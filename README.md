@@ -1,2 +1,2 @@
-# AHK_Docs-KR
+# AHK-Docs_KR
 Korean translation of AutoHotkey's documentation
