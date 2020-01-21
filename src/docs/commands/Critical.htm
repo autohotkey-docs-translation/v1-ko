@@ -1,0 +1,67 @@
+
+
+<html>
+<head>
+<title>Critical</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>임계(Critical)</h1>
+
+<p><a href="../misc/Threads.htm">현재 쓰레드</a>가 다른 쓰레드에게 인터럽트 되지 않도록 방지합니다. 또는 인터럽트 되도록 활성화합니다.</p>
+
+<pre class="Syntax">Critical [, Off]
+Critical 50 <em>; 아래의 <a href="#Interval">논평</a>을 보십시오.</em></pre>
+<p>
+첫 매개변수가 생략되면 (또는 단어가 On이면),  <a href="../misc/Threads.htm">현재 쓰레드</a>를 임계 값으로 만듭니다. 다른 쓰레드가 인터럽트 할 수 없다는 뜻입니다. 첫 매개변수가 Off이면 (또는 v1.0.48+에서 0이면), 현재 쓰레드는  <a href="Thread.htm">Thread Interrupt</a>의 설정에 상관이 없이 즉시 인터럽트가 가능해집니다.</p>
+
+<h3 id="Behave">임계 쓰레드의 행위</h3>
+<p>
+<a href="../misc/Threads.htm">우선순위가-높은</a> 쓰레드와 다르게, 임계 쓰레드 동안 발생하는 이벤트는 폐기되지 않습니다. 예를 들어, 현재 쓰레드가 임계 상태인 동안 사용자가 <a href="../Hotkeys.htm">핫키</a>를 누르면 그 핫키는 현재 쓰레드가 종료하거나 비임계 쓰레드가 될 때 까지 무한정 버퍼 처리되다가, 종료하는 그 순간 그 핫키가 새 쓰레드로 기동됩니다.</p>
+<p>
+임계 쓰레드는 비상 시에만 인터럽트 됩니다. 비상 시란 다음과 같이 구성됩니다: 
+<ol>
+	<li><a href="OnExit.htm">OnExit</a> 서브루틴;
+	<li>0x312 보다 작은 메시지 번호를 관제하는 <a href="OnMessage.htm">OnMessage()</a> 함수 (또는 그런 메시지가 촉발한 <a href="RegisterCallback.htm">역호출 함수</a>);
+	<li>그리고 임계 쓰레드 자체가 간접적으로 촉발한 <a href="RegisterCallback.htm">역호출 함수</a> (예, <a href="PostMessage.htm">SendMessage</a> 또는 <a href="DllCall.htm">DllCall</a>를 통하여)
+</ol>
+이런 인터럽트를 피하려면, 임시로 그런 함수들을 비활성화 시키십시오.</p>
+<p>
+임계 쓰레드는 <a href="MsgBox.htm">MsgBox</a>나 기타 대화상자가 화면에 나타나면 인터럽트될 수 있습니다. 그렇지만, <a href="Thread.htm">Thread Interrupt</a>과 다르게, 이 쓰레드는 사용자가 대화상자를 취소하고 나면 다시 임계 쓰레드가 됩니다.</p>
+
+<h3 id="Off">Critical Off</h3>
+<p>
+버퍼 처리된 이벤트가 새로운 쓰레드가 시작되기를 기다리고 있을 때, <code>Critical Off</code>를 사용하면 현재 쓰레드를 즉시 인터럽트하지 않습니다. 대신에, 평균 5 밀리초가 지난 다음 인터럽트가 일어납니다. 이렇게 하면 <code>Critical Off</code> 뒤에 적어도 한 줄이 인터럽트 전에 실행될 확률이 99.999% 이상입니다. 강제로 인터럽트를 즉시 일어나게 할 수 있습니다. 아직 존재하지 않는 창에 대하여 <code><a href="Sleep.htm">Sleep -1</a></code> 또는 <a href="WinWait.htm">WinWait</a>와 같은 지연을 사용하면 됩니다.</p>
+<p>
+<code>Critical Off</code>는 현재 쓰레드가 임계 쓰레드가 아니었더라도 그의 인터럽트 불가침성을 취소합니다. 그러므로 <a href="Gui.htm#GuiSize">GuiSize</a>와 같은 이벤트를 더 빨리 더 예측 가능하게 처리할 수 있습니다.</p>
+
+<h3 id="Settings">쓰레드 설정</h3>
+<p>
+임계값의 현재 설정을 저장하고 복구하는 법은 <a href="../Variables.htm#IsCritical">A_IsCritical</a>을 참조하십시오. 그렇지만, 임계값은 쓰레드에-종속적인 설정이므로, 임계 쓰레드가 끝나면, 그 아래의/재개된 쓰레드는 (있다면) 자동으로 비임계 쓰레드가 됩니다. 결론적으로 쓰레드를 끝내기 바로 전에 &quot;Critical Off&quot;를 할 필요가 없습니다.</p>
+<p>
+자동 실행 섹션에 (스크립트이 상단 부분) 임계값이 사용되지 않으면, 모든 쓰레드는 비임계 값으로 시작합니다 (그렇지만 <a href="Thread.htm">Thread Interrupt</a> 설정을 영향을 미칩니다). 대조적으로, 자동-실행 섹션에서 임계값을 켜고 다시 끄지 않으면, 새로 기동하는 매 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">시간 제한</a> 서브루틴 등은) 임계값으로 시작합니다.</p>
+<p>
+명령어 <a href="Thread.htm">Thread NoTimers</a>는 Critical과 비슷하지만 <a href="SetTimer.htm">타이머</a>의 인터럽트만 방지한다는 점이 다릅니다.</p>
+<p>
+v1.0.47+에서, Critical을 켜두고 <a href="SetBatchLines.htm"><code>SetBatchLines -1</code></a>를 배치하면 <a href="../misc/Threads.htm">현재 쓰레드</a>에 영향을 미칩니다.</p>
+
+<h3 id="Interval">메시지 점검 간격</h3>
+<p>v1.0.47+에서, 양의 정수를 첫 매개변수로 지정하면 (예를 들어, <code>Critical 30</code>) 임계값이 켜질 뿐만 아니라 내부 메시지 큐를 점검하는 간격이 수 밀리초로 변경됩니다. 지정하지 않으면, 임계값이 켜져 있는 동안 메시지는 매 16 밀리초마다 점검됩니다. 그리고 꺼져 있으면 매 5초마다 점검됩니다. 점검 간격을 증가시키면 메시지/이벤트의 도착을 지연시킵니다. 그래서 <a href="../misc/Threads.htm">현재 쓰레드</a>는 더 시간을 가지고 종료할 수 있습니다. 이렇게 하면 &quot;이미 실행 중인 쓰레드 때문에&quot;  어떤 <a href="OnMessage.htm">OnMessage()</a> 그리고 <a href="Gui.htm#DefaultWin">GUI 이벤트</a>가 소실될 가능성이 줄어듭니다. 그렇지만, <a href="Sleep.htm">Sleep</a>와 <a href="WinWait.htm">WinWait</a>같은 대기 명령어는 이 설정에 관계 없이 메시지를 점검합니다 (우회책은 <code>DllCall(&quot;Sleep&quot;, Uint, 500)</code>입니다). 주의: 메시지-점검 간격을 너무 많이 늘리면 <a href="Gui.htm">GUI</a> 창 다시 그리기와 같은 다양한 이벤트에 반응하지 못할 수 있습니다.</p>
+
+<h3>관련 항목</h3>
+<p><a href="Thread.htm">Thread (command)</a>, <a href="../misc/Threads.htm">Threads</a>, <a href="_MaxThreadsPerHotkey.htm">#MaxThreadsPerHotkey</a>, <a href="_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a>, <a href="OnMessage.htm">OnMessage()</a>, <a href="RegisterCallback.htm">RegisterCallback()</a>, <a href="Hotkey.htm">Hotkey</a>, <a href="Menu.htm">Menu</a>, <a href="SetTimer.htm">SetTimer</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">#space::  <em>; Win+Space 핫키.</em>
+Critical
+ToolTip 이 툴팁이 사라진 후에만 새 쓰레드가 시작합니다.
+Sleep 3000
+ToolTip  <em>; 팁을 끕니다.</em>
+return  <em>; 핫키 서브루틴으로부터 반환되면 쓰레드가 종료됩니다. 재개 될 아래의 쓰레드는 정의상 임계값이 아닙니다.</em></pre>
+
+</body>
+</html>

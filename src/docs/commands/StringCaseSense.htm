@@ -1,0 +1,50 @@
+
+
+<html>
+<head>
+<title>StringCaseSense</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>StringCaseSense</h1>
+
+<p>문자열 비교가 대소문자를 구분할지 말지 결정합니다 (기본 값은 &quot;대소문자를 구분하지 않습니다&quot;).</p>
+
+<pre class="Syntax">StringCaseSense, On|Off|Locale</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>On|Off|Locale</dt>
+  <dd><p><strong>On</strong>: 문자열 비교는 대소문자를 구분합니다. 이 설정은 또한 <a href="../Variables.htm#equal">표현식 등호 사인 연산자 (=)</a> 그리고 <a href="../Functions.htm#InStr">InStr()</a>의 대소문자 비 구분 모드를 아래에 기술된 <em>로케일</em> 방법을 사용하도록 만듭니다.</p>
+      <p><strong>Off</strong> (기본값으로 시작): 기호 A-Z는 소문자로 간주합니다. 이것은 하위 호환과 수행성능의 문제 때문에 모든 스크립트를 시작할 때 기본값입니다 (<em>Locale</em>은 비교되는 문자열의 성질에 따라 <em>Off</em> 때보다 1에서 8배까지 느립니다).</p>
+      <p><strong><a name="Locale"></a>Locale</strong> <span class="ver">[v1.0.43.03+]:</span> 문자열 비교는 현재 사용자의 로케일에 따라  대소문자를 <strong>구분</strong> 합니다. 예를 들어, 대부분의 영어와 서구 유럽 로케일은 기호 A-Z를 소문자로 취급할 뿐만 아니라  &Auml; and &Uuml;와 같은 ANSI 기호도 소문자로 취급합니다.</p></dd>
+
+</dl>
+
+<h3>논평</h3>
+<p>이 설정은 다음에 적용됩니다:</p>
+<ul>
+  <li><a href="../Variables.htm#equal">표현식 비교 연산자</a> ( ==는 예외). 그렇지만, <a href="../Variables.htm#equal">등호-사인 연산자 (=)</a>는 언제나 대소문자를 구분하지 않기 때문에, <em>StringCaseSense</em>가 <em>On</em>되어 있으면 <em>Locale</em> 모드를 사용합니다. <a href="../Functions.htm#InStr">InStr()</a>의 대소문자 비구분 모드도 마찬가지로 <em>Locale</em> 모드를 사용합니다.</li>
+  <li><a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, 그리고 <a href="../Functions.htm#InStr">InStr()</a>. 그렇지만, InStr()은 <em>CaseSensitive</em> 매개변수가 참(<em>true</em>)이어도 영향을 받지 않습니다.</li>
+  <li><a href="StringReplace.htm">StringReplace</a></li>
+  <li><a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, 그리고 <a href="IfEqual.htm">IfEqual과 그의 가족</a>.</li>
+  <li><span class="ver">[AHK_L 42+]:</span> <a href="IfIs.htm">if var is [not] type</a>은 <i>Locale</i> 모드가 켜져 있을 경우에만 시스템 로케일을 존중합니다.</li>
+</ul>
+<p>
+내장 변수 <strong>A_StringCaseSense</strong>는 현재 설정이 담깁니다 (단어 On, Off, 또는 Locale).</p>
+<p>
+새로 기동되는 <a href="../misc/Threads.htm">쓰레드</a>는 모두 (예를 들어 <a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본 설정을 가지고 새롭게 시작합니다. 이 기본값은 자동-실행 섹션 (스크립트의 상단)에서 이 명령어를 사용하면 변경할 수 있습니다.</p>
+
+<h3>관련 항목</h3>
+<p>
+<a href="IfEqual.htm">IfEqual</a>, <a href="IfInString.htm">IfInString</a>, <a href="IfBetween.htm">if var between</a>, <a href="StringReplace.htm">StringReplace</a>, <a href="StringGetPos.htm">StringGetPos</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">StringCaseSense Locale</pre>
+
+</body>
+</html>

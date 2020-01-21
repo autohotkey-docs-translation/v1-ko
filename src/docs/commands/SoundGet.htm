@@ -1,0 +1,94 @@
+
+
+<html>
+<head>
+<title>SoundGet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>SoundGet</h1>
+
+<p>사운드 창치로부터 다양한 설정을 열람합니다 (음소거, 볼륨 등등.)</p>
+
+<pre class="Syntax">SoundGet, OutputVar [, ComponentType, ControlType, DeviceNumber]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>OutputVar</dt>
+  <dd><p>열람된 설정을 저장할 변수의 이름, 0부터 100 (포함) 사이의 부동 소수점 수이거나 또는 단어 ON이나 OFF입니다. (used only for <em>ControlTypes</em> ONOFF, MUTE, MONO, LOUDNESS, STEREOENH, 그리고 BASSBOOST). 
+  
+  이 변수는 설정을 열람하는 데 문제가 있었으면 비워집니다. 부동 소수점 수의 형식은, 예를 들어 소수점의 위치는, <a href="SetFormat.htm">SetFormat</a>에 의하여 결정됩니다.</p></dd>
+
+  <dt>ComponentType</dt>
+  <dd><p>비어 있거냐 생략하면, 기본 값은 단어 MASTER입니다. 그렇지 않으면, 다음 단어 중 하나가 될 수 있습니다: MASTER (SPEAKERS와 동의어), DIGITAL, LINE, MICROPHONE, SYNTH, CD, TELEPHONE, PCSPEAKER, WAVE, AUX, ANALOG, HEADPHONES, 또는 N/A. 사운드 장치에 지정된 <em>ComponentType</em>이 없으면, ErrorLevel은 그 문제를 나타낼 것입니다.</p>
+      <p>
+	 어떤 믹서에서 라벨이 Auxiliary인 콤포넌트는 AUX가 아니라ANALOG로 접근할 수 있습니다.</p>
+    <p>
+	사운드 장치에 <em>ComponentType</em>의 실체가 여럿이면 (예를 들어 두 종류의 LINE이 있으면), 보통 첫 번째에 연주 설정이 담기고 둘 째에 녹음 설정이 담깁니다. 첫 번째 말고 다른 실체에 접근하려면, 쌍점과 숫자를 이 매개변수에 추가하십시오. 예를 들어: <code>Analog:2</code>는 아날로그 컴포넌트의 두번째 실체라는 뜻입니다.</p></dd>
+
+  <dt>ControlType</dt>
+  <dd><p>비어 있거나 생략하면, 기본 값은 VOLUME입니다. 그렇지 않으면, 다음 단어 중 하나가 될 수 있습니다: VOLUME (또는 VOL), ONOFF, MUTE, MONO, LOUDNESS, STEREOENH, BASSBOOST, PAN, QSOUNDPAN, BASS, TREBLE, EQUALIZER, 또는 유효한 콘트롤 유형의 번호 (<a href="SoundSet.htm#Ex">사운드카드 분석 스크립트</a> 참조). 지정된 <em>ComponentType</em>에 지정된 <em>ControlType</em>이 없으면, ErrorLevel은 그 문제를 알려줄 것입니다.</p>
+    <p><strong>주의:</strong> 사운드 장치는 보통 VOLUME (또는 VOL) 그리고 MUTE만 지원합니다. 물론 다른 것들도 윈도우즈 버전과 사운드 장치에 따라 사용할 수 있습니다.</p></dd>
+
+  <dt>DeviceNumber</dt>
+  <dd><p>1부터 지원되는 장치의 총 개수까지의 숫자. 이 매개변수를 생략하면, 기본 값은 1입니다 (첫 번째 사운드 장치), 아니면 Windows Vista 이상에서 연주를 위한 시스템의 기본 장치입니다. 이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다. <a href="SoundSet.htm#Ex">사운드카드 분석 스크립트</a>가 어느 번호를 사용해야할지 결정하는 데 도움을 줄 것입니다.</p></dd>
+
+</dl>
+<h3>ErrorLevel</h3>
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 명령어가 성공하면 0이 설정됩니다. 그렇지 않으면 다음 문구 중 하나가 설정됩니다:</p>
+<table class="info">
+  <tr>
+    <td>Invalid Control Type or Component Type (유효하지 않은 콘트롤 유형이나 컴포넌트 유형)</td>
+  </tr>
+  <tr>
+    <td>Can't Open Specified Mixer (지정된 믹서를 열 수 없음)</td>
+  </tr>
+  <tr>
+    <td>Mixer Doesn't Support This Component Type (믹서가 이 콤포넌트 유형을 지원하지 않음)</td>
+  </tr>
+  <tr>
+    <td>Mixer Doesn't Have That Many of That Component Type (믹서가 지정한 만큼 많은 콤포넌트 유형이 없음)</td>
+  </tr>
+  <tr>
+    <td>Component Doesn't Support This Control Type (컴포넌트가 이 콘트롤 유형을 지원하지 않음)</td>
+  </tr>
+  <tr>
+    <td>Can't Get Current Setting (현재 설정을 얻을 수 없음)</td>
+  </tr>
+</table>
+<h3>논평</h3>
+<p>Windows Vista 이후는 v1.1.10부터 지원합니다.</p>
+<p>
+시스템에 설치된 사운드 장치 (믹서)의 능력을 알아내려면 -- 예를 들어, 컴포턴트 유형과 콘트롤 유형 -- 다음 <a href="SoundSet.htm#Ex">사운드카드 분석 스크립트</a>를 실행하십시오.</p>
+<p>
+오디오를 더 섬세하게 제어하려면, <a href="http://www.autohotkey.com/board/topic/21984-vista-audio-control-functions/">VA 라이브러리</a>의 사용을 고려해 보십시오.</p>
+<p>
+설정을 바꾸려면 <a href="SoundSet.htm">SoundSet</a>을 사용하십시오.</p>
+
+<h3>관련 항목</h3>
+<p><a href="SoundSet.htm">SoundSet</a>, <a href="SoundGetWaveVolume.htm">SoundGetWaveVolume</a>, <a href="SoundSetWaveVolume.htm">SoundSetWaveVolume</a>, <a href="SoundPlay.htm">SoundPlay</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">SoundGet, master_volume
+MsgBox, 마스터 볼륨은 %master_volume% 퍼센트입니다.
+
+SoundGet, master_mute, , mute
+MsgBox, 마스터 음소거는 현재 %master_mute%입니다.
+
+SoundGet, bass_level, Master, bass
+if ErrorLevel
+    MsgBox, 에러 설명: %ErrorLevel%
+else
+    MsgBox, MASTER에 대한 BASS 레벨은 %bass_level% 퍼센트입니다.
+
+SoundGet, microphone_mute, Microphone, mute
+if microphone_mute = Off
+    MsgBox, 마이크로폰이 음소거되지 않았습니다.</pre>
+
+</body>
+</html>

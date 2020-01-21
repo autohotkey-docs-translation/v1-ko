@@ -1,0 +1,198 @@
+<html>
+<head>
+<title>IntelliSense -- by Rajat (requires XP/2k/NT)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>IntelliSense -- by Rajat (XP/2k/NT 이상)</h1>
+
+<p>이 스크립트는 AutoHotkey 스크립트를 편집하는 동안 감시하다가 명령어 다음에 쉼표나 스페이스를 타자하는 순간, 그 명령어의 매개변수 리스트를 보여줍니다 게다가 Ctrl+F1 (또는 여러분의 선택에 따라 다른 핫키)를 누르면 그 명령어의 도움말을 보여줍니다. 매개변수 리스트를 취소하려면 Escape 또는 Enter를 누르십시오.
+</p>
+<p><a href="IntelliSense.ahk">이 스크립트를 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
+
+<pre class="NoIndent"><em>; Requires v1.0.41+</em>
+
+<em>; CONFIGURATION SECTION: 스크립트를 다움 변수로 재단합니다.</em>
+
+<em>; 아래의 핫키를 누르면 현재 명령어의 도움말을 보여줍니다:</em>
+I_HelpHotkey = ^F1
+
+<em>; 아래의 문자열이 활성창의 제목에 존재해야
+; 타자하는 동안 IntelliSense가 작동합니다.  비워 두면
+; IntelliSense는 모든 창에 작동합니다. Pad로 만들면 
+; Metapad, Notepad, 그리고 Textpad 같은 편집기에서 작동합니다.  .ahk로 만들면
+; 오직 .ahk 파일이 Notepad, Metapad, 등등에 열려 있을 경우에만 작동합니다.</em>
+I_Editor = pad
+
+<em>; 트레이에 다른 스크립트와 차별을 위해 이 스크립트에 대하여 다른 아이콘을 사용하고 싶으면
+; 아래에 파일 이름을 제공하십시오. (비워 두면 아이콘이 없습니다).
+; 예를 들어: E:\stuff\Pics\icons\GeoIcons\Information.ico</em>
+I_Icon = 
+
+<em>; END OF CONFIGURATION SECTION (이 시점 이후로 변경하지 마십시오.
+; 단, 스크립트의 기본 기능을 바꾸고 싶은 경우는 예외입니다).</em>
+
+SetKeyDelay, 0
+#SingleInstance
+
+if I_HelpHotkey &lt;&gt;
+    Hotkey, %I_HelpHotkey%, I_HelpHotkey
+
+<em>; 트레이 아이콘을 바꿉니다 (위의 환경 구성 섹션에 지정되어 있다면):</em>
+if I_Icon &lt;&gt;
+    IfExist, %I_Icon%
+        Menu, Tray, Icon, %I_Icon%
+
+<em>; 오토핫키의 위치를 알아 냅니다:</em>
+RegRead, ahk_dir, HKEY_LOCAL_MACHINE, SOFTWARE\AutoHotkey, InstallDir
+if ErrorLevel  <em>; 발견이 안되었으므로, 다른 위치에서 찾아 봅니다.</em>
+{
+    if A_AhkPath
+        SplitPath, A_AhkPath,, ahk_dir
+    else IfExist ..\..\AutoHotkey.chm
+        ahk_dir = ..\..
+    else IfExist %A_ProgramFiles%\AutoHotkey\AutoHotkey.chm
+        ahk_dir = %A_ProgramFiles%\AutoHotkey
+    else
+    {
+        MsgBox Could not find the AutoHotkey folder.
+        ExitApp
+    }
+}
+
+ahk_help_file = %ahk_dir%\AutoHotkey.chm
+
+<em>; 명령어 구문을 읽습니다:</em>
+Loop, Read, %ahk_dir%\Extras\Editors\Syntax\Commands.txt
+{
+    I_FullCmd = %A_LoopReadLine%
+
+    <em>; 지시어들은 쉼표가 아니라 스페이스를 첫 번째로 가집니다.</em>
+    <em>; 그래서 먼저 오는 것을 명령어 이름의 끝으로 간주합니다:</em>
+    StringGetPos, I_cPos, I_FullCmd, `,
+    StringGetPos, I_sPos, I_FullCmd, %A_Space%
+    if (I_cPos = -1 or (I_cPos &gt; I_sPos and I_sPos &lt;&gt; -1))
+        I_EndPos := I_sPos
+    else
+        I_EndPos := I_cPos
+
+    if I_EndPos &lt;&gt; -1
+        StringLeft, I_CurrCmd, I_FullCmd, %I_EndPos%
+    else  <em>; 이 지시어/명령어는 매개변수가 없습니다.</em>
+        I_CurrCmd = %A_LoopReadLine%
+    
+    StringReplace, I_CurrCmd, I_CurrCmd, [,, All
+    StringReplace, I_CurrCmd, I_CurrCmd, %A_Space%,, All
+    StringReplace, I_FullCmd, I_FullCmd, ``n, `n, All
+    StringReplace, I_FullCmd, I_FullCmd, ``t, `t, All
+    
+    <em>; 명령어 이름 배열과 완전한 cmd 구문을 구성합니다:</em>
+    I_Cmd%A_Index% = %I_CurrCmd%
+    I_FullCmd%A_Index% = %I_FullCmd%
+}
+
+<em>; Input 명령어를 사용해 사용자가 타자하는 명령어를 감시합니다:</em>
+Loop
+{
+    <em>; 편집기 창 점검:</em>
+    WinGetTitle, ActiveTitle, A
+    IfNotInString, ActiveTitle, %I_Editor%
+    {
+        ToolTip
+        Sleep, 500
+        Continue
+    }
+    
+    <em>; 엔드키를 만날때까지 모든 키를 얻습니다:</em>
+    Input, I_Word, V, {enter}{escape}{space}`,
+    I_EndKey = %ErrorLevel%
+    
+    <em>; 이 경우 툴팁은 보이지 않습니다:</em>
+    if I_EndKey in EndKey:Enter,EndKey:Escape
+    {
+        ToolTip
+        Continue
+    }
+
+    <em>; 다시 편집기 창을 점검합니다!</em>
+    WinGetActiveTitle, ActiveTitle
+    IfNotInString, ActiveTitle, %I_Editor%
+    {
+        ToolTip
+        Continue
+    }
+
+    <em>; 존재하는 들여쓰기 만큼 보상합니다:</em>
+    StringReplace, I_Word, I_Word, %A_Space%,, All
+    StringReplace, I_Word, I_Word, %A_Tab%,, All
+    if I_Word =
+        Continue
+    
+    <em>; 주석 줄을 점검합니다:</em>
+    StringLeft, I_Check, I_Word, 1
+    if (I_Check = &quot;;&quot; or I_Word = &quot;If&quot;)  <em>; &quot;If&quot;는 툴팁을 보여주기에는 너무 거추장스럽습니다.</em>
+        Continue
+
+    <em>; 단어를 명령어에 부합시킵니다:</em>
+    I_Index =
+    Loop
+    {
+        <em>; 동적 변수를 한 번만 결정하면 수행성능이 개선됩니다.</em>
+        <em>; 게다가,  I_ThisCmd에 배경된 값은 또</em>
+        <em>; I_HelpHotkey 서브루틴이 사용합니다:</em>
+        I_ThisCmd := I_Cmd%A_Index%
+        if I_ThisCmd =
+            break
+        if (I_Word = I_ThisCmd)
+        {
+            I_Index := A_Index
+            I_HelpOn = %I_ThisCmd%
+            break
+        }
+    }
+    
+    <em>; 부합이 없으면 사용자 입력 감시를 재개합니다:</em>
+    if I_Index =
+        Continue
+    
+    <em>; 부합된 명령어를 보여주어 사용자를 안내합니다:</em>
+    I_ThisFullCmd := I_FullCmd%I_Index%
+    ToolTip, %I_ThisFullCmd%, A_CaretX, A_CaretY + 20
+}
+
+
+
+I_HelpHotkey:
+WinGetTitle, ActiveTitle, A
+IfNotInString, ActiveTitle, %I_Editor%, Return
+
+ToolTip  <em>; 지금 당장은 필요가 없기 때문에 구문 도움 툴팁을 끕니다.</em>
+
+SetTitleMatchMode, 1  <em>; 3의 경우, 이 설정은 이 쓰레드에만 효과가 있습니다.</em>
+IfWinNotExist, AutoHotkey Help
+{
+    IfNotExist, %ahk_help_file%
+    {
+        MsgBox, Could not find the help file: %ahk_help_file%.
+        return
+    }
+    Run, %ahk_help_file%
+    WinWait, AutoHotkey Help
+}
+
+if I_ThisCmd =  <em>; 대신에, 최근에 타자된 것을 사용합니다.</em>
+    I_ThisCmd := I_Word
+
+<em>; 위에서 &quot;마지막 발견&quot; 창이 설정되었고 그것을 아래에 사용합니다:</em>
+WinActivate
+WinWaitActive
+StringReplace, I_ThisCmd, I_ThisCmd, #, {#}  <em>; 있다면, 앞의 #를 교체합니다.</em>
+Send, !n{home}+{end}%I_HelpOn%{enter}
+return
+</pre>
+</body>
+</html>

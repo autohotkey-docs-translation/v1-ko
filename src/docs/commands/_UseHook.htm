@@ -1,0 +1,52 @@
+
+
+<html>
+<head>
+<title>#UseHook</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>#UseHook</h1>
+
+<p>모든 또는 어떤 키보드 <a href="../Hotkeys.htm">핫키</a>를 구현하는 데 갈고리의 사용을 강제합니다.</p>
+
+<pre class="Syntax">#UseHook [On|Off]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>On|Off</dt>
+  <dd><p><code>#UseHook</code> 뒤에 아무것도 없으면 <code>#UseHook On</code>과 동등합니다.</p>
+      <p><strong>On</strong>: 지금부터 (있다면) 다음 <code>#UseHook OFF</code> 사이에 모든 키보드 핫키를 구현하는 데 <a href="_InstallKeybdHook.htm">키보드 갈고리</a>가 사용됩니다.</p>
+    <p><strong>Off</strong>: 핫키는 기본 방법을 사용하여 구현됩니다 (가능하면 RegisterHotkey()를; 그렇지 않으면, 키보드 갈고리를 사용합니다).</p></dd>
+
+</dl>
+
+<h3>논평</h3>
+<p>보통, 키보드 핫키를 구현하는 데 가능하면 윈도우즈 API 함수 RegisterHotkey()가 사용됩니다. 그렇지만, 대신 <a href="_InstallKeybdHook.htm">키보드 갈고리</a>를 사용하면 어떤 상황에서는 핫키의 반응성이 더 좋은 경우가 있습니다.</p>
+<p>
+이 지시어를 켜면(ON)  각 핫키의 정의 앞에 <a href="../Hotkeys.htm#prefixdollar">$ 접두 심볼</a>을 사용한 것과 효과가 같습니다.</p>
+<p>
+모든 # 지시어처럼 -- 스크립트가 기동할 때 한 번만 처리되는 --  <code>#UseHook</code>은 명령어처럼 스크립트 아무데나 배치하면 안됩니다 (즉, 서브루틴 안에 포함시킬 필요가 없습니다). 대신에, 영향을 주고 싶은 첫 핫키 라벨 바로 앞에 배치하십시오.</p>
+<p>
+기본값으로, <a href="_InstallKeybdHook.htm">키보드 갈고리</a>를 사용하는 핫키는 <a href="Send.htm">Send</a> 명령어로 촉발시킬 수 없습니다. 비슷하게, 마우스 핫키는 <a href="Click.htm">Click</a> 명령어로 촉발시킬 수 없습니다.  왜냐하면 모든 마우스 핫키가 <a href="_InstallMouseHook.htm">마우스 갈고리</a>를 사용하기 때문입니다. 한 가지 우회책은 <a href="Gosub.htm">Gosub</a>를 사용하여 곧바로 핫키의 서브루틴에 점프하는 것입니다. 예를 들어: <code>Gosub #LButton</code>.</p>
+<p>
+<span class="ver">[v1.1.06+]:</span> <a href="_InputLevel.htm">#InputLevel</a> 그리고 <a href="SendLevel.htm">SendLevel</a>는 어느 핫키 그리고 핫스트링이 Send 명령어로 촉발될지 제어할 수 있습니다.</p>
+<p>
+이 지시어가 스크립트에 전혀 나타나지 않으면, OFF를 지정한 것처럼 행위합니다.</p>
+
+<h3>관련 항목</h3>
+<p><a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>, <a href="_InstallMouseHook.htm">#InstallMouseHook</a>, <a href="ListHotkeys.htm">ListHotkeys</a>, <a href="_InputLevel.htm">#InputLevel</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">#UseHook  <em>; 이 시점 이후로 핫키에 대하여 갈고리의 사용을 강제합니다.</em>
+#x::MsgBox, 이 핫키는 갈고리로 구현될 것입니다.
+#y::MsgBox, 이것도 마찬가지입니다.
+#UseHook off
+#z::MsgBox, 그러나 이것은 아닙니다.</pre>
+
+</body>
+</html>

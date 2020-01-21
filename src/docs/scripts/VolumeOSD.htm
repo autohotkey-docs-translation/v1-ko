@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>Volume On-Screen-Display (OSD) -- by Rajat</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>화면 위 디스플레이에서 볼륨 조절하는 법 (OSD) -- by Rajat</h1>
+
+<p>이 스크립트는 여러분이 선택한 핫키를 마스터 또는 웨이브 볼륨을 높이거나 내리는 데 할당합니다. 두 볼륨 모두 다른 색의 바 그래프로 보여줍니다.
+</p>
+<p><a href="VolumeOSD.ahk">이 스크립트 내려 받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
+
+<pre class="NoIndent"><em>;_________________________________________________ 
+;_______사용자 설정_____________________________</em>
+
+<em>; 재단은 이 구역과 핫키 구역에서만 허용합니다!!</em>
+
+<em>; 매번 볼륨을 올리거나 내릴 백분률:</em>
+vol_Step = 4
+
+<em>; 얼마나 오래 볼륨 레벨 바 그래프를 보여줄 것인가:</em>
+vol_DisplayTime = 2000
+
+<em>; 마스터 볼륨 바 컬러
+; (더 정밀한 쉐이드를 사용하려면 도움말 참조):</em>
+vol_CBM = Red
+
+<em>; 웨이브 볼륨 바 컬러</em>
+vol_CBW = Blue
+
+<em>; 배경 색</em>
+vol_CW = Silver
+
+<em>; 바의 화면 좌표.  -1을 사용하면 해당 차원의 가운데에 정렬:</em>
+vol_PosX = -1
+vol_PosY = -1
+vol_Width = 150  <em>; 바의 너비</em>
+vol_Thick = 12   <em>; 바의 두께</em>
+
+<em>; 키보드에 볼륨에 대한 멀티미디어 버튼이 있다면
+; 아래의 핫키에 그 버튼들을 사용하도록 바꿀 수 있습니다. 아래와 같이 지정하십시오.
+; Volume_Up, ^Volume_Up, Volume_Down, 그리고 ^Volume_Down:</em>
+HotKey, #Up, vol_MasterUp      <em>; Win+UpArrow</em>
+HotKey, #Down, vol_MasterDown
+HotKey, +#Up, vol_WaveUp       <em>; Shift+Win+UpArrow</em>
+HotKey, +#Down, vol_WaveDown
+
+
+<em>;___________________________________________ 
+;_____자동 실행 섹션__________________</em>
+
+<em>; 여기는 아무 것도 바꾸지 마십시오 (단, 무엇을 하고 있는지 잘 아는 경우는 예외입니다).</em>
+
+vol_BarOptionsMaster = 1:B ZH%vol_Thick% ZX0 ZY0 W%vol_Width% CB%vol_CBM% CW%vol_CW%
+vol_BarOptionsWave   = 2:B ZH%vol_Thick% ZX0 ZY0 W%vol_Width% CB%vol_CBW% CW%vol_CW%
+
+<em>; X 위치가 지정되어 있다면, 그것을 옵셥에 추가합니다.
+; 그렇지 않으면, 생략해 바를 수평으로 가운데에 배치할 수 있습니다:</em>
+if vol_PosX &gt;= 0
+{
+    vol_BarOptionsMaster = %vol_BarOptionsMaster% X%vol_PosX%
+    vol_BarOptionsWave   = %vol_BarOptionsWave% X%vol_PosX%
+}
+
+<em>; Y 위치가 지정되어 있다면, 그것을 옵션에 추가합니다.
+; 그렇지 않으면, 생략해 나중에 계산할 수 있습니다:</em>
+if vol_PosY &gt;= 0
+{
+    vol_BarOptionsMaster = %vol_BarOptionsMaster% Y%vol_PosY%
+    vol_PosY_wave = %vol_PosY%
+    vol_PosY_wave += %vol_Thick%
+    vol_BarOptionsWave = %vol_BarOptionsWave% Y%vol_PosY_wave%
+}
+
+#SingleInstance
+SetBatchLines, 10ms
+Return
+
+
+<em>;___________________________________________</em>
+
+vol_WaveUp:
+SoundSet, +%vol_Step%, Wave
+Gosub, vol_ShowBars
+return
+
+vol_WaveDown:
+SoundSet, -%vol_Step%, Wave
+Gosub, vol_ShowBars
+return
+
+vol_MasterUp:
+SoundSet, +%vol_Step%
+Gosub, vol_ShowBars
+return
+
+vol_MasterDown:
+SoundSet, -%vol_Step%
+Gosub, vol_ShowBars
+return
+
+vol_ShowBars:
+<em>; &quot;번쩍임&quot; 효과를 방지하려면, 아직 존재하지 않은 경우,
+; 바 창만 생성하십시오:</em>
+IfWinNotExist, vol_Wave
+    Progress, %vol_BarOptionsWave%, , , vol_Wave
+IfWinNotExist, vol_Master
+{
+    <em>; 스크립트가 실행 중인 동안에 화면 해상도가 바뀌는 경우,</em>
+    <em>; 여기에서 위치를 계산합니다:</em>
+    if vol_PosY &lt; 0
+    {
+        <em>; 웨이브 바를 마스터 바 바로 위에 생성합니다:</em>
+        WinGetPos, , vol_Wave_Posy, , , vol_Wave
+        vol_Wave_Posy -= %vol_Thick%
+        Progress, %vol_BarOptionsMaster% Y%vol_Wave_Posy%, , , vol_Master
+    }
+    else
+        Progress, %vol_BarOptionsMaster%, , , vol_Master
+}
+<em>; 사용자 또는 외부 프로그램이 볼륨을 바꾸었을 경우, 볼륨을 둘 다 얻습니다:</em>
+SoundGet, vol_Master, Master
+SoundGet, vol_Wave, Wave
+Progress, 1:%vol_Master%
+Progress, 2:%vol_Wave%
+SetTimer, vol_BarOff, %vol_DisplayTime%
+return
+
+vol_BarOff:
+SetTimer, vol_BarOff, off
+Progress, 1:Off
+Progress, 2:Off
+return
+</pre>
+</body>
+</html>

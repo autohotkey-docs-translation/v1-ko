@@ -1,0 +1,60 @@
+
+
+<html>
+<head>
+<title>Continue</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>Continue</h1>
+
+<p>
+현재 남은 <a href="Loop.htm">회돌이</a> 반복을 건너 뛰고 새 반복을 시작합니다. 어떤 종류의 <a href="Loop.htm">회돌이</a> 안에도 유효합니다.</p>
+
+<pre class="Syntax">Continue [, LoopLabel]</pre>
+<p>
+<span class="ver">[AHK_L 59+]:</span> 지정되면, LoopLabel은 다음 서술문을 적용해야 할 회돌이를 식별합니다; <a href="../misc/Labels.htm">라벨 이름</a> 또는 숫자로 내포 레벨을 지정합니다. 생략하거나 1이면, 이 서술문은 가장 안쪽 회될이에 적용됩니다. LoopLabel은 상수 값이어야 합니다 - 변수나 표현식은 지원하지 않습니다. <a href="../misc/Labels.htm">라벨</a>을 지정하면, 회돌이 명령어를 직접 가리켜야 합니다.</p>
+<p>Continue는 회돌이의 닫는 반괄호에 도달한 것과 같이 행위합니다:</p>
+<ol>
+  <li><a href="../Variables.htm#Index">A_Index</a>를 1만큼 증가시킵니다.</li>
+  <li>회될이 몸체의 나머지를 건너 뜁니다.</li>
+  <li>회돌이 조건을 만족하는지 (있다면) 점검합니다. 만족하면, 새 반복을 시작합니다; 그렇지 않으면 회돌이를 끝냅니다.</li>
+</ol>
+<p>
+<a href="Goto.htm">goto</a> 보다 <a href="Break.htm">Break</a>와 Continue의 사용을 권장합니다. 왜냐하면 스크립트를 읽기 더 쉽고 관리하기 더 쉽기 때문입니다</p>
+
+<h3>관련 항목</h3>
+<p><a href="Break.htm">Break</a>, <a href="Loop.htm">Loop</a>, <a href="Until.htm">Until</a>, <a href="While.htm">While-회돌이</a>, <a href="For.htm">For-회돌이</a>, <a href="Block.htm">블록</a>, <a href="../misc/Labels.htm">라벨</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent"><em>; 이 예제는 5개의 MsgBox를 보여줍니다. 각각 6부터 10까지 담고 있습니다.
+; 회돌이의 앞쪽 5회에, &quot;continue&quot; 명령어 때문에
+; 회돌이가 MsgBox 줄에 도착하기 전에 다시 시작하는 것을 주목하십시오.</em>
+Loop, 10
+{
+    if A_Index &lt;= 5
+        continue
+    MsgBox %A_Index%
+}</pre>
+<pre class="NoIndent"><em>; 내포 회돌이 안에서 바깥 회돌이를 계속합니다.</em>
+outer:
+Loop 3
+{
+    x := A_Index
+    Loop 3
+    {
+        if (x*A_Index = 4)
+            <b>continue outer</b>  <em>; <b>continue 2</b> 또는 <b>goto continue_outer</b>와 동등합니다.</em>
+        MsgBox %x%,%A_Index%
+    }
+    continue_outer: <em>; goto를 위함.</em>
+    ErrorLevel:=ErrorLevel <em>; 개정판 57 이전에서, 라벨은 블록의 끝을 가리킬 수 없었습니다.</em>
+}
+</pre>
+
+</body>
+</html>

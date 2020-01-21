@@ -1,0 +1,89 @@
+
+
+<html>
+<head>
+<title>FileCopy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>FileCopy</h1>
+
+<p>파일을 복사합니다.</p>
+
+<pre class="Syntax">FileCopy, SourcePattern, DestPattern [, Flag]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>SourcePattern</dt>
+  <dd><p>단일 파일이나 폴더 또는 C:\Temp\*.tmp 같으 와일드 카드 패턴.
+  <em>SourcePattern</em>은 절재 경로가 지정되어 있지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다.</p></dd>
+
+  <dt>DestPattern</dt>
+  <dd>
+  목표의 이름이나 패턴, 절대 경로가 지정되지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 간단한 복사를 수행하려면 -- 기존의 파일이름은 그대로 두고 -- 폴더 이름만 지정하십시오. 다음에 보여주는 예제는 기능상 동등합니다:<br>
+      <pre>FileCopy, C:\*.txt, C:\My Folder</pre>
+      <pre>FileCopy, C:\*.txt, C:\My Folder\*.*</pre>
+    </dd>
+
+  <dt>Flag</dt>
+  <dd><p>(선택적) 이 플래그는 파일이 이미 존재하면 덮어쓸지 말지 결정합니다:</p>
+      <p>0 = (기본값) 기존의 파일을 덮어쓰지 않습니다<br>
+        1 = 기존의 파일을 덮어 씁니다</p>
+      <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다. 심지어 참이나 거짓으로 평가되는 것이면 무엇이든 가능합니다 (왜냐하면 내부적으로 참은 1 거짓은 0으로 저장되기 때문입니다).</p></dd>
+
+</dl>
+
+<h3>ErrorLevel</h3>
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 에러 때문에 복사에 실패한 파일의 개수가 설정됩니다.  그렇지 않으면 0이 설정됩니다.</p>
+<p>
+어느 경우든, 소스 파일이 단일 파일이고 (와일드카드 없음) 그리고 그 파일이 존재하지 않으면, ErrorLevel은 0으로 설정됩니다. 이 상황을 탐지하려면, 복사하기 전에 <a href="IfExist.htm">IfExist</a> 또는 <a href="../Functions.htm#FileExist">FileExist()</a>를 소스 파일에 사용하십시오.</p>
+<p>
+<a href="FileMove.htm">FileMove</a>와 다르게, 파일을 자기 자신에 복사하는 것은 언제나 에러로 간주됩니다. 덮어쓰기 모드가 켜져 있어도 마찬가지입니다.</p>
+<p>
+파일이 발견되면, <a href="../Variables.htm#LastError">A_LastError</a>는 0 (0) 또는 마지막 실패 후에 곧바로 운영 체제의 GetLastError() 함수의 결과가 설정됩니다. 그렇지 않으면 A_LastError에는 왜 파일이 발견되지 않았는지 알려주는 에러 코드가 담깁니다.</p>
+
+<h3>논평</h3>
+<p>
+FileCopy는 파일만 복사합니다. 대신 폴더의 내용을 (그의 모든 파일과 하위 폴더) 복사하려면, 아래 섹션의 예제를 참조하십시오. 단일 폴더 (하위 폴더 포함)를 복사하려면, <a href="FileCopyDir.htm">FileCopyDir</a>을 사용하십시오.</p>
+<p>
+에러를 만나도 연산은 멈추지 않습니다.</p>
+
+<h3>관련 항목</h3>
+<p>
+<a href="FileMove.htm">FileMove</a>, <a href="FileCopyDir.htm">FileCopyDir</a>, <a href="FileMoveDir.htm">FileMoveDir</a>, <a href="FileDelete.htm">FileDelete</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">FileCopy, C:\My Documents\List1.txt, D:\Main Backup\  <em>; 사본을 만들지만 원본의 파일 이름을 유지합니다.</em>
+FileCopy, C:\My File.txt, C:\My File New.txt  <em>; 파일에 새 이름을 주고, 같은 폴더 안으로 복사합니다.</em>
+FileCopy, C:\Folder1\*.txt, D:\New Folder\*.bkp  <em>; 새 위치에 복사하고 새 확장자를 부여합니다.</em></pre>
+<p>&nbsp;</p>
+<pre class="NoIndent"><em>; 다음 예제는 한 폴더 안의 모든 파일과 하위 폴더를 다른 폴더로 복사 합니다:</em>
+ErrorCount := CopyFilesAndFolders(&quot;C:\My Folder\*.*&quot;, &quot;D:\Folder to receive all files &amp; folders&quot;)
+if ErrorCount &lt;&gt; 0
+    MsgBox %ErrorCount% files/folders could not be copied.
+
+CopyFilesAndFolders(SourcePattern, DestinationFolder, DoOverwrite = false)
+<em>; SourcePattern에 부합하는 모든 파일과 폴더를 DestinationFolder이라는 이름의 폴더에 복사하고
+; 복사할 수 없었던 파일/폴더의 개수를 돌려줍니다.</em>
+{
+    <em>; 먼저 모든 파일을 복사합니다 (폴더는 복사하지 않습니다):</em>
+    FileCopy, %SourcePattern%, %DestinationFolder%, %DoOverwrite%
+    ErrorCount := ErrorLevel
+    <em>; 이제 모든 폴더를 복사합니다:</em>
+    Loop, %SourcePattern%, 2  <em>; 2의 뜻은 &quot;폴더만 열람한다&quot;는 뜻입니다.</em>
+    {
+        FileCopyDir, %A_LoopFileFullPath%, %DestinationFolder%\%A_LoopFileName%, %DoOverwrite%
+        ErrorCount += ErrorLevel
+        if ErrorLevel  <em>; 문제의 폴더를 이름으로 보고합니다.</em>
+            MsgBox Could not copy %A_LoopFileFullPath% into %DestinationFolder%.
+    }
+    return ErrorCount
+}</pre>
+
+</body>
+</html>

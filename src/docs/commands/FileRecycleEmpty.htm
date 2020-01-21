@@ -1,0 +1,41 @@
+
+
+<html>
+<head>
+<title>FileRecycleEmpty</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>FileRecycleEmpty</h1>
+
+<p>휴지통을 비웁니다.</p>
+
+<pre class="Syntax">FileRecycleEmpty [, DriveLetter]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>DriveLetter</dt>
+  <dd><p>생략하면, 모든 드라이브에 대하여 휴지통을 치웁니다. 그렇지 않으면, C:\와 같이 드라이브를 지정하십시오</p></dd>
+
+</dl>
+
+<h3>ErrorLevel</h3>
+<p>
+<span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 문제가 있으면 1 그렇지 않으면 0이 설정됩니다.</p>
+
+<h3>논평</h3>
+<p>
+이 명령어은  MS Internet Explorer 4 이상이 설치되어 있기를 요구합니다.</p>
+
+<h3>관련 항목</h3>
+<p><a href="FileRecycle.htm">FileRecycle</a>, <a href="FileDelete.htm">FileDelete</a>, <a href="FileCopy.htm">FileCopy</a>, <a href="FileMove.htm">FileMove</a></p>
+<h3>예제</h3>
+<pre class="NoIndent">FileRecycleEmpty, C:\</pre>
+
+</body>
+</html>

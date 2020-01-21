@@ -1,0 +1,51 @@
+
+
+<html>
+<head>
+<title>ComObjGet()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>ComObjGet() <span class="ver">[AHK_L 53+]</span></h1>
+<p>COM 컴포넌트가 제공한 객체를 가리키는 참조를 돌려줍니다.</p>
+<pre class="Syntax">ComObject := ComObjGet(Name)</pre>
+
+<h3>매개변수</h3>
+<dl>
+
+  <dt>Name</dt>
+  <dd><p>열람 가능한 객체의 이름. 더 자세한 정보는 <a href="http://msdn.microsoft.com/en-us/library/ms691253.aspx">MkParseDisplayName (MSDN)</a>을 참조하십시오.</p></dd>
+
+</dl>
+
+<h3>관련 항목</h3>
+<a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjConnect.htm">ComObjConnect</a>, <a href="ComObjError.htm">ComObjError</a>, <a href="ComObjQuery.htm">ComObjQuery</a>, <a href="http://msdn.microsoft.com/en-us/library/ms678805.aspx">CoGetObject (MSDN)</a>
+
+<h3>예제</h3>
+<pre class="NoIndent" id="exwmi"><em>; 예제: Shift+Escape를 누르면 활성 창의 프로세스를
+;   기동시키는 데 사용된 명령줄 을 볼 수 있습니다.</em>
++Esc::
+    WinGet pid, PID, A
+    <em>; WMI 서비스 객체를 얻습니다.</em>
+    wmi := <b>ComObjGet</b>("winmgmts:")
+    <em>; 질의를 실행해 부합하는 프로세스(들)를 열람합니다.</em>
+    queryEnum := wmi.ExecQuery(""
+        . "Select * from Win32_Process where ProcessId=" . pid)
+        ._NewEnum()
+    <em>; 첫 번째로 부합하는 프로세스를 얻습니다.</em>
+    if queryEnum[process]
+        MsgBox 0, Command line, % process.CommandLine
+    else
+        MsgBox Process not found!
+    <em>; 모든 전역 객체를 풀어줍니다 (지역 변수를 사용할 때는 필요치 않음).</em>
+    wmi := queryEnum := process := ""
+return
+<em>; Win32_Process: <a href="http://msdn.microsoft.com/en-us/library/aa394372.aspx">http://msdn.microsoft.com/en-us/library/aa394372.aspx</a></em>
+</pre>
+
+</body>
+</html>

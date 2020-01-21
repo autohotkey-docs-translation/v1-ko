@@ -1,0 +1,105 @@
+
+
+<html>
+<head>
+<title>UrlDownloadToFile</title>
+<meta name="description" content="Download any type of file via UrlDownloadToFile in this free scripting language. e.g. UrlDownloadToFile, http://www.anyorg.org/File.htm, c:\File.htm">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>UrlDownloadToFile</h1>
+
+<p>파일을 인터넷에서 내려받습니다.</p>
+
+<pre class="Syntax">UrlDownloadToFile, URL, Filename</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>URL</dt>
+  <dd><p>내려 받을 파일의 URL. 예를 들어, <code>http://someorg.org</code>는 그 회사의 환영 페이지를 열람합니다.</p></dd>
+
+  <dt>Filename</dt>
+  <dd><p><strong>파일에 내려받기</strong>: 지역적으로 생성될 파일의 이름을 지정합니다. 절대 경로가 지정되지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 기존의 파일은 이 새 파일로 <strong>덮어쓰기</strong> 됩니다.</p>
+    <p><strong>변수에 내려받기</strong>: 아래의 <a href="#WHR">예제</a>를 참조하십시오.</p></dd>
+
+</dl>
+
+<h3>ErrorLevel</h3>
+<p>
+<span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p>
+<a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1로 설정되고 성공하면 0이 설정됩니다.</p>
+
+<h3>논평</h3>
+<p>
+원격 파일이 존재하지 않더라도 내려받기는 마치 성공한 것처럼 보일 수 있습니다. 많은 웹 서버가 실패한 파일 대신에 에러 페이지를 보내기 때문입니다. 이 에러 페이지가 <em>Filename</em> 대신에 저장될 것입니다.</p>
+<p>
+Internet Explorer 3 이상은 설치해야 이 기능이 작동합니다. 방화벽이나 여러 네트워크 어댑터 때문에 이 기능이 작동하지 않을 수 있습니다. 또, 어떤 웹 사이트는 이런 식의 내려받기를 금지하기도 합니다.</p>
+
+<p><strong>Caching</strong>:</p>
+<ul>
+  <li>v1.0.44.07+에서, URL은 원격 서버로부터 직접 열람됩니다 (즉, 인터넷 익스플로러의 캐쉬를 전혀 사용하지 않습니다). 캐쉬를 허용하려면, URL 앞에 *0과 스페이스 하나를 붙이십시오; 예를 들어: <code>*0 http://someorg.org</code>. 0 다음에 별표가 오면 유효한 dwFlag 번호로 교체됩니다. 자세한 것은 <a href="http://www.microsoft.com">www.microsoft.com</a>에서 InternetOpenUrl을 검색해 보십시오.</li>
+  <li>
+  1.0.44.07 이전에서, 파일은 가능하면 캐쉬로부터 열람합니다. 이를 피하려면 질의 문자열을 URL 끝에 지정하십시오. 예를 들어: <code>http://www.someorg.org/doc.html?fakeParam=42</code>. 주의: 같은 파일을 자주 내려받는다면, 질의 문자열은 반드시 다르게 해야 합니다.</li>
+</ul>
+<p>
+<strong>Proxies</strong>: 마이크로소프트 인터넷 익스플로러의 설정에 프록시를 사용하도록 구성되어 있다면 UrlDownloadToFile은 프록시 서버를 사용하여 인터넷에 접근합니다.</p>
+<p>
+<strong>FTP 그리고 Gopher</strong>: v1.0.48.04+는 FTP와 Gopher URL을 지원합니다. 예를 들어:</p>
+
+<pre>UrlDownloadToFile, ftp://example.com/home/My File.zip, C:\My Folder\My File.zip  <em>; 익명으로 로그인 합니다.</em>
+UrlDownloadToFile, ftp://user:pass@example.com:21/home/My File.zip, C:\My Folder\My File.zip  <em>; 특정 사용자로 로그인 합니다.</em>
+UrlDownloadToFile, ftp://user:pass@example.com/My Directory, C:\Dir Listing.html  <em>; 디렉토리 리스트를 HTML 형식으로 얻습니다.</em></pre>
+
+<h3>관련 항목</h3>
+<p><a href="FileRead.htm">FileRead</a>, <a href="FileCopy.htm">FileCopy</a></p>
+<h3>예제</h3>
+
+<pre class="NoIndent">UrlDownloadToFile, http://ahkscript.org/download/1.1/version.txt, C:\AutoHotkey Latest Version.txt
+UrlDownloadToFile, http://someorg.org/archive.zip, C:\SomeOrg's Archive.zip</pre>
+
+<pre id="WHR" class="NoIndent"><em>; 예제: 텍스트를 변수에 내려받습니다:</em>
+whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+whr.Open("GET", "http://ahkscript.org/download/1.1/version.txt", true)
+whr.Send()
+<em>; 위의 'true'를 사용하고 아래의 호출을 사용하여 스크립트에 반응하도록 만듭니다.</em>
+whr.WaitForResponse()
+version := whr.ResponseText
+MsgBox % version
+</pre>
+<pre id="XHR" class="NoIndent"><em>; 예제: 비동기 HTTP 요청을 만듭니다.</em>
+
+req := ComObjCreate("Msxml2.XMLHTTP")
+<em>; async를 켜고 요청을 엽니다.</em>
+req.open("GET", "http://ahkscript.org/download/1.1/version.txt", true)
+<em>; 역호출 함수를 설정합니다 (v1.1.17+).</em>
+req.onreadystatechange := Func("Ready")
+<em>; 요청을 전송합니다. 완료되면 Ready()가 호출됩니다.</em>
+req.send()
+<em>/*
+; 기다릴 생각이라면 onreadystatechange는 필요가 없습니다.
+; async=true로 설정하고 기다리면 내려받기가 되는 동안에도
+; 스크립트가 여전히 반응할 수 있습니다.
+; 반면에 async=false로 설정하면 스크립트는 반응하지 않습니다.
+while req.readyState != 4
+    sleep 100
+*/</em>
+#Persistent
+
+Ready() {
+    global req
+    if (req.readyState != 4)  ; Not done yet.
+        return
+    if (req.status == 200 || req.status == 304) ; OK.
+        MsgBox % "Latest AutoHotkey version: " req.responseText
+    else
+        MsgBox 16,, % "Status " req.status
+    ExitApp
+}</pre>
+
+</body>
+</html>

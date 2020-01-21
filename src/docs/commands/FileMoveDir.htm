@@ -1,0 +1,56 @@
+
+
+<html>
+<head>
+<title>FileMoveDir</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>FileMoveDir</h1>
+
+<p>폴더를 그의 모든 하위 폴더를 포함하여 이동합니다. 폴더의 이름을 바꿀 수도 있습니다.</p>
+
+<pre class="Syntax">FileMoveDir, Source, Dest [, Flag]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>Source</dt>
+  <dd><p>소스 디렉토리의 이름 (뒤에 역사선 없음), 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고간주됩니다. 예를 들어: <code>C:\My Folder</code></p></dd>
+
+  <dt>Dest</dt>
+  <dd><p>디렉토리의 새로운 경로와 이름 (뒤에 역사선 없음), 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 예를 들어: D:\My Folder. <strong>주의</strong>: <em>Dest</em>는 이동한 후에 디렉토리가 갖게 될 실제 경로와 이름입니다; <em>Source</em>가 이동되어 들어 갈 디렉토리가 <em>아닙니다</em> (아래에 기술한 알려진 한계는 예외입니다).</p></dd>
+
+  <dt>Flag</dt>
+  <dd><p>(옵션) 다음 단일 문자 중 하나를 지정하십시오:</p>
+      <p><strong>0</strong> (기본값): 기존의 파일을 덮어쓰지 않습니다. <em>Dest</em>가 이미 파일이나 폴더로 존재하면 이동은 실패합니다.</p>
+      <p><strong>1</strong>: 기존의 파일을 덮어씁니다. 그렇지만, <em>Dest</em> 안의 파일이나 폴더가  <em>Source</em>에 짝이 없으면 삭제되지 않습니다. <strong>알려진 한계:</strong> <em>Dest</em>가 이미 폴더로 존재하고 <em>Source</em>와 같은 볼륨에 있다면, <em>Source</em>는 그를 덮어 쓰는게 아니라 그 안으로 이동되어 들어갑니다. 이를 피하려면, 다음 옵션을 참고하십시오.</p>
+      <p><strong>2</strong>: 위의 모드 1과 동일하지만 제한이 없습니다.</p>      
+      <p><strong>R</strong>: 디렉토리를 이동하지 않고 그 이름을 변경합니다. 보통 이름을 변경하는 것은 이동한 것과 효과가 같지만, &quot;모두 아니면 모두 아님&quot; 행위를 원할 경우 도움이 됩니다; 
+	  즉, <em>Source</em>나 그의 파일 중 하나가 잠겨 있을 때 (사용 중일 때) 이동이 부분적으로만 성공하는 것을 원하지 않을 경우에 도움이 됩니다. 이 방법은 <em>Source</em>를 다른 볼륨으로 이동할 수 없습니다. 오직 자신의 볼륨에 있는 다른 디렉토리로만 이동할 수 있습니다. <em>Dest</em>가 이미 파일이나 폴더로 존재하면 이동에 실패합니다.</p></dd>
+
+</dl>
+
+<h3>ErrorLevel</h3>
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1 없으면 0이 설정됩니다.</p>
+<h3>논평</h3>
+<p>
+FileMoveDir은 단일 폴더를 새 위치로 이동합니다. 대신 폴더의 내용을 (그의 모든 파일과 하위 디렉토리를 포함하여) 이동하려면, <a href="FileMove.htm">FileMove</a> 섹션의 예제를 참조하십시오.</p>
+<p>
+소스와 목표가 다른 볼륨에 있거나 UNC 경로에 있으면, 이동이 아니라 복사/제거 연산이 수행됩니다.</p>
+
+<h3>관련 항목</h3>
+<p>
+<a href="FileCopyDir.htm">FileCopyDir</a>, <a href="FileCopy.htm">FileCopy</a>, <a href="FileMove.htm">FileMove</a>, <a href="FileDelete.htm">FileDelete</a>, <a href="LoopFile.htm">File-회돌이</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a>, <a href="SplitPath.htm">SplitPath</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">FileMoveDir, C:\My Folder, D:\My Folder  <em>; 새 드라이브로 이동시킵니다.</em>
+FileMoveDir, C:\My Folder, C:\My Folder (renamed), R  <em>; 간단한 이름 변경.</em>
+FileMoveDir, C:\My Folder, C:\New Location\My Folder, R  <em>; 폴더는 같은 폴더에 있으면 &quot;이름을 바꾸어&quot; 다른 위치로 이동할 수 있습니다.</em></pre>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+
+
+<html>
+<head>
+<title>FileGetShortcut</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>FileGetShortcut</h1>
+
+<p>단축 파일 (.lnk)에 관한 정보를 열람합니다. 예를 들어 단축 파일의 목표 파일.</p>
+
+<pre class="Syntax">FileGetShortcut, LinkFile [, OutTarget, OutDir, OutArgs, OutDescription, OutIcon, OutIconNum, OutRunState]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>LinkFile</dt>
+  <dd><p>분석할 단축 파일의 이름. 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. <strong>.lnk</strong> 확장자를 꼭 포함하십시오.</p></dd>
+
+  <dt>OutTarget</dt>
+  <dd><p>단축 파일의 목표를 저장할 변수의 이름 (인자들은 제외). 예를 들어: C:\WINDOWS\system32\notepad.exe</p></dd>
+
+  <dt>OutDir</dt>
+  <dd><p>단축 파일의 작업 디렉토리를 저장할 변수의 이름. 예를 들어: C:\My Documents. %WinDir% 같은 환경 변수가 문자열 안에 존재하면, <a href="StringReplace.htm">StringReplace</a>를 통하여 해결합니다. 예를 들어: <code>StringReplace, OutDir, OutDir, `%WinDir`%, %<a href="../Variables.htm#WinDir">A_WinDir</a>%</code>.</p></dd>
+
+  <dt>OutArgs</dt>
+  <dd><p>단축 파일의 매개변수를 저장할 변수의 이름 (없으면 비어 있음).</p></dd>
+
+  <dt>OutDescription</dt>
+  <dd><p>단축 파일의 주석을 저장할 변수의 이름 (없으면 비어 있음).</p></dd>
+
+  <dt>OutIcon</dt>
+  <dd><p>단축 파일의 아이콘 파일 이름을 저장할 변수의 이름 (없으면 비어 있음).</p></dd>
+
+  <dt>OutIconNum</dt>
+  <dd><p>아이콘 파일 안에서의 단축 파일의 아이콘 번호를 저장할 변수의 이름 (없으면 비어 있음). 이 값은 대부분 1입니다. 첫 번째 아이콘이라는 뜻입니다.</p></dd>
+
+  <dt>OutRunState</dt>
+  <dd><p>단축 파일의 최초 기동 상태를 저장할 변수의 이름. 다음 숫자 중 하나입니다:</p>
+    <p>1:  정상<br>
+      3: 최대 <br>
+        7: 최소<br>
+    </p></dd>
+
+</dl>
+<h3>ErrorLevel</h3>
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p>
+문제가 있었다면 -- 예를 들어 <em>LinkFile</em>이 존재하지 않는다면 -- 모든 출력 변수는 비워지고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 1이 설정됩니다. 그렇지 않으면 0이 설정됩니다.</p>
+
+<h3>논평</h3>
+<p>출력 변수는 상응하는 정보가 필요하지 않으면 생략할 수 있습니다.</p>
+
+<h3>관련 항목</h3>
+<p><a href="FileCreateShortcut.htm">FileCreateShortcut</a>, <a href="SplitPath.htm">SplitPath</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">FileSelectFile, file, 32,, Pick a shortcut to analyze., Shortcuts (*.lnk)
+if file =
+    return
+FileGetShortcut, %file%, OutTarget, OutDir, OutArgs, OutDesc, OutIcon, OutIconNum, OutRunState
+MsgBox %OutTarget%`n%OutDir%`n%OutArgs%`n%OutDesc%`n%OutIcon%`n%OutIconNum%`n%OutRunState%</pre>
+
+</body>
+</html>

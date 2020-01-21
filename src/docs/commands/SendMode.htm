@@ -1,0 +1,60 @@
+
+
+<html>
+<head>
+<title>SendMode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>SendMode <span class="ver">[v1.0.43+]</span></h1>
+
+<p><a href="Send.htm">Send</a>를 기본 (SendEvent)이 아니라 SendInput 또는 SendPlay와 동의어로 만듭니다. 또한 Click과 MouseMove/Click/Drag가 지정한 방법을 사용하도록 만듭니다.</p>
+
+<pre class="Syntax">SendMode Input|Play|Event|InputThenPlay</pre>
+<p>첫 매개변수는 다음 단어 중 하나입니다:</p>
+<p>
+<strong>Event</strong>: 모든 스크립트가 시작할 때 사용하는 기본 값입니다. <a href="Send.htm">Send</a>, <a href="Send.htm">SendRaw</a>, <a href="Click.htm">Click</a>, 그리고 <a href="MouseMove.htm">MouseMove</a>/<a href="MouseClick.htm">Click</a>/<a href="MouseClickDrag.htm">Drag</a>에 대하여 <a href="Send.htm#SendEvent">SendEvent</a> 방법을 사용합니다.</p>
+<p>
+<strong>Input</strong>: <a href="Send.htm">Send</a>, <a href="Send.htm">SendRaw</a>, <a href="Click.htm">Click</a>, 그리고 <a href="MouseMove.htm">MouseMove</a>/<a href="MouseClick.htm">Click</a>/<a href="MouseClickDrag.htm">Drag</a>에 대하여 <a href="Send.htm#SendInput">SendInput</a> 방법으로 전환합니다 . <br>
+</p>
+<ul><b>알려진 한계:</b>
+  <li>윈도우즈 탐색기는 SendInput의 어떤 항해 핫키를 무시합니다. 예를 들어 Alt+LeftArrow와 같은 경우, 이를 우회하려면, <code>SendEvent !{Left}</code> 또는 <code>SendInput {Backspace}</code>를 사용하십시오.</li>
+</ul>
+<p>
+<strong>InputThenPlay</strong> <span class="ver">[v1.0.43.02+]:</span> 위와 동일합니다. 그러나  SendInput이 <a href="Send.htm#SendInputUnavail">사용 불가능</a>할 때 Event 모드에 의존하기 보다, Play 모드에 의존합니다 (아래 참조). 이것은 또한 SendInput을 사용할 수 없다면 <a href="Send.htm#SendInput">SendInput 명령어</a> 자체도 Play 모드에 의존하게 만듭니다.</p>
+<p>
+<strong><a name="Play"></a>Play</strong>: <a href="Send.htm">Send</a>, <a href="Send.htm">SendRaw</a>, <a href="Click.htm">Click</a>, 그리고 <a href="MouseMove.htm">MouseMove</a>/<a href="MouseClick.htm">Click</a>/<a href="MouseClickDrag.htm">Drag</a>에 대하여 <a href="Send.htm#SendPlay">SendPlay</a> 방법으로 전환합니다.<br>
+</p>
+<ul><b>알려진 한계:</b>
+  <li>현재 키보드 레이아웃에 존재하지 않는 문자는 (예를 들어 영어의 &Ocirc;와 같은 경우) 전송할 수 없습니다. 이를 우회하려면, <a href="Send.htm#SendEvent">SendEvent</a>를 사용하십시오.</li>
+  <li>흉내낸 마우스 끌기는 예를 들어 WordPad와 Metapad 같이 RichEdit 콘트롤에서 아무 효과도 없을 수가 있습니다 (다른 것들도 마찬가지임) . 특정한 드래그에 대하여 보조 모드를 사용하려면, 다음 예제를 따르십시오: <code><a href="Send.htm#SendEvent">SendEvent</a> {Click 6, 52, down}{Click 45, 52, up}</code>.</li>
+  <li>
+  흉내낸 마우스 휠 회전은 한 쪽 방향으로만 움직임을 생산합니다 (보통 안쪽이지만, 어떤 어플리케이션에서는 바깥쪽으로). 또한, 휠 회전은 MS Word와 Notepad 같은 어플리케이션에서는 아무 효과도 없을 수 있습니다. 특정 회전에 대하여 보조 모드를 사용하려면, 다음 예제를 따르십시오: <code><a href="Send.htm#SendEvent">SendEvent</a> {WheelDown 5}</code>.</li>
+  <li>자동-실행 섹션 (스크립트의 상단)에서 <code>SendMode Play</code>를 사용할 때, 모든 리맵 키가 영향을 받고 기능의 일부를 잃어 버릴 수도 있습니다. 자세한 것은 <a href="../misc/Remap.htm#SendPlay">SendPlay 리맵핑 한계</a>를 참조하십시오.</li>
+  <li>SendPlay는 다른 프로그램이나 OS가 등록한 AutoHotkey의 핫키나 핫스트링 또는 전역 핫키를 촉발시키지 않습니다.</li>
+</ul>
+
+<h3>논평</h3>
+<p>
+SendMode는 <a href="Click.htm">Click</a> 그리고 <a href="MouseMove.htm">MouseMove</a>/<a href="MouseClick.htm">Click</a>/<a href="MouseClickDrag.htm">Drag</a>의 모드도 변경하기 때문에, 특정한 마우스 이벤트에 대하여 다른 모드를 사용하고 싶을 때가 있을 수 있습니다. 가장 쉬운 방법은 <a href="Send.htm#Click">{Click}</a>을 사용하는 것입니다. 예를 들어:</p>
+
+<pre>SendEvent {Click 100, 200}  <em>; SendEvent은 예전의 전통적인 방식의 클릭을 사용합니다.</em></pre>
+<p>
+SendMode가 자동-실행 섹션 (스크립트의 상단)에 사용되면, <a href="../misc/Remap.htm">키보드와 마우스 리맵핑</a>도 영향을 받습니다. 특히, <code>SendMode Play</code>를 리맵핑에 사용한다면, <a href="../misc/Remap.htm#SendPlay">SendPlay 리맵핑의 한계</a>를 참조하십시오.</p>
+<p>
+새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (예를 들어 <a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본 설정을 가지고 새롭게 시작합니다. 이 기본 값은 자동-실행 섹션(스크립트의 상단)에서 이 명령어를 사용하면 바꿀 수 있습니다.</p>
+
+<h3>관련 항목</h3>
+<p>
+<a href="Send.htm">Send</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, <a href="Click.htm">Click</a>, <a href="MouseClick.htm">MouseClick</a>, <a href="MouseClickDrag.htm">MouseClickDrag</a>, <a href="MouseMove.htm">MouseMove</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">SendMode Input
+SendMode InputThenPlay</pre>
+
+</body>
+</html>

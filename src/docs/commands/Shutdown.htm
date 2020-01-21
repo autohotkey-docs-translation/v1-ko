@@ -1,0 +1,81 @@
+
+
+<html>
+<head>
+<title>Shutdown</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>Shutdown</h1>
+
+<p>시스템을 끄고, 재시작하며, 로그오프 합니다.</p>
+
+<pre class="Syntax">Shutdown, Code</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>Code</dt>
+  <dd><p>아래에 나열된 셧다운 코드의 조합.</p></dd>
+
+</dl>
+
+<h3>논평</h3>
+<p>셧다운 코드는 다음 값으로 조합됩니다:</p>
+<table class="info" style="width:80%">
+  <tr>
+    <td width="25%">로그오프</td>
+    <td width="75%">0</td>
+  </tr>
+  <tr>
+    <td>셧다운</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>리부트</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>강제 창 닫기</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>전원 내리기</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>보류/잠재우기</td>
+    <td>이 페이지 하단 <a href="#Suspend">DllCall 예제</a>를 참조하십시오.</td>
+  </tr>
+  <tr>
+    <td>모니터 끄기</td>
+    <td><a href="PostMessage.htm#Examples">PostMessage 예제</a>를 참조하십시오.</td>
+  </tr>
+</table>
+<p>
+필요한 값을 함께 더하십시오. 예를 들어, 셧다운과 전원 내리기는 코드가 <strong>9</strong>입니다 (셧다운 + 전원 내리기 = 1 + 8 = 9). 다른 방법으로, 1+8과 같이 <a href="../Variables.htm#Expressions">표현식</a>을 지정할 수도 있습니다.</p>
+<p>
+강제 종료(&quot;Force&quot;) 값 (4)는 모든 열린 어플리케이션을 강제로 닫습니다. 비상시에만 사용해야 합니다. 왜냐하면 열린 어플리케이션이 데이터를 잃어 버릴 수 있기 때문입니다.</p>
+<p>
+전원 내리기(&quot;Power down&quot;) 값은 시스템을 셧다운 하고 전원을 끕니다.</p>
+<p>
+관련하여 말씀 드리자면, 스크립트는 시스템이 셧다운 중인지 아니면 사용작 로그 오프 중인지 <a href="OnExit.htm">OnExit</a>를 통하여 알 수 있습니다.</p>
+
+<h3>관련 항목</h3>
+<p><a href="Run.htm">Run</a>, <a href="ExitApp.htm">ExitApp</a>, <a href="OnExit.htm">OnExit</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent"><em>; 강제로 모든 창을 닫고 리부트 합니다 (reboot + force = 2 + 4 = 6):</em>
+Shutdown, 6
+<a name="Suspend"></a>
+<em>; 시스템을 보류하거나 재우기 위해 Windows API 함수 &quot;SetSuspendState&quot;를 호출합니다.
+; 매개변수 #1: 0 대신 1을 건네면 보류가 아니라 재웁니다.
+; 매개변수 #2: 0 대신 1을 건네면 각 어플리케이션에 허가를 구하지 않고 즉시 보류합니다.
+; 매개변수 #3: 0 대신 1을 건네면 깨어 있는 모든 이벤트를 비활성화 합니다.</em>
+DllCall(&quot;PowrProf\SetSuspendState&quot;, &quot;int&quot;, 0, &quot;int&quot;, 0, &quot;int&quot;, 0)</pre>
+
+</body>
+</html>

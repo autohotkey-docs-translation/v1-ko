@@ -1,0 +1,1341 @@
+<html>
+<head>
+  <title>GUI Styles</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+
+<body>
+<h1><a href="../commands/Gui.htm">Gui</a> 그리고 <a href="../commands/GuiControl.htm">GuiControl</a> 명령어가 사용하는 스타일</h1>
+<h2 style="margin-top: 1.5em;">목차</h2>
+<ul>
+  <li><a href="#Common">Gui/Parent 창과 대부분의 콘트롤 유형에 많이 사용되는 스타일</a></li>
+  <li><a href="#Text">Text</a> | <a href="#Edit">Edit</a> | <a href="#UpDown">UpDown</a> | <a href="#Pic">Picture</a></li>
+  <li><a href="#Button">Button | Checkbox | Radio | GroupBox</a></li>
+  <li><a href="#DDL">DropDownList | ComboBox</a></li>
+  <li><a href="#ListBox">ListBox</a> | <a href="#ListView">ListView</a> | <a href="#TreeView">TreeView</a></li>
+  <li><a href="#DateTime">DateTime</a> | <a href="#MonthCal">MonthCal</a></li>
+  <li><a href="#Slider">Slider</a> | <a href="#Progress">Progress</a> | <a href="#Tab">Tab</a> | <a href="#StatusBar">StatusBar</a></li>
+</ul>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="Common"></a>스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>GUI 창 기본값</td>
+  <td>&nbsp;</td>
+  <td><a href="#WS_POPUP">WS_POPUP</a>, <a href="#WS_CAPTION">WS_CAPTION</a>, <a href="#WS_SYSMENU">WS_SYSMENU</a>, <a href="#WS_MINIMIZEBOX">WS_MINIMIZEBOX</a></td>
+</tr>
+<tr>
+  <td>GUI 창에 강제</td>
+  <td>&nbsp;</td>
+  <td>WS_CLIPSIBLINGS</td>
+</tr>
+<tr id="WS_BORDER">
+  <td>WS_BORDER</td>
+  <td>0x800000</td>
+  <td>+/-Border. 얇은 테두리의 창을 만듭니다.</td>
+</tr>
+<tr id="WS_POPUP">
+  <td>WS_POPUP</td>
+  <td>0x80000000</td>
+  <td>팝업 창을 만듭니다. 이 스타일은 <a href="#WS_CHILD">WS_CHILD</a> 스타일과 함께 사용할 수 없습니다.</td>
+</tr>
+<tr id="WS_CAPTION">
+  <td>WS_CAPTION</td>
+  <td>0xC00000</td>
+  <td>+/-Caption. 타이틀바를 가진 창을 만듭니다. 이 스타일은 <a href="#WS_BORDER">WS_BORDER</a> 그리고 <a href="#WS_DLGFRAME">WS_DLGFRAME</a>를 숫치적으로 조합합니다.</td>
+</tr>
+<tr id="WS_DISABLED">
+  <td>WS_DISABLED</td>
+  <td>0x8000000</td>
+  <td>+/-Disabled. 처음에 비활성 상태로 창을 만듭니다.</td>
+</tr>
+<tr id="WS_DLGFRAME">
+  <td>WS_DLGFRAME</td>
+  <td>0x400000</td>
+  <td>테두리 스타일을 가진 창을 만듭니다. 보통 대화상자에 많이 사용됩니다.</td>
+</tr>
+<tr id="WS_GROUP">
+  <td>WS_GROUP</td>
+  <td>0x20000</td>
+  <td>+/-Group. 이 콘트롤이 콘트롤 그룹에서 첫 번째 콘트롤이라는 것을 나타냅니다. 이 스타일은 자동으로 라디오 버튼의 &quot;한 번에 오직 하나만&quot; 행위를 관리하도록 적용됩니다.
+  
+  
+아주 희귀한 경우로 두 그룹의 라디오 버튼이 연속적으로 (사이에 다른 콘트롤 유형이 없이) 추가되면, 
+  이 스타일은 두 번째 라디오 그룹의 첫 콘트롤에만 적용됩니다. 따라서 첫 번째 그룹과 분리되어 버립니다.
+</td>
+</tr>
+<tr id="WS_HSCROLL">
+  <td>WS_HSCROLL</td>
+  <td>0x100000</td>
+  <td>수평 스크롤바를 가진 창을 만듭니다.</td>
+</tr>
+<tr id="WS_MAXIMIZE">
+  <td>WS_MAXIMIZE</td>
+  <td>0x1000000</td>
+  <td>처음에 최대화 상태로 창을 만듭니다.</td>
+</tr>
+<tr id="WS_MAXIMIZEBOX">
+  <td>WS_MAXIMIZEBOX</td>
+  <td>0x10000</td>
+  <td>+/-MaximizeBox. 최대화 버튼이 있는 창을 만듭니다.  WS_EX_CONTEXTHELP 스타일과 함께 사용할 수 없습니다. <a href="#WS_SYSMENU">WS_SYSMENU</a> 스타일도 역시 지정해야 합니다.</td>
+</tr>
+<tr id="WS_MINIMIZE">
+  <td>WS_MINIMIZE</td>
+  <td>0x20000000</td>
+  <td>처음에 최소화 상태로 창을 만듭니다.</td>
+</tr>
+<tr id="WS_MINIMIZEBOX">
+  <td>WS_MINIMIZEBOX</td>
+  <td>0x20000</td>
+  <td>+/-MinimizeBox. 최소화 버튼을 가진 창을 만듭니다. WS_EX_CONTEXTHELP 스타일과 함께 사용할 수 없습니다. <a href="#WS_SYSMENU">WS_SYSMENU</a> 스타일도 역시 지정해야 합니다.</td>
+</tr>
+<tr id="WS_OVERLAPPED">
+  <td>WS_OVERLAPPED</td>
+  <td>0</td>
+  <td>중첩 창을 만듭니다. 중첩 창은 타이틀바와 테두리를 가집니다. WS_TILED 스타일과 동일합니다.</td>
+</tr>
+<tr id="WS_OVERLAPPEDWINDOW">
+  <td>WS_OVERLAPPEDWINDOW</td>
+  <td>0xCF0000</td>
+  <td><a href="#WS_OVERLAPPED">WS_OVERLAPPED</a>, <a href="#WS_CAPTION">WS_CAPTION</a>, 
+  <a href="#WS_SYSMENU">WS_SYSMENU</a>, <a href="#WS_THICKFRAME">WS_THICKFRAME</a>, <a href="#WS_MINIMIZEBOX">WS_MINIMIZEBOX</a>, 그리고 <a href="#WS_MAXIMIZEBOX">WS_MAXIMIZEBOX</a> 스타일을 사용해 중첩 창을 만듭니다. 
+  WS_TILEDWINDOW 스타일과 동일합니다.</td>
+</tr>
+<tr id="WS_POPUPWINDOW">
+  <td>WS_POPUPWINDOW</td>
+  <td>0x80880000</td>
+  <td><a href="#WS_BORDER">WS_BORDER</a>, <a href="#WS_POPUP">WS_POPUP</a>, 그리고 <a href="#WS_SYSMENU">WS_SYSMENU</a> 스타일을 사용해 팝업 창을 만듭니다. 
+  The <a href="#WS_CAPTION">WS_CAPTION</a>과 <a href="#WS_POPUPWINDOW">WS_POPUPWINDOW</a> 스타일을 조합하여 창 메뉴를 보여주어야 합니다.</td>
+</tr>
+<tr id="WS_SIZEBOX">
+  <td>WS_SIZEBOX</td>
+  <td>0x40000</td>
+  <td>+/-Resize. 크기조절 테두리를 가진 창을 만듭니다. <a href="#WS_THICKFRAME">WS_THICKFRAME</a> 스타일과 동일합니다.</td>
+</tr>
+<tr id="WS_SYSMENU">
+  <td>WS_SYSMENU</td>
+  <td>0x80000</td>
+  <td>+/-SysMenu. 타이틀 바에 창 메뉴를 가진 창을 만듭니다. <a href="#WS_CAPTION">WS_CAPTION</a> 스타일도 지정해야 합니다.</td>
+</tr>
+<tr id="WS_TABSTOP">
+  <td>WS_TABSTOP</td>
+  <td>0x10000</td>
+  <td>+/-Tabstop. 사용자가 TAB 키를 누를 때 키보드 초점을 받을 수 있는 콘트롤을 지정합니다. TAB 키를 누르면 <a href="#WS_TABSTOP">WS_TABSTOP</a> 스타일과 함께 키보드 초점이 다음 콘트롤로 바뀝니다.</td>
+</tr>
+<tr id="WS_THICKFRAME">
+  <td>WS_THICKFRAME</td>
+  <td>0x40000</td>
+  <td>크기조절 테두리를 가진 창을 만듭니다. <a href="#WS_SIZEBOX">WS_SIZEBOX</a> 스타일과 동일합니다</td>
+</tr>
+<tr id="WS_VSCROLL">
+  <td>WS_VSCROLL</td>
+  <td>0x200000</td>
+  <td>수직 스크롤바를 가진 창을 만듭니다.</td>
+</tr>
+<tr id="WS_VISIBLE">
+  <td>WS_VISIBLE</td>
+  <td>0x10000000</td>
+  <td>처음에 보이는 상태로 창을 만듭니다.</td>
+</tr>
+<tr id="WS_CHILD">
+  <td>WS_CHILD</td>
+  <td>0x40000000</td>
+  <td>자손 창을 만듭니다. 이 스타일의 창은 메뉴바를 가질 수 없습니다. 이 스타일은 <a href="#WS_POPUP">WS_POPUP</a> 스타일과 함께 사용할 수 없습니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="Text"></a><a href="../commands/GuiControls.htm#Text">Text</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+  </tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+  </tr>
+<tr id="SS_BLACKFRAME">
+  <td>SS_BLACKFRAME</td>
+  <td>0x7</td>
+  <td>박스를 지정합니다. 창 프레임과 같은 색으로 그립니다. 이 색은 기본 컬러 체계에 대하여 검정색입니다.</td>
+  </tr>
+<tr id="SS_BLACKRECT">
+  <td>SS_BLACKRECT</td>
+  <td>0x4</td>
+  <td>현재 창 프레임 색으로 채워진 사각형을 지정합니다. 이 색은 기본 컬러 체계에 대하여 검정색입니다.</td>
+</tr>
+<tr id="SS_CENTER">
+  <td>SS_CENTER</td>
+  <td>0x1</td>
+  <td>+/-Center. 간단한 사각형을 지정하고 에러 값 텍스트를 그 가운데에 배치합니다. 콘트롤은 줄 끝을 지나 다음 줄의 처음까지 걸치는 단어들을 자동으로 넘깁니다.</td>
+</tr>
+<tr id="SS_ETCHEDFRAME">
+  <td>SS_ETCHEDFRAME</td>
+  <td>0x12</td>
+  <td>정적 콘트롤의 프레임을 그립니다. EDGE_ETCHED 테투리 스타일을 사용합니다.</td>
+</tr>
+<tr id="SS_ETCHEDHORZ">
+  <td>SS_ETCHEDHORZ</td>
+  <td>0x10</td>
+  <td>정적 콘트롤의 위 아래 테두리를 그립니다. EDGE_ETCHED 테두리 스타일을 사용합니다.</td>
+</tr>
+<tr id="SS_ETCHEDVERT">
+  <td>SS_ETCHEDVERT</td>
+  <td>0x11</td>
+  <td>정적 콘트롤의 좌우 테두리를 그립니다. EDGE_ETCHED 테두리 스타일을 사용합니다.</td>
+</tr>
+<tr id="SS_GRAYFRAME">
+  <td>SS_GRAYFRAME</td>
+  <td>0x8</td>
+  <td>프레임을 가진 박스를 지정합니다. 화면(바탕화면) 배경색과 같은 색으로 그려집니다. 이 색은 기본 컬러 체계에서 회색입니다.</td>
+</tr>
+<tr id="SS_GRAYRECT">
+  <td>SS_GRAYRECT</td>
+  <td>0x5</td>
+  <td>현재 화면 배경 색으로 채워진 사각형을 지정합니다. 이 색은 기본 컬러 체계에서 회색입니다.</td>
+</tr>
+<tr id="SS_LEFT">
+  <td>SS_LEFT</td>
+  <td>0</td>
+  <td>+/-Left. 이것이 기본값입니다. 간단한 사각형을 지정하고 안의 텍스트를 왼쪽으로 정렬합니다. 
+  텍스트를 보여주기 전에 먼저 포맷합니다. 줄 끝을 지나 확장된 단어들은 자동으로 다음 줄에 왼쪽 정렬됩니다.  콘트롤의 너비보다 더 긴 단어들은 잘려 나갑니다.</td>
+</tr>
+<tr id="SS_LEFTNOWORDWRAP">
+  <td>SS_LEFTNOWORDWRAP</td>
+  <td>0xC</td>
+  <td>+/-Wrap. 사각형을 지정하고 안의 텍스트를 왼쪽 정렬합니다. 탭은 확장되지만, 단어들은 랩되지 않습니다. 줄끝을 지나 확장된 텍스트는 잘려나갑니다.</td>
+</tr>
+<tr id="SS_NOPREFIX">
+  <td>SS_NOPREFIX</td>
+  <td>0x80</td>
+  <td>콘트롤의 텍스트에서 앰퍼센드(&amp;) 문자를 가속 접두 문자로 번역하지 못하도록 막습니다. 이것은 앰퍼센드 (&amp;)가 포함되어 있는 파일 이름이나 다른 문자열을 보여주어야 할 경우에 유용합니다</td>
+</tr>
+<tr id="SS_NOTIFY">
+  <td>SS_NOTIFY</td>
+  <td>0x100</td>
+  <td>사용자가 콘트롤을 클릭할 때 부모 창에 STN_CLICKED 고지를 전송합니다.</td>
+  </tr>
+<tr id="SS_RIGHT">
+  <td>SS_RIGHT</td>
+  <td>0x2</td>
+  <td>+/-Right. 사각형을 지정하고 그 안의 텍스트를 오른쪽 정렬합니다.</td>
+</tr>
+<tr id="SS_SUNKEN">
+  <td>SS_SUNKEN</td>
+  <td>0x1000</td>
+  <td>정적 콘트롤 둘레에 반쯤 눌려진 테두리를 그립니다.</td>
+</tr>
+<tr id="SS_WHITEFRAME">
+  <td>SS_WHITEFRAME</td>
+  <td>0x9</td>
+  <td>프레임을 가진 박스를 지정합니다. 창 배경과 같은 색으로 그려집니다. 이 색은 기본 컬러 체계에서 하얀색입니다.</td>
+</tr>
+<tr id="SS_WHITERECT">
+  <td>SS_WHITERECT</td>
+  <td>0x6</td>
+  <td>현재 창의 배경색으로 채워진 사각형을 지정합니다. 이 색은 기본 컬러 체계에서 하얀색입니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="Edit"></a><a href="../commands/GuiControls.htm#Edit">Edit</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td><p><a href="#WS_TABSTOP">WS_TABSTOP</a> 그리고 WS_EX_CLIENTEDGE (확장 스타일 E0x200)</p>
+    <p>Edit 콘트롤이 여러-줄로 자동 탐지됩니다. 시작부터 내용에 여러 줄이 담겨 있거나, 그의 높이가 1 행보다 크거나, 아니면 그의 행 개수가 명시적으로 1보다 크게 지정되어 있기 때문입니다. 
+	다음 스타일이 기본으로 적용됩니다: <a href="#WS_VSCROLL">WS_VSCROLL</a>, <a href="#ES_WANTRETURN">ES_WANTRETURN</a>, 그리고 <a href="#ES_AUTOVSCROLL">ES_AUTOVSCROLL</a></p>
+    <p>Edit이 한 줄로 자동 탐지되면, 기본값은 <a href="#ES_AUTOHSCROLL">ES_AUTOHSCROLL</a>입니다.</p></td>
+  </tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+  </tr>
+<tr id="ES_AUTOHSCROLL">
+  <td>ES_AUTOHSCROLL</td>
+  <td>0x80</td>
+  <td>+/-Wrap 여러-줄 편집, 그리고 +/-Limit 한-줄 편집.
+  사용자가 줄 끝에서 문자를 하나 타자하면 자동으로 오른쪽으로 10 문자 만큼 감습니다.
+  사용자가 ENTER 키를 누를 때, 모든 텍스트를 다시 0 위치로 감습니다.</td>
+  </tr>
+<tr id="ES_AUTOVSCROLL">
+  <td>ES_AUTOVSCROLL</td>
+  <td>0x40</td>
+  <td>사용자가 마지막 줄에서 ENTER 키를 누르면 텍스트를 한 페이지 감아 올립니다.</td>
+</tr>
+<tr id="ES_CENTER">
+  <td>ES_CENTER</td>
+  <td>0x1</td>
+  <td>+/-Center. 여러 줄 콘트롤에서 텍스트를 가운데 정렬합니다.</td>
+</tr>
+<tr id="ES_LOWERCASE">
+  <td>ES_LOWERCASE</td>
+  <td>0x10</td>
+  <td>+/-Lowercase. 편집 콘트롤 안으로 문자가 타자되어 들어오면 모두 소문자로 변환합니다.</td>
+</tr>
+<tr id="ES_NOHIDESEL">
+  <td>ES_NOHIDESEL</td>
+  <td>0x100</td>
+  <td>기본 행위를 부인합니다. 기본 행위는 콘트롤이 입력 초점을 잃어 버릴 때 선택을 감추고 입력 초점을 받을 때 선택을 역상으로 보여줍니다. <a href="#ES_NOHIDESEL">ES_NOHIDESEL</a>을 지정했다면, 콘트롤에 초점이 없더라도 선택된 텍스트가 역상으로 보입니다.</td>
+</tr>
+<tr id="ES_NUMBER">
+  <td>ES_NUMBER</td>
+  <td>0x2000</td>
+  <td>+/-Number. 사용자가 숫자가 아닌 다른 것은 타자하지 못하도록 막습니다.</td>
+</tr>
+<tr id="ES_OEMCONVERT">
+  <td>ES_OEMCONVERT</td>
+  <td>0x400</td>
+  <td>이 스타일은 파일 이름이 포함된 편집 콘트롤에 아주 유용합니다.</td>
+</tr>
+<tr id="ES_MULTILINE">
+  <td>ES_MULTILINE</td>
+  <td>0x4</td>
+  <td>+/-Multi. 여러줄 편집 콘트롤을 지정합니다. 기본값은 한줄 편집 콘트롤입니다.</td>
+</tr>
+<tr id="ES_PASSWORD">
+  <td>ES_PASSWORD</td>
+  <td>0x20</td>
+  <td>+/-Password. 타자되어 들어오는 각 문자 대신에 은폐 문자를 보여줍니다. 텍스트를 감춥니다.</td>
+</tr>
+<tr id="ES_READONLY">
+  <td>ES_READONLY</td>
+  <td>0x800</td>
+  <td>+/-ReadOnly. 사용자가 편집 콘트롤에 타자하거나 편집하지 못하도록 막습니다.</td>
+</tr>
+<tr id="ES_RIGHT">
+  <td>ES_RIGHT</td>
+  <td>0x2</td>
+  <td>+/-Right. 여러줄 편집 콘트롤에 우측 정렬합니다.</td>
+</tr>
+<tr id="ES_UPPERCASE">
+  <td>ES_UPPERCASE</td>
+  <td>0x8</td>
+  <td>+/-Uppercase. 편집 콘트롤 안으로 문자가 타자되어 들어오면 모두 대문자로 변환합니다.</td>
+</tr>
+<tr id="ES_WANTRETURN">
+  <td>ES_WANTRETURN</td>
+  <td>0x1000</td>
+  <td>+/-WantReturn. 대화상자에서 여러줄 편집 콘트롤 안으로 텍스트를 타자하는 동안 사용자가 ENTER 키를 누를 때 캐리지 리턴이 삽입되도록 지정합니다. 이 스타일을 지정하지 않은 경우, ENTER 키를 누르면 대화상자의 기본 푸시 버튼을 누른 것과 효과가 동일합니다. 이 스타일은 한-줄 편집 콘트롤에는 아무 효과가 없습니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="UpDown"></a><a href="../commands/GuiControls.htm#UpDown">UpDown</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td><a href="#UDS_ARROWKEYS">UDS_ARROWKEYS</a>, <a href="#UDS_ALIGNRIGHT">UDS_ALIGNRIGHT</a>, <a href="#UDS_SETBUDDYINT">UDS_SETBUDDYINT</a>, 그리고 <a href="#UDS_AUTOBUDDY">UDS_AUTOBUDDY</a>.</td>
+  </tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+  </tr>
+<tr id="UDS_WRAP">
+  <td>UDS_WRAP</td>
+  <td>0x1</td>
+  <td>이름있는 옵션 &quot;Wrap&quot;. 콘트롤은 사용자가 최대 최소 값을 넘어서려고 하면 그의 범위의 다른 쪽 끝으로 되돌립니다. <em>Wrap</em>이 없다면, 최대 최소 값에 도달하면 멈춥니다.</td>
+</tr>
+<tr id="UDS_SETBUDDYINT">
+  <td>UDS_SETBUDDYINT</td>
+  <td>0x2</td>
+  <td> 위치가 바뀔 때 UpDown 콘트롤은 (WM_SETTEXT 메시지를 사용하여) 친구 콘트롤의 텍스트를 설정합니다. 그렇지만, 친구가 ListBox라면, 그 ListBox의 현재 선택이 대신 바뀝니다.</td>
+</tr>
+<tr id="UDS_ALIGNRIGHT">
+  <td>UDS_ALIGNRIGHT</td>
+  <td>0x4</td>
+  <td>이름있는 옵션 &quot;Right&quot; (기본값). UpDown을 친구 콘트롤의 오른쪽에 배치합니다.</td>
+</tr>
+<tr id="UDS_ALIGNLEFT">
+  <td>UDS_ALIGNLEFT</td>
+  <td>0x8</td>
+  <td>이름있는 옵션 &quot;Left&quot;. UpDown을 친구 콘트롤의 왼쪽에 배치합니다.</td>
+</tr>
+<tr id="UDS_AUTOBUDDY">
+  <td>UDS_AUTOBUDDY</td>
+  <td>0x10</td>
+  <td>자동으로 UpDown 콘트롤의 친구 콘트롤로 z-순서로 이전의 콘트롤을 선택합니다.</td>
+</tr>
+<tr id="UDS_ARROWKEYS">
+  <td>UDS_ARROWKEYS</td>
+  <td>0x20</td>
+  <td>사용자는 키보드에서  Up 또는 Down 화살표 키를 눌러 UpDown 콘트롤이 위치를 변경할 수 있습니다.</td>
+</tr>
+<tr id="UDS_HORZ">
+  <td>UDS_HORZ</td>
+  <td>0x40</td>
+  <td>이름있는 옵션 &quot;Horz&quot;. 콘트롤의 화살표가 위 아래가 아니라 좌우를 가리킵니다.</td>
+</tr>
+<tr id="UpDownSep">
+  <td>UDS_NOTHOUSANDS</td>
+  <td>0x80</td>
+  <td>친구 콘트롤에 세자리마다 사이에 천의 자리 가름자를 삽입하지 않습니다.</td>
+</tr>
+<tr id="UDS_HOTTRACK">
+  <td>UDS_HOTTRACK</td>
+  <td>0x100</td>
+  <td>콘트롤은 &quot;핫 트래킹&quot; 행위를 합니다. 즉, 마우스가 지나갈 때 콘트롤 버튼을 강조합니다. 이 옵션은 Windows XP에서 바탕화면 테마가 오버라이드 하면 무시됩니다.</td>
+</tr>
+<tr>
+  <td>(hex)</td>
+  <td>&nbsp;</td>
+  <td><p>친구 콘트롤 안에 보여지는 숫자 형식은 십진 형식에서 십육진 형식으로 바꿀 수 있습니다. 다음 예제를 따르면 됩니다:</p>
+
+<pre>Gui +LastFound
+SendMessage, 1133, 16, 0, msctls_updown321 <em>; 1133은 UDM_SETBASE입니다</em></pre>
+
+	<p>그렇지만, 이것은 친구 콘트롤에만 영향을 줍니다. UpDown의 보고된 위치에는 영향을 미치지 않습니다.</p></td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="Pic"></a><a href="../commands/GuiControls.htm#Picture">Picture</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+  </tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>아이콘과 커서는 SS_ICON.<br>    
+    다른 이미지 유형은 SS_BITMAP.</td>
+  </tr>
+<tr id="SS_REALSIZECONTROL">
+  <td>SS_REALSIZECONTROL</td>
+  <td>0x40</td>
+  <td>[Windows XP 이후] 비트맵을 콘트롤의 크기에 맞춥니다.</td>
+</tr>
+<tr id="SS_CENTERIMAGE">
+  <td>SS_CENTERIMAGE</td>
+  <td>0x200</td>
+  <td>비트맵을 가운데 정렬합니다. 비트맵이 너무 크면 잘려 나갑니다. 텍스트 콘트롤에 대하여 콘트롤에 한줄의 텍스트가 들어 있으면, 텍스트는 가능한 높이 안에서 수직으로 가운데 정렬됩니다.
+    <p>Microsoft Windows XP: 이 스타일은 사용되지 않는 부분을 더 이상 비트맵이나 아이콘의 좌상 픽셀의 색으로 채우지 않습니다. 사용되지 않는 부분은 여전히 배경색으로 남아 있습니다.</p></td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="Button" id="Button"></a><a href="../commands/GuiControls.htm#Button">Button</a>, <a href="../commands/GuiControls.htm#Checkbox">Checkbox</a>, <a href="../commands/GuiControls.htm#Radio">Radio</a>, 그리고 <a href="../commands/GuiControls.htm#GroupBox">GroupBox</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td><p><a href="#BS_MULTILINE">BS_MULTILINE</a> (GroupBox 제외, 버튼 제외, 체크박스 제외, 그리고 명시적으로 너비와 높이가 설정되지 않은 라디오 버튼 제외, 텍스트 안에 CR/LF 문자가 있어도 제외)</p>
+    <p><a href="#WS_TABSTOP">WS_TABSTOP</a> (GroupBox 제외) -- 그렇지만, 각 라디오 그룹에서 첫 번째 버튼만 기본으로 WS_TABSTOP이 있습니다. 게다가, 라디오 버튼은  BS_NOTIFY이 있어서 더블 클릭을 탐지할 수 있습니다.</p></td>
+</tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>버튼: BS_PUSHBUTTON 또는 <a href="#BS_DEFPUSHBUTTON">BS_DEFPUSHBUTTON</a><br>
+    라디오: BS_AUTORADIOBUTTON<br>
+    체크박스: BS_AUTOCHECKBOX 또는 BS_AUTO3STATE<br>
+    그룹박스: BS_GROUPBOX</td>
+</tr>
+<tr id="BS_LEFT">
+  <td>BS_LEFT</td>
+  <td>0x100</td>
+  <td>+/-Left. 텍스트를 왼쪽 정렬합니다.</td>
+</tr>
+<tr id="BS_PUSHLIKE">
+  <td>BS_PUSHLIKE</td>
+  <td>0x1000</td>
+  <td>체크박스나 라디오 버튼이 푸시 버튼처럼 보이고 행동하게 만듭니다. 버튼은 눌려 있지 않거나 체크되어 있지 않으면 튀어 나와 보입니다. 누르거나 체크할 때 쑥 들어갑니다.</td>
+</tr>
+<tr id="BS_RIGHT">
+  <td>BS_RIGHT</td>
+  <td>0x200</td>
+  <td>+/-Right. 텍스트를 우측 정렬합니다.</td>
+</tr>
+<tr id="BS_RIGHTBUTTON">
+  <td>BS_RIGHTBUTTON</td>
+  <td>0x20</td>
+  <td>+Right (즉, +Right는 <a href="#BS_RIGHT">BS_RIGHT</a> 그리고 <a href="#BS_RIGHTBUTTON">BS_RIGHTBUTTON</a>를 둘 다 포함하지만,  -Right는 BS_RIGHT만 제거합니다. BS_RIGHTBUTTON는 제거하지 않습니다). 체크박스 네모 또는 라디오 버튼 동그라미를 콘트롤의 왼쪽 대신에 오른쪽에 배치합니다.</td>
+</tr>
+<tr id="BS_BOTTOM">
+  <td>BS_BOTTOM</td>
+  <td>0x800</td>
+  <td>텍스트를 콘트롤 높이의 아래에 배치합니다.</td>
+</tr>
+<tr id="BS_CENTER">
+  <td>BS_CENTER</td>
+  <td>0x300</td>
+  <td>+/-Center. 텍스트를 콘트롤 너비의 중앙에 수평으로 배치합니다.</td>
+</tr>
+<tr id="BS_DEFPUSHBUTTON">
+  <td>BS_DEFPUSHBUTTON</td>
+  <td>0x1</td>
+  <td>+/-Default. 두꺼운 검정색 테두리를 가진 푸쉬 버튼을 생성합니다. 버튼이 대화상자 안에 있으면, 사용자는 그 버튼에 입력 초점이 없더라도 ENTER 키를 눌러 그 버튼을 선택할 수 있습니다. 이 스타일로 사용자는 즉시 대부분의 가능한 옵션을 선택할 수 있습니다.</td>
+</tr>
+<tr id="BS_MULTILINE">
+  <td>BS_MULTILINE</td>
+  <td>0x2000</td>
+  <td>+/-Wrap. 텍스트를 여러줄로 넘깁니다. 텍스트가 콘트롤 너비보다 너무 길어 한 줄에 맞출 수 없으면 또한 라인피드를 허용해서 (`n) 새 줄의 텍스트를 시작할 수 있습니다.</td>
+</tr>
+<tr id="BS_TOP">
+  <td>BS_TOP</td>
+  <td>0x400</td>
+  <td>텍스트를 콘트롤 높이의 상단에 배치합니다.</td>
+</tr>
+<tr id="BS_VCENTER">
+  <td>BS_VCENTER</td>
+  <td>0xC00</td>
+  <td>콘트롤의 높이에 수직으로 텍스트를 중앙에 배치합니다.</td>
+</tr>
+<tr id="BS_FLAT">
+  <td>BS_FLAT</td>
+  <td>0x8000</td>
+  <td>버튼이 평면임을 지정합니다; 3-D 효과를 위해 기본 쉐이딩을 사용하지 않습니다.</td>
+</tr>
+</table>
+
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="DDL" id="DDL"></a><a href="../commands/GuiControls.htm#DropDownList">DropDownList</a> 그리고 <a href="../commands/GuiControls.htm#ComboBox">ComboBox</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td><a href="#WS_TABSTOP">WS_TABSTOP</a> (+/-Tabstop)<br>
+    DropDownList: <a href="#WS_VSCROLL">WS_VSCROLL</a><br>
+    ComboBox: <a href="#WS_VSCROLL">WS_VSCROLL</a>, <a href="#CBS_AUTOHSCROLL">CBS_AUTOHSCROLL</a></td>
+</tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>DropDownList: CBS_DROPDOWNLIST<br>
+    ComboBox: Either CBS_DROPDOWN 또는 <a href="#CBS_SIMPLE">CBS_SIMPLE</a></td>
+</tr>
+<tr id="CBS_AUTOHSCROLL">
+  <td>CBS_AUTOHSCROLL</td>
+  <td>0x40</td>
+  <td>+/-Limit. 사용자가 줄끝에 문자를 타자하면 자동으로 텍스트를 편집 콘트롤 안에서 오른쪽으로 감습니다. 이 스타일 설정되어 있지 않으면, 오직 사각 경계 안에 맞는 텍스트만 보입니다.</td>
+</tr>
+<tr id="CBS_DISABLENOSCROLL">
+  <td>CBS_DISABLENOSCROLL</td>
+  <td>0x800</td>
+  <td>스크롤 할 만큼 충분히 항목이 없을 때 비활성화 된 수직 스크롤 바를 리스트 박스에 보여줍니다. 이 스타일이 없다면, 충분히 항목이 없을 때 스크롤 바가 보이지 않습니다.</td>
+</tr>
+<tr id="CBS_LOWERCASE">
+  <td>CBS_LOWERCASE</td>
+  <td>0x4000</td>
+  <td>+/-Lowercase. 콤보 박스의 편집 콘트롤 안으로 타자되어 들어가는 대문자를 소문자로 변환합니다.</td>
+</tr>
+<tr id="CBS_NOINTEGRALHEIGHT">
+  <td>CBS_NOINTEGRALHEIGHT</td>
+  <td>0x400</td>
+  <td>콤보 박스를 만들 때 어플이 지정한 크기대로 정확하게 같은 크기가 되도록 지정합니다. 보통, 
+  Windows CE는 콤보 박스를 부분적으로 항목을 보여주지 않도록 크기를 지정합니다.</td>
+</tr>
+<tr id="CBS_OEMCONVERT">
+  <td>CBS_OEMCONVERT</td>
+  <td>0x80</td>
+  <td>
+  콤보 박스의 편집 콘트롤에 타자되어 들어가는 텍스트를 Windows CE 문자 집합으로부터 OEM 문자 집합으로 그리고 다시 Windows CE 문자 집합으로 변환합니다. 이 스타일은 파일 이름이 들어 있는 콤보 박스에 아주 유용합니다. CBS_DROPDOWN 스타일로 생성된 콤보 박스에만 적용됩니다.</td>
+</tr>
+<tr id="CBS_SIMPLE">
+  <td>CBS_SIMPLE</td>
+  <td>0x1</td>
+  <td>+/-Simple (콤보박스 전용). 리스트 박스를 언제나 보여줍니다. 리스트 박스의 현재 선택은 편집 콘트롤 안에 보여집니다.</td>
+</tr>
+<tr id="CBS_SORT">
+  <td>CBS_SORT</td>
+  <td>0x100</td>
+  <td>+/-Sort. 드롭 리스트의 항목들을 알파벳 순서로 설정합니다.</td>
+</tr>
+<tr id="CBS_UPPERCASE">
+  <td>CBS_UPPERCASE</td>
+  <td>0x2000</td>
+  <td>+/-Uppercase. 콤보 박스의 편집 콘트롤 안으로 타자되어 들어오는 소문자를 대문자로 변경합니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="ListBox"></a><a href="../commands/GuiControls.htm#ListBox">ListBox</a> 스타일</th>
+  <th>값</th>
+  <th>기술</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td><a href="#WS_TABSTOP">WS_TABSTOP</a>, <a href="#LBS_USETABSTOPS">LBS_USETABSTOPS</a>, <a href="#WS_VSCROLL">WS_VSCROLL</a>, 그리고 WS_EX_CLIENTEDGE (확장 스타일 E0x200).</td>
+</tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>LBS_NOTIFY (더블 클릭 탐지 지원)</td>
+</tr>
+<tr id="LBS_DISABLENOSCROLL">
+  <td>LBS_DISABLENOSCROLL</td>
+  <td>0x1000</td>
+  <td>
+   박스에 항목이 충분하지 않아 스크롤 할 수 없을 때 불능화 된 수직 스크롤 바를 보여줍니다. 이 스타일을 지정하지 않으면, 스크롤바는 리스트 박스에 충분한 항목이 없을 때 보이지 않습니다.</td>
+</tr>
+<tr id="LBS_NOINTEGRALHEIGHT">
+  <td>LBS_NOINTEGRALHEIGHT</td>
+  <td>0x100</td>
+  <td>리스트 박스가 어플리케이션에 의하여 생성될 때 지정된 크기를 정확하게 가지도록 지정합니다.</td>
+</tr>
+<tr id="LBS_EXTENDEDSEL">
+  <td>LBS_EXTENDEDSEL</td>
+  <td>0x800</td>
+  <td>+/-Multi. 콘트롤 클릭 그리고 쉬프트 클릭으로 다중 선택을 허용합니다.</td>
+</tr>
+<tr id="LBS_MULTIPLESEL">
+  <td>LBS_MULTIPLESEL</td>
+  <td>0x8</td>
+  <td><a name="LBS_MULTI"></a>다중 선택을 간략화한 버전. control-click과 shift-click이 불필요합니다. 보통의 왼클릭만으로 선택을 확장하거나 선택된 항목을 해제할 수 있습니다.</td>
+</tr>
+<tr id="LBS_NOSEL">
+  <td>LBS_NOSEL</td>
+  <td>0x4000</td>
+  <td>+/-ReadOnly. 사용자는 리스트 박스 문자열을 볼 수는 있지만 선택할 수는 없습니다.</td>
+</tr>
+<tr id="LBS_SORT">
+  <td>LBS_SORT</td>
+  <td>0x2</td>
+  <td>+/-Sort. 리스트 박스 안의 항목을 알파벳 순으로 정렬합니다.</td>
+</tr>
+<tr id="LBS_USETABSTOPS">
+  <td>LBS_USETABSTOPS</td>
+  <td>0x80</td>
+  <td>문자열을 그릴 때 ListBox가 탭 문자를 인지하고 확대할 수 있습니다. 기본 탭 위치는 32 대화상자 박스 단위입니다. 대화상자 박스 단위(dialog box unit)는 현재 대화상자의 기본 너비 단위의 1/4와 동일합니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="ListView"></a><a href="../commands/ListView.htm">ListView</a> 스타일</th>
+  <th>값</th>
+  <th>기술</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td><a href="#WS_TABSTOP">WS_TABSTOP</a>, <a href="#LVS_REPORT">LVS_REPORT</a>, <a href="#LVS_SHOWSELALWAYS">LVS_SHOWSELALWAYS</a>, <a href="#LVS_EX_FULLROWSELECT">LVS_EX_FULLROWSELECT</a>, <a href="#LVS_EX_HEADERDRAGDROP">LVS_EX_HEADERDRAGDROP</a>, WS_EX_CLIENTEDGE (E0x200)</td>
+</tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+</tr>
+<tr id="LVS_ALIGNLEFT">
+  <td>LVS_ALIGNLEFT</td>
+  <td>0x800</td>
+  <td>아이콘 창에서 항목들은 왼쪽 정렬됩니다.</td>
+</tr>
+<tr id="LVS_ALIGNTOP">
+  <td>LVS_ALIGNTOP</td>
+  <td>0</td>
+  <td>아이콘 창에서 항목들은 위쪽에 정렬됩니다. 기본값입니다.</td>
+</tr>
+<tr id="LVS_AUTOARRANGE">
+  <td>LVS_AUTOARRANGE</td>
+  <td>0x100</td>
+  <td>아이콘은 자동으로 정렬됩니다.</td>
+</tr>
+<tr id="LVS_EDITLABELS">
+  <td>LVS_EDITLABELS</td>
+  <td>0x200</td>
+  <td>+/-ReadOnly. <strong>-</strong>ReadOnly (또는 +0x200)을 지정하면 사용자는 각 행의 첫 필드를 제자리에서 편집할 수 있습니다.</td>
+</tr>
+<tr id="LVS_ICON">
+  <td>LVS_ICON</td>
+  <td>0</td>
+  <td>+Icon. 큰-아이콘 보기를 지정합니다.</td>
+</tr>
+<tr id="LVS_LIST">
+  <td>LVS_LIST</td>
+  <td>0x3</td>
+  <td>+List. 리스트 보기를 지정합니다.</td>
+</tr>
+<tr id="LVS_NOCOLUMNHEADER">
+  <td>LVS_NOCOLUMNHEADER</td>
+  <td>0x4000</td>
+  <td>+/-Hdr. 보고서 보기에 열 헤더를 보여주지 않습니다.</td>
+</tr>
+<tr id="LVS_NOLABELWRAP">
+  <td>LVS_NOLABELWRAP</td>
+  <td>0x80</td>
+  <td>아이콘 보기에서 Item 텍스트를 한 줄에 보여줍니다. 기본값으로, 항목은 아이콘 보기에서 줄넘기기 됩니다.</td>
+</tr>
+<tr id="LVS_NOSCROLL">
+  <td>LVS_NOSCROLL</td>
+  <td>0x2000</td>
+  <td>스크롤을 끕니다. 모든 항목은 클라이언트 구역 안에 있어야 합니다. 이 스타일은 <a href="#LVS_LIST">LVS_LIST</a> 또는 <a href="#LVS_REPORT">LVS_REPORT</a> 스타일과 호환되지 않습니다.</td>
+</tr>
+<tr id="LVS_NOSORTHEADER">
+  <td>LVS_NOSORTHEADER</td>
+  <td>0x8000</td>
+  <td>+/-NoSortHdr. 열 헤더가 버튼처럼 작동하지 않습니다. 보고서 보기에서 열 헤더를 클릭해도 아무 조치도 하지 않을 경우에 이 스타일을 사용할 수 있습니다.</td>
+</tr>
+<tr id="LVS_OWNERDATA">
+  <td>LVS_OWNERDATA</td>
+  <td>0x1000</td>
+  <td>이 스타일은 가상 리스트 뷰 콘트롤을 지정합니다. (오토핫키가 직접 지원하지 않습니다).</td>
+</tr>
+<tr id="LVS_OWNERDRAWFIXED">
+  <td>LVS_OWNERDRAWFIXED</td>
+  <td>0x400</td>
+  <td>사용자 창이 WM_DRAWITEM 메시지에 응답하여 보고서 보기로 항목들을 그립니다. (오토핫키가 직접 지원하지 않습니다).</td>
+</tr>
+<tr id="LVS_REPORT">
+  <td>LVS_REPORT</td>
+  <td>0x1</td>
+  <td>+Report. 보고서 보기를 지정합니다.</td>
+</tr>
+<tr id="LVS_SHAREIMAGELISTS">
+  <td>LVS_SHAREIMAGELISTS</td>
+  <td>0x40</td>
+  <td>콘트롤이 파괴되더라도 <a href="../commands/ListView.htm#IL">이미지 리스트</a>가 삭제되지 않습니다. 이 스타일은 다중 리스트 뷰 콘트롤에 같은 이미지를 사용할 수 있습니다.</td>
+</tr>
+<tr id="LVS_SHOWSELALWAYS">
+  <td>LVS_SHOWSELALWAYS</td>
+  <td>0x8</td>
+  <td>선택이 언제나 보입니다. 콘트롤에 키보드 초점이 없더라도 마찬가지입니다.</td>
+</tr>
+<tr id="LVS_SINGLESEL">
+  <td>LVS_SINGLESEL</td>
+  <td>0x4</td>
+  <td>+/-Multi. 한 번에 오직 한 항목만 선택할 수 있습니다. 기본값으로 여러 항목을 선택할 수 있습니다.</td>
+</tr>
+<tr id="LVS_SMALLICON">
+  <td>LVS_SMALLICON</td>
+  <td>0x2</td>
+  <td>+IconSmall. 작은 아이콘 보기를 지정합니다.</td>
+</tr>
+<tr id="LVS_SORTASCENDING">
+  <td>LVS_SORTASCENDING</td>
+  <td>0x10</td>
+  <td>+/-Sort. 행들은 첫 필드의 내용에 기반하여 오름차순으로 정렬됩니다.</td>
+</tr>
+<tr id="LVS_SORTDESCENDING">
+  <td>LVS_SORTDESCENDING</td>
+  <td>0x20</td>
+  <td>+/-SortDesc. 위와 같지만 내림차순입니다.</td>
+</tr>
+<tr id="LVS_EX_BORDERSELECT">
+  <td>LVS_EX_BORDERSELECT</td>
+  <td>LV0x8000</td>
+  <td>항목이 선택될 때 항목이 강조되는 것이 아니라 항목의 테두리 색이 바뀝니다 (최신 운영 체제에서는 작동하지 않을 수 있습니다).</td>
+</tr>
+<tr id="LVS_EX_CHECKBOXES">
+  <td>LVS_EX_CHECKBOXES</td>
+  <td>LV0x4</td>
+  <td><p>+/-Checked. 각 항목마다 체크박스를 보여줍니다. 이 스타일을 설정하면, 콘트롤은 DrawFrameControl를 사용하여 두 개의 이미지를 가진 상태 이미지 리스트를 생성하고 설정합니다. 
+  상태 이미지 1은 체크 표시가 없는 박스이고, 상태 이미지 2는 체크 표시된 박스입니다. 상태 이미지를 0으로 설정하면 체크 박스가 완전히 제거됩니다.</p>
+    <p>
+	Windows XP 이후: 체크박스는 모든 리스트 뷰 모드에서 보이고 작동합니다. 단, Windows XP에서 도입된 타일뷰는 제외합니다. 체크박스를 타일 보기 모드에서 클릭하면 항목만 선택됩니다; 상태는 바뀌지 않습니다.</p></td>
+</tr>
+<tr id="LVS_EX_FLATSB">
+  <td>LVS_EX_FLATSB</td>
+  <td>LV0x100</td>
+  <td>리스트 뷰에서 평평한 스크롤 바를 켭니다.</td>
+</tr>
+<tr id="LVS_EX_FULLROWSELECT">
+  <td>LVS_EX_FULLROWSELECT</td>
+  <td>LV0x20</td>
+  <td>행이 선택될 때, 그의 모든 필드가 강조됩니다. 이 스타일은 <a href="#LVS_REPORT">LVS_REPORT</a> 스타일고 조합해서만 사용할 수 있습니다.</td>
+</tr>
+<tr id="LVS_EX_GRIDLINES">
+  <td>LVS_EX_GRIDLINES</td>
+  <td>LV0x1</td>
+  <td>+/-Grid. 격자 줄을 행과 열에 보여줍니다. 이 스타일은 <a href="#LVS_REPORT">LVS_REPORT</a> 과 조합해서만 사용할 수 있습니다.</td>
+</tr>
+<tr id="LVS_EX_HEADERDRAGDROP">
+  <td>LVS_EX_HEADERDRAGDROP</td>
+  <td>LV0x10</td>
+  <td>리스트 뷰 콘트롤에서 끌어 떨구기로 열을 재배치할 수 있습니다. 이 스타일은 <a href="#LVS_REPORT">LVS_REPORT</a> 스타일을 사용하는 리스트 뷰 콘트롤에서만 사용할 수 있습니다.</td>
+</tr>
+<tr id="LVS_EX_INFOTIP">
+  <td>LVS_EX_INFOTIP</td>
+  <td>LV0x400</td>
+  <td>리스트 뷰 콘트롤이 <a href="#LVS_EX_INFOTIP">LVS_EX_INFOTIP</a> 스타일을 사용할 때, 항목의 툴팁을 보여주기 전에 LVN_GETINFOTIP 고지 메시지가 부모 창에 전송됩니다.</td>
+</tr>
+<tr id="LVS_EX_LABELTIP">
+  <td>LVS_EX_LABELTIP</td>
+  <td>LV0x4000</td>
+  <td>
+  리스트 뷰 모드에서 부분적으로 숨은 라벨에 툴팁 텍스트가 없다면, 그 라벨을 언폴드합니다. 이 스타일이 설정되지 않으면, 리스트 뷰 콘트롤은 오직 큰 아이콘 모드에 대해서만 부분적으로 숨은 라벨을 언폴드합니다. Windows XP 이상을 요구합니다. 아니면 Internet Explorer 5.0 이상과 배포되는 DLL이 필요합니다. 주의: 어떤 윈도우즈 버전에서는 GUI 창이 항상 위에 오도록 설정되어 있을 경우 이 스타일 제대로 작동하지 않을 수 있습니다.</td>
+</tr>
+<tr id="LVS_EX_MULTIWORKAREAS">
+  <td>LVS_EX_MULTIWORKAREAS</td>
+  <td>LV0x2000</td>
+  <td>리스트-뷰 콘트롤에 <a href="#LVS_AUTOARRANGE">LVS_AUTOARRANGE</a> 스타일이 있다면, 그 콘트롤은 하나 이상의 작업 구역이 정의될 때까지 그의 아이콘들을 자동 정렬하지 않습니다 (LVM_SETWORKAREAS 참조). 이 스타일은 작업 구역이 정의되기 전에 그리고 콘트롤에 항목들이 모두 추가되기 전에 설정해야 효과가 있습니다.</td>
+</tr>
+<tr id="LVS_EX_ONECLICKACTIVATE">
+  <td>LVS_EX_ONECLICKACTIVATE</td>
+  <td>LV0x40</td>
+  <td>사용자가 항목을 클릭하면 부모 창에 LVN_ITEMACTIVATE 고지 메시지를 전송합니다. 이 스타일은 또 리스트 뷰 콘트롤에 핫 트래킹을 활성화 합니다. 핫 트래킹이란 마우스나 항목 위를 지나갈 때, 강조를 하지만 선택하지는 않는 기능입니다.</td>
+</tr>
+<tr id="LVS_EX_REGIONAL">
+  <td>LVS_EX_REGIONAL</td>
+  <td>LV0x200</td>
+  <td>
+  리스트 뷰 창 구역에  SetWindowRgn을 사용하여 오직 항목 아이콘과 텍스트만 포함하도록 지정합니다.
+항목의 일부가 아닌 부분들은 창 구역에서 배제됩니다. 이 스타일은 <a href="#LVS_ICON">LVS_ICON</a> 스타일을 사용하는 리스트 뷰 콘트롤에만 사용할 수 있습니다.</td>
+</tr>
+<tr id="LVS_EX_SIMPLESELECT">
+  <td>LVS_EX_SIMPLESELECT</td>
+  <td>LV0x100000</td>
+  <td>아이콘 보기에서, 콘트롤의 상태 이미지를 큰 입체 아이콘의 우상으로 이동시킵니다. 다른 보기 모드에서는 아무 변화가 없습니다. 사용자가 스페이스 바를 눌러 상태를 바꿀 때, 초점이 있는 항목이 아니라 선택된 모든 항목이 상태를 바꿉니다. Windows XP 이상을 요구합니다.
+  </td>
+</tr>
+<tr id="LVS_EX_SUBITEMIMAGES">
+  <td>LVS_EX_SUBITEMIMAGES</td>
+  <td>LV0x2</td>
+  <td>이미지를 첫 필드를 넘어서 보여줍니다. 이 스타일은 <a href="#LVS_REPORT">LVS_REPORT</a> 스타일과 조합해서만 사용할 수 있습니다.</td>
+</tr>
+<tr id="LVS_EX_TRACKSELECT">
+  <td>LVS_EX_TRACKSELECT</td>
+  <td>LV0x8</td>
+  <td>리스트 뷰 콘트롤에 핫 트랙 선택을 활성화 합니다. 핫 트랙 선택은 항 항목이 마우스가 항목 위에 일정 시간 이상 머무르면  자동으로 선택되는 것입니다. LVM_SETHOVERTIME 메시지로 머뭄 시간은 기본 시스템 설정으로부터 바꿀 수 있습니다. 이 스타일은 리스트 뷰 콘트롤의 모든 스타일에 적용됩니다. 핫 트랙 선택이 켜져 있는지 확인하려면 SystemParametersInfo를 호출해 보면 알 수 있습니다.</td>
+</tr>
+<tr id="LVS_EX_TWOCLICKACTIVATE">
+  <td>LVS_EX_TWOCLICKACTIVATE</td>
+  <td>LV0x80</td>
+  <td>사용자가 항목을 더블 클릭할 때 리스트-뷰 콘트롤은 LVN_ITEMACTIVATE 고지 메시지를 부모 창에 전송합니다. 이 스타일은 또 리스트 뷰 콘트롤에 핫 트래킹을 활성화 합니다. 핫 트래킹이란 마우스가 항목 위를 지나면, 강조하는 것입니다. 단, 선택하지는 않습니다.</td>
+</tr>
+<tr id="LVS_EX_UNDERLINECOLD">
+  <td>LVS_EX_UNDERLINECOLD</td>
+  <td>LV0x1000</td>
+  <td>활성화가 가능한 비-핫 항목들을 밑줄 그은 텍스트와 함께 보여줍니다. 이 스타일은 <a href="#LVS_EX_TWOCLICKACTIVATE">LVS_EX_TWOCLICKACTIVATE</a>도 설정되어 있어야 합니다.</td>
+</tr>
+<tr id="LVS_EX_UNDERLINEHOT">
+  <td>LVS_EX_UNDERLINEHOT</td>
+  <td>LV0x800</td>
+  <td>활성화가 가능한 핫 항목들은 밑줄 그은 텍스트와 함께 보여줍니다. 
+이 스타일은 <a href="#LVS_EX_ONECLICKACTIVATE">LVS_EX_ONECLICKACTIVATE</a> 또는 <a href="#LVS_EX_TWOCLICKACTIVATE">LVS_EX_TWOCLICKACTIVATE</a>도 설정되어 있기를 요구합니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="TreeView"></a><a href="../commands/TreeView.htm">TreeView</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td><a href="#WS_TABSTOP">WS_TABSTOP</a>, <a href="#TVS_SHOWSELALWAYS">TVS_SHOWSELALWAYS</a>, <a href="#TVS_HASLINES">TVS_HASLINES</a>, <a href="#TVS_LINESATROOT">TVS_LINESATROOT</a>, <a href="#TVS_HASBUTTONS">TVS_HASBUTTONS</a>, WS_EX_CLIENTEDGE (E0x200)</td>
+</tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+</tr>
+<tr id="TVS_CHECKBOXES">
+  <td>TVS_CHECKBOXES</td>
+  <td>0x100</td>
+  <td>+/-Checked. 각 항목 옆에 체크박스를 보여줍니다.</td>
+</tr>
+<tr id="TVS_DISABLEDRAGDROP">
+  <td>TVS_DISABLEDRAGDROP</td>
+  <td>0x10</td>
+  <td>트리 뷰 콘트롤이 TVN_BEGINDRAG 고지 메시지를 전송하지 못하도록 막습니다.</td>
+</tr>
+<tr id="TVS_EDITLABELS">
+  <td>TVS_EDITLABELS</td>
+  <td>0x8</td>
+  <td>+/-ReadOnly. 사용자가 트리 뷰 항목의 이름을 편집하도록 허용합니다.</td>
+</tr>
+<tr id="TVS_FULLROWSELECT">
+  <td>TVS_FULLROWSELECT</td>
+  <td>0x1000</td>
+  <td>트리 뷰에서 전체 행을 선택할 수 있습니다. 선택된 항목의 전체 행이 강조되고, 한 항목의 아무데나 클릭하면 전체 행이 선택됩니다. 이 스타일은 <a href="#TVS_HASLINES">TVS_HASLINES</a> 스타일과 조합하여 함께 사용할 수 없습니다.</td>
+</tr>
+<tr id="TVS_HASBUTTONS">
+  <td>TVS_HASBUTTONS</td>
+  <td>0x1</td>
+  <td>+/-Buttons. 플러스 (+) 그리고 마이너스 (-) 버튼을 부모 항목 옆에 보여줍니다. 사용자는 그 버튼을 클릭하여 부모 항목의 자손 항목 리스트를 펼치거나 접을 수 있습니다. 항목 버튼을 트리 뷰의 루트에 포함시키려면, <a href="#TVS_LINESATROOT">TVS_LINESATROOT</a>도 지정해야 합니다.</td>
+</tr>
+<tr id="TVS_HASLINES">
+  <td>TVS_HASLINES</td>
+  <td>0x2</td>
+  <td>+/-Lines. 항목의 계통을 줄을 사용하여 보여줍니다.</td>
+</tr>
+<tr id="TVS_INFOTIP">
+  <td>TVS_INFOTIP</td>
+  <td>0x800</td>
+  <td>TVN_GETINFOTIP 고지를 전송해 툴팁 정보를 얻습니다.</td>
+</tr>
+<tr id="TVS_LINESATROOT">
+  <td>TVS_LINESATROOT</td>
+  <td>0x4</td>
+  <td>+/-Lines. 트리 뷰 콘트롤의 루트에 항목들을 줄을 사용해 연결합니다. 이 값은 <a href="#TVS_HASLINES">TVS_HASLINES</a>도 설정되어 있지 않으면 무시됩니다.</td>
+</tr>
+<tr id="TVS_NOHSCROLL">
+  <td>TVS_NOHSCROLL</td>
+  <td>0x8000</td>
+  <td>+/-HScroll. 수평 스크롤을 금지합니다. 수평 스크롤바를 보여주지 않습니다.</td>
+</tr>
+<tr id="TVS_NONEVENHEIGHT">
+  <td>TVS_NONEVENHEIGHT</td>
+  <td>0x4000</td>
+  <td>TVM_SETITEMHEIGHT 메시지로 항목의 높이를 홀수 높이로 설정합니다. 기본적으로 항목의 높이는 짝수 값이어야 합니다.</td>
+</tr>
+<tr id="TVS_NOSCROLL">
+  <td>TVS_NOSCROLL</td>
+  <td>0x2000</td>
+  <td>수평 수직 스크롤을 모두 금지합니다. 스크롤바가 전혀 없습니다.</td>
+</tr>
+<tr id="TVS_NOTOOLTIPS">
+  <td>TVS_NOTOOLTIPS</td>
+  <td>0x80</td>
+  <td>툴팁을 금지합니다.</td>
+</tr>
+<tr id="TVS_RTLREADING">
+  <td>TVS_RTLREADING</td>
+  <td>0x40</td>
+  <td>텍스트를 오른쪽에서 왼쪽으로 보여줍니다(right-to-left (RTL)). 보통, 창은 텍스트를 왼쪽에서 오른쪽으로 보여줍니다(left-to-right (LTR)).</td>
+</tr>
+<tr id="TVS_SHOWSELALWAYS">
+  <td>TVS_SHOWSELALWAYS</td>
+  <td>0x20</td>
+  <td>트리 뷰 콘트롤이 초점을 잃어도 선택된 항목을 선택된 채로 있게 합니다.</td>
+</tr>
+<tr id="TVS_SINGLEEXPAND">
+  <td>TVS_SINGLEEXPAND</td>
+  <td>0x400</td>
+  <td>선택할 때 선택된 항목은 확대하고 선택되지 않은 항목들을 축소합니다. 사용자가 CTRL 키를 누른 채로 항목을 선택하면, 선택되지 않은 항목이 축소되지 않습니다.</td>
+</tr>
+<tr id="TVS_TRACKSELECT">
+  <td>TVS_TRACKSELECT</td>
+  <td>0x200</td>
+  <td>마우스 핫 트래킹을 활성화합니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="DateTime"></a><a href="../commands/GuiControls.htm#DateTime">DateTime</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>기본값</td>
+  <td>&nbsp;</td>
+  <td><a href="#DTS_SHORTDATECENTURYFORMAT">DTS_SHORTDATECENTURYFORMAT</a> 그리고 <a href="#WS_TABSTOP">WS_TABSTOP</a> (+/-Tabstop)</td>
+  </tr>
+<tr>
+  <td>강제</td>
+  <td>&nbsp;</td>
+  <td>없음</td>
+  </tr>
+<tr id="DTS_UPDOWN">
+  <td>DTS_UPDOWN</td>
+  <td>0x1</td>
+  <td>날짜-시간 값을 변경할 업-다운 콘트롤을 콘트롤의 오른쪽에 배치합니다.  드롭-다운 달력을 교체합니다.</td>
+</tr>
+<tr id="DTS_SHOWNONE">
+  <td>DTS_SHOWNONE</td>
+  <td>0x2</td>
+  <td>체크박스를 콘트롤 안에 보여줍니다. 사용자는 체크를 해제해 콘트롤에 날짜/시간을 선택하지 않을 수 있습니다. 콘트롤에 날짜/시간이 없으면, <a href="../commands/Gui.htm#Submit">Gui Submit</a> 그리고 <a href="../commands/GuiControlGet.htm">GuiControlGet</a>은 빈 값을 열람합니다 (빈 문자열).</td>
+</tr>
+<tr id="DTS_SHORTDATEFORMAT">
+  <td>DTS_SHORTDATEFORMAT</td>
+  <td>0x0</td>
+  <td>날짜를 짧은 형식으로 보여줍니다. 어떤 로케일에서는  <code>6/1/05</code> 또는 <code>6/1/2005</code>와 같이 보입니다. 예전의 운영 체제에서는 두 자리 해를 보여줄 수도 있습니다. 이것은 <a href="#DTS_SHORTDATECENTURYFORMAT">DTS_SHORTDATECENTURYFORMAT</a>이 기본값이고 <a href="#DTS_SHORTDATEFORMAT">DTS_SHORTDATEFORMAT</a>이 아니기 때문입니다.</td>
+</tr>
+<tr id="DTS_LONGDATEFORMAT">
+  <td>DTS_LONGDATEFORMAT</td>
+  <td>0x4</td>
+  <td><a href="../commands/GuiControls.htm#DateTimeFormat">형식 옵션</a> &quot;LongDate&quot;. 날짜를 긴 형식으로 보여줍니다. 어떤 로케일에서는 <code>Wednesday, June 01, 2005</code>처럼 보입니다.</td>
+</tr>
+<tr id="DTS_SHORTDATECENTURYFORMAT">
+  <td>DTS_SHORTDATECENTURYFORMAT</td>
+  <td>0xC</td>
+  <td><a href="../commands/GuiControls.htm#DateTimeFormat">형식 옵션</a> 비어있거나/생략됨. 날짜를 짧은 형식의 네 자리 해로 보여 줍니다. 어떤 로케일에서는 <code>6/1/2005</code>처럼 보입니다. 
+ Comctl32.dll의 시스템 버전이 5.8 미만이면, 이 스타일을 지원하지 않습니다. 그리고 자동으로 <a href="#DTS_SHORTDATEFORMAT">DTS_SHORTDATEFORMAT</a>이 대신합니다.</td>
+</tr>
+<tr id="DTS_TIMEFORMAT">
+  <td>DTS_TIMEFORMAT</td>
+  <td>0x9</td>
+  <td><a href="../commands/GuiControls.htm#DateTimeFormat">형식 옵션</a> &quot;Time&quot;. 시간만 보여줍니다. 어떤 로케일에서는 <code>5:31:42 PM</code>처럼 보입니다.</td>
+</tr>
+<tr id="DTS_APPCANPARSE">
+  <td>DTS_APPCANPARSE</td>
+  <td>0x10</td>
+  <td>아직 지원 안됨. 사용자에게 사용자 입력을 해석해서 필요한 조치를 취하도록 허용합니다. 사용자는 F2 키를 눌러 콘트롤의 클라이언트 구역 안에서 편집할 수 있습니다. 사용자가 일을 마치면 콘트롤은 DTN_USERSTRING  고지 메시지를 전송합니다.</td>
+</tr>
+<tr id="DTS_RIGHTALIGN">
+  <td>DTS_RIGHTALIGN</td>
+  <td>0x20</td>
+  <td>+/-Right. 달력은 콘트롤의 왼쪽이 아니라 오른쪽에 드롭 다운됩니다.</td>
+</tr>
+<tr>
+  <td>(드롭 다운 달력 안의 컬러)</td>
+  <td>&nbsp;</td>
+  <td>드롭-다운 달력 안의 날짜의 컬러는 <a href="../commands/Gui.htm#Font">Gui Font</a> 명령어 또는 <a href="../commands/Gui.htm#OtherOptions">c (Color)</a> 옵션으로 설정된 색을 준수합니다. 달력의 다른 부분의 컬러를 바꾸려면, 다음 예제를 따르십시오:<br>
+
+<pre>Gui +LastFound
+<a href="../commands/PostMessage.htm">SendMessage</a>, 0x1006, 4, 0xFFAA99, SysDateTimePick321 <em>; 0x1006은 DTM_SETMCCOLOR입니다. 4는 MCSC_MONTHBK입니다 (배경색). 컬러는 BGR vs. RGB 형식으로 지정해야 합니다 (적청 교체에 주의).</em></pre></td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="MonthCal"></a><a href="../commands/GuiControls.htm#MonthCal">MonthCal</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td>WS_TABSTOP (<span class="ver">[v1.1.22+]</span>전용, Windows 이후 전용)</td>
+  </tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+  </tr>
+<tr id="MCS_DAYSTATE">
+  <td>MCS_DAYSTATE</td>
+  <td>0x1</td>
+  <td>콘트롤이 MCN_GETDAYSTATE 고지를 전송하도록 만듭니다. 어느 날짜를 볼드체로 보여주어야 하는지에 관한 정보를 요구합니다. [아직 지원하지 않음]</td>
+</tr>
+<tr id="MCS_MULTISELECT">
+  <td>MCS_MULTISELECT</td>
+  <td>0x2</td>
+  <td>이름있는 옵션 &quot;Multi&quot;. 
+
+
+ 사용자는 날짜 하나로 제한되지 않고 한 범위의 날짜를 선택할 수 있습니다. 기본값으로, 최대 범위는 366 일입니다. 범위는 MCM_SETMAXSELCOUNT 메시지를 보내 바꿀 수 있습니다. 예를 들어:<br>
+<pre>Gui +LastFound
+<a href="../commands/PostMessage.htm">SendMessage</a>, 0x1004, 7, 0, SysMonthCal321 <em>; 7 days. 0x1004 is MCM_SETMAXSELCOUNT.</em></pre></td>
+</tr>
+<tr id="MCS_WEEKNUMBERS">
+  <td>MCS_WEEKNUMBERS</td>
+  <td>0x4</td>
+  <td>주 번호(1-52)을 각각의 날짜 줄 왼쪽에 보여줍니다.  Week 1은 적어도 네 개의 날이 있는 주를 첫 주로 정의합니다.</td>
+</tr>
+<tr id="MCS_NOTODAYCIRCLE">
+  <td>MCS_NOTODAYCIRCLE</td>
+  <td>0x8</td>
+  <td>콘트롤 안에서 오늘 날짜의 순환을 막습니다.</td>
+</tr>
+<tr id="MCS_NOTODAY">
+  <td>MCS_NOTODAY</td>
+  <td>0x10</td>
+  <td>오늘 날짜가 콘트롤 하단에 나타나지 않도록 막습니다.</td>
+</tr>
+<tr>
+  <td>(colors)</td>
+  <td>&nbsp;</td>
+  <td>달력 안에서 날짜 번호의 색은 <a href="../commands/Gui.htm#Font">Gui Font</a> 명령어나 <a href="../commands/Gui.htm#OtherOptions">c (Color)</a> 옵션의 설정을 준수합니다. 달력의 다른 부분의 색을 변경하려면, 다음 예제를 따르십시오:<br>
+<pre>Gui +LastFound
+<a href="../commands/PostMessage.htm">SendMessage</a>, 0x100A, 5, 0xFFAA99, SysMonthCal321 <em>; 0x100A는 MCM_SETCOLOR입니다. 5는 MCSC_TITLETEXT입니다 (제목 텍스트 색). 컬러는 BGR vs. RGB 형식으로 지정해야 합니다 (적청 교체에 주의).</em></pre></td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="Slider"></a><a href="../commands/GuiControls.htm#Slider">Slider</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td><a href="#WS_TABSTOP">WS_TABSTOP</a> (+/-Tabstop)</td>
+  </tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+  </tr>
+<tr id="TBS_VERT">
+  <td>TBS_VERT</td>
+  <td>0x2</td>
+  <td>+/-Vertical. 콘트롤이 수직 방향입니다.</td>
+</tr>
+<tr id="TBS_LEFT">
+  <td>TBS_LEFT</td>
+  <td>0x4</td>
+  <td>+/-Left. 콘트롤은 상단에 틱 표식을 보여줍니다 (또는 <a href="#TBS_VERT">TBS_VERT</a>이 존재한다면 왼쪽에). <a href="#TBS_TOP">TBS_TOP</a>와 동일합니다.</td>
+</tr>
+<tr id="TBS_TOP">
+  <td>TBS_TOP</td>
+  <td>0x4</td>
+  <td>same as <a href="#TBS_LEFT">TBS_LEFT</a>.</td>
+</tr>
+<tr id="TBS_BOTH">
+  <td>TBS_BOTH</td>
+  <td>0x8</td>
+  <td>+/-Center. 틱 표식을 콘트롤 좌우에 보여줍니다. TBS_HORZ가 사용되면 상하에 <a href="#TBS_VERT">TBS_VERT</a>가 사용되면 좌우에 보여줍니다.</td>
+</tr>
+<tr id="TBS_AUTOTICKS">
+  <td>TBS_AUTOTICKS</td>
+  <td>0x1</td>
+  <td>값의 범위 안에 각 증가 위치마다 틱 표식이 있습니다. +/-TickInterval를 사용하면 더 유연합니다.</td>
+</tr>
+<tr id="TBS_ENABLESELRANGE">
+  <td>TBS_ENABLESELRANGE</td>
+  <td>0x20</td>
+  <td><p>선택 범위만 보여줍니다. 선택 범위의 시작과 끝에 위치한 틱 표식은 (수직 대쉬 대신에) 삼각형으로 보여줍니다. 그리고 선택 범위가 강조됩니다 (강조를 하려면 <code>Gui -theme</code>를 통하여 테마를 제거할 필요가 있을 수도 있습니다).</p>
+    <p>선택 범위를 설정하려면, 다음 예제를 따르십시오. 시작 위치를 55에 그리고 끝 위치를 66에 설정합니다:</p>
+<pre><a href="../commands/PostMessage.htm">SendMessage</a>, 1035, 1, 55, msctls_trackbar321, WinTitle
+<a href="../commands/PostMessage.htm">SendMessage</a>, 1036, 1, 66, msctls_trackbar321, WinTitle</pre></td>
+</tr>
+<tr id="TBS_FIXEDLENGTH">
+  <td>TBS_FIXEDLENGTH</td>
+  <td>0x40</td>
+  <td>+/-Thick. 엄지 손잡이 크기를 바꿀 수 있습니다.</td>
+</tr>
+<tr id="TBS_NOTHUMB">
+  <td>TBS_NOTHUMB</td>
+  <td>0x80</td>
+  <td>이동 가능한 바를 보여 주지 않습니다.</td>
+</tr>
+<tr id="TBS_NOTICKS">
+  <td>TBS_NOTICKS</td>
+  <td>0x10</td>
+  <td>+/-NoTicks. 틱 표식을 보여 주지 않습니다.</td>
+</tr>
+<tr id="TBS_TOOLTIPS">
+  <td>TBS_TOOLTIPS</td>
+  <td>0x100</td>
+  <td>+/-Tooltip. 툴팁을 지원합니다. 콘트롤이 이 스타일을 사용하여 생성될 때, 자동으로 기본 툴팁 콘트롤을 생성해 슬라이더의 현재 위치를 보여줍니다. 툴팁을 보여줄 곳은 TBM_SETTIPSIDE 메시지를 사용하여 바꿀 수 있습니다.</td>
+</tr>
+<tr id="TBS_REVERSED">
+  <td>TBS_REVERSED</td>
+  <td>0x200</td>
+  <td>안타깝게도, 이 스타일은 콘트롤의 실제 행위에 아무 효과가 없습니다. 그래서 사용하는 의미가 없을 것입니다 (대신에, 콘트롤 옵션에 +Invert를 사용하면 뒤집을 수 있습니다). OS 버전에 따라, 이 스타일은 인터넷 익스플로서 5.0 이상을 요구합니다.</td>
+</tr>
+<tr id="TBS_DOWNISLEFT">
+  <td>TBS_DOWNISLEFT</td>
+  <td>0x400</td>
+  <td>안타깝게도, 이 스타일은 콘트롤의 실제 행위에 아무 영향을 주지 않습니다. 그래서 아마도 사용하는 의미가 없을 것입니다. OS 버전에 따라, 이 스타일은 Internet Explorer 5.01 이상을 요구합니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="Progress"></a><a href="../commands/GuiControls.htm#Progress">Progress</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td>PBS_SMOOTH</td>
+  </tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+  </tr>
+<tr id="PBS_SMOOTH">
+  <td>PBS_SMOOTH</td>
+  <td>0x1</td>
+  <td>+/-Smooth. 프로그레스 바는 진행 상태를 기본 구획 바 대신에 부드러운 스크롤 바에 보여줍니다. 이 스타일이 존재할 때, Windows XP 이후에서 스크롤은 자동으로 고전 테마 모습에 의존합니다.</td>
+</tr>
+<tr id="PBS_VERTICAL">
+  <td>PBS_VERTICAL</td>
+  <td>0x4</td>
+  <td>+/-Vertical. 아래에서 위로 수직으로 진행 상태를 보여줍니다.</td>
+</tr>
+<tr id="PBS_MARQUEE">
+  <td>PBS_MARQUEE</td>
+  <td>0x8</td>
+  <td><p>[Windows XP 이후 전용]  프로그레스 바는 마르키처럼 이동합니다; 즉, 위치가 변할 때마다 바가 이동하다가 끝에 도달하면 다시 반대 쪽으로 이동합니다. 이 스타일의 바는 위치가 정의되어 있지 않습니다. 그 위치를 변경하려고 시도하면 대신에 바가 한 눈금씩 슬라이드됩니다.</p>
+    <p>이 스타일은 전형적으로 완료 시간을 알 수 없는 작업의 진행 상황을 나타내는 데 사용됩니다.</p></td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="Tab"></a><a href="../commands/GuiControls.htm#Tab">Tab</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>default</td>
+  <td>&nbsp;</td>
+  <td><a href="#WS_TABSTOP">WS_TABSTOP</a> 그리고 <a href="#TCS_MULTILINE">TCS_MULTILINE</a></td>
+  </tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>WS_CLIPSIBLINGS<br>
+    <a href="#TCS_OWNERDRAWFIXED">TCS_OWNERDRAWFIXED</a>: 콘트롤의 배경색 그리고 텍스트 컬러가 요구하는 대로 강제로 켜거나 끕니다.</td>
+</tr>
+<tr id="TCS_SCROLLOPPOSITE">
+  <td>TCS_SCROLLOPPOSITE</td>
+  <td>0x1</td>
+  <td>불필요한 탭들은 탭이 선택될 때 콘트롤의 반대쪽으로 스크롤됩니다.</td>
+  </tr>
+<tr id="TCS_BOTTOM">
+  <td>TCS_BOTTOM</td>
+  <td>0x2</td>
+  <td>+/-Bottom. 탭이 콘트롤 상단이 아니라 하단에 나타납니다.</td>
+</tr>
+<tr id="TCS_RIGHT">
+  <td>TCS_RIGHT</td>
+  <td>0x2</td>
+  <td>탭이 오른쪽에 수직으로 나타납니다. <a href="#TCS_VERTICAL">TCS_VERTICAL</a> 스타일을 사용합니다.</td>
+</tr>
+<tr id="TCS_MULTISELECT">
+  <td>TCS_MULTISELECT</td>
+  <td>0x4</td>
+  <td>여러 탭을 선택할 수 있습니다. <small>CTRL</small> 키를 누르고 클릭하면 됩니다. 이 스타일은
+  <a href="#TCS_BUTTONS">TCS_BUTTONS</a> 스타일과 함께 사용해야 합니다.</td>
+</tr>
+<tr id="TCS_FLATBUTTONS">
+  <td>TCS_FLATBUTTONS</td>
+  <td>0x8</td>
+  <td>
+  선택된 탭이 배경 뒤로 눌려 나타납니다. 반면에 다른 탭들은 그대로 같은 평면에 같은 색으로 나타납니다. 이 스타일은 <a href="#TCS_BUTTONS">TCS_BUTTONS</a> 스타일과 함께 사용해야만 탭 콘트롤에 효과가 있습니다.</td>
+</tr>
+<tr id="TCS_FORCEICONLEFT">
+  <td>TCS_FORCEICONLEFT</td>
+  <td>0x10</td>
+  <td>아이콘은 고정-너비의 탭마다 왼쪽으로 정렬됩니다. 이 스타일은<a href="#TCS_FIXEDWIDTH">TCS_FIXEDWIDTH</a> 스타일에만 조합해 사용할 수 있습니다.</td>
+</tr>
+<tr id="TCS_FORCELABELLEFT">
+  <td>TCS_FORCELABELLEFT</td>
+  <td>0x20</td>
+  <td>라벨은 고정-너비의 탭마다 왼쪽에 정렬됩니다; 즉, 라벨은 아이콘 바로 오른쪽에 보여집니다. 가운데가 아닙니다.
+  <p>이 스타일은 <a href="#TCS_FIXEDWIDTH">TCS_FIXEDWIDTH</a> 스타일에만 조합해 사용할 수 있습니다. 그리고 <a href="#TCS_FIXEDWIDTH">TCS_FIXEDWIDTH</a> 스타일은 <a href="#TCS_FORCEICONLEFT">TCS_FORCEICONLEFT</a> 스타일을 암시합니다.</p></td>
+</tr>
+<tr id="TCS_HOTTRACK">
+  <td>TCS_HOTTRACK</td>
+  <td>0x40</td>
+  <td>포인터 아래의 항목들은 자동으로 강조됩니다</td>
+</tr>
+<tr id="TCS_VERTICAL">
+  <td>TCS_VERTICAL</td>
+  <td>0x80</td>
+  <td><p>+/-Left 또는 +/-Right. 탭이 콘트롤의 왼쪽에 나타납니다. 텍스트는 수직으로 보여집니다. 이 스타일은 오직 <a href="#TCS_MULTILINE">TCS_MULTILINE</a> 스타일과 사용할 때만 효과가 있습니다. 탭을 콘트롤의 오른쪽에 보여주려면, <a href="#TCS_RIGHT">TCS_RIGHT</a> 스타일을 사용합니다.</p>
+    <p>이 스타일은 맞춤 배경 색이나 텍스트 색이 영향을 미치면 올바르게 탭을 보여주지 못합니다. 이를 우회하려면, 탭 콘트롤 옵션에  -Background 그리고/또는 cDefault를 지정하십시오.</p>        
+    </td>
+</tr>
+<tr id="TCS_BUTTONS">
+  <td>TCS_BUTTONS</td>
+  <td>0x100</td>
+  <td>+/-Buttons. 탭이 버튼으로 나타납니다. 테두리가 그려지지 않습니다.</td>
+</tr>
+<tr id="TCS_SINGLELINE">
+  <td>TCS_SINGLELINE</td>
+  <td>0</td>
+  <td>+/-Wrap. 오직 한 줄의 탭만 보여집니다. 사용자는 감아서 탭을 더 볼 수 있습니다. 이 스타일이 기본값입니다.</td>
+</tr>
+<tr id="TCS_MULTILINE">
+  <td>TCS_MULTILINE</td>
+  <td>0x200</td>
+  <td>+/-Wrap. 여러 줄 탭을 보여줍니다. 그래서 모든 탭을 한 번에 볼 수 있습니다.</td>
+</tr>
+<tr id="TCS_RIGHTJUSTIFY">
+  <td>TCS_RIGHTJUSTIFY</td>
+  <td>0</td>
+  <td>기본값입니다. 각 탭의 너비는 필요하면 증가됩니다. 그래서 각 줄의 탭은 탭 콘트롤의 전체 너비를 채웁니다.
+    <p>이 창 스타일은 <a href="#TCS_MULTILINE">TCS_MULTILINE</a> 스타일도 지정해야 효과가 있습니다.</p></td>
+</tr>
+<tr id="TCS_FIXEDWIDTH">
+  <td>TCS_FIXEDWIDTH</td>
+  <td>0x400</td>
+  <td>모든 탭이 너비가 같습니다. 이 스타일은 <a href="#TCS_RIGHTJUSTIFY">TCS_RIGHTJUSTIFY</a> 스타일과 조합해 사용할 수 없습니다.</td>
+</tr>
+<tr id="TCS_RAGGEDRIGHT">
+  <td>TCS_RAGGEDRIGHT</td>
+  <td>0x800</td>
+  <td>탭 줄은 콘트롤의 전체 너비를 채우기 위해 늘어나지 않습니다. 이 스타일이 기본값입니다.</td>
+</tr>
+<tr id="TCS_FOCUSONBUTTONDOWN">
+  <td>TCS_FOCUSONBUTTONDOWN</td>
+  <td>0x1000</td>
+  <td>탭 콘트롤은 클릭될 때 입력 초점을 받습니다.</td>
+</tr>
+<tr id="TCS_OWNERDRAWFIXED">
+  <td>TCS_OWNERDRAWFIXED</td>
+  <td>0x2000</td>
+  <td>부모 창이 책임지고 탭을 그립니다.</td>
+</tr>
+<tr id="TCS_TOOLTIPS">
+  <td>TCS_TOOLTIPS</td>
+  <td>0x4000</td>
+  <td>탭 콘트롤에 툴팁 콘트롤을 연관짓습니다.</td>
+</tr>
+<tr id="TCS_FOCUSNEVER">
+  <td>TCS_FOCUSNEVER</td>
+  <td>0x8000</td>
+  <td>탭 콘트롤은 클릭될 때 입력 초점을 받지 않습니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<table class="info">
+<tr bgcolor="#EEEEEE">
+  <th><a name="StatusBar"></a><a href="../commands/GuiControls.htm#StatusBar">StatusBar</a> 스타일</th>
+  <th>값</th>
+  <th>설명</th>
+</tr>
+<tr>
+  <td>기본값</td>
+  <td>&nbsp;</td>
+  <td><a href="#SBARS_TOOLTIPS">SBARS_TOOLTIPS</a> 그리고 <a href="#SBARS_SIZEGRIP">SBARS_SIZEGRIP</a> (창의 크기 변경이 가능할 경우에만).</td>
+  </tr>
+<tr>
+  <td>forced</td>
+  <td>&nbsp;</td>
+  <td>None</td>
+</tr>
+<tr id="SBARS_TOOLTIPS">
+  <td>SBARS_TOOLTIPS</td>
+  <td>0x800</td>
+  <td><p>마우스가 상태바의 일부에 올라오면 툴팁을 보여줍니다: 
+  <ol>
+	<li>너무 보여줄 텍스트가 많을 때; 
+	<li>또는 아이콘은 있으나 텍스트가 없을 때
+  </ol>
+  </p>
+    <p>툴팁의 텍스트는 다음을 통하여 설정합니다:</p>
+<pre>Gui +LastFound
+<a href="../commands/PostMessage.htm">SendMessage</a>, 0x410, <strong>0</strong>, &quot;Text to display&quot;, msctls_statusbar321</pre>
+    <p>위에서 볼드체 <strong>0</strong>은 0-기반의 구역 번호입니다. 첫 번째 말고 다른 구역을 사용하려면, 두 번째 구역은 1, 세 번째 구역은 2 등등을 지정합니다. 주의: 어떤 운영체제에서는 툴팁이 전혀 나타나지 않을 수도 있습니다.</p></td>
+  </tr>
+<tr id="SBARS_SIZEGRIP">
+  <td>SBARS_SIZEGRIP</td>
+  <td>0x100</td>
+  <td>상태 바의 오른쪽 끝에 크기변경 손잡이를 포함합니다. 크기변경 손잡이는 크기조절 테두리와 비슷합니다; 사각 구역에 사용자가 클릭하면 부모 창을 끌 수 있습니다.</td>
+</tr>
+</table>
+<p>&nbsp;</p>
+
+</body>
+</html>

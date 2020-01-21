@@ -1,0 +1,53 @@
+
+
+<html>
+<head>
+<title>#Hotstring</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>#Hotstring</h1>
+
+<p><a href="../Hotstrings.htm">핫스트링</a> 옵션이나 종료 문자를 변경합니다.</p>
+
+<pre class="Syntax">#Hotstring NoMouse
+#Hotstring EndChars NewChars
+#Hotstring NewOptions</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>NoMouse</dt>
+  <dd><p>마우스 클릭 때문에 <a href="../Hotstrings.htm#NoMouse">여기에</a> 기술하는 바와 같이 핫스트링 인식자가 재설정되지 않도록 막습니다. 
+  부작용으로서, 이것은 또 <a href="_InstallMouseHook.htm">마우스 갈고리</a>를 핫스링이 요구하지 못하도록 막습니다 (그렇지만 스크립트가 다른 목적으로 요구하면 여전히 설치될 것입니다. 예를 들어, 마우스 핫키). <code>#Hotstring NoMouse</code>이 스크립트에 존재하면 모든 핫스트링에 영향을 줍니다. 단순히 물리적으로 그 아래에만 영향을 미치는 것이 아닙니다.</p></dd>
+
+  <dt>EndChars NewChars</dt>
+  <dd><p>단어 EndChars 다음에 스페이스를 하나 두고 다음에 새 종료 문자를 지정하십시오. 예를 들어:</p>
+    <pre>#Hotstring EndChars -()[]{}':;&quot;/\,.?!`n `t</pre>
+    <p>
+	새 종료 문자는 전체 스크립트에 전역적으로 효과가 있으므로 -- EndChars 지시어가 어디에 나타나는가에 상관 없이 -- EndChars를 한 번 이상 지정할 필요가 없습니다.</p>
+    <p>
+	종료 문자의 최대 개수는 100개입니다. 이 길이를 넘어서는 문자는 무시합니다.</p>
+    <p>
+	탭을 종료 문자로 만들려면, 목록에 `t를 포함하십시오. 스페이스를 종료 문자로 만들려면, 목록에 두 개의 다른 문자 사이에 포함하면 됩니다 (또는 리스트에 오직 문자가 하나 밖에 없다면 또는 하나도 없다면, 처음에 포함시킵니다).</p></dd>
+
+  <dt>NewOptions</dt>
+  <dd><p><a href="../Hotstrings.htm#Options">핫스트링 옵션</a>에 기술하는 바와 같이 새 옵션을 지정합니다. 예를 들어: <code>#Hotstring r s k0 c0</code>.</p>
+      <p>위의 <em>EndChars</em>와 다르게, #Hotstring 지시어는 이런 식으로 사용될 때 위치에 민감합니다. 다른 말로 하면, 핫스트링의 전체 섹션은 다음 예제와 같이 기본 옵션이 다를 수 있습니다:</p>
+    <pre>::btw::by the way
+
+#Hotstring r c  <em>; 이 아래의 핫스트링은 모두 &quot;날 전송 모드&quot;를 사용하고 기본으로 대소문자를 구분합니다.</em>
+::al::airline
+::CEO::Chief Executive Officer
+
+#Hotstring c0  <em>; 이 지점 아래의 모든 핫스트링을 대소문자에 무감각하게 만듭니다.</em></pre></dd>
+
+</dl>
+<h3>관련 항목</h3>
+<p><a href="../Hotstrings.htm">Hotstrings</a></p>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+
+
+<html>
+<head>
+<title>Input</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>Input</h1>
+
+<p>사용자가 문자를 타자하기를 기다립니다.</p>
+
+<pre class="Syntax">Input [, OutputVar, Options, EndKeys, MatchList]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>OutputVar</dt>
+  <dd><p>사용자가 입력한 텍스트를 저장할 변수의 이름 (기본값으로, 인위적 입력도 나포됩니다).</p>
+      <p>
+	  이 매개변수 그리고 다른 매개변수들이 생략되면, 또다른 <a href="../misc/Threads.htm">쓰레드</a>에서 진행 중인 Input이 즉시 종료됩니다. 그리고 그의 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 단어 NewInput이 설정됩니다. 대조적으로, 현재 명령어의 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 이전 Input이 종료되었으면 0이 설정됩니다. 또는 종료할 이전 Input이 없었으면 1이 설정됩니다.</p>
+      <p>
+	  <em>OutputVar</em>는 사실상 키눌림을 저장하지 않습니다. 대신에, 키눌림으로 생산되는 문자들을 활성 창의 키보드 레이아웃/언어에 맞게 저장합니다. 결과적으로, 문자를 생산하지 않는 키눌림은 (예를 들어 PageUp 그리고 Escape) 저장되지 않습니다 (그렇지만 아래의 <em>EndKeys</em> 매개변수를 통하여 인지할 수 있습니다).</p>
+      <p>TAB (`t)과 같은 공백 문자들은 문자 그대로 저장됩니다. ENTER는 라인피드 (`n)로 저장됩니다.</p></dd>
+
+  <dt>Options</dt>
+  <dd><p><u>다른 기호로 구성되는 문자열 (순서에 상관없이, 사이에 선택적으로 스페이스 허용):</u></p>
+      <p><strong>B</strong>: 백스페이스는 무시됩니다. 보통, Input 동안에 백스페이스를 누르면 최근에 눌린 문자가 문자열 끝으로부터 제거됩니다. 주의: (편집기에서) 입력 텍스트가 보이고 그리고 화살표 키나 기타 수단을 사용하여 그 안을 항해하면, 백스페이스는 캐럿 앞의 문자가 아니라 마지막 문자를 제거해 버립니다 (삽입 지점).</p>
+      <p><strong>C</strong>: 대소문자 구분. 보통, <em>MatchList</em>는 대소문자를 구분하지 않습니다 (1.0.43.03 이전에서는 오직 A-Z 기호만 대소문자로 변화된다고 인지합니다. &uuml;/&Uuml;와 같은 기호는 인지하지 않습니다).</p>
+      <p><strong>I</strong>: 오토핫키 스크립트가 생산하는 입력을 무시합니다. 예를 들어 <a href="Send.htm#SendEvent">SendEvent</a> 명령어. 그렇지만 <a href="Send.htm#SendInput">SendInput</a> 그리고 <a href="Send.htm#SendPlay">SendPlay</a> 방법은 이 설정에 상관 없이 언제나 무시됩니다.</p>      
+      <p><strong>L</strong>: 길이 제한 (예, <code>L5</code>). 최대로 허용되는 입력 길이. 텍스트가 이 길이에 도달하면, Input은 종료하고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 단어 Max가 설정됩니다. 단, 텍스트가 <em>MatchList</em> 문구 중 하나에 부합하는 경우는 예외입니다. 이 경우 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 단어 Match가 설정됩니다. 길이를 지정하지 않으면, 16383 길이로 제한됩니다. 이 값은 절대 최대치이기도 합니다.</p>
+      <p><strong>M</strong>: Control-A부터 Control-Z까지의 변형 키눌림은 실제 ASCII 문자가그에 상응한다면 인지되고 변환됩니다. 다음 예제를 연구해 보십시오. Control-C를 인지합니다:</p>
+
+	  <pre>Transform, CtrlC, Chr, 3 <em>; Ctrl-C에 대한 문자를 CtrlC 변수에 저장합니다.</em>
+Input, OutputVar, L1 M
+if OutputVar = %CtrlC%
+    MsgBox, Control-C를 눌렀습니다.
+ExitApp</pre>
+      <p>주의: Ctrl-A부터 Ctrl-Z까지의 문자는 <a href="../Functions.htm#Chr">Chr(1)</a>부터 <a href="../Functions.htm#Chr">Chr(26)</a>에 상응합니다. 또한, <strong>M</strong> 옵션 때문에  Ctrl-LeftArrow와 같이 어떤 키보드 단축키는 Input이 진행 중인 동안 잘못된 행위를 할 수 있습니다.</p>
+      <p>
+	  <strong>T</strong>: Timeout (예, <code>T3</code>). 입력을 종료하고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 단어 Timeout을 설정하기 전에 기다릴 초의 개수. 입력 시간이 초과하면, <em>OutputVar</em>는 사용자가 그 동안 타자한 모든 것들이 설정됩니다. 이 값은 부동 소수점 수일 수 있습니다. 예를 들어 2.5.</p>
+      <p id="vis"><strong>V</strong>: Visible. 보통, 사용자의 입력을 막습니다 (시스템으로부터 숨습니다). 이 옵션을 사용하면 사용자의 키눌림을 활성 창에 전달할 수 있습니다.</p>
+      <p id="asterisk"><strong>*</strong>: Wildcard (아무데나 찾음). 보통, 사용자가 타자한 것은 정확하게 <em>MatchList</em> 문구 중 하나에 부합해야 일치가 일어납니다. 이 옵션을 사용하면 입력 테스트의 전체 길이를 검색해서 부합을 좀 더 많이 찾을 수 있습니다.</p>
+      <p id="E"><strong>E</strong> <span class="ver">[v1.1.20+]</span>: 키 코드가 아니라 문자 코드로 한-문자 종료 키를 처리합니다. 
+	  
+	  이렇게 하면  활성 창의 키보드 레이아웃이 스크립트의 키보드 레이아웃과 다를 경우 결과가 더 일관성이 있습니다.
+	  
+	  또한 실제로 주어진 종료 문자를 생성하지 않는 키 조합이 입력을 종료하지 못하도록 막습니다; 
+	  
+	  예를 들어, <code>@</code>가 종료 키이면, (E 옵션이 사용될 경우) US 레이아웃에서 Shift+2는 촉발되지만 Ctrl+Shift+2는 촉발되지 않습니다. <strong>C</strong> 옵션도 사용된다면, 종료 키는 대소문자를 구분합니다.</p>
+      </dd>
+
+  <dt>EndKeys</dt>
+  <dd><p>키로 구성된 리스트, 그 중에 하나가 눌리면 입력을 종료합니다 (<em>EndKey</em> 자체는 <em>OutputVar</em>에 씌여지지 않습니다). 입력이 이런 식으로 종료될 때, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 단어 EndKey 다음에 쌍점 그리고 <em>EndKey</em>이름이 설정됩니다. 예를 들어: <code>EndKey:.</code>, <code>EndKey:Escape</code>.</p>
+      <p>
+	  <em>EndKey</em> 리스트는 <a href="Send.htm">Send</a> 명령어와 비슷한 형식을 사용합니다. 예를 들어, <code>{Enter}.{Esc}</code>를 지정하면 ENTER, period (.), 또는 ESCAPE가 입력을 종료시킵니다. 활괄호 자체를 종료 키로 사용하려면, <code>{{}</code> 그리고/또는 <code>{}}</code>을 지정하십시오.</p>
+      <p>
+	  Control, Alt, 또는 Shift를 종료 키로 사용하려면, 그 키의 중립 버전이 아니라, 좌/우 버전을 사용하십시오. 
+	  예를 들어, <code>{Control}</code>가 아니라 <code>{LControl}{RControl}</code>로 지정하십시오.</p>
+      <p>
+	  Control-C (^c)와 같은 수식 키는 지원되지 않지만, 쉬프트 키를 함께 눌러야 하는 다른 문자들은 -- 즉, <code>?!:@&amp;{}</code>와 같은 구두점 -- v1.0.14+부터 지원됩니다. 
+	 다른 문자들은 v1.1.20+부터 위에 기술된 <code>E</code> 옵션으로 지원합니다. .</p>
+      <p>
+	 <code>{vkFF}</code>와 같이 명시적인 가상 키 보드도 역시 지정할 수 있습니다. 이것은 키에 이름도 없고 건네질 때 보이는 문자도 생산하지 않는 아주 희귀한 경우에 유용합니다. 그의 가상 키 코드는 다음과 같이 종료할 수 있습니다. 아래 <a href="../KeyList.htm#SpecialKeys">키 리스트 페이지</a>에 있는 단계를 따르십시오.</p>
+    </dd>
+
+  <dt>MatchList</dt>
+  <dd><p>키 문구를 쉼표로-가른 리스트. 이 문구에 부합하면 Input은 종료됩니다 (그 경우 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 단어 Match가 설정됩니다). 사용자가 타자한 모든 것은 정확하게 이 문구 중 하나에 부합해야 일치가 일어납니다 (단, <a href="#asterisk">* 옵션</a>이 있는 경우는 예외입니다). 게다가, <strong>구분 쉼표 둘레에 있는 스페이스나 탭은 의미가 있습니다</strong>. 즉, 부합 문자열의 일부가 됩니다. 예를 들어, <em>MatchList</em>가 &quot;ABC , XYZ &quot;이라면, 사용자가 ABC 뒤에 또는 XYZ 앞에 스페이스를 타자해야 부합이 일어납니다.</p>
+      <p>연속적으로 쉼표 두 개는 문자 그대로의 쉼표 하나가 결과입니다. 예를 들어, 다음은 문자열의 끝에 문자 그대로의 쉼표 하나를 생산합니다: <code>&quot;string1,,,string2&quot;</code>. 비슷하게, 다음 리스트는 오직 안에 문자 그대로의 쉽표를 가진 하나의 항목만 담습니다: <code>&quot;single,,item&quot;</code>.</p>
+    <p>
+	<em>MatchList</em> 안의 항목들은 개별적으로 취급하지 않기 때문에, 이 리스트를 완전히 한 변수 안에 담을 수 있습니다. 실제로, 그의 길이가 16383을 초과하면 전부 또는 일부를 변수에 담아야 합니다. 스크립트 줄의 최대 길이이기 때문입니다. 
+예를 들어, <em>MatchList</em>는 <code>%List1%,%List2%,%List3%</code>으로 구성될 수 있습니다 -- 여기에서 각 변수는 부합 문구의 방대한 부-리스트를 담고 있습니다.</p>
+    </dd>
+
+</dl>
+
+<h3>ErrorLevel</h3>
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 아무 매개변수 없이 호출되었는데 Input이 진행 중이지 않으면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<table class="info">
+  <tr>
+    <td width="15%"><p>1 또는 0</p></td>
+    <td width="85%"><p>이 명령어가 매개변수 없이 사용될 때마다, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 이전 입력이 성공적으로 종료하면 0이 설정되고, 아무 Input도 진행되지 않고 있으면 1이 설정됩니다.</p></td>
+  </tr>
+  <tr>
+    <td>NewInput</td>
+    <td>Input이 Input 명령어를 사용하는 또다른 <a href="../misc/Threads.htm">쓰레드</a>에 의하여 인터럽트 되었습니다.</td>
+  </tr>
+  <tr>
+    <td>Max</td>
+    <td>Input이 허용된 최대 길이에 도달하였습니다. 그리고 <em>MatchList</em> 안의 항목에 부합하지 못했습니다.</td>
+  </tr>
+  <tr>
+    <td>Timeout</td>
+    <td>Input 시간 제한 초과.</td>
+  </tr>
+  <tr>
+    <td>Match</td>
+    <td>Input이 <em>MatchList</em> 안의 항목 중 하나에 부합합니다.</td>
+  </tr>
+  <tr>
+    <td>EndKey:<em>name</em></td>
+    <td>
+      <p><em>EndKeys</em> 중 하나가 눌렸습니다. Input을 종료합니다. 이 경우, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 단어 EndKey가 담기고 다음에 쌍점 하나와 활괄호 없이 종료 키의 이름이 따라옵니다. 예, &quot;EndKey:Enter&quot;, &quot;EndKey:Escape&quot;, 등등.</p>
+      <p>
+	  <em>name</em>이 키의 "정규화 된" 이름임을 주목하십시오. <em>EndKeys</em>에 어떻게 씌여져 있는지는 상관이 없습니다. 예를 들어, {Esc} 그리고 {vk1B}는 모두 "ErrorLevel:Escape"를 생산합니다. <a href="../Functions.htm#GetKeyName">GetKeyName()</a>를 사용하면 정규화된 이름을 열람할 수 있습니다.</p>
+      <p>
+	  <a href="#E">E 옵션</a>이 사용되었다면, <em>name</em>은 타자되어 들어 온 실제 문자입니다. 그렇지 않으면, 키 이름은 스크립트의 활성 키보드 레이아웃에 따라 결정됩니다.</p>
+      <p>
+	  <span class="ver">[v1.1.20]</span> 이전에서, 종료 키의 VK 코드가 0x41 (A)부터 0x5A (Z) 까지의 범위에 있다면, ErrorLevel은 보통 그에 상응하는 ASCII 문자를 담았습니다. 현재 키보드 레이아웃에 올바른가 아닌가는 상관이 없었습니다. v1.1.20 이후로, 올바른 문자가 사용됩니다. A부터 Z 범위의 문자가 사용되면, 하위 호환을 위해 대문자가 사용됩니다; 그렇지 않으면 보통 소문자입니다.</p>
+    </td>
+  </tr>
+</table>
+<h3>논평</h3>
+<p>
+ Input이 이미 또다른 <a href="../misc/Threads.htm">쓰레드</a>에서 진행 중인 동안 이 명령어가 사용되면, 그 Input은 종료되고 그의 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 단어 NewInput이 설정됩니다. 그 이후 (매개변수가 주어지면), 새 Input이 시작됩니다.</p>
+<p>
+Input이 진행 중인 동안에, <a href="Menu.htm">맞춤 메뉴 항목</a>과 <a href="SetTimer.htm">타이머 서브루틴</a>과 같은 새 <a href="../misc/Threads.htm">쓰레드</a>를 여전히 생성할 수 있습니다. 비슷하게, Input이 <a href="#vis">보여도</a> 키보드 <a href="../Hotkeys.htm">핫키</a>도 여전히 효과가 있습니다. Input이 보이지 않는다면, 오직 <a href="_UseHook.htm">갈고리 핫키</a>만 촉발시킬 수 있습니다.</p>
+<p>
+스크립트가 처음으로 이 명령어를 사용할 때, (아직 설치되지 않았다면) <a href="_InstallKeybdHook.htm">키보드 갈고리</a>가 설치됩니다. 게다가, 이 스크립트는 <a href="_Persistent.htm">영속적</a>이 됩니다. 즉, <a href="ExitApp.htm">ExitApp</a>를 사용해야 종료할 수 있다는 뜻입니다. 키보드 갈고리는 다음 <a href="Suspend.htm">Suspend</a> 명령어나 <a href="Hotkey.htm">Hotkey</a> 명령어를 사용할 때까지 여전히 설치되어 있을 것입니다. 그 순간 핫키가 핫키가 요구하지 않으면 제거됩니다.</p>
+<p>
+여러 언어나 키보드 레이아웃을 사용한다면, Input은 스크립트가 아니라 활성 창의 키보드 레이아웃을 사용합니다 (Input이 <a href="#vis">보이는지</a> 여부에 상관이 없습니다). 그렇지만, 1.0.44.03 이전은 스크립트 자신의 라이아웃이 사용됩니다.</p>
+<p>
+그렇게 유연하지는 못하지만, <a href="../Hotstrings.htm">핫스트링</a>이 일반적으로 Input 명령어보다 더 사용하기 쉽습니다.</p>
+
+<h3>관련 항목</h3>
+<p><a href="KeyWait.htm">KeyWait</a>, <a href="../Hotstrings.htm">핫스트링</a>, <a href="InputBox.htm">InputBox</a>, <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>, <a href="../misc/Threads.htm">쓰레드</a>, <a href="IfIn.htm">if var in/contains MatchList</a></p>
+
+<h3>예제</h3>
+
+<pre class="NoIndent"><em>; 사용자가 키를 누르기를 기다립니다. 보이지 않는 문자를 생산하는 키들도 
+;  -- 예를 들어 수식 키, 함수 키 그리고 화살표 키도 --  
+; 종료 키(end keys)에 나열되므로 역시 탐지됩니다.</em>
+Input, SingleKey, L1, {LControl}{RControl}{LAlt}{RAlt}{LShift}{RShift}{LWin}{RWin}{AppsKey}{F1}{F2}{F3}{F4}{F5}{F6}{F7}{F8}{F9}{F10}{F11}{F12}{Left}{Right}{Up}{Down}{Home}{End}{PgUp}{PgDn}{Del}{Ins}{BS}{Capslock}{Numlock}{PrintScreen}{Pause}</pre>
+<p>&nbsp;</p>
+<pre class="NoIndent"><em>; 다음은 작동하는 핫키 예제입니다.
+; 핫키에 틸드 (~) 접두 심볼이 있으므로, 키 눌림이 활성 창까지 뚫고 전달됩니다.
+; 그래서, 편집기 안에서 [btw를 타자하면 (또는 기타 다른 부합하는 문구를 타자하면)
+; 스크립트는 자동으로 여러분이 지정한 행위를 수행합니다.
+; (예를 들어 타자된 텍스트를 교체합니다):</em>
+
+~[::
+Input, UserInput, V T5 L4 C, {enter}.{esc}{tab}, btw,otoh,fl,ahk,ca
+if (ErrorLevel = "Max")
+{
+    MsgBox, You entered &quot;%UserInput%&quot;, which is the maximum length of text.
+    return
+}
+if (ErrorLevel = "Timeout")
+{
+    MsgBox, You entered &quot;%UserInput%&quot; at which time the input timed out.
+    return
+}
+if (ErrorLevel = "NewInput")
+    return
+If InStr(ErrorLevel, "EndKey:")
+{
+    MsgBox, You entered &quot;%UserInput%&quot; and terminated the input with %ErrorLevel%.
+    return
+}
+<em>; 그렇지 않으면, 부합이 발견되었습니다.</em>
+if (UserInput = "btw")
+    Send, {backspace 4}by the way
+else if (UserInput = "otoh")
+    Send, {backspace 5}on the other hand
+else if (UserInput = "fl")
+    Send, {backspace 3}Florida
+else if (UserInput = "ca")
+    Send, {backspace 3}California
+else if (UserInput = "ahk")
+    Run, http://ahkscript.org
+return</pre>
+
+</body>
+</html>

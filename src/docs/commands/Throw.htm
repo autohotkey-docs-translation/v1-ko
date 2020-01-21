@@ -1,0 +1,70 @@
+
+
+<html>
+<head>
+<title>Throw</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>Throw <span class="ver">[v1.1.04+]</span></h1>
+
+<p>에러의 출현을 알려줍니다. 이 신호는 <a href="Try.htm">try</a>-<a href="Catch.htm">catch</a> 서술문으로 잡을 수 있습니다.</p>
+
+<pre class="Syntax">Throw [, Expression]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>Expression</dt>
+  <dd><p><a href="Catch.htm">catch</a>의 OutputVar에 저장할 값.</p>
+      <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>이기 때문에, 다음은 모두 유효한 예제입니다:</p>
+
+<pre>throw 3
+throw &quot;literal string&quot;
+throw MyVar
+throw i + 1
+throw { what: &quot;Custom error&quot;, file: A_LineFile, line: A_LineNumber } <em>; <a href="../objects/Object.htm">객체</a>를 던집니다.</em></pre>
+<p>
+이 매개변수는 언제나 표현식입니다. 그래서 변수 참조는 <a href="../FAQ.htm#percent">퍼센트 사인</a>으로 둘러싸면 안됩니다. 단, <a href="../Variables.htm#ref">double-deref</a>를 수행할 때는 예외입니다.</p>
+<p>
+<span class="ver">[v1.1.05+]:</span> 생략되면, 기본 메시지와 함께 <a href="#Exception">예외 객체</a>가 던져집니다.</p></dd>
+
+</dl>
+
+<h3 id="Exception">Exception(Message [, What, Extra])</h3>
+<p>
+다음 특성을 가진 객체를 만듭니다. 또한 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>가 만든 예외에 흔합니다:</p>
+<ul>
+  <li><strong>Message:</strong> 에러 메시지 또는<a href="../misc/ErrorLevel.htm">ErrorLevel</a> 값.</li>
+  <li><strong>What:</strong> 에러가 일어날 때 실행 중인 또는 실행될 함수나 라벨 또는 명령어의 이름.</li>
+  <li><strong>Extra:</strong> 에러에 관한 추가 정보.</li>
+  <li><strong>File:</strong> 에러가 일어난 줄이 있는 스크립트 파일의 전체 경로를 자동으로 설정됩니다.</li>
+  <li><strong>Line:</strong> 에러가 일어난 줄 번호를 자동으로 설정합니다.</li>
+</ul>
+<p>
+<em>What</em>이 생략되면, 현재 함수나 서브루틴의 이름이 기본값이 됩니다. 그렇지 않으면 문자열이거나 또는 호출 스택의 위쪽으로부터 아래로 음의 오프셋일 수 있습니다. 
+
+예를 들어, 값이 -1이면 <code>Exception.What</code>에 현재 함수나 서브루틴을 설정하고 <code>Exception.Line</code>에 그를 호출한 줄을 설정합니다. 그렇지만, 스크립트가 <a href="../Scripts.htm#ahk2exe">컴파일</a> 되었거나 오프셋이 유효하지 않으면, <em>What</em>은 그냥 문자열로 변환됩니다.</p>
+<p>
+<em>Message</em>와 <em>Extra</em>는 문자열로 변환됩니다. 이것들은 예외가 던져졌는데 잡지 못하면 에러 대화상자에 보여집니다.</p>
+
+<pre>try
+    BadlyCodedFunc()
+catch e
+    MsgBox % "Error in " e.What ", which was called at line " e.Line 
+
+BadlyCodedFunc() {
+    throw Exception("Fail", -1)
+}</pre>
+
+<h3>관련 항목</h3>
+<p><a href="Try.htm">Try</a>, <a href="Catch.htm">Catch</a>, <a href="Finally.htm">Finally</a></p>
+
+<h3>예제</h3>
+<p><a href="Try.htm#Examples">Try</a>를 참조하십시오.</p>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+
+<html>
+<head>
+<title>#Include</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>#Include / #IncludeAgain</h1>
+
+<p>스크립트는 마치 지정된 파일의 내용이 정확하게 이 위치에 존재하는 것처럼 행위합니다.</p>
+
+<pre class="Syntax">#Include FileOrDirName
+#Include &lt;LibName&gt;
+#IncludeAgain FileOrDirName</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>FileOrDirName</dt>
+  <dd><p>아래에 기술하는 바와 같이 파일이나 디렉토리의 경로. 겹따옴표나 와일드카드 또는 변수 참조가 <strong>포함되면</strong> 안됩니다. 단 <a href="../Variables.htm#ScriptDir">%A_ScriptDir%</a>, <a href="../Variables.htm#AppData">%A_AppData%</a>, <a href="../Variables.htm#AppDataCommon">%A_AppDataCommon%</a> 그리고 (v1.1.11+ 전용) <a href="../Variables.htm#LineFile">%A_LineFile%</a>와 같은 변수 참조는 제외합니다. <a href="_EscapeChar.htm">피신 연속열</a>은 쌍점 (<strong>`;</strong>)을 제외하고 사용하면 안됩니다. 퍼센트 기호 같은 문자들을 문자 그대로 취급하기 때문에 필요하지도 않습니다.</p>
+    <p>
+	<strong>File:</strong> 삽입될 파일의 이름.. 절대 경로를 지정하지 않으면 기동/작업 디렉토리에 있다고 간주합니다 (<a href="../Scripts.htm#ahk2exe">ahk2exe</a>는 제외합니다. 파일이 스크립트의 디렉토리에 있다고 간주합니다). 주의: <a href="SetWorkingDir.htm">SetWorkingDir</a>는 #Include에 영향을 주지 않습니다. 왜냐하면 #Include를 처리 한 후에 스크립트가 실행을 시작하기 때문입니다.</p>
+      <p>
+	  <strong>Directory:</strong> 파일 대신에 디렉토리를 지정하여 작업 디렉토리를 변경합니다. 이어 나타나는 모든 #Include 그리고 <a href="FileInstall.htm">FileInstall</a>이 이 디렉토리를 사용합니다. 주의: 이런 식으로 작업 디렉토리를 변경하더라도 스크립트가 실행을 시작할 때의 최초 작업 디렉토리에는 영향을 미치지 않습니다 (<a href="../Variables.htm#WorkingDir">A_WorkingDir</a>). 이를 바꾸려면 스크립트의 상단에서 <a href="SetWorkingDir.htm">SetWorkingDir</a>을 지정하십시오.</p></dd>
+
+  <dt>LibName</dt>
+  <dd><p><span class="ver">[AHK_L 57+]:</span> 라이브러리 파일이나 함수 이름. 예를 들어, <code>#include &lt;lib&gt;</code> 그리고 <code>#include &lt;lib_func&gt;</code>는 둘 다 <a href="../Functions.htm#lib">함수 라이브러리 폴더</a> 중 하나로부터 lib.ahk을 포함합니다.</p></dd>
+
+</dl>
+<h3>논평</h3>
+<p>
+스크립트는 마치 포함된 파일의 내용이 (마치 복사해 붙여 넣기 한 것처럼) 물리적으로 정확하게 #Include 지시어의 위치에 존재하는 것처럼 행위합니다. 결과적으로, 두 개의 분리된 스크립트를 하나로 기능하는 스크립트로 병합할 수 없습니다 (그렇게 하려면, <a href="http://www.autohotkey.com/forum/topic18545.html">www.autohotkey.com/forum/topic18545.html</a>를 참조하십시오).</p>
+<p>#Include는 <em>FileName</em>을 여러 번 포함시켜도 오직 한 번만 포함된다고 확인해 줍니다. 대조적으로, #IncludeAgain은 같은 파일을 여러 번 포함할 수 있습니다. 하지만 모든 면에서 #Include와 똑 같습니다.</p>
+<p>
+<em>FileName</em> 매개변수는 선택적으로 앞에 *i와 하나의 스페이스를 둘 수 있습니다. 그러면 프로그램은 포함된 파일을 읽는데 실패하더라도 무시합니다. 예를 들어: <code>#Include *i SpecialOptions.ahk</code>. 이 옵션은 포함된 파일의 내용이 메인 스크립트의 연산에 별로 중요하지 않을 경우에만 사용해야 합니다.</p>
+<p>
+메인 창에 <a href="ListLines.htm">ListLines</a>이나 View-&gt;Lines 메뉴를 통하여 보여지는 줄들은 언제나 자신의 파일 안에서 물리적 순서에 맞게 번호가 매겨집니다. 다른 말로, 새 파일을 포함하면 메인 스크립트의 파일의 줄 번호가 한 줄 만큼만 변경됩니다. 즉, #Include 줄 자체 만큼 변경됩니다 (<a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>는 제외합니다. 포함 파일을 하나의 거대한 스크립트로 컴파일 시간에 병합하기 때문입니다).</p>
+<p>
+#Include는 종종 외부 파일에 정의된 <a href="../Functions.htm">함수</a>를 적재하는 데 사용됩니다. 서브루틴의 라벨과 다르게, <a href="../Functions.htm">함수</a>는 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에 영향을 주지 않고 스크립트 맨 꼭대기에 포함할 수 있습니다.</p>
+<p>
+다른 # 지시어처럼, #Include는 조건적으로 실행할 수 없습니다. 다른 말로, 다음 예제는 작동하지 않습니다:</p>
+<pre>if x = 1
+    #Include SomeFile.ahk  <em>; 이 줄은 x의 값에 관계 없이 효과가 있습니다.</em>
+    y = 2  <em>; 그리고 이 줄은 위의 IF에 속합니다. 왜냐하면 # 지시어는  IF에 속할 수 없기 때문입니다.</em></pre>
+<p>
+이름으로 <a href="../Functions.htm#lib">라이브러리 함수</a>를 호출하면 파일을 자동으로 포함할 수 있습니다 (즉, #Include를 사용할 필요가 없습니다).</p>
+<p>
+<span class="ver">[v1.1.11+]:</span> <code>%A_LineFile%\..</code>를 사용하면 현재 파일이 담긴 디렉토리를 참조할 수 있습니다. 메인 스크립트 파일이 아니더라도 상관이 없습니다. 예를 들어, <code>#Include %A_LineFile%\..\other.ahk</code>.</p>
+
+<h3>관련 항목</h3>
+<p><a href="../Functions.htm#lib">라이브러리 함수</a>, <a href="../Functions.htm">Functions</a>, <a href="FileInstall.htm">FileInstall</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">#Include C:\My Documents\Scripts\Utility Subroutines.ahk
+#Include %A_ScriptDir%  <em>; 다음에 오는 #Includes과 FileInstalls을 위해작업 디렉토리를 변경합니다.</em>
+#Include C:\My Scripts  <em>; 위와 같지만 명시적으로 이름을 지정한 디렉토리를 위해 변경합니다.</em></pre>
+
+</body>
+</html>

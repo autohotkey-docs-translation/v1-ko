@@ -1,0 +1,181 @@
+
+
+<html>
+<head>
+<title>RegisterCallback</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>RegisterCallback() <span class="ver">[v1.0.47+]</span></h1>
+
+<p>머신-코드 주소를 생성합니다. 이 주소는 호출될 때, 스크립트의 <a href="../Functions.htm">함수</a>로 방향전환 합니다.</p>
+
+<pre class="Syntax">Address := RegisterCallback(&quot;FunctionName&quot; [, Options = &quot;&quot;, ParamCount = FormalCount, EventInfo = Address])</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>Address</dt>
+  <dd><p>성공하면, RegisterCallback()은 숫치 주로를 돌려줍니다. 이 주소를 <a href="DllCall.htm">DllCall()</a> 또는 기타 머신-코드 함수를 호출할 수 있는 다른 함수가 호출할 수 있습니다. 실패하면, 빈 문자열을 돌려줍니다. 실패가 일어나는 경우는 <em>FunctionName</em>이: 
+  <ol>
+	<li>존재하지 않을 경우;
+	<li><em>ParamCount</em> 보다 너무 많거나 너무 적게 매개변수를 받은 경우;
+	<li>또는 <a href="../Functions.htm#ByRef">ByRef 매개변수</a>를 받은 경우입니다.
+  </ol>
+</p></dd>
+
+  <dt>FunctionName</dt>
+  <dd>
+      <p><a href="../Functions.htm">함수</a>의 이름입니다. 기호 그대로의 문자열일 경우 반드시 따옴표로 둘러 싸야 합니다. 이 함수는 <em>Address</em>가 호출될 때마다 자동으로 호출됩니다. 함수는 또 <em>Address</em>에 건네어진 매개변수들도 받습니다.</p>
+      <p><span class="ver">[v1.1.06+]:</span> 함수 이름 대신에 <a href="../objects/Func.htm">함수 참조</a>를 건넬 수 있습니다.</p>
+    </dd>
+
+  <dt>Options</dt>
+  <dd><p>0개 이상의 다음 단어들을 지정합니다. 각 옵션은 다음 옵션과 스페이스로 구분하십시오 (예, <code>C Fast</code>).</p>
+    <p><strong><a name="Fast" id="Fast"></a>Fast</strong> 또는 <strong>F</strong>: <em>FunctionName</em>이 호출될 때마다 새  <a href="../misc/Threads.htm">쓰레드</a>가 시작하는 것을 피합니다. 비록 수행성능은 좋아지지만, <em>Address</em>로 호출되는 쓰레드가 달라질 경우는 (예, 들어오는 메시지에 의하여 역호출이 촉발될 때는) 피해야 합니다. 왜냐하면 호출되는 순간에 쓰레드가 실행되는 경우 <em>FunctionName</em>이  <a href="../misc/ErrorLevel.htm">ErrorLevel</a>, <a href="../Variables.htm#LastError">A_LastError</a>, 그리고 <a href="../misc/WinTitle.htm#LastFoundWindow">마지막으로-발견된 창</a>과 같이 전역 설정을 바꾸어 버릴 위험이 있기 때문입니다. 더 자세한 정보는 <a href="#Threads">논평</a>을 보십시오.</p>
+    <p><strong>CDecl</strong> 또는 <strong>C</strong>: <em>Address</em>가 &quot;C&quot; 호출 관례를 따르도록 만듭니다. 이는 전형적으로 생략됩니다. 왜냐하면 표준 호출 관례가 훨씬 더 많이 역호출에 사용되기 때문입니다.</p></dd>
+
+  <dt>ParamCount</dt>
+  <dd><p>매개변수의 개수입니다. <em>Address</em>의 호출자가 건넵니다. 전부 생략하면, 기본값은 <em>FunctionName</em>에 <a href="../Functions.htm#define">정의</a>된 필수 매개변수의 개수입니다. 어느 경우든, 호출자가 정확하게 이 개수의 매개변수를 건네는지 확인하십시오.</p></dd>
+
+  <dt>EventInfo</dt>
+  <dd>
+      <p><em>FunctionName</em>이 <em>Address</em>를 통하여 호출될 때마다 <a href="../Variables.htm#EventInfo">A_EventInfo</a>에서 보게될 정수입니다. <em>FunctionName</em>이 하나 이상의 <em>Address</em>로 호출될 때 유용합니다. 생략되면, 기본값은 <em>Address</em>입니다. 주의: 다른 전역 설정과 다르게, <a href="../misc/Threads.htm">현재 쓰레드</a>의 A_EventInfo는 <a href="#Fast">빠른 모드</a>에 영향을 받지 않습니다.</p>
+      <p>
+	  스크립트를 실행하는 파일이 32-비트이면, 이 매개변수는  0부터 4294967295 사이의 값입니다.  64비트이면, 이 매개변수는 64-비트 정수입니다. <a href="../Variables.htm#EventInfo">A_EventInfo</a>는 보통 부호없는 정수를 돌려주지만, 오토핫키는 부호없는 64-비트 정수를 완벽하게 지원하지 못합니다. 그래서 어떤 연산은 그 값을 부호있는 정수에 싸서 돌려주기도 합니다.</p></dd>
+
+</dl>
+
+<h3>역호출 함수의 매개변수</h3>
+<p>
+역호출 주소에 할당된 <a href="../Functions.htm">함수</a>는 매개변수를 31개까지 받을 수 있습니다. <a href="../Functions.htm#optional">선택적 매개변수</a>를 허용합니다. 이는 함수가 여러 호출자에게 호출될 때 유용합니다.</p>
+<p>
+매개변수를 올바르게 번역하려면 x86 호출 관례의 작동 방식을 이해해야 합니다. 오토핫키는 매개변수가 유형이 정의되지 않으므로, 역호출 함수의 매개변수 리스트는 정수로 구성되어 있다고 간주됩니다. 그리고 약간의 재번역이 요구됩니다.</p>
+
+<p><strong>AutoHotkey 32-bit:</strong> 들어오는 모든 매개변수는 32-비트 정수입니다. 더 작은 유형은 32비트에 맞게 패드를 덧댑니다. 반면에 더 큰 유형은 두 개의 32 비트 매개변수로 쪼개어집니다.</p>
+<p>
+들어오는 매개변수가 부호있는 정수를 의도하면, 음의 정수는 다음 예제 중 하나로 노출시킬 수 있습니다:</p>
+<pre><em>; 방법 #1</em>
+if wParam > 0x7FFFFFFF
+    wParam := -(~wParam) - 1
+
+<em>; 방법 #2: 오토핫키가 근본적으로 부호 있는 64-비트 정수를 사용한다는 사실에 의존합니다.</em>
+wParam := wParam &lt;&lt; 32 &gt;&gt; 32</pre>
+
+<p><strong>AutoHotkey 64-bit:</strong> 들어오는 모든 매개변수는 부호있는 64-비트 정수입니다. 오토핫키는 부호없는 64-비트 정수를 지원하지 않습니다. 더 작으면 64 비트까지 패드가 덧대어지고, 더 크면 언제나 주소로 건네집니다.</p>
+
+<p><strong>AutoHotkey 32-bit/64-bit:</strong> 들어오는 매개변수가 8-비트 또는 16-비트를 의도한다면 (또 x64 머신에서는 32-비트 ), 값의 상위 비트들은  "쓰레기"로 채워집니다. 이 쓰레기들은 비트별-and 연산으로 다음 예제와 같이 여과할 수 있습니다:</p>
+<pre>Callback(UCharParam, UShortParam, UIntParam) {
+    UCharParam &amp;= 0xFF
+    UShortParam &amp;= 0xFFFF
+    UIntParam &amp;= 0xFFFFFFFF
+    <em>;...</em>
+}</pre>
+<p>
+들어오는 매개변수가 그의 호출자에게 문자열이기를 의도한다면, 실제로 받는 것은 그 문자열의 주소입니다. 문자열 자체를 받으려면 <a href="StrPutGet.htm">StrGet</a>을 사용하십시오:</p>
+<pre>MyString := StrGet(MyParameter)  <em>; AHK_L 46+</em></pre>
+<p>
+들어오는 매개변수가 구조체의 주소이면, 각 멤버들은 다음 <a href="DllCall.htm#struct">DllCall 구조</a>의 단계를 따라 추출합니다.</p>
+
+<p id="Indirect"><strong>주소로 매개변수 받기</strong> <span class="ver">[AHK_L 60+]</span>: 함수가 <a href="../Functions.htm#Variadic">가변함수</a>로 선언되어 있으면, 그의 마지막 매개변수는 역호출 함수의 첫 매개변수 <i>주소</i>에 할당됩니다.  스크립트 매개변수에 할당되지 않습니다. 예를 들어:</p>
+<pre>
+callback := RegisterCallback("TheFunc", "F", 1)  <em>; 매개변수 개수를 명시해야 합니다.</em>
+TheFunc("TheFunc was called directly.")          <em>; 직접 TheFunc를 호출합니다.</em>
+DllCall(callback, float, 10.5, int64, 42)        <em>; 역호출을 통하여 TheFunc를 호출합니다.</em>
+TheFunc(params*) {
+    if IsObject(params)
+        MsgBox % params[1]
+    else
+        MsgBox % <a href="NumGet.htm">NumGet</a>(params+0, "float") ", " NumGet(params+A_PtrSize, "int64")
+}</pre>
+<p>
+대부분의 역호출함수는 <i>stdcall</i> 호출 관례를 사용합니다. 이 관례는 고정된 개수의 매개변수를 요구합니다. 그러므로, 역호출이 생성될 때 <i>ParamCount</i>를 지정해야 합니다.  64-비트 빌드에서는 <i>ParamCount</i>를 생략할 수 있고 32-비트 빌드는 <i>Cdecl</i> 역호출을 사용합니다 - 그런 경우 모든 선택적인 매개변수는 기본 값을 받고 <i>params</i>에 저장하기 위해 주소를 계산하기 위한 목적으로는 무시됩니다.</p>
+
+<h3>함수는 무엇을 돌려주어야 하는가(<em>Return</em>)</h3>
+<p>
+함수가 매개변수 없이 <a href="Return.htm">Return</a>을 사용하거나, &quot;&quot;와 같이 빈 값을 지정하면 (또는 전혀 Return을 사용하지 않으면), 0이 역호출의 호출자에게 반환됩니다. 그렇지 않으면, 함수는 정수를 반환해야 합니다. 이 값은 그러면 호출자에게 반환됩니다. 오토핫키 32-비트는 반환 값을 32-비트로 잘라냅니다. 반면에 오토핫키 64-비트는 64-비트 반환값을 지원합니다. 이 보다 큰 값을 (값으로) 반환하는 것은 지원하지 않습니다.</p>
+
+<h3 id="Threads">빠르게 vs. 느리게</h3>
+<p>
+기본/느리게 모드에서 함수는 <a href="SendMode.htm">SendMode</a> 그리고 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>와 같은 설정에 대하여 기본 값으로 새롭게 시작합니다. 이 기본값들은  <a href="../Scripts.htm#auto">자동-실행 섹션</a>에서 바꿀 수 있습니다 .</p>
+<p>
+대조적으로, <a href="#Fast">빠른 모드</a>는 함수가 호출되는 순간에 우연하게 실행중인 <a href="../misc/Threads.htm">쓰레드</a>로부터 전역 설정을 물려받습니다. 게다가, 함수가 전역 설정에 가하는 모든 변경은  (<a href="../misc/ErrorLevel.htm">ErrorLevel</a> 그리고 <a href="../misc/WinTitle.htm#LastFoundWindow">마지막으로-발견된 창</a>을 포함하여) <a href="../misc/Threads.htm">현재 쓰레드</a> 안으로 영향을 줍니다. 결과적으로, 빠른 모드는 정확하게 어느 쓰레드로부터 함수가 호출되는지 알 경우에만 사용해야 합니다.</p>
+<p>
+자기 자신 (또는 다른 쓰레드)로부터 인터럽트되지 않으려면, 역호출함수는 자신의 첫 줄에 <a href="Critical.htm">임계값(Critical)</a>을 사용해야 합니다. 그렇지만, 이것이 완전하게 효과가 있는 것은 아닙니다. 함수가 0x312 보다 작은 메시지의 도착을 통하여 간접적으로 호출될 때는 효력을 미치지 못합니다 (Critical의 <a href="Critical.htm#Interval">간격</a>을 증가시키면 도움이 될 수 있습니다). 
+
+게다가, <a href="Critical.htm">임계값(Critical)</a>으로는 함수가 간접적으로 자신을 호출하는 결과가 되는 것을 막지 못합니다. 예를 들어 <a href="PostMessage.htm">SendMessage</a>이나 <a href="DllCall.htm">DllCall</a>를 호출하는 것을 막을 수 없습니다.</p>
+
+<h3>메모리</h3>
+<p>
+RegisterCallback()을 사용할 때마다 작은 메모리가 할당됩니다 (32 바이트에다 약간의 시스템 오버헤드). OS는 스크립트가 종료할 때 이 메모리를 자동으로 해제하기 때문에 , 스크립트가 작은, <em>고정 개수</em>의 역호출을 등록한다면 명시적으로 메모리를 해제할 필요가 없습니다. 대조적으로, 스크립트가 RegisterCallback()을 무제한/끝없이 호출한다면 명시적으로 다음과 같이 사용되지 않는 역호출 함수를 호출해야 합니다:</p>
+<pre>DllCall(&quot;GlobalFree&quot;, &quot;Ptr&quot;, Address, &quot;Ptr&quot;)</pre>
+
+<h3>관련 항목</h3>
+<p><a href="DllCall.htm">DllCall()</a>, <a href="OnMessage.htm">OnMessage()</a>, <a href="OnExit.htm">OnExit</a>, <a href="OnClipboardChange.htm">OnClipboardChange</a>, <a href="Sort.htm#callback">Sort의 역호출</a>, <a href="Critical.htm">Critical</a>, <a href="PostMessage.htm">Post/SendMessage</a>, <a href="../Functions.htm">함수</a>, <a href="../misc/SendMessageList.htm">윈도우즈 메시지 리스트</a>, <a href="../misc/Threads.htm">쓰레드</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent"><em>; 예제: 다음 예제는 작동하는 스크립트로서 모든 최상위 창의 정보를 요약해 보여줍니다.</em>
+
+<em>; 수행성능과 메모리 보전을 위해, 주어진 역호출에 대해서 RegisterCallback()을 한 번만 호출합니다:</em>
+if not EnumAddress  <em>; 빠른-모드는 이 쓰레드에서만 호출되기 때문에 괜찮습니다:</em>
+    EnumAddress := <strong>RegisterCallback</strong>(&quot;EnumWindowsProc&quot;, &quot;Fast&quot;)
+
+DetectHiddenWindows On  <em>; 빠른 모드 때문에, 이 설정은 역호출에게도 영향을 미칩니다.</em>
+
+<em>; 제어를 EnumWindows()에게 건넵니다. 이 함수는 반복적으로 역호출을 호출합니다:</em>
+DllCall(&quot;EnumWindows&quot;, Ptr, EnumAddress, Ptr, 0)
+MsgBox %Output%  <em>; 역호출이 축적한 정보를 보여줍니다.</em>
+    
+EnumWindowsProc(hwnd, lParam)
+{
+    global Output
+    WinGetTitle, title, ahk_id %hwnd%
+    WinGetClass, class, ahk_id %hwnd%
+    if title
+        Output .= &quot;HWND: &quot; . hwnd . &quot;`tTitle: &quot; . title . &quot;`tClass: &quot; . class . &quot;`n&quot;
+    return true  <em>;  EnumWindows()에게 모든 창이 열거될 때까지 계속하라고 명령합니다.</em>
+}</pre>
+<p>&nbsp;</p>
+<pre class="NoIndent"><em>; 예제: 다음 작동하는 스크립트로서 GUI 창을 상속받는 법을 보여줍니다.
+; 그의WindowProc을 스크립트의 새 WindowProc으로 방향 전환합니다. 
+; 이 경우, 텍스트 콘트롤의 배경색은 맞춤 색으로 바뀝니다.</em>
+
+TextBackgroundColor := 0xFFBBBB  <em>; BGR 포맷의 맞춤 색.</em>
+TextBackgroundBrush := DllCall(&quot;CreateSolidBrush&quot;, UInt, TextBackgroundColor)
+
+Gui, Add, Text, HwndMyTextHwnd, Here is some text that is given`na custom background color.
+Gui +LastFound
+GuiHwnd := WinExist()
+
+<em>; 64-비트 스크립트는 SetWindowLong 대신에 SetWindowLongPtr를 호출해야 합니다:</em>
+SetWindowLong := A_PtrSize=8 ? "SetWindowLongPtr" : "SetWindowLong"
+
+WindowProcNew := <strong>RegisterCallback</strong>(&quot;WindowProc&quot;, &quot;&quot;  <em>; &quot;&quot;를 지정하여 상속을 받는데 빠른-모드를 회피합니다.</em>
+    , <strong>4</strong>, MyTextHwnd)  <em>; EventInfo 매개변수가 존재하면 정확하게 ParamCount를 지정해야 합니다.</em>
+WindowProcOld := DllCall(SetWindowLong, Ptr, GuiHwnd, Int, -4  <em>; -4 is GWL_WNDPROC</em>
+    , Ptr, WindowProcNew, Ptr) <em>; 반환값은  Ptr 또는 UPtr vs. Int으로 설정해야 합니다.</em>
+
+Gui Show
+return
+
+WindowProc(hwnd, uMsg, wParam, lParam)
+{
+    Critical
+    global TextBackgroundColor, TextBackgroundBrush, WindowProcOld
+    if (uMsg = 0x138 &amp;&amp; lParam = A_EventInfo)  <em>; 0x138 is WM_CTLCOLORSTATIC.</em>
+    {
+        DllCall(&quot;SetBkColor&quot;, Ptr, wParam, UInt, TextBackgroundColor)
+        return TextBackgroundBrush  <em>; HBRUSH을 돌려주어 OS에게 HDC를 변경했다고 알립니다.</em>
+    }
+    <em>; 그렇지 않으면 (위가 반환되지 않았기 때문에), 처리되지 않은 모든 이벤트를 원래의 WindowProc에 건넵니다.</em>
+    return DllCall(&quot;CallWindowProc&quot;, Ptr, WindowProcOld, Ptr, hwnd, UInt, uMsg, Ptr, wParam, Ptr, lParam)
+}
+
+GuiClose:
+ExitApp</pre>
+
+</body>
+</html>

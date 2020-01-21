@@ -1,0 +1,95 @@
+
+
+<html>
+<head>
+<title>ImageSearch</title>
+<meta name="description" content="Use ImageSearch in this free macro program to search the screen for an ICO, BMP, or PNG image. Send keystrokes or mouse clicks in response.">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>ImageSearch</h1>
+
+<p>화면 한 구역에서 이미지를 검색합니다.</p>
+
+<pre class="Syntax">ImageSearch, OutputVarX, OutputVarY, X1, Y1, X2, Y2, ImageFile</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>OutputVarX/Y</dt>
+  <dd><p>화면에서 이미지가 발견된 좌상 픽셀의 X와 Y 좌표를 저장할 변수의 이름 (일치가 발견되지 않으면, 변수는 비워집니다). 좌표는 활성창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>가 사용되는 좌표 체계를 바꾼 경우는 예외입니다.</p>
+    <p>이 매개변수가 비어 있는 경우가 있습니다. 그러면 ErrorLevel (아래 참조)를 사용하여 일치가 발견되었는지 알아낼 수 있습니다.</p></dd>
+
+  <dt>X1,Y1</dt>
+  <dd><p>검색할 사각형의 좌상 X와 Y 좌표, <a href="../Variables.htm#Expressions">표현식</a> 가능. <strong>좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>가 사용되어 좌표 체계를 바꾼 경우는 예외입니다.</strong></p></dd>
+
+  <dt>X2,Y2</dt>
+  <dd><p>검색할 사각형의 우하 모서리 X와 Y 좌표, <a href="../Variables.htm#Expressions">표현식</a> 가능. 좌표는 활상 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>가 사용되어 좌표 체계를 바꾼 경우는 예외입니다.</p></dd>
+
+  <dt>ImageFile</dt>
+  <dd><p>이미지의 파일 이름, 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 모든 운영 체제는 GIF, JPG, BMP, ICO, CUR, 그리고 ANI 이미지를 지원합니다 (BMP 이미지는 반드시 16-비트 이상이어야 합니다). 다른 아이콘 자원으로는 다음 파일 유형이 포함됩니다: EXE, DLL, CPL, SCR, 그리고 기타 아이콘 자원을 포함한 유형들. Windows XP 이상에서, 추가 이미지 포맷으로 PNG, TIF, Exif, WMF, 그리고 EMF가 지원됩니다. 운영 체제가 XP 미만이면 Microsoft사의 무료 GDI+ DLL을 AutoHotkey.exe 폴더 안으로 복사해 넣을 수 있습니다 (그러나 <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>의 경우라면, 그 DLL을 스크립트의 폴더 안으로 복사해 넣으십시오). 그 DLL을 내려 받으려면, 다음 문구를 <a href="http://www.microsoft.com">www.microsoft.com</a>에 넣고 검색해 보십시오: <code>gdi redistributable</code></p>
+      <p><strong>Options</strong>: 다음 문자열이 오고 다음에 바로 이미지 파일 이름이 따라옵니다. 각 옵션은 다음 옵션과 사이에 하나의 스페이스나 탭으로 구분하십시오. 예를 들어: <code>*2 *w100 *h-1 C:\Main Logo.bmp</code>.</p>
+      <p><strong>*IconN</strong>: 파일에서 첫 번째 아이콘 말고 아이콘 그룹을 사용하려면, <code>*Icon</code>과 다음에 바로 그룹의 번호를 지정하십시오. 예를 들어, <code>*Icon2</code>이면 두 번째 아이콘 그룹으로부터 기본 아이콘이 적재됩니다.</p>    
+    <p>
+	<strong>*n</strong> (변형): <strong>n</strong>에  0부터 255 (포함) 사이의 숫자를 지정하면, 차원에 상관없이 각 필셀 컬러의 적녹청 요소의 채도에 대하여 허용된 쉐이드 변형의 개수를 나타낼 수 있습니다. 예를 들어, <code>*2</code>이면 두 개의 쉐이드 변형을 허용합니다. 이 매개변수는 이미지의 컬러가 조금씩 바뀔 경우 또는 <em>ImageFile</em>이  GIF나 JPG 같은 포맷을 사용할 경우 도움이 됩니다. 이 포맷은 화면에 이미지를 정확하게 나타내지 못합니다. 255 쉐이드 변형을 지정하면, 모든 색이 부합합니다. 기본 값은 0 쉐이드입니다.</p>
+    <p>
+	<strong>*TransN</strong>: 이 옵션을 이용하면 더 쉽게 부합을 찾아낼 수 있습니다. 이미지 안에서 화면 안의 어느 컬러에도 부합할 한 컬러를 지정하면 됩니다. 투명 구역이 있는 PNG, GIF, 그리고 TIF 파일을 찾는 데 아주 자주 사용됩니다 (그렇지만, 아이콘은 이 옵션이 필요 없습니다. 왜냐하면 아이콘의 투명색은 자동으로 지원되기 때문입니다). GIF 파일에 대하여, <code>*TransWhite</code>이면 거의 대부분 작동할 것입니다. PNG와 TIF 파일에 대하여, <code>*TransBlack</code>가 제일 좋을 것입니다. 그렇지 않으면, <strong>N</strong>에 다른 어떤 컬러 이름 또는 RGB 값을 지정하십시오 (가이드는 <a href="Progress.htm#colors">컬러 차트</a>를 참조하십시오. 아니면 RGB 모드로 <a href="PixelGetColor.htm">PixelGetColor</a>를 사용하십시오 ). 예제: <code>*TransBlack</code>, <code>*TransFFFFAA</code>, <code>*Trans0xFFFFAA</code>.</p>    
+    <p>	
+	<strong>*wn</strong> and <strong>*hn</strong>: 이미지 크기를 조절할 너비와 높이 	
+	(이 너비와 높이는 또 여러-아이콘 .ICO 파일로부터 어느 아이콘을 적재할지 결정하기도 합니다.). 이 두 옵션을 모두 생략하면, ICO, DLL, 또는 EXE 파일로부터 적재된 아이콘은 시스템의 기본 소형-아이콘 크기로 조절됩니다. 보통 이는 16 x 16 입니다 (<code>*w0 *h0</code>를 지정하면 강제로 실제의/내부의 크기를 사용하도록 만들 수 있습니다.). 아이콘이 아닌 이미지는 그의 실제 크기로 적재됩니다. 이 이미지를 그의 가로 세로 비율을 유지한 채 늘리거나 줄이려면,  한 차원에 -1을 지정하고 다른 차원에는 양수를 지정하십시오.	예를 들어, <code>*w200 *h-1</code>을 지정하면 이미지가 200 픽셀 너비가 되며 그의 높이는 자동으로 설정됩니다.</p></dd>
+
+</dl>
+
+<h3>ErrorLevel</h3>
+<p>
+<span class="ver">[v1.1.04+]</span> 이 명령어는 검색하는 동안 문제가 있다면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p>
+<a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 이미지를 지정된 구역 안에서 발견하면 0이 설정되고, 발견하지 못하면 1이 설정됩니다. 아니면 이 명령어가 검색을 수행하지 못하도록 막는 문제가 있었다면 2가 설정됩니다 (예를 들어 이미지 파일을 열지 못하거나 포맷 옵션이 심하게 잘못되었을 경우).</p>
+
+<h3>논평</h3>
+<p>
+ImageSearch를 사용하면 화면에서 그래픽 객체를 탐지할 수 있습니다. 그래픽 객체는 텍스트가 없으며 있다고 하더라도 쉽게 탐지하기가 어렵습니다. 예를 들어, 그림 버튼, 아이콘, 웹 페이지 링크, 또는 게임 객체의 위치를 알아내는 데 사용할 수 있습니다. 일단 발견되면, 그런 객체는 <a href="Click.htm">Click</a>을 통하여 클릭할 수 있습니다.</p>
+<p>종종 유용한 전략이 있습니다. 전체 이미지보다 이미지의 작은 구역만 떼어내 검색하는 것이 더 유용합니다. 이렇게 하면 이미지가 전체적으로 바뀌지만, 그 안에서 어떤 부분은 언제나 같은 경우, 신뢰성을 개선할 수 있습니다. 클립핑 구역을 추출하는 한 가지 방법은 다음과 같습니다:</p>
+<ol>
+  <li>이미지가 활성 창에 보이는 동안 Alt+PrintScreen를 누릅니다. 이렇게 하면 화면의 찰칵그림이 클립보드에 저장됩니다.</li>
+  <li>Paint와 같은 이미지 처리 프로그램을 엽니다.</li>
+  <li>클립보드의 내용을 붙여 넣습니다 (즉, 위의 찰칵그림).</li>
+  <li>그 이미지만 가지는 변하지 않고 유일한 구역을 선택합니다.</li>
+  <li>그 구역을 새 이미지 문서에 복사해 붙여 넣습니다.</li>
+  <li>ImageSearch에 사용하기 위해 작은 파일로 저장합니다.</li>
+</ol>
+<p>
+일치가 되려면, 화면 위의 이미지는 <em>ImageFile</em> 매개변수와 그의 옵션을 통하여 적재된 이미지와 크기가 같아야 합니다.</p>
+<p>
+검색될 구역은 반드시 보여야 합니다; 다른 말로, 다른 창 뒤에 가려진 창의 구역은 검색할 수 없습니다. 대조적으로, 마우스 커서 아래에 부분적으로 가려진 이미지는 보통 탐지가 가능합니다. 이에 대한 예외는 게임 커서입니다. 게임 커서는 대부분의 경우 그 아래에 있는 이미지를 덮어버립니다.</p>
+<p>
+검색은 구역의 위쪽에서 시작해 아래로 내려오므로, 여러 개가 부합할 경우, 위쪽에 가까운 부합이 발견됩니다.</p>
+<p>
+투명색을 포함한 아이콘은 자동으로 그 투명 컬러가 화면 위의 어떤 컬러와도 부합하도록 허용합니다. 그러므로, 아이콘 뒤에 있는 색은 문제가 되지 않습니다.</p>
+<p>
+ImageSearch는 8-비트 컬러 화면 (256-컬러) 이상을 지원합니다.</p>
+<p>
+검색 행위는 디스플레이 어댑터의 컬러 깊이에 따라 달라질 수 있습니다 (특히 GIF 파일과 JPG 파일). 그러므로, 스크립트를 다중 컬러 깊이에서 실행하려면, 각각의 깊이 설정에 테스트해 보는 것이 제일 좋습니다. 쉐이드 변형 옵션 (*n)을 사용하면 다중 컬럼 깊이에 걸쳐서 그 행위를 일관성이 있게 만드는 데 도움이 됩니다.</p>
+<p>
+화면 위에서 이미지가 반투명이라면, 아마도 ImageSearch는 그것을 찾는 데 실패할 것입니다. 이를 우회하려면, 쉐이드 변형 옵션 (*n)을 사용하거나 <code><a href="WinSet.htm#trans">WinSet, Transparent, Off</a>를 사용하여 그 창을 임시로 불투명하게 만드십시오</code>.</p>
+
+<h3>관련 항목</h3>
+<p><a href="PixelSearch.htm">PixelSearch</a>, <a href="PixelGetColor.htm">PixelGetColor</a>, <a href="CoordMode.htm">CoordMode</a>, <a href="MouseGetPos.htm">MouseGetPos</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">ImageSearch, FoundX, FoundY, 40,40, 300, 300, C:\My Images\test.bmp
+
+CoordMode Pixel  <em>; 아래의 좌표를 활성 창이 아니라 화면에 상대적으로 번역합니다.</em>
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *Icon3 %A_ProgramFiles%\SomeApp\SomeApp.exe
+if ErrorLevel = 2
+    MsgBox 검색을 수행할 수 없었습니다.
+else if ErrorLevel = 1
+    MsgBox 아이콘을 화면에서 발견할 수 없었습니다.
+else
+    MsgBox 아이콘을 %FoundX%x%FoundY%에서 발견하였습니다.</pre>
+
+</body>
+</html>

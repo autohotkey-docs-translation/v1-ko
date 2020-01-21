@@ -1,0 +1,56 @@
+
+
+<html>
+<head>
+<title>Until</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>Until <span class="ver">[AHK_L 59+]</span></h1>
+
+<p>Loop 또는 For-회돌이에 계속할지 말지 조건을 적용합니다.</p>
+
+<pre class="Syntax">Loop {
+    ...
+} Until <i>Expression</i></pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>Expression</dt>
+  <dd><p>유효한 <a href="../Variables.htm#Expressions">표현식</a>.</p></dd>
+
+</dl>
+
+<h3>논평</h3>
+<p>
+표현식은 각 반복 후에 한 번 평가됩니다. 그리고 <a href="Continue.htm">continue</a>가 사용되었어도 평가됩니다. 표현식이 거짓으로 평가되면 (빈 문자열 또는 숫자 0이면), 회돌이는 계속됩니다; 그렇지 않으면, 회돌이를 빠져 나와 다음 줄에서 실행을 계속합니다 <i>Until</i>.</p>
+<p>
+Loop Until 은 다음을 단축해 표현한 것입니다:</p>
+<pre>Loop {
+    ...
+    if (<i>Expression</i>)
+        break
+}</pre>
+<p>
+그렇지만, Loop Until이 보통 더 이해하기 쉽습니다. 위와 다르게, 한 줄-행위와도 사용할 수 있습니다. 예를 들어:</p>
+<pre>Loop
+    x *= 2
+Until x > y</pre>
+<p>
+<i>Until</i>은 어떤 Loop 또는 For과도 사용이 가능합니다. 예를 들어:</p>
+
+<pre>Loop, Read, %A_ScriptFullPath%
+    lines .= A_LoopReadLine . "`n"
+<b>Until</b> A_Index=5  <em>; 앞쪽 다섯 줄을 읽습니다.</em>
+MsgBox % lines
+</pre>
+<p>
+<a href="../Variables.htm#Index">A_Index</a>가 <i>표현식</i> 안에 사용되면, 방금 끝낸 반복의 인덱스가 담깁니다.</p>
+
+<h3>관련 항목</h3>
+<p>
+<a href="Loop.htm">Loop</a>, <a href="While.htm">While-회돌이</a>, <a href="For.htm">For-회돌이</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">Blocks</a>, <a href="LoopFile.htm">파일과 폴더 회돌이</a>, <a href="LoopReg.htm">레지스트리 회돌이</a>, <a href="LoopReadFile.htm">파일-읽기 회돌이</a>, <a href="LoopParse.htm">파싱 회돌이</a>, <a href="IfExpression.htm">If (expression)</a></p>

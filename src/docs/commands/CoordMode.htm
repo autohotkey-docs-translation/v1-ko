@@ -1,0 +1,53 @@
+
+
+<html>
+<head>
+<title>CoordMode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>CoordMode</h1>
+
+<p>다양한 명령어에 대하여 화면 또는 활성 창에 좌표 모드가 상대적이 되도록 설정합니다.</p>
+
+<pre class="Syntax">CoordMode, ToolTip|Pixel|Mouse|Caret|Menu [, Screen|Window|Client]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>Param1</dt>
+  <dd><p><strong>ToolTip</strong>: <a href="ToolTip.htm">ToolTip</a>에 영향을 줍니다.</p>
+    <p><strong>Pixel</strong>: <a href="PixelGetColor.htm">PixelGetColor</a>, <a href="PixelSearch.htm">PixelSearch</a>, 그리고 <a href="ImageSearch.htm">ImageSearch</a>에 영향을 줍니다.</p>
+    <p><strong>Mouse</strong>: Affects <a href="MouseGetPos.htm">MouseGetPos</a>, <a href="Click.htm">Click</a>, 그리고 <a href="MouseMove.htm">MouseMove</a>/<a href="MouseClick.htm">Click</a>/<a href="MouseClickDrag.htm">Drag</a>에 영향을 줍니다.</p>
+    <p><strong>Caret</strong>: 내장 변수 <a href="../Variables.htm#Caret">A_CaretX</a>와 <a href="../Variables.htm#Caret">A_CaretY</a>에 영향을 줍니다.</p>
+    <p><strong>Menu</strong>:  좌표가 지정되어 있지 않을 때 <a href="Menu.htm#Show">Menu Show</a>에 영향을 줍니다.</p></dd>
+
+  <dt>Param2</dt>
+  <dd><p><em>Param2</em>가 생략되면,  Screen이 기본값입니다.</p>
+      <p><strong>Screen</strong>: 좌표는 바탕화면에 상대적입니다 (전체 화면).</p>
+      <p><strong>Relative</strong>: 좌표는 활성 창에 상대적입니다.</p>
+      <p><strong>Window</strong> <span class="ver">[v1.1.05+]</span>: <em>Relative</em>와 동등하며 명료하기 때문에 이것을 권장합니다.</p>
+      <p><strong>Client</strong> <span class="ver">[v1.1.05+]</span>: 좌표는 활성 창의 클라이언트 영역에 상대적입니다. 클라이언트 영역에서 제목 바, 메뉴 (표준 메뉴라면) 그리고 테두리는 제외됩니다. 클라이언트 좌표는 OS 버전와 테마에 의존하지 않습니다.</p>
+      </dd>
+
+</dl>
+
+<h3>논평</h3>
+<p>
+이 명령어가 사용되지 않으면, 모든 명령어는 따로 문서화되어 있는 명령어를 제외하고 (예, <a href="WinMove.htm">WinMove</a> 그리고 <a href="InputBox.htm">InputBox</a>) 활성 창에 상대적인 좌표를 사용합니다.</p>
+<p>
+새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>는 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본 값을 가지고 새롭게 시작합니다. 그 기본 값은 자동-실행 섹션 (스크립트 상단)에 이 명령어를 사용하여 바꿀 수 있습니다).</p>
+
+<h3>관련 항목</h3>
+<p>
+<a href="Click.htm">Click</a>, <a href="MouseMove.htm">MouseMove</a>, <a href="MouseClick.htm">MouseClick</a>, <a href="MouseClickDrag.htm">MouseClickDrag</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, <a href="PixelGetColor.htm">PixelGetColor</a>, <a href="PixelSearch.htm">PixelSearch</a>, <a href="ToolTip.htm">ToolTip</a>, <a href="Menu.htm">Menu</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">CoordMode, ToolTip, Screen  <em>; 툴팁을 절재 화면 좌표에 배치합니다:</em>
+CoordMode, ToolTip  <em>; 위와 같습니다. 똑 같이 &quot;screen&quot;이 기본값입니다.</em></pre>
+
+</body>
+</html>

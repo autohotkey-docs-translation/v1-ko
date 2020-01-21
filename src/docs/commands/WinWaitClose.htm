@@ -1,0 +1,61 @@
+
+
+<html>
+<head>
+<title>WinWaitClose</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>WinWaitClose</h1>
+
+<p>지정된 창이 존재하지 않을 때까지 기다립니다.</p>
+
+<pre class="Syntax">WinWaitClose [, WinTitle, WinText, Seconds, ExcludeTitle, ExcludeText]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>WinTitle</dt>
+  <dd><p>목표 창을 식별할 수 있는 창 제목 또는 기타 기준. <a href="../misc/WinTitle.htm">WinTitle</a> 참조.</p></dd>
+
+  <dt>WinText</dt>
+  <dd><p>존재하면, 이 매개변수는 목표 창의 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>가 켜져 있으면(ON) 탐지됩니다.</p></dd>
+
+  <dt>Seconds</dt>
+  <dd><p>시간 제한까지 기다릴 초의 개수 그리고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>을 1로 설정합니다. 빈 채로 두면 무한정 기다립니다. 0으로 설정하면  0.5를 지정한 것과 같습니다. 이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>이 가능합니다.</p></dd>
+
+  <dt>ExcludeTitle</dt>
+  <dd><p>제목에 이 값을 가진 창은 제외됩니다.</p></dd>
+
+  <dt>ExcludeText</dt>
+  <dd><p>텍스트에 이 값을 가진 창은 제외됩니다.</p></dd>
+
+</dl>
+
+<h3>ErrorLevel</h3>
+<p>
+명령어가 시간 제한에 걸리면 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 1에 설정됩니다. 그렇지 않으면 0이 설정됩니다.</p>
+
+<h3>논평</h3>
+<p>
+지정된 창의 실체가 존재하지 않을 때마다, 이 명령어는 <em>Seconds</em> 동안 시간 제한을 기다리지 않습니다. 대신에, 즉시 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 0을 설정하고 스크립트는 실행을 계속합니다.</p>
+<p>
+이 명령어가 대기 상태에 있다면, <a href="../Hotkeys.htm">hotkey</a>, <a href="Menu.htm">custom menu item</a>, 또는 <a href="SetTimer.htm">timer</a>를 통하여 새 <a href="../misc/Threads.htm">쓰레드</a>를 기동할 수 있습니다.</p>
+<p>
+또다른 <a href="../misc/Threads.htm">쓰레드</a>가 이 명령어의 매개변수에 사용된 변수의 내용을 변경하더라도, 이 명령어는 변경된 것을 알지 못합니다 -- 계속해서 원래 이 명령어가 처음 기다리기 시작할 때의 변수에 존재하는 제목과 텍스트를 사용할 것입니다.</p>
+<p>
+창 제목과 텍스트는 대소문자를 구분합니다. 숨은 텍스트는 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있으면 탐지됩니다.</p>
+
+<h3>관련 항목</h3>
+<p><a href="WinClose.htm">WinClose</a>, <a href="WinWait.htm">WinWait</a>, <a href="WinWaitActive.htm">WinWaitActive</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="Process.htm">Process</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a></p>
+<h3>예제</h3>
+<pre class="NoIndent">Run, notepad.exe
+WinWait, Untitled - Notepad
+WinWaitClose  <em>; WinWait가 발견한 창이 닫히기를 기다립니다.</em>
+MsgBox, 노트패드가 이제 닫혔습니다.</pre>
+
+</body>
+</html>

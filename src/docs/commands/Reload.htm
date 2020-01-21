@@ -1,0 +1,39 @@
+
+
+<html>
+<head>
+<title>Reload</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>Reload</h1>
+
+<p>스크립트의 현재 실행 중인 실체를 새 실체로 교체합니다.</p>
+
+<pre class="Syntax">Reload</pre>
+<p>
+이 명령어는 자주 변경되는 스크립트에 유용합니다. 핫키를 이 명령어에 할당하면, 변경을 편집기에 저장한 후에 쉽게 스크립트를 재시작할 수 있습니다.</p>
+<p>
+원래 스크립트에 건네지는 <a href="../Scripts.htm#cmd">명령어-줄 매개변수</a>는 모두 새 실체로 건네지지 않습니다. 그런 매개변수를 전달하려면, Reload를 사용하지 마십시오. 대신에, <a href="../Variables.htm#AhkPath">A_AhkPath</a> 그리고 <a href="../Variables.htm#ScriptFullPath">A_ScriptFullPath</a>와 함께 <a href="Run.htm">Run</a>을 사용하십시오 (그리고 스크립트가 컴파일된 형태로 사용되었다면 <a href="../Variables.htm#IsCompiled">A_IsCompiled</a>와 함께 사용하십시오). 또, 문자열 <code>/restart</code>를 첫 매개변수로 (즉, 실행파일의 이름 뒤에) 포함하십시오. 그러면 프로그램은 Reload와 같은 행위를 사용합니다. 다음도 참조하십시오: <a href="../Scripts.htm#cmd">명령어 줄 스위치와 구문</a>.</p>
+<p>
+스크립트가 시작할 때, 그의 원래 작업 디렉토리에서 (처음 기동될 때 적용되었던 디렉토리에서) 기동합니다. 다른 말로, <a href="SetWorkingDir.htm">SetWorkingDir</a>는 새 실체에 사용될 작업 디렉토리를 바꾸지 않습니다.</p>
+<p>
+스크립트를 재적재 할 수 없으면 -- 아마도 구문 에러가 있기 때문에 -- 스크립트의 원래 실체가 계속 실행됩니다. 그러므로, 재적재 명령어는 다음에 실패시에 취하고 싶은 조치가 따라와야 합니다 (예를 들어 <a href="Return.htm">return</a>이면 현재 서브루틴을 종료합니다). 원래 실체가 실패를 탐지하도록 만들려면, 다음 예제를 따르십시오:</p>
+
+<pre>Reload
+Sleep 1000 <em>; 성공하면, 재적재 때문에 이 실체는 Sleep 시간 동안 닫힙니다. 그래서 아래 줄은 절대 도달하지 못합니다.</em>
+MsgBox, 4,, 스크립트를 재적재할 수 없습니다. 편집을 위해 여시겠습니까?
+IfMsgBox, Yes, Edit
+return</pre>
+
+<h3>관련 항목</h3>
+<p><a href="Edit.htm">Edit</a></p>
+<h3>예제</h3>
+<pre class="NoIndent">^!r::Reload  <em>; Ctrl-Alt-R를 스크립트를 재시작할 핫키에 할당합니다.</em></pre>
+
+</body>
+</html>

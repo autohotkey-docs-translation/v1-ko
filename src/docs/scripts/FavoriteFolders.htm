@@ -1,0 +1,194 @@
+<html>
+<head>
+<title>Easy Access to Favorite Folders -- by Savage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>자주 가는 폴더에 쉽게 접근하는 법 -- by Savage</h1>
+
+<p>어떠 유형이 창이 활성화되어 있는 동안에 마우스 가운데 버튼을 클릭하면, 이 스크립트는 자주 가는 폴더의 메뉴를 보여줍니다. 자주 가는 폴더를 선택하는 순간 그 활성 창 안의 폴더로 순간 이동합니다. 다음 유형의 창을 지원합니다: 1) 표준 파일 열기 또는 저장 대화상자; 2) 탐색 창; 3) 콘솔 (명령어 프롬프트) 창.
+메뉴는 또 선택적으로 지원되는 않는 유형의 창에 대해서도 보여줄 수 있습니다. 이 경우 선택된 폴더는 새 탐색 창에 열립니다.
+</p>
+<p><a href="FavoriteFolders.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Home</a></p>
+
+<pre class="NoIndent"><em>; 주의: 탐색 창에서, &quot;View &gt; Toolbars &gt; Address Bar&quot;가 활성화되어 있지 않을 때
+; 아래의 핫키에 틸드가 있는 경우 그 메뉴는 보여지지 않습니다. 
+; 틸드가 있어도 메뉴는 보일 수도 있지만
+; 자주 가는 폴더는 새 탐색 창에 열립니다.
+; 활성화되어 있는 창이 그 폴더로 전환되지 않습니다.</em>
+
+<em>; CONFIG: 핫키를 고르십시오.
+; 마우스에 3 버튼 이상이 있으면, MButton 대신에
+; XButton1 (the 4th) 또는 XButton2 (the 5th)을 시도해 볼 수 있습니다.
+; 또한 변형 마우스 버튼 (예, ^MButton) 또는 키보드 핫키를 사용할 수도 있습니다
+; MButton의 경우, 틸드 (~) 접두 심볼을 사용하면
+; 예를 들어 웹 브라우저 같은 다른 유형의 창을 클릭할 때,
+; MButton버튼의 정상 기능이 소실되지 않습니다
+; 틸드가 있으면 스크립트는 지원되지 않는 창 유형에는
+; 메뉴를 보여주지 않습니다. 다른 말로, 틸드가 없다면,
+; 핫키는 언제나 메뉴를 보여줍니다; 지원되지 않는 창 유형이
+; 활성화되어 있는 동안 자주 가는 폴더를 선택하면
+; 새 탐색 창이 열리고 그 폴더의 내용을
+; 보여줍니다.</em>
+f_Hotkey = ~MButton
+
+<em>; CONFIG: 즐겨 찾기를 고르십시오
+; 아래에 특별히 주석 처리한 부분을 업데이트 하면
+; 자주 가는 폴더를 나열할 수 있습니다. 메뉴 항목의 이름을 먼저 지정하고
+; 다음에 쌍반점, 그 다음에 실제 경로를 지정하십시오.
+; 빈 줄을 사용하면 가름 줄을 만들 수 있습니다.</em>
+
+<em>/*
+ITEMS IN FAVORITES MENU &lt;-- 이 문자열은 바꾸지 마십시오.
+Desktop      ; %A_Desktop%
+Favorites    ; %A_Desktop%\..\Favorites
+My Documents ; %A_MyDocuments%
+
+Program Files; %A_ProgramFiles%
+*/</em>
+
+
+<em>; END OF CONFIGURATION SECTION
+; 이 시점 부터는 변경하지 마십시오.
+; 단, 스크립트의 기본 기능을 바꾸고 싶다면 예외입니다.</em>
+
+#SingleInstance  <em>; 핫키가 동적으로 생성되므로 필수입니다.</em>
+
+Hotkey, %f_Hotkey%, f_DisplayMenu
+StringLeft, f_HotkeyFirstChar, f_Hotkey, 1
+if f_HotkeyFirstChar = ~  <em>; 특정 유형의 창에 대해서만 메뉴를 보여줍니다.</em>
+    f_AlwaysShowMenu = n
+else
+    f_AlwaysShowMenu = y
+
+<em>; 스크립트가 컴파일 되어 있는지 알아내는 데 사용됩니다:</em>
+SplitPath, A_ScriptName,,, f_FileExt
+if f_FileExt = Exe  <em>; 외부 파일로부터 메뉴 항목들을 읽습니다.</em>
+    f_FavoritesFile = %A_ScriptDir%\Favorites.ini
+else  <em>; 이 스크립트 파일로부터 직접 메뉴 항목들을 읽습니다.</em>
+    f_FavoritesFile = %A_ScriptFullPath%
+
+<em>;----환경 구성 파일을 읽습니다.</em>
+f_AtStartingPos = n
+f_MenuItemCount = 0
+Loop, Read, %f_FavoritesFile%
+{
+    if f_FileExt &lt;&gt; Exe
+    {
+        <em>; 메뉴 항목들은 이 스크립트로부터 직접 읽고 있기 때문에,</em>
+        <em>; 시작 줄에 도착할 때까지</em>
+        <em>; 모든 줄을 건너 뜁니다.</em>
+        if f_AtStartingPos = n
+        {
+            IfInString, A_LoopReadLine, ITEMS IN FAVORITES MENU
+                f_AtStartingPos = y
+            continue  <em>; 새 회돌이 반복을 시작합니다.</em>
+        }
+        <em>; 그렇지 않으면, 주석 닫기 심볼이 리스트의 끝을 표식합니다.</em>
+        if A_LoopReadLine = */
+            break  <em>; 회돌이를 끝냅니다</em>
+    }
+    <em>; A_ThisMenuItemPos와의 호환을 위해</em>
+    <em>; 메뉴 가름 줄들도 세어야 합니다: </em>
+    f_MenuItemCount++
+    if A_LoopReadLine =  <em>; 빈 줄은 가름 줄을 뜻합니다.</em>
+        Menu, Favorites, Add
+    else
+    {
+        StringSplit, f_line, A_LoopReadLine, `;
+        f_line1 = %f_line1%  <em>; 선두 후미의 스페이스를 제거합니다.</em>
+        f_line2 = %f_line2%  <em>; 선두 후미의 스페이스를 제거합니다.</em>
+        <em>; 필드 안에 변수 참조를 모두 결정합니다. 그리고</em>
+        <em>; 자주 가는 폴더의 경로를 담은 새 배열 원소를 생성합니다:</em>
+        Transform, f_path%f_MenuItemCount%, deref, %f_line2%
+        Transform, f_line1, deref, %f_line1%
+        Menu, Favorites, Add, %f_line1%, f_OpenFavorite
+    }
+}
+return  <em>;----자동 실행 섹션의 끝.</em>
+
+
+<em>;----선택된 폴더를 엽니다</em>
+f_OpenFavorite:
+<em>; 선택된 메뉴 항목에 상응하는 배열 원소를 가져 옵니다:</em>
+StringTrimLeft, f_path, f_path%A_ThisMenuItemPos%, 0
+if f_path =
+    return
+if f_class = #32770    <em>; 대화상자입니다.</em>
+{
+    if f_Edit1Pos &lt;&gt;   <em>; 그리고 Edit1 콘트롤이 있습니다.</em>
+    {
+        <em>; 창을 활성화 합니다. 그러면 사용자가 대화상자 밖에서</em>
+        <em>; 가운데 버튼을 클릭하면, 잇다르는 클릭들도 작동합니다:</em>
+        WinActivate ahk_id %f_window_id%
+        <em>; 이미 필드에 존재하더라도 파일이름을 모두 열람합니다.</em>
+        <em>; 그래야 새 폴더로 전환한 후에 다시 복구할 수 있습니다:</em>
+        ControlGetText, f_text, Edit1, ahk_id %f_window_id%
+        ControlSetText, Edit1, %f_path%, ahk_id %f_window_id%
+        ControlSend, Edit1, {Enter}, ahk_id %f_window_id%
+        Sleep, 100  <em>; 어떤 경우 어떤 대화상자에는 추가로 시간이 필요합니다.</em>
+        ControlSetText, Edit1, %f_text%, ahk_id %f_window_id%
+        return
+    }
+    <em>; 그렇지 않으면 서브루틴의 아래로 가 표준 조치를 취합니다.</em>
+}
+else if f_class in ExploreWClass,CabinetWClass  <em>; 탐색 창이므로, 폴더를 전환합니다.</em>
+{
+    if f_Edit1Pos &lt;&gt;   <em>; 그리고 Edit1 콘트롤이 있습니다.</em>
+    {
+        ControlSetText, Edit1, %f_path%, ahk_id %f_window_id%
+        <em>; Tekl의 보고에 의하면: &quot;만약 폴더 L:\folder로 바꾸고 싶다면</em>
+        <em>; 주소바는 http://www.L:\folder.com를 보여준다. 이를 해결하기 위해,</em>
+        <em>; 나는 {Enter} 앞에 {right}를 추가했다&quot;:</em>
+        ControlSend, Edit1, {Right}{Enter}, ahk_id %f_window_id%
+        return
+    }
+    <em>; 그렇지 않으면 서브루틴의 아래로 가서 표준 행위를 취합니다.</em>
+}
+else if f_class = ConsoleWindowClass <em>; 콘솔 창이므로, 그 디렉토리로 CD 합니다</em>
+{
+    WinActivate, ahk_id %f_window_id% <em>; 종조 mclick 때문에 비활성화 되는 경우가 있으므로,</em>
+    SetKeyDelay, 0  <em>; 이것은 이 쓰레드가 존재하는 동안에만 효과가 있습니다.</em>
+    IfInString, f_path, :  <em>; 드라이브 기호가 포함되어 있습니다</em>
+    {
+        StringLeft, f_path_drive, f_path, 1
+        Send %f_path_drive%:{enter}
+    }
+    Send, cd %f_path%{Enter}
+    return
+}
+<em>; 위에서 반환되지 않았다면, 다음 중 하나가 참입니다:
+; 1) 지원하지 않는 창 유형이지만 f_AlwaysShowMenu가 y (yes)입니다.
+; 2) 지원하는 유형이지만 Edit1 콘트롤이 없어서 맞춤 조치에 이용하지 못합니다.
+;     그래서 대신 아래의 기본 행위를 합니다.</em>
+Run, Explorer %f_path%  <em>; 겹따옴표가 없으면 더 많은 시스템에 작동할 가능성이 높습니다.</em>
+return
+
+
+<em>;----메뉴를 보여줍니다</em>
+f_DisplayMenu:
+<em>; 다음 첫 몇 변수들은 여기에서 설정하고 f_OpenFavorite가 사용합니다:</em>
+WinGet, f_window_id, ID, A
+WinGetClass, f_class, ahk_id %f_window_id%
+if f_class in #32770,ExploreWClass,CabinetWClass  <em>; 대화상자 또는 탐색기.</em>
+    ControlGetPos, f_Edit1Pos,,,, Edit1, ahk_id %f_window_id%
+if f_AlwaysShowMenu = n  <em>; 메뉴는 선택적으로만 보여주어야 합니다.</em>
+{
+    if f_class in #32770,ExploreWClass,CabinetWClass  <em>; 대화상자 또는 탐색기.</em>
+    {
+        if f_Edit1Pos =  <em>; 콘트롤이 존재하지 않습니다. 그래서 메뉴를 보여주지 않습니다</em>
+            return
+    }
+    else if f_class &lt;&gt; ConsoleWindowClass
+        return <em>; 다른 유형의 창이기 때문에, 메뉴를 보여주지 않습니다.</em>
+}
+<em>; 그렇지 않으면, 메뉴를 이 유형의 창에 보여 주어야 합니다:</em>
+Menu, Favorites, show
+return
+</pre>
+</body>
+</html>

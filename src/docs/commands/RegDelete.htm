@@ -1,0 +1,62 @@
+
+
+<html>
+<head>
+<title>RegDelete</title>
+<meta name="description" content="Use RegDelete in this free scripting language to easily remove unwanted registry entries. Use RegRead/Write to retrieve, add, and modify entries.">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>RegDelete</h1>
+
+<p>레지스트리로부터 값인 하위키를 제거합니다.</p>
+
+<pre class="Syntax">RegDelete, RootKey\SubKey [, ValueName]  <em>; v1.1.21+</em>
+RegDelete, RootKey, SubKey [, ValueName]</pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>RootKey</dt>
+  <dd><p>반드시 HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, 또는 HKEY_CURRENT_CONFIG 중의 하나여야 합니다. (또는 HKLM와 같은 약어). 원격 레지스트리에 접근하려면, 컴퓨터 이름을 앞에 두고 다음에 쌍점 (또는 v1.1.21+이면, 역사선)을, 다음 예제와 같이 배치하십시오: <code>\\workstation01:HKEY_LOCAL_MACHINE</code></p></dd>
+
+  <dt>SubKey</dt>
+  <dd><p>서브키의 이름 (예, Software\SomeApplication).</p></dd>
+  
+  <dt>RootKey\SubKey <span class="ver">[v1.1.21+]</span></dt>
+  <dd><p><em>RootKey</em> 다음에 바로 역사선이 따라오면 (<code>\</code>), <em>RootKey</em>와 <em>SubKey</em>는 하나의 매개변수로 병합됩니다.</p></dd>
+
+  <dt>ValueName</dt>
+  <dd><p>삭제할 값의 이름. <strong>생략되면, 전체 <em>SubKey</em>가 삭제됩니다</strong>. <em>Subkey</em>의 기본 값을 삭제하려면 -- RegEdit이 &quot;(기본)&quot;으로 보여주는 값  -- 이 매개변수에 <code>AHK_DEFAULT</code>를 사용하십시오.</p></dd>
+
+</dl>
+<h3>ErrorLevel</h3>
+<p>
+<span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p>
+<a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1 없으면 0이 설정됩니다.</p>
+<p>
+<a href="../Variables.htm#LastError">A_LastError</a>은 운영 체제의 GetLastError() 함수의 결과가 설정됩니다.</p>
+
+<h3>논평</h3>
+<p>
+레지스트리에서 삭제하는 것은 잠재적으로 위험합니다 - 조심해서 시행하십시오!</p>
+<p>
+여러 키와 값에 작동하고 열람하려면, <a href="LoopReg.htm">레지스트리-회돌이</a>의 사용을 고려하십시오.</p>
+<p>
+원격 컴퓨터의 레지스트리에 접근하는 법에 관한 자세한 정보는 <a href="LoopReg.htm">레지스트리-회돌이</a>에서 논평을 참조하십시오.</p>
+<p>
+32-비트 스크립트에서 레지스트리의 64-비트 섹션을 또는 그 반대로 삭제하려면, <a href="SetRegView.htm">SetRegView</a>를 사용하십시오.</p>
+
+<h3>관련 항목</h3>
+<p><a href="RegRead.htm">RegRead</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="LoopReg.htm">레지스트리-회돌이</a>, <a href="SetRegView.htm">SetRegView</a>, <a href="IniDelete.htm">IniDelete</a></p>
+
+<h3>예제</h3>
+<pre class="NoIndent">RegDelete, HKEY_LOCAL_MACHINE, Software\SomeApplication, TestValue
+RegDelete, HKEY_LOCAL_MACHINE\Software\SomeApplication, TestValue  <em>; v1.1.21+ 필요</em></pre>
+
+</body>
+</html>

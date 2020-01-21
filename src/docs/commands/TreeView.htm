@@ -1,0 +1,367 @@
+
+
+<html>
+<head>
+<title>TreeView (GUI)</title>
+<meta name="description" content="Create TreeView controls easily with this free scripting language. Includes context menus, icons, and optional ListView companion controls.">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+
+<body>
+<h1>TreeView <span class="ver">[v1.0.44+]</span></h1>
+
+<h2>목차</h2>
+<ul>
+  <li><a href="#Intro">소개와 간단한 예제</a></li>
+  <li><a href="#Options">옵션과 스타일</a></li>
+  <li><a href="#BuiltIn">내장 함수</a>:
+    <ul>
+      <li><a href="#bifAddModifyDelete">항목 추가/변경/삭제</a></li>
+      <li><a href="#bifGet">TreeView로부터 데이터 얻기</a></li>
+    </ul>
+  </li>
+  <li><a href="#notify">G-라벨 고지</a></li>
+  <li><a href="#Remarks">논평</a></li>
+  <li><a href="#Examples">긴 예제</a></li>
+</ul>
+<h2 id="Intro">간단한 예제와 소개</h2>
+<p>
+Tree-View는 계통적 항목들을 부모 아래의 자손들은 한 단계 들여 넣어 보여줍니다. 가장 흔한 예는 익스플로러의 드라이브와 폴더 트리입니다.</p>
+<p>
+TreeView를 생성하는 구문은 다음과 같습니다:</p>
+
+<pre class="Syntax"><a name="GuiAdd"></a>Gui, Add, TreeView, Options</pre>
+<p>
+다음 스크립트는 간단한 계통적 항목들을 생성하고 보여줍니다:</p>
+
+<pre>Gui, Add, TreeView
+<span class="red">P1</span> := <a href="#TV_Add">TV_Add</a>(&quot;First parent&quot;)
+P1C1 := TV_Add(&quot;Parent 1's first child&quot;, <span class="red">P1</span>)  <em>; P1을 이 항목의 부모로 지정합니다.</em>
+P2 := TV_Add(&quot;Second parent&quot;)
+P2C1 := TV_Add(&quot;Parent 2's first child&quot;, P2)
+P2C2 := TV_Add(&quot;Parent 2's second child&quot;, P2)
+P2C2C1 := TV_Add(&quot;Child 2's first child&quot;, P2C2)
+
+Gui, Show  <em>; 창과 그의 TreeView를 보여줍니다.</em>
+return
+
+GuiClose:  <em>; 사용자가 TreeView의 GUI 창을 닫으면 스크립트를 종료합니다.</em>
+ExitApp</pre>
+
+<h2 id="Options">&quot;<em>Gui, Add, TreeView, <u>Options</u></em>&quot;에 대한 옵션과 스타일</h2>
+<p>
+<strong><a name="AltSubmit"></a>AltSubmit:</strong> 스크립트에 정상보다 더 많은 유형의 TreeView 이벤트에 대하여 고지합니다. 다른 말로, g-라벨이 더 자주 기동합니다. 자세한 것은 <a href="#notify">TreeView Notifications</a>을 참조하십시오.</p>
+<p>
+<strong>Background:</strong> 단어 Background와 다음에 바로 컬러 이름을 지정하거나 (<a href="Progress.htm#colors">컬러 차트</a> 참조) RGB 값을 지정하십시오 (0x 접두사는 선택적입니다). 예제: <code>BackgroundSilver</code>, <code>BackgroundFFDD99</code>. 이 옵션이 존재하지 않으면, TreeView는 처음에 기본값이. <a href="Gui.htm#Color">Gui Color</a>의 마지막 매개변수로 설정된 배경색입니다 (또는 없으면, 시스템의 기본 배경 색입니다). <code>BackgroundDefault</code>를 지정하면 시스템의 기본 배경색이 적용됩니다 (보통 흰색). 예를 들어, <code>GuiControl, +BackgroundDefault, MyTreeView</code>를 통하여 TreeView를 기본값으로 복구할 수 있습니다.</p>
+<p>
+<strong>Buttons</strong>: <code>-Buttons</code> (마이너스 버튼)을 지정하면 플러스나 마이너스 사인이 자손이 있는 각 항목의 왼쪽에 나타나는 것을 막을 수 있습니다.</p>
+<p>
+<strong>C</strong>: 텍스트 컬러. 기호 C 다음에 즉시 컬러 이름 (<a href="Progress.htm#colors">컬러 차트</a> 참조) 또는 RGB 값을 지정하십시오 (0x 접두사는 선택적입니다). 예를 들어: <code>cRed</code>, <code>cFF2211</code>, <code>c0xFF2211</code>, <code>cDefault</code>.</p>
+<p>
+<strong><a name="Checked"></a>Checked:</strong> 각 항목의 왼쪽에 체크박스를 제공합니다. 항목을 <a href="#TV_Add">추가</a>할 때, 단어 <em>Check</em>를 그의 옵션에 지정하면 박스를 체크한 상태로 시작할 수 있습니다. 사용자는 체크박스크를 클릭하거나 스페이스를 바를 눌러 항목을 체크하거나 해제할 수 있습니다. 어느 항목이 현재 TreeView에 체크되어 있는지 알아 보려면, <a href="#TV_GetNext">TV_GetNext()</a> 또는 <a href="#TV_Get">TV_Get()</a>을 호출하십시오.</p>
+<p>
+<strong>HScroll</strong>: <code>-HScroll</code> (마이너스 HScroll)을 지정하면 수평 스크롤을 불능으로 만들 수 있습니다 (게다가, 콘트롤은 수평 바를 보여주지 않습니다).</p>
+<p>
+<strong><a name="ImageList"></a>ImageList</strong>: 이 방법으로 아이콘을 TreeView에 추가합니다. 단어 <em>ImageList</em> 다음에 바로 이전에 <a href="ListView.htm#IL_Create">IL_Create()</a>를 호출해 돌려 받은 ImageListID를 지정하십시오. 이 옵션은 TreeView를 생성할 때에만 효과가 있습니다 (그렇지만, <a href="#TV_SetImageList">TV_SetImageList()</a>는 이 제한이 없습니다). 다음은 작동하는 예제입니다:</p>
+
+<pre>ImageListID := <a href="ListView.htm#IL_Create">IL_Create</a>(10)  <em>; 최초 가용능력이 10개의 아이콘인 ImageList를 생성합니다.</em>
+Loop 10  <em>; ImageList에 표준 시스템 아이콘을 적재합니다.</em>
+    <a href="ListView.htm#IL_Add">IL_Add</a>(ImageListID, &quot;shell32.dll&quot;, A_Index)
+Gui, Add, TreeView, <strong>ImageList%ImageListID%</strong>
+<a href="#TV_Add">TV_Add</a>(&quot;Name of Item&quot;, 0, &quot;Icon4&quot;)  <em>; 항목을 TreeView에 추가하고 거기에 폴더 아이콘을 부여합니다.</em>
+Gui Show</pre>
+<p>
+<strong>Lines</strong>: <code>-Lines</code> (마이너스 Lines)를 지정하면  부모 항목을 자손 항목과 연결하는 줄들을 보여주지 않습니다. 그렇지만, 이 줄을 제거하면 최상위 레벨의 항목에 플러스/마이너스 버튼도 보이지 않게 됩니다.</p>
+<p>
+<strong><a name="ReadOnly"></a>ReadOnly:</strong> <code>-ReadOnly</code> (마이너스 ReadOnly)를 지정하면 각 항목의 텍스트/이름의 편집을 허용합니다. 항목을 편집하려면, 선택한 다음 <a href="#WantF2">F2 키</a>를 누르십시오. 다른 방법으로, 항목을 한 번 클릭하여 선택할 수 있습니다. 약 반초 기다린 다음, 같은 항목을 다시 클릭해 편집할 수 있습니다. 편집이 끝난 후, 항목은 다음 예제를 통하여 그의 형제들 사이에 알파벳 순서로 재배치됩니다:</p>
+
+<pre>Gui, Add, TreeView, -ReadOnly <a href="#notify">gMyTree</a>
+<em>; ...</em>
+MyTree:
+if (A_GuiEvent == &quot;e&quot;)  <em>; 사용자가 항목 편집을 마쳤습니다 (대소문자를 구분해 비교합니다).</em>
+    TV_Modify(TV_GetParent(A_EventInfo), &quot;Sort&quot;)  <em>; 이것은 편집 항목에 부모가 없더라도 작동합니다.</em>
+return</pre>
+<p>
+<strong>R</strong>: 줄 높이 (생성시). 기호 R 다음에 즉시 콘트롤 안에 여유를 둘 줄의 개수를 지정합니다. 예를 들어, <code>R10</code>이면 콘트롤을 10개의 항목 높이로 만듭니다.</p>
+<p>
+<strong><a name="WantF2"></a>WantF2</strong>: <code>-WantF2</code> (마이너스 WantF2)를 지정하면 F2 키눌림으로 현재 선택된 항목을 <a href="#ReadOnly">편집</a>하지 못하도록 막습니다. 이 설정은 <a href="#ReadOnly">-ReadOnly</a>도 켜져 있지 않는 한 무시됩니다. 이 설정에 상관없이, g-라벨은 여전히 F2 <a href="#NotifyK">고지</a>를 받습니다.</p>
+<p>
+<strong>(이름없는 숫자 스타일):</strong> 위에 언급된 스타일 말고는 다른 스타일은 거의 사용되지 않으므로, 이름이 없습니다. 리스트는 <a href="../misc/Styles.htm#TreeView">TreeView 스타일 테이블</a>을 참조하십시오.</p>
+
+<h2 id="BuiltIn">TreeViews용 내장 함수</h2>
+<p>
+모든 TreeView 함수는 현재 쓰레드의 <a href="Gui.htm#DefaultWin">기본 GUI 창</a>에 작동합니다 (기본 구이 창은 <code><a href="Gui.htm#Default">Gui, 2:Default</a></code>를 통하여 바꿀 수 있습니다). 기본 창이 존재하지 않거나 TreeView 콘트롤이 없다면, 모든 함수는 0을 돌려주어 문제를 나타냅니다.</p>
+<p>
+<a name="GuiTV"></a>창에 여러 TreeView 콘트롤이 있다면, 기본값으로 함수들은 가장 최근에 추가된 콘트롤에 작동합니다. 이를 바꾸려면, <code>Gui, TreeView, TreeViewName</code>를 지정하십시오. 여기에서 <em>TreeViewName</em>는 TreeView의 <a href="Gui.htm#var">연관 변수</a>이름이거나, Window Spy로 노출되는 ClassNN이거나,  또는 (v1.1.04+에서) 그의 HWND입니다. 일단 바뀌면, 기존의 모든 그리고 미래의 <a href="../misc/Threads.htm">쓰레드</a>는 지시한 TreeView를 사용합니다.</p>
+
+<h3 id="TV_SetImageList">TV_SetImageList(ImageListID [, 0|2]) <span class="ver">[v1.1.02+]</span></h3>
+<p>
+TreeView의 <a href="#ImageList">ImageList</a>를 설정하거나 삭제합니다. ImageListID는 이전에 <a href="ListView.htm#IL_Create">IL_Create()</a>를 호출해 돌려 받은 번호입니다. 두 번째 매개변수는 보통 생략됩니다. 이 경우 기본값은 0입니다. 그렇지 않으면, 2를 상태 아이콘에 지정하십시오 (아직 직접적으로 지원하지는 않지만, <a href="PostMessage.htm">SendMessage</a>를 통하여 사용할 수 있습니다). 성공하면, TV_SetImageList()는 이전에 TreeView에 연관되어 있는 ImageListID를 돌려줍니다 (연관된게 없으면 0을 돌려줍니다). 그렇게 떼어낸 ImageList는 보통 <a href="ListView.htm#IL_Destroy">IL_Destroy(ImageListID)</a>를 통하여 파괴합니다.</p>
+
+<h2 id="bifAddModifyDelete">항목을 추가하고, 변경하고, 삭제하기</h2>
+
+<h3><a name="TV_Add"></a>TV_Add(Name, [ParentItemID, Options])</h3>
+<p>
+TreeView에 새 항목을 추가하고 그의 유일한 Item ID 번호를 돌려줍니다 (또는 실패시 0을 돌려줍니다). <em>Name</em>은 항목을 보여주는 텍스트이며, 텍스트이거나 숫자일 수 있습니다 (숫치 <a href="../Variables.htm#Expressions">표현식</a>의 결과도 포함). <em>ParentItemID</em>는 새 항목의 부모 ID 번호입니다 (생략하거나 0을 지정하면 그 항목을 최상위 레벨에 추가합니다). 방대한 개수의 항목을 추가할 때, 수행성능을 개선할 수 있습니다. 항목을 추가하기 전에 <code>GuiControl, -Redraw, MyTreeView</code>를 사용하고 끝난 후에 <code>GuiControl, +Redraw, MyTreeView</code>를 사용하면 됩니다.</p>
+
+<h4>TV_Add() 그리고 TV_Modify()용 옵션</h4>
+<p>
+<em>Options</em> 매개변수는 아래 리스트의 단어로 구성된 문자열입니다 (대소문자 구분 안함). 별도의 각 단어마다 다음 단어와 스페이스나 탭으로 가르십시오. 옵션을 제거하려면, 앞에 마이너스 사인을 붙이십시오. 옵션을 추가하려면, 플러스 사인은 허용하지만 필수는 아닙니다.</p>
+<p>
+<strong><a name="Bold"></a>Bold</strong>: 항목의 이름을 볼드체로 보여줍니다. 나중에 해제하려면, <code>TV_Modify(ItemID, &quot;-Bold&quot;)</code>를 사용하십시오.</p>
+<p>
+<strong><a name="Check"></a>Check</strong>: (TreeView에 <a href="#Checked">체크박스</a>가 있다면) 체크 표식을 항목의 왼쪽에 보여줍니다. 나중에 해제하려면, <code>TV_Modify(ItemID, &quot;-Check&quot;)</code>을 사용하십시오. 단어 <em>Check</em>는 선택적으로 다음에 즉시 0 또는 1이 따라와 시작 상태를 나타낼 수 있습니다. 다른 말로, <code>&quot;Check&quot;</code>와 <code>&quot;Check&quot; <strong>.</strong> VarContainingOne</code> 모두 같습니다 (여기에서 점은 <a href="../Variables.htm#concat">결합 연산자</a>입니다).</p>
+<p>
+<strong><a name="Expand"></a>Expand</strong>: 항목을 확대해 (있다면) 그의 자손을 노출시킵니다. 나중에 항목을 축소하려면, <code>TV_Modify(ItemID, &quot;-Expand&quot;)</code>를 사용하십시오. 자손이 없다면, <a href="#TV_Modify">TV_Modify()</a>는 그 항목의 ID 대신에 0을 돌려줍니다. 대조적으로, <a href="#TV_Add">TV_Add()</a>는 항목에 자손이 나중에 거기에 추가될 경우 확대 표식을 합니다. (아래의) &quot;Select&quot;와 다르게, 항목이 확대되더라도 그의 부모가 자동으로 확대되지는 않습니다. 마지막으로, 단어 <em>Expand</em> 다음에 선택적으로 0 또는 1이 따라와 시작 상태를 나타낼 수 있습니다. 다른 말로, <code>&quot;Expand&quot;</code>와 <code>&quot;Expand&quot; <strong>.</strong> VarContainingOne</code>는 같습니다.</p>
+<p>
+<strong>First | Sort | N</strong>: 이 옵션들은 <a href="#TV_Add">TV_Add()</a>에만 적용됩니다. 새 항목의 위치를 그의 형제에 상대적으로 지정합니다 (형제(<em>sibling</em>)란 같은 레벨에 있는 다른 항목들입니다). 이 옵션들 모두 존재하지 않으면, 마지막/막내 형제로 새 항목이 추가됩니다. 그렇지 않으면, <em>First</em>를 추가해 그 항목을 첫째/장남 형제로 추가할 수 있습니다. 또는<em>Sort</em>를 지정하면 그 항목을 그의 형제들 사이에 알파벳 순서로 삽입할 수 있습니다. 평범한 정수가 (<strong>N</strong>) 지정되면, 그 다음에 새 항목을 추가할 형제의 ID 번호로 간주됩니다 (정수 N이 유일한 옵션이라면, 따옴표로 둘러쌀 필요가 없습니다).</p>
+<p>
+<strong>Icon</strong>: 단어 <em>Icon</em> 다음에 이 항목의 아이콘 번호를 지정하십시오. 이 아이콘은 항목의 이름 왼쪽에 보여집니다. 이 옵션이 없으면, <a href="#ImageList">ImageList</a>에서 첫 번째 아이콘이 사용됩니다. 빈 아이콘을 보여주려면, ImageList 안에 있는 아이콘보다 큰 숫자를 지정하면 됩니다. 콘트롤에 ImageList가 없으면, 아이콘도 보이지 않고 아이콘을 위한 스페이스도 보존되지 않습니다.</p>
+<p>
+<strong><a name="Select"></a>Select</strong>: 항목을 선택합니다. 한 번에 오직 하나의 항목만 선택할 수 있기 때문에, 이전에 선택된 항목은 자동으로 해제됩니다. 게다가, 이 옵션은 필요하면 그의 부모를 확대해서 새로 선택된 항목을 노출시킵니다. 현재 선택을 알아 내려면, <a href="#TV_GetSelection">TV_GetSelection()</a>를 호출하십시오.</p>
+<p>
+<strong>Sort</strong>: <a href="#TV_Modify">TV_Modify()</a>에 대하여, 이 옵션은 알파벳 순서로 지정된 항목의 자손들을 정렬합니다. 대신에 모든 최상위 레벨의 항목들을 정렬하려면, <code>TV_Modify(0, &quot;Sort&quot;)</code>를 사용하십시오. 자손이 없다면, 변경된 항목의 ID 대신에 0을 돌려줍니다.</p>
+<p>
+<strong>Vis</strong>: TreeView를 스크롤하거나 필요하면 그의 부모를 확대해서 항목이 완전히 보이도록 확인합니다.</p>
+<p>
+<strong>VisFirst</strong>: 위와 같지만 TreeView도 스크롤되어 가능하면 그 항목이 항상 위에 보이도록 합니다. 이 옵션은 전형적으로 <a href="#TV_Add">TV_Add()</a> 보다 <a href="#TV_Modify">TV_Modify()</a>와 사용할 때 더 효율적입니다.</p>
+
+<h3><a name="TV_Modify"></a>TV_Modify(ItemID [, Options, NewName])</h3>
+<p>
+항목의 이름과 속성을 변경합니다. 성공하면 항목 자신의 ID를 돌려줍니다. 실패시 (또는 부분적 실패시) 0을 돌려줍니다. 첫 매개변수만 있으면, 지정된 항목이 <a href="#Select">선택됩니다</a>. <em>NewName</em>을 생략하면, 현재 이름을 바꾸지 않고 그대로 둡니다. <em>Options</em>에 관해서는 위의 리스트를 참조하십시오.</p>
+
+<h3><a name="TV_Delete"></a>TV_Delete([ItemID])</h3>
+<p>
+<em>ItemID</em>을 생략하면, TreeView 안의 <strong>모든</strong> 항목이 삭제됩니다. 그렇지 않으면, 오직 지정된 <em>ItemID</em>만 삭제됩니다. 성공하면 1을 돌려주고 실패시 0을 돌려줍니다.</p>
+
+<h2 id="bifGet">TreeView로부터 데이터 얻기</h2>
+<h3>
+<a name="TV_GetSelection"></a>TV_GetSelection()</h3>
+<p>선택된 항목의 ID 번호를 돌려줍니다.</p>
+
+<h3><strong><a name="TV_GetCount"></a>TV_GetCount()</strong></h3>
+<p>
+콘트롤에 있는 항목의 총 개수를 돌려줍니다. 이 함수는 언제나 순간적입니다. 왜냐하면 콘트롤의 개수를 추적관리하기 때문입니다.</p>
+
+<h3><a name="TV_GetParent"></a>TV_GetParent(ItemID)</h3>
+<p>
+지정된 항목의 부모를 항목 ID로 돌려줍니다. 최상위 레벨의 항목들은 부모가 없으므로 0을 돌려줍니다.</p>
+
+<h3><a name="TV_GetChild"></a>TV_GetChild(ParentItemID)</h3>
+<p>
+지정된 항목의 첫째/최상위 자손의 ID 번호를 돌려줍니다 (없으면 0을 돌려줍니다).</p>
+
+<h3><a name="TV_GetPrev"></a>TV_GetPrev(ItemID)</h3>
+<p>
+지정된 항목 위의 형제의 ID 번호를 돌려줍니다 (없으면 0을 돌려줍니다).</p>
+
+<h3><a name="TV_GetNext"></a>TV_GetNext([ItemID, &quot;Checked | Full&quot;])</h3>
+<p>
+다음 모드가 있습니다:</p>
+<ol>
+  <li>모든 매개변수를 생략하면, TreeView에서 첫째/최상위 항목의 ID 번호를 돌려줍니다 (없으면 0을 돌려줍니다).</li>
+  <li>오직 첫 번째 매개변수 (ItemID)만 있으면, 지정된 항목 아래 형제의 ID 번호를 돌려줍니다 (없으면 0을 돌려줍니다). 첫 번째 매개변수가 0이면, TreeView에서 첫째/최상위 항목의 ID 번호를 돌려줍니다 (없으면 0을 돌려줍니다).</li>
+  <li>두 번째 매개변수가 &quot;Full&quot; 또는 &quot;F&quot;이면, 지정된 항목과의 관계에 상관없이 다음 항목을 열람합니다. 이렇게 하면 스크립트는 쉽게 전체 트리를 항목별로 순회할 수 있습니다. 예를 들어:
+
+	<pre>ItemID = 0  <em>; 회돌이의 첫 번째 반복이 트리의 최상단에서 검색을 시작하도록 만듭니다.</em>
+Loop
+{
+    ItemID := TV_GetNext(ItemID, &quot;Full&quot;)  <em>; 체크표식된 항목을 모두 찾으려면 &quot;Full&quot;을 &quot;Checked&quot;로 교체하십시오..</em>
+    if not ItemID  <em>; 트리에 더 이상 항목이 없습니다.</em>
+        break
+    TV_GetText(ItemText, ItemID)
+    MsgBox The next Item is %ItemID%, whose text is &quot;%ItemText%&quot;.
+}</pre>
+  </li>
+  <li>두 번째 매개변수가 &quot;Check&quot;, &quot;Checked&quot;, 또는 &quot;C&quot;이면, 위와 같은 행위를 합니다. 단, 체크표식이 없는 항목은 건너 뜁니다. 이렇게 하면 TreeView에 체크표식된 모든 항목을 하나씩 열람할 수 있습니다.</li>
+</ol>
+
+<h3><a name="TV_GetText"></a>TV_GetText(OutputVar, ItemID)</h3>
+<p>
+지정된 <em>ItemID</em>의 텍스트/이름을 열람하고 그것을 <em>OutputVar</em>에 저장합니다. 텍스트가 8191 길이를 넘으면, 오직 앞쪽 8191 문자만 열람됩니다. 성공하면, 함수는 그 항목의 ID를 돌려줍니다. 실패하면, 0을 돌려줍니다 (그리고 <em>OutputVar</em>도 비워집니다).</p>
+
+<h3><a name="TV_Get"></a>TV_Get(ItemID, &quot;Expand | Check | Bold&quot;)</h3>
+<p>
+지정된 항목에 지정된 속성이 없으면, 그 자신의 <em>ItemID</em>가 반환됩니다. 그렇지 않으면 0이 반환됩니다. 두 번째 매개변수에 대하여, &quot;E&quot;, &quot;Expand&quot;, 또는 &quot;Expanded&quot;을 지정하면 항목이 현재 <a href="#Expand">확대</a>되어 있는지 알아낼 수 있습니다 (즉, 그의 자손이 보여지고 있는지를 알아낼 수 있습니다);  &quot;C&quot;, &quot;Check&quot;, 또는 &quot;Checked&quot;를 지정하면 항목에 <a href="#Check">체크표식</a>이 있는지 알아낼 수 있습니다; 또는 &quot;B&quot;나 &quot;Bold&quot;를 지정하면 현재 항목의 글꼴이 <a href="#Bold">볼드체</a>인지 알아낼 수 있습니다.</p>
+<p>
+<strong>팁</strong>: IF-서술문은 0 아닌 값을 참(&quot;true&quot;)으로 간주하므로, 다음의 두 줄은 기능적으로 동일합니다:</p>
+<ol>
+  <li><code>if TV_Get(ItemID, &quot;Checked&quot;) = ItemID</code></li>
+  <li><code>if TV_Get(ItemID, &quot;Checked&quot;)</code></li>
+</ol>
+<h2 id="notify">G-라벨 고지 (Primary)</h2>
+<p>
+<code><strong>g</strong>MySubroutine</code>과 같은 <a href="Gui.htm#label">g-라벨</a>은 콘트롤의 옵션에 나열할 수 있습니다. 이렇게 하면 사용자가 콘트롤에 조치를 수행할 때마다 <em>MySubroutine</em> 라벨이 자동으로 기동됩니다. 이 서브루틴은 내장 함수 <a href="../Variables.htm#Gui">A_Gui</a> 그리고 <a href="../Variables.htm#GuiControl">A_GuiControl</a> 을 참고해 어느 창과 어느 TreeView가 이벤트를 발생시켰는지 알아냅니다. 더 중요한 것은  <strong>A_GuiEvent</strong>를 참고할 수 있습니다. 안에 다음 문자열 또는 기호 중 하나가 들어 있습니다 (미래 버전과의 호환을 위해, 스크립트는 이것들만 유일한 값이라고 간주하면 안됩니다):</p>
+<p>
+<strong>DoubleClick</strong>: 사용자가 항목을 더블클릭했습니다. 변수 A_EventInfo에 그 항목의 ID가 담깁니다.</p>
+<p>
+<strong>D</strong>: 사용자가 항목을 끌려고 시도했습니다 (현재 이를 내부적으로 지원하지 않습니다). 변수 A_EventInfo에 그 항목의 ID가 담깁니다.</p>
+<p>
+<strong>d</strong> (소문자 D): 위와 같지만 왼클릭 끌기가 아니라 우클릭 끌기입니다.</p>
+<p>
+<strong>e</strong> (소문자 E): 사용자가 항목 편집을 끝마쳤습니다 (사용자는 TreeView  옵션에 <code><a href="#ReadOnly"><strong>-</strong>ReadOnly</a></code>일 경우에만 항목을 편집할 수 있습니다). 변수 A_EventInfo에 그 항목의 ID가 담깁니다.</p>
+<p>
+<strong>S</strong>: 사용자 또는 스크립트 자체에서 새 항목을 선택했습니다. 변수 A_EventInfo에 새로 선택된 그 항목의 ID가 담깁니다.</p>
+
+<h2>G-라벨 고지 (Secondary)</h2>
+<p>
+TreeView의 <a href="#Options">옵션</a>에 단어 AltSubmit이 있다면, 그의g-라벨은 더 자주 기동되고 <strong>A_GuiEvent</strong>에는 다음의 값이 추가로 담길 수 있습니다:</p>
+<p>
+<strong>Normal</strong>: 사용자가 항목을 왼클릭 했습니다. 변수 A_EventInfo에 그 항목의 ID가 담깁니다.</p>
+<p>
+<strong>RightClick</strong>: 사용자가 항목을 우클릭했습니다. 변수 A_EventInfo에 그 항목의 ID가 담깁니다. 대부분의 경우, 이에 반응하여 메뉴를 보여주지 않는 것이 제일 좋습니다. 대신에, <a href="Gui.htm#GuiContextMenu">GuiContextMenu 라벨</a>을 사용하십시오. 왜냐하면 Apps 키도 인지하기 때문입니다. 예를 들어:</p>
+
+<pre>GuiContextMenu:  <em>; 우클릭에 응답하여 기동되거나 Apps 누름에 응답하여 기동됩닏.</em>
+if A_GuiControl &lt;&gt; MyTreeView  <em>; 이 점검은 선택적입니다. TreeView 안에 클릭할 때만 메뉴를 보여줍니다.</em>
+    return
+<em>; 제공된 A_GuiX 그리고 A_GuiY 좌표에 메뉴를 보여줍니다.
+; 사용자가 Apps 키를 누르더라도 올바를 좌표를 제공하기 때무에 이것을 사용해야 합니다:</em>
+Menu, MyContextMenu, Show, %A_GuiX%, %A_GuiY%
+return</pre>
+<p>
+<strong>E</strong>: 사용자가 항목 편집을 시작했습니다 (사용자는 TreeView 옵션에 <a href="#ReadOnly">-ReadOnly</a>이 있을 경우에만 항목을 편집할 수 있습니다). 변수 A_EventInfo에 그 항목의 ID가 담깁니다.</p>
+<p>
+<strong>F</strong>: TreeView가 키보드 초점을 받았습니다.</p>
+<p>
+<strong>f</strong> (소문자 F): TreeView 가 키보드 초점을 잃어버렸습니다.</p>
+<p>
+<strong><a name="NotifyK"></a>K</strong>: TreeView가 초점이 있는 동안 사용자가 키를 눌렀습니다. A_EventInfo에 키의 가상 키 코드가 담깁니다. 범위는 1부터 255까지입니다. 키가 알파벳이면, 대부분의 키보드 레이아웃에서 <code><a href="../Functions.htm#Chr">Chr(A_EventInfo)</a></code>를 통하여 상응하는 문자로 변환할 수 있습니다. F2 키눌림은 <a href="#WantF2">WantF2</a>에 상관없이 받습니다. 그렇지만, Enter 키눌림은 받지 않습니다; 이 키를 받으려면, <a href="#Enter">아래에</a> 기술하는 바와 같이 기본 버튼을 사용하십시오.</p>
+<p>
+<strong>+</strong> (플러스 사인): 항목이 확대되어 그의 자손을 보여줍니다. 변수 A_EventInfo에 그 항목의 ID가 담깁니다.</p>
+<p><strong>-</strong> (마이너스 사인): 항목이 축소되어 그의 자손을 감춥니다. 변수 A_EventInfo에 그 항목의 ID가 담깁니다.</p>
+
+<h2 id="Remarks">논평</h2>
+<p>
+<a href="Gui.htm#Submit">Gui Submit</a> 명령어는 TreeView 콘트롤에 아무 효과가 없습니다. 그러므로, 스크립트는  (있다면) TreeView의 <a href="Gui.htm#var">연관 변수</a>를 사용해 기타 데이터를 저장할 수 있습니다. 덮어쓸까봐 걱정할 필요가 없습니다.</p>
+<p>
+<a name="Enter"></a>TreeView에 초점이 있는 동안 사용자가 Enter를 눌렀는지 탐지하려면, <a href="GuiControls.htm#DefaultButton">기본 버튼</a>을 사용하십시오 (원하면 감출 수 있습니다). 예를 들어:</p>
+<pre>Gui, Add, Button, Hidden Default, OK
+...
+ButtonOK:
+GuiControlGet, FocusedControl, FocusV
+if FocusedControl &lt;&gt; MyTreeView
+    return
+MsgBox % &quot;Enter was pressed. The selected item ID is &quot; . TV_GetSelection()
+return</pre>
+<p>
+키보드로 한 항목에서 다른 항목으로 항해하는 것 말고도, 사용자는 한 항목의 이름의 첫 문자를 타자하여 점진 검색을 수행할 수도 있습니다. 이렇게 하면 선택이 부합하는 가장 가까운 항목으로 점프합니다.</p>
+<p>
+길이에 상관없이 텍스트를 TreeView의 각 항목에 저장할 수 있지만, 오직 앞쪽 260 글자만 보여줍니다.</p>
+<p>
+이론적으로 TreeView에서 항목의 개수는 최대 65536이지만, 항목을 추가할 수록 얼마 가지 않아 수행성능이 눈에 띄게 줄어듭니다. <a href="#TV_Add">TV_Add()</a>에 기술된 다시 그리기 팁을 사용하면 이를 약간 줄일 수 있습니다.</p>
+<p>
+<a name="ILremarks"></a><a href="ListView.htm">ListViews</a>와 다르게, TreeView의 ImageList는 TreeView가 파괴될 때 자동으로 파괴되지 않습니다. 그러므로, 스크립트는 TreeView의 창을 파괴하고 나면 반드시 <a href="ListView.htm#IL_Destroy">IL_Destroy(ImageListID)</a>를 호출해야 합니다. 
+
+ImageList를 다른 곳에 사용할 생각이 없다면 말입니다. 그렇지만, 스크립트가 곧 끝날 경우라면 불필요합니다. 왜냐하면 그 때 모든 ImageLists도 자동으로 파괴되기 때문입니다.</p>
+<p>
+스크립트는 창 당 하나 이상의 TreeView를 생성할 수 있습니다. 기본 말고 다른 TreeView를 처리하려면, <a href="#BuiltIn">내장 함수</a>를 참조하십시오.</p>
+<p>
+TreeView의 글꼴을 바꾸거나 크기를 바꾸거나 숨기려면 <a href="GuiControl.htm">GuiControl</a>을 사용하십시오.</p>
+<p>
+트리뷰 확장(Tree View eXtension (TVX))으로 TreeViews를 이동하고 삽입하고 제거할 수 있습니다. 다음 데모를 참조하십시오: <a href="http://www.autohotkey.com/forum/topic19021.html">www.autohotkey.com/forum/topic19021.html</a></p>
+
+<h2>관련 항목</h2>
+<p>
+<a href="ListView.htm">ListView</a>, <a href="GuiControls.htm">Other Control Types</a>, <a href="Gui.htm">Gui</a>, <a href="Gui.htm#GuiContextMenu">GuiContextMenu</a>, <a href="GuiControl.htm">GuiControl</a>, <a href="GuiControlGet.htm">GuiControlGet</a>, <a href="../misc/Styles.htm#TreeView">TreeView 스타일 테이블</a></p>
+
+<h2 id="Examples">예제</h2>
+<pre class="NoIndent"><em>; 다음 스크립트는 이 페이지 위에 있는 예제보다 더 정교합니다.
+; 모든-사용자 시작 메뉴의 모든 폴더를 담은 TreeView를 생성하고 부여줍니다.
+; 사용자가 폴더를 선택하면, 그의 내용이 ListView 오른쪽에 나타납니다 (윈도우즈의 탐색기처럼).
+; 게다가, <a href="GuiControls.htm#StatusBar">StatusBar</a> 콘트롤에 현재 선택된 폴더에 관한 정보를 보여줍니다.</em>
+
+<em>; 다음 폴더는 TreeView에 대하여 루트 폴더가 됩니다.
+; C:\와 같이 전체 드라이브를 지정하면 약간 적재 시간이 걸립니다:</em>
+TreeRoot = %A_StartMenuCommon%
+TreeViewWidth := 280
+ListViewWidth := A_ScreenWidth - TreeViewWidth - 30
+
+<em>; 사용자가 창을 끌어 크기를 바꿀 수 있도록 허용합니다:</em>
+Gui +Resize
+
+<em>; ImageList를 만들고 거기에 표준 시스템 아이콘을 배정합니다:</em>
+ImageListID := <a href="ListView.htm#IL_Create">IL_Create</a>(5)
+Loop 5 
+    <a href="ListView.htm#IL_Add">IL_Add</a>(ImageListID, &quot;shell32.dll&quot;, A_Index)
+<em>; TreeView와 ListView를 나란히 만들어 마치 윈도우즈의 탐색기처럼 행위합니다:</em>
+<a href="#GuiAdd">Gui, Add, TreeView</a>, vMyTreeView r20 w%TreeViewWidth% gMyTreeView <a href="#ImageList">ImageList</a>%ImageListID%
+Gui, Add, ListView, vMyListView r20 w%ListViewWidth% x+10, Name|Modified
+
+<em>; ListView의 컬럼 너비를 설정합니다 (이것은 선택적입니다):</em>
+Col2Width = 70  <em>; 오직 YYYYMMDD 부분만 보이도록 너비를 줄입니다.</em>
+LV_ModifyCol(1, ListViewWidth - Col2Width - 30)  <em>; 수직 스크롤바를 위해 공간을 허용합니다.</em>
+LV_ModifyCol(2, Col2Width)
+
+<em>; 파일의 개수와 그의 총 크기에 관한 정보를 보여줄 상태 바를 생성합니다:</em>
+<a href="GuiControls.htm#StatusBar">Gui, Add, StatusBar</a>
+<a href="GuiControls.htm#SB_SetParts">SB_SetParts</a>(60, 85)  <em>; 바를 세 부분으로 생성합니다 (세 번째 부분에 나머지 너비를 모두 채웁니다).</em>
+
+<em>; 폴더와 그의 부폴더덜을 트리에 추가합니다. 적재 시간이 걸릴 경우는 현재 상태를 보여줍니다:</em>
+SplashTextOn, 200, 25, TreeView and StatusBar Example, Loading the tree...
+AddSubFoldersToTree(TreeRoot)
+SplashTextOff
+
+<em>; 창을 보여주고 돌아갑니다. OS는 스크립트에게 사용자가 적절한 행위를 수행할 때마다 고지합니다:</em>
+Gui, Show,, %TreeRoot%  <em>; 제목 바에 소스 디렉토리를 보여줍니다 (TreeRoot).</em>
+return
+
+AddSubFoldersToTree(Folder, ParentItemID = 0)
+{
+    <em>; 이 함수는 지정된 폴더의 모든 부폴더를 TreeView에 추가합니다..</em>
+    <em>; 또한 깊이에 상관없이 자기 자신을 재귀해 내포된 폴더들을 수집합니다.</em>
+    Loop %Folder%\*.*, 2  <em>; 모든 폴더의 부폴더들을 열람합니다.</em>
+        AddSubFoldersToTree(A_LoopFileFullPath, <a href="#TV_Add">TV_Add</a>(A_LoopFileName, ParentItemID, &quot;Icon4&quot;))
+}
+
+MyTreeView:  <em>; 이 서브루틴은 사용자 행위를 처리합니다 (예를 들어 클릭).</em>
+if A_GuiEvent &lt;&gt; S  <em>; 즉, &quot;새로운 트리 항목 선택&quot;이 아닌 이벤트.</em>
+    return  <em>; 아무것도 하지 않음.
+; 그렇지 않으면, ListView 내용을 선택된 폴더로 채웁니다.
+; 먼처 선택된 폴더의 완전한 경로를 알아냅니다:</em>
+<a href="#TV_GetText">TV_GetText</a>(SelectedItemText, A_EventInfo)
+ParentID := A_EventInfo
+Loop  <em>; 선택된 폴더에 대한 전체 경로를 구성합니다.</em>
+{
+    ParentID := <a href="#TV_GetParent">TV_GetParent</a>(ParentID)
+    if not ParentID  <em>; 더 이상 조상 없음.</em>
+        break
+    TV_GetText(ParentText, ParentID)
+    SelectedItemText = %ParentText%\%SelectedItemText%
+}
+SelectedFullPath = %TreeRoot%\%SelectedItemText%
+
+<em>; 파일들을 ListView 안에 삽입합니다:</em>
+LV_Delete()  <em>; 모든 행들을 지웁니다.</em>
+GuiControl, -Redraw, MyListView  <em>; 적재하는 동안 다시 그리기를 막아서 수행성능을 향상시킵니다.</em>
+FileCount = 0  <em>; 아래 회돌이를 시작하기 전에 초기화합니다.</em>
+TotalSize = 0
+Loop %SelectedFullPath%\*.*  <em>; 간단하게 처리하기 위해, 폴더를 생략하고 ListView에 있는 파일들만 보입니다.</em>
+{
+    LV_Add(&quot;&quot;, A_LoopFileName, A_LoopFileTimeModified)
+    FileCount += 1
+    TotalSize += A_LoopFileSize
+}
+GuiControl, +Redraw, MyListView
+
+<em>; 상태 바의 세 부분을 업데이트해 현재 선택된 폴더에 관한 정보를 보여줍니다:</em>
+<a href="GuiControls.htm#SB_SetText">SB_SetText</a>(FileCount . &quot; files&quot;, 1)
+SB_SetText(Round(TotalSize / 1024, 1) . &quot; KB&quot;, 2)
+SB_SetText(SelectedFullPath, 3)
+return
+
+GuiSize:  <em>; 사용자의 창 크기 변경에 응답하여 ListView와 TreeView 크기를 조절합니다.</em>
+if A_EventInfo = 1  <em>; 창이 최소화되었습니다. 아무 조치도 필요하지 않습니다.</em>
+    return
+<em>; 그렇지 않으면, 창은 크기가 변경되거나 최대화되었습니다. 부합하는 콘트롤들의 크기를 조절합니다.</em>
+GuiControl, Move, MyTreeView, % &quot;H&quot; . (A_GuiHeight - 30)  <em>; StatusBar와 여백에 -30을 지정합니다.</em>
+GuiControl, Move, MyListView, % &quot;H&quot; . (A_GuiHeight - 30) . &quot; W&quot; . (A_GuiWidth - TreeViewWidth - 30)
+return
+
+GuiClose:  <em>; 사용자가 TreeView의 GUI 창을 닫으면 스크립트를 종료합니다.</em>
+ExitApp</pre>
+
+</body>
+</html>

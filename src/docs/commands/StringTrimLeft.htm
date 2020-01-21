@@ -1,0 +1,47 @@
+
+
+<html>
+<head>
+<title>StringTrimLeft / StringTrimRight</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>StringTrimLeft / StringTrimRight</h1>
+
+<p>문자열의 왼쪽 오른쪽으로부터 문자들을 제거합니다.</p>
+
+<pre class="Syntax">StringTrimLeft, OutputVar, InputVar, Count
+StringTrimRight, OutputVar, InputVar, Count
+NewStr := <a href="../Functions.htm#SubStr">SubStr</a>(String, StartPos [, Length]) <em>; 자세한 것은 <a href="../Functions.htm#SubStr">SubStr() 함수</a> 참조.</em></pre>
+<h3>매개변수</h3>
+<dl>
+
+  <dt>OutputVar</dt>
+  <dd>줄어든 <em>InputVar</em>를 <p>저장할 변수의 이름 .</p></dd>
+
+  <dt>InputVar</dt>
+  <dd><p>내용을 읽어 들일 변수의 이름. 이름을 퍼센트 사인으로 둘러 싸지 마십시오. 단, 변수의 <em>내용</em>이 이름으로 사용되기를 바란다면 예외입니다.</p></dd>
+
+  <dt>Count</dt>
+  <dd><p>제거할 문자의 개수. <a href="../Variables.htm#Expressions">표현식</a> 가능.  <em>Count</em>가 0보다 작으면, <em>OutputVar</em>는 <em>InputVar</em> 전체와 같게 설정됩니다. <em>Count</em>가 <em>InputVar</em>의 길이를 초과하면, <em>OutputVar</em>는 비워집니다.</p></dd>
+
+</dl>
+
+<h3>논평</h3>
+<p>이 명령어와 기타 모든 명령어에 대하여, <em>OutputVar</em>는 <em>InputVar</em>와 같은 변수가 되어도 허용합니다.</p>
+
+<h3>관련 항목</h3>
+<p><a href="../Functions.htm#SubStr">SubStr()</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
+
+<h3>예제</h3>
+
+<pre class="NoIndent">String = This is a test.
+StringTrimLeft, OutputVar, String, 5  <em>;  문자열 &quot;is a test.&quot;를 OutputVar에 저장합니다.</em>
+StringTrimRight, OutputVar, String, 6  <em>; 문자열 &quot;This is a&quot;를 OutputVar에 저장합니다.</em></pre>
+
+</body>
+</html>

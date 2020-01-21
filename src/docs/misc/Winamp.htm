@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Automating Winamp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+
+<body>
+<h1>Winamp 자동화하기</h1>
+
+<p>
+이 섹션은 핫키를 통하여 Winamp를 제어하는 법을 보여줍니다. 최소화되어 있든 비활성화 상태이든 상관없이 제어할 수 있습니다. 이 정보는  Winamp 2.78c로 검증되었지만 다른 배포본에도 역시 잘 작동할 것이라 믿습니다. 변경을 하였거나 개선을 하였으면 포롬에 게시해 주시거나 저자에게 연락을 주십시오.</p>
+<p>
+다음 예제는 Ctrl+Alt+P 핫키를 Winamp의 pause/unpause 버튼을 누른 것과 동등하게 만듭니다:</p>
+<pre>^!p::
+IfWinNotExist ahk_class Winamp v1.x
+    return
+<em>; 그렇지 않으면, 위에서 &quot;가장 마지막에 발견된&quot; 창을 아래에 사용하도록 설정했습니다.</em>
+<a href="../commands/ControlSend.htm">ControlSend</a>, ahk_parent, c  <em>; Pause/Unpause</em>
+return</pre>
+<p>
+다음은 Winamp 2.x에서 사용가능한 몇 가지 키보드 단축키입니다 (다른 버전에서도 작동할 것입니다). 위의 예제는 다음 키들을 사용하도록 개정할 수 있습니다:</p>
+<table class="info" style="width:50%">
+  <tr>
+    <th>보낼 키</th>
+    <th>효과</th>
+  </tr>
+  <tr>
+    <td>c</td>
+    <td>정지/재개</td>
+  </tr>
+  <tr>
+    <td>x</td>
+    <td>플레이/재시작/재개</td>
+  </tr>
+  <tr>
+    <td width="29%">v</td>
+    <td width="71%">멈춤</td>
+  </tr>
+  <tr>
+    <td>+v</td>
+    <td>소리를 죽이며 천천히 멈춤</td>
+  </tr>
+  <tr>
+    <td>^v</td>
+    <td>현재 트랙이 끝나면 멈춤</td>
+  </tr>
+  <tr>
+    <td>b</td>
+    <td>다음 트랙으로</td>
+  </tr>
+  <tr>
+    <td>z</td>
+    <td>이전 트랙으로</td>
+  </tr>
+  <tr>
+    <td>{left}</td>
+    <td>5 초 되감음</td>
+  </tr>
+  <tr>
+    <td>{right}</td>
+    <td>빠르게 5초 앞으로 감음</td>
+  </tr>
+  <tr>
+    <td>{up}</td>
+    <td>볼륨 높게</td>
+  </tr>
+  <tr>
+    <td>{down}</td>
+    <td>볼륨 낮게</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<pre>
+<em>; 다음 예제는 Winamp에게 현재 어느 트랙이 활성화되어 있는지 묻습니다:</em>
+<a href="../commands/PostMessage.htm">SendMessage</a>, 1024, 0, 120, ahk_class Winamp v1.x
+if ErrorLevel &lt;&gt; FAIL
+{
+    ErrorLevel += 1  <em>; Winamp의 카운트는 0부터 시작합니다. 그래서 1 만큼 조정합니다.</em>
+    MsgBox, #%ErrorLevel% 번 트랙이 현재 연주 중입니다.
+}</pre>
+</body>
+</html>

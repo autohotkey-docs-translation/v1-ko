@@ -1,0 +1,261 @@
+<html>
+<head>
+<title>Minimize Window to Tray Menu</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>창을 트레이 메뉴로 최소화하기</h1>
+
+<p>이 스크립트는 여러분이 선택한 핫키를 창을 감추는 데 할당합니다. 창은 스크립트의 트레이 메뉴 아래에 엔트리가 됩니다. 숨은 창들은 개별적으로 또는 한 꺼번에 메뉴에서 상응하는 항목을 선택해 보여줄 수 있습니다. 스크립트가 어떤 이유로 종료하면, 숨겨진 모든 창은 자동으로 숨김 해제됩니다.
+</p>
+<p><a href="MinimizeToTrayMenu.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
+
+<pre class="NoIndent"><em>; 변경 이력:
+; July 22, 2005 (egilmour가 제공한 변경):
+; - 마지막 숨은 창을 보여줄 새 핫키 추가 (Win+U)
+;
+; November 3, 2004 (trogdor가 제공한 변경):
+; - 프로그램 관리자가 숨지 못하도록 방지.
+; - 활성 창이 없다면, minimize-to-tray 핫키가 무한정 기다리는 대신에
+;   아무 효과가 없도록 변경.
+;
+; October 23, 2004:
+; - 태스크바가 숨지 못하도록 방지.
+; - 창 제목이 긴경우 발생 가능한 문제들이 해결됨.
+; - 제목 없는 창도 아무 문제 없이 숨길 수 있음.
+; - 스크립트가  AHK v1.0.22 이상에서 실행 중이면,
+;   각 메뉴 항목의 최대 길이을 100에서 260으로 늘림.</em>
+
+<em>; CONFIGURATION SECTION: 아래의 값을 입맛에 맞게 바꾸십시오.</em>
+
+<em>; 다음은 숨기기를 허용할 창의 최대 개수입니다.
+; (제한을 두면 수행성능이 향상됩니다):</em>
+mwt_MaxWindows = 50
+
+<em>; 활성 창을 감추는데 사용되는 핫키입니다:</em>
+mwt_Hotkey = #h  <em>; Win+H</em>
+
+<em>; 마지막 숨김 창을 보여주는 데 사용되는 핫키입니다:</em>
+mwt_UnHotkey = #u  <em>; Win+U</em>
+
+<em>; 트레이 메뉴에서 모든 표준 항목을 비우려면,
+; 예를 들어 Help 그리고 Pause를 비우려면, N을 사용하십시오. 그렇지 않으면, Y를 사용하십시오:</em>
+mwt_StandardMenu = N
+
+<em>; 다음의 몇 가지 수행성능을 위한 설정은 
+; #HotkeyModifierTimeout 시간 안에 조치를 마치는 데 도움이 됩니다. 
+; 그리하여 주욱 늘어선 여러 창을 일렬로 감추기 위해
+;  핫키의 수식자를 떼고 누를 필요가 없습니다. 
+; 다음과 같이 설정하면 #InstallKeybdHook 또는 기타 수단을 통하여
+; 스크립트에 키보드 갈고리를 사용할 필요가 없습니다:</em>
+#HotkeyModifierTimeout 100
+SetWinDelay 10
+SetKeyDelay 0
+
+#SingleInstance  <em>; 이 스크립트의 실체가 하나만 실행되도록 허용합니다.</em>
+
+<em>; END OF CONFIGURATION SECTION (이 시점부터 변경하지 마십시오
+; 단, 스크립트의 기본 기능을 변경하고 싶은 경우는 예외입니다).</em>
+
+Hotkey, %mwt_Hotkey%, mwt_Minimize
+Hotkey, %mwt_UnHotkey%, mwt_UnMinimize
+
+<em>; 사용자가 어떤 수단으로 스크립트를 종료하면, 
+; 모든 창을 먼저 닫습니다:</em>
+OnExit, mwt_RestoreAllThenExit
+
+if mwt_StandardMenu = Y
+    Menu, Tray, Add
+else
+{
+    Menu, Tray, NoStandard
+    Menu, Tray, Add, E&amp;xit and Unhide All, mwt_RestoreAllThenExit
+}
+Menu, Tray, Add, &amp;Unhide All Hidden Windows, mwt_RestoreAll
+Menu, Tray, Add  <em>; 위 항목을 더 특별하게 만들어 줄 또다른 가름 줄.</em>
+
+if a_AhkVersion =   <em>; 비어 있으므로, 버전이 1.0.22 미만입니다.</em>
+    mwt_MaxLength = 100
+else
+    mwt_MaxLength = 260  <em>; 이를 줄이면 메뉴의 너비를 제한할 수 있습니다.</em>
+
+return  <em>; 자동 실행 섹션의 끝.</em>
+
+
+mwt_Minimize:
+if mwt_WindowCount &gt;= %mwt_MaxWindows%
+{
+    MsgBox No more than %mwt_MaxWindows% may be hidden simultaneously.
+    return
+}
+
+<em>; &quot;마지막으로 발견된 창&quot;을 설정해 수행성능을 개선하고 일을 간단하게 만듭니다.
+; 어떤 경우 활성 창이 없을 수 있으므로,
+; 시간제한을 추가했습니다:</em>
+WinWait, A,, 2
+if ErrorLevel &lt;&gt; 0  <em>; 시한 종료, 그래서 아무것도 하지 않습니다.</em>
+    return
+
+<em>; 그렇지 않으면, &quot;마지막 발견 창&quot;을 설정하고 이제 사용할 수 있습니다:</em>
+WinGet, mwt_ActiveID, ID
+WinGetTitle, mwt_ActiveTitle
+WinGetClass, mwt_ActiveClass
+if mwt_ActiveClass in Shell_TrayWnd,Progman
+{
+    MsgBox The desktop and taskbar cannot be hidden.
+    return
+}
+<em>; 창을 감추어도 비활성화되는 것은 아니기 때문에,
+; 이 창 아래의 창을 활성화 합니다. 다른 방법을 시도했지만, 결과적으로
+; 태스크 바가 활성화되었습니다. 이런 식으로 (숨기 바로 직전의) 활성 창을 
+; 스택 뒤로 밀어 버리는 편이 가장 좋은 듯 보입니다:</em>
+Send, !{esc}
+<em>; Hide it only now that WinGetTitle/WinGetClass above have been run
+; (기본적으로, 그런 명령어들은 숨은 창을 탐지할 수 없기 때문입니다):</em>
+WinHide
+
+<em>; 제목이 비어 있으면, 대신에 클래스를 사용하십시오. 이것은 두 가지 목적으로 기여합니다:
+; 1) 더 의미 있는 이름이 메뉴 이름으로 사용됩니다.
+; 2) 메뉴 항목을 생성할 수 있습니다
+;     (그렇지 않으면, 빈 항목을 아래의 다양한 루틴에서 제대로 다룰 수 없습니다).</em>
+if mwt_ActiveTitle =
+    mwt_ActiveTitle = ahk_class %mwt_ActiveClass%
+<em>; 제목이 길이가 짧은지 확인합니다. 
+; mwt_ActiveTitle도 역시 이 특정한 메뉴 항목을 유일하게 식별하는 데 기여합니다.</em>
+StringLeft, mwt_ActiveTitle, mwt_ActiveTitle, %mwt_MaxLength%
+
+<em>; 트레이 메뉴가 각 메뉴 이름이 유일하기를 요구하는 외에도
+; 메뉴 이름이 유일해야만 나중에 창이 숨을 때 
+; 배열에서 안전하게 찾을 수 있습니다.
+; 그래서 아직 그렇지 않다면 유일하게 만드십시오:</em>
+Loop, %mwt_MaxWindows%
+{
+    if mwt_WindowTitle%a_index% = %mwt_ActiveTitle%
+    {
+        <em>; 부합이 발견됨. 그래서 유일한 것이 아닙니다.</em>
+        <em>; 먼저 0x를 십육진 수에서 제거해 메뉴 공간을 보존합니다:</em>
+        StringTrimLeft, mwt_ActiveIDShort, mwt_ActiveID, 2
+        StringLen, mwt_ActiveIDShortLength, mwt_ActiveIDShort
+        StringLen, mwt_ActiveTitleLength, mwt_ActiveTitle
+        mwt_ActiveTitleLength += %mwt_ActiveIDShortLength%
+        mwt_ActiveTitleLength += 1 <em>; +1 the 1 space between title &amp; ID.</em>
+        if mwt_ActiveTitleLength &gt; %mwt_MaxLength%
+        {
+            <em>; 메뉴 이름이 길이에 제한이 있기 때문에,</em>
+            <em>; 제목을 다듬어 그의 이름 뒤에</em>
+            <em>; 창의 Short ID를 위한 충분한 공간을 확보합니다:</em>
+            TrimCount = %mwt_ActiveTitleLength%
+            TrimCount -= %mwt_MaxLength%
+            StringTrimRight, mwt_ActiveTitle, mwt_ActiveTitle, %TrimCount%
+        }
+        <em>; 유일한 제목을 빌드합니다:</em>
+        mwt_ActiveTitle = %mwt_ActiveTitle% %mwt_ActiveIDShort%
+        break
+    }
+}
+
+<em>; 먼저, 이 ID가 리스트에 이미 존재하지 않는지 확인합니다.
+; 이런 일은 특정 창이 외부적으로 보이게 되면 (또는 그의 어플리케이션이 숨김을 해제하면
+; 일어날 수 있습니다. 그리고 이제 다시 숨기 일보 직전입니다:</em>
+mwt_AlreadyExists = n
+Loop, %mwt_MaxWindows%
+{
+    if mwt_WindowID%a_index% = %mwt_ActiveID%
+    {
+        mwt_AlreadyExists = y
+        break
+    }
+}
+
+<em>; 항목을 트레이와 메뉴에 추가합니다:</em>
+if mwt_AlreadyExists = n
+{
+    Menu, Tray, add, %mwt_ActiveTitle%, RestoreFromTrayMenu
+    mwt_WindowCount += 1
+    Loop, %mwt_MaxWindows%  <em>; Search for a free slot.</em>
+    {
+        <em>; 올바르게 설계되었다면 언제나 빈 공간을 찾을 수 있을 것입니다.</em>
+        if mwt_WindowID%a_index% =  <em>; 빈 슬롯이 발견되었습니다.</em>
+        {
+            mwt_WindowID%a_index% = %mwt_ActiveID%
+            mwt_WindowTitle%a_index% = %mwt_ActiveTitle%
+            break
+        }
+    }
+}
+return
+
+
+RestoreFromTrayMenu:
+Menu, Tray, delete, %A_ThisMenuItem%
+<em>; 메뉴 항목 이름으로 저장된 유일한 제목에 기반하여 창을 찾습니다:</em>
+Loop, %mwt_MaxWindows%
+{
+    if mwt_WindowTitle%a_index% = %A_ThisMenuItem%  <em>; 부합 발견.</em>
+    {
+        StringTrimRight, IDToRestore, mwt_WindowID%a_index%, 0
+        WinShow, ahk_id %IDToRestore%
+        WinActivate ahk_id %IDToRestore%  <em>; 종종 필요.</em>
+        mwt_WindowID%a_index% =  <em>; 비워서 슬롯을 풀어줍니다.</em>
+        mwt_WindowTitle%a_index% =
+        mwt_WindowCount -= 1
+        break
+    }
+}
+return
+
+
+<em>;; 다음은 마지막 최소화 창을 스택에서 꺼내 보여줍니다.</em>
+mwt_UnMinimize:
+<em>;; 더 이상 보여줄 것이 없는지 확인합니다.</em>
+if mwt_WindowCount &gt; 0 
+{
+    <em>;; 마지막 최소 창의 id를 얻어 그것을 보여줍니다</em>
+    StringTrimRight, IDToRestore, mwt_WindowID%mwt_WindowCount%, 0
+    WinShow, ahk_id %IDToRestore%
+    WinActivate ahk_id %IDToRestore%
+    
+    <em>;; 마지막 최소 창의 메뉴 이름을 얻어 그것을 제거합니다</em>
+    StringTrimRight, MenuToRemove, mwt_WindowTitle%mwt_WindowCount%, 0
+    Menu, Tray, delete, %MenuToRemove%
+    
+    <em>;; 우리의 '배열'을 정리하고 창 개수를 줄입니다</em>
+    mwt_WindowID%mwt_WindowCount% =
+    mwt_WindowTitle%mwt_WindowCount% = 
+    mwt_WindowCount -= 1
+}
+return
+
+
+mwt_RestoreAllThenExit:
+Gosub, mwt_RestoreAll
+ExitApp  <em>; 진짜로 종료합니다.</em>
+
+
+mwt_RestoreAll:
+Loop, %mwt_MaxWindows%
+{
+    if mwt_WindowID%a_index% &lt;&gt;
+    {
+        StringTrimRight, IDToRestore, mwt_WindowID%a_index%, 0
+        WinShow, ahk_id %IDToRestore%
+        WinActivate ahk_id %IDToRestore%  <em>; 종종 필요함.</em>
+        <em>; 이런 식으로 하거나 vs. 모두 지웁니다(DeleteAll)</em>
+        <em>; 가름 줄과 첫 항목은 그대로 둡니다:</em>
+        StringTrimRight, MenuToRemove, mwt_WindowTitle%a_index%, 0
+        Menu, Tray, delete, %MenuToRemove%
+        mwt_WindowID%a_index% =  <em>; 비워서 슬롯을 풀어 줍니다.</em>
+        mwt_WindowTitle%a_index% =
+        mwt_WindowCount -= 1
+    }
+    if mwt_WindowCount = 0
+        break
+}
+return
+</pre>
+</body>
+</html>
