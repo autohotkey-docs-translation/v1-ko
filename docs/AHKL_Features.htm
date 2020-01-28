@@ -1,148 +1,149 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>AutoHotkey_L New Features</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
 <script src="static/content.js" type="text/javascript"></script>
 </head>
 <body><h1>AutoHotkey_L New Features</h1>
 
-<p>ÀÌ ¹®¼­´Â AutoHotkey_L ºÐ±â¿¡ Ãß°¡µÈ Æ¯Â¡À» ±â¼úÇÕ´Ï´Ù. ÀÌ ºÐ±â´Â Áö±ÝÀº °£´ÜÇÏ°Ô "AutoHotkey 1.1"¶ó°í ºÎ¸¨´Ï´Ù.</p>
-<p><strong>ÁÖÀÇ:</strong> ÀÌ ¹®¼­´Â ¸î ³â°£ ¹æÄ¡µÇ¾î ¿ÔÀ¸¸ç ÃÖ±ÙÀÇ º¯È­·Î ¾ø¾îÁö°Å³ª ´õ Ãß°¡µÈ °ÍÀÌ ÀÖÀ» ¼ö ÀÖ½À´Ï´Ù.</p>
+<p>ì´ ë¬¸ì„œëŠ” AutoHotkey_L ë¶„ê¸°ì— ì¶”ê°€ëœ íŠ¹ì§•ì„ ê¸°ìˆ í•©ë‹ˆë‹¤. ì´ ë¶„ê¸°ëŠ” ì§€ê¸ˆì€ ê°„ë‹¨í•˜ê²Œ "AutoHotkey 1.1"ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤.</p>
+<p><strong>ì£¼ì˜:</strong> ì´ ë¬¸ì„œëŠ” ëª‡ ë…„ê°„ ë°©ì¹˜ë˜ì–´ ì™”ìœ¼ë©° ìµœê·¼ì˜ ë³€í™”ë¡œ ì—†ì–´ì§€ê±°ë‚˜ ë” ì¶”ê°€ëœ ê²ƒì´ ìžˆì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
 <br><table class="info">
 
-<tr><th id="flow">Á¦¾î Èå¸§</th><th>&nbsp;</th></tr>
-<tr><td><a href="commands/Break.htm">Break <i>LoopLabel</i></a></td><td>³»Æ÷ È¸µ¹ÀÌ·ÎºÎÅÍ ±íÀÌ¿¡ »ó°ü¾øÀÌ ºüÁ® ³ª¿É´Ï´Ù.</td></tr>
-<tr><td><a href="commands/Continue.htm">Continue <i>LoopLabel</i></a></td><td>È¸µ¹ÀÌ¸¦ °è¼ÓÇÕ´Ï´Ù. ±íÀÌ¿¡ »ó°üÀÌ ¾ø½À´Ï´Ù.</td></tr>
-<tr><td><a href="commands/For.htm">For <i>x</i>,<i>y</i> in <i>z</i></a></td><td>°´Ã¼ÀÇ ³»¿ëÀ» È¸µ¹ÀÌÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/Until.htm">Loop Until</a></td><td>Á¶°ÇÀÌ ÂüÀÎ µ¿¾È È¸µ¹ÀÌ ÇÕ´Ï´Ù. ¾î¶² Á¾·ùÀÇ È¸µ¹ÀÌ¿¡µµ Àû¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
-<tr><td><a href="commands/Try.htm">Try</a>...<a href="commands/Catch.htm">Catch</a>...<a href="commands/Finally.htm">Finally</a></td><td>±¸Á¶È­ µÈ ¿¹¿Ü Ã³¸®¸¦ Á¦°øÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/Throw.htm">Throw</a></td><td>¿¹¿Ü¸¦ ´øÁý´Ï´Ù.</td></tr>
+<tr><th id="flow">ì œì–´ íë¦„</th><th>&nbsp;</th></tr>
+<tr><td><a href="commands/Break.htm">Break <i>LoopLabel</i></a></td><td>ë‚´í¬ íšŒëŒì´ë¡œë¶€í„° ê¹Šì´ì— ìƒê´€ì—†ì´ ë¹ ì ¸ ë‚˜ì˜µë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/Continue.htm">Continue <i>LoopLabel</i></a></td><td>íšŒëŒì´ë¥¼ ê³„ì†í•©ë‹ˆë‹¤. ê¹Šì´ì— ìƒê´€ì´ ì—†ìŠµë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/For.htm">For <i>x</i>,<i>y</i> in <i>z</i></a></td><td>ê°ì²´ì˜ ë‚´ìš©ì„ íšŒëŒì´í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/Until.htm">Loop Until</a></td><td>ì¡°ê±´ì´ ì°¸ì¸ ë™ì•ˆ íšŒëŒì´ í•©ë‹ˆë‹¤. ì–´ë–¤ ì¢…ë¥˜ì˜ íšŒëŒì´ì—ë„ ì ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/Try.htm">Try</a>...<a href="commands/Catch.htm">Catch</a>...<a href="commands/Finally.htm">Finally</a></td><td>êµ¬ì¡°í™” ëœ ì˜ˆì™¸ ì²˜ë¦¬ë¥¼ ì œê³µí•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/Throw.htm">Throw</a></td><td>ì˜ˆì™¸ë¥¼ ë˜ì§‘ë‹ˆë‹¤.</td></tr>
 
-<tr><th id="commands">¸í·É¾î</th><th>&nbsp;</th></tr>
-<tr><td><a href="commands/FileEncoding.htm">FileEncoding</a></td><td>±âº» ÀÎÄÚµùÀ» ¼³Á¤ÇÕ´Ï´Ù: <a href="commands/FileRead.htm">FileRead</a>, <a href="commands/FileReadLine.htm">FileReadLine</a>, <a href="commands/LoopReadFile.htm">Loop Read</a>, <a href="commands/FileAppend.htm">FileAppend</a>, ±×¸®°í <a href="commands/FileOpen.htm">FileOpen</a>.<br><i>´ÙÀ½ ÂüÁ¶:</i> <a href="#enc">ÅØ½ºÆ® ÀÎÄÚµù</a></td></tr>
-<tr><td><a href="commands/Gui.htm">Gui</a></td><td>¾Æ·¡ÀÇ <a href="#GUI_Enhancements">GUI °³¼±</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</td></tr>
-<tr><td><a href="commands/IniRead.htm">IniRead</a>/<a href="commands/IniWrite.htm">Write</a>/<a href="commands/IniDelete.htm">Delete</a></td><td>ÀüÃ¼ ¼½¼ÇÀ» ÀÐ°í, ¾²°í, Áö¿ó´Ï´Ù. ¶Ç´Â ¸ðµç ¼½¼Ç ÀÌ¸§ ¸ñ·ÏÀ» ¿­¶÷ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/Menu.htm#MenuIcon">Menu, Icon</a></td><td>¸Þ´º ¾ÆÀÌÅÛÀÇ ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÏ°Å³ª Á¦°ÅÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/Run.htm">Run</a></td><td>¸Å°³º¯¼ö¸¦ ÇØ¼®ÇÏµµ·Ï <a href="Compat.htm#Run">°³¼±µÇ¾ú½À´Ï´Ù</a>.</tr>
-<tr><td><a href="commands/Send.htm#Unicode">SendInput {U+nnnn}</a></td><td>À¯´ÏÄÚµå ¹®ÀÚ¸¦ Àü¼ÛÇÕ´Ï´Ù. À¯´ÏÄÚµå ¹®ÀÚ´Â À¯´ÏÄÚµå ºôµå¿¡¼­ Á÷Á¢ÀûÀ¸·Î »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
-<tr><td><a href="commands/SendLevel.htm">SendLevel</a></td><td>ÇÖÅ°¿Í ÇÖ½ºÆ®¸µÀÌ ¹«½ÃÇÒ ÀÎÀ§ÀûÀÎ Å°º¸µå ÀÌº¥Æ®¿Í ¸¶¿ì½º ÀÌº¥Æ®¸¦ Á¦¾îÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/SetFormat.htm">SetFormat, IntegerFast, h|H</a></td><td>¼Ò¹®ÀÚ³ª ´ë¹®ÀÚ·Î ½ÊÀ°Áø ¼öÀÇ Çü½ÄÀ» ¼³Á¤ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/SetRegView.htm">SetRegView, RegView</a></td><td>·¹Áö½ºÆ®¸® ¸í·É¾î°¡ 32-ºñÆ® ½ºÅ©¸³Æ®¿¡¼­ 64-ºñÆ® ·¹Áö½ºÆ®¸® ºä¿¡ ¶Ç´Â ±× ¹Ý´ë·Î Á¢±ÙÇÏµµ·Ï ÇØ ÁÝ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/Transform.htm#HTML">Transform, HTML</a></td><td>ÄÚµå ÆäÀÌÁö³ª  HTML º¯È¯À» ¼öÇàÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/WinGet.htm#ProcessPath">WinGet, ..., ProcessPath</a></td><td>ÁÖ¾îÁø Ã¢À» ¼ÒÀ¯ÇÑ ÇÁ·Î¼¼½ºÀÇ ÀÌ¸§°ú ÀüÃ¼ °æ·Î¸¦ ¿­¶÷ÇÕ´Ï´Ù.</td></tr>
+<tr><th id="commands">ëª…ë ¹ì–´</th><th>&nbsp;</th></tr>
+<tr><td><a href="commands/FileEncoding.htm">FileEncoding</a></td><td>ê¸°ë³¸ ì¸ì½”ë”©ì„ ì„¤ì •í•©ë‹ˆë‹¤: <a href="commands/FileRead.htm">FileRead</a>, <a href="commands/FileReadLine.htm">FileReadLine</a>, <a href="commands/LoopReadFile.htm">Loop Read</a>, <a href="commands/FileAppend.htm">FileAppend</a>, ê·¸ë¦¬ê³  <a href="commands/FileOpen.htm">FileOpen</a>.<br><i>ë‹¤ìŒ ì°¸ì¡°:</i> <a href="#enc">í…ìŠ¤íŠ¸ ì¸ì½”ë”©</a></td></tr>
+<tr><td><a href="commands/Gui.htm">Gui</a></td><td>ì•„ëž˜ì˜ <a href="#GUI_Enhancements">GUI ê°œì„ </a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</td></tr>
+<tr><td><a href="commands/IniRead.htm">IniRead</a>/<a href="commands/IniWrite.htm">Write</a>/<a href="commands/IniDelete.htm">Delete</a></td><td>ì „ì²´ ì„¹ì…˜ì„ ì½ê³ , ì“°ê³ , ì§€ì›ë‹ˆë‹¤. ë˜ëŠ” ëª¨ë“  ì„¹ì…˜ ì´ë¦„ ëª©ë¡ì„ ì—´ëžŒí•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/Menu.htm#MenuIcon">Menu, Icon</a></td><td>ë©”ë‰´ ì•„ì´í…œì˜ ì•„ì´ì½˜ì„ ì„¤ì •í•˜ê±°ë‚˜ ì œê±°í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/Run.htm">Run</a></td><td>ë§¤ê°œë³€ìˆ˜ë¥¼ í•´ì„í•˜ë„ë¡ <a href="Compat.htm#Run">ê°œì„ ë˜ì—ˆìŠµë‹ˆë‹¤</a>.</tr>
+<tr><td><a href="commands/Send.htm#Unicode">SendInput {U+nnnn}</a></td><td>ìœ ë‹ˆì½”ë“œ ë¬¸ìžë¥¼ ì „ì†¡í•©ë‹ˆë‹¤. ìœ ë‹ˆì½”ë“œ ë¬¸ìžëŠ” ìœ ë‹ˆì½”ë“œ ë¹Œë“œì—ì„œ ì§ì ‘ì ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/SendLevel.htm">SendLevel</a></td><td>í•«í‚¤ì™€ í•«ìŠ¤íŠ¸ë§ì´ ë¬´ì‹œí•  ì¸ìœ„ì ì¸ í‚¤ë³´ë“œ ì´ë²¤íŠ¸ì™€ ë§ˆìš°ìŠ¤ ì´ë²¤íŠ¸ë¥¼ ì œì–´í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/SetFormat.htm">SetFormat, IntegerFast, h|H</a></td><td>ì†Œë¬¸ìžë‚˜ ëŒ€ë¬¸ìžë¡œ ì‹­ìœ¡ì§„ ìˆ˜ì˜ í˜•ì‹ì„ ì„¤ì •í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/SetRegView.htm">SetRegView, RegView</a></td><td>ë ˆì§€ìŠ¤íŠ¸ë¦¬ ëª…ë ¹ì–´ê°€ 32-ë¹„íŠ¸ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ 64-ë¹„íŠ¸ ë ˆì§€ìŠ¤íŠ¸ë¦¬ ë·°ì— ë˜ëŠ” ê·¸ ë°˜ëŒ€ë¡œ ì ‘ê·¼í•˜ë„ë¡ í•´ ì¤ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/Transform.htm#HTML">Transform, HTML</a></td><td>ì½”ë“œ íŽ˜ì´ì§€ë‚˜  HTML ë³€í™˜ì„ ìˆ˜í–‰í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/WinGet.htm#ProcessPath">WinGet, ..., ProcessPath</a></td><td>ì£¼ì–´ì§„ ì°½ì„ ì†Œìœ í•œ í”„ë¡œì„¸ìŠ¤ì˜ ì´ë¦„ê³¼ ì „ì²´ ê²½ë¡œë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</td></tr>
 
-<tr><th id="directives">Áö½Ã¾î</th><th>&nbsp;</th></tr>
-<tr><td><a href="commands/_If.htm">#If <i>expression</i></a></td><td><a href="commands/_IfWinActive.htm">#IfWinActive</a>¿Í ºñ½ÁÇÏÁö¸¸, ¾î¶² Ç¥Çö½Ä¿¡µµ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
-<tr><td><a href="commands/_IfTimeout.htm">#IfTimeout</a></td><td>#If  Ç¥Çö½Ä ÇÏ³ª¸¦ Æò°¡ÇÏ´Â µ¥ ¼ÒºñµÉ ÃÖ´ë ½Ã°£À» ¼³Á¤ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/_MenuMaskKey.htm">#MenuMaskKey</a></td><td>Win ÀÌº¥Æ®³ª Alt Å°¶À ÀÌº¥Æ®¸¦ ¸¶½ºÅ©ÇÏ±â À§ÇØ »ç¿ëµÉ Å°¸¦ º¯°æÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/_Include.htm">#Include &lt;Lib&gt;</a></td><td>½ºÅ©¸³Æ® ÆÄÀÏÀ» ÇÔ¼ö ¶óÀÌºê·¯¸® Æú´õ·ÎºÎÅÍ Æ÷ÇÔÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/_InputLevel.htm">#InputLevel</a></td><td>ÇÖ½ºÆ®¸µ°ú ÇÖÅ°°¡ ¹«½ÃÇÒ Å°º¸µå ÀÌº¥Æ®¿Í ¸¶¿ì½º ÀÌº¥Æ®¸¦ Á¦¾îÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/_Warn.htm">#Warn</a></td><td>¼±ÅÃµÈ Á¶°Ç¿¡ ´ëÇÏ¿© °æ°í¸¦ ÄÑ°í ²ü´Ï´Ù. ÀÌ ¿¡·¯´Â °³¹ßÀÚ ¿¡·¯¸¦ °¡¸®Åµ´Ï´Ù.</td></tr>
+<tr><th id="directives">ì§€ì‹œì–´</th><th>&nbsp;</th></tr>
+<tr><td><a href="commands/_If.htm">#If <i>expression</i></a></td><td><a href="commands/_IfWinActive.htm">#IfWinActive</a>ì™€ ë¹„ìŠ·í•˜ì§€ë§Œ, ì–´ë–¤ í‘œí˜„ì‹ì—ë„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/_IfTimeout.htm">#IfTimeout</a></td><td>#If  í‘œí˜„ì‹ í•˜ë‚˜ë¥¼ í‰ê°€í•˜ëŠ” ë° ì†Œë¹„ë  ìµœëŒ€ ì‹œê°„ì„ ì„¤ì •í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/_MenuMaskKey.htm">#MenuMaskKey</a></td><td>Win ì´ë²¤íŠ¸ë‚˜ Alt í‚¤ë—Œ ì´ë²¤íŠ¸ë¥¼ ë§ˆìŠ¤í¬í•˜ê¸° ìœ„í•´ ì‚¬ìš©ë  í‚¤ë¥¼ ë³€ê²½í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/_Include.htm">#Include &lt;Lib&gt;</a></td><td>ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì„ í•¨ìˆ˜ ë¼ì´ë¸ŒëŸ¬ë¦¬ í´ë”ë¡œë¶€í„° í¬í•¨í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/_InputLevel.htm">#InputLevel</a></td><td>í•«ìŠ¤íŠ¸ë§ê³¼ í•«í‚¤ê°€ ë¬´ì‹œí•  í‚¤ë³´ë“œ ì´ë²¤íŠ¸ì™€ ë§ˆìš°ìŠ¤ ì´ë²¤íŠ¸ë¥¼ ì œì–´í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/_Warn.htm">#Warn</a></td><td>ì„ íƒëœ ì¡°ê±´ì— ëŒ€í•˜ì—¬ ê²½ê³ ë¥¼ ì¼œê³  ë•ë‹ˆë‹¤. ì´ ì—ëŸ¬ëŠ” ê°œë°œìž ì—ëŸ¬ë¥¼ ê°€ë¦¬í‚µë‹ˆë‹¤.</td></tr>
 
-<tr><th id="functions">ÇÔ¼ö</th><th>&nbsp;</th></tr>
-<tr><td><a href="commands/ComObjActive.htm">ComObj...</a> --<br>ComObjActive<br>ComObjEnwrap/Unwrap<br>ComObjParameter<br>ComObjType</td><td><br>µî·ÏµÈ COM °´Ã¼¸¦ ¿­¶÷ÇÕ´Ï´Ù.<br>COM °´Ã¼¸¦ Æ÷ÀåÇÏ°Å³ª/Ç±´Ï´Ù.<br>¸Å°³º¯¼ö·Î °Ç³Ú °ª°ú À¯ÇüÀ» Æ÷ÀåÇÕ´Ï´Ù.<br>COM °´Ã¼ÀÇ À¯Çü Á¤º¸¸¦ ¿­¶÷ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/ComObjArray.htm">ComObjArray</a></td><td>COM¿¡ »ç¿ëÇÏ±â À§ÇØ SAFEARRAY¸¦ »ý¼ºÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/ComObjConnect.htm">ComObjConnect</a></td><td>COM °´Ã¼ÀÇ ÀÌº¥Æ®¸¦ ÁÖ¾îÁø Á¢µÎ»ç¸¦ °¡Áø ÇÔ¼ö¿¡ ¿¬°áÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/ComObjCreate.htm">ComObjCreate</a></td><td>COM °´Ã¼¸¦ »ý¼ºÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/ComObjError.htm">ComObjError</a></td><td>COM ¿¡·¯ÀÇ °íÁö¸¦ ÄÑ°í ²ü´Ï´Ù.</td></tr>
-<tr><td><a href="commands/ComObjFlags.htm">ComObjFlags</a></td><td>COM Æ÷Àå °´Ã¼ÀÇ ÇàÀ§¸¦ Á¦¾îÇÏ´Â ÇÃ·¡±×¸¦ ¿­¶÷ÇÏ°Å³ª º¯°æÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/ComObjGet.htm">ComObjGet</a></td><td>COM ÄÞÆ÷³ÍÆ®°¡ Á¦°øÇÏ´Â °´Ã¼ ÁÖ¼Ò¸¦ µ¹·ÁÁÝ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/ComObjQuery.htm">ComObjQuery</a></td><td>COM °´Ã¼¿¡ ÀÎÅÍÆäÀÌ½º ¶Ç´Â ¼­ºñ½º¸¦ ÁúÀÇÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/ComObjType.htm">ComObjType</a></td><td>À¯Çü Á¤º¸¸¦ COM °´Ã¼·ÎºÎÅÍ ¿­¶÷ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/ComObjValue.htm">ComObjValue</a></td><td>COM Æ÷Àå °´Ã¼¿¡ ÀúÀåµÈ °ªÀÌ³ª Æ÷ÀÎÅÍ¸¦ ¿­¶÷ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/Throw.htm#Exception">Exception</a></td><td><a href="commands/Throw.htm">Throw</a>¿¡ ´ëÇÏ¿© ¿¹¿Ü °´Ã¼¸¦ »ý¼ºÇÕ´Ï´Ù (È£Ãâ ½ºÅÃ¿¡ Á¦ÇÑÀûÀ¸·Î Á¢±ÙÀ» Á¦°øÇÕ´Ï´Ù).</td></tr>
-<tr><td><a href="commands/FileOpen.htm">FileOpen</a></td><td>°´Ã¼-ÁöÇâÀû ÆÄÀÏ ÀÔ/Ãâ·ÂÀ» Á¦°øÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="Functions.htm#Func">Func</a></td><td>ÇÔ¼ö¸¦ °¡¸®Å°´Â <a href="Objects.htm#Function_References">ÂüÁ¶</a>¸¦ ¿­¶÷ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="Functions.htm#GetKeyName">GetKeyName/VK/SC</a></td><td>Å°ÀÇ °¡»ó Å° ÄÚµå³ª ½ºÄµ ÄÚµå ¶Ç´Â ÅØ½ºÆ®³ª ÀÌ¸§À» ¿­¶÷ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="Functions.htm#InStr">InStr</a></td><td> ¿ÞÂÊÀÌ³ª ¿À¸¥ÂÊÀ¸·ÎºÎÅÍ  ÁÖ¾îÁø ¹®ÀÚ¿­ÀÌ <em>³ªÅ¸³ª´ÂÁö</em> °Ë»öÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="Functions.htm#IsByRef">IsByRef</a></td><td>ByRef ¸Å°³º¯¼ö¿¡ º¯¼ö°¡ Á¦°øµÇ´ÂÁö °áÁ¤ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="Objects.htm">IsObject</a></td><td>°ªÀÌ °´Ã¼ÀÎÁö °áÁ¤ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/StrPutGet.htm">StrPut / StrGet</a></td><td>¹®ÀÚ¿­À» ¸Þ¸ð¸®¿¡ ¶Ç´Â ¸Þ·Î¸®·ÎºÎÅÍ º¹»çÇÕ´Ï´Ù. ¼±ÅÃÀûÀ¸·Î ÄÚµå ÆäÀÌÁö »çÀÌ¿¡ º¯È¯ÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/Trim.htm">Trim</a></td><td>¹®ÀÚ¿­ÀÇ Ã³À½°ú ³¡À¸·ÎºÎÅÍ ¾î¶² ¹®ÀÚµéÀ» °È¾î³À´Ï´Ù.</td></tr>
-<tr><td><a href="misc/RegExCallout.htm">RegEx (?C<i>Num</i>:<i>Func</i>)</a></td><td>regex ÆÐÅÏÀ» Æò°¡ÇÏ´Â µ¿¾È ÇÔ¼ö¸¦ È£ÃâÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="#Function_Libraries">ÇÔ¼ö ¶óÀÌºê·¯¸®</a></td><td>»õ·Î¿î &quot;Áö¿ª ¶óÀÌºê·¯¸®&quot; ±×¸®°í <code>#Include &lt;LibName&gt;</code>.</td></tr>
-<tr><td><a href="Functions.htm#Variadic">°¡º¯ ÇÔ¼ö</a></td><td>ÇÔ¼ö´Â ¹è¿­À» ÅëÇÏ¿© °¡º¯ °³¼öÀÇ ¸Å°³º¯¼ö¸¦ ¹ÞÀ» ¼ö ÀÖ½À´Ï´Ù.</td></tr>
-<tr><td><a href="#Static">Á¤Àû ÃÊ±âÈ­ÀÚ</a></td><td>Á¤Àû º¯¼ö´Â ÀÌÁ¦ ¾î¶² Ç¥Çö½ÄÀ¸·Îµµ ÃÊ±âÈ­ÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+<tr><th id="functions">í•¨ìˆ˜</th><th>&nbsp;</th></tr>
+<tr><td><a href="commands/ComObjActive.htm">ComObj...</a> --<br>ComObjActive<br>ComObjEnwrap/Unwrap<br>ComObjParameter<br>ComObjType</td><td><br>ë“±ë¡ëœ COM ê°ì²´ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.<br>COM ê°ì²´ë¥¼ í¬ìž¥í•˜ê±°ë‚˜/í’‰ë‹ˆë‹¤.<br>ë§¤ê°œë³€ìˆ˜ë¡œ ê±´ë„¬ ê°’ê³¼ ìœ í˜•ì„ í¬ìž¥í•©ë‹ˆë‹¤.<br>COM ê°ì²´ì˜ ìœ í˜• ì •ë³´ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/ComObjArray.htm">ComObjArray</a></td><td>COMì— ì‚¬ìš©í•˜ê¸° ìœ„í•´ SAFEARRAYë¥¼ ìƒì„±í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/ComObjConnect.htm">ComObjConnect</a></td><td>COM ê°ì²´ì˜ ì´ë²¤íŠ¸ë¥¼ ì£¼ì–´ì§„ ì ‘ë‘ì‚¬ë¥¼ ê°€ì§„ í•¨ìˆ˜ì— ì—°ê²°í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/ComObjCreate.htm">ComObjCreate</a></td><td>COM ê°ì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/ComObjError.htm">ComObjError</a></td><td>COM ì—ëŸ¬ì˜ ê³ ì§€ë¥¼ ì¼œê³  ë•ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/ComObjFlags.htm">ComObjFlags</a></td><td>COM í¬ìž¥ ê°ì²´ì˜ í–‰ìœ„ë¥¼ ì œì–´í•˜ëŠ” í”Œëž˜ê·¸ë¥¼ ì—´ëžŒí•˜ê±°ë‚˜ ë³€ê²½í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/ComObjGet.htm">ComObjGet</a></td><td>COM ì½¤í¬ë„ŒíŠ¸ê°€ ì œê³µí•˜ëŠ” ê°ì²´ ì£¼ì†Œë¥¼ ëŒë ¤ì¤ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/ComObjQuery.htm">ComObjQuery</a></td><td>COM ê°ì²´ì— ì¸í„°íŽ˜ì´ìŠ¤ ë˜ëŠ” ì„œë¹„ìŠ¤ë¥¼ ì§ˆì˜í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/ComObjType.htm">ComObjType</a></td><td>ìœ í˜• ì •ë³´ë¥¼ COM ê°ì²´ë¡œë¶€í„° ì—´ëžŒí•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/ComObjValue.htm">ComObjValue</a></td><td>COM í¬ìž¥ ê°ì²´ì— ì €ìž¥ëœ ê°’ì´ë‚˜ í¬ì¸í„°ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/Throw.htm#Exception">Exception</a></td><td><a href="commands/Throw.htm">Throw</a>ì— ëŒ€í•˜ì—¬ ì˜ˆì™¸ ê°ì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤ (í˜¸ì¶œ ìŠ¤íƒì— ì œí•œì ìœ¼ë¡œ ì ‘ê·¼ì„ ì œê³µí•©ë‹ˆë‹¤).</td></tr>
+<tr><td><a href="commands/FileOpen.htm">FileOpen</a></td><td>ê°ì²´-ì§€í–¥ì  íŒŒì¼ ìž…/ì¶œë ¥ì„ ì œê³µí•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="Functions.htm#Func">Func</a></td><td>í•¨ìˆ˜ë¥¼ ê°€ë¦¬í‚¤ëŠ” <a href="Objects.htm#Function_References">ì°¸ì¡°</a>ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="Functions.htm#GetKeyName">GetKeyName/VK/SC</a></td><td>í‚¤ì˜ ê°€ìƒ í‚¤ ì½”ë“œë‚˜ ìŠ¤ìº” ì½”ë“œ ë˜ëŠ” í…ìŠ¤íŠ¸ë‚˜ ì´ë¦„ì„ ì—´ëžŒí•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="Functions.htm#InStr">InStr</a></td><td> ì™¼ìª½ì´ë‚˜ ì˜¤ë¥¸ìª½ìœ¼ë¡œë¶€í„°  ì£¼ì–´ì§„ ë¬¸ìžì—´ì´ <em>ë‚˜íƒ€ë‚˜ëŠ”ì§€</em> ê²€ìƒ‰í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="Functions.htm#IsByRef">IsByRef</a></td><td>ByRef ë§¤ê°œë³€ìˆ˜ì— ë³€ìˆ˜ê°€ ì œê³µë˜ëŠ”ì§€ ê²°ì •í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="Objects.htm">IsObject</a></td><td>ê°’ì´ ê°ì²´ì¸ì§€ ê²°ì •í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/StrPutGet.htm">StrPut / StrGet</a></td><td>ë¬¸ìžì—´ì„ ë©”ëª¨ë¦¬ì— ë˜ëŠ” ë©”ë¡œë¦¬ë¡œë¶€í„° ë³µì‚¬í•©ë‹ˆë‹¤. ì„ íƒì ìœ¼ë¡œ ì½”ë“œ íŽ˜ì´ì§€ ì‚¬ì´ì— ë³€í™˜í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/Trim.htm">Trim</a></td><td>ë¬¸ìžì—´ì˜ ì²˜ìŒê³¼ ëìœ¼ë¡œë¶€í„° ì–´ë–¤ ë¬¸ìžë“¤ì„ ê±·ì–´ëƒ…ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="misc/RegExCallout.htm">RegEx (?C<i>Num</i>:<i>Func</i>)</a></td><td>regex íŒ¨í„´ì„ í‰ê°€í•˜ëŠ” ë™ì•ˆ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="#Function_Libraries">í•¨ìˆ˜ ë¼ì´ë¸ŒëŸ¬ë¦¬</a></td><td>ìƒˆë¡œìš´ &quot;ì§€ì—­ ë¼ì´ë¸ŒëŸ¬ë¦¬&quot; ê·¸ë¦¬ê³  <code>#Include &lt;LibName&gt;</code>.</td></tr>
+<tr><td><a href="Functions.htm#Variadic">ê°€ë³€ í•¨ìˆ˜</a></td><td>í•¨ìˆ˜ëŠ” ë°°ì—´ì„ í†µí•˜ì—¬ ê°€ë³€ ê°œìˆ˜ì˜ ë§¤ê°œë³€ìˆ˜ë¥¼ ë°›ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
+<tr><td><a href="#Static">ì •ì  ì´ˆê¸°í™”ìž</a></td><td>ì •ì  ë³€ìˆ˜ëŠ” ì´ì œ ì–´ë–¤ í‘œí˜„ì‹ìœ¼ë¡œë„ ì´ˆê¸°í™”í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
 
-<tr><th id="objects">°´Ã¼</th><th>&nbsp;</th></tr>
-<tr><td><a href="Objects.htm">ÀÏ¹Ý</a></td><td>ÀÏ¹ÝÀûÀÎ °´Ã¼ÀÇ »ç¿ë¹ý°ú ÇàÀ§.</td></tr>
-<tr><td><a href="Objects.htm#Arrays">°´Ã¼</a></td><td>´Ù¸¥ ±â´ÉÀ¸·Î È®ÀåÇÒ ¼ö ÀÖ´Â ¿¬°ü ¹è¿­.</td></tr>
-<tr><td><a href="objects/Enumerator.htm">¿­°ÅÀÚ</a></td><td>Áý´Ü ¾ÈÀÇ Ç×¸ñÀ» ¿­°ÅÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="objects/File.htm">ÆÄÀÏ</a></td><td>ÆÄÀÏ¿¡ Á¢±ÙÇÒ ¼ö ÀÖµµ·Ï ÀÎÅÍÆäÀÌ½º¸¦ Á¦°øÇÕ´Ï´Ù.  <a href="commands/FileOpen.htm">FileOpen</a>Àº ÀÌ À¯ÇüÀÇ °´Ã¼¸¦ µ¹·ÁÁÝ´Ï´Ù.</td></tr>
-<tr><td><a href="objects/Func.htm">ÇÔ¼ö</a></td><td>½ºÅ©¸³Æ®°¡ È£ÃâÇÒ ¼ö ÀÖ´Â »ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö ¶Ç´Â ³»Àå ÇÔ¼ö¸¦ °¡¸®Åµ´Ï´Ù.</td></tr>
-<tr><td>ComObject</td><td>À§ÀÇ ComObj ÇÔ¼ö¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</td></tr>
+<tr><th id="objects">ê°ì²´</th><th>&nbsp;</th></tr>
+<tr><td><a href="Objects.htm">ì¼ë°˜</a></td><td>ì¼ë°˜ì ì¸ ê°ì²´ì˜ ì‚¬ìš©ë²•ê³¼ í–‰ìœ„.</td></tr>
+<tr><td><a href="Objects.htm#Arrays">ê°ì²´</a></td><td>ë‹¤ë¥¸ ê¸°ëŠ¥ìœ¼ë¡œ í™•ìž¥í•  ìˆ˜ ìžˆëŠ” ì—°ê´€ ë°°ì—´.</td></tr>
+<tr><td><a href="objects/Enumerator.htm">ì—´ê±°ìž</a></td><td>ì§‘ë‹¨ ì•ˆì˜ í•­ëª©ì„ ì—´ê±°í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="objects/File.htm">íŒŒì¼</a></td><td>íŒŒì¼ì— ì ‘ê·¼í•  ìˆ˜ ìžˆë„ë¡ ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ ì œê³µí•©ë‹ˆë‹¤.  <a href="commands/FileOpen.htm">FileOpen</a>ì€ ì´ ìœ í˜•ì˜ ê°ì²´ë¥¼ ëŒë ¤ì¤ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="objects/Func.htm">í•¨ìˆ˜</a></td><td>ìŠ¤í¬ë¦½íŠ¸ê°€ í˜¸ì¶œí•  ìˆ˜ ìžˆëŠ” ì‚¬ìš©ìž ì •ì˜ í•¨ìˆ˜ ë˜ëŠ” ë‚´ìž¥ í•¨ìˆ˜ë¥¼ ê°€ë¦¬í‚µë‹ˆë‹¤.</td></tr>
+<tr><td>ComObject</td><td>ìœ„ì˜ ComObj í•¨ìˆ˜ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</td></tr>
 
-<tr><th id="vars">º¯¼ö</th><th>&nbsp;</th></tr>
-<tr><td>A_Is64bitOS</td><td>OS°¡ 64-ºñÆ®ÀÌ¸é 1 (true)ÀÌ, 32-ºñÆ®ÀÌ¸é 0 (false)ÀÌ ´ã±é´Ï´Ù.</td></tr>
-<tr><td>A_IsUnicode</td><td>À¯´ÏÄÚµå ºôµå¿¡¼­ ÀÌº¯¼ö´Â 1 (<i>true</i>)ÀÌ ´ã±é´Ï´Ù.  ANSI ºôµå´Â Á¤ÀÇµÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù. ±×·¡¼­ ±× È¿°ú»ó °ÅÁþ(<i>false</i>)ÀÔ´Ï´Ù.</td></tr>
-<tr><td>A_FileEncoding</td><td>´Ù¾çÇÑ ¸í·É¾î¿¡ ´ëÇÏ¿© ±âº» ÀÎÄÚµùÀ» ´ã°í ÀÖ½À´Ï´Ù; <a href="commands/FileEncoding.htm">FileEncoding</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</td></tr>
-<tr><td>A_OSVersion</td><td>Windows 7°ú Windows 8À» Áö¿øÇÕ´Ï´Ù; <a href="Variables.htm#OSVersion">A_OSVersion</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</td></tr>
-<tr><td>A_PriorKey</td><td>°¡Àå ÃÖ±Ù¿¡ Å°-´©¸§ÀÌ³ª Å°-¶À ¹Ù·Î Àü¿¡ ¸¶Áö¸·À¸·Î ´­·ÁÁø Å°ÀÇ ÀÌ¸§ ... <a href="Variables.htm#PriorKey">(ÀÚ¼¼ÇÑ °ÍÀº ¿©±â¸¦ ÂüÁ¶)</a></td></tr>
-<tr><td>A_PtrSize</td><td>¹ÙÀÌÆ® ´ÜÀ§·Î Æ÷ÀÎÅÍÀÇ Å©±â°¡ ´ã±é´Ï´Ù. ÀÌ°ÍÀº 4 (32-bit) ¶Ç´Â 8 (64-bit)ÀÔ´Ï´Ù.</td></tr>
-<tr><td>A_RegView</td><td><a href="commands/SetRegView.htm">SetRegView</a>°¡ ¼³Á¤ÇÑ ÇöÀç ·¹Áö½ºÆ®¸® ºä.</td></tr>
-<tr><td>A_ScriptHwnd</td><td>½ºÅ©¸³Æ®ÀÇ ¼ûÀº ¸ÞÀÎ Ã¢ÀÇ À¯ÀÏÇÑ ID (HWND/ÇÚµé).</td></tr>
+<tr><th id="vars">ë³€ìˆ˜</th><th>&nbsp;</th></tr>
+<tr><td>A_Is64bitOS</td><td>OSê°€ 64-ë¹„íŠ¸ì´ë©´ 1 (true)ì´, 32-ë¹„íŠ¸ì´ë©´ 0 (false)ì´ ë‹´ê¹ë‹ˆë‹¤.</td></tr>
+<tr><td>A_IsUnicode</td><td>ìœ ë‹ˆì½”ë“œ ë¹Œë“œì—ì„œ ì´ë³€ìˆ˜ëŠ” 1 (<i>true</i>)ì´ ë‹´ê¹ë‹ˆë‹¤.  ANSI ë¹Œë“œëŠ” ì •ì˜ë˜ì–´ ìžˆì§€ ì•ŠìŠµë‹ˆë‹¤. ê·¸ëž˜ì„œ ê·¸ íš¨ê³¼ìƒ ê±°ì§“(<i>false</i>)ìž…ë‹ˆë‹¤.</td></tr>
+<tr><td>A_FileEncoding</td><td>ë‹¤ì–‘í•œ ëª…ë ¹ì–´ì— ëŒ€í•˜ì—¬ ê¸°ë³¸ ì¸ì½”ë”©ì„ ë‹´ê³  ìžˆìŠµë‹ˆë‹¤; <a href="commands/FileEncoding.htm">FileEncoding</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</td></tr>
+<tr><td>A_OSVersion</td><td>Windows 7ê³¼ Windows 8ì„ ì§€ì›í•©ë‹ˆë‹¤; <a href="Variables.htm#OSVersion">A_OSVersion</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</td></tr>
+<tr><td>A_PriorKey</td><td>ê°€ìž¥ ìµœê·¼ì— í‚¤-ëˆ„ë¦„ì´ë‚˜ í‚¤-ë—Œ ë°”ë¡œ ì „ì— ë§ˆì§€ë§‰ìœ¼ë¡œ ëˆŒë ¤ì§„ í‚¤ì˜ ì´ë¦„ ... <a href="Variables.htm#PriorKey">(ìžì„¸í•œ ê²ƒì€ ì—¬ê¸°ë¥¼ ì°¸ì¡°)</a></td></tr>
+<tr><td>A_PtrSize</td><td>ë°”ì´íŠ¸ ë‹¨ìœ„ë¡œ í¬ì¸í„°ì˜ í¬ê¸°ê°€ ë‹´ê¹ë‹ˆë‹¤. ì´ê²ƒì€ 4 (32-bit) ë˜ëŠ” 8 (64-bit)ìž…ë‹ˆë‹¤.</td></tr>
+<tr><td>A_RegView</td><td><a href="commands/SetRegView.htm">SetRegView</a>ê°€ ì„¤ì •í•œ í˜„ìž¬ ë ˆì§€ìŠ¤íŠ¸ë¦¬ ë·°.</td></tr>
+<tr><td>A_ScriptHwnd</td><td>ìŠ¤í¬ë¦½íŠ¸ì˜ ìˆ¨ì€ ë©”ì¸ ì°½ì˜ ìœ ì¼í•œ ID (HWND/í•¸ë“¤).</td></tr>
 
-<tr><th id="types">µ¥ÀÌÅÍÀ¯Çü</th><th>&nbsp;</th></tr>
-<tr><td><a href="commands/DllCall.htm#ptr">Ptr</a></td><td>32-ºñÆ® ºôµå¿¡¼­ <i>Int</i>¿Í µ¿µîÇÏ°í 64-ºñÆ® ºôµå¿¡¼­´Â <i>Int64</i>°ú µ¿µîÇÕ´Ï´Ù. <a href="commands/DllCall.htm">DllCall</a>, <a href="commands/NumPut.htm">NumPut</a> ±×¸®°í <a href="commands/NumGet.htm">NumGet</a>ÀÌ Áö¿øÇÕ´Ï´Ù.</td></tr>
-<tr><td><a href="commands/DllCall.htm#astr">AStr</a>, <a href="commands/DllCall.htm#wstr">WStr</a></td><td><a href="commands/DllCall.htm">DllCall</a>¸¸ Áö¿øÇÕ´Ï´Ù; <a href="Compat.htm">½ºÅ©¸³Æ® È£È¯¼º</a> ÂüÁ¶.</td></tr>
+<tr><th id="types">ë°ì´í„°ìœ í˜•</th><th>&nbsp;</th></tr>
+<tr><td><a href="commands/DllCall.htm#ptr">Ptr</a></td><td>32-ë¹„íŠ¸ ë¹Œë“œì—ì„œ <i>Int</i>ì™€ ë™ë“±í•˜ê³  64-ë¹„íŠ¸ ë¹Œë“œì—ì„œëŠ” <i>Int64</i>ê³¼ ë™ë“±í•©ë‹ˆë‹¤. <a href="commands/DllCall.htm">DllCall</a>, <a href="commands/NumPut.htm">NumPut</a> ê·¸ë¦¬ê³  <a href="commands/NumGet.htm">NumGet</a>ì´ ì§€ì›í•©ë‹ˆë‹¤.</td></tr>
+<tr><td><a href="commands/DllCall.htm#astr">AStr</a>, <a href="commands/DllCall.htm#wstr">WStr</a></td><td><a href="commands/DllCall.htm">DllCall</a>ë§Œ ì§€ì›í•©ë‹ˆë‹¤; <a href="Compat.htm">ìŠ¤í¬ë¦½íŠ¸ í˜¸í™˜ì„±</a> ì°¸ì¡°.</td></tr>
 
-<tr><th id="unicode">À¯´ÏÄÚµå</th><th>&nbsp;</th></tr>
-<tr><td><a href="Compat.htm">È£È¯¼º</a></td><td>DllCall µîµî¿¡¼­ À¯´ÏÄÚµå¸¦ ´Ù·ç´Â ¹ý</td></tr>
-<tr><td><a href="Scripts.htm#cp">½ºÅ©¸³Æ® ÆÄÀÏ</a></td><td>½ºÅ©¸³Æ® ÆÄÀÏ¿¡ À¯´ÏÄÚµå »ç¿ëÇÏ±â.</td></tr>
-<tr><td><a href="commands/Send.htm#Unicode">SendInput</a></td><td>SendInput¿¡ À¯´ÏÄÚµå »ç¿ëÇÏ±â.</td></tr>
+<tr><th id="unicode">ìœ ë‹ˆì½”ë“œ</th><th>&nbsp;</th></tr>
+<tr><td><a href="Compat.htm">í˜¸í™˜ì„±</a></td><td>DllCall ë“±ë“±ì—ì„œ ìœ ë‹ˆì½”ë“œë¥¼ ë‹¤ë£¨ëŠ” ë²•</td></tr>
+<tr><td><a href="Scripts.htm#cp">ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼</a></td><td>ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì— ìœ ë‹ˆì½”ë“œ ì‚¬ìš©í•˜ê¸°.</td></tr>
+<tr><td><a href="commands/Send.htm#Unicode">SendInput</a></td><td>SendInputì— ìœ ë‹ˆì½”ë“œ ì‚¬ìš©í•˜ê¸°.</td></tr>
 
-<tr><th id="other">±âÅ¸</th><th>&nbsp;</th></tr>
-<tr><td><a href="misc/WinTitle.htm#ahk_exe">ahk_exe</a></td><td>Ã¢À» ¼ÒÀ¯ÇÏ°í ÀÖ´Â ÇÁ·Î¼¼½º (EXE ÆÄÀÏ)ÀÇ °æ·Î³ª ÀÌ¸§À¸·Î Ã¢À» ½Äº°ÇÒ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
-<tr><td><a href="Scripts.htm#idebug">µð¹ö±ë</a></td><td>»óÈ£´ëÈ­ µð¹ö±ë Æ¯Â¡ (ÁÙ ´ÜÀ§·Î ½ÇÇà µîµî.).</td></tr>
-<tr><td><a href="#Error_Handling">¿¡·¯ Ã³¸®</a></td><td>Try/catch/throw ±×¸®°í  A_LastErrorÀÇ À¯¿ë¼º Áõ°¡.</td></tr>
-<tr><td><a href="#GUI_Enhancements">GUI °³¼±</a></td><td>Gui °ü·Ã ¸í·É¾î¸¦ °³¼±.</td></tr>
-<tr><td><a href="#icons">¾ÆÀÌÄÜ Áö¿ø</a></td><td>ÀÚ¿ø ½Äº°ÀÚ Áö¿ø ±×¸®°í ´Ù¾çÇÑ ¾ÆÀÌÄÜ Å©±â Áö¿ø °³¼±.</td></tr>
-<tr><td><a href="Compat.htm">±âÅ¸ º¯°æ</a></td><td>½ºÅ©¸³Æ®ÀÇ È£È¯¼º¿¡ ¿µÇâÀ» ¹ÌÄ¡´Â º¯°æµé.</td></tr>
-<tr><td><a href="AHKL_ChangeLog.htm">¹öÀü ÀÌ·Â</a></td><td>AutoHotkey_L °³Á¤ÆÇ ÀÌ·Â.</td></tr>
+<tr><th id="other">ê¸°íƒ€</th><th>&nbsp;</th></tr>
+<tr><td><a href="misc/WinTitle.htm#ahk_exe">ahk_exe</a></td><td>ì°½ì„ ì†Œìœ í•˜ê³  ìžˆëŠ” í”„ë¡œì„¸ìŠ¤ (EXE íŒŒì¼)ì˜ ê²½ë¡œë‚˜ ì´ë¦„ìœ¼ë¡œ ì°½ì„ ì‹ë³„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
+<tr><td><a href="Scripts.htm#idebug">ë””ë²„ê¹…</a></td><td>ìƒí˜¸ëŒ€í™” ë””ë²„ê¹… íŠ¹ì§• (ì¤„ ë‹¨ìœ„ë¡œ ì‹¤í–‰ ë“±ë“±.).</td></tr>
+<tr><td><a href="#Error_Handling">ì—ëŸ¬ ì²˜ë¦¬</a></td><td>Try/catch/throw ê·¸ë¦¬ê³   A_LastErrorì˜ ìœ ìš©ì„± ì¦ê°€.</td></tr>
+<tr><td><a href="#GUI_Enhancements">GUI ê°œì„ </a></td><td>Gui ê´€ë ¨ ëª…ë ¹ì–´ë¥¼ ê°œì„ .</td></tr>
+<tr><td><a href="#icons">ì•„ì´ì½˜ ì§€ì›</a></td><td>ìžì› ì‹ë³„ìž ì§€ì› ê·¸ë¦¬ê³  ë‹¤ì–‘í•œ ì•„ì´ì½˜ í¬ê¸° ì§€ì› ê°œì„ .</td></tr>
+<tr><td><a href="Compat.htm">ê¸°íƒ€ ë³€ê²½</a></td><td>ìŠ¤í¬ë¦½íŠ¸ì˜ í˜¸í™˜ì„±ì— ì˜í–¥ì„ ë¯¸ì¹˜ëŠ” ë³€ê²½ë“¤.</td></tr>
+<tr><td><a href="AHKL_ChangeLog.htm">ë²„ì „ ì´ë ¥</a></td><td>AutoHotkey_L ê°œì •íŒ ì´ë ¥.</td></tr>
 
 </table>
 
 
-<h2 id="Error_Handling">¿¡·¯ Ã³¸®</h2>
+<h2 id="Error_Handling">ì—ëŸ¬ ì²˜ë¦¬</h2>
 <p>
-¿¡·¯ Ã³¸®¸¦ À§ÇØ ¸¹Àº ¸í·É¾î°¡ ErrorLevel ´ë½Å¿¡ <a href="commands/Try.htm">try</a>/<a href="commands/Catch.htm">catch</a>ÀÇ »ç¿ëÀ» Áö¿øÇÕ´Ï´Ù:</p>
+ì—ëŸ¬ ì²˜ë¦¬ë¥¼ ìœ„í•´ ë§Žì€ ëª…ë ¹ì–´ê°€ ErrorLevel ëŒ€ì‹ ì— <a href="commands/Try.htm">try</a>/<a href="commands/Catch.htm">catch</a>ì˜ ì‚¬ìš©ì„ ì§€ì›í•©ë‹ˆë‹¤:</p>
 <pre class="NoIndent">try
 {
     FileCopy, file1.txt, C:\folder
     FileDelete, C:\folder\old.txt
 }
 catch
-    MsgBox ¿¡·¯°¡ ÀÏ¾î³µ½À´Ï´Ù!</pre>
+    MsgBox ì—ëŸ¬ê°€ ì¼ì–´ë‚¬ìŠµë‹ˆë‹¤!</pre>
 <p>
-Ãß°¡·Î, ´ÙÀ½ ¸í·É¾î´Â ÀÌÁ¦ <a href="Variables.htm#LastError">A_LastError</a>¸¦ ¼³Á¤ÇØ µð¹ö±ëÀ» µ½½À´Ï´Ù: FileAppend, FileRead, FileReadLine, FileDelete, FileCopy, FileMove, FileGetAttrib/Time/Size/Version, FileSetAttrib/Time, FileCreateDir, RegRead, RegWrite, RegDelete.</p>
+ì¶”ê°€ë¡œ, ë‹¤ìŒ ëª…ë ¹ì–´ëŠ” ì´ì œ <a href="Variables.htm#LastError">A_LastError</a>ë¥¼ ì„¤ì •í•´ ë””ë²„ê¹…ì„ ë•ìŠµë‹ˆë‹¤: FileAppend, FileRead, FileReadLine, FileDelete, FileCopy, FileMove, FileGetAttrib/Time/Size/Version, FileSetAttrib/Time, FileCreateDir, RegRead, RegWrite, RegDelete.</p>
 
-<h2 id="Function_Libraries">ÇÔ¼ö ¶óÀÌºê·¯¸®</h2>
+<h2 id="Function_Libraries">í•¨ìˆ˜ ë¼ì´ë¸ŒëŸ¬ë¦¬</h2>
 <p>
-<code>%A_MyDocuments%\AutoHotkey\Lib</code>ÀÇ »ç¿ëÀÚ ¶óÀÌºê·¯¸®¿Í AutoHotkey µð·ºÅä¸®ÀÇ Ç¥ÁØ ¶óÀÌºê·¯¸® ¸»°íµµ, <code>%A_ScriptDir%\Lib</code>¿¡ À§Ä¡ÇÏ´Â &quot;Áö¿ª ¶óÀÌºê·¯¸®&quot;·ÎºÎÅÍ ÇÔ¼ö¸¦ ÀÚµ¿ »ðÀÔÇÒ ¼ö ÀÖ½À´Ï´Ù. 
+<code>%A_MyDocuments%\AutoHotkey\Lib</code>ì˜ ì‚¬ìš©ìž ë¼ì´ë¸ŒëŸ¬ë¦¬ì™€ AutoHotkey ë””ë ‰í† ë¦¬ì˜ í‘œì¤€ ë¼ì´ë¸ŒëŸ¬ë¦¬ ë§ê³ ë„, <code>%A_ScriptDir%\Lib</code>ì— ìœ„ì¹˜í•˜ëŠ” &quot;ì§€ì—­ ë¼ì´ë¸ŒëŸ¬ë¦¬&quot;ë¡œë¶€í„° í•¨ìˆ˜ë¥¼ ìžë™ ì‚½ìž…í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 
 
-´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Functions.htm#lib">ÇÔ¼ö ¶óÀÌºê·¯¸®</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-<p><a href="commands/_Include.htm">#Include &lt;LibName&gt;</a>´Â ÇÔ¼ö ¶óÀÌºê·¯¸® Áß ÇÏ³ª¿¡ À§Ä¡ÇÑ ¶óÀÌºê·¯¸® ÆÄÀÏÀ» ¸í½ÃÀûÀ¸·Î Æ÷ÇÔÇÕ´Ï´Ù.</p>
+ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Functions.htm#lib">í•¨ìˆ˜ ë¼ì´ë¸ŒëŸ¬ë¦¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+<p><a href="commands/_Include.htm">#Include &lt;LibName&gt;</a>ëŠ” í•¨ìˆ˜ ë¼ì´ë¸ŒëŸ¬ë¦¬ ì¤‘ í•˜ë‚˜ì— ìœ„ì¹˜í•œ ë¼ì´ë¸ŒëŸ¬ë¦¬ íŒŒì¼ì„ ëª…ì‹œì ìœ¼ë¡œ í¬í•¨í•©ë‹ˆë‹¤.</p>
 
-<h2 id="GUI_Enhancements">GUI °³¼±</h2>
-<p><a href="commands/Gui.htm">Gui</a> ¸í·É¿Í ±âÅ¸ °ü·ÃµÈ Ç×¸ñ¿¡ ¼ö ¸¹Àº °³¼±ÀÌ ÀÌ·ç¾îÁ³½À´Ï´Ù:</p>
+<h2 id="GUI_Enhancements">GUI ê°œì„ </h2>
+<p><a href="commands/Gui.htm">Gui</a> ëª…ë ¹ì™€ ê¸°íƒ€ ê´€ë ¨ëœ í•­ëª©ì— ìˆ˜ ë§Žì€ ê°œì„ ì´ ì´ë£¨ì–´ì¡ŒìŠµë‹ˆë‹¤:</p>
 <ul>
-  <li>GUI¸¦ °¡¸®Å³ ¶§ 1ºÎÅÍ 99 »çÀÌÀÇ ¼ýÀÚ ´ë½Å¿¡ <a href="commands/Gui.htm#MultiWin">ÀÌ¸§ÀÌ³ª HWND</a>¸¦ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</li>
-  <li><a href="commands/Gui.htm#New">Gui, New</a>´Â ÀÍ¸íÀÇ GUI¸¦ »õ·Î ¸¸µì´Ï´Ù.</li>
-  <li>¾ó¸¶µçÁö ÀÍ¸í ¶Ç´Â ½Ç¸íÀ¸·Î GUI¸¦ »ý¼ºÇÒ ¼ö ÀÖ½À´Ï´Ù.</li>
-  <li>»õ·Î¿î GUI ¿É¼Ç: <a href="commands/Gui.htm#GuiHwndOutputVar">+Hwnd<em>OutputVar</em></a>, <a href="commands/Gui.htm#Parent">+Parent<em>GUI</em></a></li>
-  <li>¾î¶² Ã¢ÀÌµç GUIÀÇ ¼ÒÀ¯ÀÚ°¡ µÉ ¼ö ÀÖ½À´Ï´Ù: <a href="commands/Gui.htm#Owner">+Owner<em>%HWND%</em></a>.</li>
-  <li><a href="commands/Gui.htm#fontq">Gui, Font</a>´Â ÅØ½ºÆ®ÀÇ ¾ÈÆ¼-¾Ù¸®¾î½ÌÀ» Á¦¾îÇÒ ¼ö ÀÖ½À´Ï´Ù.</li>
-  <li>ÀÎÅÍ³Ý ÀÍ½ºÇÃ·Î·¯ °°Àº <a href="commands/GuiControls.htm#ActiveX">ActiveX ÄÜÆ®·Ñ</a>À» Áö¿øÇÕ´Ï´Ù.</li>
-  <li><a href="commands/GuiControlGet.htm#Name">GuiControlGet, <em>OutputVar</em>, Name</a> Àº GUI ÄÜÆ®¸¦¿¡ ¿¬°üµÈ º¯¼öÀÇ ÀÌ¸§À» ¾ò½À´Ï´Ù.</li>
-  <li><a href="commands/Gui.htm#Menu">Gui ¸Þ´º</a>¿¡ »ç¿ëµÉ ¶§ Ctrl+O¿Í °°Àº Å°º¸µå °¡¼ÓÅ°¸¦ ÀÚµ¿À¸·Î Áö¿øÇÕ´Ï´Ù.</li>
-  <li><a href="commands/Gui.htm#fontq">±Û²Ã Ç°Áú</a>Àº Font ºÎ-¸í·É¾î·Î Á¦¾îÇÕ´Ï´Ù.</li>
+  <li>GUIë¥¼ ê°€ë¦¬í‚¬ ë•Œ 1ë¶€í„° 99 ì‚¬ì´ì˜ ìˆ«ìž ëŒ€ì‹ ì— <a href="commands/Gui.htm#MultiWin">ì´ë¦„ì´ë‚˜ HWND</a>ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</li>
+  <li><a href="commands/Gui.htm#New">Gui, New</a>ëŠ” ìµëª…ì˜ GUIë¥¼ ìƒˆë¡œ ë§Œë“­ë‹ˆë‹¤.</li>
+  <li>ì–¼ë§ˆë“ ì§€ ìµëª… ë˜ëŠ” ì‹¤ëª…ìœ¼ë¡œ GUIë¥¼ ìƒì„±í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</li>
+  <li>ìƒˆë¡œìš´ GUI ì˜µì…˜: <a href="commands/Gui.htm#GuiHwndOutputVar">+Hwnd<em>OutputVar</em></a>, <a href="commands/Gui.htm#Parent">+Parent<em>GUI</em></a></li>
+  <li>ì–´ë–¤ ì°½ì´ë“  GUIì˜ ì†Œìœ ìžê°€ ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤: <a href="commands/Gui.htm#Owner">+Owner<em>%HWND%</em></a>.</li>
+  <li><a href="commands/Gui.htm#fontq">Gui, Font</a>ëŠ” í…ìŠ¤íŠ¸ì˜ ì•ˆí‹°-ì•¨ë¦¬ì–´ì‹±ì„ ì œì–´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</li>
+  <li>ì¸í„°ë„· ìµìŠ¤í”Œë¡œëŸ¬ ê°™ì€ <a href="commands/GuiControls.htm#ActiveX">ActiveX ì½˜íŠ¸ë¡¤</a>ì„ ì§€ì›í•©ë‹ˆë‹¤.</li>
+  <li><a href="commands/GuiControlGet.htm#Name">GuiControlGet, <em>OutputVar</em>, Name</a> ì€ GUI ì½˜íŠ¸ë¥¼ì— ì—°ê´€ëœ ë³€ìˆ˜ì˜ ì´ë¦„ì„ ì–»ìŠµë‹ˆë‹¤.</li>
+  <li><a href="commands/Gui.htm#Menu">Gui ë©”ë‰´</a>ì— ì‚¬ìš©ë  ë•Œ Ctrl+Oì™€ ê°™ì€ í‚¤ë³´ë“œ ê°€ì†í‚¤ë¥¼ ìžë™ìœ¼ë¡œ ì§€ì›í•©ë‹ˆë‹¤.</li>
+  <li><a href="commands/Gui.htm#fontq">ê¸€ê¼´ í’ˆì§ˆ</a>ì€ Font ë¶€-ëª…ë ¹ì–´ë¡œ ì œì–´í•©ë‹ˆë‹¤.</li>
 </ul>
 
-<h2 id="Static">Á¤Àû º¯¼ö</h2>
-<p>Á¤Àû º¯¼ö´Â ÀÌÁ¦ ¾î¶² Ç¥Çö½ÄÀ¸·Îµµ ÃÊ±âÈ­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+<h2 id="Static">ì •ì  ë³€ìˆ˜</h2>
+<p>ì •ì  ë³€ìˆ˜ëŠ” ì´ì œ ì–´ë–¤ í‘œí˜„ì‹ìœ¼ë¡œë„ ì´ˆê¸°í™”í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre>Sleep 500
 MsgBox % Time() &quot;ms since the script started.&quot;
 Time() {
@@ -150,27 +151,27 @@ Time() {
     return A_TickCount - Tick
 }</pre>
 
-<h2 id="enc">ÅØ½ºÆ® ÀÎÄÚµù</h2>
-<p><a href="commands/FileRead.htm">FileRead</a>, <a href="commands/FileReadLine.htm">FileReadLine</a>, <a href="commands/LoopReadFile.htm">Loop Read</a> ±×¸®°í <a href="commands/FileAppend.htm">FileAppend</a>´Â À©µµ¿ìÁî°¡ Áö¿øÇÏ´Â ÅØ½ºÆ® ÀÎÄÚµùÀ» ´ëºÎºÐ Áö¿øÇÕ´Ï´Ù. ´Ü, ½Ã½ºÅÛÀÇ ±âº» ANSI ÄÚµå ÆäÀÌÁö´Â Áö¿øÇÏÁö ¾Ê½À´Ï´Ù.  <a href="commands/FileEncoding.htm">FileEncoding</a>À» »ç¿ëÇÏ¸é ±âº» ÀÎÄÚµùÀ» ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù. ´ÙÀ½°ú °°ÀÌ FileRead¿Í FileAppend¸¦ ¿À¹ö¶óÀÌµå ÇÕ´Ï´Ù:</p>
+<h2 id="enc">í…ìŠ¤íŠ¸ ì¸ì½”ë”©</h2>
+<p><a href="commands/FileRead.htm">FileRead</a>, <a href="commands/FileReadLine.htm">FileReadLine</a>, <a href="commands/LoopReadFile.htm">Loop Read</a> ê·¸ë¦¬ê³  <a href="commands/FileAppend.htm">FileAppend</a>ëŠ” ìœˆë„ìš°ì¦ˆê°€ ì§€ì›í•˜ëŠ” í…ìŠ¤íŠ¸ ì¸ì½”ë”©ì„ ëŒ€ë¶€ë¶„ ì§€ì›í•©ë‹ˆë‹¤. ë‹¨, ì‹œìŠ¤í…œì˜ ê¸°ë³¸ ANSI ì½”ë“œ íŽ˜ì´ì§€ëŠ” ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.  <a href="commands/FileEncoding.htm">FileEncoding</a>ì„ ì‚¬ìš©í•˜ë©´ ê¸°ë³¸ ì¸ì½”ë”©ì„ ì„¤ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ìŒê³¼ ê°™ì´ FileReadì™€ FileAppendë¥¼ ì˜¤ë²„ë¼ì´ë“œ í•©ë‹ˆë‹¤:</p>
 <pre class="Syntax">FileRead, OutputVar, *P<i>nnn</i> Filename
 FileAppend [, Text, Filename, Encoding]</pre>
 <p>
-<i>nnn</i>´Â ¼ýÄ¡ <a href="http://msdn.microsoft.com/en-us/library/dd317756.aspx">ÄÚµå ÆäÀÌÁö ½Äº°ÀÚ</a>°¡ µÇ¾î¾ß ÇÏ¸ç, <i>Encoding</i>Àº <a href="commands/FileEncoding.htm">FileEncoding</a>°ú °°Àº Çü½ÄÀ» µû¶ó¾ß ÇÕ´Ï´Ù.</p>
-<p><b>´ÙÀ½µµ ÂüÁ¶ÇÏ½Ê½Ã¿À:</b> <a href="Compat.htm#FileRead">½ºÅ©¸³Æ® È£È¯¼º</a></p>
+<i>nnn</i>ëŠ” ìˆ«ì¹˜ <a href="http://msdn.microsoft.com/en-us/library/dd317756.aspx">ì½”ë“œ íŽ˜ì´ì§€ ì‹ë³„ìž</a>ê°€ ë˜ì–´ì•¼ í•˜ë©°, <i>Encoding</i>ì€ <a href="commands/FileEncoding.htm">FileEncoding</a>ê³¼ ê°™ì€ í˜•ì‹ì„ ë”°ë¼ì•¼ í•©ë‹ˆë‹¤.</p>
+<p><b>ë‹¤ìŒë„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤:</b> <a href="Compat.htm#FileRead">ìŠ¤í¬ë¦½íŠ¸ í˜¸í™˜ì„±</a></p>
 
-<h2 id="Variadic">°¡º¯ ÇÔ¼ö ±×¸®°í °¡º¯ ÇÔ¼ö-È£Ãâ</h2>
-<p><a href="Functions.htm#Variadic">°¡º¯ ÇÔ¼ö</a>´Â ¹è¿­À» ÅëÇÏ¿© °¡º¯ °³¼öÀÇ ÀÎÀÚ¸¦ ¹ÞÀ» ¼ö ÀÖ½À´Ï´Ù. ¹Ý¸é¿¡, <a href="Functions.htm#VariadicCall">°¡º¯ ÇÔ¼ö-È£Ãâ</a>À» »ç¿ëÇÏ¸é °¡º¯ °³¼öÀÇ ¸Å°³º¯¼ö¸¦ ÇÔ¼ö¿¡ °Ç³Ú ¼ö ÀÖ½À´Ï´Ù.</p>
+<h2 id="Variadic">ê°€ë³€ í•¨ìˆ˜ ê·¸ë¦¬ê³  ê°€ë³€ í•¨ìˆ˜-í˜¸ì¶œ</h2>
+<p><a href="Functions.htm#Variadic">ê°€ë³€ í•¨ìˆ˜</a>ëŠ” ë°°ì—´ì„ í†µí•˜ì—¬ ê°€ë³€ ê°œìˆ˜ì˜ ì¸ìžë¥¼ ë°›ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë°˜ë©´ì—, <a href="Functions.htm#VariadicCall">ê°€ë³€ í•¨ìˆ˜-í˜¸ì¶œ</a>ì„ ì‚¬ìš©í•˜ë©´ ê°€ë³€ ê°œìˆ˜ì˜ ë§¤ê°œë³€ìˆ˜ë¥¼ í•¨ìˆ˜ì— ê±´ë„¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
 
-<h2 id="icons">¾ÆÀÌÄÜ Áö¿ø °³¼±</h2>
+<h2 id="icons">ì•„ì´ì½˜ ì§€ì› ê°œì„ </h2>
 
-<h3>ºñÁ¤»óÀûÀÎ Å©±â</h3>
+<h3>ë¹„ì •ìƒì ì¸ í¬ê¸°</h3>
 <p>
-Å©±â¿¡ »ó°ü¾øÀÌ ¿î¿µÃ¼Á¦°¡ Áö¿øÇÏ´Â ¾ÆÀÌÄÜ ÀÚ¿øÀÌ¸é ¾ó¸¶µçÁö ½ÇÇàÆÄÀÏ·ÎºÎÅÍ ÃßÃâÇÒ ¼ö ÀÖ½À´Ï´Ù. ¾ÆÀÌÄÜ ±×·ì¿¡ ¿©·¯ Å©±âÀÇ ¾ÆÀÌÄÜ ÀÚ¿øÀÌ Á¸ÀçÇÏ¸é, °¡Àå ÀûÀýÇÑ Å©±â°¡ »ç¿ëµË´Ï´Ù. 17 ÀÌÀü ¹öÀü¿¡¼­´Â ÀÓÀÇÀÇ ¾ÆÀÌÄÜ ÀÚ¿øÀ» ¿î¿µÃ¼Á¦°¡ ¼±ÅÃÇØ ÁÖ¾ú°í, ½Ã½ºÅÛ Å©±âÀÇ ¾ÆÀÌÄÜÀ¸·Î È®´ëµÇ¾ú´Ù°¡, ´Ù½Ã ¿äÃ»ÇÑ Å©±â·Î º¯°æµÇ¾ú½À´Ï´Ù.</p>
+í¬ê¸°ì— ìƒê´€ì—†ì´ ìš´ì˜ì²´ì œê°€ ì§€ì›í•˜ëŠ” ì•„ì´ì½˜ ìžì›ì´ë©´ ì–¼ë§ˆë“ ì§€ ì‹¤í–‰íŒŒì¼ë¡œë¶€í„° ì¶”ì¶œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì•„ì´ì½˜ ê·¸ë£¹ì— ì—¬ëŸ¬ í¬ê¸°ì˜ ì•„ì´ì½˜ ìžì›ì´ ì¡´ìž¬í•˜ë©´, ê°€ìž¥ ì ì ˆí•œ í¬ê¸°ê°€ ì‚¬ìš©ë©ë‹ˆë‹¤. 17 ì´ì „ ë²„ì „ì—ì„œëŠ” ìž„ì˜ì˜ ì•„ì´ì½˜ ìžì›ì„ ìš´ì˜ì²´ì œê°€ ì„ íƒí•´ ì£¼ì—ˆê³ , ì‹œìŠ¤í…œ í¬ê¸°ì˜ ì•„ì´ì½˜ìœ¼ë¡œ í™•ëŒ€ë˜ì—ˆë‹¤ê°€, ë‹¤ì‹œ ìš”ì²­í•œ í¬ê¸°ë¡œ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
 
-<h3>ÀÚ¿ø ½Äº°ÀÚ</h3>
+<h3>ìžì› ì‹ë³„ìž</h3>
 <p>
-À½¼öÀÇ ¾ÆÀÌÄÜ ¹øÈ£¸¦ »ç¿ëÇÏ¸é ½ÇÇà ÆÄÀÏ ¾È¿¡¼­ ±×·ì ¾ÆÀÌÄÜÀ» ½Äº°ÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, ´ÙÀ½Àº Æ®·¹ÀÌ ¾ÆÀÌÄÜÀ» ahk ÆÄÀÏÀÌ »ç¿ëÇÒ ±âº» ¾ÆÀÌÄÜÀ¸·Î ¼³Á¤ÇÕ´Ï´Ù:</p>
+ìŒìˆ˜ì˜ ì•„ì´ì½˜ ë²ˆí˜¸ë¥¼ ì‚¬ìš©í•˜ë©´ ì‹¤í–‰ íŒŒì¼ ì•ˆì—ì„œ ê·¸ë£¹ ì•„ì´ì½˜ì„ ì‹ë³„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ë‹¤ìŒì€ íŠ¸ë ˆì´ ì•„ì´ì½˜ì„ ahk íŒŒì¼ì´ ì‚¬ìš©í•  ê¸°ë³¸ ì•„ì´ì½˜ìœ¼ë¡œ ì„¤ì •í•©ë‹ˆë‹¤:</p>
 <pre>Menu, Tray, Icon, %A_AhkPath%, -160</pre>
 
 </body></html>

@@ -1,8 +1,9 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>PostMessage / SendMessage</title>
 <meta name="description" content="Send messages to a window with this free macro program. PostMessage puts a message in the window's message queue, but SendMessage waits for a reply.">
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,127 +12,127 @@
 
 <h1>PostMessage / SendMessage</h1>
 
-<p> ¸Þ½ÃÁö¸¦ Ã¢ÀÌ³ª ÄÜÆ®·Ñ¿¡ º¸³À´Ï´Ù (SendMessage´Â ½ÂÀÎÀ» ±â´Ù¸³´Ï´Ù).</p>
+<p> ë©”ì‹œì§€ë¥¼ ì°½ì´ë‚˜ ì½˜íŠ¸ë¡¤ì— ë³´ëƒ…ë‹ˆë‹¤ (SendMessageëŠ” ìŠ¹ì¸ì„ ê¸°ë‹¤ë¦½ë‹ˆë‹¤).</p>
 
 <pre class="Syntax">PostMessage, Msg [, wParam, lParam, Control, WinTitle, WinText, ExcludeTitle, ExcludeText]
 SendMessage, Msg [, wParam, lParam, Control, WinTitle, WinText, ExcludeTitle, ExcludeText, Timeout]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Msg</dt>
-  <dd><p>Àü¼ÛÇÒ ¸Þ½ÃÁö ¹øÈ£, <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>°¡´É. ¼ýÀÚ¸¦ ¾Ë¾Æ ³»·Á¸é <a href="../misc/SendMessageList.htm">¸Þ½ÃÁö ¸ñ·Ï</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p></dd>
+  <dd><p>ì „ì†¡í•  ë©”ì‹œì§€ ë²ˆí˜¸, <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ê°€ëŠ¥. ìˆ«ìžë¥¼ ì•Œì•„ ë‚´ë ¤ë©´ <a href="../misc/SendMessageList.htm">ë©”ì‹œì§€ ëª©ë¡</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p></dd>
 
   <dt>wParam</dt>
-  <dd><p>¸Þ½ÃÁöÀÇ Ã¹ ¹øÂ° ±¸¼º¿ä¼Ò. <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É. ºñ¾î ÀÖ°Å³ª »ý·«ÇÏ¸é 0ÀÌ Àü¼ÛµË´Ï´Ù.</p></dd>
+  <dd><p>ë©”ì‹œì§€ì˜ ì²« ë²ˆì§¸ êµ¬ì„±ìš”ì†Œ. <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥. ë¹„ì–´ ìžˆê±°ë‚˜ ìƒëžµí•˜ë©´ 0ì´ ì „ì†¡ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>lParam</dt>
-  <dd><p>¸Þ½ÃÁöÀÇ µÎ ¹øÂ° ±¸¼º¿ä¼Ò. <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É. ºñ¾î ÀÖ°Å³ª »ý·«ÇÏ¸é 0ÀÌ Àü¼ÛµË´Ï´Ù.</p></dd>
+  <dd><p>ë©”ì‹œì§€ì˜ ë‘ ë²ˆì§¸ êµ¬ì„±ìš”ì†Œ. <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥. ë¹„ì–´ ìžˆê±°ë‚˜ ìƒëžµí•˜ë©´ 0ì´ ì „ì†¡ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>Control</dt>
-  <dd><p>ÀÌ ¸Å°³º¯¼ö°¡ ºñ¾îÀÖ°Å³ª »ý·«µÇ¸é, ¸Þ½ÃÁö´Â ±×ÀÇ ÄÜÆ®·Ñ Áß¿¡ ÇÏ³ª°¡ ¾Æ´Ï¶ó Á÷Á¢ ¸ñÇ¥ Ã¢¿¡ Àü¼ÛµË´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é, ÀÌ ¸Å°³º¯¼ö´Â ClassNN (Å¬·¡½ºÀÌ¸§°ú ÄÜÆ®·ÑÀÇ ½ÇÃ¼ ¹øÈ£) ¶Ç´Â ÄÜÆ®·ÑÀÇ ÅØ½ºÆ®ÀÏ ¼ö ÀÖ½À´Ï´Ù. µÑ ¸ðµÎ Window Spy·Î ¾Ë¾Æ³¾ ¼ö ÀÖ½À´Ï´Ù. ÅØ½ºÆ®¸¦ »ç¿ëÇÒ ¶§, ºÎÇÕ ÇàÀ§´Â <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>·Î °áÁ¤µË´Ï´Ù.</p>
+  <dd><p>ì´ ë§¤ê°œë³€ìˆ˜ê°€ ë¹„ì–´ìžˆê±°ë‚˜ ìƒëžµë˜ë©´, ë©”ì‹œì§€ëŠ” ê·¸ì˜ ì½˜íŠ¸ë¡¤ ì¤‘ì— í•˜ë‚˜ê°€ ì•„ë‹ˆë¼ ì§ì ‘ ëª©í‘œ ì°½ì— ì „ì†¡ë©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ì´ ë§¤ê°œë³€ìˆ˜ëŠ” ClassNN (í´ëž˜ìŠ¤ì´ë¦„ê³¼ ì½˜íŠ¸ë¡¤ì˜ ì‹¤ì²´ ë²ˆí˜¸) ë˜ëŠ” ì½˜íŠ¸ë¡¤ì˜ í…ìŠ¤íŠ¸ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‘˜ ëª¨ë‘ Window Spyë¡œ ì•Œì•„ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í…ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©í•  ë•Œ, ë¶€í•© í–‰ìœ„ëŠ” <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>ë¡œ ê²°ì •ë©ë‹ˆë‹¤.</p>
     <p>
-	ÄÜÆ®·ÑÀÇ HWND (Ã¢ ÇÚµé)À» Ã³¸®ÇÏ·Á¸é, <em>Control</em> ¸Å°³º¯¼ö¸¦ ºñ¿ö µÎ°í <code>ahk_id %ControlHwnd%</code>¸¦ <em>WinTitle</em> ¸Å°³º¯¼ö¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À (ÀÌ°ÍÀº ¼ûÀº Ã¢¿¡µµ ÀÛµ¿ÇÕ´Ï´Ù. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>°¡ ²¨Á® ÀÖ¾îµµ(Off) ¸¶Âù°¡ÁöÀÔ´Ï´Ù). ÄÜÆ®·ÑÀÇ HWND´Â ÀüÇüÀûÀ¸·Î <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, ¶Ç´Â <a href="DllCall.htm">DllCall</a>¸¦ ÅëÇÏ¿© ¿­¶÷ÇÕ´Ï´Ù.</p>
+	ì½˜íŠ¸ë¡¤ì˜ HWND (ì°½ í•¸ë“¤)ì„ ì²˜ë¦¬í•˜ë ¤ë©´, <em>Control</em> ë§¤ê°œë³€ìˆ˜ë¥¼ ë¹„ì›Œ ë‘ê³  <code>ahk_id %ControlHwnd%</code>ë¥¼ <em>WinTitle</em> ë§¤ê°œë³€ìˆ˜ì— ì§€ì •í•˜ì‹­ì‹œì˜¤ (ì´ê²ƒì€ ìˆ¨ì€ ì°½ì—ë„ ìž‘ë™í•©ë‹ˆë‹¤. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>ê°€ êº¼ì ¸ ìžˆì–´ë„(Off) ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤). ì½˜íŠ¸ë¡¤ì˜ HWNDëŠ” ì „í˜•ì ìœ¼ë¡œ <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, ë˜ëŠ” <a href="DllCall.htm">DllCall</a>ë¥¼ í†µí•˜ì—¬ ì—´ëžŒí•©ë‹ˆë‹¤.</p>
     </dd>
 
   <dt>WinTitle</dt>
-  <dd><p>¸ñÇ¥ Ã¢À» ½Äº°ÇÏ´Â Ã¢ Á¦¸ñ ¶Ç´Â ±âÅ¸ ±âÁØ. <a href="../misc/WinTitle.htm">WinTitle</a> ÂüÁ¶.</p></dd>
+  <dd><p>ëª©í‘œ ì°½ì„ ì‹ë³„í•˜ëŠ” ì°½ ì œëª© ë˜ëŠ” ê¸°íƒ€ ê¸°ì¤€. <a href="../misc/WinTitle.htm">WinTitle</a> ì°¸ì¡°.</p></dd>
 
   <dt>WinText</dt>
-  <dd><p>Á¸ÀçÇÏ¸é, ÀÌ ¸Å°³º¯¼ö´Â ¸ñÇ¥ Ã¢ ÅØ½ºÆ®ÀÇ ºÎ¹®ÀÚ¿­ÀÔ´Ï´Ù (Window Spy¿¡ ³ëÃâ). ¼ûÀº ÅØ½ºÆ®´Â  <a href="DetectHiddenText.htm">DetectHiddenText</a>°¡ ÄÑÁ® ÀÖ¾î¾ß(ON) Å½ÁöµË´Ï´Ù.</p></dd>
+  <dd><p>ì¡´ìž¬í•˜ë©´, ì´ ë§¤ê°œë³€ìˆ˜ëŠ” ëª©í‘œ ì°½ í…ìŠ¤íŠ¸ì˜ ë¶€ë¬¸ìžì—´ìž…ë‹ˆë‹¤ (Window Spyì— ë…¸ì¶œ). ìˆ¨ì€ í…ìŠ¤íŠ¸ëŠ”  <a href="DetectHiddenText.htm">DetectHiddenText</a>ê°€ ì¼œì ¸ ìžˆì–´ì•¼(ON) íƒì§€ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>ExcludeTitle</dt>
-  <dd><p>Á¦¸ñ¿¡ ÀÌ °ªÀÌ ÀÖ´Â Ã¢Àº ¹«½ÃÇÕ´Ï´Ù.</p></dd>
+  <dd><p>ì œëª©ì— ì´ ê°’ì´ ìžˆëŠ” ì°½ì€ ë¬´ì‹œí•©ë‹ˆë‹¤.</p></dd>
 
   <dt>ExcludeText</dt>
-  <dd><p>ÅØ½ºÆ®¿¡ ÀÌ °ªÀÌ ÀÖ´Â Ã¢Àº ¹«½ÃÇÕ´Ï´Ù.</p></dd>
+  <dd><p>í…ìŠ¤íŠ¸ì— ì´ ê°’ì´ ìžˆëŠ” ì°½ì€ ë¬´ì‹œí•©ë‹ˆë‹¤.</p></dd>
 
   <dt>Timeout</dt>
-  <dd><p><span class="ver">[AHK_L 42+]:</span> ¸ñÇ¥ Ã¢ÀÌ ¸Þ½ÃÁö¸¦ Ã³¸®ÇÏ±â¸¦ ±â´Ù¸± ¹Ð¸®ÃÊÀÇ ÃÖ´ë °³¼ö. »ý·«ÇÏ¸é ±âº»°ªÀº 5000 (¹Ð¸®ÃÊ)ÀÔ´Ï´Ù. ÀÌ °ªÀº ÀÌ ¸Å°³º¯¼ö¸¦ Áö¿øÇÏÁö ¾Ê¾Ò´ø ¿¹Àü ¹öÀüÀÇ AutoHotkey¿¡¼­ ±âº»°ªÀÔ´Ï´Ù. ¸Þ½ÃÁö°¡ ÀÌ ½Ã°£ ¾È¿¡ Ã³¸®µÇÁö ¾ÊÀ¸¸é, ¸í·É¾î´Â ³¡³ª°í ErrorLevel¿¡ ´Ü¾î FAILÀ» ¼³Á¤ÇÕ´Ï´Ù. ÀÌ ¸Å°³º¯¼ö´Â <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>ÀÏ ¼ö ÀÖ½À´Ï´Ù.</p></dd>
+  <dd><p><span class="ver">[AHK_L 42+]:</span> ëª©í‘œ ì°½ì´ ë©”ì‹œì§€ë¥¼ ì²˜ë¦¬í•˜ê¸°ë¥¼ ê¸°ë‹¤ë¦´ ë°€ë¦¬ì´ˆì˜ ìµœëŒ€ ê°œìˆ˜. ìƒëžµí•˜ë©´ ê¸°ë³¸ê°’ì€ 5000 (ë°€ë¦¬ì´ˆ)ìž…ë‹ˆë‹¤. ì´ ê°’ì€ ì´ ë§¤ê°œë³€ìˆ˜ë¥¼ ì§€ì›í•˜ì§€ ì•Šì•˜ë˜ ì˜ˆì „ ë²„ì „ì˜ AutoHotkeyì—ì„œ ê¸°ë³¸ê°’ìž…ë‹ˆë‹¤. ë©”ì‹œì§€ê°€ ì´ ì‹œê°„ ì•ˆì— ì²˜ë¦¬ë˜ì§€ ì•Šìœ¼ë©´, ëª…ë ¹ì–´ëŠ” ëë‚˜ê³  ErrorLevelì— ë‹¨ì–´ FAILì„ ì„¤ì •í•©ë‹ˆë‹¤. ì´ ë§¤ê°œë³€ìˆ˜ëŠ” <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p></dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
 <p>
-<span class="ver">[v1.1.04+]</span> ÀÌ ¸í·É¾î´Â ½ÇÆÐ½Ã ¿¹¿Ü¸¦ ´øÁú ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Catch.htm#RuntimeErrors">½ÇÇà½Ã°£ ¿¡·¯</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<span class="ver">[v1.1.04+]</span> ì´ ëª…ë ¹ì–´ëŠ” ì‹¤íŒ¨ì‹œ ì˜ˆì™¸ë¥¼ ë˜ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Catch.htm#RuntimeErrors">ì‹¤í–‰ì‹œê°„ ì—ëŸ¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-PostMessage: <a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº ¹®Á¦°¡ ÀÖ¾úÀ¸¸é 1ÀÌ ¼³Á¤µË´Ï´Ù. ¿¹¸¦ µé¾î ¸ñÇ¥ Ã¢ÀÌ³ª ÄÜÆ®·ÑÀÌ Á¸ÀçÇÏÁö ¾ÊÀ» °æ¿ì¿¡ 1ÀÌ ¼³Á¤µË´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é 0ÀÌ ¼³Á¤µË´Ï´Ù.</p>
-<p>SendMessage: <a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº ¹®Á¦°¡ ÀÖ¾ú°Å³ª ½Ã°£Á¦ÇÑ¿¡ °É¸®¸é ´Ü¾î FAILÀÌ ¼³Á¤µË´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é, ¸Þ½ÃÁöÀÇ ¼ýÀÚ °ª °á°ú°¡ ¼³Á¤µË´Ï´Ù. °¡²û ÀÌ °ªÀÌ ¸Þ½ÃÁö¿Í ±×ÀÇ ¸ñÇ¥ Ã¢ÀÇ ¼ºÁú¿¡ µû¶ó &quot;reply&quot;ÀÏ °æ¿ì°¡ ÀÖ½À´Ï´Ù.</p>
+PostMessage: <a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ ë¬¸ì œê°€ ìžˆì—ˆìœ¼ë©´ 1ì´ ì„¤ì •ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ ëª©í‘œ ì°½ì´ë‚˜ ì½˜íŠ¸ë¡¤ì´ ì¡´ìž¬í•˜ì§€ ì•Šì„ ê²½ìš°ì— 1ì´ ì„¤ì •ë©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p>
+<p>SendMessage: <a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ ë¬¸ì œê°€ ìžˆì—ˆê±°ë‚˜ ì‹œê°„ì œí•œì— ê±¸ë¦¬ë©´ ë‹¨ì–´ FAILì´ ì„¤ì •ë©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ë©”ì‹œì§€ì˜ ìˆ«ìž ê°’ ê²°ê³¼ê°€ ì„¤ì •ë©ë‹ˆë‹¤. ê°€ë” ì´ ê°’ì´ ë©”ì‹œì§€ì™€ ê·¸ì˜ ëª©í‘œ ì°½ì˜ ì„±ì§ˆì— ë”°ë¼ &quot;reply&quot;ì¼ ê²½ìš°ê°€ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-°¡´ÉÇÑ °ªÀÇ ¹üÀ§´Â ¿ÀÅäÇÖÅ°ÀÇ ¹öÀü°ú ¸ñÇ¥ Ã¢¿¡ µû¶ó ´Ù¸¨´Ï´Ù. 32-ºñÆ® ¹öÀüÀÇ ¿ÀÅäÇÖÅ°¸¦ »ç¿ëÇÏ°Å³ª, ¶Ç´Â ¸ñÇ¥ Ã¢ÀÌ 32-ºñÆ®ÀÌ¸é, ±× °á°ú´Â 0ºÎÅÍ 4294967295 ±îÁöÀÇ 32-ºñÆ® ¹«ºÎÈ£ Á¤¼öÀÔ´Ï´Ù. 64-ºñÆ® ¹öÀüÀÇ ¿ÀÅäÇÖÅ°¸¦ 64-ºñÆ® Ã¢¿¡ »ç¿ëÇÏ¸é, ±× °á°ú´Â -9223372036854775808°ú 9223372036854775807 ±îÁöÀÇ 64-ºñÆ® ºÎÈ£ÀÖ´Â Á¤¼öÀÔ´Ï´Ù .</p>
+ê°€ëŠ¥í•œ ê°’ì˜ ë²”ìœ„ëŠ” ì˜¤í† í•«í‚¤ì˜ ë²„ì „ê³¼ ëª©í‘œ ì°½ì— ë”°ë¼ ë‹¤ë¦…ë‹ˆë‹¤. 32-ë¹„íŠ¸ ë²„ì „ì˜ ì˜¤í† í•«í‚¤ë¥¼ ì‚¬ìš©í•˜ê±°ë‚˜, ë˜ëŠ” ëª©í‘œ ì°½ì´ 32-ë¹„íŠ¸ì´ë©´, ê·¸ ê²°ê³¼ëŠ” 0ë¶€í„° 4294967295 ê¹Œì§€ì˜ 32-ë¹„íŠ¸ ë¬´ë¶€í˜¸ ì •ìˆ˜ìž…ë‹ˆë‹¤. 64-ë¹„íŠ¸ ë²„ì „ì˜ ì˜¤í† í•«í‚¤ë¥¼ 64-ë¹„íŠ¸ ì°½ì— ì‚¬ìš©í•˜ë©´, ê·¸ ê²°ê³¼ëŠ” -9223372036854775808ê³¼ 9223372036854775807 ê¹Œì§€ì˜ 64-ë¹„íŠ¸ ë¶€í˜¸ìžˆëŠ” ì •ìˆ˜ìž…ë‹ˆë‹¤ .</p>
 <p>
-°á°ú°¡ 32-ºñÆ® ºÎÈ£ ÀÖ´Â Á¤¼öÀÌ±â¸¦ ¿øÇÑ´Ù¸é (-2147483648ºÎÅÍ 2147483648±îÁöÀÇ °ª), ´ÙÀ½°ú °°ÀÌ 32-ºñÆ®·Î Àß¶ó³»°í ºÎÈ£ÀÖ´Â °ªÀ¸·Î º¯È¯ÇÒ ¼ö ÀÖ½À´Ï´Ù:</p>
+ê²°ê³¼ê°€ 32-ë¹„íŠ¸ ë¶€í˜¸ ìžˆëŠ” ì •ìˆ˜ì´ê¸°ë¥¼ ì›í•œë‹¤ë©´ (-2147483648ë¶€í„° 2147483648ê¹Œì§€ì˜ ê°’), ë‹¤ìŒê³¼ ê°™ì´ 32-ë¹„íŠ¸ë¡œ ìž˜ë¼ë‚´ê³  ë¶€í˜¸ìžˆëŠ” ê°’ìœ¼ë¡œ ë³€í™˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 
 <pre>MsgReply := ErrorLevel &lt;&lt; 32 &gt;&gt; 32</pre>
 <p>
-ÀÌ º¯È¯Àº AutoHotkey 64-ºñÆ®¿¡¼­µµ ÇÊ¿äÇÒ ¼ö°¡ ÀÖ½À´Ï´Ù. ¿Ö³ÄÇÏ¸é, 32-ºñÆ® Ã¢À¸·ÎºÎÅÍÀÇ °á°ú´Â È®ÀåµÇÁö ¾Ê±â ¶§¹®ÀÔ´Ï´Ù. ¿¹¸¦ µé¾î, 32-ºñÆ® Ã¢À¸·ÎºÎÅÍÀÇ °á°ú°¡  -1ÀÌ¸é ¾î´À ¿ÀÅäÇÖÅ° ¹öÀü¿¡¼­µµ 0xFFFFFFFFÀ¸·Î º¸ÀÔ´Ï´Ù. ¹Ý¸é¿¡ 64-ºñÆ® Ã¢À¸·ÎºÎÅÍÀÇ °á°ú°¡  -1ÀÌ¸é 32ºñÆ® ¹öÀüÀÇ ¿ÀÅäÇÖÅ°¿¡¼­´Â 0xFFFFFFFFÀ¸·Î º¸ÀÌ°í 64ºñÆ® ¹öÀü¿¡¼­´Â -1·Î º¸ÀÔ´Ï´Ù.</p>
+ì´ ë³€í™˜ì€ AutoHotkey 64-ë¹„íŠ¸ì—ì„œë„ í•„ìš”í•  ìˆ˜ê°€ ìžˆìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´, 32-ë¹„íŠ¸ ì°½ìœ¼ë¡œë¶€í„°ì˜ ê²°ê³¼ëŠ” í™•ìž¥ë˜ì§€ ì•Šê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, 32-ë¹„íŠ¸ ì°½ìœ¼ë¡œë¶€í„°ì˜ ê²°ê³¼ê°€  -1ì´ë©´ ì–´ëŠ ì˜¤í† í•«í‚¤ ë²„ì „ì—ì„œë„ 0xFFFFFFFFìœ¼ë¡œ ë³´ìž…ë‹ˆë‹¤. ë°˜ë©´ì— 64-ë¹„íŠ¸ ì°½ìœ¼ë¡œë¶€í„°ì˜ ê²°ê³¼ê°€  -1ì´ë©´ 32ë¹„íŠ¸ ë²„ì „ì˜ ì˜¤í† í•«í‚¤ì—ì„œëŠ” 0xFFFFFFFFìœ¼ë¡œ ë³´ì´ê³  64ë¹„íŠ¸ ë²„ì „ì—ì„œëŠ” -1ë¡œ ë³´ìž…ë‹ˆë‹¤.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÀÌ ¸í·É¾îµéÀº ÁÖÀÇÇØ¼­ »ç¿ëÇØ¾ß ÇÕ´Ï´Ù. ¿Ö³ÄÇÏ¸é ¾û¶×ÇÑ Ã¢¿¡ ¸Þ½ÃÁö¸¦ Àü¼ÛÇÏ¸é (¶Ç´Â ¹«È¿ÇÑ ¸Þ½ÃÁö¸¦ Àü¼ÛÇÏ¸é) ¿¹»óÄ¡ ¸øÇÑ ÇàÀ§¸¦ ¾ß±âÇÏ°Ô µÇ°í ½ÉÁö¾î ¸ñÇ¥ ¾îÇÃ¸®ÄÉÀÌ¼ÇÀÌ Ãæµ¹À» ÀÏÀ¸Å³ ¼ö ÀÖ±â ¶§¹®ÀÔ´Ï´Ù. ´ëºÎºÐÀÇ ¾îÇÃ¸®ÄÉÀÌ¼ÇÀº ¿ÜºÎ ¼Ò½º·ÎºÎÅÍ ¾î¶² À¯ÇüÀÇ ¸Þ½ÃÁö¸¦ ¹Þµµ·Ï ¼³°èµÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù.</p>
+ì´ ëª…ë ¹ì–´ë“¤ì€ ì£¼ì˜í•´ì„œ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì—‰ëš±í•œ ì°½ì— ë©”ì‹œì§€ë¥¼ ì „ì†¡í•˜ë©´ (ë˜ëŠ” ë¬´íš¨í•œ ë©”ì‹œì§€ë¥¼ ì „ì†¡í•˜ë©´) ì˜ˆìƒì¹˜ ëª»í•œ í–‰ìœ„ë¥¼ ì•¼ê¸°í•˜ê²Œ ë˜ê³  ì‹¬ì§€ì–´ ëª©í‘œ ì–´í”Œë¦¬ì¼€ì´ì…˜ì´ ì¶©ëŒì„ ì¼ìœ¼í‚¬ ìˆ˜ ìžˆê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ëŒ€ë¶€ë¶„ì˜ ì–´í”Œë¦¬ì¼€ì´ì…˜ì€ ì™¸ë¶€ ì†ŒìŠ¤ë¡œë¶€í„° ì–´ë–¤ ìœ í˜•ì˜ ë©”ì‹œì§€ë¥¼ ë°›ë„ë¡ ì„¤ê³„ë˜ì–´ ìžˆì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-PostMessage´Â ¸Þ½ÃÁö¸¦ ¸ñÇ¥ Ã¢¿¡ ¿¬°üµÈ ¸Þ½ÃÁö Å¥¿¡ ³Ö½À´Ï´Ù. ½ÂÀÎÀÌ³ª ÀÀ´äÀ» ±â´Ù¸®Áö ¾Ê½À´Ï´Ù. ´ëÁ¶ÀûÀ¸·Î, SendMessage´Â ¸ñÇ¥ Ã¢ÀÌ ±× ¸Þ½ÃÁö¸¦ Ã³¸®ÇÏ±â¸¦ ½Ã°£Á¦ÇÑ¿¡ °É¸± ¶§±îÁö ±â´Ù¸³´Ï´Ù.</p>
+PostMessageëŠ” ë©”ì‹œì§€ë¥¼ ëª©í‘œ ì°½ì— ì—°ê´€ëœ ë©”ì‹œì§€ íì— ë„£ìŠµë‹ˆë‹¤. ìŠ¹ì¸ì´ë‚˜ ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ì§€ ì•ŠìŠµë‹ˆë‹¤. ëŒ€ì¡°ì ìœ¼ë¡œ, SendMessageëŠ” ëª©í‘œ ì°½ì´ ê·¸ ë©”ì‹œì§€ë¥¼ ì²˜ë¦¬í•˜ê¸°ë¥¼ ì‹œê°„ì œí•œì— ê±¸ë¦´ ë•Œê¹Œì§€ ê¸°ë‹¤ë¦½ë‹ˆë‹¤.</p>
 <p>
-<em>wParam</em>°ú <em>lParam</em> ¸Å°³º¯¼ö´Â Á¤¼ö¿©¾ß ÇÕ´Ï´Ù. AutoHotkey ¶Ç´Â ¸ñÇ¥ Ã¢ÀÌ 32-ºñÆ®ÀÌ¸é, ¿ÀÁ÷ ¾Æ·¡ÀÇ 32 ºñÆ®¸¸ »ç¿ëµË´Ï´Ù; Áï, °ªÀº ¹üÀ§°¡ -2147483648°ú 4294967295 (0xFFFFFFFF) »çÀÌÀÔ´Ï´Ù. ¿ÀÅäÇÖÅ°¿Í ¸ñÇ¥ Ã¢ÀÌ ¸ðµÎ 64-ºñÆ®ÀÌ¸é, <a href="../Variables.htm#cap">¿ÀÅäÇÖÅ°°¡ Áö¿øÇÏ´Â</a> ¾î¶² Á¤¼öµµ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿ÀÅäÇÖÅ°ÀÇ ¸ðµç Á¤¼ö °ªÃ³·³, Á¢µÎ»ç°¡ 0xÀÌ¸é ½ÊÀ°Áø¼ö¸¦ ³ªÅ¸³À´Ï´Ù. ¿¹¸¦ µé¾î 0xFF´Â 255¿Í µ¿µîÇÕ´Ï´Ù.</p>
+<em>wParam</em>ê³¼ <em>lParam</em> ë§¤ê°œë³€ìˆ˜ëŠ” ì •ìˆ˜ì—¬ì•¼ í•©ë‹ˆë‹¤. AutoHotkey ë˜ëŠ” ëª©í‘œ ì°½ì´ 32-ë¹„íŠ¸ì´ë©´, ì˜¤ì§ ì•„ëž˜ì˜ 32 ë¹„íŠ¸ë§Œ ì‚¬ìš©ë©ë‹ˆë‹¤; ì¦‰, ê°’ì€ ë²”ìœ„ê°€ -2147483648ê³¼ 4294967295 (0xFFFFFFFF) ì‚¬ì´ìž…ë‹ˆë‹¤. ì˜¤í† í•«í‚¤ì™€ ëª©í‘œ ì°½ì´ ëª¨ë‘ 64-ë¹„íŠ¸ì´ë©´, <a href="../Variables.htm#cap">ì˜¤í† í•«í‚¤ê°€ ì§€ì›í•˜ëŠ”</a> ì–´ë–¤ ì •ìˆ˜ë„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜¤í† í•«í‚¤ì˜ ëª¨ë“  ì •ìˆ˜ ê°’ì²˜ëŸ¼, ì ‘ë‘ì‚¬ê°€ 0xì´ë©´ ì‹­ìœ¡ì§„ìˆ˜ë¥¼ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ 0xFFëŠ” 255ì™€ ë™ë“±í•©ë‹ˆë‹¤.</p>
 <p>
-¹®ÀÚ¿­Àº º¯¼öÀÇ ÁÖ¼Ò¸¦ ÁöÁ¤ÇÏ¸é <em>wParam</em> ¶Ç´Â <em>lParam</em>À» ÅëÇÏ¿© Àü¼ÛÇÒ ¼ö ÀÖ½À´Ï´Ù. ´ÙÀ½ ¿¹Á¦´Â <a href="../Variables.htm#amp">ÁÖ¼Ò ¿¬»êÀÚ (&amp;)</a>¸¦ »ç¿ëÇØ Àü¼ÛÇÕ´Ï´Ù:</p>
+ë¬¸ìžì—´ì€ ë³€ìˆ˜ì˜ ì£¼ì†Œë¥¼ ì§€ì •í•˜ë©´ <em>wParam</em> ë˜ëŠ” <em>lParam</em>ì„ í†µí•˜ì—¬ ì „ì†¡í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œëŠ” <a href="../Variables.htm#amp">ì£¼ì†Œ ì—°ì‚°ìž (&amp;)</a>ë¥¼ ì‚¬ìš©í•´ ì „ì†¡í•©ë‹ˆë‹¤:</p>
 
 <pre>SendMessage, 0xC, 0, <strong>&amp;MyVar</strong>, ClassNN, WinTitle  <em>; 0XC is WM_SETTEXT</em></pre>
 <p>
-v1.0.43.06+¿¡¼­, ¸Þ½ÃÁö ¼ö½ÅÀÚ¿¡ ÀÇÇÏ¿© MyVar ¾È¿¡ ¹èÁ¤µÈ ¹®ÀÚ¿­Àº º°µµÀÇ Ãß°¡ ÀýÂ÷ ¾øÀÌ ÀûÀýÇÏ°Ô ÀÎÁöµË´Ï´Ù. ±×·¸Áö¸¸, ÀÌ°ÍÀº ¸Å°³º¯¼öÀÇ Ã¹ ¹®ÀÚ°¡ ¾ÚÆÛ¼¾µå (&amp;)ÀÏ °æ¿ì¿¡¸¸ ÀÛµ¿ÇÕ´Ï´Ù; ¿¹¸¦ µé¾î, <code>5+&amp;MyVar</code>´Â ÀÛµ¿ÇÏÁö ¾ÊÁö¸¸ <code>&amp;MyVar</code> ¶Ç´Â <code>&amp;MyVar+5</code>´Â ÀÛµ¿ÇÕ´Ï´Ù.</p>
+v1.0.43.06+ì—ì„œ, ë©”ì‹œì§€ ìˆ˜ì‹ ìžì— ì˜í•˜ì—¬ MyVar ì•ˆì— ë°°ì •ëœ ë¬¸ìžì—´ì€ ë³„ë„ì˜ ì¶”ê°€ ì ˆì°¨ ì—†ì´ ì ì ˆí•˜ê²Œ ì¸ì§€ë©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì´ê²ƒì€ ë§¤ê°œë³€ìˆ˜ì˜ ì²« ë¬¸ìžê°€ ì•°í¼ì„¼ë“œ (&amp;)ì¼ ê²½ìš°ì—ë§Œ ìž‘ë™í•©ë‹ˆë‹¤; ì˜ˆë¥¼ ë“¤ì–´, <code>5+&amp;MyVar</code>ëŠ” ìž‘ë™í•˜ì§€ ì•Šì§€ë§Œ <code>&amp;MyVar</code> ë˜ëŠ” <code>&amp;MyVar+5</code>ëŠ” ìž‘ë™í•©ë‹ˆë‹¤.</p>
 <p>
-ÀÎ¿ëºÎÈ£ Ã³¸®µÈ/±âÈ£ ±×´ë·ÎÀÇ ¹®ÀÚ¿­µµ ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ Àü¼ÛÇÒ ¼ö ÀÖ½À´Ï´Ù (&amp; ¿¬»êÀÚ´Â ÀÌ °æ¿ì »ç¿ëÇÏ¸é ¾È µË´Ï´Ù):</p>
+ì¸ìš©ë¶€í˜¸ ì²˜ë¦¬ëœ/ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ ë¬¸ìžì—´ë„ ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ì „ì†¡í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (&amp; ì—°ì‚°ìžëŠ” ì´ ê²½ìš° ì‚¬ìš©í•˜ë©´ ì•ˆ ë©ë‹ˆë‹¤):</p>
 
 <pre>Run Notepad
 WinWait Untitled - Notepad
 SendMessage, 0xC, 0, <strong>&quot;New Notepad Title&quot;</strong>  <em>; 0XC is WM_SETTEXT</em></pre>
 <p>
-¸Þ½ÃÁö ÇÏ³ª¸¦ ¼û¾î ÀÖµç ºñÈ°¼ºÈ­µÇ¾î ÀÖµç ½Ã½ºÅÛ¿¡ ÀÖ´Â ¸ðµç Ã¢¿¡ º¸³»·Á¸é, <code>ahk_id 0xFFFF</code>¸¦ <em>WinTitle</em> (0xFFFF´Â HWND_BROADCASTÀÓ)¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À. ÀÌ Å×Å©´ÐÀº ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ¹æ¼Û¿ë ÀÇµµÀÇ ¸Þ½ÃÁö¿¡¸¸ »ç¿ëÇØ¾ß ÇÕ´Ï´Ù:</p>
+ë©”ì‹œì§€ í•˜ë‚˜ë¥¼ ìˆ¨ì–´ ìžˆë“  ë¹„í™œì„±í™”ë˜ì–´ ìžˆë“  ì‹œìŠ¤í…œì— ìžˆëŠ” ëª¨ë“  ì°½ì— ë³´ë‚´ë ¤ë©´, <code>ahk_id 0xFFFF</code>ë¥¼ <em>WinTitle</em> (0xFFFFëŠ” HWND_BROADCASTìž„)ì— ì§€ì •í•˜ì‹­ì‹œì˜¤. ì´ í…Œí¬ë‹‰ì€ ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ë°©ì†¡ìš© ì˜ë„ì˜ ë©”ì‹œì§€ì—ë§Œ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤:</p>
 
 <pre>SendMessage, 0x1A,,,, ahk_id 0xFFFF  <em>; 0x1A is WM_SETTINGCHANGE</em></pre>
 <p>
-½ºÅ©¸³Æ®°¡ ¸Þ½ÃÁö¸¦ ¹Þµµ·Ï ÇÏ·Á¸é <a href="OnMessage.htm">OnMessage()</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+ìŠ¤í¬ë¦½íŠ¸ê°€ ë©”ì‹œì§€ë¥¼ ë°›ë„ë¡ í•˜ë ¤ë©´ <a href="OnMessage.htm">OnMessage()</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-ÀÌ ¸í·É¾îµåµéÀ» »ç¿ëÇÏ´Â ¹æ¹ý¿¡ °üÇÑ ¼Ò°³´Â <a href="../misc/SendMessage.htm">¸Þ½ÃÁö ÀÚ½À¼­</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ì´ ëª…ë ¹ì–´ë“œë“¤ì„ ì‚¬ìš©í•˜ëŠ” ë°©ë²•ì— ê´€í•œ ì†Œê°œëŠ” <a href="../misc/SendMessage.htm">ë©”ì‹œì§€ ìžìŠµì„œ</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-Ã¢ Á¦¸ñ°ú ÅØ½ºÆ®´Â ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÕ´Ï´Ù. ¼ûÀº Ã¢Àº <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>°¡ ÄÑÁ® ÀÖ¾î¾ß Å½ÁöµË´Ï´Ù.</p>
+ì°½ ì œëª©ê³¼ í…ìŠ¤íŠ¸ëŠ” ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•©ë‹ˆë‹¤. ìˆ¨ì€ ì°½ì€ <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>ê°€ ì¼œì ¸ ìžˆì–´ì•¼ íƒì§€ë©ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="../misc/SendMessageList.htm">Message List</a>, <a href="../misc/SendMessage.htm">Message Tutorial</a>, <a href="OnMessage.htm">OnMessage()</a>, <a href="../misc/Winamp.htm">Automating Winamp</a>, <a href="DllCall.htm">DllCall</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="WinMenuSelectItem.htm">WinMenuSelectItem</a></p>
 
-<h3 id="Examples">¿¹Á¦</h3>
-<pre class="NoIndent">#o::  <em>; ¸ð´ÏÅÍ¸¦ ²ø Win+O ÇÖÅ°.</em>
-Sleep 1000  <em>; »ç¿ëÀÚ¿¡°Ô Å°¸¦ ¶¿ ±âÈ¸¸¦ ÁÝ´Ï´Ù (Å°¸¦ ¶¼¸é ¸ð´ÏÅÍ°¡ ´Ù½Ã ²¡´Ï´Ù).
+<h3 id="Examples">ì˜ˆì œ</h3>
+<pre class="NoIndent">#o::  <em>; ëª¨ë‹ˆí„°ë¥¼ ëŒ Win+O í•«í‚¤.</em>
+Sleep 1000  <em>; ì‚¬ìš©ìžì—ê²Œ í‚¤ë¥¼ ë—„ ê¸°íšŒë¥¼ ì¤ë‹ˆë‹¤ (í‚¤ë¥¼ ë–¼ë©´ ëª¨ë‹ˆí„°ê°€ ë‹¤ì‹œ ê¹¹ë‹ˆë‹¤).
 ; Turn Monitor Off:</em>
-SendMessage, 0x112, 0xF170, 2,, Program Manager  <em>; 0x112´Â WM_SYSCOMMANDÀÌ°í, 0xF170´Â SC_MONITORPOWERÀÔ´Ï´Ù.
-; À§¿¡ ÁÖ¸ñÇÏ½Ê½Ã¿À: 2 ´ë½Å¿¡ -1À» »ç¿ëÇÏ¸é ¸ð´ÏÅÍ°¡ ÄÑÁý´Ï´Ù.
-; 2 ´ë½Å¿¡ 1À» »ç¿ëÇÏ¸é ¸ð´ÏÅÍÀÇ ÀúÀü·Â ¸ðµå°¡ ÄÑÁý´Ï´Ù.</em>
+SendMessage, 0x112, 0xF170, 2,, Program Manager  <em>; 0x112ëŠ” WM_SYSCOMMANDì´ê³ , 0xF170ëŠ” SC_MONITORPOWERìž…ë‹ˆë‹¤.
+; ìœ„ì— ì£¼ëª©í•˜ì‹­ì‹œì˜¤: 2 ëŒ€ì‹ ì— -1ì„ ì‚¬ìš©í•˜ë©´ ëª¨ë‹ˆí„°ê°€ ì¼œì§‘ë‹ˆë‹¤.
+; 2 ëŒ€ì‹ ì— 1ì„ ì‚¬ìš©í•˜ë©´ ëª¨ë‹ˆí„°ì˜ ì €ì „ë ¥ ëª¨ë“œê°€ ì¼œì§‘ë‹ˆë‹¤.</em>
 return
 
-<em>; »ç¿ëÀÚ°¡ ¼±ÅÃÇÑ È­¸é º¸È£±â¸¦ ½ÃÀÛÇÕ´Ï´Ù:</em>
-SendMessage, 0x112, 0xF140, 0,, Program Manager  <em>; 0x112´Â WM_SYSCOMMANDÀÌ°í, 0xF140´Â SC_SCREENSAVEÀÔ´Ï´Ù.</em>
+<em>; ì‚¬ìš©ìžê°€ ì„ íƒí•œ í™”ë©´ ë³´í˜¸ê¸°ë¥¼ ì‹œìž‘í•©ë‹ˆë‹¤:</em>
+SendMessage, 0x112, 0xF140, 0,, Program Manager  <em>; 0x112ëŠ” WM_SYSCOMMANDì´ê³ , 0xF140ëŠ” SC_SCREENSAVEìž…ë‹ˆë‹¤.</em>
 
-<em>; ÇÑ ÁÙ À§·Î °¨½À´Ï´Ù (¼öÁ÷ ½ºÅ©·Ñ ¹Ù°¡ ÀÖ´Â ÄÜÆ®·Ñ¿¡ ´ëÇÏ¿©):</em>
+<em>; í•œ ì¤„ ìœ„ë¡œ ê°ìŠµë‹ˆë‹¤ (ìˆ˜ì§ ìŠ¤í¬ë¡¤ ë°”ê°€ ìžˆëŠ” ì½˜íŠ¸ë¡¤ì— ëŒ€í•˜ì—¬):</em>
 ControlGetFocus, control, A
 SendMessage, 0x115, 0, 0, %control%, A
 
-<em>; ÇÑ ÁÙ ¾Æ·¡·Î °¨½À´Ï´Ù:</em>
+<em>; í•œ ì¤„ ì•„ëž˜ë¡œ ê°ìŠµë‹ˆë‹¤:</em>
 ControlGetFocus, control, A
 SendMessage, 0x115, 1, 0, %control%, A
 
-<em>; È°¼º Ã¢ÀÇ Å°º¸µå ·¹ÀÌ¾Æ¿ô/¾ð¾î¸¦ ¿µ¾î·Î ÀüÈ¯ÇÕ´Ï´Ù:</em>
-PostMessage, 0x50, 0, 0x4090409,, A  <em>; 0x50Àº WM_INPUTLANGCHANGEREQUESTÀÔ´Ï´Ù.</em>
+<em>; í™œì„± ì°½ì˜ í‚¤ë³´ë“œ ë ˆì´ì•„ì›ƒ/ì–¸ì–´ë¥¼ ì˜ì–´ë¡œ ì „í™˜í•©ë‹ˆë‹¤:</em>
+PostMessage, 0x50, 0, 0x4090409,, A  <em>; 0x50ì€ WM_INPUTLANGCHANGEREQUESTìž…ë‹ˆë‹¤.</em>
 
-<em>; ÀÌ ¿¹Á¦´Â Winamp¿¡°Ô ÇöÀç È°¼ºÈ­µÇ¾î ÀÖ´Â Æ®·¢ ¹øÈ£¸¦ ¹°¾îº¾´Ï´Ù:</em>
+<em>; ì´ ì˜ˆì œëŠ” Winampì—ê²Œ í˜„ìž¬ í™œì„±í™”ë˜ì–´ ìžˆëŠ” íŠ¸ëž™ ë²ˆí˜¸ë¥¼ ë¬¼ì–´ë´…ë‹ˆë‹¤:</em>
 SetTitleMatchMode, 2
 SendMessage, 1024, 0, 120, - Winamp
 if ErrorLevel &lt;&gt; FAIL
 {
-    ErrorLevel++  <em>; WinampÀÇ Ä«¿îÆ®´Â &quot;0&quot;¿¡¼­ ½ÃÀÛÇÕ´Ï´Ù. ±×·¡¼­ 1·Î Á¶Á¤ÇÕ´Ï´Ù.</em>
+    ErrorLevel++  <em>; Winampì˜ ì¹´ìš´íŠ¸ëŠ” &quot;0&quot;ì—ì„œ ì‹œìž‘í•©ë‹ˆë‹¤. ê·¸ëž˜ì„œ 1ë¡œ ì¡°ì •í•©ë‹ˆë‹¤.</em>
     MsgBox, Track #%ErrorLevel% is active or playing.
 }
-<em>; ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="../misc/Winamp.htm">Winamp ÀÚµ¿È­ ÇÏ±â</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</em>
+<em>; ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="../misc/Winamp.htm">Winamp ìžë™í™” í•˜ê¸°</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</em>
 
-<em>; AHK ½ºÅ©¸³Æ®ÀÇ ÇÁ·Î¼¼½º ID¸¦ Ã£±â À§ÇØ (&quot;<a href="WinGet.htm">WinGet PID</a>&quot;¿¡ ´ëÇÑ ´ë¾È):</em>
+<em>; AHK ìŠ¤í¬ë¦½íŠ¸ì˜ í”„ë¡œì„¸ìŠ¤ IDë¥¼ ì°¾ê¸° ìœ„í•´ (&quot;<a href="WinGet.htm">WinGet PID</a>&quot;ì— ëŒ€í•œ ëŒ€ì•ˆ):</em>
 SetTitleMatchMode, 2
 DetectHiddenWindows, on
 SendMessage, 0x44, 0x405, 0, , SomeOtherScript.ahk - AutoHotkey v

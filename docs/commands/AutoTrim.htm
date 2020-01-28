@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>AutoTrim</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,42 +11,42 @@
 
 <h1>AutoTrim</h1>
 
-<p><code><a href="SetEnv.htm">Var1 = %Var2%</a></code> ¼­¼ú¹®¿¡¼­ <em>Var2</em>ÀÇ ¾Õ µÚ·ÎºÎÅÍ ½ºÆäÀÌ½º¿Í ÅÇ ¹®ÀÚ¸¦ °È¾î³¾Áö ¸»Áö °áÁ¤ÇÕ´Ï´Ù.</p>
+<p><code><a href="SetEnv.htm">Var1 = %Var2%</a></code> ì„œìˆ ë¬¸ì—ì„œ <em>Var2</em>ì˜ ì•ž ë’¤ë¡œë¶€í„° ìŠ¤íŽ˜ì´ìŠ¤ì™€ íƒ­ ë¬¸ìžë¥¼ ê±·ì–´ë‚¼ì§€ ë§ì§€ ê²°ì •í•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">AutoTrim, On|Off</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>On|Off</dt>
-  <dd><p><strong>On</strong>: <code><a href="SetEnv.htm">Var1 = %Var2%</a></code>¿Í °°Àº ¼­¼ú¹®¿¡¼­, ÅÇ°ú ½ºÆäÀÌ½º°¡ <em>Var2</em>ÀÇ ¾Õ µÚ¿¡ ÀÖÀ¸¸é <em>Var1</em>À¸·ÎºÎÅÍ °È¾î³À´Ï´Ù. ÀÌ°ÍÀÌ ±âº»°ªÀÔ´Ï´Ù.</p>
-      <p><strong><a name="Off"></a>Off</strong>: ÅÇ°ú ½ºÆäÀÌ½º¸¦ °È¾î³»Áö ¾Ê½À´Ï´Ù.</p>
+  <dd><p><strong>On</strong>: <code><a href="SetEnv.htm">Var1 = %Var2%</a></code>ì™€ ê°™ì€ ì„œìˆ ë¬¸ì—ì„œ, íƒ­ê³¼ ìŠ¤íŽ˜ì´ìŠ¤ê°€ <em>Var2</em>ì˜ ì•ž ë’¤ì— ìžˆìœ¼ë©´ <em>Var1</em>ìœ¼ë¡œë¶€í„° ê±·ì–´ëƒ…ë‹ˆë‹¤. ì´ê²ƒì´ ê¸°ë³¸ê°’ìž…ë‹ˆë‹¤.</p>
+      <p><strong><a name="Off"></a>Off</strong>: íƒ­ê³¼ ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ ê±·ì–´ë‚´ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
       <p>
-	  ±âÈ£ ±×´ë·ÎÀÇ ÅÇ°ú ½ºÆäÀÌ½º´Â ÀÌ ¼³Á¤¿¡ »ó°ü¾øÀÌ »ý·«µË´Ï´Ù.  v1.1.06ÀÌÀü¿¡´Â, ¿©±â¿¡ `t ¶Ç´Â ±âÅ¸ ÇÇ½ÅµÈ ±âÈ£ ±×´ë·ÎÀÇ ½ºÆäÀÌ½º³ª ÅÇÀÌ Æ÷ÇÔµÇ¾ú½À´Ï´Ù. ¿¹¸¦ µé¾î AutoTrimÀÌ OffÀÏ ¶§, ¼­¼ú¹® <code>Var = `t</code>´Â v1.1.06¿¡¼­´Â ÅÇ ¹®ÀÚ¸¦ ÇÒ´çÇÏ°í ±× ÀÌÀü ¹öÀüÀº ºó ¹®ÀÚ¿­ÀÌ ÇÒ´çµË´Ï´Ù.</p></dd>
+	  ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ íƒ­ê³¼ ìŠ¤íŽ˜ì´ìŠ¤ëŠ” ì´ ì„¤ì •ì— ìƒê´€ì—†ì´ ìƒëžµë©ë‹ˆë‹¤.  v1.1.06ì´ì „ì—ëŠ”, ì—¬ê¸°ì— `t ë˜ëŠ” ê¸°íƒ€ í”¼ì‹ ëœ ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ ìŠ¤íŽ˜ì´ìŠ¤ë‚˜ íƒ­ì´ í¬í•¨ë˜ì—ˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ AutoTrimì´ Offì¼ ë•Œ, ì„œìˆ ë¬¸ <code>Var = `t</code>ëŠ” v1.1.06ì—ì„œëŠ” íƒ­ ë¬¸ìžë¥¼ í• ë‹¹í•˜ê³  ê·¸ ì´ì „ ë²„ì „ì€ ë¹ˆ ë¬¸ìžì—´ì´ í• ë‹¹ë©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÀÌ ¸í·É¾î°¡ ½ºÅ©¸³Æ®¿¡ ¾øÀ¸¸é, ¼³Á¤Àº ONÀÌ ±âº»°ªÀÔ´Ï´Ù.</p>
+ì´ ëª…ë ¹ì–´ê°€ ìŠ¤í¬ë¦½íŠ¸ì— ì—†ìœ¼ë©´, ì„¤ì •ì€ ONì´ ê¸°ë³¸ê°’ìž…ë‹ˆë‹¤.</p>
 <p>
-³»Àå º¯¼ö <strong>A_AutoTrim</strong>¿¡´Â ÇöÀç ¼³Á¤ÀÌ ´ã°Ü ÀÖ½À´Ï´Ù (On ¶Ç´Â Off).</p>
+ë‚´ìž¥ ë³€ìˆ˜ <strong>A_AutoTrim</strong>ì—ëŠ” í˜„ìž¬ ì„¤ì •ì´ ë‹´ê²¨ ìžˆìŠµë‹ˆë‹¤ (On ë˜ëŠ” Off).</p>
 <p>
-³»Àå º¯¼ö <a href="../Variables.htm#Space">A_Space</a> ±×¸®°í <a href="../Variables.htm#Tab">A_Tab</a>¿¡´Â ´ÜÀÏ ½ºÆäÀÌ½º¿Í ´ÜÀÏ ÅÇ ¹®ÀÚ°¡ °¢°¢ µé¾î ÀÖ½À´Ï´Ù.</p>
+ë‚´ìž¥ ë³€ìˆ˜ <a href="../Variables.htm#Space">A_Space</a> ê·¸ë¦¬ê³  <a href="../Variables.htm#Tab">A_Tab</a>ì—ëŠ” ë‹¨ì¼ ìŠ¤íŽ˜ì´ìŠ¤ì™€ ë‹¨ì¼ íƒ­ ë¬¸ìžê°€ ê°ê° ë“¤ì–´ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-AutoTrimÀº <code>Var := &quot; string &quot;</code>¿Í °°Àº <a href="SetExpression.htm">Ç¥Çö½Ä ÇÒ´ç</a>¿¡ ¿µÇâÀ» ÁÖÁö ¾Ê½À´Ï´Ù. ´Ù¸¥ ¸»·Î ÇÏ¸é, ±× °æ¿ì ¼±µÎ ÈÄ¹ÌÀÇ ½ºÆäÀÌ½º¿Í ÅÇÀº ¾ðÁ¦³ª ±×´ë·Î À¯ÁöµË´Ï´Ù.</p>
+AutoTrimì€ <code>Var := &quot; string &quot;</code>ì™€ ê°™ì€ <a href="SetExpression.htm">í‘œí˜„ì‹ í• ë‹¹</a>ì— ì˜í–¥ì„ ì£¼ì§€ ì•ŠìŠµë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ í•˜ë©´, ê·¸ ê²½ìš° ì„ ë‘ í›„ë¯¸ì˜ ìŠ¤íŽ˜ì´ìŠ¤ì™€ íƒ­ì€ ì–¸ì œë‚˜ ê·¸ëŒ€ë¡œ ìœ ì§€ë©ë‹ˆë‹¤.</p>
 <p>
-»õ·Î ±âµ¿µÈ <a href="../misc/Threads.htm">¾²·¹µå</a>¸¶´Ù (<a href="../Hotkeys.htm">ÇÖÅ°</a>, <a href="Menu.htm">¸ÂÃã ¸Þ´º Ç×¸ñ</a>, ¶Ç´Â <a href="SetTimer.htm">Å¸ÀÌ¸Ó</a> ¼­ºê·çÆ¾) ÀÌ ¸í·É¾î¿¡ ´ëÇÑ ±âº»°ªÀ» °¡Áö°í »õ·Î ½ÃÀÛÇÕ´Ï´Ù. ÀÌ ¼³Á¤Àº ÀÌ ¸í·É¾î¸¦ ÀÚµ¿-½ÇÇà ¼½¼Ç¿¡ (½ºÅ©¸³Æ®ÀÇ »ó´Ü ºÎºÐ) »ç¿ëÇÏ¸é ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù.</p>
+ìƒˆë¡œ ê¸°ë™ëœ <a href="../misc/Threads.htm">ì“°ë ˆë“œ</a>ë§ˆë‹¤ (<a href="../Hotkeys.htm">í•«í‚¤</a>, <a href="Menu.htm">ë§žì¶¤ ë©”ë‰´ í•­ëª©</a>, ë˜ëŠ” <a href="SetTimer.htm">íƒ€ì´ë¨¸</a> ì„œë¸Œë£¨í‹´) ì´ ëª…ë ¹ì–´ì— ëŒ€í•œ ê¸°ë³¸ê°’ì„ ê°€ì§€ê³  ìƒˆë¡œ ì‹œìž‘í•©ë‹ˆë‹¤. ì´ ì„¤ì •ì€ ì´ ëª…ë ¹ì–´ë¥¼ ìžë™-ì‹¤í–‰ ì„¹ì…˜ì— (ìŠ¤í¬ë¦½íŠ¸ì˜ ìƒë‹¨ ë¶€ë¶„) ì‚¬ìš©í•˜ë©´ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
 <a href="SetEnv.htm">SetEnv</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">AutoTrim, off
-NewVar1 = %OldVar%  <em>; OldVar¿¡ ¼±µÎ¿Í ÈÄ¹Ì¿¡ ½ºÆäÀÌ½º°¡ µé¾î ÀÖÀ¸¸é, NewVarµµ ¿ª½Ã ±×´ë·Î °¡Áý´Ï´Ù.</em>
-NewVar2 = %A_Space%  <em>; AutoTrimÀÌ ²¨Á® ÀÖÀ¸¸é, ´ÜÀÏ ½ºÆäÀÌ½º¸¦ ÀÌ·± ½ÄÀ¸·Î ÇÒ´çÇÒ ¼ö ÀÖ½À´Ï´Ù.</em>
+NewVar1 = %OldVar%  <em>; OldVarì— ì„ ë‘ì™€ í›„ë¯¸ì— ìŠ¤íŽ˜ì´ìŠ¤ê°€ ë“¤ì–´ ìžˆìœ¼ë©´, NewVarë„ ì—­ì‹œ ê·¸ëŒ€ë¡œ ê°€ì§‘ë‹ˆë‹¤.</em>
+NewVar2 = %A_Space%  <em>; AutoTrimì´ êº¼ì ¸ ìžˆìœ¼ë©´, ë‹¨ì¼ ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ ì´ëŸ° ì‹ìœ¼ë¡œ í• ë‹¹í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</em>
 
-Var1 := &quot;`t&quot; <strong>.</strong> Var2 <strong>.</strong> &quot; &quot;  <em>; <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>ÀÌ±â ¶§¹®¿¡ AutoTrimÀÇ ¼³Á¤Àº ¹®Á¦°¡ µÇÁö ¾Ê½À´Ï´Ù.</em></pre>
+Var1 := &quot;`t&quot; <strong>.</strong> Var2 <strong>.</strong> &quot; &quot;  <em>; <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ì´ê¸° ë•Œë¬¸ì— AutoTrimì˜ ì„¤ì •ì€ ë¬¸ì œê°€ ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</em></pre>
 
 </body>
 </html>

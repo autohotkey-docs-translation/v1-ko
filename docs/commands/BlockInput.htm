@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>BlockInput</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,60 +11,60 @@
 
 <h1>BlockInput</h1>
 
-<p>»ç¿ëÀÚ°¡ ÄÄÇ»ÅÍ¿Í Å°º¸µå¿Í ¸¶¿ì½º¸¦ ÅëÇÏ¿© »óÈ£ÀÛ¿ë ÇÒÁö ¸»Áö ¿©ºÎ¸¦ ÄÑ°í ²ü´Ï´Ù.</p>
+<p>ì‚¬ìš©ìžê°€ ì»´í“¨í„°ì™€ í‚¤ë³´ë“œì™€ ë§ˆìš°ìŠ¤ë¥¼ í†µí•˜ì—¬ ìƒí˜¸ìž‘ìš© í• ì§€ ë§ì§€ ì—¬ë¶€ë¥¼ ì¼œê³  ë•ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">BlockInput, Mode</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Mode</dt>
-  <dd><p><strong><u>Mode 1</u></strong>: ´ÙÀ½ ´Ü¾î Áß ÇÏ³ª:</p>
-      <p><strong>On</strong>: »ç¿ëÀÚ°¡ ÄÄÇ»ÅÍ¿Í »óÈ£ÀÛ¿ëÇÏÁö ¸øÇÕ´Ï´Ù (¸¶¿ì½º¿Í Å°º¸µå ÀÔ·ÂÀº È¿°ú°¡ ¾ø½À´Ï´Ù).</p>
-      <p><strong>Off</strong>: ÀÔ·ÂÀ» °¡´ÉÇÏ°Ô ÇÕ´Ï´Ù.</p>
-      <p><strong><u>Mode 2</u></strong>: ÀÌ ¸ðµå´Â ´Ù¸¥ µÎ °³¿Í µ¶¸³ÀûÀ¸·Î ÀÛµ¿ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <code>BlockInput On</code>ÀÌ¸é <code>BlockInput Off</code>ÀÌ »ç¿ëµÉ ¶§±îÁö ÀÔ·ÂÀ» ¸·½À´Ï´Ù. ¾Æ·¡ÀÇ ¿É¼ÇÀÌ È¿°ú¸¦ ¹ßÈÖÇØµµ »ó°ü¾ø½À´Ï´Ù.</p>
+  <dd><p><strong><u>Mode 1</u></strong>: ë‹¤ìŒ ë‹¨ì–´ ì¤‘ í•˜ë‚˜:</p>
+      <p><strong>On</strong>: ì‚¬ìš©ìžê°€ ì»´í“¨í„°ì™€ ìƒí˜¸ìž‘ìš©í•˜ì§€ ëª»í•©ë‹ˆë‹¤ (ë§ˆìš°ìŠ¤ì™€ í‚¤ë³´ë“œ ìž…ë ¥ì€ íš¨ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤).</p>
+      <p><strong>Off</strong>: ìž…ë ¥ì„ ê°€ëŠ¥í•˜ê²Œ í•©ë‹ˆë‹¤.</p>
+      <p><strong><u>Mode 2</u></strong>: ì´ ëª¨ë“œëŠ” ë‹¤ë¥¸ ë‘ ê°œì™€ ë…ë¦½ì ìœ¼ë¡œ ìž‘ë™í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>BlockInput On</code>ì´ë©´ <code>BlockInput Off</code>ì´ ì‚¬ìš©ë  ë•Œê¹Œì§€ ìž…ë ¥ì„ ë§‰ìŠµë‹ˆë‹¤. ì•„ëž˜ì˜ ì˜µì…˜ì´ íš¨ê³¼ë¥¼ ë°œíœ˜í•´ë„ ìƒê´€ì—†ìŠµë‹ˆë‹¤.</p>
       <p>
-	  <strong>Send</strong>: <a href="Send.htm">Send</a> ¶Ç´Â <a href="Send.htm">SendRaw</a>°¡ ÁøÇà ÁßÀÎ µ¿¾È »ç¿ëÀÚÀÇ Å°º¸µå¿Í ¸¶¿ì½º ÀÔ·ÂÀ» ¹«½ÃÇÕ´Ï´Ù (ÀüÅëÀûÀÎ <a href="SendMode.htm">SendEvent ¸ðµå</a>¸¸ Çã¿ëÇÕ´Ï´Ù). »ç¿ëÀÚÀÇ Å° ÀÔ·Â ¶§¹®¿¡ Èä³»³½ Å°´­¸²ÀÇ Èå¸§ÀÌ ¹æÇØ¹ÞÁö ¾Êµµ·Ï ¸·½À´Ï´Ù. Send°¡ ³¡³¯ ¶§, ÀÔ·ÂÀÌ ´Ù½Ã °¡´ÉÇØÁý´Ï´Ù (¾Õ¿¡¼­ <code>BlockInput On</code>À¸·Î ¸·°í ÀÖ´Â °æ¿ì´Â Á¦¿ÜÇÕ´Ï´Ù).</p>
+	  <strong>Send</strong>: <a href="Send.htm">Send</a> ë˜ëŠ” <a href="Send.htm">SendRaw</a>ê°€ ì§„í–‰ ì¤‘ì¸ ë™ì•ˆ ì‚¬ìš©ìžì˜ í‚¤ë³´ë“œì™€ ë§ˆìš°ìŠ¤ ìž…ë ¥ì„ ë¬´ì‹œí•©ë‹ˆë‹¤ (ì „í†µì ì¸ <a href="SendMode.htm">SendEvent ëª¨ë“œ</a>ë§Œ í—ˆìš©í•©ë‹ˆë‹¤). ì‚¬ìš©ìžì˜ í‚¤ ìž…ë ¥ ë•Œë¬¸ì— í‰ë‚´ë‚¸ í‚¤ëˆŒë¦¼ì˜ íë¦„ì´ ë°©í•´ë°›ì§€ ì•Šë„ë¡ ë§‰ìŠµë‹ˆë‹¤. Sendê°€ ëë‚  ë•Œ, ìž…ë ¥ì´ ë‹¤ì‹œ ê°€ëŠ¥í•´ì§‘ë‹ˆë‹¤ (ì•žì—ì„œ <code>BlockInput On</code>ìœ¼ë¡œ ë§‰ê³  ìžˆëŠ” ê²½ìš°ëŠ” ì œì™¸í•©ë‹ˆë‹¤).</p>
       <p>
-	  <strong>Mouse</strong>: »ç¿ëÀÚÀÇ Å°º¸µå¿Í ¸¶¿ì½º ÀÔ·ÂÀº <a href="Click.htm">Click</a>, <a href="MouseMove.htm">MouseMove</a>, <a href="MouseClick.htm">MouseClick</a>, ¶Ç´Â <a href="MouseClickDrag.htm">MouseClickDrag</a>ÀÌ ÁøÇà ÁßÀÏ ¶§ ¹«½ÃµË´Ï´Ù (ÀüÅëÀûÀÎ <a href="SendMode.htm">SendEvent ¸ðµå</a>¸¸ Çã¿ëÇÕ´Ï´Ù). »ç¿ëÀÚÀÇ ¸¶¿ì½º ÀÌµ¿°ú Å¬¸¯ ¶§¹®¿¡ Èä³»³½ ¸¶¿ì½º ÀÌº¥Æ® Èå¸§ÀÌ ¹æÇØ¹ÞÁö ¾Êµµ·Ï ¸·½À´Ï´Ù. ¸¶¿ì½º ¸í·É¾î°¡ ³¡³¯ ¶§ (ÀÌÀü¿¡ <code>BlockInput On</code>ÀÌ »ç¿ëµÇ¿© ¿©ÀüÈ÷ ÀÔ·ÂÀ» ¸·°í ÀÖÁö¸¸ ¾Ê´Ù¸é) ÀÔ·ÂÀÌ ´Ù½Ã °¡´ÉÇØÁý´Ï´Ù.</p>
-      <p><strong>SendAndMouse</strong>: À§ µÎ ¹æ¹ýÀ» Á¶ÇÕ.</p>
-      <p><strong>Default</strong>: <em>Send</em>¿Í <em>Mouse</em> ¸ðµå¸¦ ¸ðµÎ ²ôÁö¸¸, ÀÔ·Â ¹æÁöÀÇ ÇöÀç »óÅÂ¸¦ ¹Ù²ÙÁö ¾Ê½À´Ï´Ù. ¿¹¸¦ µé¾î, <code>BlockInput On</code>ÀÌ ÇöÀç È¿°ú°¡ ÀÖ´Ù¸é,  <code>BlockInput Default</code>¸¦ »ç¿ëÇØµµ ²¨ÁöÁö ¾Ê½À´Ï´Ù.</p>
+	  <strong>Mouse</strong>: ì‚¬ìš©ìžì˜ í‚¤ë³´ë“œì™€ ë§ˆìš°ìŠ¤ ìž…ë ¥ì€ <a href="Click.htm">Click</a>, <a href="MouseMove.htm">MouseMove</a>, <a href="MouseClick.htm">MouseClick</a>, ë˜ëŠ” <a href="MouseClickDrag.htm">MouseClickDrag</a>ì´ ì§„í–‰ ì¤‘ì¼ ë•Œ ë¬´ì‹œë©ë‹ˆë‹¤ (ì „í†µì ì¸ <a href="SendMode.htm">SendEvent ëª¨ë“œ</a>ë§Œ í—ˆìš©í•©ë‹ˆë‹¤). ì‚¬ìš©ìžì˜ ë§ˆìš°ìŠ¤ ì´ë™ê³¼ í´ë¦­ ë•Œë¬¸ì— í‰ë‚´ë‚¸ ë§ˆìš°ìŠ¤ ì´ë²¤íŠ¸ íë¦„ì´ ë°©í•´ë°›ì§€ ì•Šë„ë¡ ë§‰ìŠµë‹ˆë‹¤. ë§ˆìš°ìŠ¤ ëª…ë ¹ì–´ê°€ ëë‚  ë•Œ (ì´ì „ì— <code>BlockInput On</code>ì´ ì‚¬ìš©ë˜ì—¬ ì—¬ì „ížˆ ìž…ë ¥ì„ ë§‰ê³  ìžˆì§€ë§Œ ì•Šë‹¤ë©´) ìž…ë ¥ì´ ë‹¤ì‹œ ê°€ëŠ¥í•´ì§‘ë‹ˆë‹¤.</p>
+      <p><strong>SendAndMouse</strong>: ìœ„ ë‘ ë°©ë²•ì„ ì¡°í•©.</p>
+      <p><strong>Default</strong>: <em>Send</em>ì™€ <em>Mouse</em> ëª¨ë“œë¥¼ ëª¨ë‘ ë„ì§€ë§Œ, ìž…ë ¥ ë°©ì§€ì˜ í˜„ìž¬ ìƒíƒœë¥¼ ë°”ê¾¸ì§€ ì•ŠìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>BlockInput On</code>ì´ í˜„ìž¬ íš¨ê³¼ê°€ ìžˆë‹¤ë©´,  <code>BlockInput Default</code>ë¥¼ ì‚¬ìš©í•´ë„ êº¼ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
       <p>
-	  <u><strong><a name="MouseMove"></a>Mode 3</strong> (v1.0.43.11+ ¿ä±¸)</u>: ÀÌ ¸ðµå´Â ´Ù¸¥ µÎ ¹æ¹ý°ú µ¶¸³ÀûÀ¸·Î ÀÛµ¿ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <code>BlockInput On</code>°ú <code>BlockInput MouseMove</code>°¡ µÑ ´Ù ÄÑÁ® ÀÖÀ¸¸é, ¸¶¿ì½º ÀÌµ¿Àº µÑ ´Ù ²¨Áú ¶§±îÁö ¸·Èü´Ï´Ù.</p>
-      <p><strong>MouseMove</strong>: ¸¶¿ì½º Ä¿¼­´Â »ç¿ëÀÚÀÇ ¹°¸®Àû ¸¶¿ì½º ÀÌµ¿¿¡ ¹ÝÀÀÇÏÁö ¾Ê½À´Ï´Ù (DirectInput ¾îÇÃÀº ¿¹¿ÜÀûÀ¸·Î °¡´ÉÇÕ´Ï´Ù). ½ºÅ©¸³Æ®°¡ ÀÌ ¸í·É¾î¸¦ Ã³À½ »ç¿ëÇÒ ¶§, (¾ÆÁ÷ ¼³Ä¡µÇÁö ¾Ê¾Ò´Ù¸é) <a href="_InstallMouseHook.htm">¸¶¿ì½º °¥°í¸®</a>°¡ ¼³Ä¡µË´Ï´Ù. °Ô´Ù°¡, ½ºÅ©¸³Æ®´Â <a href="_Persistent.htm">¿µ¼ÓÀû</a>ÀÌ µË´Ï´Ù. <a href="ExitApp.htm">ExitApp</a>¸¦ »ç¿ëÇØ¾ß¸¸ Á¾·áÇÒ ¼ö ÀÖ´Ù´Â ¶æÀÎ´Ù. ¸¶¿ì½º °¥°í¸®´Â ´ÙÀ½ <a href="Suspend.htm">Suspend</a> ¶Ç´Â <a href="Hotkey.htm">Hotkey</a> ¸í·É¾î¸¦ »ç¿ëÇÒ ¶§±îÁö ¿©ÀüÈ÷ ¼³Ä¡µÇ¾î ÀÖÀ» °ÍÀÔ´Ï´Ù. ±× ¼ø°£ ÇÖÅ°³ª ÇÖ½ºÆ®¸µÀ» ¿ä±¸ÇÏÁö ¾ÊÀ¸¸é Á¦°ÅµË´Ï´Ù (<a href="_Hotstring.htm">#Hotstring NoMouse</a> ÂüÁ¶).</p>
-      <p><strong>MouseMoveOff</strong>: »ç¿ëÀÚ¿¡°Ô ¸¶¿ì½º Ä¿¼­¸¦ ÀÌµ¿ÇÏµµ·Ï Çã¿ëÇÕ´Ï´Ù.</p></dd>
+	  <u><strong><a name="MouseMove"></a>Mode 3</strong> (v1.0.43.11+ ìš”êµ¬)</u>: ì´ ëª¨ë“œëŠ” ë‹¤ë¥¸ ë‘ ë°©ë²•ê³¼ ë…ë¦½ì ìœ¼ë¡œ ìž‘ë™í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>BlockInput On</code>ê³¼ <code>BlockInput MouseMove</code>ê°€ ë‘˜ ë‹¤ ì¼œì ¸ ìžˆìœ¼ë©´, ë§ˆìš°ìŠ¤ ì´ë™ì€ ë‘˜ ë‹¤ êº¼ì§ˆ ë•Œê¹Œì§€ ë§‰íž™ë‹ˆë‹¤.</p>
+      <p><strong>MouseMove</strong>: ë§ˆìš°ìŠ¤ ì»¤ì„œëŠ” ì‚¬ìš©ìžì˜ ë¬¼ë¦¬ì  ë§ˆìš°ìŠ¤ ì´ë™ì— ë°˜ì‘í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ (DirectInput ì–´í”Œì€ ì˜ˆì™¸ì ìœ¼ë¡œ ê°€ëŠ¥í•©ë‹ˆë‹¤). ìŠ¤í¬ë¦½íŠ¸ê°€ ì´ ëª…ë ¹ì–´ë¥¼ ì²˜ìŒ ì‚¬ìš©í•  ë•Œ, (ì•„ì§ ì„¤ì¹˜ë˜ì§€ ì•Šì•˜ë‹¤ë©´) <a href="_InstallMouseHook.htm">ë§ˆìš°ìŠ¤ ê°ˆê³ ë¦¬</a>ê°€ ì„¤ì¹˜ë©ë‹ˆë‹¤. ê²Œë‹¤ê°€, ìŠ¤í¬ë¦½íŠ¸ëŠ” <a href="_Persistent.htm">ì˜ì†ì </a>ì´ ë©ë‹ˆë‹¤. <a href="ExitApp.htm">ExitApp</a>ë¥¼ ì‚¬ìš©í•´ì•¼ë§Œ ì¢…ë£Œí•  ìˆ˜ ìžˆë‹¤ëŠ” ëœ»ì¸ë‹¤. ë§ˆìš°ìŠ¤ ê°ˆê³ ë¦¬ëŠ” ë‹¤ìŒ <a href="Suspend.htm">Suspend</a> ë˜ëŠ” <a href="Hotkey.htm">Hotkey</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•  ë•Œê¹Œì§€ ì—¬ì „ížˆ ì„¤ì¹˜ë˜ì–´ ìžˆì„ ê²ƒìž…ë‹ˆë‹¤. ê·¸ ìˆœê°„ í•«í‚¤ë‚˜ í•«ìŠ¤íŠ¸ë§ì„ ìš”êµ¬í•˜ì§€ ì•Šìœ¼ë©´ ì œê±°ë©ë‹ˆë‹¤ (<a href="_Hotstring.htm">#Hotstring NoMouse</a> ì°¸ì¡°).</p>
+      <p><strong>MouseMoveOff</strong>: ì‚¬ìš©ìžì—ê²Œ ë§ˆìš°ìŠ¤ ì»¤ì„œë¥¼ ì´ë™í•˜ë„ë¡ í—ˆìš©í•©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-BlockInputº¸´Ù, Á¾Á¾ <code><a href="SendMode.htm">SendMode Input</a></code> ¶Ç´Â <code><a href="SendMode.htm">SendMode Play</a></code>À» »ç¿ëÇÏ´Â ÆíÀÌ ´õ ÁÁÀ» °æ¿ì°¡ ¸¹½À´Ï´Ù. ¿Ö³ÄÇÏ¸é Å°´­¸²°ú ¸¶¿ì½º Å¬¸¯À» ÀÎÅÍ·´Æ®ÇÒ ¼ö ¾ø±â ¶§¹®ÀÔ´Ï´Ù. BlockInput°ú ´Ù¸£°Ô, À§ ¸ðµå´Â Àü¼Û Áß »ç¿ëÀÚ°¡ Å¸ÀÚÇÑ °ÍÀ» ¹ö¸®Áö ¾Ê½À´Ï´Ù; ´ë½Å¿¡, ¹öÆÛ Ã³¸®Çß´Ù°¡ ³ªÁß¿¡ Àü¼ÛÇÕ´Ï´Ù. BlockInputÀ» ÇÇÇÏ¸é ´ÙÀ½ ¹®´Ü¿¡¼­ ±â¼úÇÏ´Â ¹Ù¿Í °°ÀÌ Å°°¡ ´­·¯ºÙ´Â °ÍÀ» ¿ìÈ¸ÇÒ ÇÊ¿äµµ ¾ø¾îÁý´Ï´Ù.</p>
+BlockInputë³´ë‹¤, ì¢…ì¢… <code><a href="SendMode.htm">SendMode Input</a></code> ë˜ëŠ” <code><a href="SendMode.htm">SendMode Play</a></code>ì„ ì‚¬ìš©í•˜ëŠ” íŽ¸ì´ ë” ì¢‹ì„ ê²½ìš°ê°€ ë§ŽìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ í‚¤ëˆŒë¦¼ê³¼ ë§ˆìš°ìŠ¤ í´ë¦­ì„ ì¸í„°ëŸ½íŠ¸í•  ìˆ˜ ì—†ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. BlockInputê³¼ ë‹¤ë¥´ê²Œ, ìœ„ ëª¨ë“œëŠ” ì „ì†¡ ì¤‘ ì‚¬ìš©ìžê°€ íƒ€ìží•œ ê²ƒì„ ë²„ë¦¬ì§€ ì•ŠìŠµë‹ˆë‹¤; ëŒ€ì‹ ì—, ë²„í¼ ì²˜ë¦¬í–ˆë‹¤ê°€ ë‚˜ì¤‘ì— ì „ì†¡í•©ë‹ˆë‹¤. BlockInputì„ í”¼í•˜ë©´ ë‹¤ìŒ ë¬¸ë‹¨ì—ì„œ ê¸°ìˆ í•˜ëŠ” ë°”ì™€ ê°™ì´ í‚¤ê°€ ëˆŒëŸ¬ë¶™ëŠ” ê²ƒì„ ìš°íšŒí•  í•„ìš”ë„ ì—†ì–´ì§‘ë‹ˆë‹¤.</p>
 <p>
-»ç¿ëÀÚ°¡ Å°¸¦ ´©¸£°í ÀÖ´Â µ¿¾È¿¡ BlockInputÀÌ È°¼ºÈ­µÈ´Ù¸é, ±×·± Å°µéÀº &quot;´­·¯ ºÙ¾î¹ö¸³´Ï´Ù&quot;. ÀÌ°ÍÀº ±× Å°°¡ ³õÀÏ ¶§±îÁö ±â´Ù·È´Ù°¡ BlockInputÀ» ÄÑ¸é ÇØ°áµË´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ:</p>
+ì‚¬ìš©ìžê°€ í‚¤ë¥¼ ëˆ„ë¥´ê³  ìžˆëŠ” ë™ì•ˆì— BlockInputì´ í™œì„±í™”ëœë‹¤ë©´, ê·¸ëŸ° í‚¤ë“¤ì€ &quot;ëˆŒëŸ¬ ë¶™ì–´ë²„ë¦½ë‹ˆë‹¤&quot;. ì´ê²ƒì€ ê·¸ í‚¤ê°€ ë†“ì¼ ë•Œê¹Œì§€ ê¸°ë‹¤ë ¸ë‹¤ê°€ BlockInputì„ ì¼œë©´ í•´ê²°ë©ë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´:</p>
 
 <pre>^!p::
-KeyWait Control  <em>; Å°¸¦ ¶¼±â¸¦ ±â´Ù¸³´Ï´Ù. °¢°¢ÀÇ ÇÖÅ° ¼ö½ÄÀÚ¸¶´Ù KeyWait¸¦ ÇÏ³ª¾¿ »ç¿ëÇÕ´Ï´Ù.</em>
+KeyWait Control  <em>; í‚¤ë¥¼ ë–¼ê¸°ë¥¼ ê¸°ë‹¤ë¦½ë‹ˆë‹¤. ê°ê°ì˜ í•«í‚¤ ìˆ˜ì‹ìžë§ˆë‹¤ KeyWaitë¥¼ í•˜ë‚˜ì”© ì‚¬ìš©í•©ë‹ˆë‹¤.</em>
 KeyWait Alt
 BlockInput On
-<em>; ... Å°´­¸²°ú ¸¶¿ì½º Å¬¸¯À» Àü¼ÛÇÕ´Ï´Ù ...</em>
+<em>; ... í‚¤ëˆŒë¦¼ê³¼ ë§ˆìš°ìŠ¤ í´ë¦­ì„ ì „ì†¡í•©ë‹ˆë‹¤ ...</em>
 BlockInput Off
 return</pre>
 <p>
-ÀÔ·Â ¹æÁö´Â ALT ÀÌº¥Æ®°¡ Àü¼ÛµÉ ¶§¸¶´Ù ÀÚµ¿À¸·Î ±×¸®°í ÀÓ½Ã·Î ²¨Áý´Ï´Ù (³ªÁß¿¡ ´Ù½Ã È°¼ºÈ­µË´Ï´Ù).</p>
+ìž…ë ¥ ë°©ì§€ëŠ” ALT ì´ë²¤íŠ¸ê°€ ì „ì†¡ë  ë•Œë§ˆë‹¤ ìžë™ìœ¼ë¡œ ê·¸ë¦¬ê³  ìž„ì‹œë¡œ êº¼ì§‘ë‹ˆë‹¤ (ë‚˜ì¤‘ì— ë‹¤ì‹œ í™œì„±í™”ë©ë‹ˆë‹¤).</p>
 <p>
-BlockInputÀÌ ÄÑÁ® ÀÖÀ» ¶§, »ç¿ëÀÚ ÀÔ·ÂÀº ¸·È÷Áö¸¸ ¿ÀÅäÇÖÅ°´Â Å°´­¸²°ú ¸¶¿ì½º Å¬¸¯À» Èä³»³¾ ¼ö ÀÖ½À´Ï´Ù. ±×·¸Áö¸¸, Ctrl+Alt+DelÀ» ´©¸£¸é Windows API Æ¯Â¡ ¶§¹®¿¡ ÀÔ·ÂÀÌ ´Ù½Ã °¡´ÉÇØÁý´Ï´Ù.</p>
+BlockInputì´ ì¼œì ¸ ìžˆì„ ë•Œ, ì‚¬ìš©ìž ìž…ë ¥ì€ ë§‰ížˆì§€ë§Œ ì˜¤í† í•«í‚¤ëŠ” í‚¤ëˆŒë¦¼ê³¼ ë§ˆìš°ìŠ¤ í´ë¦­ì„ í‰ë‚´ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, Ctrl+Alt+Delì„ ëˆ„ë¥´ë©´ Windows API íŠ¹ì§• ë•Œë¬¸ì— ìž…ë ¥ì´ ë‹¤ì‹œ ê°€ëŠ¥í•´ì§‘ë‹ˆë‹¤.</p>
 <p>
-¾î¶² À¯ÇüÀÇ <a href="_UseHook.htm">°¥°í¸® ÇÖÅ°</a>´Â BlockInputÀÌ ÄÑÁ® ÀÖ¾îµµ  ¿©ÀüÈ÷ ÃË¹ßµÉ ¼ö ÀÖ½À´Ï´Ù. ¿¹·Î´Â <code>MButton</code> (¸¶¿ì½º °¥°í¸®) ±×¸®°í <code>LWin &amp; Space</code> (¼ö½Ä ½Éº¼ <code>$#</code>ÀÌ ¾Æ´Ï¶ó ¸í½ÃÀûÀ¸·Î Á¢µÎ ½Éº¼ÀÌ ºÙÀº Å°º¸µå °¥°í¸®)°¡ ÀÖ½À´Ï´Ù.</p>
+ì–´ë–¤ ìœ í˜•ì˜ <a href="_UseHook.htm">ê°ˆê³ ë¦¬ í•«í‚¤</a>ëŠ” BlockInputì´ ì¼œì ¸ ìžˆì–´ë„  ì—¬ì „ížˆ ì´‰ë°œë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¡œëŠ” <code>MButton</code> (ë§ˆìš°ìŠ¤ ê°ˆê³ ë¦¬) ê·¸ë¦¬ê³  <code>LWin &amp; Space</code> (ìˆ˜ì‹ ì‹¬ë³¼ <code>$#</code>ì´ ì•„ë‹ˆë¼ ëª…ì‹œì ìœ¼ë¡œ ì ‘ë‘ ì‹¬ë³¼ì´ ë¶™ì€ í‚¤ë³´ë“œ ê°ˆê³ ë¦¬)ê°€ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-½ºÅ©¸³Æ®°¡ ³¡³¯ ¶§ ÀÚµ¿À¸·Î ÀÔ·ÂÀÌ ´Ù½Ã °¡´ÉÇØÁý´Ï´Ù.</p>
+ìŠ¤í¬ë¦½íŠ¸ê°€ ëë‚  ë•Œ ìžë™ìœ¼ë¡œ ìž…ë ¥ì´ ë‹¤ì‹œ ê°€ëŠ¥í•´ì§‘ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="SendMode.htm">SendMode</a>, <a href="Send.htm">Send</a>, <a href="Click.htm">Click</a>, <a href="MouseMove.htm">MouseMove</a>, <a href="MouseClick.htm">MouseClick</a>, <a href="MouseClickDrag.htm">MouseClickDrag</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">BlockInput, on
 Run, notepad
 WinWaitActive, Untitled - Notepad
-Send, {F5} <em>; ³¯Â¥¿Í ½Ã°£À» ºÙ¿© ³Ö½À´Ï´Ù</em>
+Send, {F5} <em>; ë‚ ì§œì™€ ì‹œê°„ì„ ë¶™ì—¬ ë„£ìŠµë‹ˆë‹¤</em>
 BlockInput, off</pre>
 
 </body>

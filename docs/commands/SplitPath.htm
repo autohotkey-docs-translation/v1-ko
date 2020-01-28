@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>SplitPath</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,64 +11,64 @@
 
 <h1>SplitPath</h1>
 
-<p>ÆÄÀÏÀÌ¸§ÀÌ³ª URLÀ» ±×ÀÇ ÀÌ¸§, µð·ºÅä¸®, È®ÀåÀÚ ±×¸®°í µå¶óÀÌºê·Î ºÐÇØÇÕ´Ï´Ù.</p>
+<p>íŒŒì¼ì´ë¦„ì´ë‚˜ URLì„ ê·¸ì˜ ì´ë¦„, ë””ë ‰í† ë¦¬, í™•ìž¥ìž ê·¸ë¦¬ê³  ë“œë¼ì´ë¸Œë¡œ ë¶„í•´í•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">SplitPath, InputVar [, OutFileName, OutDir, OutExtension, OutNameNoExt, OutDrive]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>InputVar</dt>
   <dd>
-    <p>ºÐ¼®ÇÒ ÆÄÀÏÀÌ¸§À» ´ã°í ÀÖ´Â º¯¼öÀÇ ÀÌ¸§.</p>
-    <p><span class="ver">[v1.1.21+]:</span> ÀÌ ¸Å°³º¯¼ö´Â <code>% <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a></code>ÀÏ ¼ö ÀÖÁö¸¸, ÆÛ¼¾Æ®-½ºÆäÀÌ½º¸¦ ¹Ýµå½Ã ¾Õ¿¡ »ç¿ëÇØ¾ß ÇÕ´Ï´Ù.</p>
+    <p>ë¶„ì„í•  íŒŒì¼ì´ë¦„ì„ ë‹´ê³  ìžˆëŠ” ë³€ìˆ˜ì˜ ì´ë¦„.</p>
+    <p><span class="ver">[v1.1.21+]:</span> ì´ ë§¤ê°œë³€ìˆ˜ëŠ” <code>% <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a></code>ì¼ ìˆ˜ ìžˆì§€ë§Œ, í¼ì„¼íŠ¸-ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ ë°˜ë“œì‹œ ì•žì— ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤.</p>
   </dd>
 
   <dt>OutFileName</dt>
-  <dd><p>°æ·Î ¾øÀÌ ÆÄÀÏ ÀÌ¸§À» ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§. ÆÄÀÏÀÇ È®ÀåÀÚ´Â Æ÷ÇÔµË´Ï´Ù.</p></dd>
+  <dd><p>ê²½ë¡œ ì—†ì´ íŒŒì¼ ì´ë¦„ì„ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„. íŒŒì¼ì˜ í™•ìž¥ìžëŠ” í¬í•¨ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>OutDir</dt>
-  <dd><p>ÆÄÀÏÀÇ µð·ºÅä¸®¸¦ ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§, µå¶óÀÌºê ±âÈ£¿Í (Á¸ÀçÇÏ¸é) °øÀ¯ ÀÌ¸§À» Æ÷ÇÔÇÕ´Ï´Ù. ÆÄÀÏÀÌ µå¶óÀÌºêÀÇ ·çÆ® µð·ºÅä¸®¿¡ ÀÖ´Ù¸é ¸¶Áö¸·ÀÇ ¿ª»ç¼±Àº Æ÷ÇÔµÇÁö ¾Ê½À´Ï´Ù.</p></dd>
+  <dd><p>íŒŒì¼ì˜ ë””ë ‰í† ë¦¬ë¥¼ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„, ë“œë¼ì´ë¸Œ ê¸°í˜¸ì™€ (ì¡´ìž¬í•˜ë©´) ê³µìœ  ì´ë¦„ì„ í¬í•¨í•©ë‹ˆë‹¤. íŒŒì¼ì´ ë“œë¼ì´ë¸Œì˜ ë£¨íŠ¸ ë””ë ‰í† ë¦¬ì— ìžˆë‹¤ë©´ ë§ˆì§€ë§‰ì˜ ì—­ì‚¬ì„ ì€ í¬í•¨ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p></dd>
 
   <dt>OutExtension</dt>
-  <dd><p>ÆÄÀÏÀÇ È®ÀåÀÚ¸¦ ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§ (¿¹, TXT, DOC, ¶Ç´Â EXE). Á¡Àº Æ÷ÇÔµÇÁö ¾Ê½À´Ï´Ù.</p></dd>
+  <dd><p>íŒŒì¼ì˜ í™•ìž¥ìžë¥¼ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„ (ì˜ˆ, TXT, DOC, ë˜ëŠ” EXE). ì ì€ í¬í•¨ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p></dd>
 
   <dt>OutNameNoExt</dt>
-  <dd><p>°æ·Î, Á¡, ±×¸®°í È®ÀåÀÚ ¾øÀÌ ÆÄÀÏ ÀÌ¸§À» ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§.</p></dd>
+  <dd><p>ê²½ë¡œ, ì , ê·¸ë¦¬ê³  í™•ìž¥ìž ì—†ì´ íŒŒì¼ ì´ë¦„ì„ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„.</p></dd>
 
   <dt>OutDrive</dt>
-  <dd><p>ÆÄÀÏÀÇ µå¶óÀÌºê ±âÈ£ ¶Ç´Â ¼­¹ö ÀÌ¸§À» ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§. ÆÄÀÏÀÌ ·ÎÄÃ ¶Ç´Â ¸Ê µå¶óÀÌºê¿¡ ÀÖ´Ù¸é, º¯¼ö´Â µå¶óÀÌºê ±âÈ£¿Í ´Ù¸§ ½ÖÁ¡ (¿ª»ç¼± ¾øÀ½)ÀÌ ¼³Á¤µË´Ï´Ù. ÆÄÀÏÀÌ ³×Æ®¿öÅ© °æ·Î¿¡ ÀÖ´Ù¸é (UNC), º¯¼ö´Â °øÀ¯ ÀÌ¸§ÀÌ ¼³Á¤µË´Ï´Ù. ¿¹, \\Workstation01</p></dd>
+  <dd><p>íŒŒì¼ì˜ ë“œë¼ì´ë¸Œ ê¸°í˜¸ ë˜ëŠ” ì„œë²„ ì´ë¦„ì„ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„. íŒŒì¼ì´ ë¡œì»¬ ë˜ëŠ” ë§µ ë“œë¼ì´ë¸Œì— ìžˆë‹¤ë©´, ë³€ìˆ˜ëŠ” ë“œë¼ì´ë¸Œ ê¸°í˜¸ì™€ ë‹¤ë¦„ ìŒì  (ì—­ì‚¬ì„  ì—†ìŒ)ì´ ì„¤ì •ë©ë‹ˆë‹¤. íŒŒì¼ì´ ë„¤íŠ¸ì›Œí¬ ê²½ë¡œì— ìžˆë‹¤ë©´ (UNC), ë³€ìˆ˜ëŠ” ê³µìœ  ì´ë¦„ì´ ì„¤ì •ë©ë‹ˆë‹¤. ì˜ˆ, \\Workstation01</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-»óÀÀÇÏ´Â Á¤º¸°¡ ÇÊ¿äÇÏÁö ¾Ê´Ù¸é Ãâ·Â º¯¼ö¸¦ »ý·«ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ìƒì‘í•˜ëŠ” ì •ë³´ê°€ í•„ìš”í•˜ì§€ ì•Šë‹¤ë©´ ì¶œë ¥ ë³€ìˆ˜ë¥¼ ìƒëžµí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<em>InputVar</em>¿¡ ÆÄÀÏÀÌ¸§ÀÌ µé¾î ÀÖ´Âµ¥ µå¶óÀÌºê ±âÈ£°¡ ¾ø´Ù¸ç (Áï, °æ·Î°¡ ¾ø°Å³ª ´Ü¼øÈ÷ »ó´ë °æ·Î¸¸ ÀÖ´Ù¸é), <em>OutDrive</em>´Â ºñ¿öÁöÁö¸¸ ´Ù¸¥ ¸ðµç Ãâ·Â º¯¼ö´Â ¿Ã¹Ù¸£°Ô ¼³Á¤µË´Ï´Ù. ºñ½ÁÇÏ°Ô, °æ·Î°¡ Á¸ÀçÇÏÁö ¾ÊÀ¸¸é, <em>OutDir</em>Àº ºñ¿öÁý´Ï´Ù; ±×¸®°í °æ·Î´Â ÀÖÀ¸³ª ÆÄÀÏÀÌ¸§ÀÌ ¾øÀ¸¸é, <em>OutFileName</em>°ú <em>OutNameNoExt</em>°¡ ºñ¿öÁý´Ï´Ù.</p>
+<em>InputVar</em>ì— íŒŒì¼ì´ë¦„ì´ ë“¤ì–´ ìžˆëŠ”ë° ë“œë¼ì´ë¸Œ ê¸°í˜¸ê°€ ì—†ë‹¤ë©° (ì¦‰, ê²½ë¡œê°€ ì—†ê±°ë‚˜ ë‹¨ìˆœížˆ ìƒëŒ€ ê²½ë¡œë§Œ ìžˆë‹¤ë©´), <em>OutDrive</em>ëŠ” ë¹„ì›Œì§€ì§€ë§Œ ë‹¤ë¥¸ ëª¨ë“  ì¶œë ¥ ë³€ìˆ˜ëŠ” ì˜¬ë°”ë¥´ê²Œ ì„¤ì •ë©ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, ê²½ë¡œê°€ ì¡´ìž¬í•˜ì§€ ì•Šìœ¼ë©´, <em>OutDir</em>ì€ ë¹„ì›Œì§‘ë‹ˆë‹¤; ê·¸ë¦¬ê³  ê²½ë¡œëŠ” ìžˆìœ¼ë‚˜ íŒŒì¼ì´ë¦„ì´ ì—†ìœ¼ë©´, <em>OutFileName</em>ê³¼ <em>OutNameNoExt</em>ê°€ ë¹„ì›Œì§‘ë‹ˆë‹¤.</p>
 <p>
-½Ã½ºÅÛ¿¡¼­ ½ÇÁ¦ ÆÄÀÏ°ú µð·ºÅä¸®´Â ÀÌ ¸í·É¾î·Î Á¡°ËµÇÁö ¾Ê½À´Ï´Ù. ±×³É <em>InputVar</em>¿¡ ÁÖ¾îÁø ¹®ÀÚ¿­À» ºÐ¼®ÇÒ »ÓÀÔ´Ï´Ù.</p>
+ì‹œìŠ¤í…œì—ì„œ ì‹¤ì œ íŒŒì¼ê³¼ ë””ë ‰í† ë¦¬ëŠ” ì´ ëª…ë ¹ì–´ë¡œ ì ê²€ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ê·¸ëƒ¥ <em>InputVar</em>ì— ì£¼ì–´ì§„ ë¬¸ìžì—´ì„ ë¶„ì„í•  ë¿ìž…ë‹ˆë‹¤.</p>
 <p>
-ÆÄÀÏÀÌ¸§¿¡ À¯È¿ÇÏÁö ¾ÊÀº ¿ÍÀÏµåÄ«µå (* ±×¸®°í ?) ±×¸®°í ±âÅ¸ ¹®ÀÚ´Â À¯È¿ÇÑ ¹®ÀÚ·Î Ãë±ÞÇÕ´Ï´Ù. ´Ü, ¿¹¿Ü´Â  ½ÖÁ¡, ¿ª»ç¼±, ±×¸®°í Á¡ÀÔ´Ï´Ù. ÀÌ°ÍµéÀº °¢ÀÚ ÀÓ¹«¿¡ µû¶ó ÆÄÀÏÀÇ µå¶óÀÌºê ±âÈ£¿Í µð·ºÅä¸® ±×¸®°í È®ÀåÀÚ¸¦ ±¸ºÐÇÏ´Â µ¥ »ç¿ëµË´Ï´Ù.</p>
+íŒŒì¼ì´ë¦„ì— ìœ íš¨í•˜ì§€ ì•Šì€ ì™€ì¼ë“œì¹´ë“œ (* ê·¸ë¦¬ê³  ?) ê·¸ë¦¬ê³  ê¸°íƒ€ ë¬¸ìžëŠ” ìœ íš¨í•œ ë¬¸ìžë¡œ ì·¨ê¸‰í•©ë‹ˆë‹¤. ë‹¨, ì˜ˆì™¸ëŠ”  ìŒì , ì—­ì‚¬ì„ , ê·¸ë¦¬ê³  ì ìž…ë‹ˆë‹¤. ì´ê²ƒë“¤ì€ ê°ìž ìž„ë¬´ì— ë”°ë¼ íŒŒì¼ì˜ ë“œë¼ì´ë¸Œ ê¸°í˜¸ì™€ ë””ë ‰í† ë¦¬ ê·¸ë¦¬ê³  í™•ìž¥ìžë¥¼ êµ¬ë¶„í•˜ëŠ” ë° ì‚¬ìš©ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>URL Áö¿ø</strong>: <em>InputVar</em>¿¡ ½ÖÁ¡°ú µÎ°³ÀÇ Á¤»ç¼±ÀÌ Æ÷ÇÔµÇ¾î ÀÖ´Ù¸é, ¿¹¸¦ µé¾î http://domain.com or ftp://domain.com¿Í °°Àº °æ¿ì, <em>OutDir</em>´Â ÇÁ·ÎÅäÄÝ Á¢µÎ¾î + µµ¸ÞÀÎ ÀÌ¸§ + µð·ºÅä¸® (¿¹, http://domain.com/images)°¡ ¼³Á¤µË´Ï´Ù. ±×¸®°í <em>OutDrive</em>´Â ÇÁ·ÎÅäÄÝ Á¢µÎ¾î + µµ¸ÞÀÎ ÀÌ¸§ (¿¹, http://domain.com)ÀÌ ¼³Á¤µË´Ï´Ù. ´Ù¸¥ ¸ðµç º¯¼ö´Â À§¿¡ Á¤ÀÇµÈ ´ë·Î ¼³Á¤µË´Ï´Ù.</p>
+<strong>URL ì§€ì›</strong>: <em>InputVar</em>ì— ìŒì ê³¼ ë‘ê°œì˜ ì •ì‚¬ì„ ì´ í¬í•¨ë˜ì–´ ìžˆë‹¤ë©´, ì˜ˆë¥¼ ë“¤ì–´ http://domain.com or ftp://domain.comì™€ ê°™ì€ ê²½ìš°, <em>OutDir</em>ëŠ” í”„ë¡œí† ì½œ ì ‘ë‘ì–´ + ë„ë©”ì¸ ì´ë¦„ + ë””ë ‰í† ë¦¬ (ì˜ˆ, http://domain.com/images)ê°€ ì„¤ì •ë©ë‹ˆë‹¤. ê·¸ë¦¬ê³  <em>OutDrive</em>ëŠ” í”„ë¡œí† ì½œ ì ‘ë‘ì–´ + ë„ë©”ì¸ ì´ë¦„ (ì˜ˆ, http://domain.com)ì´ ì„¤ì •ë©ë‹ˆë‹¤. ë‹¤ë¥¸ ëª¨ë“  ë³€ìˆ˜ëŠ” ìœ„ì— ì •ì˜ëœ ëŒ€ë¡œ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
 <a href="LoopFile.htm#LoopFileExt">A_LoopFileExt</a>, <a href="StringSplit.htm">StringSplit</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">FullFileName = C:\My Documents\Address List.txt
    
-<em>; À§·ÎºÎÅÍ ÆÄÀÏÀÌ¸§¸¸ °¡Á® ¿É´Ï´Ù:</em>
+<em>; ìœ„ë¡œë¶€í„° íŒŒì¼ì´ë¦„ë§Œ ê°€ì ¸ ì˜µë‹ˆë‹¤:</em>
 SplitPath, FullFileName, name
 
-<em>; µð·ºÅä¸®¸¸ °¡Á® ¿É´Ï´Ù:</em>
+<em>; ë””ë ‰í† ë¦¬ë§Œ ê°€ì ¸ ì˜µë‹ˆë‹¤:</em>
 SplitPath, FullFileName,, dir
 
-<em>; ¸ðµç Á¤º¸¸¦ °¡Á® ¿É´Ï´Ù:</em>
+<em>; ëª¨ë“  ì •ë³´ë¥¼ ê°€ì ¸ ì˜µë‹ˆë‹¤:</em>
 SplitPath, FullFileName, name, dir, ext, name_no_ext, drive
    
-<em>; À§·ÎºÎÅÍ º¯¼öµéÀº ´ÙÀ½°ú °°ÀÌ ¼³Á¤µË´Ï´Ù:
+<em>; ìœ„ë¡œë¶€í„° ë³€ìˆ˜ë“¤ì€ ë‹¤ìŒê³¼ ê°™ì´ ì„¤ì •ë©ë‹ˆë‹¤:
 ; name = Address List.txt
 ; dir = C:\My Documents
 ; ext = txt

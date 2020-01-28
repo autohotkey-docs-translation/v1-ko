@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>IfInString / IfNotInString</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,45 +11,45 @@
 
 <h1>IfInString / IfNotInString</h1>
 
-<p><a href="../Variables.htm">º¯¼ö</a>¿¡ ÁöÁ¤µÈ ¹®ÀÚ¿­ÀÌ ´ã°Ü ÀÖ´ÂÁö Á¡°ËÇÕ´Ï´Ù.</p>
+<p><a href="../Variables.htm">ë³€ìˆ˜</a>ì— ì§€ì •ëœ ë¬¸ìì—´ì´ ë‹´ê²¨ ìˆëŠ”ì§€ ì ê²€í•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">IfInString, var, SearchString
 IfNotInString, var, SearchString
-Position := <a href="../Functions.htm#InStr">InStr</a>(Haystack, Needle [, CaseSensitive?, StartingPos]]) <em>; ÀÚ¼¼ÇÑ °ÍÀº <a href="../Functions.htm#InStr">InStr() function</a>¸¦ ÂüÁ¶ÇÕ´Ï´Ù.</em></pre>
+Position := <a href="../Functions.htm#InStr">InStr</a>(Haystack, Needle [, CaseSensitive?, StartingPos]]) <em>; ìì„¸í•œ ê²ƒì€ <a href="../Functions.htm#InStr">InStr() function</a>ë¥¼ ì°¸ì¡°í•©ë‹ˆë‹¤.</em></pre>
 
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>var</dt>
-  <dd>ºÎÇÕÀ» À§ÇØ ±×ÀÇ ³»¿ëÀ» °Ë»öÇÒ <p><a href="../Variables.htm">º¯¼ö</a>ÀÇ ÀÌ¸§.</p></dd>
+  <dd>ë¶€í•©ì„ ìœ„í•´ ê·¸ì˜ ë‚´ìš©ì„ ê²€ìƒ‰í•  <p><a href="../Variables.htm">ë³€ìˆ˜</a>ì˜ ì´ë¦„.</p></dd>
 
   <dt>SearchString</dt>
-  <dd><p>°Ë»öÇÒ ¹®ÀÚ¿­. ºÎÇÕÀº ´ë¼Ò¹®ÀÚ¸¦ ±¸ºĞÇÏÁö ¾Ê½À´Ï´Ù. ´Ü, <a href="StringCaseSense.htm">StringCaseSense</a>°¡ ÄÑÁ® ÀÖ´Â °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù.</p></dd>
+  <dd><p>ê²€ìƒ‰í•  ë¬¸ìì—´. ë¶€í•©ì€ ëŒ€ì†Œë¬¸ìë¥¼ êµ¬ë¶„í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë‹¨, <a href="StringCaseSense.htm">StringCaseSense</a>ê°€ ì¼œì ¸ ìˆëŠ” ê²½ìš°ëŠ” ì˜ˆì™¸ì…ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-³»Àå º¯¼ö <a href="../Variables.htm">%A_Space%</a>¿Í <a href="../Variables.htm">%A_Tab%</a>´Â ¾È¿¡ ½ºÆäÀÌ½º ÇÏ³ª¿Í ÅÇ ¹®ÀÚ ÇÏ³ª°¡ °¢°¢ µé¾î ÀÖ½À´Ï´Ù. ÀÌ·± ¹®ÀÚµéÀ» ´Üµ¶À¸·Î °Ë»öÇÒ ¶§ À¯¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ë‚´ì¥ ë³€ìˆ˜ <a href="../Variables.htm">%A_Space%</a>ì™€ <a href="../Variables.htm">%A_Tab%</a>ëŠ” ì•ˆì— ìŠ¤í˜ì´ìŠ¤ í•˜ë‚˜ì™€ íƒ­ ë¬¸ì í•˜ë‚˜ê°€ ê°ê° ë“¤ì–´ ìˆìŠµë‹ˆë‹¤. ì´ëŸ° ë¬¸ìë“¤ì„ ë‹¨ë…ìœ¼ë¡œ ê²€ìƒ‰í•  ë•Œ ìœ ìš©í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.</p>
 <p>
-¶Ç´Ù¸¥ ¸í·É¾î´Â ÀÌ ¸í·É¾î¿Í °°Àº ÁÙ¿¡ ³ªÅ¸³¯ ¼ö ÀÖ½À´Ï´Ù. ´Ù¸¥ ¸»·Î ÇÏ¸é, ´ÙÀ½Àº µÑ ´Ù µ¿µîÇÕ´Ï´Ù:</p>
+ë˜ë‹¤ë¥¸ ëª…ë ¹ì–´ëŠ” ì´ ëª…ë ¹ì–´ì™€ ê°™ì€ ì¤„ì— ë‚˜íƒ€ë‚  ìˆ˜ ìˆìŠµë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ í•˜ë©´, ë‹¤ìŒì€ ë‘˜ ë‹¤ ë™ë“±í•©ë‹ˆë‹¤:</p>
 <pre>IfInString, MyVar, abc, Gosub, Process1
 IfInString, MyVar, abc
     Gosub, Process1</pre>
 <p>
-±×·¸Áö¸¸, ÀÌ¸§ÀÖ´Â ¸í·É¾î ¸»°í ´Ù¸¥ Ç×¸ñÀº °°Àº ÁÙ¿¡ Áö¿øÇÏÁö ¾Ê½À´Ï´Ù. ¿¹¸¦ µé¾î:</p>
-<pre>IfInString, MyVar, abc, found := true  <em><strong>; À¯È¿ÇÏÁö ¾ÊÀ½.</strong></em></pre>
+ê·¸ë ‡ì§€ë§Œ, ì´ë¦„ìˆëŠ” ëª…ë ¹ì–´ ë§ê³  ë‹¤ë¥¸ í•­ëª©ì€ ê°™ì€ ì¤„ì— ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
+<pre>IfInString, MyVar, abc, found := true  <em><strong>; ìœ íš¨í•˜ì§€ ì•ŠìŒ.</strong></em></pre>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
-<a href="../Functions.htm#InStr">InStr()</a>, <a href="RegExMatch.htm">RegExMatch()</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="IfEqual.htm">IfEqual</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfIs.htm">if var is type</a>, <a href="Block.htm">ºí·Ï</a>, <a href="Else.htm">Else</a></p>
+<a href="../Functions.htm#InStr">InStr()</a>, <a href="RegExMatch.htm">RegExMatch()</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="IfEqual.htm">IfEqual</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfIs.htm">if var is type</a>, <a href="Block.htm">ë¸”ë¡</a>, <a href="Else.htm">Else</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">Haystack = abcdefghijklmnopqrs
 Needle = abc
 IfInString, Haystack, %Needle%
 {
-    MsgBox, ¹®ÀÚ¿­ÀÌ ¹ß°ßµÇ¾ú½À´Ï´Ù.
+    MsgBox, ë¬¸ìì—´ì´ ë°œê²¬ë˜ì—ˆìŠµë‹ˆë‹¤.
     return
 }
 else

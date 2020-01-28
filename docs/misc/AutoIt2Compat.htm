@@ -1,41 +1,42 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>AutoIt v2 Compatibility</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>AutoIt v2¿ÍÀÇ È£È¯¼º</h1>
+<h1>AutoIt v2ì™€ì˜ í˜¸í™˜ì„±</h1>
 <p>
-AutoHotkey v1.1.09 ÀÌÈÄ´Â AutoIt v2 (.aut) ½ºÅ©¸³Æ®¸¦ <strong>Áö¿øÇÏÁö ¾Ê½À´Ï´Ù</strong>. ¿¹Àü ¹öÀüÀÇ ¿ÀÅäÇÖÅ°´Â ±âº» ¼³Á¤°ú ¾à°£ÀÇ ¸í·É¾îÀÇ ÇàÀ§¸¦ ¹Ù²Ù¾î¼­ AutoIt v2 ½ºÅ©¸³Æ®¸¦ Áö¿øÇÕ´Ï´Ù. ÀÌ ÆäÀÌÁö´Â ¹®¼­ÀÇ ´Ù¸¥ ÆäÀÌÁö·ÎºÎÅÍ Á¦°ÅµÈ Á¤º¸¸¦ ´ã°í ÀÖ½À´Ï´Ù.</p>
+AutoHotkey v1.1.09 ì´í›„ëŠ” AutoIt v2 (.aut) ìŠ¤í¬ë¦½íŠ¸ë¥¼ <strong>ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤</strong>. ì˜ˆì „ ë²„ì „ì˜ ì˜¤í† í•«í‚¤ëŠ” ê¸°ë³¸ ì„¤ì •ê³¼ ì•½ê°„ì˜ ëª…ë ¹ì–´ì˜ í–‰ìœ„ë¥¼ ë°”ê¾¸ì–´ì„œ AutoIt v2 ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì§€ì›í•©ë‹ˆë‹¤. ì´ íŽ˜ì´ì§€ëŠ” ë¬¸ì„œì˜ ë‹¤ë¥¸ íŽ˜ì´ì§€ë¡œë¶€í„° ì œê±°ëœ ì •ë³´ë¥¼ ë‹´ê³  ìžˆìŠµë‹ˆë‹¤.</p>
 
-<p><strong>´ÙÀ½Àº ¿ÀÁ÷ .aut ÆÄÀÏ¸¸ Áö¿øÇÕ´Ï´Ù. ±×¸®°í ¿ÀÁ÷ v1.1.08.01 ÀÌÀü ¹öÀü¿¡¼­¸¸ Áö¿øÇÕ´Ï´Ù.</strong></p>
+<p><strong>ë‹¤ìŒì€ ì˜¤ì§ .aut íŒŒì¼ë§Œ ì§€ì›í•©ë‹ˆë‹¤. ê·¸ë¦¬ê³  ì˜¤ì§ v1.1.08.01 ì´ì „ ë²„ì „ì—ì„œë§Œ ì§€ì›í•©ë‹ˆë‹¤.</strong></p>
 <table class="info">
-  <tr><td><a href="../commands/_AllowSameLineComments.htm">#AllowSameLineComments</a></td><td>±âº»°ªÀ¸·Î, ÁÖ¼®Àº ¸í·É¾î¿Í °°Àº ÁÙ¿¡ Çã¿ëµÇÁö ¾Ê½À´Ï´Ù.</td></tr>
-  <tr><td>A_ScriptDir</td><td>¸¶Áö¸· ¿ª»ç¼±À» Æ÷ÇÔÇÕ´Ï´Ù.</td></tr>
-  <tr><td>DetectHiddenText</td><td>±âº»°ªÀº ²¨Á® ÀÖ½À´Ï´Ù.</td></tr>
-  <tr><td>#EscapeChar</td><td>±âº»°ªÀº ¿ª»ç¼± (\)ÀÔ´Ï´Ù.</td></tr>
-  <tr><td>FileCopy</td><td> ÆÄÀÏÀ» º¹»çÇÒ ¼ö ¾øÀ¸¸é ErrorLevelÀ» 1·Î ¼³Á¤ÇÕ´Ï´Ù.</td></tr>
-  <tr><td>IniDelete</td><td>ErrorLevel´Â º¯ÇÏÁö ¾Ê½À´Ï´Ù.</td></tr>
-  <tr><td>IniRead</td><td><em>Default</em> ¸Å°³º¯¼ö¸¦ Áö¿øÇÏÁö ¾Ê½À´Ï´Ù; °ªÀ» ÀÐ´Âµ¥ ¹®Á¦°¡ ÀÖÀ¸¸é ¹®ÀÚ¿­ ERROR°¡ ¾ðÁ¦³ª <em>OutputVar</em>¿¡ ÀúÀåµË´Ï´Ù.</td></tr>
-  <tr><td>IniWrite</td><td>ErrorLevelÀº º¯ÇÏÁö ¾Ê½À´Ï´Ù.</td></tr>
-  <tr><td>InputBox</td><td>»ç¿ëÀÚ°¡ CANCEL ¹öÆ°À» ´©¸£¸é, <em>OutputVar</em>¸¦ ºñ¿ó´Ï´Ù. <a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº ´ëÈ­»óÀÚ°¡ ½Ã°£ Á¦ÇÑ¿¡ °É¸®Áö ¾Ê´Â ÇÑ º¯ÇÏÁö ¾Ê½À´Ï´Ù.</td></tr>
-  <tr><td>SetBatchLines</td><td>±âº»°ªÀº 1ÀÔ´Ï´Ù. ±× ¶§¹®¿¡ ½ºÅ©¸³Æ®°¡ ¸Å ÁÙ¸¶´Ù ÀáÀ» Àâ´Ï´Ù.</td></tr>
-  <tr><td>SetKeyDelay</td><td>ÀüÅëÀûÀÎ SendEvent ¸ðµå¿¡ ´ëÇÑ ±âº» <em>Delay</em>´Â 20ÀÔ´Ï´Ù.</td></tr>
-  <tr><td>Send</td><td>¹®ÀÚ <code>#</code>Àº ¹«½ÃµË´Ï´Ù.</td></tr>
-  <tr><td>SplashTextOn</td><td><em>Height</em>´Â Ã¢ÀÇ Å¸ÀÌÆ² ¹Ù¸¦ Æ÷ÇÔÇÕ´Ï´Ù.</td></tr>
+  <tr><td><a href="../commands/_AllowSameLineComments.htm">#AllowSameLineComments</a></td><td>ê¸°ë³¸ê°’ìœ¼ë¡œ, ì£¼ì„ì€ ëª…ë ¹ì–´ì™€ ê°™ì€ ì¤„ì— í—ˆìš©ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</td></tr>
+  <tr><td>A_ScriptDir</td><td>ë§ˆì§€ë§‰ ì—­ì‚¬ì„ ì„ í¬í•¨í•©ë‹ˆë‹¤.</td></tr>
+  <tr><td>DetectHiddenText</td><td>ê¸°ë³¸ê°’ì€ êº¼ì ¸ ìžˆìŠµë‹ˆë‹¤.</td></tr>
+  <tr><td>#EscapeChar</td><td>ê¸°ë³¸ê°’ì€ ì—­ì‚¬ì„  (\)ìž…ë‹ˆë‹¤.</td></tr>
+  <tr><td>FileCopy</td><td> íŒŒì¼ì„ ë³µì‚¬í•  ìˆ˜ ì—†ìœ¼ë©´ ErrorLevelì„ 1ë¡œ ì„¤ì •í•©ë‹ˆë‹¤.</td></tr>
+  <tr><td>IniDelete</td><td>ErrorLevelëŠ” ë³€í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</td></tr>
+  <tr><td>IniRead</td><td><em>Default</em> ë§¤ê°œë³€ìˆ˜ë¥¼ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤; ê°’ì„ ì½ëŠ”ë° ë¬¸ì œê°€ ìžˆìœ¼ë©´ ë¬¸ìžì—´ ERRORê°€ ì–¸ì œë‚˜ <em>OutputVar</em>ì— ì €ìž¥ë©ë‹ˆë‹¤.</td></tr>
+  <tr><td>IniWrite</td><td>ErrorLevelì€ ë³€í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</td></tr>
+  <tr><td>InputBox</td><td>ì‚¬ìš©ìžê°€ CANCEL ë²„íŠ¼ì„ ëˆ„ë¥´ë©´, <em>OutputVar</em>ë¥¼ ë¹„ì›ë‹ˆë‹¤. <a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ ëŒ€í™”ìƒìžê°€ ì‹œê°„ ì œí•œì— ê±¸ë¦¬ì§€ ì•ŠëŠ” í•œ ë³€í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</td></tr>
+  <tr><td>SetBatchLines</td><td>ê¸°ë³¸ê°’ì€ 1ìž…ë‹ˆë‹¤. ê·¸ ë•Œë¬¸ì— ìŠ¤í¬ë¦½íŠ¸ê°€ ë§¤ ì¤„ë§ˆë‹¤ ìž ì„ ìž¡ë‹ˆë‹¤.</td></tr>
+  <tr><td>SetKeyDelay</td><td>ì „í†µì ì¸ SendEvent ëª¨ë“œì— ëŒ€í•œ ê¸°ë³¸ <em>Delay</em>ëŠ” 20ìž…ë‹ˆë‹¤.</td></tr>
+  <tr><td>Send</td><td>ë¬¸ìž <code>#</code>ì€ ë¬´ì‹œë©ë‹ˆë‹¤.</td></tr>
+  <tr><td>SplashTextOn</td><td><em>Height</em>ëŠ” ì°½ì˜ íƒ€ì´í‹€ ë°”ë¥¼ í¬í•¨í•©ë‹ˆë‹¤.</td></tr>
 </table>
 
-<h2>ÇÇ½Å ¹®ÀÚ º¯È¯</h2>
+<h2>í”¼ì‹  ë¬¸ìž ë³€í™˜</h2>
 <p>
-AutoHotkey v1.1.08.01 ÀÌÀü¿¡¼­ È®ÀåÀÚ <code>.aut.ahk</code>¸¦ °¡Áö°í ½ºÅ©¸³Æ® ÆÄÀÏÀ» ½ÇÇàÇÏ¸é ½ÇÇàÀÌ µÇÁö ¾Ê½À´Ï´Ù; ´ë½Å¿¡ ±× ½ºÅ©¸³Æ®¸¦ AutoIt v2 ±âº» ÇÇ½Å ¹®ÀÚ·ÎºÎÅÍ  (¿ª»ç¼±)  ¿ÀÅäÇÖÅ°ÀÇ ±âº» ÇÇ½Å ¹®ÀÚ (¹éÆ½)À¸·Î º¯È¯ÇÕ´Ï´Ù.</p>
+AutoHotkey v1.1.08.01 ì´ì „ì—ì„œ í™•ìž¥ìž <code>.aut.ahk</code>ë¥¼ ê°€ì§€ê³  ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì„ ì‹¤í–‰í•˜ë©´ ì‹¤í–‰ì´ ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤; ëŒ€ì‹ ì— ê·¸ ìŠ¤í¬ë¦½íŠ¸ë¥¼ AutoIt v2 ê¸°ë³¸ í”¼ì‹  ë¬¸ìžë¡œë¶€í„°  (ì—­ì‚¬ì„ )  ì˜¤í† í•«í‚¤ì˜ ê¸°ë³¸ í”¼ì‹  ë¬¸ìž (ë°±í‹±)ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤.</p>
 
-<h2>Æó±âµÈ ¸í·É¾îµé</h2>
+<h2>íê¸°ëœ ëª…ë ¹ì–´ë“¤</h2>
 <p>
-´ÙÀ½ ¸í·É¾î´Â ÀÚµ¿À¸·Î ¿ÀÅäÇÖÅ° ¸í·É¾î¿¡ »óÀÀÇÏ´Â ¸í·É¾î·Î º¯È¯µË´Ï´Ù (±×¸®°í ÀÌÀü¿¡´Â ÀÌ »ç½ÇÀÌ ¹®¼­¿¡ ¸í±âµÇ¾î ÀÖÁö ¾Ê¾Ò½À´Ï´Ù): LeftClick, LeftClickDrag, RightClick, RightClickDrag, HideAutoItWin, Repeat, EndRepeat. ÀÌ ÀÚµ¿ º¯È¯ ±â´ÉÀº v1.1.09¿¡¼­ Á¦°ÅµÇ¾ú½À´Ï´Ù.</p>
+ë‹¤ìŒ ëª…ë ¹ì–´ëŠ” ìžë™ìœ¼ë¡œ ì˜¤í† í•«í‚¤ ëª…ë ¹ì–´ì— ìƒì‘í•˜ëŠ” ëª…ë ¹ì–´ë¡œ ë³€í™˜ë©ë‹ˆë‹¤ (ê·¸ë¦¬ê³  ì´ì „ì—ëŠ” ì´ ì‚¬ì‹¤ì´ ë¬¸ì„œì— ëª…ê¸°ë˜ì–´ ìžˆì§€ ì•Šì•˜ìŠµë‹ˆë‹¤): LeftClick, LeftClickDrag, RightClick, RightClickDrag, HideAutoItWin, Repeat, EndRepeat. ì´ ìžë™ ë³€í™˜ ê¸°ëŠ¥ì€ v1.1.09ì—ì„œ ì œê±°ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
 
 </body>
 </html>

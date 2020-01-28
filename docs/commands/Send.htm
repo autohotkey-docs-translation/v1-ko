@@ -1,8 +1,9 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Send/SendRaw/SendInput/SendPlay/SendEvent: Send keys &amp; clicks</title>
 <meta name="description" content="Send keystrokes and mouse clicks to any window with this free macro program. SendInput is generally the fastest and most reliable method.">
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -16,7 +17,7 @@
 
 <h1>Send / SendRaw / SendInput / SendPlay / SendEvent: Send Keys &amp; Clicks</h1>
 
-<p>Å°´­¸²°ú ¸¶¿ì½º Å¬¸¯À» Èä³»³»¾î <a href="WinActivate.htm">È°¼º</a> Ã¢¿¡ Àü¼ÛÇÕ´Ï´Ù.</p>
+<p>í‚¤ëˆŒë¦¼ê³¼ ë§ˆìš°ìŠ¤ í´ë¦­ì„ í‰ë‚´ë‚´ì–´ <a href="WinActivate.htm">í™œì„±</a> ì°½ì— ì „ì†¡í•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">Send Keys
 SendRaw Keys
@@ -24,39 +25,39 @@ SendInput Keys
 SendPlay Keys
 SendEvent Keys</pre>
 
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Keys</dt>
-  <dd><p>Àü¼ÛÇÒ Å° ¿¬¼Ó¿­. ´Ù¸¥ ¸í·É¾îÃ³·³, Ã¹ ¸Å°³º¯¼ö ¾ÕÀÇ ½°Ç¥´Â ¼±ÅÃÀûÀÔ´Ï´Ù.</p></dd>
+  <dd><p>ì „ì†¡í•  í‚¤ ì—°ì†ì—´. ë‹¤ë¥¸ ëª…ë ¹ì–´ì²˜ëŸ¼, ì²« ë§¤ê°œë³€ìˆ˜ ì•žì˜ ì‰¼í‘œëŠ” ì„ íƒì ìž…ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
-<p><strong><a name="SendRaw"></a>³¯ ¸ðµå</strong>: <em>SendRaw</em> ¸í·É¾î´Â ¸ðµç ¹®ÀÚµé ¹®ÀÚ ±×´ë·Î ÇØ¼®ÇÕ´Ï´Ù. {Enter}¸¦ ENTER Å°´­¸²À¸·Î, ^c¸¦ Control-C·Î, µîµî º¯È¯ÇÏÁö ¾Ê½À´Ï´Ù. ±×·¸Áö¸¸, ÇÇ½Å ¿¬¼Ó¿­ÀÇ Á¤»ó ±ÔÄ¢, º¯¼ö ÂüÁ¶ ±×¸®°í Ç¥Çö½ÄÀº ¿©ÀüÈ÷ Àû¿ëµË´Ï´Ù. ¿Ö³ÄÇÏ¸é ¸í·É¾î°¡ ½ÇÇàµÇ±â Àü¿¡ ÀÌ°ÍµéÀÌ ¸ÕÀú Ã³¸®µÇ±â ¶§¹®ÀÔ´Ï´Ù. SendInput, SendPlay, ¶Ç´Â SendEvent¿¡ ³¯ ¸ðµå¸¦ »ç¿ëÇÏ·Á¸é, ¹®ÀÚ¿­¿¡¼­ Ã¹ Ç×¸ñ¿¡ <a href="#Raw">{Raw}</a>¸¦ ¾²½Ê½Ã¿À. ¿¹¸¦ µé¾î: <code>SendInput {Raw}abc</code>.</p>
+<p><strong><a name="SendRaw"></a>ë‚  ëª¨ë“œ</strong>: <em>SendRaw</em> ëª…ë ¹ì–´ëŠ” ëª¨ë“  ë¬¸ìžë“¤ ë¬¸ìž ê·¸ëŒ€ë¡œ í•´ì„í•©ë‹ˆë‹¤. {Enter}ë¥¼ ENTER í‚¤ëˆŒë¦¼ìœ¼ë¡œ, ^cë¥¼ Control-Cë¡œ, ë“±ë“± ë³€í™˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, í”¼ì‹  ì—°ì†ì—´ì˜ ì •ìƒ ê·œì¹™, ë³€ìˆ˜ ì°¸ì¡° ê·¸ë¦¬ê³  í‘œí˜„ì‹ì€ ì—¬ì „ížˆ ì ìš©ë©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ëª…ë ¹ì–´ê°€ ì‹¤í–‰ë˜ê¸° ì „ì— ì´ê²ƒë“¤ì´ ë¨¼ì € ì²˜ë¦¬ë˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. SendInput, SendPlay, ë˜ëŠ” SendEventì— ë‚  ëª¨ë“œë¥¼ ì‚¬ìš©í•˜ë ¤ë©´, ë¬¸ìžì—´ì—ì„œ ì²« í•­ëª©ì— <a href="#Raw">{Raw}</a>ë¥¼ ì“°ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´: <code>SendInput {Raw}abc</code>.</p>
 <p>
-<strong>Á¤»ó ¸ðµå</strong>: ³¯ ¸ðµå°¡ ¾Æ´Ò ¶§, ´ÙÀ½ ¹®ÀÚµéÀº ¼ö½ÄÀÚ·Î Ãë±ÞµË´Ï´Ù (ÀÌ ¼ö½Ä Å°µéÀº ¹Ù·Î ´ÙÀ½ Å°¿¡¸¸ ¿µÇâÀ» ÁÝ´Ï´Ù):</p>
+<strong>ì •ìƒ ëª¨ë“œ</strong>: ë‚  ëª¨ë“œê°€ ì•„ë‹ ë•Œ, ë‹¤ìŒ ë¬¸ìžë“¤ì€ ìˆ˜ì‹ìžë¡œ ì·¨ê¸‰ë©ë‹ˆë‹¤ (ì´ ìˆ˜ì‹ í‚¤ë“¤ì€ ë°”ë¡œ ë‹¤ìŒ í‚¤ì—ë§Œ ì˜í–¥ì„ ì¤ë‹ˆë‹¤):</p>
 <p>
-<span class="red">!</span>: ALT Å°´­¸²À» Àü¼ÛÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <code>Send This is text!a</code>´Â &quot;This is text&quot;¸¦ Àü¼ÛÇÑ ´ÙÀ½ ALT+a¸¦ ´©¸¨´Ï´Ù. <strong>ÁÖÀÇ</strong>: !A´Â ¾î¶² ÇÁ·Î±×·¥¿¡¼­´Â !a¿Í ÀüÇô ´Ù¸¥ È¿°ú¸¦ ³À´Ï´Ù. ÀÌ°ÍÀº !A°¡ ALT+SHIFT+A¸¦ ´©¸£´Â ¹Ý¸é !a´Â ALT+a¸¦ ´©¸£±â ¶§¹®ÀÔ´Ï´Ù. Àß ¸ð¸£°ÚÀ¸¸é, ¼Ò¹®ÀÚ¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+<span class="red">!</span>: ALT í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Send This is text!a</code>ëŠ” &quot;This is text&quot;ë¥¼ ì „ì†¡í•œ ë‹¤ìŒ ALT+aë¥¼ ëˆ„ë¦…ë‹ˆë‹¤. <strong>ì£¼ì˜</strong>: !AëŠ” ì–´ë–¤ í”„ë¡œê·¸ëž¨ì—ì„œëŠ” !aì™€ ì „í˜€ ë‹¤ë¥¸ íš¨ê³¼ë¥¼ ëƒ…ë‹ˆë‹¤. ì´ê²ƒì€ !Aê°€ ALT+SHIFT+Aë¥¼ ëˆ„ë¥´ëŠ” ë°˜ë©´ !aëŠ” ALT+aë¥¼ ëˆ„ë¥´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ìž˜ ëª¨ë¥´ê² ìœ¼ë©´, ì†Œë¬¸ìžë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<span class="red">+</span>: SHIFT Å°´­¸²À» Àü¼ÛÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <code>Send +abC</code>´Â  &quot;AbC&quot;¸¦ Àü¼ÛÇÏ°í, <code>Send !+a</code>´Â ALT+SHIFT+a¸¦ ´©¸¨´Ï´Ù.</p>
+<span class="red">+</span>: SHIFT í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Send +abC</code>ëŠ”  &quot;AbC&quot;ë¥¼ ì „ì†¡í•˜ê³ , <code>Send !+a</code>ëŠ” ALT+SHIFT+aë¥¼ ëˆ„ë¦…ë‹ˆë‹¤.</p>
 <p>
-<span class="red">^</span>: CONTROL Å°´­¸²À» Àü¼ÛÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <code>Send ^!a</code>´Â CTRL+ALT+a¸¦ ´©¸£°í, <code>Send ^{Home}</code>´Â CONTROL+HOMEÀ» ´©¸¨´Ï´Ù. <strong>ÁÖÀÇ</strong>: ^A´Â ¾î¶² ÇÁ·Î±×·¥¿¡¼­ ^a¿Í ÀüÇô ´Ù¸¥ È¿°ú¸¦ ³À´Ï´Ù. ¿Ö³ÄÇÏ¸é ^A´Â CONTROL+SHIFT+A¸¦ ´©¸£´Â ¹Ý¸é ^a´Â CONTROL+a¸¦ ´©¸£±â ¶§¹®ÀÔ´Ï´Ù. Àß ¸ð¸£°ÚÀ¸¸é, ¼Ò¹®ÀÚ¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+<span class="red">^</span>: CONTROL í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Send ^!a</code>ëŠ” CTRL+ALT+aë¥¼ ëˆ„ë¥´ê³ , <code>Send ^{Home}</code>ëŠ” CONTROL+HOMEì„ ëˆ„ë¦…ë‹ˆë‹¤. <strong>ì£¼ì˜</strong>: ^AëŠ” ì–´ë–¤ í”„ë¡œê·¸ëž¨ì—ì„œ ^aì™€ ì „í˜€ ë‹¤ë¥¸ íš¨ê³¼ë¥¼ ëƒ…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ^AëŠ” CONTROL+SHIFT+Aë¥¼ ëˆ„ë¥´ëŠ” ë°˜ë©´ ^aëŠ” CONTROL+aë¥¼ ëˆ„ë¥´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ìž˜ ëª¨ë¥´ê² ìœ¼ë©´, ì†Œë¬¸ìžë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<span class="red">#</span>: WIN Å°´­¸²À» Àü¼ÛÇÕ´Ï´Ù. ±×·¯¹Ç·Î <code>Send #e</code>´Â Windows Å°¸¦ ´©¸¥ Ã¤·Î ±âÈ£ &quot;e&quot;¸¦ ´©¸¨´Ï´Ù.</p>
+<span class="red">#</span>: WIN í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•©ë‹ˆë‹¤. ê·¸ëŸ¬ë¯€ë¡œ <code>Send #e</code>ëŠ” Windows í‚¤ë¥¼ ëˆ„ë¥¸ ì±„ë¡œ ê¸°í˜¸ &quot;e&quot;ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤.</p>
 <p><br>
-<a name="SendInput"></a><a name="SendPlay"></a><strong>SendInput</strong>±×¸®°í <strong>SendPlay</strong> <span class="ver">[v1.0.43+]:</span> SendInput ±×¸®°í SendPlay´Â Send¿Í °°Àº ±¸¹®À» »ç¿ëÇÕ´Ï´Ù. ±×·¯³ª ÀÏ¹ÝÀûÀ¸·Î ´õ ºü¸£°í ´õ ½Å·Ú¼ºÀÌ ÀÖ½À´Ï´Ù. °Ô´Ù°¡, Àü¼ÛÇÏ´Â µ¿¾È¿¡ ¹°¸®Àû Å°´­¸²°ú ¸¶¿ì½º Å¬¸¯À» ¹öÆÛ Ã³¸®ÇØ ÁÝ´Ï´Ù. ±× ´öºÐ¿¡ »ç¿ëÀÚÀÇ Å°´­¸²ÀÌ Èð¾îÁöÁö ¾Ê°í ¿ÂÀüÇÏ°Ô Àü¼ÛµË´Ï´Ù. <a href="SendMode.htm">SendMode</a>À» »ç¿ëÇÏ¸é Send¸¦ SendInput ¶Ç´Â SendPlay°ú ¶È°°ÀÌ ¸¸µé ¼ö ÀÖ½À´Ï´Ù. °¢ ¸ðµå¿¡ °üÇÏ¿© ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â ¾Æ·¡ÀÇ <a href="#SendInputDetail">SendInput</a> ±×¸®°í <a href="#SendPlayDetail">SendPlay</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<a name="SendInput"></a><a name="SendPlay"></a><strong>SendInput</strong>ê·¸ë¦¬ê³  <strong>SendPlay</strong> <span class="ver">[v1.0.43+]:</span> SendInput ê·¸ë¦¬ê³  SendPlayëŠ” Sendì™€ ê°™ì€ êµ¬ë¬¸ì„ ì‚¬ìš©í•©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ì¼ë°˜ì ìœ¼ë¡œ ë” ë¹ ë¥´ê³  ë” ì‹ ë¢°ì„±ì´ ìžˆìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, ì „ì†¡í•˜ëŠ” ë™ì•ˆì— ë¬¼ë¦¬ì  í‚¤ëˆŒë¦¼ê³¼ ë§ˆìš°ìŠ¤ í´ë¦­ì„ ë²„í¼ ì²˜ë¦¬í•´ ì¤ë‹ˆë‹¤. ê·¸ ë•ë¶„ì— ì‚¬ìš©ìžì˜ í‚¤ëˆŒë¦¼ì´ í©ì–´ì§€ì§€ ì•Šê³  ì˜¨ì „í•˜ê²Œ ì „ì†¡ë©ë‹ˆë‹¤. <a href="SendMode.htm">SendMode</a>ì„ ì‚¬ìš©í•˜ë©´ Sendë¥¼ SendInput ë˜ëŠ” SendPlayê³¼ ë˜‘ê°™ì´ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê° ëª¨ë“œì— ê´€í•˜ì—¬ ë” ìžì„¸í•œ ì •ë³´ëŠ” ì•„ëž˜ì˜ <a href="#SendInputDetail">SendInput</a> ê·¸ë¦¬ê³  <a href="#SendPlayDetail">SendPlay</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<a name="SendEvent"></a><strong>SendEvent</strong> <span class="ver">[v1.0.43+]:</span> SendEvent´Â 1.0.43-ÀÌÀüÀÇ  <em>Send</em> ¸í·É¾î¿Í °°Àº ¹æ¹ýÀ¸·Î Å°´­¸²À» Àü¼ÛÇÕ´Ï´Ù. Å°´­¸²ÀÇ Àü¼Û ºñÀ²Àº <a href="SetKeyDelay.htm">SetKeyDelay</a>·Î °áÁ¤µË´Ï´Ù. ±âº»°ªÀ¸·Î, <em>Send</em>´Â <em>SendEvent</em>¿Í µ¿ÀÏÇÏÁö¸¸; <a href="SendMode.htm">SendMode</a>¸¦ ÅëÇÏ¿© <a href="#SendInputDetail">SendInput</a>ÀÌ³ª <a href="#SendPlayDetail">SendPlay</a>¿Í °°°Ô ¸¸µé ¼ö ÀÖ½À´Ï´Ù .</p>
+<a name="SendEvent"></a><strong>SendEvent</strong> <span class="ver">[v1.0.43+]:</span> SendEventëŠ” 1.0.43-ì´ì „ì˜  <em>Send</em> ëª…ë ¹ì–´ì™€ ê°™ì€ ë°©ë²•ìœ¼ë¡œ í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•©ë‹ˆë‹¤. í‚¤ëˆŒë¦¼ì˜ ì „ì†¡ ë¹„ìœ¨ì€ <a href="SetKeyDelay.htm">SetKeyDelay</a>ë¡œ ê²°ì •ë©ë‹ˆë‹¤. ê¸°ë³¸ê°’ìœ¼ë¡œ, <em>Send</em>ëŠ” <em>SendEvent</em>ì™€ ë™ì¼í•˜ì§€ë§Œ; <a href="SendMode.htm">SendMode</a>ë¥¼ í†µí•˜ì—¬ <a href="#SendInputDetail">SendInput</a>ì´ë‚˜ <a href="#SendPlayDetail">SendPlay</a>ì™€ ê°™ê²Œ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤ .</p>
 <p>
-<strong>Key Names</strong>: ´ÙÀ½ Å×ÀÌºíÀº Àü¼ÛÀÌ °¡´ÉÇÑ Æ¯¼ö Å°µéÀ» ³ª¿­ÇÕ´Ï´Ù. (°¢ Å° ÀÌ¸§Àº È°°ýÈ£·Î µÑ·¯½Î¾ß ÇÕ´Ï´Ù):</p>
+<strong>Key Names</strong>: ë‹¤ìŒ í…Œì´ë¸”ì€ ì „ì†¡ì´ ê°€ëŠ¥í•œ íŠ¹ìˆ˜ í‚¤ë“¤ì„ ë‚˜ì—´í•©ë‹ˆë‹¤. (ê° í‚¤ ì´ë¦„ì€ í™œê´„í˜¸ë¡œ ë‘˜ëŸ¬ì‹¸ì•¼ í•©ë‹ˆë‹¤):</p>
 <table class="info">
   <tr>
-    <th width="200">Å° ÀÌ¸§</th>
-    <th>°á°ú Å°´­¸²</th>
+    <th width="200">í‚¤ ì´ë¦„</th>
+    <th>ê²°ê³¼ í‚¤ëˆŒë¦¼</th>
   </tr>
   <tr>
     <td align="center">{F1} - {F24}</td>
-    <td>±â´É Å°. ¿¹¸¦ µé¾î: {F12}´Â F12 Å°.</td>
+    <td>ê¸°ëŠ¥ í‚¤. ì˜ˆë¥¼ ë“¤ì–´: {F12}ëŠ” F12 í‚¤.</td>
   </tr>
   <tr>
     <td align="center">{!}</td>
@@ -84,63 +85,63 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{Enter}</td>
-    <td>¸ÞÀÎ Å°º¸µåÀÇ ¿£ÅÍÅ°</td>
+    <td>ë©”ì¸ í‚¤ë³´ë“œì˜ ì—”í„°í‚¤</td>
   </tr>
   <tr>
-    <td align="center">{Escape} ¶Ç´Â {Esc}</td>
+    <td align="center">{Escape} ë˜ëŠ” {Esc}</td>
     <td>ESCAPE</td>
   </tr>
   <tr>
     <td align="center">{Space}</td>
-    <td>SPACE (½ºÆäÀÌ½º°¡ Àü¼ÛÇÒ ¹®ÀÚ¿­ÀÇ ¾ÕÀÌ³ª µÚ¿¡ ³ªÅ¸³¯ ¶§ ÇÊ¿äÇÕ´Ï´Ù -- °¡¿îµ¥ ÀÖ´Â ½ºÆäÀÌ½º´Â ¹®ÀÚ ±×´ë·Î ½ºÆäÀÌ½ºÀÔ´Ï´Ù)</td>
+    <td>SPACE (ìŠ¤íŽ˜ì´ìŠ¤ê°€ ì „ì†¡í•  ë¬¸ìžì—´ì˜ ì•žì´ë‚˜ ë’¤ì— ë‚˜íƒ€ë‚  ë•Œ í•„ìš”í•©ë‹ˆë‹¤ -- ê°€ìš´ë° ìžˆëŠ” ìŠ¤íŽ˜ì´ìŠ¤ëŠ” ë¬¸ìž ê·¸ëŒ€ë¡œ ìŠ¤íŽ˜ì´ìŠ¤ìž…ë‹ˆë‹¤)</td>
   </tr>
   <tr>
     <td align="center">{Tab}</td>
-    <td>ÅÇÅ°</td>
+    <td>íƒ­í‚¤</td>
   </tr>
   <tr>
-    <td align="center">{Backspace} ¶Ç´Â {BS}</td>
-    <td>¹é½ºÆäÀÌ½º</td>
+    <td align="center">{Backspace} ë˜ëŠ” {BS}</td>
+    <td>ë°±ìŠ¤íŽ˜ì´ìŠ¤</td>
   </tr>
   <tr>
-    <td align="center">{Delete} ¶Ç´Â {Del}</td>
-    <td>»èÁ¦</td>
+    <td align="center">{Delete} ë˜ëŠ” {Del}</td>
+    <td>ì‚­ì œ</td>
   </tr>
   <tr>
-    <td align="center">{Insert} ¶Ç´Â {Ins}</td>
-    <td>»ðÀÔ</td>
+    <td align="center">{Insert} ë˜ëŠ” {Ins}</td>
+    <td>ì‚½ìž…</td>
   </tr>
   <tr>
     <td align="center">{Up}</td>
-    <td>¸ÞÀÎ À§ È­»ìÇ¥ Å°</td>
+    <td>ë©”ì¸ ìœ„ í™”ì‚´í‘œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{Down}</td>
-    <td>¸ÞÀÎ ¾Æ·¡ È­»ìÇ¥ Å°</td>
+    <td>ë©”ì¸ ì•„ëž˜ í™”ì‚´í‘œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{Left}</td>
-    <td>¸ÞÀÎ ¿ÞÂÊ È­»ìÇ¥ Å°</td>
+    <td>ë©”ì¸ ì™¼ìª½ í™”ì‚´í‘œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{Right}</td>
-    <td>¸ÞÀÎ ¿À¸¥ÂÊ È­»ìÇ¥ Å°</td>
+    <td>ë©”ì¸ ì˜¤ë¥¸ìª½ í™”ì‚´í‘œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{Home}</td>
-    <td>¸ÞÀÎ È¨ Å°</td>
+    <td>ë©”ì¸ í™ˆ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{End}</td>
-    <td>¸ÞÀÎ ¿£µå Å°</td>
+    <td>ë©”ì¸ ì—”ë“œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{PgUp}</td>
-    <td>¸ÞÀÎ ÆäÀÌÁö ¾÷ Å°</td>
+    <td>ë©”ì¸ íŽ˜ì´ì§€ ì—… í‚¤</td>
   </tr>
   <tr>
     <td align="center">{PgDn}</td>
-    <td>¸ÞÀÎ ÆäÀÌÁö ´Ù¿î Å°</td>
+    <td>ë©”ì¸ íŽ˜ì´ì§€ ë‹¤ìš´ í‚¤</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -148,38 +149,38 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{CapsLock}</td>
-    <td>CapsLock (Win 2k/XPÀÌ¶ó¸é <a href="SetNumScrollCapsLockState.htm">SetCapsLockState</a>À» »ç¿ëÇÏ´Â ÆíÀÌ ´õ ½Å·Ú¼ºÀÌ ³ô½À´Ï´Ù).
+    <td>CapsLock (Win 2k/XPì´ë¼ë©´ <a href="SetNumScrollCapsLockState.htm">SetCapsLockState</a>ì„ ì‚¬ìš©í•˜ëŠ” íŽ¸ì´ ë” ì‹ ë¢°ì„±ì´ ë†’ìŠµë‹ˆë‹¤).
 
 
- {CapsLock}¸¦ Àü¼ÛÇÏ·Á¸é ¹Ì¸® <a href="SetStoreCapslockMode.htm">SetStoreCapslockMode Off</a>ÀÌ µÇ¾î ÀÖ¾î¾ß ÇÕ´Ï´Ù.</td>
+ {CapsLock}ë¥¼ ì „ì†¡í•˜ë ¤ë©´ ë¯¸ë¦¬ <a href="SetStoreCapslockMode.htm">SetStoreCapslockMode Off</a>ì´ ë˜ì–´ ìžˆì–´ì•¼ í•©ë‹ˆë‹¤.</td>
   </tr>
   <tr>
     <td align="center">{ScrollLock}</td>
-    <td>ScrollLock (´ÙÀ½µµ ÂüÁ¶: <a href="SetNumScrollCapsLockState.htm">SetScrollLockState</a>)</td>
+    <td>ScrollLock (ë‹¤ìŒë„ ì°¸ì¡°: <a href="SetNumScrollCapsLockState.htm">SetScrollLockState</a>)</td>
   </tr>
   <tr>
     <td align="center">{NumLock}</td>
-    <td>NumLock (´ÙÀ½µµ ÂüÁ¶: <a href="SetNumScrollCapsLockState.htm">SetNumLockState</a>)</td>
+    <td>NumLock (ë‹¤ìŒë„ ì°¸ì¡°: <a href="SetNumScrollCapsLockState.htm">SetNumLockState</a>)</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
   </tr>
   <tr>
-    <td align="center">{Control} ¶Ç´Â {Ctrl}</td>
-    <td>CONTROL (±â¼ú Á¤º¸: ÁÂ¿ì ±¸ºÐ ¾ø´Â °¡»ó Å°¸¦ º¸³»Áö¸¸ ½ºÄµ ÄÚµå´Â ¿ÞÂÊÀ» Àü¼ÛÇÔ)</td>
+    <td align="center">{Control} ë˜ëŠ” {Ctrl}</td>
+    <td>CONTROL (ê¸°ìˆ  ì •ë³´: ì¢Œìš° êµ¬ë¶„ ì—†ëŠ” ê°€ìƒ í‚¤ë¥¼ ë³´ë‚´ì§€ë§Œ ìŠ¤ìº” ì½”ë“œëŠ” ì™¼ìª½ì„ ì „ì†¡í•¨)</td>
   </tr>
   <tr>
-    <td align="center">{LControl} ¶Ç´Â {LCtrl}</td>
-    <td>¿ÞÂÊ CONTROL Å° (±â¼ú Á¤º¸: ÁÂ¿ì ±¸ºÐ ¾ø´Â °¡»ó Å°°¡ ¾Æ´Ï¶ó ¿ÞÂÊ °¡»ó Å°¸¦ Àü¼ÛÇÔ)</td>
+    <td align="center">{LControl} ë˜ëŠ” {LCtrl}</td>
+    <td>ì™¼ìª½ CONTROL í‚¤ (ê¸°ìˆ  ì •ë³´: ì¢Œìš° êµ¬ë¶„ ì—†ëŠ” ê°€ìƒ í‚¤ê°€ ì•„ë‹ˆë¼ ì™¼ìª½ ê°€ìƒ í‚¤ë¥¼ ì „ì†¡í•¨)</td>
   </tr>
   <tr>
-    <td align="center">{RControl} ¶Ç´Â {RCtrl}</td>
-    <td>¿À¸¥ÂÊ CONTROL Å°</td>
+    <td align="center">{RControl} ë˜ëŠ” {RCtrl}</td>
+    <td>ì˜¤ë¥¸ìª½ CONTROL í‚¤</td>
   </tr>
   <tr>
-    <td align="center">{Control Down} ¶Ç´Â {Ctrl Down}</td>
-    <td>{Ctrl Up}ÀÌ Àü¼ÛµÉ ¶§±îÁö CONTROL Å°¸¦ ´©¸¨´Ï´Ù. ´ë½Å¿¡ ¿ÞÂÊ ¶Ç´Â ¿À¸¥ÂÊ Å°¸¦ ´©¸£°í ÀÖÀ¸·Á¸é, {RCtrl Down}°ú {RCtrl Up}À» »ç¿ëÇÏ½Ê½Ã¿À.</td>
+    <td align="center">{Control Down} ë˜ëŠ” {Ctrl Down}</td>
+    <td>{Ctrl Up}ì´ ì „ì†¡ë  ë•Œê¹Œì§€ CONTROL í‚¤ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤. ëŒ€ì‹ ì— ì™¼ìª½ ë˜ëŠ” ì˜¤ë¥¸ìª½ í‚¤ë¥¼ ëˆ„ë¥´ê³  ìžˆìœ¼ë ¤ë©´, {RCtrl Down}ê³¼ {RCtrl Up}ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -187,19 +188,19 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{Alt}</td>
-    <td>ALT (±â¼ú Á¤º¸: ÁÂ¿ì ±¸ºÐ¾ø´Â °¡»ó Å°¸¦ Àü¼ÛÇÏÁö¸¸ ½ºÄµ ÄÚµå´Â ¿ÞÂÊ ½ºÄµÄÚµå¸¦ Àü¼ÛÇÔ)</td>
+    <td>ALT (ê¸°ìˆ  ì •ë³´: ì¢Œìš° êµ¬ë¶„ì—†ëŠ” ê°€ìƒ í‚¤ë¥¼ ì „ì†¡í•˜ì§€ë§Œ ìŠ¤ìº” ì½”ë“œëŠ” ì™¼ìª½ ìŠ¤ìº”ì½”ë“œë¥¼ ì „ì†¡í•¨)</td>
   </tr>
   <tr>
     <td align="center">{LAlt}</td>
-    <td>¿ÞÂÊ ALT Å° (±â¼ú Á¤º¸: ÁÂ¿ì ±¸ºÐ¾ø´Â °¡»ó Å°°¡ ¾Æ´Ï¶ó ¿ÞÂÊ °¡»ó Å°¸¦ Àü¼ÛÇÕ´Ï´Ù)</td>
+    <td>ì™¼ìª½ ALT í‚¤ (ê¸°ìˆ  ì •ë³´: ì¢Œìš° êµ¬ë¶„ì—†ëŠ” ê°€ìƒ í‚¤ê°€ ì•„ë‹ˆë¼ ì™¼ìª½ ê°€ìƒ í‚¤ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤)</td>
   </tr>
   <tr>
     <td align="center">{RAlt}</td>
-    <td>¿À¸¥ÂÊ ALT Å° (¶Ç´Â Å°º¸µå ·¹ÀÌ¾Æ¿ô¿¡ µû¶ó AltGr)</td>
+    <td>ì˜¤ë¥¸ìª½ ALT í‚¤ (ë˜ëŠ” í‚¤ë³´ë“œ ë ˆì´ì•„ì›ƒì— ë”°ë¼ AltGr)</td>
   </tr>
   <tr>
     <td align="center">{Alt Down}</td>
-    <td>{Alt Up}ÀÌ Àü¼ÛµÉ ¶§±îÁö ALT Å°¸¦ ´©¸¨´Ï´Ù. ´ë½Å¿¡ ¿ÞÂÊ ¶Ç´Â ¿À¸¥ÂÊ Å°¸¦ ´©¸£°í ÀÖÀ¸·Á¸é {RAlt Down}°ú {RAlt Up}À» »ç¿ëÇÏ½Ê½Ã¿À.</td>
+    <td>{Alt Up}ì´ ì „ì†¡ë  ë•Œê¹Œì§€ ALT í‚¤ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤. ëŒ€ì‹ ì— ì™¼ìª½ ë˜ëŠ” ì˜¤ë¥¸ìª½ í‚¤ë¥¼ ëˆ„ë¥´ê³  ìžˆìœ¼ë ¤ë©´ {RAlt Down}ê³¼ {RAlt Up}ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -207,19 +208,19 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{Shift}</td>
-    <td>SHIFT (±â¼ú Á¤º¸: ÁÂ¿ì ±¸ºÐ¾ø´Â °¡»ó Å°¸¦ Àü¼ÛÇÏÁö¸¸ ½ºÄµÄÚµå´Â ¿ÞÂÊ ½ºÄµÄÚµå¸¦ Àü¼ÛÇÔ)</td>
+    <td>SHIFT (ê¸°ìˆ  ì •ë³´: ì¢Œìš° êµ¬ë¶„ì—†ëŠ” ê°€ìƒ í‚¤ë¥¼ ì „ì†¡í•˜ì§€ë§Œ ìŠ¤ìº”ì½”ë“œëŠ” ì™¼ìª½ ìŠ¤ìº”ì½”ë“œë¥¼ ì „ì†¡í•¨)</td>
   </tr>
   <tr>
     <td align="center">{LShift}</td>
-    <td>¿ÞÂÊ SHIFT Å° (±â¼ú Á¤º¸: ÁÂ¿ì ±¸ºÐ ¾ø´Â °¡»ó Å°°¡ ¾Æ´Ï¶ó ¿ÞÂÊ °¡»ó Å°¸¦ Àü¼ÛÇÔ)</td>
+    <td>ì™¼ìª½ SHIFT í‚¤ (ê¸°ìˆ  ì •ë³´: ì¢Œìš° êµ¬ë¶„ ì—†ëŠ” ê°€ìƒ í‚¤ê°€ ì•„ë‹ˆë¼ ì™¼ìª½ ê°€ìƒ í‚¤ë¥¼ ì „ì†¡í•¨)</td>
   </tr>
   <tr>
     <td align="center">{RShift}</td>
-    <td>¿À¸¥ÂÊ SHIFT Å°</td>
+    <td>ì˜¤ë¥¸ìª½ SHIFT í‚¤</td>
   </tr>
   <tr>
     <td align="center">{Shift Down}</td>
-    <td>{Shift Up}ÀÌ Àü¼ÛµÉ ¶§±îÁö SHIFT Å°¸¦ ´©¸¨´Ï´Ù. ´ë½Å¿¡ ¿ÞÂÊ ¶Ç´Â ¿À¸¥ÂÊ Å°¸¦ ´©¸£°í ÀÖÀ¸·Á¸é {RShift Down}°ú {RShift Up}À» »ç¿ëÇÏ½Ê½Ã¿À.</td>
+    <td>{Shift Up}ì´ ì „ì†¡ë  ë•Œê¹Œì§€ SHIFT í‚¤ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤. ëŒ€ì‹ ì— ì™¼ìª½ ë˜ëŠ” ì˜¤ë¥¸ìª½ í‚¤ë¥¼ ëˆ„ë¥´ê³  ìžˆìœ¼ë ¤ë©´ {RShift Down}ê³¼ {RShift Up}ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -227,19 +228,19 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{LWin}</td>
-    <td>¿ÞÂÊ Windows Å°</td>
+    <td>ì™¼ìª½ Windows í‚¤</td>
   </tr>
   <tr>
     <td align="center">{RWin}</td>
-    <td>¿À¸¥ÂÊ Windows Å°</td>
+    <td>ì˜¤ë¥¸ìª½ Windows í‚¤</td>
   </tr>
   <tr>
     <td align="center">{LWin Down}</td>
-    <td>{LWin Up}ÀÌ Àü¼ÛµÉ ¶§±îÁö ¿ÞÂÊ Windows Å°¸¦ ´©¸¨´Ï´Ù</td>
+    <td>{LWin Up}ì´ ì „ì†¡ë  ë•Œê¹Œì§€ ì™¼ìª½ Windows í‚¤ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤</td>
   </tr>
   <tr>
     <td align="center">{RWin Down}</td>
-    <td>{RWin Up}ÀÌ Àü¼ÛµÉ ¶§±îÁö ¿À¸¥ÂÊ Windows Å°¸¦ ´©¸¨´Ï´Ù</td>
+    <td>{RWin Up}ì´ ì „ì†¡ë  ë•Œê¹Œì§€ ì˜¤ë¥¸ìª½ Windows í‚¤ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -247,28 +248,28 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{AppsKey}</td>
-    <td>Windows App Å° (¿À¸¥ÂÊ Å¬¸¯ ¶Ç´Â ¹®¸Æ ¸Þ´º¸¦ ¿äÃ»ÇÕ´Ï´Ù)</td>
+    <td>Windows App í‚¤ (ì˜¤ë¥¸ìª½ í´ë¦­ ë˜ëŠ” ë¬¸ë§¥ ë©”ë‰´ë¥¼ ìš”ì²­í•©ë‹ˆë‹¤)</td>
   </tr>
   <tr>
     <td align="center">{Sleep}</td>
-    <td>ÄÄÇ»ÅÍ SLEEP Å°.</td>
+    <td>ì»´í“¨í„° SLEEP í‚¤.</td>
   </tr>
   <tr>
     <td align="center">{ASC nnnnn}</td>
-    <td><p><a name="asc"></a>ALT+nnnnn Å°ÆÐµå Á¶ÇÕÀ» Àü¼ÛÇÕ´Ï´Ù. ÀÌ¸¦ ÀÌ¿ëÇÏ¿© Å°º¸µå¿¡ Á¸ÀçÇÏÁö ¾Ê´Â Æ¯¼ö ¹®ÀÚµéÀ» ¹ß»ý½ÃÅ³ ¼ö ÀÖ½À´Ï´Ù. ASCII ¹®ÀÚµéÀ» ¹ß»ý½ÃÅ°·Á¸é, 1ºÎÅÍ 255 »çÀÌÀÇ ¼ýÀÚ¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. (´ëºÎºÐÀÇ ¾ð¾î¿¡ Ç¥ÁØÀÎ) ANSI ¹®ÀÚ¸¦ ¹ß»ý½ÃÅ°·Á¸é, 128ºÎÅÍ 255 »çÀÌÀÇ ¼ýÀÚ¸¦ ÁöÁ¤ÇÏµÇ, ¾Õ¿¡ 0À» µ¡ºÙÀÌ½Ê½Ã¿À. ¿¹, {Asc 0133}.</p>
-    <p>À¯´ÏÄÚµå ¹®ÀÚ´Â 256ºÎÅÍ 65535 »çÀÌÀÇ ¼ýÀÚ¸¦ ÁöÁ¤ÇØ ¹ß»ý½ÃÅ³ ¼ö ÀÖ½À´Ï´Ù (¾Õ¿¡ 0À» ºÙÀÌÁö ¾ÊÀ½). ±×·¸Áö¸¸, ÀÌ ¹æ¹ýÀº ¸ðµç ¾îÇÃ¸®ÄÉÀÌ¼Ç¿¡¼­ Áö¿øµÇÁö´Â ¾Ê½À´Ï´Ù. ´ë¾ÈÀº ¾Æ·¡ ¼½¼ÇÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p></td>
+    <td><p><a name="asc"></a>ALT+nnnnn í‚¤íŒ¨ë“œ ì¡°í•©ì„ ì „ì†¡í•©ë‹ˆë‹¤. ì´ë¥¼ ì´ìš©í•˜ì—¬ í‚¤ë³´ë“œì— ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” íŠ¹ìˆ˜ ë¬¸ìžë“¤ì„ ë°œìƒì‹œí‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ASCII ë¬¸ìžë“¤ì„ ë°œìƒì‹œí‚¤ë ¤ë©´, 1ë¶€í„° 255 ì‚¬ì´ì˜ ìˆ«ìžë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. (ëŒ€ë¶€ë¶„ì˜ ì–¸ì–´ì— í‘œì¤€ì¸) ANSI ë¬¸ìžë¥¼ ë°œìƒì‹œí‚¤ë ¤ë©´, 128ë¶€í„° 255 ì‚¬ì´ì˜ ìˆ«ìžë¥¼ ì§€ì •í•˜ë˜, ì•žì— 0ì„ ë§ë¶™ì´ì‹­ì‹œì˜¤. ì˜ˆ, {Asc 0133}.</p>
+    <p>ìœ ë‹ˆì½”ë“œ ë¬¸ìžëŠ” 256ë¶€í„° 65535 ì‚¬ì´ì˜ ìˆ«ìžë¥¼ ì§€ì •í•´ ë°œìƒì‹œí‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì•žì— 0ì„ ë¶™ì´ì§€ ì•ŠìŒ). ê·¸ë ‡ì§€ë§Œ, ì´ ë°©ë²•ì€ ëª¨ë“  ì–´í”Œë¦¬ì¼€ì´ì…˜ì—ì„œ ì§€ì›ë˜ì§€ëŠ” ì•ŠìŠµë‹ˆë‹¤. ëŒ€ì•ˆì€ ì•„ëž˜ ì„¹ì…˜ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p></td>
   </tr>
   <tr id="Unicode">
     <td align="center">{U+nnnn}</td>
-    <td><p><a name="sendu"></a><span class="ver">[AHK_L 24+]:</span> À¯´ÏÄÚµå ¹®ÀÚ¸¦ Àü¼ÛÇÕ´Ï´Ù. <em>nnnn</em>Àº ¾Õ¿¡ 0À» Á¦¿ÜÇÏ°í ¹®ÀÚÀÇ ½ÊÀ°Áø °ªÀÔ´Ï´Ù. À¯´ÏÄÚµå ¹öÀüÀÇ ¿ÀÅäÇÖÅ°¿¡¼­´Â ÀÚµ¿À¸·Î Send¿Í ControlSendÀÌ À¯´ÏÄÚµå ÅØ½ºÆ®¸¦ Áö¿øÇÏ±â ¶§¹®¿¡ ÀÌ ¹æ¹ýÀÌ ÇÊ¿äÇÏÁö ¾Ê½À´Ï´Ù.</p>
-    <p>¹®ÀÚ°¡ °¡»ó Å°º¸µå¿¡ Â¦Áö¾îÁöÁö ¾Ê´Â´Ù¸é, <a href="http://msdn.microsoft.com/en-us/library/ms646310.aspx">SendInput()</a> ¶Ç´Â <a href="http://msdn.microsoft.com/en-us/library/ms646276.aspx">WM_CHAR</a>À» ÀÌ¿ëÇØ ±× ¹®ÀÚ¸¦ Àü¼ÛÇÒ ¼ö ÀÖ½À´Ï´Ù. ÇöÀçÀÇ Send ¸ðµå´Â ¾Æ¹« È¿°ú°¡ ¾ø½À´Ï´Ù.</p></td>
+    <td><p><a name="sendu"></a><span class="ver">[AHK_L 24+]:</span> ìœ ë‹ˆì½”ë“œ ë¬¸ìžë¥¼ ì „ì†¡í•©ë‹ˆë‹¤. <em>nnnn</em>ì€ ì•žì— 0ì„ ì œì™¸í•˜ê³  ë¬¸ìžì˜ ì‹­ìœ¡ì§„ ê°’ìž…ë‹ˆë‹¤. ìœ ë‹ˆì½”ë“œ ë²„ì „ì˜ ì˜¤í† í•«í‚¤ì—ì„œëŠ” ìžë™ìœ¼ë¡œ Sendì™€ ControlSendì´ ìœ ë‹ˆì½”ë“œ í…ìŠ¤íŠ¸ë¥¼ ì§€ì›í•˜ê¸° ë•Œë¬¸ì— ì´ ë°©ë²•ì´ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
+    <p>ë¬¸ìžê°€ ê°€ìƒ í‚¤ë³´ë“œì— ì§ì§€ì–´ì§€ì§€ ì•ŠëŠ”ë‹¤ë©´, <a href="http://msdn.microsoft.com/en-us/library/ms646310.aspx">SendInput()</a> ë˜ëŠ” <a href="http://msdn.microsoft.com/en-us/library/ms646276.aspx">WM_CHAR</a>ì„ ì´ìš©í•´ ê·¸ ë¬¸ìžë¥¼ ì „ì†¡í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í˜„ìž¬ì˜ Send ëª¨ë“œëŠ” ì•„ë¬´ íš¨ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</p></td>
   </tr>
   <tr>
     <td align="center"><p>{vkXX}<br>
       {scYYY}<br>
     {vkXXscYYY}</p></td>
-    <td><p><a name="vk"></a>°¡»ó Å° XX¿Í ½ºÄµ ÄÚµå YYYÀÎ Å°´­¸²À» Àü¼ÛÇÕ´Ï´Ù. ¿¹¸¦ µé¾î: <code>Send {vkFFsc159}</code>. sc ¶Ç´Â vk ºÎºÐÀ» »ý·«ÇÏ¸é, ±× ÀÚ¸®¿¡ °¡Àå ÀûÀýÇÑ °ªÀÌ Àü¼ÛµË´Ï´Ù.</p>
-      <p>XX¿Í YYY¿¡ ´ëÇÑ °ªµéÀº ½ÊÀ°Áø¼öÀÌ°í º¸Åë ¸ÞÀÎ Ã¢ÀÌ <a href="KeyHistory.htm">View-&gt;Key history</a> ¸Þ´º Ç×¸ñÀ» ÅëÇÏ¿© ¾Ë¾Æ³¾ ¼ö ÀÖ½À´Ï´Ù. ´ÙÀ½µµ ÂüÁ¶: <a href="../KeyList.htm#SpecialKeys">Æ¯¼ö Å°</a></p></td>
+    <td><p><a name="vk"></a>ê°€ìƒ í‚¤ XXì™€ ìŠ¤ìº” ì½”ë“œ YYYì¸ í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>Send {vkFFsc159}</code>. sc ë˜ëŠ” vk ë¶€ë¶„ì„ ìƒëžµí•˜ë©´, ê·¸ ìžë¦¬ì— ê°€ìž¥ ì ì ˆí•œ ê°’ì´ ì „ì†¡ë©ë‹ˆë‹¤.</p>
+      <p>XXì™€ YYYì— ëŒ€í•œ ê°’ë“¤ì€ ì‹­ìœ¡ì§„ìˆ˜ì´ê³  ë³´í†µ ë©”ì¸ ì°½ì´ <a href="KeyHistory.htm">View-&gt;Key history</a> ë©”ë‰´ í•­ëª©ì„ í†µí•˜ì—¬ ì•Œì•„ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ìŒë„ ì°¸ì¡°: <a href="../KeyList.htm#SpecialKeys">íŠ¹ìˆ˜ í‚¤</a></p></td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -276,31 +277,31 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{Numpad0} - {Numpad9}</td>
-    <td>³ÑÆÐµå ¼ýÀÚ Å° (NumlockÀ» ÄÑ¸é º¸ÀÓ). ¿¹¸¦ µé¾î: {Numpad5}´Â ¼ýÀÚ 5ÀÔ´Ï´Ù.</td>
+    <td>ë„˜íŒ¨ë“œ ìˆ«ìž í‚¤ (Numlockì„ ì¼œë©´ ë³´ìž„). ì˜ˆë¥¼ ë“¤ì–´: {Numpad5}ëŠ” ìˆ«ìž 5ìž…ë‹ˆë‹¤.</td>
   </tr>
   <tr>
     <td align="center">{NumpadDot}</td>
-    <td>³ÑÆÐµå Á¡ (NumlockÀ» ÄÑ¸é º¸ÀÓ).</td>
+    <td>ë„˜íŒ¨ë“œ ì  (Numlockì„ ì¼œë©´ ë³´ìž„).</td>
   </tr>
   <tr>
     <td align="center">{NumpadEnter}</td>
-    <td>Å°ÆÐµåÀÇ ¿£ÅÍ Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ ì—”í„° í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadMult}</td>
-    <td>³ÑÆÐµå °ö¼À Å°</td>
+    <td>ë„˜íŒ¨ë“œ ê³±ì…ˆ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadDiv}</td>
-    <td>³ÑÆÐµå ³ª´°¼À Å°</td>
+    <td>ë„˜íŒ¨ë“œ ë‚˜ëˆ—ì…ˆ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadAdd}</td>
-    <td>³ÑÆÐµå µ¡¼À Å°</td>
+    <td>ë„˜íŒ¨ë“œ ë§ì…ˆ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadSub}</td>
-    <td>³ÑÆÐµå »¬¼À Å°</td>
+    <td>ë„˜íŒ¨ë“œ ëº„ì…ˆ í‚¤</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -308,47 +309,47 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{NumpadDel}</td>
-    <td>Å°ÆÐµåÀÇ »èÁ¦ Å° (ÀÌ Å°¿Í ¾Æ·¡ÀÇ ³ÑÆÐµå Å°µéÀº NumlockÀÌ ²¨Á® ÀÖÀ» ¶§ »ç¿ëµË´Ï´Ù)</td>
+    <td>í‚¤íŒ¨ë“œì˜ ì‚­ì œ í‚¤ (ì´ í‚¤ì™€ ì•„ëž˜ì˜ ë„˜íŒ¨ë“œ í‚¤ë“¤ì€ Numlockì´ êº¼ì ¸ ìžˆì„ ë•Œ ì‚¬ìš©ë©ë‹ˆë‹¤)</td>
   </tr>
   <tr>
     <td align="center">{NumpadIns}</td>
-    <td>Å°ÆÐµåÀÇ »ðÀÔ Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ ì‚½ìž… í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadClear}</td>
-    <td>Å°ÆÐµåÀÇ ¼Ò°Å Å° (º¸Åë NumlockÀÌ ²¨Á® ÀÖÀ» ¶§ '5' Å°).</td>
+    <td>í‚¤íŒ¨ë“œì˜ ì†Œê±° í‚¤ (ë³´í†µ Numlockì´ êº¼ì ¸ ìžˆì„ ë•Œ '5' í‚¤).</td>
   </tr>
   <tr>
     <td align="center">{NumpadUp}</td>
-    <td>Å°ÆÐµåÀÇ À§ È­»ìÇ¥ Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ ìœ„ í™”ì‚´í‘œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadDown}</td>
-    <td>Å°ÆÐµåÀÇ ¾Æ·¡ È­»ìÇ¥ Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ ì•„ëž˜ í™”ì‚´í‘œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadLeft}</td>
-    <td>Å°ÆÐµåÀÇ ¿ÞÂÊ È­»ìÇ¥ Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ ì™¼ìª½ í™”ì‚´í‘œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadRight}</td>
-    <td>Å°ÆÐµåÀÇ ¿À¸¥ÂÊ È­»ìÇ¥ Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ ì˜¤ë¥¸ìª½ í™”ì‚´í‘œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadHome}</td>
-    <td>Å°ÆÐµåÀÇ È¨ Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ í™ˆ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadEnd}</td>
-    <td>Å°ÆÐµåÀÇ ¿£µå Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ ì—”ë“œ í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadPgUp}</td>
-    <td>Å°ÆÐµåÀÇ ÆäÀÌÁö-¾÷ Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ íŽ˜ì´ì§€-ì—… í‚¤</td>
   </tr>
   <tr>
     <td align="center">{NumpadPgDn}</td>
-    <td>Å°ÆÐµåÀÇ ÆäÀÌÁö-´Ù¿î Å°</td>
+    <td>í‚¤íŒ¨ë“œì˜ íŽ˜ì´ì§€-ë‹¤ìš´ í‚¤</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -356,75 +357,75 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{Browser_Back}</td>
-    <td>ºê¶ó¿ìÀúÀÇ &quot;back&quot; ¹öÆ°</td>
+    <td>ë¸Œë¼ìš°ì €ì˜ &quot;back&quot; ë²„íŠ¼</td>
   </tr>
   <tr>
     <td align="center">{Browser_Forward}</td>
-    <td>ºê¶ó¿ìÀúÀÇ &quot;forward&quot; ¹öÆ°</td>
+    <td>ë¸Œë¼ìš°ì €ì˜ &quot;forward&quot; ë²„íŠ¼</td>
   </tr>
   <tr>
     <td align="center">{Browser_Refresh}</td>
-    <td>ºê¶ó¿ìÀúÀÇ &quot;refresh&quot; ¹öÆ°</td>
+    <td>ë¸Œë¼ìš°ì €ì˜ &quot;refresh&quot; ë²„íŠ¼</td>
   </tr>
   <tr>
     <td align="center">{Browser_Stop}</td>
-    <td>ºê¶ó¿ìÀúÀÇ &quot;stop&quot; ¹öÆ°</td>
+    <td>ë¸Œë¼ìš°ì €ì˜ &quot;stop&quot; ë²„íŠ¼</td>
   </tr>
   <tr>
     <td align="center">{Browser_Search}</td>
-    <td>ºê¶ó¿ìÀúÀÇ &quot;search&quot; ¹öÆ°</td>
+    <td>ë¸Œë¼ìš°ì €ì˜ &quot;search&quot; ë²„íŠ¼</td>
   </tr>
   <tr>
     <td align="center">{Browser_Favorites}</td>
-    <td>ºê¶ó¿ìÀúÀÇ &quot;favorites&quot; ¹öÆ°</td>
+    <td>ë¸Œë¼ìš°ì €ì˜ &quot;favorites&quot; ë²„íŠ¼</td>
   </tr>
   <tr>
     <td align="center">{Browser_Home}</td>
-    <td>ºê¶ó¿ìÀú¸¦ ±âµ¿ÇÏ°í È¨ÆäÀÌÁö·Î °©´Ï´Ù</td>
+    <td>ë¸Œë¼ìš°ì €ë¥¼ ê¸°ë™í•˜ê³  í™ˆíŽ˜ì´ì§€ë¡œ ê°‘ë‹ˆë‹¤</td>
   </tr>
   <tr>
     <td align="center">{Volume_Mute}</td>
-    <td>¸¶½ºÅÍ º¼·ý À½¼Ò°Å. º¸Åë <code><a href="SoundSet.htm">SoundSet</a>, +1, , mute</code>¿Í µ¿µîÇÔ.</td>
+    <td>ë§ˆìŠ¤í„° ë³¼ë¥¨ ìŒì†Œê±°. ë³´í†µ <code><a href="SoundSet.htm">SoundSet</a>, +1, , mute</code>ì™€ ë™ë“±í•¨.</td>
   </tr>
   <tr>
     <td align="center">{Volume_Down}</td>
-    <td>¸¶½ºÅÍ º¼·ýÀ» ÁÙÀÔ´Ï´Ù. º¸Åë <code><a href="SoundSet.htm">SoundSet</a> -5</code>¿Í µ¿µî.</td>
+    <td>ë§ˆìŠ¤í„° ë³¼ë¥¨ì„ ì¤„ìž…ë‹ˆë‹¤. ë³´í†µ <code><a href="SoundSet.htm">SoundSet</a> -5</code>ì™€ ë™ë“±.</td>
   </tr>
   <tr>
     <td align="center">{Volume_Up}</td>
-    <td>¸¶½ºÅÍ º¼·ýÀ» ³ôÀÔ´Ï´Ù. º¸Åë <code><a href="SoundSet.htm">SoundSet</a> +5</code>¿Í µ¿µîÇÔ.</td>
+    <td>ë§ˆìŠ¤í„° ë³¼ë¥¨ì„ ë†’ìž…ë‹ˆë‹¤. ë³´í†µ <code><a href="SoundSet.htm">SoundSet</a> +5</code>ì™€ ë™ë“±í•¨.</td>
   </tr>
   <tr>
     <td align="center">{Media_Next}</td>
-    <td>¹Ìµð¾î ÇÃ·¹ÀÌ¾î¿¡¼­ ´ÙÀ½ Æ®·¢À¸·Î</td>
+    <td>ë¯¸ë””ì–´ í”Œë ˆì´ì–´ì—ì„œ ë‹¤ìŒ íŠ¸ëž™ìœ¼ë¡œ</td>
   </tr>
   <tr>
     <td align="center">{Media_Prev}</td>
-    <td>¹Ìµð¾î ÇÃ·¹ÀÌ¾î¿¡¼­ ÀÌÀü Æ®·¢À¸·Î</td>
+    <td>ë¯¸ë””ì–´ í”Œë ˆì´ì–´ì—ì„œ ì´ì „ íŠ¸ëž™ìœ¼ë¡œ</td>
   </tr>
   <tr>
     <td align="center">{Media_Stop}</td>
-    <td>¹Ìµð¾î ÇÃ·¹ÀÌ¾î ÁßÁö</td>
+    <td>ë¯¸ë””ì–´ í”Œë ˆì´ì–´ ì¤‘ì§€</td>
   </tr>
   <tr>
     <td align="center">{Media_Play_Pause}</td>
-    <td>¹Ìµð¾î ÇÃ·¹ÀÌ¾î Á¤Áö/¿¬ÁÖ</td>
+    <td>ë¯¸ë””ì–´ í”Œë ˆì´ì–´ ì •ì§€/ì—°ì£¼</td>
   </tr>
   <tr>
     <td align="center">{Launch_Mail}</td>
-    <td>ÀÌ¸ÞÀÏ ¾îÇÃ¸®ÄÉÀÌ¼Ç ±âµ¿</td>
+    <td>ì´ë©”ì¼ ì–´í”Œë¦¬ì¼€ì´ì…˜ ê¸°ë™</td>
   </tr>
   <tr>
     <td align="center">{Launch_Media}</td>
-    <td>¹Ìµð¾î ÇÃ·¹ÀÌ¾î ±âµ¿</td>
+    <td>ë¯¸ë””ì–´ í”Œë ˆì´ì–´ ê¸°ë™</td>
   </tr>
   <tr>
     <td align="center">{Launch_App1}</td>
-    <td>»ç¿ëÀÚ app1 ±âµ¿</td>
+    <td>ì‚¬ìš©ìž app1 ê¸°ë™</td>
   </tr>
   <tr>
     <td align="center">{Launch_App2}</td>
-    <td>»ç¿ëÀÚ app2 ±âµ¿</td>
+    <td>ì‚¬ìš©ìž app2 ê¸°ë™</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -432,7 +433,7 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{PrintScreen}</td>
-    <td>È­¸é ÀÎ¼â</td>
+    <td>í™”ë©´ ì¸ì‡„</td>
   </tr>
   <tr>
     <td align="center">{CtrlBreak}</td>
@@ -440,7 +441,7 @@ SendEvent Keys</pre>
   </tr>
   <tr>
     <td align="center">{Pause}</td>
-    <td>Á¤Áö</td>
+    <td>ì •ì§€</td>
   </tr>
   <tr>
     <th>&nbsp;</th>
@@ -449,113 +450,113 @@ SendEvent Keys</pre>
   <tr>
     <td align="center"><strong>{Click [Options]}</strong><br>
     <span class="ver">[v1.0.43+]</span></td>
-    <td><a name="Click"></a><a href="Click.htm">Click ¸í·É¾î</a>¿Í °°Àº ¿É¼ÇÀ» »ç¿ëÇÏ¿© ¸¶¿ì½º Å¬¸¯À» Àü¼ÛÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <code>{Click}</code>Àº ¸¶¿ì½º Ä¿¼­ÀÇ ÇöÀç À§Ä¡¿¡ ¿Þ ¸¶¿ì½º ¹öÆ°À» ÇÑ ¹ø Å¬¸¯ÇÕ´Ï´Ù. ±×¸®°í <code>{Click 100, 200}</code>´Â ÁÂÇ¥ 100, 200¿¡ Å¬¸¯ÇÕ´Ï´Ù (<a href="CoordMode.htm">CoordMode</a>¿¡ ±â¹Ý). Å¬¸¯ ¾øÀÌ ¸¶¿ì½º¸¦ ÀÌµ¿½ÃÅ°·Á¸é, ÁÂÇ¥ ´ÙÀ½¿¡ 0À» ÁöÁ¤ÇÏ½Ê½Ã¿À; ¿¹¸¦ µé¾î: <code>{Click 100, 200, 0}</code>. ¸¶¿ì½º Å¬¸¯ »çÀÌÀÇ Áö¿¬ ½Ã°£Àº  <a href="SetMouseDelay.htm">SetMouseDelay</a>·Î °áÁ¤µË´Ï´Ù (<a href="SetKeyDelay.htm">SetKeyDelay</a>·Î °áÁ¤µÇÁö ¾Ê½À´Ï´Ù).</td>
+    <td><a name="Click"></a><a href="Click.htm">Click ëª…ë ¹ì–´</a>ì™€ ê°™ì€ ì˜µì…˜ì„ ì‚¬ìš©í•˜ì—¬ ë§ˆìš°ìŠ¤ í´ë¦­ì„ ì „ì†¡í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>{Click}</code>ì€ ë§ˆìš°ìŠ¤ ì»¤ì„œì˜ í˜„ìž¬ ìœ„ì¹˜ì— ì™¼ ë§ˆìš°ìŠ¤ ë²„íŠ¼ì„ í•œ ë²ˆ í´ë¦­í•©ë‹ˆë‹¤. ê·¸ë¦¬ê³  <code>{Click 100, 200}</code>ëŠ” ì¢Œí‘œ 100, 200ì— í´ë¦­í•©ë‹ˆë‹¤ (<a href="CoordMode.htm">CoordMode</a>ì— ê¸°ë°˜). í´ë¦­ ì—†ì´ ë§ˆìš°ìŠ¤ë¥¼ ì´ë™ì‹œí‚¤ë ¤ë©´, ì¢Œí‘œ ë‹¤ìŒì— 0ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤; ì˜ˆë¥¼ ë“¤ì–´: <code>{Click 100, 200, 0}</code>. ë§ˆìš°ìŠ¤ í´ë¦­ ì‚¬ì´ì˜ ì§€ì—° ì‹œê°„ì€  <a href="SetMouseDelay.htm">SetMouseDelay</a>ë¡œ ê²°ì •ë©ë‹ˆë‹¤ (<a href="SetKeyDelay.htm">SetKeyDelay</a>ë¡œ ê²°ì •ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤).</td>
   </tr>
   <tr>
     <td align="center">{WheelDown}, {WheelUp}, {WheelLeft}, {WheelRight}, {LButton}, {RButton}, {MButton}, {XButton1}, {XButton2}</td>
-    <td>Ä¿¼­ÀÇ ÇöÀç À§Ä¡¿¡ ¸¶¿ì½º ¹öÆ° ÀÌº¥Æ®¸¦ Àü¼ÛÇÕ´Ï´Ù (À§Ä¡¿Í ±âÅ¸ ¿É¼Ç¿¡ °üÇÏ¿© ÅëÁ¦ÇÏ·Á¸é, À§ÀÇ <a href="Click.htm">{Click}</a>À» »ç¿ëÇÏ½Ê½Ã¿À). ¸¶¿ì½º Å¬¸¯ »çÀÌÀÇ Áö¿¬ ½Ã°£Àº <a href="SetMouseDelay.htm">SetMouseDelay</a>À¸·Î °áÁ¤µË´Ï´Ù. WheelLeft/Right´Â v1.0.48+À» ¿ä±¸ÇÏÁö¸¸, Windows Vista ¹Ì¸¸ÀÇ ¿î¿µ Ã¼Á¦¿¡¼­´Â ¾Æ¹« È¿°ú°¡ ¾ø½À´Ï´Ù.</td>
+    <td>ì»¤ì„œì˜ í˜„ìž¬ ìœ„ì¹˜ì— ë§ˆìš°ìŠ¤ ë²„íŠ¼ ì´ë²¤íŠ¸ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤ (ìœ„ì¹˜ì™€ ê¸°íƒ€ ì˜µì…˜ì— ê´€í•˜ì—¬ í†µì œí•˜ë ¤ë©´, ìœ„ì˜ <a href="Click.htm">{Click}</a>ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤). ë§ˆìš°ìŠ¤ í´ë¦­ ì‚¬ì´ì˜ ì§€ì—° ì‹œê°„ì€ <a href="SetMouseDelay.htm">SetMouseDelay</a>ìœ¼ë¡œ ê²°ì •ë©ë‹ˆë‹¤. WheelLeft/RightëŠ” v1.0.48+ì„ ìš”êµ¬í•˜ì§€ë§Œ, Windows Vista ë¯¸ë§Œì˜ ìš´ì˜ ì²´ì œì—ì„œëŠ” ì•„ë¬´ íš¨ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</td>
   </tr>
   <tr>
     <td align="center"><strong>{Blind}</strong></td>
-    <td><p><a name="blind"></a>¹®ÀÚ¿­¿¡¼­ {Blind}°¡ Ã¹ Ç×¸ñÀÌ¸é, ÇÁ·Î±×·¥Àº Alt/Control/Shift/Win Å°°¡ ´­¸° »óÅÂ¿¡¼­ ½ÃÀÛÇßÀ» °æ¿ì ¶¼·Á°í ÇÏÁö ¾Ê½À´Ï´Ù. ¿¹¸¦ µé¾î, ÇÖÅ° <code>+s::Send {Blind}abc</code>´Â abc°¡ ¾Æ´Ï¶ó ABC¸¦ Àü¼ÛÇÕ´Ï´Ù. ¿Ö³ÄÇÏ¸é »ç¿ëÀÚ°¡ Shift Å°¸¦ ´©¸£°í ÀÖ±â ¶§¹®ÀÔ´Ï´Ù.</p>
-      <p>{Blind}´Â ¶ÇÇÑ <a href="SetStoreCapslockMode.htm">SetStoreCapslockMode</a>¸¦ ¹«½ÃÇÕ´Ï´Ù; Áï, CapslockÀÇ »óÅÂ°¡ ¹Ù²îÁö ¾Ê½À´Ï´Ù. ¸¶Áö¸·À¸·Î, {Blind}´Â Ãß°¡ Control Å°´­¸²À» »ý·«ÇÕ´Ï´Ù; ±×·¯¹Ç·Î: 1) LWin/RWin Å°¸¦ ´­·¯µµ ½ÃÀÛ ¸Þ´º°¡ ÃË¹ßµÇÁö ¾Ê½À´Ï´Ù; 2) Alt Å°¸¦ ´­·¯µµ ¸Þ´º ¹Ù°¡ È°¼ºÈ­µÇÁö ¾Ê½À´Ï´Ù.</p>
-      <p>¸Í¸ñ-¸ðµå´Â <a href="../misc/Remap.htm">Å°¸¦ ¸®¸ÊÇÎÇÒ ¶§</a> ³»ºÎÀûÀ¸·Î »ç¿ëµË´Ï´Ù. ¿¹¸¦ µé¾î, ¸®¸ÊÇÎ <code>a::b</code>´Â: 1) &quot;a&quot;¸¦ Å¸ÀÚÇÏ¸é &quot;b&quot;¸¦ »ý»êÇÏ°í; 2) ´ë¹®ÀÚ A¸¦ Å¸ÀÚÇÏ¸é ´ë¹®ÀÚ B¸¦ »ý»êÇÏ¸ç ; ±×¸®°í 3) Control-A¸¦ Å¸ÀÚÇÏ¸é Control-B¸¦ »ý»êÇÕ´Ï´Ù.</p>
-      <p>{Blind}´Â SendRaw°ú <a href="ControlSend.htm">ControlSendRaw</a>°¡ Áö¿øÇÏÁö ¾Ê½À´Ï´Ù. °Ô´Ù°¡, <a href="#SendPlayDetail">SendPlay</a>µµ ¿Ïº®ÇÏ°Ô´Â Áö¿øÇÏÁö ¸øÇÕ´Ï´Ù. Æ¯È÷ ¼ö½Ä Å°µéÀ» ´Ù·ê ¶§ (Control, Alt, Shift, ±×¸®°í Win) Áö¿øÇÏÁö ¸øÇÕ´Ï´Ù.</p></td>
+    <td><p><a name="blind"></a>ë¬¸ìžì—´ì—ì„œ {Blind}ê°€ ì²« í•­ëª©ì´ë©´, í”„ë¡œê·¸ëž¨ì€ Alt/Control/Shift/Win í‚¤ê°€ ëˆŒë¦° ìƒíƒœì—ì„œ ì‹œìž‘í–ˆì„ ê²½ìš° ë–¼ë ¤ê³  í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, í•«í‚¤ <code>+s::Send {Blind}abc</code>ëŠ” abcê°€ ì•„ë‹ˆë¼ ABCë¥¼ ì „ì†¡í•©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì‚¬ìš©ìžê°€ Shift í‚¤ë¥¼ ëˆ„ë¥´ê³  ìžˆê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
+      <p>{Blind}ëŠ” ë˜í•œ <a href="SetStoreCapslockMode.htm">SetStoreCapslockMode</a>ë¥¼ ë¬´ì‹œí•©ë‹ˆë‹¤; ì¦‰, Capslockì˜ ìƒíƒœê°€ ë°”ë€Œì§€ ì•ŠìŠµë‹ˆë‹¤. ë§ˆì§€ë§‰ìœ¼ë¡œ, {Blind}ëŠ” ì¶”ê°€ Control í‚¤ëˆŒë¦¼ì„ ìƒëžµí•©ë‹ˆë‹¤; ê·¸ëŸ¬ë¯€ë¡œ: 1) LWin/RWin í‚¤ë¥¼ ëˆŒëŸ¬ë„ ì‹œìž‘ ë©”ë‰´ê°€ ì´‰ë°œë˜ì§€ ì•ŠìŠµë‹ˆë‹¤; 2) Alt í‚¤ë¥¼ ëˆŒëŸ¬ë„ ë©”ë‰´ ë°”ê°€ í™œì„±í™”ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
+      <p>ë§¹ëª©-ëª¨ë“œëŠ” <a href="../misc/Remap.htm">í‚¤ë¥¼ ë¦¬ë§µí•‘í•  ë•Œ</a> ë‚´ë¶€ì ìœ¼ë¡œ ì‚¬ìš©ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ë¦¬ë§µí•‘ <code>a::b</code>ëŠ”: 1) &quot;a&quot;ë¥¼ íƒ€ìží•˜ë©´ &quot;b&quot;ë¥¼ ìƒì‚°í•˜ê³ ; 2) ëŒ€ë¬¸ìž Aë¥¼ íƒ€ìží•˜ë©´ ëŒ€ë¬¸ìž Bë¥¼ ìƒì‚°í•˜ë©° ; ê·¸ë¦¬ê³  3) Control-Aë¥¼ íƒ€ìží•˜ë©´ Control-Bë¥¼ ìƒì‚°í•©ë‹ˆë‹¤.</p>
+      <p>{Blind}ëŠ” SendRawê³¼ <a href="ControlSend.htm">ControlSendRaw</a>ê°€ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, <a href="#SendPlayDetail">SendPlay</a>ë„ ì™„ë²½í•˜ê²ŒëŠ” ì§€ì›í•˜ì§€ ëª»í•©ë‹ˆë‹¤. íŠ¹ížˆ ìˆ˜ì‹ í‚¤ë“¤ì„ ë‹¤ë£° ë•Œ (Control, Alt, Shift, ê·¸ë¦¬ê³  Win) ì§€ì›í•˜ì§€ ëª»í•©ë‹ˆë‹¤.</p></td>
   </tr>
   <tr>
     <td align="center"><strong>{Raw}</strong><br>
     <span class="ver">[v1.0.43+]</span></td>
-    <td><a name="Raw" id="Raw"></a>Å°´­¸²À» º¸ÀÌ´Â ±×´ë·Î Àü¼ÛÇÕ´Ï´Ù. {Enter}¸¦ ENTER Å°´­¸²À¸·Î º¯È¯ÇÏÁö ¾Ê°í, <code>^c</code>¸¦ Control-C·Î º¯È¯ÇÏÁö ¾Ê½À´Ï´Ù, µîµî. ¹®ÀÚ¿­ {Raw}´Â ¹®ÀÚ¿­ÀÇ ½ÃÀÛºÎÅÍ ÀÏ¾î³¯ ÇÊ¿ä´Â ¾øÁö¸¸, ÀÏ´Ü ÁöÁ¤µÇ¸é, ¹®ÀÚ¿­ÀÇ ³ª¸ÓÁö¿¡ È¿°ú¸¦ À¯ÁöÇÕ´Ï´Ù.</td>
+    <td><a name="Raw" id="Raw"></a>í‚¤ëˆŒë¦¼ì„ ë³´ì´ëŠ” ê·¸ëŒ€ë¡œ ì „ì†¡í•©ë‹ˆë‹¤. {Enter}ë¥¼ ENTER í‚¤ëˆŒë¦¼ìœ¼ë¡œ ë³€í™˜í•˜ì§€ ì•Šê³ , <code>^c</code>ë¥¼ Control-Cë¡œ ë³€í™˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤, ë“±ë“±. ë¬¸ìžì—´ {Raw}ëŠ” ë¬¸ìžì—´ì˜ ì‹œìž‘ë¶€í„° ì¼ì–´ë‚  í•„ìš”ëŠ” ì—†ì§€ë§Œ, ì¼ë‹¨ ì§€ì •ë˜ë©´, ë¬¸ìžì—´ì˜ ë‚˜ë¨¸ì§€ì— íš¨ê³¼ë¥¼ ìœ ì§€í•©ë‹ˆë‹¤.</td>
   </tr>
 </table>
 
-<h2>Å°¸¦ ¹Ýº¹ÇÏ±â ¶Ç´Â Å°¸¦ ´©¸£°í ÀÖ±â</h2>
+<h2>í‚¤ë¥¼ ë°˜ë³µí•˜ê¸° ë˜ëŠ” í‚¤ë¥¼ ëˆ„ë¥´ê³  ìžˆê¸°</h2>
 <p>
-<strong>Å°¸¦ ¹Ýº¹ÇÏ·Á¸é</strong>: Å°ÀÇ ÀÌ¸§¿¡ È°°ýÈ£¸¦ µÎ¸£°í ´ÙÀ½¿¡ ¹Ýº¹ÇÒ È½¼ö¸¦ ÁöÁ¤ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
-<pre>Send {DEL 4}  <em>; Delete Å°¸¦ 4 ¹ø ´©¸¨´Ï´Ù.</em>
-Send {S 30}   <em>; ´ë¹®ÀÚ S¸¦ 30°³ Àü¼ÛÇÕ´Ï´Ù.</em>
-Send +{TAB 4}  <em>; Shift-TabÀ» 4 ¹ø ´©¸¨´Ï´Ù.</em></pre>
+<strong>í‚¤ë¥¼ ë°˜ë³µí•˜ë ¤ë©´</strong>: í‚¤ì˜ ì´ë¦„ì— í™œê´„í˜¸ë¥¼ ë‘ë¥´ê³  ë‹¤ìŒì— ë°˜ë³µí•  íšŸìˆ˜ë¥¼ ì§€ì •í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
+<pre>Send {DEL 4}  <em>; Delete í‚¤ë¥¼ 4 ë²ˆ ëˆ„ë¦…ë‹ˆë‹¤.</em>
+Send {S 30}   <em>; ëŒ€ë¬¸ìž Së¥¼ 30ê°œ ì „ì†¡í•©ë‹ˆë‹¤.</em>
+Send +{TAB 4}  <em>; Shift-Tabì„ 4 ë²ˆ ëˆ„ë¦…ë‹ˆë‹¤.</em></pre>
 <p>
-<strong>Å°¸¦ ´©¸£°í ÀÖ°Å³ª ¶¼±â</strong>: Å°ÀÇ ÀÌ¸§À» È°°ýÈ£·Î µÑ·¯½Î°í ´ÙÀ½¿¡ ´Ü¾î <strong>Down</strong> ¶Ç´Â <strong>Up</strong>À» ÁöÁ¤ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+<strong>í‚¤ë¥¼ ëˆ„ë¥´ê³  ìžˆê±°ë‚˜ ë–¼ê¸°</strong>: í‚¤ì˜ ì´ë¦„ì„ í™œê´„í˜¸ë¡œ ë‘˜ëŸ¬ì‹¸ê³  ë‹¤ìŒì— ë‹¨ì–´ <strong>Down</strong> ë˜ëŠ” <strong>Up</strong>ì„ ì§€ì •í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre>Send {b down}{b up}
 Send {TAB down}{TAB up}
-Send {Up down}  <em>; À§ È­»ìÇ¥ Å°¸¦ ´©¸¨´Ï´Ù.</em>
-Sleep 1000  <em>; 1ÃÊ µ¿¾È ´©¸£°í ÀÖ½À´Ï´Ù.</em>
-Send {Up up}  <em>; À§ È­»ìÇ¥ Å°¸¦ ¶Á´Ï´Ù.</em></pre>
+Send {Up down}  <em>; ìœ„ í™”ì‚´í‘œ í‚¤ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤.</em>
+Sleep 1000  <em>; 1ì´ˆ ë™ì•ˆ ëˆ„ë¥´ê³  ìžˆìŠµë‹ˆë‹¤.</em>
+Send {Up up}  <em>; ìœ„ í™”ì‚´í‘œ í‚¤ë¥¼ ë—ë‹ˆë‹¤.</em></pre>
 <p>
-Å°°¡ À§ÀÇ ¹æ¹ýÀ» ÅëÇÏ¿© ´­¸± ¶§, ÀÚµ¿ ¹Ýº¹À» ½ÃÀÛÇÏÁö ¾Ê½À´Ï´Ù. ¹Ý¸é¿¡ ¹°¸®ÀûÀ¸·Î Å°¸¦ ´©¸£°í ÀÖÀ¸¸é ÀÚµ¿ ¹Ýº¹À» ½ÃÀÛÇÕ´Ï´Ù (ÀÌ°ÍÀº ÀÚµ¿-¹Ýº¹ÀÌ µå¶óÀÌ¹ö/ÇÏµå¿þ¾îÀÇ Æ¯Â¡ÀÌ±â ¶§¹®ÀÔ´Ï´Ù). ±×·¸Áö¸¸, <a href="Loop.htm">Loop</a>¸¦ »ç¿ëÇÏ¸é ÀÚµ¿ ¹Ýº¹À» Èä³»³¾ ¼ö ÀÖ½À´Ï´Ù. ´ÙÀ½ ¿¹Á¦´Â 20 °³ÀÇ ÅÇ Å°´­¸²À» Àü¼ÛÇÕ´Ï´Ù:</p>
+í‚¤ê°€ ìœ„ì˜ ë°©ë²•ì„ í†µí•˜ì—¬ ëˆŒë¦´ ë•Œ, ìžë™ ë°˜ë³µì„ ì‹œìž‘í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë°˜ë©´ì— ë¬¼ë¦¬ì ìœ¼ë¡œ í‚¤ë¥¼ ëˆ„ë¥´ê³  ìžˆìœ¼ë©´ ìžë™ ë°˜ë³µì„ ì‹œìž‘í•©ë‹ˆë‹¤ (ì´ê²ƒì€ ìžë™-ë°˜ë³µì´ ë“œë¼ì´ë²„/í•˜ë“œì›¨ì–´ì˜ íŠ¹ì§•ì´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤). ê·¸ë ‡ì§€ë§Œ, <a href="Loop.htm">Loop</a>ë¥¼ ì‚¬ìš©í•˜ë©´ ìžë™ ë°˜ë³µì„ í‰ë‚´ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œëŠ” 20 ê°œì˜ íƒ­ í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•©ë‹ˆë‹¤:</p>
 <pre>Loop 20
 {
-    Send {Tab down}  <em>; ÀÚµ¿-¹Ýº¹Àº ¿¬¼ÓÀûÀÎ ´©¸£±â ÀÌº¥Æ®·Î ±¸¼ºµË´Ï´Ù (¾÷-ÀÌº¥Æ® ¾øÀ½).</em>
-    Sleep 30  <em>; Å° ´­¸² »çÀÌ¿¡ ´ë±âÇÏ´Â ¹Ð¸® ÃÊ (¶Ç´Â <a href="SetKeyDelay.htm">SetKeyDelay</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À).</em>
+    Send {Tab down}  <em>; ìžë™-ë°˜ë³µì€ ì—°ì†ì ì¸ ëˆ„ë¥´ê¸° ì´ë²¤íŠ¸ë¡œ êµ¬ì„±ë©ë‹ˆë‹¤ (ì—…-ì´ë²¤íŠ¸ ì—†ìŒ).</em>
+    Sleep 30  <em>; í‚¤ ëˆŒë¦¼ ì‚¬ì´ì— ëŒ€ê¸°í•˜ëŠ” ë°€ë¦¬ ì´ˆ (ë˜ëŠ” <a href="SetKeyDelay.htm">SetKeyDelay</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤).</em>
 }
-Send {Tab up}  <em>; Å°¸¦ ¶Á´Ï´Ù.</em></pre>
+Send {Tab up}  <em>; í‚¤ë¥¼ ë—ë‹ˆë‹¤.</em></pre>
 <p>
-´Ü¾î <em>DownTemp</em>µµ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×ÀÇ È¿°ú´Â ¼ö½Ä (Control/Shift/Alt/Win) Å°¸¦ Á¦¿ÜÇÏ°í <em>Down</em>°ú ¶È °°½À´Ï´Ù. 
+ë‹¨ì–´ <em>DownTemp</em>ë„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ì˜ íš¨ê³¼ëŠ” ìˆ˜ì‹ (Control/Shift/Alt/Win) í‚¤ë¥¼ ì œì™¸í•˜ê³  <em>Down</em>ê³¼ ë˜‘ ê°™ìŠµë‹ˆë‹¤. 
 
-±×·± °æ¿ì, <em>DownTemp</em>´Â ¿¬ÀÌÀº Àü¼Û¿¡ Å°°¡ ¿µ±¸È÷ ´­·Á ÀÖ´Â °ÍÀº ¾Æ´Ï¸ç, ±×·¯¹Ç·Î Å°´­¸²ÀÌ ¿ä±¸ÇÏ¸é ¾ðÁ¦µçÁö ¶¼¾îµµ ÁÁ´Ù°í ¾Ë·ÁÁÝ´Ï´Ù. ¿¹¸¦ µé¾î, <code>Send {Control DownTemp}</code> ´ÙÀ½¿¡ <code>Send a</code>°¡ µû¶ó¿À¸é º¸ÅëÀÇ &quot;a&quot; Å°´­¸²À» »ý»êÇÏ¸ç, control-A Å°´­¸²À» »ý»êÇÏÁö ¾Ê½À´Ï´Ù.</p>
+ê·¸ëŸ° ê²½ìš°, <em>DownTemp</em>ëŠ” ì—°ì´ì€ ì „ì†¡ì— í‚¤ê°€ ì˜êµ¬ížˆ ëˆŒë ¤ ìžˆëŠ” ê²ƒì€ ì•„ë‹ˆë©°, ê·¸ëŸ¬ë¯€ë¡œ í‚¤ëˆŒë¦¼ì´ ìš”êµ¬í•˜ë©´ ì–¸ì œë“ ì§€ ë–¼ì–´ë„ ì¢‹ë‹¤ê³  ì•Œë ¤ì¤ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Send {Control DownTemp}</code> ë‹¤ìŒì— <code>Send a</code>ê°€ ë”°ë¼ì˜¤ë©´ ë³´í†µì˜ &quot;a&quot; í‚¤ëˆŒë¦¼ì„ ìƒì‚°í•˜ë©°, control-A í‚¤ëˆŒë¦¼ì„ ìƒì‚°í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 
-<h2 id="Remarks">ÃÑÆò</h2>
+<h2 id="Remarks">ì´í‰</h2>
 <p>
-Send ¸í·É¾î°¡ Áö¿øÇÏ´Â ¹®ÀÚ¿¡ Æ¯º°ÇÑ Á¦ÇÑÀº ¾ø½À´Ï´Ù. ¹®ÀÚ°¡ ÇöÀç Å°º¸µå ·¹ÀÌ¾Æ¿ô¿¡ Á¸ÀçÇÏÁö ¾ÊÀ¸¸é, ¿ÀÅäÇÖÅ° ¹öÀü¿¡ µû¶ó  À¯´ÏÄÚµå ¹®ÀÚ ÆÐÅ¶ ¶Ç´Â <a href="#asc">Alt+nnnnn</a> Á¶ÇÕÀ» Àü¼ÛÇØ Èä³»³¾ ¼ö ÀÖ½À´Ï´Ù. À¯´ÏÄÚµå ¹®ÀÚ´Â ÅØ½ºÆ®·Î À¯´ÏÄÚµå ¹öÀüÀÇ ¿ÀÅäÇÖÅ°¿¡¼­ Á÷Á¢ÀûÀ¸·Î Áö¿øÇÕ´Ï´Ù. ¶Ç´Â ´Ù¸¥ ¹öÀüÀÌ¶ó¸é <a href="#sendu">{U+nnnn} Ç¥±â¹ý</a>À» »ç¿ëÇÏ¸é µË´Ï´Ù.</p>
+Send ëª…ë ¹ì–´ê°€ ì§€ì›í•˜ëŠ” ë¬¸ìžì— íŠ¹ë³„í•œ ì œí•œì€ ì—†ìŠµë‹ˆë‹¤. ë¬¸ìžê°€ í˜„ìž¬ í‚¤ë³´ë“œ ë ˆì´ì•„ì›ƒì— ì¡´ìž¬í•˜ì§€ ì•Šìœ¼ë©´, ì˜¤í† í•«í‚¤ ë²„ì „ì— ë”°ë¼  ìœ ë‹ˆì½”ë“œ ë¬¸ìž íŒ¨í‚· ë˜ëŠ” <a href="#asc">Alt+nnnnn</a> ì¡°í•©ì„ ì „ì†¡í•´ í‰ë‚´ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ìœ ë‹ˆì½”ë“œ ë¬¸ìžëŠ” í…ìŠ¤íŠ¸ë¡œ ìœ ë‹ˆì½”ë“œ ë²„ì „ì˜ ì˜¤í† í•«í‚¤ì—ì„œ ì§ì ‘ì ìœ¼ë¡œ ì§€ì›í•©ë‹ˆë‹¤. ë˜ëŠ” ë‹¤ë¥¸ ë²„ì „ì´ë¼ë©´ <a href="#sendu">{U+nnnn} í‘œê¸°ë²•</a>ì„ ì‚¬ìš©í•˜ë©´ ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>SendInput/SendPlay¿Í ºñ±³ÇÑ BlockInput</strong>: <a href="BlockInput.htm">BlockInput</a> ¸í·É¾î´Â »ç¿ëÀÚ°¡ ¹°¸®ÀûÀ¸·Î Å¸ÀÚÇÏ´Â Å° ´­¸²ÀÌ Èä³»³½ Å°´­¸²¿¡ ¹æÇØ¸¦ ¹ÞÁö ¾Êµµ·Ï ¸·¾Æ ÁÖÁö¸¸, Á¾Á¾ <a href="#SendInputDetail">SendInput</a>ÀÌ³ª <a href="#SendPlayDetail">SendPlay</a>¸¦ »ç¿ëÇÏ¸é ´õ ÁÁÀº °æ¿ì°¡ ÀÖ½À´Ï´Ù. Å°´­¸²°ú ¸¶¿ì½º Å¬¸¯ÀÌ ÀÎÅÍ·´Æ®°¡ ºÒ°¡´ÉÇÕ´Ï´Ù. BlockInput°ú ´Ù¸£°Ô, SendInput/Play ´Â Àü¼ÛÇÏ´Â µ¿¾È »ç¿ëÀÚ°¡ Å¸ÀÚÇÑ Å°µéÀ» ¹ö¸®Áö ¾Ê½À´Ï´Ù; ´ë½Å, ±×·± Å°µéÀº ¹öÆÛ Ã³¸®µÇ¾ú´Ù°¡ ³ªÁß¿¡ Àü¼ÛµË´Ï´Ù.</p>
+<strong>SendInput/SendPlayì™€ ë¹„êµí•œ BlockInput</strong>: <a href="BlockInput.htm">BlockInput</a> ëª…ë ¹ì–´ëŠ” ì‚¬ìš©ìžê°€ ë¬¼ë¦¬ì ìœ¼ë¡œ íƒ€ìží•˜ëŠ” í‚¤ ëˆŒë¦¼ì´ í‰ë‚´ë‚¸ í‚¤ëˆŒë¦¼ì— ë°©í•´ë¥¼ ë°›ì§€ ì•Šë„ë¡ ë§‰ì•„ ì£¼ì§€ë§Œ, ì¢…ì¢… <a href="#SendInputDetail">SendInput</a>ì´ë‚˜ <a href="#SendPlayDetail">SendPlay</a>ë¥¼ ì‚¬ìš©í•˜ë©´ ë” ì¢‹ì€ ê²½ìš°ê°€ ìžˆìŠµë‹ˆë‹¤. í‚¤ëˆŒë¦¼ê³¼ ë§ˆìš°ìŠ¤ í´ë¦­ì´ ì¸í„°ëŸ½íŠ¸ê°€ ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤. BlockInputê³¼ ë‹¤ë¥´ê²Œ, SendInput/Play ëŠ” ì „ì†¡í•˜ëŠ” ë™ì•ˆ ì‚¬ìš©ìžê°€ íƒ€ìží•œ í‚¤ë“¤ì„ ë²„ë¦¬ì§€ ì•ŠìŠµë‹ˆë‹¤; ëŒ€ì‹ , ê·¸ëŸ° í‚¤ë“¤ì€ ë²„í¼ ì²˜ë¦¬ë˜ì—ˆë‹¤ê°€ ë‚˜ì¤‘ì— ì „ì†¡ë©ë‹ˆë‹¤.</p>
 <p>
-¾öÃ»³ª°Ô ¸¹Àº Å°´­¸²À» Àü¼ÛÇÒ °æ¿ì, <a href="../Scripts.htm#continuation">°è¼Ó ¼½¼Ç</a>À» »ç¿ëÇÏ¸é °¡µ¶¼º°ú À¯Áö°ü¸®¼ºÀ» °³¼±ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ì—„ì²­ë‚˜ê²Œ ë§Žì€ í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•  ê²½ìš°, <a href="../Scripts.htm#continuation">ê³„ì† ì„¹ì…˜</a>ì„ ì‚¬ìš©í•˜ë©´ ê°€ë…ì„±ê³¼ ìœ ì§€ê´€ë¦¬ì„±ì„ ê°œì„ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-¿î¿µ Ã¼Á¦´Â CTRL-ALT-DELETE Á¶ÇÕÀ» Çã¿ëÇÏÁö ¾Ê±â ¶§¹®¿¡, <code>Send ^!{Delete}</code>¿Í °°ÀÌ ÇÏ´õ¶óµµ ¾Æ¹« È¿°ú°¡ ¾ø½À´Ï´Ù.</p>
+ìš´ì˜ ì²´ì œëŠ” CTRL-ALT-DELETE ì¡°í•©ì„ í—ˆìš©í•˜ì§€ ì•Šê¸° ë•Œë¬¸ì—, <code>Send ^!{Delete}</code>ì™€ ê°™ì´ í•˜ë”ë¼ë„ ì•„ë¬´ íš¨ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</p>
 <p>
-<b>Send´Â ¾Æ¹« È¿°ú°¡ ¾øÀ» ¼ö ÀÖ½À´Ï´Ù</b> Windows Vista ÀÌÈÄ È°¼º Ã¢ÀÌ °ü¸®ÀÚ ±ÇÇÑÀ¸·Î ½ÇÇàÁßÀÎµ¥ ½ºÅ©¸³Æ®´Â °ü¸®ÀÚ ±ÇÇÑÀÌ ¾øÀ¸¸é ±×·¸½À´Ï´Ù. ÀÌ°ÍÀº »ç¿ëÀÚ ÀÎÅÍÆäÀÌ½º ±ÇÇÑ °Ý¸®(User Interface Privilege Isolation) º¸¾È ¸ÅÄ¿´ÏÁò ¶§¹®ÀÔ´Ï´Ù.</p>
+<b>SendëŠ” ì•„ë¬´ íš¨ê³¼ê°€ ì—†ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤</b> Windows Vista ì´í›„ í™œì„± ì°½ì´ ê´€ë¦¬ìž ê¶Œí•œìœ¼ë¡œ ì‹¤í–‰ì¤‘ì¸ë° ìŠ¤í¬ë¦½íŠ¸ëŠ” ê´€ë¦¬ìž ê¶Œí•œì´ ì—†ìœ¼ë©´ ê·¸ë ‡ìŠµë‹ˆë‹¤. ì´ê²ƒì€ ì‚¬ìš©ìž ì¸í„°íŽ˜ì´ìŠ¤ ê¶Œí•œ ê²©ë¦¬(User Interface Privilege Isolation) ë³´ì•ˆ ë§¤ì»¤ë‹ˆì¦˜ ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 
 <h2 id="SendInputDetail">SendInput <span class="ver">[v1.0.43+]</span></h2>
 <p>
-SendInputÀº ÀÏ¹ÝÀûÀ¸·Î Å°´­¸²°ú ¸¶¿ì½º Å¬¸¯À» Àü¼ÛÇÏ´Â µ¥ ¼±È£µÇ´Â ¹æ¹ýÀÔ´Ï´Ù. ¿Ö³ÄÇÏ¸é ¼Óµµ°¡ ¿ùµîÇÏ°í ½Å·Ú¼ºÀÌ ÀÖ±â ¶§¹®ÀÔ´Ï´Ù. ´ëºÎºÐÀÇ »óÈ²¿¡¼­, SendInputÀº °ÅÀÇ Áï½Ã ½ÇÇàµË´Ï´Ù. ±â´Ù¶õ ¹®ÀÚ¿­À» º¸³»µµ ¼ø½Ä°£ÀÔ´Ï´Ù. SendInputÀº ºü¸£±â ¶§¹®¿¡, ´õ ½Å·Ú¼ºÀÌ ÀÖ½À´Ï´Ù. ¿Ö³ÄÇÏ¸é ´Ù¸¥ Ã¢ÀÌ ÀÇµµÄ¡ ¾Ê°Ô ³ªÅ¸³ª°Å³ª Å°´­¸²À» °¡·Î Ã¤´Â ºóµµ°¡ ÁÙ¾îµé±â ¶§¹®ÀÔ´Ï´Ù. SendInput µ¿¾È¿¡ »ç¿ëÀÚ°¡ Å¸ÀÚÇÏ¸é ¿¬±âµÇ¾ú´Ù°¡ ³ªÁß¿¡ Ã³¸®µÇ¹Ç·Î ½Å·Ú¼ºÀº ´õ¿í °³¼±µË´Ï´Ù.</p>
+SendInputì€ ì¼ë°˜ì ìœ¼ë¡œ í‚¤ëˆŒë¦¼ê³¼ ë§ˆìš°ìŠ¤ í´ë¦­ì„ ì „ì†¡í•˜ëŠ” ë° ì„ í˜¸ë˜ëŠ” ë°©ë²•ìž…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì†ë„ê°€ ì›”ë“±í•˜ê³  ì‹ ë¢°ì„±ì´ ìžˆê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ëŒ€ë¶€ë¶„ì˜ ìƒí™©ì—ì„œ, SendInputì€ ê±°ì˜ ì¦‰ì‹œ ì‹¤í–‰ë©ë‹ˆë‹¤. ê¸°ë‹¤ëž€ ë¬¸ìžì—´ì„ ë³´ë‚´ë„ ìˆœì‹ê°„ìž…ë‹ˆë‹¤. SendInputì€ ë¹ ë¥´ê¸° ë•Œë¬¸ì—, ë” ì‹ ë¢°ì„±ì´ ìžˆìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ ë‹¤ë¥¸ ì°½ì´ ì˜ë„ì¹˜ ì•Šê²Œ ë‚˜íƒ€ë‚˜ê±°ë‚˜ í‚¤ëˆŒë¦¼ì„ ê°€ë¡œ ì±„ëŠ” ë¹ˆë„ê°€ ì¤„ì–´ë“¤ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. SendInput ë™ì•ˆì— ì‚¬ìš©ìžê°€ íƒ€ìží•˜ë©´ ì—°ê¸°ë˜ì—ˆë‹¤ê°€ ë‚˜ì¤‘ì— ì²˜ë¦¬ë˜ë¯€ë¡œ ì‹ ë¢°ì„±ì€ ë”ìš± ê°œì„ ë©ë‹ˆë‹¤.</p>
 <p>
-´Ù¸¥ Àü¼Û ¸ðµå¿Í ´Ù¸£°Ô, ¿î¿µ Ã¼Á¦´Â SendInputÀ» ´ë·« 5000 ¹®ÀÚ·Î Á¦ÇÑÇÕ´Ï´Ù (ÀÌ °ªÀº ¿î¿µ Ã¼Á¦ÀÇ ¹öÀü°ú ¼öÇà¼º´É ¼³Á¤¿¡ µû¶ó ´Þ¶óÁý´Ï´Ù). ÀÌ Á¦ÇÑÀ» ³Ñ¾î¼­ ¹®ÀÚµé°ú ÀÌº¥Æ®µéÀº Àü¼ÛµÇÁö ¾Ê½À´Ï´Ù.</p>
+ë‹¤ë¥¸ ì „ì†¡ ëª¨ë“œì™€ ë‹¤ë¥´ê²Œ, ìš´ì˜ ì²´ì œëŠ” SendInputì„ ëŒ€ëžµ 5000 ë¬¸ìžë¡œ ì œí•œí•©ë‹ˆë‹¤ (ì´ ê°’ì€ ìš´ì˜ ì²´ì œì˜ ë²„ì „ê³¼ ìˆ˜í–‰ì„±ëŠ¥ ì„¤ì •ì— ë”°ë¼ ë‹¬ë¼ì§‘ë‹ˆë‹¤). ì´ ì œí•œì„ ë„˜ì–´ì„œ ë¬¸ìžë“¤ê³¼ ì´ë²¤íŠ¸ë“¤ì€ ì „ì†¡ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>ÁÖÀÇ:</strong> SendInputÀº SetKeyDelay¸¦ ¹«½ÃÇÕ´Ï´Ù. ¿Ö³ÄÇÏ¸é ¿î¿µ Ã¼Á¦°¡ ÀÌ ¸ðµå¿¡¼­´Â Áö¿¬ ½Ã°£À» Áö¿øÇÏÁö ¾Ê±â ¶§¹®ÀÔ´Ï´Ù. ±×·¸Áö¸¸, ¾Æ·¡¿¡ ±â¼úÇÑ »óÈ² ¾Æ·¡¿¡¼­ SendInputÀº <a href="#SendEvent">SendEvent</a>¿¡ ÀÇÁ¸ÇÕ´Ï´Ù. SendEvent´Â <code><a href="SetKeyDelay.htm">SetKeyDelay -1, 0</a></code>¸¦ »ç¿ëÇÕ´Ï´Ù 
+<strong>ì£¼ì˜:</strong> SendInputì€ SetKeyDelayë¥¼ ë¬´ì‹œí•©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ìš´ì˜ ì²´ì œê°€ ì´ ëª¨ë“œì—ì„œëŠ” ì§€ì—° ì‹œê°„ì„ ì§€ì›í•˜ì§€ ì•Šê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì•„ëž˜ì— ê¸°ìˆ í•œ ìƒí™© ì•„ëž˜ì—ì„œ SendInputì€ <a href="#SendEvent">SendEvent</a>ì— ì˜ì¡´í•©ë‹ˆë‹¤. SendEventëŠ” <code><a href="SetKeyDelay.htm">SetKeyDelay -1, 0</a></code>ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤ 
 
-(´Ü, SendEventÀÇ Å° Áö¿¬½Ã°£ÀÌ(KeyDelay) <code>-1,-1</code>ÀÎ °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù. ÀÌ °æ¿ì´Â <code>-1,-1</code>ÀÌ »ç¿ëµË´Ï´Ù). 
+(ë‹¨, SendEventì˜ í‚¤ ì§€ì—°ì‹œê°„ì´(KeyDelay) <code>-1,-1</code>ì¸ ê²½ìš°ëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤. ì´ ê²½ìš°ëŠ” <code>-1,-1</code>ì´ ì‚¬ìš©ë©ë‹ˆë‹¤). 
 
-SendInputÀÌ <a href="#SendPlayDetail">SendPlay</a>¿¡ ÀÇÁ¸ÇÒ ¶§, SendPlayÀÇ Å° Áö¿¬½Ã°£(KeyDelay)À» »ç¿ëÇÕ´Ï´Ù.</p>
+SendInputì´ <a href="#SendPlayDetail">SendPlay</a>ì— ì˜ì¡´í•  ë•Œ, SendPlayì˜ í‚¤ ì§€ì—°ì‹œê°„(KeyDelay)ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.</p>
 <p>
-<a name="SendInputUnavail"></a>SendInputÀ» ½ÇÇàÇÏ´Â ½ºÅ©¸³Æ®¿¡ <a href="_InstallKeybdHook.htm">Àú-¼öÁØ Å°º¸µå °¥°í¸®</a>°¡ ¼³Ä¡µÇ¾î ÀÖ´Ù¸é, SendInputÀº ÀÚµ¿À¸·Î <a href="#SendEvent">SendEvent</a>¿¡ ÀÇÁ¸ÇÕ´Ï´Ù (¾Æ´Ï¸é <a href="SendMode.htm"><code>SendMode InputThenPlay</code></a>°¡ ÄÑÁ® ÀÖÀ» °æ¿ì¶ó¸é <a href="#SendPlayDetail">SendPlay</a>¿¡ ÀÇÁ¸ÇÕ´Ï´Ù). ¿ÜºÎ °¥°í¸®ÀÇ Á¸Àç ¶§¹®¿¡ SendInputÀÇ ¸ðµç ÀåÁ¡ÀÌ °¡·ÁÁý´Ï´Ù. ±× ¶§¹®¿¡ SendPlay¿Í SendEvent¿¡ ºñÇØ ¿­µîÇÕ´Ï´Ù. ±×·¸Áö¸¸, SendInputÀº AutoHotkey v1.0.43+ÀÌ ¾Æ´Ï¶ó¸é Àú-¼öÁØ °¥°í¸®¸¦ Å½ÁöÇÒ ¼ö ¾ø±â ¶§¹®¿¡, ÀÌ·± °æ¿ì´Â ÀÇÁ¸ÇÒ °ÍÀÌ ¾øÀ¸¹Ç·Î SendPlay/Event º¸´Ù ½Å·Ú¼ºÀÌ ´õ ¶³¾îÁý´Ï´Ù.</p>
+<a name="SendInputUnavail"></a>SendInputì„ ì‹¤í–‰í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸ì— <a href="_InstallKeybdHook.htm">ì €-ìˆ˜ì¤€ í‚¤ë³´ë“œ ê°ˆê³ ë¦¬</a>ê°€ ì„¤ì¹˜ë˜ì–´ ìžˆë‹¤ë©´, SendInputì€ ìžë™ìœ¼ë¡œ <a href="#SendEvent">SendEvent</a>ì— ì˜ì¡´í•©ë‹ˆë‹¤ (ì•„ë‹ˆë©´ <a href="SendMode.htm"><code>SendMode InputThenPlay</code></a>ê°€ ì¼œì ¸ ìžˆì„ ê²½ìš°ë¼ë©´ <a href="#SendPlayDetail">SendPlay</a>ì— ì˜ì¡´í•©ë‹ˆë‹¤). ì™¸ë¶€ ê°ˆê³ ë¦¬ì˜ ì¡´ìž¬ ë•Œë¬¸ì— SendInputì˜ ëª¨ë“  ìž¥ì ì´ ê°€ë ¤ì§‘ë‹ˆë‹¤. ê·¸ ë•Œë¬¸ì— SendPlayì™€ SendEventì— ë¹„í•´ ì—´ë“±í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, SendInputì€ AutoHotkey v1.0.43+ì´ ì•„ë‹ˆë¼ë©´ ì €-ìˆ˜ì¤€ ê°ˆê³ ë¦¬ë¥¼ íƒì§€í•  ìˆ˜ ì—†ê¸° ë•Œë¬¸ì—, ì´ëŸ° ê²½ìš°ëŠ” ì˜ì¡´í•  ê²ƒì´ ì—†ìœ¼ë¯€ë¡œ SendPlay/Event ë³´ë‹¤ ì‹ ë¢°ì„±ì´ ë” ë–¨ì–´ì§‘ë‹ˆë‹¤.</p>
 <p>
-SendInputÀÌ <a href="#Click">{Click}</a>¿Í °°Àº ¼ö´ÜÀ» ÅëÇÏ¿© ¸¶¿ì½º Å¬¸¯À» Àü¼ÛÇÒ ¶§ ±×¸®°í <a href="SetMouseDelay.htm"><code>CoordMode Mouse, Relative</code></a>°¡ ÄÑÁ® ÀÖÀ» ¶§ (±âº»°ª), ¸ðµç Å¬¸¯Àº Àü¼ÛÀÌ ½ÃÀÛµÉ ¶§ È°¼ºÈ­ µÈ Ã¢¿¡ »ó´ëÀûÀÔ´Ï´Ù. ±×·¯¹Ç·Î, SendInputÀÌ ÀÇµµÀûÀ¸·Î (¾ËÆ®-ÅÇ °°Àº ¼ö´ÜÀ¸·Î) ¶Ç´Ù¸¥ Ã¢À» È°¼ºÈ­ÇÏ¸é, °°Àº ¸í·É¾î ¾È¿¡¼­ ¿¬ÀÌÀº Å¬¸¯ÀÇ ÁÂÇ¥µéÀº ¿À·ù°¡ ÀÏ¾î³³´Ï´Ù. ¿Ö³ÄÇÏ¸é ¿©ÀüÈ÷ »õ Ã¢ÀÌ ¾Æ´Ï¶ó ¿¹Àü Ã¢¿¡ »ó´ëÀûÀÌ±â ¶§¹®ÀÔ´Ï´Ù.</p>
+SendInputì´ <a href="#Click">{Click}</a>ì™€ ê°™ì€ ìˆ˜ë‹¨ì„ í†µí•˜ì—¬ ë§ˆìš°ìŠ¤ í´ë¦­ì„ ì „ì†¡í•  ë•Œ ê·¸ë¦¬ê³  <a href="SetMouseDelay.htm"><code>CoordMode Mouse, Relative</code></a>ê°€ ì¼œì ¸ ìžˆì„ ë•Œ (ê¸°ë³¸ê°’), ëª¨ë“  í´ë¦­ì€ ì „ì†¡ì´ ì‹œìž‘ë  ë•Œ í™œì„±í™” ëœ ì°½ì— ìƒëŒ€ì ìž…ë‹ˆë‹¤. ê·¸ëŸ¬ë¯€ë¡œ, SendInputì´ ì˜ë„ì ìœ¼ë¡œ (ì•ŒíŠ¸-íƒ­ ê°™ì€ ìˆ˜ë‹¨ìœ¼ë¡œ) ë˜ë‹¤ë¥¸ ì°½ì„ í™œì„±í™”í•˜ë©´, ê°™ì€ ëª…ë ¹ì–´ ì•ˆì—ì„œ ì—°ì´ì€ í´ë¦­ì˜ ì¢Œí‘œë“¤ì€ ì˜¤ë¥˜ê°€ ì¼ì–´ë‚©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì—¬ì „ížˆ ìƒˆ ì°½ì´ ì•„ë‹ˆë¼ ì˜ˆì „ ì°½ì— ìƒëŒ€ì ì´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 
 <h2 id="SendPlayDetail">SendPlay <span class="ver">[v1.0.43+]</span></h2>
 <p>
-SendPlayÀÇ °¡Àå Å« ÀåÁ¡Àº ´Ù¸¥ ¸ðµå¿Í ´Ù¸£°Ô ±¤¹üÀ§ÇÑ °ÔÀÓ¿¡¼­ ¸¶¿ì½º Å¬¸¯°ú Å°´­¸²À» &quot;Àç½Ã¿¬&quot;ÇÒ ¼ö ÀÖ´Ù´Â °ÍÀÔ´Ï´Ù. ¿¹¸¦ µé¾î, Æ¯Á¤ÇÑ °ÔÀÓÀº ¿ÀÁ÷ <a href="../Hotstrings.htm#SendMode">SendPlay ¿É¼ÇÀÌ</a>ÀÌ ÀÖÀ» °æ¿ì¿¡¸¸ <a href="../Hotstrings.htm#SendMode">ÇÖ½ºÆ®¸µ</a>À» ¹Þ¾Æ µéÀÔ´Ï´Ù. ±×·¸Áö¸¸, SendPlay´Â Windows Vista ÀÌÈÄ¿¡¼­ »ç¿ëÀÚ °èÁ¤ ÅëÁ¦(User Account Control)°¡ ÄÑÁ® ÀÖÀ¸¸é, ¾Æ¹« È¿°ú°¡ ¾ø½À´Ï´Ù. ½ºÅ©¸³Æ®°¡ »ç¿ëÀÚ ±ÇÇÑÀ¸·Î ½ÇÇàµÇ¾îµµ ¸¶Âù°¡ÁöÀÔ´Ï´Ù. ´ÙÀ½ ½ºÅ©¸³Æ®´Â ÀÌ ¹®Á¦ÀÇ ¿ìÈ¸Ã¥À» Á¦°øÇÕ´Ï´Ù: <a href="http://www.autohotkey.com/forum/topic75595.html">http://www.autohotkey.com/forum/topic75595.html</a>.</p>
+SendPlayì˜ ê°€ìž¥ í° ìž¥ì ì€ ë‹¤ë¥¸ ëª¨ë“œì™€ ë‹¤ë¥´ê²Œ ê´‘ë²”ìœ„í•œ ê²Œìž„ì—ì„œ ë§ˆìš°ìŠ¤ í´ë¦­ê³¼ í‚¤ëˆŒë¦¼ì„ &quot;ìž¬ì‹œì—°&quot;í•  ìˆ˜ ìžˆë‹¤ëŠ” ê²ƒìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, íŠ¹ì •í•œ ê²Œìž„ì€ ì˜¤ì§ <a href="../Hotstrings.htm#SendMode">SendPlay ì˜µì…˜ì´</a>ì´ ìžˆì„ ê²½ìš°ì—ë§Œ <a href="../Hotstrings.htm#SendMode">í•«ìŠ¤íŠ¸ë§</a>ì„ ë°›ì•„ ë“¤ìž…ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, SendPlayëŠ” Windows Vista ì´í›„ì—ì„œ ì‚¬ìš©ìž ê³„ì • í†µì œ(User Account Control)ê°€ ì¼œì ¸ ìžˆìœ¼ë©´, ì•„ë¬´ íš¨ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤. ìŠ¤í¬ë¦½íŠ¸ê°€ ì‚¬ìš©ìž ê¶Œí•œìœ¼ë¡œ ì‹¤í–‰ë˜ì–´ë„ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤. ë‹¤ìŒ ìŠ¤í¬ë¦½íŠ¸ëŠ” ì´ ë¬¸ì œì˜ ìš°íšŒì±…ì„ ì œê³µí•©ë‹ˆë‹¤: <a href="http://www.autohotkey.com/forum/topic75595.html">http://www.autohotkey.com/forum/topic75595.html</a>.</p>
 <p>
-¼¼ °¡Áö Àü¼Û ¸ðµå Áß¿¡¼­, SendPlay°¡ °¡Àå ÀÌ»óÇÕ´Ï´Ù. ¿Ö³ÄÇÏ¸é Å°´­¸²°ú ¸¶¿ì½º Å¬¸¯À» »ç½Ç»ó Èä³»³»Áö ¾Ê±â ¶§¹®ÀÔ´Ï´Ù. ´ë½Å¿¡, ÀÏ·ÃÀÇ ÀÌº¥Æ® (¸Þ½ÃÁö)¸¦ ¸¸µé¾î ³À´Ï´Ù. ±× ¸Þ½ÃÁöµéÀÌ È°¼º Ã¢À¸·Î Á÷Á¢ Èê·¯ µé¾î°©´Ï´Ù (<a href="ControlSend.htm">ControlSend</a>¿Í ºñ½ÁÇÏ°Ô, ±×·¯³ª ³·Àº ¼öÁØ¿¡¼­). °á°úÀûÀ¸·Î, SendPlay´Â ÇÖÅ°³ª ÇÖÆ®¸µÀ» ÃË¹ß½ÃÅ°Áö ¾Ê½À´Ï´Ù.</p>
+ì„¸ ê°€ì§€ ì „ì†¡ ëª¨ë“œ ì¤‘ì—ì„œ, SendPlayê°€ ê°€ìž¥ ì´ìƒí•©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ í‚¤ëˆŒë¦¼ê³¼ ë§ˆìš°ìŠ¤ í´ë¦­ì„ ì‚¬ì‹¤ìƒ í‰ë‚´ë‚´ì§€ ì•Šê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ëŒ€ì‹ ì—, ì¼ë ¨ì˜ ì´ë²¤íŠ¸ (ë©”ì‹œì§€)ë¥¼ ë§Œë“¤ì–´ ëƒ…ë‹ˆë‹¤. ê·¸ ë©”ì‹œì§€ë“¤ì´ í™œì„± ì°½ìœ¼ë¡œ ì§ì ‘ í˜ëŸ¬ ë“¤ì–´ê°‘ë‹ˆë‹¤ (<a href="ControlSend.htm">ControlSend</a>ì™€ ë¹„ìŠ·í•˜ê²Œ, ê·¸ëŸ¬ë‚˜ ë‚®ì€ ìˆ˜ì¤€ì—ì„œ). ê²°ê³¼ì ìœ¼ë¡œ, SendPlayëŠ” í•«í‚¤ë‚˜ í•«íŠ¸ë§ì„ ì´‰ë°œì‹œí‚¤ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="#SendInputDetail">SendInput</a>Ã³·³, SendPlayÀÇ Å°´­¸²Àº »ç¿ëÀÚ°¡ Å¸ÀÚÇÑ Å°´­¸² ¶§¹®¿¡ Èð¾îÁöÁö ¾Ê½À´Ï´Ù. ±×·¡¼­, »ç¿ëÀÚ°¡ ¾îÂ¼´Ù°¡ SendPlay Áß¿¡ Å¸ÀÚ¸¦ ÇÏ´õ¶óµµ, ±×·± Å°´­¸²Àº ¿¬±âµÇ¾ú´Ù°¡ ³ªÁß¿¡ Ã³¸®µË´Ï´Ù.</p>
+<a href="#SendInputDetail">SendInput</a>ì²˜ëŸ¼, SendPlayì˜ í‚¤ëˆŒë¦¼ì€ ì‚¬ìš©ìžê°€ íƒ€ìží•œ í‚¤ëˆŒë¦¼ ë•Œë¬¸ì— í©ì–´ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤. ê·¸ëž˜ì„œ, ì‚¬ìš©ìžê°€ ì–´ì©Œë‹¤ê°€ SendPlay ì¤‘ì— íƒ€ìžë¥¼ í•˜ë”ë¼ë„, ê·¸ëŸ° í‚¤ëˆŒë¦¼ì€ ì—°ê¸°ë˜ì—ˆë‹¤ê°€ ë‚˜ì¤‘ì— ì²˜ë¦¬ë©ë‹ˆë‹¤.</p>
 <p>
-SendPlay´Â SendInput¿¡ ºñÇØ »ó´çÈ÷ ´À¸³´Ï´Ù. ±×·¯³ª º¸Åë  ÀüÅëÀûÀÎ <a href="#SendEvent">SendEvent</a> ¸ðµå º¸´Ù´Â ºü¸¨´Ï´Ù (<a href="SetKeyDelay.htm">KeyDelay</a>°¡ -1ÀÏ °æ¿ì¿¡µµ ¸¶Âù°¡ÁöÀÔ´Ï´Ù).</p>
+SendPlayëŠ” SendInputì— ë¹„í•´ ìƒë‹¹ížˆ ëŠë¦½ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ë³´í†µ  ì „í†µì ì¸ <a href="#SendEvent">SendEvent</a> ëª¨ë“œ ë³´ë‹¤ëŠ” ë¹ ë¦…ë‹ˆë‹¤ (<a href="SetKeyDelay.htm">KeyDelay</a>ê°€ -1ì¼ ê²½ìš°ì—ë„ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤).</p>
 <p>
-Windows Å° (LWin ±×¸®°í RWin)´Â  <a href="_InstallKeybdHook.htm">Å°º¸µå °¥°í¸®</a>°¡ ¼³Ä¡µÇ¾î ÀÖÀ¸¸é SendPlay µ¿¾È ÀÚµ¿À¸·Î ¸·Èü´Ï´Ù. ÀÌ ´öºÐ¿¡ Àü¼ÛÇÏ´Â µ¿¾È¿¡ »ç¿ëÀÚ°¡ ¿ì¹ßÀûÀ¸·Î Windows Å°¸¦ ´­·¯µµ ½ÃÀÛ ¸Þ´º°¡ ³ªÅ¸³ªÁö ¾Ê½À´Ï´Ù. ´ëÁ¶ÀûÀ¸·Î, LWin¿Í RWin ¸»°í ´Ù¸¥ Å°µéÀº ¸·¾ÆÁÙ ÇÊ¿ä°¡ ÀÖ½À´Ï´Ù. ¿Ö³ÄÇÏ¸é ¿î¿µ Ã¼Á¦°¡ ÀÚµ¿À¸·Î Å°µéÀ» (¹öÆÛ Ã³¸®ÇÏ¿©) SendPlay°¡ ³¡³¯ ¶§±îÁö ¿¬±âÇØ ÁÖ±â ¶§¹®ÀÔ´Ï´Ù.</p>
+Windows í‚¤ (LWin ê·¸ë¦¬ê³  RWin)ëŠ”  <a href="_InstallKeybdHook.htm">í‚¤ë³´ë“œ ê°ˆê³ ë¦¬</a>ê°€ ì„¤ì¹˜ë˜ì–´ ìžˆìœ¼ë©´ SendPlay ë™ì•ˆ ìžë™ìœ¼ë¡œ ë§‰íž™ë‹ˆë‹¤. ì´ ë•ë¶„ì— ì „ì†¡í•˜ëŠ” ë™ì•ˆì— ì‚¬ìš©ìžê°€ ìš°ë°œì ìœ¼ë¡œ Windows í‚¤ë¥¼ ëˆŒëŸ¬ë„ ì‹œìž‘ ë©”ë‰´ê°€ ë‚˜íƒ€ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ëŒ€ì¡°ì ìœ¼ë¡œ, LWinì™€ RWin ë§ê³  ë‹¤ë¥¸ í‚¤ë“¤ì€ ë§‰ì•„ì¤„ í•„ìš”ê°€ ìžˆìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ ìš´ì˜ ì²´ì œê°€ ìžë™ìœ¼ë¡œ í‚¤ë“¤ì„ (ë²„í¼ ì²˜ë¦¬í•˜ì—¬) SendPlayê°€ ëë‚  ë•Œê¹Œì§€ ì—°ê¸°í•´ ì£¼ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 <p>
-SendPlay´Â SetKeyDelay¿Í SetMouseDelayÀÇ Ç¥ÁØ ¼³Á¤À» »ç¿ëÇÏÁö ¾Ê½À´Ï´Ù. ´ë½Å¿¡, ±âº»°ªÀ¸·Î ÀüÇô ´ë±â ½Ã°£ÀÌ ¾ø½À´Ï´Ù. ÀÌ ´ë±â ½Ã°£Àº ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù:</p>
+SendPlayëŠ” SetKeyDelayì™€ SetMouseDelayì˜ í‘œì¤€ ì„¤ì •ì„ ì‚¬ìš©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ëŒ€ì‹ ì—, ê¸°ë³¸ê°’ìœ¼ë¡œ ì „í˜€ ëŒ€ê¸° ì‹œê°„ì´ ì—†ìŠµë‹ˆë‹¤. ì´ ëŒ€ê¸° ì‹œê°„ì€ ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 
-<pre><a href="SetKeyDelay.htm">SetKeyDelay</a>, 0, 10, <strong>Play</strong>  <em>; SendPlay ¸ðµå¿¡¼­´Â 0°ú -1ÀÌ °°À½À» ÁÖ¸ñÇÏ½Ê½Ã¿À.</em>
+<pre><a href="SetKeyDelay.htm">SetKeyDelay</a>, 0, 10, <strong>Play</strong>  <em>; SendPlay ëª¨ë“œì—ì„œëŠ” 0ê³¼ -1ì´ ê°™ìŒì„ ì£¼ëª©í•˜ì‹­ì‹œì˜¤.</em>
 <a href="SetMouseDelay.htm">SetMouseDelay</a>, 10, <strong>Play</strong></pre>
 <p>
-SendPlay´Â Capslock, Numlock, ¶Ç´Â Scroll-lock Å°¸¦ ÄÑ°í ²ø ¼ö ¾ø½À´Ï´Ù. ºñ½ÁÇÏ°Ô, <a href="GetKeyState.htm">GetKeyState</a>·Î º¸ÀÌ´Â Å°ÀÇ »óÅÂ¸¦ ¹Ù²Ü ¼ö ¾ø½À´Ï´Ù.
-´Ü, ±× Å°´­¸²µéÀÌ ½ºÅ©¸³Æ®ÀÇ Ã¢ Áß¿¡ ÇÏ³ª·Î Àü¼ÛµÈ´Ù¸é ¿¹¿ÜÀÔ´Ï´Ù. ±× ¶§±îÁö, ¿ÞÂÊ/¿À¸¥ÂÊ ¼ö½ÄÅ°¿¡ º¯È­°¡ ÀÖ´Ù¸é (¿¹, RControl) ¿ÀÁ÷ ÁÂ¿ì ±¸ºÐ ¾ø´Â ¼ö½ÄÅ°¸¦ ÅëÇØ¼­¸¸ Å½ÁöÇÒ ¼ö ÀÖ½À´Ï´Ù (¿¹, Control). ¶Ç, SendPlay´Â <a href="SendMode.htm#Play">SendMode ÆäÀÌÁö</a>¿¡ ±â¼úµÈ ´Ù¸¥ Á¦ÇÑµµ ÀÖ½À´Ï´Ù.</p>
+SendPlayëŠ” Capslock, Numlock, ë˜ëŠ” Scroll-lock í‚¤ë¥¼ ì¼œê³  ëŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, <a href="GetKeyState.htm">GetKeyState</a>ë¡œ ë³´ì´ëŠ” í‚¤ì˜ ìƒíƒœë¥¼ ë°”ê¿€ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.
+ë‹¨, ê·¸ í‚¤ëˆŒë¦¼ë“¤ì´ ìŠ¤í¬ë¦½íŠ¸ì˜ ì°½ ì¤‘ì— í•˜ë‚˜ë¡œ ì „ì†¡ëœë‹¤ë©´ ì˜ˆì™¸ìž…ë‹ˆë‹¤. ê·¸ ë•Œê¹Œì§€, ì™¼ìª½/ì˜¤ë¥¸ìª½ ìˆ˜ì‹í‚¤ì— ë³€í™”ê°€ ìžˆë‹¤ë©´ (ì˜ˆ, RControl) ì˜¤ì§ ì¢Œìš° êµ¬ë¶„ ì—†ëŠ” ìˆ˜ì‹í‚¤ë¥¼ í†µí•´ì„œë§Œ íƒì§€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì˜ˆ, Control). ë˜, SendPlayëŠ” <a href="SendMode.htm#Play">SendMode íŽ˜ì´ì§€</a>ì— ê¸°ìˆ ëœ ë‹¤ë¥¸ ì œí•œë„ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="#SendInputDetail">SendInput</a> ±×¸®°í <a href="#SendEvent">SendEvent</a>°ú ´Ù¸£°Ô, »ç¿ëÀÚ´Â Control-Alt-DelÀÌ³ª Control-Escape¸¦ ´­·¯¼­ SendPlay¸¦ ÀÎÅÍ·´Æ®ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·± ÀÏÀÌ ÀÏ¾î³¯ ¶§, ³ª¸ÓÁö Å°´­¸²Àº Àü¼ÛµÇÁö ¾ÊÁö¸¸ ½ºÅ©¸³Æ®¸¥ ¸¶Ä¡ SendPlay°¡ Á¤»óÀûÀ¸·Î Àü¼ÛÀ» ¿Ï·áÇÑ °ÍÃ³·³ ½ÇÇàÀ» °è¼ÓÇÕ´Ï´Ù.</p>
+<a href="#SendInputDetail">SendInput</a> ê·¸ë¦¬ê³  <a href="#SendEvent">SendEvent</a>ê³¼ ë‹¤ë¥´ê²Œ, ì‚¬ìš©ìžëŠ” Control-Alt-Delì´ë‚˜ Control-Escapeë¥¼ ëˆŒëŸ¬ì„œ SendPlayë¥¼ ì¸í„°ëŸ½íŠ¸í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ëŸ° ì¼ì´ ì¼ì–´ë‚  ë•Œ, ë‚˜ë¨¸ì§€ í‚¤ëˆŒë¦¼ì€ ì „ì†¡ë˜ì§€ ì•Šì§€ë§Œ ìŠ¤í¬ë¦½íŠ¸ë¥¸ ë§ˆì¹˜ SendPlayê°€ ì •ìƒì ìœ¼ë¡œ ì „ì†¡ì„ ì™„ë£Œí•œ ê²ƒì²˜ëŸ¼ ì‹¤í–‰ì„ ê³„ì†í•©ë‹ˆë‹¤.</p>
 <p>
-SendPlay´Â send LWin°ú RWin ÀÌº¥Æ®¸¦ º¸³¾ ¼ö ÀÖÁö¸¸, Ã¢¿¡ Á÷Á¢ÀûÀ¸·Î Àü¼ÛÇÕ´Ï´Ù. ¿î¿µ Ã¼Á¦ °íÀ¯ÀÇ ±â´ÉÀ» ¼öÇàÇÏÁö ¾Ê½À´Ï´Ù. ÀÌ¸¦ ¿ìÈ¸ÇÏ·Á¸é <a href="#SendEvent">SendEvent</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, <code>SendEvent #r</code>´Â ½ÃÀÛ ¸Þ´ºÀÇ ½ÇÇà ´ëÈ­»óÀÚ¸¦ º¸¿©ÁÙ °ÍÀÔ´Ï´Ù.</p>
+SendPlayëŠ” send LWinê³¼ RWin ì´ë²¤íŠ¸ë¥¼ ë³´ë‚¼ ìˆ˜ ìžˆì§€ë§Œ, ì°½ì— ì§ì ‘ì ìœ¼ë¡œ ì „ì†¡í•©ë‹ˆë‹¤. ìš´ì˜ ì²´ì œ ê³ ìœ ì˜ ê¸°ëŠ¥ì„ ìˆ˜í–‰í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì´ë¥¼ ìš°íšŒí•˜ë ¤ë©´ <a href="#SendEvent">SendEvent</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, <code>SendEvent #r</code>ëŠ” ì‹œìž‘ ë©”ë‰´ì˜ ì‹¤í–‰ ëŒ€í™”ìƒìžë¥¼ ë³´ì—¬ì¤„ ê²ƒìž…ë‹ˆë‹¤.</p>
 
-<h2>°ü·Ã Ç×¸ñ</h2>
+<h2>ê´€ë ¨ í•­ëª©</h2>
 <p>
-<a href="SendMode.htm">SendMode</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetStoreCapslockMode.htm">SetStoreCapslockMode</a>, <a href="_EscapeChar.htm">ÇÇ½Å ¿¬¼Ó¿­ (¿¹, `%)</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="BlockInput.htm">BlockInput</a>, <a href="../Hotstrings.htm">ÇÖ½ºÆ®¸µ</a>, <a href="WinActivate.htm">WinActivate</a></p>
+<a href="SendMode.htm">SendMode</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetStoreCapslockMode.htm">SetStoreCapslockMode</a>, <a href="_EscapeChar.htm">í”¼ì‹  ì—°ì†ì—´ (ì˜ˆ, `%)</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="BlockInput.htm">BlockInput</a>, <a href="../Hotstrings.htm">í•«ìŠ¤íŠ¸ë§</a>, <a href="WinActivate.htm">WinActivate</a></p>
 
-<h2>¿¹Á¦</h2>
-<pre class="NoIndent">Send Sincerely,{enter}John Smith  <em>; µÎ ÁÙÀÇ ¼­¸íÀ» Å¸ÀÚÇÕ´Ï´Ù.</em>
-Send !fs <em>; File-&gt;Save ¸Þ´º¸¦ ¼±ÅÃÇÕ´Ï´Ù (Alt+F¸¦ ´©¸¥ ´ÙÀ½ S).</em>
-Send {End}+{Left 4} <em>; ÅØ½ºÆ® ³¡À¸·Î Á¡ÇÁÇØ¼­ ³× °³ÀÇ shift+left-arrow Å°´­¸²À» Àü¼ÛÇÕ´Ï´Ù.</em>
-SendInput <a href="#Raw">{Raw}</a>±â´Ù¶õ ³¯ ¹®ÀÚ¿­µéÀÌ ºü¸¥ ¹æ¹ýÀ» »ç¿ëÇÏ¿© Àü¼ÛµÊ (<a href="#SendInputDetail">SendInput</a>).</pre>
+<h2>ì˜ˆì œ</h2>
+<pre class="NoIndent">Send Sincerely,{enter}John Smith  <em>; ë‘ ì¤„ì˜ ì„œëª…ì„ íƒ€ìží•©ë‹ˆë‹¤.</em>
+Send !fs <em>; File-&gt;Save ë©”ë‰´ë¥¼ ì„ íƒí•©ë‹ˆë‹¤ (Alt+Fë¥¼ ëˆ„ë¥¸ ë‹¤ìŒ S).</em>
+Send {End}+{Left 4} <em>; í…ìŠ¤íŠ¸ ëìœ¼ë¡œ ì í”„í•´ì„œ ë„¤ ê°œì˜ shift+left-arrow í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•©ë‹ˆë‹¤.</em>
+SendInput <a href="#Raw">{Raw}</a>ê¸°ë‹¤ëž€ ë‚  ë¬¸ìžì—´ë“¤ì´ ë¹ ë¥¸ ë°©ë²•ì„ ì‚¬ìš©í•˜ì—¬ ì „ì†¡ë¨ (<a href="#SendInputDetail">SendInput</a>).</pre>
 
 </body>
 </html>

@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>ComObjFlags()</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,23 +11,23 @@
 
 
 <h1>ComObjFlags() <span class="ver">[v1.0.96.00+]</span></h1>
-<p>COM Æ÷Àå °´Ã¼ÀÇ ÇàÀ§¸¦ Á¦¾îÇÏ´Â ÇÃ·¡±×¸¦ ¿­¶÷ÇÏ°Å³ª ¹Ù²ß´Ï´Ù.</p>
+<p>COM í¬ìž¥ ê°ì²´ì˜ í–‰ìœ„ë¥¼ ì œì–´í•˜ëŠ” í”Œëž˜ê·¸ë¥¼ ì—´ëžŒí•˜ê±°ë‚˜ ë°”ê¿‰ë‹ˆë‹¤.</p>
 <pre class="Syntax">Flags := ComObjFlags(ComObject [, NewFlags, Mask])</pre>
 
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>ComObject</dt>
-  <dd><p>COM Æ÷Àå °´Ã¼.</p></dd>
+  <dd><p>COM í¬ìž¥ ê°ì²´.</p></dd>
 
   <dt>NewFlags</dt>
-  <dd><p><i>Mask</i>·Î ½Äº°µÇ´Â ÇÁ·¡±×¿¡ ´ëÇÑ »õ °ª, ¶Ç´Â Ãß°¡ÇÏ°Å³ª ´õÇÒ ÇÃ·¡±×.</p></dd>
+  <dd><p><i>Mask</i>ë¡œ ì‹ë³„ë˜ëŠ” í”„ëž˜ê·¸ì— ëŒ€í•œ ìƒˆ ê°’, ë˜ëŠ” ì¶”ê°€í•˜ê±°ë‚˜ ë”í•  í”Œëž˜ê·¸.</p></dd>
 
   <dt>Mask</dt>
-  <dd><p>¹Ù²Ü ºñÆ®¸¶½ºÅ© ÇÃ·¡±×.</p></dd>
+  <dd><p>ë°”ê¿€ ë¹„íŠ¸ë§ˆìŠ¤í¬ í”Œëž˜ê·¸.</p></dd>
 
   <dt>Flags</dt>
-  <dd><p><i>ComObject</i>°´Ã¼ÀÇ ¸ðµç ÇÃ·¡±× (ÁöÁ¤ÇÏ¸é, <i>NewFlags</i>°¡ Àû¿ëµÈ ÈÄÀÇ).</p></dd>
+  <dd><p><i>ComObject</i>ê°ì²´ì˜ ëª¨ë“  í”Œëž˜ê·¸ (ì§€ì •í•˜ë©´, <i>NewFlags</i>ê°€ ì ìš©ëœ í›„ì˜).</p></dd>
 
 </dl>
 
@@ -37,42 +36,42 @@
   <tr>
     <td>F_OWNVALUE<br>1</td>
     <td>
-	ÇöÀç´Â ¿ÀÁ÷ SafeArrays¿¡¸¸ ¿µÇâÀ» ÁÝ´Ï´Ù. ÀÌ ÇÃ·¡±×°¡ ¼³Á¤µÇ¸é, SafeArray´Â Æ÷Àå °´Ã¼°¡ ÇØÁ¦µÉ ¶§ ÆÄ±«µË´Ï´Ù. SafeArrays´Â ÂüÁ¶ È½¼ö ¼¼±â ¸ÞÄ¿´ÏÁòÀÌ ¾øÀ¸¹Ç·Î, ¸¸¾à ÀÌ ÇÃ·¡±×¸¦ °¡Áø SafeArray°¡ ¶Ç´Ù¸¥ SafeArrayÀÇ ÇÑ ¿ø¼Ò¿¡ ÇÒ´çµÇ¸é, µû·Î »çº»ÀÌ »ý¼ºµË´Ï´Ù.</td>
+	í˜„ìž¬ëŠ” ì˜¤ì§ SafeArraysì—ë§Œ ì˜í–¥ì„ ì¤ë‹ˆë‹¤. ì´ í”Œëž˜ê·¸ê°€ ì„¤ì •ë˜ë©´, SafeArrayëŠ” í¬ìž¥ ê°ì²´ê°€ í•´ì œë  ë•Œ íŒŒê´´ë©ë‹ˆë‹¤. SafeArraysëŠ” ì°¸ì¡° íšŸìˆ˜ ì„¸ê¸° ë©”ì»¤ë‹ˆì¦˜ì´ ì—†ìœ¼ë¯€ë¡œ, ë§Œì•½ ì´ í”Œëž˜ê·¸ë¥¼ ê°€ì§„ SafeArrayê°€ ë˜ë‹¤ë¥¸ SafeArrayì˜ í•œ ì›ì†Œì— í• ë‹¹ë˜ë©´, ë”°ë¡œ ì‚¬ë³¸ì´ ìƒì„±ë©ë‹ˆë‹¤.</td>
   </tr>
 </table>
 
-<h3>ÃÑÆò</h3>
+<h3>ì´í‰</h3>
 <p>
-<i>Mask</i>¸¦ »ý·«ÇÏ¸é, <i>NewFlags</i>´Â (¾ç¼öÀÌ¸é) ´õÇÒ ÇÃ·¡±×, (À½¼öÀÌ¸é) Á¦°ÅÇÒ ÇÃ·¡±×¸¦ ÁöÁ¤ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <code>ComObjFlags(obj, -1)</code>´Â F_OWNVALUE ÇÃ·¡±×¸¦ Á¦°ÅÇÕ´Ï´Ù.  <i>Mask</i>¿¡´Â 0ÀÌ³ª 1¸»°í ´Ù¸¥ °ªÀ» ÁöÁ¤ÇÏÁö ¸¶½Ê½Ã¿À; ´Ù¸¥ ¸ðµç ºñÆ®´Â ¹Ì·¡¿¡ »ç¿ëÇÒ ¸ñÀûÀ¸·Î ¿¹¾àµÇ¾î ÀÖ½À´Ï´Ù.</p>
+<i>Mask</i>ë¥¼ ìƒëžµí•˜ë©´, <i>NewFlags</i>ëŠ” (ì–‘ìˆ˜ì´ë©´) ë”í•  í”Œëž˜ê·¸, (ìŒìˆ˜ì´ë©´) ì œê±°í•  í”Œëž˜ê·¸ë¥¼ ì§€ì •í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>ComObjFlags(obj, -1)</code>ëŠ” F_OWNVALUE í”Œëž˜ê·¸ë¥¼ ì œê±°í•©ë‹ˆë‹¤.  <i>Mask</i>ì—ëŠ” 0ì´ë‚˜ 1ë§ê³  ë‹¤ë¥¸ ê°’ì„ ì§€ì •í•˜ì§€ ë§ˆì‹­ì‹œì˜¤; ë‹¤ë¥¸ ëª¨ë“  ë¹„íŠ¸ëŠ” ë¯¸ëž˜ì— ì‚¬ìš©í•  ëª©ì ìœ¼ë¡œ ì˜ˆì•½ë˜ì–´ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjArray.htm">ComObjArray</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent"><em>; ¿¹Á¦: F_OWNVALUE ÇÃ±×·¡°¡ ÀÖ´ÂÁö Á¡°ËÇÕ´Ï´Ù.</em>
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent"><em>; ì˜ˆì œ: F_OWNVALUE í”Œê·¸ëž˜ê°€ ìžˆëŠ”ì§€ ì ê²€í•©ë‹ˆë‹¤.</em>
 
 arr := ComObjArray(0xC, 1)
 if ComObjFlags(arr) &amp; 1
-    MsgBox arrÀº ÀÚµ¿À¸·Î ÆÄ±«µË´Ï´Ù.
+    MsgBox arrì€ ìžë™ìœ¼ë¡œ íŒŒê´´ë©ë‹ˆë‹¤.
 else
-    MsgBox arr´Â ÀÚµ¿À¸·Î ÆÄ±«µÇÁö ¾Ê½À´Ï´Ù.
+    MsgBox arrëŠ” ìžë™ìœ¼ë¡œ íŒŒê´´ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
 </pre>
 
-<pre class="NoIndent"><em>; ¿¹Á¦: ¹è¿­-¾ÈÀÇ ¹è¿­ ÇàÀ§ ¹Ù²Ù±â.</em>
+<pre class="NoIndent"><em>; ì˜ˆì œ: ë°°ì—´-ì•ˆì˜ ë°°ì—´ í–‰ìœ„ ë°”ê¾¸ê¸°.</em>
 
 arr1 := ComObjArray(0xC, 3)
 arr2 := ComObjArray(0xC, 1)
 arr2[0] := "original value"
-arr1[0] := arr2         <em>; ¹¬½ÃÀû »çº»À» ÇÒ´çÇÕ´Ï´Ù.</em>
-ComObjFlags(arr2, -1)   <em>; F_OWNVALUE¸¦ Á¦°ÅÇÕ´Ï´Ù.</em>
-arr1[1] := arr2         <em>; ¿øº» ¹è¿­À» ÇÒ´çÇÕ´Ï´Ù.</em>
-arr1[2] := arr2.Clone() <em>; ¸í½ÃÀû »çº»À» ÇÒ´çÇÕ´Ï´Ù.</em>
+arr1[0] := arr2         <em>; ë¬µì‹œì  ì‚¬ë³¸ì„ í• ë‹¹í•©ë‹ˆë‹¤.</em>
+ComObjFlags(arr2, -1)   <em>; F_OWNVALUEë¥¼ ì œê±°í•©ë‹ˆë‹¤.</em>
+arr1[1] := arr2         <em>; ì›ë³¸ ë°°ì—´ì„ í• ë‹¹í•©ë‹ˆë‹¤.</em>
+arr1[2] := arr2.Clone() <em>; ëª…ì‹œì  ì‚¬ë³¸ì„ í• ë‹¹í•©ë‹ˆë‹¤.</em>
 arr2[0] := "new value"
 for arr in arr1
     MsgBox % arr[0]
 
 arr1 := ""
-<em>; arr2 == arr1[1]ÀÌ±â ¶§¹®¿¡ À¯È¿ÇÏÁö ¾Ê½À´Ï´Ù. ÀÌ¹Ì ÆÄ±«µÇ¾ú½À´Ï´Ù: 
+<em>; arr2 == arr1[1]ì´ê¸° ë•Œë¬¸ì— ìœ íš¨í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì´ë¯¸ íŒŒê´´ë˜ì—ˆìŠµë‹ˆë‹¤: 
 ;  arr2[0] := "foo"</em>
 </pre>
 

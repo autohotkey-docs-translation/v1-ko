@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>StringReplace</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,73 +11,73 @@
 
 <h1>StringReplace</h1>
 
-<p>ÁöÁ¤µÈ ºÎ¹®ÀÚ¿­À» »õ ¹®ÀÚ¿­·Î ±³Ã¼ÇÕ´Ï´Ù.</p>
+<p>ì§€ì •ëœ ë¶€ë¬¸ìžì—´ì„ ìƒˆ ë¬¸ìžì—´ë¡œ êµì²´í•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">OutputVar := StrReplace(Haystack, SearchText [, ReplaceText, OutputVarCount, Limit := -1])  <em>; v1.1.21+</em>
 StringReplace, OutputVar, InputVar, SearchText [, ReplaceText, ReplaceAll?]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>±³Ã¼ÀÇ °á°ú¸¦ ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§.</p></dd>
+  <dd><p>êµì²´ì˜ ê²°ê³¼ë¥¼ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„.</p></dd>
 
-  <dt>InputVar ¶Ç´Â Haystack</dt>
+  <dt>InputVar ë˜ëŠ” Haystack</dt>
   <dd>
-    <p>±×ÀÇ ³»¿ëÀ» ÀÐÀ» º¯¼öÀÇ ÀÌ¸§. ÀÌ¸§À» ÆÛ¼¾Æ® »çÀÎÀ¸·Î µÑ·¯ ½ÎÁö ¸¶½Ê½Ã¿À. ´Ü, º¯¼öÀÇ  <em>³»¿ë</em>ÀÌ ÀÌ¸§ÀÌ±â¸¦ ¿øÇÏ´Â °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù.</p>
+    <p>ê·¸ì˜ ë‚´ìš©ì„ ì½ì„ ë³€ìˆ˜ì˜ ì´ë¦„. ì´ë¦„ì„ í¼ì„¼íŠ¸ ì‚¬ì¸ìœ¼ë¡œ ë‘˜ëŸ¬ ì‹¸ì§€ ë§ˆì‹­ì‹œì˜¤. ë‹¨, ë³€ìˆ˜ì˜  <em>ë‚´ìš©</em>ì´ ì´ë¦„ì´ê¸°ë¥¼ ì›í•˜ëŠ” ê²½ìš°ëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤.</p>
     <p>
-	StrReplace()´Â ÇÔ¼öÀÌ¹Ç·Î, <em>Haystack</em>Àº Ç¥Çö½ÄÀÌ °¡´ÉÇÕ´Ï´Ù.</p>
+	StrReplace()ëŠ” í•¨ìˆ˜ì´ë¯€ë¡œ, <em>Haystack</em>ì€ í‘œí˜„ì‹ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.</p>
   </dd>
 
   <dt>SearchText</dt>
-  <dd><p>°Ë»ö¿¡ »ç¿ëµÉ ¹®ÀÚ¿­. ºÎÇÕÀº ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÏÁö ¾Ê½À´Ï´Ù. ´Ü, <a href="StringCaseSense.htm">StringCaseSense</a>°¡ ÄÑÁ® ÀÖ´Â °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù.</p></dd>
+  <dd><p>ê²€ìƒ‰ì— ì‚¬ìš©ë  ë¬¸ìžì—´. ë¶€í•©ì€ ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë‹¨, <a href="StringCaseSense.htm">StringCaseSense</a>ê°€ ì¼œì ¸ ìžˆëŠ” ê²½ìš°ëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤.</p></dd>
 
   <dt>ReplaceText</dt>
-  <dd><p><em>SearchText</em>´Â ÀÌ ÅØ½ºÆ®·Î ±³Ã¼µË´Ï´Ù. »ý·«µÇ°Å³ª ºñ¾î ÀÖÀ¸¸é, <em>SearchText</em>´Â ºó ¹®ÀÚ¿­·Î ±³Ã¼µË´Ï´Ù. ´Ù¸¥ ¸»·Î, <em>OutputVar</em>·ÎºÎÅÍ Á¦¿ÜµË´Ï´Ù.</p></dd>
+  <dd><p><em>SearchText</em>ëŠ” ì´ í…ìŠ¤íŠ¸ë¡œ êµì²´ë©ë‹ˆë‹¤. ìƒëžµë˜ê±°ë‚˜ ë¹„ì–´ ìžˆìœ¼ë©´, <em>SearchText</em>ëŠ” ë¹ˆ ë¬¸ìžì—´ë¡œ êµì²´ë©ë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ, <em>OutputVar</em>ë¡œë¶€í„° ì œì™¸ë©ë‹ˆë‹¤.</p></dd>
   
   <dt>OutputVarCount (<em>StrReplace</em>)</dt>
-  <dd><p>±³Ã¼°¡ ÀÏ¾î³­ È½¼ö¸¦ ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§. ÀÎ¿ëºÎÈ£ Ã³¸® ¾ÈÇÔ (¾øÀ¸¸é 0).</p></dd>
+  <dd><p>êµì²´ê°€ ì¼ì–´ë‚œ íšŸìˆ˜ë¥¼ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„. ì¸ìš©ë¶€í˜¸ ì²˜ë¦¬ ì•ˆí•¨ (ì—†ìœ¼ë©´ 0).</p></dd>
   
   <dt>Limit (<em>StrReplace</em>)</dt>
   <dd><p>
-  <em>Limit</em>À» »ý·«ÇÏ¸é, ±âº»°ªÀº  -1ÀÔ´Ï´Ù. ±âº»À¸·Î <em>Haystack</em> ¹ß°ßµÈ <strong>¸ðµç</strong> ÆÐÅÏÀ» ±³Ã¼ÇÕ´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é, ±³Ã¼¸¦ Çã¿ëÇÒ ÃÖ´ë È½¼ö¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. <em>Haystack</em>¿¡¼­ ¸¶Áö¸· ¸Å°³º¯¼öÀÇ ¿À¸¥ÂÊ ºÎºÐÀº ±³Ã¼µÇÁö ¾Ê°í ±×´ë·ÎÀÔ´Ï´Ù.</p></dd>
+  <em>Limit</em>ì„ ìƒëžµí•˜ë©´, ê¸°ë³¸ê°’ì€  -1ìž…ë‹ˆë‹¤. ê¸°ë³¸ìœ¼ë¡œ <em>Haystack</em> ë°œê²¬ëœ <strong>ëª¨ë“ </strong> íŒ¨í„´ì„ êµì²´í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, êµì²´ë¥¼ í—ˆìš©í•  ìµœëŒ€ íšŸìˆ˜ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. <em>Haystack</em>ì—ì„œ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì˜ ì˜¤ë¥¸ìª½ ë¶€ë¶„ì€ êµì²´ë˜ì§€ ì•Šê³  ê·¸ëŒ€ë¡œìž…ë‹ˆë‹¤.</p></dd>
 
   <dt>ReplaceAll? (<em>StringReplace</em>)</dt>
-  <dd><p>»ý·«ÇÏ¸é, ¿ÀÁ÷ <em>SearchText</em>ÀÇ Ã¹ ¹øÂ° ºÎÇÕ¸¸ ±³Ã¼µË´Ï´Ù. ±×·¯³ª ÀÌ ¸Å°³º¯¼ö°¡ 1ÀÌ³ª A ¶Ç´Â AllÀÌ¸é, ¸ðµç ºÎÇÕÀÌ ±³Ã¼µË´Ï´Ù.</p>
+  <dd><p>ìƒëžµí•˜ë©´, ì˜¤ì§ <em>SearchText</em>ì˜ ì²« ë²ˆì§¸ ë¶€í•©ë§Œ êµì²´ë©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ì´ ë§¤ê°œë³€ìˆ˜ê°€ 1ì´ë‚˜ A ë˜ëŠ” Allì´ë©´, ëª¨ë“  ë¶€í•©ì´ êµì²´ë©ë‹ˆë‹¤.</p>
     <p>
-	´Ü¾î <strong>UseErrorLevel</strong>À» ÁöÁ¤ÇÏ¸é ErrorLevel¿¡ ±³Ã¼µÈ È½¼ö¸¦ ÀúÀåÇÒ ¼ö ÀÖ½À´Ï´Ù (¾øÀ¸¸é 0). UseErrorLevelÀº ¹¬½ÃÀûÀ¸·Î &quot;All&quot;.</p>
+	ë‹¨ì–´ <strong>UseErrorLevel</strong>ì„ ì§€ì •í•˜ë©´ ErrorLevelì— êµì²´ëœ íšŸìˆ˜ë¥¼ ì €ìž¥í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì—†ìœ¼ë©´ 0). UseErrorLevelì€ ë¬µì‹œì ìœ¼ë¡œ &quot;All&quot;.</p>
     </dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
 <p>
-<strong>StrReplace:</strong> ErrorLevelÀº ¼³Á¤µÇÁö ¾Ê½À´Ï´Ù.</p>
-<p><strong>StringReplace:</strong> ¸¶Áö¸· ¸Å°³º¯¼ö°¡ <em>UseErrorLevel</em>ÀÌ¸é, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>¿¡´Â ±³Ã¼µÈ È½¼ö°¡ ¼³Á¤µË´Ï´Ù (¾øÀ¸¸é 0). ±×·¸Áö ¾ÊÀ¸¸é, ErrorLevelÀº <em>SearchText</em>¸¦ <em>InputVar</em> ¾È¿¡¼­ ¹ß°ßÇÏÁö ¸øÇÑ °æ¿ì 1ÀÌ ¼³Á¤µÇ°í ¹ß°ßÇÑ °æ¿ì´Â 0ÀÌ ¼³Á¤µË´Ï´Ù.</p>
+<strong>StrReplace:</strong> ErrorLevelì€ ì„¤ì •ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
+<p><strong>StringReplace:</strong> ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ê°€ <em>UseErrorLevel</em>ì´ë©´, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì—ëŠ” êµì²´ëœ íšŸìˆ˜ê°€ ì„¤ì •ë©ë‹ˆë‹¤ (ì—†ìœ¼ë©´ 0). ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ErrorLevelì€ <em>SearchText</em>ë¥¼ <em>InputVar</em> ì•ˆì—ì„œ ë°œê²¬í•˜ì§€ ëª»í•œ ê²½ìš° 1ì´ ì„¤ì •ë˜ê³  ë°œê²¬í•œ ê²½ìš°ëŠ” 0ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÀÌ ¸í·É¾î ±×¸®°í ±âÅ¸ ¸ðµç ¸í·É¾î¿¡ ´ëÇÏ¿©, <em>OutputVar</em>´Â <em>InputVar</em>¿Í º¯¼ö°¡ °°¾Æµµ Çã¿ëµË´Ï´Ù.</p>
+ì´ ëª…ë ¹ì–´ ê·¸ë¦¬ê³  ê¸°íƒ€ ëª¨ë“  ëª…ë ¹ì–´ì— ëŒ€í•˜ì—¬, <em>OutputVar</em>ëŠ” <em>InputVar</em>ì™€ ë³€ìˆ˜ê°€ ê°™ì•„ë„ í—ˆìš©ë©ë‹ˆë‹¤.</p>
 <p>
-³»Àå º¯¼ö <a href="../Variables.htm">%A_Space%</a>¿Í <a href="../Variables.htm">%A_Tab%</a>¿¡ °¢°¢ ½ºÆäÀÌ½º ÇÏ³ª¿Í ÅÇ ¹®ÀÚ ÇÏ³ª°¡ µé¾î ÀÖ½À´Ï´Ù. <em>SearchText</em>ÀÇ ¾ÕÀÌ³ª µÚ¿¡¼­ ½ºÆäÀÌ½º¿Í ÅÇ¸¸ È¦·Î °Ë»öÇÒ ¶§ À¯¿ëÇÕ´Ï´Ù.</p>
+ë‚´ìž¥ ë³€ìˆ˜ <a href="../Variables.htm">%A_Space%</a>ì™€ <a href="../Variables.htm">%A_Tab%</a>ì— ê°ê° ìŠ¤íŽ˜ì´ìŠ¤ í•˜ë‚˜ì™€ íƒ­ ë¬¸ìž í•˜ë‚˜ê°€ ë“¤ì–´ ìžˆìŠµë‹ˆë‹¤. <em>SearchText</em>ì˜ ì•žì´ë‚˜ ë’¤ì—ì„œ ìŠ¤íŽ˜ì´ìŠ¤ì™€ íƒ­ë§Œ í™€ë¡œ ê²€ìƒ‰í•  ë•Œ ìœ ìš©í•©ë‹ˆë‹¤.</p>
 <p>
-v1.0.45¿¡¼­, AllSlow ¿É¼ÇÀº ¼öÇà¼º´É Çâ»ó°ú È¿À²ÀûÀÎ ¸Þ¸ð¸® ÀÌ¿ëÀ» À§ÇØ Æó±â µÇ¾ú½À´Ï´Ù. ¿©ÀüÈ÷ ÁöÁ¤ÇÒ ¼ö´Â ÀÖÁö¸¸, ¾Æ¹« È¿°ú°¡ ¾øÀ» °ÍÀÔ´Ï´Ù.</p>
+v1.0.45ì—ì„œ, AllSlow ì˜µì…˜ì€ ìˆ˜í–‰ì„±ëŠ¥ í–¥ìƒê³¼ íš¨ìœ¨ì ì¸ ë©”ëª¨ë¦¬ ì´ìš©ì„ ìœ„í•´ íê¸° ë˜ì—ˆìŠµë‹ˆë‹¤. ì—¬ì „ížˆ ì§€ì •í•  ìˆ˜ëŠ” ìžˆì§€ë§Œ, ì•„ë¬´ íš¨ê³¼ê°€ ì—†ì„ ê²ƒìž…ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
 <a href="RegExReplace.htm">RegExReplace()</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringGetPos.htm">StringGetPos</a>,  <a href="IfIs.htm">if var is type</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent"><em>; Å¬¸³º¸µåÀÇ ³»¿ë¿¡¼­ ¸ðµç CR+LF¸¦ Á¦°ÅÇÕ´Ï´Ù:</em>
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent"><em>; í´ë¦½ë³´ë“œì˜ ë‚´ìš©ì—ì„œ ëª¨ë“  CR+LFë¥¼ ì œê±°í•©ë‹ˆë‹¤:</em>
 StringReplace, clipboard, clipboard, `r`n, , All
 
-<em>; ¸ðµç ½ºÆäÀÌ½º¸¦ ÇÃ·¯½º·Î ±³Ã¼ÇÕ´Ï´Ù:</em>
+<em>; ëª¨ë“  ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ í”ŒëŸ¬ìŠ¤ë¡œ êµì²´í•©ë‹ˆë‹¤:</em>
 StringReplace, NewStr, OldStr, %A_SPACE%, +, All
 
-<em>; º¯¼ö ¾ÈÀÇ ÅØ½ºÆ®·ÎºÎÅÍ ¸ðµç ºó ÁÙÀ» Á¦°ÅÇÕ´Ï´Ù:</em>
+<em>; ë³€ìˆ˜ ì•ˆì˜ í…ìŠ¤íŠ¸ë¡œë¶€í„° ëª¨ë“  ë¹ˆ ì¤„ì„ ì œê±°í•©ë‹ˆë‹¤:</em>
 Loop
 {
     StringReplace, MyString, MyString, `r`n`r`n, `r`n, UseErrorLevel
-    if ErrorLevel = 0  <em>; ´õ ÀÌ»ó ±³Ã¼°¡ ÇÊ¿äÇÏÁö ¾Ê½À´Ï´Ù.</em>
+    if ErrorLevel = 0  <em>; ë” ì´ìƒ êµì²´ê°€ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</em>
         break
 }</pre>
 

@@ -1,6 +1,7 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>AutoHotkey FAQ</title>
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
@@ -8,240 +9,240 @@
 </head>
 <body>
 
-<h1>ÀÚÁÖ ¹¯´Â Áú¹®(FAQ)</h1>
+<h1>ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸(FAQ)</h1>
 
-<p>¿©·¯ºÐÀÇ Áú¹®ÀÌ ¾Æ·¡ ¸®½ºÆ®¿¡ ¾ø´Ù¸é, °øµ¿Ã¼°¡ ¿î¿µÇÏ´Â <a href="http://www.autohotkey.net/~faqbot/faq.html">autoHotkey.netÀÇ FAQ</a>¸¦ Á¡°ËÇØ º¸½Ê½Ã¿À.</p>
+<p>ì—¬ëŸ¬ë¶„ì˜ ì§ˆë¬¸ì´ ì•„ëž˜ ë¦¬ìŠ¤íŠ¸ì— ì—†ë‹¤ë©´, ê³µë™ì²´ê°€ ìš´ì˜í•˜ëŠ” <a href="http://www.autohotkey.net/~faqbot/faq.html">autoHotkey.netì˜ FAQ</a>ë¥¼ ì ê²€í•´ ë³´ì‹­ì‹œì˜¤.</p>
 
-<h3>¾ð¾î ±¸¹®</h3>
+<h3>ì–¸ì–´ êµ¬ë¬¸</h3>
 <ul>
-  <li><a href="#quotes">¾ðÁ¦ ÀÎ¿ë ºÎÈ£¸¦ ¸í·É¾î¿Í ±×ÀÇ ¸Å°³º¯¼ö¿¡ »ç¿ëÇÏ´Â°¡?</a></li>
-  <li><a href="#percent">¾ðÁ¦ Á¤È®ÇÏ°Ô º¯¼ö ÀÌ¸§À» ÆÛ¼¾Æ® ±âÈ£·Î µÑ·¯½Î´Â°¡?</a></li>
-  <li><a href="#esc">¾ðÁ¦ ÆÛ¼¾Æ® »çÀÎ°ú ½°Ç¥¸¦ ÇÇ½Å½ÃÄÑ¾ß ÇÏ´Â°¡?</a></li>
+  <li><a href="#quotes">ì–¸ì œ ì¸ìš© ë¶€í˜¸ë¥¼ ëª…ë ¹ì–´ì™€ ê·¸ì˜ ë§¤ê°œë³€ìˆ˜ì— ì‚¬ìš©í•˜ëŠ”ê°€?</a></li>
+  <li><a href="#percent">ì–¸ì œ ì •í™•í•˜ê²Œ ë³€ìˆ˜ ì´ë¦„ì„ í¼ì„¼íŠ¸ ê¸°í˜¸ë¡œ ë‘˜ëŸ¬ì‹¸ëŠ”ê°€?</a></li>
+  <li><a href="#esc">ì–¸ì œ í¼ì„¼íŠ¸ ì‚¬ì¸ê³¼ ì‰¼í‘œë¥¼ í”¼ì‹ ì‹œì¼œì•¼ í•˜ëŠ”ê°€?</a></li>
 </ul>
-<h3>ÀÏ¹ÝÀû °ú¾÷</h3>
+<h3>ì¼ë°˜ì  ê³¼ì—…</h3>
 <ul>
-  <li><a href="#Download">¾îµð¿¡¼­ °ø½ÄÀûÀÎ ¹èÆ÷º», ¶Ç´Â ¿¹Àü ¹èÆ÷º»À» Ã£À» ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#autoexec">¿Ö ½ºÅ©¸³Æ®¿¡¼­ ¾î¶² ÁÙµéÀº ÀüÇô ½ÇÇàµÇÁö ¾Ê´Â°¡?</a></li>
-  <li><a href="#vista">¿Ö ½ºÅ©¸³Æ®°¡ XP¿¡´Â Àß ½ÇÇàµÇ´Âµ¥  Vista³ª Windows 7 ¶Ç´Â 8¿¡¼­ ½ÇÇàµÇÁö ¾Ê´Â°¡?</a></li>
-  <li><a href="#DefaultScript">Æ®·¹ÀÌ ¾ÆÀÌÄÜÀ» ÅëÇÏ¿© ½ºÅ©¸³Æ®¸¦ ÆíÁýÇÒ ¼ö ¾ø´Ù. ¿¡·¯ ¶§¹®¿¡ ½ÃÀÛÁ¶Â÷ ÇÏÁö ¾Ê±â ¶§¹®ÀÌ´Ù. ´Ù¸¥ ¾î¶² °÷¿¡¼­ ½ºÅ©¸³Æ®¸¦ Ã£À» ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#Debug">¾î¶»°Ô ÄÚµå¿¡¼­ ¿¡·¯¸¦ Ã£¾Æ °íÄ¡´Â°¡?</a></li>
-  <li><a href="#USB">AHK¸¦ USB µå¶óÀÌºê¿¡¼­ ½ÇÇàÇÒ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#run">¿Ö Run ¸í·É¾î°¡ °ÔÀÓÀÌ³ª ÇÁ·Î±×·¥À» ½ÇÇà½ÃÅ°Áö ¸øÇÏ´Â°¡?</a></li>
-  <li><a href="#output">¾î¶»°Ô ¸í·É¾î ÁÙ ¿¬»êÀÇ Ãâ·Â °á°ú¸¦ ¾òÀ» ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#close">¾î¶»°Ô ½ºÅ©¸³Æ®·Î ´Ù¸¥ ½ºÅ©¸³Æ®¸¦ ´Ý°Å³ª Á¤ÁöÇÏ°Å³ª ¶Ç´Â º¸·ùÇÒ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#repeat">½ºÅ©¸³Æ®¸¦ Á¾·áÇÏÁö ¾Ê°í ¾î¶»°Ô ¹Ýº¹ ÇàÀ§¸¦ ¸ØÃâ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#perf">¾î¶»°Ô °ÔÀÓÀ» À§ÇØ ¼º´ÉÀ» Çâ»ó½ÃÅ³ ¼ö ÀÖ´Â°¡? ´Ù½Ã ¸»ÇØ  CPU¿¡ ¾öÃ»³­ ºÎ´ãÀÌ ÀÖÀ» ¶§´Â ¾î¶»°Ô °³¼±ÇÏ´Â°¡?</a></li>
-  <li><a href="#help">¾î¶»°Ô ¿ÀÅäÇÖÅ° ¸í·É¾î¿¡ ´ëÇÏ¿© ¹®¸Æ °¨Áö µµ¿ò¸»À» ÆíÁý±â¿¡ »ç¿ëÇÒ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#load">À¥ ÆäÀÌÁö°¡ ÀûÀç¸¦ ³¡³Â´Ù´Â °ÍÀ» ¾î¶»°Ô Å½ÁöÇÒ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#time">³¯Â¥¿Í ½Ã°£À» ¾î¶»°Ô ºñ±³ ¶Ç´Â Á¶ÀÛÇÏ´Â°¡?</a></li>
-  <li><a href="#SendDate">ÇöÀç ³¯Â¥¿Í ½Ã°£À» ¾î¶»°Ô Àü¼ÛÇÒ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#ControlSend">¾î¶»°Ô ÅØ½ºÆ®¸¦ È°¼ºµÇÁö ¾ÊÀº Ã¢ ¶Ç´Â º¸ÀÌÁö ¾Ê´Â Ã¢¿¡ º¸³¾ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#games">¿Ö ÇÖ½ºÆ®¸µ, Send ±×¸®°í MouseClickÀÌ ¾î¶² °ÔÀÓ¿¡¼­´Â ÀÛµ¿ÇÏÁö ¾Ê´Â°¡?</a></li>
-  <li><a href="#winamp">Winamp¸¦ ¾î¶»°Ô Á¦¾îÇÏ´Â°¡? È°¼ºÈ­µÇÁö ¾ÊÀ» °æ¿ì¿¡µµ Á¦¾îÇÏ°í ½Í´Ù</a></li>
-  <li><a href="#msgbox">¾î¶»°Ô MsgBoxÀÇ ¹öÆ° ÀÌ¸§À» ¹Ù²Ü ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#DefaultEditor">¾î¶»°Ô ±âº» ÆíÁý±â¸¦ ¹Ù²Ü ¼ö ÀÖ´Â°¡? ¹®¸Æ ¸Þ´º³ª Æ®·¹ÀÌ ¾ÆÀÌÄÜÀ» ÅëÇÏ¿© Á¢±ÙÇÏ°í ½Í´Ù</a></li>
-  <li><a href="#GuiSubmit">¾î¶»°Ô º¯¼ö¿¡ ¿¬°üµÈ GUIÀÇ ³»¿ëµéÀ» ÀúÀåÇÒ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#GDIPlus">¾î¶»°Ô AHK·Î ±×¸± ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#WinWaitAction">Ã¢ÀÌ ³ªÅ¸³ª°Å³ª, ´ÝÈ÷°Å³ª ¶Ç´Â [ºñ]È°¼ºÈ­µÉ¶§ ¾î¶»°Ô ÇàÀ§¸¦ ÃË¹ß½ÃÅ³ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#Virus">¹ÙÀÌ·¯½º ¹é½Å ÇÁ·Î±×·¥ÀÌ AHK¸¦ ¸È¿þ¾î·Î Áø´ÜÇß´Ù. Á¤¸»·Î ¹ÙÀÌ·¯½º°¡ µé¾îÀÖ´Â°¡?</a></li>
+  <li><a href="#Download">ì–´ë””ì—ì„œ ê³µì‹ì ì¸ ë°°í¬ë³¸, ë˜ëŠ” ì˜ˆì „ ë°°í¬ë³¸ì„ ì°¾ì„ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#autoexec">ì™œ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ì–´ë–¤ ì¤„ë“¤ì€ ì „í˜€ ì‹¤í–‰ë˜ì§€ ì•ŠëŠ”ê°€?</a></li>
+  <li><a href="#vista">ì™œ ìŠ¤í¬ë¦½íŠ¸ê°€ XPì—ëŠ” ìž˜ ì‹¤í–‰ë˜ëŠ”ë°  Vistaë‚˜ Windows 7 ë˜ëŠ” 8ì—ì„œ ì‹¤í–‰ë˜ì§€ ì•ŠëŠ”ê°€?</a></li>
+  <li><a href="#DefaultScript">íŠ¸ë ˆì´ ì•„ì´ì½˜ì„ í†µí•˜ì—¬ ìŠ¤í¬ë¦½íŠ¸ë¥¼ íŽ¸ì§‘í•  ìˆ˜ ì—†ë‹¤. ì—ëŸ¬ ë•Œë¬¸ì— ì‹œìž‘ì¡°ì°¨ í•˜ì§€ ì•Šê¸° ë•Œë¬¸ì´ë‹¤. ë‹¤ë¥¸ ì–´ë–¤ ê³³ì—ì„œ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#Debug">ì–´ë–»ê²Œ ì½”ë“œì—ì„œ ì—ëŸ¬ë¥¼ ì°¾ì•„ ê³ ì¹˜ëŠ”ê°€?</a></li>
+  <li><a href="#USB">AHKë¥¼ USB ë“œë¼ì´ë¸Œì—ì„œ ì‹¤í–‰í•  ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#run">ì™œ Run ëª…ë ¹ì–´ê°€ ê²Œìž„ì´ë‚˜ í”„ë¡œê·¸ëž¨ì„ ì‹¤í–‰ì‹œí‚¤ì§€ ëª»í•˜ëŠ”ê°€?</a></li>
+  <li><a href="#output">ì–´ë–»ê²Œ ëª…ë ¹ì–´ ì¤„ ì—°ì‚°ì˜ ì¶œë ¥ ê²°ê³¼ë¥¼ ì–»ì„ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#close">ì–´ë–»ê²Œ ìŠ¤í¬ë¦½íŠ¸ë¡œ ë‹¤ë¥¸ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë‹«ê±°ë‚˜ ì •ì§€í•˜ê±°ë‚˜ ë˜ëŠ” ë³´ë¥˜í•  ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#repeat">ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì¢…ë£Œí•˜ì§€ ì•Šê³  ì–´ë–»ê²Œ ë°˜ë³µ í–‰ìœ„ë¥¼ ë©ˆì¶œ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#perf">ì–´ë–»ê²Œ ê²Œìž„ì„ ìœ„í•´ ì„±ëŠ¥ì„ í–¥ìƒì‹œí‚¬ ìˆ˜ ìžˆëŠ”ê°€? ë‹¤ì‹œ ë§í•´  CPUì— ì—„ì²­ë‚œ ë¶€ë‹´ì´ ìžˆì„ ë•ŒëŠ” ì–´ë–»ê²Œ ê°œì„ í•˜ëŠ”ê°€?</a></li>
+  <li><a href="#help">ì–´ë–»ê²Œ ì˜¤í† í•«í‚¤ ëª…ë ¹ì–´ì— ëŒ€í•˜ì—¬ ë¬¸ë§¥ ê°ì§€ ë„ì›€ë§ì„ íŽ¸ì§‘ê¸°ì— ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#load">ì›¹ íŽ˜ì´ì§€ê°€ ì ìž¬ë¥¼ ëëƒˆë‹¤ëŠ” ê²ƒì„ ì–´ë–»ê²Œ íƒì§€í•  ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#time">ë‚ ì§œì™€ ì‹œê°„ì„ ì–´ë–»ê²Œ ë¹„êµ ë˜ëŠ” ì¡°ìž‘í•˜ëŠ”ê°€?</a></li>
+  <li><a href="#SendDate">í˜„ìž¬ ë‚ ì§œì™€ ì‹œê°„ì„ ì–´ë–»ê²Œ ì „ì†¡í•  ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#ControlSend">ì–´ë–»ê²Œ í…ìŠ¤íŠ¸ë¥¼ í™œì„±ë˜ì§€ ì•Šì€ ì°½ ë˜ëŠ” ë³´ì´ì§€ ì•ŠëŠ” ì°½ì— ë³´ë‚¼ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#games">ì™œ í•«ìŠ¤íŠ¸ë§, Send ê·¸ë¦¬ê³  MouseClickì´ ì–´ë–¤ ê²Œìž„ì—ì„œëŠ” ìž‘ë™í•˜ì§€ ì•ŠëŠ”ê°€?</a></li>
+  <li><a href="#winamp">Winampë¥¼ ì–´ë–»ê²Œ ì œì–´í•˜ëŠ”ê°€? í™œì„±í™”ë˜ì§€ ì•Šì„ ê²½ìš°ì—ë„ ì œì–´í•˜ê³  ì‹¶ë‹¤</a></li>
+  <li><a href="#msgbox">ì–´ë–»ê²Œ MsgBoxì˜ ë²„íŠ¼ ì´ë¦„ì„ ë°”ê¿€ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#DefaultEditor">ì–´ë–»ê²Œ ê¸°ë³¸ íŽ¸ì§‘ê¸°ë¥¼ ë°”ê¿€ ìˆ˜ ìžˆëŠ”ê°€? ë¬¸ë§¥ ë©”ë‰´ë‚˜ íŠ¸ë ˆì´ ì•„ì´ì½˜ì„ í†µí•˜ì—¬ ì ‘ê·¼í•˜ê³  ì‹¶ë‹¤</a></li>
+  <li><a href="#GuiSubmit">ì–´ë–»ê²Œ ë³€ìˆ˜ì— ì—°ê´€ëœ GUIì˜ ë‚´ìš©ë“¤ì„ ì €ìž¥í•  ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#GDIPlus">ì–´ë–»ê²Œ AHKë¡œ ê·¸ë¦´ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#WinWaitAction">ì°½ì´ ë‚˜íƒ€ë‚˜ê±°ë‚˜, ë‹«ížˆê±°ë‚˜ ë˜ëŠ” [ë¹„]í™œì„±í™”ë ë•Œ ì–´ë–»ê²Œ í–‰ìœ„ë¥¼ ì´‰ë°œì‹œí‚¬ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#Virus">ë°”ì´ëŸ¬ìŠ¤ ë°±ì‹  í”„ë¡œê·¸ëž¨ì´ AHKë¥¼ ë§¬ì›¨ì–´ë¡œ ì§„ë‹¨í–ˆë‹¤. ì •ë§ë¡œ ë°”ì´ëŸ¬ìŠ¤ê°€ ë“¤ì–´ìžˆëŠ”ê°€?</a></li>
 </ul>
-<h3>ÇÖÅ°, ÇÖ½ºÆ®¸µ, ±×¸®°í ¸®¸ÊÇÎ</h3>
+<h3>í•«í‚¤, í•«ìŠ¤íŠ¸ë§, ê·¸ë¦¬ê³  ë¦¬ë§µí•‘</h3>
 <ul>
-  <li><a href="#Startup">ÄÄÇ»ÅÍ°¡ ½ÃÀÛÇÒ ¶§¸¶´Ù ¾î¶»°Ô ÇÖÅ°¿Í ÇÖ½ºÆ®¸µÀ» ÀÚµ¿À¸·Î ÀÛµ¿ÇÏ°Ô ¸¸µå´Â°¡?</a></li>
-  <li><a href="#HotMouse">¸¶¿ì½º ¹öÆ°À» ÇÖÅ°Ã³·³ ÀÛµ¿½ÃÅ°´Âµ¥ ¾î·Á¿òÀ» °Þ°í ÀÖ´Ù. ¹«½¼ Á¶¾ðÀÌ ÀÖ´Â°¡?</a></li>
-  <li><a href="#HotSymb">¾î¶»°Ô ÅÇ°ú ½ºÆäÀÌ½º¸¦ ÇÖÅ°·Î Á¤ÀÇÇÒ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#Remap">¾î¶»°Ô Å°³ª ¸¶¿ì½º ¹öÆ°À» ¸®¸ÊÇØ¼­ ´Ù¸¥ Å°Ã³·³ ¸¸µé ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#DoublePress">¾î¶»°Ô Å°³ª ¹öÆ°À» µÎ ¹ø ´­·¶´ÂÁö Å½ÁöÇÏ´Â°¡?</a></li>
-  <li><a href="#HotContext">¾î¶»°Ô ÇÖÅ°³ª ÇÖ½ºÆ®¸µÀ» ¾î¶² ÇÁ·Î±×·¥¿¡´Â ¹èÁ¦µÇµµ·Ï ¸¸µé ¼ö ÀÖ´Â°¡? ´Ù¸¥ ¸»·Î ÇØ¼­, Æ¯Á¤ÇÑ Ã¢ÀÌ È°¼ºÈ­µÉ ¶§ ¾î¶² Å°´Â ¸¶Ä¡ º¸ÅëÃ³·³ ÇàÀ§ÇÏ°Ô ¸¸µé°í ½Í´Ù.</a></li>
-  <li><a href="#HotPrefix">¾î¶»°Ô Á¢µÎ Å°¸¦ ¾Æ¹«°Íµµ ÇÏÁö ¾Ê´Â ´ë½Å¿¡ ±×ÀÇ ¿ø·¡ ±â´ÉÀ» ¼öÇàÇÏµµ·Ï ¸¸µé ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#HotOverride">¾î¶»°Ô ³»Àå À©µµ¿ìÁî ´ÜÃà Å°, Win+U (À¯Æ¿¸®Æ¼ °ü¸®ÀÚ) ±×¸®°í Win+R (½ÇÇà) °°Àº Å°µéÀ», ¹Ù²Ù°Å³ª ºÒ´ÉÀ¸·Î ¸¸µé ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#HotRegEx">ÇÖ½ºÆ®¸µ¿¡ ¿ÍÀÏµåÄ«µå³ª Á¤±Ô Ç¥Çö½ÄÀ» »ç¿ëÇÒ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#SpecialKey">Å°º¸µå ·¹ÀÌ¾Æ¿ô¿¡ ¾ø´Â ÇÖÅ°¸¦ »ç¿ëÇÒ ¼ö ÀÖ´Â°¡?</a></li>
-  <li><a href="#HotZero">³ªÀÇ Å°ÆÐµå´Â Æ¯¼öÇÑ 000 Å°¸¦ °¡Áö°í ÀÖ´Ù. ±×°Íµµ ÇÖÅ°·Î ¹Ù²Ü ¼ö ÀÖ´Â°¡?</a></li>
+  <li><a href="#Startup">ì»´í“¨í„°ê°€ ì‹œìž‘í•  ë•Œë§ˆë‹¤ ì–´ë–»ê²Œ í•«í‚¤ì™€ í•«ìŠ¤íŠ¸ë§ì„ ìžë™ìœ¼ë¡œ ìž‘ë™í•˜ê²Œ ë§Œë“œëŠ”ê°€?</a></li>
+  <li><a href="#HotMouse">ë§ˆìš°ìŠ¤ ë²„íŠ¼ì„ í•«í‚¤ì²˜ëŸ¼ ìž‘ë™ì‹œí‚¤ëŠ”ë° ì–´ë ¤ì›€ì„ ê²ªê³  ìžˆë‹¤. ë¬´ìŠ¨ ì¡°ì–¸ì´ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#HotSymb">ì–´ë–»ê²Œ íƒ­ê³¼ ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ í•«í‚¤ë¡œ ì •ì˜í•  ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#Remap">ì–´ë–»ê²Œ í‚¤ë‚˜ ë§ˆìš°ìŠ¤ ë²„íŠ¼ì„ ë¦¬ë§µí•´ì„œ ë‹¤ë¥¸ í‚¤ì²˜ëŸ¼ ë§Œë“¤ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#DoublePress">ì–´ë–»ê²Œ í‚¤ë‚˜ ë²„íŠ¼ì„ ë‘ ë²ˆ ëˆŒë €ëŠ”ì§€ íƒì§€í•˜ëŠ”ê°€?</a></li>
+  <li><a href="#HotContext">ì–´ë–»ê²Œ í•«í‚¤ë‚˜ í•«ìŠ¤íŠ¸ë§ì„ ì–´ë–¤ í”„ë¡œê·¸ëž¨ì—ëŠ” ë°°ì œë˜ë„ë¡ ë§Œë“¤ ìˆ˜ ìžˆëŠ”ê°€? ë‹¤ë¥¸ ë§ë¡œ í•´ì„œ, íŠ¹ì •í•œ ì°½ì´ í™œì„±í™”ë  ë•Œ ì–´ë–¤ í‚¤ëŠ” ë§ˆì¹˜ ë³´í†µì²˜ëŸ¼ í–‰ìœ„í•˜ê²Œ ë§Œë“¤ê³  ì‹¶ë‹¤.</a></li>
+  <li><a href="#HotPrefix">ì–´ë–»ê²Œ ì ‘ë‘ í‚¤ë¥¼ ì•„ë¬´ê²ƒë„ í•˜ì§€ ì•ŠëŠ” ëŒ€ì‹ ì— ê·¸ì˜ ì›ëž˜ ê¸°ëŠ¥ì„ ìˆ˜í–‰í•˜ë„ë¡ ë§Œë“¤ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#HotOverride">ì–´ë–»ê²Œ ë‚´ìž¥ ìœˆë„ìš°ì¦ˆ ë‹¨ì¶• í‚¤, Win+U (ìœ í‹¸ë¦¬í‹° ê´€ë¦¬ìž) ê·¸ë¦¬ê³  Win+R (ì‹¤í–‰) ê°™ì€ í‚¤ë“¤ì„, ë°”ê¾¸ê±°ë‚˜ ë¶ˆëŠ¥ìœ¼ë¡œ ë§Œë“¤ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#HotRegEx">í•«ìŠ¤íŠ¸ë§ì— ì™€ì¼ë“œì¹´ë“œë‚˜ ì •ê·œ í‘œí˜„ì‹ì„ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#SpecialKey">í‚¤ë³´ë“œ ë ˆì´ì•„ì›ƒì— ì—†ëŠ” í•«í‚¤ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ”ê°€?</a></li>
+  <li><a href="#HotZero">ë‚˜ì˜ í‚¤íŒ¨ë“œëŠ” íŠ¹ìˆ˜í•œ 000 í‚¤ë¥¼ ê°€ì§€ê³  ìžˆë‹¤. ê·¸ê²ƒë„ í•«í‚¤ë¡œ ë°”ê¿€ ìˆ˜ ìžˆëŠ”ê°€?</a></li>
 </ul>
-<h2>¾ð¾î ±¸¹®</h2>
-<h3 id="quotes">¾ðÁ¦ ÀÎ¿ë Ç¥½ÄÀ» ¸í·É¾î¿Í ±×ÀÇ ¸Å°³º¯¼ö¿¡ »ç¿ëÇÏ´Â°¡?</h3>
+<h2>ì–¸ì–´ êµ¬ë¬¸</h2>
+<h3 id="quotes">ì–¸ì œ ì¸ìš© í‘œì‹ì„ ëª…ë ¹ì–´ì™€ ê·¸ì˜ ë§¤ê°œë³€ìˆ˜ì— ì‚¬ìš©í•˜ëŠ”ê°€?</h3>
 <p>
-µÎ°ã µû¿ÈÇ¥ (&quot;)´Â <a href="Variables.htm#Expressions">Ç¥Çö½Ä</a> ¾È¿¡¼­¸¸ Æ¯º°ÇÑ ÀÇ¹Ì°¡ ÀÖ½À´Ï´Ù. ´Ù¸¥ °÷¿¡¼­´Â ¹®ÀÚ ±×´ë·Î ¸¶Ä¡ Á¤»ó ¹®ÀÚÃ³·³ Ãë±ÞµË´Ï´Ù. ±×·¸Áö¸¸, ½ºÅ©¸³Æ®°¡ ÇÁ·Î±×·¥À» ±âµ¿½ÃÅ°°Å³ª ¹®¼­¸¦ ¿­¶§, ¿î¿µ Ã¼Á¦´Â º¸Åë °ãµû¿ÈÇ¥°¡ ¸í·É¾î-ÁÙ ¸Å°³º¯¼ö¿¡ µÑ·¯Á® ÀÖ±â¸¦ ¿ä±¸ÇÕ´Ï´Ù. ´ÙÀ½ ¿¹Á¦Ã³·³, ¾È¿¡ °ø¹éÀÌ ÀÖÀ¸¸é ¸»ÀÔ´Ï´Ù: <code>Run, Notepad.exe &quot;C:\My Documents\Address List.txt&quot;</code>.</p>
+ë‘ê²¹ ë”°ì˜´í‘œ (&quot;)ëŠ” <a href="Variables.htm#Expressions">í‘œí˜„ì‹</a> ì•ˆì—ì„œë§Œ íŠ¹ë³„í•œ ì˜ë¯¸ê°€ ìžˆìŠµë‹ˆë‹¤. ë‹¤ë¥¸ ê³³ì—ì„œëŠ” ë¬¸ìž ê·¸ëŒ€ë¡œ ë§ˆì¹˜ ì •ìƒ ë¬¸ìžì²˜ëŸ¼ ì·¨ê¸‰ë©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ìŠ¤í¬ë¦½íŠ¸ê°€ í”„ë¡œê·¸ëž¨ì„ ê¸°ë™ì‹œí‚¤ê±°ë‚˜ ë¬¸ì„œë¥¼ ì—´ë•Œ, ìš´ì˜ ì²´ì œëŠ” ë³´í†µ ê²¹ë”°ì˜´í‘œê°€ ëª…ë ¹ì–´-ì¤„ ë§¤ê°œë³€ìˆ˜ì— ë‘˜ëŸ¬ì ¸ ìžˆê¸°ë¥¼ ìš”êµ¬í•©ë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì²˜ëŸ¼, ì•ˆì— ê³µë°±ì´ ìžˆìœ¼ë©´ ë§ìž…ë‹ˆë‹¤: <code>Run, Notepad.exe &quot;C:\My Documents\Address List.txt&quot;</code>.</p>
 
-<h3 id="percent">Á¤È®ÇÏ°Ô ¾ðÁ¦ º¯¼ö ÀÌ¸§À» ÆÛ¼¾Æ® ±âÈ£·Î µÑ·¯½Î´Â°¡?</h3>
+<h3 id="percent">ì •í™•í•˜ê²Œ ì–¸ì œ ë³€ìˆ˜ ì´ë¦„ì„ í¼ì„¼íŠ¸ ê¸°í˜¸ë¡œ ë‘˜ëŸ¬ì‹¸ëŠ”ê°€?</h3>
 <p>
-º¯¼ö ÀÌ¸§Àº ¾ðÁ¦³ª ÆÛ¼¾Æ® ±âÈ£·Î µÑ·¯½Ô´Ï´Ù. ´Ü, ¾Æ·¡ÀÇ <strong>º¼µåÃ¼</strong>·Î º¸¿©ÁØ °ÍÀº Á¦¿ÜÇÕ´Ï´Ù:</p>
-<p>1) ÀÔ·Â º¯¼ö³ª Ãâ·Â º¯¼öÀÎ ¸Å°³º¯¼ö¿¡: <code><a href="commands/StringLen.htm">StringLen</a>, <strong>OutputVar</strong>, <strong>InputVar</strong></code><br>
-  2) ÇÒ´çÀÇ ¿ÞÂÊ¿¡: <code><strong>Var</strong> = 123abc</code><br>
-  3) <a href="commands/IfEqual.htm">ÀüÅëÀûÀÎ (ºñ-Ç¥Çö½Ä) if-¼­¼ú¹®ÀÇ ¿ÞÂÊ¿¡</a>: <code>If <strong>Var1</strong> &lt; %Var2%</code><br>
-4) <a href="Variables.htm#Expressions">Ç¥Çö½Ä</a>ÀÇ ¸ðµç °÷¿¡. ¿¹¸¦ µé¾î:</p>
+ë³€ìˆ˜ ì´ë¦„ì€ ì–¸ì œë‚˜ í¼ì„¼íŠ¸ ê¸°í˜¸ë¡œ ë‘˜ëŸ¬ìŒ‰ë‹ˆë‹¤. ë‹¨, ì•„ëž˜ì˜ <strong>ë³¼ë“œì²´</strong>ë¡œ ë³´ì—¬ì¤€ ê²ƒì€ ì œì™¸í•©ë‹ˆë‹¤:</p>
+<p>1) ìž…ë ¥ ë³€ìˆ˜ë‚˜ ì¶œë ¥ ë³€ìˆ˜ì¸ ë§¤ê°œë³€ìˆ˜ì—: <code><a href="commands/StringLen.htm">StringLen</a>, <strong>OutputVar</strong>, <strong>InputVar</strong></code><br>
+  2) í• ë‹¹ì˜ ì™¼ìª½ì—: <code><strong>Var</strong> = 123abc</code><br>
+  3) <a href="commands/IfEqual.htm">ì „í†µì ì¸ (ë¹„-í‘œí˜„ì‹) if-ì„œìˆ ë¬¸ì˜ ì™¼ìª½ì—</a>: <code>If <strong>Var1</strong> &lt; %Var2%</code><br>
+4) <a href="Variables.htm#Expressions">í‘œí˜„ì‹</a>ì˜ ëª¨ë“  ê³³ì—. ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre>If (<strong>Var1</strong> &lt;&gt; <strong>Var2</strong>)
     <strong>Var1 <a href="commands/SetExpression.htm">:=</a> Var2</strong> + 100</pre>
 
-<h3 id="esc">¾ðÁ¦ ÆÛ¼¾Æ® ±âÈ£¿Í ¼ûÇ¥¸¦ <a href="commands/_EscapeChar.htm">ÇÇ½Å½ÃÄÑ¾ß ÇÏ´Â°¡</a>?</h3>
+<h3 id="esc">ì–¸ì œ í¼ì„¼íŠ¸ ê¸°í˜¸ì™€ ìˆ¨í‘œë¥¼ <a href="commands/_EscapeChar.htm">í”¼ì‹ ì‹œì¼œì•¼ í•˜ëŠ”ê°€</a>?</h3>
 <p>
-¹®ÀÚ ±×´ë·ÎÀÇ ÆÛ¼¾Æ® ±âÈ£´Â ¹Ýµå½Ã <a href="commands/_EscapeChar.htm">ÇÇ½Å½ÃÄÑ¾ß</a> ÇÕ´Ï´Ù. ¾Õ¿¡´Ù ¾×¼¾Æ®/¹éÆ½À» ºÙÀÌ¸é µË´Ï´Ù. ¿¹¸¦ µé¾î: <code>MsgBox ÇöÀç ¹éºÐ·üÀº 25`% ÀÔ´Ï´Ù.</code> 
-¹®ÀÚ ±×´ë·ÎÀÇ ½°Ç¥µµ ¹Ýµå½Ã ÇÇ½Å½ÃÄÑ¾ß ÇÕ´Ï´Ù (<code>`,</code>). ´Ü, <a href="commands/MsgBox.htm">MsgBox</a> ¶Ç´Â ¸í·É¾îÀÇ ¸¶Áö¸· ¸Å°³º¯¼ö·Î »ç¿ëµÉ ¶§´Â Á¦¿ÜÇÕ´Ï´Ù (ÀÌ °æ¿ì ¾×¼¾Æ®´Â Çã¿ëµÇÁö¸¸ ÇÊ¼ö´Â ¾Æ´Õ´Ï´Ù).</p>
+ë¬¸ìž ê·¸ëŒ€ë¡œì˜ í¼ì„¼íŠ¸ ê¸°í˜¸ëŠ” ë°˜ë“œì‹œ <a href="commands/_EscapeChar.htm">í”¼ì‹ ì‹œì¼œì•¼</a> í•©ë‹ˆë‹¤. ì•žì—ë‹¤ ì•¡ì„¼íŠ¸/ë°±í‹±ì„ ë¶™ì´ë©´ ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>MsgBox í˜„ìž¬ ë°±ë¶„ë¥ ì€ 25`% ìž…ë‹ˆë‹¤.</code> 
+ë¬¸ìž ê·¸ëŒ€ë¡œì˜ ì‰¼í‘œë„ ë°˜ë“œì‹œ í”¼ì‹ ì‹œì¼œì•¼ í•©ë‹ˆë‹¤ (<code>`,</code>). ë‹¨, <a href="commands/MsgBox.htm">MsgBox</a> ë˜ëŠ” ëª…ë ¹ì–´ì˜ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ë¡œ ì‚¬ìš©ë  ë•ŒëŠ” ì œì™¸í•©ë‹ˆë‹¤ (ì´ ê²½ìš° ì•¡ì„¼íŠ¸ëŠ” í—ˆìš©ë˜ì§€ë§Œ í•„ìˆ˜ëŠ” ì•„ë‹™ë‹ˆë‹¤).</p>
 <p>
-½°Ç¥³ª ÆÛ¼¾Æ® ±âÈ£°¡ <a href="Variables.htm#Expressions">Ç¥Çö½Ä</a> ¾È¿¡¼­ µû¿ÈÇ¥·Î µÑ·¯ ½ÎÀÌ¸é, ¾×¼¾Æ®´Â Çã¿ëµÇÁö¸¸ ÇÊ¼ö´Â ¾Æ´Õ´Ï´Ù. ¿¹¸¦ µé¾î: <code>Var := &quot;15%&quot;</code>.</p>
+ì‰¼í‘œë‚˜ í¼ì„¼íŠ¸ ê¸°í˜¸ê°€ <a href="Variables.htm#Expressions">í‘œí˜„ì‹</a> ì•ˆì—ì„œ ë”°ì˜´í‘œë¡œ ë‘˜ëŸ¬ ì‹¸ì´ë©´, ì•¡ì„¼íŠ¸ëŠ” í—ˆìš©ë˜ì§€ë§Œ í•„ìˆ˜ëŠ” ì•„ë‹™ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>Var := &quot;15%&quot;</code>.</p>
 
-<h2>ÀÏ¹ÝÀûÀÎ °ú¾÷</h2>
+<h2>ì¼ë°˜ì ì¸ ê³¼ì—…</h2>
 
-<h3 id="Download">°ø½Ä ºôµå ¶Ç´Â ¿¹Àü ¹èÆ÷º»Àº ¾îµð¿¡¼­ Ã£À» ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="Download">ê³µì‹ ë¹Œë“œ ë˜ëŠ” ì˜ˆì „ ë°°í¬ë³¸ì€ ì–´ë””ì—ì„œ ì°¾ì„ ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-<a href="http://ahkscript.org/download/">¿ÀÅäÇÖÅ° ³»·Á¹Þ±â ÆäÀÌÁö</a>¸¦ ÂüÁ¶ÇÕ´Ï´Ù.</p>
+<a href="http://ahkscript.org/download/">ì˜¤í† í•«í‚¤ ë‚´ë ¤ë°›ê¸° íŽ˜ì´ì§€</a>ë¥¼ ì°¸ì¡°í•©ë‹ˆë‹¤.</p>
 
-<h3 id="autoexec">¿Ö ½ºÅ©¸³Æ®¿¡¼­ ¾î¶² ÁÙÀº Àý´ë·Î ½ÇÇàµÇÁö ¾Ê´Â°¡?</h3>
+<h3 id="autoexec">ì™œ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ì–´ë–¤ ì¤„ì€ ì ˆëŒ€ë¡œ ì‹¤í–‰ë˜ì§€ ì•ŠëŠ”ê°€?</h3>
 <p>
-¾î¶² ÁÙÀÌµç Áï½Ã ½ÇÇàÇÏ°í ½Í´Ù¸é ½ºÅ©¸³Æ®°¡ ½ÇÇàµÉ ¶§ »ó´Ü¿¡ ÀÖ¾î¾ß ÇÕ´Ï´Ù.  ±× ´ÙÀ½¿¡ <a href="Hotkeys.htm">ÇÖÅ°</a>, <a href="Hotstrings.htm">ÇÖ½ºÆ®¸µ</a>, ¶Ç´Â <a href="commands/Return.htm">Return</a>ÀÌ ³ª¿Í¾ß ÇÕ´Ï´Ù. ´õ ÀÚ¼¼ÇÑ °ÍÀº <a href="Scripts.htm#auto">ÀÚµ¿-½ÇÇà ¼½¼Ç</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-<p>¶ÇÇÑ, ÇÑ ÁÙ ÀÌ»ó ½ÇÇàÇÏ´Â <a href="Hotkeys.htm">ÇÖÅ°</a>´Â ±×ÀÇ Ã¹ ¹øÂ° ÁÙÀÌ ÇÖÅ° <em>¹Ù·Î ¾Æ·¡¿¡</em> ³ªÅ¸³ª¾ß ÇÕ´Ï´Ù. °°Àº ÁÙÀÌ ¾Æ´Õ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì–´ë–¤ ì¤„ì´ë“  ì¦‰ì‹œ ì‹¤í–‰í•˜ê³  ì‹¶ë‹¤ë©´ ìŠ¤í¬ë¦½íŠ¸ê°€ ì‹¤í–‰ë  ë•Œ ìƒë‹¨ì— ìžˆì–´ì•¼ í•©ë‹ˆë‹¤.  ê·¸ ë‹¤ìŒì— <a href="Hotkeys.htm">í•«í‚¤</a>, <a href="Hotstrings.htm">í•«ìŠ¤íŠ¸ë§</a>, ë˜ëŠ” <a href="commands/Return.htm">Return</a>ì´ ë‚˜ì™€ì•¼ í•©ë‹ˆë‹¤. ë” ìžì„¸í•œ ê²ƒì€ <a href="Scripts.htm#auto">ìžë™-ì‹¤í–‰ ì„¹ì…˜</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+<p>ë˜í•œ, í•œ ì¤„ ì´ìƒ ì‹¤í–‰í•˜ëŠ” <a href="Hotkeys.htm">í•«í‚¤</a>ëŠ” ê·¸ì˜ ì²« ë²ˆì§¸ ì¤„ì´ í•«í‚¤ <em>ë°”ë¡œ ì•„ëž˜ì—</em> ë‚˜íƒ€ë‚˜ì•¼ í•©ë‹ˆë‹¤. ê°™ì€ ì¤„ì´ ì•„ë‹™ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre>#space::  <em>; Win+Spacebar</em>
 Run Notepad
 WinWaitActive Untitled - Notepad
 WinMaximize
 return</pre>
 
-<h3 id="vista">¿Ö ½ºÅ©¸³Æ®°¡ XP¿¡¼­´Â Àß ½ÇÇàµÇ´Âµ¥  Vista³ª Windows 7 ¶Ç´Â 8¿¡¼­´Â ½ÇÇàµÇÁö ¾Ê´Â°¡?</h3>
+<h3 id="vista">ì™œ ìŠ¤í¬ë¦½íŠ¸ê°€ XPì—ì„œëŠ” ìž˜ ì‹¤í–‰ë˜ëŠ”ë°  Vistaë‚˜ Windows 7 ë˜ëŠ” 8ì—ì„œëŠ” ì‹¤í–‰ë˜ì§€ ì•ŠëŠ”ê°€?</h3>
 <p>
-¿î¿µÃ¼Á¦¸¦ ÀüÈ¯ÇÏ¸é, ´Ù¸¥ ¹«¾ð°¡µµ ¿ª½Ã ¹Ù²ð °¡´É¼ºÀÌ ³ô½À´Ï´Ù. ±× ¶§¹®¿¡ ½ºÅ©¸³Æ®¿¡ ¿µÇâÀ» ³¢Ä¥ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¸é, »õ ÄÄÇ»ÅÍ¸¦ ±¸ÀÔÇß´Ù¸é, ¿¹Àü ÄÄÇ»ÅÍ¿Í ¾î¶»°Ôµç ´Ù¸¦ °Ì´Ï´Ù. ¶Ç »õ·Î¿î ¹öÀüÀÇ ¿ÀÅäÇÖÅ°·Î ¾÷±×·¹ÀÌµåÇß´Ù¸é, ¿¹Àü¿¡´Â ¾î¶² ¹öÀüÀÌ¾ú´ÂÁö ¾Ë¾Æº¸°í <a href="AHKL_ChangeLog.htm">º¯°æ ±â·Ï</a>°ú <a href="Compat.htm">È£È¯¼º ³ëÆ®</a>¸¦ Á¡°ËÇØ º¸½Ê½Ã¿À.</p>
+ìš´ì˜ì²´ì œë¥¼ ì „í™˜í•˜ë©´, ë‹¤ë¥¸ ë¬´ì–¸ê°€ë„ ì—­ì‹œ ë°”ë€” ê°€ëŠ¥ì„±ì´ ë†’ìŠµë‹ˆë‹¤. ê·¸ ë•Œë¬¸ì— ìŠ¤í¬ë¦½íŠ¸ì— ì˜í–¥ì„ ë¼ì¹  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ë©´, ìƒˆ ì»´í“¨í„°ë¥¼ êµ¬ìž…í–ˆë‹¤ë©´, ì˜ˆì „ ì»´í“¨í„°ì™€ ì–´ë–»ê²Œë“  ë‹¤ë¥¼ ê²ë‹ˆë‹¤. ë˜ ìƒˆë¡œìš´ ë²„ì „ì˜ ì˜¤í† í•«í‚¤ë¡œ ì—…ê·¸ë ˆì´ë“œí–ˆë‹¤ë©´, ì˜ˆì „ì—ëŠ” ì–´ë–¤ ë²„ì „ì´ì—ˆëŠ”ì§€ ì•Œì•„ë³´ê³  <a href="AHKL_ChangeLog.htm">ë³€ê²½ ê¸°ë¡</a>ê³¼ <a href="Compat.htm">í˜¸í™˜ì„± ë…¸íŠ¸</a>ë¥¼ ì ê²€í•´ ë³´ì‹­ì‹œì˜¤.</p>
 <p>
-XP¿¡¼­ ºñ½ºÅ¸³ª ±× ÀÌÈÄ ¹öÀüÀÇ À©µµ¿ìÁî·Î ÀÌÀüÇÏ¸é ÀÚÁÖ ¹ß»ýÇÏ´Â ¹®Á¦´Â ÇÁ·Î±×·¥ÀÌ "½Â°ÝµÇ¾î ¹ö·Á¼­" (°ü¸®ÀÚ·Î ½ÇÇàµÇ¾î ¹ö¸®¹Ç·Î) ÇÖÅ°°¡ ¸·È÷°Å³ª ÀÚµ¿È­µÇ±â¸¦ °ÅºÎÇÕ´Ï´Ù. Àû¾îµµ ¼¼°¡Áö ÇØ°áÃ¥ÀÌ ÀÖ½À´Ï´Ù:</p>
+XPì—ì„œ ë¹„ìŠ¤íƒ€ë‚˜ ê·¸ ì´í›„ ë²„ì „ì˜ ìœˆë„ìš°ì¦ˆë¡œ ì´ì „í•˜ë©´ ìžì£¼ ë°œìƒí•˜ëŠ” ë¬¸ì œëŠ” í”„ë¡œê·¸ëž¨ì´ "ìŠ¹ê²©ë˜ì–´ ë²„ë ¤ì„œ" (ê´€ë¦¬ìžë¡œ ì‹¤í–‰ë˜ì–´ ë²„ë¦¬ë¯€ë¡œ) í•«í‚¤ê°€ ë§‰ížˆê±°ë‚˜ ìžë™í™”ë˜ê¸°ë¥¼ ê±°ë¶€í•©ë‹ˆë‹¤. ì ì–´ë„ ì„¸ê°€ì§€ í•´ê²°ì±…ì´ ìžˆìŠµë‹ˆë‹¤:</p>
 <ul>
-  <li>AutoHotkey.exe¸¦ ¼öÁ¤ÇØ¼­ °ü¸®ÀÚ ÇÁ·Î±×·¥°ú »óÈ£ÀÛ¿ëÇÏµµ·Ï ¸¸µì´Ï´Ù. ÀÌ ¹æ¹ýÀº ¾à°£ °áÁ¡ÀÌ ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â ´ÙÀ½À» ÂüÁ¶ÇÕ´Ï´Ù: <a href="http://www.autohotkey.com/board/topic/70449-enable-interaction-with-administrative-programs/">http://www.autohotkey.com/board/topic/70449-enable-interaction-with-administrative-programs/</a></li>
-  <li>½ºÅ©¸³Æ®¸¦ <a href="Variables.htm#IsAdmin">°ü¸®ÀÚ·Î</a> ½ÇÇàÇÕ´Ï´Ù. ÀÌ °æ¿ìµµ ¿ª½Ã ÇÁ·Î±×·¥¿¡ ¹®Á¦¸¦ ÀÏÀ¸Å³ ¼ö ÀÖ½À´Ï´Ù.</li>
-  <li><a href="http://windows.microsoft.com/en-US/windows7/What-is-User-Account-Control">»ç¿ëÀÚ °èÁ¤ Á¦¾î</a>¸¦ ¸·¾Æ ¹ö¸³´Ï´Ù (±ÇÀåÇÏÁö ¾Ê½À´Ï´Ù); Windows 8 ÀÌÈÄ´Â º¸¾È ¼³Á¤À» ¹«·ÂÈ­ÇÒ ¼ö ÀÖ½À´Ï´Ù. &quot;°ü¸®ÀÚ ½ÂÀÎ ¸ðµå¿¡¼­ ¸ðµç ÇÁ·Î±×·¥À» ½ÇÇà&quot;À» ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù (¿ª½Ã ±ÇÀåÇÏÁö ¾Ê½À´Ï´Ù).</li>
+  <li>AutoHotkey.exeë¥¼ ìˆ˜ì •í•´ì„œ ê´€ë¦¬ìž í”„ë¡œê·¸ëž¨ê³¼ ìƒí˜¸ìž‘ìš©í•˜ë„ë¡ ë§Œë“­ë‹ˆë‹¤. ì´ ë°©ë²•ì€ ì•½ê°„ ê²°ì ì´ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” ë‹¤ìŒì„ ì°¸ì¡°í•©ë‹ˆë‹¤: <a href="http://www.autohotkey.com/board/topic/70449-enable-interaction-with-administrative-programs/">http://www.autohotkey.com/board/topic/70449-enable-interaction-with-administrative-programs/</a></li>
+  <li>ìŠ¤í¬ë¦½íŠ¸ë¥¼ <a href="Variables.htm#IsAdmin">ê´€ë¦¬ìžë¡œ</a> ì‹¤í–‰í•©ë‹ˆë‹¤. ì´ ê²½ìš°ë„ ì—­ì‹œ í”„ë¡œê·¸ëž¨ì— ë¬¸ì œë¥¼ ì¼ìœ¼í‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</li>
+  <li><a href="http://windows.microsoft.com/en-US/windows7/What-is-User-Account-Control">ì‚¬ìš©ìž ê³„ì • ì œì–´</a>ë¥¼ ë§‰ì•„ ë²„ë¦½ë‹ˆë‹¤ (ê¶Œìž¥í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤); Windows 8 ì´í›„ëŠ” ë³´ì•ˆ ì„¤ì •ì„ ë¬´ë ¥í™”í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. &quot;ê´€ë¦¬ìž ìŠ¹ì¸ ëª¨ë“œì—ì„œ ëª¨ë“  í”„ë¡œê·¸ëž¨ì„ ì‹¤í–‰&quot;ì„ ì„¤ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì—­ì‹œ ê¶Œìž¥í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤).</li>
 </ul>
-<p><a href="commands/SoundGet.htm">SoundGet</a>, <a href="commands/SoundSet.htm">SoundSet</a>, <a href="commands/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> ±×¸®°í <a href="commands/SoundSetWaveVolume.htm">SoundSetWaveVolume</a>´Â ºñ½ºÅ¸ ÀÌÀü ÀÌÈÄ ¹öÀü¿¡ µû¶ó ´Ù¸£°Ô Çàµ¿ÇÕ´Ï´Ù. Æ¯È÷, ÀåÄ¡ ¹øÈ£°¡ ´Ù¸£°í ¾î¶² ÄÄÆ÷³ÍÆ®´Â »ç¿ëÇÒ ¼öÁ¶Â÷ ¾ø½À´Ï´Ù. ÇàÀ§´Â ¿Àµð¿À µå¶óÀÌ¹ö¿¡ µû¶ó ´Ù¸¨´Ï´Ù. XP¿¡ »ç¿ëµÇ´Â µå¶óÀÌ¹ö¶ó¸é ´ç¿¬È÷ ´Ù¸¦ °Ì´Ï´Ù. <a href="commands/SoundSet.htm#Ex">»ç¿îµå Ä«µå ºÐ¼® ½ºÅ©¸³Æ®</a>¸¦ »ç¿ëÇÏ¸é ¿Ã¹Ù¸¥ ÀåÄ¡ ¹øÈ£¸¦ Ã£À» ¼ö ÀÖ½À´Ï´Ù.</p>
+<p><a href="commands/SoundGet.htm">SoundGet</a>, <a href="commands/SoundSet.htm">SoundSet</a>, <a href="commands/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> ê·¸ë¦¬ê³  <a href="commands/SoundSetWaveVolume.htm">SoundSetWaveVolume</a>ëŠ” ë¹„ìŠ¤íƒ€ ì´ì „ ì´í›„ ë²„ì „ì— ë”°ë¼ ë‹¤ë¥´ê²Œ í–‰ë™í•©ë‹ˆë‹¤. íŠ¹ížˆ, ìž¥ì¹˜ ë²ˆí˜¸ê°€ ë‹¤ë¥´ê³  ì–´ë–¤ ì»´í¬ë„ŒíŠ¸ëŠ” ì‚¬ìš©í•  ìˆ˜ì¡°ì°¨ ì—†ìŠµë‹ˆë‹¤. í–‰ìœ„ëŠ” ì˜¤ë””ì˜¤ ë“œë¼ì´ë²„ì— ë”°ë¼ ë‹¤ë¦…ë‹ˆë‹¤. XPì— ì‚¬ìš©ë˜ëŠ” ë“œë¼ì´ë²„ë¼ë©´ ë‹¹ì—°ížˆ ë‹¤ë¥¼ ê²ë‹ˆë‹¤. <a href="commands/SoundSet.htm#Ex">ì‚¬ìš´ë“œ ì¹´ë“œ ë¶„ì„ ìŠ¤í¬ë¦½íŠ¸</a>ë¥¼ ì‚¬ìš©í•˜ë©´ ì˜¬ë°”ë¥¸ ìž¥ì¹˜ ë²ˆí˜¸ë¥¼ ì°¾ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3 id="DefaultScript">Æ®·¹ÀÌ ¾ÆÀÌÄÜÀ» ÅëÇÏ¿© ½ºÅ©¸³Æ®¸¦ ÆíÁýÇÒ ¼ö ¾ø´Ù. ¿¡·¯ ¶§¹®¿¡ ½ÃÀÛÁ¶Â÷ ÇÏÁö ¾Ê´Â´Ù. ¾î¶»°Ô ÇØ¾ß ÇÏ´Â°¡?</h3>
+<h3 id="DefaultScript">íŠ¸ë ˆì´ ì•„ì´ì½˜ì„ í†µí•˜ì—¬ ìŠ¤í¬ë¦½íŠ¸ë¥¼ íŽ¸ì§‘í•  ìˆ˜ ì—†ë‹¤. ì—ëŸ¬ ë•Œë¬¸ì— ì‹œìž‘ì¡°ì°¨ í•˜ì§€ ì•ŠëŠ”ë‹¤. ì–´ë–»ê²Œ í•´ì•¼ í•˜ëŠ”ê°€?</h3>
 <p>
-½ºÅ©¸³Æ®ÀÇ ¿¡·¯¸¦ ¸ÕÀú ¼öÁ¤ÇÒ ÇÊ¿ä°¡ ÀÖ½À´Ï´Ù. ±× ´ÙÀ½¿¡ Æ®·¹ÀÌ ¾ÆÀÌÄÜÀ» ´Ù½Ã ¾òÀ» ¼ö ÀÖ½À´Ï´Ù. ±×·¯³ª ¸ÕÀú, ÇØ´ç ½ºÅ©¸³Æ® ÆÄÀÏÀ» Ã£À» ÇÊ¿ä°¡ ÀÖ½À´Ï´Ù.</p>
-<p>´ÙÀ½ µð·ºÅä¸®¿¡¼­ AutoHotkey.ahk¸¦ Ã£½À´Ï´Ù:</p>
+ìŠ¤í¬ë¦½íŠ¸ì˜ ì—ëŸ¬ë¥¼ ë¨¼ì € ìˆ˜ì •í•  í•„ìš”ê°€ ìžˆìŠµë‹ˆë‹¤. ê·¸ ë‹¤ìŒì— íŠ¸ë ˆì´ ì•„ì´ì½˜ì„ ë‹¤ì‹œ ì–»ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ë¨¼ì €, í•´ë‹¹ ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì„ ì°¾ì„ í•„ìš”ê°€ ìžˆìŠµë‹ˆë‹¤.</p>
+<p>ë‹¤ìŒ ë””ë ‰í† ë¦¬ì—ì„œ AutoHotkey.ahkë¥¼ ì°¾ìŠµë‹ˆë‹¤:</p>
 <ul>
-  <li><em>³ªÀÇ ¹®¼­</em> (¶Ç´Â <em>My Documents</em>) Æú´õ.</li>
-  <li>¿ÀÅäÇÖÅ°¸¦ ¼³Ä¡ÇÑ µð·ºÅä¸®. º¸Åë C:\Program Files\AutoHotkey. 
-   ¿ÀÅäÇÖÅ°¸¦ ¼³Ä¡ÇÏ°í »ç¿ëÇÏ°í ÀÖ´Ù¸é, AutoHotkey.exe°¡ µé¾î ÀÖ´Â µð·ºÅä¸®¸¦ µé¿©´Ù º¾´Ï´Ù.</li>
+  <li><em>ë‚˜ì˜ ë¬¸ì„œ</em> (ë˜ëŠ” <em>My Documents</em>) í´ë”.</li>
+  <li>ì˜¤í† í•«í‚¤ë¥¼ ì„¤ì¹˜í•œ ë””ë ‰í† ë¦¬. ë³´í†µ C:\Program Files\AutoHotkey. 
+   ì˜¤í† í•«í‚¤ë¥¼ ì„¤ì¹˜í•˜ê³  ì‚¬ìš©í•˜ê³  ìžˆë‹¤ë©´, AutoHotkey.exeê°€ ë“¤ì–´ ìžˆëŠ” ë””ë ‰í† ë¦¬ë¥¼ ë“¤ì—¬ë‹¤ ë´…ë‹ˆë‹¤.</li>
 </ul>
 <p>
-¶Ç´Ù¸¥ ¿ÀÅäÇÖÅ° ½ÇÇàÆÄÀÏÀ» Á÷Á¢ÀûÀ¸·Î ½ÇÇàÇÏ°í ÀÖ´Ù¸é, ±× ½ºÅ©¸³Æ®ÀÇ ÀÌ¸§Àº ½ÇÇàÆÄÀÏ¿¡ µû¶ó ´Ù¸¨´Ï´Ù. ¿¹¸¦ µé¾î, AutoHotkeyU32.exe¸¦ ½ÇÇàÇÏ°í ÀÖ´Ù¸é, AutoHotkeyU32.ahk¸¦ Ã£½À´Ï´Ù. ¿©·¯ºÐÀÇ ½Ã½ºÅÛ¿¡ µû¶ó ".ahk" ºÎºÐÀÌ °¨Ãß¾îÁ® ÀÖÀ» ¼ö ÀÖÁö¸¸, ±× ÆÄÀÏÀº ºÐ¸íÈ÷ <img src="static/ahkfile16.png" alt="[H]">¿Í °°Àº ¾ÆÀÌÄÜÀÌ ÀÖ½À´Ï´Ù.</p>
+ë˜ë‹¤ë¥¸ ì˜¤í† í•«í‚¤ ì‹¤í–‰íŒŒì¼ì„ ì§ì ‘ì ìœ¼ë¡œ ì‹¤í–‰í•˜ê³  ìžˆë‹¤ë©´, ê·¸ ìŠ¤í¬ë¦½íŠ¸ì˜ ì´ë¦„ì€ ì‹¤í–‰íŒŒì¼ì— ë”°ë¼ ë‹¤ë¦…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, AutoHotkeyU32.exeë¥¼ ì‹¤í–‰í•˜ê³  ìžˆë‹¤ë©´, AutoHotkeyU32.ahkë¥¼ ì°¾ìŠµë‹ˆë‹¤. ì—¬ëŸ¬ë¶„ì˜ ì‹œìŠ¤í…œì— ë”°ë¼ ".ahk" ë¶€ë¶„ì´ ê°ì¶”ì–´ì ¸ ìžˆì„ ìˆ˜ ìžˆì§€ë§Œ, ê·¸ íŒŒì¼ì€ ë¶„ëª…ížˆ <img src="static/ahkfile16.png" alt="[H]">ì™€ ê°™ì€ ì•„ì´ì½˜ì´ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-º¸Åë ½ºÅ©¸³Æ® ÆÄÀÏ¿¡ ¿ìÅ¬¸¯ÇØ¼­ <em>Edit Script</em>¸¦ ¼±ÅÃÇÏ¸é ÆíÁýÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×·¸Áö ¾Ê´Ù¸é, ÆÄÀÏÀ» ³ëÆ®ÆÐµå³ª ±âÅ¸ ´Ù¸¥ ÆíÁý±â·Î ¿­ ¼ö ÀÖ½À´Ï´Ù.</p>
+ë³´í†µ ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì— ìš°í´ë¦­í•´ì„œ <em>Edit Script</em>ë¥¼ ì„ íƒí•˜ë©´ íŽ¸ì§‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šë‹¤ë©´, íŒŒì¼ì„ ë…¸íŠ¸íŒ¨ë“œë‚˜ ê¸°íƒ€ ë‹¤ë¥¸ íŽ¸ì§‘ê¸°ë¡œ ì—´ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-AutoHotkey¸¦ ½ÃÀÛ ¸Þ´º·ÎºÎÅÍ ±âµ¿Çß°Å³ª ¶Ç´Â Á÷Á¢ AutoHotkey.exe¸¦ (¸í·É¾î ÁÙ ¸Å°³º¯¼ö ¾øÀÌ) ½ÇÇàÇß´Ù¸é, À§¿¡ º¸¿©ÁØ À§Ä¡ Áß ÇÏ³ª¿¡¼­ ½ºÅ©¸³Æ®¸¦ Ã£½À´Ï´Ù. ´Ù¸¥ ¹æ¹ýÀ¸·Î ¾Æ¹«µ¥³ª ¿øÇÏ´Â °÷¿¡ ½ºÅ©¸³Æ® ÆÄÀÏÀ» ¸¸µé¾î¼­  (something.ahk), ¿ÀÅäÇÖÅ°¸¦ ½ÇÇàÇÏ´Â ´ë½Å¿¡ ±× ½ºÅ©¸³Æ® ÆÄÀÏÀ» ½ÇÇàÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+AutoHotkeyë¥¼ ì‹œìž‘ ë©”ë‰´ë¡œë¶€í„° ê¸°ë™í–ˆê±°ë‚˜ ë˜ëŠ” ì§ì ‘ AutoHotkey.exeë¥¼ (ëª…ë ¹ì–´ ì¤„ ë§¤ê°œë³€ìˆ˜ ì—†ì´) ì‹¤í–‰í–ˆë‹¤ë©´, ìœ„ì— ë³´ì—¬ì¤€ ìœ„ì¹˜ ì¤‘ í•˜ë‚˜ì—ì„œ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì°¾ìŠµë‹ˆë‹¤. ë‹¤ë¥¸ ë°©ë²•ìœ¼ë¡œ ì•„ë¬´ë°ë‚˜ ì›í•˜ëŠ” ê³³ì— ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì„ ë§Œë“¤ì–´ì„œ  (something.ahk), ì˜¤í† í•«í‚¤ë¥¼ ì‹¤í–‰í•˜ëŠ” ëŒ€ì‹ ì— ê·¸ ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì„ ì‹¤í–‰í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-¶Ç <a href="Scripts.htm#defaultfile">¸í·É¾î ÁÙ ¸Å°³º¯¼ö &quot;½ºÅ©¸³Æ® ÆÄÀÏÀÌ¸§&quot;</a> ±×¸®°í <a href="Scripts.htm#port">AutoHotkey.exeÀÇ ÀÌ½Ä¼º</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ë˜ <a href="Scripts.htm#defaultfile">ëª…ë ¹ì–´ ì¤„ ë§¤ê°œë³€ìˆ˜ &quot;ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì´ë¦„&quot;</a> ê·¸ë¦¬ê³  <a href="Scripts.htm#port">AutoHotkey.exeì˜ ì´ì‹ì„±</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3 id="Debug">ÄÚµå¿¡¼­ ¿¡·¯¸¦ ¾î¶»°Ô ¹ß°ßÇÏ°í °íÄ¥ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="Debug">ì½”ë“œì—ì„œ ì—ëŸ¬ë¥¼ ì–´ë–»ê²Œ ë°œê²¬í•˜ê³  ê³ ì¹  ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-°£´ÜÇÑ ½ºÅ©¸³Æ®¶ó¸é <a href="Scripts.htm#debug">½ºÅ©¸³Æ® µð¹ö±ëÇÏ±â</a>¸¦ ÂüÁ¶ÇÕ´Ï´Ù. º¯¼öÀÇ ³»¿ëÀ» º¸¿©ÁÖ·Á¸é, <a href="commands/MsgBox.htm">MsgBox</a> ¶Ç´Â <a href="commands/ToolTip.htm">ToolTip</a>À» »ç¿ëÇÕ´Ï´Ù. 
-º¹ÀâÇÑ ½ºÅ©¸³Æ®¶ó¸é <a href="Scripts.htm#idebug">»óÈ£´ëÈ­ µð¹ö±ë</a>À» ÂüÁ¶ÇÕ´Ï´Ù.</p>
+ê°„ë‹¨í•œ ìŠ¤í¬ë¦½íŠ¸ë¼ë©´ <a href="Scripts.htm#debug">ìŠ¤í¬ë¦½íŠ¸ ë””ë²„ê¹…í•˜ê¸°</a>ë¥¼ ì°¸ì¡°í•©ë‹ˆë‹¤. ë³€ìˆ˜ì˜ ë‚´ìš©ì„ ë³´ì—¬ì£¼ë ¤ë©´, <a href="commands/MsgBox.htm">MsgBox</a> ë˜ëŠ” <a href="commands/ToolTip.htm">ToolTip</a>ì„ ì‚¬ìš©í•©ë‹ˆë‹¤. 
+ë³µìž¡í•œ ìŠ¤í¬ë¦½íŠ¸ë¼ë©´ <a href="Scripts.htm#idebug">ìƒí˜¸ëŒ€í™” ë””ë²„ê¹…</a>ì„ ì°¸ì¡°í•©ë‹ˆë‹¤.</p>
 
-<h3 id="USB">AHK¸¦ USB µå¶óÀÌºê¿¡¼­ ½ÇÇàÇÒ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="USB">AHKë¥¼ USB ë“œë¼ì´ë¸Œì—ì„œ ì‹¤í–‰í•  ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-<a href="Scripts.htm#port">AutoHotkey.exeÀÇ ÀÌ½Ä¼º</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À. ÀÚµ¿-Æ÷ÇÔ ÇÔ¼ö ¶óÀÌºê·¯¸®¸¦ »ç¿ëÇÑ´Ù¸é, AutoHotkey.exe¿Í Lib Æú´õ´Â Ahk2Exe.exeº¸´Ù ÇÑ ´Ü°è ³ôÀº Æú´õ¿¡ À§Ä¡ÇØ¾ß ÇÕ´Ï´Ù (¿¹, \AutoHotkey.exe vs \Compiler\Ahk2Exe.exe).
-¶Ç Ahk2Exe´Â ¼³Á¤À» ´ÙÀ½ ·¹Áö½ºÆ®¸® Å°¿¡ ÀúÀåÇÑ´Ù´Â °Í¿¡µµ ÁÖ¸ñÇÏ½Ê½Ã¿À: <code>HKEY_CURRENT_USER\Software\AutoHotkey\Ahk2Exe</code>.</p>
+<a href="Scripts.htm#port">AutoHotkey.exeì˜ ì´ì‹ì„±</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤. ìžë™-í¬í•¨ í•¨ìˆ˜ ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ì‚¬ìš©í•œë‹¤ë©´, AutoHotkey.exeì™€ Lib í´ë”ëŠ” Ahk2Exe.exeë³´ë‹¤ í•œ ë‹¨ê³„ ë†’ì€ í´ë”ì— ìœ„ì¹˜í•´ì•¼ í•©ë‹ˆë‹¤ (ì˜ˆ, \AutoHotkey.exe vs \Compiler\Ahk2Exe.exe).
+ë˜ Ahk2ExeëŠ” ì„¤ì •ì„ ë‹¤ìŒ ë ˆì§€ìŠ¤íŠ¸ë¦¬ í‚¤ì— ì €ìž¥í•œë‹¤ëŠ” ê²ƒì—ë„ ì£¼ëª©í•˜ì‹­ì‹œì˜¤: <code>HKEY_CURRENT_USER\Software\AutoHotkey\Ahk2Exe</code>.</p>
 
-<h3 id="run">¿Ö <a href="commands/Run.htm">Run</a> ¸í·É¾î°¡ °ÔÀÓÀÌ³ª ÇÁ·Î±×·¥À» ±âµ¿½ÃÅ°Áö ¸øÇÏ´Â°¡?</h3>
+<h3 id="run">ì™œ <a href="commands/Run.htm">Run</a> ëª…ë ¹ì–´ê°€ ê²Œìž„ì´ë‚˜ í”„ë¡œê·¸ëž¨ì„ ê¸°ë™ì‹œí‚¤ì§€ ëª»í•˜ëŠ”ê°€?</h3>
 <p>
-¾î¶² ÇÁ·Î±×·¥Àº ÀÚ½Å¸¸ÀÇ µð·ºÅä¸®¿¡¼­ ½ÃÀÛÇÒ ÇÊ¿ä°¡ ÀÖ½À´Ï´Ù (Àß ¸ð¸£°Ú´Ù¸é, º¸Åë ±×·¸°Ô ÇÏ´Â °ÍÀÌ °¡Àå ÁÁ½À´Ï´Ù). ¿¹¸¦ µé¾î:</p>
+ì–´ë–¤ í”„ë¡œê·¸ëž¨ì€ ìžì‹ ë§Œì˜ ë””ë ‰í† ë¦¬ì—ì„œ ì‹œìž‘í•  í•„ìš”ê°€ ìžˆìŠµë‹ˆë‹¤ (ìž˜ ëª¨ë¥´ê² ë‹¤ë©´, ë³´í†µ ê·¸ë ‡ê²Œ í•˜ëŠ” ê²ƒì´ ê°€ìž¥ ì¢‹ìŠµë‹ˆë‹¤). ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre>Run, %A_ProgramFiles%\Some Application\App.exe, %A_ProgramFiles%\Some Application</pre>
 
-<h3 id="output">¾î¶»°Ô ¸í·É ÁÙ ¿¬»êÀÇ Ãâ·Â °á°ú¸¦ ¿­¶÷ÇÒ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="output">ì–´ë–»ê²Œ ëª…ë ¹ ì¤„ ì—°ì‚°ì˜ ì¶œë ¥ ê²°ê³¼ë¥¼ ì—´ëžŒí•  ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-Å×½ºÆ®¿¡ ÀÇÇÏ¸é ÆÄÀÏ Ä³½³ ¶§¹®¿¡, ÀÓ½Ã ÆÄÀÏÀº »ó´ëÀûÀ¸·Î ÀÛÀº Ãâ·Â¿¡ ¾ÆÁÖ ºü¸¦ ¼ö ÀÖ½À´Ï´Ù. 
-»ç½Ç, ±× ÆÄÀÏÀÌ »ç¿ëµÈ ÈÄ °ð¹Ù·Î »èÁ¦µÈ´Ù¸é, ½ÇÁ¦·Î µð½ºÅ©¿¡ ¾º¿©ÁöÁö Á¶Â÷ ¾Ê´Â °æ¿ì°¡ Á¾Á¾ ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+í…ŒìŠ¤íŠ¸ì— ì˜í•˜ë©´ íŒŒì¼ ìºìŠ ë•Œë¬¸ì—, ìž„ì‹œ íŒŒì¼ì€ ìƒëŒ€ì ìœ¼ë¡œ ìž‘ì€ ì¶œë ¥ì— ì•„ì£¼ ë¹ ë¥¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 
+ì‚¬ì‹¤, ê·¸ íŒŒì¼ì´ ì‚¬ìš©ëœ í›„ ê³§ë°”ë¡œ ì‚­ì œëœë‹¤ë©´, ì‹¤ì œë¡œ ë””ìŠ¤í¬ì— ì”Œì—¬ì§€ì§€ ì¡°ì°¨ ì•ŠëŠ” ê²½ìš°ê°€ ì¢…ì¢… ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre><a href="commands/Run.htm">RunWait</a> %comspec% /c dir &gt; C:\My Temp File.txt
 FileRead, VarToContainContents, C:\My Temp File.txt
 FileDelete, C:\My Temp File.txt</pre>
 <p>
-ÀÓ½Ã ÆÄÀÏÀÇ »ç¿ëÀ» ÇÇÇÏ·Á¸é (Æ¯È÷ Ãâ·ÂÀÌ Å¬ ¶§), <a href="commands/Run.htm">Run</a> ¸í·É¾î¿¡ ¿¹Á¦¿¡ º¸¿©ÁØ ¹Ù¿Í °°ÀÌ <a href="commands/Run.htm#StdOut">Shell.Exec()</a> ¸Þ½îµåÀÇ »ç¿ëÀ» °í·ÁÇØ º¸½Ê½Ã¿À.</p>
+ìž„ì‹œ íŒŒì¼ì˜ ì‚¬ìš©ì„ í”¼í•˜ë ¤ë©´ (íŠ¹ížˆ ì¶œë ¥ì´ í´ ë•Œ), <a href="commands/Run.htm">Run</a> ëª…ë ¹ì–´ì— ì˜ˆì œì— ë³´ì—¬ì¤€ ë°”ì™€ ê°™ì´ <a href="commands/Run.htm#StdOut">Shell.Exec()</a> ë©”ì˜ë“œì˜ ì‚¬ìš©ì„ ê³ ë ¤í•´ ë³´ì‹­ì‹œì˜¤.</p>
 
-<h3 id="close">¾î¶»°Ô ½ºÅ©¸³Æ®°¡ ´Ù¸¥ ½ºÅ©¸³Æ®¸¦ ´Ý°í, ¸ØÃß¸ç, ¶Ç´Â º¸·ùÇÏµµ·Ï ¸¸µé ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="close">ì–´ë–»ê²Œ ìŠ¤í¬ë¦½íŠ¸ê°€ ë‹¤ë¥¸ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë‹«ê³ , ë©ˆì¶”ë©°, ë˜ëŠ” ë³´ë¥˜í•˜ë„ë¡ ë§Œë“¤ ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-¸ÕÀú, ´ÙÀ½Àº ¶Ç´Ù¸¥ ½ºÅ©¸³Æ®¸¦ ´Ý´Â ¿¹ÀÔ´Ï´Ù:</p>
+ë¨¼ì €, ë‹¤ìŒì€ ë˜ë‹¤ë¥¸ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë‹«ëŠ” ì˜ˆìž…ë‹ˆë‹¤:</p>
 
-<pre>DetectHiddenWindows On  <em>; ½ºÅ©¸³Æ®ÀÇ ¼û°ÜÁø ¸ÞÀÎ Ã¢À» Å½ÁöµÇµµ·Ï Çã¿ëÇÕ´Ï´Ù.</em>
-SetTitleMatchMode 2  <em>; ¾Æ·¡ ÆÄÀÏÀÇ ÀüÃ¼ °æ·Î¸¦ ÁöÁ¤ÇÒ ÇÊ¿ä¸¦ È¸ÇÇÇÕ´Ï´Ù.</em>
-WinClose Script's File Name.ahk - AutoHotkey  <em>; ÀÌ°ÍÀ» °»½ÅÇÏ¿© ½ºÅ©¸³Æ®ÀÇ ÀÌ¸§À» ¹Ý¿µÇÕ´Ï´Ù (´ë¼Ò¹®ÀÚ ±¸ºÐ).</em></pre>
+<pre>DetectHiddenWindows On  <em>; ìŠ¤í¬ë¦½íŠ¸ì˜ ìˆ¨ê²¨ì§„ ë©”ì¸ ì°½ì„ íƒì§€ë˜ë„ë¡ í—ˆìš©í•©ë‹ˆë‹¤.</em>
+SetTitleMatchMode 2  <em>; ì•„ëž˜ íŒŒì¼ì˜ ì „ì²´ ê²½ë¡œë¥¼ ì§€ì •í•  í•„ìš”ë¥¼ íšŒí”¼í•©ë‹ˆë‹¤.</em>
+WinClose Script's File Name.ahk - AutoHotkey  <em>; ì´ê²ƒì„ ê°±ì‹ í•˜ì—¬ ìŠ¤í¬ë¦½íŠ¸ì˜ ì´ë¦„ì„ ë°˜ì˜í•©ë‹ˆë‹¤ (ëŒ€ì†Œë¬¸ìž êµ¬ë¶„).</em></pre>
 
 <p>
-¶Ç´Ù¸¥ ½ºÅ©¸³Æ®¸¦ <a href="commands/Suspend.htm">º¸·ùÇÏ°Å³ª</a> ¶Ç´Â <a href="commands/Pause.htm">Á¤ÁöÇÏ·Á¸é</a>, À§¿¡¼­ ¸¶Áö¸· ÁÙÀ» ´ÙÀ½À¸·Î ±³Ã¼ÇÕ´Ï´Ù:</p>
+ë˜ë‹¤ë¥¸ ìŠ¤í¬ë¦½íŠ¸ë¥¼ <a href="commands/Suspend.htm">ë³´ë¥˜í•˜ê±°ë‚˜</a> ë˜ëŠ” <a href="commands/Pause.htm">ì •ì§€í•˜ë ¤ë©´</a>, ìœ„ì—ì„œ ë§ˆì§€ë§‰ ì¤„ì„ ë‹¤ìŒìœ¼ë¡œ êµì²´í•©ë‹ˆë‹¤:</p>
 
 <pre>PostMessage, 0x111, 65305,,, Script's File Name.ahk - AutoHotkey  <em>; Suspend.</em>
 PostMessage, 0x111, 65306,,, Script's File Name.ahk - AutoHotkey  <em>; Pause.</em></pre>
 
-<h3 id="repeat">½ºÅ©¸³Æ®¸¦ ³¡³»Áö ¾Ê°í ¾î¶»°Ô ¹Ýº¹ ÇàÀ§¸¦ ¸ØÃâ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="repeat">ìŠ¤í¬ë¦½íŠ¸ë¥¼ ëë‚´ì§€ ì•Šê³  ì–´ë–»ê²Œ ë°˜ë³µ í–‰ìœ„ë¥¼ ë©ˆì¶œ ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-ÀüÃ¼ ½ºÅ©¸³Æ®¸¦ Å°°¡ ´­¸± ¶§ Á¤ÁöÇÏ°Å³ª Àç°³ÇÏ·Á¸é, ÇÖÅ°¸¦ <a href="commands/Pause.htm">Pause</a> ¸í·É¾î¿¡ ÇÒ´çÇÕ´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ:</p>
-<pre>^!p::Pause  <em>; Ctrl+Alt+P¸¦ ´­·¯ Á¤ÁöÇÕ´Ï´Ù. ´Ù½Ã ´©¸£¸é Àç°³ÇÕ´Ï´Ù.</em></pre>
+ì „ì²´ ìŠ¤í¬ë¦½íŠ¸ë¥¼ í‚¤ê°€ ëˆŒë¦´ ë•Œ ì •ì§€í•˜ê±°ë‚˜ ìž¬ê°œí•˜ë ¤ë©´, í•«í‚¤ë¥¼ <a href="commands/Pause.htm">Pause</a> ëª…ë ¹ì–´ì— í• ë‹¹í•©ë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´:</p>
+<pre>^!p::Pause  <em>; Ctrl+Alt+Pë¥¼ ëˆŒëŸ¬ ì •ì§€í•©ë‹ˆë‹¤. ë‹¤ì‹œ ëˆ„ë¥´ë©´ ìž¬ê°œí•©ë‹ˆë‹¤.</em></pre>
 <p>
-<a href="commands/Loop.htm">È¸µ¹ÀÌ</a> ¾È¿¡¼­ ¹Ýº¹µÇ´Â ÇàÀ§¸¦ ¸ØÃß·Á¸é, ´ÙÀ½ÀÇ ÀÛµ¿ÇÏ´Â ¿¹Á¦¸¦ ¿¬±¸ÇØ º¸½Ê½Ã¿À.  ÇÖÅ° ÇÏ³ª·Î ¹Ýº¹ ÇàÀ§¸¦ ½ÃÀÛÇÏ°í ¸ØÃä´Ï´Ù. ´Ù¸¥ ¸»·Î ÇÏ¸é, ÇÖÅ°¸¦ ÇÑ¹ø ´©¸£¸é È¸µ¹ÀÌ¸¦ ½ÃÀÛÇÕ´Ï´Ù. ±× ÇÖÅ°¸¦ ´Ù½Ã ´©¸£¸é È¸µ¹ÀÌ¸¦ ¸ØÃä´Ï´Ù.</p>
+<a href="commands/Loop.htm">íšŒëŒì´</a> ì•ˆì—ì„œ ë°˜ë³µë˜ëŠ” í–‰ìœ„ë¥¼ ë©ˆì¶”ë ¤ë©´, ë‹¤ìŒì˜ ìž‘ë™í•˜ëŠ” ì˜ˆì œë¥¼ ì—°êµ¬í•´ ë³´ì‹­ì‹œì˜¤.  í•«í‚¤ í•˜ë‚˜ë¡œ ë°˜ë³µ í–‰ìœ„ë¥¼ ì‹œìž‘í•˜ê³  ë©ˆì¶¥ë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ í•˜ë©´, í•«í‚¤ë¥¼ í•œë²ˆ ëˆ„ë¥´ë©´ íšŒëŒì´ë¥¼ ì‹œìž‘í•©ë‹ˆë‹¤. ê·¸ í•«í‚¤ë¥¼ ë‹¤ì‹œ ëˆ„ë¥´ë©´ íšŒëŒì´ë¥¼ ë©ˆì¶¥ë‹ˆë‹¤.</p>
 <pre>#MaxThreadsPerHotkey 3
-<strong>#z::  <em>; Win+Z ÇÖÅ° (ÀÌ ÇÖÅ°¸¦ ¿©·¯ºÐÀÇ ±âÈ£¿¡ ¸Â°Ô º¯°æÇÕ´Ï´Ù).</em></strong>
+<strong>#z::  <em>; Win+Z í•«í‚¤ (ì´ í•«í‚¤ë¥¼ ì—¬ëŸ¬ë¶„ì˜ ê¸°í˜¸ì— ë§žê²Œ ë³€ê²½í•©ë‹ˆë‹¤).</em></strong>
 #MaxThreadsPerHotkey 1
-if KeepWinZRunning  <em>; ÀÌ°ÍÀº ¾Æ·¡ÀÇ <a href="misc/Threads.htm">¾²·¹µå</a>°¡ ÀÌ¹Ì ¾Æ·¡ÀÇ È¸µ¹ÀÌ¸¦ ½ÇÇàÁßÀÌ¶ó´Â ¶æÀÔ´Ï´Ù.</em>
+if KeepWinZRunning  <em>; ì´ê²ƒì€ ì•„ëž˜ì˜ <a href="misc/Threads.htm">ì“°ë ˆë“œ</a>ê°€ ì´ë¯¸ ì•„ëž˜ì˜ íšŒëŒì´ë¥¼ ì‹¤í–‰ì¤‘ì´ë¼ëŠ” ëœ»ìž…ë‹ˆë‹¤.</em>
 {
-    KeepWinZRunning := false  <em>; ¾²·¹µåÀÇ È¸µ¹ÀÌ¸¦ ¸ØÃß°Ô ÇÏ´Â ½ÅÈ£ÀÔ´Ï´Ù.</em>
-    return  <em>; ÀÌ ¾²·¹µå¸¦ ³¡³À´Ï´Ù. ÀÌ ¾Æ·¡ÀÇ ÄÚµå°¡ ½ÇÇàÀ» Àç°³ÇÕ´Ï´Ù. À§ÀÇ ÁÙ¿¡¼­ ¹Ù²ï °÷¿¡ ÁÖ¸ñÇÏ½Ê½Ã¿À.</em>
+    KeepWinZRunning := false  <em>; ì“°ë ˆë“œì˜ íšŒëŒì´ë¥¼ ë©ˆì¶”ê²Œ í•˜ëŠ” ì‹ í˜¸ìž…ë‹ˆë‹¤.</em>
+    return  <em>; ì´ ì“°ë ˆë“œë¥¼ ëëƒ…ë‹ˆë‹¤. ì´ ì•„ëž˜ì˜ ì½”ë“œê°€ ì‹¤í–‰ì„ ìž¬ê°œí•©ë‹ˆë‹¤. ìœ„ì˜ ì¤„ì—ì„œ ë°”ë€ ê³³ì— ì£¼ëª©í•˜ì‹­ì‹œì˜¤.</em>
 }
-<em>; ±×·¸Áö ¾ÊÀ¸¸é:</em>
+<em>; ê·¸ë ‡ì§€ ì•Šìœ¼ë©´:</em>
 KeepWinZRunning := true
 Loop
 {
-    <strong><em>; ´ÙÀ½ ³× ÁÙÀº ¹Ýº¹ÇÏ°í ½ÍÀº ÇàÀ§ÀÔ´Ï´Ù (¿©·¯ºÐÀÇ ±âÈ£¿¡ ¸Â°Ô ¹Ù²ß´Ï´Ù):</em></strong>
-    ToolTip, Win-Z¸¦ ´Ù½Ã ´­·¯ ÀÌ°ÍÀÌ ¶³¸®´Â °ÍÀ» ¸ØÃä´Ï´Ù.
+    <strong><em>; ë‹¤ìŒ ë„¤ ì¤„ì€ ë°˜ë³µí•˜ê³  ì‹¶ì€ í–‰ìœ„ìž…ë‹ˆë‹¤ (ì—¬ëŸ¬ë¶„ì˜ ê¸°í˜¸ì— ë§žê²Œ ë°”ê¿‰ë‹ˆë‹¤):</em></strong>
+    ToolTip, Win-Zë¥¼ ë‹¤ì‹œ ëˆŒëŸ¬ ì´ê²ƒì´ ë–¨ë¦¬ëŠ” ê²ƒì„ ë©ˆì¶¥ë‹ˆë‹¤.
     Sleep 1000
     ToolTip
     Sleep 1000
-    <strong><em>; ±×·¯³ª ¾Æ·¡ÀÇ ³ª¸ÓÁö´Â ±×´ë·Î µÓ´Ï´Ù.</em></strong>
-    if not KeepWinZRunning  <em>; »ç¿ëÀÚ°¡ Win-Z¸¦ ´Ù½Ã ´­·¯ È¸µ¹ÀÌ¸¦ ¸ØÃß¶ó°í ½ÅÈ£¸¦ º¸³Â½À´Ï´Ù.</em>
-        break  <em>; ÀÌ È¸µ¹ÀÌ¸¦ ºüÁ® ³ª°©´Ï´Ù.</em>
+    <strong><em>; ê·¸ëŸ¬ë‚˜ ì•„ëž˜ì˜ ë‚˜ë¨¸ì§€ëŠ” ê·¸ëŒ€ë¡œ ë‘¡ë‹ˆë‹¤.</em></strong>
+    if not KeepWinZRunning  <em>; ì‚¬ìš©ìžê°€ Win-Zë¥¼ ë‹¤ì‹œ ëˆŒëŸ¬ íšŒëŒì´ë¥¼ ë©ˆì¶”ë¼ê³  ì‹ í˜¸ë¥¼ ë³´ëƒˆìŠµë‹ˆë‹¤.</em>
+        break  <em>; ì´ íšŒëŒì´ë¥¼ ë¹ ì ¸ ë‚˜ê°‘ë‹ˆë‹¤.</em>
 }
-KeepWinZRunning := false  <em>; ÀÌ ÇÖÅ°°¡ ´ÙÀ½¿¡ ´­¸± ¶§¸¦ ´ëºñÇÏ¿© Àç¼³Á¤ÇÕ´Ï´Ù.</em>
+KeepWinZRunning := false  <em>; ì´ í•«í‚¤ê°€ ë‹¤ìŒì— ëˆŒë¦´ ë•Œë¥¼ ëŒ€ë¹„í•˜ì—¬ ìž¬ì„¤ì •í•©ë‹ˆë‹¤.</em>
 return</pre>
 
-<h3 id="perf">¾î¶»°Ô °ÔÀÓÀ» À§ÇØ ¼öÇà¼º´ÉÀ» Çâ»ó½ÃÅ³ ¼ö ÀÖ´Â°¡? CPU°¡ Å©°Ô ºÎ´ãÀÌ µÉ °æ¿ì ¾î¶»°Ô ÇÏ´Â°¡?</h3>
+<h3 id="perf">ì–´ë–»ê²Œ ê²Œìž„ì„ ìœ„í•´ ìˆ˜í–‰ì„±ëŠ¥ì„ í–¥ìƒì‹œí‚¬ ìˆ˜ ìžˆëŠ”ê°€? CPUê°€ í¬ê²Œ ë¶€ë‹´ì´ ë  ê²½ìš° ì–´ë–»ê²Œ í•˜ëŠ”ê°€?</h3>
 <p>
-½ºÅ©¸³Æ®ÀÇ <a href="Hotkeys.htm">ÇÖÅ°</a>, <a href="commands/Click.htm">Å¬¸¯</a>, ¶Ç´Â <a href="commands/Send.htm">Àü¼ÛÀÌ</a> º¸Åë ¶§º¸´Ù ÇöÀúÇÏ°Ô ´À¸®´Ù¸é,  CPU°¡ ¾öÃ»³­ ºÎ´ãÀ» Áö°í ÀÖ¾î¼­ ±×·¸´Ù¸é, ½ºÅ©¸³Æ®ÀÇ Ã³¸®-¿ì¼±¼øÀ§¸¦ ³ôÀÌ¸é µµ¿òÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ·Á¸é, ´ÙÀ½ ÁÙÀ» ½ºÅ©¸³Æ® »ó´Ü ±ÙÃ³¿¡ Æ÷ÇÔÇÕ´Ï´Ù:</p>
+ìŠ¤í¬ë¦½íŠ¸ì˜ <a href="Hotkeys.htm">í•«í‚¤</a>, <a href="commands/Click.htm">í´ë¦­</a>, ë˜ëŠ” <a href="commands/Send.htm">ì „ì†¡ì´</a> ë³´í†µ ë•Œë³´ë‹¤ í˜„ì €í•˜ê²Œ ëŠë¦¬ë‹¤ë©´,  CPUê°€ ì—„ì²­ë‚œ ë¶€ë‹´ì„ ì§€ê³  ìžˆì–´ì„œ ê·¸ë ‡ë‹¤ë©´, ìŠ¤í¬ë¦½íŠ¸ì˜ ì²˜ë¦¬-ìš°ì„ ìˆœìœ„ë¥¼ ë†’ì´ë©´ ë„ì›€ì´ ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë ¤ë©´, ë‹¤ìŒ ì¤„ì„ ìŠ¤í¬ë¦½íŠ¸ ìƒë‹¨ ê·¼ì²˜ì— í¬í•¨í•©ë‹ˆë‹¤:</p>
 
 <pre><a href="commands/Process.htm">Process</a>, Priority, , High</pre>
 
-<h3 id="help">¾î¶»°Ô ¿ÀÅäÇÖÅ° ¸í·É¾î¸¦ À§ÇÑ ¹®¸Æ °¨Áö µµ¿ò¸»À» ´Ù¸¥ ÆíÁý±â¿¡¼­ »ç¿ëÇÒ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="help">ì–´ë–»ê²Œ ì˜¤í† í•«í‚¤ ëª…ë ¹ì–´ë¥¼ ìœ„í•œ ë¬¸ë§¥ ê°ì§€ ë„ì›€ë§ì„ ë‹¤ë¥¸ íŽ¸ì§‘ê¸°ì—ì„œ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ”ê°€?</h3>
 
-<p>¶óÁ¬(Rajat) ¾¾°¡ <a href="scripts/ContextSensitiveHelp.htm">´ÙÀ½ ½ºÅ©¸³Æ®</a>¸¦ ¸¸µé¾ú½À´Ï´Ù.</p>
+<p>ë¼ì ¯(Rajat) ì”¨ê°€ <a href="scripts/ContextSensitiveHelp.htm">ë‹¤ìŒ ìŠ¤í¬ë¦½íŠ¸</a>ë¥¼ ë§Œë“¤ì—ˆìŠµë‹ˆë‹¤.</p>
 
-<h3 id="load">À¥ ÆäÀÌÁö°¡ ÀûÀç¸¦ ³¡³Â´ÂÁö ¾î¶»°Ô ¾Æ´Â°¡?</h3>
+<h3 id="load">ì›¹ íŽ˜ì´ì§€ê°€ ì ìž¬ë¥¼ ëëƒˆëŠ”ì§€ ì–´ë–»ê²Œ ì•„ëŠ”ê°€?</h3>
 <p>
-ÀÎÅÍ³Ý ÀÍ½ºÇÃ·Î·¯¶ó¸é, ¾Æ¸¶µµ °¡Àå ¹ÏÀ»¸¸ÇÑ ¹æ¹ýÀº DllCall°ú COMÀ» <a href="http://www.autohotkey.com/forum/topic19256.html">www.autohotkey.com/forum/topic19256.html</a>¿¡ ½Ã¿¬ÇÏ´Â °ÍÃ³·³ »ç¿ëÇÏ´Â °ÍÀÔ´Ï´Ù. °ü·ÃÇØ¼­ ÇÑ°¡Áö µ¡ºÙÀÌ¸é, ÁÖ¼Ò ¹Ù¿Í »óÅÂ ¹ÙÀÇ ³»¿ëÀº <a href="http://www.autohotkey.com/forum/topic19255.html">www.autohotkey.com/forum/topic19255.html</a>¿¡ º¸¿©ÁÖ´Â °ÍÃ³·³ ¿­¶÷ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
-<p><strong>¿¹ÀüÀÇ, ½Å·Ú°¡ ´úÇÑ ¹æ¹ý:</strong> ´ÙÀ½ ¿¹Á¦¿¡¼­ÀÇ Å×Å©´ÐÀº ´ëºÎºÐÀÇ ÆäÀÌÁö¿¡ ´ëÇÏ¿© MS ÀÎÅÍ³Ý ÀÍ½ºÇÃ·Î·¯¿¡ ÀÛµ¿ÇÒ °ÍÀÔ´Ï´Ù. ºñ½ÁÇÑ Å×Å©´ÐÀ» ´Ù¸¥ ºê¶ó¿ìÀú¿¡¼­µµ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù:</p>
+ì¸í„°ë„· ìµìŠ¤í”Œë¡œëŸ¬ë¼ë©´, ì•„ë§ˆë„ ê°€ìž¥ ë¯¿ì„ë§Œí•œ ë°©ë²•ì€ DllCallê³¼ COMì„ <a href="http://www.autohotkey.com/forum/topic19256.html">www.autohotkey.com/forum/topic19256.html</a>ì— ì‹œì—°í•˜ëŠ” ê²ƒì²˜ëŸ¼ ì‚¬ìš©í•˜ëŠ” ê²ƒìž…ë‹ˆë‹¤. ê´€ë ¨í•´ì„œ í•œê°€ì§€ ë§ë¶™ì´ë©´, ì£¼ì†Œ ë°”ì™€ ìƒíƒœ ë°”ì˜ ë‚´ìš©ì€ <a href="http://www.autohotkey.com/forum/topic19255.html">www.autohotkey.com/forum/topic19255.html</a>ì— ë³´ì—¬ì£¼ëŠ” ê²ƒì²˜ëŸ¼ ì—´ëžŒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
+<p><strong>ì˜ˆì „ì˜, ì‹ ë¢°ê°€ ëœí•œ ë°©ë²•:</strong> ë‹¤ìŒ ì˜ˆì œì—ì„œì˜ í…Œí¬ë‹‰ì€ ëŒ€ë¶€ë¶„ì˜ íŽ˜ì´ì§€ì— ëŒ€í•˜ì—¬ MS ì¸í„°ë„· ìµìŠ¤í”Œë¡œëŸ¬ì— ìž‘ë™í•  ê²ƒìž…ë‹ˆë‹¤. ë¹„ìŠ·í•œ í…Œí¬ë‹‰ì„ ë‹¤ë¥¸ ë¸Œë¼ìš°ì €ì—ì„œë„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 <pre>Run, www.yahoo.com
-MouseMove, 0, 0  <em>; »óÅÂ ¹Ù¿¡ ¸¶¿ì½º¸¦ ¿Ã¸®¸é ¸µÅ©¸¦ º¸¿©ÁÖÁö ¸øÇÏ°Ô ¸·½À´Ï´Ù. ´ë½Å &quot;Done&quot;ÀÌ º¸ÀÔ´Ï´Ù.</em>
+MouseMove, 0, 0  <em>; ìƒíƒœ ë°”ì— ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë¦¬ë©´ ë§í¬ë¥¼ ë³´ì—¬ì£¼ì§€ ëª»í•˜ê²Œ ë§‰ìŠµë‹ˆë‹¤. ëŒ€ì‹  &quot;Done&quot;ì´ ë³´ìž…ë‹ˆë‹¤.</em>
 WinWait, Yahoo! - 
 WinActivate 
 <a href="commands/StatusBarWait.htm">StatusBarWait</a>, Done, 30
 if ErrorLevel
-   MsgBox ´ë±â ½Ã°£ÀÌ ³¡³µ°Å³ª Ã¢ÀÌ ´ÝÇû½À´Ï´Ù. 
+   MsgBox ëŒ€ê¸° ì‹œê°„ì´ ëë‚¬ê±°ë‚˜ ì°½ì´ ë‹«í˜”ìŠµë‹ˆë‹¤. 
 else 
-   MsgBox ÆäÀÌÁö°¡ ÀûÀç¸¦ ¸¶ÃÆ½À´Ï´Ù.</pre>
+   MsgBox íŽ˜ì´ì§€ê°€ ì ìž¬ë¥¼ ë§ˆì³¤ìŠµë‹ˆë‹¤.</pre>
 
-<h3 id="time">³¯Â¥¿Í ½Ã°£À» ¾î¶»°Ô ºñ±³ÇÏ°í Á¶ÀÛÇÏ´Â°¡?</h3>
+<h3 id="time">ë‚ ì§œì™€ ì‹œê°„ì„ ì–´ë–»ê²Œ ë¹„êµí•˜ê³  ì¡°ìž‘í•˜ëŠ”ê°€?</h3>
 <p>
-<a href="commands/EnvAdd.htm">EnvAdd</a> ¸í·É¾î´Â ³¯Â¥, ½Ã°£, ºÐ, ÃÊ¸¦ ´õÇÏ°í »©¼­ ½Ã°£-¹®ÀÚ¿­·Î ¸¸µé ¼ö ÀÖ½À´Ï´Ù. Çü½ÄÀº <a href="commands/FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>ÀÔ´Ï´Ù. ´ÙÀ½ ¿¹Á¦´Â ÁöÁ¤µÈ ½Ã°£¿¡¼­ 7ÀÏÀ» »®´Ï´Ù: <code>EnvAdd, VarContainingTimestamp, -7, days</code>.</p>
+<a href="commands/EnvAdd.htm">EnvAdd</a> ëª…ë ¹ì–´ëŠ” ë‚ ì§œ, ì‹œê°„, ë¶„, ì´ˆë¥¼ ë”í•˜ê³  ë¹¼ì„œ ì‹œê°„-ë¬¸ìžì—´ë¡œ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í˜•ì‹ì€ <a href="commands/FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>ìž…ë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œëŠ” ì§€ì •ëœ ì‹œê°„ì—ì„œ 7ì¼ì„ ëºë‹ˆë‹¤: <code>EnvAdd, VarContainingTimestamp, -7, days</code>.</p>
 <p>
-µÎ ³¯Â¥³ª ½Ã°£ »çÀÌÀÇ ¾çÀ» °áÁ¤ÇÏ·Á¸é <a href="commands/EnvSub.htm">EnvSub</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À. ¾È¿¡ ¿¹Á¦°¡ ÀÖ½À´Ï´Ù. ¶ÇÇÑ, ³»Àå º¯¼ö <a href="Variables.htm#Now">A_Now</a>¿¡´Â ÇöÀçÀÇ Áö¿ª ½Ã°£ÀÌ ´ã°Ü ÀÖ½À´Ï´Ù. 
-¸¶Áö¸·À¸·Î, ¿©·¯ ³»Àå <a href="Variables.htm#date">³¯Â¥/½Ã°£ º¯¼ö</a>°¡ ÀÖ½À´Ï´Ù. »Ó¸¸ ¾Æ´Ï¶ó <a href="commands/FormatTime.htm">FormatTime</a> ¸í·É¾î·Î ¸ÂÃã ³¯Â¥/½Ã°£ ¹®ÀÚ¿­À» ¸¸µé ¼ö ÀÖ½À´Ï´Ù.</p>
+ë‘ ë‚ ì§œë‚˜ ì‹œê°„ ì‚¬ì´ì˜ ì–‘ì„ ê²°ì •í•˜ë ¤ë©´ <a href="commands/EnvSub.htm">EnvSub</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤. ì•ˆì— ì˜ˆì œê°€ ìžˆìŠµë‹ˆë‹¤. ë˜í•œ, ë‚´ìž¥ ë³€ìˆ˜ <a href="Variables.htm#Now">A_Now</a>ì—ëŠ” í˜„ìž¬ì˜ ì§€ì—­ ì‹œê°„ì´ ë‹´ê²¨ ìžˆìŠµë‹ˆë‹¤. 
+ë§ˆì§€ë§‰ìœ¼ë¡œ, ì—¬ëŸ¬ ë‚´ìž¥ <a href="Variables.htm#date">ë‚ ì§œ/ì‹œê°„ ë³€ìˆ˜</a>ê°€ ìžˆìŠµë‹ˆë‹¤. ë¿ë§Œ ì•„ë‹ˆë¼ <a href="commands/FormatTime.htm">FormatTime</a> ëª…ë ¹ì–´ë¡œ ë§žì¶¤ ë‚ ì§œ/ì‹œê°„ ë¬¸ìžì—´ì„ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3 id="SendDate">ÇöÀç ³¯Â¥/½Ã°£À» ¾î¶»°Ô Àü¼ÛÇÏ´Â°¡?</h3>
+<h3 id="SendDate">í˜„ìž¬ ë‚ ì§œ/ì‹œê°„ì„ ì–´ë–»ê²Œ ì „ì†¡í•˜ëŠ”ê°€?</h3>
 <p>
-<a href="commands/FormatTime.htm">FormatTime</a> ¶Ç´Â <a href="Variables.htm#date">³¯Â¥¿Í ½Ã°£À» À§ÇÑ ³»Àå º¯¼öµéÀ» »ç¿ëÇÏ½Ê½Ã¿À</a>.</p>
+<a href="commands/FormatTime.htm">FormatTime</a> ë˜ëŠ” <a href="Variables.htm#date">ë‚ ì§œì™€ ì‹œê°„ì„ ìœ„í•œ ë‚´ìž¥ ë³€ìˆ˜ë“¤ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤</a>.</p>
 
-<h3 id="ControlSend">¾î¶»°Ô ÅØ½ºÆ®¸¦ ºñÈ°¼ºÈ­ »óÅÂÀÇ Ã¢ ¶Ç´Â º¸ÀÌÁö ¾Ê´Â Ã¢¿¡ Àü¼ÛÇÒ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="ControlSend">ì–´ë–»ê²Œ í…ìŠ¤íŠ¸ë¥¼ ë¹„í™œì„±í™” ìƒíƒœì˜ ì°½ ë˜ëŠ” ë³´ì´ì§€ ì•ŠëŠ” ì°½ì— ì „ì†¡í•  ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-<a href="commands/ControlSend.htm">ControlSend</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+<a href="commands/ControlSend.htm">ControlSend</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3 id="games">¿Ö <a href="Hotstrings.htm">ÇÖ½ºÆ®¸µ</a>, <a href="commands/Send.htm">Send</a>, ±×¸®°í <a href="commands/Click.htm">Click</a>ÀÌ ¾î¶² °ÔÀÓ¿¡¼­´Â È¿°ú°¡ ¾ø´Â°¡?</h3>
+<h3 id="games">ì™œ <a href="Hotstrings.htm">í•«ìŠ¤íŠ¸ë§</a>, <a href="commands/Send.htm">Send</a>, ê·¸ë¦¬ê³  <a href="commands/Click.htm">Click</a>ì´ ì–´ë–¤ ê²Œìž„ì—ì„œëŠ” íš¨ê³¼ê°€ ì—†ëŠ”ê°€?</h3>
 <p>
-¸ðµç °ÔÀÓÀÌ AHK°¡ Àü¼ÛÇÏ´Â Å°¿Í Å¬¸¯ ¶Ç´Â ÇÈ¼¿ ÄÃ·¯¸¦ Çã¿ëÇÏ´Â °ÍÀº ¾Æ´Õ´Ï´Ù.</p>
-<p>±×·¯³ª ´ë¾ÈÀÌ ÀÖ½À´Ï´Ù. ¾Æ·¡¿¡ ¾ð±ÞÇÑ ¸ðµç ÇØ°áÃ¥µéÀ» ½ÃµµÇØ º¸½Ê½Ã¿À. ¸ðµç °ÍÀÌ ½ÇÆÐÇÏ¸é, ¾Æ¸¶µµ AHK·Î´Â °ÔÀÓÀ» ÀÛµ¿½ÃÅ³ ¼ö ¾øÀ» °ÍÀÔ´Ï´Ù. Á¾Á¾ °ÔÀÓÀÌ GameGuard³ª Hackshield °°Àº ÇÙ°ú Ä¡Æ® ¹æÁö ¼ö´ÜÀ» °®Ãß°í ÀÖ´Â °æ¿ì°¡ ÀÖ½À´Ï´Ù. ±×·¸´Ù¸é, ±× °ÔÀÓ¿¡´Â ¿ÀÅäÇÖÅ°°¡ ÀÛµ¿ÇÏÁö ¾ÊÀ» °¡´É¼ºÀÌ ¾ÆÁÖ ³ô½À´Ï´Ù.</p>
+ëª¨ë“  ê²Œìž„ì´ AHKê°€ ì „ì†¡í•˜ëŠ” í‚¤ì™€ í´ë¦­ ë˜ëŠ” í”½ì…€ ì»¬ëŸ¬ë¥¼ í—ˆìš©í•˜ëŠ” ê²ƒì€ ì•„ë‹™ë‹ˆë‹¤.</p>
+<p>ê·¸ëŸ¬ë‚˜ ëŒ€ì•ˆì´ ìžˆìŠµë‹ˆë‹¤. ì•„ëž˜ì— ì–¸ê¸‰í•œ ëª¨ë“  í•´ê²°ì±…ë“¤ì„ ì‹œë„í•´ ë³´ì‹­ì‹œì˜¤. ëª¨ë“  ê²ƒì´ ì‹¤íŒ¨í•˜ë©´, ì•„ë§ˆë„ AHKë¡œëŠ” ê²Œìž„ì„ ìž‘ë™ì‹œí‚¬ ìˆ˜ ì—†ì„ ê²ƒìž…ë‹ˆë‹¤. ì¢…ì¢… ê²Œìž„ì´ GameGuardë‚˜ Hackshield ê°™ì€ í•µê³¼ ì¹˜íŠ¸ ë°©ì§€ ìˆ˜ë‹¨ì„ ê°–ì¶”ê³  ìžˆëŠ” ê²½ìš°ê°€ ìžˆìŠµë‹ˆë‹¤. ê·¸ë ‡ë‹¤ë©´, ê·¸ ê²Œìž„ì—ëŠ” ì˜¤í† í•«í‚¤ê°€ ìž‘ë™í•˜ì§€ ì•Šì„ ê°€ëŠ¥ì„±ì´ ì•„ì£¼ ë†’ìŠµë‹ˆë‹¤.</p>
 <ul>
   <li>
-  <p><a href="commands/Send.htm#SendPlay">SendPlay</a> ¸í·É¾î, <a href="commands/SendMode.htm">SendMode Play</a> ±×¸®°í/¶Ç´Â <a href="Hotstrings.htm">ÇÖ½ºÆ®¸µ ¿É¼Ç SP</a>¸¦ ½ÃµµÇÕ´Ï´Ù.</p>
+  <p><a href="commands/Send.htm#SendPlay">SendPlay</a> ëª…ë ¹ì–´, <a href="commands/SendMode.htm">SendMode Play</a> ê·¸ë¦¬ê³ /ë˜ëŠ” <a href="Hotstrings.htm">í•«ìŠ¤íŠ¸ë§ ì˜µì…˜ SP</a>ë¥¼ ì‹œë„í•©ë‹ˆë‹¤.</p>
   <pre>SendPlay, abc</pre>
   <pre>SendMode, Play
 Send, abc</pre>
@@ -251,44 +252,44 @@ Send, abc</pre>
 
 #Hotstring SP
 ::btw::by the way</pre>
-  <p>ÁÖÀÇ: SendPlay´Â Windows Vista ÀÌÈÄ¿¡ »ç¿ëÀÚ °èÁ¤ Á¦¾î°¡ ÄÑÁ® ÀÖÀ¸¸é ÀüÇô È¿°ú°¡ ¾ø½À´Ï´Ù. ½ºÅ©¸³Æ®°¡ °ü¸®ÀÚ ±ÇÇÑÀ¸·Î ½ÇÇàµÇ´õ¶óµµ ¸¶Âù°¡ÁöÀÔ´Ï´Ù.</p>
+  <p>ì£¼ì˜: SendPlayëŠ” Windows Vista ì´í›„ì— ì‚¬ìš©ìž ê³„ì • ì œì–´ê°€ ì¼œì ¸ ìžˆìœ¼ë©´ ì „í˜€ íš¨ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤. ìŠ¤í¬ë¦½íŠ¸ê°€ ê´€ë¦¬ìž ê¶Œí•œìœ¼ë¡œ ì‹¤í–‰ë˜ë”ë¼ë„ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤.</p>
   </li>
   <li>
-  <p><a href="commands/SetKeyDelay.htm">SetKeyDelay</a>¸¦ Áõ°¡½ÃÄÑ º¾´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+  <p><a href="commands/SetKeyDelay.htm">SetKeyDelay</a>ë¥¼ ì¦ê°€ì‹œì¼œ ë´…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
   <pre>SetKeyDelay, 0, 50
 SetKeyDelay, 0, 50, Play</pre>
   </li>
   <li>
-  <p><a href="commands/ControlSend.htm">ControlSend</a>¸¦ ½ÃµµÇÕ´Ï´Ù. ´Ù¸¥ Send ¸ðµå°¡ ½ÇÆÐÇÒ °æ¿ì ¼º°øÇÒ °¡´É¼ºÀÌ ÀÖ½À´Ï´Ù:</p>
+  <p><a href="commands/ControlSend.htm">ControlSend</a>ë¥¼ ì‹œë„í•©ë‹ˆë‹¤. ë‹¤ë¥¸ Send ëª¨ë“œê°€ ì‹¤íŒ¨í•  ê²½ìš° ì„±ê³µí•  ê°€ëŠ¥ì„±ì´ ìžˆìŠµë‹ˆë‹¤:</p>
   <pre>ControlSend,, abc, game_title</pre>
   </li>
   <li>
-  <p>´Ù¾çÇÑ Àü¼Û ¹æ¹ýÀ¸·Î ÇÑ Å°ÀÇ ÀÌº¥Æ®¸¦ ´©¸£°í ¶¼°í ½ÃµµÇØ º¾´Ï´Ù:</p>
+  <p>ë‹¤ì–‘í•œ ì „ì†¡ ë°©ë²•ìœ¼ë¡œ í•œ í‚¤ì˜ ì´ë²¤íŠ¸ë¥¼ ëˆ„ë¥´ê³  ë–¼ê³  ì‹œë„í•´ ë´…ë‹ˆë‹¤:</p>
   <pre>Send {KEY down}{KEY up}</pre>
   </li>
   <li>
-  <p>ÇÑ Å°ÀÇ ÀÌº¥Æ®¸¦ ´©¸£°í ¶¼¸ç,  ±× »çÀÌ¿¡ <a href="commands/ControlSend.htm">Sleep</a>À» ³Ö°í ½ÃÇèÇØ º¾´Ï´Ù:</p>
+  <p>í•œ í‚¤ì˜ ì´ë²¤íŠ¸ë¥¼ ëˆ„ë¥´ê³  ë–¼ë©°,  ê·¸ ì‚¬ì´ì— <a href="commands/ControlSend.htm">Sleep</a>ì„ ë„£ê³  ì‹œí—˜í•´ ë´…ë‹ˆë‹¤:</p>
   <pre>Send {KEY down}
-Sleep 10 <em>; ¿©·¯°¡Áö ¹Ð¸®ÃÊ¸¦ ½ÃÇèÇØ º¸½Ê½Ã¿À</em>
+Sleep 10 <em>; ì—¬ëŸ¬ê°€ì§€ ë°€ë¦¬ì´ˆë¥¼ ì‹œí—˜í•´ ë³´ì‹­ì‹œì˜¤</em>
 Send {KEY Up}</pre>
   </li>
 </ul>
 
-<h3 id="winamp">¾î¶»°Ô Winamp¸¦ Á¦¾îÇÒ ¼ö ÀÖ´Â°¡? ÀÛµ¿ÇÏÁö ¾ÊÀ» ¶§¿¡µµ Á¦¾îÇÏ°í ½Í´Ù.</h3>
+<h3 id="winamp">ì–´ë–»ê²Œ Winampë¥¼ ì œì–´í•  ìˆ˜ ìžˆëŠ”ê°€? ìž‘ë™í•˜ì§€ ì•Šì„ ë•Œì—ë„ ì œì–´í•˜ê³  ì‹¶ë‹¤.</h3>
 <p>
-<a href="misc/Winamp.htm">Winamp ÀÚµ¿È­ÇÏ±â</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<a href="misc/Winamp.htm">Winamp ìžë™í™”í•˜ê¸°</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3 id="msgbox">¾î¶»°Ô <a href="commands/MsgBox.htm">MsgBox</a>ÀÇ ¹öÆ° ÀÌ¸§À» ¹Ù²Ü ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="msgbox">ì–´ë–»ê²Œ <a href="commands/MsgBox.htm">MsgBox</a>ì˜ ë²„íŠ¼ ì´ë¦„ì„ ë°”ê¿€ ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-´ÙÀ½ <a href="scripts/MsgBoxButtonNames.htm">¿¹Á¦</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ë‹¤ìŒ <a href="scripts/MsgBoxButtonNames.htm">ì˜ˆì œ</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3 id="DefaultEditor">¾î¶»°Ô ±âº» ÆíÁý±â¸¦ ¹Ù²Ü ¼ö ÀÖ´Â°¡? ¹®¸Æ ¸Þ´º³ª Æ®·¹ÀÌ ¾ÆÀÌÄÜÀ¸·Î Á¢±ÙÇÏ°í ½Í´Ù.</h3>
-<p><a href="commands/Edit.htm">ÆíÁý±â ¿¹Á¦ ¼½¼Ç¿¡¼­</a> ±âº» ÆíÁý±â¸¦ ¹Ù²Ù´Â ½ºÅ©¸³Æ®¸¦ º¸½Ç ¼ö ÀÖ½À´Ï´Ù.</p>
+<h3 id="DefaultEditor">ì–´ë–»ê²Œ ê¸°ë³¸ íŽ¸ì§‘ê¸°ë¥¼ ë°”ê¿€ ìˆ˜ ìžˆëŠ”ê°€? ë¬¸ë§¥ ë©”ë‰´ë‚˜ íŠ¸ë ˆì´ ì•„ì´ì½˜ìœ¼ë¡œ ì ‘ê·¼í•˜ê³  ì‹¶ë‹¤.</h3>
+<p><a href="commands/Edit.htm">íŽ¸ì§‘ê¸° ì˜ˆì œ ì„¹ì…˜ì—ì„œ</a> ê¸°ë³¸ íŽ¸ì§‘ê¸°ë¥¼ ë°”ê¾¸ëŠ” ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë³´ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3 id="GuiSubmit">GUI °ü·Ã º¯¼öÀÇ ³»¿ëÀ» ¾î¶»°Ô ÀúÀåÇÏ´Â°¡?</h3>
+<h3 id="GuiSubmit">GUI ê´€ë ¨ ë³€ìˆ˜ì˜ ë‚´ìš©ì„ ì–´ë–»ê²Œ ì €ìž¥í•˜ëŠ”ê°€?</h3>
 <p>
-<a href="commands/Gui.htm#Submit">Gui Submit</a>À» »ç¿ëÇÕ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
-<pre>Gui, Add, Text,, ÅØ½ºÆ®¸¦ ÀÔ·ÂÇÏ°í SubmitÀ» ´©¸¨´Ï´Ù:
+<a href="commands/Gui.htm#Submit">Gui Submit</a>ì„ ì‚¬ìš©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
+<pre>Gui, Add, Text,, í…ìŠ¤íŠ¸ë¥¼ ìž…ë ¥í•˜ê³  Submitì„ ëˆ„ë¦…ë‹ˆë‹¤:
 Gui, Add, Edit, vAssociatedVar
 Gui, Add, Button,, Submit
 Gui, Show
@@ -296,87 +297,87 @@ Return
 
 ButtonSubmit:
 Gui, Submit, NoHide
-MsgBox, ÆíÁý ÄÜÆ®·ÑÀÇ ³»¿ë: %AssociatedVar%
+MsgBox, íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì˜ ë‚´ìš©: %AssociatedVar%
 Return</pre>
 
-<h3 id="GDIPlus">AHK·Î ¾î¶»°Ô ±×¸®´Â°¡?</h3>
+<h3 id="GDIPlus">AHKë¡œ ì–´ë–»ê²Œ ê·¸ë¦¬ëŠ”ê°€?</h3>
 <p>
-Æ½(tic)ÀÌ ÁýÇÊÇÑ <a href="http://www.autohotkey.com/forum/topic32238.html">GDI+ Ç¥ÁØ ¶óÀÌºê·¯¸®</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À. Gui¸¦ »ç¿ëÇÏ¿© ±âº»ÀûÀÎ ¸Þ½îµåµéÀ» »ç¿ëÇÒ ¼ö ÀÖÁö¸¸, Á¦ÇÑÀûÀÔ´Ï´Ù.</p>
+í‹±(tic)ì´ ì§‘í•„í•œ <a href="http://www.autohotkey.com/forum/topic32238.html">GDI+ í‘œì¤€ ë¼ì´ë¸ŒëŸ¬ë¦¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤. Guië¥¼ ì‚¬ìš©í•˜ì—¬ ê¸°ë³¸ì ì¸ ë©”ì˜ë“œë“¤ì„ ì‚¬ìš©í•  ìˆ˜ ìžˆì§€ë§Œ, ì œí•œì ìž…ë‹ˆë‹¤.</p>
 
-<h3 id="WinWaitAction">Ã¢ÀÌ ¿­¸®°Å³ª, ´ÝÈ÷°Å³ª ¶Ç´Â [ºñ]È°¼ºÈ­µÉ ¶§ ¾î¶»°Ô ÇàÀ§¸¦ ÃË¹ß½ÃÅ³ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="WinWaitAction">ì°½ì´ ì—´ë¦¬ê±°ë‚˜, ë‹«ížˆê±°ë‚˜ ë˜ëŠ” [ë¹„]í™œì„±í™”ë  ë•Œ ì–´ë–»ê²Œ í–‰ìœ„ë¥¼ ì´‰ë°œì‹œí‚¬ ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-<a href="commands/WinWait.htm">WinWait</a>, <a href="commands/WinWaitClose.htm">WinWaitClose</a> ¶Ç´Â <a href="commands/WinWaitActive.htm">WinWait[Not]Active</a>¸¦ »ç¿ëÇÕ´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="http://www.autohotkey.net/~faqbot/faq.html#window">°øµ¿Ã¼°¡-ÀÌ²ô´Â FAQ</a> (À©µµ¿ìÁî ¼½¼Ç)¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<a href="commands/WinWait.htm">WinWait</a>, <a href="commands/WinWaitClose.htm">WinWaitClose</a> ë˜ëŠ” <a href="commands/WinWaitActive.htm">WinWait[Not]Active</a>ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="http://www.autohotkey.net/~faqbot/faq.html#window">ê³µë™ì²´ê°€-ì´ë„ëŠ” FAQ</a> (ìœˆë„ìš°ì¦ˆ ì„¹ì…˜)ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3 id="Virus">¹é½Å ÇÁ·Î±×·¥ÀÌ AHK¸¦ ¸È¿þ¾î¶ó°í Áø´ÜÇß´Ù. ÁøÂ¥ ¹ÙÀÌ·¯½º°¡ µé¾îÀÖ´Â°¡?</h3>
+<h3 id="Virus">ë°±ì‹  í”„ë¡œê·¸ëž¨ì´ AHKë¥¼ ë§¬ì›¨ì–´ë¼ê³  ì§„ë‹¨í–ˆë‹¤. ì§„ì§œ ë°”ì´ëŸ¬ìŠ¤ê°€ ë“¤ì–´ìžˆëŠ”ê°€?</h3>
 <p>
-´ç¿¬È÷ ¾Æ´Õ´Ï´Ù. ¾ÈÆ¼¹ÙÀÌ·¯½º ÇÁ·Î±×·¥Àº AHK¸¦ ¸È¿þ¾î·Î Àß¸ø Áø´ÜÇÒ ¼ö ÀÖ½À´Ï´Ù. (°ÅÁþ ±àÁ¤ÀÌ¶ó°í ºÎ¸§). ½ºÅ©¸³Æ®°¡ UPX (AHK 1.0 ±âº»°ª, AHK 1.1 Á¦°Å) ¶Ç´Â MPRESS (AHK 1.1 ¼±ÅÃÀû) °°Àº ¾ÐÃà±â·Î ÄÄÆÄÀÏµÇ¾î ½ÇÇàµÉ ¶§ ±×·² °¡´É¼ºÀÌ ÀÖ½À´Ï´Ù. ¾ÐÃà±â´Â ÄÄÆÄÀÏµÈ ½ºÅ©¸³Æ®ÀÇ Å©±â¸¦ ÁÙÀÏ ¼ö ÀÖ½À´Ï´Ù. ÄÄÆÄÀÏµÈ ½ÇÇàÈ­ÀÏÀ» ²À ¾ÐÃàÇØ¾ß ÇÒ ÇÊ¿ä°¡ ¾ø´Ù¸é, ¾ÐÃà±âÀÇ »ç¿ëÀ» ÀÚÁ¦ÇØ¼­ ¾ÈÆ¼¹ÙÀÌ·¯½º ÇÁ·Î±×·¥À¸·ÎºÎÅÍ °ÅÁþ °æ°í¸¦ ¹ÞÁö ¾Ê´Â °ÍÀÌ ÁÁ½À´Ï´Ù. ¿©·¯ºÐÀº ¹°·Ð ÀáÀçÀûÀÎ ´Ù¸¥ »ç¿ëÀÚ¸¦ À§ÇØ¼­ ¸»ÀÌÁö¿ä.</p>
+ë‹¹ì—°ížˆ ì•„ë‹™ë‹ˆë‹¤. ì•ˆí‹°ë°”ì´ëŸ¬ìŠ¤ í”„ë¡œê·¸ëž¨ì€ AHKë¥¼ ë§¬ì›¨ì–´ë¡œ ìž˜ëª» ì§„ë‹¨í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. (ê±°ì§“ ê¸ì •ì´ë¼ê³  ë¶€ë¦„). ìŠ¤í¬ë¦½íŠ¸ê°€ UPX (AHK 1.0 ê¸°ë³¸ê°’, AHK 1.1 ì œê±°) ë˜ëŠ” MPRESS (AHK 1.1 ì„ íƒì ) ê°™ì€ ì••ì¶•ê¸°ë¡œ ì»´íŒŒì¼ë˜ì–´ ì‹¤í–‰ë  ë•Œ ê·¸ëŸ´ ê°€ëŠ¥ì„±ì´ ìžˆìŠµë‹ˆë‹¤. ì••ì¶•ê¸°ëŠ” ì»´íŒŒì¼ëœ ìŠ¤í¬ë¦½íŠ¸ì˜ í¬ê¸°ë¥¼ ì¤„ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì»´íŒŒì¼ëœ ì‹¤í–‰í™”ì¼ì„ ê¼­ ì••ì¶•í•´ì•¼ í•  í•„ìš”ê°€ ì—†ë‹¤ë©´, ì••ì¶•ê¸°ì˜ ì‚¬ìš©ì„ ìžì œí•´ì„œ ì•ˆí‹°ë°”ì´ëŸ¬ìŠ¤ í”„ë¡œê·¸ëž¨ìœ¼ë¡œë¶€í„° ê±°ì§“ ê²½ê³ ë¥¼ ë°›ì§€ ì•ŠëŠ” ê²ƒì´ ì¢‹ìŠµë‹ˆë‹¤. ì—¬ëŸ¬ë¶„ì€ ë¬¼ë¡  ìž ìž¬ì ì¸ ë‹¤ë¥¸ ì‚¬ìš©ìžë¥¼ ìœ„í•´ì„œ ë§ì´ì§€ìš”.</p>
 
-<h2>ÇÖÅ°, ÇÖ½ºÆ®¸µ, ±×¸®°í ¸®¸ÊÇÎ</h2>
+<h2>í•«í‚¤, í•«ìŠ¤íŠ¸ë§, ê·¸ë¦¬ê³  ë¦¬ë§µí•‘</h2>
 
-<h3 id="Startup">¾î¶»°Ô ÇÖÅ°¿Í ÇÖ½ºÆ®¸µÀ» ÄÄÇ»ÅÍ°¡ ±âµ¿ÇÒ ¶§ ÀÚµ¿À¸·Î Àû¿ëµÇµµ·Ï ¸¸µé ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="Startup">ì–´ë–»ê²Œ í•«í‚¤ì™€ í•«ìŠ¤íŠ¸ë§ì„ ì»´í“¨í„°ê°€ ê¸°ë™í•  ë•Œ ìžë™ìœ¼ë¡œ ì ìš©ë˜ë„ë¡ ë§Œë“¤ ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-½ÃÀÛ ¸Þ´º¿¡ ½ÃÀÛÀÌ¶ó´Â Æú´õ°¡ ÀÖ½À´Ï´Ù. ½ºÅ©¸³Æ®¿¡ ´ëÇÑ ´ÜÃà¾ÆÀÌÄÜÀ» ±× Æú´õ¿¡ ³ÖÀ¸½Ê½Ã¿À. ±×·¯¸é ±× ½ºÅ©¸³Æ®´Â ÄÄÇ»ÅÍ°¡ ½ÃÀÛÇÒ ¶§¸¶´Ù ÀÚµ¿À¸·Î ½ÃÀÛÇÕ´Ï´Ù. ´ÜÃà¾ÆÀÌÄÜÀ» ¸¸µé·Á¸é:</p>
+ì‹œìž‘ ë©”ë‰´ì— ì‹œìž‘ì´ë¼ëŠ” í´ë”ê°€ ìžˆìŠµë‹ˆë‹¤. ìŠ¤í¬ë¦½íŠ¸ì— ëŒ€í•œ ë‹¨ì¶•ì•„ì´ì½˜ì„ ê·¸ í´ë”ì— ë„£ìœ¼ì‹­ì‹œì˜¤. ê·¸ëŸ¬ë©´ ê·¸ ìŠ¤í¬ë¦½íŠ¸ëŠ” ì»´í“¨í„°ê°€ ì‹œìž‘í•  ë•Œë§ˆë‹¤ ìžë™ìœ¼ë¡œ ì‹œìž‘í•©ë‹ˆë‹¤. ë‹¨ì¶•ì•„ì´ì½˜ì„ ë§Œë“¤ë ¤ë©´:</p>
 <ol>
-  <li>½ºÅ©¸³Æ® ÆÄÀÏÀ» Ã£½À´Ï´Ù. ¼±ÅÃÇÑ ´ÙÀ½ Control-C¸¦ ´©¸¨´Ï´Ù.</li>
-  <li>½ÃÀÛ ¹öÆ°À» ¿ìÅ¬¸¯ÇÕ´Ï´Ù (ÀüÇüÀûÀ¸·Î È­¸é ÁÂÇÏ¿¡ ÀÖ½À´Ï´Ù) ±×¸®°í &quot;Explore All Users&quot;¸¦ Å¬¸¯ÇÕ´Ï´Ù.</li>
-  <li>ÇÁ·Î±×·¥ Æú´õ ¾ÈÀÇ ½ÃÀÛ Æú´õ¸¦ Ã£¾Æ °©´Ï´Ù.</li>
-  <li>¸Þ´º¹Ù¿¡¼­ <em>Edit -&gt; Paste Shortcut</em>À» ¼±ÅÃÇÕ´Ï´Ù. ½ºÅ©¸³Æ®¸¦ °¡¸®Å°´Â ´ÜÃà¾ÆÀÌÄÜÀÌ ÀÌÁ¦ ½ÃÀÛ Æú´õ¿¡ ¹èÄ¡µË´Ï´Ù.</li>
+  <li>ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì„ ì°¾ìŠµë‹ˆë‹¤. ì„ íƒí•œ ë‹¤ìŒ Control-Cë¥¼ ëˆ„ë¦…ë‹ˆë‹¤.</li>
+  <li>ì‹œìž‘ ë²„íŠ¼ì„ ìš°í´ë¦­í•©ë‹ˆë‹¤ (ì „í˜•ì ìœ¼ë¡œ í™”ë©´ ì¢Œí•˜ì— ìžˆìŠµë‹ˆë‹¤) ê·¸ë¦¬ê³  &quot;Explore All Users&quot;ë¥¼ í´ë¦­í•©ë‹ˆë‹¤.</li>
+  <li>í”„ë¡œê·¸ëž¨ í´ë” ì•ˆì˜ ì‹œìž‘ í´ë”ë¥¼ ì°¾ì•„ ê°‘ë‹ˆë‹¤.</li>
+  <li>ë©”ë‰´ë°”ì—ì„œ <em>Edit -&gt; Paste Shortcut</em>ì„ ì„ íƒí•©ë‹ˆë‹¤. ìŠ¤í¬ë¦½íŠ¸ë¥¼ ê°€ë¦¬í‚¤ëŠ” ë‹¨ì¶•ì•„ì´ì½˜ì´ ì´ì œ ì‹œìž‘ í´ë”ì— ë°°ì¹˜ë©ë‹ˆë‹¤.</li>
 </ol>
 
-<h3 id="HotMouse">¸¶¿ì½º ¹öÆ°À» ÇÖÅ°Ã³·³ ÀÛµ¿½ÃÅ°´Âµ¥ ¾î·Á¿òÀ» °Þ°í ÀÖ´Ù. Á¶¾ðÀÌ ÀÖ´Â°¡?</h3>
+<h3 id="HotMouse">ë§ˆìš°ìŠ¤ ë²„íŠ¼ì„ í•«í‚¤ì²˜ëŸ¼ ìž‘ë™ì‹œí‚¤ëŠ”ë° ì–´ë ¤ì›€ì„ ê²ªê³  ìžˆë‹¤. ì¡°ì–¸ì´ ìžˆëŠ”ê°€?</h3>
 <p>
-¿ÞÂÊ ¿À¸¥ÂÊ ¸¶¿ì½º ¹öÆ°Àº º¸Åë ÇÒ´çÀÌ °¡´ÉÇÕ´Ï´Ù (¿¹¸¦ µé¾î, <code>#LButton::</code>´Â Win+LeftButton ÇÖÅ°ÀÔ´Ï´Ù). ºñ½ÁÇÏ°Ô, °¡¿îµ¥ ¹öÆ°°ú <a href="KeyList.htm">¸¶¿ì½º ÈÙ</a>ÀÇ È¸ÀüÀº º¸Åë ÇÒ´çÀÌ °¡´ÉÇÕ´Ï´Ù. ´Ü, ¸¶¿ì½º µå¶óÀÌ¹ö°¡ ¹öÆ°À» Á÷Á¢ÀûÀ¸·Î Á¦¾îÇÏ´Â °æ¿ì´Â Á¦¿ÜÇÕ´Ï´Ù.</p>
+ì™¼ìª½ ì˜¤ë¥¸ìª½ ë§ˆìš°ìŠ¤ ë²„íŠ¼ì€ ë³´í†µ í• ë‹¹ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤ (ì˜ˆë¥¼ ë“¤ì–´, <code>#LButton::</code>ëŠ” Win+LeftButton í•«í‚¤ìž…ë‹ˆë‹¤). ë¹„ìŠ·í•˜ê²Œ, ê°€ìš´ë° ë²„íŠ¼ê³¼ <a href="KeyList.htm">ë§ˆìš°ìŠ¤ íœ </a>ì˜ íšŒì „ì€ ë³´í†µ í• ë‹¹ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤. ë‹¨, ë§ˆìš°ìŠ¤ ë“œë¼ì´ë²„ê°€ ë²„íŠ¼ì„ ì§ì ‘ì ìœ¼ë¡œ ì œì–´í•˜ëŠ” ê²½ìš°ëŠ” ì œì™¸í•©ë‹ˆë‹¤.</p>
 <p>
-³× ¹øÂ° ¹öÆ° (XButton1)°ú ´Ù¼¸ ¹øÂ° ¹öÆ°(XButton2)Àº ¸¶¿ì½º µå¶óÀÌ¹ö°¡ Å¬¸¯À» ½Ã½ºÅÛ¿¡ <a href="commands/KeyHistory.htm">º¸ÀÌµµ·Ï</a> Çã¿ëÇÏ¸é ÇÒ´çÀÌ °¡´ÉÇÒ ¼öµµ ÀÖ½À´Ï´Ù. º¸ÀÌÁö ¾Ê°Å³ª -- ¶Ç´Â ¸¶¿ì½º°¡ ¹öÆ°ÀÌ ´Ù¼¸°³°¡ ³Ñ¾î°¡¸é -- ¸¶¿ì½º¿¡ ÇÔ²² µû¶ó¿Â ¼ÒÇÁÆ®¿þ¾î¸¦ Á¶Á¤ÇØ¼­ (º¸Åë Á¦¾îÆÇÀÌ³ª ½ÃÀÛ ¸Þ´º·Î Á¢±ÙÇÒ ¼ö ÀÖÀ» °ÍÀÔ´Ï´Ù) ÀÌ·± ¹öÆ°À» ´©¸¦ ¶§¸¶´Ù Å°´©¸§À» Àü¼ÛÇÏµµ·Ï ½ÃµµÇØ º¸¾Æ¾ß ÇÕ´Ï´Ù. ±×·± Å°´­¸²Àº ½ºÅ©¸³Æ®¿¡¼­ ÇÖÅ°·Î Á¤ÀÇÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, ³× ¹øÂ° ¹öÆ°ÀÌ Control+F1¸¦ Àü¼ÛÇÏµµ·Ï ±¸¼ºÇß´Ù¸é, <code>^F1::</code>¸¦ »ç¿ëÇÏ¿© ½ºÅ©¸³Æ®¿¡ °£Á¢ÀûÀ¸·Î ±× ¹öÆ°À» ÇÖÅ°·Î ±¸¼ºÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
-<p>´Ù¼¸ ¹öÆ° ¸¶¿ì½º¸¦ °¡Áö°í ÀÖ´Âµ¥ ³× ¹øÂ° ¹öÆ°°ú ´Ù¼¸ ¹øÂ° ¹öÆ°Àº  <a href="commands/KeyHistory.htm">º¸ÀÌÁö ¾Ê´Â´Ù¸é</a>, ¸¶¿ì½º µå¶óÀÌ¹ö¸¦ ¿î¿µÃ¼Á¦¿¡ Æ÷ÇÔµÈ ±âº» µå¶óÀÌ¹ö·Î ¹Ù²Ù¾î º¼ ¼ö ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº ¿©·¯ºÐÀÇ Æ¯º°ÇÑ ¸¶¿ì½º¸¦ À§ÇÑ Àü¿ë µå¶óÀÌ¹ö°¡ ÀÖ°í °Å±â¿¡¼­ Á¦°øµÇ´Â Æ¯º°ÇÑ Æ¯Â¡ÀÌ ¾ø¾îµµ »ì¼ö ÀÖ´Ù°í °¡Á¤ÇÕ´Ï´Ù.</p>
+ë„¤ ë²ˆì§¸ ë²„íŠ¼ (XButton1)ê³¼ ë‹¤ì„¯ ë²ˆì§¸ ë²„íŠ¼(XButton2)ì€ ë§ˆìš°ìŠ¤ ë“œë¼ì´ë²„ê°€ í´ë¦­ì„ ì‹œìŠ¤í…œì— <a href="commands/KeyHistory.htm">ë³´ì´ë„ë¡</a> í—ˆìš©í•˜ë©´ í• ë‹¹ì´ ê°€ëŠ¥í•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤. ë³´ì´ì§€ ì•Šê±°ë‚˜ -- ë˜ëŠ” ë§ˆìš°ìŠ¤ê°€ ë²„íŠ¼ì´ ë‹¤ì„¯ê°œê°€ ë„˜ì–´ê°€ë©´ -- ë§ˆìš°ìŠ¤ì— í•¨ê»˜ ë”°ë¼ì˜¨ ì†Œí”„íŠ¸ì›¨ì–´ë¥¼ ì¡°ì •í•´ì„œ (ë³´í†µ ì œì–´íŒì´ë‚˜ ì‹œìž‘ ë©”ë‰´ë¡œ ì ‘ê·¼í•  ìˆ˜ ìžˆì„ ê²ƒìž…ë‹ˆë‹¤) ì´ëŸ° ë²„íŠ¼ì„ ëˆ„ë¥¼ ë•Œë§ˆë‹¤ í‚¤ëˆ„ë¦„ì„ ì „ì†¡í•˜ë„ë¡ ì‹œë„í•´ ë³´ì•„ì•¼ í•©ë‹ˆë‹¤. ê·¸ëŸ° í‚¤ëˆŒë¦¼ì€ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ í•«í‚¤ë¡œ ì •ì˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ë„¤ ë²ˆì§¸ ë²„íŠ¼ì´ Control+F1ë¥¼ ì „ì†¡í•˜ë„ë¡ êµ¬ì„±í–ˆë‹¤ë©´, <code>^F1::</code>ë¥¼ ì‚¬ìš©í•˜ì—¬ ìŠ¤í¬ë¦½íŠ¸ì— ê°„ì ‘ì ìœ¼ë¡œ ê·¸ ë²„íŠ¼ì„ í•«í‚¤ë¡œ êµ¬ì„±í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
+<p>ë‹¤ì„¯ ë²„íŠ¼ ë§ˆìš°ìŠ¤ë¥¼ ê°€ì§€ê³  ìžˆëŠ”ë° ë„¤ ë²ˆì§¸ ë²„íŠ¼ê³¼ ë‹¤ì„¯ ë²ˆì§¸ ë²„íŠ¼ì€  <a href="commands/KeyHistory.htm">ë³´ì´ì§€ ì•ŠëŠ”ë‹¤ë©´</a>, ë§ˆìš°ìŠ¤ ë“œë¼ì´ë²„ë¥¼ ìš´ì˜ì²´ì œì— í¬í•¨ëœ ê¸°ë³¸ ë“œë¼ì´ë²„ë¡œ ë°”ê¾¸ì–´ ë³¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ê²ƒì€ ì—¬ëŸ¬ë¶„ì˜ íŠ¹ë³„í•œ ë§ˆìš°ìŠ¤ë¥¼ ìœ„í•œ ì „ìš© ë“œë¼ì´ë²„ê°€ ìžˆê³  ê±°ê¸°ì—ì„œ ì œê³µë˜ëŠ” íŠ¹ë³„í•œ íŠ¹ì§•ì´ ì—†ì–´ë„ ì‚´ìˆ˜ ìžˆë‹¤ê³  ê°€ì •í•©ë‹ˆë‹¤.</p>
 
-<h3 id="HotSymb">ÅÇ°ú ½ºÆäÀÌ½º´Â ¾î¶»°Ô ÇÖÅ°·Î Á¤ÀÇÇÒ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="HotSymb">íƒ­ê³¼ ìŠ¤íŽ˜ì´ìŠ¤ëŠ” ì–´ë–»ê²Œ í•«í‚¤ë¡œ ì •ì˜í•  ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-¹®ÀÚ°¡ ¾Æ´Ï¶ó Å°ÀÇ ÀÌ¸§À» »ç¿ëÇÏ½Ê½Ã¿À (Tab ±×¸®°í Space). ¿¹¸¦ µé¾î, <code>#Space</code>´Â Win+SpaceÀÌ°í <code>^!Tab</code>Àº Control+Alt+TabÀÔ´Ï´Ù.</p>
+ë¬¸ìžê°€ ì•„ë‹ˆë¼ í‚¤ì˜ ì´ë¦„ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤ (Tab ê·¸ë¦¬ê³  Space). ì˜ˆë¥¼ ë“¤ì–´, <code>#Space</code>ëŠ” Win+Spaceì´ê³  <code>^!Tab</code>ì€ Control+Alt+Tabìž…ë‹ˆë‹¤.</p>
 
-<h3 id="Remap">Å°³ª ¸¶¿ì½º ¹öÆ°À» ¾î¶»°Ô ¸®¸ÊÇÒ ¼ö ÀÖ´Â°¡? ¸¶Ä¡ ´Ù¸¥ Å°Ã³·³ º¸ÀÌ°Ô ÇÏ°í ½Í´Ù.</h3>
+<h3 id="Remap">í‚¤ë‚˜ ë§ˆìš°ìŠ¤ ë²„íŠ¼ì„ ì–´ë–»ê²Œ ë¦¬ë§µí•  ìˆ˜ ìžˆëŠ”ê°€? ë§ˆì¹˜ ë‹¤ë¥¸ í‚¤ì²˜ëŸ¼ ë³´ì´ê²Œ í•˜ê³  ì‹¶ë‹¤.</h3>
 <p>
-ÀÌ ÁÖÁ¦´Â <a href="misc/Remap.htm">¸®¸ÊÇÎ</a> ÆäÀÌÁö¿¡ ±â¼úµÇ¾î ÀÖ½À´Ï´Ù.</p>
+ì´ ì£¼ì œëŠ” <a href="misc/Remap.htm">ë¦¬ë§µí•‘</a> íŽ˜ì´ì§€ì— ê¸°ìˆ ë˜ì–´ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3 id="DoublePress">Å°³ª ¹öÆ°ÀÌ µÎ ¹ø ´­¸®´Â °ÍÀ» ¾î¶»°Ô Å½ÁöÇÏ´Â°¡?</h3>
+<h3 id="DoublePress">í‚¤ë‚˜ ë²„íŠ¼ì´ ë‘ ë²ˆ ëˆŒë¦¬ëŠ” ê²ƒì„ ì–´ë–»ê²Œ íƒì§€í•˜ëŠ”ê°€?</h3>
 <p>
-´ÙÀ½°ú °°ÀÌ <a href="Variables.htm#h">ÇÖÅ°¿¡ ³»Àå º¯¼ö</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À:</p>
+ë‹¤ìŒê³¼ ê°™ì´ <a href="Variables.htm#h">í•«í‚¤ì— ë‚´ìž¥ ë³€ìˆ˜</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤:</p>
 <pre>~Ctrl::
     if (A_ThisHotkey = A_PriorHotkey &amp;&amp; A_TimeSincePriorHotkey &lt; 200)
-        MsgBox µÎ¹ø-´­·¶½À´Ï´Ù
+        MsgBox ë‘ë²ˆ-ëˆŒë €ìŠµë‹ˆë‹¤
 return</pre>
 
-<h3 id="HotContext">¾î¶»°Ô <a href="Hotkeys.htm">ÇÖÅ°</a>³ª <a href="Hotstrings.htm">ÇÖ½ºÆ®¸µÀ»</a> ¾î¶² ÇÁ·Î±×·¥¿¡´Â ¹èÁ¦ÇÒ ¼ö ÀÖ´Â°¡? ´Ù¸¥ ¸»·Î ÇÏ¸é, Æ¯Á¤ Ã¢ÀÌ È°¼ºÈ­µÇ¾î ÀÖÀ» ¶§¸¦ Á¦¿ÜÇÏ°í ¾î¶² Å°¸¦ ±×³É º¸Åë ¶§Ã³·³ ÀÛµ¿½ÃÅ°°í ½Í´Ù.</h3>
+<h3 id="HotContext">ì–´ë–»ê²Œ <a href="Hotkeys.htm">í•«í‚¤</a>ë‚˜ <a href="Hotstrings.htm">í•«ìŠ¤íŠ¸ë§ì„</a> ì–´ë–¤ í”„ë¡œê·¸ëž¨ì—ëŠ” ë°°ì œí•  ìˆ˜ ìžˆëŠ”ê°€? ë‹¤ë¥¸ ë§ë¡œ í•˜ë©´, íŠ¹ì • ì°½ì´ í™œì„±í™”ë˜ì–´ ìžˆì„ ë•Œë¥¼ ì œì™¸í•˜ê³  ì–´ë–¤ í‚¤ë¥¼ ê·¸ëƒ¥ ë³´í†µ ë•Œì²˜ëŸ¼ ìž‘ë™ì‹œí‚¤ê³  ì‹¶ë‹¤.</h3>
 <p>
-¼±È£µÇ´Â ¹æ¹ýÀº <a href="commands/_IfWinActive.htm">#IfWinActive</a>ÀÔ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì„ í˜¸ë˜ëŠ” ë°©ë²•ì€ <a href="commands/_IfWinActive.htm">#IfWinActive</a>ìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre>#IfWinActive, ahk_class Notepad
-^a::MsgBox ³ëÆ®ÆÐµå°¡ È°¼ºÈ­µÇ¾î ÀÖ´Â µ¿¾È Control-A¸¦ ´­·¶½À´Ï´Ù.
+^a::MsgBox ë…¸íŠ¸íŒ¨ë“œê°€ í™œì„±í™”ë˜ì–´ ìžˆëŠ” ë™ì•ˆ Control-Aë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.
 </pre>
 
-<h3 id="HotPrefix">¾î¶»°Ô Á¢µÎ Å°¸¦ ¾Æ¹«°Íµµ ÇÏÁö ¾Ê´Â ´ë½Å¿¡ ±×ÀÇ ¿ø·¡ ±â´ÉÀ» ¼öÇàÇÏµµ·Ï ¸¸µé ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="HotPrefix">ì–´ë–»ê²Œ ì ‘ë‘ í‚¤ë¥¼ ì•„ë¬´ê²ƒë„ í•˜ì§€ ì•ŠëŠ” ëŒ€ì‹ ì— ê·¸ì˜ ì›ëž˜ ê¸°ëŠ¥ì„ ìˆ˜í–‰í•˜ë„ë¡ ë§Œë“¤ ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-´ÙÀ½ ¿¹Á¦¸¦ ¿¬±¸ÇØ º¸½Ê½Ã¿À. Numpad0¸¦ Á¢µÎ Å°·Î ¸¸µì´Ï´Ù:</p>
-<pre>Numpad0 &amp; Numpad1::MsgBox, Numpad0À» ´©¸£°í ÀÖ´Â µ¿¾È Numpad1À» ´­·¶½À´Ï´Ù.</pre>
+ë‹¤ìŒ ì˜ˆì œë¥¼ ì—°êµ¬í•´ ë³´ì‹­ì‹œì˜¤. Numpad0ë¥¼ ì ‘ë‘ í‚¤ë¡œ ë§Œë“­ë‹ˆë‹¤:</p>
+<pre>Numpad0 &amp; Numpad1::MsgBox, Numpad0ì„ ëˆ„ë¥´ê³  ìžˆëŠ” ë™ì•ˆ Numpad1ì„ ëˆŒë €ìŠµë‹ˆë‹¤.</pre>
 <p>
-ÀÌÁ¦, À§¿Í °°ÀÌ ÇÖÅ°¸¦ ±âµ¿ÇÏ´Âµ¥ »ç¿ëµÇÁö ¾ÊÀ» °æ¿ì Numpad0°¡ ½ÇÁ¦ Numpad0 Å°´­¸²À» Àü¼ÛÇÏµµ·Ï ¸¸µé·Á¸é, ´ÙÀ½ ÇÖÅ°¸¦ Ãß°¡ÇÕ´Ï´Ù:</p>
+ì´ì œ, ìœ„ì™€ ê°™ì´ í•«í‚¤ë¥¼ ê¸°ë™í•˜ëŠ”ë° ì‚¬ìš©ë˜ì§€ ì•Šì„ ê²½ìš° Numpad0ê°€ ì‹¤ì œ Numpad0 í‚¤ëˆŒë¦¼ì„ ì „ì†¡í•˜ë„ë¡ ë§Œë“¤ë ¤ë©´, ë‹¤ìŒ í•«í‚¤ë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤:</p>
 <pre> $Numpad0::Send, {Numpad0}</pre>
 <p>
-$ Á¢µÎ»ç´Â ¹«ÇÑ È¸µ¹ÀÌ¸¦ °æ°íÇÏ´Â ´ëÈ­»óÀÚ°¡ ³ªÅ¸³ª´Â °ÍÀ» ¸·±â À§ÇØ ÇÊ¿äÇÕ´Ï´Ù (ÇÖÅ°°¡ &quot;ÀÚ±â ÀÚ½ÅÀ» Àü¼Û&quot;ÇÏ±â ¶§¹®ÀÔ´Ï´Ù). °Ô´Ù°¡, À§ÀÇ ÇàÀ§´Â Å°¿¡¼­ ¼ÕÀ»  <strong>¶¿ ¶§</strong> ÀÏ¾î³³´Ï´Ù.</p>
+$ ì ‘ë‘ì‚¬ëŠ” ë¬´í•œ íšŒëŒì´ë¥¼ ê²½ê³ í•˜ëŠ” ëŒ€í™”ìƒìžê°€ ë‚˜íƒ€ë‚˜ëŠ” ê²ƒì„ ë§‰ê¸° ìœ„í•´ í•„ìš”í•©ë‹ˆë‹¤ (í•«í‚¤ê°€ &quot;ìžê¸° ìžì‹ ì„ ì „ì†¡&quot;í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤). ê²Œë‹¤ê°€, ìœ„ì˜ í–‰ìœ„ëŠ” í‚¤ì—ì„œ ì†ì„  <strong>ë—„ ë•Œ</strong> ì¼ì–´ë‚©ë‹ˆë‹¤.</p>
 
-<h3 id="HotOverride">¾î¶»°Ô Win+U (Utility Manager) ±×¸®°í Win+R (Run) °°Àº ³»Àå À©µµ¿ìÁî ´ÜÃà Å°¸¦ ¹Ù²Ù°Å³ª ºÒ´ÉÀ¸·Î ¸¸µé ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="HotOverride">ì–´ë–»ê²Œ Win+U (Utility Manager) ê·¸ë¦¬ê³  Win+R (Run) ê°™ì€ ë‚´ìž¥ ìœˆë„ìš°ì¦ˆ ë‹¨ì¶• í‚¤ë¥¼ ë°”ê¾¸ê±°ë‚˜ ë¶ˆëŠ¥ìœ¼ë¡œ ë§Œë“¤ ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-´ÙÀ½Àº <a href="misc/Override.htm">¿¹Á¦µéÀ»</a> ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ë‹¤ìŒì€ <a href="misc/Override.htm">ì˜ˆì œë“¤ì„</a> ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3 id="HotRegex">ÇÖ½ºÆ®¸µ¿¡ ¿ÍÀÏµåÄ«µå³ª Á¤±Ô Ç¥Çö½ÄÀ» »ç¿ëÇÒ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="HotRegex">í•«ìŠ¤íŠ¸ë§ì— ì™€ì¼ë“œì¹´ë“œë‚˜ ì •ê·œ í‘œí˜„ì‹ì„ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-Æú¸®Å×³×(polyethene)°¡ ÀÛ¼ºÇÑ <a href="https://github.com/polyethene/AutoHotkey-Scripts/blob/master/Hotstrings.ahk">½ºÅ©¸³Æ®</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À  (¿¹Á¦µéÀÌ Æ÷ÇÔµÇ¾î ÀÖ½À´Ï´Ù).</p>
+í´ë¦¬í…Œë„¤(polyethene)ê°€ ìž‘ì„±í•œ <a href="https://github.com/polyethene/AutoHotkey-Scripts/blob/master/Hotstrings.ahk">ìŠ¤í¬ë¦½íŠ¸</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤  (ì˜ˆì œë“¤ì´ í¬í•¨ë˜ì–´ ìžˆìŠµë‹ˆë‹¤).</p>
 
-<h3 id="SpecialKey">Å°º¸µå ·¹ÀÌ¾Æ¿ô¿¡ ¾ø´Â ÇÖÅ°¸¦ ¾î¶»°Ô »ç¿ëÇÒ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="SpecialKey">í‚¤ë³´ë“œ ë ˆì´ì•„ì›ƒì— ì—†ëŠ” í•«í‚¤ë¥¼ ì–´ë–»ê²Œ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-<a href="KeyList.htm#SpecialKeys">Æ¯¼ö Å°µé</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<a href="KeyList.htm#SpecialKeys">íŠ¹ìˆ˜ í‚¤ë“¤</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3 id="HotZero">Å°º¸µå¿¡ Æ¯º°ÇÑ 000 Å°°¡ ÀÖ´Ù. ÀÌ°ÍÀ» ÇÖÅ°·Î º¯È¯ÇÒ ¼ö ÀÖ´Â°¡?</h3>
+<h3 id="HotZero">í‚¤ë³´ë“œì— íŠ¹ë³„í•œ 000 í‚¤ê°€ ìžˆë‹¤. ì´ê²ƒì„ í•«í‚¤ë¡œ ë³€í™˜í•  ìˆ˜ ìžˆëŠ”ê°€?</h3>
 <p>
-±×·¸½À´Ï´Ù. ´ÙÀ½ <a href="scripts/Numpad000.htm">¿¹Á¦ ½ºÅ©¸³Æ®</a>´Â 000 Å°¸¦ µîÈ£ Å°·Î ¹Ù²ß´Ï´Ù. <code>Send, =</code> ÁÙÀ» ¿øÇÏ´Â ´ë·Î ¹Ù²Ù¾î¼­ ÇàÀ§¸¦ ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù.</p>
+ê·¸ë ‡ìŠµë‹ˆë‹¤. ë‹¤ìŒ <a href="scripts/Numpad000.htm">ì˜ˆì œ ìŠ¤í¬ë¦½íŠ¸</a>ëŠ” 000 í‚¤ë¥¼ ë“±í˜¸ í‚¤ë¡œ ë°”ê¿‰ë‹ˆë‹¤. <code>Send, =</code> ì¤„ì„ ì›í•˜ëŠ” ëŒ€ë¡œ ë°”ê¾¸ì–´ì„œ í–‰ìœ„ë¥¼ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 </body>
 </html>

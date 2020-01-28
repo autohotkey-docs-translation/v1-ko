@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>PixelGetColor</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,53 +11,53 @@
 
 <h1>PixelGetColor</h1>
 
-<p>ÁöÁ¤µÈ x,y ÁÂÇ¥¿¡ ÀÖ´Â ÇÈ¼¿ÀÇ ÄÃ·¯¸¦ ¿­¶÷ÇÕ´Ï´Ù.</p>
+<p>ì§€ì •ëœ x,y ì¢Œí‘œì— ìžˆëŠ” í”½ì…€ì˜ ì»¬ëŸ¬ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">PixelGetColor, OutputVar, X, Y [, Alt|Slow|RGB]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>½ÊÀ°Áø BGR Çü½ÄÀ¸·Î ÄÃ·¯ ID¸¦ ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§. ¿¹¸¦ µé¾î, º¸¶ó»öÀº 0x800080À¸·Î Á¤ÀÇµË´Ï´Ù. Ã»»öÀÇ Ã¤µµ°¡ 80ÀÌ°í Àû»öÀÇ Ã¤µµ°¡ 80 ±×¸®°í ³ì»öÀº Ã¤µµ°¡ 0ÀÌ±â ¶§¹®ÀÔ´Ï´Ù.</p></dd>
+  <dd><p>ì‹­ìœ¡ì§„ BGR í˜•ì‹ìœ¼ë¡œ ì»¬ëŸ¬ IDë¥¼ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„. ì˜ˆë¥¼ ë“¤ì–´, ë³´ë¼ìƒ‰ì€ 0x800080ìœ¼ë¡œ ì •ì˜ë©ë‹ˆë‹¤. ì²­ìƒ‰ì˜ ì±„ë„ê°€ 80ì´ê³  ì ìƒ‰ì˜ ì±„ë„ê°€ 80 ê·¸ë¦¬ê³  ë…¹ìƒ‰ì€ ì±„ë„ê°€ 0ì´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p></dd>
 
   <dt>X, Y</dt>
-  <dd><p>ÇÈ¼¿ÀÇ X¿Í Y ÁÂÇ¥, <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É. ÁÂÇ¥´Â È°¼º Ã¢¿¡ »ó´ëÀûÀÔ´Ï´Ù. ´Ü, <a href="CoordMode.htm">CoordMode</a>¸¦ »ç¿ëÇÏ¿© ÁÂÇ¥ Ã¼°è¸¦ ¹Ù²Ù¾ú´Ù¸é ¿¹¿ÜÀÔ´Ï´Ù.</p></dd>
+  <dd><p>í”½ì…€ì˜ Xì™€ Y ì¢Œí‘œ, <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥. ì¢Œí‘œëŠ” í™œì„± ì°½ì— ìƒëŒ€ì ìž…ë‹ˆë‹¤. ë‹¨, <a href="CoordMode.htm">CoordMode</a>ë¥¼ ì‚¬ìš©í•˜ì—¬ ì¢Œí‘œ ì²´ê³„ë¥¼ ë°”ê¾¸ì—ˆë‹¤ë©´ ì˜ˆì™¸ìž…ë‹ˆë‹¤.</p></dd>
 
   <dt>Alt|Slow|RGB</dt>
-  <dd><p>ÀÌ ¸Å°³º¯¼ö´Â 0 °³ ÀÌ»óÀÇ ´ÙÀ½ ´Ü¾î°¡ ´ã±é´Ï´Ù. ´Ü¾î°¡ ¿©·¯ °³ Á¸ÀçÇÏ¸é, ´ÙÀ½ ´Ü¾î¿Í ½ºÆäÀÌ½º·Î °¡¸£½Ê½Ã¿À (¿¹, <code>Alt RGB</code>).</p>
+  <dd><p>ì´ ë§¤ê°œë³€ìˆ˜ëŠ” 0 ê°œ ì´ìƒì˜ ë‹¤ìŒ ë‹¨ì–´ê°€ ë‹´ê¹ë‹ˆë‹¤. ë‹¨ì–´ê°€ ì—¬ëŸ¬ ê°œ ì¡´ìž¬í•˜ë©´, ë‹¤ìŒ ë‹¨ì–´ì™€ ìŠ¤íŽ˜ì´ìŠ¤ë¡œ ê°€ë¥´ì‹­ì‹œì˜¤ (ì˜ˆ, <code>Alt RGB</code>).</p>
       <p>
-	  <strong>Alt</strong> <span class="ver">[v1.0.43.10+]:</span> ´ëÃ¼ ¹æ¹ýÀ» »ç¿ëÇÏ¿© »öÀ» ¿­¶÷ÇÕ´Ï´Ù. Á¤»ó ¹æ¹ýÀ¸·Î´Â Æ¯Á¤ À¯ÇüÀÇ Ã¢¿¡ ´ëÇÏ¿© Á¤È®ÇÏ°Å³ª À¯È¿ÇÑ ÄÃ·¯¸¦ ¾òÀ» ¼ö ¾øÀ» °æ¿ì¿¡ »ç¿ëµË´Ï´Ù. ÀÌ ¹æ¹ýÀº Á¤»ó ¹æ¹ýº¸´Ù ´ë·« 10% Á¤µµ ´À¸³´Ï´Ù.</p>
+	  <strong>Alt</strong> <span class="ver">[v1.0.43.10+]:</span> ëŒ€ì²´ ë°©ë²•ì„ ì‚¬ìš©í•˜ì—¬ ìƒ‰ì„ ì—´ëžŒí•©ë‹ˆë‹¤. ì •ìƒ ë°©ë²•ìœ¼ë¡œëŠ” íŠ¹ì • ìœ í˜•ì˜ ì°½ì— ëŒ€í•˜ì—¬ ì •í™•í•˜ê±°ë‚˜ ìœ íš¨í•œ ì»¬ëŸ¬ë¥¼ ì–»ì„ ìˆ˜ ì—†ì„ ê²½ìš°ì— ì‚¬ìš©ë©ë‹ˆë‹¤. ì´ ë°©ë²•ì€ ì •ìƒ ë°©ë²•ë³´ë‹¤ ëŒ€ëžµ 10% ì •ë„ ëŠë¦½ë‹ˆë‹¤.</p>
       <p>
-	  <strong>Slow</strong> <span class="ver">[v1.0.43.10+]:</span> ´õ Á¤±³ÇÑ ¹æ¹ýÀ» »ç¿ëÇÏ¿© ÄÃ·¯¸¦ ¿­¶÷ÇÕ´Ï´Ù. ¾î¶² ÀüÃ¼ È­¸é ¾îÇÃ¸®ÄÉÀÌ¼Ç¿¡¼­ ´Ù¸¥ ¸Þ½îµå´Â ½ÇÆÐÇÏÁö¸¸ ÀÌ ¹æ¹ýÀº ÀÛµ¿ÇÒ °¡´É¼ºÀÌ ÀÖ½À´Ï´Ù. ÀÌ ¹æ¹ýÀº Á¤»ó ¹æ¹ýº¸´Ù ´ë·« ¼¼ ¹è ´À¸³´Ï´Ù. ÁÖÀÇ: <em>Slow</em>°¡ <em>Alt</em>º¸´Ù ¿ì¼± ¼øÀ§°¡ ³ô½À´Ï´Ù. ±×·¡¼­ ÀÌ °æ¿ì´Â <em>Alt</em>¸¦ ÁöÁ¤ÇÒ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.</p>
+	  <strong>Slow</strong> <span class="ver">[v1.0.43.10+]:</span> ë” ì •êµí•œ ë°©ë²•ì„ ì‚¬ìš©í•˜ì—¬ ì»¬ëŸ¬ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤. ì–´ë–¤ ì „ì²´ í™”ë©´ ì–´í”Œë¦¬ì¼€ì´ì…˜ì—ì„œ ë‹¤ë¥¸ ë©”ì˜ë“œëŠ” ì‹¤íŒ¨í•˜ì§€ë§Œ ì´ ë°©ë²•ì€ ìž‘ë™í•  ê°€ëŠ¥ì„±ì´ ìžˆìŠµë‹ˆë‹¤. ì´ ë°©ë²•ì€ ì •ìƒ ë°©ë²•ë³´ë‹¤ ëŒ€ëžµ ì„¸ ë°° ëŠë¦½ë‹ˆë‹¤. ì£¼ì˜: <em>Slow</em>ê°€ <em>Alt</em>ë³´ë‹¤ ìš°ì„  ìˆœìœ„ê°€ ë†’ìŠµë‹ˆë‹¤. ê·¸ëž˜ì„œ ì´ ê²½ìš°ëŠ” <em>Alt</em>ë¥¼ ì§€ì •í•  í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.</p>
       <p>
-	  <strong>RGB</strong>: ÄÃ·¯¸¦ RGB vs. BGR Æ÷¸ËÀ¸·Î ¿­¶÷ÇÕ´Ï´Ù. ´Ù¸¥ ¸»·Î, Àû»ö°ú Ã»»öÀ» ±³È¯ÇÕ´Ï´Ù. ÀÌ´Â <a href="WinSet.htm">WinSet</a>, <a href="Gui.htm">Gui</a>, <a href="Progress.htm">Progress</a>, ±×¸®°í <a href="Progress.htm">SplashImage</a>°ú È£È¯µÇ´Â ÄÃ·¯¸¦ ¿­¶÷ÇÏ´Â µ¥ À¯¿ëÇÕ´Ï´Ù.</p></dd>
+	  <strong>RGB</strong>: ì»¬ëŸ¬ë¥¼ RGB vs. BGR í¬ë§·ìœ¼ë¡œ ì—´ëžŒí•©ë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ, ì ìƒ‰ê³¼ ì²­ìƒ‰ì„ êµí™˜í•©ë‹ˆë‹¤. ì´ëŠ” <a href="WinSet.htm">WinSet</a>, <a href="Gui.htm">Gui</a>, <a href="Progress.htm">Progress</a>, ê·¸ë¦¬ê³  <a href="Progress.htm">SplashImage</a>ê³¼ í˜¸í™˜ë˜ëŠ” ì»¬ëŸ¬ë¥¼ ì—´ëžŒí•˜ëŠ” ë° ìœ ìš©í•©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> ÀÌ ¸í·É¾î´Â ½ÇÆÐ½Ã ¿¹¿Ü¸¦ ´øÁú ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Catch.htm#RuntimeErrors">½ÇÇà½Ã°£ ¿¡·¯</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº ¹®Á¦°¡ ÀÖ¾úÀ¸¸é 1 ±×·¸Áö ¾ÊÀ¸¸é 0ÀÌ ¼³Á¤µË´Ï´Ù.</p>
+<p><span class="ver">[v1.1.04+]</span> ì´ ëª…ë ¹ì–´ëŠ” ì‹¤íŒ¨ì‹œ ì˜ˆì™¸ë¥¼ ë˜ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Catch.htm#RuntimeErrors">ì‹¤í–‰ì‹œê°„ ì—ëŸ¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ ë¬¸ì œê°€ ìžˆì—ˆìœ¼ë©´ 1 ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÇÈ¼¿Àº ¹Ýµå½Ã º¸¿©¾ß ÇÕ´Ï´Ù; ´Ù¸¥ ¸»·Î, Ã¢¿¡¼­ ´Ù¸¥ Ã¢¿¡ °¡·ÁÁø ÇÈ¼¿ ÄÃ·¯´Â ¿­¶÷ÇÒ ¼ö ¾ø½À´Ï´Ù. ´ëÁ¶ÀûÀ¸·Î, ¸¶¿ì½º ¾Æ·¡ÀÇ Ä¿¼­´Â º¸Åë Å½ÁöÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ¿¡ ´ëÇÑ ¿¹¿Ü´Â °ÔÀÓ Ä¿¼­ÀÔ´Ï´Ù. ´ëºÎºÐÀÇ °æ¿ì °ÔÀÓ Ä¿¼­´Â ÀÚ½ÅÀÇ ¾Æ·¡¿¡ ÇÈ¼¿À» ¼û±é´Ï´Ù.</p>
+í”½ì…€ì€ ë°˜ë“œì‹œ ë³´ì—¬ì•¼ í•©ë‹ˆë‹¤; ë‹¤ë¥¸ ë§ë¡œ, ì°½ì—ì„œ ë‹¤ë¥¸ ì°½ì— ê°€ë ¤ì§„ í”½ì…€ ì»¬ëŸ¬ëŠ” ì—´ëžŒí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ëŒ€ì¡°ì ìœ¼ë¡œ, ë§ˆìš°ìŠ¤ ì•„ëž˜ì˜ ì»¤ì„œëŠ” ë³´í†µ íƒì§€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ì— ëŒ€í•œ ì˜ˆì™¸ëŠ” ê²Œìž„ ì»¤ì„œìž…ë‹ˆë‹¤. ëŒ€ë¶€ë¶„ì˜ ê²½ìš° ê²Œìž„ ì»¤ì„œëŠ” ìžì‹ ì˜ ì•„ëž˜ì— í”½ì…€ì„ ìˆ¨ê¹ë‹ˆë‹¤.</p>
 <p>
-ÇöÀç È­¸éÀÇ ÄÃ·¯¸¦ ¾Ë¾Æ³»·Á¸é Window Spy (Æ®·¹ÀÌ ¾ÆÀÌÄÜ ¸Þ´º)¸¦ »ç¿ëÇÏ°Å³ª ¶Ç´Â ÀÌ ÆäÀÌÁö ¾Æ·¡¿¡ ¿¡Á¦¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+í˜„ìž¬ í™”ë©´ì˜ ì»¬ëŸ¬ë¥¼ ì•Œì•„ë‚´ë ¤ë©´ Window Spy (íŠ¸ë ˆì´ ì•„ì´ì½˜ ë©”ë‰´)ë¥¼ ì‚¬ìš©í•˜ê±°ë‚˜ ë˜ëŠ” ì´ íŽ˜ì´ì§€ ì•„ëž˜ì— ì—ì œë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 
-<p><b>¾Ë·ÁÁø ÇÑ°è:</b></p>
+<p><b>ì•Œë ¤ì§„ í•œê³„:</b></p>
 <ul>
-  <li>Ã¢ÀÌ <a href="WinSet.htm#trans">ºÎºÐÀûÀ¸·Î Åõ¸íÇÏ°Å³ª</a> ¶Ç´Â ÀÚ½ÅÀÇ ÄÃ·¯¸¦ º¸ÀÌÁö ¾Êµµ·Ï Ç¥½ÄÇß´Ù¸é (<a href="WinSet.htm#TransColor">TransColor</a>) ÀüÇüÀûÀ¸·Î ±× °á°ú ÄÃ·¯´Â ±× Ã¢¿¡ ¾Æ´Ï¶ó ±× Ã¢ µÚÀÇ ÄÃ·¯°¡ µË´Ï´Ù.</li>
-  <li>PixelGetColor´Â ¾î¶² ¾îÇÃ¸®ÄÉÀÌ¼Ç¿¡¼­ Á¤È®ÇÑ °á°ú¸¦ »ý»êÇÒ ¼ö ¾øÀ» ¼öµµ ÀÖ½À´Ï´Ù. ÀÌ·± ÀÏÀÌ ÀÏ¾î³ª¸é, ´Ü¾î <em>Alt</em> ¶Ç´Â <em>Slow</em>¸¦ ¸¶Áö¸· ¸Å°³º¯¼ö¿¡ ÁöÁ¤ÇØ º¸½Ê½Ã¿À.</li>
+  <li>ì°½ì´ <a href="WinSet.htm#trans">ë¶€ë¶„ì ìœ¼ë¡œ íˆ¬ëª…í•˜ê±°ë‚˜</a> ë˜ëŠ” ìžì‹ ì˜ ì»¬ëŸ¬ë¥¼ ë³´ì´ì§€ ì•Šë„ë¡ í‘œì‹í–ˆë‹¤ë©´ (<a href="WinSet.htm#TransColor">TransColor</a>) ì „í˜•ì ìœ¼ë¡œ ê·¸ ê²°ê³¼ ì»¬ëŸ¬ëŠ” ê·¸ ì°½ì— ì•„ë‹ˆë¼ ê·¸ ì°½ ë’¤ì˜ ì»¬ëŸ¬ê°€ ë©ë‹ˆë‹¤.</li>
+  <li>PixelGetColorëŠ” ì–´ë–¤ ì–´í”Œë¦¬ì¼€ì´ì…˜ì—ì„œ ì •í™•í•œ ê²°ê³¼ë¥¼ ìƒì‚°í•  ìˆ˜ ì—†ì„ ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤. ì´ëŸ° ì¼ì´ ì¼ì–´ë‚˜ë©´, ë‹¨ì–´ <em>Alt</em> ë˜ëŠ” <em>Slow</em>ë¥¼ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì— ì§€ì •í•´ ë³´ì‹­ì‹œì˜¤.</li>
 </ul>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="PixelSearch.htm">PixelSearch</a>, <a href="ImageSearch.htm">ImageSearch</a>, <a href="CoordMode.htm">CoordMode</a>, <a href="MouseGetPos.htm">MouseGetPos</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent">^!z::  <em>; Control+Alt+Z ÇÖÅ°.</em>
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent">^!z::  <em>; Control+Alt+Z í•«í‚¤.</em>
 MouseGetPos, MouseX, MouseY
 PixelGetColor, color, %MouseX%, %MouseY%
-MsgBox ÇöÀç Ä¿¼­ À§Ä¡ÀÇ ÄÃ·¯´Â %color%ÀÔ´Ï´Ù.
+MsgBox í˜„ìž¬ ì»¤ì„œ ìœ„ì¹˜ì˜ ì»¬ëŸ¬ëŠ” %color%ìž…ë‹ˆë‹¤.
 return</pre>
 
 </body>

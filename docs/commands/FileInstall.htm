@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>FileInstall</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -13,46 +12,46 @@
 <h1>FileInstall</h1>
 
 <p>
-ÁöÁ¤µÈ ÆÄÀÏÀ» ½ºÅ©¸³Æ®ÀÇ <a href="../Scripts.htm#ahk2exe">ÄÄÆÄÀÏ ¹öÀü</a>¿¡ Æ÷ÇÔ½ÃÅµ´Ï´Ù.</p>
+ì§€ì •ëœ íŒŒì¼ì„ ìŠ¤í¬ë¦½íŠ¸ì˜ <a href="../Scripts.htm#ahk2exe">ì»´íŒŒì¼ ë²„ì „</a>ì— í¬í•¨ì‹œí‚µë‹ˆë‹¤.</p>
 
 <pre class="Syntax">FileInstall, Source, Dest [, Flag]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Source</dt>
-  <dd><p>ÄÄÆÄÀÏµÈ EXE¿¡ Ãß°¡ÇÒ ÆÄÀÏÀÇ ÀÌ¸§. Àý´ë °æ·Î¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é ÆÄÀÏÀÌ ½ºÅ©¸³Æ® ÀÚ½ÅÀÇ µð·ºÅä¸®¿¡ (¶Ç´Â »ó´ëÀûÀ¸·Î) ÀÖ´Ù°í °£ÁÖµË´Ï´Ù.</p>
+  <dd><p>ì»´íŒŒì¼ëœ EXEì— ì¶”ê°€í•  íŒŒì¼ì˜ ì´ë¦„. ì ˆëŒ€ ê²½ë¡œë¥¼ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ íŒŒì¼ì´ ìŠ¤í¬ë¦½íŠ¸ ìžì‹ ì˜ ë””ë ‰í† ë¦¬ì— (ë˜ëŠ” ìƒëŒ€ì ìœ¼ë¡œ) ìžˆë‹¤ê³  ê°„ì£¼ë©ë‹ˆë‹¤.</p>
     <p>
-	ÆÄÀÏ ÀÌ¸§¿¡´Â °ãµû¿ÈÇ¥, º¯¼ö ÂüÁ¶ (¿¹, %A_ProgramFiles%) ¶Ç´Â ¿ÍÀÏµåÄ«µå°¡ <strong>Æ÷ÇÔµÇ¸é ¾È µË´Ï´Ù</strong>. °Ô´Ù°¡, (¸ðµç ´Ù¸¥ ¸í·É¾îÀÇ ¸Å°³º¯¼ö¿Í ¶È °°ÀÌ) ±ÛÀÚ ±×´ë·ÎÀÇ ÆÛ¼¾Æ®¿Í ½°Ç¥ °°Àº Æ¯¼ö ¹®ÀÚµéÀº <a href="_EscapeChar.htm">ÇÇ½Å</a> ½ÃÄÑ¾ß ÇÕ´Ï´Ù. ¸¶Áö¸·À¸·Î, ÀÌ ¸Å°³º¯¼ö´Â FileInstall ¸í·É¾îÀÇ ¿À¸¥ÂÊ¿¡ ³ª¿­ÇØ¾ß ÇÕ´Ï´Ù (Áï,  ±× ¾Æ·¡ÀÇ <a href="../Scripts.htm#continuation">°è¼Ó ¼½¼Ç</a>¿¡ ³ª¿­ÇÏ¸é ¾È µË´Ï´Ù).</p></dd>
+	íŒŒì¼ ì´ë¦„ì—ëŠ” ê²¹ë”°ì˜´í‘œ, ë³€ìˆ˜ ì°¸ì¡° (ì˜ˆ, %A_ProgramFiles%) ë˜ëŠ” ì™€ì¼ë“œì¹´ë“œê°€ <strong>í¬í•¨ë˜ë©´ ì•ˆ ë©ë‹ˆë‹¤</strong>. ê²Œë‹¤ê°€, (ëª¨ë“  ë‹¤ë¥¸ ëª…ë ¹ì–´ì˜ ë§¤ê°œë³€ìˆ˜ì™€ ë˜‘ ê°™ì´) ê¸€ìž ê·¸ëŒ€ë¡œì˜ í¼ì„¼íŠ¸ì™€ ì‰¼í‘œ ê°™ì€ íŠ¹ìˆ˜ ë¬¸ìžë“¤ì€ <a href="_EscapeChar.htm">í”¼ì‹ </a> ì‹œì¼œì•¼ í•©ë‹ˆë‹¤. ë§ˆì§€ë§‰ìœ¼ë¡œ, ì´ ë§¤ê°œë³€ìˆ˜ëŠ” FileInstall ëª…ë ¹ì–´ì˜ ì˜¤ë¥¸ìª½ì— ë‚˜ì—´í•´ì•¼ í•©ë‹ˆë‹¤ (ì¦‰,  ê·¸ ì•„ëž˜ì˜ <a href="../Scripts.htm#continuation">ê³„ì† ì„¹ì…˜</a>ì— ë‚˜ì—´í•˜ë©´ ì•ˆ ë©ë‹ˆë‹¤).</p></dd>
 
   <dt>Dest</dt>
-  <dd><p><em>Source</em>¸¦ EXE·ÎºÎÅÍ ÃßÃâÇÒ ¶§, ÀÌ°ÍÀÌ »ý¼ºµÉ ÆÄÀÏÀÇ ÀÌ¸§ÀÔ´Ï´Ù. Àý´ë °æ·Î¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>¿¡ ÀÖ´Ù°í °£ÁÖµË´Ï´Ù. ¸ñÇ¥ µð·ºÅä¸®´Â ÀÌ¹Ì Á¸ÀçÇØ¾ß ÇÕ´Ï´Ù. <em>Source</em>¿Í ´Ù¸£°Ô, º¯¼ö ÂüÁ¶¸¦ »ç¿ëÇØµµ µË´Ï´Ù.</p></dd>
+  <dd><p><em>Source</em>ë¥¼ EXEë¡œë¶€í„° ì¶”ì¶œí•  ë•Œ, ì´ê²ƒì´ ìƒì„±ë  íŒŒì¼ì˜ ì´ë¦„ìž…ë‹ˆë‹¤. ì ˆëŒ€ ê²½ë¡œë¥¼ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>ì— ìžˆë‹¤ê³  ê°„ì£¼ë©ë‹ˆë‹¤. ëª©í‘œ ë””ë ‰í† ë¦¬ëŠ” ì´ë¯¸ ì¡´ìž¬í•´ì•¼ í•©ë‹ˆë‹¤. <em>Source</em>ì™€ ë‹¤ë¥´ê²Œ, ë³€ìˆ˜ ì°¸ì¡°ë¥¼ ì‚¬ìš©í•´ë„ ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>Flag</dt>
-  <dd><p>(¼±ÅÃÀû) ÀÌ ÇÃ·¡±×´Â ÆÄÀÏÀÌ ÀÌ¹Ì Á¸ÀçÇÏ¸é µ¤¾î¾µÁö ¸»Áö °áÁ¤ÇÕ´Ï´Ù:</p>
-        <p>0 = (±âº»°ª) ±âÁ¸ÀÇ ÆÄÀÏÀ» µ¤¾î¾²Áö ¾Ê½À´Ï´Ù<br>
-        1 = ±âÁ¸ÀÇ ÆÄÀÏÀ» µ¤¾î¾¹´Ï´Ù</p>
-        <p>ÀÌ ¸Å°³º¯¼ö´Â <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>ÀÏ ¼ö ÀÖ½À´Ï´Ù. ½ÉÁö¾î ÂüÀÌ³ª °ÅÁþÀ¸·Î Æò°¡µÇ¸é ¹«¾ùÀÌµç µÉ ¼ö ÀÖ½À´Ï´Ù (Âü°ú °ÅÁþÀº ³»ºÎÀûÀ¸·Î 1°ú 0À¸·Î ÀúÀåµÇ±â ¶§¹®ÀÔ´Ï´Ù).</p></dd>
+  <dd><p>(ì„ íƒì ) ì´ í”Œëž˜ê·¸ëŠ” íŒŒì¼ì´ ì´ë¯¸ ì¡´ìž¬í•˜ë©´ ë®ì–´ì“¸ì§€ ë§ì§€ ê²°ì •í•©ë‹ˆë‹¤:</p>
+        <p>0 = (ê¸°ë³¸ê°’) ê¸°ì¡´ì˜ íŒŒì¼ì„ ë®ì–´ì“°ì§€ ì•ŠìŠµë‹ˆë‹¤<br>
+        1 = ê¸°ì¡´ì˜ íŒŒì¼ì„ ë®ì–´ì”ë‹ˆë‹¤</p>
+        <p>ì´ ë§¤ê°œë³€ìˆ˜ëŠ” <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì‹¬ì§€ì–´ ì°¸ì´ë‚˜ ê±°ì§“ìœ¼ë¡œ í‰ê°€ë˜ë©´ ë¬´ì—‡ì´ë“  ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì°¸ê³¼ ê±°ì§“ì€ ë‚´ë¶€ì ìœ¼ë¡œ 1ê³¼ 0ìœ¼ë¡œ ì €ìž¥ë˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤).</p></dd>
 
 </dl>
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> ÀÌ ¸í·É¾î´Â ½ÇÆÐ½Ã ¿¹¿Ü¸¦ ´øÁú ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Catch.htm#RuntimeErrors">½ÇÇà½Ã°£ ¿¡·¯</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>´Â ¹®Á¦°¡ ÀÖÀ¸¸é 1 ¾øÀ¸¸é 0ÀÌ ¼³Á¤µË´Ï´Ù.</p>
+<p><span class="ver">[v1.1.04+]</span> ì´ ëª…ë ¹ì–´ëŠ” ì‹¤íŒ¨ì‹œ ì˜ˆì™¸ë¥¼ ë˜ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Catch.htm#RuntimeErrors">ì‹¤í–‰ì‹œê°„ ì—ëŸ¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>ëŠ” ë¬¸ì œê°€ ìžˆìœ¼ë©´ 1 ì—†ìœ¼ë©´ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
-ÀÌ ¸í·É¾î´Â <a href="../Scripts.htm#ahk2exe">Ahk2Exe ÄÄÆÄÀÏ·¯</a>¸¦ À§ÇÑ Áö½Ã¾îÀÔ´Ï´Ù. ÆÄÀÏÀ» ÄÄÆÄÀÏ ½ºÅ©¸³Æ® °á°ú¿¡ Ãß°¡ÇÒ ¼ö ÀÖ½À´Ï´Ù. ³ªÁß¿¡, ÄÄÆÄÀÏ ½ºÅ©¸³Æ®°¡ ½ÇÇàµÇ¸é, ÆÄÀÏÀÌ ´Ù½Ã µð½ºÅ©·Î ÃßÃâµË´Ï´Ù.</p>
+ì´ ëª…ë ¹ì–´ëŠ” <a href="../Scripts.htm#ahk2exe">Ahk2Exe ì»´íŒŒì¼ëŸ¬</a>ë¥¼ ìœ„í•œ ì§€ì‹œì–´ìž…ë‹ˆë‹¤. íŒŒì¼ì„ ì»´íŒŒì¼ ìŠ¤í¬ë¦½íŠ¸ ê²°ê³¼ì— ì¶”ê°€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‚˜ì¤‘ì—, ì»´íŒŒì¼ ìŠ¤í¬ë¦½íŠ¸ê°€ ì‹¤í–‰ë˜ë©´, íŒŒì¼ì´ ë‹¤ì‹œ ë””ìŠ¤í¬ë¡œ ì¶”ì¶œë©ë‹ˆë‹¤.</p>
 <p>
-ÀÌ ÆÄÀÏÀº <strong>½ºÅ©¸³Æ® ÄÄÆÄÀÏ ½Ã°£</strong>¿¡ Ãß°¡µË´Ï´Ù. ÄÄÆÄÀÏµÈ ½ºÅ©¸³Æ®°¡ ½ÇÇàµÉ ¶§ ¶È °°Àº &quot;FileInstall&quot; ¸í·É¾î¸¦ ¸¸³ª¸é, ±× ÆÄÀÏÀº ÀÌÁ¦ <em>Dest</em>·Î ÃßÃâµË´Ï´Ù.</p>
+ì´ íŒŒì¼ì€ <strong>ìŠ¤í¬ë¦½íŠ¸ ì»´íŒŒì¼ ì‹œê°„</strong>ì— ì¶”ê°€ë©ë‹ˆë‹¤. ì»´íŒŒì¼ëœ ìŠ¤í¬ë¦½íŠ¸ê°€ ì‹¤í–‰ë  ë•Œ ë˜‘ ê°™ì€ &quot;FileInstall&quot; ëª…ë ¹ì–´ë¥¼ ë§Œë‚˜ë©´, ê·¸ íŒŒì¼ì€ ì´ì œ <em>Dest</em>ë¡œ ì¶”ì¶œë©ë‹ˆë‹¤.</p>
 <p>
-½ºÅ©¸³Æ®¿¡ Ãß°¡µÈ ÆÄÀÏÀº ¾ÐÃàµÇ°í ¶Ç ¾ÏÈ£È­µË´Ï´Ù.</p>
+ìŠ¤í¬ë¦½íŠ¸ì— ì¶”ê°€ëœ íŒŒì¼ì€ ì••ì¶•ë˜ê³  ë˜ ì•”í˜¸í™”ë©ë‹ˆë‹¤.</p>
 <p>
-ÀÌ ¸í·É¾î¸¦ Á¤»óÀÇ (ÄÄÆÄÀÏ ¾È µÈ) ½ºÅ©¸³Æ®¿¡ »ç¿ëÇÏ¸é, ´ë½Å¿¡ °£´ÜÇÑ ÆÄÀÏ º¹»ç°¡ ¼öÇàµË´Ï´Ù -- ±×·¡¼­ ½ºÅ©¸³Æ®°¡ °á±¹ Á¦´ë·Î ÄÄÆÄÀÏµÉÁö Å×½ºÆ®ÇÏ´Â µ¥ µµ¿òÀÌ µË´Ï´Ù.</p>
+ì´ ëª…ë ¹ì–´ë¥¼ ì •ìƒì˜ (ì»´íŒŒì¼ ì•ˆ ëœ) ìŠ¤í¬ë¦½íŠ¸ì— ì‚¬ìš©í•˜ë©´, ëŒ€ì‹ ì— ê°„ë‹¨í•œ íŒŒì¼ ë³µì‚¬ê°€ ìˆ˜í–‰ë©ë‹ˆë‹¤ -- ê·¸ëž˜ì„œ ìŠ¤í¬ë¦½íŠ¸ê°€ ê²°êµ­ ì œëŒ€ë¡œ ì»´íŒŒì¼ë ì§€ í…ŒìŠ¤íŠ¸í•˜ëŠ” ë° ë„ì›€ì´ ë©ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
 <a href="FileCopy.htm">FileCopy</a>, <a href="_Include.htm">#Include</a></p>
 
-<h3>¿¹¿Ü</h3>
+<h3>ì˜ˆì™¸</h3>
 <pre class="NoIndent">FileInstall, C:\My Documents\My File.txt, %A_ProgramFiles%\My Application\Readme.txt, 1</pre>
 
 </body>

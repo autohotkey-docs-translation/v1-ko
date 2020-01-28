@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>FileAppend</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,79 +11,79 @@
 
 <h1>FileAppend</h1>
 
-<p>ÅØ½ºÆ®¸¦ ÆÄÀÏ ³¡¿¡ ¾¹´Ï´Ù (ÇÊ¿äÇÏ¸é ¸ÕÀú ÆÄÀÏÀ» »ý¼ºÇÕ´Ï´Ù).</p>
+<p>í…ìŠ¤íŠ¸ë¥¼ íŒŒì¼ ëì— ì”ë‹ˆë‹¤ (í•„ìš”í•˜ë©´ ë¨¼ì € íŒŒì¼ì„ ìƒì„±í•©ë‹ˆë‹¤).</p>
 
 <pre class="Syntax">FileAppend [, Text, Filename, Encoding]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Text</dt>
-  <dd><p>ÆÄÀÏ¿¡ Ãß°¡ÇÒ ÅØ½ºÆ®. ÀÌ ÅØ½ºÆ®´Â ¶óÀÎÇÇµå ¹®ÀÚ (`n)¸¦ Æ÷ÇÔÇØ »õÁÙÀ» ½ÃÀÛÇÒ ¼öµµ ÀÖ½À´Ï´Ù. °Ô´Ù°¡, ±â´Ù¶õ ÇÑÁÙÀº <a href="../Scripts.htm#continuation">°è¼Ó ¼½¼Ç</a>À» ÀÌ¿ëÇÏ¿© ´õ ÂªÀº ¿©·¯ ÁÙ·Î ºÐ¸®ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+  <dd><p>íŒŒì¼ì— ì¶”ê°€í•  í…ìŠ¤íŠ¸. ì´ í…ìŠ¤íŠ¸ëŠ” ë¼ì¸í”¼ë“œ ë¬¸ìž (`n)ë¥¼ í¬í•¨í•´ ìƒˆì¤„ì„ ì‹œìž‘í•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, ê¸°ë‹¤ëž€ í•œì¤„ì€ <a href="../Scripts.htm#continuation">ê³„ì† ì„¹ì…˜</a>ì„ ì´ìš©í•˜ì—¬ ë” ì§§ì€ ì—¬ëŸ¬ ì¤„ë¡œ ë¶„ë¦¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
       <p>
-	  <em>Text</em>°¡ ºñ¾î ÀÖÀ¸¸é, <em>Filename</em>ÀÌ ÀÓ½Ã ÆÄÀÏ·Î »ý¼ºµË´Ï´Ù (±×·¯³ª ±× ÆÄÀÏÀÌ ÀÌ¹Ì Á¸ÀçÇÏ¸é, ±×ÀÇ ¼öÁ¤ ½Ã°£ÀÌ °»½ÅµË´Ï´Ù).</p>
+	  <em>Text</em>ê°€ ë¹„ì–´ ìžˆìœ¼ë©´, <em>Filename</em>ì´ ìž„ì‹œ íŒŒì¼ë¡œ ìƒì„±ë©ë‹ˆë‹¤ (ê·¸ëŸ¬ë‚˜ ê·¸ íŒŒì¼ì´ ì´ë¯¸ ì¡´ìž¬í•˜ë©´, ê·¸ì˜ ìˆ˜ì • ì‹œê°„ì´ ê°±ì‹ ë©ë‹ˆë‹¤).</p>
     <p>
-	<em>Text</em>°¡ <a href="../misc/Clipboard.htm#ClipboardAll">%ClipboardAll%</a>ÀÌ°Å³ª ÀÌÀü¿¡ ClipboardAllÀÇ °ªÀÌ ÇÒ´çµÈ º¯¼ö¶ó¸é, <em>Filename</em>Àº ¹«Á¶°Ç  ±× Å¬¸³º¸µåÀÇ ÀüÃ¼ ³»¿ëÀ¸·Î µ¤¾î¾²±â µË´Ï´Ù (Áï, <a href="FileDelete.htm">FileDelete</a>°¡ ÇÊ¿äÇÏÁö ¾Ê½À´Ï´Ù).</p></dd>
+	<em>Text</em>ê°€ <a href="../misc/Clipboard.htm#ClipboardAll">%ClipboardAll%</a>ì´ê±°ë‚˜ ì´ì „ì— ClipboardAllì˜ ê°’ì´ í• ë‹¹ëœ ë³€ìˆ˜ë¼ë©´, <em>Filename</em>ì€ ë¬´ì¡°ê±´  ê·¸ í´ë¦½ë³´ë“œì˜ ì „ì²´ ë‚´ìš©ìœ¼ë¡œ ë®ì–´ì“°ê¸° ë©ë‹ˆë‹¤ (ì¦‰, <a href="FileDelete.htm">FileDelete</a>ê°€ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤).</p></dd>
 
   <dt>Filename</dt>
   <dd>
-  <p>Ãß°¡µÉ ÆÄÀÏÀÇ ÀÌ¸§. Àý´ë °æ·Î°¡ ÁöÁ¤µÇ¾î ÀÖÁö ¾ÊÀ¸¸é <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>¿¡ ÀÖ´Ù°í °£ÁÖµË´Ï´Ù.</p>
+  <p>ì¶”ê°€ë  íŒŒì¼ì˜ ì´ë¦„. ì ˆëŒ€ ê²½ë¡œê°€ ì§€ì •ë˜ì–´ ìžˆì§€ ì•Šìœ¼ë©´ <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>ì— ìžˆë‹¤ê³  ê°„ì£¼ë©ë‹ˆë‹¤.</p>
     <p>
-	<strong>ÀÌÁø ¸ðµå</strong>: ÅØ½ºÆ® ¸ðµå°¡ ¾Æ´Ï¶ó ÀÌÁø ¸ðµå·Î Ãß°¡ÇÏ·Á¸é, º°Ç¥¸¦ ÆÄÀÏÀÌ¸§ ¾Õ¿¡ Ãß°¡ÇÏ½Ê½Ã¿À. ÀÌ·¸°Ô ÇÏ¸é °¢ ¶óÀÎÇÇµå ¹®ÀÚ (`n)°¡ À©µµ¿ìÁîÀÇ Ç¥ÁØ CR+LF ´ë½Å¿¡ ÇÑ°³Â¥¸® ¶óÀÎÇÇµå (LF)°¡ ¾º¿©Áý´Ï´Ù. ¿¹¸¦ µé¾î: <code>*C:\My Unix File.txt</code>.</p>
+	<strong>ì´ì§„ ëª¨ë“œ</strong>: í…ìŠ¤íŠ¸ ëª¨ë“œê°€ ì•„ë‹ˆë¼ ì´ì§„ ëª¨ë“œë¡œ ì¶”ê°€í•˜ë ¤ë©´, ë³„í‘œë¥¼ íŒŒì¼ì´ë¦„ ì•žì— ì¶”ê°€í•˜ì‹­ì‹œì˜¤. ì´ë ‡ê²Œ í•˜ë©´ ê° ë¼ì¸í”¼ë“œ ë¬¸ìž (`n)ê°€ ìœˆë„ìš°ì¦ˆì˜ í‘œì¤€ CR+LF ëŒ€ì‹ ì— í•œê°œì§œë¦¬ ë¼ì¸í”¼ë“œ (LF)ê°€ ì”Œì—¬ì§‘ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>*C:\My Unix File.txt</code>.</p>
     <p>
-	ÆÄÀÏÀÌ (<a href="LoopReadFile.htm">ÆÄÀÏ-ÀÐ±â È¸µ¹ÀÌ ¾È¿¡ ÀÖ¾î¼­)</a> ¾ÆÁ÷ ¿­·Á ÀÖÁö ¾ÊÀº °æ¿ì, <em>Text</em>¿¡ Ä³¸®Áö ¸®ÅÏ°ú ¶óÀÎÇÇµå°¡ ½ÖÀ¸·Î µé¾î ÀÖ´Ù¸é (`r`n) ±× ÆÄÀÏÀº ÀÚµ¿À¸·Î ÀÌÁø ¸ðµå·Î ¿­¸³´Ï´Ù. ´Ù¸¥ ¸»·Î, ¾Õ ¹®´Ü¿¡¼­ ±â¼úÇÑ º°Ç¥ ¿É¼ÇÀÌ ÀÚµ¿À¸·Î È¿·ÂÀ» ¹ßÈÖÇÕ´Ï´Ù.  ±×·¸Áö¸¸ <em>Text</em>¿¡ `r`n°¡ µé¾î ÀÖÀ» ¶§ º°Ç¥¸¦ ÁöÁ¤ÇÏ¸é ¼öÇà¼º´ÉÀÌ Çâ»óµË´Ï´Ù. ¿Ö³ÄÇÏ¸é ÇÁ·Î±×·¥ÀÌ <em>Text</em>¸¦ ½ºÄµÇØ `r`nÀ» Ã£À» ÇÊ¿ä°¡ ¾ø±â ¶§¹®ÀÔ´Ï´Ù.</p>
+	íŒŒì¼ì´ (<a href="LoopReadFile.htm">íŒŒì¼-ì½ê¸° íšŒëŒì´ ì•ˆì— ìžˆì–´ì„œ)</a> ì•„ì§ ì—´ë ¤ ìžˆì§€ ì•Šì€ ê²½ìš°, <em>Text</em>ì— ìºë¦¬ì§€ ë¦¬í„´ê³¼ ë¼ì¸í”¼ë“œê°€ ìŒìœ¼ë¡œ ë“¤ì–´ ìžˆë‹¤ë©´ (`r`n) ê·¸ íŒŒì¼ì€ ìžë™ìœ¼ë¡œ ì´ì§„ ëª¨ë“œë¡œ ì—´ë¦½ë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ, ì•ž ë¬¸ë‹¨ì—ì„œ ê¸°ìˆ í•œ ë³„í‘œ ì˜µì…˜ì´ ìžë™ìœ¼ë¡œ íš¨ë ¥ì„ ë°œíœ˜í•©ë‹ˆë‹¤.  ê·¸ë ‡ì§€ë§Œ <em>Text</em>ì— `r`nê°€ ë“¤ì–´ ìžˆì„ ë•Œ ë³„í‘œë¥¼ ì§€ì •í•˜ë©´ ìˆ˜í–‰ì„±ëŠ¥ì´ í–¥ìƒë©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ í”„ë¡œê·¸ëž¨ì´ <em>Text</em>ë¥¼ ìŠ¤ìº”í•´ `r`nì„ ì°¾ì„ í•„ìš”ê°€ ì—†ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
     <p>
-	<strong><a name="stdout"></a>Ç¥ÁØ Ãâ·Â (stdout)</strong>: º°Ç¥ (*)¸¦ <em>Filename</em>¿¡ ÁöÁ¤ÇÏ¸é <em>Text</em>´Â Ç¥ÁØ Ãâ·Â (stdout)À¸·Î Àü¼ÛµË´Ï´Ù. ±×·± ÅØ½ºÆ®´Â ÆÄÀÏ¿¡ ¹æÇâÀüÈ¯ÇÒ ¼ö ÀÖ°í, ¶Ç´Ù¸¥ EXE·Î ÆÄÀÌÇÁ Ã³¸®ÇØ º¸³¾ ¼ö ÀÖÀ¸¸ç, ¶Ç´Â <a href="_ErrorStdOut.htm">È¯»óÀûÀÎ ÆíÁý±â</a>·Î ³ªÆ÷ÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, ´ÙÀ½Àº ¸í·É¾î ÇÁ·ÒÇÁÆ®¿¡¼­ Å¸ÀÚÇÏ¸é À¯È¿ÇÕ´Ï´Ù:</p>
+	<strong><a name="stdout"></a>í‘œì¤€ ì¶œë ¥ (stdout)</strong>: ë³„í‘œ (*)ë¥¼ <em>Filename</em>ì— ì§€ì •í•˜ë©´ <em>Text</em>ëŠ” í‘œì¤€ ì¶œë ¥ (stdout)ìœ¼ë¡œ ì „ì†¡ë©ë‹ˆë‹¤. ê·¸ëŸ° í…ìŠ¤íŠ¸ëŠ” íŒŒì¼ì— ë°©í–¥ì „í™˜í•  ìˆ˜ ìžˆê³ , ë˜ë‹¤ë¥¸ EXEë¡œ íŒŒì´í”„ ì²˜ë¦¬í•´ ë³´ë‚¼ ìˆ˜ ìžˆìœ¼ë©°, ë˜ëŠ” <a href="_ErrorStdOut.htm">í™˜ìƒì ì¸ íŽ¸ì§‘ê¸°</a>ë¡œ ë‚˜í¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ë‹¤ìŒì€ ëª…ë ¹ì–´ í”„ë¡¬í”„íŠ¸ì—ì„œ íƒ€ìží•˜ë©´ ìœ íš¨í•©ë‹ˆë‹¤:</p>
       <pre>&quot;%ProgramFiles%\AutoHotkey\AutoHotkey.exe&quot; &quot;My Script.ahk&quot; &gt;&quot;Error Log.txt&quot;</pre>
     <p>
-	±×·¸Áö¸¸, Ç¥ÁØÃâ·ÂÀ¸·Î Àü¼ÛµÈ ÅØ½ºÆ®´Â Ã³À½ ±âµ¿µÈ ÇÁ·ÒÇÁÆ®¿¡ ³ªÅ¸³ªÁö ¾Ê½À´Ï´Ù. ÀÌ ¹®Á¦´Â ½ºÅ©¸³Æ®ÀÇ Ãâ·ÂÀ» ¶Ç´Ù¸¥ ¸í·É¾î³ª ÇÁ·Î±×·¥¿¡ ÆÄÀÌÇÁ Ã³¸®ÇØ ¿ìÈ¸ÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+	ê·¸ë ‡ì§€ë§Œ, í‘œì¤€ì¶œë ¥ìœ¼ë¡œ ì „ì†¡ëœ í…ìŠ¤íŠ¸ëŠ” ì²˜ìŒ ê¸°ë™ëœ í”„ë¡¬í”„íŠ¸ì— ë‚˜íƒ€ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì´ ë¬¸ì œëŠ” ìŠ¤í¬ë¦½íŠ¸ì˜ ì¶œë ¥ì„ ë˜ë‹¤ë¥¸ ëª…ë ¹ì–´ë‚˜ í”„ë¡œê·¸ëž¨ì— íŒŒì´í”„ ì²˜ë¦¬í•´ ìš°íšŒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
       <pre>&quot;%ProgramFiles%\AutoHotkey\AutoHotkey.exe&quot; &quot;My Script.ahk&quot; |more</pre>
       <pre>For /F &quot;tokens=*&quot; %L in ('&quot;&quot;%ProgramFiles%\AutoHotkey\AutoHotkey.exe&quot; &quot;My Script .ahk&quot;&quot;') do @Echo %L</pre>
-    <p><span class="ver">[v1.1.20+]:</span> º°Ç¥ µÎ °³ (**)¸¦ <em>Filename</em>¿¡ ÁöÁ¤ÇÏ¸é <em>Text</em>°¡ Ç¥ÁØ¿¡·¯(stderr) ½ºÆ®¸²À¸·Î Àü¼ÛµË´Ï´Ù.</p>
+    <p><span class="ver">[v1.1.20+]:</span> ë³„í‘œ ë‘ ê°œ (**)ë¥¼ <em>Filename</em>ì— ì§€ì •í•˜ë©´ <em>Text</em>ê°€ í‘œì¤€ì—ëŸ¬(stderr) ìŠ¤íŠ¸ë¦¼ìœ¼ë¡œ ì „ì†¡ë©ë‹ˆë‹¤.</p>
     </dd>
 
-  <dt>ÀÎÄÚµù</dt>
-  <dd><p><span class="ver">[AHK_L 42+]:</span> <a href="FileEncoding.htm">FileEncoding</a>À¸·Î ¼³Á¤µÈ ±âº» ÀÎÄÚµùÀ» ¿À¹ö¶óÀÌµå ÇÕ´Ï´Ù. <em>Encoding</em>Àº °°Àº Çü½ÄÀ» µû¸¨´Ï´Ù.</p></dd>
+  <dt>ì¸ì½”ë”©</dt>
+  <dd><p><span class="ver">[AHK_L 42+]:</span> <a href="FileEncoding.htm">FileEncoding</a>ìœ¼ë¡œ ì„¤ì •ëœ ê¸°ë³¸ ì¸ì½”ë”©ì„ ì˜¤ë²„ë¼ì´ë“œ í•©ë‹ˆë‹¤. <em>Encoding</em>ì€ ê°™ì€ í˜•ì‹ì„ ë”°ë¦…ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
 <p>
-<span class="ver">[v1.1.04+]</span> ÀÌ ¸í·É¾î´Â ½ÇÆÐ½Ã ¿¹¿Ü¸¦ ´øÁú ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Catch.htm#RuntimeErrors">½ÇÇà½Ã°£ ¿¡·¯</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>´Â ¹®Á¦°¡ ÀÖÀ¸¸é 1 ¾øÀ¸¸é 0ÀÌ ¼³Á¤µË´Ï´Ù.</p>
-<p><a href="../Variables.htm#LastError">A_LastError</a>´Â ¿î¿µ Ã¼Á¦ÀÇ GetLastError() ÇÔ¼öÀÇ °á°ú°¡ ¼³Á¤µË´Ï´Ù.</p>
+<span class="ver">[v1.1.04+]</span> ì´ ëª…ë ¹ì–´ëŠ” ì‹¤íŒ¨ì‹œ ì˜ˆì™¸ë¥¼ ë˜ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Catch.htm#RuntimeErrors">ì‹¤í–‰ì‹œê°„ ì—ëŸ¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>ëŠ” ë¬¸ì œê°€ ìžˆìœ¼ë©´ 1 ì—†ìœ¼ë©´ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p>
+<p><a href="../Variables.htm#LastError">A_LastError</a>ëŠ” ìš´ì˜ ì²´ì œì˜ GetLastError() í•¨ìˆ˜ì˜ ê²°ê³¼ê°€ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-±âÁ¸ÀÇ ÆÄÀÏÀ» µ¤¾î¾²·Á¸é, FileAppend¸¦ »ç¿ëÇÏ±â Àü¿¡ <a href="FileDelete.htm">FileDelete</a>·Î Áö¿ì½Ê½Ã¿À.</p>
+ê¸°ì¡´ì˜ íŒŒì¼ì„ ë®ì–´ì“°ë ¤ë©´, FileAppendë¥¼ ì‚¬ìš©í•˜ê¸° ì „ì— <a href="FileDelete.htm">FileDelete</a>ë¡œ ì§€ìš°ì‹­ì‹œì˜¤.</p>
 <p>
-¸ñÇ¥ ÆÄÀÏÀº ÅØ½ºÆ®°¡ Ãß°¡µÈ ÈÄ ÀÚµ¿À¸·Î ´ÝÈü´Ï´Ù (´Ü, FileAppend°¡ <a href="LoopReadFile.htm">ÆÄÀÏ-ÀÐ±â/¾²±â È¸µ¹ÀÌ</a> ¾È¿¡¼­ ´ÜÀÏ-¸Å°³º¯¼ö ¸ðµå¸¦ »ç¿ëÇÒ ¶§´Â ¿¹¿ÜÀÔ´Ï´Ù).</p>
+ëª©í‘œ íŒŒì¼ì€ í…ìŠ¤íŠ¸ê°€ ì¶”ê°€ëœ í›„ ìžë™ìœ¼ë¡œ ë‹«íž™ë‹ˆë‹¤ (ë‹¨, FileAppendê°€ <a href="LoopReadFile.htm">íŒŒì¼-ì½ê¸°/ì“°ê¸° íšŒëŒì´</a> ì•ˆì—ì„œ ë‹¨ì¼-ë§¤ê°œë³€ìˆ˜ ëª¨ë“œë¥¼ ì‚¬ìš©í•  ë•ŒëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤).</p>
 <p>
-<span class="ver">[AHK_L 42+]:</span> <a href="FileOpen.htm">FileOpen()</a>À» Ãß°¡ ¸ðµå·Î »ç¿ëÇÏ´Â °ÍÀÌ FileAppendº¸´Ù ´õ ¼¶¼¼ÇÏ°Ô Á¦¾îÇÒ ¼ö ÀÖ°í °è¼Ó ÆÄÀÏÀ» ¿­¾î µÑ ¼öµµ ÀÖ½À´Ï´Ù. ¸Å¹ø ÆÄÀÏÀ» ¿­°í ´ÝÀ» ÇÊ¿ä°¡ ¾ø½À´Ï´Ù. ÀÏ´Ü ÆÄÀÏÀÌ Ãß°¡ ¸ðµå·Î ¿­¸®¸é <code>file.<a href="../objects/File.htm#Write">Write</a>(string)</code>¸¦ »ç¿ëÇØ Ãß°¡ÇÏ¸é µË´Ï´Ù. ÆÄÀÏ °´Ã¼´Â <a href="../objects/File.htm#RawWrite">RawWrite</a>/<a href="../objects/File.htm#RawRead">RawRead</a> ¶Ç´Â <a href="../objects/File.htm#WriteNum">Write<i>Num</i></a>/<a href="../objects/File.htm#ReadNum">Read<i>Num</i></a>¸¦ ÅëÇÏ¿© ÀÌÁø I/Oµµ Áö¿øÇÕ´Ï´Ù. ¹Ý¸é¿¡ FileAppend´Â ¿ÀÁ÷ ÅØ½ºÆ®¸¸ Áö¿øÇÕ´Ï´Ù.</p>
+<span class="ver">[AHK_L 42+]:</span> <a href="FileOpen.htm">FileOpen()</a>ì„ ì¶”ê°€ ëª¨ë“œë¡œ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ FileAppendë³´ë‹¤ ë” ì„¬ì„¸í•˜ê²Œ ì œì–´í•  ìˆ˜ ìžˆê³  ê³„ì† íŒŒì¼ì„ ì—´ì–´ ë‘˜ ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤. ë§¤ë²ˆ íŒŒì¼ì„ ì—´ê³  ë‹«ì„ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤. ì¼ë‹¨ íŒŒì¼ì´ ì¶”ê°€ ëª¨ë“œë¡œ ì—´ë¦¬ë©´ <code>file.<a href="../objects/File.htm#Write">Write</a>(string)</code>ë¥¼ ì‚¬ìš©í•´ ì¶”ê°€í•˜ë©´ ë©ë‹ˆë‹¤. íŒŒì¼ ê°ì²´ëŠ” <a href="../objects/File.htm#RawWrite">RawWrite</a>/<a href="../objects/File.htm#RawRead">RawRead</a> ë˜ëŠ” <a href="../objects/File.htm#WriteNum">Write<i>Num</i></a>/<a href="../objects/File.htm#ReadNum">Read<i>Num</i></a>ë¥¼ í†µí•˜ì—¬ ì´ì§„ I/Oë„ ì§€ì›í•©ë‹ˆë‹¤. ë°˜ë©´ì— FileAppendëŠ” ì˜¤ì§ í…ìŠ¤íŠ¸ë§Œ ì§€ì›í•©ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
-<a href="FileOpen.htm">FileOpen</a>/<a href="../objects/File.htm">File Object</a>, <a href="FileRead.htm">FileRead</a>, <a href="LoopReadFile.htm">file-reading loop</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="IniWrite.htm">IniWrite</a>, <a href="FileDelete.htm">FileDelete</a>, <a href="OutputDebug.htm">OutputDebug</a>, <a href="../Scripts.htm#continuation">°è¼Ó ¼½¼Ç</a></p>
+<a href="FileOpen.htm">FileOpen</a>/<a href="../objects/File.htm">File Object</a>, <a href="FileRead.htm">FileRead</a>, <a href="LoopReadFile.htm">file-reading loop</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="IniWrite.htm">IniWrite</a>, <a href="FileDelete.htm">FileDelete</a>, <a href="OutputDebug.htm">OutputDebug</a>, <a href="../Scripts.htm#continuation">ê³„ì† ì„¹ì…˜</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">FileAppend, Another line.`n, C:\My Documents\Test.txt
 
-<em>; ´ÙÀ½ ¿¹Á¦´Â <a href="../Scripts.htm#continuation">°è¼Ó ¼½¼Ç</a>À» »ç¿ëÇØ °¡µ¶¼º°ú À¯Áö°ü¸®¼ºÀ» Çâ»ó½ÃÅµ´Ï´Ù:</em>
+<em>; ë‹¤ìŒ ì˜ˆì œëŠ” <a href="../Scripts.htm#continuation">ê³„ì† ì„¹ì…˜</a>ì„ ì‚¬ìš©í•´ ê°€ë…ì„±ê³¼ ìœ ì§€ê´€ë¦¬ì„±ì„ í–¥ìƒì‹œí‚µë‹ˆë‹¤:</em>
 FileAppend,
 (
-ÇÑ ÁÙÀÇ ÅØ½ºÆ®.
-±âº»À¸·Î, ÀÌÀü ÁÙ°ú ÀÌ ÁÙ »çÀÌÀÇ ÇÏµå Ä³¸®Áö ¸®ÅÏÀº (Enter) ÆÄÀÏ¿¡ ¾²¿©Áý´Ï´Ù.
-    ÀÌ ÁÙÀº ÅÇ ÇÏ³ª·Î µé¿©¾²±â µË´Ï´Ù; ±âº»À¸·Î, ÅÇµµ ÆÄÀÏ¿¡ ¾º¿©Áý´Ï´Ù.
-%Var%¿Í °°Àº º¯¼ö ÂüÁ¶´Â ±âº»À¸·Î È®ÀåµË´Ï´Ù.
+í•œ ì¤„ì˜ í…ìŠ¤íŠ¸.
+ê¸°ë³¸ìœ¼ë¡œ, ì´ì „ ì¤„ê³¼ ì´ ì¤„ ì‚¬ì´ì˜ í•˜ë“œ ìºë¦¬ì§€ ë¦¬í„´ì€ (Enter) íŒŒì¼ì— ì“°ì—¬ì§‘ë‹ˆë‹¤.
+    ì´ ì¤„ì€ íƒ­ í•˜ë‚˜ë¡œ ë“¤ì—¬ì“°ê¸° ë©ë‹ˆë‹¤; ê¸°ë³¸ìœ¼ë¡œ, íƒ­ë„ íŒŒì¼ì— ì”Œì—¬ì§‘ë‹ˆë‹¤.
+%Var%ì™€ ê°™ì€ ë³€ìˆ˜ ì°¸ì¡°ëŠ” ê¸°ë³¸ìœ¼ë¡œ í™•ìž¥ë©ë‹ˆë‹¤.
 ), C:\My File.txt</pre>
 <p>&nbsp;</p>
-<pre class="NoIndent"><a name="FTP"></a><em>; ´ÙÀ½ ¿¹Á¦´Â ¿î¿µ Ã¼Á¦ÀÇ ³»Àå FTP ¸í·É¾î¸¦ »ç¿ëÇÏ¿© 
-; FTP ¾÷·Îµå¸¦ ÀÚµ¿È­ ÇÏ´Â ¹ýÀ» º¸¿©ÁÝ´Ï´Ù. ÀÌ ½ºÅ©¸³Æ®´Â Windows XP¿¡¼­ °ËÁõµÇ¾ú½À´Ï´Ù.</em>
+<pre class="NoIndent"><a name="FTP"></a><em>; ë‹¤ìŒ ì˜ˆì œëŠ” ìš´ì˜ ì²´ì œì˜ ë‚´ìž¥ FTP ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ì—¬ 
+; FTP ì—…ë¡œë“œë¥¼ ìžë™í™” í•˜ëŠ” ë²•ì„ ë³´ì—¬ì¤ë‹ˆë‹¤. ì´ ìŠ¤í¬ë¦½íŠ¸ëŠ” Windows XPì—ì„œ ê²€ì¦ë˜ì—ˆìŠµë‹ˆë‹¤.</em>
 
 FTPCommandFile = %A_ScriptDir%\FTPCommands.txt
 FTPLogFile = %A_ScriptDir%\FTPLog.txt
-FileDelete %FTPCommandFile%  <em>; ÀÌÀü ½ÇÇàÀÌ ³Ê¹« ÀÏÂï ³¡³µÀ» °æ¿ì.</em>
+FileDelete %FTPCommandFile%  <em>; ì´ì „ ì‹¤í–‰ì´ ë„ˆë¬´ ì¼ì° ëë‚¬ì„ ê²½ìš°.</em>
 
-FileAppend,  <em>; ÀÌ °æ¿ì ½°Ç¥°¡ ÇÊ¿äÇÕ´Ï´Ù.</em>
+FileAppend,  <em>; ì´ ê²½ìš° ì‰¼í‘œê°€ í•„ìš”í•©ë‹ˆë‹¤.</em>
 (
 open host.domain.com
 username
@@ -99,8 +98,8 @@ quit
 ), %FTPCommandFile%
 
 RunWait %comspec% /c ftp.exe -s:&quot;%FTPCommandFile%&quot; &gt;&quot;%FTPLogFile%&quot;
-FileDelete %FTPCommandFile%  <em>; º¸¾È»óÀÇ ÀÌÀ¯·Î »èÁ¦ÇÕ´Ï´Ù.</em>
-Run %FTPLogFile%  <em>; °ËÅä¸¦ À§ÇØ ·Î±× ±â·ÏÀ» º¸¿©ÁÝ´Ï´Ù.</em></pre>
+FileDelete %FTPCommandFile%  <em>; ë³´ì•ˆìƒì˜ ì´ìœ ë¡œ ì‚­ì œí•©ë‹ˆë‹¤.</em>
+Run %FTPLogFile%  <em>; ê²€í† ë¥¼ ìœ„í•´ ë¡œê·¸ ê¸°ë¡ì„ ë³´ì—¬ì¤ë‹ˆë‹¤.</em></pre>
 
 </body>
 </html>

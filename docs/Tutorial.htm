@@ -1,6 +1,7 @@
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="ko">
 	<head>
-		<meta charset="euc-kr" />
+		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!--Tutorial by tidbit, from http://ahkscript.github.io/AHK_Tutorial/
 				Modified to fit with the AutoHotkey documentation.-->
@@ -34,239 +35,239 @@
 	</head>
 	<body>
 		<div class="page">
-			<h1>¿ÀÅäÇÖÅ° ÃÊº¸ÀÚ ÀÚ½À¼­, ÀÛ¼º <span style="opacity:0.4">Æ¼µåºñÆ®(tidbit)</span></h1>
+			<h1>ì˜¤í† í•«í‚¤ ì´ˆë³´ìž ìžìŠµì„œ, ìž‘ì„± <span style="opacity:0.4">í‹°ë“œë¹„íŠ¸(tidbit)</span></h1>
 			<div id="toc" class="section">
-				<h3>¸ñÂ÷</h3>
+				<h3>ëª©ì°¨</h3>
 				<ol>
-					<li><a href="#s1" class="toci">±âº»</a>
+					<li><a href="#s1" class="toci">ê¸°ë³¸</a>
 						<ol>
-							<li><a href="#s11" class="toci">¿ÀÅäÇÖÅ° ³»·Á¹Þ±â</a></li>
-							<li><a href="#s12" class="toci">½ºÅ©¸³Æ® ¸¸µå´Â ¹ý</a></li>
-							<li><a href="#s13" class="toci">¸í·É¾î´Â º´ÇÕÇÒ ¼ö ¾ø´Ù</a></li>
-							<li><a href="#s14" class="toci">±âÅ¸ ±âº» Á¤º¸</a></li>
+							<li><a href="#s11" class="toci">ì˜¤í† í•«í‚¤ ë‚´ë ¤ë°›ê¸°</a></li>
+							<li><a href="#s12" class="toci">ìŠ¤í¬ë¦½íŠ¸ ë§Œë“œëŠ” ë²•</a></li>
+							<li><a href="#s13" class="toci">ëª…ë ¹ì–´ëŠ” ë³‘í•©í•  ìˆ˜ ì—†ë‹¤</a></li>
+							<li><a href="#s14" class="toci">ê¸°íƒ€ ê¸°ë³¸ ì •ë³´</a></li>
 						</ol>
 					</li>
-					<li><a href="#s2" class="toci">ÇÖÅ° &amp; ÇÖ½ºÆ®¸µ</a>
+					<li><a href="#s2" class="toci">í•«í‚¤ &amp; í•«ìŠ¤íŠ¸ë§</a>
 						<ol>
-							<li><a href="#s21" class="toci">Å° ±×¸®°í ½Éº¼</a></li>
-							<li><a href="#s22" class="toci">Ã¢ Àü¿ë</a></li>
-							<li><a href="#s23" class="toci">ÆÄÀÏ´ç ¿©·¯ ÇÖÅ°</a></li>
-							<li><a href="#s24" class="toci">¿¹Á¦</a></li>
+							<li><a href="#s21" class="toci">í‚¤ ê·¸ë¦¬ê³  ì‹¬ë³¼</a></li>
+							<li><a href="#s22" class="toci">ì°½ ì „ìš©</a></li>
+							<li><a href="#s23" class="toci">íŒŒì¼ë‹¹ ì—¬ëŸ¬ í•«í‚¤</a></li>
+							<li><a href="#s24" class="toci">ì˜ˆì œ</a></li>
 						</ol>
 					</li>
-					<li><a href="#s3" class="toci">Å° ´­¸² Àü¼ÛÇÏ±â</a>
+					<li><a href="#s3" class="toci">í‚¤ ëˆŒë¦¼ ì „ì†¡í•˜ê¸°</a>
 						<ol>
-							<li><a href="#s31" class="toci">°ÔÀÓ</a></li>
+							<li><a href="#s31" class="toci">ê²Œìž„</a></li>
 						</ol>
 					</li>
-					<li><a href="#s4" class="toci">ÇÁ·Î±×·¥ ½ÇÇàÇÏ±â &amp; À¥»çÀÌÆ® ¿­±â</a></li>
-					<li><a href="#s5" class="toci">¸í·É¾î vs. ÇÔ¼ö</a>
+					<li><a href="#s4" class="toci">í”„ë¡œê·¸ëž¨ ì‹¤í–‰í•˜ê¸° &amp; ì›¹ì‚¬ì´íŠ¸ ì—´ê¸°</a></li>
+					<li><a href="#s5" class="toci">ëª…ë ¹ì–´ vs. í•¨ìˆ˜</a>
 						<ol>
-							<li><a href="#s51" class="toci">ÄÚµå ºí·Ï</a></li>
+							<li><a href="#s51" class="toci">ì½”ë“œ ë¸”ë¡</a></li>
 						</ol>
 					</li>
-					<li><a href="#s6" class="toci">º¯¼ö</a>
+					<li><a href="#s6" class="toci">ë³€ìˆ˜</a>
 						<ol>
-							<li><a href="#s61" class="toci">ÆÛ¼¾Æ®¸¦ »ç¿ëÇÒ ¶§</a></li>
-							<li><a href="#s62" class="toci">»ç¿ëÀÚ ÀÔ·Â ¾ò±â</a></li>
-							<li><a href="#s63" class="toci">´Ù¸¥ ¿¹Á¦µé?</a></li>
+							<li><a href="#s61" class="toci">í¼ì„¼íŠ¸ë¥¼ ì‚¬ìš©í•  ë•Œ</a></li>
+							<li><a href="#s62" class="toci">ì‚¬ìš©ìž ìž…ë ¥ ì–»ê¸°</a></li>
+							<li><a href="#s63" class="toci">ë‹¤ë¥¸ ì˜ˆì œë“¤?</a></li>
 						</ol>
 					</li>
-					<li><a href="#s7" class="toci">°´Ã¼</a>
+					<li><a href="#s7" class="toci">ê°ì²´</a>
 						<ol>
-							<li><a href="#s71" class="toci">°´Ã¼ ¸¸µé±â</a></li>
-							<li><a href="#s72" class="toci">°´Ã¼ »ç¿ëÇÏ±â</a></li>
+							<li><a href="#s71" class="toci">ê°ì²´ ë§Œë“¤ê¸°</a></li>
+							<li><a href="#s72" class="toci">ê°ì²´ ì‚¬ìš©í•˜ê¸°</a></li>
 						</ol>
 					</li>
-					<li><a href="#s8" class="toci">±âÅ¸ µµ¿òÀÌ µÇ´Â °Íµé</a>
+					<li><a href="#s8" class="toci">ê¸°íƒ€ ë„ì›€ì´ ë˜ëŠ” ê²ƒë“¤</a>
 						<ol>
-							<li><a href="#s81" class="toci">½ÅºñÇÑ []</a></li>
-							<li><a href="#s82" class="toci">AHK ¹öÀü ¾Ë¾Æ³»±â</a></li>
-							<li><a href="#s83" class="toci">½ÃÇà Âø¿À</a></li>
-							<li><a href="#s84" class="toci">µé¿©¾²±â</a></li>
-							<li><a href="#s85" class="toci">µµ¿ò ±¸ÇÏ±â</a></li>
-							<li><a href="#s86" class="toci">±âÅ¸ ¸µÅ©</a></li>
+							<li><a href="#s81" class="toci">ì‹ ë¹„í•œ []</a></li>
+							<li><a href="#s82" class="toci">AHK ë²„ì „ ì•Œì•„ë‚´ê¸°</a></li>
+							<li><a href="#s83" class="toci">ì‹œí–‰ ì°©ì˜¤</a></li>
+							<li><a href="#s84" class="toci">ë“¤ì—¬ì“°ê¸°</a></li>
+							<li><a href="#s85" class="toci">ë„ì›€ êµ¬í•˜ê¸°</a></li>
+							<li><a href="#s86" class="toci">ê¸°íƒ€ ë§í¬</a></li>
 						</ol>
 					</li>
 				</ol>
 			</div>
 			<div id="bodyContent">
 				<div id="basics" class="section">
-					<h2 id="s1">1 - ±âº» Áö½Ä</h2>
+					<h2 id="s1">1 - ê¸°ë³¸ ì§€ì‹</h2>
 					<p class="note">
-						¿©ÇàÀ» ½ÃÀÛÇÏ±â Àü¿¡, Á¶¾ðÀ» ÇÑ ¸¶µð ÇÒ±î ÇÕ´Ï´Ù. 
-						ÀÌ ÀÚ½À¼­¿¡¼­ ¿©·¯ºÐÀº ²Ï ¸¹Àº ÅØ½ºÆ®¿Í ÄÚµå¸¦ º¸½Ã°Ô µË´Ï´Ù. 
-						¹è¿ì´Â ÈûÀ» Å°¿ì·Á¸é, ÅØ½ºÆ®¸¦ ÀÐ°í ÄÚµå¸¦ <b>½ÃÇèÇØ</b> º¾´Ï´Ù. 
-						´ÙÀ½ ±× ÄÚµå¸¦ ¿¬±¸ÇØ º¸½Ã±â ¹Ù¶ø´Ï´Ù.
-						<br />ÀÌ ÆäÀÌÁö¿¡¼­ ´ëºÎºÐÀÇ ¿¹Á¦¸¦ º¹»çÇØ ºÙ¿© ³ÖÀ» ¼ö ÀÖ½À´Ï´Ù.
-						<br />Àß ¸ð¸£°Ú´Ù¸é, ´Ù½Ã ÀÐ¾î º¸½Ê½Ã¿À.
+						ì—¬í–‰ì„ ì‹œìž‘í•˜ê¸° ì „ì—, ì¡°ì–¸ì„ í•œ ë§ˆë”” í• ê¹Œ í•©ë‹ˆë‹¤. 
+						ì´ ìžìŠµì„œì—ì„œ ì—¬ëŸ¬ë¶„ì€ ê½¤ ë§Žì€ í…ìŠ¤íŠ¸ì™€ ì½”ë“œë¥¼ ë³´ì‹œê²Œ ë©ë‹ˆë‹¤. 
+						ë°°ìš°ëŠ” íž˜ì„ í‚¤ìš°ë ¤ë©´, í…ìŠ¤íŠ¸ë¥¼ ì½ê³  ì½”ë“œë¥¼ <b>ì‹œí—˜í•´</b> ë´…ë‹ˆë‹¤. 
+						ë‹¤ìŒ ê·¸ ì½”ë“œë¥¼ ì—°êµ¬í•´ ë³´ì‹œê¸° ë°”ëžë‹ˆë‹¤.
+						<br />ì´ íŽ˜ì´ì§€ì—ì„œ ëŒ€ë¶€ë¶„ì˜ ì˜ˆì œë¥¼ ë³µì‚¬í•´ ë¶™ì—¬ ë„£ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+						<br />ìž˜ ëª¨ë¥´ê² ë‹¤ë©´, ë‹¤ì‹œ ì½ì–´ ë³´ì‹­ì‹œì˜¤.
 					</p>
 
-					<h3 id="s11">a. ¿ÀÅäÇÖÅ°¸¦ ³»·Á¹Þ¾Æ ¼³Ä¡ÇÏ±â</h3>
-
-					<script type="text/javascript">
-					if ('file:mk:ms-its:'.indexOf(location.protocol) != -1)
-						document.write('<p class="note">' + translate.tutLocalMessage + '</p>');
-					</script>
+					<h3 id="s11">a. ì˜¤í† í•«í‚¤ë¥¼ ë‚´ë ¤ë°›ì•„ ì„¤ì¹˜í•˜ê¸°</h3>
+<p id="local_note" class="note" style="display: none">ì´ ë¬¸ì„œë¥¼ í•˜ë“œì—ì„œ ë³´ê³  ìžˆê¸° ë•Œë¬¸ì—, ì•„ë§ˆë„ ì´ë¯¸ AutoHotkeyê°€ ì„¤ì¹˜ë˜ì–´ ìžˆì„ ê²ƒì´ê³  ì„¹ì…˜ bë¡œ ê±´ë„ˆ ë›°ì–´ë„ ë©ë‹ˆë‹¤.</p>
+<script type="text/javascript">
+  if ('file:mk:ms-its:'.indexOf(location.protocol) != -1)
+    document.getElementById("local_note").removeAttribute("style");
+</script>
 					<p>
-						AutoHotkey (AHK)ÀÇ »ç¿ë¹ýÀ» ¹è¿ì±â¿¡ ¾Õ¼­,  ³»·Á ¹Þ¾Æ¾ß ÇÏ°Ú½À´Ï´Ù. 
-						³»·Á ¹Þ¾ÒÀ¸¸é, ¼³Ä¡ÇØ¾ß °ÚÁö¿ä. ±×·¯³ª ±×°ÍÀº ¿øÇÏ´Â ¹öÀüÀÌ ¹«¾ùÀÎ°¡¿¡ µû¶ó ´Þ¶óÁý´Ï´Ù.
-						ÀÌ ÁöÄ§¼­¿¡¼­´Â ¼³Ä¡±â¸¦ »ç¿ëÇÏ°Ú½À´Ï´Ù. °¡Àå ½±°Ô ¼³Ä¡ÇÒ ¼ö ÀÖÀ¸´Ï±î¿ä.
+						AutoHotkey (AHK)ì˜ ì‚¬ìš©ë²•ì„ ë°°ìš°ê¸°ì— ì•žì„œ,  ë‚´ë ¤ ë°›ì•„ì•¼ í•˜ê² ìŠµë‹ˆë‹¤. 
+						ë‚´ë ¤ ë°›ì•˜ìœ¼ë©´, ì„¤ì¹˜í•´ì•¼ ê² ì§€ìš”. ê·¸ëŸ¬ë‚˜ ê·¸ê²ƒì€ ì›í•˜ëŠ” ë²„ì „ì´ ë¬´ì—‡ì¸ê°€ì— ë”°ë¼ ë‹¬ë¼ì§‘ë‹ˆë‹¤.
+						ì´ ì§€ì¹¨ì„œì—ì„œëŠ” ì„¤ì¹˜ê¸°ë¥¼ ì‚¬ìš©í•˜ê² ìŠµë‹ˆë‹¤. ê°€ìž¥ ì‰½ê²Œ ì„¤ì¹˜í•  ìˆ˜ ìžˆìœ¼ë‹ˆê¹Œìš”.
 					</p>
 
 
-					<h3>ÅØ½ºÆ® Áö½Ã:</h3>
+					<h3>í…ìŠ¤íŠ¸ ì§€ì‹œ:</h3>
 					<ol>
-						<li>AutoHotkey È¨ÆäÀÌÁö·Î °©´Ï´Ù. 
+						<li>AutoHotkey í™ˆíŽ˜ì´ì§€ë¡œ ê°‘ë‹ˆë‹¤. 
 							<a href="http://ahkscript.org/">http://ahkscript.org/</a>
 						</li>
-						<li>³»·Á¹Þ½À´Ï´Ù.
+						<li>ë‚´ë ¤ë°›ìŠµë‹ˆë‹¤.
 							<a href="http://ahkscript.org/download/ahk-install.exe">http://ahkscript.org/download/ahk-install.exe</a>
 						</li>
 						<li>
-							AutoHotkey¸¦ ¼³Ä¡ÇÏ´Â µ¿¾È UNICODE ¶Ç´Â ANSI Áß ÇÏ³ª¸¦ °ñ¶ó¾ß ÇÕ´Ï´Ù.
-							Âª°Ô ¸»ÇØ, ¾Æ¸¶µµ UNICODE¸¦ ¼±ÅÃÇÏ´Â ÆíÀÌ ÁÁ½À´Ï´Ù. 
-							¿µ¹®ÀÚ-¾Æ´Ñ ¹®ÀÚ¿Í ¼ýÀÚµéÀ» Áö¿øÇÏ°Åµç¿ä. 
-							¼³Ä¡ ¹öÆ°ÀÌ ³ª¿Ã ¶§±îÁö °è¼Ó ÁøÇàÇÕ´Ï´Ù.
+							AutoHotkeyë¥¼ ì„¤ì¹˜í•˜ëŠ” ë™ì•ˆ UNICODE ë˜ëŠ” ANSI ì¤‘ í•˜ë‚˜ë¥¼ ê³¨ë¼ì•¼ í•©ë‹ˆë‹¤.
+							ì§§ê²Œ ë§í•´, ì•„ë§ˆë„ UNICODEë¥¼ ì„ íƒí•˜ëŠ” íŽ¸ì´ ì¢‹ìŠµë‹ˆë‹¤. 
+							ì˜ë¬¸ìž-ì•„ë‹Œ ë¬¸ìžì™€ ìˆ«ìžë“¤ì„ ì§€ì›í•˜ê±°ë“ ìš”. 
+							ì„¤ì¹˜ ë²„íŠ¼ì´ ë‚˜ì˜¬ ë•Œê¹Œì§€ ê³„ì† ì§„í–‰í•©ë‹ˆë‹¤.
 						</li>
-						<li>ÀÏ´Ü ³¡³µÀ¸¸é, ¼º°øÀÔ´Ï´Ù! ¼½¼Ç  b¿¡¼­ °è¼ÓÇÕ´Ï´Ù.</li>
+						<li>ì¼ë‹¨ ëë‚¬ìœ¼ë©´, ì„±ê³µìž…ë‹ˆë‹¤! ì„¹ì…˜  bì—ì„œ ê³„ì†í•©ë‹ˆë‹¤.</li>
 					</ol>
-					<p class="note">µ¿¿µ»ó Áö½Ã:<br />
+					<p class="note">ë™ì˜ìƒ ì§€ì‹œ:<br />
 						Frankie's "Install and Hello World"<br />
 						<a href="http://www.autohotkey.com/forum/viewtopic.php?t=77674">http://www.autohotkey.com/forum/viewtopic.php?t=77674</a>
 					</p>
 
-					<h3 id="s12">b. ½ºÅ©¸³Æ® ¸¸µå´Â ¹ý</h3>
+					<h3 id="s12">b. ìŠ¤í¬ë¦½íŠ¸ ë§Œë“œëŠ” ë²•</h3>
 					<p>
-						¿ÀÅäÇÖÅ°¸¦ ¼³Ä¡ÇßÀ¸¸é, ¹º°¡ ÀÏÀ» ½ÃÅ°°í ½Í°ÚÁö¿ä. 
-						¿ÀÅäÇÖÅ°°¡ ¸¶¹ýÀº ¾Æ´Õ´Ï´Ù. ¿ì¸® ¸ðµÎ°¡ ±×·¸±â¸¦ ¹Ù¶óÁö¸¸, ½ÇÁ¦·Î´Â ¾Æ´Õ´Ï´Ù.
-						±×·¡¼­ ¹«½¼ ÀÏÀ» ÇÏ¶ó°í Áö½ÃÇÒ ÇÊ¿ä°¡ ÀÖ½À´Ï´Ù.
-						ÀÌ·± ÀýÂ÷¸¦ "½ºÅ©¸³ÆÃ(Scripting)"ÀÌ¶ó°í ºÎ¸¨´Ï´Ù.
+						ì˜¤í† í•«í‚¤ë¥¼ ì„¤ì¹˜í–ˆìœ¼ë©´, ë­”ê°€ ì¼ì„ ì‹œí‚¤ê³  ì‹¶ê² ì§€ìš”. 
+						ì˜¤í† í•«í‚¤ê°€ ë§ˆë²•ì€ ì•„ë‹™ë‹ˆë‹¤. ìš°ë¦¬ ëª¨ë‘ê°€ ê·¸ë ‡ê¸°ë¥¼ ë°”ë¼ì§€ë§Œ, ì‹¤ì œë¡œëŠ” ì•„ë‹™ë‹ˆë‹¤.
+						ê·¸ëž˜ì„œ ë¬´ìŠ¨ ì¼ì„ í•˜ë¼ê³  ì§€ì‹œí•  í•„ìš”ê°€ ìžˆìŠµë‹ˆë‹¤.
+						ì´ëŸ° ì ˆì°¨ë¥¼ "ìŠ¤í¬ë¦½íŒ…(Scripting)"ì´ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤.
 					</p>
 
-					<h3>ÅØ½ºÆ® Áö½Ã:</h3>
+					<h3>í…ìŠ¤íŠ¸ ì§€ì‹œ:</h3>
 					<ul>
-						<li>1. µ¥½ºÅ©Å¾¿¡ ¿ìÅ¬¸¯ÇÕ´Ï´Ù.</li>
-						<li>2. ¸Þ´º¿¡¼­ "New"¸¦ Ã£½À´Ï´Ù.</li>
-						<li>3. "New" ¸Þ´º ¾È¿¡ "AutoHotkey Script"¸¦ Å¬¸¯ÇÕ´Ï´Ù.</li>
-						<li>4. ½ºÅ©¸³Æ®¿¡ »õ ÀÌ¸§À» ÁÝ´Ï´Ù. ÁÖÀÇ: È®ÀåÀÚ´Â  .ahk·Î ³¡³ª¾ß ÇÕ´Ï´Ù. ¿¹. MyScript.ahk</li>
-						<li>5. µ¥½ºÅ©Å¾¿¡ »õ·Î ¸¸µé¾îÁø ÆÄÀÏÀ» Ã£¾Æ ¿ìÅ¬¸¯ÇÕ´Ï´Ù.</li>
-						<li>6. "Edit Script"¸¦ Å¬¸¯ÇÕ´Ï´Ù.</li>
-						<li>7. Ã¢ÀÌ ¿­¸± °Ì´Ï´Ù. ¾Æ¸¶µµ ³ëÆ®ÆÐµåÀÌ°ÚÁö¿ä. ±×·¸´Ù¸é, ¼º°øÀÔ´Ï´Ù!
+						<li>1. ë°ìŠ¤í¬íƒ‘ì— ìš°í´ë¦­í•©ë‹ˆë‹¤.</li>
+						<li>2. ë©”ë‰´ì—ì„œ "New"ë¥¼ ì°¾ìŠµë‹ˆë‹¤.</li>
+						<li>3. "New" ë©”ë‰´ ì•ˆì— "AutoHotkey Script"ë¥¼ í´ë¦­í•©ë‹ˆë‹¤.</li>
+						<li>4. ìŠ¤í¬ë¦½íŠ¸ì— ìƒˆ ì´ë¦„ì„ ì¤ë‹ˆë‹¤. ì£¼ì˜: í™•ìž¥ìžëŠ”  .ahkë¡œ ëë‚˜ì•¼ í•©ë‹ˆë‹¤. ì˜ˆ. MyScript.ahk</li>
+						<li>5. ë°ìŠ¤í¬íƒ‘ì— ìƒˆë¡œ ë§Œë“¤ì–´ì§„ íŒŒì¼ì„ ì°¾ì•„ ìš°í´ë¦­í•©ë‹ˆë‹¤.</li>
+						<li>6. "Edit Script"ë¥¼ í´ë¦­í•©ë‹ˆë‹¤.</li>
+						<li>7. ì°½ì´ ì—´ë¦´ ê²ë‹ˆë‹¤. ì•„ë§ˆë„ ë…¸íŠ¸íŒ¨ë“œì´ê² ì§€ìš”. ê·¸ë ‡ë‹¤ë©´, ì„±ê³µìž…ë‹ˆë‹¤!
 						<hr />
 						<p>
-							ÀÌÁ¦ ½ºÅ©¸³Æ®¸¦ ¸¸µé¾úÀ¸¹Ç·Î, ÆÄÀÏ ¾È¿¡ ³»¿ëÀ» Ã¤¿ö ³Ö¾î¾ß ÇÏ°Ú½À´Ï´Ù.
-							¸ðµç ³»Àå ¸í·É¾î¿Í ÇÔ¼ö ±×¸®°í º¯¼ö ¸ñ·ÏÀº
-							<a href="#s5">section 5</a>¿¡¼­ º¸½Ç ¼ö ÀÖ½À´Ï´Ù.<br />
+							ì´ì œ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë§Œë“¤ì—ˆìœ¼ë¯€ë¡œ, íŒŒì¼ ì•ˆì— ë‚´ìš©ì„ ì±„ì›Œ ë„£ì–´ì•¼ í•˜ê² ìŠµë‹ˆë‹¤.
+							ëª¨ë“  ë‚´ìž¥ ëª…ë ¹ì–´ì™€ í•¨ìˆ˜ ê·¸ë¦¬ê³  ë³€ìˆ˜ ëª©ë¡ì€
+							<a href="#s5">section 5</a>ì—ì„œ ë³´ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.<br />
 						</p>
 						<p>
-							´ÙÀ½Àº ÇÖÅ°¸¦ ´ã°í ÀÖ´Â ¾ÆÁÖ °£´ÜÇÑ ½ºÅ©¸³Æ®ÀÔ´Ï´Ù.
-							±× ÇÖÅ°°¡ ´­¸®¸é <a href="commands/Send.htm">Send</a> ¸í·É¾î¸¦ »ç¿ëÇÏ¿© ÅØ½ºÆ®¸¦ Å¸ÀÚÇÕ´Ï´Ù.
+							ë‹¤ìŒì€ í•«í‚¤ë¥¼ ë‹´ê³  ìžˆëŠ” ì•„ì£¼ ê°„ë‹¨í•œ ìŠ¤í¬ë¦½íŠ¸ìž…ë‹ˆë‹¤.
+							ê·¸ í•«í‚¤ê°€ ëˆŒë¦¬ë©´ <a href="commands/Send.htm">Send</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ì—¬ í…ìŠ¤íŠ¸ë¥¼ íƒ€ìží•©ë‹ˆë‹¤.
 						</p>
 
 <pre>
 ^j::
-   Send, ³ªÀÇ Ã¹ ¹øÂ° ½ºÅ©¸³Æ®
+   Send, ë‚˜ì˜ ì²« ë²ˆì§¸ ìŠ¤í¬ë¦½íŠ¸
 Return
 </pre>
 						<p>
-							³ªÁß¿¡ ´õ ±íÀÌ µé¾î°¡ º¸°Ú½À´Ï´Ù. ±× ¶§±îÁö, ¿©±â¿¡¼­´Â À§ÀÇ ÄÚµå¸¦ ¼³¸íÇÕ´Ï´Ù.<br />
+							ë‚˜ì¤‘ì— ë” ê¹Šì´ ë“¤ì–´ê°€ ë³´ê² ìŠµë‹ˆë‹¤. ê·¸ ë•Œê¹Œì§€, ì—¬ê¸°ì—ì„œëŠ” ìœ„ì˜ ì½”ë“œë¥¼ ì„¤ëª…í•©ë‹ˆë‹¤.<br />
 
-							- Ã¹ ÁÙ. <code>^j::</code>°¡ ¹Ù·Î ÇÖÅ°ÀÔ´Ï´Ù. 
-							<code>^</code>´Â <span class="key">CTRL</span>À» ÀÇ¹ÌÇÏ°í,  <code>j</code>´Â ±âÈ£¹®ÀÚ <span class="key">j</span>ÀÔ´Ï´Ù. 
-							<code>::</code>ÀÇ  <b>¿ÞÂÊ</b>¿¡ ÀÖ´Â °ÍÀº ¸ðµÎ ´©¸¦ ÇÊ¿ä°¡ ÀÖ´Â Å°µéÀÔ´Ï´Ù.<br />
+							- ì²« ì¤„. <code>^j::</code>ê°€ ë°”ë¡œ í•«í‚¤ìž…ë‹ˆë‹¤. 
+							<code>^</code>ëŠ” <span class="key">CTRL</span>ì„ ì˜ë¯¸í•˜ê³ ,  <code>j</code>ëŠ” ê¸°í˜¸ë¬¸ìž <span class="key">j</span>ìž…ë‹ˆë‹¤. 
+							<code>::</code>ì˜  <b>ì™¼ìª½</b>ì— ìžˆëŠ” ê²ƒì€ ëª¨ë‘ ëˆ„ë¥¼ í•„ìš”ê°€ ìžˆëŠ” í‚¤ë“¤ìž…ë‹ˆë‹¤.<br />
 
-							- µÑÂ° ÁÙ. <code>Send, My First Script</code>´Â Å°µéÀ» Àü¼ÛÇÏ´Â(SEND) ¹ýÀ» º¸¿©ÁÝ´Ï´Ù. 
-							<code>SEND</code>´Â ¸í·É¾îÀÌ°í,  ½°Ç¥(,) ´ÙÀ½¿¡ ¿À´Â °ÍµéÀÌ ¸ðµÎ Å¸ÀÚµË´Ï´Ù.<br />
+							- ë‘˜ì§¸ ì¤„. <code>Send, My First Script</code>ëŠ” í‚¤ë“¤ì„ ì „ì†¡í•˜ëŠ”(SEND) ë²•ì„ ë³´ì—¬ì¤ë‹ˆë‹¤. 
+							<code>SEND</code>ëŠ” ëª…ë ¹ì–´ì´ê³ ,  ì‰¼í‘œ(,) ë‹¤ìŒì— ì˜¤ëŠ” ê²ƒë“¤ì´ ëª¨ë‘ íƒ€ìžë©ë‹ˆë‹¤.<br />
 
-							- ¼ÂÂ° ÁÙ. <code>Return</code>. ReturnÀº ¾ÕÀ¸·Î °¡Àå ¸¹ÀÌ Á¢ÇÏ°Ô µÇ½Ç °Ì´Ï´Ù.
-							¹®ÀÚ ±×´ë·Î ÄÚµå¸¦ ¸ØÃä´Ï´Ù. ¾Æ·¡·Î ´õ ÀÌ»ó ÁøÇàÇÏÁö ¾Ê½À´Ï´Ù.
-							ÀÌ·¸°Ô ÇÏ¸é ½ºÅ©¸³Æ®¿¡ ¸¹Àº ³»¿ëÀÌ ÀÖÀ» ¶§ ¹®Á¦¸¦ ÇÇÇÒ ¼ö ÀÖ½À´Ï´Ù.
+							- ì…‹ì§¸ ì¤„. <code>Return</code>. Returnì€ ì•žìœ¼ë¡œ ê°€ìž¥ ë§Žì´ ì ‘í•˜ê²Œ ë˜ì‹¤ ê²ë‹ˆë‹¤.
+							ë¬¸ìž ê·¸ëŒ€ë¡œ ì½”ë“œë¥¼ ë©ˆì¶¥ë‹ˆë‹¤. ì•„ëž˜ë¡œ ë” ì´ìƒ ì§„í–‰í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+							ì´ë ‡ê²Œ í•˜ë©´ ìŠ¤í¬ë¦½íŠ¸ì— ë§Žì€ ë‚´ìš©ì´ ìžˆì„ ë•Œ ë¬¸ì œë¥¼ í”¼í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 						</p>
 						<hr />
-						<li>8. ÆÄÀÏÀ» ÀúÀåÇÕ´Ï´Ù.</li>
-						<li>9. µ¥½ºÅ©Å¾ÀÇ ±× ÆÄÀÏÀ» ´õºíÅ¬¸¯ÇÏ¿© ½ÇÇàÇÕ´Ï´Ù.  ³ëÆ®ÆÐµå¸¦ ¿±´Ï´Ù (¹«¾ùÀÌµç Å¸ÀÚÇØ ³ÖÀ» ¼ö ÀÖ½À´Ï´Ù). 
-						         ±×¸®°í <span class="key">Ctrl</span> and <span class="key">J</span>¸¦ ´©¸¨´Ï´Ù.</li>
-						<li>10. ¸ÚÁöÁö¿ä, ¼º°øÀÔ´Ï´Ù! Ã¹ ½ºÅ©¸³Æ®°¡ ½ÇÇàµÇ¾ú½À´Ï´Ù. °¡¼­ Àá½Ã ½¬°í µ¹¾Æ¿Í ÀÌ ÀÚ½À¼­¸¦ °è¼Ó ÀÐ¾îº¸½Ê½Ã¿À..</li>
+						<li>8. íŒŒì¼ì„ ì €ìž¥í•©ë‹ˆë‹¤.</li>
+						<li>9. ë°ìŠ¤í¬íƒ‘ì˜ ê·¸ íŒŒì¼ì„ ë”ë¸”í´ë¦­í•˜ì—¬ ì‹¤í–‰í•©ë‹ˆë‹¤.  ë…¸íŠ¸íŒ¨ë“œë¥¼ ì—½ë‹ˆë‹¤ (ë¬´ì—‡ì´ë“  íƒ€ìží•´ ë„£ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤). 
+						         ê·¸ë¦¬ê³  <span class="key">Ctrl</span> and <span class="key">J</span>ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤.</li>
+						<li>10. ë©‹ì§€ì§€ìš”, ì„±ê³µìž…ë‹ˆë‹¤! ì²« ìŠ¤í¬ë¦½íŠ¸ê°€ ì‹¤í–‰ë˜ì—ˆìŠµë‹ˆë‹¤. ê°€ì„œ ìž ì‹œ ì‰¬ê³  ëŒì•„ì™€ ì´ ìžìŠµì„œë¥¼ ê³„ì† ì½ì–´ë³´ì‹­ì‹œì˜¤..</li>
 					</ul>
 
 					<p class="note">
-						ºñµð¿À Áö½Ã:<br />
+						ë¹„ë””ì˜¤ ì§€ì‹œ:<br />
 						Frankie's "Install and Hello World"<br /><a href="http://www.autohotkey.com/forum/viewtopic.php?t=77674">http://www.autohotkey.com/forum/viewtopic.php?t=77674</a>
 
 					</p>
-					<h3 id="s13">c. ¸í·É¾î´Â º´ÇÕÇÒ ¼ö ¾ø½À´Ï´Ù</h3>
+					<h3 id="s13">c. ëª…ë ¹ì–´ëŠ” ë³‘í•©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤</h3>
 					<p>
-						ÄÚµå¸¦ ¸¸µé ¶§, ¿©·¯ ¸í·É¾îµéÀ» ÇÑ ÁÙ¿¡ ¶Ç´Â ÇÑ ¸í·É¾î ¾È¿¡ ´Ù¸¥ ¸í·É¾î¸¦ ¹èÄ¡ÇÏ°í ½ÍÀº À¯È¤¿¡ ºüÁú °æ¿ì°¡ ¸¹À» °ÍÀÔ´Ï´Ù.
-						Àý´ë ±×·¸°Ô ÇÏÁö ¸¶½Ê½Ã¿À. <a href="#s5">¼½¼Ç 5</a>¿¡¼­ ¿Ö ¿¹»óÇÑ´ë·Î ÀÛµ¿ÇÏÁö ¾Ê´ÂÁö ±×¸®°í ´ë½Å¿¡ ¾î¶»°Ô ÇÏ¸é ÁÁÀºÁö ¸»¾¸µå¸®°Ú½À´Ï´Ù.
+						ì½”ë“œë¥¼ ë§Œë“¤ ë•Œ, ì—¬ëŸ¬ ëª…ë ¹ì–´ë“¤ì„ í•œ ì¤„ì— ë˜ëŠ” í•œ ëª…ë ¹ì–´ ì•ˆì— ë‹¤ë¥¸ ëª…ë ¹ì–´ë¥¼ ë°°ì¹˜í•˜ê³  ì‹¶ì€ ìœ í˜¹ì— ë¹ ì§ˆ ê²½ìš°ê°€ ë§Žì„ ê²ƒìž…ë‹ˆë‹¤.
+						ì ˆëŒ€ ê·¸ë ‡ê²Œ í•˜ì§€ ë§ˆì‹­ì‹œì˜¤. <a href="#s5">ì„¹ì…˜ 5</a>ì—ì„œ ì™œ ì˜ˆìƒí•œëŒ€ë¡œ ìž‘ë™í•˜ì§€ ì•ŠëŠ”ì§€ ê·¸ë¦¬ê³  ëŒ€ì‹ ì— ì–´ë–»ê²Œ í•˜ë©´ ì¢‹ì€ì§€ ë§ì”€ë“œë¦¬ê² ìŠµë‹ˆë‹¤.
 					</p>
 
-					<h3 id="s14">d. ±âÅ¸ ±âº»ÀûÀÎ Á¤º¸µé</h3>
+					<h3 id="s14">d. ê¸°íƒ€ ê¸°ë³¸ì ì¸ ì •ë³´ë“¤</h3>
 					<div>
-						µµ¿ò¸» ÆÄÀÏ Ã£´Â ¹ý:<br />
-						¸î °¡Áö ¹æ¹ýÀÌ ÀÖ½À´Ï´Ù. µµ¿ò¸»ÀÌ ±âº» À§Ä¡¿¡ ¼³Ä¡µÇ¾î ÀÖ´Ù°í °¡Á¤ÇÏ°Ú½À´Ï´Ù..<br /><br />
-						¹æ¹ý 1:
+						ë„ì›€ë§ íŒŒì¼ ì°¾ëŠ” ë²•:<br />
+						ëª‡ ê°€ì§€ ë°©ë²•ì´ ìžˆìŠµë‹ˆë‹¤. ë„ì›€ë§ì´ ê¸°ë³¸ ìœ„ì¹˜ì— ì„¤ì¹˜ë˜ì–´ ìžˆë‹¤ê³  ê°€ì •í•˜ê² ìŠµë‹ˆë‹¤..<br /><br />
+						ë°©ë²• 1:
 						<ol>
-							<li>½ÃÀÛ ¸Þ´º¸¦ Ã£°Å³ª È­¸é¿¡¼­ Start Orb¸¦ ¿±´Ï´Ù. º¸Åë ÁÂÇÏ¿¡ ÀÖ½À´Ï´Ù.</li>
-							<li><b>ÇÁ·Î±×·¥</b> ¶Ç´Â <b>¸ðµç ÇÁ·Î±×·¥</b>À» ¼±ÅÃÇÕ´Ï´Ù.</li>
-							<li>¸ñ·Ï¿¡¼­ <b>AutoHotkey</b>¸¦ Ã£½À´Ï´Ù.</li>
-							<li>Ã£¾ÒÀ¸¸é <b>AutoHotkey µµ¿ò¸» ÆÄÀÏ</b>ÀÌ º¸ÀÏ °Ì´Ï´Ù. ±×°ÍÀ» Å¬¸¯ÇÕ´Ï´Ù.</li>
-							<li>³¡ÀÔ´Ï´Ù!</li>
+							<li>ì‹œìž‘ ë©”ë‰´ë¥¼ ì°¾ê±°ë‚˜ í™”ë©´ì—ì„œ Start Orbë¥¼ ì—½ë‹ˆë‹¤. ë³´í†µ ì¢Œí•˜ì— ìžˆìŠµë‹ˆë‹¤.</li>
+							<li><b>í”„ë¡œê·¸ëž¨</b> ë˜ëŠ” <b>ëª¨ë“  í”„ë¡œê·¸ëž¨</b>ì„ ì„ íƒí•©ë‹ˆë‹¤.</li>
+							<li>ëª©ë¡ì—ì„œ <b>AutoHotkey</b>ë¥¼ ì°¾ìŠµë‹ˆë‹¤.</li>
+							<li>ì°¾ì•˜ìœ¼ë©´ <b>AutoHotkey ë„ì›€ë§ íŒŒì¼</b>ì´ ë³´ì¼ ê²ë‹ˆë‹¤. ê·¸ê²ƒì„ í´ë¦­í•©ë‹ˆë‹¤.</li>
+							<li>ëìž…ë‹ˆë‹¤!</li>
 						</ol>
-						¹æ¹ý 2:
+						ë°©ë²• 2:
 						<ol>
-							<li>µ¥½ºÅ©Å¾À¸·Î °©´Ï´Ù.</li>
-							<li><b>³» ÄÄÇ»ÅÍ</b> ¶Ç´Â <b>ÄÄÇ»ÅÍ</b>¸¦ Ã£½À´Ï´Ù. ±×°ÍÀ» ¿±´Ï´Ù.</li>
-							<li><b>AutoHotkey</b>°¡ µé¾îÀÖ´Â ÇÏµå µå¶óÀÌºê·Î °©´Ï´Ù. ¾Æ¸¶µµ <b>C:\</b> µå¶óÀÌºêÀÌ°ÚÁö¿ä.</li>
-							<li><b>Program Files</b> Æú´õ ¾È¿¡¼­ <b>AutoHotkey</b>¸¦ °Ë»öÇÕ´Ï´Ù.</li>
-							<li><b>AutoHotkey.chm</b>¸¦ Ã£°Å³ª ÀÌ¸§ÀÌ AutoHotkeyÀÎ ÆÄÀÏÀ» Ã£½À´Ï´Ù. ±× À§¿¡ ³ë¶õ»ö ¹°À½Ç¥°¡ ÀÖ½À´Ï´Ù.</li>
-							<li>³¡ÀÔ´Ï´Ù!</li>
+							<li>ë°ìŠ¤í¬íƒ‘ìœ¼ë¡œ ê°‘ë‹ˆë‹¤.</li>
+							<li><b>ë‚´ ì»´í“¨í„°</b> ë˜ëŠ” <b>ì»´í“¨í„°</b>ë¥¼ ì°¾ìŠµë‹ˆë‹¤. ê·¸ê²ƒì„ ì—½ë‹ˆë‹¤.</li>
+							<li><b>AutoHotkey</b>ê°€ ë“¤ì–´ìžˆëŠ” í•˜ë“œ ë“œë¼ì´ë¸Œë¡œ ê°‘ë‹ˆë‹¤. ì•„ë§ˆë„ <b>C:\</b> ë“œë¼ì´ë¸Œì´ê² ì§€ìš”.</li>
+							<li><b>Program Files</b> í´ë” ì•ˆì—ì„œ <b>AutoHotkey</b>ë¥¼ ê²€ìƒ‰í•©ë‹ˆë‹¤.</li>
+							<li><b>AutoHotkey.chm</b>ë¥¼ ì°¾ê±°ë‚˜ ì´ë¦„ì´ AutoHotkeyì¸ íŒŒì¼ì„ ì°¾ìŠµë‹ˆë‹¤. ê·¸ ìœ„ì— ë…¸ëž€ìƒ‰ ë¬¼ìŒí‘œê°€ ìžˆìŠµë‹ˆë‹¤.</li>
+							<li>ëìž…ë‹ˆë‹¤!</li>
 						</ol>
 					</div>
 					<p class="note">
-						¿Â¶óÀÎ ¸µÅ©:<br />
-						<a href="http://ahkscript.org/docs/">¹®¼­</a><br />
-						<a href="http://ahkscript.org/docs/commands/">¸í·É¾î ¸®½ºÆ®</a><br />
-						<a href="http://ahkscript.org/docs/Functions.htm#BuiltIn">ÇÔ¼ö</a><br />
-						<a href="http://ahkscript.org/docs/Variables.htm">º¯¼ö</a>
+						ì˜¨ë¼ì¸ ë§í¬:<br />
+						<a href="http://ahkscript.org/docs/">ë¬¸ì„œ</a><br />
+						<a href="http://ahkscript.org/docs/commands/">ëª…ë ¹ì–´ ë¦¬ìŠ¤íŠ¸</a><br />
+						<a href="http://ahkscript.org/docs/Functions.htm#BuiltIn">í•¨ìˆ˜</a><br />
+						<a href="http://ahkscript.org/docs/Variables.htm">ë³€ìˆ˜</a>
 					</p>
 				</div>
 				<div id="hotkeys_and_hotstrings" class="section">
-					<h2 id="s2">2 - ÇÖÅ° &amp; ÇÖ½ºÆ®¸µ</h2>
+					<h2 id="s2">2 - í•«í‚¤ &amp; í•«ìŠ¤íŠ¸ë§</h2>
 
 					<p>
-						ÇÖÅ°¶õ ¹«¾ùÀÎ°¡? ÇÖÅ°´Â ¼Õ±æ¿¡ ¹ÝÀÀÇÏ´Â Å°ÀÔ´Ï´Ù. ... ³ó´ãÀÔ´Ï´Ù. ÇÖÅ°´Â »ç¿ëÀÚ°¡ Å°º¸µå¸¦ ´­·¯ ¾î¶² ÇàÀ§¸¦ ÃË¹ß½ÃÅ°´Â Å° ¶Ç´Â Å°ÀÇ Á¶ÇÕÀÔ´Ï´Ù.<br />
-						ÇÖ½ºÆ®¸µÀÌ¶õ ¹«¾ùÀÎ°¡? ÇÖ½ºÆ®¸µÀº ÁÖ·Î Å¸ÀÚÇÏ´Â µ¿¾È ¾àÀÚ¸¦ È®´ëÇÏ´Â µ¥ »ç¿ëµË´Ï´Ù (ÀÚµ¿-Ä¡È¯). ¶Ç ½ºÅ©¸³Æ® ÇàÀ§¸¦ ÃË¹ß½ÃÅ°´Â µ¥¿¡µµ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.
+						í•«í‚¤ëž€ ë¬´ì—‡ì¸ê°€? í•«í‚¤ëŠ” ì†ê¸¸ì— ë°˜ì‘í•˜ëŠ” í‚¤ìž…ë‹ˆë‹¤. ... ë†ë‹´ìž…ë‹ˆë‹¤. í•«í‚¤ëŠ” ì‚¬ìš©ìžê°€ í‚¤ë³´ë“œë¥¼ ëˆŒëŸ¬ ì–´ë–¤ í–‰ìœ„ë¥¼ ì´‰ë°œì‹œí‚¤ëŠ” í‚¤ ë˜ëŠ” í‚¤ì˜ ì¡°í•©ìž…ë‹ˆë‹¤.<br />
+						í•«ìŠ¤íŠ¸ë§ì´ëž€ ë¬´ì—‡ì¸ê°€? í•«ìŠ¤íŠ¸ë§ì€ ì£¼ë¡œ íƒ€ìží•˜ëŠ” ë™ì•ˆ ì•½ìžë¥¼ í™•ëŒ€í•˜ëŠ” ë° ì‚¬ìš©ë©ë‹ˆë‹¤ (ìžë™-ì¹˜í™˜). ë˜ ìŠ¤í¬ë¦½íŠ¸ í–‰ìœ„ë¥¼ ì´‰ë°œì‹œí‚¤ëŠ” ë°ì—ë„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 					</p>
 
-					<p>´ÙÀ½Àº ÇÖÅ°ÀÔ´Ï´Ù:</p>
+					<p>ë‹¤ìŒì€ í•«í‚¤ìž…ë‹ˆë‹¤:</p>
 
 <pre>
 ^j::
-   Send, ³ªÀÇ Ã¹ ¹øÂ° ½ºÅ©¸³Æ®
+   Send, ë‚˜ì˜ ì²« ë²ˆì§¸ ìŠ¤í¬ë¦½íŠ¸
 Return
 </pre>
 
-					<p>´ÙÀ½Àº ÇÖ½ºÆ®¸µÀÔ´Ï´Ù:</p>
+					<p>ë‹¤ìŒì€ í•«ìŠ¤íŠ¸ë§ìž…ë‹ˆë‹¤:</p>
 
 <pre>
 ::ftw::Free the whales
 </pre>
 
-					<p>µÎ ¿¹Á¦ »çÀÌÀÇ Â÷ÀÌ´Â ÇÖÅ°°¡ <span class="key">CTRL &amp; J</span>¸¦ ´©¸¦ ¶§ ÃË¹ßµÇÁö¸¸ ÇÖ½ºÆ®¸µÀº  "ftw"¸¦ Å¸ÀÚÇÏ¸é ¹Ù·Î "Free the whales"·Î Ä¡È¯ÇÕ´Ï´Ù.</p>
+					<p>ë‘ ì˜ˆì œ ì‚¬ì´ì˜ ì°¨ì´ëŠ” í•«í‚¤ê°€ <span class="key">CTRL &amp; J</span>ë¥¼ ëˆ„ë¥¼ ë•Œ ì´‰ë°œë˜ì§€ë§Œ í•«ìŠ¤íŠ¸ë§ì€  "ftw"ë¥¼ íƒ€ìží•˜ë©´ ë°”ë¡œ "Free the whales"ë¡œ ì¹˜í™˜í•©ë‹ˆë‹¤.</p>
 					<p>
-						<i>"±×·¡¼­, Á¤È®ÇÏ°Ô ¾î¶»°Ô ÇÖÅ°¸¦ ¸¸µå´Â°¡?"</i>
-						ÁÁÀº Áú¹®ÀÔ´Ï´Ù. ÇÖÅ°´Â ÇÑ ½ÖÀÇ ::·Î ¸¸µé ¼ö ÀÖ½À´Ï´Ù. Å°³ª Å° Á¶ÇÕÀÇ <b>¿À¸¥ÂÊ¿¡</b> <code>::</code>ÀÌ ÀÖ¾î¾ß ÇÕ´Ï´Ù. ±×¸®°í ³»¿ëÀº ¾Æ·¡¿¡ ÀÖ¾î¾ß ÇÏ°í, ¹Ù·Î µû¶ó¼­ ¾Æ·¡¿¡ <code>Return</code>ÀÌ ÀÖ¾î¾ß ÇÕ´Ï´Ù.<br />
+						<i>"ê·¸ëž˜ì„œ, ì •í™•í•˜ê²Œ ì–´ë–»ê²Œ í•«í‚¤ë¥¼ ë§Œë“œëŠ”ê°€?"</i>
+						ì¢‹ì€ ì§ˆë¬¸ìž…ë‹ˆë‹¤. í•«í‚¤ëŠ” í•œ ìŒì˜ ::ë¡œ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í‚¤ë‚˜ í‚¤ ì¡°í•©ì˜ <b>ì˜¤ë¥¸ìª½ì—</b> <code>::</code>ì´ ìžˆì–´ì•¼ í•©ë‹ˆë‹¤. ê·¸ë¦¬ê³  ë‚´ìš©ì€ ì•„ëž˜ì— ìžˆì–´ì•¼ í•˜ê³ , ë°”ë¡œ ë”°ë¼ì„œ ì•„ëž˜ì— <code>Return</code>ì´ ìžˆì–´ì•¼ í•©ë‹ˆë‹¤.<br />
 					</p>
-					<p class="note">ÁÖÀÇ: ¿¹¿Ü°¡ ÀÖÁö¸¸, ±×·± °ÍµéÀº È¥¶õ¸¸ °¡Áß ½ÃÅ³ »ÓÀÔ´Ï´Ù. ±×·¡¼­ ±×·± °ÍµéÀº ÀÌ ÀÚ½À¼­¿¡¼­ ´Ù·çÁö ¾Ê½À´Ï´Ù. Àû¾îµµ Áö±ÝÀº ¾Æ´Õ´Ï´Ù.</p>
+					<p class="note">ì£¼ì˜: ì˜ˆì™¸ê°€ ìžˆì§€ë§Œ, ê·¸ëŸ° ê²ƒë“¤ì€ í˜¼ëž€ë§Œ ê°€ì¤‘ ì‹œí‚¬ ë¿ìž…ë‹ˆë‹¤. ê·¸ëž˜ì„œ ê·¸ëŸ° ê²ƒë“¤ì€ ì´ ìžìŠµì„œì—ì„œ ë‹¤ë£¨ì§€ ì•ŠìŠµë‹ˆë‹¤. ì ì–´ë„ ì§€ê¸ˆì€ ì•„ë‹™ë‹ˆë‹¤.</p>
 <pre>
 esc::
    MsgBox Escape!!!!
 Return
 </pre>
-					<p>ÇÖ ½ºÆ®¸µÀº ÇÑ ½ÖÀÇ ::·Î ¸¸µì´Ï´Ù.  ±× »çÀÌ¿¡ ÅØ½ºÆ® ±³Ã¼¸¦ ÃË¹ßÇÏ°í ½ÍÀº ÅØ½ºÆ®¸¦ ³Ö½À´Ï´Ù.
-					¹Ý¸é¿¡ Å¸ÀÚµÈ ÅØ½ºÆ®¸¦ ´ë½ÅÇÒ ÅØ½ºÆ®´Â µÎ ¹øÂ°  :: ½ÖÀÇ <b>¿À¸¥ÂÊ¿¡</b> ¹èÄ¡ÇÕ´Ï´Ù.</p>
-					<p>ÇÖ½ºÆ®¸µÀº À§¿¡ ¾ð±ÞÇÑ ¹Ù¿Í °°ÀÌ ½ºÅ©¸³Æ®µÈ ÇàÀ§¸¦ ÃË¹ßÇÒ ¼ö ÀÖ½À´Ï´Ù. ÇÖÅ°¿Í ¶È °°ÀÌ <i>"¸ÚÁö°Ô ÀÏÀ» ÇÏ°Å¶ó"</i>¿Í °°Àº ¸¶¹ýÀÇ ÁÖ¹®ÀÔ´Ï´Ù.</p>
+					<p>í•« ìŠ¤íŠ¸ë§ì€ í•œ ìŒì˜ ::ë¡œ ë§Œë“­ë‹ˆë‹¤.  ê·¸ ì‚¬ì´ì— í…ìŠ¤íŠ¸ êµì²´ë¥¼ ì´‰ë°œí•˜ê³  ì‹¶ì€ í…ìŠ¤íŠ¸ë¥¼ ë„£ìŠµë‹ˆë‹¤.
+					ë°˜ë©´ì— íƒ€ìžëœ í…ìŠ¤íŠ¸ë¥¼ ëŒ€ì‹ í•  í…ìŠ¤íŠ¸ëŠ” ë‘ ë²ˆì§¸  :: ìŒì˜ <b>ì˜¤ë¥¸ìª½ì—</b> ë°°ì¹˜í•©ë‹ˆë‹¤.</p>
+					<p>í•«ìŠ¤íŠ¸ë§ì€ ìœ„ì— ì–¸ê¸‰í•œ ë°”ì™€ ê°™ì´ ìŠ¤í¬ë¦½íŠ¸ëœ í–‰ìœ„ë¥¼ ì´‰ë°œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í•«í‚¤ì™€ ë˜‘ ê°™ì´ <i>"ë©‹ì§€ê²Œ ì¼ì„ í•˜ê±°ë¼"</i>ì™€ ê°™ì€ ë§ˆë²•ì˜ ì£¼ë¬¸ìž…ë‹ˆë‹¤.</p>
 <pre>
 ::btw::
    MsgBox You typed "btw".
@@ -274,8 +275,8 @@ Return
 </pre>
 
 					<p>
-						¾Ë¾Æ¾ß ÇÒ ¸ÚÁø ÀÏÀº °¢ ÇÖÅ°, ÇÖ ½ºÆ®¸µ, ¶óº§ ±×¸®°í ¾ÆÁ÷ ¾ð±ÞÇÏÁö ¾ÊÀº ¸¹Àº °Íµé¸¶´Ù 
-						¸¹Àº ÁÙÀÇ ÄÚµå¸¦ °¡Áú ¼ö ÀÖ´Ù´Â °ÍÀÔ´Ï´Ù.
+						ì•Œì•„ì•¼ í•  ë©‹ì§„ ì¼ì€ ê° í•«í‚¤, í•« ìŠ¤íŠ¸ë§, ë¼ë²¨ ê·¸ë¦¬ê³  ì•„ì§ ì–¸ê¸‰í•˜ì§€ ì•Šì€ ë§Žì€ ê²ƒë“¤ë§ˆë‹¤ 
+						ë§Žì€ ì¤„ì˜ ì½”ë“œë¥¼ ê°€ì§ˆ ìˆ˜ ìžˆë‹¤ëŠ” ê²ƒìž…ë‹ˆë‹¤.
 					</p>
 
 <pre>
@@ -290,14 +291,14 @@ Return
 Return
 </pre>
 
-					<h3 id="s21">a. Å°¿Í ±×ÀÇ ½ÅºñÇÑ ½Éº¼</h3>
+					<h3 id="s21">a. í‚¤ì™€ ê·¸ì˜ ì‹ ë¹„í•œ ì‹¬ë³¼</h3>
 
 					<div>
-						±Ã±ÝÇÏ½Ç °Ì´Ï´Ù. <i>"µµµ¥Ã¼ ¾î¶»°Ô ^ÀÌ CTRLÀ» ¶æÇÑ´Ù´Â °É ¾Ë ¼ö ÀÖÁö?!"</i>. À½, ÁÁÀº Áú¹®ÀÔ´Ï´Ù. 
-						 ^¿Í ±âÅ¸ ½Éº¼ÀÌ ¹«¾ùÀ» ¶æÇÏ´ÂÁö µ½±â À§ÇØ, ´ÙÀ½ Ç¥¿¡ ¸ð¾Æ º¸¾Ò½À´Ï´Ù:<br />
+						ê¶ê¸ˆí•˜ì‹¤ ê²ë‹ˆë‹¤. <i>"ë„ë°ì²´ ì–´ë–»ê²Œ ^ì´ CTRLì„ ëœ»í•œë‹¤ëŠ” ê±¸ ì•Œ ìˆ˜ ìžˆì§€?!"</i>. ìŒ, ì¢‹ì€ ì§ˆë¬¸ìž…ë‹ˆë‹¤. 
+						 ^ì™€ ê¸°íƒ€ ì‹¬ë³¼ì´ ë¬´ì—‡ì„ ëœ»í•˜ëŠ”ì§€ ë•ê¸° ìœ„í•´, ë‹¤ìŒ í‘œì— ëª¨ì•„ ë³´ì•˜ìŠµë‹ˆë‹¤:<br />
 						<table class="info">
-							<tr><th>½Éº¼</th><th>¼³¸í</th></tr>
-							<tr><td><strong>#</strong></td><td>Win (À©µµ¿ìÁî ·Î°í Å°)</td></tr>
+							<tr><th>ì‹¬ë³¼</th><th>ì„¤ëª…</th></tr>
+							<tr><td><strong>#</strong></td><td>Win (ìœˆë„ìš°ì¦ˆ ë¡œê³  í‚¤)</td></tr>
 							<tr><td><strong>!</strong></td><td>Alt</td></tr>
 							<tr><td><strong>^</strong></td><td>Control</td></tr>
 							<tr><td><strong>+</strong></td><td>Shift</td></tr>
@@ -306,29 +307,29 @@ Return
 									<strong>&amp;</strong>
 								</td>
 								<td>
-									¾ÚÆÛ¼¾µå´Â µÎ °³ÀÇ Å° ¶Ç´Â ¸¶¿ì½º ¹öÆ° »çÀÌ¿¡ »ç¿ëµÇ¾î ¸ÂÃã ÇÖÅ°·Î Á¶ÇÕÇØ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.
+									ì•°í¼ì„¼ë“œëŠ” ë‘ ê°œì˜ í‚¤ ë˜ëŠ” ë§ˆìš°ìŠ¤ ë²„íŠ¼ ì‚¬ì´ì— ì‚¬ìš©ë˜ì–´ ë§žì¶¤ í•«í‚¤ë¡œ ì¡°í•©í•´ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 								</td>
 							</tr>
 						</table>
 						<p>
 							<strong>
-								(¿ÏÀüÇÑ ½Éº¼ ¸ñ·ÏÀº <a href="Hotkeys.htm">ÇÖÅ°</a> ÆäÀÌÁö¸¦ ÂüÁ¶ÇÕ´Ï´Ù)
+								(ì™„ì „í•œ ì‹¬ë³¼ ëª©ë¡ì€ <a href="Hotkeys.htm">í•«í‚¤</a> íŽ˜ì´ì§€ë¥¼ ì°¸ì¡°í•©ë‹ˆë‹¤)
 							</strong>
 						</p>
 					</div>
 					<p>
-						Ãß°¡·Î, ´ÙÀ½Àº ÇÖÅ°ÀÇ <b>¿ÞÂÊ¿¡ </b>»ç¿ëÇÒ ¼ö ÀÖ´Â ¸ðµç/°ÅÀÇ ´ëºÎºÐÀÇ ÇÖÅ° ÀÌ¸§ ¸ñ·ÏÀÔ´Ï´Ù:<br /><a href="KeyList.htm">KeyList.htm</a>
+						ì¶”ê°€ë¡œ, ë‹¤ìŒì€ í•«í‚¤ì˜ <b>ì™¼ìª½ì— </b>ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” ëª¨ë“ /ê±°ì˜ ëŒ€ë¶€ë¶„ì˜ í•«í‚¤ ì´ë¦„ ëª©ë¡ìž…ë‹ˆë‹¤:<br /><a href="KeyList.htm">KeyList.htm</a>
 					</p>
 					<p>
-						µÎ °³ÀÇ Å°¸¦ (¿ÀÁ÷ µÎ °³±îÁö¸¸) Á¶ÇÕÇØ Á¤ÀÇÇÒ ¼ö ÀÖ½À´Ï´Ù (Á¶ÀÌ½ºÆ½ ¹öÆ° Á¦¿Ü).
-						±× »çÀÌ¿¡ <b>&amp;</b>¸¦ »ç¿ëÇÏ¸é µË´Ï´Ù.
-						¾Æ·¡ÀÇ ¿¹Á¦¿¡¼­, <span class="key">Numpad0</span>¸¦ ´©¸¥ ´ÙÀ½
-						µÎ ¹øÂ° Å°¸¦ ´­·¯¼­ ÇÖÅ°¸¦ ÃË¹ß½ÃÄÑ º¸°Ú½À´Ï´Ù:
+						ë‘ ê°œì˜ í‚¤ë¥¼ (ì˜¤ì§ ë‘ ê°œê¹Œì§€ë§Œ) ì¡°í•©í•´ ì •ì˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì¡°ì´ìŠ¤í‹± ë²„íŠ¼ ì œì™¸).
+						ê·¸ ì‚¬ì´ì— <b>&amp;</b>ë¥¼ ì‚¬ìš©í•˜ë©´ ë©ë‹ˆë‹¤.
+						ì•„ëž˜ì˜ ì˜ˆì œì—ì„œ, <span class="key">Numpad0</span>ë¥¼ ëˆ„ë¥¸ ë‹¤ìŒ
+						ë‘ ë²ˆì§¸ í‚¤ë¥¼ ëˆŒëŸ¬ì„œ í•«í‚¤ë¥¼ ì´‰ë°œì‹œì¼œ ë³´ê² ìŠµë‹ˆë‹¤:
 					</p>
 
 <pre>
 Numpad0 &amp; Numpad1::
-   MsgBox Numpad0À» ´©¸£°í ÀÖ´Â µ¿¾È Numpad1¸¦ ´­·¶½À´Ï´Ù.
+   MsgBox Numpad0ì„ ëˆ„ë¥´ê³  ìžˆëŠ” ë™ì•ˆ Numpad1ë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.
 Return
 
 Numpad0 &amp; Numpad2::
@@ -337,8 +338,8 @@ Return
 </pre>
 
 					<p>
-						±×·¯³ª ÀÌÁ¦ ÇÖ½ºÆ®¸µÀº ÇÖÅ°°¡ ±×·± °ÍÃ³·³ ¸ÚÁø ¼ö½ÄÅ°µéÀÌ ÀÖÀ»±î ±Ã±ÝÇÏ½Ç °Ì´Ï´Ù. ¹°·Ð ÀÖ½À´Ï´Ù!<br />
-						ÇÖ½ºÆ®¸µ ¼ö½ÄÅ°´Â Ã¹ ¹øÂ°  :: ½Ö »çÀÌ¿¡ µé¾î°©´Ï´Ù. ´ÙÀ½°ú °°ÀÌ:
+						ê·¸ëŸ¬ë‚˜ ì´ì œ í•«ìŠ¤íŠ¸ë§ì€ í•«í‚¤ê°€ ê·¸ëŸ° ê²ƒì²˜ëŸ¼ ë©‹ì§„ ìˆ˜ì‹í‚¤ë“¤ì´ ìžˆì„ê¹Œ ê¶ê¸ˆí•˜ì‹¤ ê²ë‹ˆë‹¤. ë¬¼ë¡  ìžˆìŠµë‹ˆë‹¤!<br />
+						í•«ìŠ¤íŠ¸ë§ ìˆ˜ì‹í‚¤ëŠ” ì²« ë²ˆì§¸  :: ìŒ ì‚¬ì´ì— ë“¤ì–´ê°‘ë‹ˆë‹¤. ë‹¤ìŒê³¼ ê°™ì´:
 					</p>
 
 <pre>
@@ -346,47 +347,47 @@ Return
 </pre>
 
 					<p class="note">
-						ÇÖÅ°¿Í ÇÖ½ºÆ®¸µ ¼ö½ÄÅ°¿¡ °üÇÑ ´õ ÀÚ¼¼ÇÑ Á¤º¸¿Í ¿¹Á¦´Â ´ÙÀ½À» ÂüÁ¶ÇÕ´Ï´Ù:<br />
-						<a href="Hotkeys.htm">ÇÖÅ°</a><br />
-						<a href="Hotstrings.htm">ÇÖ½ºÆ®¸µ</a>
+						í•«í‚¤ì™€ í•«ìŠ¤íŠ¸ë§ ìˆ˜ì‹í‚¤ì— ê´€í•œ ë” ìžì„¸í•œ ì •ë³´ì™€ ì˜ˆì œëŠ” ë‹¤ìŒì„ ì°¸ì¡°í•©ë‹ˆë‹¤:<br />
+						<a href="Hotkeys.htm">í•«í‚¤</a><br />
+						<a href="Hotstrings.htm">í•«ìŠ¤íŠ¸ë§</a>
 					</p>
-					<h3 id="s22">b. Ã¢ Àü¿ë ÇÖÅ°/ÇÖ½ºÆ®¸µ</h3>
+					<h3 id="s22">b. ì°½ ì „ìš© í•«í‚¤/í•«ìŠ¤íŠ¸ë§</h3>
 
-					<p>Á¾Á¾ ÇÖÅ°³ª ÇÖ½ºÆ®¸µÀÌ Æ¯Á¤ Ã¢¿¡¼­¸¸ ÀÛµ¿ÇßÀ¸¸é (¶Ç´Â ÀÛµ¿ÇÏÁö ¸»¾ÒÀ¸¸é) ÇÏ°í ¹Ù¶ö °æ¿ì°¡ ÀÖ½À´Ï´Ù. ¾Õ¿¡ #¸¦ µÎ°í ´ÙÀ½ÀÇ È¯»óÀûÀÎ ¸í·É¾î¸¦ »ç¿ëÇÏ¸é µË´Ï´Ù.</p>
+					<p>ì¢…ì¢… í•«í‚¤ë‚˜ í•«ìŠ¤íŠ¸ë§ì´ íŠ¹ì • ì°½ì—ì„œë§Œ ìž‘ë™í–ˆìœ¼ë©´ (ë˜ëŠ” ìž‘ë™í•˜ì§€ ë§ì•˜ìœ¼ë©´) í•˜ê³  ë°”ëž„ ê²½ìš°ê°€ ìžˆìŠµë‹ˆë‹¤. ì•žì— #ë¥¼ ë‘ê³  ë‹¤ìŒì˜ í™˜ìƒì ì¸ ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ë©´ ë©ë‹ˆë‹¤.</p>
 					<p>#IfWinActive<br />
 					#IfWinExist</p>
 					<p>
-						(±â¼úÀûÀ¸·Î "Áö½Ã¾î"¶ó°í ºÒ¸®¿ì´Â) ÀÌ Æ¯º°ÇÑ ¸í·É¾îµéÀº ¹®¸ÆÀ»-°¨ÁöÇÏ´Â ÇÖÅ°¿Í ÇÖ½ºÆ®¸µÀ» ¸¸µì´Ï´Ù. ±×³É Ã¢ Á¦¸ñÀ» ÁöÁ¤ÇÏ¸é µË´Ï´Ù. ±×·¯³ª ¾î¶² °æ¿ì´Â HWND³ª ±×·ì ¶Ç´Â Å¬·¡½º¸¦ ÁöÁ¤ÇÏ°í ½ÍÀ» °æ¿ìµµ ÀÖ½À´Ï´Ù. ±×·± °ÍµéÀº Á» °í±Þ ÁÖÁ¦ÀÌ¹Ç·Î ´ÙÀ½¿¡¼­ ´õ ±í°Ô ´Ù·ì´Ï´Ù: <a href="commands/_IfWinActive.htm">#IfWinActive</a>.
+						(ê¸°ìˆ ì ìœ¼ë¡œ "ì§€ì‹œì–´"ë¼ê³  ë¶ˆë¦¬ìš°ëŠ”) ì´ íŠ¹ë³„í•œ ëª…ë ¹ì–´ë“¤ì€ ë¬¸ë§¥ì„-ê°ì§€í•˜ëŠ” í•«í‚¤ì™€ í•«ìŠ¤íŠ¸ë§ì„ ë§Œë“­ë‹ˆë‹¤. ê·¸ëƒ¥ ì°½ ì œëª©ì„ ì§€ì •í•˜ë©´ ë©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ì–´ë–¤ ê²½ìš°ëŠ” HWNDë‚˜ ê·¸ë£¹ ë˜ëŠ” í´ëž˜ìŠ¤ë¥¼ ì§€ì •í•˜ê³  ì‹¶ì„ ê²½ìš°ë„ ìžˆìŠµë‹ˆë‹¤. ê·¸ëŸ° ê²ƒë“¤ì€ ì¢€ ê³ ê¸‰ ì£¼ì œì´ë¯€ë¡œ ë‹¤ìŒì—ì„œ ë” ê¹Šê²Œ ë‹¤ë£¹ë‹ˆë‹¤: <a href="commands/_IfWinActive.htm">#IfWinActive</a>.
 					</p>
 <pre>
 #IfWinActive Untitled - Notepad
 #space::
-   MsgBox ³ëÆ®ÆÐµå¿¡¼­ Win+Spacebar¸¦ ´­·¶½À´Ï´Ù.
+   MsgBox ë…¸íŠ¸íŒ¨ë“œì—ì„œ Win+Spacebarë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.
 Return
 #IfWinActive
 </pre>
-					<p>¹®¸Æ °¨Áö¸¦ ²ô·Á¸é, #IfWin ¸í·É¾î´Â ÁöÁ¤ÇÏµÇ ±×ÀÇ ¸ðµç ¸Å°³º¯¼ö¸¦ ºó Ã¤·Î µÎ¸é µË´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+					<p>ë¬¸ë§¥ ê°ì§€ë¥¼ ë„ë ¤ë©´, #IfWin ëª…ë ¹ì–´ëŠ” ì§€ì •í•˜ë˜ ê·¸ì˜ ëª¨ë“  ë§¤ê°œë³€ìˆ˜ë¥¼ ë¹ˆ ì±„ë¡œ ë‘ë©´ ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre>
 <em>; Notepad</em>
 #IfWinActive untitled - Notepad
 !q::
-   MsgBox, ³ëÆ®ÆÐµå¿¡¼­  Alt ¿Í Q¸¦ ´­·¶½À´Ï´Ù.
+   MsgBox, ë…¸íŠ¸íŒ¨ë“œì—ì„œ  Alt ì™€ Që¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.
 Return
 #IfWinActive
 
-<em>; Untitled - Notepad°¡ ¾Æ´Ñ ¸ðµç Ã¢</em>
+<em>; Untitled - Notepadê°€ ì•„ë‹Œ ëª¨ë“  ì°½</em>
 !q::
-   MsgBox, ¾î¶² Ã¢ÀÎÁö´Â ¸ð¸£Áö¸¸ Alt¿Í Q¸¦ ´­·¶½À´Ï´Ù.
+   MsgBox, ì–´ë–¤ ì°½ì¸ì§€ëŠ” ëª¨ë¥´ì§€ë§Œ Altì™€ Që¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.
 Return
 </pre>
-					<p>#IfWin ¸í·É¾î°¡ ²¨Á® ÀÖÀ¸¸é (¶Ç´Â ½ºÅ©¸³Æ® ¾È¿¡¼­ ÀüÇô »ç¿ëµÇÁö ¾ÊÀ¸¸é), ¸ðµç ÇÖÅ°¿Í ÇÖ½ºÆ®¸µÀº ¸ðµç Ã¢¿¡ ¹ÝÀÀÇÕ´Ï´Ù.</p><br />
-					<p>#IfWin ¸í·É¾î´Â À§Ä¡¿¡ ¿µÇâÀ» ¹ÌÄ¨´Ï´Ù: ¹°¸®ÀûÀ¸·Î ÀÌ ¸í·É¾î ¾Æ·¡¿¡ ÀÖ´Â ¸ðµç ÇÖÅ°¿Í ÇÖ½ºÆ®¸µÀº ¸ðµÎ ¿µÇâÀ» ¹Þ½À´Ï´Ù.</p>
+					<p>#IfWin ëª…ë ¹ì–´ê°€ êº¼ì ¸ ìžˆìœ¼ë©´ (ë˜ëŠ” ìŠ¤í¬ë¦½íŠ¸ ì•ˆì—ì„œ ì „í˜€ ì‚¬ìš©ë˜ì§€ ì•Šìœ¼ë©´), ëª¨ë“  í•«í‚¤ì™€ í•«ìŠ¤íŠ¸ë§ì€ ëª¨ë“  ì°½ì— ë°˜ì‘í•©ë‹ˆë‹¤.</p><br />
+					<p>#IfWin ëª…ë ¹ì–´ëŠ” ìœ„ì¹˜ì— ì˜í–¥ì„ ë¯¸ì¹©ë‹ˆë‹¤: ë¬¼ë¦¬ì ìœ¼ë¡œ ì´ ëª…ë ¹ì–´ ì•„ëž˜ì— ìžˆëŠ” ëª¨ë“  í•«í‚¤ì™€ í•«ìŠ¤íŠ¸ë§ì€ ëª¨ë‘ ì˜í–¥ì„ ë°›ìŠµë‹ˆë‹¤.</p>
 
 <pre>
 <em>; Notepad</em>
 #IfWinActive ahk_class Notepad
 #space::
-   MsgBox, ³ëÆ®ÆÐµå¿¡¼­ Win+Spacebar¸¦ ´­·¶½À´Ï´Ù.
+   MsgBox, ë…¸íŠ¸íŒ¨ë“œì—ì„œ Win+Spacebarë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.
 Return
 ::msg::You typed msg in Notepad
 #IfWinActive
@@ -394,17 +395,17 @@ Return
 <em>; MSPaint</em>
 #IfWinActive untitled - Paint
 #space::
-   MsgBox, MSPaint¿¡¼­ Win+Spacebar¸¦ ´­·¶½À´Ï´Ù!
+   MsgBox, MSPaintì—ì„œ Win+Spacebarë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤!
 Return
 ::msg::You typed msg in MSPaint!
 #IfWinActive
 </pre>
-					<p class="note">´õ ±íÀº Á¤º¸°ú ºñ½ÁÇÑ ¸í·É¾îµéÀ» º¸·Á¸é, ´ÙÀ½À» ÂüÁ¶ÇÕ´Ï´Ù:<br />
+					<p class="note">ë” ê¹Šì€ ì •ë³´ê³¼ ë¹„ìŠ·í•œ ëª…ë ¹ì–´ë“¤ì„ ë³´ë ¤ë©´, ë‹¤ìŒì„ ì°¸ì¡°í•©ë‹ˆë‹¤:<br />
 					<a href="commands/_IfWinActive.htm">#IfWinActive</a></p>
-					<h3 id="s23">c. ÆÄÀÏ´ç ´ÙÁß ÇÖÅ°/ÇÖ½ºÆ®¸µ</h3>			   
-					<p>¾î¶² ÀÌÀ¯·Î ÀÌ·± »ý°¢ÀÌ µå½ÇÁö ¸ð¸£°Ú½À´Ï´Ù. 
-					±×·¡¼­, ¸íÈ®ÇÏ°Ô ¹àÇô µÓ´Ï´Ù: 
-					¿ÀÅäÇÖÅ°´Â ÆÄÀÏ ÇÏ³ª´ç <i>¾ó¸¶µçÁö ¸¹Àº</i> ÇÖÅ°¿Í ÇÖ½ºÆ®¸µÀ» °¡Áú ¼ö ÀÖ½À´Ï´Ù. 1ÀÌµç  3253ÀÌµç (±× ÀÌ»óÀÌµç) »ó°ü¾ø½À´Ï´Ù.</p>
+					<h3 id="s23">c. íŒŒì¼ë‹¹ ë‹¤ì¤‘ í•«í‚¤/í•«ìŠ¤íŠ¸ë§</h3>			   
+					<p>ì–´ë–¤ ì´ìœ ë¡œ ì´ëŸ° ìƒê°ì´ ë“œì‹¤ì§€ ëª¨ë¥´ê² ìŠµë‹ˆë‹¤. 
+					ê·¸ëž˜ì„œ, ëª…í™•í•˜ê²Œ ë°í˜€ ë‘¡ë‹ˆë‹¤: 
+					ì˜¤í† í•«í‚¤ëŠ” íŒŒì¼ í•˜ë‚˜ë‹¹ <i>ì–¼ë§ˆë“ ì§€ ë§Žì€</i> í•«í‚¤ì™€ í•«ìŠ¤íŠ¸ë§ì„ ê°€ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 1ì´ë“   3253ì´ë“  (ê·¸ ì´ìƒì´ë“ ) ìƒê´€ì—†ìŠµë‹ˆë‹¤.</p>
 <pre>
 #i::
    run, http://www.google.com/
@@ -428,21 +429,21 @@ Return
 ::ameria::America
 </pre>
 
-					<p>À§ÀÇ ÄÚµå¸¦ ¿Ïº®ÇÏ°Ô ¹Þ¾ÆµéÀÏ ¼öÀÖ´Â ´ÙÁß ÇÖÅ°¿Í ´ÙÁß ÇÖ½ºÆ®¸µÀÔ´Ï´Ù. ¸ðµÎ°¡ ÇÏ³ª·Î ¹¶¶×±×·ÁÁø Çàº¹ÇÑ ½ºÅ©¸³Æ® ÆÄÀÏÀÌ³×¿ä.</p>
+					<p>ìœ„ì˜ ì½”ë“œë¥¼ ì™„ë²½í•˜ê²Œ ë°›ì•„ë“¤ì¼ ìˆ˜ìžˆëŠ” ë‹¤ì¤‘ í•«í‚¤ì™€ ë‹¤ì¤‘ í•«ìŠ¤íŠ¸ë§ìž…ë‹ˆë‹¤. ëª¨ë‘ê°€ í•˜ë‚˜ë¡œ ë­‰ëš±ê·¸ë ¤ì§„ í–‰ë³µí•œ ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì´ë„¤ìš”.</p>
 
 
-					<h3 id="s24">d. ¿¹Á¦</h3>
-<pre>::btw::By the way                          <em>; <a href="commands/_Hotstring.htm">EndChar</a>¸¦ ´©¸£¸é ¹Ù·Î "btw"¸¦ "By the way"·Î ±³Ã¼ÇÕ´Ï´Ù.</em>
-:*:btw::By the way                         <em>; "btw"¸¦ "By the way"·Î ¹Ù²ß´Ï´Ù.  EndChar°¡ ÇÊ¿ä ¾ø½À´Ï´Ù.</em>
+					<h3 id="s24">d. ì˜ˆì œ</h3>
+<pre>::btw::By the way                          <em>; <a href="commands/_Hotstring.htm">EndChar</a>ë¥¼ ëˆ„ë¥´ë©´ ë°”ë¡œ "btw"ë¥¼ "By the way"ë¡œ êµì²´í•©ë‹ˆë‹¤.</em>
+:*:btw::By the way                         <em>; "btw"ë¥¼ "By the way"ë¡œ ë°”ê¿‰ë‹ˆë‹¤.  EndCharê°€ í•„ìš” ì—†ìŠµë‹ˆë‹¤.</em>
 
 ^n::                                       <em>; Ctrl &amp; n Hotkey</em>
-   run, notepad.exe                        <em>; Ctrl &amp; nÀ» ´©·Á¸é ¹Ù·Î notepad.exe¸¦ ½ÇÇàÇÕ´Ï´Ù</em>
-Return                                     <em>; ÇÖÅ°°¡ ³¡³³´Ï´Ù. ÀÌ ¾Æ·¡ÀÇ ÄÚµå´Â ½ÇÇàµÇÁö ¾Ê½À´Ï´Ù.</em>
+   run, notepad.exe                        <em>; Ctrl &amp; nì„ ëˆ„ë ¤ë©´ ë°”ë¡œ notepad.exeë¥¼ ì‹¤í–‰í•©ë‹ˆë‹¤</em>
+Return                                     <em>; í•«í‚¤ê°€ ëë‚©ë‹ˆë‹¤. ì´ ì•„ëž˜ì˜ ì½”ë“œëŠ” ì‹¤í–‰ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</em>
 
 ^b::                                       <em>; Ctrl &amp; b Hotkey</em>
-   send, {ctrl down}c{ctrl up}             <em>; ¼±ÅÃµÈ ÅØ½ºÆ®¸¦ º¹»çÇÕ´Ï´Ù. ^cµµ »ç¿ëÇÒ ¼ö ÀÖÁö¸¸, ÀÌ ¹æ¹ýÀÌ ´õ ¾ÈÀüÇÕ´Ï´Ù.</em>
-   SendInput, [b]{ctrl down}v{ctrl up}[/b] <em>; ¼±ÅÃµÈ ÅØ½ºÆ®¸¦ bbcode (forum) Bold ÅÂ±× ¾È¿¡ ½Î ³Ö½À´Ï´Ù.</em>
-Return                                     <em>; ÇÖÅ°°¡ ³¡³³´Ï´Ù. ÀÌ ¾Æ·¡ÀÇ ÄÚµå´Â ½ÇÇàµÇÁö ¾Ê½À´Ï´Ù.</em>
+   send, {ctrl down}c{ctrl up}             <em>; ì„ íƒëœ í…ìŠ¤íŠ¸ë¥¼ ë³µì‚¬í•©ë‹ˆë‹¤. ^cë„ ì‚¬ìš©í•  ìˆ˜ ìžˆì§€ë§Œ, ì´ ë°©ë²•ì´ ë” ì•ˆì „í•©ë‹ˆë‹¤.</em>
+   SendInput, [b]{ctrl down}v{ctrl up}[/b] <em>; ì„ íƒëœ í…ìŠ¤íŠ¸ë¥¼ bbcode (forum) Bold íƒœê·¸ ì•ˆì— ì‹¸ ë„£ìŠµë‹ˆë‹¤.</em>
+Return                                     <em>; í•«í‚¤ê°€ ëë‚©ë‹ˆë‹¤. ì´ ì•„ëž˜ì˜ ì½”ë“œëŠ” ì‹¤í–‰ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</em>
 </pre>
 
 					<!-- PAGE 2 -->
@@ -450,40 +451,40 @@ Return                                     <em>; ÇÖÅ°°¡ ³¡³³´Ï´Ù. ÀÌ ¾Æ·¡ÀÇ ÄÚµå
 					<!-- PAGE 2 -->
 				</div>
 				<div id="sending_keystrokes" class="section">
-					<h2 id="s3">3 - Å° ´­¸² Àü¼ÛÇÏ±â</h2>
+					<h2 id="s3">3 - í‚¤ ëˆŒë¦¼ ì „ì†¡í•˜ê¸°</h2>
 					<p>
-						±×·¡¼­ ÀÌÁ¦ Å°µéÀ» ÇÁ·Î±×·¥À¸·Î Àü¼Û(Å¸ÀÚ)ÇÏ±â·Î °áÁ¤ÇÕ´Ï´Ù.
-						<a href="commands/Send.htm">Send</a> ¸í·É¾î¸¦ »ç¿ëÇÏ¸é µË´Ï´Ù. 
-						¹®ÀÚ ±×´ë·Î Å°µéÀ» Àü¼ÛÇÕ´Ï´Ù. ¸¶Ä¡ Å°¸¦ Å¸ÀÚÇÏ°Å³ª ´©¸¥ °ÍÃ³·³ Èä³» ³À´Ï´Ù.<br /><br />
-						´õ ±í°Ô µé¾î°¡±â Àü¿¡, ¸ÕÀú ¾à°£ÀÇ ÀÏ¹ÝÀûÀÎ ¹®Á¦µéÀ» ´Ù·ì´Ï´Ù:<br />
-						ÇÖÅ°Ã³·³, Send¿¡µµ Æ¯¼öÇÑ Å°°¡ ÀÖ½À´Ï´Ù. <a href="commands/Send.htm">¾ÆÁÖ ¸¹½À´Ï´Ù.</a><br />
-						´ÙÀ½Àº °¡Àå ¸¹ÀÌ »ç¿ëÇÏ´Â ½Éº¼ ³× °¡ÁöÀÔ´Ï´Ù:
+						ê·¸ëž˜ì„œ ì´ì œ í‚¤ë“¤ì„ í”„ë¡œê·¸ëž¨ìœ¼ë¡œ ì „ì†¡(íƒ€ìž)í•˜ê¸°ë¡œ ê²°ì •í•©ë‹ˆë‹¤.
+						<a href="commands/Send.htm">Send</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ë©´ ë©ë‹ˆë‹¤. 
+						ë¬¸ìž ê·¸ëŒ€ë¡œ í‚¤ë“¤ì„ ì „ì†¡í•©ë‹ˆë‹¤. ë§ˆì¹˜ í‚¤ë¥¼ íƒ€ìží•˜ê±°ë‚˜ ëˆ„ë¥¸ ê²ƒì²˜ëŸ¼ í‰ë‚´ ëƒ…ë‹ˆë‹¤.<br /><br />
+						ë” ê¹Šê²Œ ë“¤ì–´ê°€ê¸° ì „ì—, ë¨¼ì € ì•½ê°„ì˜ ì¼ë°˜ì ì¸ ë¬¸ì œë“¤ì„ ë‹¤ë£¹ë‹ˆë‹¤:<br />
+						í•«í‚¤ì²˜ëŸ¼, Sendì—ë„ íŠ¹ìˆ˜í•œ í‚¤ê°€ ìžˆìŠµë‹ˆë‹¤. <a href="commands/Send.htm">ì•„ì£¼ ë§ŽìŠµë‹ˆë‹¤.</a><br />
+						ë‹¤ìŒì€ ê°€ìž¥ ë§Žì´ ì‚¬ìš©í•˜ëŠ” ì‹¬ë³¼ ë„¤ ê°€ì§€ìž…ë‹ˆë‹¤:
 					</p>
 					<div>
 						<hr />
-						<p><span class="red">!</span>: ALT Å°¸¦ Àü¼ÛÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <em>Send This is text!a</em>´Â "This is text" Å°µéÀ» ´©¸¥ ´ÙÀ½ ALT+a¸¦ ´©¸¥ °Í°ú °°½À´Ï´Ù. 
-						<strong>ÁÖÀÇ</strong>: !A ´Â ´Ù¸¥ ÇÁ·Î±×·¥¿¡¼­´Â !a¿Í ÀüÇô ´Ù¸¥ È¿°ú¸¦ ³À´Ï´Ù. ÀÌ°ÍÀº  !A°¡  ALT+SHIFT+A¸¦ ´©¸¥ °ÍÀÎ ¹Ý¸é !a´Â ALT+a¸¦ ´©¸¥ °ÍÀÌ±â ¶§¹®ÀÔ´Ï´Ù. 
-						Àß ¸ð¸£°Ú´Ù¸é, ¼Ò¹®ÀÚ¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
-						<p><span class="red">+</span>: SHIFT Å°¸¦ Àü¼ÛÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <em>Send +abC </em>´Â ÅØ½ºÆ® "AbC"¸¦ Àü¼ÛÇÏ°í, <em>Send !+a</em>´Â ALT+SHIFT+a¸¦ ´©¸¨´Ï´Ù.</p>
-						<p><span class="red">^</span>: CONTROL (Ctrl) Å°¸¦ Àü¼ÛÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <em>Send ^!a</em>´Â CTRL+ALT+a¸¦ ´©¸¥ °Í°ú °°°í, <em>Send ^{Home}</em>Àº CONTROL+HOMEÀ» Àü¼ÛÇÕ´Ï´Ù. <strong>ÁÖÀÇ</strong>: ^A´Â ¾î¶² ÇÁ·Î±×·¥¿¡¼­ ^a¿Í ÀüÇô ´Ù¸¥ È¿°ú¸¦ ³À´Ï´Ù. ÀÌ°ÍÀº  ^A°¡ CONTROL+SHIFT+A¸¦ ´©¸¥ °ÍÀÌ°í ^a´Â CONTROL+a¸¦ ´©¸¥ °ÍÀÌ±â ¶§¹®ÀÔ´Ï´Ù. 
-						Àß ¸ð¸£°Ú´Ù¸é, ¼Ò¹®ÀÚ¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
-						<p><span class="red">#</span>: WIN Å°¸¦ Àü¼ÛÇÕ´Ï´Ù (À©µµ¿ìÁî ·Î°í°¡ ±×·ÁÁø Å°) ±×·¯¹Ç·Î <em>Send #e</em>´Â À©µµ¿ìÁî Å°¸¦ ´©¸¥ ´ÙÀ½ ±âÈ£ "e"¸¦ Àü¼ÛÇÕ´Ï´Ù.</p>
+						<p><span class="red">!</span>: ALT í‚¤ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <em>Send This is text!a</em>ëŠ” "This is text" í‚¤ë“¤ì„ ëˆ„ë¥¸ ë‹¤ìŒ ALT+aë¥¼ ëˆ„ë¥¸ ê²ƒê³¼ ê°™ìŠµë‹ˆë‹¤. 
+						<strong>ì£¼ì˜</strong>: !A ëŠ” ë‹¤ë¥¸ í”„ë¡œê·¸ëž¨ì—ì„œëŠ” !aì™€ ì „í˜€ ë‹¤ë¥¸ íš¨ê³¼ë¥¼ ëƒ…ë‹ˆë‹¤. ì´ê²ƒì€  !Aê°€  ALT+SHIFT+Aë¥¼ ëˆ„ë¥¸ ê²ƒì¸ ë°˜ë©´ !aëŠ” ALT+aë¥¼ ëˆ„ë¥¸ ê²ƒì´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. 
+						ìž˜ ëª¨ë¥´ê² ë‹¤ë©´, ì†Œë¬¸ìžë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
+						<p><span class="red">+</span>: SHIFT í‚¤ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <em>Send +abC </em>ëŠ” í…ìŠ¤íŠ¸ "AbC"ë¥¼ ì „ì†¡í•˜ê³ , <em>Send !+a</em>ëŠ” ALT+SHIFT+aë¥¼ ëˆ„ë¦…ë‹ˆë‹¤.</p>
+						<p><span class="red">^</span>: CONTROL (Ctrl) í‚¤ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <em>Send ^!a</em>ëŠ” CTRL+ALT+aë¥¼ ëˆ„ë¥¸ ê²ƒê³¼ ê°™ê³ , <em>Send ^{Home}</em>ì€ CONTROL+HOMEì„ ì „ì†¡í•©ë‹ˆë‹¤. <strong>ì£¼ì˜</strong>: ^AëŠ” ì–´ë–¤ í”„ë¡œê·¸ëž¨ì—ì„œ ^aì™€ ì „í˜€ ë‹¤ë¥¸ íš¨ê³¼ë¥¼ ëƒ…ë‹ˆë‹¤. ì´ê²ƒì€  ^Aê°€ CONTROL+SHIFT+Aë¥¼ ëˆ„ë¥¸ ê²ƒì´ê³  ^aëŠ” CONTROL+aë¥¼ ëˆ„ë¥¸ ê²ƒì´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. 
+						ìž˜ ëª¨ë¥´ê² ë‹¤ë©´, ì†Œë¬¸ìžë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
+						<p><span class="red">#</span>: WIN í‚¤ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤ (ìœˆë„ìš°ì¦ˆ ë¡œê³ ê°€ ê·¸ë ¤ì§„ í‚¤) ê·¸ëŸ¬ë¯€ë¡œ <em>Send #e</em>ëŠ” ìœˆë„ìš°ì¦ˆ í‚¤ë¥¼ ëˆ„ë¥¸ ë‹¤ìŒ ê¸°í˜¸ "e"ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤.</p>
 					</div>
-					<p><i><strong>´ÙÀ½ µÎ ¹®´Ü¿¡¼­ <a href="commands/Send.htm">Àü¼Û ÆäÀÌÁö¿¡ °üÇÑ Å×ÀÌºí¿¡ °üÇÏ¿©</a> ¾ð±ÞÇÕ´Ï´Ù.</strong><br /></i></p>
+					<p><i><strong>ë‹¤ìŒ ë‘ ë¬¸ë‹¨ì—ì„œ <a href="commands/Send.htm">ì „ì†¡ íŽ˜ì´ì§€ì— ê´€í•œ í…Œì´ë¸”ì— ê´€í•˜ì—¬</a> ì–¸ê¸‰í•©ë‹ˆë‹¤.</strong><br /></i></p>
 					<p class="note">
-						ÁÖÀÇ:<br /> ÀÌ Å×ÀÌºíÀº <a href="Hotkeys.htm">ÇÖÅ°</a>¿¡ <b>Àû¿ëµÇÁö ¾Ê½À´Ï´Ù</b>. ÇÖÅ°¸¦ ¸¸µé ¶§ <span class="key">CTRL</span> ¶Ç´Â <span class="key">ENTER</span> (¶Ç´Â ±âÅ¸ ¾î¶² Å°ÀÌµç) {} ¾È¿¡ ½Î ³ÖÁö ¸øÇÑ´Ù´Â ¶æÀÔ´Ï´Ù.
+						ì£¼ì˜:<br /> ì´ í…Œì´ë¸”ì€ <a href="Hotkeys.htm">í•«í‚¤</a>ì— <b>ì ìš©ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤</b>. í•«í‚¤ë¥¼ ë§Œë“¤ ë•Œ <span class="key">CTRL</span> ë˜ëŠ” <span class="key">ENTER</span> (ë˜ëŠ” ê¸°íƒ€ ì–´ë–¤ í‚¤ì´ë“ ) {} ì•ˆì— ì‹¸ ë„£ì§€ ëª»í•œë‹¤ëŠ” ëœ»ìž…ë‹ˆë‹¤.
 					</p><br />
 
 					<div>
-						´ÙÀ½ ¿¹Á¦¿¡¼­ ÇÖÅ°¿¡ ÇØ¼­´Â ¾ÈµÇ´Â °ÍµéÀ» º¸¿©ÁÝ´Ï´Ù:
+						ë‹¤ìŒ ì˜ˆì œì—ì„œ í•«í‚¤ì— í•´ì„œëŠ” ì•ˆë˜ëŠ” ê²ƒë“¤ì„ ë³´ì—¬ì¤ë‹ˆë‹¤:
 <pre>
-<em>; ÇÖÅ°¸¦ ¸¸µé ¶§...
-; Àß¸øµÊ</em>
+<em>; í•«í‚¤ë¥¼ ë§Œë“¤ ë•Œ...
+; ìž˜ëª»ë¨</em>
 {LCtrl}::
    send, AutoHotkey
 Return
 
-<em>; ¿Ã¹Ù¸§</em>
+<em>; ì˜¬ë°”ë¦„</em>
 LCtrl::
    send, AutoHotkey
 Return
@@ -491,121 +492,121 @@ Return
 					</div>
 					<hr />
 					<div>
-						<p>À§ÀÇ °Å´ëÇÑ Å×ÀÌºí¿¡ ¾ÆÁÖ ¸¹Àº Æ¯¼ö Å°µéÀÌ AHK¿¡ ³»ÀåµÇ¾î ÀÖ´Â °ÍÀ» º¼ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î: <code>{enter}</code> ±×¸®°í <code>{space}</code>.<br />
-						¸¹Àº »ç¶÷µéÀÌ È°°ýÈ£°¡ ±×³É Àç¹Ì·Î ¹èÄ¡µÇ¾î ÀÖ´Ù°í »ý°¢ÇÕ´Ï´Ù. ±×·¯³ª »ç½Ç <b>²À ÇÊ¿äÇÕ´Ï´Ù</b>. ±×·¸°Ô ÇØ¾ß AHK°¡ <code>{!}</code>ÀÌ "´À³¦Ç¥"ÀÏ »Ó "<span class="key">Alt</span> Å°¸¦ ´©¸£¶ó"´Â ¶æÀÌ ¾Æ´ÔÀ» ÀÌÇØÇÕ´Ï´Ù. 
-						±×·¡¼­ <a href="commands/Send.htm">send</a> ÆäÀÌÁö¿¡ ÀÖ´Â Å×ÀÌºíÀ» ²À ¾Ï±âÇÏ½Ã°í °ýÈ£¸¦ Á¦ ÀÚ¸®¿¡ ¹èÄ¡ÇÏ½Ê½Ã¿À.</p>
+						<p>ìœ„ì˜ ê±°ëŒ€í•œ í…Œì´ë¸”ì— ì•„ì£¼ ë§Žì€ íŠ¹ìˆ˜ í‚¤ë“¤ì´ AHKì— ë‚´ìž¥ë˜ì–´ ìžˆëŠ” ê²ƒì„ ë³¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>{enter}</code> ê·¸ë¦¬ê³  <code>{space}</code>.<br />
+						ë§Žì€ ì‚¬ëžŒë“¤ì´ í™œê´„í˜¸ê°€ ê·¸ëƒ¥ ìž¬ë¯¸ë¡œ ë°°ì¹˜ë˜ì–´ ìžˆë‹¤ê³  ìƒê°í•©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ì‚¬ì‹¤ <b>ê¼­ í•„ìš”í•©ë‹ˆë‹¤</b>. ê·¸ë ‡ê²Œ í•´ì•¼ AHKê°€ <code>{!}</code>ì´ "ëŠë‚Œí‘œ"ì¼ ë¿ "<span class="key">Alt</span> í‚¤ë¥¼ ëˆ„ë¥´ë¼"ëŠ” ëœ»ì´ ì•„ë‹˜ì„ ì´í•´í•©ë‹ˆë‹¤. 
+						ê·¸ëž˜ì„œ <a href="commands/Send.htm">send</a> íŽ˜ì´ì§€ì— ìžˆëŠ” í…Œì´ë¸”ì„ ê¼­ ì•”ê¸°í•˜ì‹œê³  ê´„í˜¸ë¥¼ ì œ ìžë¦¬ì— ë°°ì¹˜í•˜ì‹­ì‹œì˜¤.</p>
 <pre>
-<em>;  !°¡ {} ¾È¿¡ ÀÖ´Â °Í¿¡ ÁÖ¸ñÇÏ½Ê½Ã¿À. ±×·¸Áö ¾ÊÀ¸¸é  AHK°¡
-;  ALT Å°¸¦ ´­·¯ ¹ö¸®±â ¶§¹®ÀÔ´Ï´Ù.</em>
+<em>;  !ê°€ {} ì•ˆì— ìžˆëŠ” ê²ƒì— ì£¼ëª©í•˜ì‹­ì‹œì˜¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´  AHKê°€
+;  ALT í‚¤ë¥¼ ëˆŒëŸ¬ ë²„ë¦¬ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</em>
 send, This text has been typed{!}
 </pre>
 
 <pre>
-<em>; À§¿Í °°Áö¸¸,  ÀÌ ¹ø¿¡´Â ENTER Å°ÀÔ´Ï´Ù. AHK´Â "enter"¸¦ Å¸ÀÚÇØ ¹ö¸³´Ï´Ù...
-; ... {} ¾È¿¡ ½Î¿© ÀÖÁö ¾Ê´Ù¸é ¸»ÀÔ´Ï´Ù.</em>
-send, Multiple enter lines have enter been sent. <em>; Àß¸øµÊ</em>
-send, Multiple{enter}lines have{enter}been sent. <em>; ¿Ã¹Ù¸§</em>
+<em>; ìœ„ì™€ ê°™ì§€ë§Œ,  ì´ ë²ˆì—ëŠ” ENTER í‚¤ìž…ë‹ˆë‹¤. AHKëŠ” "enter"ë¥¼ íƒ€ìží•´ ë²„ë¦½ë‹ˆë‹¤...
+; ... {} ì•ˆì— ì‹¸ì—¬ ìžˆì§€ ì•Šë‹¤ë©´ ë§ìž…ë‹ˆë‹¤.</em>
+send, Multiple enter lines have enter been sent. <em>; ìž˜ëª»ë¨</em>
+send, Multiple{enter}lines have{enter}been sent. <em>; ì˜¬ë°”ë¦„</em>
 </pre>
 						<div>
-							¶Ç´Ù¸¥ ¹®Á¦´Â »ç¶÷µéÀÌ  send ¸í·É¾î¿¡¼­ <b>¸ðµç °ÍµéÀº</b> °ýÈ£¿¡ ½Î ³Ö¾î¾ß ÇÑ´Ù°í »ý°¢ÇÑ´Ù´Â °ÍÀÔ´Ï´Ù. 
-							±×·¸Áö ¾Ê½À´Ï´Ù. Ç¥¿¡ ¾øÀ¸¸é °ýÈ£°¡ ÇÊ¿äÇÏÁö ¾Ê½À´Ï´Ù.
-							ÀÏ¹ÝÀûÀÎ ±âÈ£¿Í ¼ýÀÚ ½ÉÁö¾î ¾î¶² ½Éº¼µéÀº <b>°ýÈ£¿¡ ½Î ³ÖÀ» ÇÊ¿ä°¡ ¾ø½À´Ï´Ù</b> (¿¹¸¦ µé¾î <code>{}'s.</code>¿¡¼­ Á¡) <br /> 
-							¶ÇÇÑ,  Send ¸í·É¾î·Î 1 °³ ÀÌ»óÀÇ ±âÈ£³ª ¼ýÀÚ ¶Ç´Â ½Éº¼À» ´Ü ¹ø¿¡ º¸³¾ ¼ö ÀÖ½À´Ï´Ù. 
-							±×·¡¼­ 1 °³ÀÇ ±âÈ£¸¶´Ù µû·Îµû·Î ¼ö ¸¹Àº Send ¸í·É¾î¸¦ »ç¿ëÇÒ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.
+							ë˜ë‹¤ë¥¸ ë¬¸ì œëŠ” ì‚¬ëžŒë“¤ì´  send ëª…ë ¹ì–´ì—ì„œ <b>ëª¨ë“  ê²ƒë“¤ì€</b> ê´„í˜¸ì— ì‹¸ ë„£ì–´ì•¼ í•œë‹¤ê³  ìƒê°í•œë‹¤ëŠ” ê²ƒìž…ë‹ˆë‹¤. 
+							ê·¸ë ‡ì§€ ì•ŠìŠµë‹ˆë‹¤. í‘œì— ì—†ìœ¼ë©´ ê´„í˜¸ê°€ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+							ì¼ë°˜ì ì¸ ê¸°í˜¸ì™€ ìˆ«ìž ì‹¬ì§€ì–´ ì–´ë–¤ ì‹¬ë³¼ë“¤ì€ <b>ê´„í˜¸ì— ì‹¸ ë„£ì„ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤</b> (ì˜ˆë¥¼ ë“¤ì–´ <code>{}'s.</code>ì—ì„œ ì ) <br /> 
+							ë˜í•œ,  Send ëª…ë ¹ì–´ë¡œ 1 ê°œ ì´ìƒì˜ ê¸°í˜¸ë‚˜ ìˆ«ìž ë˜ëŠ” ì‹¬ë³¼ì„ ë‹¨ ë²ˆì— ë³´ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 
+							ê·¸ëž˜ì„œ 1 ê°œì˜ ê¸°í˜¸ë§ˆë‹¤ ë”°ë¡œë”°ë¡œ ìˆ˜ ë§Žì€ Send ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•  í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.
 
 <pre>
-<em>; À§¿¡ ¾ð±ÞÇÑ Å×ÀÌºí¿¡ ¾ø´Â ±âÈ£³ª ´Ü¾îµéÀ» µû·Î °ýÈ£¿¡ ½Î ³ÖÁö ¸¶½Ê½Ã¿À.</em>
-send, {a}       <em>; Àß¸øµÊ</em>
-send, {b}       <em>; Àß¸øµÊ</em>
-send, {c}       <em>; Àß¸øµÊ</em>
-send, {a}{b}{c} <em>; Àß¸øµÊ</em>
-send, {abc}     <em>; Àß¸øµÊ</em>
-send, abc       <em>; ¿Ã¹Ù¸§</em>
+<em>; ìœ„ì— ì–¸ê¸‰í•œ í…Œì´ë¸”ì— ì—†ëŠ” ê¸°í˜¸ë‚˜ ë‹¨ì–´ë“¤ì„ ë”°ë¡œ ê´„í˜¸ì— ì‹¸ ë„£ì§€ ë§ˆì‹­ì‹œì˜¤.</em>
+send, {a}       <em>; ìž˜ëª»ë¨</em>
+send, {b}       <em>; ìž˜ëª»ë¨</em>
+send, {c}       <em>; ìž˜ëª»ë¨</em>
+send, {a}{b}{c} <em>; ìž˜ëª»ë¨</em>
+send, {abc}     <em>; ìž˜ëª»ë¨</em>
+send, abc       <em>; ì˜¬ë°”ë¦„</em>
 </pre>
 						</div>
 						<div>
-							Å°¸¦ ´©¸£°Å³ª ¶¼·Á¸é, Å° ÀÌ¸§À» °ýÈ£·Î µÑ·¯ ½Î°í UPÀÌ³ª DOWNÀ» »ç¿ëÇÕ´Ï´Ù.
+							í‚¤ë¥¼ ëˆ„ë¥´ê±°ë‚˜ ë–¼ë ¤ë©´, í‚¤ ì´ë¦„ì„ ê´„í˜¸ë¡œ ë‘˜ëŸ¬ ì‹¸ê³  UPì´ë‚˜ DOWNì„ ì‚¬ìš©í•©ë‹ˆë‹¤.
 
 <pre>
-<em>; ´ÙÀ½Àº Å° ÇÏ³ª¸¦ ´©¸§°ú µ¿½Ã¿¡ ¶Ç´Ù¸¥ Å° (¶Ç´Â Å°µé)À» ´©¸£´Â ¹æ¹ýÀÔ´Ï´Ù.
-; ÇÑ°¡Áö ¹æ¹ýÀÌ ÀÛµ¿ÇÏÁö ¾ÊÀ¸¸é, ´Ù¸¥ ¹æ¹ýÀ» ½ÃµµÇØ º¸½Ê½Ã¿À.</em>
-send, ^s                     <em>; µÑ ´Ù CTRL+s¸¦ Àü¼ÛÇÕ´Ï´Ù.</em>
-send, {ctrl down}s{ctrl up}  <em>; µÑ ´Ù CTRL+s¸¦ Àü¼ÛÇÕ´Ï´Ù.</em>
+<em>; ë‹¤ìŒì€ í‚¤ í•˜ë‚˜ë¥¼ ëˆ„ë¦„ê³¼ ë™ì‹œì— ë˜ë‹¤ë¥¸ í‚¤ (ë˜ëŠ” í‚¤ë“¤)ì„ ëˆ„ë¥´ëŠ” ë°©ë²•ìž…ë‹ˆë‹¤.
+; í•œê°€ì§€ ë°©ë²•ì´ ìž‘ë™í•˜ì§€ ì•Šìœ¼ë©´, ë‹¤ë¥¸ ë°©ë²•ì„ ì‹œë„í•´ ë³´ì‹­ì‹œì˜¤.</em>
+send, ^s                     <em>; ë‘˜ ë‹¤ CTRL+së¥¼ ì „ì†¡í•©ë‹ˆë‹¤.</em>
+send, {ctrl down}s{ctrl up}  <em>; ë‘˜ ë‹¤ CTRL+së¥¼ ì „ì†¡í•©ë‹ˆë‹¤.</em>
 Send, {ctrl down}c{ctrl up}
 Send, {b down}{b up}
 Send, {TAB down}{TAB up}
-Send, {Up down}  <em>; À§ È­»ìÇ¥ Å°¸¦ ´©¸¨´Ï´Ù.</em>
-Sleep, 1000      <em>; ÀÏ ÃÊ µ¿¾È ´©¸£°í ÀÖ½À´Ï´Ù.</em>
-Send, {Up up}    <em>; À§ È­»ìÇ¥ Å°¸¦ ¶Á´Ï´Ù.</em>
+Send, {Up down}  <em>; ìœ„ í™”ì‚´í‘œ í‚¤ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤.</em>
+Sleep, 1000      <em>; ì¼ ì´ˆ ë™ì•ˆ ëˆ„ë¥´ê³  ìžˆìŠµë‹ˆë‹¤.</em>
+Send, {Up up}    <em>; ìœ„ í™”ì‚´í‘œ í‚¤ë¥¼ ë—ë‹ˆë‹¤.</em>
 </pre>
 						</div>
 					</div>
 					<div>
-							±×·¯³ª ÀÌÁ¦ ±Ã±ÝÇÏ½Ç °Ì´Ï´Ù.
-							<i>"Á¤¸» ±ä send ¸í·É¾îµéÀ» ¾î¶»°Ô Àß ÀÐÀ» ¼ö ÀÖÁö?"</i>.
-							½±½À´Ï´Ù. °è¼Ó ¼½¼ÇÀ» »ç¿ëÇÏ¸é µË´Ï´Ù. 
-							±×³É »õ ÁÙ¿¡ ¹Ý°ýÈ£¸¦ ¿­°í, ³»¿ëÀ» ³Ö°í, ¸¶Áö¸·À¸·Î ¹Ý°ýÈ£·Î ÁÙÀ» ´Ý½À´Ï´Ù. 
-							´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Scripts.htm#continuation">°è¼Ó ¼½¼Ç</a>À» ÂüÁ¶ÇÕ´Ï´Ù.
+							ê·¸ëŸ¬ë‚˜ ì´ì œ ê¶ê¸ˆí•˜ì‹¤ ê²ë‹ˆë‹¤.
+							<i>"ì •ë§ ê¸´ send ëª…ë ¹ì–´ë“¤ì„ ì–´ë–»ê²Œ ìž˜ ì½ì„ ìˆ˜ ìžˆì§€?"</i>.
+							ì‰½ìŠµë‹ˆë‹¤. ê³„ì† ì„¹ì…˜ì„ ì‚¬ìš©í•˜ë©´ ë©ë‹ˆë‹¤. 
+							ê·¸ëƒ¥ ìƒˆ ì¤„ì— ë°˜ê´„í˜¸ë¥¼ ì—´ê³ , ë‚´ìš©ì„ ë„£ê³ , ë§ˆì§€ë§‰ìœ¼ë¡œ ë°˜ê´„í˜¸ë¡œ ì¤„ì„ ë‹«ìŠµë‹ˆë‹¤. 
+							ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Scripts.htm#continuation">ê³„ì† ì„¹ì…˜</a>ì„ ì°¸ì¡°í•©ë‹ˆë‹¤.
 <pre>
 send,
 (
-Ã¹ ¹øÂ° ÁÙ
-µÎ ¹øÂ° ÁÙ
-¿øÇÏ´Â ¸¸Å­ ÁÙÀ» ¹èÄ¡ÇÒ ¼ö ÀÖ½À´Ï´Ù.
+ì²« ë²ˆì§¸ ì¤„
+ë‘ ë²ˆì§¸ ì¤„
+ì›í•˜ëŠ” ë§Œí¼ ì¤„ì„ ë°°ì¹˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 )
 </pre>
 
 					</div>
 					<p class="note">
-						ÁÖÀÇ: ´Ù¾çÇÑ ÇüÅÂÀÇ Àü¼Û ¹æ¹ýÀÌ ÀÖ½À´Ï´Ù. 
-						°¢ÀÚ µû·Î Æ¯º°ÇÑ Æ¯Â¡ÀÌ ÀÖ½À´Ï´Ù.
-						ÀÌ Áß¿¡ ÇÏ³ª·Î ¿©·¯ºÐÀÇ ÇÊ¿ä¸¦ ÃæÁ·ÇÏÁö ¸øÇÏ¸é, ¶Ç´Ù¸¥ Á¾·ùÀÇ Àü¼Û ÇüÅÂ¸¦ ½ÃµµÇØ º¾´Ï´Ù. 
-						±×³É ¸í·É¾î ÀÌ¸§À» "send"¿¡¼­ "sendPlay" ¶Ç´Â ¿øÇÏ´Â ¾Æ¹«°ÍÀÌ³ª ½ÃµµÇØ º¾´Ï´Ù.<br />
-						´ÙÀ½Àº ÅØ½ºÆ®¸¦ Àü¼ÛÇÏ´Â °¡Àå ÈçÇÑ ¹æ¹ýÀÔ´Ï´Ù:<br />
+						ì£¼ì˜: ë‹¤ì–‘í•œ í˜•íƒœì˜ ì „ì†¡ ë°©ë²•ì´ ìžˆìŠµë‹ˆë‹¤. 
+						ê°ìž ë”°ë¡œ íŠ¹ë³„í•œ íŠ¹ì§•ì´ ìžˆìŠµë‹ˆë‹¤.
+						ì´ ì¤‘ì— í•˜ë‚˜ë¡œ ì—¬ëŸ¬ë¶„ì˜ í•„ìš”ë¥¼ ì¶©ì¡±í•˜ì§€ ëª»í•˜ë©´, ë˜ë‹¤ë¥¸ ì¢…ë¥˜ì˜ ì „ì†¡ í˜•íƒœë¥¼ ì‹œë„í•´ ë´…ë‹ˆë‹¤. 
+						ê·¸ëƒ¥ ëª…ë ¹ì–´ ì´ë¦„ì„ "send"ì—ì„œ "sendPlay" ë˜ëŠ” ì›í•˜ëŠ” ì•„ë¬´ê²ƒì´ë‚˜ ì‹œë„í•´ ë´…ë‹ˆë‹¤.<br />
+						ë‹¤ìŒì€ í…ìŠ¤íŠ¸ë¥¼ ì „ì†¡í•˜ëŠ” ê°€ìž¥ í”í•œ ë°©ë²•ìž…ë‹ˆë‹¤:<br />
 						Send<br />
 						SendRaw<br />
 						SendInput<br />
 						SendPlay<br />
 						SendEvent<br />
-						°¢ÀÚ ¾î¶² ÀÏÀ» ÇÏ´ÂÁö¿¡ °üÇÑ ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="commands/Send.htm">¿©±â¸¦ ÀÐ¾î º¸½Ê½Ã¿À</a>.
+						ê°ìž ì–´ë–¤ ì¼ì„ í•˜ëŠ”ì§€ì— ê´€í•œ ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="commands/Send.htm">ì—¬ê¸°ë¥¼ ì½ì–´ ë³´ì‹­ì‹œì˜¤</a>.
 					</p>
-					<h3 id="s31">a. °ÔÀÓ</h3>
+					<h3 id="s31">a. ê²Œìž„</h3>
 					<p>
-						<b><span style="color:red;">Áß¿äÇÕ´Ï´Ù!</span></b><br />
-						¸¹Àº °ÔÀÓÀº, Æ¯È÷ Çö´ëÀÇ °ÔÀÓÀº, ¼ÓÀÌ´Â °ÍÀ» ¹æÁöÇÏ´Â ±â´ÉÀÌ ÀÖ½À´Ï´Ù.
-						¿¹¸¦ µé¾î, ÀÌ·± Á¾·ùÀÇ °ÔÀÓÀ¸·Î´Â GameGuard, Hackshield, PunkBuster, µîµîÀÌ ÀÖ½À´Ï´Ù. 
-						°ÔÀÓÀÌ ¼ÓÀÓ ¹æÁö ½Ã½ºÅÛÀÌ ÀÖ°í ÇÖÅ°¿Í ÇÖ½ºÆ®¸µ ±×¸®°í send ¸í·É¾î°¡ ÀÛµ¿ÇÏÁö ¾Ê´Â´Ù¸é, ¾ÈÅ¸±î¿î ÀÏÀÔ´Ï´Ù.<br />
-						ÀÌ·± ½Ã½ºÅÛÀ» ¿ìÈ¸ÇÏ´Â ÀÏÀº °ÔÀÓ»çÀÇ Á¤Ã¥À» À§¹ÝÇÏ´Â °ÍÀÌ¸ç ±×·¯¸é ¿©·¯ºÐÀº Á¦¸í ´çÇÒ ¼ö ÀÖ½À´Ï´Ù. ÇØ°áÃ¥Àº ´ë´ÜÈ÷ º¹ÀâÇÕ´Ï´Ù. 
-						¾î¶² °ÔÀÓ¿¡¼­´Â ÀÛµ¿ÀÇ ±âÈ¸¸¦ ³ôÀÏ ¼ö ÀÖ´Â ¹æ¹ýÀÌ ÀÖÁö¸¸, ¸¶¹ýÀÇ <i>"´çÀå °ÔÀÓ¿¡¼­ ÀÛµ¿ÇÏ¶ó"</i> ¹öÆ°Àº ¾ø½À´Ï´Ù.
-						±×·¡¼­ Æ÷±âÇÏ±â Àü¿¡ ÀÌ <b>¸ðµç °ÍµéÀ»</b> ½ÃµµÇØ º¸½Ê½Ã¿À.<br />
+						<b><span style="color:red;">ì¤‘ìš”í•©ë‹ˆë‹¤!</span></b><br />
+						ë§Žì€ ê²Œìž„ì€, íŠ¹ížˆ í˜„ëŒ€ì˜ ê²Œìž„ì€, ì†ì´ëŠ” ê²ƒì„ ë°©ì§€í•˜ëŠ” ê¸°ëŠ¥ì´ ìžˆìŠµë‹ˆë‹¤.
+						ì˜ˆë¥¼ ë“¤ì–´, ì´ëŸ° ì¢…ë¥˜ì˜ ê²Œìž„ìœ¼ë¡œëŠ” GameGuard, Hackshield, PunkBuster, ë“±ë“±ì´ ìžˆìŠµë‹ˆë‹¤. 
+						ê²Œìž„ì´ ì†ìž„ ë°©ì§€ ì‹œìŠ¤í…œì´ ìžˆê³  í•«í‚¤ì™€ í•«ìŠ¤íŠ¸ë§ ê·¸ë¦¬ê³  send ëª…ë ¹ì–´ê°€ ìž‘ë™í•˜ì§€ ì•ŠëŠ”ë‹¤ë©´, ì•ˆíƒ€ê¹Œìš´ ì¼ìž…ë‹ˆë‹¤.<br />
+						ì´ëŸ° ì‹œìŠ¤í…œì„ ìš°íšŒí•˜ëŠ” ì¼ì€ ê²Œìž„ì‚¬ì˜ ì •ì±…ì„ ìœ„ë°˜í•˜ëŠ” ê²ƒì´ë©° ê·¸ëŸ¬ë©´ ì—¬ëŸ¬ë¶„ì€ ì œëª… ë‹¹í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í•´ê²°ì±…ì€ ëŒ€ë‹¨ížˆ ë³µìž¡í•©ë‹ˆë‹¤. 
+						ì–´ë–¤ ê²Œìž„ì—ì„œëŠ” ìž‘ë™ì˜ ê¸°íšŒë¥¼ ë†’ì¼ ìˆ˜ ìžˆëŠ” ë°©ë²•ì´ ìžˆì§€ë§Œ, ë§ˆë²•ì˜ <i>"ë‹¹ìž¥ ê²Œìž„ì—ì„œ ìž‘ë™í•˜ë¼"</i> ë²„íŠ¼ì€ ì—†ìŠµë‹ˆë‹¤.
+						ê·¸ëž˜ì„œ í¬ê¸°í•˜ê¸° ì „ì— ì´ <b>ëª¨ë“  ê²ƒë“¤ì„</b> ì‹œë„í•´ ë³´ì‹­ì‹œì˜¤.<br />
 					</p>
 
 					<p>
-						DirectX¿Í °ü·ÃµÈ ¹®Á¦µµ ÀÖ½À´Ï´Ù. ¹®Á¦°¡ ÀÖ°í °ÔÀÓÀÌ DirectX¸¦ »ç¿ëÇÑ´Ù¸é, ¾Æ·¡ÀÇ ¹æ¹ýÀ» ½ÃµµÇØ º¸½Ê½Ã¿À.
-						°¡´ÉÇÏ¸é Ã¢(Windowed ¿ªÁÖ: ÀÔ·Â ¹æ½ÄÀ» ÀüÀûÀ¸·Î ¿î¿µÃ¼Á¦¿¡ ¸Ã±è) ¸ðµå¿¡¼­ ½ÃÇèÇØ º¸½Ê½Ã¿À. ±×·¯¸é DirectX ¹®Á¦°¡ ÇØ°áµÉ Áöµµ ¸ð¸¨´Ï´Ù.<br />
-						ÇÈ¼¿ÀÌ³ª ÀÌ¹ÌÁö ¸í·É¾î¸¦ »ç¿ëÇÒ ¶§, DirectX ¹®Á¦°¡ ´õ ¸¹ÀÌ ÀÏ¾î³¯ ¼öµµ ÀÖ½À´Ï´Ù.
-						¾î¶² »öÀ» ¾òÀ¸·Á°í ½ÃµµÇÏ´ÂÁö¿¡ »ó°ü¾øÀÌ »ö±òÀÌ °ËÁ¤»öÀ¸·Î ¹Ù²ð ¼ö ÀÖ½À´Ï´Ù (0x000000).
-						±×°ÍÀº ÇØ°áÇÏ±â ¾î·Á¿î ¶Ç´Ù¸¥ ¹®Á¦ÀÔ´Ï´Ù. 
-						µÇµµ·ÏÀÌ¸é Windowed ¸ðµå¿¡¼­ ½ÇÇàÇØ º¸½Ê½Ã¿À.
+						DirectXì™€ ê´€ë ¨ëœ ë¬¸ì œë„ ìžˆìŠµë‹ˆë‹¤. ë¬¸ì œê°€ ìžˆê³  ê²Œìž„ì´ DirectXë¥¼ ì‚¬ìš©í•œë‹¤ë©´, ì•„ëž˜ì˜ ë°©ë²•ì„ ì‹œë„í•´ ë³´ì‹­ì‹œì˜¤.
+						ê°€ëŠ¥í•˜ë©´ ì°½(Windowed ì—­ì£¼: ìž…ë ¥ ë°©ì‹ì„ ì „ì ìœ¼ë¡œ ìš´ì˜ì²´ì œì— ë§¡ê¹€) ëª¨ë“œì—ì„œ ì‹œí—˜í•´ ë³´ì‹­ì‹œì˜¤. ê·¸ëŸ¬ë©´ DirectX ë¬¸ì œê°€ í•´ê²°ë  ì§€ë„ ëª¨ë¦…ë‹ˆë‹¤.<br />
+						í”½ì…€ì´ë‚˜ ì´ë¯¸ì§€ ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•  ë•Œ, DirectX ë¬¸ì œê°€ ë” ë§Žì´ ì¼ì–´ë‚  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.
+						ì–´ë–¤ ìƒ‰ì„ ì–»ìœ¼ë ¤ê³  ì‹œë„í•˜ëŠ”ì§€ì— ìƒê´€ì—†ì´ ìƒ‰ê¹”ì´ ê²€ì •ìƒ‰ìœ¼ë¡œ ë°”ë€” ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (0x000000).
+						ê·¸ê²ƒì€ í•´ê²°í•˜ê¸° ì–´ë ¤ìš´ ë˜ë‹¤ë¥¸ ë¬¸ì œìž…ë‹ˆë‹¤. 
+						ë˜ë„ë¡ì´ë©´ Windowed ëª¨ë“œì—ì„œ ì‹¤í–‰í•´ ë³´ì‹­ì‹œì˜¤.
 					</p>
 					<p>
-					AutoHotkey¸¦ ¸ðµç ÇÁ·Î±×·¥¿¡¼­ ÀÛµ¿ÇÏ½ÃÅ°´Â ´Ü ÇÑ°¡Áö ÇØ°áÃ¥Àº ¾ø½À´Ï´Ù.
-					½ÃµµÇÑ ¸ðµç °ÍÀÌ ½ÇÆÐÇÑ´Ù¸é, ¾ÈÅ¸±õ°Ôµµ AutoHotkey·Î´Â ¿©·¯ºÐÀÇ ¿ä±¸¸¦ ¸¸Á·½ÃÅ³ ¼ö ¾ø´Â °ÍÀÔ´Ï´Ù.
+					AutoHotkeyë¥¼ ëª¨ë“  í”„ë¡œê·¸ëž¨ì—ì„œ ìž‘ë™í•˜ì‹œí‚¤ëŠ” ë‹¨ í•œê°€ì§€ í•´ê²°ì±…ì€ ì—†ìŠµë‹ˆë‹¤.
+					ì‹œë„í•œ ëª¨ë“  ê²ƒì´ ì‹¤íŒ¨í•œë‹¤ë©´, ì•ˆíƒ€ê¹ê²Œë„ AutoHotkeyë¡œëŠ” ì—¬ëŸ¬ë¶„ì˜ ìš”êµ¬ë¥¼ ë§Œì¡±ì‹œí‚¬ ìˆ˜ ì—†ëŠ” ê²ƒìž…ë‹ˆë‹¤.
 					</p>
 					<div>
 						<hr />
-						<a href="FAQ.htm#games">FAQ</a> ÆäÀÌÁö¿¡¼­ ÀÎ¿ëÇÕ´Ï´Ù:<br />
-						¾î¶² °ÔÀÓÀº DirectInput¸¦ ´Üµ¶À¸·Î »ç¿ëÇÕ´Ï´Ù. ±× ºÎÀÛ¿ëÀ¸·Î, ¸ðµç ½Ã¹Ä·¹ÀÌ¼Ç Å°´­¸²°ú ¸¶¿ì½º Å¬¸¯À» ¹«½ÃÇØ ¹ö¸³´Ï´Ù. 
-						ÀÌ¸¦ ÇØ°áÇÏ·Á¸é,  ´ÙÀ½ Áß ÇÏ³ª¸¦ (¶Ç´Â Á¶ÇÕÇØ¼­) ½ÃµµÇØ º¸½Ê½Ã¿À:
+						<a href="FAQ.htm#games">FAQ</a> íŽ˜ì´ì§€ì—ì„œ ì¸ìš©í•©ë‹ˆë‹¤:<br />
+						ì–´ë–¤ ê²Œìž„ì€ DirectInputë¥¼ ë‹¨ë…ìœ¼ë¡œ ì‚¬ìš©í•©ë‹ˆë‹¤. ê·¸ ë¶€ìž‘ìš©ìœ¼ë¡œ, ëª¨ë“  ì‹œë®¬ë ˆì´ì…˜ í‚¤ëˆŒë¦¼ê³¼ ë§ˆìš°ìŠ¤ í´ë¦­ì„ ë¬´ì‹œí•´ ë²„ë¦½ë‹ˆë‹¤. 
+						ì´ë¥¼ í•´ê²°í•˜ë ¤ë©´,  ë‹¤ìŒ ì¤‘ í•˜ë‚˜ë¥¼ (ë˜ëŠ” ì¡°í•©í•´ì„œ) ì‹œë„í•´ ë³´ì‹­ì‹œì˜¤:
 						<ul>
-							<li>´ÙÀ½À» ÅëÇÏ¿© <a href="commands/Send.htm#SendPlayDetail">SendPlay</a>¸¦ »ç¿ëÇÕ´Ï´Ù.  
-							: 1) SendPlay ¸í·É¾î¸¦ »ç¿ëÇÕ´Ï´Ù; 
-							2) <a href="commands/SendMode.htm">SendMode</a>¸¦ »ç¿ëÇÕ´Ï´Ù; 
-							±×¸®°í/¶Ç´Â 3) <a href="Hotstrings.htm#SendMode">ÇÖ½ºÆ®¸µ</a> ¿É¼ÇÀÎ SP¸¦ »ç¿ëÇÕ´Ï´Ù.</li>
-							<li><a href="commands/SetKeyDelay.htm">SetKeyDelay</a>ÀÇ Áö¿¬½Ã°£À» ´Ã·Á º¾´Ï´Ù. ¿¹¸¦ µé¾î:</li>
+							<li>ë‹¤ìŒì„ í†µí•˜ì—¬ <a href="commands/Send.htm#SendPlayDetail">SendPlay</a>ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤.  
+							: 1) SendPlay ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤; 
+							2) <a href="commands/SendMode.htm">SendMode</a>ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤; 
+							ê·¸ë¦¬ê³ /ë˜ëŠ” 3) <a href="Hotstrings.htm#SendMode">í•«ìŠ¤íŠ¸ë§</a> ì˜µì…˜ì¸ SPë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤.</li>
+							<li><a href="commands/SetKeyDelay.htm">SetKeyDelay</a>ì˜ ì§€ì—°ì‹œê°„ì„ ëŠ˜ë ¤ ë´…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</li>
 							<li><code>SetKeyDelay, 0, 50</code></li>
 							<li><code>SetKeyDelay, 150, 150, Play</code></li>
-							<li><a href="commands/ControlSend.htm">ControlSend</a>¸¦ ½ÃµµÇØ º¾´Ï´Ù. ´Ù¸¥ Send ¸ðµå°¡ ¸ðµÎ ½ÇÆÐÇÏ´õ¶óµµ ÀÌ ¹æ¹ýÀº ÀÛµ¿ÇÒ °¡´É¼ºÀÌ ÀÖ½À´Ï´Ù.</li>
+							<li><a href="commands/ControlSend.htm">ControlSend</a>ë¥¼ ì‹œë„í•´ ë´…ë‹ˆë‹¤. ë‹¤ë¥¸ Send ëª¨ë“œê°€ ëª¨ë‘ ì‹¤íŒ¨í•˜ë”ë¼ë„ ì´ ë°©ë²•ì€ ìž‘ë™í•  ê°€ëŠ¥ì„±ì´ ìžˆìŠµë‹ˆë‹¤.</li>
 						</ul>
 					</div>
 					<!-- PAGE 3 -->
@@ -613,38 +614,38 @@ send,
 					<!-- PAGE 3 -->
 				</div>
 				<div id="running_programs_and_websites" class="section">
-					<h2 id="s4">4 - ÇÁ·Î±×·¥ &amp; À¥»çÀÌÆ® ½ÇÇàÇÏ±â</h2>
+					<h2 id="s4">4 - í”„ë¡œê·¸ëž¨ &amp; ì›¹ì‚¬ì´íŠ¸ ì‹¤í–‰í•˜ê¸°</h2>
 					<div>
-						<i>Mspaint.exe, Calc.exe, script.ahk</i> ½ÉÁö¾î Æú´õ °°Àº ÇÁ·Î±×·¥À» ½ÇÇàÇÏ·Á¸é,  <a href="commands/Run.htm">Run</a> ¸í·É¾î¸¦ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.
-						½ÉÁö¾î <a href="http://ahkscript.org/">http://ahkscript.org/</a>°ú °°ÀÌ URL¿¡µµ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿øÇÏ´Â ÇÁ·Î±×·¥ÀÇ À¯ÇüÀ» ½ÇÇàÇÏµµ·Ï ÄÄÇ»ÅÍ°¡ È¯°æÀÌ ¼³Á¤µÇ¾î ÀÖ´Ù¸é, ¾ÆÁÖ °£´ÜÇÕ´Ï´Ù:
+						<i>Mspaint.exe, Calc.exe, script.ahk</i> ì‹¬ì§€ì–´ í´ë” ê°™ì€ í”„ë¡œê·¸ëž¨ì„ ì‹¤í–‰í•˜ë ¤ë©´,  <a href="commands/Run.htm">Run</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+						ì‹¬ì§€ì–´ <a href="http://ahkscript.org/">http://ahkscript.org/</a>ê³¼ ê°™ì´ URLì—ë„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì›í•˜ëŠ” í”„ë¡œê·¸ëž¨ì˜ ìœ í˜•ì„ ì‹¤í–‰í•˜ë„ë¡ ì»´í“¨í„°ê°€ í™˜ê²½ì´ ì„¤ì •ë˜ì–´ ìžˆë‹¤ë©´, ì•„ì£¼ ê°„ë‹¨í•©ë‹ˆë‹¤:
 
 <pre>
-<em>; ÇÁ·Î±×·¥À» ½ÇÇàÇÕ´Ï´Ù. ÁÖÀÇ: ´ëºÎºÐÀÇ ÇÁ·Î±×·¥Àº ÀüÃ¼ ÆÄÀÏ °æ·Î¸¦ ¿ä±¸ÇÕ´Ï´Ù.</em>
+<em>; í”„ë¡œê·¸ëž¨ì„ ì‹¤í–‰í•©ë‹ˆë‹¤. ì£¼ì˜: ëŒ€ë¶€ë¶„ì˜ í”„ë¡œê·¸ëž¨ì€ ì „ì²´ íŒŒì¼ ê²½ë¡œë¥¼ ìš”êµ¬í•©ë‹ˆë‹¤.</em>
 Run, %A_ProgramFiles%\Some_Program\Program.exe
 
-<em>; À¥ »çÀÌÆ®¸¦ ½ÇÇàÇÕ´Ï´Ù</em>
+<em>; ì›¹ ì‚¬ì´íŠ¸ë¥¼ ì‹¤í–‰í•©ë‹ˆë‹¤</em>
 Run, http://ahkscript.org
 </pre>
 					</div>
 					<div>
-						¸í·É¾î-ÁÙ ¸Å°³º¯¼ö¿Í CLSID¿Í °°Àº ´Ù¸¥ °í±Þ Æ¯Â¡µéµµ ¿ª½Ã ÀÖ½À´Ï´Ù.<br />
-						´õ ¾Ë°í ½Í´Ù¸é <a href="commands/Run.htm">ÀÌ ÆäÀÌÁö</a>¸¦ ÂüÁ¶ÇÕ´Ï´Ù.
+						ëª…ë ¹ì–´-ì¤„ ë§¤ê°œë³€ìˆ˜ì™€ CLSIDì™€ ê°™ì€ ë‹¤ë¥¸ ê³ ê¸‰ íŠ¹ì§•ë“¤ë„ ì—­ì‹œ ìžˆìŠµë‹ˆë‹¤.<br />
+						ë” ì•Œê³  ì‹¶ë‹¤ë©´ <a href="commands/Run.htm">ì´ íŽ˜ì´ì§€</a>ë¥¼ ì°¸ì¡°í•©ë‹ˆë‹¤.
 						<br />
-						´ÙÀ½¿¡ ¸î °¡Áö ¿¹¸¦ ´õ º¸¿©ÁÝ´Ï´Ù:
+						ë‹¤ìŒì— ëª‡ ê°€ì§€ ì˜ˆë¥¼ ë” ë³´ì—¬ì¤ë‹ˆë‹¤:
 <pre>
-<em>;  À©µµ¿ìÁîÀÇ Ç¥ÁØ ÇÁ·Î±×·¥µé°ú °°ÀÌ ÀüÃ¼ °æ·Î°¡ ÇÊ¿äÇÏÁö ¾ÊÀº ÇÁ·Î±×·¥ÀÌ ÀÖ½À´Ï´Ù.</em>
+<em>;  ìœˆë„ìš°ì¦ˆì˜ í‘œì¤€ í”„ë¡œê·¸ëž¨ë“¤ê³¼ ê°™ì´ ì „ì²´ ê²½ë¡œê°€ í•„ìš”í•˜ì§€ ì•Šì€ í”„ë¡œê·¸ëž¨ì´ ìžˆìŠµë‹ˆë‹¤.</em>
 Run, Notepad.exe
 Run, MsPaint.exe
 
-<em>; ³»Àå <a href="Variables.htm#BuiltIn">AHK º¯¼ö</a>¸¦ »ç¿ëÇÏ¿© "My Documents" Æú´õ¸¦ ¿±´Ï´Ù.</em>
+<em>; ë‚´ìž¥ <a href="Variables.htm#BuiltIn">AHK ë³€ìˆ˜</a>ë¥¼ ì‚¬ìš©í•˜ì—¬ "My Documents" í´ë”ë¥¼ ì—½ë‹ˆë‹¤.</em>
 Run, %A_MyDocuments%
 
-<em>; À¥ »çÀÌÆ®¸¦ ½ÇÇàÇÕ´Ï´Ù</em>
+<em>; ì›¹ ì‚¬ì´íŠ¸ë¥¼ ì‹¤í–‰í•©ë‹ˆë‹¤</em>
 Run, http://ahkscript.org
 Run, http://www.google.com
 </pre>
 						<br />
-						<p class="note">´õ ±íÀº Á¤º¸¿Í ´õ ¸¹Àº ¿¹Á¦´Â ´ÙÀ½À» ÂüÁ¶ÇÕ´Ï´Ù:<br /><a href="commands/Run.htm">commands/Run.htm</a>.</p>
+						<p class="note">ë” ê¹Šì€ ì •ë³´ì™€ ë” ë§Žì€ ì˜ˆì œëŠ” ë‹¤ìŒì„ ì°¸ì¡°í•©ë‹ˆë‹¤:<br /><a href="commands/Run.htm">commands/Run.htm</a>.</p>
 					</div>
 
 
@@ -653,101 +654,101 @@ Run, http://www.google.com
 					<!-- PAGE 4 -->
 				</div>
 				<div id="commands_vs_functions" class="section">
-					<h2 id="s5">5 - ¸í·É¾î vs. ÇÔ¼ö</h2>
+					<h2 id="s5">5 - ëª…ë ¹ì–´ vs. í•¨ìˆ˜</h2>
 					<div>
-						¿ÀÅäÇÖÅ°´Â ÄÚµå¸¦ ¸¸µå´Âµ¥ »ç¿ëµÇ´Â Å©°Ô µÎ °¡Áö À¯ÇüÀÌ ÀÖ½À´Ï´Ù:<br />
-						¸í·É¾î¿Í ÇÔ¼ö°¡ ±×°ÍÀÔ´Ï´Ù<br />
-						<p class="note">µµ¿òÀÌ µÇ´Â ¸µÅ©:<br />
-							¸ðµç ¸í·É¾î ¸ñ·Ï: <a href="commands/index.htm">commands/index.htm</a><br />
-							¸ðµç ³»Àå ÇÔ¼ö ¸ñ·Ï: <a href="Functions.htm#BuiltIn">Functions.htm#BuiltIn</a></p>
+						ì˜¤í† í•«í‚¤ëŠ” ì½”ë“œë¥¼ ë§Œë“œëŠ”ë° ì‚¬ìš©ë˜ëŠ” í¬ê²Œ ë‘ ê°€ì§€ ìœ í˜•ì´ ìžˆìŠµë‹ˆë‹¤:<br />
+						ëª…ë ¹ì–´ì™€ í•¨ìˆ˜ê°€ ê·¸ê²ƒìž…ë‹ˆë‹¤<br />
+						<p class="note">ë„ì›€ì´ ë˜ëŠ” ë§í¬:<br />
+							ëª¨ë“  ëª…ë ¹ì–´ ëª©ë¡: <a href="commands/index.htm">commands/index.htm</a><br />
+							ëª¨ë“  ë‚´ìž¥ í•¨ìˆ˜ ëª©ë¡: <a href="Functions.htm#BuiltIn">Functions.htm#BuiltIn</a></p>
 					</div>
-					<h3>¸í·É¾î</h3>
+					<h3>ëª…ë ¹ì–´</h3>
 					<p>
-						±×ÀÇ ±¸¹®À» º¸¸é (±×ÀÇ °Ñ ¸ð½ÀÀ¸·Î) ¸í·É¾îÀÎÁö ¾Æ´ÑÁö ±¸ºÐÇÒ ¼ö ÀÖ½À´Ï´Ù.
-						¸í·É¾î´Â ¸Å°³º¯¼ö¿¡ ¹Ý°ýÈ£"()"¸¦ »ç¿ëÇÏÁö ¾ÊÁö¸¸ ÇÔ¼ö´Â »ç¿ëÇÕ´Ï´Ù. 
-						±×·¡¼­ ¸í·É¾î´Â ´ÙÀ½°ú °°ÀÌ º¸ÀÔ´Ï´Ù:<br />
+						ê·¸ì˜ êµ¬ë¬¸ì„ ë³´ë©´ (ê·¸ì˜ ê²‰ ëª¨ìŠµìœ¼ë¡œ) ëª…ë ¹ì–´ì¸ì§€ ì•„ë‹Œì§€ êµ¬ë¶„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+						ëª…ë ¹ì–´ëŠ” ë§¤ê°œë³€ìˆ˜ì— ë°˜ê´„í˜¸"()"ë¥¼ ì‚¬ìš©í•˜ì§€ ì•Šì§€ë§Œ í•¨ìˆ˜ëŠ” ì‚¬ìš©í•©ë‹ˆë‹¤. 
+						ê·¸ëž˜ì„œ ëª…ë ¹ì–´ëŠ” ë‹¤ìŒê³¼ ê°™ì´ ë³´ìž…ë‹ˆë‹¤:<br />
 						<code>Command, parameter1, parameter2, parameter3</code><br />
 
-						<br />¸í·É¾î¸¦ »ç¿ëÇÒ ¶§, ´Ù¸¥ ¸í·É¾î¸¦ °°Àº ÁÙ¿¡ ³õÀ» ¼ö ¾ø½À´Ï´Ù (¿¹¿Ü:  <a href="commands/IfEqual.htm">ifEqual</a>).<br />
-						¸í·É¾î¸¦ ´Ù¸¥ ¸í·É¾îÀÇ ¸Å°³º¯¼ö ¾È¿¡ ³õÀ» ¼ö ¾ø½À´Ï´Ù.
+						<br />ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•  ë•Œ, ë‹¤ë¥¸ ëª…ë ¹ì–´ë¥¼ ê°™ì€ ì¤„ì— ë†“ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤ (ì˜ˆì™¸:  <a href="commands/IfEqual.htm">ifEqual</a>).<br />
+						ëª…ë ¹ì–´ë¥¼ ë‹¤ë¥¸ ëª…ë ¹ì–´ì˜ ë§¤ê°œë³€ìˆ˜ ì•ˆì— ë†“ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.
 					</p>
 
 <pre>
-Msgbox, Hello Run, Notepad.exe   <em>; Àß¸øµÊ</em>
-Msgbox, Hello, Run, Notepad.exe  <em>; Àß¸øµÊ</em>
+Msgbox, Hello Run, Notepad.exe   <em>; ìž˜ëª»ë¨</em>
+Msgbox, Hello, Run, Notepad.exe  <em>; ìž˜ëª»ë¨</em>
 
-Msgbox, Hello      <em>; ¿Ã¹Ù¸§</em>
+Msgbox, Hello      <em>; ì˜¬ë°”ë¦„</em>
 Run, Notepad.exe
 </pre>
 
-					¸í·É¾î´Â ¶Ç "ÀüÅëÀûÀÎ ±¸¹®"À» »ç¿ëÇÑ´Ù´Â Á¡¿¡¼­ ÇÔ¼ö¿Í ´Ù¸¨´Ï´Ù. 
-					±× ÀÇ¹Ì´Â: <code>º¯¼ö</code>¸¦ »ç¿ëÇÒ ¶§, ±× µÑ·¹¿¡ %¸¦ »ç¿ëÇÒ ÇÊ¿ä°¡ ÀÖ´Ù´Â ¶æÀÔ´Ï´Ù. <code>%variable%</code>. 
-					ÅØ½ºÆ®¿Í ¼ýÀÚ´Â "ÀÎ¿ë ºÎÈ£" ¾È¿¡ ÀÖÀ» ÇÊ¿ä°¡ ¾ø½À´Ï´Ù: ¿¹, <code>This is some text</code>. 
-					°Ô´Ù°¡, ÇÔ¼ö¿Í´Â ´Ù¸£°Ô ¸Å°³º¯¼ö ¾È¿¡¼­ ¼öÇÐ½ÄÀ» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.
+					ëª…ë ¹ì–´ëŠ” ë˜ "ì „í†µì ì¸ êµ¬ë¬¸"ì„ ì‚¬ìš©í•œë‹¤ëŠ” ì ì—ì„œ í•¨ìˆ˜ì™€ ë‹¤ë¦…ë‹ˆë‹¤. 
+					ê·¸ ì˜ë¯¸ëŠ”: <code>ë³€ìˆ˜</code>ë¥¼ ì‚¬ìš©í•  ë•Œ, ê·¸ ë‘˜ë ˆì— %ë¥¼ ì‚¬ìš©í•  í•„ìš”ê°€ ìžˆë‹¤ëŠ” ëœ»ìž…ë‹ˆë‹¤. <code>%variable%</code>. 
+					í…ìŠ¤íŠ¸ì™€ ìˆ«ìžëŠ” "ì¸ìš© ë¶€í˜¸" ì•ˆì— ìžˆì„ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤: ì˜ˆ, <code>This is some text</code>. 
+					ê²Œë‹¤ê°€, í•¨ìˆ˜ì™€ëŠ” ë‹¤ë¥´ê²Œ ë§¤ê°œë³€ìˆ˜ ì•ˆì—ì„œ ìˆ˜í•™ì‹ì„ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.
 					<p class="note">
-						¸Å°³º¯¼ö¿¡ ¼öÇÐ½ÄÀ» »ç¿ëÇÒ ¼ö´Â ÀÖ½À´Ï´Ù. °­Á¦·Î <code>%</code> ±âÈ£·Î Ç¥Çö½ÄÀ» ¸¸µé¸é µÇÁö¸¸, ÀÌ¿¡ °üÇØ¼­´Â ´Ù·çÁö ¾Ê°Ú½À´Ï´Ù.
+						ë§¤ê°œë³€ìˆ˜ì— ìˆ˜í•™ì‹ì„ ì‚¬ìš©í•  ìˆ˜ëŠ” ìžˆìŠµë‹ˆë‹¤. ê°•ì œë¡œ <code>%</code> ê¸°í˜¸ë¡œ í‘œí˜„ì‹ì„ ë§Œë“¤ë©´ ë˜ì§€ë§Œ, ì´ì— ê´€í•´ì„œëŠ” ë‹¤ë£¨ì§€ ì•Šê² ìŠµë‹ˆë‹¤.
 					</p>
-					<h3>ÇÔ¼ö</h3>
+					<h3>í•¨ìˆ˜</h3>
 					<div>
-						À§¿¡ ¾ð±ÞÇÑ ¹Ù¿Í °°ÀÌ, ÇÔ¼ö´Â ¹Ý°ýÈ£¸¦ »ç¿ëÇÏ±â ¶§¹®¿¡ ´Ù¸¨´Ï´Ù. ÀüÇüÀûÀÎ ÇÔ¼öÀÇ ¸ð½ÀÀº ´ÙÀ½°ú °°½À´Ï´Ù:<br />
+						ìœ„ì— ì–¸ê¸‰í•œ ë°”ì™€ ê°™ì´, í•¨ìˆ˜ëŠ” ë°˜ê´„í˜¸ë¥¼ ì‚¬ìš©í•˜ê¸° ë•Œë¬¸ì— ë‹¤ë¦…ë‹ˆë‹¤. ì „í˜•ì ì¸ í•¨ìˆ˜ì˜ ëª¨ìŠµì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤:<br />
 						<code>Function(parameter1, parameter2, parameter3)</code><br /><br />
-						ÇÔ¼ö´Â ¸î °¡Áö Å« Â÷ÀÌÁ¡ÀÌ ÀÖ½À´Ï´Ù:
+						í•¨ìˆ˜ëŠ” ëª‡ ê°€ì§€ í° ì°¨ì´ì ì´ ìžˆìŠµë‹ˆë‹¤:
 						<ol>
 							<li>
-								±× ¾È¿¡ ¼öÇÐ½ÄÀ» »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.<br />
+								ê·¸ ì•ˆì— ìˆ˜í•™ì‹ì„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.<br />
 								-- <code>SubStr(37*12, 1, 2)</code><br />
 								-- <code>SubStr(A_Hour-12, 2)</code>
 							</li>
 							<li>
-								º¯¼ö´Â ÆÛ¼¾Æ® ±âÈ£·Î µÑ·¯½Ò ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.<br />
+								ë³€ìˆ˜ëŠ” í¼ì„¼íŠ¸ ê¸°í˜¸ë¡œ ë‘˜ëŸ¬ìŒ€ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.<br />
 								-- <code>SubStr(A_Now, 7, 2)</code>
 							</li>
 							<li>
-								ÇÔ¼ö´Â ÇÔ¼ö ¾È¿¡ µé¾î°¥ ¼ö ÀÖ½À´Ï´Ù.<br />
+								í•¨ìˆ˜ëŠ” í•¨ìˆ˜ ì•ˆì— ë“¤ì–´ê°ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.<br />
 								-- <code>SubStr(A_AHKPath, inStr(A_AHKPath, "AutoHotkey"))</code>
 							</li>
 							<li>
-								ÅØ½ºÆ®´Â ÀÎ¿ëºÎÈ£·Î µÑ·¯½Î¾ß ÇÕ´Ï´Ù.<br />
+								í…ìŠ¤íŠ¸ëŠ” ì¸ìš©ë¶€í˜¸ë¡œ ë‘˜ëŸ¬ì‹¸ì•¼ í•©ë‹ˆë‹¤.<br />
 								-- <code>SubStr("I'm scripting, awesome!", 16)</code>
 							</li>
 						</ol>
 
-						ÇÔ¼ö´Â ¸í·É¾î¿Í ´Ù¸£°Ô º¸Åë °ªÀ» µ¹·ÁÁÝ´Ï´Ù. ¸í·É¾î´Â <i>OutputVar</i> ¸Å°³º¯¼ö°¡ ÇÊ¿äÇÏÁö¸¸, ÇÔ¼ö´Â ±×·¸Áö ¾Ê½À´Ï´Ù.
-						º¯¼ö¸¦ ÇÔ¼öÀÇ °ª¿¡ ÇÒ´çÇÏ´Â °¡Àå ÀÏ¹ÝÀûÀÎ ¹æ½ÄÀº ´ÙÀ½°ú °°½À´Ï´Ù:<br />
+						í•¨ìˆ˜ëŠ” ëª…ë ¹ì–´ì™€ ë‹¤ë¥´ê²Œ ë³´í†µ ê°’ì„ ëŒë ¤ì¤ë‹ˆë‹¤. ëª…ë ¹ì–´ëŠ” <i>OutputVar</i> ë§¤ê°œë³€ìˆ˜ê°€ í•„ìš”í•˜ì§€ë§Œ, í•¨ìˆ˜ëŠ” ê·¸ë ‡ì§€ ì•ŠìŠµë‹ˆë‹¤.
+						ë³€ìˆ˜ë¥¼ í•¨ìˆ˜ì˜ ê°’ì— í• ë‹¹í•˜ëŠ” ê°€ìž¥ ì¼ë°˜ì ì¸ ë°©ì‹ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤:<br />
 						<code><span style="color:#ff4400"><b>MyVariable</b></span>:=Function(Parameters)</code>
 
 <pre>
 <span style="color:#ff4400"><b>MyVariable</b></span>:=SubStr("I'm scripting, awesome!", 16)
 </pre>
-					<p class="note">ÀÌ°Í¸¸ÀÌ À¯ÀÏÇÑ ¹æ¹ýÀº ¾Æ´Õ´Ï´Ù. ±×·¯³ª °¡Àå ¸¹ÀÌ »ç¿ëµÇ´Â ¹æ¹ýÀÔ´Ï´Ù. 
-					<code>MyVariable</code> º¯¼ö¸¦ :=ÀÇ ¿À¸¥ÂÊ¿¡ ÀÖ´Â ÇÔ¼öÀÇ °ªÀ¸·Î ÇÒ´çÇÏ°í ÀÖ½À´Ï´Ù (ÀÌ °æ¿ì, <code>SubStr(...)</code>).<br />
-					ÇÔ¼ö¿¡ °üÇÏ¿© ´õ ÀÚ¼¼ÇÑ °ÍÀº <a href="Functions.htm">¿©±â¸¦</a> ÂüÁ¶ÇÕ´Ï´Ù.</p>
+					<p class="note">ì´ê²ƒë§Œì´ ìœ ì¼í•œ ë°©ë²•ì€ ì•„ë‹™ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ê°€ìž¥ ë§Žì´ ì‚¬ìš©ë˜ëŠ” ë°©ë²•ìž…ë‹ˆë‹¤. 
+					<code>MyVariable</code> ë³€ìˆ˜ë¥¼ :=ì˜ ì˜¤ë¥¸ìª½ì— ìžˆëŠ” í•¨ìˆ˜ì˜ ê°’ìœ¼ë¡œ í• ë‹¹í•˜ê³  ìžˆìŠµë‹ˆë‹¤ (ì´ ê²½ìš°, <code>SubStr(...)</code>).<br />
+					í•¨ìˆ˜ì— ê´€í•˜ì—¬ ë” ìžì„¸í•œ ê²ƒì€ <a href="Functions.htm">ì—¬ê¸°ë¥¼</a> ì°¸ì¡°í•©ë‹ˆë‹¤.</p>
 					</div>
 					<div>
-						Âª°Ô ¸»ÇØ:
+						ì§§ê²Œ ë§í•´:
 
 <pre>
-<em>; ´ÙÀ½Àº ¸í·É¾îÀÔ´Ï´Ù</em>
-Msgbox, ÀÌ°ÍÀº ÅØ½ºÆ®ÀÔ´Ï´Ù.
+<em>; ë‹¤ìŒì€ ëª…ë ¹ì–´ìž…ë‹ˆë‹¤</em>
+Msgbox, ì´ê²ƒì€ í…ìŠ¤íŠ¸ìž…ë‹ˆë‹¤.
 StringReplace, Output, Input, AutoHotKey, AutoHotkey, ALL
-SendInput, ÀÌ°Å Á¤¸» ±²ÀåÇÏ³×¿ä{!}{!}{!}
+SendInput, ì´ê±° ì •ë§ êµ‰ìž¥í•˜ë„¤ìš”{!}{!}{!}
 
-<em>; ´ÙÀ½Àº ÇÔ¼öÀÔ´Ï´Ù</em>
-SubStr("½ºÅ©¸³ÆÃÀ» ÇÏ°í ÀÖ¾î¿ä, Á¤¸» Á×¿©ÁÖ³×¿ä!", 16)
+<em>; ë‹¤ìŒì€ í•¨ìˆ˜ìž…ë‹ˆë‹¤</em>
+SubStr("ìŠ¤í¬ë¦½íŒ…ì„ í•˜ê³  ìžˆì–´ìš”, ì •ë§ ì£½ì—¬ì£¼ë„¤ìš”!", 16)
 FileExist(VariableContainingPath)
-Output:=SubStr("½ºÅ©¸³ÆÃÀ» ÇÏ°í ÀÖ¾î¿ä, Á¤¸» Á×¿©ÁÖ³×¿ä!", 16)
+Output:=SubStr("ìŠ¤í¬ë¦½íŒ…ì„ í•˜ê³  ìžˆì–´ìš”, ì •ë§ ì£½ì—¬ì£¼ë„¤ìš”!", 16)
 </pre>
 
 					</div>
-					<h3 id="s51">a. ÄÚµå ºí·Ï</h3>
+					<h3 id="s51">a. ì½”ë“œ ë¸”ë¡</h3>
 					<p>
-						<a href="commands/Block.htm">ÄÚµå ºí·Ï</a>Àº  È°°ýÈ£ ¾È¿¡ ÀÖ´Â °ÍµéÀÔ´Ï´Ù (<b>{</b> ±×¸®°í <b>}</b>). 
-						ÇÑ ±×·ìÀÇ ´ÜÀ§·Î ¹­¾î ÁÖ¹Ç·Î AutoHotkey´Â ±×°ÍÀ» ÇÔ²² ÀÖ¾î¾ß ÇÏ´Â ÇÏ³ªÀÇ Ä¿´Ù¶õ °¡Á·À¸·Î ÀÎ½ÄÇÕ´Ï´Ù. 
-						<i>If</i> ±×¸®°í <i>Loop</i>¿Í ÇÔ²² °¡Àå ¸¹ÀÌ »ç¿ëµË´Ï´Ù. 
-						ÀÌ°ÍÀÌ ¾ø´Ù¸é, ºí·Ï¿¡¼­ Ã¹ ÁÙ¸¸ È£ÃâµË´Ï´Ù.<br /><br />
+						<a href="commands/Block.htm">ì½”ë“œ ë¸”ë¡</a>ì€  í™œê´„í˜¸ ì•ˆì— ìžˆëŠ” ê²ƒë“¤ìž…ë‹ˆë‹¤ (<b>{</b> ê·¸ë¦¬ê³  <b>}</b>). 
+						í•œ ê·¸ë£¹ì˜ ë‹¨ìœ„ë¡œ ë¬¶ì–´ ì£¼ë¯€ë¡œ AutoHotkeyëŠ” ê·¸ê²ƒì„ í•¨ê»˜ ìžˆì–´ì•¼ í•˜ëŠ” í•˜ë‚˜ì˜ ì»¤ë‹¤ëž€ ê°€ì¡±ìœ¼ë¡œ ì¸ì‹í•©ë‹ˆë‹¤. 
+						<i>If</i> ê·¸ë¦¬ê³  <i>Loop</i>ì™€ í•¨ê»˜ ê°€ìž¥ ë§Žì´ ì‚¬ìš©ë©ë‹ˆë‹¤. 
+						ì´ê²ƒì´ ì—†ë‹¤ë©´, ë¸”ë¡ì—ì„œ ì²« ì¤„ë§Œ í˜¸ì¶œë©ë‹ˆë‹¤.<br /><br />
 					</p>
 					<div>
-						´ÙÀ½ ÄÚµå¿¡¼­, µÎ ÁÙ ¸ðµÎ var°¡ 5¿Í °°Àº °æ¿ì¿¡¸¸ ½ÇÇàµË´Ï´Ù.
+						ë‹¤ìŒ ì½”ë“œì—ì„œ, ë‘ ì¤„ ëª¨ë‘ varê°€ 5ì™€ ê°™ì€ ê²½ìš°ì—ë§Œ ì‹¤í–‰ë©ë‹ˆë‹¤.
 <pre>
 if (var=5)
 {
@@ -756,21 +757,21 @@ if (var=5)
 }
 </pre><br />
 
-						´ÙÀ½ ÄÚµå¿¡¼­, msgbox´Â var°¡ 5ÀÏ °æ¿ì¿¡¸¸ º¸ÀÔ´Ï´Ù. ÄÚµå´Â var°¡ 5°¡ <b>¾Æ´ÒÁö¶óµµ</b> ¾ðÁ¦³ª ½ºÅ©¸³Æ®´Â Á¾·áÇÕ´Ï´Ù.
+						ë‹¤ìŒ ì½”ë“œì—ì„œ, msgboxëŠ” varê°€ 5ì¼ ê²½ìš°ì—ë§Œ ë³´ìž…ë‹ˆë‹¤. ì½”ë“œëŠ” varê°€ 5ê°€ <b>ì•„ë‹ì§€ë¼ë„</b> ì–¸ì œë‚˜ ìŠ¤í¬ë¦½íŠ¸ëŠ” ì¢…ë£Œí•©ë‹ˆë‹¤.
 
 <pre>
 if (var=5)
-   MsgBox, var´Â %var%¿Í °°½À´Ï´Ù!!
+   MsgBox, varëŠ” %var%ì™€ ê°™ìŠµë‹ˆë‹¤!!
    Exitapp
 </pre><br />
 
-						ÀÌ°ÍÀº Ã¹ ¹øÂ° ÁÙÀÇ ÄÚµå¿Í ¿¬°üµÇ¾î ÀÖÀ» °æ¿ì¿¡¸¸ ¿Ïº®ÇÏ°Ô ÁÁ½À´Ï´Ù.
-						Á¤È®ÇÏ°Ô À§¿Í ¶È°°Áö¸¸, µÎ ¹øÂ° ÁÙÀº ³»¾î ½èÀ¸¹Ç·Î if¿Í ºÐÇÒµÇ¾î ÀÖÀ½À» ¾Ë ¼ö ÀÖ½À´Ï´Ù.
+						ì´ê²ƒì€ ì²« ë²ˆì§¸ ì¤„ì˜ ì½”ë“œì™€ ì—°ê´€ë˜ì–´ ìžˆì„ ê²½ìš°ì—ë§Œ ì™„ë²½í•˜ê²Œ ì¢‹ìŠµë‹ˆë‹¤.
+						ì •í™•í•˜ê²Œ ìœ„ì™€ ë˜‘ê°™ì§€ë§Œ, ë‘ ë²ˆì§¸ ì¤„ì€ ë‚´ì–´ ì¼ìœ¼ë¯€ë¡œ ifì™€ ë¶„í• ë˜ì–´ ìžˆìŒì„ ì•Œ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
 <pre>
 if (var=5)
-   MsgBox, var´Â %var%¿Í °°½À´Ï´Ù!!
-MsgBox, ÀÌÁ¦ if ¼­¼ú¹® '¹Û¿¡' ÀÖ½À´Ï´Ù. ¾Æ·¡¿¡ ÇÑ ÁÙ¸¸ ÀÖ±â ¶§¹®¿¡ {}ÀÌ ÇÊ¿äÇÏÁö ¾Ê½À´Ï´Ù.
+   MsgBox, varëŠ” %var%ì™€ ê°™ìŠµë‹ˆë‹¤!!
+MsgBox, ì´ì œ if ì„œìˆ ë¬¸ 'ë°–ì—' ìžˆìŠµë‹ˆë‹¤. ì•„ëž˜ì— í•œ ì¤„ë§Œ ìžˆê¸° ë•Œë¬¸ì— {}ì´ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
 </pre>
 					</div>
 					<!-- PAGE 5 -->
@@ -778,61 +779,61 @@ MsgBox, ÀÌÁ¦ if ¼­¼ú¹® '¹Û¿¡' ÀÖ½À´Ï´Ù. ¾Æ·¡¿¡ ÇÑ ÁÙ¸¸ ÀÖ±â ¶§¹®¿¡ {}ÀÌ ÇÊ¿äÇÏÁö
 					<!-- PAGE 5 -->
 				</div>
 				<div id="variables" class="section">
-					<h2 id="s6">6 - º¯¼ö</h2>
+					<h2 id="s6">6 - ë³€ìˆ˜</h2>
 					<p>
-						<a href="Variables.htm">º¯¼ö</a>´Â ÀÛÀº Æ÷½ºÆ®ÀÕ ¸Þ¸ðÁöÃ³·³ ±× ¾È¿¡ Á¤º¸¸¦ ´ã½À´Ï´Ù. 
-						ÅØ½ºÆ®³ª, ¼ýÀÚ, ±×¸®°í ÇÔ¼ö³ª ¸í·É¾î ½ÉÁö¾î ¼öÇÐ ¹æÁ¤½ÄÀ¸·ÎºÎÅÍ ¾òÀº µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â µ¥ »ç¿ëÇÕ´Ï´Ù. 
-						º¯¼ö°¡ ¾ø´Ù¸é ÇÁ·Î±×·¡¹Ö &amp; ½ºÅ©¸³ÆÃÀº Á¤¸» Â¥Áõ³ª´Â ÀÏÀÌ µÉ °ÍÀÔ´Ï´Ù.
+						<a href="Variables.htm">ë³€ìˆ˜</a>ëŠ” ìž‘ì€ í¬ìŠ¤íŠ¸ìž‡ ë©”ëª¨ì§€ì²˜ëŸ¼ ê·¸ ì•ˆì— ì •ë³´ë¥¼ ë‹´ìŠµë‹ˆë‹¤. 
+						í…ìŠ¤íŠ¸ë‚˜, ìˆ«ìž, ê·¸ë¦¬ê³  í•¨ìˆ˜ë‚˜ ëª…ë ¹ì–´ ì‹¬ì§€ì–´ ìˆ˜í•™ ë°©ì •ì‹ìœ¼ë¡œë¶€í„° ì–»ì€ ë°ì´í„°ë¥¼ ì €ìž¥í•˜ëŠ” ë° ì‚¬ìš©í•©ë‹ˆë‹¤. 
+						ë³€ìˆ˜ê°€ ì—†ë‹¤ë©´ í”„ë¡œê·¸ëž˜ë° &amp; ìŠ¤í¬ë¦½íŒ…ì€ ì •ë§ ì§œì¦ë‚˜ëŠ” ì¼ì´ ë  ê²ƒìž…ë‹ˆë‹¤.
 					</p>
 					<hr />
 					<div>
-						º¯¼ö´Â ¸î °¡Áö ¹æ¹ýÀ¸·Î ÇÒ´çÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿©±â¿¡¼­´Â °¡Àå ÈçÇÑ ¹æ¹ýÀ» ´Ù·ç°Ú½À´Ï´Ù. 
-						µîÈ£ ±âÈ£(=)¿¡ ÁÖ¸ñÇØ ÁÖ½Ê½Ã¿À.
+						ë³€ìˆ˜ëŠ” ëª‡ ê°€ì§€ ë°©ë²•ìœ¼ë¡œ í• ë‹¹í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì—¬ê¸°ì—ì„œëŠ” ê°€ìž¥ í”í•œ ë°©ë²•ì„ ë‹¤ë£¨ê² ìŠµë‹ˆë‹¤. 
+						ë“±í˜¸ ê¸°í˜¸(=)ì— ì£¼ëª©í•´ ì£¼ì‹­ì‹œì˜¤.
 						<ol>
 							<li><code>variable=text</code><br />
-								<div class="indented">°¡Àå °£´ÜÇÑ ÇüÅÂ·Î, ÀüÅëÀûÀÎ ÇÒ´ç ¹æ½ÄÀÔ´Ï´Ù. ±×³É ÅØ½ºÆ®¸¦ Å¸ÀÚÇØ ³ÖÀ¸¸é ±×°É·Î ³¡ÀÔ´Ï´Ù.</div>
+								<div class="indented">ê°€ìž¥ ê°„ë‹¨í•œ í˜•íƒœë¡œ, ì „í†µì ì¸ í• ë‹¹ ë°©ì‹ìž…ë‹ˆë‹¤. ê·¸ëƒ¥ í…ìŠ¤íŠ¸ë¥¼ íƒ€ìží•´ ë„£ìœ¼ë©´ ê·¸ê±¸ë¡œ ëìž…ë‹ˆë‹¤.</div>
 							</li>
 							<li><code>variable=%variable2%</code><br />
-								<div class="indented">À§¿Í °°Áö¸¸, º¯¼ö¸¦ ´Ù¸¥ º¯¼ö °ª¿¡ ÇÒ´çÇÏ°í ÀÖ½À´Ï´Ù.</div>
+								<div class="indented">ìœ„ì™€ ê°™ì§€ë§Œ, ë³€ìˆ˜ë¥¼ ë‹¤ë¥¸ ë³€ìˆ˜ ê°’ì— í• ë‹¹í•˜ê³  ìžˆìŠµë‹ˆë‹¤.</div>
 							</li>
 							<li><code>variable:="text"</code><br />
-								<div class="indented">= ¾Õ¿¡ ÀÖ´Â  :  ¶§¹®¿¡ Ç¥Çö½Ä ÇÒ´çÀÌ¶ó°í ºÎ¸¨´Ï´Ù. ÅØ½ºÆ®´Â "ÀÎ¿ëºÎÈ£" Ã³¸®ÇØ ÁÖ¾î¾ß ÇÕ´Ï´Ù.</div>
+								<div class="indented">= ì•žì— ìžˆëŠ”  :  ë•Œë¬¸ì— í‘œí˜„ì‹ í• ë‹¹ì´ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤. í…ìŠ¤íŠ¸ëŠ” "ì¸ìš©ë¶€í˜¸" ì²˜ë¦¬í•´ ì£¼ì–´ì•¼ í•©ë‹ˆë‹¤.</div>
 							</li>
 							<li><code>variable:=variable2</code><br />
-								<div class="indented">Ç¥Çö½Ä ¸ðµå¿¡¼­ º¯¼ö´Â  %°¡ ÇÊ¿äÇÏÁö ¾Ê½À´Ï´Ù.</div>
+								<div class="indented">í‘œí˜„ì‹ ëª¨ë“œì—ì„œ ë³€ìˆ˜ëŠ”  %ê°€ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</div>
 							</li>
 							<li><code>variable:=6+8/3*2-sqrt(9)</code><br />
-								<div class="indented">Ç¥Çö½Ä ´öºÐ¿¡, ¼öÇÐ °è»êÀ» ÇÒ ¼ö ÀÖ½À´Ï´Ù!</div>
+								<div class="indented">í‘œí˜„ì‹ ë•ë¶„ì—, ìˆ˜í•™ ê³„ì‚°ì„ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤!</div>
 							</li>
 						</ol>
-						¼ýÀÚ 1 &amp; 2 ¸¦ °áÇÕÇØ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. <code>var=%var2% some text %var3%.</code><br />
-						3, 4 &amp; 5 µµ ¿ª½Ã °áÇÕÇÒ ¼ö ÀÖ½À´Ï´Ù. <code>var:="The value of 5+ " Variable " is: " 5+Variable</code>
+						ìˆ«ìž 1 &amp; 2 ë¥¼ ê²°í•©í•´ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <code>var=%var2% some text %var3%.</code><br />
+						3, 4 &amp; 5 ë„ ì—­ì‹œ ê²°í•©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <code>var:="The value of 5+ " Variable " is: " 5+Variable</code>
 					</div>
 					<hr />
 
 					<p class="note">
-						¾Õ¿¡ ½Éº¼ÀÌ ÀÖ´Â ¸ðµç µîÈ£ ±âÈ£(<b>=</b>)´Â <b>ÇÒ´ç ¿¬»êÀÚ</b>¶ó°í ºÎ¸¨´Ï´Ù. ¾ðÁ¦³ª Ç¥Çö½ÄÀÔ´Ï´Ù. ]
-						±×·¡¼­ <code>:=</code> <code>+=</code> <code>-=</code> <code>.=</code> µîµîÀº ¾ðÁ¦³ª Ç¥Çö½ÄÀ» »ç¿ëÇÕ´Ï´Ù.
+						ì•žì— ì‹¬ë³¼ì´ ìžˆëŠ” ëª¨ë“  ë“±í˜¸ ê¸°í˜¸(<b>=</b>)ëŠ” <b>í• ë‹¹ ì—°ì‚°ìž</b>ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤. ì–¸ì œë‚˜ í‘œí˜„ì‹ìž…ë‹ˆë‹¤. ]
+						ê·¸ëž˜ì„œ <code>:=</code> <code>+=</code> <code>-=</code> <code>.=</code> ë“±ë“±ì€ ì–¸ì œë‚˜ í‘œí˜„ì‹ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.
 					</p>
-					<h3 id="s61">a. ÆÛ¼¾Æ® ±âÈ£¸¦ »ç¿ëÇØ¾ß ÇÒ ¶§</h3>
+					<h3 id="s61">a. í¼ì„¼íŠ¸ ê¸°í˜¸ë¥¼ ì‚¬ìš©í•´ì•¼ í•  ë•Œ</h3>
 					<p>
-						º¯¼ö¿Í °ü·ÃÇÏ¿© ¿ÀÅäÇÖÅ°¿¡¼­ °¡Àå ¸¹ÀÌ Á¦±âµÇ´Â ¹®Á¦Áß ÇÏ³ª´Â ¾ðÁ¦ ÆÛ¼¾Æ® ±âÈ£ (<b>%</b>)¸¦ »ç¿ëÇÏ´Â°¡ ÇÏ´Â °ÍÀÔ´Ï´Ù. 
-						´ÙÀ½ ¼³¸íÀ¸·Î ±ò²ûÇÏ°Ô È¥¶õÀÌ Á¦°ÅµÇ±â¸¦ ¹Ù¶ø´Ï´Ù.
+						ë³€ìˆ˜ì™€ ê´€ë ¨í•˜ì—¬ ì˜¤í† í•«í‚¤ì—ì„œ ê°€ìž¥ ë§Žì´ ì œê¸°ë˜ëŠ” ë¬¸ì œì¤‘ í•˜ë‚˜ëŠ” ì–¸ì œ í¼ì„¼íŠ¸ ê¸°í˜¸ (<b>%</b>)ë¥¼ ì‚¬ìš©í•˜ëŠ”ê°€ í•˜ëŠ” ê²ƒìž…ë‹ˆë‹¤. 
+						ë‹¤ìŒ ì„¤ëª…ìœ¼ë¡œ ê¹”ë”í•˜ê²Œ í˜¼ëž€ì´ ì œê±°ë˜ê¸°ë¥¼ ë°”ëžë‹ˆë‹¤.
 					</p>
 					<div>
-						%¸¦ »ç¿ëÇØ¾ß ÇÒ ¶§:
+						%ë¥¼ ì‚¬ìš©í•´ì•¼ í•  ë•Œ:
 						<ol>
-							<li>¸í·É¾î¸¦ »ç¿ëÇÒ ¶§ (À§ ÂüÁ¶) ÆÛ¼¾Æ® ±âÈ£¸¦ »ç¿ëÇÕ´Ï´Ù.<br />
-							-- ¸Å°³º¯¼ö°¡ OutputVarÀÌ°Å³ª InputVarÀÏ °æ¿ì´Â Á¦¿ÜÇÕ´Ï´Ù.</li>
-							<li>ÀüÅëÀûÀÎ ¸ðµå¸¦ »ç¿ëÇÏ´Â º¯¼ö¿¡ º¯¼ö¸¦ ÇÒ´çÇÒ ¶§ (¾Õ¿¡ ½Éº¼ÀÌ ¾ø´Â µîÈ£ ±âÈ£).</li>
+							<li>ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•  ë•Œ (ìœ„ ì°¸ì¡°) í¼ì„¼íŠ¸ ê¸°í˜¸ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤.<br />
+							-- ë§¤ê°œë³€ìˆ˜ê°€ OutputVarì´ê±°ë‚˜ InputVarì¼ ê²½ìš°ëŠ” ì œì™¸í•©ë‹ˆë‹¤.</li>
+							<li>ì „í†µì ì¸ ëª¨ë“œë¥¼ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜ì— ë³€ìˆ˜ë¥¼ í• ë‹¹í•  ë•Œ (ì•žì— ì‹¬ë³¼ì´ ì—†ëŠ” ë“±í˜¸ ê¸°í˜¸).</li>
 						</ol>
 
-						%¸¦ »ç¿ëÇÏ¸é <b>¾ÈµÉ ¶§</b>:
+						%ë¥¼ ì‚¬ìš©í•˜ë©´ <b>ì•ˆë  ë•Œ</b>:
 						<ol>
-							<li>¸Å°³º¯¼ö°¡ ÀÔ·Âº¯¼öÀÌ°Å³ª Ãâ·Â º¯¼öÀÏ °æ¿ì, ¿¹¸¦ µé¾î: <code>StringLen, <span style="color:red">OutputVar</span>, <span style="color:red">InputVar</span></code></li>
-							<li>ÇÒ´çÀÇ ¿ÞÂÊ¿¡ ÀÖÀ» ¶§: <code><span style="color:red">Var</span> = 123abc</code></li>
-							<li>ÀüÅëÀû (ºñ-Ç¥Çö½Ä) if-¼­¼ú¹®ÀÇ ¿ÞÂÊ¿¡: <code>If <span style="color:red">Var1</span> &lt; %Var2%</code></li>
-							<li>Ç¥Çö½Ä ¾È¿¡. ¿¹¸¦ µé¾î:
+							<li>ë§¤ê°œë³€ìˆ˜ê°€ ìž…ë ¥ë³€ìˆ˜ì´ê±°ë‚˜ ì¶œë ¥ ë³€ìˆ˜ì¼ ê²½ìš°, ì˜ˆë¥¼ ë“¤ì–´: <code>StringLen, <span style="color:red">OutputVar</span>, <span style="color:red">InputVar</span></code></li>
+							<li>í• ë‹¹ì˜ ì™¼ìª½ì— ìžˆì„ ë•Œ: <code><span style="color:red">Var</span> = 123abc</code></li>
+							<li>ì „í†µì  (ë¹„-í‘œí˜„ì‹) if-ì„œìˆ ë¬¸ì˜ ì™¼ìª½ì—: <code>If <span style="color:red">Var1</span> &lt; %Var2%</code></li>
+							<li>í‘œí˜„ì‹ ì•ˆì—. ì˜ˆë¥¼ ë“¤ì–´:
 <pre>
 If (<span style="color:red">Var1</span> != <span style="color:red">Var2</span>)
    <span style="color:red">Var1</span> := <span style="color:red">Var2</span> + 100
@@ -843,50 +844,50 @@ If (<span style="color:red">Var1</span> != <span style="color:red">Var2</span>)
 
 
 
-					<h3 id="s62">b. »ç¿ëÀÚ ÀÔ·Â ¾ò±â</h3>
+					<h3 id="s62">b. ì‚¬ìš©ìž ìž…ë ¥ ì–»ê¸°</h3>
 					<div>
-						Á¾Á¾ »ç¿ëÀÚ°¡ °ªÀ» Ã¤¿ö ³Ö¾îÁÖ±â¸¦ ¹Ù¶ö °æ¿ì°¡ ÀÖ½À´Ï´Ù. ¿©·¯ °¡Áö ¹æ¹ýÀÌ ÀÖÁö¸¸, °¡Àå °£´ÜÇÑ ¹æ¹ýÀº <a href="commands/InputBox.htm">Inputbox</a>ÀÔ´Ï´Ù. 
-						´ÙÀ½Àº °£´ÜÇÑ ¿¹ÀÔ´Ï´Ù. »ç¿ëÀÚ¿¡°Ô µÎ °¡Áö Áú¹®À» ÇÏ°í ±× ´äÀ» °¡Áö°í ¹«½¼ ÀÏÀ» ÇÕ´Ï´Ù.
+						ì¢…ì¢… ì‚¬ìš©ìžê°€ ê°’ì„ ì±„ì›Œ ë„£ì–´ì£¼ê¸°ë¥¼ ë°”ëž„ ê²½ìš°ê°€ ìžˆìŠµë‹ˆë‹¤. ì—¬ëŸ¬ ê°€ì§€ ë°©ë²•ì´ ìžˆì§€ë§Œ, ê°€ìž¥ ê°„ë‹¨í•œ ë°©ë²•ì€ <a href="commands/InputBox.htm">Inputbox</a>ìž…ë‹ˆë‹¤. 
+						ë‹¤ìŒì€ ê°„ë‹¨í•œ ì˜ˆìž…ë‹ˆë‹¤. ì‚¬ìš©ìžì—ê²Œ ë‘ ê°€ì§€ ì§ˆë¬¸ì„ í•˜ê³  ê·¸ ë‹µì„ ê°€ì§€ê³  ë¬´ìŠ¨ ì¼ì„ í•©ë‹ˆë‹¤.
 
 <pre>
-InputBox, OutputVar, Question 1, ÀÌ¸§ÀÌ ¹«¾ùÀÔ´Ï±î?
+InputBox, OutputVar, Question 1, ì´ë¦„ì´ ë¬´ì—‡ìž…ë‹ˆê¹Œ?
 if (OutputVar="Bill")
-   MsgBox, ¸ÚÁø ÀÌ¸§ÀÌ±º¿ä, %OutputVar%.
+   MsgBox, ë©‹ì§„ ì´ë¦„ì´êµ°ìš”, %OutputVar%.
 
-InputBox, OutputVar2, Question 2, ¿ÀÅäÇÖÅ°¸¦ ÁÁ¾ÆÇÕ´Ï±î?
+InputBox, OutputVar2, Question 2, ì˜¤í† í•«í‚¤ë¥¼ ì¢‹ì•„í•©ë‹ˆê¹Œ?
 if (OutputVar2="yes")
-   MsgBox, %OutputVar2%`¶ó°í ´äÇØ ÁÖ¼Å¼­ °í¸¿½À´Ï´Ù. %OutputVar%! ¿©·¯ºÐÀÇ ÈÇ¸¢ÇÑ Ä£±¸°¡ µÇ¾î µå¸®°Ú½À´Ï´Ù.
+   MsgBox, %OutputVar2%`ë¼ê³  ë‹µí•´ ì£¼ì…”ì„œ ê³ ë§™ìŠµë‹ˆë‹¤. %OutputVar%! ì—¬ëŸ¬ë¶„ì˜ í›Œë¥­í•œ ì¹œêµ¬ê°€ ë˜ì–´ ë“œë¦¬ê² ìŠµë‹ˆë‹¤.
 else
-   MsgBox, %OutputVar%`, Á¤¸» ½½ÇÁ±º¿ä.
+   MsgBox, %OutputVar%`, ì •ë§ ìŠ¬í”„êµ°ìš”.
 </pre>
 					</div>
 
-					<h3 id="s63">c. ´Ù¸¥ ¿¹Á¦µé?</h3>
+					<h3 id="s63">c. ë‹¤ë¥¸ ì˜ˆì œë“¤?</h3>
 					<div>
 <pre>
-<a href="commands/MsgBox.htm">MsgBox</a>, 4, , °è¼ÓÇÏ½Ã°Ú½À´Ï±î?
+<a href="commands/MsgBox.htm">MsgBox</a>, 4, , ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?
 <a href="commands/IfMsgBox.htm">IfMsgBox</a>, No
-   Return                <em>; NoÀÌ¸é, ÄÚµå¸¦ ¸ØÃä´Ï´Ù.</em>
-MsgBox ´ç½ÅÀº YES¸¦ ´­·¶½À´Ï´Ù.  <em>; ±×·¸Áö ¾ÊÀ¸¸é, »ç¿ëÀÚ´Â yes¸¦ °í¸¥ °ÍÀÔ´Ï´Ù.</em>
+   Return                <em>; Noì´ë©´, ì½”ë“œë¥¼ ë©ˆì¶¥ë‹ˆë‹¤.</em>
+MsgBox ë‹¹ì‹ ì€ YESë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.  <em>; ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ì‚¬ìš©ìžëŠ” yesë¥¼ ê³ ë¥¸ ê²ƒìž…ë‹ˆë‹¤.</em>
 </pre>
 <pre>
-<em>; ÆÛ¼¾Æ® ±âÈ£¸¦ »ç¿ëÇØ¾ß ÇÒ ¶§¿Í ÇÏÁö ¸»¾Æ¾ß ÇÒ ¶§´Â º¸¿©ÁÖ´Â ¸î °¡Áö ¿¹µé</em>
-Variable=text                      <em>; º¯¼ö¿¡ ÅØ½ºÆ®¸¦ ÇÒ´çÇÕ´Ï´Ù. 'ÀüÅëÀûÀÎ' ÇÒ´ç¹æ½ÄÀÔ´Ï´Ù.</em>
-VariableNumber:=6                  <em>; º¯¼ö¿¡ ¼ýÀÚ¸¦ ÇÒ´çÇÕ´Ï´Ù. 'Ç¥Çö½Ä' ÇÒ´çÀÔ´Ï´Ù.</em>
-Variable2=%Variable%               <em>; º¯¼ö¸¦ ¶Ç´Ù¸¥ º¯¼ö¿¡ ÇÒ´çÇÕ´Ï´Ù. ÀüÅëÀûÀÎ ÇÒ´çÀ» »ç¿ëÇÕ´Ï´Ù.</em>
-Variable3:=Variable                <em>; º¯¼ö¸¦ ¶Ç´Ù¸¥ º¯¼ö¿¡ ÇÒ´çÇÕ´Ï´Ù. Ç¥Çö½Ä ÇÒ´çÀÔ´Ï´Ù.</em>
-Variable4.=Variable                <em>; º¯¼ö¸¦ ¶Ç´Ù¸¥ º¯¼öÀÇ ³¡¿¡ Ãß°¡ÇÕ´Ï´Ù. Ç¥Çö½Ä ÇÒ´çÀÔ´Ï´Ù.</em>
-Variable5+=VariableNumber          <em>; º¯¼öÀÇ °ªÀ» ¶Ç´Ù¸¥ º¯¼ö¿¡ Ãß°¡ÇÕ´Ï´Ù. Ç¥Çö½Ä ÇÒ´çÀÔ´Ï´Ù.</em>
-Variable5-=VariableNumber          <em>; º¯¼öÀÇ °ªÀ» ¶Ç´Ù¸¥ º¯¼ö·ÎºÎÅÍ »®´Ï´Ù. Ç¥Çö½Ä ÇÒ´çÀÔ´Ï´Ù.</em>
-Variable6:=SubStr(Variable, 2, 2)  <em>; ÇÔ¼ö ¾ÈÀÇ º¯¼öÀÔ´Ï´Ù. ÀÌ°ÍÀº ¾ðÁ¦³ª Ç¥Çö½Ä ÇÒ´çÀÔ´Ï´Ù.</em>
-Variable7=%Variable% Text          <em>; º¯¼ö¸¦ ¶Ç´Ù¸¥ º¯¼ö¿¡ ¾à°£ÀÇ ÅØ½ºÆ®¿À ÇÔ²² ÇÒ´çÇÕ´Ï´Ù. ÀüÅëÀûÀÎ ÇÒ´çÀ» »ç¿ëÇÕ´Ï´Ù.</em>
-Variable8:=Variable " Text"        <em>; º¯¼ö¸¦ ¶Ç´Ù¸¥ º¯¼ö¿¡ ¾à°£ÀÇ ÅØ½ºÆ®¿Í ÇÔ²² ÇÒ´çÇÕ´Ï´Ù. Ç¥Çö½Ä ÇÒ´çÀ» »ç¿ëÇÕ´Ï´Ù.</em>
-MsgBox, %Variable%                 <em>; ¸í·É¾î ¾ÈÀÇ º¯¼öÀÔ´Ï´Ù. </em>
-StringSplit, Variable, Variable, x <em>; InputVar¿Í OutputVar¸¦ »ç¿ëÇÏ´Â ¸í·É¾î ¾ÈÀÇ º¯¼öÀÔ´Ï´Ù.</em>
-if (VariableNumber=6)              <em>; IF¿¡ °ýÈ£°¡ ÀÖÀ» ¶§¸¶´Ù, ±×°ÍÀº Ç¥Çö½ÄÀÔ´Ï´Ù. ±×·¡¼­  %¸¦ »ç¿ëÇÏÁö ¾Ê½À´Ï´Ù.</em>
-If (Variable != VariableNumber)    <em>; IF¿¡ °ýÈ£°¡ ÀÖÀ» ¶§¸¶´Ù, ±×°ÍÀº Ç¥Çö½ÄÀÔ´Ï´Ù. ±×·¡¼­  %¸¦ »ç¿ëÇÏÁö ¾Ê½À´Ï´Ù.</em>
-if VariableNumber=6                <em>; °ýÈ£°¡ ¾øÀ¸¸é, ±× if´Â ÀüÅëÀûÀÔ´Ï´Ù. ±×·¸Áö¸¸, '¿À¸¥ÂÊ¿¡ ÀÖ´Â' º¯¼ö¸¸ %°¡ ÇÊ¿äÇÕ´Ï´Ù. </em>
-If Var1 &lt; %Var2%                   <em>; °ýÈ£°¡ ¾øÀ¸¸é, ±× if´Â ÀüÅëÀûÀÔ´Ï´Ù. ±×·¸Áö¸¸, '¿À¸¥ÂÊ¿¡ ÀÖ´Â' º¯¼ö¸¸ %°¡ ÇÊ¿äÇÕ´Ï´Ù. </em>
+<em>; í¼ì„¼íŠ¸ ê¸°í˜¸ë¥¼ ì‚¬ìš©í•´ì•¼ í•  ë•Œì™€ í•˜ì§€ ë§ì•„ì•¼ í•  ë•ŒëŠ” ë³´ì—¬ì£¼ëŠ” ëª‡ ê°€ì§€ ì˜ˆë“¤</em>
+Variable=text                      <em>; ë³€ìˆ˜ì— í…ìŠ¤íŠ¸ë¥¼ í• ë‹¹í•©ë‹ˆë‹¤. 'ì „í†µì ì¸' í• ë‹¹ë°©ì‹ìž…ë‹ˆë‹¤.</em>
+VariableNumber:=6                  <em>; ë³€ìˆ˜ì— ìˆ«ìžë¥¼ í• ë‹¹í•©ë‹ˆë‹¤. 'í‘œí˜„ì‹' í• ë‹¹ìž…ë‹ˆë‹¤.</em>
+Variable2=%Variable%               <em>; ë³€ìˆ˜ë¥¼ ë˜ë‹¤ë¥¸ ë³€ìˆ˜ì— í• ë‹¹í•©ë‹ˆë‹¤. ì „í†µì ì¸ í• ë‹¹ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.</em>
+Variable3:=Variable                <em>; ë³€ìˆ˜ë¥¼ ë˜ë‹¤ë¥¸ ë³€ìˆ˜ì— í• ë‹¹í•©ë‹ˆë‹¤. í‘œí˜„ì‹ í• ë‹¹ìž…ë‹ˆë‹¤.</em>
+Variable4.=Variable                <em>; ë³€ìˆ˜ë¥¼ ë˜ë‹¤ë¥¸ ë³€ìˆ˜ì˜ ëì— ì¶”ê°€í•©ë‹ˆë‹¤. í‘œí˜„ì‹ í• ë‹¹ìž…ë‹ˆë‹¤.</em>
+Variable5+=VariableNumber          <em>; ë³€ìˆ˜ì˜ ê°’ì„ ë˜ë‹¤ë¥¸ ë³€ìˆ˜ì— ì¶”ê°€í•©ë‹ˆë‹¤. í‘œí˜„ì‹ í• ë‹¹ìž…ë‹ˆë‹¤.</em>
+Variable5-=VariableNumber          <em>; ë³€ìˆ˜ì˜ ê°’ì„ ë˜ë‹¤ë¥¸ ë³€ìˆ˜ë¡œë¶€í„° ëºë‹ˆë‹¤. í‘œí˜„ì‹ í• ë‹¹ìž…ë‹ˆë‹¤.</em>
+Variable6:=SubStr(Variable, 2, 2)  <em>; í•¨ìˆ˜ ì•ˆì˜ ë³€ìˆ˜ìž…ë‹ˆë‹¤. ì´ê²ƒì€ ì–¸ì œë‚˜ í‘œí˜„ì‹ í• ë‹¹ìž…ë‹ˆë‹¤.</em>
+Variable7=%Variable% Text          <em>; ë³€ìˆ˜ë¥¼ ë˜ë‹¤ë¥¸ ë³€ìˆ˜ì— ì•½ê°„ì˜ í…ìŠ¤íŠ¸ì˜¤ í•¨ê»˜ í• ë‹¹í•©ë‹ˆë‹¤. ì „í†µì ì¸ í• ë‹¹ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.</em>
+Variable8:=Variable " Text"        <em>; ë³€ìˆ˜ë¥¼ ë˜ë‹¤ë¥¸ ë³€ìˆ˜ì— ì•½ê°„ì˜ í…ìŠ¤íŠ¸ì™€ í•¨ê»˜ í• ë‹¹í•©ë‹ˆë‹¤. í‘œí˜„ì‹ í• ë‹¹ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.</em>
+MsgBox, %Variable%                 <em>; ëª…ë ¹ì–´ ì•ˆì˜ ë³€ìˆ˜ìž…ë‹ˆë‹¤. </em>
+StringSplit, Variable, Variable, x <em>; InputVarì™€ OutputVarë¥¼ ì‚¬ìš©í•˜ëŠ” ëª…ë ¹ì–´ ì•ˆì˜ ë³€ìˆ˜ìž…ë‹ˆë‹¤.</em>
+if (VariableNumber=6)              <em>; IFì— ê´„í˜¸ê°€ ìžˆì„ ë•Œë§ˆë‹¤, ê·¸ê²ƒì€ í‘œí˜„ì‹ìž…ë‹ˆë‹¤. ê·¸ëž˜ì„œ  %ë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</em>
+If (Variable != VariableNumber)    <em>; IFì— ê´„í˜¸ê°€ ìžˆì„ ë•Œë§ˆë‹¤, ê·¸ê²ƒì€ í‘œí˜„ì‹ìž…ë‹ˆë‹¤. ê·¸ëž˜ì„œ  %ë¥¼ ì‚¬ìš©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</em>
+if VariableNumber=6                <em>; ê´„í˜¸ê°€ ì—†ìœ¼ë©´, ê·¸ ifëŠ” ì „í†µì ìž…ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, 'ì˜¤ë¥¸ìª½ì— ìžˆëŠ”' ë³€ìˆ˜ë§Œ %ê°€ í•„ìš”í•©ë‹ˆë‹¤. </em>
+If Var1 &lt; %Var2%                   <em>; ê´„í˜¸ê°€ ì—†ìœ¼ë©´, ê·¸ ifëŠ” ì „í†µì ìž…ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, 'ì˜¤ë¥¸ìª½ì— ìžˆëŠ”' ë³€ìˆ˜ë§Œ %ê°€ í•„ìš”í•©ë‹ˆë‹¤. </em>
 </pre>
 					</div>
 				<!-- PAGE 6 -->
@@ -894,161 +895,161 @@ If Var1 &lt; %Var2%                   <em>; °ýÈ£°¡ ¾øÀ¸¸é, ±× if´Â ÀüÅëÀûÀÔ´Ï´Ù.
 				<!-- PAGE 6 -->
 				</div>
 				<div id="objects" class="section">
-					<h2 id="s7">7 - °´Ã¼</h2>
+					<h2 id="s7">7 - ê°ì²´</h2>
 					<p>
-						<a href="Objects.htm">°´Ã¼</a>´Â Á» ´õ È¿À²ÀûÀ¸·Î »ç¿ëÇÏ±â À§ÇØ µ¥ÀÌÅÍ¸¦ Á¶Á÷ÇÏ´Â ¹æ¹ýÀÔ´Ï´Ù. Á¾Á¾ °´Ã¼´Â ¹è¿­ÀÌ¶ó°í ÁöÄªµÇ±âµµ ÇÕ´Ï´Ù. 
-						±×·¯³ª ¸ðµç ¹è¿­Àº ±×³É °´Ã¼ÀÏ »ÓÀÌ¶ó´Â »ç½ÇÀ» ÀÎ½ÄÇÏ´Â °ÍÀÌ Áß¿äÇÕ´Ï´Ù.
-						°´Ã¼¸¦ ¾îµð¿¡ »ç¿ëÇÏ·Á°í ÇÏ´Â°¡¿¡ µû¶ó ´Ù¸£°Ô ºÎ¸£±âµµ ÇÏÁö¸¸, ±× ¸ðµç °´Ã¼´Â °°Àº °ÍÀÔ´Ï´Ù.
+						<a href="Objects.htm">ê°ì²´</a>ëŠ” ì¢€ ë” íš¨ìœ¨ì ìœ¼ë¡œ ì‚¬ìš©í•˜ê¸° ìœ„í•´ ë°ì´í„°ë¥¼ ì¡°ì§í•˜ëŠ” ë°©ë²•ìž…ë‹ˆë‹¤. ì¢…ì¢… ê°ì²´ëŠ” ë°°ì—´ì´ë¼ê³  ì§€ì¹­ë˜ê¸°ë„ í•©ë‹ˆë‹¤. 
+						ê·¸ëŸ¬ë‚˜ ëª¨ë“  ë°°ì—´ì€ ê·¸ëƒ¥ ê°ì²´ì¼ ë¿ì´ë¼ëŠ” ì‚¬ì‹¤ì„ ì¸ì‹í•˜ëŠ” ê²ƒì´ ì¤‘ìš”í•©ë‹ˆë‹¤.
+						ê°ì²´ë¥¼ ì–´ë””ì— ì‚¬ìš©í•˜ë ¤ê³  í•˜ëŠ”ê°€ì— ë”°ë¼ ë‹¤ë¥´ê²Œ ë¶€ë¥´ê¸°ë„ í•˜ì§€ë§Œ, ê·¸ ëª¨ë“  ê°ì²´ëŠ” ê°™ì€ ê²ƒìž…ë‹ˆë‹¤.
 					</p>
 					<hr />
-					°´Ã¼´Â ±âº»ÀûÀ¸·Î º¯¼ö ÁýÇÕÀÔ´Ï´Ù.
-					º¯¼ö ÀÌ¸§Àº "Å°"¶ó°í ¾Ë·ÁÁ® ÀÖ°í,  ±× º¯¼öÀÇ ³»¿ëÀº "°ª"ÀÌ¶ó°í ÇÕ´Ï´Ù.<br />
+					ê°ì²´ëŠ” ê¸°ë³¸ì ìœ¼ë¡œ ë³€ìˆ˜ ì§‘í•©ìž…ë‹ˆë‹¤.
+					ë³€ìˆ˜ ì´ë¦„ì€ "í‚¤"ë¼ê³  ì•Œë ¤ì ¸ ìžˆê³ ,  ê·¸ ë³€ìˆ˜ì˜ ë‚´ìš©ì€ "ê°’"ì´ë¼ê³  í•©ë‹ˆë‹¤.<br />
 					<br />
-					°´Ã¼¸¦ <i>¹è¿­</i> ¶Ç´Â <i>ÀÎµ¦½º ¹è¿­</i>ÀÌ¶ó°í ºÎ¸¥´Ù¸é,  º¸Åë ¸ðµç Å°°¡ 1ºÎÅÍ ½ÃÀÛÇØ¼­ ¿¬¼ÓÀûÀ¸·Î Áõ°¡ÇÏ´Â ¼ýÀÚ¶ó´Â ¶æÀÔ´Ï´Ù.<br />
-					°´Ã¼¸¦ <i>¿¬°ü ¹è¿­</i>ÀÌ¶ó°í ºÎ¸¥´Ù¸é, Å°°¡ ¹®ÀÚ¿­(ÅØ½ºÆ®)ÀÌ°Å³ª ¾Æ´Ï¸é ºñ-¿¬¼Ó ¼ýÀÚµéÀÌ¶ó´Â ¶æÀÔ´Ï´Ù.
-					Á¾Á¾, ±× µÑÀº È¥¿ëµË´Ï´Ù. ¿¬¼Ó ¼ýÀÚµµ ¸¶Âù°¡ÁöÀÔ´Ï´Ù!<br />
+					ê°ì²´ë¥¼ <i>ë°°ì—´</i> ë˜ëŠ” <i>ì¸ë±ìŠ¤ ë°°ì—´</i>ì´ë¼ê³  ë¶€ë¥¸ë‹¤ë©´,  ë³´í†µ ëª¨ë“  í‚¤ê°€ 1ë¶€í„° ì‹œìž‘í•´ì„œ ì—°ì†ì ìœ¼ë¡œ ì¦ê°€í•˜ëŠ” ìˆ«ìžë¼ëŠ” ëœ»ìž…ë‹ˆë‹¤.<br />
+					ê°ì²´ë¥¼ <i>ì—°ê´€ ë°°ì—´</i>ì´ë¼ê³  ë¶€ë¥¸ë‹¤ë©´, í‚¤ê°€ ë¬¸ìžì—´(í…ìŠ¤íŠ¸)ì´ê±°ë‚˜ ì•„ë‹ˆë©´ ë¹„-ì—°ì† ìˆ«ìžë“¤ì´ë¼ëŠ” ëœ»ìž…ë‹ˆë‹¤.
+					ì¢…ì¢…, ê·¸ ë‘˜ì€ í˜¼ìš©ë©ë‹ˆë‹¤. ì—°ì† ìˆ«ìžë„ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤!<br />
 					<br />
-					Å°³ª °ªÀÌ ¹«¾ùÀÎÁö´Â Á¦ÇÑÀÌ ¾ø½À´Ï´Ù. ½ÉÁö¾î ´Ù¸¥ ¹è¿­ÀÌ µÉ ¼öµµ ÀÖ½À´Ï´Ù!
+					í‚¤ë‚˜ ê°’ì´ ë¬´ì—‡ì¸ì§€ëŠ” ì œí•œì´ ì—†ìŠµë‹ˆë‹¤. ì‹¬ì§€ì–´ ë‹¤ë¥¸ ë°°ì—´ì´ ë  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤!
 					<br />
-					°ªÀÌ ¶Ç ¹è¿­ÀÌ¸é, ÀÌ°ÍÀ» <i>³»Æ÷ ¹è¿­</i>ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. ÀÌ¿¡ °üÇØ¼­´Â ³ªÁß¿¡ ¼³¸íµå¸®°Ú½À´Ï´Ù.
+					ê°’ì´ ë˜ ë°°ì—´ì´ë©´, ì´ê²ƒì„ <i>ë‚´í¬ ë°°ì—´</i>ì´ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤. ì´ì— ê´€í•´ì„œëŠ” ë‚˜ì¤‘ì— ì„¤ëª…ë“œë¦¬ê² ìŠµë‹ˆë‹¤.
 					<hr />
 					<div>
-						°´Ã¼¸¦ »ç¿ëÇÏ°í ½ÍÀº ÀÌÀ¯°¡ ¸¹ÀÌ ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¸é:<br />
+						ê°ì²´ë¥¼ ì‚¬ìš©í•˜ê³  ì‹¶ì€ ì´ìœ ê°€ ë§Žì´ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ë©´:<br />
 						<ol>
-							<li>¹øÈ£ ¸®½ºÆ®¸¦ »ç¿ëÇÏ°í ½Í½À´Ï´Ù. ¿¹¸¦ µé¾î, Àåº¸±â ¸ñ·Ï °°Àº °æ¿ìÀÌ°ÚÁö¿ä (ÀÌ°ÍÀº ÀÎµ¦½º ¹è¿­ÀÌ¶ó°í ÁöÄªµË´Ï´Ù)</li>
-							<li>°ÝÀÚ¸¦ Ç¥ÇöÇÏ°í ½Í½À´Ï´Ù. ¾Æ¸¶µµ º¸µå °ÔÀÓ¿¡ »ç¿ëÇÏ½Ç »ý°¢ÀÌ°ÚÁö¿ä (ÀÌ°ÍÀº ³»Æ÷ °´Ã¼·Î ¸¸µé ¼ö ÀÖ½À´Ï´Ù)</li>
-							<li>°¢°¢¿¡ ÀÌ¸§ÀÌ ÀÖ´Â ¹°Ç° ¸ñ·ÏÀÌ ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î °úÀÏÀÇ Æ¯Â¡¿¡ ¸ÂÃß¾î ÀÌ¸§À» Àû¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù (ÀÌ°ÍÀº ¿¬°ü ¹è¿­ÀÌ¶ó°í ºÎ¸¨´Ï´Ù)</li>
+							<li>ë²ˆí˜¸ ë¦¬ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©í•˜ê³  ì‹¶ìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ìž¥ë³´ê¸° ëª©ë¡ ê°™ì€ ê²½ìš°ì´ê² ì§€ìš” (ì´ê²ƒì€ ì¸ë±ìŠ¤ ë°°ì—´ì´ë¼ê³  ì§€ì¹­ë©ë‹ˆë‹¤)</li>
+							<li>ê²©ìžë¥¼ í‘œí˜„í•˜ê³  ì‹¶ìŠµë‹ˆë‹¤. ì•„ë§ˆë„ ë³´ë“œ ê²Œìž„ì— ì‚¬ìš©í•˜ì‹¤ ìƒê°ì´ê² ì§€ìš” (ì´ê²ƒì€ ë‚´í¬ ê°ì²´ë¡œ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤)</li>
+							<li>ê°ê°ì— ì´ë¦„ì´ ìžˆëŠ” ë¬¼í’ˆ ëª©ë¡ì´ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ ê³¼ì¼ì˜ íŠ¹ì§•ì— ë§žì¶”ì–´ ì´ë¦„ì„ ì ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì´ê²ƒì€ ì—°ê´€ ë°°ì—´ì´ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤)</li>
 						</ol>
 					</div>
-					<h3 id="s71">a. °´Ã¼ ¸¸µé±â</h3>
+					<h3 id="s71">a. ê°ì²´ ë§Œë“¤ê¸°</h3>
 					<div>
-						°´Ã¼¸¦ ¸¸µé·Á¸é ¸î °¡Áö ¹æ¹ýÀÌ ÀÖ½À´Ï´Ù. °¡Àå ÈçÇÑ ¹æ¹ýÀº ¾Æ·¡¿Í °°½À´Ï´Ù.<br />
+						ê°ì²´ë¥¼ ë§Œë“¤ë ¤ë©´ ëª‡ ê°€ì§€ ë°©ë²•ì´ ìžˆìŠµë‹ˆë‹¤. ê°€ìž¥ í”í•œ ë°©ë²•ì€ ì•„ëž˜ì™€ ê°™ìŠµë‹ˆë‹¤.<br />
 						<ol>
 							<li><code>MyObject := ["one", "two", "three", 17]</code><br />
 								<div class="indented" >
-									°¢°ýÈ£ ±¸¹®ÀÔ´Ï´Ù.
-									ÀÌ°ÍÀ¸·Î "ÀÎµ¦½º ¹è¿­"À» ¸¸µé ¼ö ÀÖ½À´Ï´Ù.
-									ÀÎµ¦½º ¹è¿­Àº Ç×¸ñ ¸®½ºÆ®¸¦ 1ºÎÅÍ ÂÞ¿í ³ª¿­ÇØ º¸¿©ÁÖ´Â °´Ã¼ÀÔ´Ï´Ù.
-									ÀÌ ¿¹Á¦¿¡¼­, °ª <code>"one"</code>Àº °´Ã¼ Å°<code>1</code>¿¡ ÀúÀåµË´Ï´Ù (ÀÎµ¦½º 1), ±×¸®°í °ª <code>17</code>Àº °´Ã¼ Å° <code>4</code>¿¡ ÀúÀåµË´Ï´Ù (ÀÎµ¦½º 4).
+									ê°ê´„í˜¸ êµ¬ë¬¸ìž…ë‹ˆë‹¤.
+									ì´ê²ƒìœ¼ë¡œ "ì¸ë±ìŠ¤ ë°°ì—´"ì„ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+									ì¸ë±ìŠ¤ ë°°ì—´ì€ í•­ëª© ë¦¬ìŠ¤íŠ¸ë¥¼ 1ë¶€í„° ì­ˆìš± ë‚˜ì—´í•´ ë³´ì—¬ì£¼ëŠ” ê°ì²´ìž…ë‹ˆë‹¤.
+									ì´ ì˜ˆì œì—ì„œ, ê°’ <code>"one"</code>ì€ ê°ì²´ í‚¤<code>1</code>ì— ì €ìž¥ë©ë‹ˆë‹¤ (ì¸ë±ìŠ¤ 1), ê·¸ë¦¬ê³  ê°’ <code>17</code>ì€ ê°ì²´ í‚¤ <code>4</code>ì— ì €ìž¥ë©ë‹ˆë‹¤ (ì¸ë±ìŠ¤ 4).
 								</div>
 							</li>
 							<li><code>Banana := {"Shape": "Elongated", "Color": "Yellow", "Taste": "Delicious", "Price": 3}</code><br />
 								<div class="indented" >
-									È°°ýÈ£ ±¸¹®ÀÔ´Ï´Ù.
-									ÀÌ°ÍÀ¸·Î "¿¬°ü ¹è¿­"À» Á¤ÀÇÇÒ ¼ö ÀÖ½À´Ï´Ù.
-									¿¬°ü ¹è¿­Àº °¢ Ç×¸ñ¿¡ ÀÌ¸§ÀÌ ÀÖ´Â µ¥ÀÌÅÍ ÁýÇÕÀÔ´Ï´Ù.
-									ÀÌ ¿¹Á¦¿¡¼­ °ª <code>"yellow"</code>´Â °´Ã¼ Å° <code>"color"</code>¿¡ ÀúÀåµË´Ï´Ù. ¶Ç, °ª <code>3</code>Àº °´Ã¼ Å° <code>"Price"</code>¿¡ ÀúÀåµË´Ï´Ù.
+									í™œê´„í˜¸ êµ¬ë¬¸ìž…ë‹ˆë‹¤.
+									ì´ê²ƒìœ¼ë¡œ "ì—°ê´€ ë°°ì—´"ì„ ì •ì˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+									ì—°ê´€ ë°°ì—´ì€ ê° í•­ëª©ì— ì´ë¦„ì´ ìžˆëŠ” ë°ì´í„° ì§‘í•©ìž…ë‹ˆë‹¤.
+									ì´ ì˜ˆì œì—ì„œ ê°’ <code>"yellow"</code>ëŠ” ê°ì²´ í‚¤ <code>"color"</code>ì— ì €ìž¥ë©ë‹ˆë‹¤. ë˜, ê°’ <code>3</code>ì€ ê°ì²´ í‚¤ <code>"Price"</code>ì— ì €ìž¥ë©ë‹ˆë‹¤.
 								</div>
 							</li>
 							<li><code>MyObject := Array("one", "two", "three", 17)</code><br />
 								<div class="indented" >
-									"¹è¿­" »ý¼º ÇÔ¼öÀÔ´Ï´Ù. ÀÌ ÇÔ¼ö´Â °¢°ýÈ£ ±¸¹®°ú µ¿µîÇÏÁö¸¸, ÇÔ¼ö¿¡ ½Î¿© ÀÖ½À´Ï´Ù.
+									"ë°°ì—´" ìƒì„± í•¨ìˆ˜ìž…ë‹ˆë‹¤. ì´ í•¨ìˆ˜ëŠ” ê°ê´„í˜¸ êµ¬ë¬¸ê³¼ ë™ë“±í•˜ì§€ë§Œ, í•¨ìˆ˜ì— ì‹¸ì—¬ ìžˆìŠµë‹ˆë‹¤.
 								</div>
 							</li>
 							<li><code>Banana := Object("Shape", "Elongated", "Color", "Yellow", "Taste", "Delicious", "Price", 3)</code><br />
 								<div class="indented" >
-									°´Ã¼ »ý¼º ÇÔ¼öÀÔ´Ï´Ù. ÀÌ ÇÔ¼ö´Â È°°ýÈ£¿Í µ¿µîÇÏÁö¸¸, ÇÔ¼ö¿¡ ½Î¿© ÀÖ½À´Ï´Ù.
+									ê°ì²´ ìƒì„± í•¨ìˆ˜ìž…ë‹ˆë‹¤. ì´ í•¨ìˆ˜ëŠ” í™œê´„í˜¸ì™€ ë™ë“±í•˜ì§€ë§Œ, í•¨ìˆ˜ì— ì‹¸ì—¬ ìžˆìŠµë‹ˆë‹¤.
 								</div>
 							</li>
 						</ol>
 
-						ÀÌ ¸ðµç Á¤ÀÇ°¡ °°Àº °Í(°´Ã¼)À» ¸¸µé¾î ³½´Ù´Â °ÍÀ» ±â¾ïÇÏ´Â °ÍÀÌ Áß¿äÇÕ´Ï´Ù. ´ÜÁö Å°°¡ ´Ù¸¦ »ÓÀÔ´Ï´Ù.
+						ì´ ëª¨ë“  ì •ì˜ê°€ ê°™ì€ ê²ƒ(ê°ì²´)ì„ ë§Œë“¤ì–´ ë‚¸ë‹¤ëŠ” ê²ƒì„ ê¸°ì–µí•˜ëŠ” ê²ƒì´ ì¤‘ìš”í•©ë‹ˆë‹¤. ë‹¨ì§€ í‚¤ê°€ ë‹¤ë¥¼ ë¿ìž…ë‹ˆë‹¤.
 
 					</div>
 
-					<h3 id="s72">b. °´Ã¼ »ç¿ëÇÏ±â</h3>
-					°´Ã¼¸¦ »ç¿ëÇÏ´Â ¹æ¹ýÀÌ ¿©·¯°¡Áö°¡ ÀÖ½À´Ï´Ù. °ªÀ» ¿­¶÷ÇÏ±â, °ªÀ» ¼³Á¤ÇÏ±â, °ªÀ» Ãß°¡ÇÏ±â, µîµîÀÌ Æ÷ÇÔµË´Ï´Ù.
+					<h3 id="s72">b. ê°ì²´ ì‚¬ìš©í•˜ê¸°</h3>
+					ê°ì²´ë¥¼ ì‚¬ìš©í•˜ëŠ” ë°©ë²•ì´ ì—¬ëŸ¬ê°€ì§€ê°€ ìžˆìŠµë‹ˆë‹¤. ê°’ì„ ì—´ëžŒí•˜ê¸°, ê°’ì„ ì„¤ì •í•˜ê¸°, ê°’ì„ ì¶”ê°€í•˜ê¸°, ë“±ë“±ì´ í¬í•¨ë©ë‹ˆë‹¤.
 					<div>
 						<br />
-						<strong>°ªÀ» ¼³Á¤ÇÏ·Á¸é:</strong>
+						<strong>ê°’ì„ ì„¤ì •í•˜ë ¤ë©´:</strong>
 						<div class="indented">
-							°´Ã¼¿¡ °ªÀ» ¼³Á¤ÇÏ´Â ÀÏÀº º¯¼ö¿¡ °ªÀ» ¼³Á¤ÇÏ´Â °Í ¸¸Å­ÀÌ³ª ´Ü¼øÇÕ´Ï´Ù.<br />
-							±×³É (¿­¶÷ ¼½¼Ç¿¡¼­ º¸½ÃµíÀÌ)  Ç¥Çö½Ä ÇÒ´ç ½Éº¼ <code>:=</code>ÀÇ ¿ÞÂÊ¿¡.<br />
-							 °¢°ýÈ£³ª Á¡ Ç¥±â¹ýÀ» ¹èÄ¡ÇÏ±â¸¸ ÇÏ¸é µË´Ï´Ù.
+							ê°ì²´ì— ê°’ì„ ì„¤ì •í•˜ëŠ” ì¼ì€ ë³€ìˆ˜ì— ê°’ì„ ì„¤ì •í•˜ëŠ” ê²ƒ ë§Œí¼ì´ë‚˜ ë‹¨ìˆœí•©ë‹ˆë‹¤.<br />
+							ê·¸ëƒ¥ (ì—´ëžŒ ì„¹ì…˜ì—ì„œ ë³´ì‹œë“¯ì´)  í‘œí˜„ì‹ í• ë‹¹ ì‹¬ë³¼ <code>:=</code>ì˜ ì™¼ìª½ì—.<br />
+							 ê°ê´„í˜¸ë‚˜ ì  í‘œê¸°ë²•ì„ ë°°ì¹˜í•˜ê¸°ë§Œ í•˜ë©´ ë©ë‹ˆë‹¤.
 							<br />
-							¿¹¸¦ µé¾î:<br />
+							ì˜ˆë¥¼ ë“¤ì–´:<br />
 							<code>Banana.Consistency := "Mushy"</code><br />
-							<code>Banana["Pickled"] := True <em>; ÀÌ ¹Ù³ª³ª´Â ÀýÀÎ ¹Ù³ª³ªÀÔ´Ï´Ù. ¿ìÀ¡.</em></code>
+							<code>Banana["Pickled"] := True <em>; ì´ ë°”ë‚˜ë‚˜ëŠ” ì ˆì¸ ë°”ë‚˜ë‚˜ìž…ë‹ˆë‹¤. ìš°ì›©.</em></code>
 						</div>
 						<br />
-						<strong>°ªÀ» ¿­¶÷ÇÏ·Á¸é:</strong>
+						<strong>ê°’ì„ ì—´ëžŒí•˜ë ¤ë©´:</strong>
 						<ol>
 							<li><code>Value := Banana["Color"]</code><br />
-								<div class="indented" >°¢°ýÈ£ Ç¥±â¹ýÀÔ´Ï´Ù.  Ç¥Çö½ÄÀ» Å°·Î »ç¿ëÇÏ¿© °´Ã¼·ÎºÎÅÍ °ªÀ» ¾òÀ» ¼ö ÀÖ½À´Ï´Ù.
-									ÀÌ °æ¿ì, °£´ÜÇÑ Ç¥Çö½Ä <code>"Color"</code>¸¦ »ç¿ëÇß½À´Ï´Ù. ÀÌ°ÍÀÌ (´ç¿¬È÷) Å° <code>Color</code>ÀÔ´Ï´Ù.
-									¸Þ½ÃÁö ¹Ú½º¿¡ "Yellow"¶ó´Â ´Ü¾î°¡ ³ªÅ¸³¯ ÅÙµ¥, ÀÌ°ÍÀº  <a href="#s71">¾Õ ¼½¼Ç</a>¿¡¼­ Å° <code>Color</code>¿¡ ÇÒ´çÇß´ø °ªÀÔ´Ï´Ù.
+								<div class="indented" >ê°ê´„í˜¸ í‘œê¸°ë²•ìž…ë‹ˆë‹¤.  í‘œí˜„ì‹ì„ í‚¤ë¡œ ì‚¬ìš©í•˜ì—¬ ê°ì²´ë¡œë¶€í„° ê°’ì„ ì–»ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+									ì´ ê²½ìš°, ê°„ë‹¨í•œ í‘œí˜„ì‹ <code>"Color"</code>ë¥¼ ì‚¬ìš©í–ˆìŠµë‹ˆë‹¤. ì´ê²ƒì´ (ë‹¹ì—°ížˆ) í‚¤ <code>Color</code>ìž…ë‹ˆë‹¤.
+									ë©”ì‹œì§€ ë°•ìŠ¤ì— "Yellow"ë¼ëŠ” ë‹¨ì–´ê°€ ë‚˜íƒ€ë‚  í…ë°, ì´ê²ƒì€  <a href="#s71">ì•ž ì„¹ì…˜</a>ì—ì„œ í‚¤ <code>Color</code>ì— í• ë‹¹í–ˆë˜ ê°’ìž…ë‹ˆë‹¤.
 								</div>
 							</li>
 							<li><code>Value := Banana.Color</code><br />
 								<div class="indented" >
-									Á¡ Ç¥±â¹ýÀÔ´Ï´Ù. ÀÌ ¹æ¹ýÀº ±âÈ£ ¹®ÀÚ¿­¸¸ Å°·Î »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. º¯¼ö´Â Å°·Î »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.
+									ì  í‘œê¸°ë²•ìž…ë‹ˆë‹¤. ì´ ë°©ë²•ì€ ê¸°í˜¸ ë¬¸ìžì—´ë§Œ í‚¤ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë³€ìˆ˜ëŠ” í‚¤ë¡œ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.
 								</div>
 							</li>
 						</ol>
 						<br />
-						<strong>»õ Å°¿Í °ªÀ» Ãß°¡ÇÏ·Á¸é:</strong>
+						<strong>ìƒˆ í‚¤ì™€ ê°’ì„ ì¶”ê°€í•˜ë ¤ë©´:</strong>
 						<ol>
-							<li>Á÷Á¢ÀûÀ¸·Î °ªÀ» Ãß°¡ÇÏ±â
+							<li>ì§ì ‘ì ìœ¼ë¡œ ê°’ì„ ì¶”ê°€í•˜ê¸°
 								<div class="indented" >
-									Á÷Á¢ÀûÀ¸·Î Å°¿Í °ªÀ» Ãß°¡ÇÏ·Á¸é, ±×³É Á¸ÀçÇÏÁö ¾Ê´Â Å°¸¦ ¼³Á¤ÇÏ±â¸¸ ÇÏ¸é µË´Ï´Ù.
-									¿¹¸¦ µé¾î:<br />
+									ì§ì ‘ì ìœ¼ë¡œ í‚¤ì™€ ê°’ì„ ì¶”ê°€í•˜ë ¤ë©´, ê·¸ëƒ¥ ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” í‚¤ë¥¼ ì„¤ì •í•˜ê¸°ë§Œ í•˜ë©´ ë©ë‹ˆë‹¤.
+									ì˜ˆë¥¼ ë“¤ì–´:<br />
 									<code>MyObject.NewKey := "Shiny"</code><br />
 									<code>MyObject["NewerKey"] := 3.1415</code>
 								</div>
 							</li>
-							<li>°ªÀ» »ðÀÔÇÏ±â
+							<li>ê°’ì„ ì‚½ìž…í•˜ê¸°
 								<div class="indented" >
-									°´Ã¼¿¡ Å°¿Í °ªÀ» Ãß°¡ÇÏ´Â ¶Ç´Ù¸¥ ¹æ¹ýÀº ´ÙÀ½ ¹æ¹ý Áß ÇÏ³ª¸¦ »ç¿ëÇÕ´Ï´Ù.<br />
+									ê°ì²´ì— í‚¤ì™€ ê°’ì„ ì¶”ê°€í•˜ëŠ” ë˜ë‹¤ë¥¸ ë°©ë²•ì€ ë‹¤ìŒ ë°©ë²• ì¤‘ í•˜ë‚˜ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤.<br />
 									<br />
 									<code>MyObject.InsertAt(Index, Value1, Value2, Value3...)</code><br />
-									<i>Index</i>´Â Á¤¼ö Å°ÀÔ´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é »ðÀÔÇÒ ¶§¸¶´Ù ÀÌ °ªº¸´Ù ´õ ³ôÀº ¸ðµç Å°µéÀÌ À§·Î ÀÌµ¿ÇÕ´Ï´Ù. Æ´ÀÌ ÀÖ¾îµµ ÀÌµ¿ÇÕ´Ï´Ù. 
-									(¿¹¸¦ µé¾î, Å°°¡ 1ºÎÅÍ 100 ±îÁö¸¸ Á¸ÀçÇÏ°í, °ªÀ» Å° 50¿¡ »ðÀÔÇÏ¸é,  100Àº 101·Î ÀÌµ¿ÇÕ´Ï´Ù).<br />
+									<i>Index</i>ëŠ” ì •ìˆ˜ í‚¤ìž…ë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ì‚½ìž…í•  ë•Œë§ˆë‹¤ ì´ ê°’ë³´ë‹¤ ë” ë†’ì€ ëª¨ë“  í‚¤ë“¤ì´ ìœ„ë¡œ ì´ë™í•©ë‹ˆë‹¤. í‹ˆì´ ìžˆì–´ë„ ì´ë™í•©ë‹ˆë‹¤. 
+									(ì˜ˆë¥¼ ë“¤ì–´, í‚¤ê°€ 1ë¶€í„° 100 ê¹Œì§€ë§Œ ì¡´ìž¬í•˜ê³ , ê°’ì„ í‚¤ 50ì— ì‚½ìž…í•˜ë©´,  100ì€ 101ë¡œ ì´ë™í•©ë‹ˆë‹¤).<br />
 									<br />
 									<code>MyObject.Push(Value1, Value2, Value3...)</code><br />
-									ÀÌ·¸°Ô ÇÏ¸é <i>MyObject</i>¹è¿­ÀÇ ³¡¿¡ °ªÀÌ "Ãß°¡µË´Ï´Ù". ´Ù¸¥ ¸»·Î ÇØ¼­, °ªÀ» °¡Àå ³ôÀº Á¤¼öÅ°º¸´Ù ÇÏ³ª ´õ Å« À§Ä¡¿¡ »ðÀÔÇÕ´Ï´Ù.<br />
+									ì´ë ‡ê²Œ í•˜ë©´ <i>MyObject</i>ë°°ì—´ì˜ ëì— ê°’ì´ "ì¶”ê°€ë©ë‹ˆë‹¤". ë‹¤ë¥¸ ë§ë¡œ í•´ì„œ, ê°’ì„ ê°€ìž¥ ë†’ì€ ì •ìˆ˜í‚¤ë³´ë‹¤ í•˜ë‚˜ ë” í° ìœ„ì¹˜ì— ì‚½ìž…í•©ë‹ˆë‹¤.<br />
 								</div>
 							</li>
 						</ol>
 						<br />
-						<strong>Å°¿Í °ªÀ» »èÁ¦ÇÏ·Á¸é:</strong>
+						<strong>í‚¤ì™€ ê°’ì„ ì‚­ì œí•˜ë ¤ë©´:</strong>
 						<ol>
-							<li>°ªÀ» Á¦°ÅÇÏ±â.<br />
+							<li>ê°’ì„ ì œê±°í•˜ê¸°.<br />
 								<div class="indented" >
-									°¡Àå ½±°Ô °ªÀ» Á¦°ÅÇÏ´Â ¹æ¹ýÀº ±×³É ¾ø¾Ö ¹ö¸®´Â °ÍÀÔ´Ï´Ù. 
-									±×³É ""·Î ¼³Á¤ÇÏ¸é µË´Ï´Ù. <i>ºó ¹®ÀÚ¿­</i>ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. ÀÌ°ÍÀ¸·Î´Â Å°°¡ Á¦°ÅµÇÁö ¾ÊÁö¸¸, °ªÀÌ ¼³Á¤µÇÁö ¾ÊÀº °ª°ú µ¿ÀÏÇÏ°Ô º¸ÀÌµµ·Ï ¸¸µì´Ï´Ù.<br />
-									<code>HasKey</code> ¸Þ½îµå¸¦ »ç¿ëÇÏ¸é Å°°¡ ¿©ÀüÈ÷ Á¸ÀçÇÑ´Ù°í ¾Ë·ÁÁÙ ¼ö ÀÖ½À´Ï´Ù.  ±×·¯¸é ¿©ÀüÈ÷ <code>for</code> È¸µ¹ÀÌ¿¡ ³ªÅ¸³¯ °ÍÀÔ´Ï´Ù. (È¸µ¹ÀÌ¿¡ °üÇØ¼­´Â ³ªÁß¿¡ ÀÚ¼¼È÷ ¸»¾¸µå¸®°Ú½À´Ï´Ù)
+									ê°€ìž¥ ì‰½ê²Œ ê°’ì„ ì œê±°í•˜ëŠ” ë°©ë²•ì€ ê·¸ëƒ¥ ì—†ì•  ë²„ë¦¬ëŠ” ê²ƒìž…ë‹ˆë‹¤. 
+									ê·¸ëƒ¥ ""ë¡œ ì„¤ì •í•˜ë©´ ë©ë‹ˆë‹¤. <i>ë¹ˆ ë¬¸ìžì—´</i>ì´ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤. ì´ê²ƒìœ¼ë¡œëŠ” í‚¤ê°€ ì œê±°ë˜ì§€ ì•Šì§€ë§Œ, ê°’ì´ ì„¤ì •ë˜ì§€ ì•Šì€ ê°’ê³¼ ë™ì¼í•˜ê²Œ ë³´ì´ë„ë¡ ë§Œë“­ë‹ˆë‹¤.<br />
+									<code>HasKey</code> ë©”ì˜ë“œë¥¼ ì‚¬ìš©í•˜ë©´ í‚¤ê°€ ì—¬ì „ížˆ ì¡´ìž¬í•œë‹¤ê³  ì•Œë ¤ì¤„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.  ê·¸ëŸ¬ë©´ ì—¬ì „ížˆ <code>for</code> íšŒëŒì´ì— ë‚˜íƒ€ë‚  ê²ƒìž…ë‹ˆë‹¤. (íšŒëŒì´ì— ê´€í•´ì„œëŠ” ë‚˜ì¤‘ì— ìžì„¸ížˆ ë§ì”€ë“œë¦¬ê² ìŠµë‹ˆë‹¤)
 								</div>
 							</li>
-							<li>Å°¸¦ Á¦°ÅÇÏ±â<br />
+							<li>í‚¤ë¥¼ ì œê±°í•˜ê¸°<br />
 								<div class="indented" >
-									Å°¿Í °ªÀ» Á¦°ÅÇÏ´Â ¸î °¡Áö ´Ù¸¥ ¹æ¹ýÀÌ ÀÖ½À´Ï´Ù:
+									í‚¤ì™€ ê°’ì„ ì œê±°í•˜ëŠ” ëª‡ ê°€ì§€ ë‹¤ë¥¸ ë°©ë²•ì´ ìžˆìŠµë‹ˆë‹¤:
 								</div>
 								<ol>
 									<li><code>RemovedValue := MyObject.Delete(AnyKey)</code>
 										<div class="indented">
-											<code>MyObject[AnyKey]</code>ÀÇ ÀÌÀü °ªÀº <i>RemovedValue</i>¿¡ ÀúÀåµË´Ï´Ù.
+											<code>MyObject[AnyKey]</code>ì˜ ì´ì „ ê°’ì€ <i>RemovedValue</i>ì— ì €ìž¥ë©ë‹ˆë‹¤.
 										</div>
 									</li>
 									<li><code>NumberOfRemovedKeys := MyObject.Delete(FirstKey, LastKey)</code>
 										<div class="indented">
-											ÀÌ·±½ÄÀ¸·Î Á¦°ÅÇÏ¸é FirstKey¿Í LastKey »çÀÌÀÇ ¼ýÀÚ/Á¤¼ö ¶Ç´Â ¹®ÀÚ¿­ Å°¸¦ ¸ù¶¥ Á¦°ÅÇÒ ¼ö ÀÖ½À´Ï´Ù.<br />
+											ì´ëŸ°ì‹ìœ¼ë¡œ ì œê±°í•˜ë©´ FirstKeyì™€ LastKey ì‚¬ì´ì˜ ìˆ«ìž/ì •ìˆ˜ ë˜ëŠ” ë¬¸ìžì—´ í‚¤ë¥¼ ëª½ë•… ì œê±°í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.<br />
 											<br />
-											µ¹·Á¹Þ´Â °ªÀº Á¦°ÅµÈ Å°ÀÇ °³¼öÀÔ´Ï´Ù. ÀÌ°ÍÀº Å° »çÀÌ¿¡ Æ´ÀÌ ÀÖÀ» ¶§ À¯¿ëÇÕ´Ï´Ù 
-											(¿¹¸¦ µé¾î, Å°¸¦ 1ºÎÅÍ 4±îÁö ÁöÁ¤ÇßÁö¸¸, Å° 2´Â Á¸ÀçÇÏÁö ¾Ê´Â´Ù¸é, NumberOfRemovedKeys°¡ 3À¸·Î ¼³Á¤µÇ°í ¼¼ °³ÀÇ Å°¸¸ Á¦°ÅµË´Ï´Ù)
+											ëŒë ¤ë°›ëŠ” ê°’ì€ ì œê±°ëœ í‚¤ì˜ ê°œìˆ˜ìž…ë‹ˆë‹¤. ì´ê²ƒì€ í‚¤ ì‚¬ì´ì— í‹ˆì´ ìžˆì„ ë•Œ ìœ ìš©í•©ë‹ˆë‹¤ 
+											(ì˜ˆë¥¼ ë“¤ì–´, í‚¤ë¥¼ 1ë¶€í„° 4ê¹Œì§€ ì§€ì •í–ˆì§€ë§Œ, í‚¤ 2ëŠ” ì¡´ìž¬í•˜ì§€ ì•ŠëŠ”ë‹¤ë©´, NumberOfRemovedKeysê°€ 3ìœ¼ë¡œ ì„¤ì •ë˜ê³  ì„¸ ê°œì˜ í‚¤ë§Œ ì œê±°ë©ë‹ˆë‹¤)
 										</div>
 									</li>
 									<li><code>MyObject.Pop()</code>
 										<div class="indented">
-											°¡Àå ³ôÀº Á¤¼ö Å°°¡ Á¦°ÅµÇ°í, ±× °ªÀ» µ¹·ÁÁÝ´Ï´Ù. ¿µÇâÀ» ¹ÞÀ» ´õ ³ôÀº Å°´Â ÀüÇô ¾ø½À´Ï´Ù.
+											ê°€ìž¥ ë†’ì€ ì •ìˆ˜ í‚¤ê°€ ì œê±°ë˜ê³ , ê·¸ ê°’ì„ ëŒë ¤ì¤ë‹ˆë‹¤. ì˜í–¥ì„ ë°›ì„ ë” ë†’ì€ í‚¤ëŠ” ì „í˜€ ì—†ìŠµë‹ˆë‹¤.
 										</div>
 									</li>
 									<li><code>RemovedValue := MyObject.RemoveAt(Index)</code><br />
 									<code>NumberOfRemovedKeys := MyObject.RemoveAt(Index, Length)</code>
 										<div class="indented">
-											 <i>Index</i>ºÎÅÍ <i>Index + Length - 1</i> (Æ÷ÇÔe)±îÁö ¸ðµç Å°µéÀÌ »èÁ¦µË´Ï´Ù. <i>Length</i>¸¦ »ý·«ÇÏ¸é  1ÀÌ ±âº»°ªÀÔ´Ï´Ù. 
-											 Å°¸¦ Á¦°ÅÇÑ ´ÙÀ½ ÀÌ º¸´Ù ³ôÀº ¸ðµç ¼ýÀÚ/Á¤¼ö Å°µéÀ» À§·Î ¿Ã·Á¼­ Æ´À» ¸Þ¿ó´Ï´Ù.
-											 ±×·¡¼­ °ªÀÌ <i>Index + Length</i>¿¡ ÀÖ¾ú´Ù¸é ÀÌÁ¦ ±× °ªÀº <i>Index</i>¿¡ ÀÖ½À´Ï´Ù. 
-											 ÀÌ ¹æ½ÄÀº ¿©·¯ °ªÀÌ ÁöÁ¤µÈ InsertAt ¸Þ½îµåÀÇ ÀÛµ¿ ¹æ½Ä°ú ºñ½ÁÇÕ´Ï´Ù.
+											 <i>Index</i>ë¶€í„° <i>Index + Length - 1</i> (í¬í•¨e)ê¹Œì§€ ëª¨ë“  í‚¤ë“¤ì´ ì‚­ì œë©ë‹ˆë‹¤. <i>Length</i>ë¥¼ ìƒëžµí•˜ë©´  1ì´ ê¸°ë³¸ê°’ìž…ë‹ˆë‹¤. 
+											 í‚¤ë¥¼ ì œê±°í•œ ë‹¤ìŒ ì´ ë³´ë‹¤ ë†’ì€ ëª¨ë“  ìˆ«ìž/ì •ìˆ˜ í‚¤ë“¤ì„ ìœ„ë¡œ ì˜¬ë ¤ì„œ í‹ˆì„ ë©”ì›ë‹ˆë‹¤.
+											 ê·¸ëž˜ì„œ ê°’ì´ <i>Index + Length</i>ì— ìžˆì—ˆë‹¤ë©´ ì´ì œ ê·¸ ê°’ì€ <i>Index</i>ì— ìžˆìŠµë‹ˆë‹¤. 
+											 ì´ ë°©ì‹ì€ ì—¬ëŸ¬ ê°’ì´ ì§€ì •ëœ InsertAt ë©”ì˜ë“œì˜ ìž‘ë™ ë°©ì‹ê³¼ ë¹„ìŠ·í•©ë‹ˆë‹¤.
 										</div>
 									</li>
 								</ol>
@@ -1061,71 +1062,71 @@ If Var1 &lt; %Var2%                   <em>; °ýÈ£°¡ ¾øÀ¸¸é, ±× if´Â ÀüÅëÀûÀÔ´Ï´Ù.
 					<!-- PAGE 7 -->
 				</div>
 				<div id="helpful_goodies" class="section">
-					<h2 id="s8">8 - ±âÅ¸ µîµî µµ¿ò</h2>
+					<h2 id="s8">8 - ê¸°íƒ€ ë“±ë“± ë„ì›€</h2>
 					<p>
-						ÀÌÁ¦ ¿©ÇàÀÇ ¸·¹ÙÁö¿¡ ´Ù´Ù¶ú½À´Ï´Ù. ¸ðÂÉ·Ï ¹«¾ð°¡¸¦ ¹è¿ü±â¸¦ ¹Ù¶ø´Ï´Ù.
-						±×·¯³ª ³¡³»±â Àü¿¡, ¿©·¯ºÐÀÌ ²À ¾Ë¾Æ¾ß ÇÑ´Ù°í »ý°¢ÇÏ´Â ´Ù¸¥ °ÍµéÀ» ¿©±â¿¡ Á¦½ÃÇÕ´Ï´Ù. Áñ°Å¿î ½Ã°£ µÇ½Ã±â¸¦!
+						ì´ì œ ì—¬í–‰ì˜ ë§‰ë°”ì§€ì— ë‹¤ë‹¤ëžìŠµë‹ˆë‹¤. ëª¨ìª¼ë¡ ë¬´ì–¸ê°€ë¥¼ ë°°ì› ê¸°ë¥¼ ë°”ëžë‹ˆë‹¤.
+						ê·¸ëŸ¬ë‚˜ ëë‚´ê¸° ì „ì—, ì—¬ëŸ¬ë¶„ì´ ê¼­ ì•Œì•„ì•¼ í•œë‹¤ê³  ìƒê°í•˜ëŠ” ë‹¤ë¥¸ ê²ƒë“¤ì„ ì—¬ê¸°ì— ì œì‹œí•©ë‹ˆë‹¤. ì¦ê±°ìš´ ì‹œê°„ ë˜ì‹œê¸°ë¥¼!
 					</p>
-					<h3 id="s81">a. ½ÅºñÇÑ []</h3>
+					<h3 id="s81">a. ì‹ ë¹„í•œ []</h3>
 					<div>
-						¹®¼­¸¦ ÅëÇÏ¿©, ´ÙÀ½ µÎ ½Éº¼ÀÌ º¸ÀÏ °Ì´Ï´Ù (<b>[</b> ±×¸®°í <b>]</b>). °ÅÀÇ ¸ðµç ÆäÀÌÁö »ó´Ü¿¡ ³ë¶õ»ö ±¸¹® ¹Ú½º ¾È¿¡¼­ ÄÚµå¸¦ µÑ·¯ ½Î°í ÀÖÁö¿ä. 
+						ë¬¸ì„œë¥¼ í†µí•˜ì—¬, ë‹¤ìŒ ë‘ ì‹¬ë³¼ì´ ë³´ì¼ ê²ë‹ˆë‹¤ (<b>[</b> ê·¸ë¦¬ê³  <b>]</b>). ê±°ì˜ ëª¨ë“  íŽ˜ì´ì§€ ìƒë‹¨ì— ë…¸ëž€ìƒ‰ êµ¬ë¬¸ ë°•ìŠ¤ ì•ˆì—ì„œ ì½”ë“œë¥¼ ë‘˜ëŸ¬ ì‹¸ê³  ìžˆì§€ìš”. 
 						
-						ÀÌ °¢È°È£ ¾È¿¡ µç ¸ðµç °ÍµéÀº <b><i>¼±ÅÃÀû</i>ÀÔ´Ï´Ù</b>. ±× ¾È¿¡ µç °ÍµéÀº ÇÊ¿ä ¾øÀ¸¸é »ý·«ÇØµµ µÈ´Ù´Â ¶æÀÔ´Ï´Ù.
-						ÄÚµå¸¦ ÀÛ¼ºÇÒ ¶§,  [] ´Â <b>Àý´ë·Î Å¸ÀÚÇÏÁö ¾Ê½À´Ï´Ù</b>.<br /><br />
-						<a href="commands/ControlGetText.htm">ControlGetText</a> ÆäÀÌÁö¿¡¼­ ÀÌ°ÍÀ» º¸½Ç ¼ö ÀÖ½À´Ï´Ù (»ö±ò ¾øÀÌ):<br />
+						ì´ ê°í™œí˜¸ ì•ˆì— ë“  ëª¨ë“  ê²ƒë“¤ì€ <b><i>ì„ íƒì </i>ìž…ë‹ˆë‹¤</b>. ê·¸ ì•ˆì— ë“  ê²ƒë“¤ì€ í•„ìš” ì—†ìœ¼ë©´ ìƒëžµí•´ë„ ëœë‹¤ëŠ” ëœ»ìž…ë‹ˆë‹¤.
+						ì½”ë“œë¥¼ ìž‘ì„±í•  ë•Œ,  [] ëŠ” <b>ì ˆëŒ€ë¡œ íƒ€ìží•˜ì§€ ì•ŠìŠµë‹ˆë‹¤</b>.<br /><br />
+						<a href="commands/ControlGetText.htm">ControlGetText</a> íŽ˜ì´ì§€ì—ì„œ ì´ê²ƒì„ ë³´ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ìƒ‰ê¹” ì—†ì´):<br />
 						<code>ControlGetText, OutputVar <span style="color:red"><b>[</b></span><span style="color:navy">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span><span style="color:red"><b>]</b></span></code><br /><br />
-						±×·¡¼­ ±×³É ¿øÇÏ´Ù¸é ÀÌ·¸°Ô ÇØµµ µË´Ï´Ù:<br />
+						ê·¸ëž˜ì„œ ê·¸ëƒ¥ ì›í•˜ë‹¤ë©´ ì´ë ‡ê²Œ í•´ë„ ë©ë‹ˆë‹¤:<br />
 						<code>ControlGetText, OutputVar</code><br /><br />
 
-						¶Ç´Â Á» ´õ ¼¼¹ÐÇÏ°Ô ÀÌ·¸°Ô ÇØµµ µË´Ï´Ù:<br />
+						ë˜ëŠ” ì¢€ ë” ì„¸ë°€í•˜ê²Œ ì´ë ‡ê²Œ í•´ë„ ë©ë‹ˆë‹¤:<br />
 						<code>ControlGetText, OutputVar, Control, WinTitle</code><br /><br />
 
-						ExcludeTitle¸¦ »ç¿ëÇÏ°í ½ÍÁö¸¸ WinText³ª WinTitleÀº Ã¤¿ì°í ½ÍÁö ¾Ê´Ù¸é? °£´ÜÇÕ´Ï´Ù!<br />
+						ExcludeTitleë¥¼ ì‚¬ìš©í•˜ê³  ì‹¶ì§€ë§Œ WinTextë‚˜ WinTitleì€ ì±„ìš°ê³  ì‹¶ì§€ ì•Šë‹¤ë©´? ê°„ë‹¨í•©ë‹ˆë‹¤!<br />
 						<code>ControlGetText, OutputVar, Control,,, ExcludeTitle</code><br /><br />
 						<p class="Note">
-							¸Å°³º¯¼ö´Â ¹«½ÃÇÒ ¼ö ¾ø½À´Ï´Ù. ±×³É ºó Ã¤·Î ³õ¾Æ µÎ´Â °ÍÀº ±¦Âú½À´Ï´Ù.<br />
-							"WinTitle, WinText"¸¦ ¹«½ÃÇØ ¹ö¸®¸é, ´ÙÀ½°ú °°ÀÌ º¸ÀÏ °ÍÀÌ°í ¹®Á¦¸¦ ÀÏÀ¸Åµ´Ï´Ù:<br />
+							ë§¤ê°œë³€ìˆ˜ëŠ” ë¬´ì‹œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ê·¸ëƒ¥ ë¹ˆ ì±„ë¡œ ë†“ì•„ ë‘ëŠ” ê²ƒì€ ê´œì°®ìŠµë‹ˆë‹¤.<br />
+							"WinTitle, WinText"ë¥¼ ë¬´ì‹œí•´ ë²„ë¦¬ë©´, ë‹¤ìŒê³¼ ê°™ì´ ë³´ì¼ ê²ƒì´ê³  ë¬¸ì œë¥¼ ì¼ìœ¼í‚µë‹ˆë‹¤:<br />
 							<code>ControlGetText, OutputVar, Control, ExcludeTitle</code><br />
-							´ÙÀ½Àº À¯È¿ÇÕ´Ï´Ù.<br />
+							ë‹¤ìŒì€ ìœ íš¨í•©ë‹ˆë‹¤.<br />
 							<code>ControlGetText, OutputVar, Control,,, ExcludeTitle</code>
 						</p>
 					</div>
-					<h3 id="s82">b. AHK ¹öÀü ¾Ë¾Æ³»±â</h3>
+					<h3 id="s82">b. AHK ë²„ì „ ì•Œì•„ë‚´ê¸°</h3>
 					<div>
-						´ÙÀ½ ÄÚµå¸¦ ½ÇÇàÇÏ¸é AHK ¹öÀüÀ» º¼ ¼ö ÀÖ½À´Ï´Ù:
+						ë‹¤ìŒ ì½”ë“œë¥¼ ì‹¤í–‰í•˜ë©´ AHK ë²„ì „ì„ ë³¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤:
 <pre>
 MsgBox, %A_AHKVersion%
 </pre>
 
-						¶Ç´Â "AutoHotkey µµ¿ò¸» ÆÄÀÏ" ¶Ç´Â "AutoHotkey.chm"À» ½ÃÀÛ ¸Þ´º³ª ¼³Ä¡ µð·ºÅä¸®¿¡¼­ Ã£¾Æ º¸½Ê½Ã¿À.
+						ë˜ëŠ” "AutoHotkey ë„ì›€ë§ íŒŒì¼" ë˜ëŠ” "AutoHotkey.chm"ì„ ì‹œìž‘ ë©”ë‰´ë‚˜ ì„¤ì¹˜ ë””ë ‰í† ë¦¬ì—ì„œ ì°¾ì•„ ë³´ì‹­ì‹œì˜¤.
 					</div>
 
-					<h3 id="s83">c. ½ÃÇà Âø¿À</h3>
+					<h3 id="s83">c. ì‹œí–‰ ì°©ì˜¤</h3>
 					<p>
-						½ÃÇà Âø¿À´Â ¹è¿ò¿¡¼­ ¾ÆÁÖ ÈçÇÏ°í È¿°úÀûÀÎ ¹æ¹ýÀÔ´Ï´Ù.
-						¸ðµç °Íµé¿¡ µµ¿òÀ» ±¸ÇÏ´Â ´ë½Å¿¡, Á» È¥ÀÚ¸¸ÀÇ ½Ã°£À» °¡Áö°í (¸î ½Ã°£ÀÌ³ª ¸î ÀÏ µ¿¾È) ÀÛµ¿½ÃÄÑ º¸·Á°í ½ÃµµÇÏ´Â °ÍÀÌ ´õ »¡¸® ¹è¿ì´Âµ¥ µµ¿òÀÌ µÇ½Ç °Ì´Ï´Ù.
+						ì‹œí–‰ ì°©ì˜¤ëŠ” ë°°ì›€ì—ì„œ ì•„ì£¼ í”í•˜ê³  íš¨ê³¼ì ì¸ ë°©ë²•ìž…ë‹ˆë‹¤.
+						ëª¨ë“  ê²ƒë“¤ì— ë„ì›€ì„ êµ¬í•˜ëŠ” ëŒ€ì‹ ì—, ì¢€ í˜¼ìžë§Œì˜ ì‹œê°„ì„ ê°€ì§€ê³  (ëª‡ ì‹œê°„ì´ë‚˜ ëª‡ ì¼ ë™ì•ˆ) ìž‘ë™ì‹œì¼œ ë³´ë ¤ê³  ì‹œë„í•˜ëŠ” ê²ƒì´ ë” ë¹¨ë¦¬ ë°°ìš°ëŠ”ë° ë„ì›€ì´ ë˜ì‹¤ ê²ë‹ˆë‹¤.
 					</p>
 					<p>
-						¹º°¡¸¦ ½ÃµµÇØ º¸°í ¿¡·¯¸¦ ¸ÂÀÌÇØ º¸¸é¼­, ±× ¿¡·¯¸¦ ¿¬±¸ÇÕ´Ï´Ù. ´ÙÀ½ ÄÚµå¸¦ ¼öÁ¤ÇÑ ´ÙÀ½, ´Ù½Ã ½ÃµµÇØ º¾´Ï´Ù.
-						¿©ÀüÈ÷ ¿¡·¯¸¦ ¸ÂÀÌÇÑ´Ù¸é, ÄÚµå¸¦ Á» ´õ ¼öÁ¤ÇÕ´Ï´Ù. ÄÚµå°¡ ´õ ÀÌ»ó ½ÇÆÐÇÏÁö ¾ÊÀ» ¶§±îÁö °è¼Ó ½Ãµµ¿Í ½ÇÆÐ¸¦ °ÅµìÇÕ´Ï´Ù.  
-						¹®¼­¸¦ ÀÐ°í, ¿¡·¯¸¦ ÀÐ°í ¹«¾ùÀÌ ÀÛµ¿ÇÏ°í ¹«¾ùÀÌ ÀÛµ¿ÇÏÁö ¾Ê´ÂÁö ¹è¿ì¸é¼­ ¸¹Àº °ÍÀ» ¹è¿ì½Ç °Ì´Ï´Ù.
-						<span class="InlineCode">½Ãµµ, ½ÇÆÐ, ½Ãµµ, ½ÇÆÐ,½Ãµµ, ½ÇÆÐ, ½Ãµµ, ½ÇÆÐ, <b>¼º°ø!</b></span>
+						ë­”ê°€ë¥¼ ì‹œë„í•´ ë³´ê³  ì—ëŸ¬ë¥¼ ë§žì´í•´ ë³´ë©´ì„œ, ê·¸ ì—ëŸ¬ë¥¼ ì—°êµ¬í•©ë‹ˆë‹¤. ë‹¤ìŒ ì½”ë“œë¥¼ ìˆ˜ì •í•œ ë‹¤ìŒ, ë‹¤ì‹œ ì‹œë„í•´ ë´…ë‹ˆë‹¤.
+						ì—¬ì „ížˆ ì—ëŸ¬ë¥¼ ë§žì´í•œë‹¤ë©´, ì½”ë“œë¥¼ ì¢€ ë” ìˆ˜ì •í•©ë‹ˆë‹¤. ì½”ë“œê°€ ë” ì´ìƒ ì‹¤íŒ¨í•˜ì§€ ì•Šì„ ë•Œê¹Œì§€ ê³„ì† ì‹œë„ì™€ ì‹¤íŒ¨ë¥¼ ê±°ë“­í•©ë‹ˆë‹¤.  
+						ë¬¸ì„œë¥¼ ì½ê³ , ì—ëŸ¬ë¥¼ ì½ê³  ë¬´ì—‡ì´ ìž‘ë™í•˜ê³  ë¬´ì—‡ì´ ìž‘ë™í•˜ì§€ ì•ŠëŠ”ì§€ ë°°ìš°ë©´ì„œ ë§Žì€ ê²ƒì„ ë°°ìš°ì‹¤ ê²ë‹ˆë‹¤.
+						<span class="InlineCode">ì‹œë„, ì‹¤íŒ¨, ì‹œë„, ì‹¤íŒ¨,ì‹œë„, ì‹¤íŒ¨, ì‹œë„, ì‹¤íŒ¨, <b>ì„±ê³µ!</b></span>
 					</p>
 					<p>
-						ÀÌ ¹æ¹ýÀ¸·Î ¼ö ¸¹Àº "ÇÁ·ÎµéÀÌ" ¹è¿ü½À´Ï´Ù. ±×·¯³ª µµ¿òÀ» ±¸ÇÏ´Â µ¥ µÎ·Á¿öÇÏÁö ¸¶½Ê½Ã¿À. ¸é¹Ú´çÇÏÁö ¾Ê½À´Ï´Ù.
-						¹è¿ì´Â µ¥´Â ½Ã°£ÀÌ ÇÊ¿äÇÏ¸ç, ¿©·¯ºÐÀÌ ¸¸³ª´Â "ÇÁ·Î"°¡ ´Ü ¸î ½Ã°£ ¸î ÀÏ ¸¸¿¡ ¹è¿ö¼­ ¸¶½ºÅÍ°¡ µÈ °ÍÀÌ ¾Æ´Õ´Ï´Ù.
+						ì´ ë°©ë²•ìœ¼ë¡œ ìˆ˜ ë§Žì€ "í”„ë¡œë“¤ì´" ë°°ì› ìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ë„ì›€ì„ êµ¬í•˜ëŠ” ë° ë‘ë ¤ì›Œí•˜ì§€ ë§ˆì‹­ì‹œì˜¤. ë©´ë°•ë‹¹í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+						ë°°ìš°ëŠ” ë°ëŠ” ì‹œê°„ì´ í•„ìš”í•˜ë©°, ì—¬ëŸ¬ë¶„ì´ ë§Œë‚˜ëŠ” "í”„ë¡œ"ê°€ ë‹¨ ëª‡ ì‹œê°„ ëª‡ ì¼ ë§Œì— ë°°ì›Œì„œ ë§ˆìŠ¤í„°ê°€ ëœ ê²ƒì´ ì•„ë‹™ë‹ˆë‹¤.
 					</p>
-					<p class="Note">"Ã³À½¿¡´Â ¼º°øÇÏÁö ¸øÇÏ´õ¶óµµ, ´Ù½Ã ½Ãµµ, ¶Ç ½Ãµµ, ½ÃµµÇÏ¶ó." - Hickson, William E.</p>
-					<h3 id="s84">d. µé¿©¾²±â</h3>
+					<p class="Note">"ì²˜ìŒì—ëŠ” ì„±ê³µí•˜ì§€ ëª»í•˜ë”ë¼ë„, ë‹¤ì‹œ ì‹œë„, ë˜ ì‹œë„, ì‹œë„í•˜ë¼." - Hickson, William E.</p>
+					<h3 id="s84">d. ë“¤ì—¬ì“°ê¸°</h3>
 					<div>
-						µé¿©¾²±â´Â ¾ÆÁÖ Áß¿äÇÕ´Ï´Ù! ÄÚµå´Â ¿Ïº®ÇÏ°Ô ½ÇÇàµÇÁö¸¸, ÄÚµå¸¦ ÀÐÀ» ¶§ ½É°¢ÇÑ µÎÅë°Å¸®°¡ µÉ °ÍÀÔ´Ï´Ù. 
-						ÀÛÀº ÄÚµå¶ó¸é (25 ÁÙ ÀÌÇÏ) ¾Æ¸¶µµ µé¿©¾²±â°¡ ¾ø´õ¶óµµ ÀÐ´Âµ¥ ¹®Á¦°¡ ¾ø°ÚÁö¸¸, Á¶¸¸°£ ¾î·Á¿öÁú °Ì´Ï´Ù.
-						µÇµµ·ÏÀÌ¸é ºü¸® µé¿©¾²±â¸¦ ¹è¿ì´Â ÆíÀÌ Á¦ÀÏ ÁÁ½À´Ï´Ù.<br />
-						µé¿©¾²±â´Â Æ¯º°ÇÑ ½ºÅ¸ÀÏÀÌ ¾øÁö¸¸, ÀÏ°ü¼ºÀ» À¯ÁöÇÏ´Â °ÍÀÌ Á¦ÀÏ ÁÁ½À´Ï´Ù.<br />
-						"<b>µé¿©¾²±â¶õ ¹«¾ùÀÎ°¡?</b>" ¾Æ¸¶µµ ÀÌ·¸°Ô ¹¯°í ½Í°ÚÁö¿ä? 
-						¹«¾ùÀÌ ¹«¾ù¿¡ ¼ÓÇØ ÀÖ´ÂÁö º¸±â À§ÇØ ÄÚµå¸¦ °£°ÝÀ» µÎ¾î ÂÉ°³´Â °ÍÀÔ´Ï´Ù.
-						»ç¶÷µéÀº ÇÑ ·¹º§ ´ç º¸Åë 3 ÀÌ³ª 4 °³ÀÇ °ø¹é ¶Ç´Â ÇÑ °³ÀÇ ÅÇÀ» »ç¿ëÇÕ´Ï´Ù.<br /><br />
-						µé¿©¾²±â ¾øÀ½:
+						ë“¤ì—¬ì“°ê¸°ëŠ” ì•„ì£¼ ì¤‘ìš”í•©ë‹ˆë‹¤! ì½”ë“œëŠ” ì™„ë²½í•˜ê²Œ ì‹¤í–‰ë˜ì§€ë§Œ, ì½”ë“œë¥¼ ì½ì„ ë•Œ ì‹¬ê°í•œ ë‘í†µê±°ë¦¬ê°€ ë  ê²ƒìž…ë‹ˆë‹¤. 
+						ìž‘ì€ ì½”ë“œë¼ë©´ (25 ì¤„ ì´í•˜) ì•„ë§ˆë„ ë“¤ì—¬ì“°ê¸°ê°€ ì—†ë”ë¼ë„ ì½ëŠ”ë° ë¬¸ì œê°€ ì—†ê² ì§€ë§Œ, ì¡°ë§Œê°„ ì–´ë ¤ì›Œì§ˆ ê²ë‹ˆë‹¤.
+						ë˜ë„ë¡ì´ë©´ ë¹ ë¦¬ ë“¤ì—¬ì“°ê¸°ë¥¼ ë°°ìš°ëŠ” íŽ¸ì´ ì œì¼ ì¢‹ìŠµë‹ˆë‹¤.<br />
+						ë“¤ì—¬ì“°ê¸°ëŠ” íŠ¹ë³„í•œ ìŠ¤íƒ€ì¼ì´ ì—†ì§€ë§Œ, ì¼ê´€ì„±ì„ ìœ ì§€í•˜ëŠ” ê²ƒì´ ì œì¼ ì¢‹ìŠµë‹ˆë‹¤.<br />
+						"<b>ë“¤ì—¬ì“°ê¸°ëž€ ë¬´ì—‡ì¸ê°€?</b>" ì•„ë§ˆë„ ì´ë ‡ê²Œ ë¬»ê³  ì‹¶ê² ì§€ìš”? 
+						ë¬´ì—‡ì´ ë¬´ì—‡ì— ì†í•´ ìžˆëŠ”ì§€ ë³´ê¸° ìœ„í•´ ì½”ë“œë¥¼ ê°„ê²©ì„ ë‘ì–´ ìª¼ê°œëŠ” ê²ƒìž…ë‹ˆë‹¤.
+						ì‚¬ëžŒë“¤ì€ í•œ ë ˆë²¨ ë‹¹ ë³´í†µ 3 ì´ë‚˜ 4 ê°œì˜ ê³µë°± ë˜ëŠ” í•œ ê°œì˜ íƒ­ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.<br /><br />
+						ë“¤ì—¬ì“°ê¸° ì—†ìŒ:
 
 <pre>
 if (car="old")
@@ -1147,54 +1148,54 @@ msgbox, My`, what a shiny new vehicle you have there.
 }
 </pre>
 
-						µé¿©¾²±âÇÔ:
+						ë“¤ì—¬ì“°ê¸°í•¨:
 
 <pre>
 if (car="old")
 {
-   msgbox, ÀÚµ¿Â÷°¡ Á¤¸» ¿À·¡µÇ¾ú½À´Ï´Ù
+   msgbox, ìžë™ì°¨ê°€ ì •ë§ ì˜¤ëž˜ë˜ì—ˆìŠµë‹ˆë‹¤
    if (wheels="flat")
    {
-      msgbox, ÀÌ ÀÚµ¿Â÷´Â ¿îÀüÇÏ±â¿¡ ¾ÈÀüÇÏÁö ¾Ê½À´Ï´Ù.
+      msgbox, ì´ ìžë™ì°¨ëŠ” ìš´ì „í•˜ê¸°ì— ì•ˆì „í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
       Return
    }
    else
    {
-      msgbox, ÁÖÀÇÇÏ¼¼¿ä! ÀÌ ±¸Çü ÀÚµ¿Â÷´Â ¿îÀüÇÏ±â¿¡ À§ÇèÇÕ´Ï´Ù.
+      msgbox, ì£¼ì˜í•˜ì„¸ìš”! ì´ êµ¬í˜• ìžë™ì°¨ëŠ” ìš´ì „í•˜ê¸°ì— ìœ„í—˜í•©ë‹ˆë‹¤.
    }
 }
 else
 {
-   msgbox, ¿Í¿ì`, Á¤¸» ¸ÚÁø ÀÚµ¿Â÷¸¦ °¡Áö¼Ì±º¿ä.
+   msgbox, ì™€ìš°`, ì •ë§ ë©‹ì§„ ìžë™ì°¨ë¥¼ ê°€ì§€ì…¨êµ°ìš”.
 }
 </pre>
-						Wiki¿¡ ´Ù¾çÇÑ ½ºÅ¸ÀÏ°ú ¿¹Á¦°¡ ÀÖ½À´Ï´Ù. ¿©·¯ºÐÀÌ ÀÐ±â¿¡ °¡Àå ½±´Ù°í »ý°¢ÇÏ´Â ½ºÅ¸ÀÏÀ» °ñ¶ó µé¿©¾²±â ÇÏ´Â ¹ýÀ» ¹è¿ì½Ê½Ã¿À.<br />
+						Wikiì— ë‹¤ì–‘í•œ ìŠ¤íƒ€ì¼ê³¼ ì˜ˆì œê°€ ìžˆìŠµë‹ˆë‹¤. ì—¬ëŸ¬ë¶„ì´ ì½ê¸°ì— ê°€ìž¥ ì‰½ë‹¤ê³  ìƒê°í•˜ëŠ” ìŠ¤íƒ€ì¼ì„ ê³¨ë¼ ë“¤ì—¬ì“°ê¸° í•˜ëŠ” ë²•ì„ ë°°ìš°ì‹­ì‹œì˜¤.<br />
 						<a href="http://en.wikipedia.org/wiki/Indent_style">http://en.wikipedia.org/wiki/Indent_style</a>
 					</div>
 
-					<h3 id="s85">e. µµ¿ò ¿äÃ»ÇÏ±â</h3>
-					¹°¾îº¸±â Àü¿¡, ¸ÕÀú ½º½º·Î ¿¬±¸ÇØ º¾´Ï´Ù. ¶Ç´Â ½º½º·Î ÄÚµåÇØ º¾´Ï´Ù.
-					°á°ú°¡ ¸¸Á·½º·´Áö ¸øÇÏ´Ù¸é, ¾Æ·¡¸¦ ÀÐ¾î º¸½Ê½Ã¿À.
+					<h3 id="s85">e. ë„ì›€ ìš”ì²­í•˜ê¸°</h3>
+					ë¬¼ì–´ë³´ê¸° ì „ì—, ë¨¼ì € ìŠ¤ìŠ¤ë¡œ ì—°êµ¬í•´ ë´…ë‹ˆë‹¤. ë˜ëŠ” ìŠ¤ìŠ¤ë¡œ ì½”ë“œí•´ ë´…ë‹ˆë‹¤.
+					ê²°ê³¼ê°€ ë§Œì¡±ìŠ¤ëŸ½ì§€ ëª»í•˜ë‹¤ë©´, ì•„ëž˜ë¥¼ ì½ì–´ ë³´ì‹­ì‹œì˜¤.
 					<ul>
-						<li>µÎ·Á¿ö ÇÏÁö ¸»°í µµ¿òÀ» Ã»ÇÕ´Ï´Ù. °¡Àå ¶È¶ÈÇÑ »ç¶÷µéÁ¶Â÷ ´Ù¸¥ ÀÌ¿¡°Ô µµ¿òÀ» ±¸ÇÕ´Ï´Ù.</li>
-						<li>¹«¾ùÀ» ½ÃµµÇÏ°í ÀÖ´ÂÁö µÎ·Á¿ö ÇÏÁö ¸»°í º¸¿©ÁÝ´Ï´Ù. ½ÉÁö¾î ¸»µµ ¾ÈµÇ´Â °ÍÀÌ¶ó°í »ý°¢ÇÒÁö¶óµµ ¸»ÀÔ´Ï´Ù.</li>
-						<li>½ÃµµÇØ º» °ÍµéÀ» ¸ðµÎ °Ô½ÃÇÕ´Ï´Ù.</li>
-						<li><i>¿©·¯ºÐÀ» Á¦¿ÜÇÏ°í</i> ´©±¸µç ¸ÛÃ»ÇØ¼­ ¾Æ¹«°Íµµ ¸ð¸¥´Ù°í »ý°¢ÇÏ½Ê½Ã¿À. µÇµµ·ÏÀÌ¸é ¸¹Àº Á¤º¸¸¦ ÁÖ¾î¼­ ¹Ùº¸µé¿¡°Ô ¹«¾ùÀ» ÇÏ·Á°í ÇÏ´ÂÁö ÀÏ±ú¿ö ÁÖ½Ê½Ã¿À. ¿ì¸®¸¦ µ½´Â °ÍÀÌ ¹Ù·Î ¿©·¯ºÐÀ» µ½´Â °ÍÀÔ´Ï´Ù.</li>
-						<li>ÀÎ³» ÇÏ½Ê½Ã¿À.</li>
-						<li>Á¤Áß ÇÏ½Ê½Ã¿À.</li>
-						<li>´ÙÀ½À» ¿©½Ê½Ã¿À.</li>
-						<li>Ä£Àý ÇÏ½Ê½Ã¿À.</li>
-						<li>Áñ±â½Ê½Ã¿À</li>
+						<li>ë‘ë ¤ì›Œ í•˜ì§€ ë§ê³  ë„ì›€ì„ ì²­í•©ë‹ˆë‹¤. ê°€ìž¥ ë˜‘ë˜‘í•œ ì‚¬ëžŒë“¤ì¡°ì°¨ ë‹¤ë¥¸ ì´ì—ê²Œ ë„ì›€ì„ êµ¬í•©ë‹ˆë‹¤.</li>
+						<li>ë¬´ì—‡ì„ ì‹œë„í•˜ê³  ìžˆëŠ”ì§€ ë‘ë ¤ì›Œ í•˜ì§€ ë§ê³  ë³´ì—¬ì¤ë‹ˆë‹¤. ì‹¬ì§€ì–´ ë§ë„ ì•ˆë˜ëŠ” ê²ƒì´ë¼ê³  ìƒê°í• ì§€ë¼ë„ ë§ìž…ë‹ˆë‹¤.</li>
+						<li>ì‹œë„í•´ ë³¸ ê²ƒë“¤ì„ ëª¨ë‘ ê²Œì‹œí•©ë‹ˆë‹¤.</li>
+						<li><i>ì—¬ëŸ¬ë¶„ì„ ì œì™¸í•˜ê³ </i> ëˆ„êµ¬ë“  ë©ì²­í•´ì„œ ì•„ë¬´ê²ƒë„ ëª¨ë¥¸ë‹¤ê³  ìƒê°í•˜ì‹­ì‹œì˜¤. ë˜ë„ë¡ì´ë©´ ë§Žì€ ì •ë³´ë¥¼ ì£¼ì–´ì„œ ë°”ë³´ë“¤ì—ê²Œ ë¬´ì—‡ì„ í•˜ë ¤ê³  í•˜ëŠ”ì§€ ì¼ê¹¨ì›Œ ì£¼ì‹­ì‹œì˜¤. ìš°ë¦¬ë¥¼ ë•ëŠ” ê²ƒì´ ë°”ë¡œ ì—¬ëŸ¬ë¶„ì„ ë•ëŠ” ê²ƒìž…ë‹ˆë‹¤.</li>
+						<li>ì¸ë‚´ í•˜ì‹­ì‹œì˜¤.</li>
+						<li>ì •ì¤‘ í•˜ì‹­ì‹œì˜¤.</li>
+						<li>ë‹¤ìŒì„ ì—¬ì‹­ì‹œì˜¤.</li>
+						<li>ì¹œì ˆ í•˜ì‹­ì‹œì˜¤.</li>
+						<li>ì¦ê¸°ì‹­ì‹œì˜¤</li>
 					</ul>
 
-					¹Ù·Î ´äÀ» ¾òÁö ¸øÇÏ´õ¶óµµ, Àû¾îµµ ÇÏ·ç (24 ½Ã°£)Àº ±â´Ù¸° ÈÄ¿¡ µµ¿òÀ» ´õ ¿äÃ»ÇÕ´Ï´Ù. ¿ì¸®µµ ±â²¨ÀÌ µµ¿ÍÁÖ°í ½ÍÁö¸¸, ½Ã°£ÀÌ ³ª¾ß µµ¿ÍÁÙ ¼ö ÀÖ½À´Ï´Ù. 
-					ÀÏÀ» ÇÏ°í ÀÖÀ» ¼öµµ ÀÖ°í, ÀáÀÚ°Å³ª, °ÔÀÓÇÏ°Å³ª, °¡Á·°ú ÇÔ²²ÀÌ°Å³ª ¾Æ´Ï¸é ±×³É ¹Ù»Ü ¼ö ÀÖ½À´Ï´Ù.<br />
-					µµ¿òÀ» ±â´Ù¸®´Â µ¿¾È, ½º½º·Î ½ÃµµÇÏ¸é¼­ ¹è¿ï ¼ö ÀÖ½À´Ï´Ù. 
-					µµ¿ò¾øÀÌ ½º½º·Î ¹º°¡¸¦ ÀÌ·ç¸é Å« º¸¶÷À» ´À³¢½Ç °ÍÀÔ´Ï´Ù.
+					ë°”ë¡œ ë‹µì„ ì–»ì§€ ëª»í•˜ë”ë¼ë„, ì ì–´ë„ í•˜ë£¨ (24 ì‹œê°„)ì€ ê¸°ë‹¤ë¦° í›„ì— ë„ì›€ì„ ë” ìš”ì²­í•©ë‹ˆë‹¤. ìš°ë¦¬ë„ ê¸°êº¼ì´ ë„ì™€ì£¼ê³  ì‹¶ì§€ë§Œ, ì‹œê°„ì´ ë‚˜ì•¼ ë„ì™€ì¤„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 
+					ì¼ì„ í•˜ê³  ìžˆì„ ìˆ˜ë„ ìžˆê³ , ìž ìžê±°ë‚˜, ê²Œìž„í•˜ê±°ë‚˜, ê°€ì¡±ê³¼ í•¨ê»˜ì´ê±°ë‚˜ ì•„ë‹ˆë©´ ê·¸ëƒ¥ ë°”ì  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.<br />
+					ë„ì›€ì„ ê¸°ë‹¤ë¦¬ëŠ” ë™ì•ˆ, ìŠ¤ìŠ¤ë¡œ ì‹œë„í•˜ë©´ì„œ ë°°ìš¸ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 
+					ë„ì›€ì—†ì´ ìŠ¤ìŠ¤ë¡œ ë­”ê°€ë¥¼ ì´ë£¨ë©´ í° ë³´ëžŒì„ ëŠë¼ì‹¤ ê²ƒìž…ë‹ˆë‹¤.
 
-					<h3 id="s86">f. ´Ù¸¥ ¸µÅ©µé</h3>
+					<h3 id="s86">f. ë‹¤ë¥¸ ë§í¬ë“¤</h3>
 					<p>
-						<a href="FAQ.htm">ÀÚÁÖ ¹¯´Â Áú¹®µé (FAQ)</a>
+						<a href="FAQ.htm">ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸ë“¤ (FAQ)</a>
 					</p>
 				</div>
 			</div>

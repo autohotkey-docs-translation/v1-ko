@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>StringMid</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,46 +11,46 @@
 
 <h1>StringMid</h1>
 
-<p>¹®ÀÚ¿­¿¡¼­ ÁöÁ¤µÈ À§Ä¡·ÎºÎÅÍ ÇÏ³ª ÀÌ»óÀÇ ¹®ÀÚ¸¦ ¿­¶÷ÇÕ´Ï´Ù.</p>
+<p>ë¬¸ìžì—´ì—ì„œ ì§€ì •ëœ ìœ„ì¹˜ë¡œë¶€í„° í•˜ë‚˜ ì´ìƒì˜ ë¬¸ìžë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">StringMid, OutputVar, InputVar, StartChar [, Count , L]
-NewStr := <a href="../Functions.htm#SubStr">SubStr</a>(String, StartPos [, Length]) <em>; ÀÚ¼¼ÇÑ °ÍÀº <a href="../Functions.htm#SubStr">SubStr() ÇÔ¼ö</a> ÂüÁ¶.</em></pre>
-<h3>¸Å°³º¯¼ö</h3>
+NewStr := <a href="../Functions.htm#SubStr">SubStr</a>(String, StartPos [, Length]) <em>; ìžì„¸í•œ ê²ƒì€ <a href="../Functions.htm#SubStr">SubStr() í•¨ìˆ˜</a> ì°¸ì¡°.</em></pre>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p><em>InputVar</em>·ÎºÎÅÍ ÃßÃâÇÑ ºÎ¹®ÀÚ¿­À» ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§.</p></dd>
+  <dd><p><em>InputVar</em>ë¡œë¶€í„° ì¶”ì¶œí•œ ë¶€ë¬¸ìžì—´ì„ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„.</p></dd>
 
   <dt>InputVar</dt>
-  <dd><p>³»¿ë¿¡¼­ ºÎºÐÀÚ¿­À» ÃßÃâÇÒ º¯¼öÀÇ ÀÌ¸§. ÀÌ¸§À» ÆÛ¼¾Æ® »çÀÎÀ¸·Î µÑ·¯ ½ÎÁö ¸¶½Ê½Ã¿À. ´Ü, º¯¼öÀÇ <em>³»¿ë</em>ÀÌ ÀÌ¸§ÀÌ±â¸¦ ¹Ù¶ó´Â °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù.</p></dd>
+  <dd><p>ë‚´ìš©ì—ì„œ ë¶€ë¶„ìžì—´ì„ ì¶”ì¶œí•  ë³€ìˆ˜ì˜ ì´ë¦„. ì´ë¦„ì„ í¼ì„¼íŠ¸ ì‚¬ì¸ìœ¼ë¡œ ë‘˜ëŸ¬ ì‹¸ì§€ ë§ˆì‹­ì‹œì˜¤. ë‹¨, ë³€ìˆ˜ì˜ <em>ë‚´ìš©</em>ì´ ì´ë¦„ì´ê¸°ë¥¼ ë°”ë¼ëŠ” ê²½ìš°ëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤.</p></dd>
 
   <dt>StartChar</dt>
-  <dd><p>ÃßÃâÇÒ Ã¹ ¹®ÀÚÀÇ À§Ä¡, <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É. <a href="StringGetPos.htm">StringGetPos</a>¿Í ´Ù¸£°Ô, 1ÀÌ¸é Ã¹ ¹®ÀÚÀÔ´Ï´Ù. <em>StartChar</em>°¡ 1º¸´Ù ÀÛÀ¸¸é, 1ÀÌ¶ó°í °£ÁÖÇÕ´Ï´Ù. <em>StartChar</em>°¡ ¹®ÀÚ¿­ÀÇ ³¡À» ³Ñ¾î¼­¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù.</p></dd>
+  <dd><p>ì¶”ì¶œí•  ì²« ë¬¸ìžì˜ ìœ„ì¹˜, <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥. <a href="StringGetPos.htm">StringGetPos</a>ì™€ ë‹¤ë¥´ê²Œ, 1ì´ë©´ ì²« ë¬¸ìžìž…ë‹ˆë‹¤. <em>StartChar</em>ê°€ 1ë³´ë‹¤ ìž‘ìœ¼ë©´, 1ì´ë¼ê³  ê°„ì£¼í•©ë‹ˆë‹¤. <em>StartChar</em>ê°€ ë¬¸ìžì—´ì˜ ëì„ ë„˜ì–´ì„œë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤.</p></dd>
 
   <dt>Count</dt>
-  <dd><p>v1.0.43.10+¿¡¼­, ÀÌ ¸Å°³º¯¼ö´Â »ý·«ÇÏ°Å³ª ºñ¿ö µÑ ¼ö ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº ¹®ÀÚ¿­·ÎºÎÅÍ ¸ðµç ¹®ÀÚ¸¦ ¿­¶÷ÇÏ±â¿¡ ÃæºÐÈ÷ Å« Á¤¼ö¸¦ ÁöÁ¤ÇÑ °Í°ú °°Àº È¿°ú°¡ ÀÖ½À´Ï´Ù.</p>
-      <p>±×·¸Áö ¾ÊÀ¸¸é, ÃßÃâÇÒ ¹®ÀÚÀÇ °³¼ö¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>ÀÌ °¡´ÉÇÕ´Ï´Ù. <em>Count</em>°¡ 0º¸´Ù ÀÛ°Å³ª °°À¸¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù.  <em>Count</em>°¡ <em>StartChar</em>·ÎºÎÅÍ ÃøÁ¤ÇØ <em>InputVar</em>ÀÇ ±æÀÌ¸¦ ÃÊ°úÇÏ¸é, <em>OutputVar</em>´Â <em>StartChar</em>ºÎÅÍ ½ÃÀÛÇØ <em>InputVar</em>ÀÇ ÀüÃ¼·Î ¼³Á¤µË´Ï´Ù.</p></dd>
+  <dd><p>v1.0.43.10+ì—ì„œ, ì´ ë§¤ê°œë³€ìˆ˜ëŠ” ìƒëžµí•˜ê±°ë‚˜ ë¹„ì›Œ ë‘˜ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ê²ƒì€ ë¬¸ìžì—´ë¡œë¶€í„° ëª¨ë“  ë¬¸ìžë¥¼ ì—´ëžŒí•˜ê¸°ì— ì¶©ë¶„ížˆ í° ì •ìˆ˜ë¥¼ ì§€ì •í•œ ê²ƒê³¼ ê°™ì€ íš¨ê³¼ê°€ ìžˆìŠµë‹ˆë‹¤.</p>
+      <p>ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ì¶”ì¶œí•  ë¬¸ìžì˜ ê°œìˆ˜ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤. <em>Count</em>ê°€ 0ë³´ë‹¤ ìž‘ê±°ë‚˜ ê°™ìœ¼ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤.  <em>Count</em>ê°€ <em>StartChar</em>ë¡œë¶€í„° ì¸¡ì •í•´ <em>InputVar</em>ì˜ ê¸¸ì´ë¥¼ ì´ˆê³¼í•˜ë©´, <em>OutputVar</em>ëŠ” <em>StartChar</em>ë¶€í„° ì‹œìž‘í•´ <em>InputVar</em>ì˜ ì „ì²´ë¡œ ì„¤ì •ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>L</dt>
-  <dd><p>±âÈ£ LÀ» »ç¿ëÇÏ¸é <em>StartChar</em>ÀÇ ¿À¸¥ÂÊÀÌ ¾Æ´Ï¶ó ¿ÞÂÊ¿¡ ÀÖ´Â ¹®ÀÚµéÀ» ÃßÃâÇÒ ¼ö ÀÖ½À´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿¡¼­, <em>OutputVar</em>´Â <em>Red</em>·Î ¼³Á¤µË´Ï´Ù:</p>
+  <dd><p>ê¸°í˜¸ Lì„ ì‚¬ìš©í•˜ë©´ <em>StartChar</em>ì˜ ì˜¤ë¥¸ìª½ì´ ì•„ë‹ˆë¼ ì™¼ìª½ì— ìžˆëŠ” ë¬¸ìžë“¤ì„ ì¶”ì¶œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì—ì„œ, <em>OutputVar</em>ëŠ” <em>Red</em>ë¡œ ì„¤ì •ë©ë‹ˆë‹¤:</p>
 <pre>InputVar = The Red Fox
 StringMid, OutputVar, InputVar, 7, 3, L</pre>
     <p>
-	L ¿É¼ÇÀÌ Á¸ÀçÇÏ°í <em>StartChar</em>°¡ 1º¸´Ù ÀÛÀ¸¸é, <em>OutputVar</em>Àº ºñ¿öÁý´Ï´Ù.  <em>StartChar</em>°¡ <em>InputVar</em>ÀÇ ±æÀÌ¸¦ ³Ñ¾î ¼­¸é, ¿ÀÁ÷ <em>Count</em> ¹üÀ§ ¾ÈÀÇ ¹®ÀÚµé¸¸ ÃßÃâµË´Ï´Ù. ¿¹¸¦ µé¾î, ¾Æ·¡ÀÇ ¿¹Á¦¿¡¼­ <em>OutputVar</em>´Â <em>Fox</em>°¡ ¼³Á¤µË´Ï´Ù:</p>
+	L ì˜µì…˜ì´ ì¡´ìž¬í•˜ê³  <em>StartChar</em>ê°€ 1ë³´ë‹¤ ìž‘ìœ¼ë©´, <em>OutputVar</em>ì€ ë¹„ì›Œì§‘ë‹ˆë‹¤.  <em>StartChar</em>ê°€ <em>InputVar</em>ì˜ ê¸¸ì´ë¥¼ ë„˜ì–´ ì„œë©´, ì˜¤ì§ <em>Count</em> ë²”ìœ„ ì•ˆì˜ ë¬¸ìžë“¤ë§Œ ì¶”ì¶œë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ì•„ëž˜ì˜ ì˜ˆì œì—ì„œ <em>OutputVar</em>ëŠ” <em>Fox</em>ê°€ ì„¤ì •ë©ë‹ˆë‹¤:</p>
 <pre>InputVar = The Red Fox
 StringMid, OutputVar, InputVar, 14, 6, L</pre>
 </dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÀÌ ¸í·É¾î¿Í ±âÅ¸ ¸ðµç ¸í·É¾î¿¡ ´ëÇÏ¿©, <em>OutputVar</em>´Â <em>InputVar</em>¿Í º¯¼ö°¡ °°¾Æµµ Çã¿ëÇÕ´Ï´Ù.</p>
+ì´ ëª…ë ¹ì–´ì™€ ê¸°íƒ€ ëª¨ë“  ëª…ë ¹ì–´ì— ëŒ€í•˜ì—¬, <em>OutputVar</em>ëŠ” <em>InputVar</em>ì™€ ë³€ìˆ˜ê°€ ê°™ì•„ë„ í—ˆìš©í•©ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="../Functions.htm#SubStr">SubStr()</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 
 <pre class="NoIndent">Source = Hello this is a test. 
 StringMid, the_word_this, Source, 7, 4</pre>

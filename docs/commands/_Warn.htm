@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>#Warn</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,75 +11,75 @@
 
 <h1>#Warn <span class="ver">[v1.0.95.00+]</span></h1>
 
-<p>Æ¯Á¤ÇÑ Á¶°Ç¿¡ ´ëÇÑ °æ°í¸¦ ÄÑ°í ²ü´Ï´Ù. Ã¶ÀÚ¿À·ù°¡ ÀÖ°Å³ª ¼±¾ðÀÌ ¾ø´Â °æ¿ì¿Í °°ÀÌ ¿¡·¯¸¦ ³ªÅ¸³¾ ¼öµµ ÀÖ½À´Ï´Ù.</p>
+<p>íŠ¹ì •í•œ ì¡°ê±´ì— ëŒ€í•œ ê²½ê³ ë¥¼ ì¼œê³  ë•ë‹ˆë‹¤. ì² ìžì˜¤ë¥˜ê°€ ìžˆê±°ë‚˜ ì„ ì–¸ì´ ì—†ëŠ” ê²½ìš°ì™€ ê°™ì´ ì—ëŸ¬ë¥¼ ë‚˜íƒ€ë‚¼ ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.</p>
 
 <pre class="Syntax">#Warn [, WarningType, WarningMode]</pre>
 
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>WarningType</dt>
   <dd>
-      <p>ÄÑ°í ²ø °æ°íÀÇ Á¾·ù. »ý·«ÇÏ¸é, <i>All</i>ÀÌ ±âº»°ªÀÔ´Ï´Ù.</p>
-      <p><strong>UseUnsetLocal</strong> ¶Ç´Â <strong>UseUnsetGlobal</strong>: º¯¼ö°¡ ÀÌÀü¿¡ °ªÀÌ ÇÒ´çµÇ¾î ÀÖÁö ¾Ê°Å³ª <a href="VarSetCapacity.htm">VarSetCapacity</a>·Î ÃÊ±âÈ­µÇÁö ¾ÊÀº Ã¤·Î ÀÐÇôÁö¸é °æ°í¸¦ º¸³À´Ï´Ù. º¯¼ö¸¦ ºñ¿ï ¸ñÀûÀÌ¶ó¸é, ºó ¹®ÀÚ¿­À» ÇÒ´çÇØ ÀÌ °æ°í¸¦ ´©¸£½Ê½Ã¿À.</p>
+      <p>ì¼œê³  ëŒ ê²½ê³ ì˜ ì¢…ë¥˜. ìƒëžµí•˜ë©´, <i>All</i>ì´ ê¸°ë³¸ê°’ìž…ë‹ˆë‹¤.</p>
+      <p><strong>UseUnsetLocal</strong> ë˜ëŠ” <strong>UseUnsetGlobal</strong>: ë³€ìˆ˜ê°€ ì´ì „ì— ê°’ì´ í• ë‹¹ë˜ì–´ ìžˆì§€ ì•Šê±°ë‚˜ <a href="VarSetCapacity.htm">VarSetCapacity</a>ë¡œ ì´ˆê¸°í™”ë˜ì§€ ì•Šì€ ì±„ë¡œ ì½í˜€ì§€ë©´ ê²½ê³ ë¥¼ ë³´ëƒ…ë‹ˆë‹¤. ë³€ìˆ˜ë¥¼ ë¹„ìš¸ ëª©ì ì´ë¼ë©´, ë¹ˆ ë¬¸ìžì—´ì„ í• ë‹¹í•´ ì´ ê²½ê³ ë¥¼ ëˆ„ë¥´ì‹­ì‹œì˜¤.</p>
       <p>
-	  Áö¿ª º¯¼ö¿Í Àü¿ª º¯¼ö¿¡ ´ëÇÏ¿© µû·Î °æ°í À¯ÇüÀÌ ³ª´²Áý´Ï´Ù. Àü¿ª º¯¼ö´Â ¿µ¼ÓÀûÀÌ°í ½ºÅ©¸³Æ®-ÀüÃ¼¿¡ °ÉÃÄ ¿µÇâÀ» ¹ÌÄ¡´Â ¼ºÁúÀÌ ÀÖÀ¸¹Ç·Î ¹Ì¸® ÃÊ±âÈ­ÇÏÁö ¾Ê°í »ç¿ëÇÏ´Â °ÍÀÌ º¸´Ù ÀÏ¹ÝÀûÀÌ±â ¶§¹®ÀÔ´Ï´Ù. ÀÌ·± ÀÌÀ¯·Î, ¾î¶² ½ºÅ©¸³Æ® ÀúÀÚ´Â ÀÌ·± Á¾·ùÀÇ °æ°í¸¦ Áö¿ª º¯¼ö¿¡´Â ÄÑ°í Àü¿ª º¯¼ö¿¡´Â ²ô°í ½Í¾îÇÕ´Ï´Ù.</p>
+	  ì§€ì—­ ë³€ìˆ˜ì™€ ì „ì—­ ë³€ìˆ˜ì— ëŒ€í•˜ì—¬ ë”°ë¡œ ê²½ê³  ìœ í˜•ì´ ë‚˜ëˆ ì§‘ë‹ˆë‹¤. ì „ì—­ ë³€ìˆ˜ëŠ” ì˜ì†ì ì´ê³  ìŠ¤í¬ë¦½íŠ¸-ì „ì²´ì— ê±¸ì³ ì˜í–¥ì„ ë¯¸ì¹˜ëŠ” ì„±ì§ˆì´ ìžˆìœ¼ë¯€ë¡œ ë¯¸ë¦¬ ì´ˆê¸°í™”í•˜ì§€ ì•Šê³  ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ë³´ë‹¤ ì¼ë°˜ì ì´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ì´ëŸ° ì´ìœ ë¡œ, ì–´ë–¤ ìŠ¤í¬ë¦½íŠ¸ ì €ìžëŠ” ì´ëŸ° ì¢…ë¥˜ì˜ ê²½ê³ ë¥¼ ì§€ì—­ ë³€ìˆ˜ì—ëŠ” ì¼œê³  ì „ì—­ ë³€ìˆ˜ì—ëŠ” ë„ê³  ì‹¶ì–´í•©ë‹ˆë‹¤.</p>
       <pre>#Warn
-<em>;y := ""  ; ÀÌ·¸°Ô ÇÏ¸é °æ°í¸¦ ´©¸¨´Ï´Ù.</em>
-x := y    <em>; y¿¡´Â ¾ÆÁ÷ °ªÀÌ ÇÒ´çµÇÁö ¾Ê¾Ò½À´Ï´Ù.</em></pre>
+<em>;y := ""  ; ì´ë ‡ê²Œ í•˜ë©´ ê²½ê³ ë¥¼ ëˆ„ë¦…ë‹ˆë‹¤.</em>
+x := y    <em>; yì—ëŠ” ì•„ì§ ê°’ì´ í• ë‹¹ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.</em></pre>
       <p>
-	  <strong>UseEnv</strong>: È¯°æ º¯¼ö°¡ ºó ½ºÅ©¸³Æ® º¯¼ö ´ë½Å¿¡ ÀÚµ¿À¸·Î »ç¿ëµÇ¸é °æ°í¸¦ º¸³À´Ï´Ù.  ÀÌ·± ÀÏÀº Á¾Á¾ È¯°æ º¯¼öÀÇ ÀÌ¸§ÀÌ ¿¹»óÄ¡ ¸øÇÏ°Ô ½ºÅ©¸³Æ®°¡ »ç¿ëÇÏ´Â º¯¼ö¿¡ ÀÏÄ¡ÇÒ ¶§ ÀÏ¾î³³´Ï´Ù. ÀÌ °æ°í´Â º¯¼ö¿¡ Á¢±ÙÇÒ ¶§ ÀÏ¾î³³´Ï´Ù. ±×·¯³ª ½ºÅ©¸³Æ®¿¡ <a href="_NoEnv.htm">#NoEnv</a>°¡ ÄÑÁ® ÀÖÀ¸¸é Àý´ë·Î ÀÏ¾î³ªÁö ¾Ê½À´Ï´Ù (¿©·¯ °¡Áö ÀÌÀ¯·Î ±ÇÀåÇÔ).</p>
+	  <strong>UseEnv</strong>: í™˜ê²½ ë³€ìˆ˜ê°€ ë¹ˆ ìŠ¤í¬ë¦½íŠ¸ ë³€ìˆ˜ ëŒ€ì‹ ì— ìžë™ìœ¼ë¡œ ì‚¬ìš©ë˜ë©´ ê²½ê³ ë¥¼ ë³´ëƒ…ë‹ˆë‹¤.  ì´ëŸ° ì¼ì€ ì¢…ì¢… í™˜ê²½ ë³€ìˆ˜ì˜ ì´ë¦„ì´ ì˜ˆìƒì¹˜ ëª»í•˜ê²Œ ìŠ¤í¬ë¦½íŠ¸ê°€ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜ì— ì¼ì¹˜í•  ë•Œ ì¼ì–´ë‚©ë‹ˆë‹¤. ì´ ê²½ê³ ëŠ” ë³€ìˆ˜ì— ì ‘ê·¼í•  ë•Œ ì¼ì–´ë‚©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ìŠ¤í¬ë¦½íŠ¸ì— <a href="_NoEnv.htm">#NoEnv</a>ê°€ ì¼œì ¸ ìžˆìœ¼ë©´ ì ˆëŒ€ë¡œ ì¼ì–´ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤ (ì—¬ëŸ¬ ê°€ì§€ ì´ìœ ë¡œ ê¶Œìž¥í•¨).</p>
       <pre>#Warn
-<em>;#NoEnv             ; ÀÌ°ÍÀ» Ãß°¡ÇØ "temp"°¡ È¯°æ º¯¼ö°¡ ¾Æ´Ï¶ó°í ¹àÈ÷½Ê½Ã¿À.</em>
-<em>;EnvGet temp, TEMP  ; ÀÌ·¸°Ô ÇÏ¸é È¯°æ º¯¼öÀÇ °ªÀ» ½ºÅ©¸³Æ® º¯¼ö ¾ÈÀ¸·Î º¹»çÇÒ °ÍÀÔ´Ï´Ù.</em>
-temp := ""          <em>; ÀÌ ÁÙÀ» »èÁ¦ÇØµµ, temp´Â ¿©ÀüÈ÷ °ªÀ» °¡Áö°í ÀÖ½À´Ï´Ù.</em>
-MsgBox % temp       <em>; ÀÌ°ÍÀº ÀÌ¸§ÀÌ "TEMP"ÀÎ È¯°æ º¯¼ö¿¡ Á¢±ÙÇÕ´Ï´Ù.</em></pre>
+<em>;#NoEnv             ; ì´ê²ƒì„ ì¶”ê°€í•´ "temp"ê°€ í™˜ê²½ ë³€ìˆ˜ê°€ ì•„ë‹ˆë¼ê³  ë°ížˆì‹­ì‹œì˜¤.</em>
+<em>;EnvGet temp, TEMP  ; ì´ë ‡ê²Œ í•˜ë©´ í™˜ê²½ ë³€ìˆ˜ì˜ ê°’ì„ ìŠ¤í¬ë¦½íŠ¸ ë³€ìˆ˜ ì•ˆìœ¼ë¡œ ë³µì‚¬í•  ê²ƒìž…ë‹ˆë‹¤.</em>
+temp := ""          <em>; ì´ ì¤„ì„ ì‚­ì œí•´ë„, tempëŠ” ì—¬ì „ížˆ ê°’ì„ ê°€ì§€ê³  ìžˆìŠµë‹ˆë‹¤.</em>
+MsgBox % temp       <em>; ì´ê²ƒì€ ì´ë¦„ì´ "TEMP"ì¸ í™˜ê²½ ë³€ìˆ˜ì— ì ‘ê·¼í•©ë‹ˆë‹¤.</em></pre>
       <p>
-	  <strong>LocalSameAsGlobal</strong>: ½ºÅ©¸³Æ®°¡ ½ÇÇàÀ» ½ÃÀÛÇÏ±â Àü¿¡, Àü¿ª º¯¼ö¿Í ÀÌ¸§ÀÌ °°Àº <em>¼±¾ðµÇÁö ¾ÊÀº</em> Áö¿ª º¯¼ö¿¡ ´ëÇÏ¿© °æ°í¸¦ º¸¿©ÁÝ´Ï´Ù. ÀÌ°ÍÀº ±ô¹ÚÀØ°í Àü¿ª º¯¼ö¸¦ ÇÔ¼ö ¾È¿¡ ¼±¾ðÇÑ ´ÙÀ½, °Å±â¿¡ Á¢±ÙÀ» ½ÃµµÇÏ¸é ¾ß±âµÇ´Â ¿¡·¯¸¦ ¹æÁöÇÏ±â À§ÇÑ ¸ñÀûÀÔ´Ï´Ù. ±× º¯¼ö°¡ ½ÇÁ¦·Î Áö¿ª º¯¼öÀÌ±â¸¦ ÀÇµµÇß´Ù¸é,  <code>local x</code> ¶Ç´Â <code>static y</code>¿Í °°ÀÌ ¼±¾ðÇÏ¿© °æ°í¸¦ ´©¸¦ ¼ö ÀÖ½À´Ï´Ù.</p>
+	  <strong>LocalSameAsGlobal</strong>: ìŠ¤í¬ë¦½íŠ¸ê°€ ì‹¤í–‰ì„ ì‹œìž‘í•˜ê¸° ì „ì—, ì „ì—­ ë³€ìˆ˜ì™€ ì´ë¦„ì´ ê°™ì€ <em>ì„ ì–¸ë˜ì§€ ì•Šì€</em> ì§€ì—­ ë³€ìˆ˜ì— ëŒ€í•˜ì—¬ ê²½ê³ ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤. ì´ê²ƒì€ ê¹œë°•ìžŠê³  ì „ì—­ ë³€ìˆ˜ë¥¼ í•¨ìˆ˜ ì•ˆì— ì„ ì–¸í•œ ë‹¤ìŒ, ê±°ê¸°ì— ì ‘ê·¼ì„ ì‹œë„í•˜ë©´ ì•¼ê¸°ë˜ëŠ” ì—ëŸ¬ë¥¼ ë°©ì§€í•˜ê¸° ìœ„í•œ ëª©ì ìž…ë‹ˆë‹¤. ê·¸ ë³€ìˆ˜ê°€ ì‹¤ì œë¡œ ì§€ì—­ ë³€ìˆ˜ì´ê¸°ë¥¼ ì˜ë„í–ˆë‹¤ë©´,  <code>local x</code> ë˜ëŠ” <code>static y</code>ì™€ ê°™ì´ ì„ ì–¸í•˜ì—¬ ê²½ê³ ë¥¼ ëˆ„ë¥¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
 <pre>#Warn
 g := 1
-ShowG() {       <em>; ÇÔ¼ö¸¦ È£ÃâÇÏÁö ¾Ê¾Æµµ °æ°í°¡ ³ªÅ¸³³´Ï´Ù.</em>
-    <em>;global g   ; &lt;-- Àü¿ª º¯¼ö¿¡ Á¢±ÙÇÏ±â À§ÇØ ÇÊ¿äÇÕ´Ï´Ù.</em>
-    MsgBox % g  <em>; ¼±¾ðÇÒ ÇÊ¿ä¾øÀÌ, "g"´Â ºó Áö¿ª º¯¼öÀÔ´Ï´Ù.</em>
+ShowG() {       <em>; í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ì§€ ì•Šì•„ë„ ê²½ê³ ê°€ ë‚˜íƒ€ë‚©ë‹ˆë‹¤.</em>
+    <em>;global g   ; &lt;-- ì „ì—­ ë³€ìˆ˜ì— ì ‘ê·¼í•˜ê¸° ìœ„í•´ í•„ìš”í•©ë‹ˆë‹¤.</em>
+    MsgBox % g  <em>; ì„ ì–¸í•  í•„ìš”ì—†ì´, "g"ëŠ” ë¹ˆ ì§€ì—­ ë³€ìˆ˜ìž…ë‹ˆë‹¤.</em>
 }</pre>
       <p>
-	  <strong>All</strong>: ÁÖ¾îÁø <em>WarningMode</em>¸¦ Áö¿øµÇ´Â ¸ðµç °æ°í À¯Çü¿¡ Àû¿ëÇÕ´Ï´Ù.</p>
+	  <strong>All</strong>: ì£¼ì–´ì§„ <em>WarningMode</em>ë¥¼ ì§€ì›ë˜ëŠ” ëª¨ë“  ê²½ê³  ìœ í˜•ì— ì ìš©í•©ë‹ˆë‹¤.</p>
     </dd>
 
   <dt>WarningMode</dt>
   <dd>
-      <p>¾î¶»°Ô °æ°í¸¦ º¸³¾Áö °¡¸®Å°´Â °ª. »ý·«µÇ¸é, ±âº»°ªÀº <em>MsgBox</em>ÀÔ´Ï´Ù.</p>
-      <p><strong>MsgBox</strong>: °æ°í¸¦ ±â¼úÇÏ´Â ¸Þ½ÃÁö ¹Ú½º¸¦ º¸¿©ÁÝ´Ï´Ù. ¸Þ½ÃÁö ¹Ú½º¸¦ ¹¬»ìÇÏ¸é, ½ºÅ©¸³Æ®´Â º¸ÅëÃ³·³ ½ÇÇàÀ» °è¼ÓÇÕ´Ï´Ù.</p>
-      <p><strong>StdOut</strong> <span class="ver">[v1.1.04+]</span>: °æ°í¸¦ ±â¼úÇÏ´Â ¸»À» Ç¥ÁØÃâ·Â(<em>stdout</em>)À¸·Î º¸³À´Ï´Ù (ÇÁ·Î±×·¥ÀÇ Ç¥ÁØ Ãâ·Â ½ºÆ®¸²). ÆÄÀÏ ÀÌ¸§°ú ÁÙ ¹øÈ£¸¦ ÇÔ²² º¸³À´Ï´Ù.  ÀÌ ´öºÐ¿¡ SciTE°°Àº È¯»óÀûÀÎ ÆíÁý±âµéÀº ½ºÅ©¸³Æ®¸¦ ¹æÇØÇÏÁö ¾Ê°í °æ°í¸¦ ³ªÆ÷ÇÒ ¼ö ÀÖ½À´Ï´Ù - »ç¿ëÀÚ´Â ³ªÁß¿¡ ÆíÁý±âÀÇ Ãâ·Â ÆÇÀ» ÅëÇÏ¿© ¹®Á¦ÀÇ ÁÙ¿¡ Á¡ÇÁÇØ °¥ ¼ö ÀÖ½À´Ï´Ù.</p>
-      <p><strong>OutputDebug</strong>: È­¸é¿¡ º¸¿©ÁÖ±â À§ÇØ °æ°í ¹®±¸¸¦ µð¹ö°Å¿¡°Ô º¸³À´Ï´Ù. µð¹ö°Å°¡ ÄÑÁ® ÀÖÁö ¾ÊÀ¸¸é, ¾Æ¹« È¿°ú°¡ ¾ø½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="OutputDebug.htm">OutputDebug</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-      <p><strong>Off</strong>: ÁÖ¾îÁø <em>WarningType</em>ÀÇ °æ°í¸¦ ²ü´Ï´Ù.</p>
+      <p>ì–´ë–»ê²Œ ê²½ê³ ë¥¼ ë³´ë‚¼ì§€ ê°€ë¦¬í‚¤ëŠ” ê°’. ìƒëžµë˜ë©´, ê¸°ë³¸ê°’ì€ <em>MsgBox</em>ìž…ë‹ˆë‹¤.</p>
+      <p><strong>MsgBox</strong>: ê²½ê³ ë¥¼ ê¸°ìˆ í•˜ëŠ” ë©”ì‹œì§€ ë°•ìŠ¤ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤. ë©”ì‹œì§€ ë°•ìŠ¤ë¥¼ ë¬µì‚´í•˜ë©´, ìŠ¤í¬ë¦½íŠ¸ëŠ” ë³´í†µì²˜ëŸ¼ ì‹¤í–‰ì„ ê³„ì†í•©ë‹ˆë‹¤.</p>
+      <p><strong>StdOut</strong> <span class="ver">[v1.1.04+]</span>: ê²½ê³ ë¥¼ ê¸°ìˆ í•˜ëŠ” ë§ì„ í‘œì¤€ì¶œë ¥(<em>stdout</em>)ìœ¼ë¡œ ë³´ëƒ…ë‹ˆë‹¤ (í”„ë¡œê·¸ëž¨ì˜ í‘œì¤€ ì¶œë ¥ ìŠ¤íŠ¸ë¦¼). íŒŒì¼ ì´ë¦„ê³¼ ì¤„ ë²ˆí˜¸ë¥¼ í•¨ê»˜ ë³´ëƒ…ë‹ˆë‹¤.  ì´ ë•ë¶„ì— SciTEê°™ì€ í™˜ìƒì ì¸ íŽ¸ì§‘ê¸°ë“¤ì€ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë°©í•´í•˜ì§€ ì•Šê³  ê²½ê³ ë¥¼ ë‚˜í¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ - ì‚¬ìš©ìžëŠ” ë‚˜ì¤‘ì— íŽ¸ì§‘ê¸°ì˜ ì¶œë ¥ íŒì„ í†µí•˜ì—¬ ë¬¸ì œì˜ ì¤„ì— ì í”„í•´ ê°ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
+      <p><strong>OutputDebug</strong>: í™”ë©´ì— ë³´ì—¬ì£¼ê¸° ìœ„í•´ ê²½ê³  ë¬¸êµ¬ë¥¼ ë””ë²„ê±°ì—ê²Œ ë³´ëƒ…ë‹ˆë‹¤. ë””ë²„ê±°ê°€ ì¼œì ¸ ìžˆì§€ ì•Šìœ¼ë©´, ì•„ë¬´ íš¨ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="OutputDebug.htm">OutputDebug</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+      <p><strong>Off</strong>: ì£¼ì–´ì§„ <em>WarningType</em>ì˜ ê²½ê³ ë¥¼ ë•ë‹ˆë‹¤.</p>
     </dd>
 
 </dl>
-<h3>³íÆò</h3>
-	<p>±âº»°ªÀ¸·Î, ¸ðµç °æ°í´Â ²¨Á® ÀÖ½À´Ï´Ù.</p>
-	<p>°æ°í´Â ½ÇÇà½Ã°£¿¡´Â ÄÑ°í ²ø ¼ö ¾ø½À´Ï´Ù; ¼³Á¤Àº ½ºÅ©¸³Æ®°¡ ÀûÀçµÉ ¶§ °áÁ¤µË´Ï´Ù. ±×·¯¹Ç·Î, ½ºÅ©¸³Æ®¿¡¼­ À§Ä¡´Â ÀÇ¹Ì°¡ ¾ø½À´Ï´Ù (±×¸®°í, ´Ù¸¥ # Áö½Ã¾îÃ³·³, #WarnÀº Á¶°ÇÀûÀ¸·Î ½ÇÇàÇÒ ¼ö ¾ø½À´Ï´Ù).</p>
+<h3>ë…¼í‰</h3>
+	<p>ê¸°ë³¸ê°’ìœ¼ë¡œ, ëª¨ë“  ê²½ê³ ëŠ” êº¼ì ¸ ìžˆìŠµë‹ˆë‹¤.</p>
+	<p>ê²½ê³ ëŠ” ì‹¤í–‰ì‹œê°„ì—ëŠ” ì¼œê³  ëŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤; ì„¤ì •ì€ ìŠ¤í¬ë¦½íŠ¸ê°€ ì ìž¬ë  ë•Œ ê²°ì •ë©ë‹ˆë‹¤. ê·¸ëŸ¬ë¯€ë¡œ, ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ìœ„ì¹˜ëŠ” ì˜ë¯¸ê°€ ì—†ìŠµë‹ˆë‹¤ (ê·¸ë¦¬ê³ , ë‹¤ë¥¸ # ì§€ì‹œì–´ì²˜ëŸ¼, #Warnì€ ì¡°ê±´ì ìœ¼ë¡œ ì‹¤í–‰í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤).</p>
 	<p>
-	±×·¸Áö¸¸, ¿©·¯ #Warn Áö½Ã¾îÀÇ ¼ø¼­´Â ÀÇ¹Ì°¡ ÀÖ½À´Ï´Ù: ¸¶Áö¸·À¸·Î ³ªÅ¸³ª ÁÖ¾îÁø °æ°í¸¦ ¼³Á¤ÇÑ Áö½Ã¾î°¡ ±× °æ°í¿¡ ´ëÇÑ ¸ðµå¸¦ °áÁ¤ÇÕ´Ï´Ù. 	±×·¡¼­, ¿¹¸¦ µé¾î, UseEnv¸¦ Á¦¿ÜÇÏ°í ¾Æ·¡ÀÇ µÎ ¼­¼ú¹®Àº Á¶ÇÕÇÏ¿© ¸ðµç °æ°í¸¦ ÄÒ È¿°ú°¡ ÀÖ½À´Ï´Ù:</p>
+	ê·¸ë ‡ì§€ë§Œ, ì—¬ëŸ¬ #Warn ì§€ì‹œì–´ì˜ ìˆœì„œëŠ” ì˜ë¯¸ê°€ ìžˆìŠµë‹ˆë‹¤: ë§ˆì§€ë§‰ìœ¼ë¡œ ë‚˜íƒ€ë‚˜ ì£¼ì–´ì§„ ê²½ê³ ë¥¼ ì„¤ì •í•œ ì§€ì‹œì–´ê°€ ê·¸ ê²½ê³ ì— ëŒ€í•œ ëª¨ë“œë¥¼ ê²°ì •í•©ë‹ˆë‹¤. 	ê·¸ëž˜ì„œ, ì˜ˆë¥¼ ë“¤ì–´, UseEnvë¥¼ ì œì™¸í•˜ê³  ì•„ëž˜ì˜ ë‘ ì„œìˆ ë¬¸ì€ ì¡°í•©í•˜ì—¬ ëª¨ë“  ê²½ê³ ë¥¼ ì¼  íš¨ê³¼ê°€ ìžˆìŠµë‹ˆë‹¤:</p>
 
 <pre>#Warn All
 #Warn UseEnv, Off
 
 EnvSet EnvVar, 1
-x := EnvVar       <em>; #NoEnv°¡ »ç¿ëµÇÁö ¾Ê¾ÒÀ¸¹Ç·Î ¹®Á¦°¡ ¾ø½À´Ï´Ù.</em>
-x := NotAnEnvVar  <em>; °æ°í.</em>
+x := EnvVar       <em>; #NoEnvê°€ ì‚¬ìš©ë˜ì§€ ì•Šì•˜ìœ¼ë¯€ë¡œ ë¬¸ì œê°€ ì—†ìŠµë‹ˆë‹¤.</em>
+x := NotAnEnvVar  <em>; ê²½ê³ .</em>
 </pre>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
-<a href="../Functions.htm#Locals">Áö¿ª º¯¼ö¿Í Àü¿ª º¯¼ö</a></p>
+<a href="../Functions.htm#Locals">ì§€ì—­ ë³€ìˆ˜ì™€ ì „ì—­ ë³€ìˆ˜</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">
-#Warn All, Off                    <em>; ¸ðµç °æ°í¸¦ ²ü´Ï´Ù. ÀÌ°ÍÀÌ ±âº» »óÅÂÀÔ´Ï´Ù.</em>
-#Warn                             <em>; ¸ðµç Á¾·ùÀÇ °æ°í¸¦ ÄÕ´Ï´Ù; °¢ °æ°í¸¦ ¸Þ½ÃÁö »óÀÚ¿¡ º¸¿©ÁÝ´Ï´Ù.</em>
-#Warn UseUnsetLocal, OutputDebug  <em>; Áö¿ª º¯¼ö¸¦ ¼³Á¤ÇÏ±â Àü¿¡ »ç¿ëµÇ¸é °æ°íÇÕ´Ï´Ù; OutputDebug·Î °æ°í¸¦ º¸³À´Ï´Ù.</em>
+#Warn All, Off                    <em>; ëª¨ë“  ê²½ê³ ë¥¼ ë•ë‹ˆë‹¤. ì´ê²ƒì´ ê¸°ë³¸ ìƒíƒœìž…ë‹ˆë‹¤.</em>
+#Warn                             <em>; ëª¨ë“  ì¢…ë¥˜ì˜ ê²½ê³ ë¥¼ ì¼­ë‹ˆë‹¤; ê° ê²½ê³ ë¥¼ ë©”ì‹œì§€ ìƒìžì— ë³´ì—¬ì¤ë‹ˆë‹¤.</em>
+#Warn UseUnsetLocal, OutputDebug  <em>; ì§€ì—­ ë³€ìˆ˜ë¥¼ ì„¤ì •í•˜ê¸° ì „ì— ì‚¬ìš©ë˜ë©´ ê²½ê³ í•©ë‹ˆë‹¤; OutputDebugë¡œ ê²½ê³ ë¥¼ ë³´ëƒ…ë‹ˆë‹¤.</em>
 </pre>
 
 </body>

@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>FileRead</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,79 +11,79 @@
 
 <h1>FileRead</h1>
 
-<p>ÆÄÀÏÀÇ ³»¿ëÀ» <a href="../Variables.htm">º¯¼ö</a> ¾ÈÀ¸·Î ÀÐ½À´Ï´Ù.</p>
+<p>íŒŒì¼ì˜ ë‚´ìš©ì„ <a href="../Variables.htm">ë³€ìˆ˜</a> ì•ˆìœ¼ë¡œ ì½ìŠµë‹ˆë‹¤.</p>
 
 <pre class="Syntax">FileRead, OutputVar, Filename</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>¿­¶÷µÈ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÒ <a href="../Variables.htm">º¯¼öÀÇ</a> ÀÌ¸§. ¹®Á¦°¡ ÀÏ¾î³ª¸é ¿¹¸¦ µé¾î ÆÄÀÏÀÌ &quot;»ç¿ë Áß&quot;ÀÌ°Å³ª Á¸ÀçÇÏÁö ¾ÊÀ¸¸é (ÀÌ °æ¿ì <a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº 1·Î ¼³Á¤µË´Ï´Ù) <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. <em>Filename</em>ÀÌ ºó ÆÄÀÏÀÌ¾îµµ ºñ¿öÁý´Ï´Ù (ÀÌ °æ¿ì ErrorLevelÀº 0ÀÌ ¼³Á¤µË´Ï´Ù).</p></dd>
+  <dd><p>ì—´ëžŒëœ ë°ì´í„°ë¥¼ ì €ìž¥í•  <a href="../Variables.htm">ë³€ìˆ˜ì˜</a> ì´ë¦„. ë¬¸ì œê°€ ì¼ì–´ë‚˜ë©´ ì˜ˆë¥¼ ë“¤ì–´ íŒŒì¼ì´ &quot;ì‚¬ìš© ì¤‘&quot;ì´ê±°ë‚˜ ì¡´ìž¬í•˜ì§€ ì•Šìœ¼ë©´ (ì´ ê²½ìš° <a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ 1ë¡œ ì„¤ì •ë©ë‹ˆë‹¤) <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. <em>Filename</em>ì´ ë¹ˆ íŒŒì¼ì´ì–´ë„ ë¹„ì›Œì§‘ë‹ˆë‹¤ (ì´ ê²½ìš° ErrorLevelì€ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤).</p></dd>
 
   <dt>Filename</dt>
-  <dd><p>ÀÐÀ» ÆÄÀÏÀÇ ÀÌ¸§. Àý´ë °æ·Î¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>¿¡ ÀÖ´Ù°í °£ÁÖµË´Ï´Ù.</p>
+  <dd><p>ì½ì„ íŒŒì¼ì˜ ì´ë¦„. ì ˆëŒ€ ê²½ë¡œë¥¼ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>ì— ìžˆë‹¤ê³  ê°„ì£¼ë©ë‹ˆë‹¤.</p>
       <p>
-	  <strong>Options</strong>: ÆÄÀÏÀÇ ÀÌ¸§ ¾Õ¿¡ ¹Ù·Î 0 °³ ÀÌ»óÀÇ ´ÙÀ½ ¹®ÀÚ¿­ÀÌ ³ªÅ¸³¯ ¼öµµ ÀÖ½À´Ï´Ù. °¢ ¿É¼ÇÀº ¿É¼Ç »çÀÌ¿¡ ´ÜÀÏ ½ºÆäÀÌ½º ¶Ç´Â ÅÇÀ¸·Î ºÐ¸®ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î: <code>*t *m5000 C:\Log Files\200601.txt</code>.</p>
+	  <strong>Options</strong>: íŒŒì¼ì˜ ì´ë¦„ ì•žì— ë°”ë¡œ 0 ê°œ ì´ìƒì˜ ë‹¤ìŒ ë¬¸ìžì—´ì´ ë‚˜íƒ€ë‚  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤. ê° ì˜µì…˜ì€ ì˜µì…˜ ì‚¬ì´ì— ë‹¨ì¼ ìŠ¤íŽ˜ì´ìŠ¤ ë˜ëŠ” íƒ­ìœ¼ë¡œ ë¶„ë¦¬í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´: <code>*t *m5000 C:\Log Files\200601.txt</code>.</p>
     <p>
-	<strong>*c</strong>: <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a> ÆÄÀÏ ¶Ç´Â ´Ù¸¥ ÀÌÁø µ¥ÀÌÅÍ¸¦ ÀûÀçÇÕ´Ï´Ù. <strong>*c</strong> ¿É¼ÇÀÌ Á¸ÀçÇÏ¸é ´Ù¸¥ ¸ðµç ¿É¼ÇÀº ¹«½ÃµË´Ï´Ù.</p>
+	<strong>*c</strong>: <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a> íŒŒì¼ ë˜ëŠ” ë‹¤ë¥¸ ì´ì§„ ë°ì´í„°ë¥¼ ì ìž¬í•©ë‹ˆë‹¤. <strong>*c</strong> ì˜µì…˜ì´ ì¡´ìž¬í•˜ë©´ ë‹¤ë¥¸ ëª¨ë“  ì˜µì…˜ì€ ë¬´ì‹œë©ë‹ˆë‹¤.</p>
     <p>
-	<strong>*m1024</strong>: ÀÌ ¿É¼ÇÀÌ »ý·«µÇ¸é, ÀüÃ¼ ÆÄÀÏÀº ¸Þ¸ð¸®°¡ ¸ðÀÚ¶óÁö ¾Ê´Â ÇÑ ÀûÀçµË´Ï´Ù. ÀÌ·± °æ¿ì ¿¡·¯ ¸Þ½ÃÁö°¡ ³ªÅ¸³³´Ï´Ù. ±×¸®°í ¾²·¹µå´Â Á¾·áÇÕ´Ï´Ù (±×·¯³ª ÀÌ¸¦ ÇÇÇÏ·Á¸é <a href="Try.htm">Try</a>¸¦ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù). ±×·¸Áö ¾ÊÀ¸¸é, 1024¸¦ ¹ÙÀÌÆ® °³¼öÀÇ ½ÊÁø¼ö ¶Ç´Â ½ÊÀ°Áø ¼ö·Î ±³Ã¼ÇÏ½Ê½Ã¿À.  ÆÄÀÏÀÌ ÀÌ º¸´Ù Å©¸é, ¿ÀÁ÷ ±×ÀÇ ¾Õ ºÎºÐ¸¸ ÀûÀçµË´Ï´Ù. ÁÖÀÇ: ÀÌ ¶§¹®¿¡ ¸¶Áö¸· ÁÙÀº `r`nÀÌ ¾Æ´Ï¶ó Ä³¸®Áö ¸®ÅÏ È¦·Î (`r) ³¡³ª´Â °á°ú¸¦ ÃÊ·¡ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>    
+	<strong>*m1024</strong>: ì´ ì˜µì…˜ì´ ìƒëžµë˜ë©´, ì „ì²´ íŒŒì¼ì€ ë©”ëª¨ë¦¬ê°€ ëª¨ìžë¼ì§€ ì•ŠëŠ” í•œ ì ìž¬ë©ë‹ˆë‹¤. ì´ëŸ° ê²½ìš° ì—ëŸ¬ ë©”ì‹œì§€ê°€ ë‚˜íƒ€ë‚©ë‹ˆë‹¤. ê·¸ë¦¬ê³  ì“°ë ˆë“œëŠ” ì¢…ë£Œí•©ë‹ˆë‹¤ (ê·¸ëŸ¬ë‚˜ ì´ë¥¼ í”¼í•˜ë ¤ë©´ <a href="Try.htm">Try</a>ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤). ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, 1024ë¥¼ ë°”ì´íŠ¸ ê°œìˆ˜ì˜ ì‹­ì§„ìˆ˜ ë˜ëŠ” ì‹­ìœ¡ì§„ ìˆ˜ë¡œ êµì²´í•˜ì‹­ì‹œì˜¤.  íŒŒì¼ì´ ì´ ë³´ë‹¤ í¬ë©´, ì˜¤ì§ ê·¸ì˜ ì•ž ë¶€ë¶„ë§Œ ì ìž¬ë©ë‹ˆë‹¤. ì£¼ì˜: ì´ ë•Œë¬¸ì— ë§ˆì§€ë§‰ ì¤„ì€ `r`nì´ ì•„ë‹ˆë¼ ìºë¦¬ì§€ ë¦¬í„´ í™€ë¡œ (`r) ëë‚˜ëŠ” ê²°ê³¼ë¥¼ ì´ˆëž˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>    
     <p>
-	<strong>*t</strong>: Ä³¸®Áö ¸®ÅÏ &amp; ¶óÀÎÇÇµå (`r`n)°¡ ³ªÅ¸³ª¸é ¸ðµÎ ¶óÀÎÇÇµå (`n)·Î ¹Ù²ß´Ï´Ù. ±×·¸Áö¸¸, ÀÌ º¯È¯Àº ¼öÇà¼º´ÉÀ» ÁÙÀÔ´Ï´Ù. ±×¸®°í º¸Åë ÇÊ¿äÇÏÁö ¾Ê½À´Ï´Ù. ¿¹¸¦ µé¾î, `r`nÀÌ Æ÷ÇÔµÈ ÅØ½ºÆ®´Â ÀÌ¹Ì <a href="StringReplace.htm">Gui Edit ÄÜÆ®·Ñ</a>¿¡ Ãß°¡µÉ ¿Ã¹Ù¸¥ Çü½ÄÀÔ´Ï´Ù. ºñ½ÁÇÏ°Ô, <a href="FileAppend.htm">FileAppend</a>´Â »õ ÆÄÀÏÀ» ¿­ ¶§ `r`nÀÌ ÀÖ´ÂÁö Å½ÁöÇÕ´Ï´Ù; °¢ `r`nÀ» ÀÖ´Â ±×´ë·Î ¾µ ÁÙ ¾Ð´Ï´Ù. `r`r`nÀ¸·Î º¯È¯ÇÏÁö ¾Ê½À´Ï´Ù. ¸¶Áö¸·À¸·Î, ÆÄÀÏ ³¡ÀÌ `r`n·Î ³¡³ªµç ±×³É `n·Î ³¡³ªµç »ó°ü¾øÀÌ ´ÙÀ½ <a href="LoopParse.htm">ÆÄ½Ì È¸µ¹ÀÌ</a>´Â ¿Ã¹Ù¸£°Ô ÀÛµ¿ÇÒ °ÍÀÔ´Ï´Ù: <code>Loop, parse, MyFileContents, `n, `r</code>.</p>
+	<strong>*t</strong>: ìºë¦¬ì§€ ë¦¬í„´ &amp; ë¼ì¸í”¼ë“œ (`r`n)ê°€ ë‚˜íƒ€ë‚˜ë©´ ëª¨ë‘ ë¼ì¸í”¼ë“œ (`n)ë¡œ ë°”ê¿‰ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì´ ë³€í™˜ì€ ìˆ˜í–‰ì„±ëŠ¥ì„ ì¤„ìž…ë‹ˆë‹¤. ê·¸ë¦¬ê³  ë³´í†µ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, `r`nì´ í¬í•¨ëœ í…ìŠ¤íŠ¸ëŠ” ì´ë¯¸ <a href="StringReplace.htm">Gui Edit ì½˜íŠ¸ë¡¤</a>ì— ì¶”ê°€ë  ì˜¬ë°”ë¥¸ í˜•ì‹ìž…ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, <a href="FileAppend.htm">FileAppend</a>ëŠ” ìƒˆ íŒŒì¼ì„ ì—´ ë•Œ `r`nì´ ìžˆëŠ”ì§€ íƒì§€í•©ë‹ˆë‹¤; ê° `r`nì„ ìžˆëŠ” ê·¸ëŒ€ë¡œ ì“¸ ì¤„ ì••ë‹ˆë‹¤. `r`r`nìœ¼ë¡œ ë³€í™˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë§ˆì§€ë§‰ìœ¼ë¡œ, íŒŒì¼ ëì´ `r`në¡œ ëë‚˜ë“  ê·¸ëƒ¥ `në¡œ ëë‚˜ë“  ìƒê´€ì—†ì´ ë‹¤ìŒ <a href="LoopParse.htm">íŒŒì‹± íšŒëŒì´</a>ëŠ” ì˜¬ë°”ë¥´ê²Œ ìž‘ë™í•  ê²ƒìž…ë‹ˆë‹¤: <code>Loop, parse, MyFileContents, `n, `r</code>.</p>
     <p>
-	<strong>*Pnnn</strong>: <span class="ver">[AHK_L 42+]:</span> <a href="FileEncoding.htm">FileEncoding</a>ÀÌ ¼³Á¤ÇÑ ±âº» ÀÎÄÚµùÀ» ¿À¹ö¶óÀÌµå ÇÕ´Ï´Ù. ¿©±â¿¡¼­ <em>nnn</em>Àº ¼ýÄ¡ <a href="http://msdn.microsoft.com/en-us/library/dd317756.aspx">ÄÚµå ÆäÀÌÁö ½Äº°ÀÚ</a>ÀÔ´Ï´Ù.</p></dd>
+	<strong>*Pnnn</strong>: <span class="ver">[AHK_L 42+]:</span> <a href="FileEncoding.htm">FileEncoding</a>ì´ ì„¤ì •í•œ ê¸°ë³¸ ì¸ì½”ë”©ì„ ì˜¤ë²„ë¼ì´ë“œ í•©ë‹ˆë‹¤. ì—¬ê¸°ì—ì„œ <em>nnn</em>ì€ ìˆ«ì¹˜ <a href="http://msdn.microsoft.com/en-us/library/dd317756.aspx">ì½”ë“œ íŽ˜ì´ì§€ ì‹ë³„ìž</a>ìž…ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> ÀÌ ¸í·É¾î´Â ½ÇÆÐ½Ã ¿¹¿Ü¸¦ ´øÁú ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Catch.htm#RuntimeErrors">½ÇÇà½Ã°£ ¿¡·¯</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº ÀûÀç°¡ ¼º°øÇÏ¸é 0ÀÌ ¼³Á¤µË´Ï´Ù. ¹®Á¦°¡ ÀÏ¾î³ª¸é 1ÀÌ ¼³Á¤µË´Ï´Ù. ¿¹¸¦ µé¸é: 
+<p><span class="ver">[v1.1.04+]</span> ì´ ëª…ë ¹ì–´ëŠ” ì‹¤íŒ¨ì‹œ ì˜ˆì™¸ë¥¼ ë˜ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Catch.htm#RuntimeErrors">ì‹¤í–‰ì‹œê°„ ì—ëŸ¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ ì ìž¬ê°€ ì„±ê³µí•˜ë©´ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤. ë¬¸ì œê°€ ì¼ì–´ë‚˜ë©´ 1ì´ ì„¤ì •ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ë©´: 
 <ol>
-	<li>ÆÄÀÏÀÌ Á¸ÀçÇÏÁö ¾Ê´Â´Ù;
-	<li>ÆÄÀÏÀÌ Àá°Ü ÀÖ°Å³ª Á¢±ÙÀÌ ºÒ°¡´ÉÇÏ´Ù; 
-	<li>½Ã½ºÅÛ¿¡ ÆÄÀÏÀ» ÀûÀçÇÒ ¸Þ¸ð¸®°¡ ÃæºÐÇÏÁö ¾Ê´Ù
+	<li>íŒŒì¼ì´ ì¡´ìž¬í•˜ì§€ ì•ŠëŠ”ë‹¤;
+	<li>íŒŒì¼ì´ ìž ê²¨ ìžˆê±°ë‚˜ ì ‘ê·¼ì´ ë¶ˆê°€ëŠ¥í•˜ë‹¤; 
+	<li>ì‹œìŠ¤í…œì— íŒŒì¼ì„ ì ìž¬í•  ë©”ëª¨ë¦¬ê°€ ì¶©ë¶„í•˜ì§€ ì•Šë‹¤
 </ol>
 </p>
 <p>
-<a href="../Variables.htm#LastError">A_LastError</a>´Â ¿î¿µ Ã¼Á¦ÀÇ GetLastError() ÇÔ¼öÀÇ °á°ú°¡ ´ã±é´Ï´Ù.</p>
+<a href="../Variables.htm#LastError">A_LastError</a>ëŠ” ìš´ì˜ ì²´ì œì˜ GetLastError() í•¨ìˆ˜ì˜ ê²°ê³¼ê°€ ë‹´ê¹ë‹ˆë‹¤.</p>
 
-<h3 id="Binary">ÀÌÁø µ¥ÀÌÅÍ ÀÐ±â</h3>
+<h3 id="Binary">ì´ì§„ ë°ì´í„° ì½ê¸°</h3>
 <p>
-ÆÄÀÏ, ¸Å°³º¯¼ö ±×¸®°í ±âº» ¼³Á¤¿¡ µû¶ó, FileRead´Â ÆÄÀÏ µ¥ÀÌÅÍ¸¦ ÅØ½ºÆ®·Î ÀÌÇØÇÏ°í ±×°ÍÀ» ½ºÅ©¸³Æ®°¡ »ç¿ëÇÏ´Â <a href="../Compat.htm#Format">°íÀ¯ÀÇ ÀÎÄÚµù</a>À¸·Î º¯È¯ÇÕ´Ï´Ù. ÀÌ ¶§¹®¿¡ ÆÄÀÏ¿¡ ÀÌÁø µ¥ÀÌÅÍ°¡ µé¾î ÀÖÀ» °æ¿ì ¹®Á¦¸¦ ¾ß±âÇÒ ¼ö ÀÖ½À´Ï´Ù. ´ÙÀ½ °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù:</p>
+íŒŒì¼, ë§¤ê°œë³€ìˆ˜ ê·¸ë¦¬ê³  ê¸°ë³¸ ì„¤ì •ì— ë”°ë¼, FileReadëŠ” íŒŒì¼ ë°ì´í„°ë¥¼ í…ìŠ¤íŠ¸ë¡œ ì´í•´í•˜ê³  ê·¸ê²ƒì„ ìŠ¤í¬ë¦½íŠ¸ê°€ ì‚¬ìš©í•˜ëŠ” <a href="../Compat.htm#Format">ê³ ìœ ì˜ ì¸ì½”ë”©</a>ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤. ì´ ë•Œë¬¸ì— íŒŒì¼ì— ì´ì§„ ë°ì´í„°ê°€ ë“¤ì–´ ìžˆì„ ê²½ìš° ë¬¸ì œë¥¼ ì•¼ê¸°í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ê²½ìš°ëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤:</p>
 <ul>
-  <li><span class="Syntax">*C</span> ¿É¼ÇÀÌ Á¸ÀçÇÏ¸é, ¸ðµç ÄÚµå ÆäÀÌÁö¿Í ÁÙ³¡ º¯È¯Àº ¹«Á¶°Ç ¹«½ÃµË´Ï´Ù.</li>
-  <li><span class="Syntax">*P<i>nnn</i></span> ¿É¼ÇÀÌ Á¸ÀçÇÏ°í <i>nnn</i>ÀÌ °íÀ¯ÀÇ ¹®ÀÚ¿­ ÀÎÄÚµù¿¡ »óÀÀÇÏ¸é, ÄÚµå ÆäÀÌÁö º¯È¯ÀÌ ÀÏ¾î³ªÁö ¾Ê½À´Ï´Ù.</li>
-  <li>ÇöÀç <a href="FileEncoding.htm">ÆÄÀÏ ÀÎÄÚµù</a> ¼³Á¤ÀÌ °íÀ¯ÀÇ ¹®ÀÚ¿­ ÀÎÄÚµù¿¡ »óÀÀÇÑ´Ù¸é, ÄÚµå ÆäÀÌÁö º¯È¯Àº ÀÏ¾î³ªÁö ¾Ê½À´Ï´Ù.</li>
+  <li><span class="Syntax">*C</span> ì˜µì…˜ì´ ì¡´ìž¬í•˜ë©´, ëª¨ë“  ì½”ë“œ íŽ˜ì´ì§€ì™€ ì¤„ë ë³€í™˜ì€ ë¬´ì¡°ê±´ ë¬´ì‹œë©ë‹ˆë‹¤.</li>
+  <li><span class="Syntax">*P<i>nnn</i></span> ì˜µì…˜ì´ ì¡´ìž¬í•˜ê³  <i>nnn</i>ì´ ê³ ìœ ì˜ ë¬¸ìžì—´ ì¸ì½”ë”©ì— ìƒì‘í•˜ë©´, ì½”ë“œ íŽ˜ì´ì§€ ë³€í™˜ì´ ì¼ì–´ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</li>
+  <li>í˜„ìž¬ <a href="FileEncoding.htm">íŒŒì¼ ì¸ì½”ë”©</a> ì„¤ì •ì´ ê³ ìœ ì˜ ë¬¸ìžì—´ ì¸ì½”ë”©ì— ìƒì‘í•œë‹¤ë©´, ì½”ë“œ íŽ˜ì´ì§€ ë³€í™˜ì€ ì¼ì–´ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</li>
 </ul>
 <p>
-ÁÖ¸ñÇÏ½Ê½Ã¿À. ÀÏ´Ü µ¥ÀÌÅÍ¸¦ <em>OutputVar</em>¸¦ ÀÐ¾î µé¿´´Ù¸é, ¿ÀÅäÇÖÅ° ¸í·É¾î¿Í ÇÔ¼ö¿¡ ¿ÀÁ÷ (Á¸ÀçÇÑ´Ù¸é) Ã¹ ÀÌÁø 0 ¾ÕÀÇ ÅØ½ºÆ®¸¸ &quot;º¸¿©Áý´Ï´Ù&quot;. ±×·¸Áö¸¸, ÀüÃ¼ ³»¿ëÀº ¿©ÀüÈ÷ Á¸ÀçÇÏ°í <a href="NumGet.htm">NumGet()</a> °°Àº °í±Þ ¹æ½ÄÀ¸·Î Á¢±ÙÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ì£¼ëª©í•˜ì‹­ì‹œì˜¤. ì¼ë‹¨ ë°ì´í„°ë¥¼ <em>OutputVar</em>ë¥¼ ì½ì–´ ë“¤ì˜€ë‹¤ë©´, ì˜¤í† í•«í‚¤ ëª…ë ¹ì–´ì™€ í•¨ìˆ˜ì— ì˜¤ì§ (ì¡´ìž¬í•œë‹¤ë©´) ì²« ì´ì§„ 0 ì•žì˜ í…ìŠ¤íŠ¸ë§Œ &quot;ë³´ì—¬ì§‘ë‹ˆë‹¤&quot;. ê·¸ë ‡ì§€ë§Œ, ì „ì²´ ë‚´ìš©ì€ ì—¬ì „ížˆ ì¡´ìž¬í•˜ê³  <a href="NumGet.htm">NumGet()</a> ê°™ì€ ê³ ê¸‰ ë°©ì‹ìœ¼ë¡œ ì ‘ê·¼í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-¸¶Áö¸·À¸·Î, <a href="FileOpen.htm">FileOpen()</a> ±×¸®°í <a href="../objects/File.htm#RawRead">File.RawRead()</a> ¶Ç´Â <a href="../objects/File.htm#ReadNum">File.Read<i>Num</i>()</a> ¸ÕÀú ÀüÃ¼ ÆÄÀÏÀ» ¸Þ¸ð¸®·Î ÀÐ¾î µéÀÏ ÇÊ¿ä ¾øÀÌ ÀÌÁø µ¥ÀÌÅÍ¸¦ ÀÐ´Â µ¥ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ë§ˆì§€ë§‰ìœ¼ë¡œ, <a href="FileOpen.htm">FileOpen()</a> ê·¸ë¦¬ê³  <a href="../objects/File.htm#RawRead">File.RawRead()</a> ë˜ëŠ” <a href="../objects/File.htm#ReadNum">File.Read<i>Num</i>()</a> ë¨¼ì € ì „ì²´ íŒŒì¼ì„ ë©”ëª¨ë¦¬ë¡œ ì½ì–´ ë“¤ì¼ í•„ìš” ì—†ì´ ì´ì§„ ë°ì´í„°ë¥¼ ì½ëŠ” ë° ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-¸ñÀûÀÌ ÆÄÀÏÀÇ ¸ðµç ³»¿ë ¶Ç´Â ÀÏºÎ¸¦ ¸Þ¸ð¸®·Î ÀÐ¾î µéÀÌ´Â °ÍÀÏ ¶§, <a href="LoopReadFile.htm">ÆÄÀÏ-ÀÐ±â È¸µ¹ÀÌ</a>¸¦ »ç¿ëÇÏ´Â °Íº¸´Ù FileRead°¡ ¼öÇà¼º´ÉÀÌ ÈÎ¾À ´õ ÁÁ½À´Ï´Ù.</p>
+ëª©ì ì´ íŒŒì¼ì˜ ëª¨ë“  ë‚´ìš© ë˜ëŠ” ì¼ë¶€ë¥¼ ë©”ëª¨ë¦¬ë¡œ ì½ì–´ ë“¤ì´ëŠ” ê²ƒì¼ ë•Œ, <a href="LoopReadFile.htm">íŒŒì¼-ì½ê¸° íšŒëŒì´</a>ë¥¼ ì‚¬ìš©í•˜ëŠ” ê²ƒë³´ë‹¤ FileReadê°€ ìˆ˜í–‰ì„±ëŠ¥ì´ í›¨ì”¬ ë” ì¢‹ìŠµë‹ˆë‹¤.</p>
 <p>
-Å©±â°¡ 1 GB°¡ ³Ñ´Â ÆÄÀÏÀº <a href="../misc/ErrorLevel.htm">ErrorLevel</a>¿¡ 1ÀÌ ¼³Á¤µÇ°í ±×¸®°í <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. ´Ü, <strong>*m</strong> ¿É¼ÇÀÌ Á¸ÀçÇÏ¸é ¿¹¿ÜÀÔ´Ï´Ù. ÀÌ °æ¿ì´Â ÆÄÀÏÀÇ ¾ÕºÎºÐÀÌ ÀûÀçµË´Ï´Ù.</p>
+í¬ê¸°ê°€ 1 GBê°€ ë„˜ëŠ” íŒŒì¼ì€ <a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì— 1ì´ ì„¤ì •ë˜ê³  ê·¸ë¦¬ê³  <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. ë‹¨, <strong>*m</strong> ì˜µì…˜ì´ ì¡´ìž¬í•˜ë©´ ì˜ˆì™¸ìž…ë‹ˆë‹¤. ì´ ê²½ìš°ëŠ” íŒŒì¼ì˜ ì•žë¶€ë¶„ì´ ì ìž¬ë©ë‹ˆë‹¤.</p>
 <p>
-FileRead´Â <a href="_MaxMem.htm">#MaxMem</a>À» ÁØ¼öÇÏÁö ¾Ê½À´Ï´Ù. ³Ê¹« ¸¹Àº ¸Þ¸ð¸®¸¦ »ç¿ëÇÒ±î °ÆÁ¤ÀÌ µÇ¸é, <a href="FileGetSize.htm">FileGetSize</a>À¸·Î ¹Ì¸® ÆÄÀÏ Å©±â¸¦ Á¡°ËÇÏ½Ê½Ã¿À.</p>
+FileReadëŠ” <a href="_MaxMem.htm">#MaxMem</a>ì„ ì¤€ìˆ˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë„ˆë¬´ ë§Žì€ ë©”ëª¨ë¦¬ë¥¼ ì‚¬ìš©í• ê¹Œ ê±±ì •ì´ ë˜ë©´, <a href="FileGetSize.htm">FileGetSize</a>ìœ¼ë¡œ ë¯¸ë¦¬ íŒŒì¼ í¬ê¸°ë¥¼ ì ê²€í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<a href="FileOpen.htm">FileOpen()</a>Àº FileReadº¸´Ù °í±Þ ±â´ÉÀ» Á¦°øÇÕ´Ï´Ù. ¿¹¸¦ µé¾î ÆÄÀÏ ÀüÃ¼¸¦ ¸Þ¸ð¸®·Î ÀÐ¾î µéÀÏ ÇÊ¿ä ¾øÀÌ Æ¯Á¤ÇÑ À§Ä¡¿¡ µ¥ÀÌÅÍ¸¦ ÀÐ°í ¾µ ¼ö ÀÖ½À´Ï´Ù. ÇÔ¼ö ¸®½ºÆ®´Â <a href="../objects/File.htm">ÆÄÀÏ °´Ã¼</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<a href="FileOpen.htm">FileOpen()</a>ì€ FileReadë³´ë‹¤ ê³ ê¸‰ ê¸°ëŠ¥ì„ ì œê³µí•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ íŒŒì¼ ì „ì²´ë¥¼ ë©”ëª¨ë¦¬ë¡œ ì½ì–´ ë“¤ì¼ í•„ìš” ì—†ì´ íŠ¹ì •í•œ ìœ„ì¹˜ì— ë°ì´í„°ë¥¼ ì½ê³  ì“¸ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í•¨ìˆ˜ ë¦¬ìŠ¤íŠ¸ëŠ” <a href="../objects/File.htm">íŒŒì¼ ê°ì²´</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="FileEncoding.htm">FileEncoding</a>, <a href="FileOpen.htm">FileOpen</a>/<a href="../objects/File.htm">File Object</a>, <a href="LoopReadFile.htm">file-reading loop</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="FileAppend.htm">FileAppend</a>, <a href="IniRead.htm">IniRead</a>, <a href="Sort.htm">Sort</a>, <a href="URLDownloadToFile.htm">UrlDownloadToFile</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent" id="ex1"><em>; ¿¹Á¦ #1: ÅØ½ºÆ® ÆÄÀÏÀ» OutputVar·Î ÀÐ¾î µéÀÔ´Ï´Ù.</em>
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent" id="ex1"><em>; ì˜ˆì œ #1: í…ìŠ¤íŠ¸ íŒŒì¼ì„ OutputVarë¡œ ì½ì–´ ë“¤ìž…ë‹ˆë‹¤.</em>
 FileRead, OutputVar, C:\My Documents\My File.txt</pre>
-<pre class="NoIndent" id="ex2"><em>; ¿¹Á¦ #2: ÆÄÀÏÀÇ ³»¿ëÀ» ½Å¼ÓÇÏ°Ô Á¤·ÄÇÕ´Ï´Ù.</em>
+<pre class="NoIndent" id="ex2"><em>; ì˜ˆì œ #2: íŒŒì¼ì˜ ë‚´ìš©ì„ ì‹ ì†í•˜ê²Œ ì •ë ¬í•©ë‹ˆë‹¤.</em>
 FileRead, Contents, C:\Address List.txt
-if not ErrorLevel  <em>; ¼º°øÀûÀ¸·Î ÀûÀçµÊ.</em>
+if not ErrorLevel  <em>; ì„±ê³µì ìœ¼ë¡œ ì ìž¬ë¨.</em>
 {
     <a href="Sort.htm">Sort</a>, Contents
     FileDelete, C:\Address List (alphabetical).txt
     FileAppend, %Contents%, C:\Address List (alphabetical).txt
-    Contents =  <em>; ¸Þ¸ð¸®¸¦ Ç®¾îÁÝ´Ï´Ù.</em>
+    Contents =  <em>; ë©”ëª¨ë¦¬ë¥¼ í’€ì–´ì¤ë‹ˆë‹¤.</em>
 }</pre>
 
 </body>

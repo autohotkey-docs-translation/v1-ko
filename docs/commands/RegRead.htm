@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>RegRead</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,82 +11,82 @@
 
 <h1>RegRead</h1>
 
-<p>·¹Áö½ºÆ®¸®·ÎºÎÅÍ °ªÀ» ÀÐ½À´Ï´Ù.</p>
+<p>ë ˆì§€ìŠ¤íŠ¸ë¦¬ë¡œë¶€í„° ê°’ì„ ì½ìŠµë‹ˆë‹¤.</p>
 
 <pre class="Syntax">RegRead, OutputVar, RootKey\SubKey [, ValueName]  <em>; v1.1.21+</em>
 RegRead, OutputVar, RootKey, SubKey [, ValueName]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>¿­¶÷µÈ °ªÀ» ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§. º¯¼ö¸¦ ¿­¶÷ÇÒ ¼ö ¾øÀ¸¸é, º¯¼ö´Â ºñ¿öÁö°í <a href="../misc/ErrorLevel.htm">ErrorLevel</a>¿¡ 1ÀÌ ¼³Á¤µË´Ï´Ù.</p></dd>
+  <dd><p>ì—´ëžŒëœ ê°’ì„ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„. ë³€ìˆ˜ë¥¼ ì—´ëžŒí•  ìˆ˜ ì—†ìœ¼ë©´, ë³€ìˆ˜ëŠ” ë¹„ì›Œì§€ê³  <a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì— 1ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>RootKey</dt>
-  <dd><p>´ÙÀ½ HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, ¶Ç´Â HKEY_CURRENT_CONFIG Áß ÇÏ³ª (¶Ç´Â HKLM¿Í °°Àº ¾àÀÚ). ¿ø°Ý ·¹Áö½ºÆ®¸®¿¡ Á¢±ÙÇÏ·Á¸é, ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ÄÄÇ»ÅÍ ÀÌ¸§°ú ½ÖÁ¡À» (¶Ç´Â v1.1.21+ÀÌ¸é, Á¤»ç¼±À») ¾Õ¿¡ ¹èÄ¡ÇÏ½Ê½Ã¿À: <code>\\workstation01:HKEY_LOCAL_MACHINE</code></p></dd>
+  <dd><p>ë‹¤ìŒ HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, ë˜ëŠ” HKEY_CURRENT_CONFIG ì¤‘ í•˜ë‚˜ (ë˜ëŠ” HKLMì™€ ê°™ì€ ì•½ìž). ì›ê²© ë ˆì§€ìŠ¤íŠ¸ë¦¬ì— ì ‘ê·¼í•˜ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ì»´í“¨í„° ì´ë¦„ê³¼ ìŒì ì„ (ë˜ëŠ” v1.1.21+ì´ë©´, ì •ì‚¬ì„ ì„) ì•žì— ë°°ì¹˜í•˜ì‹­ì‹œì˜¤: <code>\\workstation01:HKEY_LOCAL_MACHINE</code></p></dd>
 
   <dt>SubKey</dt>
-  <dd><p>ÇÏÀ§Å°ÀÇ ÀÌ¸§ (¿¹, Software\SomeApplication).</p></dd>
+  <dd><p>í•˜ìœ„í‚¤ì˜ ì´ë¦„ (ì˜ˆ, Software\SomeApplication).</p></dd>
   
   <dt>RootKey\SubKey <span class="ver">[v1.1.21+]</span></dt>
-  <dd><p><em>RootKey</em> ´ÙÀ½¿¡ Á¤»ç¼±ÀÌ ¿À¸é (<code>\</code>), <em>RootKey</em>¿Í <em>SubKey</em>´Â ÇÏ³ªÀÇ ¸Å°³º¯¼ö·Î ÇÕº´µË´Ï´Ù.</p></dd>
+  <dd><p><em>RootKey</em> ë‹¤ìŒì— ì •ì‚¬ì„ ì´ ì˜¤ë©´ (<code>\</code>), <em>RootKey</em>ì™€ <em>SubKey</em>ëŠ” í•˜ë‚˜ì˜ ë§¤ê°œë³€ìˆ˜ë¡œ í•©ë³‘ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>ValueName</dt>
-  <dd><p>¿­¶÷µÉ °ªÀÇ ÀÌ¸§. »ý·«ÇÏ¸é, <em>Subkey</em>ÀÇ ±âº» °ªÀÌ ¿­¶÷µË´Ï´Ù. ÀÌ °ªÀº RegEditÀÌ &quot;(Default)&quot;·Î º¸¿©ÁÖ´Â °ªÀÔ´Ï´Ù. ±âº» °ªÀÌ ¾ø´Ù¸é (Áï, RegEdit &quot;value not set&quot;ÀÌ¶ó°í º¸¿©ÁÖ¸é), <em>OutputVar</em>´Â ºñ¿öÁö°í ErrorLevelÀº 1ÀÌ ¼³Á¤µË´Ï´Ù.</p></dd>
+  <dd><p>ì—´ëžŒë  ê°’ì˜ ì´ë¦„. ìƒëžµí•˜ë©´, <em>Subkey</em>ì˜ ê¸°ë³¸ ê°’ì´ ì—´ëžŒë©ë‹ˆë‹¤. ì´ ê°’ì€ RegEditì´ &quot;(Default)&quot;ë¡œ ë³´ì—¬ì£¼ëŠ” ê°’ìž…ë‹ˆë‹¤. ê¸°ë³¸ ê°’ì´ ì—†ë‹¤ë©´ (ì¦‰, RegEdit &quot;value not set&quot;ì´ë¼ê³  ë³´ì—¬ì£¼ë©´), <em>OutputVar</em>ëŠ” ë¹„ì›Œì§€ê³  ErrorLevelì€ 1ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 <h3>ErrorLevel</h3>
 <p>
-<span class="ver">[v1.1.04+]</span> ÀÌ ¸í·É¾î´Â ½ÇÆÐ½Ã ¿¹¿Ü¸¦ ´øÁú ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Catch.htm#RuntimeErrors">½ÇÇà½Ã°£ ¿¡·¯</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<span class="ver">[v1.1.04+]</span> ì´ ëª…ë ¹ì–´ëŠ” ì‹¤íŒ¨ì‹œ ì˜ˆì™¸ë¥¼ ë˜ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Catch.htm#RuntimeErrors">ì‹¤í–‰ì‹œê°„ ì—ëŸ¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº ¹®Á¦°¡ ÀÖ¾úÀ¸¸é 1ÀÌ ¼³Á¤µÇ°í (¿¹¸¦ µé¾î Á¸ÀçÇÏÁö ¾Ê´Â °ªÀÌ³ª Å°) ±×·¸Áö ¾ÊÀ¸¸é 0ÀÌ ¼³Á¤µË´Ï´Ù.</p>
+<a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ ë¬¸ì œê°€ ìžˆì—ˆìœ¼ë©´ 1ì´ ì„¤ì •ë˜ê³  (ì˜ˆë¥¼ ë“¤ì–´ ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” ê°’ì´ë‚˜ í‚¤) ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 <p>
-<a href="../Variables.htm#LastError">A_LastError</a>Àº ¿î¿µ Ã¼Á¦ÀÇ GetLastError() ÇÔ¼öÀÇ °á°ú°¡ ÀúÀåµË´Ï´Ù.</p>
+<a href="../Variables.htm#LastError">A_LastError</a>ì€ ìš´ì˜ ì²´ì œì˜ GetLastError() í•¨ìˆ˜ì˜ ê²°ê³¼ê°€ ì €ìž¥ë©ë‹ˆë‹¤.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÇöÀç ´ÙÀ½ÀÇ °ª À¯Çü¸¸ Áö¿øµË´Ï´Ù: REG_SZ, REG_EXPAND_SZ, REG_MULTI_SZ, REG_DWORD, ±×¸®°í REG_BINARY.</p>
+í˜„ìž¬ ë‹¤ìŒì˜ ê°’ ìœ í˜•ë§Œ ì§€ì›ë©ë‹ˆë‹¤: REG_SZ, REG_EXPAND_SZ, REG_MULTI_SZ, REG_DWORD, ê·¸ë¦¬ê³  REG_BINARY.</p>
 <p>
-REG_DWORD °ªÀº ¾ðÁ¦³ª ¾çÀÇ ½ÊÁø¼ö·Î Ç¥ÇöµË´Ï´Ù.</p>
+REG_DWORD ê°’ì€ ì–¸ì œë‚˜ ì–‘ì˜ ì‹­ì§„ìˆ˜ë¡œ í‘œí˜„ë©ë‹ˆë‹¤.</p>
 <p>
-REG_BINARY Å°¸¦ ÀÐÀ» ¶§ ±× °á°ú´Â ½ÊÀ°Áø ¹®ÀÚ·Î ±¸¼ºµÈ ¹®ÀÚ¿­ÀÔ´Ï´Ù. ¿¹¸¦ µé¾î REG_BINARY °ªÀÌ 01,a9,ff,77ÀÌ¸é ¹®ÀÚ¿­ 01A9FF77·Î ÀÐÈü´Ï´Ù.</p>
+REG_BINARY í‚¤ë¥¼ ì½ì„ ë•Œ ê·¸ ê²°ê³¼ëŠ” ì‹­ìœ¡ì§„ ë¬¸ìžë¡œ êµ¬ì„±ëœ ë¬¸ìžì—´ìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ REG_BINARY ê°’ì´ 01,a9,ff,77ì´ë©´ ë¬¸ìžì—´ 01A9FF77ë¡œ ì½íž™ë‹ˆë‹¤.</p>
 <p>
-REG_MULTI_SZ Å°¸¦ ÀÐÀ» ¶§, °¢ ±¸¼º¿ä¼Ò´Â ¶óÀÎÇÇµå ¹®ÀÚ·Î ³¡³³´Ï´Ù (`n). ±¸¼º¿ä¼Ò°¡ ¾ø´Ù¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. <em>OutputVar</em>·ÎºÎÅÍ °³º°ÀûÀ¸·Î ±¸¼º¿ä¼Ò¸¦ ÃßÃâÇÏ´Â ¹æ¹ýÀ» º¸¿©ÁÖ´Â ¿¹´Â <a href="FileSelectFile.htm">FileSelectFile</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+REG_MULTI_SZ í‚¤ë¥¼ ì½ì„ ë•Œ, ê° êµ¬ì„±ìš”ì†ŒëŠ” ë¼ì¸í”¼ë“œ ë¬¸ìžë¡œ ëë‚©ë‹ˆë‹¤ (`n). êµ¬ì„±ìš”ì†Œê°€ ì—†ë‹¤ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. <em>OutputVar</em>ë¡œë¶€í„° ê°œë³„ì ìœ¼ë¡œ êµ¬ì„±ìš”ì†Œë¥¼ ì¶”ì¶œí•˜ëŠ” ë°©ë²•ì„ ë³´ì—¬ì£¼ëŠ” ì˜ˆëŠ” <a href="FileSelectFile.htm">FileSelectFile</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-REG_BINARY °ªÀÌ 64Kº¸´Ù Å©¸é v1.1.10.01 ÀÌ»ó¿¡¼­¸¸ ÀÐÀ» ¼ö ÀÖ½À´Ï´Ù.</p>
+REG_BINARY ê°’ì´ 64Kë³´ë‹¤ í¬ë©´ v1.1.10.01 ì´ìƒì—ì„œë§Œ ì½ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-¿©·¯ ·¹Áö½ºÆ®¸® Å°³ª °ªÀ» ¿­¶÷ÇÏ°í Ã³¸®ÇÏ·Á¸é, <a href="LoopReg.htm">·¹Áö½ºÆ®¸®-È¸µ¹ÀÌ</a>ÀÇ »ç¿ëÀ» °í·ÁÇØ º¸½Ê½Ã¿À.</p>
+ì—¬ëŸ¬ ë ˆì§€ìŠ¤íŠ¸ë¦¬ í‚¤ë‚˜ ê°’ì„ ì—´ëžŒí•˜ê³  ì²˜ë¦¬í•˜ë ¤ë©´, <a href="LoopReg.htm">ë ˆì§€ìŠ¤íŠ¸ë¦¬-íšŒëŒì´</a>ì˜ ì‚¬ìš©ì„ ê³ ë ¤í•´ ë³´ì‹­ì‹œì˜¤.</p>
 <p>
-¿ø°Ý ÄÄÇ»ÅÍÀÇ ·¹Áö½ºÆ®¸®¿¡ Á¢±ÙÇÏ´Â ¹ý¿¡ °üÇÑ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="LoopReg.htm">·¹Áö½ºÆ®¸®-È¸µ¹ÀÌ</a>ÀÇ ³íÆòÀ» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ì›ê²© ì»´í“¨í„°ì˜ ë ˆì§€ìŠ¤íŠ¸ë¦¬ì— ì ‘ê·¼í•˜ëŠ” ë²•ì— ê´€í•œ ìžì„¸í•œ ì •ë³´ëŠ” <a href="LoopReg.htm">ë ˆì§€ìŠ¤íŠ¸ë¦¬-íšŒëŒì´</a>ì˜ ë…¼í‰ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-32-ºñÆ® ½ºÅ©¸³Æ®¿¡¼­ 64-ºñÆ® ¼½¼ÇÀÇ ·¹Áö½ºÆ®¸®·ÎºÎÅÍ ¿£Æ®¸®¸¦ ¶Ç´Â ±× ¹Ý´ë·Î ÀÐ°í ¾²·Á¸é, <a href="SetRegView.htm">SetRegView</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+32-ë¹„íŠ¸ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ 64-ë¹„íŠ¸ ì„¹ì…˜ì˜ ë ˆì§€ìŠ¤íŠ¸ë¦¬ë¡œë¶€í„° ì—”íŠ¸ë¦¬ë¥¼ ë˜ëŠ” ê·¸ ë°˜ëŒ€ë¡œ ì½ê³  ì“°ë ¤ë©´, <a href="SetRegView.htm">SetRegView</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="RegDelete.htm">RegDelete</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="LoopReg.htm">Registry-loop</a>, <a href="SetRegView.htm">SetRegView</a>, <a href="IniRead.htm">IniRead</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent"><em>; ¿¹Á¦: ÇÁ·Î±×·¥ ÆÄÀÏ µð·ºÅä¸®ÀÇ °æ·Î¸¦ ¿­¶÷ÇÕ´Ï´Ù.
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent"><em>; ì˜ˆì œ: í”„ë¡œê·¸ëž¨ íŒŒì¼ ë””ë ‰í† ë¦¬ì˜ ê²½ë¡œë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.
 
-; ¾Æ·¡ÀÇ ÁÙÀº OS´Â 64-ºñÆ®ÀÎµ¥ ½ºÅ©¸³Æ®´Â ±×·¸Áö ¾ÊÀ» °æ¿ì,
-; 64-ºñÆ® ÇÁ·Î±×·¥ ÆÄÀÏÀÇ °æ·Î°¡ ¹ÝÈ¯µÈ´Ù´Â °ÍÀ» È®ÀÎÇÕ´Ï´Ù.</em>
-<a href="SetRegView.htm">SetRegView</a> 64  <em>; v1.1.08+ ÇÊ¿ä</em>
+; ì•„ëž˜ì˜ ì¤„ì€ OSëŠ” 64-ë¹„íŠ¸ì¸ë° ìŠ¤í¬ë¦½íŠ¸ëŠ” ê·¸ë ‡ì§€ ì•Šì„ ê²½ìš°,
+; 64-ë¹„íŠ¸ í”„ë¡œê·¸ëž¨ íŒŒì¼ì˜ ê²½ë¡œê°€ ë°˜í™˜ëœë‹¤ëŠ” ê²ƒì„ í™•ì¸í•©ë‹ˆë‹¤.</em>
+<a href="SetRegView.htm">SetRegView</a> 64  <em>; v1.1.08+ í•„ìš”</em>
 
 RegRead, OutputVar, HKEY_LOCAL_MACHINE<span class="red">,</span> SOFTWARE\Microsoft\Windows\CurrentVersion, ProgramFilesDir
 MsgBox, Program files are in: %OutputVar%
 
-<em>; ´Ù¸¥ ±¸¹® (v1.1.21+ ÇÊ¿ä):</em>
+<em>; ë‹¤ë¥¸ êµ¬ë¬¸ (v1.1.21+ í•„ìš”):</em>
 RegRead, OutputVar, HKEY_LOCAL_MACHINE<span class="red">\</span>SOFTWARE\Microsoft\Windows\CurrentVersion, ProgramFilesDir
 MsgBox, Program files are in: %OutputVar%
 
-<em>; ÇÁ·Î±×·¥ ÆÄÀÏ µð·ºÅä¸® °æ·Î¸¦ ¿­¶÷ÇÏ´Â ¶Ç´Ù¸¥ ¹æ¹ý:</em>
+<em>; í”„ë¡œê·¸ëž¨ íŒŒì¼ ë””ë ‰í† ë¦¬ ê²½ë¡œë¥¼ ì—´ëžŒí•˜ëŠ” ë˜ë‹¤ë¥¸ ë°©ë²•:</em>
 EnvGet OutputVar, % <a href="../Variables.htm#Is64bitOS">A_Is64bitOS</a> ? "ProgramW6432" : "ProgramFiles"
 MsgBox, Program files are in: %OutputVar%
 </pre>
 <p>&nbsp;</p>
-<pre class="NoIndent"><em>; ´ÙÀ½ ¿¹Á¦´Â ·¹Áö½ºÆ®¸® °ªÀÇ À¯ÇüÀ» ¿­¶÷ÇÕ´Ï´Ù (¿¹, REG_SZ ¶Ç´Â REG_DWORD).</em>
+<pre class="NoIndent"><em>; ë‹¤ìŒ ì˜ˆì œëŠ” ë ˆì§€ìŠ¤íŠ¸ë¦¬ ê°’ì˜ ìœ í˜•ì„ ì—´ëžŒí•©ë‹ˆë‹¤ (ì˜ˆ, REG_SZ ë˜ëŠ” REG_DWORD).</em>
 MsgBox % RegKeyType(&quot;HKCU&quot;, &quot;Environment&quot;, &quot;TEMP&quot;)
 return
 
-RegKeyType(RootKey, SubKey, ValueName)  <em>; ÀÌ ÇÔ¼ö´Â ÁöÁ¤µÈ °ªÀÇ À¯ÇüÀ» µ¹·ÁÁÝ´Ï´Ù.</em>
+RegKeyType(RootKey, SubKey, ValueName)  <em>; ì´ í•¨ìˆ˜ëŠ” ì§€ì •ëœ ê°’ì˜ ìœ í˜•ì„ ëŒë ¤ì¤ë‹ˆë‹¤.</em>
 {
     Loop, %RootKey%, %SubKey%
         if (A_LoopRegName = ValueName)

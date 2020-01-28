@@ -1,43 +1,44 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Window Shading (roll up a window to its title bar) -- by Rajat</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>Window Shading (Ã¢À» Á¦¸ñ ¹Ù±îÁö ¸»¾Æ ¿Ã¸®±â) -- by Rajat</h1>
+<h1>Window Shading (ì°½ì„ ì œëª© ë°”ê¹Œì§€ ë§ì•„ ì˜¬ë¦¬ê¸°) -- by Rajat</h1>
 
-<p>ÀÌ ½ºÅ©¸³Æ®´Â Ã¢À» Á¦¸ñ ¹Ù±îÁö ¸»¾Æ ¿Ã¸®°í ÇÖÅ°¸¦ ´©¸£¸é ´Ù½Ã ¿ø·¡ Å©±â·Î µ¹¾Æ¿É´Ï´Ù. Ã¢ÀÇ °³¼ö¿¡ »ó°ü¾øÀÌ ÀÌ·± ½ÄÀ¸·Î ÁÙÀÏ ¼ö ÀÖ½À´Ï´Ù (½ºÅ©¸³Æ®°¡ °¢°¢ ±â¾ïÇÕ´Ï´Ù). ½ºÅ©¸³Æ®°¡ ¾î¶² ÀÌÀ¯·Î Á¾·áÇÏ¸é &quot;¸»·Á ¿Ã¶ó°£&quot; ¸ðµç Ã¢ÀÌ ÀÚµ¿À¸·Î ¿ø·¡ ³ôÀÌ·Î º¹±¸µË´Ï´Ù.
+<p>ì´ ìŠ¤í¬ë¦½íŠ¸ëŠ” ì°½ì„ ì œëª© ë°”ê¹Œì§€ ë§ì•„ ì˜¬ë¦¬ê³  í•«í‚¤ë¥¼ ëˆ„ë¥´ë©´ ë‹¤ì‹œ ì›ëž˜ í¬ê¸°ë¡œ ëŒì•„ì˜µë‹ˆë‹¤. ì°½ì˜ ê°œìˆ˜ì— ìƒê´€ì—†ì´ ì´ëŸ° ì‹ìœ¼ë¡œ ì¤„ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ìŠ¤í¬ë¦½íŠ¸ê°€ ê°ê° ê¸°ì–µí•©ë‹ˆë‹¤). ìŠ¤í¬ë¦½íŠ¸ê°€ ì–´ë–¤ ì´ìœ ë¡œ ì¢…ë£Œí•˜ë©´ &quot;ë§ë ¤ ì˜¬ë¼ê°„&quot; ëª¨ë“  ì°½ì´ ìžë™ìœ¼ë¡œ ì›ëž˜ ë†’ì´ë¡œ ë³µêµ¬ë©ë‹ˆë‹¤.
 </p>
-<p><a href="WindowShading.ahk">ÀÌ ½ºÅ©¸³Æ® ³»·Á¹Þ±â</a> &nbsp;| &nbsp;<a href="index.htm">´Ù¸¥ »ùÇÃ ½ºÅ©¸³Æ®</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">È¨À¸·Î</a></p>
+<p><a href="WindowShading.ahk">ì´ ìŠ¤í¬ë¦½íŠ¸ ë‚´ë ¤ë°›ê¸°</a> &nbsp;| &nbsp;<a href="index.htm">ë‹¤ë¥¸ ìƒ˜í”Œ ìŠ¤í¬ë¦½íŠ¸</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">í™ˆìœ¼ë¡œ</a></p>
 
-<pre class="NoIndent"><em>; ¸»¸° Ã¢ÀÇ ³ôÀÌ¸¦ ¿©±â¿¡¼­ ¼³Á¤ÇÕ´Ï´Ù.
-; ¾Æ¸¶µµ ÀÌ ¼ýÀÚ°¡ ¾ó¸¶³ª ³·Àº°¡¿¡ »ó°ü ¾øÀÌ ¿î¿µÃ¼Á¦´Â 
-; Á¦¸ñ¹Ù°¡ ¼û´Â °ÍÀ» Çã¿ëÇÏÁö ¾ÊÀ» °ÍÀÔ´Ï´Ù:</em>
+<pre class="NoIndent"><em>; ë§ë¦° ì°½ì˜ ë†’ì´ë¥¼ ì—¬ê¸°ì—ì„œ ì„¤ì •í•©ë‹ˆë‹¤.
+; ì•„ë§ˆë„ ì´ ìˆ«ìžê°€ ì–¼ë§ˆë‚˜ ë‚®ì€ê°€ì— ìƒê´€ ì—†ì´ ìš´ì˜ì²´ì œëŠ” 
+; ì œëª©ë°”ê°€ ìˆ¨ëŠ” ê²ƒì„ í—ˆìš©í•˜ì§€ ì•Šì„ ê²ƒìž…ë‹ˆë‹¤:</em>
 ws_MinHeight = 25
 
-<em>; ÀÌ ÁÙÀº ¾î¶² ÀÌÀ¯·Î ½ºÅ©¸³Æ®°¡ Á¾·áÇÏ¸é
-; ¸»·Á ¿Ã¶ó°£ Ã¢À» º¹±¸ÇÕ´Ï´Ù:</em>
+<em>; ì´ ì¤„ì€ ì–´ë–¤ ì´ìœ ë¡œ ìŠ¤í¬ë¦½íŠ¸ê°€ ì¢…ë£Œí•˜ë©´
+; ë§ë ¤ ì˜¬ë¼ê°„ ì°½ì„ ë³µêµ¬í•©ë‹ˆë‹¤:</em>
 OnExit, ExitSub
-return  <em>; ÀÚµ¿ ½ÇÇà ¼½¼ÇÀÇ ³¡</em>
+return  <em>; ìžë™ ì‹¤í–‰ ì„¹ì…˜ì˜ ë</em>
 
-#z::  <em>; ÀÌ ÁÙÀ» ¹Ù²ã ´Ù¸¥ ÇÖÅ°¸¦ °ñ¶óµµ µË´Ï´Ù.
-; ÀÌ ½ÃÁ¡ ÀÌÈÄ·Î, ¾î¶² º¯°æµµ Çã¿ëÇÏÁö ¾Ê½À´Ï´Ù
-; ´Ü, ½ºÅ©¸³Æ®ÀÇ ±âº» ±â´ÉÀ» º¯°æÇÏ°í ½ÍÀº °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù.
-; ´ÙÀ½ ÁÙÀ» ÁÖ¼® ÇØÁ¦ÇÏ¸é ÀÌ ¼­ºê·çÆ¾À» ÇÖÅ°°¡ ¾Æ´Ï¶ó
-; ¸ÂÃã ¸Þ´º Ç×¸ñÀ¸·Î º¯È¯ÇÒ ¼ö ÀÖ½À´Ï´Ù.  
-; Áö¿¬ ½Ã°£ ´öºÐ¿¡ ¸Þ´º ¶§¹®¿¡ ²¨Á³´ø
-; È°¼º Ã¢Àº ´Ù½Ã ÄÑÁý´Ï´Ù:
+#z::  <em>; ì´ ì¤„ì„ ë°”ê¿” ë‹¤ë¥¸ í•«í‚¤ë¥¼ ê³¨ë¼ë„ ë©ë‹ˆë‹¤.
+; ì´ ì‹œì  ì´í›„ë¡œ, ì–´ë–¤ ë³€ê²½ë„ í—ˆìš©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤
+; ë‹¨, ìŠ¤í¬ë¦½íŠ¸ì˜ ê¸°ë³¸ ê¸°ëŠ¥ì„ ë³€ê²½í•˜ê³  ì‹¶ì€ ê²½ìš°ëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤.
+; ë‹¤ìŒ ì¤„ì„ ì£¼ì„ í•´ì œí•˜ë©´ ì´ ì„œë¸Œë£¨í‹´ì„ í•«í‚¤ê°€ ì•„ë‹ˆë¼
+; ë§žì¶¤ ë©”ë‰´ í•­ëª©ìœ¼ë¡œ ë³€í™˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.  
+; ì§€ì—° ì‹œê°„ ë•ë¶„ì— ë©”ë‰´ ë•Œë¬¸ì— êº¼ì¡Œë˜
+; í™œì„± ì°½ì€ ë‹¤ì‹œ ì¼œì§‘ë‹ˆë‹¤:
 ;Sleep, 200</em>
 WinGet, ws_ID, ID, A
 Loop, Parse, ws_IDList, |
 {
     IfEqual, A_LoopField, %ws_ID%
     {
-        <em>; ºÎÇÕÀÌ ¹ß°ßµÇ¾úÀ¸¹Ç·Î, ÀÌ Ã¢Àº º¹±¸µË´Ï´Ù (´Ù½Ã ÆìÁü):</em>
+        <em>; ë¶€í•©ì´ ë°œê²¬ë˜ì—ˆìœ¼ë¯€ë¡œ, ì´ ì°½ì€ ë³µêµ¬ë©ë‹ˆë‹¤ (ë‹¤ì‹œ íŽ´ì§):</em>
         StringTrimRight, ws_Height, ws_Window%ws_ID%, 0
         WinMove, ahk_id %ws_ID%,,,,, %ws_Height%
         StringReplace, ws_IDList, ws_IDList, |%ws_ID%
@@ -53,12 +54,12 @@ return
 ExitSub:
 Loop, Parse, ws_IDList, |
 {
-    if A_LoopField =  <em>; ¸®½ºÆ®ÀÇ Ã¹ ÇÊµå´Â º¸Åë ºñ¾î ÀÖ½À´Ï´Ù.</em>
-        continue      <em>; ±×·¡¼­ °Ç³Ê ¶Ý´Ï´Ù.</em>
+    if A_LoopField =  <em>; ë¦¬ìŠ¤íŠ¸ì˜ ì²« í•„ë“œëŠ” ë³´í†µ ë¹„ì–´ ìžˆìŠµë‹ˆë‹¤.</em>
+        continue      <em>; ê·¸ëž˜ì„œ ê±´ë„ˆ ëœë‹ˆë‹¤.</em>
     StringTrimRight, ws_Height, ws_Window%A_LoopField%, 0
     WinMove, ahk_id %A_LoopField%,,,,, %ws_Height%
 }
-ExitApp  <em>; OnExit ¼­ºê·çÆ¾¿¡ ´ëÇÏ¿© ¹Ýµå½Ã ÀÌ·¸°Ô ÇØ¾ß¸¸ ½ºÅ©¸³Æ®¸¦ ½ÇÁ¦·Î Á¾·áÇÒ ¼ö ÀÖ½À´Ï´Ù.</em>
+ExitApp  <em>; OnExit ì„œë¸Œë£¨í‹´ì— ëŒ€í•˜ì—¬ ë°˜ë“œì‹œ ì´ë ‡ê²Œ í•´ì•¼ë§Œ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì‹¤ì œë¡œ ì¢…ë£Œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</em>
 </pre>
 </body>
 </html>

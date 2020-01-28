@@ -1,96 +1,97 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>File Object</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>ÆÄÀÏ °´Ã¼ <span class="ver">[AHK_L 42+]</span></h1>
+<h1>íŒŒì¼ ê°ì²´ <span class="ver">[AHK_L 42+]</span></h1>
 
-<p>ÆÄÀÏ ÀÔ/Ãâ·ÂÀ» À§ÇÑ ÀÎÅÍÆäÀÌ½º¸¦ Á¦°øÇÕ´Ï´Ù. <a href="../commands/FileOpen.htm">FileOpen</a>ÀÌ ÀÌ À¯ÇüÀÇ °´Ã¼¸¦ µ¹·ÁÁÝ´Ï´Ù.</p>
+<p>íŒŒì¼ ìž…/ì¶œë ¥ì„ ìœ„í•œ ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ ì œê³µí•©ë‹ˆë‹¤. <a href="../commands/FileOpen.htm">FileOpen</a>ì´ ì´ ìœ í˜•ì˜ ê°ì²´ë¥¼ ëŒë ¤ì¤ë‹ˆë‹¤.</p>
 
 <div class="methodShort" id="Read"><h2>Read</h2>
-<p>¹®ÀÚ¿­À» ÆÄÀÏ·ÎºÎÅÍ ÀÐ°í ÆÄÀÏ Æ÷ÀÎÅÍ¸¦ ¾ÕÀ¸·Î ÀÌµ¿½ÃÅµ´Ï´Ù.</p>
+<p>ë¬¸ìžì—´ì„ íŒŒì¼ë¡œë¶€í„° ì½ê³  íŒŒì¼ í¬ì¸í„°ë¥¼ ì•žìœ¼ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.</p>
 <pre class="Syntax">String := File.Read([Characters])</pre>
 <table class="info">
-  <tr><td width="15%">Characters</td><td width="85%">ÀÐÀ» ¹®ÀÚÀÇ ÃÖ´ë °³¼ö. »ý·«ÇÏ¸é, ÆÄÀÏ ³ª¸ÓÁö¸¦ ÀÐ¾î¼­ ÇÏ³ªÀÇ ¹®ÀÚ¿­·Î µ¹·ÁÁÝ´Ï´Ù. ÄÜ¼Ö ¹öÆÛ³ª ÆÄÀÌÇÁ °°ÀÌ Æ÷ÀÎÅÍ¸¦ ¾ÕµÚ·Î ÀÌµ¿½ÃÅ³ ¼ö ¾ø´Â ÇÚµé·ÎºÎÅÍ ÆÄÀÏ °´Ã¼°¡ »ý¼ºµÇ¾úÀ» °æ¿ì, ÀÌ ¸Å°³º¯¼ö¸¦ »ý·«ÇÏ¸é ¸Þ½îµå°¡ ½ÇÆÐÇÏ°Å³ª ¶Ç´Â ÇöÀç »ç¿ëÀÌ °¡´ÉÇÑ µ¥ÀÌÅÍ¸¸ µ¹·ÁÁÙ °¡´É¼ºÀÌ ÀÖ½À´Ï´Ù.</td></tr>
-  <tr><td><b>Returns</b></td><td>¹®ÀÚ¿­.</td></tr>
+  <tr><td width="15%">Characters</td><td width="85%">ì½ì„ ë¬¸ìžì˜ ìµœëŒ€ ê°œìˆ˜. ìƒëžµí•˜ë©´, íŒŒì¼ ë‚˜ë¨¸ì§€ë¥¼ ì½ì–´ì„œ í•˜ë‚˜ì˜ ë¬¸ìžì—´ë¡œ ëŒë ¤ì¤ë‹ˆë‹¤. ì½˜ì†” ë²„í¼ë‚˜ íŒŒì´í”„ ê°™ì´ í¬ì¸í„°ë¥¼ ì•žë’¤ë¡œ ì´ë™ì‹œí‚¬ ìˆ˜ ì—†ëŠ” í•¸ë“¤ë¡œë¶€í„° íŒŒì¼ ê°ì²´ê°€ ìƒì„±ë˜ì—ˆì„ ê²½ìš°, ì´ ë§¤ê°œë³€ìˆ˜ë¥¼ ìƒëžµí•˜ë©´ ë©”ì˜ë“œê°€ ì‹¤íŒ¨í•˜ê±°ë‚˜ ë˜ëŠ” í˜„ìž¬ ì‚¬ìš©ì´ ê°€ëŠ¥í•œ ë°ì´í„°ë§Œ ëŒë ¤ì¤„ ê°€ëŠ¥ì„±ì´ ìžˆìŠµë‹ˆë‹¤.</td></tr>
+  <tr><td><b>Returns</b></td><td>ë¬¸ìžì—´.</td></tr>
 </table></div>
 
 <div class="methodShort" id="Write"><h2>Write</h2>
-<p>¹®ÀÚ¿­À» ÆÄÀÏ¿¡ ¾²°í ÆÄÀÏ Æ÷ÀÎÅÍ¸¦ ¾ÕÀ¸·Î ÀÌµ¿½ÃÅµ´Ï´Ù.</p>
+<p>ë¬¸ìžì—´ì„ íŒŒì¼ì— ì“°ê³  íŒŒì¼ í¬ì¸í„°ë¥¼ ì•žìœ¼ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.</p>
 <pre class="Syntax">File.Write(String)</pre>
 <table class="info">
-  <tr><td width="15%">String</td><td width="85%">¹®ÀÚ¿­.</td></tr>
-  <tr><td><b>Returns</b></td><td>¾º¿©Áø ¹ÙÀÌÆ® °³¼ö (¹®ÀÚ °³¼ö°¡ ¾Æ´Ô).</td></tr>
+  <tr><td width="15%">String</td><td width="85%">ë¬¸ìžì—´.</td></tr>
+  <tr><td><b>Returns</b></td><td>ì”Œì—¬ì§„ ë°”ì´íŠ¸ ê°œìˆ˜ (ë¬¸ìž ê°œìˆ˜ê°€ ì•„ë‹˜).</td></tr>
 </table></div>
 
 <div class="methodShort" id="ReadLine"><h2>ReadLine</h2>
-<p>ÆÄÀÏ·ÎºÎÅÍ ÅØ½ºÆ® ÇÑ ÁÙÀ» ÀÐ°í ÆÄÀÏ Æ÷ÀÎÅÍ¸¦ ¾ÕÀ¸·Î ÀÌµ¿½ÃÅµ´Ï´Ù.</p>
+<p>íŒŒì¼ë¡œë¶€í„° í…ìŠ¤íŠ¸ í•œ ì¤„ì„ ì½ê³  íŒŒì¼ í¬ì¸í„°ë¥¼ ì•žìœ¼ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.</p>
 <pre class="Syntax">Line := File.ReadLine()</pre>
 <table class="info">
-  <tr><td width="15%"><b>Returns</b></td><td width="85%">ÅØ½ºÆ® ÇÑ ÁÙ.  ¿©±â¿¡´Â ÆÄÀÏ°ú ±× ÆÄÀÏÀ» ¿©´Â µ¥ »ç¿ëµÈ EOL ÇÃ·¡±×¿¡ µû¶ó <code>`n</code>, <code>`r`n</code> ¶Ç´Â <code>`r</code>ÀÌ Æ÷ÇÔµÉ ¼ö ÀÖ½À´Ï´Ù.</td></tr>
+  <tr><td width="15%"><b>Returns</b></td><td width="85%">í…ìŠ¤íŠ¸ í•œ ì¤„.  ì—¬ê¸°ì—ëŠ” íŒŒì¼ê³¼ ê·¸ íŒŒì¼ì„ ì—¬ëŠ” ë° ì‚¬ìš©ëœ EOL í”Œëž˜ê·¸ì— ë”°ë¼ <code>`n</code>, <code>`r`n</code> ë˜ëŠ” <code>`r</code>ì´ í¬í•¨ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</td></tr>
 </table></div>
 
 <div class="methodShort" id="WriteLine"><h2>WriteLine</h2>
-<p>¹®ÀÚ¿­À» ¾¹´Ï´Ù. ÆÄÀÏÀ» ¿©´Â µ¥ »ç¿ëµÈ ÇÃ·¡±×¿¡ µû¶ó ´ÙÀ½¿¡ <code>`n</code> ¶Ç´Â <code>`r`n</code>ÀÌ µû¶ó¿É´Ï´Ù. ÆÄÀÏ Æ÷ÀÎÅÍ¸¦ ¾ÕÀ¸·Î ÀÌµ¿½ÃÅµ´Ï´Ù.</p>
+<p>ë¬¸ìžì—´ì„ ì”ë‹ˆë‹¤. íŒŒì¼ì„ ì—¬ëŠ” ë° ì‚¬ìš©ëœ í”Œëž˜ê·¸ì— ë”°ë¼ ë‹¤ìŒì— <code>`n</code> ë˜ëŠ” <code>`r`n</code>ì´ ë”°ë¼ì˜µë‹ˆë‹¤. íŒŒì¼ í¬ì¸í„°ë¥¼ ì•žìœ¼ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.</p>
 <pre class="Syntax">File.WriteLine([String])</pre>
 <table class="info">
-  <tr><td width="15%">String</td><td width="85%">¼±ÅÃÀûÀÎ ¹®ÀÚ¿­.</td></tr>
-  <tr><td><b>Returns</b></td><td>¾º¿©Áø ¹ÙÀÌÆ® °³¼ö (¹®ÀÚ °³¼ö°¡ ¾Æ´Ô).</td></tr>
+  <tr><td width="15%">String</td><td width="85%">ì„ íƒì ì¸ ë¬¸ìžì—´.</td></tr>
+  <tr><td><b>Returns</b></td><td>ì”Œì—¬ì§„ ë°”ì´íŠ¸ ê°œìˆ˜ (ë¬¸ìž ê°œìˆ˜ê°€ ì•„ë‹˜).</td></tr>
 </table></div>
 
 <div class="methodShort" id="ReadNum"><h2>Read<i>Num</i></h2>
-<p>ÁöÁ¤ÇÑ ¹ÙÀÌÆ® °³¼ö¸¸Å­ ÆÄÀÏ·ÎºÎÅÍ ÀÐ°í ÆÄÀÏ Æ÷ÀÎÅÍ¸¦ ¾ÕÀ¸·Î ÀÌµ¿½ÃÅµ´Ï´Ù.</p>
+<p>ì§€ì •í•œ ë°”ì´íŠ¸ ê°œìˆ˜ë§Œí¼ íŒŒì¼ë¡œë¶€í„° ì½ê³  íŒŒì¼ í¬ì¸í„°ë¥¼ ì•žìœ¼ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.</p>
 <pre class="Syntax">Num := File.Read<i>NumType</i>()</pre>
 <table class="info">
-  <tr><td width="15%"><i>NumType</i></td><td width="85%">´ÙÀ½ Áß ÇÏ³ª¸¦ ÇÔ¼ö ÀÌ¸§¿¡ Á÷Á¢ ÁöÁ¤ÇÕ´Ï´Ù:<br>UInt, Int, Int64, Short, UShort, Char, UChar, Double, ¶Ç´Â Float.</td></tr>
-  <tr><td><b>Returns</b></td><td>¼º°øÇÏ¸é ¹ÙÀÌÆ® °³¼ö, ±×·¸Áö ¾ÊÀ¸¸é ºó ¹®ÀÚ¿­À» µ¹·ÁÁÝ´Ï´Ù.</td></tr>
+  <tr><td width="15%"><i>NumType</i></td><td width="85%">ë‹¤ìŒ ì¤‘ í•˜ë‚˜ë¥¼ í•¨ìˆ˜ ì´ë¦„ì— ì§ì ‘ ì§€ì •í•©ë‹ˆë‹¤:<br>UInt, Int, Int64, Short, UShort, Char, UChar, Double, ë˜ëŠ” Float.</td></tr>
+  <tr><td><b>Returns</b></td><td>ì„±ê³µí•˜ë©´ ë°”ì´íŠ¸ ê°œìˆ˜, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ ë¹ˆ ë¬¸ìžì—´ì„ ëŒë ¤ì¤ë‹ˆë‹¤.</td></tr>
 </table></div>
 
 <div class="methodShort" id="WriteNum"><h2>Write<i>Num</i></h2>
-<p>ÁöÁ¤µÈ ¹ÙÀÌÆ® °³¼ö ¸¸Å­ ¾²°í ÆÄÀÏ Æ÷ÀÎÅÍ¸¦ ¾ÕÀ¸·Î ÀÌµ¿½ÃÅµ´Ï´Ù.</p>
+<p>ì§€ì •ëœ ë°”ì´íŠ¸ ê°œìˆ˜ ë§Œí¼ ì“°ê³  íŒŒì¼ í¬ì¸í„°ë¥¼ ì•žìœ¼ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.</p>
 <pre class="Syntax">File.Write<i>NumType</i>(Num)</pre>
 <table class="info">
-  <tr><td width="15%"><i>NumType</i></td><td width="85%">´ÙÀ½ Áß ÇÏ³ª¸¦ ÇÔ¼ö ÀÌ¸§¿¡ Á÷Á¢ ÁöÁ¤ÇÕ´Ï´Ù:<br>UInt, Int, Int64, Short, UShort, Char, UChar, Double, ¶Ç´Â Float.</td></tr>
-  <tr><td>Num</td><td>¼ýÀÚ.</td></tr>
-  <tr><td><b>Returns</b></td><td>¾º¿©Áø ¹ÙÀÌÆ® °³¼ö. ¿¹¸¦ µé¸é WriteUInt´Â ¼º°øÇÏ¸é 4¸¦ µ¹·ÁÁÝ´Ï´Ù.</td></tr>
+  <tr><td width="15%"><i>NumType</i></td><td width="85%">ë‹¤ìŒ ì¤‘ í•˜ë‚˜ë¥¼ í•¨ìˆ˜ ì´ë¦„ì— ì§ì ‘ ì§€ì •í•©ë‹ˆë‹¤:<br>UInt, Int, Int64, Short, UShort, Char, UChar, Double, ë˜ëŠ” Float.</td></tr>
+  <tr><td>Num</td><td>ìˆ«ìž.</td></tr>
+  <tr><td><b>Returns</b></td><td>ì”Œì—¬ì§„ ë°”ì´íŠ¸ ê°œìˆ˜. ì˜ˆë¥¼ ë“¤ë©´ WriteUIntëŠ” ì„±ê³µí•˜ë©´ 4ë¥¼ ëŒë ¤ì¤ë‹ˆë‹¤.</td></tr>
 </table></div>
 
 <div class="methodShort" id="RawRead"><h2>RawRead</h2>
-<p>³¯ ÀÌÁø µ¥ÀÌÅÍ¸¦ ÆÄÀÏ·ÎºÎÅÍ ¸Þ¸ð¸®·Î ÀÐ¾î µéÀÔ´Ï´Ù. º¯¼ö°¡ ÁöÁ¤µÇ¾î ÀÖÀ¸¸é, ÇÊ¿äÇÑ °æ¿ì ÀÚµ¿À¸·Î È®´ëµË´Ï´Ù.</p>
+<p>ë‚  ì´ì§„ ë°ì´í„°ë¥¼ íŒŒì¼ë¡œë¶€í„° ë©”ëª¨ë¦¬ë¡œ ì½ì–´ ë“¤ìž…ë‹ˆë‹¤. ë³€ìˆ˜ê°€ ì§€ì •ë˜ì–´ ìžˆìœ¼ë©´, í•„ìš”í•œ ê²½ìš° ìžë™ìœ¼ë¡œ í™•ëŒ€ë©ë‹ˆë‹¤.</p>
 <pre class="Syntax">File.RawRead(VarOrAddress, Bytes)</pre>
 <table class="info">
-  <tr><td width="15%">VarOrAddress</td><td width="85%">µ¥ÀÌÅÍ°¡ º¹»çµÉ º¯¼ö ¶Ç´Â ¸Þ¸ð¸® ÁÖ¼Ò. »ç¿ë¹ýÀº <a href="../commands/NumGet.htm">NumGet</a>°ú ºñ½ÁÇÕ´Ï´Ù.</td></tr>
-  <tr><td>Bytes</td><td>ÀÐÀ» ¹ÙÀÌÆ®ÀÇ ÃÖ´ë °³¼ö.</td></tr>
-  <tr><td><b>Returns</b></td><td>ÀÐÀº ¹ÙÀÌÆ® °³¼ö.</td></tr>
+  <tr><td width="15%">VarOrAddress</td><td width="85%">ë°ì´í„°ê°€ ë³µì‚¬ë  ë³€ìˆ˜ ë˜ëŠ” ë©”ëª¨ë¦¬ ì£¼ì†Œ. ì‚¬ìš©ë²•ì€ <a href="../commands/NumGet.htm">NumGet</a>ê³¼ ë¹„ìŠ·í•©ë‹ˆë‹¤.</td></tr>
+  <tr><td>Bytes</td><td>ì½ì„ ë°”ì´íŠ¸ì˜ ìµœëŒ€ ê°œìˆ˜.</td></tr>
+  <tr><td><b>Returns</b></td><td>ì½ì€ ë°”ì´íŠ¸ ê°œìˆ˜.</td></tr>
 </table></div>
 
 <div class="methodShort" id="RawWrite"><h2>RawWrite</h2>
-<p>³¯ ÀÌÁø µ¥ÀÌÅÍ¸¦ ÆÄÀÏ¿¡ ¾¹´Ï´Ù.</p>
+<p>ë‚  ì´ì§„ ë°ì´í„°ë¥¼ íŒŒì¼ì— ì”ë‹ˆë‹¤.</p>
 <pre class="Syntax">File.RawWrite(VarOrAddress, Bytes)</pre>
 <table class="info">
-  <tr><td width="15%">VarOrAddress</td><td width="85%">µ¥ÀÌÅÍ¸¦ ´ã°í ÀÖ´Â º¯¼ö ¶Ç´Â ¸Þ¸ð¸®ÀÇ µ¥ÀÌÅÍ ÁÖ¼Ò.  »ç¿ë¹ýÀº <a href="../commands/NumPut.htm">NumPut</a>°ú ºñ½ÁÇÕ´Ï´Ù.</td></tr>
-  <tr><td>Bytes</td><td>¾µ ¹ÙÀÌÆ® °³¼ö.</td></tr>
-  <tr><td><b>Returns</b></td><td>ÀÐÀº ¹ÙÀÌÆ® °³¼ö.</td></tr>
+  <tr><td width="15%">VarOrAddress</td><td width="85%">ë°ì´í„°ë¥¼ ë‹´ê³  ìžˆëŠ” ë³€ìˆ˜ ë˜ëŠ” ë©”ëª¨ë¦¬ì˜ ë°ì´í„° ì£¼ì†Œ.  ì‚¬ìš©ë²•ì€ <a href="../commands/NumPut.htm">NumPut</a>ê³¼ ë¹„ìŠ·í•©ë‹ˆë‹¤.</td></tr>
+  <tr><td>Bytes</td><td>ì“¸ ë°”ì´íŠ¸ ê°œìˆ˜.</td></tr>
+  <tr><td><b>Returns</b></td><td>ì½ì€ ë°”ì´íŠ¸ ê°œìˆ˜.</td></tr>
 </table></div>
 
 <div class="methodShort" id="Seek"><h2>Seek</h2>
-<p>ÆÄÀÏ Æ÷ÀÎÅÍ¸¦ ÀÌµ¿½ÃÅµ´Ï´Ù.</p>
+<p>íŒŒì¼ í¬ì¸í„°ë¥¼ ì´ë™ì‹œí‚µë‹ˆë‹¤.</p>
 <pre class="Syntax">File.Seek(Distance [, Origin = 0])
 File.Position := Distance
 File.Pos := Distance</pre>
 <table class="info">
-  <tr><td width="15%">Distance</td><td width="85%">¹ÙÀÌÆ® ´ÜÀ§·Î ÀÌµ¿ÇÒ °Å¸®. °ªÀÌ ³·À» ¼ö·Ï ÆÄÀÏÀÇ ¾Õ ÂÊ¿¡ °¡±õ½À´Ï´Ù.</td></tr>
-  <tr><td>Origin</td><td>ÆÄÀÏ Æ÷ÀÎÅÍÀÇ ÀÌµ¿ ½ÃÀÛ ÁöÁ¡. ¹Ýµå½Ã ´ÙÀ½ ÇÏ³ª°¡ µÇ¾î¾ß ÇÕ´Ï´Ù:<ul>
-      <li>0 (SEEK_SET): ÆÄÀÏÀÇ Ã³À½. <i>Distance</i>´Â 0ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.</li>
-      <li>1 (SEEK_CUR): ÆÄÀÏ Æ÷ÀÎÅÍÀÇ ÇöÀç À§Ä¡.</li>
-      <li>2 (SEEK_END): ÆÄÀÏ ³¡. <i>Distance</i>´Â º¸Åë À½ÀÇ Á¤¼öÀÔ´Ï´Ù.</li>
-    </ul>»ý·«ÇÏ¸é, Distance°¡ À½ÀÇ Á¤¼öÀÏ ¶§ <i>Origin</i>´Â SEEK_ENDÀÌ ±âº»°ªÀÌ°í ±×·¸Áö ¾ÊÀ¸¸é SEEK_SETÀÌ ±âº»°ªÀÔ´Ï´Ù.</td></tr>
-  <tr><td><b>Returns</b></td><td>¼º°øÇÏ¸é 0-¾Æ´Ñ °ªÀ», ±×·¸Áö ¾ÊÀ¸¸é 0À» µ¹·ÁÁÝ´Ï´Ù.</td></tr>
+  <tr><td width="15%">Distance</td><td width="85%">ë°”ì´íŠ¸ ë‹¨ìœ„ë¡œ ì´ë™í•  ê±°ë¦¬. ê°’ì´ ë‚®ì„ ìˆ˜ë¡ íŒŒì¼ì˜ ì•ž ìª½ì— ê°€ê¹ìŠµë‹ˆë‹¤.</td></tr>
+  <tr><td>Origin</td><td>íŒŒì¼ í¬ì¸í„°ì˜ ì´ë™ ì‹œìž‘ ì§€ì . ë°˜ë“œì‹œ ë‹¤ìŒ í•˜ë‚˜ê°€ ë˜ì–´ì•¼ í•©ë‹ˆë‹¤:<ul>
+      <li>0 (SEEK_SET): íŒŒì¼ì˜ ì²˜ìŒ. <i>Distance</i>ëŠ” 0ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.</li>
+      <li>1 (SEEK_CUR): íŒŒì¼ í¬ì¸í„°ì˜ í˜„ìž¬ ìœ„ì¹˜.</li>
+      <li>2 (SEEK_END): íŒŒì¼ ë. <i>Distance</i>ëŠ” ë³´í†µ ìŒì˜ ì •ìˆ˜ìž…ë‹ˆë‹¤.</li>
+    </ul>ìƒëžµí•˜ë©´, Distanceê°€ ìŒì˜ ì •ìˆ˜ì¼ ë•Œ <i>Origin</i>ëŠ” SEEK_ENDì´ ê¸°ë³¸ê°’ì´ê³  ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ SEEK_SETì´ ê¸°ë³¸ê°’ìž…ë‹ˆë‹¤.</td></tr>
+  <tr><td><b>Returns</b></td><td>ì„±ê³µí•˜ë©´ 0-ì•„ë‹Œ ê°’ì„, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì„ ëŒë ¤ì¤ë‹ˆë‹¤.</td></tr>
 </table></div>
 
 <div class="methodShort" id="Tell"><h2>Tell</h2>
@@ -98,56 +99,56 @@ File.Pos := Distance</pre>
 Pos := File.Position
 Pos := File.Pos</pre>
 <table class="info">
-  <tr><td width="15%"><b>Returns</b></td><td width="85%">ÆÄÀÏ Æ÷ÀÎÅÍÀÇ ÇöÀç À§Ä¡. 0ÀÌ¸é ÆÄÀÏÀÇ Ã³À½ÀÔ´Ï´Ù.</td></tr>
+  <tr><td width="15%"><b>Returns</b></td><td width="85%">íŒŒì¼ í¬ì¸í„°ì˜ í˜„ìž¬ ìœ„ì¹˜. 0ì´ë©´ íŒŒì¼ì˜ ì²˜ìŒìž…ë‹ˆë‹¤.</td></tr>
 </table></div>
 
 <div class="methodShort" id="Length"><h2>Length</h2>
-<p>ÆÄÀÏÀÇ Å©±â¸¦ ¿­¶÷ÇÏ°Å³ª ¼³Á¤ÇÕ´Ï´Ù.</p>
+<p>íŒŒì¼ì˜ í¬ê¸°ë¥¼ ì—´ëžŒí•˜ê±°ë‚˜ ì„¤ì •í•©ë‹ˆë‹¤.</p>
 <pre class="Syntax">FileSize := File.Length
 File.Length := NewSize</pre>
 <table class="info">
-  <tr><td width="15%">NewSize</td><td width="85%">¹ÙÀÌÆ® ´ÜÀ§·Î, ÆÄÀÏÀÇ »õ Å©±â.</td></tr>
-  <tr><td><b>Returns</b></td><td>¹ÙÀÌÆ® ´ÜÀ§·Î, ÆÄÀÏÀÇ Å©±â.</td></tr>
+  <tr><td width="15%">NewSize</td><td width="85%">ë°”ì´íŠ¸ ë‹¨ìœ„ë¡œ, íŒŒì¼ì˜ ìƒˆ í¬ê¸°.</td></tr>
+  <tr><td><b>Returns</b></td><td>ë°”ì´íŠ¸ ë‹¨ìœ„ë¡œ, íŒŒì¼ì˜ í¬ê¸°.</td></tr>
 </table>
-<p>ÀÌ Æ¯¼ºÀº ½ÇÁ¦ ÆÄÀÏ¿¡¸¸ »ç¿ëÇØ¾ß ÇÕ´Ï´Ù. ÆÄÀÏ °´Ã¼°¡ ÆÄÀÌÇÁ¸¦ °¡¸®Å°´Â ÇÚµé·ÎºÎÅÍ »ý¼ºµÇ¾ú´Ù¸é, ÆÄÀÌÇÁÀÇ ³»ºÎ ¹öÆÛ¿¡¼­ ÇöÀç »ç¿ë°¡´ÉÇÑ ˆÔÀÇ µ¥ÀÌÅÍ¸¦ µ¹·ÁÁÙ ¼ö ÀÖÁö¸¸, ÀÌ ÇàÀ§´Â º¸ÁõÇÏÁö ¾Ê½À´Ï´Ù.</p></div>
+<p>ì´ íŠ¹ì„±ì€ ì‹¤ì œ íŒŒì¼ì—ë§Œ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤. íŒŒì¼ ê°ì²´ê°€ íŒŒì´í”„ë¥¼ ê°€ë¦¬í‚¤ëŠ” í•¸ë“¤ë¡œë¶€í„° ìƒì„±ë˜ì—ˆë‹¤ë©´, íŒŒì´í”„ì˜ ë‚´ë¶€ ë²„í¼ì—ì„œ í˜„ìž¬ ì‚¬ìš©ê°€ëŠ¥í•œ Âˆçº›?ë°ì´í„°ë¥¼ ëŒë ¤ì¤„ ìˆ˜ ìžˆì§€ë§Œ, ì´ í–‰ìœ„ëŠ” ë³´ì¦í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p></div>
 
 <div class="methodShort" id="AtEOF"><h2>AtEOF</h2>
 <pre class="Syntax">IsAtEOF := File.AtEOF</pre>
 <table class="info">
-  <tr><td width="15%"><b>Returns</b></td><td width="85%">ÆÄÀÏ Æ÷ÀÎÅÍ°¡ ÆÄÀÏÀÇ ³¡¿¡ µµ´ÞÇÏ¸é 0 ¾Æ´Ñ °ªÀ», ±×·¸Áö ¾ÊÀ¸¸é 0À» µ¹·ÁÁÝ´Ï´Ù.</td></tr>
+  <tr><td width="15%"><b>Returns</b></td><td width="85%">íŒŒì¼ í¬ì¸í„°ê°€ íŒŒì¼ì˜ ëì— ë„ë‹¬í•˜ë©´ 0 ì•„ë‹Œ ê°’ì„, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì„ ëŒë ¤ì¤ë‹ˆë‹¤.</td></tr>
 </table>
 <p>
-ÀÌ Æ¯¼ºÀº ½ÇÁ¦ ÆÄÀÏ¿¡¸¸ »ç¿ëÇØ¾ß ÇÕ´Ï´Ù. ÄÜ¼Ö ¹öÆÛ³ª ÆÄÀÌÇÁ °°Àº Æ÷ÀÎÅÍ-ÀÌµ¿ ¾ø´Â ÀåÄ¡¸¦ °¡¸®Å°´Â ÇÚµé·ÎºÎÅÍ ÆÄÀÏ °´Ã¼°¡ »ý¼ºµÇ¾ú´Ù¸é, ¹ÝÈ¯ °ªÀº ÀÇ¹Ì°¡ ¾ø½À´Ï´Ù. ±×·± ÀåÄ¡´Â ³í¸®ÀûÀ¸·Î "ÆÄÀÏ ³¡"ÀÌ ¾ø±â ¶§¹®ÀÔ´Ï´Ù.</p></div>
+ì´ íŠ¹ì„±ì€ ì‹¤ì œ íŒŒì¼ì—ë§Œ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤. ì½˜ì†” ë²„í¼ë‚˜ íŒŒì´í”„ ê°™ì€ í¬ì¸í„°-ì´ë™ ì—†ëŠ” ìž¥ì¹˜ë¥¼ ê°€ë¦¬í‚¤ëŠ” í•¸ë“¤ë¡œë¶€í„° íŒŒì¼ ê°ì²´ê°€ ìƒì„±ë˜ì—ˆë‹¤ë©´, ë°˜í™˜ ê°’ì€ ì˜ë¯¸ê°€ ì—†ìŠµë‹ˆë‹¤. ê·¸ëŸ° ìž¥ì¹˜ëŠ” ë…¼ë¦¬ì ìœ¼ë¡œ "íŒŒì¼ ë"ì´ ì—†ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p></div>
 
 <div class="methodShort" id="Close"><h2>Close</h2>
-<p>ÆÄÀÏÀ» ´Ý½À´Ï´Ù. Ä³½¬¿¡ ÀÖ´Â µ¥ÀÌÅÍ¸¦ µð½ºÅ©·Î ºñ¿ó´Ï´Ù. °øÀ¯ Àá±ÝÀ» ÇØÁ¦ÇÕ´Ï´Ù. °´Ã¼°¡ ÇØÁ¦µÇ¸é ÀÚµ¿À¸·Î ÆÄÀÏÀÌ ´ÝÈ÷Áö¸¸, °¡´ÉÇÏ¸é »¡¸® ´Ý±â¸¦ ±ÇÀåÇÕ´Ï´Ù.</p>
+<p>íŒŒì¼ì„ ë‹«ìŠµë‹ˆë‹¤. ìºì‰¬ì— ìžˆëŠ” ë°ì´í„°ë¥¼ ë””ìŠ¤í¬ë¡œ ë¹„ì›ë‹ˆë‹¤. ê³µìœ  ìž ê¸ˆì„ í•´ì œí•©ë‹ˆë‹¤. ê°ì²´ê°€ í•´ì œë˜ë©´ ìžë™ìœ¼ë¡œ íŒŒì¼ì´ ë‹«ížˆì§€ë§Œ, ê°€ëŠ¥í•˜ë©´ ë¹¨ë¦¬ ë‹«ê¸°ë¥¼ ê¶Œìž¥í•©ë‹ˆë‹¤.</p>
 <pre class="Syntax">File.Close()</pre>
-<p><i>¸Å°³º¯¼öµµ ¾ø°í ¹ÝÈ¯ °ªµµ ¾ø½À´Ï´Ù.</i></p></div>
+<p><i>ë§¤ê°œë³€ìˆ˜ë„ ì—†ê³  ë°˜í™˜ ê°’ë„ ì—†ìŠµë‹ˆë‹¤.</i></p></div>
 
 <div class="methodShort" id="Encoding"><h2>Encoding</h2>
-<p>ÀÌ ÆÄÀÏ °´Ã¼°¡ »ç¿ëÇÏ´Â ÅØ½ºÆ® ÀÎÄÚµùÀ» ¿­¶÷ÇÏ°Å³ª ¼³Á¤ÇÕ´Ï´Ù.</p>
+<p>ì´ íŒŒì¼ ê°ì²´ê°€ ì‚¬ìš©í•˜ëŠ” í…ìŠ¤íŠ¸ ì¸ì½”ë”©ì„ ì—´ëžŒí•˜ê±°ë‚˜ ì„¤ì •í•©ë‹ˆë‹¤.</p>
 <pre class="Syntax">Encoding := File.Encoding
 File.Encoding := Encoding</pre>
 <table class="info">
-  <tr><td width="15%">Encoding</td><td width="85%">¼ýÀÚ ÄÚµå ÆäÀÌÁö ½Äº°ÀÚ (<a href="http://msdn.microsoft.com/en-us/library/dd317756.aspx">MSDN</a> ÂüÁ¶) ¶Ç´Â ´ÙÀ½ ¹®ÀÚ¿­ Áß ÇÏ³ª:<br>
+  <tr><td width="15%">Encoding</td><td width="85%">ìˆ«ìž ì½”ë“œ íŽ˜ì´ì§€ ì‹ë³„ìž (<a href="http://msdn.microsoft.com/en-us/library/dd317756.aspx">MSDN</a> ì°¸ì¡°) ë˜ëŠ” ë‹¤ìŒ ë¬¸ìžì—´ ì¤‘ í•˜ë‚˜:<br>
   <ul>
-	<li><code>UTF-8</code>: Unicode UTF-8, CP65001¿Í µ¿µîÇÔ.</li>
-	<li><code>UTF-16</code>: Unicode UTF-16 ÀÛÀº °ª Á¾·áÇü ¹ÙÀÌÆ® ¼ø¼­r, CP1200¿Í µ¿µîÇÔ.</li>
-	<li><code>CP<i>nnn</i></code>: ¼ýÄ¡ ½Äº°ÀÚ <i>nnn</i>¸¦ °¡Áø ÄÚµå ÆäÀÌÁö.</li>
+	<li><code>UTF-8</code>: Unicode UTF-8, CP65001ì™€ ë™ë“±í•¨.</li>
+	<li><code>UTF-16</code>: Unicode UTF-16 ìž‘ì€ ê°’ ì¢…ë£Œí˜• ë°”ì´íŠ¸ ìˆœì„œr, CP1200ì™€ ë™ë“±í•¨.</li>
+	<li><code>CP<i>nnn</i></code>: ìˆ«ì¹˜ ì‹ë³„ìž <i>nnn</i>ë¥¼ ê°€ì§„ ì½”ë“œ íŽ˜ì´ì§€.</li>
   </ul>
-  <p><em>ÀÎÄÚµù</em>Àº <code>-RAW</code> Á¢¹Ì»ç¸¦ ºÙÀÌ¸é °ªÀ» µ¹·ÁÁÖÁö ¾Ê½À´Ï´Ù. ÆÄÀÏÀÌ ¾î¶»°Ô ¿­·ÈµçÁö ¶Ç´Â ¾È¿¡ ¹ÙÀÌÆ® ¼ø¼­ Ç¥½Ä (BOM)ÀÌ µé¾î ÀÖµç ¸»µç »ó°üÇÏÁö ¾Ê½À´Ï´Ù. <em>ÀÎÄÚµù</em> ¼³Á¤¸¸À¸·Î BOMÀÌ ºÙ°Å³ª Á¦°ÅµÇÁö ¾Ê½À´Ï´Ù.  BOMÀº º¸Åë Ã³À½ ÆÄÀÏÀÌ »ý¼ºµÉ ¶§ ¾º¿©Áý´Ï´Ù.</p>
+  <p><em>ì¸ì½”ë”©</em>ì€ <code>-RAW</code> ì ‘ë¯¸ì‚¬ë¥¼ ë¶™ì´ë©´ ê°’ì„ ëŒë ¤ì£¼ì§€ ì•ŠìŠµë‹ˆë‹¤. íŒŒì¼ì´ ì–´ë–»ê²Œ ì—´ë ¸ë“ ì§€ ë˜ëŠ” ì•ˆì— ë°”ì´íŠ¸ ìˆœì„œ í‘œì‹ (BOM)ì´ ë“¤ì–´ ìžˆë“  ë§ë“  ìƒê´€í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. <em>ì¸ì½”ë”©</em> ì„¤ì •ë§Œìœ¼ë¡œ BOMì´ ë¶™ê±°ë‚˜ ì œê±°ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.  BOMì€ ë³´í†µ ì²˜ìŒ íŒŒì¼ì´ ìƒì„±ë  ë•Œ ì”Œì—¬ì§‘ë‹ˆë‹¤.</p>
   <p>
-  <em>v1.1.15.04+¿¡¼­, ÀÎÄÚµù</em>À» <code>UTF-8-RAW</code>ÀÌ³ª <code>UTF-16-RAW</code>À¸·Î ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×·¯³ª <code>-RAW</code> Á¢¹Ì»ç´Â ¹«½ÃµË´Ï´Ù. ÀÌÀü ¹öÀü¿¡¼­, <code>UTF-8-RAW</code>¿Í <code>UTF-16-RAW</code>Àº ¹«È¿ÇÑ  8-ºñÆ® ÀÎÄÚµùÃ³·³ ÇàÀ§ÇÏ¹Ç·Î, ¸ðµç ºñ-ASCII ¹®ÀÚµéÀÌ Æó±âµË´Ï´Ù. ÀÌ°ÍÀº ¿ÀÁ÷ <code>File.Encoding</code>¿¡¸¸ Àû¿ëµÇÁö, <a href="../commands/FileOpen.htm">FileOpen()</a>¿¡´Â Àû¿ëµÇÁö ¾Ê½À´Ï´Ù.</p>
+  <em>v1.1.15.04+ì—ì„œ, ì¸ì½”ë”©</em>ì„ <code>UTF-8-RAW</code>ì´ë‚˜ <code>UTF-16-RAW</code>ìœ¼ë¡œ ì„¤ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ <code>-RAW</code> ì ‘ë¯¸ì‚¬ëŠ” ë¬´ì‹œë©ë‹ˆë‹¤. ì´ì „ ë²„ì „ì—ì„œ, <code>UTF-8-RAW</code>ì™€ <code>UTF-16-RAW</code>ì€ ë¬´íš¨í•œ  8-ë¹„íŠ¸ ì¸ì½”ë”©ì²˜ëŸ¼ í–‰ìœ„í•˜ë¯€ë¡œ, ëª¨ë“  ë¹„-ASCII ë¬¸ìžë“¤ì´ íê¸°ë©ë‹ˆë‹¤. ì´ê²ƒì€ ì˜¤ì§ <code>File.Encoding</code>ì—ë§Œ ì ìš©ë˜ì§€, <a href="../commands/FileOpen.htm">FileOpen()</a>ì—ëŠ” ì ìš©ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
   </td></tr>
 </table></div>
 
 <div class="methodShort" id="Handle"><h2>__Handle</h2>
 <pre class="Syntax">File.__Handle</pre>
 <table class="info">
-  <tr><td width="15%"><b>Returns</b></td><td width="85%">½Ã½ºÅÛ ÆÄÀÏ ÇÚµé, DllCall°ú ÇÔ²² »ç¿ëÇÏ´Â °ÍÀÌ ¸ñÀûÀÔ´Ï´Ù. <a href="http://msdn.microsoft.com/en-us/library/aa363858.aspx">CreateFile</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</td></tr>
+  <tr><td width="15%"><b>Returns</b></td><td width="85%">ì‹œìŠ¤í…œ íŒŒì¼ í•¸ë“¤, DllCallê³¼ í•¨ê»˜ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ëª©ì ìž…ë‹ˆë‹¤. <a href="http://msdn.microsoft.com/en-us/library/aa363858.aspx">CreateFile</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</td></tr>
 </table>
 <p>
-ÆÄÀÏ °´Ã¼´Â ³»ºÎÀûÀ¸·Î ÀÐ±â¿Í ¾²±â¸¦ ¹öÆÛ Ã³¸®ÇÕ´Ï´Ù. µ¥ÀÌÅÍ°¡ °´Ã¼ÀÇ ³»ºÎ ¹öÆÛ¿¡ ¾º¿©Á³´Ù¸é, ÇÚµéÀ» ¹ÝÈ¯ÇÏ±â Àü¿¡ µð½ºÅ©¿¡ ½á¾ß ÇÕ´Ï´Ù. ¹öÆÛ¿¡ ÆÄÀÏ·ÎºÎÅÍ ÀÐÀº µ¥ÀÌÅÍ°¡ µé¾î ÀÖ´Ù¸é, ±× µ¥ÀÌÅÍ´Â Æó±âµÇ°í <code>File.Pos</code>°¡ °¡¸®Å°´Â ½ÇÁ¦ ÆÄÀÏ Æ÷ÀÎÅÍ´Â ³í¸® À§Ä¡·Î Àç¼³Á¤µË´Ï´Ù.</p></div>
+íŒŒì¼ ê°ì²´ëŠ” ë‚´ë¶€ì ìœ¼ë¡œ ì½ê¸°ì™€ ì“°ê¸°ë¥¼ ë²„í¼ ì²˜ë¦¬í•©ë‹ˆë‹¤. ë°ì´í„°ê°€ ê°ì²´ì˜ ë‚´ë¶€ ë²„í¼ì— ì”Œì—¬ì¡Œë‹¤ë©´, í•¸ë“¤ì„ ë°˜í™˜í•˜ê¸° ì „ì— ë””ìŠ¤í¬ì— ì¨ì•¼ í•©ë‹ˆë‹¤. ë²„í¼ì— íŒŒì¼ë¡œë¶€í„° ì½ì€ ë°ì´í„°ê°€ ë“¤ì–´ ìžˆë‹¤ë©´, ê·¸ ë°ì´í„°ëŠ” íê¸°ë˜ê³  <code>File.Pos</code>ê°€ ê°€ë¦¬í‚¤ëŠ” ì‹¤ì œ íŒŒì¼ í¬ì¸í„°ëŠ” ë…¼ë¦¬ ìœ„ì¹˜ë¡œ ìž¬ì„¤ì •ë©ë‹ˆë‹¤.</p></div>
 
 </body>
 </html>

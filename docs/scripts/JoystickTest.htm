@@ -1,36 +1,37 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Joystick Test Script</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>���̽�ƽ �׽�Ʈ ��ũ��Ʈ</h1>
+<h1>조이스틱 테스트 스크립트</h1>
 
-<p>�� ��ũ��Ʈ�� ���̽�ƽ�� ��ư ��ȣ�� ��Ÿ �Ӽ��� �˾Ƴ� �� �ֽ��ϴ�. �� ���̽�ƽ�� ���� ������ �ʿ����� ������� �ݴϴ�; ��, �� ���� �̵� ������ �׷��� �ϴ� ��ó�� 0���� 100 �ۼ�Ʈ �����Դϴ�. ���� ������ �ʿ��ϸ�, � ü���� �������̳� ���̽�ƽ�� ������� ����Ʈ��� �̿��Ͻʽÿ�.
+<p>이 스크립트로 조이스틱의 버튼 번호와 기타 속성을 알아낼 수 있습니다. 또 조이스틱이 눈금 조정이 필요한지 노출시켜 줍니다; 즉, 각 축의 이동 범위는 그래야 하는 것처럼 0부터 100 퍼센트 사이입니다. 눈금 조정이 필요하면, 운영 체제의 제어판이나 조이스틱에 따라오는 소프트웨어를 이용하십시오.
 </p>
-<p><a href="JoystickTest.ahk">�� ��ũ��Ʈ ���� �ޱ�</a> &nbsp;| &nbsp;<a href="index.htm">�ٸ� ���� ��ũ��Ʈ</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Ȩ����</a></p>
+<p><a href="JoystickTest.ahk">이 스크립트 내려 받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
 
-<pre class="NoIndent"><em>; July 6, 2005: ���̽�ƽ ��ȣ�� �ڵ� Ž��.
-; May 8, 2005 : ����: ���̽�ƽ�� ���ӵǾ� �ִ��� Ž���ϴ� ��������
-; JoyAxes�� �� �̻� �������� ����. � ���̽�ƽ�� �����е��̰�
-; ���� �ϳ��� ���� �����Դϴ�.</em>
+<pre class="NoIndent"><em>; July 6, 2005: 조이스틱 번호를 자동 탐지.
+; May 8, 2005 : 수정: 조이스틱이 접속되어 있는지 탐지하는 수단으로
+; JoyAxes를 더 이상 질의하지 않음. 어떤 조이스틱은 게임패드이고
+; 축이 하나도 없기 때문입니다.</em>
 
-<em>; ������ Ư�� ���̽�ƽ ��ȣ�� ����ϰ� �ʹٸ�,
-; ���� ���� 0���� ���̽�ƽ ��ȣ�� �ٲߴϴ� (1-16).
-; ���� 0�̸� ���̽�ƽ ��ȣ�� �ڵ� Ž���մϴ�:</em>
+<em>; 무조건 특정 조이스틱 번호를 사용하고 싶다면,
+; 다음 값을 0에서 조이스틱 번호로 바꿉니다 (1-16).
+; 값이 0이면 조이스틱 번호를 자동 탐지합니다:</em>
 JoystickNumber = 0
 
-<em>; END OF CONFIG SECTION. �� ���� ���ķ� �������� ���ʽÿ�
-; ��, ��ũ��Ʈ�� �⺻ ����� �ٲٰ� �ʹٸ� �����Դϴ�.</em>
+<em>; END OF CONFIG SECTION. 이 시점 이후로 변경하지 마십시오
+; 단, 스크립트의 기본 기능을 바꾸고 싶다면 예외입니다.</em>
 
-<em>; ��û�ϸ� ���̽�ƽ ��ȣ�� �ڵ� Ž���մϴ�:</em>
+<em>; 요청하면 조이스틱 번호를 자동 탐지합니다:</em>
 if JoystickNumber &lt;= 0
 {
-    Loop 16  <em>; �� ���̽�ƽ ��ȣ�� ������ ��� ��ȣ�� �����ϴ��� �˾Ƴ��ϴ�.</em>
+    Loop 16  <em>; 각 조이스틱 번호를 질의해 어느 번호가 존재하는지 알아냅니다.</em>
     {
         GetKeyState, JoyName, %A_Index%JoyName
         if JoyName &lt;&gt;
@@ -41,13 +42,13 @@ if JoystickNumber &lt;= 0
     }
     if JoystickNumber &lt;= 0
     {
-        MsgBox �ý��ۿ� ���̽�ƽ�� �����Ǿ� ���� ���� �� �����ϴ�.
+        MsgBox 시스템에 조이스틱이 장착되어 있지 않은 것 같습니다.
         ExitApp
     }
 }
 
 #SingleInstance
-SetFormat, float, 03  <em>; �� ��ġ �ۼ�Ʈ���� �Ҽ����� �����մϴ�.</em>
+SetFormat, float, 03  <em>; 축 위치 퍼센트에서 소수점을 생략합니다.</em>
 GetKeyState, joy_buttons, %JoystickNumber%JoyButtons
 GetKeyState, joy_name, %JoystickNumber%JoyName
 GetKeyState, joy_info, %JoystickNumber%JoyInfo
@@ -89,7 +90,7 @@ Loop
         GetKeyState, joyp, %JoystickNumber%JoyPOV
         axis_info = %axis_info%%a_space%%a_space%POV%joyp%
     }
-    ToolTip, %joy_name% (#%JoystickNumber%):`n%axis_info%`nButtons Down: %buttons_down%`n`n(�����Ϸ��� Ʈ���� �������� ��Ŭ�� �Ͻʽÿ�)
+    ToolTip, %joy_name% (#%JoystickNumber%):`n%axis_info%`nButtons Down: %buttons_down%`n`n(종료하려면 트레이 아이콘을 우클릭 하십시오)
     Sleep, 100
 }
 return

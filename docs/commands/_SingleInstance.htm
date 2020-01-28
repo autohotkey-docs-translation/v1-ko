@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>#SingleInstance</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,27 +11,27 @@
 
 <h1>#SingleInstance</h1>
 
-<p>½ºÅ©¸³Æ®¿¡°Ô ÀÌ¹Ì ½ÇÇà ÁßÀÏ ¶§ ´Ù½Ã ½ÇÇàÀ» Çã¿ëÇÒÁö °áÁ¤ÇÕ´Ï´Ù.</p>
+<p>ìŠ¤í¬ë¦½íŠ¸ì—ê²Œ ì´ë¯¸ ì‹¤í–‰ ì¤‘ì¼ ë•Œ ë‹¤ì‹œ ì‹¤í–‰ì„ í—ˆìš©í• ì§€ ê²°ì •í•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">#SingleInstance [force|ignore|off]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>force|ignore|off</dt>
-  <dd><p>ÀÌ ¸Å°³º¯¼ö´Â ½ºÅ©¸³Æ®ÀÇ ½ÇÃ¼°¡ ÀÌ¹Ì ÀÌÀü¿¡ ½ÇÇà ÁßÀÏ ¶§ ½ºÅ©¸³Æ®°¡ ¶Ç ±âµ¿ÇÏ¸é ¹«½¼ ÀÏÀÌ ÀÏ¾î³¯ Áö °áÁ¤ÇÕ´Ï´Ù:</p>
-      <p>´Ü¾î FORCE´Â ´ëÈ­ »óÀÚ¸¦ °Ç³Ê ¶Ù°í ÀÚµ¿À¸·Î ¿¹Àü ½ÇÃ¼¸¦ ±³Ã¼ÇÕ´Ï´Ù. ±× È¿°ú´Â <a href="Reload.htm">Reload</a> ¸í·É¾î¿Í ºñ½ÁÇÕ´Ï´Ù.</p>
-      <p>´Ü¾î IGNORE´Â ´ëÈ­ »óÀÚ¸¦ °Ç³Ê ¶Ù°í ¿¹Àü ½ÇÃ¼¸¦ ±×´ë·Î ½ÇÇàµÇµµ·Ï µÓ´Ï´Ù. Áï, ÀÌ¹Ì ½ÇÇà ÁßÀÎ ½ºÅ©¸³Æ®ÀÇ ±âµ¿ ½Ãµµ¸¦ ¹«½ÃÇÕ´Ï´Ù.</p>
-      <p>´Ü¾î OFF´Â ½ºÅ©¸³Æ®ÀÇ ¿©·¯ ½ÇÃ¼¸¦ º´ÇàÀûÀ¸·Î ½ÇÇàµÇµµ·Ï Çã¿ëÇÕ´Ï´Ù.</p>
-      <p>ÀÌ ¸Å°³º¯¼ö¸¦ »ý·«ÇÏ¸é, ´ëÈ­»óÀÚ°¡ ³ªÅ¸³ª ¿¹Àü ½ÇÃ¼¸¦ À¯ÁöÇÒÁö »õ ½ÇÃ¼·Î ±³Ã¼ÇÒÁö ¹¯½À´Ï´Ù.</p></dd>
+  <dd><p>ì´ ë§¤ê°œë³€ìˆ˜ëŠ” ìŠ¤í¬ë¦½íŠ¸ì˜ ì‹¤ì²´ê°€ ì´ë¯¸ ì´ì „ì— ì‹¤í–‰ ì¤‘ì¼ ë•Œ ìŠ¤í¬ë¦½íŠ¸ê°€ ë˜ ê¸°ë™í•˜ë©´ ë¬´ìŠ¨ ì¼ì´ ì¼ì–´ë‚  ì§€ ê²°ì •í•©ë‹ˆë‹¤:</p>
+      <p>ë‹¨ì–´ FORCEëŠ” ëŒ€í™” ìƒìžë¥¼ ê±´ë„ˆ ë›°ê³  ìžë™ìœ¼ë¡œ ì˜ˆì „ ì‹¤ì²´ë¥¼ êµì²´í•©ë‹ˆë‹¤. ê·¸ íš¨ê³¼ëŠ” <a href="Reload.htm">Reload</a> ëª…ë ¹ì–´ì™€ ë¹„ìŠ·í•©ë‹ˆë‹¤.</p>
+      <p>ë‹¨ì–´ IGNOREëŠ” ëŒ€í™” ìƒìžë¥¼ ê±´ë„ˆ ë›°ê³  ì˜ˆì „ ì‹¤ì²´ë¥¼ ê·¸ëŒ€ë¡œ ì‹¤í–‰ë˜ë„ë¡ ë‘¡ë‹ˆë‹¤. ì¦‰, ì´ë¯¸ ì‹¤í–‰ ì¤‘ì¸ ìŠ¤í¬ë¦½íŠ¸ì˜ ê¸°ë™ ì‹œë„ë¥¼ ë¬´ì‹œí•©ë‹ˆë‹¤.</p>
+      <p>ë‹¨ì–´ OFFëŠ” ìŠ¤í¬ë¦½íŠ¸ì˜ ì—¬ëŸ¬ ì‹¤ì²´ë¥¼ ë³‘í–‰ì ìœ¼ë¡œ ì‹¤í–‰ë˜ë„ë¡ í—ˆìš©í•©ë‹ˆë‹¤.</p>
+      <p>ì´ ë§¤ê°œë³€ìˆ˜ë¥¼ ìƒëžµí•˜ë©´, ëŒ€í™”ìƒìžê°€ ë‚˜íƒ€ë‚˜ ì˜ˆì „ ì‹¤ì²´ë¥¼ ìœ ì§€í• ì§€ ìƒˆ ì‹¤ì²´ë¡œ êµì²´í• ì§€ ë¬»ìŠµë‹ˆë‹¤.</p></dd>
 
 </dl>
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-½ºÅ©¸³Æ®¿¡ <a href="../Hotkeys.htm">hotkeys</a>, <a href="../Hotstrings.htm">hotstrings</a>, <a href="_Persistent.htm">#Persistent</a>, <a href="OnMessage.htm">OnMessage()</a>, ¶Ç´Â <a href="Gui.htm">Gui</a>°¡ ´ã°Ü ÀÖÀ¸¸é ±âº»°ªÀº ´ÜÀÏ-½ÇÃ¼ÀÔ´Ï´Ù (´ëÈ­»óÀÚ°¡ ³ªÅ¸³ª &amp; ¹¯½À´Ï´Ù). ´Ù¸¥ ½ºÅ©¸³Æ®´Â ±âº»ÀûÀ¸·Î ´ÙÁß ½ÇÃ¼¸¦ Çã¿ëÇÕ´Ï´Ù. ÀÌ ÇàÀ§´Â À§¿¡ ±â¼úÇÑ °ÍÃ³·³ ºÒ´ÉÈ­ÇÏ°Å³ª º¯°æÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ìŠ¤í¬ë¦½íŠ¸ì— <a href="../Hotkeys.htm">hotkeys</a>, <a href="../Hotstrings.htm">hotstrings</a>, <a href="_Persistent.htm">#Persistent</a>, <a href="OnMessage.htm">OnMessage()</a>, ë˜ëŠ” <a href="Gui.htm">Gui</a>ê°€ ë‹´ê²¨ ìžˆìœ¼ë©´ ê¸°ë³¸ê°’ì€ ë‹¨ì¼-ì‹¤ì²´ìž…ë‹ˆë‹¤ (ëŒ€í™”ìƒìžê°€ ë‚˜íƒ€ë‚˜ &amp; ë¬»ìŠµë‹ˆë‹¤). ë‹¤ë¥¸ ìŠ¤í¬ë¦½íŠ¸ëŠ” ê¸°ë³¸ì ìœ¼ë¡œ ë‹¤ì¤‘ ì‹¤ì²´ë¥¼ í—ˆìš©í•©ë‹ˆë‹¤. ì´ í–‰ìœ„ëŠ” ìœ„ì— ê¸°ìˆ í•œ ê²ƒì²˜ëŸ¼ ë¶ˆëŠ¥í™”í•˜ê±°ë‚˜ ë³€ê²½í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="Reload.htm">Reload</a>, <a href="_Persistent.htm">#Persistent</a></p>
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">#SingleInstance force
 #SingleInstance ignore
 #SingleInstance off</pre>

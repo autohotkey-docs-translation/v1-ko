@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>ControlGet</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,146 +11,146 @@
 
 <h1>ControlGet</h1>
 
-<p>ÄÜÆ®·Ñ¿¡ °üÇÏ¿© ´Ù¾çÇÑ À¯ÇüÀÇ Á¤º¸¸¦ ¿­¶÷ÇÕ´Ï´Ù.</p>
+<p>ì½˜íŠ¸ë¡¤ì— ê´€í•˜ì—¬ ë‹¤ì–‘í•œ ìœ í˜•ì˜ ì •ë³´ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">ControlGet, OutputVar, Cmd [, Value, Control, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p><em>Cmd</em> ¸í·ÉÀÇ °á°ú¸¦ ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§.</p></dd>
+  <dd><p><em>Cmd</em> ëª…ë ¹ì˜ ê²°ê³¼ë¥¼ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„.</p></dd>
 
   <dt>Cmd, Value</dt>
-  <dd>¾Æ·¡ ¸®½ºÆ® ÂüÁ¶
+  <dd>ì•„ëž˜ ë¦¬ìŠ¤íŠ¸ ì°¸ì¡°
     </dd>
 
   <dt>Control</dt>
-  <dd><p>ClassNN (ÄÜÆ®·ÑÀÇ Å¬·¡½ºÀÌ¸§°ú ½ÇÃ¼ ¹øÈ£) ¶Ç´Â ÄÜÆ®·ÑÀÇ ÅØ½ºÆ®ÀÏ ¼ö ÀÖ½À´Ï´Ù. µÑ ¸ðµÎ Window Spy¸¦ ÅëÇÏ¿© ¾Ë¾Æ³¾ ¼ö ÀÖ½À´Ï´Ù. ÅØ½ºÆ®¸¦ »ç¿ëÇÒ ¶§, ºÎÇÕÇÏ´Â ÇàÀ§´Â <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>·Î °áÁ¤µË´Ï´Ù. ÀÌ ¸Å°³º¯¼ö°¡ ºñ¾î ÀÖÀ¸¸é, ¸ñÇ¥ Ã¢ÀÇ ÃÖ»óÀ§ ÄÜÆ®·ÑÀÌ »ç¿ëµË´Ï´Ù.</p>
+  <dd><p>ClassNN (ì½˜íŠ¸ë¡¤ì˜ í´ëž˜ìŠ¤ì´ë¦„ê³¼ ì‹¤ì²´ ë²ˆí˜¸) ë˜ëŠ” ì½˜íŠ¸ë¡¤ì˜ í…ìŠ¤íŠ¸ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‘˜ ëª¨ë‘ Window Spyë¥¼ í†µí•˜ì—¬ ì•Œì•„ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í…ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©í•  ë•Œ, ë¶€í•©í•˜ëŠ” í–‰ìœ„ëŠ” <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>ë¡œ ê²°ì •ë©ë‹ˆë‹¤. ì´ ë§¤ê°œë³€ìˆ˜ê°€ ë¹„ì–´ ìžˆìœ¼ë©´, ëª©í‘œ ì°½ì˜ ìµœìƒìœ„ ì½˜íŠ¸ë¡¤ì´ ì‚¬ìš©ë©ë‹ˆë‹¤.</p>
     <p>
-	ÄÜÆ®·ÑÀÇ HWND (Ã¢ ÇÚµé)¿¡ ÀÛµ¿½ÃÅ°·Á¸é, <em>Control</em> ¸Å°³º¯¼ö¸¦ ºó Ã¤·Î µÎ°í <code>ahk_id %ControlHwnd%</code>¸¦ <em>WinTitle</em> ¸Å°³º¯¼ö¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À (ÀÌ°ÍÀº ¼ûÀº ÄÜÆ®·Ñ¿¡µµ ÀÛµ¿ÇÕ´Ï´Ù. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>°¡ ²¨Á® ÀÖ¾îµµ »ó°ü¾ø½À´Ï´Ù). ÄÜÆ®·ÑÀÇ HWND´Â ÀüÇüÀûÀ¸·Î <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, ¶Ç´Â <a href="DllCall.htm">DllCall</a>À» ÅëÇÏ¿© ¿­¶÷ÇÕ´Ï´Ù.</p></dd>
+	ì½˜íŠ¸ë¡¤ì˜ HWND (ì°½ í•¸ë“¤)ì— ìž‘ë™ì‹œí‚¤ë ¤ë©´, <em>Control</em> ë§¤ê°œë³€ìˆ˜ë¥¼ ë¹ˆ ì±„ë¡œ ë‘ê³  <code>ahk_id %ControlHwnd%</code>ë¥¼ <em>WinTitle</em> ë§¤ê°œë³€ìˆ˜ì— ì§€ì •í•˜ì‹­ì‹œì˜¤ (ì´ê²ƒì€ ìˆ¨ì€ ì½˜íŠ¸ë¡¤ì—ë„ ìž‘ë™í•©ë‹ˆë‹¤. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>ê°€ êº¼ì ¸ ìžˆì–´ë„ ìƒê´€ì—†ìŠµë‹ˆë‹¤). ì½˜íŠ¸ë¡¤ì˜ HWNDëŠ” ì „í˜•ì ìœ¼ë¡œ <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, ë˜ëŠ” <a href="DllCall.htm">DllCall</a>ì„ í†µí•˜ì—¬ ì—´ëžŒí•©ë‹ˆë‹¤.</p></dd>
 
   <dt>WinTitle</dt>
-  <dd><p>Ã¢ Á¦¸ñ ¶Ç´Â ¸ñÇ¥ Ã¢À» ½Äº°ÇÏ´Â ±âÅ¸ ±âÁØ. <a href="../misc/WinTitle.htm">WinTitle</a> ÂüÁ¶.</p></dd>
+  <dd><p>ì°½ ì œëª© ë˜ëŠ” ëª©í‘œ ì°½ì„ ì‹ë³„í•˜ëŠ” ê¸°íƒ€ ê¸°ì¤€. <a href="../misc/WinTitle.htm">WinTitle</a> ì°¸ì¡°.</p></dd>
 
   <dt>WinText</dt>
-  <dd><p>Á¸ÀçÇÏ¸é ¸ñÇ¥ Ã¢ ÅØ½ºÆ®ÀÇ ºÎ¹®ÀÚ¿­ÀÔ´Ï´Ù (Window Spy¿¡ ³ëÃâµÊ). ¼ûÀº ÅØ½ºÆ®´Â <a href="DetectHiddenText.htm">DetectHiddenText</a>°¡ ÄÑÁ®(ON) ÀÖ¾î¾ß ³ëÃâµË´Ï´Ù.</p></dd>
+  <dd><p>ì¡´ìž¬í•˜ë©´ ëª©í‘œ ì°½ í…ìŠ¤íŠ¸ì˜ ë¶€ë¬¸ìžì—´ìž…ë‹ˆë‹¤ (Window Spyì— ë…¸ì¶œë¨). ìˆ¨ì€ í…ìŠ¤íŠ¸ëŠ” <a href="DetectHiddenText.htm">DetectHiddenText</a>ê°€ ì¼œì ¸(ON) ìžˆì–´ì•¼ ë…¸ì¶œë©ë‹ˆë‹¤.</p></dd>
 
   <dt>ExcludeTitle</dt>
-  <dd><p>Á¦¸ñ¿¡ ÀÌ °ªÀÌ ÀÖ´Â Ã¢Àº Á¦¿ÜÇÕ´Ï´Ù.</p></dd>
+  <dd><p>ì œëª©ì— ì´ ê°’ì´ ìžˆëŠ” ì°½ì€ ì œì™¸í•©ë‹ˆë‹¤.</p></dd>
 
   <dt>ExcludeText</dt>
-  <dd><p>ÅØ½ºÆ®¿¡ ÀÌ °ªÀÌ ÀÖ´Â Ã¢Àº Á¦¿ÜÇÕ´Ï´Ù.</p></dd>
+  <dd><p>í…ìŠ¤íŠ¸ì— ì´ ê°’ì´ ìžˆëŠ” ì°½ì€ ì œì™¸í•©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
 <h3>Cmd, Value</h3>
 <p>
-<em>Cmd</em>¿Í <em>Value</em> ¸Å°³º¯¼ö´Â ¼­·Î ÀÇÁ¸ÇÕ´Ï´Ù. ±× »ç¿ë¹ýÀº ¾Æ·¡¿¡ ±â¼úÇÕ´Ï´Ù.</p>
+<em>Cmd</em>ì™€ <em>Value</em> ë§¤ê°œë³€ìˆ˜ëŠ” ì„œë¡œ ì˜ì¡´í•©ë‹ˆë‹¤. ê·¸ ì‚¬ìš©ë²•ì€ ì•„ëž˜ì— ê¸°ìˆ í•©ë‹ˆë‹¤.</p>
 <p>
-<strong><a name="List"></a>List</strong>: ListView, ListBox, ComboBox, ¶Ç´Â DropDownList·ÎºÎÅÍ Ç×¸ñ ¸®½ºÆ®¸¦ ¿­¶÷ÇÕ´Ï´Ù.</p>
+<strong><a name="List"></a>List</strong>: ListView, ListBox, ComboBox, ë˜ëŠ” DropDownListë¡œë¶€í„° í•­ëª© ë¦¬ìŠ¤íŠ¸ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</p>
 <p>
-<u>ListView</u>: ListView¸¦ ¿­¶÷ÇÏ´Â ±¸¹®Àº ´ÙÀ½°ú °°½À´Ï´Ù:</p>
+<u>ListView</u>: ListViewë¥¼ ì—´ëžŒí•˜ëŠ” êµ¬ë¬¸ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤:</p>
 
 <pre>ControlGet, OutputVar, List, <strong>Options</strong>, SysListView321, WinTitle, WinText</pre>
 <p>
-<em>Options</em> ¸Å°³º¯¼ö°¡ ºñ¾î ÀÖ°Å³ª »ý·«µÇ¸é, ÄÜÆ®·Ñ¿¡ ÀÖ´Â ¸ðµç ÅØ½ºÆ®°¡ ¿­¶÷µË´Ï´Ù. ¸¶Áö¸· ÇàÀ» Á¦¿ÜÇÏ°í °¢ Çà¸¶´Ù ¶óÀÎÇÇµå ¹®ÀÚ·Î ³¡³³´Ï´Ù (`n). °¢ Çà ¾È¿¡¼­, °¢ ÇÊµå (ÄÃ·³)Àº ¸¶Áö¸·À» Á¦¿ÜÇÏ°í ÅÇ ¹®ÀÚ·Î ³¡³³´Ï´Ù (`t).</p>
+<em>Options</em> ë§¤ê°œë³€ìˆ˜ê°€ ë¹„ì–´ ìžˆê±°ë‚˜ ìƒëžµë˜ë©´, ì½˜íŠ¸ë¡¤ì— ìžˆëŠ” ëª¨ë“  í…ìŠ¤íŠ¸ê°€ ì—´ëžŒë©ë‹ˆë‹¤. ë§ˆì§€ë§‰ í–‰ì„ ì œì™¸í•˜ê³  ê° í–‰ë§ˆë‹¤ ë¼ì¸í”¼ë“œ ë¬¸ìžë¡œ ëë‚©ë‹ˆë‹¤ (`n). ê° í–‰ ì•ˆì—ì„œ, ê° í•„ë“œ (ì»¬ëŸ¼)ì€ ë§ˆì§€ë§‰ì„ ì œì™¸í•˜ê³  íƒ­ ë¬¸ìžë¡œ ëë‚©ë‹ˆë‹¤ (`t).</p>
 <p>
-<em>Options</em>¿¡ ´ÙÀ½ ´Ü¾îµéÀ» ÁöÁ¤ÇÏ½Ê½Ã¿À. °¢ ¿É¼ÇÀº ´ÙÀ½ ¿É¼Ç°ú ½ºÆäÀÌ½º ¶Ç´Â ÅÇÀ¸·Î ±¸ºÐµË´Ï´Ù:</p>
-<p><em>Selected</em>: ¸ðµç Çà ¸»°í ¼±ÅÃµÈ (°­Á¶µÈ) Çàµé¸¸ ¿­¶÷ÇÕ´Ï´Ù. ¾Æ¹«°Íµµ ¾øÀ¸¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù.<br>
-  <em>Focused</em>: ÃÊÁ¡ Çà¸¸ ¿­¶÷ÇÕ´Ï´Ù. ¾øÀ¸¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù.<br>
-  <em><a name="ColN"></a>Col4</em>: ¸ðµç ÄÃ·³ ¸»°í ³× ¹øÂ° ÄÃ·³(ÇÊµå)¸¸ ¿­¶÷ÇÕ´Ï´Ù (4¸¦ ¿øÇÏ´Â ¹øÈ£·Î ±³Ã¼). <br>
-  <em>Count</em>: ÄÜÆ®·Ñ¿¡ ÀÖ´Â ÀüÃ¼ ÇàÀÇ °³¼ö¸¦ ¿­¶÷ÇÕ´Ï´Ù.<br>
-  <em>Count Selected</em>: ¼±ÅÃµÈ (°­Á¶µÈ) ÇàÀÇ °³¼ö¸¦ ¿­¶÷ÇÕ´Ï´Ù.<br>
-  <em>Count Focused</em>: ÃÊÁ¡ ÇàÀÇ¹øÈ£(À§Ä¡)¸¦ ¿­¶÷ÇÕ´Ï´Ù (¾øÀ¸¸é 0).<br>
-<em>Count Col</em>: ÄÜÆ®·Ñ¿¡ ÀÖ´Â ÄÃ·³ÀÇ °³¼ö¸¦ ¿­¶÷ÇÕ´Ï´Ù (¶Ç´Â °³¼ö¸¦ ¼¿ ¼ö ¾øÀ¸¸é -1).</p>
+<em>Options</em>ì— ë‹¤ìŒ ë‹¨ì–´ë“¤ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. ê° ì˜µì…˜ì€ ë‹¤ìŒ ì˜µì…˜ê³¼ ìŠ¤íŽ˜ì´ìŠ¤ ë˜ëŠ” íƒ­ìœ¼ë¡œ êµ¬ë¶„ë©ë‹ˆë‹¤:</p>
+<p><em>Selected</em>: ëª¨ë“  í–‰ ë§ê³  ì„ íƒëœ (ê°•ì¡°ëœ) í–‰ë“¤ë§Œ ì—´ëžŒí•©ë‹ˆë‹¤. ì•„ë¬´ê²ƒë„ ì—†ìœ¼ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤.<br>
+  <em>Focused</em>: ì´ˆì  í–‰ë§Œ ì—´ëžŒí•©ë‹ˆë‹¤. ì—†ìœ¼ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤.<br>
+  <em><a name="ColN"></a>Col4</em>: ëª¨ë“  ì»¬ëŸ¼ ë§ê³  ë„¤ ë²ˆì§¸ ì»¬ëŸ¼(í•„ë“œ)ë§Œ ì—´ëžŒí•©ë‹ˆë‹¤ (4ë¥¼ ì›í•˜ëŠ” ë²ˆí˜¸ë¡œ êµì²´). <br>
+  <em>Count</em>: ì½˜íŠ¸ë¡¤ì— ìžˆëŠ” ì „ì²´ í–‰ì˜ ê°œìˆ˜ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.<br>
+  <em>Count Selected</em>: ì„ íƒëœ (ê°•ì¡°ëœ) í–‰ì˜ ê°œìˆ˜ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.<br>
+  <em>Count Focused</em>: ì´ˆì  í–‰ì˜ë²ˆí˜¸(ìœ„ì¹˜)ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤ (ì—†ìœ¼ë©´ 0).<br>
+<em>Count Col</em>: ì½˜íŠ¸ë¡¤ì— ìžˆëŠ” ì»¬ëŸ¼ì˜ ê°œìˆ˜ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤ (ë˜ëŠ” ê°œìˆ˜ë¥¼ ì…€ ìˆ˜ ì—†ìœ¼ë©´ -1).</p>
 <p>
-ÁÖÀÇ: ¾î¶² ¾îÇÃ¸®ÄÉÀÌ¼ÇÀº ListView ÅØ½ºÆ®¸¦ µû·Î º¸°üÇÕ´Ï´Ù. ±× ¶§¹®¿¡ ÅØ½ºÆ®¸¦ ¿­¶÷ÇÒ ¼ö ¾ø½À´Ï´Ù. ÀÌ·± °æ¿ì, ErrorLevelÀº º¸Åë 0À¸·Î ¼³Á¤µË´Ï´Ù (¼º°øÀ» ¶æÇÔ). ±×·¯³ª ¿­¶÷µÈ ÇÊµå´Â ºñ¾î ÀÖÀ» °ÍÀÔ´Ï´Ù. ¶ÇÇÑ  ListView ÅØ½ºÆ® ¿­¶÷Àº <a href="_MaxMem.htm">#MaxMem</a>À¸·Î Á¦ÇÑµÇÁö ¾Ê½À´Ï´Ù.</p>
+ì£¼ì˜: ì–´ë–¤ ì–´í”Œë¦¬ì¼€ì´ì…˜ì€ ListView í…ìŠ¤íŠ¸ë¥¼ ë”°ë¡œ ë³´ê´€í•©ë‹ˆë‹¤. ê·¸ ë•Œë¬¸ì— í…ìŠ¤íŠ¸ë¥¼ ì—´ëžŒí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ì´ëŸ° ê²½ìš°, ErrorLevelì€ ë³´í†µ 0ìœ¼ë¡œ ì„¤ì •ë©ë‹ˆë‹¤ (ì„±ê³µì„ ëœ»í•¨). ê·¸ëŸ¬ë‚˜ ì—´ëžŒëœ í•„ë“œëŠ” ë¹„ì–´ ìžˆì„ ê²ƒìž…ë‹ˆë‹¤. ë˜í•œ  ListView í…ìŠ¤íŠ¸ ì—´ëžŒì€ <a href="_MaxMem.htm">#MaxMem</a>ìœ¼ë¡œ ì œí•œë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-¼º°øÇÏ¸é, ErrorLevelÀº 0ÀÌ ¼³Á¤µË´Ï´Ù. ½ÇÆÐÇÏ¸é 1·Î ¼³Á¤µÇ°í <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. ½ÇÆÐ´Â ´ÙÀ½°ú °°Àº °æ¿ì ÀÏ¾î³³´Ï´Ù: 
+ì„±ê³µí•˜ë©´, ErrorLevelì€ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤. ì‹¤íŒ¨í•˜ë©´ 1ë¡œ ì„¤ì •ë˜ê³  <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. ì‹¤íŒ¨ëŠ” ë‹¤ìŒê³¼ ê°™ì€ ê²½ìš° ì¼ì–´ë‚©ë‹ˆë‹¤: 
 <ol>
-	<li>¸ñÇ¥ Ã¢ÀÌ³ª ÄÜÆ®·ÑÀÌ Á¸ÀçÇÏÁö ¾Ê´Â´Ù;
-	<li>¸ñÇ¥ Ã¢ÀÌ SysListView32 À¯ÇüÀÌ ¾Æ´Ï´Ù;
-	<li>ListView¸¦ ¼ÒÀ¯ÇÑ ÇÁ·Î¼¼½º¸¦ ¿­ ¼ö ¾ø´Ù. ¾Æ¸¶µµ »ç¿ëÀÚ°¡ ±ÇÇÑÀÌ ¾ø°Å³ª Àá°Ü ÀÖ±â ¶§¹®ÀÏ °ÍÀÌ´Ù;
-	<li><a href="#ColN">Col<em>N</em> ¿É¼Ç</a>¿¡ Á¸ÀçÇÏÁö ¾Ê´Â ÄÃ·³À» ÁöÁ¤Çß´Ù.
+	<li>ëª©í‘œ ì°½ì´ë‚˜ ì½˜íŠ¸ë¡¤ì´ ì¡´ìž¬í•˜ì§€ ì•ŠëŠ”ë‹¤;
+	<li>ëª©í‘œ ì°½ì´ SysListView32 ìœ í˜•ì´ ì•„ë‹ˆë‹¤;
+	<li>ListViewë¥¼ ì†Œìœ í•œ í”„ë¡œì„¸ìŠ¤ë¥¼ ì—´ ìˆ˜ ì—†ë‹¤. ì•„ë§ˆë„ ì‚¬ìš©ìžê°€ ê¶Œí•œì´ ì—†ê±°ë‚˜ ìž ê²¨ ìžˆê¸° ë•Œë¬¸ì¼ ê²ƒì´ë‹¤;
+	<li><a href="#ColN">Col<em>N</em> ì˜µì…˜</a>ì— ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” ì»¬ëŸ¼ì„ ì§€ì •í–ˆë‹¤.
 </ol> 
 </p>
 <p>
-ListView·ÎºÎÅÍ °³º°ÀûÀ¸·Î Çà°ú ÇÊµå¸¦ ÃßÃâÇÏ·Á¸é, ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ <a href="LoopParse.htm">ÆÄ½Ì È¸µ¹ÀÌ</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À:</p>
+ListViewë¡œë¶€í„° ê°œë³„ì ìœ¼ë¡œ í–‰ê³¼ í•„ë“œë¥¼ ì¶”ì¶œí•˜ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ <a href="LoopParse.htm">íŒŒì‹± íšŒëŒì´</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤:</p>
 
 <pre>ControlGet, List, List, Selected, SysListView321, WinTitle
-Loop, Parse, List, `n  <em>; ÇàÀº ¶óÀÎÇÇµå·Î ±¸ºÐµË´Ï´Ù (`n).</em>
+Loop, Parse, List, `n  <em>; í–‰ì€ ë¼ì¸í”¼ë“œë¡œ êµ¬ë¶„ë©ë‹ˆë‹¤ (`n).</em>
 {
     RowNumber := A_Index
-    Loop, Parse, A_LoopField, %A_Tab%  <em>; °¢ ÇàÀÇ ÇÊµå (ÄÃ·³)Àº ÅÇÀ¸·Î ±¸ºÐµË´Ï´Ù (A_Tab).</em>
+    Loop, Parse, A_LoopField, %A_Tab%  <em>; ê° í–‰ì˜ í•„ë“œ (ì»¬ëŸ¼)ì€ íƒ­ìœ¼ë¡œ êµ¬ë¶„ë©ë‹ˆë‹¤ (A_Tab).</em>
         MsgBox Row #%RowNumber% Col #%A_Index% is %A_LoopField%.
 }</pre>
 <p>
-°ü·ÃÇÏ¿© ¸»¾¸ µå¸®ÀÚ¸é, ListViewÀÇ ÄÃ·³Àº <a href="PostMessage.htm">SendMessage</a>¸¦ ÅëÇÏ¿© Å©±â¸¦ º¯°æÇÒ ¼ö ÀÖ½À´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿¡ º¸¿©ÁÝ´Ï´Ù:</p>
+ê´€ë ¨í•˜ì—¬ ë§ì”€ ë“œë¦¬ìžë©´, ListViewì˜ ì»¬ëŸ¼ì€ <a href="PostMessage.htm">SendMessage</a>ë¥¼ í†µí•˜ì—¬ í¬ê¸°ë¥¼ ë³€ê²½í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì— ë³´ì—¬ì¤ë‹ˆë‹¤:</p>
 
-<pre>SendMessage, 4126, 0, 80, SysListView321, WinTitle  <em>; 4126Àº ¸Þ½ÃÁö LVM_SETCOLUMNWIDTHÀÔ´Ï´Ù.
-; À§¿¡¼­, 0Àº Ã¹ ÄÃ·³À» ³ªÅ¸³À´Ï´Ù (1Àº µÎ ¹øÂ°, 2´Â ¼¼ ¹øÂ°, µîµî.)  ¶ÇÇÑ, 80Àº »õ ³ÊºñÀÔ´Ï´Ù.
-; 80À» -1·Î ¹Ù²Ù¸é ÄÃ·³ÀÇ Å©±â°¡ ÀÚµ¿À¸·Î Á¶ÀýµË´Ï´Ù. -2·Î ±³Ã¼ÇÏ¸é Çì´õ ÅØ½ºÆ® ³Êºñ±îÁö °í·ÁÇÏ¿© Å©±â¸¦ Á¶ÀýÇØ ÁÝ´Ï´Ù.</em></pre>
+<pre>SendMessage, 4126, 0, 80, SysListView321, WinTitle  <em>; 4126ì€ ë©”ì‹œì§€ LVM_SETCOLUMNWIDTHìž…ë‹ˆë‹¤.
+; ìœ„ì—ì„œ, 0ì€ ì²« ì»¬ëŸ¼ì„ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤ (1ì€ ë‘ ë²ˆì§¸, 2ëŠ” ì„¸ ë²ˆì§¸, ë“±ë“±.)  ë˜í•œ, 80ì€ ìƒˆ ë„ˆë¹„ìž…ë‹ˆë‹¤.
+; 80ì„ -1ë¡œ ë°”ê¾¸ë©´ ì»¬ëŸ¼ì˜ í¬ê¸°ê°€ ìžë™ìœ¼ë¡œ ì¡°ì ˆë©ë‹ˆë‹¤. -2ë¡œ êµì²´í•˜ë©´ í—¤ë” í…ìŠ¤íŠ¸ ë„ˆë¹„ê¹Œì§€ ê³ ë ¤í•˜ì—¬ í¬ê¸°ë¥¼ ì¡°ì ˆí•´ ì¤ë‹ˆë‹¤.</em></pre>
 <p>
-<u>ListBox, ComboBox, DropDownList</u>: ÄÜÆ®·Ñ·ÎºÎÅÍ ¸ðµç ÅØ½ºÆ®°¡ ¿­¶÷µË´Ï´Ù (Áï, À§ÀÇ<em>Count</em>°ú <em>Selected</em>°°Àº ListView ¿É¼ÇÀº Áö¿øÇÏÁö ¾Ê½À´Ï´Ù).</p>
+<u>ListBox, ComboBox, DropDownList</u>: ì½˜íŠ¸ë¡¤ë¡œë¶€í„° ëª¨ë“  í…ìŠ¤íŠ¸ê°€ ì—´ëžŒë©ë‹ˆë‹¤ (ì¦‰, ìœ„ì˜<em>Count</em>ê³¼ <em>Selected</em>ê°™ì€ ListView ì˜µì…˜ì€ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤).</p>
 <p>
-°¢ ÇàÀº ¸¶Áö¸·À» Á¦¿ÜÇÏ°í ¶óÀÎÇÇµå·Î ³¡³³´Ï´Ù (`n). Ç×¸ñ¿¡ °³º°ÀûÀ¸·Î Á¢±ÙÇÏ·Á¸é, ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ <a href="LoopParse.htm">ÆÄ½Ì È¸µ¹ÀÌ</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À:</p>
+ê° í–‰ì€ ë§ˆì§€ë§‰ì„ ì œì™¸í•˜ê³  ë¼ì¸í”¼ë“œë¡œ ëë‚©ë‹ˆë‹¤ (`n). í•­ëª©ì— ê°œë³„ì ìœ¼ë¡œ ì ‘ê·¼í•˜ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ <a href="LoopParse.htm">íŒŒì‹± íšŒëŒì´</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤:</p>
 
 <pre>ControlGet, List, List,, ComboBox1, WinTitle
 Loop, Parse, List, `n
     MsgBox Item number %A_Index% is %A_LoopField%.</pre>
 <p>
-<strong>Checked</strong>: Ã¼Å©¹Ú½º³ª ¶óµð¿À ¹öÆ°ÀÌ Ã¼Å©µÇ¾î ÀÖÀ¸¸é <em>OutputVar</em>¿¡ 1À» ¼³Á¤ÇÕ´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é 0À» ¼³Á¤ÇÕ´Ï´Ù.</p>
-<p><strong>Enabled</strong>: <em>Control</em>ÀÌ È°¼ºÈ­µÇ¾î ÀÖÀ¸¸é <em>OutputVar</em>¿¡ 1À» ¼³Á¤ÇÕ´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é 0À» ¼³Á¤ÇÕ´Ï´Ù.</p>
+<strong>Checked</strong>: ì²´í¬ë°•ìŠ¤ë‚˜ ë¼ë””ì˜¤ ë²„íŠ¼ì´ ì²´í¬ë˜ì–´ ìžˆìœ¼ë©´ <em>OutputVar</em>ì— 1ì„ ì„¤ì •í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì„ ì„¤ì •í•©ë‹ˆë‹¤.</p>
+<p><strong>Enabled</strong>: <em>Control</em>ì´ í™œì„±í™”ë˜ì–´ ìžˆìœ¼ë©´ <em>OutputVar</em>ì— 1ì„ ì„¤ì •í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì„ ì„¤ì •í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>Visible</strong>: <em>Control</em>ÀÌ º¸ÀÌ¸é <em>OutputVar</em>¿¡ 1À» ¼³°øÇÏ°í, ¼û¾î ÀÖÀ¸¸é 0À» ¼³Á¤ÇÕ´Ï´Ù.</p>
+<strong>Visible</strong>: <em>Control</em>ì´ ë³´ì´ë©´ <em>OutputVar</em>ì— 1ì„ ì„¤ê³µí•˜ê³ , ìˆ¨ì–´ ìžˆìœ¼ë©´ 0ì„ ì„¤ì •í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>Tab</strong>: <em>OutputVar</em>¿¡ SysTabControl32 ÄÜÆ®·ÑÀÇ ÅÇ ¹øÈ£¸¦ ¼³Á¤ÇÕ´Ï´Ù. Ã¹ ÅÇÀº 1, µÎ ¹øÂ° ÅÇÀº 2ÀÔ´Ï´Ù, µîµî. ´ë½Å¿¡ ¾ó¸¶³ª ¸¹Àº ÅÇ(ÆäÀÌÁö)°¡ ÅÇ ÄÜÆ®·Ñ¿¡ ÀÖ´ÂÁö ¾Ë¾Æ º¸·Á¸é, ´ÙÀ½ ¿¹Á¦¸¦ µû¸£½Ê½Ã¿À:</p>
+<strong>Tab</strong>: <em>OutputVar</em>ì— SysTabControl32 ì½˜íŠ¸ë¡¤ì˜ íƒ­ ë²ˆí˜¸ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤. ì²« íƒ­ì€ 1, ë‘ ë²ˆì§¸ íƒ­ì€ 2ìž…ë‹ˆë‹¤, ë“±ë“±. ëŒ€ì‹ ì— ì–¼ë§ˆë‚˜ ë§Žì€ íƒ­(íŽ˜ì´ì§€)ê°€ íƒ­ ì½˜íŠ¸ë¡¤ì— ìžˆëŠ”ì§€ ì•Œì•„ ë³´ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¥´ì‹­ì‹œì˜¤:</p>
 
-<pre><a href="PostMessage.htm">SendMessage</a>, 0x1304,,, SysTabControl321, WinTitle  <em>; 0x1304´Â TCM_GETITEMCOUNTÀÔ´Ï´Ù.</em>
+<pre><a href="PostMessage.htm">SendMessage</a>, 0x1304,,, SysTabControl321, WinTitle  <em>; 0x1304ëŠ” TCM_GETITEMCOUNTìž…ë‹ˆë‹¤.</em>
 TabCount = %ErrorLevel%</pre>
 <p>
-<strong>FindString, String</strong>: ListBox ¶Ç´Â ComboBox¿¡¼­ <em>String</em>¿¡ Á¤È®ÇÏ°Ô ÀÏÄ¡ÇÑ ¿£Æ®¸®ÀÇ °¹¼ö¸¦ <em>OutputVar</em>¿¡ ¼³Á¤ÇÕ´Ï´Ù. ÄÜÆ®·ÑÀÇ Ã¹ ¿£Æ®¸®´Â 1ÀÌ°í, µÎ ¹øÂ° ¿£Æ®¸®´Â 2ÀÔ´Ï´Ù,  µîµî. ÀÏÄ¡°¡ ¾øÀ¸¸é, <em>OutputVar</em>´Â ºñ¿öÁö°í ErrorLevelÀº 1·Î ¼³Á¤µË´Ï´Ù.</p>
+<strong>FindString, String</strong>: ListBox ë˜ëŠ” ComboBoxì—ì„œ <em>String</em>ì— ì •í™•í•˜ê²Œ ì¼ì¹˜í•œ ì—”íŠ¸ë¦¬ì˜ ê°¯ìˆ˜ë¥¼ <em>OutputVar</em>ì— ì„¤ì •í•©ë‹ˆë‹¤. ì½˜íŠ¸ë¡¤ì˜ ì²« ì—”íŠ¸ë¦¬ëŠ” 1ì´ê³ , ë‘ ë²ˆì§¸ ì—”íŠ¸ë¦¬ëŠ” 2ìž…ë‹ˆë‹¤,  ë“±ë“±. ì¼ì¹˜ê°€ ì—†ìœ¼ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§€ê³  ErrorLevelì€ 1ë¡œ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>Choice</strong>:  ListBox ¶Ç´Â ComboBoxSet¿¡¼­ ÇöÀç ¼±ÅÃµÈ ¿£Æ®¸®ÀÇ ÀÌ¸§À» <em>OutputVar</em>¿¡ ¼³Á¤ÇÕ´Ï´Ù. ´ë½Å¿¡ ¼±ÅÃµÈ Ç×¸ñÀÇ À§Ä¡¸¦ ¿­¶÷ÇÏ·Á¸é, ´ÙÀ½ ¿¹Á¦¸¦ µû¸£½Ê½Ã¿À (¾ÕÀÇ µÎ ÁÙ¸¸ »ç¿ëÇÕ´Ï´Ù):</p>
+<strong>Choice</strong>:  ListBox ë˜ëŠ” ComboBoxSetì—ì„œ í˜„ìž¬ ì„ íƒëœ ì—”íŠ¸ë¦¬ì˜ ì´ë¦„ì„ <em>OutputVar</em>ì— ì„¤ì •í•©ë‹ˆë‹¤. ëŒ€ì‹ ì— ì„ íƒëœ í•­ëª©ì˜ ìœ„ì¹˜ë¥¼ ì—´ëžŒí•˜ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¥´ì‹­ì‹œì˜¤ (ì•žì˜ ë‘ ì¤„ë§Œ ì‚¬ìš©í•©ë‹ˆë‹¤):</p>
 
-<pre><a href="PostMessage.htm">SendMessage</a>, 0x188, 0, 0, ListBox1, WinTitle  <em>; 0x188Àº LB_GETCURSELÀÔ´Ï´Ù (ListBox).</em>
-<a href="PostMessage.htm">SendMessage</a>, 0x147, 0, 0, ComboBox1, WinTitle  <em>; 0x147Àº CB_GETCURSELÀÔ´Ï´Ù (DropDownList ¶Ç´Â ComboBox).</em>
-ChoicePos = %ErrorLevel%  <em>; Ç×¸ñÀÌ ¼±ÅÃµÇ¾î ÀÖÁö ¾ÊÀ¸¸é -1ÀÌ ¼³Á¤µË´Ï´Ù.</em>
-ChoicePos += 1  <em>; 0-±â¹Ý¿¡¼­ 1-±â¹ÝÀ¸·Î º¯È¯ÇÕ´Ï´Ù. ±×·¡¼­ Ã¹ Ç×¸ñÀº 0ÀÌ ¾Æ´Ï¶ó, 1ÀÔ´Ï´Ù.</em></pre>
+<pre><a href="PostMessage.htm">SendMessage</a>, 0x188, 0, 0, ListBox1, WinTitle  <em>; 0x188ì€ LB_GETCURSELìž…ë‹ˆë‹¤ (ListBox).</em>
+<a href="PostMessage.htm">SendMessage</a>, 0x147, 0, 0, ComboBox1, WinTitle  <em>; 0x147ì€ CB_GETCURSELìž…ë‹ˆë‹¤ (DropDownList ë˜ëŠ” ComboBox).</em>
+ChoicePos = %ErrorLevel%  <em>; í•­ëª©ì´ ì„ íƒë˜ì–´ ìžˆì§€ ì•Šìœ¼ë©´ -1ì´ ì„¤ì •ë©ë‹ˆë‹¤.</em>
+ChoicePos += 1  <em>; 0-ê¸°ë°˜ì—ì„œ 1-ê¸°ë°˜ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤. ê·¸ëž˜ì„œ ì²« í•­ëª©ì€ 0ì´ ì•„ë‹ˆë¼, 1ìž…ë‹ˆë‹¤.</em></pre>
 <p>
-<strong>LineCount</strong>: Edit ÄÜÆ®·ÑÀÇ ÁÙÀÇ °³¼ö¸¦ <em>OutputVar</em>¿¡ ¼³Á¤ÇÕ´Ï´Ù. ¸ðµç Edit ÄÜÆ®·ÑÀº ÄÜÆ®·ÑÀÌ ºñ¾î ÀÖÀ»Áö¶óµµ Àû¾îµµ 1 ÁÙÀÌ ÀÖ½À´Ï´Ù.</p>
+<strong>LineCount</strong>: Edit ì½˜íŠ¸ë¡¤ì˜ ì¤„ì˜ ê°œìˆ˜ë¥¼ <em>OutputVar</em>ì— ì„¤ì •í•©ë‹ˆë‹¤. ëª¨ë“  Edit ì½˜íŠ¸ë¡¤ì€ ì½˜íŠ¸ë¡¤ì´ ë¹„ì–´ ìžˆì„ì§€ë¼ë„ ì ì–´ë„ 1 ì¤„ì´ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>CurrentLine</strong>: Edit ÄÜÆ®·Ñ¿¡¼­ ÇöÀç Ä³·µÀÌ ÀÖ´Â (»ðÀÔ ÁöÁ¡) ÁÙÀÇ ¹øÈ£¸¦ <em>OutputVar</em>¿¡ ¼³Á¤ÇÕ´Ï´Ù. Ã¹ ÁÙÀº 1ÀÔ´Ï´Ù. ÄÜÆ®·Ñ¿¡ ¼±ÅÃµÈ ÅØ½ºÆ®°¡ ÀÖ´Ù¸é, ¼±ÅÃÀÌ ½ÃÀÛÇÏ´Â °÷ÀÇ ÁÙ ¹øÈ£¸¦ <em>OutputVar</em>¿¡ ¼³Á¤ÇÕ´Ï´Ù.</p>
+<strong>CurrentLine</strong>: Edit ì½˜íŠ¸ë¡¤ì—ì„œ í˜„ìž¬ ìºëŸ¿ì´ ìžˆëŠ” (ì‚½ìž… ì§€ì ) ì¤„ì˜ ë²ˆí˜¸ë¥¼ <em>OutputVar</em>ì— ì„¤ì •í•©ë‹ˆë‹¤. ì²« ì¤„ì€ 1ìž…ë‹ˆë‹¤. ì½˜íŠ¸ë¡¤ì— ì„ íƒëœ í…ìŠ¤íŠ¸ê°€ ìžˆë‹¤ë©´, ì„ íƒì´ ì‹œìž‘í•˜ëŠ” ê³³ì˜ ì¤„ ë²ˆí˜¸ë¥¼ <em>OutputVar</em>ì— ì„¤ì •í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>CurrentCol</strong>: Edit ÄÜÆ®·Ñ¿¡¼­ ÇöÀç Ä³·µÀÌ ÀÖ´Â (ÅØ½ºÆ® »ðÀÔ ÁöÁ¡) ¿­ ¹øÈ£¸¦ <em>OutputVar</em>¿¡ ¼³Á¤ÇÕ´Ï´Ù. Ã¹ ¿­Àº 1ÀÔ´Ï´Ù. ¼±ÅÃµÈ ÅØ½ºÆ®°¡ ÄÜÆ®·Ñ¿¡ ÀÖ´Ù¸é, <em>OutputVar</em>¿¡ ¼±ÅÃÀÌ ½ÃÀÛµÇ´Â °÷ÀÇ ¿­ ¹øÈ£°¡ ¼³Á¤µË´Ï´Ù.</p>
+<strong>CurrentCol</strong>: Edit ì½˜íŠ¸ë¡¤ì—ì„œ í˜„ìž¬ ìºëŸ¿ì´ ìžˆëŠ” (í…ìŠ¤íŠ¸ ì‚½ìž… ì§€ì ) ì—´ ë²ˆí˜¸ë¥¼ <em>OutputVar</em>ì— ì„¤ì •í•©ë‹ˆë‹¤. ì²« ì—´ì€ 1ìž…ë‹ˆë‹¤. ì„ íƒëœ í…ìŠ¤íŠ¸ê°€ ì½˜íŠ¸ë¡¤ì— ìžˆë‹¤ë©´, <em>OutputVar</em>ì— ì„ íƒì´ ì‹œìž‘ë˜ëŠ” ê³³ì˜ ì—´ ë²ˆí˜¸ê°€ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>Line, N</strong>: Edit ÄÜÆ®·Ñ¿¡¼­ <em>N</em> ¹ø ÁÙÀÇ ÅØ½ºÆ®¸¦ <em>OutputVar</em>¿¡ ¼³Á¤ÇÕ´Ï´Ù. Line 1Àº Ã¹ ÁÙÀÔ´Ï´Ù. ÄÜÆ®·ÑÀÇ Æ¯¼º¿¡ µû¶ó, <em>OutputVar</em>´Â Ä³¸®Áö ¸®ÅÏ (`r) ¶Ç´Â Ä³¸®Áö ¸®ÅÏ + ¶óÀÎÇÇµå (`r`n)·Î ³¡³¯ ¼ö ÀÖ½À´Ï´Ù. ÁöÁ¤µÈ ÁÙ ¹øÈ£°¡ ºñ¾î ÀÖ°Å³ª Á¸ÀçÇÏÁö ¾ÊÀ¸¸é, <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ¿¡ 1ÀÌ ¼³Á¤µÇ°í <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù.</p>
+<strong>Line, N</strong>: Edit ì½˜íŠ¸ë¡¤ì—ì„œ <em>N</em> ë²ˆ ì¤„ì˜ í…ìŠ¤íŠ¸ë¥¼ <em>OutputVar</em>ì— ì„¤ì •í•©ë‹ˆë‹¤. Line 1ì€ ì²« ì¤„ìž…ë‹ˆë‹¤. ì½˜íŠ¸ë¡¤ì˜ íŠ¹ì„±ì— ë”°ë¼, <em>OutputVar</em>ëŠ” ìºë¦¬ì§€ ë¦¬í„´ (`r) ë˜ëŠ” ìºë¦¬ì§€ ë¦¬í„´ + ë¼ì¸í”¼ë“œ (`r`n)ë¡œ ëë‚  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì§€ì •ëœ ì¤„ ë²ˆí˜¸ê°€ ë¹„ì–´ ìžˆê±°ë‚˜ ì¡´ìž¬í•˜ì§€ ì•Šìœ¼ë©´, <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ì— 1ì´ ì„¤ì •ë˜ê³  <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤.</p>
 <p>
-<strong>Selected</strong>: Edit ÄÜÆ®·Ñ¿¡¼­ ¼±ÅÃµÈ ÅØ½ºÆ®¸¦ <em>OutputVar</em>¿¡ ¼³Á¤ÇÕ´Ï´Ù. ¾Æ¹« ÅØ½ºÆ®µµ ¼±ÅÃµÇ¾î ÀÖÁö ¾ÊÀ¸¸é, OutputVar´Â ºñ¿öÁö°í ErrorLevel¿¡´Â 0ÀÌ ¼³Á¤µË´Ï´Ù (Áï, ¿¡·¯ ¾øÀ½). ¾î¶² À¯ÇüÀÇ ÄÜÆ®·ÑÀº RichEdit20A¿Í °°ÀÌ ¾î¶² °æ¿ì ¿Ã¹Ù¸£°Ô ÅØ½ºÆ®¸¦ »ý»êÇÏÁö ¾ÊÀ» ¼ö ÀÖ½À´Ï´Ù (¿¹, Metapad).</p>
+<strong>Selected</strong>: Edit ì½˜íŠ¸ë¡¤ì—ì„œ ì„ íƒëœ í…ìŠ¤íŠ¸ë¥¼ <em>OutputVar</em>ì— ì„¤ì •í•©ë‹ˆë‹¤. ì•„ë¬´ í…ìŠ¤íŠ¸ë„ ì„ íƒë˜ì–´ ìžˆì§€ ì•Šìœ¼ë©´, OutputVarëŠ” ë¹„ì›Œì§€ê³  ErrorLevelì—ëŠ” 0ì´ ì„¤ì •ë©ë‹ˆë‹¤ (ì¦‰, ì—ëŸ¬ ì—†ìŒ). ì–´ë–¤ ìœ í˜•ì˜ ì½˜íŠ¸ë¡¤ì€ RichEdit20Aì™€ ê°™ì´ ì–´ë–¤ ê²½ìš° ì˜¬ë°”ë¥´ê²Œ í…ìŠ¤íŠ¸ë¥¼ ìƒì‚°í•˜ì§€ ì•Šì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì˜ˆ, Metapad).</p>
 <p>
-<strong>Style</strong>: ÄÜÆ®·ÑÀÇ ½ºÅ¸ÀÏÀ» ³ªÅ¸³»´Â 8-ÀÚ¸® ½ÊÀ°Áø ¼ö¸¦ ¿­¶÷ÇÕ´Ï´Ù. ½ºÅ¸ÀÏ ¸ñ·ÏÀº <a href="../misc/Styles.htm">½ºÅ¸ÀÏ Å×ÀÌºí</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<strong>Style</strong>: ì½˜íŠ¸ë¡¤ì˜ ìŠ¤íƒ€ì¼ì„ ë‚˜íƒ€ë‚´ëŠ” 8-ìžë¦¬ ì‹­ìœ¡ì§„ ìˆ˜ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤. ìŠ¤íƒ€ì¼ ëª©ë¡ì€ <a href="../misc/Styles.htm">ìŠ¤íƒ€ì¼ í…Œì´ë¸”</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<strong>ExStyle</strong>: ÄÜÆ®·ÑÀÇ È®Àå ½ºÅ¸ÀÏÀ» ³ªÅ¸³»´Â 8-ÀÚ¸® ½ÊÀ°Áø ¼ö¸¦ ¿­¶÷ÇÕ´Ï´Ù.</p>
+<strong>ExStyle</strong>: ì½˜íŠ¸ë¡¤ì˜ í™•ìž¥ ìŠ¤íƒ€ì¼ì„ ë‚˜íƒ€ë‚´ëŠ” 8-ìžë¦¬ ì‹­ìœ¡ì§„ ìˆ˜ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</p>
 <p>
-<strong><a name="Hwnd"></a>Hwnd</strong> <span class="ver">[v1.0.43.06+]:</span> ÁöÁ¤µÈ ÄÜÆ®·ÑÀÇ Ã¢ ÇÚµé(HWND)À» ¿­¶÷ÇÕ´Ï´Ù: <code>ControlGet, OutputVar, Hwnd,, Edit1, WinTitle</code>. ÄÜÆ®·ÑÀÇ HWND´Â <a href="PostMessage.htm">PostMessage</a>, <a href="PostMessage.htm">SendMessage</a>, ±×¸®°í <a href="DllCall.htm">DllCall</a>¿¡ ÀÚÁÖ »ç¿ëµË´Ï´Ù. °ü·ÃÇÏ¿© ¸»¾¸ µå¸®ÀÚ¸é, ÄÜÆ®·ÑÀÇ HWND´Â <a href="MouseGetPos.htm">MouseGetPos</a>¸¦ ÅëÇØ¼­ ¿­¶÷ÇÒ ¼öµµ ÀÖ½À´Ï´Ù. ¸¶Áö¸·À¸·Î, ÄÜÆ®·ÑÀÇ HWND¸¦ <a href="../misc/WinTitle.htm#ahk_id">ahk_id WinTitle</a>·Î Á÷Á¢ÀûÀ¸·Î »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù (ÀÌ°ÍÀº ¼ûÀº ÄÜÆ®·Ñ¿¡µµ ÀÛµ¿ÇÕ´Ï´Ù. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>°¡ ²¨Á® ÀÖ¾îµµ »ó°ü¾ø½À´Ï´Ù).</p>
+<strong><a name="Hwnd"></a>Hwnd</strong> <span class="ver">[v1.0.43.06+]:</span> ì§€ì •ëœ ì½˜íŠ¸ë¡¤ì˜ ì°½ í•¸ë“¤(HWND)ì„ ì—´ëžŒí•©ë‹ˆë‹¤: <code>ControlGet, OutputVar, Hwnd,, Edit1, WinTitle</code>. ì½˜íŠ¸ë¡¤ì˜ HWNDëŠ” <a href="PostMessage.htm">PostMessage</a>, <a href="PostMessage.htm">SendMessage</a>, ê·¸ë¦¬ê³  <a href="DllCall.htm">DllCall</a>ì— ìžì£¼ ì‚¬ìš©ë©ë‹ˆë‹¤. ê´€ë ¨í•˜ì—¬ ë§ì”€ ë“œë¦¬ìžë©´, ì½˜íŠ¸ë¡¤ì˜ HWNDëŠ” <a href="MouseGetPos.htm">MouseGetPos</a>ë¥¼ í†µí•´ì„œ ì—´ëžŒí•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤. ë§ˆì§€ë§‰ìœ¼ë¡œ, ì½˜íŠ¸ë¡¤ì˜ HWNDë¥¼ <a href="../misc/WinTitle.htm#ahk_id">ahk_id WinTitle</a>ë¡œ ì§ì ‘ì ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì´ê²ƒì€ ìˆ¨ì€ ì½˜íŠ¸ë¡¤ì—ë„ ìž‘ë™í•©ë‹ˆë‹¤. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>ê°€ êº¼ì ¸ ìžˆì–´ë„ ìƒê´€ì—†ìŠµë‹ˆë‹¤).</p>
 
 <h3>ErrorLevel</h3>
 <p>
-<span class="ver">[v1.1.04+]</span> ÀÌ ¸í·É¾î´Â ½ÇÆÐ½Ã ¿¹¿Ü¸¦ ´øÁú ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Catch.htm#RuntimeErrors">½ÇÇà½Ã°£ ¿¡·¯</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-<p>¼º°øÇÏ¸é, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº 0ÀÌ ¼³Á¤µË´Ï´Ù. ¹®Á¦°¡ ¹ß»ýÇÏ¸é -- Á¸ÀçÇÏÁö ¾Ê´Â Ã¢ÀÌ³ª ÄÜÆ®·Ñ °°Àº °æ¿ì -- <a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº 1ÀÌ ¼³Á¤µÇ°í <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù.</p>
+<span class="ver">[v1.1.04+]</span> ì´ ëª…ë ¹ì–´ëŠ” ì‹¤íŒ¨ì‹œ ì˜ˆì™¸ë¥¼ ë˜ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Catch.htm#RuntimeErrors">ì‹¤í–‰ì‹œê°„ ì—ëŸ¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+<p>ì„±ê³µí•˜ë©´, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤. ë¬¸ì œê°€ ë°œìƒí•˜ë©´ -- ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” ì°½ì´ë‚˜ ì½˜íŠ¸ë¡¤ ê°™ì€ ê²½ìš° -- <a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ 1ì´ ì„¤ì •ë˜ê³  <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÄÜÆ®·ÑÀ» º¯°æÇÏ´Â ¸í·É¾î¿Í ´Ù¸£°Ô, ControlGetÀº ÀÚµ¿ Áö¿¬ÀÌ ¾ø½À´Ï´Ù; Áï, <a href="SetControlDelay.htm">SetControlDelay</a>¿¡ ¿µÇâÀ» ¹ÞÁö ¾Ê½À´Ï´Ù.</p>
+ì½˜íŠ¸ë¡¤ì„ ë³€ê²½í•˜ëŠ” ëª…ë ¹ì–´ì™€ ë‹¤ë¥´ê²Œ, ControlGetì€ ìžë™ ì§€ì—°ì´ ì—†ìŠµë‹ˆë‹¤; ì¦‰, <a href="SetControlDelay.htm">SetControlDelay</a>ì— ì˜í–¥ì„ ë°›ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-ÇöÀç ¸¶¿ì½º°¡ ¶° ÀÖ´Â ÄÜÆ®·ÑÀÇ ClassNN ¶Ç´Â HWND¸¦ ¾Ë¾Æ³»·Á¸é, <a href="MouseGetPos.htm">MouseGetPos</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À. Ã¢ÀÇ ÄÜÆ®·Ñ ¸ñ·ÏÀ» ¾òÀ¸·Á¸é, <a href="WinGet.htm">WinGet ControlList</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+í˜„ìž¬ ë§ˆìš°ìŠ¤ê°€ ë–  ìžˆëŠ” ì½˜íŠ¸ë¡¤ì˜ ClassNN ë˜ëŠ” HWNDë¥¼ ì•Œì•„ë‚´ë ¤ë©´, <a href="MouseGetPos.htm">MouseGetPos</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤. ì°½ì˜ ì½˜íŠ¸ë¡¤ ëª©ë¡ì„ ì–»ìœ¼ë ¤ë©´, <a href="WinGet.htm">WinGet ControlList</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-Ã¢ Á¦¸ñ°ú ÅØ½ºÆ®´Â ´ë¼Ò¹®ÀÚ¸¦ ±¸º°ÇÕ´Ï´Ù. ¼ûÀº Ã¢Àº <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>°¡ ÄÑÁ® ÀÖ¾î¾ß Å½ÁöµË´Ï´Ù.</p>
+ì°½ ì œëª©ê³¼ í…ìŠ¤íŠ¸ëŠ” ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë³„í•©ë‹ˆë‹¤. ìˆ¨ì€ ì°½ì€ <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>ê°€ ì¼œì ¸ ìžˆì–´ì•¼ íƒì§€ë©ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="Control.htm">Control</a>, <a href="GuiControlGet.htm">GuiControlGet</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlGetPos.htm">ControlGetPos</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="WinGet.htm">WinGet</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 
 <pre class="NoIndent">ControlGet, OutputVar, Line, 1, Edit1, Some Window Title
 

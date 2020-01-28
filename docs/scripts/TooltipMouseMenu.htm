@@ -1,24 +1,25 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>ToolTip Mouse Menu (requires XP/2k/NT) -- by Rajat</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>ÅøÆÁ ¸¶¿ì½º ¸Þ´º (XP/2k/NT ¿ä±¸) -- by Rajat</h1>
+<h1>íˆ´íŒ ë§ˆìš°ìŠ¤ ë©”ë‰´ (XP/2k/NT ìš”êµ¬) -- by Rajat</h1>
 
 <p>
-ÀÌ ½ºÅ©¸³Æ®´Â °¡¿îµ¥ ¹öÆ°À» Àá±ñ ´©¸£´Âµ¥ ÀÀ´äÇÏ¿© ÆË¾÷ ¸Þ´º¸¦ º¸¿©ÁÝ´Ï´Ù. ¿ÞÅ¬¸¯ÇÏ¿© ¸Þ´º Ç×¸ñÀ» ¼±ÅÃÇÕ´Ï´Ù. ¹Ù±ù¿¡¼­ ÁÂÅ¬¸¯ÇÏ¸é ¸Þ´º¸¦ Ãë¼ÒÇÕ´Ï´Ù. ÃÖ±Ù¿¡ ¾î´À À¯ÇüÀÇ Ã¢ÀÌ È°¼ºÈ­µÇ¾î ÀÖ´Â°¡¿¡ µû¶ó ¸Þ´ºÀÇ ³»¿ëÀÌ º¯ÇÏµµ·Ï °³¼±µÇ¾ú½À´Ï´Ù. (¿©±â¿¡¼­´Â Notepad¿Í Word¸¦ ¿¹Á¦·Î »ç¿ëÇÕ´Ï´Ù).
+ì´ ìŠ¤í¬ë¦½íŠ¸ëŠ” ê°€ìš´ë° ë²„íŠ¼ì„ ìž ê¹ ëˆ„ë¥´ëŠ”ë° ì‘ë‹µí•˜ì—¬ íŒì—… ë©”ë‰´ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤. ì™¼í´ë¦­í•˜ì—¬ ë©”ë‰´ í•­ëª©ì„ ì„ íƒí•©ë‹ˆë‹¤. ë°”ê¹¥ì—ì„œ ì¢Œí´ë¦­í•˜ë©´ ë©”ë‰´ë¥¼ ì·¨ì†Œí•©ë‹ˆë‹¤. ìµœê·¼ì— ì–´ëŠ ìœ í˜•ì˜ ì°½ì´ í™œì„±í™”ë˜ì–´ ìžˆëŠ”ê°€ì— ë”°ë¼ ë©”ë‰´ì˜ ë‚´ìš©ì´ ë³€í•˜ë„ë¡ ê°œì„ ë˜ì—ˆìŠµë‹ˆë‹¤. (ì—¬ê¸°ì—ì„œëŠ” Notepadì™€ Wordë¥¼ ì˜ˆì œë¡œ ì‚¬ìš©í•©ë‹ˆë‹¤).
 </p>
-<p><a href="TooltipMouseMenu.ahk">ÀÌ ½ºÅ©¸³Æ® ³»·Á ¹Þ±â</a> &nbsp;| &nbsp;<a href="index.htm">´Ù¸¥ »ùÇÃ ½ºÅ©¸³Æ®</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">È¨À¸·Î</a></p>
+<p><a href="TooltipMouseMenu.ahk">ì´ ìŠ¤í¬ë¦½íŠ¸ ë‚´ë ¤ ë°›ê¸°</a> &nbsp;| &nbsp;<a href="index.htm">ë‹¤ë¥¸ ìƒ˜í”Œ ìŠ¤í¬ë¦½íŠ¸</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">í™ˆìœ¼ë¡œ</a></p>
 
-<pre class="NoIndent"><em>; ¸Þ´º¿¡ ´ëÇÏ¿© ¿©±â¿¡¼­ Á¦¸ñÀ» ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù:</em>
+<pre class="NoIndent"><em>; ë©”ë‰´ì— ëŒ€í•˜ì—¬ ì—¬ê¸°ì—ì„œ ì œëª©ì„ ì„¤ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</em>
 MenuTitle = -=-=-=-=-=-=-=-
 
-<em>; ´ÙÀ½Àº ¾ó¸¶³ª ¿À·¡ ¹öÆ°À» ´­·¯¾ß ¸Þ´º¸¦ º¸¿©ÁÙÁö °áÁ¤ÇÕ´Ï´Ù:</em>
+<em>; ë‹¤ìŒì€ ì–¼ë§ˆë‚˜ ì˜¤ëž˜ ë²„íŠ¼ì„ ëˆŒëŸ¬ì•¼ ë©”ë‰´ë¥¼ ë³´ì—¬ì¤„ì§€ ê²°ì •í•©ë‹ˆë‹¤:</em>
 UMDelay = 20
 
 SetFormat, float, 0.0
@@ -28,21 +29,21 @@ SetTitleMatchMode, 2
 
 
 <em>;___________________________________________
-;_____¸Þ´º Á¤ÀÇ______________________</em>
+;_____ë©”ë‰´ ì •ì˜______________________</em>
 
-<em>; ¿©±â¿¡¼­ ¸Þ´º Ç×¸ñÀ» ¸¸µé°í ¼öÁ¤ÇÕ´Ï´Ù.
-; keys/values/section ÀÌ¸§¿¡ ½ºÆäÀÌ½º¸¦ »ç¿ëÇÏ¸é ¾È µË´Ï´Ù.</em>
+<em>; ì—¬ê¸°ì—ì„œ ë©”ë‰´ í•­ëª©ì„ ë§Œë“¤ê³  ìˆ˜ì •í•©ë‹ˆë‹¤.
+; keys/values/section ì´ë¦„ì— ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ ì‚¬ìš©í•˜ë©´ ì•ˆ ë©ë‹ˆë‹¤.</em>
 
-<em>; ¼ø¼­´Â ½Å°æ¾²Áö ¾Ê¾Æµµ µË´Ï´Ù. ¸Þ´º´Â Á¤·ÄµË´Ï´Ù.</em>
+<em>; ìˆœì„œëŠ” ì‹ ê²½ì“°ì§€ ì•Šì•„ë„ ë©ë‹ˆë‹¤. ë©”ë‰´ëŠ” ì •ë ¬ë©ë‹ˆë‹¤.</em>
 
 MenuItems = Notepad/Calculator/Section 3/Section 4/Section 5
 
 
 <em>;___________________________________________
-;______µ¿ÀûÀÎ ¸Þ´º Ç×¸ñ Á¤ÀÇ_______________</em>
+;______ë™ì ì¸ ë©”ë‰´ í•­ëª© ì •ì˜_______________</em>
 
-<em>; ±¸¹®:
-;     Dyn# = ¸Þ´º Ç×¸ñ|Ã¢ Á¦¸ñ</em>
+<em>; êµ¬ë¬¸:
+;     Dyn# = ë©”ë‰´ í•­ëª©|ì°½ ì œëª©</em>
 
 Dyn1 = MS Word|- Microsoft Word
 Dyn2 = Notepad II|- Notepad
@@ -53,9 +54,9 @@ Exit
 
 
 <em>;___________________________________________
-;_____¸Þ´º ¼½¼Ç_________________________</em>
+;_____ë©”ë‰´ ì„¹ì…˜_________________________</em>
 
-<em>; ¿©±â¿¡ ¸Þ´º ¼½¼ÇÀ» »ý¼ºÇÏ°í ÆíÁýÇÕ´Ï´Ù.</em>
+<em>; ì—¬ê¸°ì— ë©”ë‰´ ì„¹ì…˜ì„ ìƒì„±í•˜ê³  íŽ¸ì§‘í•©ë‹ˆë‹¤.</em>
 
 Notepad:
 Run, Notepad.exe
@@ -87,7 +88,7 @@ Return
 
 
 <em>;___________________________________________
-;_____ÇÖÅ° ¼½¼Ç________________________</em>
+;_____í•«í‚¤ ì„¹ì…˜________________________</em>
 
 ~MButton::
 HowLong = 0
@@ -101,7 +102,7 @@ Loop
 IfLess, HowLong, %UMDelay%, Return
 
 
-<em>; µ¿Àû ¸Þ´º¸¦ ÁØºñÇÕ´Ï´Ù</em>
+<em>; ë™ì  ë©”ë‰´ë¥¼ ì¤€ë¹„í•©ë‹ˆë‹¤</em>
 DynMenu =
 Loop
 {
@@ -117,25 +118,25 @@ Loop
 }
 
 
-<em>; Á¤·ÄµÈ ¸ÞÀÎ ¸Þ´º¿Í µ¿Àû ¸Þ´º¸¦ °áÇÕÇÕ´Ï´Ù</em>
+<em>; ì •ë ¬ëœ ë©”ì¸ ë©”ë‰´ì™€ ë™ì  ë©”ë‰´ë¥¼ ê²°í•©í•©ë‹ˆë‹¤</em>
 Sort, MenuItems, D/
 TempMenu = %MenuItems%%DynMenu%
 
 
-<em>; ÀÌÀü ¿£Æ®¸®µéÀ» Áö¿ó´Ï´Ù</em>
+<em>; ì´ì „ ì—”íŠ¸ë¦¬ë“¤ì„ ì§€ì›ë‹ˆë‹¤</em>
 Loop
 {
     IfEqual, MenuItem%a_index%,, Break
     MenuItem%a_index% =
 }
 
-<em>; »õ ¿£Æ®¸®µéÀ» »ý¼ºÇÕ´Ï´Ù</em>
+<em>; ìƒˆ ì—”íŠ¸ë¦¬ë“¤ì„ ìƒì„±í•©ë‹ˆë‹¤</em>
 Loop, Parse, TempMenu, /
 {
     MenuItem%a_index% = %a_loopfield%
 }
 
-<em>; ¸Þ´º¸¦ »ý¼ºÇÕ´Ï´Ù</em>
+<em>; ë©”ë‰´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤</em>
 Menu = %MenuTitle%
 Loop
 {
@@ -163,8 +164,8 @@ IfWinNotActive, %MenuTitle%
 
 MouseGetPos, mX, mY
 ToolTip
-mY -= 3        <em>; Ã¹ ÁÙÀÌ ½ÃÀÛÇÏ¸é µÚ¿¡ ½ºÆäÀÌ½º</em>
-mY /= 13    <em>; °¢ ÁÙ¸¶´Ù ½ºÆäÀÌ½º</em>
+mY -= 3        <em>; ì²« ì¤„ì´ ì‹œìž‘í•˜ë©´ ë’¤ì— ìŠ¤íŽ˜ì´ìŠ¤</em>
+mY /= 13    <em>; ê° ì¤„ë§ˆë‹¤ ìŠ¤íŽ˜ì´ìŠ¤</em>
 IfLess, mY, 1, Return
 IfGreater, mY, %numItems%, Return
 StringTrimLeft, TargetSection, MenuItem%mY%, 0

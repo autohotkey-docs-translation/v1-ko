@@ -1,7 +1,8 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Regular Expressions (RegEx) - Quick Reference</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -13,197 +14,197 @@
 </style>
 </head>
 <body>
-<h1>Á¤±ÔÇ¥Çö½Ä (RegEx) - °£Æí ÂüÁ¶¼­</h1>
+<h1>ì •ê·œí‘œí˜„ì‹ (RegEx) - ê°„íŽ¸ ì°¸ì¡°ì„œ</h1>
 
-<h2>±âº» Áö½Ä</h2>
+<h2>ê¸°ë³¸ ì§€ì‹</h2>
 <p>
-<strong>¾îµð¿¡³ª ºÎÇÕ</strong>: ±âº»°ªÀ¸·Î, Á¤±Ô Ç¥Çö½Ä¿¡¼­ ºÎºÐ¹®ÀÚ¿­Àº °Ë»öµÉ ¹®ÀÚ¿­ ¾È ¾îµð¿¡³ª ºÎÇÕÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, Á¤±Ô Ç¥Çö½Ä <span class="regex">abc</span>´Â <span class="subj">abc</span>123, 123<span class="subj">abc</span>, ±×¸®°í 123<span class="subj">abc</span>xyz¿¡ ºÎÇÕÇÕ´Ï´Ù. ºÎÇÕÀ» Ã³À½ÀÌ³ª ³¡¿¡¼­¸¸ ÀÏ¾î³ªµµ·Ï ÇÏ·Á¸é  <a href="#anchor">´é</a>À» »ç¿ëÇÕ´Ï´Ù.</p>
+<strong>ì–´ë””ì—ë‚˜ ë¶€í•©</strong>: ê¸°ë³¸ê°’ìœ¼ë¡œ, ì •ê·œ í‘œí˜„ì‹ì—ì„œ ë¶€ë¶„ë¬¸ìžì—´ì€ ê²€ìƒ‰ë  ë¬¸ìžì—´ ì•ˆ ì–´ë””ì—ë‚˜ ë¶€í•©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ì •ê·œ í‘œí˜„ì‹ <span class="regex">abc</span>ëŠ” <span class="subj">abc</span>123, 123<span class="subj">abc</span>, ê·¸ë¦¬ê³  123<span class="subj">abc</span>xyzì— ë¶€í•©í•©ë‹ˆë‹¤. ë¶€í•©ì„ ì²˜ìŒì´ë‚˜ ëì—ì„œë§Œ ì¼ì–´ë‚˜ë„ë¡ í•˜ë ¤ë©´  <a href="#anchor">ë‹»</a>ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>ÇÇ½Å ¹®ÀÚ</strong>: abc123°ú °°ÀÌ ´ëºÎºÐÀÇ ¹®ÀÚ´Â Á¤±Ô Ç¥Çö½Ä ¾È¿¡ ¹®ÀÚ ±×´ë·Î »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×·¸Áö¸¸, <strong>\.*?+[{|()^$</strong>ÀÇ ¹®ÀÚµéÀº ¹Ýµå½Ã ¾Õ¿¡ ¿ª»ç¼±À» ¹èÄ¡ÇØ¾ß ¹®ÀÚ ±×´ë·Î º¸ÀÏ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">\.</span>´Â ¹®ÀÚ ±×´ë·ÎÀÇ ¸¶Ä§Ç¥ÀÌ°í <span class="regex">\\</span>´Â ¹®ÀÚ ±×´ë·ÎÀÇ ¿ª»ç¼±ÀÔ´Ï´Ù. ÇÇ½ÅÀ» ÇÇÇÏ·Á¸é \Q...\EÀ» »ç¿ëÇÕ´Ï´Ù. ¿¹¸¦ µé¾î: \QLiteral Text\E.</p>
+<strong>í”¼ì‹  ë¬¸ìž</strong>: abc123ê³¼ ê°™ì´ ëŒ€ë¶€ë¶„ì˜ ë¬¸ìžëŠ” ì •ê·œ í‘œí˜„ì‹ ì•ˆì— ë¬¸ìž ê·¸ëŒ€ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, <strong>\.*?+[{|()^$</strong>ì˜ ë¬¸ìžë“¤ì€ ë°˜ë“œì‹œ ì•žì— ì—­ì‚¬ì„ ì„ ë°°ì¹˜í•´ì•¼ ë¬¸ìž ê·¸ëŒ€ë¡œ ë³´ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">\.</span>ëŠ” ë¬¸ìž ê·¸ëŒ€ë¡œì˜ ë§ˆì¹¨í‘œì´ê³  <span class="regex">\\</span>ëŠ” ë¬¸ìž ê·¸ëŒ€ë¡œì˜ ì—­ì‚¬ì„ ìž…ë‹ˆë‹¤. í”¼ì‹ ì„ í”¼í•˜ë ¤ë©´ \Q...\Eì„ ì‚¬ìš©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: \QLiteral Text\E.</p>
 <p>
-<strong>´ë¼Ò¹®ÀÚ ±¸ºÐ</strong>: ±âº»°ªÀ¸·Î Á¤±Ô Ç¥Çö½ÄÀº ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÕ´Ï´Ù. ÀÌ ÇàÀ§´Â &quot;i&quot; ¿É¼ÇÀ¸·Î ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, ÆÐÅÏ <span class="regex">i)abc</span>´Â ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÏÁö ¾Ê°í &quot;abc&quot;¸¦ °Ë»öÇÕ´Ï´Ù. ´Ù¸¥ ¼ö½ÄÀÚµéÀº ¾Æ·¡¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<strong>ëŒ€ì†Œë¬¸ìž êµ¬ë¶„</strong>: ê¸°ë³¸ê°’ìœ¼ë¡œ ì •ê·œ í‘œí˜„ì‹ì€ ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•©ë‹ˆë‹¤. ì´ í–‰ìœ„ëŠ” &quot;i&quot; ì˜µì…˜ìœ¼ë¡œ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, íŒ¨í„´ <span class="regex">i)abc</span>ëŠ” ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•˜ì§€ ì•Šê³  &quot;abc&quot;ë¥¼ ê²€ìƒ‰í•©ë‹ˆë‹¤. ë‹¤ë¥¸ ìˆ˜ì‹ìžë“¤ì€ ì•„ëž˜ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h2 id="Options">¿É¼Ç (´ë¼Ò¹®ÀÚ ±¸ºÐ)</h2>
-<p>Á¤±Ô Ç¥Çö½Ä ¸Ç ¾Õ¿¡ ´ÙÀ½ ¿É¼ÇÀ» ÁöÁ¤ÇÏ°í ´ÙÀ½¿¡ ¹Ý°ýÈ£·Î ´Ý¾Æ ¿É¼ÇÀ» ÁöÁ¤ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, ÆÐÅÏ &quot;<span class="red">im)</span>abc&quot;´Â ¿©·¯ ÁÙ ¿É¼ÇÀ» °¡Áö°í ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÏ¿© <em>abc</em>¸¦ °Ë»öÇÕ´Ï´Ù (¾Æ¹« ¿É¼ÇÀÌ ¾øÀ¸¸é ´Ý´Â ¹Ý°ýÈ£´Â »ý·«ÇÕ´Ï´Ù.). ÀÌ ±¸¹®Àº ÀüÅëÀ» ¾î±âÁö¸¸, Æ¯¼öÇÑ ±¸ºÐÀÚ¸¦ ¿ä±¸ÇÏÁö ¾Ê½À´Ï´Ù (¿¹¸¦ µé¾î ¿ª»ç¼±). ±×·¡¼­ ÆÐÅÏ ¾È¿¡¼­ ±×·± ±¸ºÐÀÚ¸¦ ÇÇ½Å½ÃÅ³ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù. °Ô´Ù°¡ ¼öÇà¼º´ÉÀÌ Çâ»óµË´Ï´Ù. ¿Ö³ÄÇÏ¸é ¿É¼ÇÀ» ÇØ¼®ÇÏ±â°¡ ´õ ½±±â ¶§¹®ÀÔ´Ï´Ù.</p>
+<h2 id="Options">ì˜µì…˜ (ëŒ€ì†Œë¬¸ìž êµ¬ë¶„)</h2>
+<p>ì •ê·œ í‘œí˜„ì‹ ë§¨ ì•žì— ë‹¤ìŒ ì˜µì…˜ì„ ì§€ì •í•˜ê³  ë‹¤ìŒì— ë°˜ê´„í˜¸ë¡œ ë‹«ì•„ ì˜µì…˜ì„ ì§€ì •í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, íŒ¨í„´ &quot;<span class="red">im)</span>abc&quot;ëŠ” ì—¬ëŸ¬ ì¤„ ì˜µì…˜ì„ ê°€ì§€ê³  ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•˜ì—¬ <em>abc</em>ë¥¼ ê²€ìƒ‰í•©ë‹ˆë‹¤ (ì•„ë¬´ ì˜µì…˜ì´ ì—†ìœ¼ë©´ ë‹«ëŠ” ë°˜ê´„í˜¸ëŠ” ìƒëžµí•©ë‹ˆë‹¤.). ì´ êµ¬ë¬¸ì€ ì „í†µì„ ì–´ê¸°ì§€ë§Œ, íŠ¹ìˆ˜í•œ êµ¬ë¶„ìžë¥¼ ìš”êµ¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ (ì˜ˆë¥¼ ë“¤ì–´ ì—­ì‚¬ì„ ). ê·¸ëž˜ì„œ íŒ¨í„´ ì•ˆì—ì„œ ê·¸ëŸ° êµ¬ë¶„ìžë¥¼ í”¼ì‹ ì‹œí‚¬ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€ ìˆ˜í–‰ì„±ëŠ¥ì´ í–¥ìƒë©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì˜µì…˜ì„ í•´ì„í•˜ê¸°ê°€ ë” ì‰½ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 <table class="info">
   <tr id="opt_i">
     <td><strong>i</strong></td>
-    <td>´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÏÁö ¾Ê°í ºÎÇÕÇÕ´Ï´Ù. ±âÈ£ AºÎÅÍ Z¸¦ ¼Ò¹®ÀÚ¿Í µ¿ÀÏÇÏ°Ô Ãë±ÞÇÕ´Ï´Ù.</td>
+    <td>ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•˜ì§€ ì•Šê³  ë¶€í•©í•©ë‹ˆë‹¤. ê¸°í˜¸ Aë¶€í„° Zë¥¼ ì†Œë¬¸ìžì™€ ë™ì¼í•˜ê²Œ ì·¨ê¸‰í•©ë‹ˆë‹¤.</td>
   </tr>
   <tr>
     <td><strong>m</strong></td>
-    <td><p><a name="Multiline"></a>¿©·¯ ÁÙ¿¡ ºÎÇÕÇÕ´Ï´Ù. (»õÁÙ ¹®ÀÚ°¡ Æ÷ÇÔµÇ¾î ÀÖ´Ù¸é) ¸ñÇ¥ ¹®ÀÚ¿­(<em>Haystack</em>)À» ÇÏ³ªÀÇ ¿¬¼ÓÀûÀÎ ÁÙ·Î º¸Áö ¾Ê°í °¢ ÁÙÀÌ ¸ðÀÎ Áý´ÜÀ¸·Î º¾´Ï´Ù. Æ¯È÷, ´ÙÀ½°ú °°ÀÌ º¯°æµË´Ï´Ù:</p>
-      <p>1) À­²©¼è(^)´Â ¸ðµç ³»ºÎ »õÁÙ ¹®ÀÚ µÚ¿¡ Áï½Ã ºÎÇÕÇÕ´Ï´Ù -- »Ó¸¸ ¾Æ´Ï¶ó <em>Haystack</em>ÀÇ ½ÃÀÛ¿¡µµ ¾ðÁ¦³ª ºÎÇÕÇÕ´Ï´Ù (±×·¯³ª <em>Haystack</em>ÀÇ <em>¸Ç ³¡¿¡ ÀÖ´Â</em> »õÁÙ ¹®ÀÚ ´ÙÀ½¿¡´Â ºÎÇÕÇÏÁö ¾Ê½À´Ï´Ù).</p>
-      <p>2) ´Þ·¯ »çÀÎ ($)Àº <em>Haystack</em> ¾ÈÀÇ ¾î¶² »õÁÙ ¹®ÀÚ ¾Õ¿¡µµ ºÎÇÕÇÕ´Ï´Ù. (»Ó¸¸ ¾Æ´Ï¶ó ¸Ç ³¡ÀÇ »õÁÙ ¹®ÀÚ¿¡µµ ¾ðÁ¦³ª ºÎÇÕÇÕ´Ï´Ù).</p>
-      <p>¿¹¸¦ µé¾î, ÆÐÅÏ &quot;<span class="red">m)</span>^abc$&quot;´Â &quot;m&quot; ¿É¼ÇÀÌ Á¸ÀçÇÏÁö ¾ÊÀ¸¸é ¸ñÇ¥¹®ÀÚ¿­(<em>Haystack</em>) &quot;xyz`r`nabc&quot;¿¡ ºÎÇÕÇÏÁö ¾Ê½À´Ï´Ù.</p>
-      <p>&quot;D&quot; ¿É¼ÇÀº &quot;m&quot; ¿É¼ÇÀÌ ÀÖÀ¸¸é ¹«½ÃµË´Ï´Ù.</p></td>
+    <td><p><a name="Multiline"></a>ì—¬ëŸ¬ ì¤„ì— ë¶€í•©í•©ë‹ˆë‹¤. (ìƒˆì¤„ ë¬¸ìžê°€ í¬í•¨ë˜ì–´ ìžˆë‹¤ë©´) ëª©í‘œ ë¬¸ìžì—´(<em>Haystack</em>)ì„ í•˜ë‚˜ì˜ ì—°ì†ì ì¸ ì¤„ë¡œ ë³´ì§€ ì•Šê³  ê° ì¤„ì´ ëª¨ì¸ ì§‘ë‹¨ìœ¼ë¡œ ë´…ë‹ˆë‹¤. íŠ¹ížˆ, ë‹¤ìŒê³¼ ê°™ì´ ë³€ê²½ë©ë‹ˆë‹¤:</p>
+      <p>1) ìœ—êº½ì‡ (^)ëŠ” ëª¨ë“  ë‚´ë¶€ ìƒˆì¤„ ë¬¸ìž ë’¤ì— ì¦‰ì‹œ ë¶€í•©í•©ë‹ˆë‹¤ -- ë¿ë§Œ ì•„ë‹ˆë¼ <em>Haystack</em>ì˜ ì‹œìž‘ì—ë„ ì–¸ì œë‚˜ ë¶€í•©í•©ë‹ˆë‹¤ (ê·¸ëŸ¬ë‚˜ <em>Haystack</em>ì˜ <em>ë§¨ ëì— ìžˆëŠ”</em> ìƒˆì¤„ ë¬¸ìž ë‹¤ìŒì—ëŠ” ë¶€í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤).</p>
+      <p>2) ë‹¬ëŸ¬ ì‚¬ì¸ ($)ì€ <em>Haystack</em> ì•ˆì˜ ì–´ë–¤ ìƒˆì¤„ ë¬¸ìž ì•žì—ë„ ë¶€í•©í•©ë‹ˆë‹¤. (ë¿ë§Œ ì•„ë‹ˆë¼ ë§¨ ëì˜ ìƒˆì¤„ ë¬¸ìžì—ë„ ì–¸ì œë‚˜ ë¶€í•©í•©ë‹ˆë‹¤).</p>
+      <p>ì˜ˆë¥¼ ë“¤ì–´, íŒ¨í„´ &quot;<span class="red">m)</span>^abc$&quot;ëŠ” &quot;m&quot; ì˜µì…˜ì´ ì¡´ìž¬í•˜ì§€ ì•Šìœ¼ë©´ ëª©í‘œë¬¸ìžì—´(<em>Haystack</em>) &quot;xyz`r`nabc&quot;ì— ë¶€í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
+      <p>&quot;D&quot; ì˜µì…˜ì€ &quot;m&quot; ì˜µì…˜ì´ ìžˆìœ¼ë©´ ë¬´ì‹œë©ë‹ˆë‹¤.</p></td>
   </tr>
   <tr id="opt_s">
     <td><strong>s</strong></td>
-    <td>DotAll. ¸¶Ä§Ç¥ (.)°¡ »õÁÙ¹®ÀÚ¸¦ Æ÷ÇÔÇÏ¿© ¸ðµç ¹®ÀÚ¿¡ ÀÏÄ¡ÇÕ´Ï´Ù (º¸Åë, »õÁÙ¹®ÀÚ¿¡´Â ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù). ±×·¸Áö¸¸, »õÁÙ ¹®ÀÚ°¡ ±âº»°ªÀ¸·Î CRLF (`r`n)ÀÌ¸é, µÎ °³ÀÇ Á¡ÀÌ ÀÖ¾î¾î ºÎÇÕÇÕ´Ï´Ù (ÇÏ³ª¸¸À¸·Î´Â ºÎÇÕÇÏÁö ¾Ê½À´Ï´Ù). ÀÌ ¿É¼Ç°ú »ó°ü¾øÀÌ, [^a]°°Àº ºÎÁ¤ ºÎ·ù´Â ¾ðÁ¦³ª »õÁÙ¹®ÀÚ¿¡ ºÎÇÕÇÕ´Ï´Ù.</td>
+    <td>DotAll. ë§ˆì¹¨í‘œ (.)ê°€ ìƒˆì¤„ë¬¸ìžë¥¼ í¬í•¨í•˜ì—¬ ëª¨ë“  ë¬¸ìžì— ì¼ì¹˜í•©ë‹ˆë‹¤ (ë³´í†µ, ìƒˆì¤„ë¬¸ìžì—ëŠ” ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤). ê·¸ë ‡ì§€ë§Œ, ìƒˆì¤„ ë¬¸ìžê°€ ê¸°ë³¸ê°’ìœ¼ë¡œ CRLF (`r`n)ì´ë©´, ë‘ ê°œì˜ ì ì´ ìžˆì–´ì–´ ë¶€í•©í•©ë‹ˆë‹¤ (í•˜ë‚˜ë§Œìœ¼ë¡œëŠ” ë¶€í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤). ì´ ì˜µì…˜ê³¼ ìƒê´€ì—†ì´, [^a]ê°™ì€ ë¶€ì • ë¶€ë¥˜ëŠ” ì–¸ì œë‚˜ ìƒˆì¤„ë¬¸ìžì— ë¶€í•©í•©ë‹ˆë‹¤.</td>
   </tr>
   <tr id="opt_x">
     <td><strong>x</strong></td>
-    <td>¹®ÀÚ ºÎ·ù ¾ÈÀÌ³ª ÇÇ½Å½ÃÅ² °æ¿ì¸¦ Á¦¿ÜÇÏ°í ÆÐÅÏ¿¡¼­ °ø¹é ¹®ÀÚ¸¦ ¹«½ÃÇÕ´Ï´Ù. ¹®ÀÚ `n°ú `tÀÌ ¹«½ÃµÇ´Âµ¥ ¿Ö³ÄÇÏ¸é PCRE¿¡ µµÂøÇÒ ¶§ ÂëÀÌ¸é, ÀÌ¹Ì ³¯/±âÈ£ °ø¹é ¹®ÀÚÀÌ±â ¶§¹®ÀÔ´Ï´Ù (´ëÁ¶ÀûÀ¸·Î, \n¿Í \t´Â PCRE ÇÇ½Å ¿¬¼Ó¿­ÀÌ±â ¶§¹®¿¡ ¹«½ÃµÇÁö ¾Ê½À´Ï´Ù). <strong>x</strong> ¿É¼ÇÀº ¶Ç ¹®ÀÚ ºÎ·ù ¹ÛÀÇ ÇÇ½ÅµÇÁö ¾ÊÀº #ºÎÅÍ ´ÙÀ½ »õÁÙ¹®ÀÚ(Æ÷ÇÔ) »çÀÌÀÇ ¹®ÀÚµéÀ» ¹«½ÃÇÕ´Ï´Ù. ÀÌ ´öºÐ¿¡ º¹ÀâÇÑ ÆÐÅÏ ¾È¿¡ ÁÖ¼®À» »ðÀÔÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×·¸Áö¸¸, ÀÌ°ÍÀº ¿ÀÁ÷ µ¥ÀÌÅÍ ¹®ÀÚ¿¡¸¸ Àû¿ëµË´Ï´Ù; Á¶°ÇÀû ºÎÆÐÅÏÀ» ½ÃÀÛÇÏ´Â  (?(¿Í °°Àº Æ¯¼ö ¹®ÀÚ ¿¬¼Ó¿­ ¾È¿¡ °ø¹é¹®ÀÚ´Â ³ªÅ¸³ªÁö ¾Ê½À´Ï´Ù.</td>
+    <td>ë¬¸ìž ë¶€ë¥˜ ì•ˆì´ë‚˜ í”¼ì‹ ì‹œí‚¨ ê²½ìš°ë¥¼ ì œì™¸í•˜ê³  íŒ¨í„´ì—ì„œ ê³µë°± ë¬¸ìžë¥¼ ë¬´ì‹œí•©ë‹ˆë‹¤. ë¬¸ìž `nê³¼ `tì´ ë¬´ì‹œë˜ëŠ”ë° ì™œëƒí•˜ë©´ PCREì— ë„ì°©í•  ë•Œ ì¯¤ì´ë©´, ì´ë¯¸ ë‚ /ê¸°í˜¸ ê³µë°± ë¬¸ìžì´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤ (ëŒ€ì¡°ì ìœ¼ë¡œ, \nì™€ \tëŠ” PCRE í”¼ì‹  ì—°ì†ì—´ì´ê¸° ë•Œë¬¸ì— ë¬´ì‹œë˜ì§€ ì•ŠìŠµë‹ˆë‹¤). <strong>x</strong> ì˜µì…˜ì€ ë˜ ë¬¸ìž ë¶€ë¥˜ ë°–ì˜ í”¼ì‹ ë˜ì§€ ì•Šì€ #ë¶€í„° ë‹¤ìŒ ìƒˆì¤„ë¬¸ìž(í¬í•¨) ì‚¬ì´ì˜ ë¬¸ìžë“¤ì„ ë¬´ì‹œí•©ë‹ˆë‹¤. ì´ ë•ë¶„ì— ë³µìž¡í•œ íŒ¨í„´ ì•ˆì— ì£¼ì„ì„ ì‚½ìž…í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì´ê²ƒì€ ì˜¤ì§ ë°ì´í„° ë¬¸ìžì—ë§Œ ì ìš©ë©ë‹ˆë‹¤; ì¡°ê±´ì  ë¶€íŒ¨í„´ì„ ì‹œìž‘í•˜ëŠ”  (?(ì™€ ê°™ì€ íŠ¹ìˆ˜ ë¬¸ìž ì—°ì†ì—´ ì•ˆì— ê³µë°±ë¬¸ìžëŠ” ë‚˜íƒ€ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</td>
   </tr>
   <tr id="opt_A">
     <td><strong>A</strong></td>
-    <td>ÆÐÅÏÀ» °­Á¦·Î °íÁ¤ÇÕ´Ï´Ù; Áï, <em>Haystack</em>ÀÇ ½ÃÀÛ¿¡¸¸ ºÎÇÕÇÒ ¼ö ÀÖ½À´Ï´Ù. ´ëºÎºÐÀÇ »óÈ²¿¡¼­, ÀÌ°ÍÀº &quot;^&quot;¿Í °°Àº ¼ö´ÜÀ» »ç¿ëÇÏ¿© ¸í½ÃÀûÀ¸·Î ÆÐÅÏÀ» °íÁ¤ÇÑ °Í°ú µ¿µîÇÕ´Ï´Ù.</td>
+    <td>íŒ¨í„´ì„ ê°•ì œë¡œ ê³ ì •í•©ë‹ˆë‹¤; ì¦‰, <em>Haystack</em>ì˜ ì‹œìž‘ì—ë§Œ ë¶€í•©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ëŒ€ë¶€ë¶„ì˜ ìƒí™©ì—ì„œ, ì´ê²ƒì€ &quot;^&quot;ì™€ ê°™ì€ ìˆ˜ë‹¨ì„ ì‚¬ìš©í•˜ì—¬ ëª…ì‹œì ìœ¼ë¡œ íŒ¨í„´ì„ ê³ ì •í•œ ê²ƒê³¼ ë™ë“±í•©ë‹ˆë‹¤.</td>
   </tr>
   <tr id="opt_D">
     <td><strong>D</strong></td>
-    <td>´Þ·¯ »çÀÎ($)À» °­Á¦·Î ¸ñÇ¥ ¹®ÀÚ¿­(<em>Haystack</em>)ÀÇ ¸Ç ³¡¿¡ ºÎÇÕ½ÃÅµ´Ï´Ù. ¸ñÇ¥ ¹®ÀÚ¿­(<em>Haystack</em>)ÀÇ ¸¶Áö¸·ÀÌ »õÁÙ ¹®ÀÚ¿©µµ ºÎÇÕÇÕ´Ï´Ù. 
-	ÀÌ ¿É¼Ç¿¡ ¾ø´Ù¸é, ´ë½Å¿¡ $´Â (ÀÖ´Ù¸é) ¸¶Áö¸· »õÁÙ ¹®ÀÚ ¹Ù·Î ¾Õ¿¡ ºÎÇÕÇÕ´Ï´Ù. ÁÖÀÇ: ÀÌ ¿É¼ÇÀº &quot;m&quot; ¿É¼ÇÀÌ ÀÖÀ¸¸é ¹«½ÃµË´Ï´Ù.</td>
+    <td>ë‹¬ëŸ¬ ì‚¬ì¸($)ì„ ê°•ì œë¡œ ëª©í‘œ ë¬¸ìžì—´(<em>Haystack</em>)ì˜ ë§¨ ëì— ë¶€í•©ì‹œí‚µë‹ˆë‹¤. ëª©í‘œ ë¬¸ìžì—´(<em>Haystack</em>)ì˜ ë§ˆì§€ë§‰ì´ ìƒˆì¤„ ë¬¸ìžì—¬ë„ ë¶€í•©í•©ë‹ˆë‹¤. 
+	ì´ ì˜µì…˜ì— ì—†ë‹¤ë©´, ëŒ€ì‹ ì— $ëŠ” (ìžˆë‹¤ë©´) ë§ˆì§€ë§‰ ìƒˆì¤„ ë¬¸ìž ë°”ë¡œ ì•žì— ë¶€í•©í•©ë‹ˆë‹¤. ì£¼ì˜: ì´ ì˜µì…˜ì€ &quot;m&quot; ì˜µì…˜ì´ ìžˆìœ¼ë©´ ë¬´ì‹œë©ë‹ˆë‹¤.</td>
   </tr>
   <tr id="opt_J">
     <td><strong>J</strong></td>
-    <td><a href="../commands/RegExMatch.htm#NamedSubPat">ÀÌ¸§ºÙÀÎ ºÎÆÐÅÏ</a>ÀÇ Áßº¹À» Çã¿ëÇÕ´Ï´Ù. 
+    <td><a href="../commands/RegExMatch.htm#NamedSubPat">ì´ë¦„ë¶™ì¸ ë¶€íŒ¨í„´</a>ì˜ ì¤‘ë³µì„ í—ˆìš©í•©ë‹ˆë‹¤. 
 
 
-ÀÌ°ÍÀº °°Àº-ÀÌ¸§ÀÇ ºÎÆÐÅÏ Áß ÇÏ³ª¸¸ ºÎÇÕÇÒ ¼ö ÀÖ´Â  ÆÐÅÏ¿¡ À¯¿ëÇÏ°Ô »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. 
-ÁÖÀÇ: ¹«¾ùÀÌµç Æ¯Á¤ ÀÌ¸§ÀÌ ÇÑ ¹ø ÀÌ»ó ºÎÇÕÇÏ¸é, ¿ÞÂÊ¿¡ ÀÖ´Â °Í¸¸ ÀúÀåµË´Ï´Ù. ¶Ç, º¯¼ö ÀÌ¸§Àº ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÏÁö ¾Ê½À´Ï´Ù.</td>
+ì´ê²ƒì€ ê°™ì€-ì´ë¦„ì˜ ë¶€íŒ¨í„´ ì¤‘ í•˜ë‚˜ë§Œ ë¶€í•©í•  ìˆ˜ ìžˆëŠ”  íŒ¨í„´ì— ìœ ìš©í•˜ê²Œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 
+ì£¼ì˜: ë¬´ì—‡ì´ë“  íŠ¹ì • ì´ë¦„ì´ í•œ ë²ˆ ì´ìƒ ë¶€í•©í•˜ë©´, ì™¼ìª½ì— ìžˆëŠ” ê²ƒë§Œ ì €ìž¥ë©ë‹ˆë‹¤. ë˜, ë³€ìˆ˜ ì´ë¦„ì€ ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</td>
   </tr>
   <tr id="opt_U">
     <td><strong>U</strong></td>
-    <td>ºñÅ½¿åÀû. 
+    <td>ë¹„íƒìš•ì . 
 
 
-¼ö·®ÀÚ *+?{}°¡ ºÎÇÕÀ» Çü¼ºÇÏ´Âµ¥ Àý´ëÀûÀ¸·Î ÇÊ¿äÇÑ ¹®ÀÚµé¸¸ ¼ÒºñÇÕ´Ï´Ù. ³ª¸ÓÁö ºÎÇÕÀº ´ÙÀ½ ÆÐÅÏÀ» À§ÇØ ³²°ÜµÓ´Ï´Ù. &quot;U&quot; ¿É¼ÇÀÌ È¿°ú°¡ ¾øÀ¸¸é, °¢ ¼ö·®ÀÚ ´ÙÀ½¿¡ ¹°À½Ç¥¸¦ Ãß°¡ÇÏ¸é ºñÅ½¿åÀûÀ¸·Î ¸¸µé ¼ö ÀÖ½À´Ï´Ù. ¹Ý´ë·Î, &quot;U&quot;°¡ <em>È¿°ú°¡ ÀÖÀ¸¸é</em>, ¹°À½Ç¥´Â °¢ ¼ö·®ÀÚ¸¦ Å½¿åÀûÀ¸·Î ¸¸µì´Ï´Ù.</td>
+ìˆ˜ëŸ‰ìž *+?{}ê°€ ë¶€í•©ì„ í˜•ì„±í•˜ëŠ”ë° ì ˆëŒ€ì ìœ¼ë¡œ í•„ìš”í•œ ë¬¸ìžë“¤ë§Œ ì†Œë¹„í•©ë‹ˆë‹¤. ë‚˜ë¨¸ì§€ ë¶€í•©ì€ ë‹¤ìŒ íŒ¨í„´ì„ ìœ„í•´ ë‚¨ê²¨ë‘¡ë‹ˆë‹¤. &quot;U&quot; ì˜µì…˜ì´ íš¨ê³¼ê°€ ì—†ìœ¼ë©´, ê° ìˆ˜ëŸ‰ìž ë‹¤ìŒì— ë¬¼ìŒí‘œë¥¼ ì¶”ê°€í•˜ë©´ ë¹„íƒìš•ì ìœ¼ë¡œ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë°˜ëŒ€ë¡œ, &quot;U&quot;ê°€ <em>íš¨ê³¼ê°€ ìžˆìœ¼ë©´</em>, ë¬¼ìŒí‘œëŠ” ê° ìˆ˜ëŸ‰ìžë¥¼ íƒìš•ì ìœ¼ë¡œ ë§Œë“­ë‹ˆë‹¤.</td>
   </tr>
   <tr id="opt_extra">
     <td><strong>X</strong></td>
-    <td>PCRE_EXTRA. ÆÞ°ú È£È¯µÇÁö ¾Ê´Â PCRE Æ¯Â¡À» È°¼ºÈ­ÇÕ´Ï´Ù. ÇöÀç, Áö¿øµÇ´Â À¯ÀÏÇÑ Æ¯Â¡Àº ´ÙÀ½°ú °°½À´Ï´Ù. ÆÐÅÏ¿¡¼­ ¿ª»ç¼± ´ÙÀ½¿¡ ¾Æ¹« Æ¯¼ö ÀÇ¹Ì°¡ ¾ø´Â ±âÈ£°¡ µû¶ó¿À¸é ºÎÇÕÀº ½ÇÆÐÇÏ°í ±×¿¡ ¸Â°Ô  ErrorLevelÀÌ ¼³Á¤µË´Ï´Ù. 
-	ÀÌ ¿É¼ÇÀº »ç¿ëÇÏÁö ¾Ê´Â ¿ª»ç¼± ¹®ÀÚ¿­À» ¹Ì·¡¿¡ »ç¿ëÇÏ±â À§ÇØ ¿¹¾àÇÏ´Âµ¥ µµ¿òÀ» ÁÝ´Ï´Ù. ÀÌ ¿É¼ÇÀÌ ¾ø´Ù¸é, ¿ª»ç¼± ´ÙÀ½¿¡ ¾Æ¹« Æ¯¼ö ÀÇ¹Ì°¡ ¾ø´Â ±âÈ£°¡ µû¶ó¿À¸é ±âÈ£ ±×´ë·Î Ãë±ÞÇÕ´Ï´Ù (¿¹, \g¿Í g´Â ¸ðµÎ ±âÈ£ ±×´ë·ÎÀÇ g·Î ÀÎ½ÄµË´Ï´Ù). ÀÌ ¿É¼Ç¿¡ »ó°ü¾øÀÌ, ¾Æ¹« ÀÇ¹Ì°¡ ¾ø´Â ¾ËÆÄºª-¾Æ´Ñ ¿¬¼Ó¿­Àº ¾ðÁ¦³ª ±âÈ£ ±×´ë·Î Ãë±ÞµË´Ï´Ù (¿¹, \/ ±×¸®°í / ´Â ¸ðµÎ Á¤»ç¼±À¸·Î ÀÎÁöµË´Ï´Ù).</td>
+    <td>PCRE_EXTRA. íŽ„ê³¼ í˜¸í™˜ë˜ì§€ ì•ŠëŠ” PCRE íŠ¹ì§•ì„ í™œì„±í™”í•©ë‹ˆë‹¤. í˜„ìž¬, ì§€ì›ë˜ëŠ” ìœ ì¼í•œ íŠ¹ì§•ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤. íŒ¨í„´ì—ì„œ ì—­ì‚¬ì„  ë‹¤ìŒì— ì•„ë¬´ íŠ¹ìˆ˜ ì˜ë¯¸ê°€ ì—†ëŠ” ê¸°í˜¸ê°€ ë”°ë¼ì˜¤ë©´ ë¶€í•©ì€ ì‹¤íŒ¨í•˜ê³  ê·¸ì— ë§žê²Œ  ErrorLevelì´ ì„¤ì •ë©ë‹ˆë‹¤. 
+	ì´ ì˜µì…˜ì€ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” ì—­ì‚¬ì„  ë¬¸ìžì—´ì„ ë¯¸ëž˜ì— ì‚¬ìš©í•˜ê¸° ìœ„í•´ ì˜ˆì•½í•˜ëŠ”ë° ë„ì›€ì„ ì¤ë‹ˆë‹¤. ì´ ì˜µì…˜ì´ ì—†ë‹¤ë©´, ì—­ì‚¬ì„  ë‹¤ìŒì— ì•„ë¬´ íŠ¹ìˆ˜ ì˜ë¯¸ê°€ ì—†ëŠ” ê¸°í˜¸ê°€ ë”°ë¼ì˜¤ë©´ ê¸°í˜¸ ê·¸ëŒ€ë¡œ ì·¨ê¸‰í•©ë‹ˆë‹¤ (ì˜ˆ, \gì™€ gëŠ” ëª¨ë‘ ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ gë¡œ ì¸ì‹ë©ë‹ˆë‹¤). ì´ ì˜µì…˜ì— ìƒê´€ì—†ì´, ì•„ë¬´ ì˜ë¯¸ê°€ ì—†ëŠ” ì•ŒíŒŒë²³-ì•„ë‹Œ ì—°ì†ì—´ì€ ì–¸ì œë‚˜ ê¸°í˜¸ ê·¸ëŒ€ë¡œ ì·¨ê¸‰ë©ë‹ˆë‹¤ (ì˜ˆ, \/ ê·¸ë¦¬ê³  / ëŠ” ëª¨ë‘ ì •ì‚¬ì„ ìœ¼ë¡œ ì¸ì§€ë©ë‹ˆë‹¤).</td>
   </tr>
   <tr id="opt_P">
     <td><strong>P</strong></td>
-    <td>À§Ä¡ ¸ðµå. ÀÌ ¸ðµå´Â RegExMatch()°¡ ºÎÇÕÇÑ ºÎ¹®ÀÚ¿­ÀÌ ¾Æ´Ï¶ó ±×ÀÇ ºÎÆÐÅÏ°ú ºÎÇÕÀÇ À§Ä¡¿Í ±æÀÌ¸¦ »êÃâÇÏµµ·Ï ¸¸µì´Ï´Ù. ÀÚ¼¼ÇÑ °ÍÀº <a href="../commands/RegExMatch.htm#PosMode">UnquotedOutputVar</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</td>
+    <td>ìœ„ì¹˜ ëª¨ë“œ. ì´ ëª¨ë“œëŠ” RegExMatch()ê°€ ë¶€í•©í•œ ë¶€ë¬¸ìžì—´ì´ ì•„ë‹ˆë¼ ê·¸ì˜ ë¶€íŒ¨í„´ê³¼ ë¶€í•©ì˜ ìœ„ì¹˜ì™€ ê¸¸ì´ë¥¼ ì‚°ì¶œí•˜ë„ë¡ ë§Œë“­ë‹ˆë‹¤. ìžì„¸í•œ ê²ƒì€ <a href="../commands/RegExMatch.htm#PosMode">UnquotedOutputVar</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</td>
   </tr>
   <tr>
     <td><strong>S</strong></td>
-    <td><a name="Study"></a>ÆÐÅÏÀ» ¿¬±¸ÇÏ¿© ¼öÇà¼º´ÉÀ» Çâ»ó½ÃÅ°·Á°í ½ÃµµÇÕ´Ï´Ù. ÀÌ Æ¯Â¡Àº Æ¯Á¤ ÆÐÅÏÀÌ (Æ¯È÷ º¹ÀâÇÑ ÆÐÅÏÀÌ) ¿©·¯ ¹ø ¼öÇàµÉ ¶§ À¯¿ëÇÕ´Ï´Ù.  PCRE°¡ ¼öÇà¼º´ÉÀ» Çâ»ó½ÃÅ°´Â ¹ýÀ» ¹ß°ßÇÏ¸é, ±× ¹ß°ßÀº ÆÐÅÏ°ú ÇÔ²² Ä³½¬¿¡ ÀúÀåµË´Ï´Ù. °°Àº ÆÐÅÏÀÌ ¿¬ÀÌ¾î ½ÇÇàµÇ¸é ÀúÀåµÈ ¹ß°ßÀ» »ç¿ëÇÕ´Ï´Ù.
+    <td><a name="Study"></a>íŒ¨í„´ì„ ì—°êµ¬í•˜ì—¬ ìˆ˜í–‰ì„±ëŠ¥ì„ í–¥ìƒì‹œí‚¤ë ¤ê³  ì‹œë„í•©ë‹ˆë‹¤. ì´ íŠ¹ì§•ì€ íŠ¹ì • íŒ¨í„´ì´ (íŠ¹ížˆ ë³µìž¡í•œ íŒ¨í„´ì´) ì—¬ëŸ¬ ë²ˆ ìˆ˜í–‰ë  ë•Œ ìœ ìš©í•©ë‹ˆë‹¤.  PCREê°€ ìˆ˜í–‰ì„±ëŠ¥ì„ í–¥ìƒì‹œí‚¤ëŠ” ë²•ì„ ë°œê²¬í•˜ë©´, ê·¸ ë°œê²¬ì€ íŒ¨í„´ê³¼ í•¨ê»˜ ìºì‰¬ì— ì €ìž¥ë©ë‹ˆë‹¤. ê°™ì€ íŒ¨í„´ì´ ì—°ì´ì–´ ì‹¤í–‰ë˜ë©´ ì €ìž¥ëœ ë°œê²¬ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.
 	
-	(ÆÐÅÏÀ» ¿¬ÀÌ¾î »ç¿ëÇÏ¸é S ¿É¼ÇÀ» ÁöÁ¤ÇØ¾ß ÇÕ´Ï´Ù. ¿Ö³ÄÇÏ¸é Ä³½¬¿¡¼­ ºÎÇÕÀ» ¹ß°ßÇÏ·Á¸é ±× ¿É¼Ç ±âÈ£°¡ Á¤È®ÇÏ°Ô ÀÏÄ¡ÇØ¾ß ÇÏ¸ç, ¼ø¼­±îÁö ÀÏÄ¡ÇØ¾ß ÇÏ±â ¶§¹®ÀÔ´Ï´Ù).</td>
+	(íŒ¨í„´ì„ ì—°ì´ì–´ ì‚¬ìš©í•˜ë©´ S ì˜µì…˜ì„ ì§€ì •í•´ì•¼ í•©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ìºì‰¬ì—ì„œ ë¶€í•©ì„ ë°œê²¬í•˜ë ¤ë©´ ê·¸ ì˜µì…˜ ê¸°í˜¸ê°€ ì •í™•í•˜ê²Œ ì¼ì¹˜í•´ì•¼ í•˜ë©°, ìˆœì„œê¹Œì§€ ì¼ì¹˜í•´ì•¼ í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤).</td>
   </tr>
   <tr id="opt_Callout">
     <td><strong>C</strong></td>
-    <td>ÀÚµ¿-callout ¸ðµå¸¦ ÄÕ´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="../misc/RegExCallout.htm#auto">Á¤±Ô Ç¥Çö½Ä ¿ÜºÎÈ£Ãâ</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</td>
+    <td>ìžë™-callout ëª¨ë“œë¥¼ ì¼­ë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="../misc/RegExCallout.htm#auto">ì •ê·œ í‘œí˜„ì‹ ì™¸ë¶€í˜¸ì¶œ</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</td>
   </tr>
   <tr id="opt_esc_n">
     <td><strong>`n</strong></td>
-    <td>±âº» »õÁÙ ¹®ÀÚ(`r`n)¸¦ ´Üµ¶ ¶óÀÎÇÇµå (`n)·Î ÀüÈ¯ÇÕ´Ï´Ù. ÀÌ ÁÙ³¡ ¹®ÀÚ´Â UNIX ½Ã½ºÅÛÀÇ Ç¥ÁØÀÔ´Ï´Ù. ¼±ÅÃµÈ »õÁÙ ¹®ÀÚ´Â <a href="../misc/RegEx-QuickRef.htm#anchor">´é (^¿Í $)</a> ±×¸®°í <a href="../misc/RegEx-QuickRef.htm#dot">Á¡(dot/period) ÆÐÅÏ</a>ÀÇ ÇàÀ§¿¡ ¿µÇâÀ» ¹ÌÄ¨´Ï´Ù.</td>
+    <td>ê¸°ë³¸ ìƒˆì¤„ ë¬¸ìž(`r`n)ë¥¼ ë‹¨ë… ë¼ì¸í”¼ë“œ (`n)ë¡œ ì „í™˜í•©ë‹ˆë‹¤. ì´ ì¤„ë ë¬¸ìžëŠ” UNIX ì‹œìŠ¤í…œì˜ í‘œì¤€ìž…ë‹ˆë‹¤. ì„ íƒëœ ìƒˆì¤„ ë¬¸ìžëŠ” <a href="../misc/RegEx-QuickRef.htm#anchor">ë‹» (^ì™€ $)</a> ê·¸ë¦¬ê³  <a href="../misc/RegEx-QuickRef.htm#dot">ì (dot/period) íŒ¨í„´</a>ì˜ í–‰ìœ„ì— ì˜í–¥ì„ ë¯¸ì¹©ë‹ˆë‹¤.</td>
   </tr>
   <tr id="opt_esc_r">
     <td><strong>`r</strong></td>
-    <td>±âº» »õÁÙ ¹®ÀÚ (`r`n)¸¦ ´Üµ¶ Ä³¸®Áö ¸®ÅÏ (`r)À¸·Î ÀüÈ¯ÇÕ´Ï´Ù.</td>
+    <td>ê¸°ë³¸ ìƒˆì¤„ ë¬¸ìž (`r`n)ë¥¼ ë‹¨ë… ìºë¦¬ì§€ ë¦¬í„´ (`r)ìœ¼ë¡œ ì „í™˜í•©ë‹ˆë‹¤.</td>
   </tr>
   <tr>
     <td><strong>`a</strong></td>
-    <td><a name="NEWLINE_ANY"></a>v1.0.46.06+¿¡¼­, `a´Â »õÁÙÀÌ¸é ¾î¶² Á¾·ùµçÁö ¸ðµÎ ÀÎÁöÇÕ´Ï´Ù. Áï, `r, `n, `r`n, `v/VT/vertical tab/chr(0xB), `f/FF/formfeed/chr(0xC), ±×¸®°í NEL/next-line/chr(0x85).  v1.0.47.05+¿¡¼­, »õÁÙÀº CR, LF, ±×¸®°í CRLF·Î Á¦ÇÑÇÒ ¼ö ÀÖ½À´Ï´Ù. ÆÐÅÏÀÇ ½ÃÀÛ¿¡ (¿É¼Ç µÚ¿¡) ´ë¹®ÀÚ·Î (*ANYCRLF)¸¦ ÁöÁ¤ÇÏ¸é µË´Ï´Ù; ¿¹, <code>im)(*ANYCRLF)^abc$</code>.</td>
+    <td><a name="NEWLINE_ANY"></a>v1.0.46.06+ì—ì„œ, `aëŠ” ìƒˆì¤„ì´ë©´ ì–´ë–¤ ì¢…ë¥˜ë“ ì§€ ëª¨ë‘ ì¸ì§€í•©ë‹ˆë‹¤. ì¦‰, `r, `n, `r`n, `v/VT/vertical tab/chr(0xB), `f/FF/formfeed/chr(0xC), ê·¸ë¦¬ê³  NEL/next-line/chr(0x85).  v1.0.47.05+ì—ì„œ, ìƒˆì¤„ì€ CR, LF, ê·¸ë¦¬ê³  CRLFë¡œ ì œí•œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. íŒ¨í„´ì˜ ì‹œìž‘ì— (ì˜µì…˜ ë’¤ì—) ëŒ€ë¬¸ìžë¡œ (*ANYCRLF)ë¥¼ ì§€ì •í•˜ë©´ ë©ë‹ˆë‹¤; ì˜ˆ, <code>im)(*ANYCRLF)^abc$</code>.</td>
   </tr>
 </table>
-<p>ÁÖÀÇ: °¢ ¿É¼ÇÀ» ´ÙÀ½ ¿É¼Ç°ú °¡¸£´Âµ¥ ½ºÆäÀÌ½º¿Í ÅÇÀ» ¼±ÅÃÀûÀ¸·Î »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<p>ì£¼ì˜: ê° ì˜µì…˜ì„ ë‹¤ìŒ ì˜µì…˜ê³¼ ê°€ë¥´ëŠ”ë° ìŠ¤íŽ˜ì´ìŠ¤ì™€ íƒ­ì„ ì„ íƒì ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h2 id="Common">ÀÚÁÖ »ç¿ëµÇ´Â ½Éº¼°ú ±¸¹®</h2>
+<h2 id="Common">ìžì£¼ ì‚¬ìš©ë˜ëŠ” ì‹¬ë³¼ê³¼ êµ¬ë¬¸</h2>
 <table class="info">
 	<tr>
 		<td align="center"><strong>.</strong></td>
-		<td><a name="dot"></a>±âº»°ªÀ¸·Î, Á¡Àº ¹®ÀÚ ÇÏ³ª¿¡ ºÎÇÕÇÕ´Ï´Ù. »õÁÙ¹®ÀÚ (`r`n) ¿¬¼Ó¿­Àº Á¦¿ÜÇÕ´Ï´Ù. ±×·¯³ª  <a href="#opt_s">DotAll (s)</a>, <a href="#opt_esc_n">¶óÀÎÇÇµå (`n)</a>, <a href="#opt_esc_r">Ä³¸®Áö ¸®ÅÏ (`r)</a>, <a href="#NEWLINE_ANY">`a ¶Ç´Â (*ANYCRLF)</a> ¿É¼ÇÀ» »ç¿ëÇÏ¿© ÀÌ ÇàÀ§¸¦ º¯°æÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">ab.</span>´Â <span class="subj">abc</span> and <span class="subj">abz</span> ±×¸®°í <span class="subj">ab_</span>¿¡ ºÎÇÕÇÕ´Ï´Ù.</td>
+		<td><a name="dot"></a>ê¸°ë³¸ê°’ìœ¼ë¡œ, ì ì€ ë¬¸ìž í•˜ë‚˜ì— ë¶€í•©í•©ë‹ˆë‹¤. ìƒˆì¤„ë¬¸ìž (`r`n) ì—°ì†ì—´ì€ ì œì™¸í•©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜  <a href="#opt_s">DotAll (s)</a>, <a href="#opt_esc_n">ë¼ì¸í”¼ë“œ (`n)</a>, <a href="#opt_esc_r">ìºë¦¬ì§€ ë¦¬í„´ (`r)</a>, <a href="#NEWLINE_ANY">`a ë˜ëŠ” (*ANYCRLF)</a> ì˜µì…˜ì„ ì‚¬ìš©í•˜ì—¬ ì´ í–‰ìœ„ë¥¼ ë³€ê²½í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">ab.</span>ëŠ” <span class="subj">abc</span> and <span class="subj">abz</span> ê·¸ë¦¬ê³  <span class="subj">ab_</span>ì— ë¶€í•©í•©ë‹ˆë‹¤.</td>
 	</tr>
 	<tr>
 		<td align="center"><strong>*</strong></td>
-		<td><p>º°Ç¥´Â 0°³ ÀÌ»óÀÇ ÀÌÀü ¹®ÀÚ, <a href="#class">ºÎ·ù</a>, ¶Ç´Â <a href="#subpat">ºÎÆÐÅÏ</a>¿¡ ºÎÇÕÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">a*</span>´Â <span class="subj">a</span>b ±×¸®°í <span class="subj">aaa</span>b¿¡ ºÎÇÕÇÕ´Ï´Ù. ¶Ç &quot;a&quot;°¡ ÀüÇô ¾ø´Â ¹®ÀÚ¿­ÀÇ ¸Ç ¾Õ¿¡µµ ºÎÇÕÇÕ´Ï´Ù.</p>
-	      <p><strong>¸¸´É¹®ÀÚ:</strong> Á¡-º° ÆÐÅÏ <span class="regex">.*</span>Àº °¡Àå ¸¹ÀÌ »ç¿ëµÇ´Â ÆÐÅÏÀÔ´Ï´Ù. ¿Ö³ÄÇÏ¸é <em>¾î¶² ¹®ÀÚµçÁö</em> 0 È¸ ÀÌ»ó ºÎÇÕÇÏ±â ¶§¹®ÀÔ´Ï´Ù (»õÁÙ ¹®ÀÚ´Â Á¦¿ÜÇÕ´Ï´Ù: `r ±×¸®°í `n). ¿¹¸¦ µé¾î, <span class="regex">abc.*123</span>Àº <span class="subj">abcAnything123</span>´Â ¹°·Ð <span class="subj">abc123</span>¿¡µµ ºÎÇÕÇÕ´Ï´Ù.</p>		  </td>
+		<td><p>ë³„í‘œëŠ” 0ê°œ ì´ìƒì˜ ì´ì „ ë¬¸ìž, <a href="#class">ë¶€ë¥˜</a>, ë˜ëŠ” <a href="#subpat">ë¶€íŒ¨í„´</a>ì— ë¶€í•©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">a*</span>ëŠ” <span class="subj">a</span>b ê·¸ë¦¬ê³  <span class="subj">aaa</span>bì— ë¶€í•©í•©ë‹ˆë‹¤. ë˜ &quot;a&quot;ê°€ ì „í˜€ ì—†ëŠ” ë¬¸ìžì—´ì˜ ë§¨ ì•žì—ë„ ë¶€í•©í•©ë‹ˆë‹¤.</p>
+	      <p><strong>ë§ŒëŠ¥ë¬¸ìž:</strong> ì -ë³„ íŒ¨í„´ <span class="regex">.*</span>ì€ ê°€ìž¥ ë§Žì´ ì‚¬ìš©ë˜ëŠ” íŒ¨í„´ìž…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ <em>ì–´ë–¤ ë¬¸ìžë“ ì§€</em> 0 íšŒ ì´ìƒ ë¶€í•©í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤ (ìƒˆì¤„ ë¬¸ìžëŠ” ì œì™¸í•©ë‹ˆë‹¤: `r ê·¸ë¦¬ê³  `n). ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">abc.*123</span>ì€ <span class="subj">abcAnything123</span>ëŠ” ë¬¼ë¡  <span class="subj">abc123</span>ì—ë„ ë¶€í•©í•©ë‹ˆë‹¤.</p>		  </td>
 	</tr>
 	<tr>
 	  <td align="center"><strong>?</strong></td>
-	  <td>¹°À½Ç¥´Â ÀÌÀü ¹®ÀÚ, <a href="#set">ºÎ·ù</a>, ¶Ç´Â <a href="#subpat">ºÎÆÐÅÏ</a>ÀÌ 0 ¶Ç´Â 1°³¿¡ ºÎÇÕÇÕ´Ï´Ù. ÀÌ°ÍÀ» &quot;¾ÕÀÇ ¹®ÀÚ´Â ¼±ÅÃÀûÀÌ´Ù&quot¶ó°í °£ÁÖÇÏ½Ê½Ã¿À; ¿¹¸¦ µé¾î, <span class="regex">colou?r</span>´Â <span class="subj">color</span>¿Í <span class="subj">colour</span>¿¡ ¸ðµÎ ºÎÇÕÇÕ´Ï´Ù ¿Ö³ÄÇÏ¸é &quot;u&quot;°¡ ¼±ÅÃÀûÀÌ±â ¶§¹®ÀÔ´Ï´Ù.</td>
+	  <td>ë¬¼ìŒí‘œëŠ” ì´ì „ ë¬¸ìž, <a href="#set">ë¶€ë¥˜</a>, ë˜ëŠ” <a href="#subpat">ë¶€íŒ¨í„´</a>ì´ 0 ë˜ëŠ” 1ê°œì— ë¶€í•©í•©ë‹ˆë‹¤. ì´ê²ƒì„ &quot;ì•žì˜ ë¬¸ìžëŠ” ì„ íƒì ì´ë‹¤&quotë¼ê³  ê°„ì£¼í•˜ì‹­ì‹œì˜¤; ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">colou?r</span>ëŠ” <span class="subj">color</span>ì™€ <span class="subj">colour</span>ì— ëª¨ë‘ ë¶€í•©í•©ë‹ˆë‹¤ ì™œëƒí•˜ë©´ &quot;u&quot;ê°€ ì„ íƒì ì´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>+</strong></td>
-	  <td>µ¡¼À ºÎÈ£´Â ÇÏ³ª ÀÌ»óÀÇ ÀÌÀü ¹®ÀÚ, <a href="#class">ºÎ·ù</a>, ¶Ç´Â <a href="#subpat">ºÎÆÐÅÏ</a>¿¡ ºÎÇÕÇÕ´Ï´Ù. ¿¹¸¦ µé¾î <span class="regex">a+</span>´Â <span class="subj">a</span>b ±×¸®°í <span class="subj">aaa</span>b¿¡ ºÎÇÕÇÕ´Ï´Ù. ±×·¯³ª <span class="regex">a*</span> ±×¸®°í <span class="regex">a?</span>¿Í ´Ù¸£°Ô, ÆÐÅÏ <span class="regex">a+</span>´Â &quot;a&quot;°¡  ¾ø´Â ¹®ÀÚ¿­ÀÇ ¼±µÎ¿¡ ºÎÇÕÇÏÁö ¾Ê½À´Ï´Ù.</td>
+	  <td>ë§ì…ˆ ë¶€í˜¸ëŠ” í•˜ë‚˜ ì´ìƒì˜ ì´ì „ ë¬¸ìž, <a href="#class">ë¶€ë¥˜</a>, ë˜ëŠ” <a href="#subpat">ë¶€íŒ¨í„´</a>ì— ë¶€í•©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ <span class="regex">a+</span>ëŠ” <span class="subj">a</span>b ê·¸ë¦¬ê³  <span class="subj">aaa</span>bì— ë¶€í•©í•©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ <span class="regex">a*</span> ê·¸ë¦¬ê³  <span class="regex">a?</span>ì™€ ë‹¤ë¥´ê²Œ, íŒ¨í„´ <span class="regex">a+</span>ëŠ” &quot;a&quot;ê°€  ì—†ëŠ” ë¬¸ìžì—´ì˜ ì„ ë‘ì— ë¶€í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</td>
   </tr>
 	<tr>
 	  <td align="center">{min,max}</td>
-	  <td><p>ÀÌÀüÀÇ ¹®ÀÚ, <a href="#set">ºÎ·ù</a>, ¶Ç´Â <a href="#subpat">ºÎÆÐÅÏ</a>ÀÌ ÃÖ¼Ò <em>min</em>È¸ ±×¸®°í ÃÖ´ë <em>max</em>È¸ ³ªÅ¸³ª¸é ºÎÇÕÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">a{1,2}</span>´Â  <span class="subj">a</span>b¿¡ ºÎÇÕÇÏÁö¸¸ <span class="subj">aa</span>ab¿¡¼­ ¿ÀÁ÷ ¾ÕÀÇ µÎ a¿¡¸¸ ºÎÇÕÇÕ´Ï´Ù.</p>
-        <p>¶Ç, {3}´Â Á¤È®ÇÏ°Ô 3 È¸ ³ªÅ¸³ª¾ß ÇÑ´Ù´Â ¶æÀÌ°í, {3<strong>,</strong>}´Â 3 È¸ ÀÌ»óÀ» ÀÇ¹ÌÇÕ´Ï´Ù. ÁÖÀÇ: ÁöÁ¤µÈ È½¼ö´Â 65536º¸´Ù ÀÛ¾Æ¾ß ÇÕ´Ï´Ù. ±×¸®°í ¾ÕÀÇ ¼ýÀÚ´Â µÚÀÇ ¼ýÀÚº¸´Ù °°°Å³ª ÀÛ¾Æ¾ß ÇÕ´Ï´Ù.</p></td>
+	  <td><p>ì´ì „ì˜ ë¬¸ìž, <a href="#set">ë¶€ë¥˜</a>, ë˜ëŠ” <a href="#subpat">ë¶€íŒ¨í„´</a>ì´ ìµœì†Œ <em>min</em>íšŒ ê·¸ë¦¬ê³  ìµœëŒ€ <em>max</em>íšŒ ë‚˜íƒ€ë‚˜ë©´ ë¶€í•©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">a{1,2}</span>ëŠ”  <span class="subj">a</span>bì— ë¶€í•©í•˜ì§€ë§Œ <span class="subj">aa</span>abì—ì„œ ì˜¤ì§ ì•žì˜ ë‘ aì—ë§Œ ë¶€í•©í•©ë‹ˆë‹¤.</p>
+        <p>ë˜, {3}ëŠ” ì •í™•í•˜ê²Œ 3 íšŒ ë‚˜íƒ€ë‚˜ì•¼ í•œë‹¤ëŠ” ëœ»ì´ê³ , {3<strong>,</strong>}ëŠ” 3 íšŒ ì´ìƒì„ ì˜ë¯¸í•©ë‹ˆë‹¤. ì£¼ì˜: ì§€ì •ëœ íšŸìˆ˜ëŠ” 65536ë³´ë‹¤ ìž‘ì•„ì•¼ í•©ë‹ˆë‹¤. ê·¸ë¦¬ê³  ì•žì˜ ìˆ«ìžëŠ” ë’¤ì˜ ìˆ«ìžë³´ë‹¤ ê°™ê±°ë‚˜ ìž‘ì•„ì•¼ í•©ë‹ˆë‹¤.</p></td>
   </tr>
 	<tr>
 	  <td align="center"><strong>[...]</strong></td>
-	  <td><p><a name="set"></a><a name="class"></a><strong>¹®ÀÚ ºÎ·ù:</strong> °¢°ýÈ£´Â ¹®ÀÚÀÇ ¹üÀ§³ª ¸®½ºÆ®¸¦ µÑ·¯½Ô´Ï´Ù (¶Ç´Â µÑ ´Ù). ¿¹¸¦ µé¾î, <span class="regex">[abc]</span>´Â &quot; a, b ¶Ç´Â cÁß ¾î´À ¹®ÀÚ¿¡³ª ºÎÇÕÇÑ´Ù&quot;´Â ¶æÀÔ´Ï´Ù. »çÀÌ¿¡ ¿·ÁÙ ¹®ÀÚ¸¦ »ç¿ëÇÏ¸é ¹üÀ§°¡ »ý¼ºµË´Ï´Ù; ¿¹¸¦ µé¾î, <span class="regex">[a-z]</span>´Â &quot;¼Ò¹®ÀÚ aºÎÅÍ z±îÁöÀÇ (Æ÷ÇÔ) ¸ðµç ¹®ÀÚ ÇÏ³ª¿¡ ºÎÇÕÇÑ´Ù&quot;´Â ¶æÀÔ´Ï´Ù. ¸®½ºÆ®¿Í ¹üÀ§´Â Á¶ÇÕÇÒ ¼ö ÀÖ½À´Ï´Ù; ¿¹¸¦ µé¾î <span class="regex">[a-zA-Z0-9_]</span>´Â &quot;¸ðµç ¾ËÆÄºª°ú ¼ýÀÚ ¶Ç´Â ¹ØÁÙ ¹®ÀÚ&quot;¸¦ ¶æÇÕ´Ï´Ù.</p>
-	    <p>¹®ÀÚ ºÎ·ù ´ÙÀ½¿¡ *, ?, +, ¶Ç´Â {min,max}°¡ µû¶ó¿Ã ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">[0-9]+</span>´Â ¼ýÀÚ°¡ ÇÏ³ª ÀÌ»ó ³ªÅ¸³ª¸é ºÎÇÕÇÕ´Ï´Ù; ±×·¡¼­ xyz<span class="subj">123</span>¿¡´Â ºÎÇÕÇÏÁö¸¸ abcxyz¿¡´Â ºÎÇÕÇÏÁö ¾Ê½À´Ï´Ù.</p>            
-        <p>´ÙÀ½ POSIX ÀÌ¸§ ÁýÇÕµµ Áö¿øÇÕ´Ï´Ù. ÇüÅÂ´Â [[:xxx:]]¿Í °°À¸¸ç, ¿©±â¿¡¼­ xxx´Â ´ÙÀ½ ´Ü¾î Áß ÇÏ³ªÀÔ´Ï´Ù: alnum, alpha, ascii (0-127), blank (½ºÆäÀÌ½º ¶Ç´Â ÅÇ), cntrl (Á¦¾î ¹®ÀÚ), digit (0-9), xdigit (½ÊÀ°Áø¼ö), print, graph (½ºÆäÀÌ½º¸¦ Á¦¿ÜÇÏ°í ÀÎ¼â °¡´É ¹®ÀÚ), punct, lower, upper, space (°ø¹é¹®ÀÚ), word (<a href="#word">\w</a>¿Í µ¿ÀÏ).</p>
-        <p>¹®ÀÚ ºÎ·ù ¾È¿¡¼­, ¹®ÀÚµéÀº ÇÇ½Å½ÃÅ³ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù. ºÎ·ù ¾È¿¡¼­ Æ¯º°ÇÑ ÀÇ¹Ì¸¦ °¡Áú °æ¿ì´Â Á¦¿ÜÇÕ´Ï´Ù; ¿¹¸¦ µé¾î, <span class="regex">[\^a]</span>, <span class="regex">[a\-b]</span>, <span class="regex">[a\]]</span>, ±×¸®°í <span class="regex">[\\a]</span>.</p></td>
+	  <td><p><a name="set"></a><a name="class"></a><strong>ë¬¸ìž ë¶€ë¥˜:</strong> ê°ê´„í˜¸ëŠ” ë¬¸ìžì˜ ë²”ìœ„ë‚˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ë‘˜ëŸ¬ìŒ‰ë‹ˆë‹¤ (ë˜ëŠ” ë‘˜ ë‹¤). ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">[abc]</span>ëŠ” &quot; a, b ë˜ëŠ” cì¤‘ ì–´ëŠ ë¬¸ìžì—ë‚˜ ë¶€í•©í•œë‹¤&quot;ëŠ” ëœ»ìž…ë‹ˆë‹¤. ì‚¬ì´ì— ì˜†ì¤„ ë¬¸ìžë¥¼ ì‚¬ìš©í•˜ë©´ ë²”ìœ„ê°€ ìƒì„±ë©ë‹ˆë‹¤; ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">[a-z]</span>ëŠ” &quot;ì†Œë¬¸ìž aë¶€í„° zê¹Œì§€ì˜ (í¬í•¨) ëª¨ë“  ë¬¸ìž í•˜ë‚˜ì— ë¶€í•©í•œë‹¤&quot;ëŠ” ëœ»ìž…ë‹ˆë‹¤. ë¦¬ìŠ¤íŠ¸ì™€ ë²”ìœ„ëŠ” ì¡°í•©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤; ì˜ˆë¥¼ ë“¤ì–´ <span class="regex">[a-zA-Z0-9_]</span>ëŠ” &quot;ëª¨ë“  ì•ŒíŒŒë²³ê³¼ ìˆ«ìž ë˜ëŠ” ë°‘ì¤„ ë¬¸ìž&quot;ë¥¼ ëœ»í•©ë‹ˆë‹¤.</p>
+	    <p>ë¬¸ìž ë¶€ë¥˜ ë‹¤ìŒì— *, ?, +, ë˜ëŠ” {min,max}ê°€ ë”°ë¼ì˜¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">[0-9]+</span>ëŠ” ìˆ«ìžê°€ í•˜ë‚˜ ì´ìƒ ë‚˜íƒ€ë‚˜ë©´ ë¶€í•©í•©ë‹ˆë‹¤; ê·¸ëž˜ì„œ xyz<span class="subj">123</span>ì—ëŠ” ë¶€í•©í•˜ì§€ë§Œ abcxyzì—ëŠ” ë¶€í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>            
+        <p>ë‹¤ìŒ POSIX ì´ë¦„ ì§‘í•©ë„ ì§€ì›í•©ë‹ˆë‹¤. í˜•íƒœëŠ” [[:xxx:]]ì™€ ê°™ìœ¼ë©°, ì—¬ê¸°ì—ì„œ xxxëŠ” ë‹¤ìŒ ë‹¨ì–´ ì¤‘ í•˜ë‚˜ìž…ë‹ˆë‹¤: alnum, alpha, ascii (0-127), blank (ìŠ¤íŽ˜ì´ìŠ¤ ë˜ëŠ” íƒ­), cntrl (ì œì–´ ë¬¸ìž), digit (0-9), xdigit (ì‹­ìœ¡ì§„ìˆ˜), print, graph (ìŠ¤íŽ˜ì´ìŠ¤ë¥¼ ì œì™¸í•˜ê³  ì¸ì‡„ ê°€ëŠ¥ ë¬¸ìž), punct, lower, upper, space (ê³µë°±ë¬¸ìž), word (<a href="#word">\w</a>ì™€ ë™ì¼).</p>
+        <p>ë¬¸ìž ë¶€ë¥˜ ì•ˆì—ì„œ, ë¬¸ìžë“¤ì€ í”¼ì‹ ì‹œí‚¬ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤. ë¶€ë¥˜ ì•ˆì—ì„œ íŠ¹ë³„í•œ ì˜ë¯¸ë¥¼ ê°€ì§ˆ ê²½ìš°ëŠ” ì œì™¸í•©ë‹ˆë‹¤; ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">[\^a]</span>, <span class="regex">[a\-b]</span>, <span class="regex">[a\]]</span>, ê·¸ë¦¬ê³  <span class="regex">[\\a]</span>.</p></td>
   </tr>
 	<tr>
 	  <td align="center"><strong>[^...]</strong></td>
-	  <td>ºÎ·ù¿¡ <strong>¾ø´Â</strong> ¹®ÀÚ¿¡ ºÎÇÕÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">[^/]*</span>´Â Á¤»ç¼±ÀÌ <em>¾Æ´Ñ</em>¹®ÀÚ°¡ 0È¸ ÀÌ»ó ³ªÅ¸³ª¸é ºÎÇÕÇÕ´Ï´Ù. ¿¹¸¦ µé¾î <span class="subj">http:</span>//. ºñ½ÁÇÏ°Ô, <span class="regex">[^0-9xyz]</span>´Â ¼ýÀÚ°¡ ¾Æ´Ï°í ¼Ò¹®ÀÚ x, y, ¶Ç´Â z°¡ ¾Æ´Ï¸é ºÎÇÕÇÕ´Ï´Ù.</td>
+	  <td>ë¶€ë¥˜ì— <strong>ì—†ëŠ”</strong> ë¬¸ìžì— ë¶€í•©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">[^/]*</span>ëŠ” ì •ì‚¬ì„ ì´ <em>ì•„ë‹Œ</em>ë¬¸ìžê°€ 0íšŒ ì´ìƒ ë‚˜íƒ€ë‚˜ë©´ ë¶€í•©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ <span class="subj">http:</span>//. ë¹„ìŠ·í•˜ê²Œ, <span class="regex">[^0-9xyz]</span>ëŠ” ìˆ«ìžê°€ ì•„ë‹ˆê³  ì†Œë¬¸ìž x, y, ë˜ëŠ” zê°€ ì•„ë‹ˆë©´ ë¶€í•©í•©ë‹ˆë‹¤.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>\d</strong></td>
-	  <td>¼ýÀÚ ÇÏ³ª¿¡ ºÎÇÕÇÕ´Ï´Ù (¹®ÀÚ ºÎ·ù <span class="regex">[0-9]</span>¿Í µ¿µîÇÕ´Ï´Ù). ¿ªÀ¸·Î, ´ë¹®ÀÚ \D´Â &quot;¼ýÀÚ°¡ <em>¾Æ´Ñ</em>-¹®ÀÚ ÇÏ³ª&quot;¿¡ ºÎÇÕÇÕ´Ï´Ù. ÀÌ°Í°ú ¾Æ·¡ÀÇ µÎ °³´Â  <a href="#set">ºÎ·ù</a> ¾È¿¡ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù; ¿¹¸¦ µé¾î, <span class="regex">[\d.-]</span>´Â &quot;¼ýÀÚ, ¸¶Ä§Ç¥, ¶Ç´Â »¬¼À ±âÈ£&quot;¸¦ ¶æÇÕ´Ï´Ù.</td>
+	  <td>ìˆ«ìž í•˜ë‚˜ì— ë¶€í•©í•©ë‹ˆë‹¤ (ë¬¸ìž ë¶€ë¥˜ <span class="regex">[0-9]</span>ì™€ ë™ë“±í•©ë‹ˆë‹¤). ì—­ìœ¼ë¡œ, ëŒ€ë¬¸ìž \DëŠ” &quot;ìˆ«ìžê°€ <em>ì•„ë‹Œ</em>-ë¬¸ìž í•˜ë‚˜&quot;ì— ë¶€í•©í•©ë‹ˆë‹¤. ì´ê²ƒê³¼ ì•„ëž˜ì˜ ë‘ ê°œëŠ”  <a href="#set">ë¶€ë¥˜</a> ì•ˆì— ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤; ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">[\d.-]</span>ëŠ” &quot;ìˆ«ìž, ë§ˆì¹¨í‘œ, ë˜ëŠ” ëº„ì…ˆ ê¸°í˜¸&quot;ë¥¼ ëœ»í•©ë‹ˆë‹¤.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>\s</strong></td>
-	  <td>°ø¹é ¹®ÀÚ¿¡ ºÎÇÕÇÕ´Ï´Ù. ÁÖ·Î ½ºÆäÀÌ½º, ÅÇ, ±×¸®°í »õÁÙ¹®ÀÚ (`r ±×¸®°í `n)¿¡ ºÎÇÕÇÕ´Ï´Ù. ¹Ý´ë·Î, ´ë¹®ÀÚ \S´Â &quot;°ø¹é ¹®ÀÚ°¡ <em>¾Æ´Ñ</em>-¹®ÀÚ&quot;¸¦ ¶æÇÕ´Ï´Ù.</td>
+	  <td>ê³µë°± ë¬¸ìžì— ë¶€í•©í•©ë‹ˆë‹¤. ì£¼ë¡œ ìŠ¤íŽ˜ì´ìŠ¤, íƒ­, ê·¸ë¦¬ê³  ìƒˆì¤„ë¬¸ìž (`r ê·¸ë¦¬ê³  `n)ì— ë¶€í•©í•©ë‹ˆë‹¤. ë°˜ëŒ€ë¡œ, ëŒ€ë¬¸ìž \SëŠ” &quot;ê³µë°± ë¬¸ìžê°€ <em>ì•„ë‹Œ</em>-ë¬¸ìž&quot;ë¥¼ ëœ»í•©ë‹ˆë‹¤.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>\w</strong></td>
-	  <td><a name="word"></a>&quot;´Ü¾î&quot; ¹®ÀÚ¿¡ ºÎÇÕÇÕ´Ï´Ù. Áï ¾ËÆÄºª¼ýÀÚ³ª ¹ØÁÙ¹®ÀÚ¿¡ ºÎÇÕÇÕ´Ï´Ù. ÀÌ°ÍÀº ¹®ÀÚºÎ·ù <span class="regex">[a-zA-Z0-9_]</span>¿Í µ¿µîÇÕ´Ï´Ù. ¿ªÀ¸·Î, ´ë¹®ÀÚ \W´Â &quot;´Ü¾î ¹®ÀÚ°¡ <em>¾Æ´Ñ</em>-¹®ÀÚ&quot;¸¦ ¶æÇÕ´Ï´Ù.</td>
+	  <td><a name="word"></a>&quot;ë‹¨ì–´&quot; ë¬¸ìžì— ë¶€í•©í•©ë‹ˆë‹¤. ì¦‰ ì•ŒíŒŒë²³ìˆ«ìžë‚˜ ë°‘ì¤„ë¬¸ìžì— ë¶€í•©í•©ë‹ˆë‹¤. ì´ê²ƒì€ ë¬¸ìžë¶€ë¥˜ <span class="regex">[a-zA-Z0-9_]</span>ì™€ ë™ë“±í•©ë‹ˆë‹¤. ì—­ìœ¼ë¡œ, ëŒ€ë¬¸ìž \WëŠ” &quot;ë‹¨ì–´ ë¬¸ìžê°€ <em>ì•„ë‹Œ</em>-ë¬¸ìž&quot;ë¥¼ ëœ»í•©ë‹ˆë‹¤.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>^<br>
         $</strong></td>
-	  <td><p><a name="anchor" id="anchor"></a>À­²©¼è (^)¿Í ´Þ·¯ »çÀÎ($)Àº <em>´é(anchors)</em>¶ó°í ºÎ¸¨´Ï´Ù. ¿Ö³ÄÇÏ¸é ¹®ÀÚ¸¦ ¼ÒºñÇÏÁö ¾Ê±â ¶§¹®ÀÔ´Ï´Ù; ´ë½Å¿¡, ÆÐÅÏÀ» °Ë»öµÉ ¹®ÀÚ¿­ÀÇ ¼±µÎ ¶Ç´Â ÈÄ¹Ì¿¡ °íÁ¤ÇÕ´Ï´Ù.</p>
-	    <p><span class="regex">^</span>´Â ÆÐÅÏÀÇ ¼±µÎ¿¡ ³ªÅ¸³ª¸é ºÎÇÕÀÌ ÇÑ ÁÙÀÇ ¸Ç ¾Õ¿¡¼­ ÀÏ¾î³ª¾ß ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">^abc</span>´Â <span class="subj">abc</span>123¿¡´Â ºÎÇÕÇÏÁö¸¸ 123abc¿¡´Â ºÎÇÕÇÏÁö ¾Ê½À´Ï´Ù.</p>
-	    <p><span class="regex">$</span>°¡ ÆÐÅÏÀÇ ÈÄ¹Ì¿¡ ³ªÅ¸³ª¸é ºÎÇÕÀÌ ÇÑ ÁÙÀÇ ¸Ç µÚ¿¡¼­ ÀÏ¾î³ª¾ß ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">abc$</span>´Â 123<span class="subj">abc</span>¿¡´Â ºÎÇÕÇÏÁö¸¸ abc123¿¡´Â ºÎÇÕÇÏÁö ¾Ê½À´Ï´Ù.</p>
-      <p>µÎ °³ÀÇ ´éÀ» Á¶ÇÕÇØ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">^abc$</span>´Â <span class="subj">abc</span>¿¡¸¸ ºÎÇÕÇÕ´Ï´Ù (Áï, ¾Õ µÚ¿¡ ¾Æ¹« ¹®ÀÚµµ ¾ø¾î¾ß ÇÕ´Ï´Ù).</p>
-      <p>°Ë»öµÉ ÅØ½ºÆ®¿¡ ¿©·¯ ÁÙÀÌ Æ÷ÇÔµÇ¾î ÀÖ´Ù¸é, <a href="#Multiline">&quot;m&quot; ¿É¼ÇÀ»</a> ¼ö´ÜÀ¸·Î ´éÀ» ÅØ½ºÆ® ÀüÃ¼°¡ ¾Æ´Ï¶ó °¢ ÁÙ¿¡ Àû¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">m)^abc$</span>´Â 123`r`n<span class="subj">abc</span>`r`n789¿¡ ºÎÇÕÇÕ´Ï´Ù. ±×·¯³ª &quot;m&quot; ¿É¼ÇÀÌ ¾ø´Ù¸é, ºÎÇÕÇÏÁö ¾Ê½À´Ï´Ù.</p></td>
+	  <td><p><a name="anchor" id="anchor"></a>ìœ—êº½ì‡  (^)ì™€ ë‹¬ëŸ¬ ì‚¬ì¸($)ì€ <em>ë‹»(anchors)</em>ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ë¬¸ìžë¥¼ ì†Œë¹„í•˜ì§€ ì•Šê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤; ëŒ€ì‹ ì—, íŒ¨í„´ì„ ê²€ìƒ‰ë  ë¬¸ìžì—´ì˜ ì„ ë‘ ë˜ëŠ” í›„ë¯¸ì— ê³ ì •í•©ë‹ˆë‹¤.</p>
+	    <p><span class="regex">^</span>ëŠ” íŒ¨í„´ì˜ ì„ ë‘ì— ë‚˜íƒ€ë‚˜ë©´ ë¶€í•©ì´ í•œ ì¤„ì˜ ë§¨ ì•žì—ì„œ ì¼ì–´ë‚˜ì•¼ í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">^abc</span>ëŠ” <span class="subj">abc</span>123ì—ëŠ” ë¶€í•©í•˜ì§€ë§Œ 123abcì—ëŠ” ë¶€í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
+	    <p><span class="regex">$</span>ê°€ íŒ¨í„´ì˜ í›„ë¯¸ì— ë‚˜íƒ€ë‚˜ë©´ ë¶€í•©ì´ í•œ ì¤„ì˜ ë§¨ ë’¤ì—ì„œ ì¼ì–´ë‚˜ì•¼ í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">abc$</span>ëŠ” 123<span class="subj">abc</span>ì—ëŠ” ë¶€í•©í•˜ì§€ë§Œ abc123ì—ëŠ” ë¶€í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
+      <p>ë‘ ê°œì˜ ë‹»ì„ ì¡°í•©í•´ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">^abc$</span>ëŠ” <span class="subj">abc</span>ì—ë§Œ ë¶€í•©í•©ë‹ˆë‹¤ (ì¦‰, ì•ž ë’¤ì— ì•„ë¬´ ë¬¸ìžë„ ì—†ì–´ì•¼ í•©ë‹ˆë‹¤).</p>
+      <p>ê²€ìƒ‰ë  í…ìŠ¤íŠ¸ì— ì—¬ëŸ¬ ì¤„ì´ í¬í•¨ë˜ì–´ ìžˆë‹¤ë©´, <a href="#Multiline">&quot;m&quot; ì˜µì…˜ì„</a> ìˆ˜ë‹¨ìœ¼ë¡œ ë‹»ì„ í…ìŠ¤íŠ¸ ì „ì²´ê°€ ì•„ë‹ˆë¼ ê° ì¤„ì— ì ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">m)^abc$</span>ëŠ” 123`r`n<span class="subj">abc</span>`r`n789ì— ë¶€í•©í•©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ &quot;m&quot; ì˜µì…˜ì´ ì—†ë‹¤ë©´, ë¶€í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p></td>
   </tr>
 	<tr>
 	  <td align="center"><strong>\b</strong></td>
-	  <td>\b´Â &quot;´Ü¾î °æ°è&quot;¸¦ ¶æÇÏ´Âµ¥, ¹®ÀÚ¸¦ ¼ÒºñÇÏÁö ¾Ê±â ¶§¹®¿¡ ´é°ú ºñ½ÁÇÕ´Ï´Ù. ÇöÀç ¹®ÀÚÀÇ »óÅÂ°¡ <a href="#word">´Ü¾î ¹®ÀÚ(\w)</a>ÀÇ ¹Ý´ë°¡ µÇ±â¸¦ ¿ä±¸ÇÕ´Ï´Ù. ÀüÇüÀûÀ¸·Î ´Ù¸¥ ´Ü¾î ¾È¿¡ ³ªÅ¸³ª´Â ´Ü¾î¿¡ ¿ì¹ßÀûÀ¸·Î ºÎÇÕÇÏ´Â °ÍÀ» ÇÇÇÏ±â À§ÇØ »ç¿ëµË´Ï´Ù. 
-	  ¿¹¸¦ µé¾î, <span class="regex">\bcat\b</span>´Â catfish¿¡ ºÎÇÕÇÏÁö ¾ÊÁö¸¸, <span class="subj">cat</span>¿¡´Â ±× µÑ·¹¿¡ ±¸µÎÁ¡ ±âÈ£°¡ ÀÖµç °ø¹é¹®ÀÚ°¡ ÀÖµç »ó°ü¾øÀÌ ºÎÇÕÇÕ´Ï´Ù. ´ë¹®ÀÚ \B´Â ±× ¹Ý´ëÀÔ´Ï´Ù: ÇöÀç ¹®ÀÚ°¡ ´Ü¾î °æ°è¿¡ <em>ÀÖÁö ¾Ê±â¸¦</em> ¿ä±¸ÇÕ´Ï´Ù.</td>
+	  <td>\bëŠ” &quot;ë‹¨ì–´ ê²½ê³„&quot;ë¥¼ ëœ»í•˜ëŠ”ë°, ë¬¸ìžë¥¼ ì†Œë¹„í•˜ì§€ ì•Šê¸° ë•Œë¬¸ì— ë‹»ê³¼ ë¹„ìŠ·í•©ë‹ˆë‹¤. í˜„ìž¬ ë¬¸ìžì˜ ìƒíƒœê°€ <a href="#word">ë‹¨ì–´ ë¬¸ìž(\w)</a>ì˜ ë°˜ëŒ€ê°€ ë˜ê¸°ë¥¼ ìš”êµ¬í•©ë‹ˆë‹¤. ì „í˜•ì ìœ¼ë¡œ ë‹¤ë¥¸ ë‹¨ì–´ ì•ˆì— ë‚˜íƒ€ë‚˜ëŠ” ë‹¨ì–´ì— ìš°ë°œì ìœ¼ë¡œ ë¶€í•©í•˜ëŠ” ê²ƒì„ í”¼í•˜ê¸° ìœ„í•´ ì‚¬ìš©ë©ë‹ˆë‹¤. 
+	  ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">\bcat\b</span>ëŠ” catfishì— ë¶€í•©í•˜ì§€ ì•Šì§€ë§Œ, <span class="subj">cat</span>ì—ëŠ” ê·¸ ë‘˜ë ˆì— êµ¬ë‘ì  ê¸°í˜¸ê°€ ìžˆë“  ê³µë°±ë¬¸ìžê°€ ìžˆë“  ìƒê´€ì—†ì´ ë¶€í•©í•©ë‹ˆë‹¤. ëŒ€ë¬¸ìž \BëŠ” ê·¸ ë°˜ëŒ€ìž…ë‹ˆë‹¤: í˜„ìž¬ ë¬¸ìžê°€ ë‹¨ì–´ ê²½ê³„ì— <em>ìžˆì§€ ì•Šê¸°ë¥¼</em> ìš”êµ¬í•©ë‹ˆë‹¤.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>|</strong></td>
-	  <td>¼öÁ÷ ¸·´ë´Â µÎ °³ ÀÌ»óÀÇ ´ë¾ÈÀ» °¡¸¨´Ï´Ù. ´ë¾È Áß <em>¾î´À °Í</em>ÀÌ¶óµµ ¸¸Á·ÇÏ¸é ºÎÇÕÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">gray|grey</span>´Â <span class="subj">gray</span>¿Í <span class="subj">grey</span>¿¡ ¸ðµÎ ºÎÇÕÇÕ´Ï´Ù. ºñ½ÁÇÏ°Ô, ÆÐÅÏ <span class="regex">gr(a|e)y</span>´Â ¾Æ·¡¿¡ ±â¼úÇÑ ¹Ý°ýÈ£ÀÇ µµ¿òÀ¸·Î °°Àº ÀÏÀ» ÇÕ´Ï´Ù.</td>
+	  <td>ìˆ˜ì§ ë§‰ëŒ€ëŠ” ë‘ ê°œ ì´ìƒì˜ ëŒ€ì•ˆì„ ê°€ë¦…ë‹ˆë‹¤. ëŒ€ì•ˆ ì¤‘ <em>ì–´ëŠ ê²ƒ</em>ì´ë¼ë„ ë§Œì¡±í•˜ë©´ ë¶€í•©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">gray|grey</span>ëŠ” <span class="subj">gray</span>ì™€ <span class="subj">grey</span>ì— ëª¨ë‘ ë¶€í•©í•©ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, íŒ¨í„´ <span class="regex">gr(a|e)y</span>ëŠ” ì•„ëž˜ì— ê¸°ìˆ í•œ ë°˜ê´„í˜¸ì˜ ë„ì›€ìœ¼ë¡œ ê°™ì€ ì¼ì„ í•©ë‹ˆë‹¤.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>(...)</strong></td>
-	  <td><p><a name="subpat"></a>°ýÈ£·Î µÑ·¯½ÎÀÎ Ç×¸ñÀº ´ÙÀ½¿¡ ÁÖ·Î ¸¹ÀÌ »ç¿ëµË´Ï´Ù:</p>
+	  <td><p><a name="subpat"></a>ê´„í˜¸ë¡œ ë‘˜ëŸ¬ì‹¸ì¸ í•­ëª©ì€ ë‹¤ìŒì— ì£¼ë¡œ ë§Žì´ ì‚¬ìš©ë©ë‹ˆë‹¤:</p>
 	    <ul>
-	      <li>Æò°¡ÀÇ ¼ø¼­¸¦ °áÁ¤ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">(Sun|Mon|Tues|Wednes|Thurs|Fri|Satur)day</span>´Â ¿äÀÏ ÀÌ¸§¿¡ ºÎÇÕÇÕ´Ï´Ù.</li>
-	      <li><span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span>, ¶Ç´Â <span class="regex">{min,max}</span>¸¦ ¹®ÀÚ ÇÏ³ª°¡ ¾Æ´Ï¶ó <em>ÀÏ·ÃÀÇ</em> ¹®ÀÚ¿¡ Àû¿ëÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">(abc)+</span>´Â ¹®ÀÚ¿­ &quot;abc&quot;°¡ ÇÏ³ª ÀÌ»ó ³ªÅ¸³ª¸é ºÎÇÕÇÕ´Ï´Ù; ±×·¡¼­ <span class="subj">abcabc</span>123´Â ºÎÇÕÇÏÁö¸¸ ab123ÀÌ³ª bc123¿¡´Â ºÎÇÕÇÏÁö ¾Ê½À´Ï´Ù.</li>
-          <li><a name="capture"></a> <span class="regex">abc<span class="red">(.*)</span>xyz</span>¿¡¼­ Á¡-º°°ú °°ÀÌ ºÎÆÐÅÏÀ» ³ªÆ÷ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <a href="../commands/RegExMatch.htm">RegExMatch()</a>´Â °¢ ÆÐÅÏ¿¡ ºÎÇÕÇÏ´Â ºÎ¹®ÀÚ¿­À» ÀÚ½ÅÀÇ <a href="../commands/RegExMatch.htm#Array">Ãâ·Â ¹è¿­</a>¿¡ ÀúÀåÇÕ´Ï´Ù. ºñ½ÁÇÏ°Ô, <a href="../commands/RegExReplace.htm">RegExReplace()</a>´Â $1¿Í °°Àº <a href="../commands/RegExReplace.htm#BackRef">¿ªÂüÁ¶</a>¸¦ ÅëÇÏ¿©, °¢ ºÎÆÐÅÏ¿¡ ºÎÇÕÇÏ´Â ºÎ¹®ÀÚ¿­À» °á°ú¿¡ »ðÀÔÇÒ ¼ö ÀÖ½À´Ï´Ù. ºÎÆÐÅÏÀ» ³ªÆ÷ÇÏ´Â ºÎÀÛ¿ë ¾øÀÌ ¹Ý°ýÈ£¸¦ »ç¿ëÇÏ·Á¸é, <span class="regex">?:</span>¸¦ ¾ÕÂÊ µÎ °³ÀÇ ¹®ÀÚ·Î ÇÏ¿© °ýÈ£ ¾È¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À; ¿¹¸¦ µé¾î: <span class="regex">(<span class="red">?:</span>.*)</span></li>
-	      <li>¹Ù·Î¹Ù·Î <a href="#Options">¿É¼Ç</a>À» º¯°æÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">(?im)</span>´Â ÆÐÅÏÀÇ ³ª¸ÓÁö¿¡ ´ëÇÏ¿© (¶Ç´Â ºÎÆÐÅÏ ¾È¿¡¼­ ÀÏ¾î³ª¸é ºÎÆÐÅÏ¿¡) ´ë¼Ò¹®ÀÚ ±¸º°°ú ¿©·¯ ÁÙ ¿É¼ÇÀ» ÄÕ´Ï´Ù. ¿ªÀ¸·Î, <span class="regex">(?-im)</span>´Â ±× µÑÀ» ´Ù ²ü´Ï´Ù. DPS`r`n`a¸¦ Á¦¿ÜÇÏ°í ¸ðµç ¿É¼ÇÀ» Áö¿øÇÕ´Ï´Ù.</li>
+	      <li>í‰ê°€ì˜ ìˆœì„œë¥¼ ê²°ì •í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">(Sun|Mon|Tues|Wednes|Thurs|Fri|Satur)day</span>ëŠ” ìš”ì¼ ì´ë¦„ì— ë¶€í•©í•©ë‹ˆë‹¤.</li>
+	      <li><span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span>, ë˜ëŠ” <span class="regex">{min,max}</span>ë¥¼ ë¬¸ìž í•˜ë‚˜ê°€ ì•„ë‹ˆë¼ <em>ì¼ë ¨ì˜</em> ë¬¸ìžì— ì ìš©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">(abc)+</span>ëŠ” ë¬¸ìžì—´ &quot;abc&quot;ê°€ í•˜ë‚˜ ì´ìƒ ë‚˜íƒ€ë‚˜ë©´ ë¶€í•©í•©ë‹ˆë‹¤; ê·¸ëž˜ì„œ <span class="subj">abcabc</span>123ëŠ” ë¶€í•©í•˜ì§€ë§Œ ab123ì´ë‚˜ bc123ì—ëŠ” ë¶€í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</li>
+          <li><a name="capture"></a> <span class="regex">abc<span class="red">(.*)</span>xyz</span>ì—ì„œ ì -ë³„ê³¼ ê°™ì´ ë¶€íŒ¨í„´ì„ ë‚˜í¬í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <a href="../commands/RegExMatch.htm">RegExMatch()</a>ëŠ” ê° íŒ¨í„´ì— ë¶€í•©í•˜ëŠ” ë¶€ë¬¸ìžì—´ì„ ìžì‹ ì˜ <a href="../commands/RegExMatch.htm#Array">ì¶œë ¥ ë°°ì—´</a>ì— ì €ìž¥í•©ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, <a href="../commands/RegExReplace.htm">RegExReplace()</a>ëŠ” $1ì™€ ê°™ì€ <a href="../commands/RegExReplace.htm#BackRef">ì—­ì°¸ì¡°</a>ë¥¼ í†µí•˜ì—¬, ê° ë¶€íŒ¨í„´ì— ë¶€í•©í•˜ëŠ” ë¶€ë¬¸ìžì—´ì„ ê²°ê³¼ì— ì‚½ìž…í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë¶€íŒ¨í„´ì„ ë‚˜í¬í•˜ëŠ” ë¶€ìž‘ìš© ì—†ì´ ë°˜ê´„í˜¸ë¥¼ ì‚¬ìš©í•˜ë ¤ë©´, <span class="regex">?:</span>ë¥¼ ì•žìª½ ë‘ ê°œì˜ ë¬¸ìžë¡œ í•˜ì—¬ ê´„í˜¸ ì•ˆì— ì§€ì •í•˜ì‹­ì‹œì˜¤; ì˜ˆë¥¼ ë“¤ì–´: <span class="regex">(<span class="red">?:</span>.*)</span></li>
+	      <li>ë°”ë¡œë°”ë¡œ <a href="#Options">ì˜µì…˜</a>ì„ ë³€ê²½í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">(?im)</span>ëŠ” íŒ¨í„´ì˜ ë‚˜ë¨¸ì§€ì— ëŒ€í•˜ì—¬ (ë˜ëŠ” ë¶€íŒ¨í„´ ì•ˆì—ì„œ ì¼ì–´ë‚˜ë©´ ë¶€íŒ¨í„´ì—) ëŒ€ì†Œë¬¸ìž êµ¬ë³„ê³¼ ì—¬ëŸ¬ ì¤„ ì˜µì…˜ì„ ì¼­ë‹ˆë‹¤. ì—­ìœ¼ë¡œ, <span class="regex">(?-im)</span>ëŠ” ê·¸ ë‘˜ì„ ë‹¤ ë•ë‹ˆë‹¤. DPS`r`n`aë¥¼ ì œì™¸í•˜ê³  ëª¨ë“  ì˜µì…˜ì„ ì§€ì›í•©ë‹ˆë‹¤.</li>
 	    </ul></td>
   </tr>
 	<tr>
 	  <td align="center"><strong>\t<br>
   \r<br>
   etc.</strong></td>
-	  <td><p>ÀÌ ÇÇ½Å ¿¬¼Ó¿­Àº Æ¯¼ö ¹®ÀÚ¸¦ ÀÇ¹ÌÇÕ´Ï´Ù. °¡Àå ¸¹ÀÌ »ç¿ëµÇ´Â °ÍÀº <span class="regex">\t</span> (ÅÇ), <span class="regex">\r</span> (Ä³¸®Áö ¸®ÅÏ), ±×¸®°í <span class="regex">\n</span> (ÁÙ³Ñ±è)ÀÔ´Ï´Ù. ¿ÀÅäÇÖÅ°¿¡¼­ ¾×¼¾Æ® (`)´Â ¼±ÅÃÀûÀ¸·Î ÀÌ·± °æ¿ì ¿ª»ç¼± ´ë½Å »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. \xhh ÇüÅÂÀÇ ÇÇ½Å ¿¬¼Ó¿­µµ Áö¿øÇÕ´Ï´Ù. ¿©±â¿¡¼­ <em>hh</em>´Â 00ºÎÅÍ FF »çÀÌÀÇ  ANSI ¹®ÀÚÀÇ ½ÊÀ°Áø ÄÚµåÀÔ´Ï´Ù.</p>
-      <p>v1.0.46.06+¿¡¼­, <span class="regex">\R</span>´Â &quot;Á¾·ù¿¡ »ó°ü¾øÀÌ »õÁÙ ÇÏ³ª&quot;¸¦ ¶æÇÕ´Ï´Ù. Áï, <a href="#NEWLINE_ANY">`a ¿É¼Ç</a>¿¡ ³ª¿­µÇ¾î ÀÖ´Â ÁÙµéÀ» ¶æÇÕ´Ï´Ù (±×·¸Áö¸¸, <a href="#class">¹®ÀÚ ºÎ·ù</a> ¾È¿¡¼­ \RÀº ±×Àú ±âÈ£ &quot;R&quot;¿¡ ºÒ°úÇÕ´Ï´Ù). v1.0.47.05+¿¡¼­, <span class="regex">\R</span>¸¦ CR, LF, ±×¸®°í CRLF·Î Á¦ÇÑÇÒ ¼ö ÀÖ½À´Ï´Ù. (¿É¼Ç ¹Ù·Î µÚ) ÆÐÅÏÀÇ ¾Õ¿¡ ´ë¹®ÀÚ·Î (*BSR_ANYCRLF)¸¦ ÁöÁ¤ÇÏ¸é µË´Ï´Ù; ¿¹, <span class="regex">im)(*BSR_ANYCRLF)abc\Rxyz</span></p></td>
+	  <td><p>ì´ í”¼ì‹  ì—°ì†ì—´ì€ íŠ¹ìˆ˜ ë¬¸ìžë¥¼ ì˜ë¯¸í•©ë‹ˆë‹¤. ê°€ìž¥ ë§Žì´ ì‚¬ìš©ë˜ëŠ” ê²ƒì€ <span class="regex">\t</span> (íƒ­), <span class="regex">\r</span> (ìºë¦¬ì§€ ë¦¬í„´), ê·¸ë¦¬ê³  <span class="regex">\n</span> (ì¤„ë„˜ê¹€)ìž…ë‹ˆë‹¤. ì˜¤í† í•«í‚¤ì—ì„œ ì•¡ì„¼íŠ¸ (`)ëŠ” ì„ íƒì ìœ¼ë¡œ ì´ëŸ° ê²½ìš° ì—­ì‚¬ì„  ëŒ€ì‹  ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. \xhh í˜•íƒœì˜ í”¼ì‹  ì—°ì†ì—´ë„ ì§€ì›í•©ë‹ˆë‹¤. ì—¬ê¸°ì—ì„œ <em>hh</em>ëŠ” 00ë¶€í„° FF ì‚¬ì´ì˜  ANSI ë¬¸ìžì˜ ì‹­ìœ¡ì§„ ì½”ë“œìž…ë‹ˆë‹¤.</p>
+      <p>v1.0.46.06+ì—ì„œ, <span class="regex">\R</span>ëŠ” &quot;ì¢…ë¥˜ì— ìƒê´€ì—†ì´ ìƒˆì¤„ í•˜ë‚˜&quot;ë¥¼ ëœ»í•©ë‹ˆë‹¤. ì¦‰, <a href="#NEWLINE_ANY">`a ì˜µì…˜</a>ì— ë‚˜ì—´ë˜ì–´ ìžˆëŠ” ì¤„ë“¤ì„ ëœ»í•©ë‹ˆë‹¤ (ê·¸ë ‡ì§€ë§Œ, <a href="#class">ë¬¸ìž ë¶€ë¥˜</a> ì•ˆì—ì„œ \Rì€ ê·¸ì € ê¸°í˜¸ &quot;R&quot;ì— ë¶ˆê³¼í•©ë‹ˆë‹¤). v1.0.47.05+ì—ì„œ, <span class="regex">\R</span>ë¥¼ CR, LF, ê·¸ë¦¬ê³  CRLFë¡œ ì œí•œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. (ì˜µì…˜ ë°”ë¡œ ë’¤) íŒ¨í„´ì˜ ì•žì— ëŒ€ë¬¸ìžë¡œ (*BSR_ANYCRLF)ë¥¼ ì§€ì •í•˜ë©´ ë©ë‹ˆë‹¤; ì˜ˆ, <span class="regex">im)(*BSR_ANYCRLF)abc\Rxyz</span></p></td>
   </tr>
   <tr id="slashP">
     <td align="center"><strong>\p{xx}<br>\P{xx}<br>\X</strong></td>
-    <td><p><span class="ver">[AHK_L 61+]:</span> À¯´ÏÄÚµå ¹®ÀÚ Æ¯¼º. ANSI ºôµå´Â Áö¿øÇÏÁö ¾Ê½À´Ï´Ù. <span class="regex">\p{xx}</span>´Â xx Æ¯¼ºÀÌ ÀÖ´Â ¹®ÀÚ¿¡ ºÎÇÕÇÕ´Ï´Ù. ¹Ý¸é¿¡ <span class="regex">\P{xx}</span>´Â xx Æ¯¼ºÀÌ <i>¾ø´Â</i> ¹®ÀÚ¿¡ ºÎÇÕÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">\pL</span>´Â ¾î´À ±âÈ£¿¡³ª ºÎÇÕÇÏ°í <span class="regex">\p{Lu}</span>´Â ´ë¹®ÀÚ ±âÈ£ÀÌ¸é ºÎÇÕÇÕ´Ï´Ù. <span class="regex">\X</span>´Â È®Àå À¯´ÏÄÚµå ¿¬¼Ó¿­À» Çü¼ºÇÏ±â¸¸ ÇÏ¸é ¹®ÀÚÀÇ °³¼ö¿¡ »ó°ü¾øÀÌ ºÎÇÕÇÕ´Ï´Ù.</p>
-    <p>Áö¿øµÇ´Â Æ¯¼º ÀÌ¸§°ú ±âÅ¸ ÀÚ¼¼ÇÑ Á¤º¸¸¦ ´ãÀº ¿ÏÀüÇÑ ¸ñ·ÏÀº <a href="http://www.pcre.org/pcre.txt">www.pcre.org/pcre.txt</a>¿¡¼­ "\p{xx}"¸¦ °Ë»öÇØ º¸½Ê½Ã¿À.</p></td>
+    <td><p><span class="ver">[AHK_L 61+]:</span> ìœ ë‹ˆì½”ë“œ ë¬¸ìž íŠ¹ì„±. ANSI ë¹Œë“œëŠ” ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. <span class="regex">\p{xx}</span>ëŠ” xx íŠ¹ì„±ì´ ìžˆëŠ” ë¬¸ìžì— ë¶€í•©í•©ë‹ˆë‹¤. ë°˜ë©´ì— <span class="regex">\P{xx}</span>ëŠ” xx íŠ¹ì„±ì´ <i>ì—†ëŠ”</i> ë¬¸ìžì— ë¶€í•©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">\pL</span>ëŠ” ì–´ëŠ ê¸°í˜¸ì—ë‚˜ ë¶€í•©í•˜ê³  <span class="regex">\p{Lu}</span>ëŠ” ëŒ€ë¬¸ìž ê¸°í˜¸ì´ë©´ ë¶€í•©í•©ë‹ˆë‹¤. <span class="regex">\X</span>ëŠ” í™•ìž¥ ìœ ë‹ˆì½”ë“œ ì—°ì†ì—´ì„ í˜•ì„±í•˜ê¸°ë§Œ í•˜ë©´ ë¬¸ìžì˜ ê°œìˆ˜ì— ìƒê´€ì—†ì´ ë¶€í•©í•©ë‹ˆë‹¤.</p>
+    <p>ì§€ì›ë˜ëŠ” íŠ¹ì„± ì´ë¦„ê³¼ ê¸°íƒ€ ìžì„¸í•œ ì •ë³´ë¥¼ ë‹´ì€ ì™„ì „í•œ ëª©ë¡ì€ <a href="http://www.pcre.org/pcre.txt">www.pcre.org/pcre.txt</a>ì—ì„œ "\p{xx}"ë¥¼ ê²€ìƒ‰í•´ ë³´ì‹­ì‹œì˜¤.</p></td>
   </tr>
   <tr id="UCP">
     <td><strong>(*UCP)</strong></td>
-    <td><p><span class="ver">[AHK_L 61+]:</span> ¼öÇà¼º´ÉÀ» À§ÇØ, \d, \D, \s, \S, \w, \W, \b ±×¸®°í \B´Â ±âº»°ªÀ¸·Î ASCII ¹®ÀÚ¸¸ ÀÎÁöÇÕ´Ï´Ù. À¯´ÏÄÚµå ºôµåµµ ¸¶Âù°¡ÁöÀÔ´Ï´Ù. ÆÐÅÏÀÌ <span class="regex">(*UCP)</span>·Î ½ÃÀÛÇÏ¸é, À¯´ÏÄÚµå Æ¯¼ºÀ» »ç¿ëÇÏ¿© ¾î´À ¹®ÀÚ¿¡ ºÎÇÕÇÒÁö °áÁ¤ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, , \w´Â <span class="regex">[\p{L}\p{N}_]</span>¿Í µ¿µîÇØÁö°í \d´Â <span class="regex">\p{Nd}</span>¿Í µ¿µîÇØÁý´Ï´Ù.</p>
+    <td><p><span class="ver">[AHK_L 61+]:</span> ìˆ˜í–‰ì„±ëŠ¥ì„ ìœ„í•´, \d, \D, \s, \S, \w, \W, \b ê·¸ë¦¬ê³  \BëŠ” ê¸°ë³¸ê°’ìœ¼ë¡œ ASCII ë¬¸ìžë§Œ ì¸ì§€í•©ë‹ˆë‹¤. ìœ ë‹ˆì½”ë“œ ë¹Œë“œë„ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤. íŒ¨í„´ì´ <span class="regex">(*UCP)</span>ë¡œ ì‹œìž‘í•˜ë©´, ìœ ë‹ˆì½”ë“œ íŠ¹ì„±ì„ ì‚¬ìš©í•˜ì—¬ ì–´ëŠ ë¬¸ìžì— ë¶€í•©í• ì§€ ê²°ì •í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, , \wëŠ” <span class="regex">[\p{L}\p{N}_]</span>ì™€ ë™ë“±í•´ì§€ê³  \dëŠ” <span class="regex">\p{Nd}</span>ì™€ ë™ë“±í•´ì§‘ë‹ˆë‹¤.</p>
     </td>
   </tr>
 </table>
-<p><strong>Å½¿åÀû</strong>: ±âº»°ªÀÔ´Ï´Ù, <span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span>, ±×¸®°í <span class="regex">{min,max}</span>´Â Å½¿åÀûÀÔ´Ï´Ù. ¿Ö³ÄÇÏ¸é ¿©ÀüÈ÷ ÀüÃ¼ ÆÐÅÏÀ» ¸¸Á·½ÃÅ°±â¸¸ ÇÏ¸é <em>¸¶Áö¸·</em> °¡´ÉÇÑ ¹®ÀÚ±îÁö ¸ðµç ¹®ÀÚ¸¦ ¼ÒºñÇÏ±â ¶§¹®ÀÔ´Ï´Ù.
+<p><strong>íƒìš•ì </strong>: ê¸°ë³¸ê°’ìž…ë‹ˆë‹¤, <span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span>, ê·¸ë¦¬ê³  <span class="regex">{min,max}</span>ëŠ” íƒìš•ì ìž…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì—¬ì „ížˆ ì „ì²´ íŒ¨í„´ì„ ë§Œì¡±ì‹œí‚¤ê¸°ë§Œ í•˜ë©´ <em>ë§ˆì§€ë§‰</em> ê°€ëŠ¥í•œ ë¬¸ìžê¹Œì§€ ëª¨ë“  ë¬¸ìžë¥¼ ì†Œë¹„í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.
 
-´ë½Å¿¡ °¡´ÉÇÑ <em>Ã¹</em> ¹®ÀÚ¿¡ ¸ØÃß°Ô ÇÏ°í ½Í´Ù¸é, ´ÙÀ½¿¡ ¹°À½Ç¥¸¦ µ¡ºÙÀÌ½Ê½Ã¿À. ¿¹¸¦ µé¾î, (¹°À½Ç¥ ¾ø´Â) ÆÐÅÏ <span class="regex">&lt;.+&gt;</span>´Â ´ÙÀ½°ú °°Àº ¶æÀÔ´Ï´Ù: &quot;&lt;¸¦ Ã£°í, ´ÙÀ½¿¡ ÇÏ³ª ÀÌ»óÀÇ ¹®ÀÚµéÀÌ µû¶ó¿À°í, ´ÙÀ½¿¡ &gt;ÀÌ µû¶ó¿À´Â ¹®ÀÚ¿­À» Ã£¾Æ¶ó&quot;. ÀÌ ÆÐÅÏÀÌ <em>ÀüÃ¼</em> ¹®ÀÚ¿­ <span class="subj"><span class="red"><strong>&lt;</strong></span>em&gt;text&lt;/em<span class="red"><strong>&gt;</strong></span></span>¿¡ ºÎÇÕÇÏÁö ¸øÇÏµµ·Ï ¸·À¸·Á¸é, ¹°À½Ç¥¸¦ µ¡¼À ºÎÈ£ µÚ¿¡ Ãß°¡ÇÏ½Ê½Ã¿À: <span class="regex">&lt;.+<span class="red">?</span>&gt;</span>. ÀÌ·¸°Ô ÇÏ¸é ºÎÇÕÀÌ Ã¹ ¹øÂ° '&gt;'¿¡¼­ ¸ØÃß°í ±×¸®ÇÏ¿© Ã¹ ¹øÂ° ÅÂ±× <span class="subj"><span class="red"><strong>&lt;</strong></span>em<span class="red"><strong>&gt;</strong></span></span>¿¡¸¸ ºÎÇÕÇÕ´Ï´Ù.</p>
+ëŒ€ì‹ ì— ê°€ëŠ¥í•œ <em>ì²«</em> ë¬¸ìžì— ë©ˆì¶”ê²Œ í•˜ê³  ì‹¶ë‹¤ë©´, ë‹¤ìŒì— ë¬¼ìŒí‘œë¥¼ ë§ë¶™ì´ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, (ë¬¼ìŒí‘œ ì—†ëŠ”) íŒ¨í„´ <span class="regex">&lt;.+&gt;</span>ëŠ” ë‹¤ìŒê³¼ ê°™ì€ ëœ»ìž…ë‹ˆë‹¤: &quot;&lt;ë¥¼ ì°¾ê³ , ë‹¤ìŒì— í•˜ë‚˜ ì´ìƒì˜ ë¬¸ìžë“¤ì´ ë”°ë¼ì˜¤ê³ , ë‹¤ìŒì— &gt;ì´ ë”°ë¼ì˜¤ëŠ” ë¬¸ìžì—´ì„ ì°¾ì•„ë¼&quot;. ì´ íŒ¨í„´ì´ <em>ì „ì²´</em> ë¬¸ìžì—´ <span class="subj"><span class="red"><strong>&lt;</strong></span>em&gt;text&lt;/em<span class="red"><strong>&gt;</strong></span></span>ì— ë¶€í•©í•˜ì§€ ëª»í•˜ë„ë¡ ë§‰ìœ¼ë ¤ë©´, ë¬¼ìŒí‘œë¥¼ ë§ì…ˆ ë¶€í˜¸ ë’¤ì— ì¶”ê°€í•˜ì‹­ì‹œì˜¤: <span class="regex">&lt;.+<span class="red">?</span>&gt;</span>. ì´ë ‡ê²Œ í•˜ë©´ ë¶€í•©ì´ ì²« ë²ˆì§¸ '&gt;'ì—ì„œ ë©ˆì¶”ê³  ê·¸ë¦¬í•˜ì—¬ ì²« ë²ˆì§¸ íƒœê·¸ <span class="subj"><span class="red"><strong>&lt;</strong></span>em<span class="red"><strong>&gt;</strong></span></span>ì—ë§Œ ë¶€í•©í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>³»´Ù-º¸±â¿Í µ¹¾Æ-º¸±â Ç¥¸í</strong>: ±×·ì <span class="regex">(?=...)</span>, <span class="regex">(?!...)</span>, <span class="regex">(?&lt;=...)</span>, ±×¸®°í <span class="regex">(?&lt;!...)</span>´Â <em>Ç¥¸í(assertions)</em>ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. ¿Ö³ÄÇÏ¸é Á¶°ÇÀº ¸¸Á·ÇÏµµ·Ï ¿ä±¸ÇÏÁö¸¸ ¹®ÀÚ¸¦ ÀüÇô ¼ÒºñÇÏÁö ¾Ê±â ¶§¹®ÀÔ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">abc(?=.*xyz)</span> ´Â ³»´Ù-º¸±â Ç¥¸íÀÔ´Ï´Ù. ¹®ÀÚ¿­ xyz°¡ ¹®ÀÚ¿­ abcÀÇ ¿À¸¥ÂÊ ¾îµò°¡¿¡¼­ ³¡³ª±â¸¦ ¿ä±¸ÇÕ´Ï´Ù (±×·¸Áö ¾Ê´Ù¸é, ÀüÃ¼ ÆÐÅÏÀ» ºÎÇÕÇÑ °ÍÀ¸·Î °£ÁÖÇÏÁö ¾Ê½À´Ï´Ù). <span class="regex">(?=...)</span>´Â <em>±àÁ¤</em> ³»´Ù-º¸±â·Î ºÎ¸¨´Ï´Ù. ¿Ö³ÄÇÏ¸é ÁöÁ¤µÈ ÆÐÅÏÀÌ Á¸ÀçÇÏ±â¸¦ ¿ä±¸ÇÏ±â ¶§¹®ÀÔ´Ï´Ù. ¹Ý´ë·Î, <span class="regex">(?!...)</span>´Â <em>ºÎÁ¤</em> ³»´Ù-º¸±â ÀÔ´Ï´Ù. ¿Ö³ÄÇÏ¸é ÁöÁ¤ÇÑ ÆÐÅÏÀÌ Á¸ÀçÇÏÁö <em>¾Ê±â</em>¸¦ ¿ä±¸ÇÕ´Ï´Ù. ºñ½ÁÇÏ°Ô, <span class="regex">(?&lt;=...)</span>¿Í <span class="regex">(?&lt;!...)</span>´Â (°¢°¢) ±àÁ¤ ±×¸®°í ºÎÁ¤ <em>µ¹¾Æ-º¸±â</em>ÀÔ´Ï´Ù. ¿Ö³ÄÇÏ¸é ÇöÀç À§Ä¡¿¡¼­ ¿À¸¥ÂÊÀÌ ¾Æ´Ï¶ó <em>¿ÞÂÊÀ»</em> µ¹¾Æ º¸±â ¶§¹®ÀÔ´Ï´Ù. µ¹¾Æ-º¸±â´Â ³»´Ù-º¸±âº¸´Ù Á¦ÇÑÀÌ ´õ ¸¹½À´Ï´Ù. ¿Ö³ÄÇÏ¸é <span class="regex">*</span>, <span class="regex">?</span>, ±×¸®°í <span class="regex">+</span>¿Í °°Àº ´Ù¾çÇÑ Å©±âÀÇ ¼ö·®ÀÚ¸¦ Áö¿øÇÏÁö ¾Ê±â ¶§¹®ÀÔ´Ï´Ù. ÇÇ½Å ¿¬¼Ó¿­ \K´Â µ¹¾Æ-º¸±â Ç¥¸í°ú ºñ½ÁÇØ º¸ÀÔ´Ï´Ù. ¿Ö³ÄÇÏ¸é ÀÌÀü¿¡-ºÎÇÕµÈ ¹®ÀÚ¸¦ ÃÖÁ¾ ºÎÇÕ °á°ú¿¡¼­ »©¹ö¸®±â ¶§¹®ÀÔ´Ï´Ù. ¿¹¸¦ µé¾î, <span class="regex">foo\Kbar</span>´Â &quot;foobar&quot;¿¡ ºÎÇÕÇÏÁö¸¸ &quot;bar&quot;¿¡ ºÎÇÕÇß´Ù°í º¸°íÇÕ´Ï´Ù.</p>
-<p><strong>°ü·Ã Ç×¸ñ</strong>: Á¤±Ô Ç¥Çö½ÄÀº <a href="../commands/RegExMatch.htm">RegExMatch()</a>, <a href="../commands/RegExReplace.htm">RegExReplace()</a>, ±×¸®°í <a href="../commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>°¡ Áö¿øÇÕ´Ï´Ù.</p>
-<p><strong>¸¶Áö¸· ´çºÎ</strong>: ÀÌ ÆäÀÌÁö°¡ ¾ÆÁÖ »ç¿ëµÇ´Â RegEx Æ¯Â¡ÀÇ ´ëºÎºÐÀ» ´Ù·ç°í ÀÖÁö¸¸, ÀÌ ¸»°íµµ Á¶°ÇÀû ºÎºÐ ÆÐÅÏ °°ÀÌ, Å½ÇèÇØ º¼ ¸¸ÇÑ ¼ö ¸¹Àº Æ¯Â¡ÀÌ ÀÖ½À´Ï´Ù. ¿ÏÀüÇÑ PCRE ¸Å´º¾óÀº <a href="http://www.pcre.org/pcre.txt">www.pcre.org/pcre.txt</a>¿¡ ÀÖ½À´Ï´Ù.</p>
+<strong>ë‚´ë‹¤-ë³´ê¸°ì™€ ëŒì•„-ë³´ê¸° í‘œëª…</strong>: ê·¸ë£¹ <span class="regex">(?=...)</span>, <span class="regex">(?!...)</span>, <span class="regex">(?&lt;=...)</span>, ê·¸ë¦¬ê³  <span class="regex">(?&lt;!...)</span>ëŠ” <em>í‘œëª…(assertions)</em>ì´ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì¡°ê±´ì€ ë§Œì¡±í•˜ë„ë¡ ìš”êµ¬í•˜ì§€ë§Œ ë¬¸ìžë¥¼ ì „í˜€ ì†Œë¹„í•˜ì§€ ì•Šê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">abc(?=.*xyz)</span> ëŠ” ë‚´ë‹¤-ë³´ê¸° í‘œëª…ìž…ë‹ˆë‹¤. ë¬¸ìžì—´ xyzê°€ ë¬¸ìžì—´ abcì˜ ì˜¤ë¥¸ìª½ ì–´ë”˜ê°€ì—ì„œ ëë‚˜ê¸°ë¥¼ ìš”êµ¬í•©ë‹ˆë‹¤ (ê·¸ë ‡ì§€ ì•Šë‹¤ë©´, ì „ì²´ íŒ¨í„´ì„ ë¶€í•©í•œ ê²ƒìœ¼ë¡œ ê°„ì£¼í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤). <span class="regex">(?=...)</span>ëŠ” <em>ê¸ì •</em> ë‚´ë‹¤-ë³´ê¸°ë¡œ ë¶€ë¦…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì§€ì •ëœ íŒ¨í„´ì´ ì¡´ìž¬í•˜ê¸°ë¥¼ ìš”êµ¬í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ë°˜ëŒ€ë¡œ, <span class="regex">(?!...)</span>ëŠ” <em>ë¶€ì •</em> ë‚´ë‹¤-ë³´ê¸° ìž…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì§€ì •í•œ íŒ¨í„´ì´ ì¡´ìž¬í•˜ì§€ <em>ì•Šê¸°</em>ë¥¼ ìš”êµ¬í•©ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, <span class="regex">(?&lt;=...)</span>ì™€ <span class="regex">(?&lt;!...)</span>ëŠ” (ê°ê°) ê¸ì • ê·¸ë¦¬ê³  ë¶€ì • <em>ëŒì•„-ë³´ê¸°</em>ìž…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ í˜„ìž¬ ìœ„ì¹˜ì—ì„œ ì˜¤ë¥¸ìª½ì´ ì•„ë‹ˆë¼ <em>ì™¼ìª½ì„</em> ëŒì•„ ë³´ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ëŒì•„-ë³´ê¸°ëŠ” ë‚´ë‹¤-ë³´ê¸°ë³´ë‹¤ ì œí•œì´ ë” ë§ŽìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ <span class="regex">*</span>, <span class="regex">?</span>, ê·¸ë¦¬ê³  <span class="regex">+</span>ì™€ ê°™ì€ ë‹¤ì–‘í•œ í¬ê¸°ì˜ ìˆ˜ëŸ‰ìžë¥¼ ì§€ì›í•˜ì§€ ì•Šê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. í”¼ì‹  ì—°ì†ì—´ \KëŠ” ëŒì•„-ë³´ê¸° í‘œëª…ê³¼ ë¹„ìŠ·í•´ ë³´ìž…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì´ì „ì—-ë¶€í•©ëœ ë¬¸ìžë¥¼ ìµœì¢… ë¶€í•© ê²°ê³¼ì—ì„œ ë¹¼ë²„ë¦¬ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <span class="regex">foo\Kbar</span>ëŠ” &quot;foobar&quot;ì— ë¶€í•©í•˜ì§€ë§Œ &quot;bar&quot;ì— ë¶€í•©í–ˆë‹¤ê³  ë³´ê³ í•©ë‹ˆë‹¤.</p>
+<p><strong>ê´€ë ¨ í•­ëª©</strong>: ì •ê·œ í‘œí˜„ì‹ì€ <a href="../commands/RegExMatch.htm">RegExMatch()</a>, <a href="../commands/RegExReplace.htm">RegExReplace()</a>, ê·¸ë¦¬ê³  <a href="../commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>ê°€ ì§€ì›í•©ë‹ˆë‹¤.</p>
+<p><strong>ë§ˆì§€ë§‰ ë‹¹ë¶€</strong>: ì´ íŽ˜ì´ì§€ê°€ ì•„ì£¼ ì‚¬ìš©ë˜ëŠ” RegEx íŠ¹ì§•ì˜ ëŒ€ë¶€ë¶„ì„ ë‹¤ë£¨ê³  ìžˆì§€ë§Œ, ì´ ë§ê³ ë„ ì¡°ê±´ì  ë¶€ë¶„ íŒ¨í„´ ê°™ì´, íƒí—˜í•´ ë³¼ ë§Œí•œ ìˆ˜ ë§Žì€ íŠ¹ì§•ì´ ìžˆìŠµë‹ˆë‹¤. ì™„ì „í•œ PCRE ë§¤ë‰´ì–¼ì€ <a href="http://www.pcre.org/pcre.txt">www.pcre.org/pcre.txt</a>ì— ìžˆìŠµë‹ˆë‹¤.</p>
 <p>&nbsp;</p>
 </body>
 </html>

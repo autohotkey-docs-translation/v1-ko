@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Var := expression</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,38 +11,38 @@
 
 <h1>Var := expression</h1>
 
-<p>Ç¥Çö½ÄÀ» Æò°¡ÇØ ±× °á°ú¸¦ <a href="../Variables.htm">º¯¼ö</a>¿¡ ÀúÀåÇÕ´Ï´Ù.</p>
+<p>í‘œí˜„ì‹ì„ í‰ê°€í•´ ê·¸ ê²°ê³¼ë¥¼ <a href="../Variables.htm">ë³€ìˆ˜</a>ì— ì €ìž¥í•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">Var := expression</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Var</dt>
-  <dd><p><em>Ç¥Çö½Ä</em>ÀÇ °á°ú¸¦ ÀúÀåÇÒ <a href="../Variables.htm">º¯¼ö</a>ÀÇ ÀÌ¸§.</p></dd>
+  <dd><p><em>í‘œí˜„ì‹</em>ì˜ ê²°ê³¼ë¥¼ ì €ìž¥í•  <a href="../Variables.htm">ë³€ìˆ˜</a>ì˜ ì´ë¦„.</p></dd>
 
   <dt>Expression</dt>
-  <dd><p>ÀÚ¼¼ÇÑ °ÍÀº <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>°ú ¾Æ·¡ÀÇ ¿¹Á¦¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p></dd>
+  <dd><p>ìžì„¸í•œ ê²ƒì€ <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ê³¼ ì•„ëž˜ì˜ ì˜ˆì œë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
-<p> := ¿¬»êÀÚ´Â ´ÙÀ½°ú °°ÀÌ °£´ÜÇÑ °æ¿ì¿¡  = ¿¬»êÀÚÃ³·³ ¶È°°ÀÌ ºü¸£°Ô ¼öÇàµÇµµ·Ï ÃÖÀûÈ­ µË´Ï´Ù:</p>
-<pre>x := y  <em>; ¼öÇà¼º´ÉÀº x = %y%¿Í °°À½</em>
-x := 5  <em>; ¼öÇà¼º´ÉÀº x = 5¿Í °°À½.</em>
-x := &quot;literal string&quot;  <em>; ¼öÇà¼ºÀº x = literal string°ú °°À½.</em></pre>
+<h3>ë…¼í‰</h3>
+<p> := ì—°ì‚°ìžëŠ” ë‹¤ìŒê³¼ ê°™ì´ ê°„ë‹¨í•œ ê²½ìš°ì—  = ì—°ì‚°ìžì²˜ëŸ¼ ë˜‘ê°™ì´ ë¹ ë¥´ê²Œ ìˆ˜í–‰ë˜ë„ë¡ ìµœì í™” ë©ë‹ˆë‹¤:</p>
+<pre>x := y  <em>; ìˆ˜í–‰ì„±ëŠ¥ì€ x = %y%ì™€ ê°™ìŒ</em>
+x := 5  <em>; ìˆ˜í–‰ì„±ëŠ¥ì€ x = 5ì™€ ê°™ìŒ.</em>
+x := &quot;literal string&quot;  <em>; ìˆ˜í–‰ì„±ì€ x = literal stringê³¼ ê°™ìŒ.</em></pre>
 <p>
-´Ü¾î <code>true</code>¿Í <code>false</code>´Â ³»Àå »ó¼ö·Î¼­ °¢°¢ 1°ú 0À» ´ã°í ÀÖ½À´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ½ºÅ©¸³Æ®¸¦ ´õ ÀÐ±â ½±°Ô ¸¸µé ¼ö ÀÖ½À´Ï´Ù:</p>
+ë‹¨ì–´ <code>true</code>ì™€ <code>false</code>ëŠ” ë‚´ìž¥ ìƒìˆ˜ë¡œì„œ ê°ê° 1ê³¼ 0ì„ ë‹´ê³  ìžˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë” ì½ê¸° ì‰½ê²Œ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 
 <pre>CaseSensitive := false
 ContinueSearch := true</pre>
 <p>
-ÀÌ ¸í·É¾î¿Í ±×¸®°í <em>OuputVar</em>¸¦ ¹Þ´Â ´Ù¸¥ ¸í·É¾î·Î <a href="../misc/Arrays.htm#pseudo">ÀÇ»ç-¹è¿­</a>À» ¸¸µé ¼ö ÀÖ½À´Ï´Ù. <em>OutputVar</em>¿¡ ¶Ç´Ù¸¥ º¯¼ö¸¦ °¡¸®Å°´Â ÂüÁ¶¸¦ ´ãµµ·Ï ¸¸µé¸é µË´Ï´Ù. ¿¹, <code>Array%i% := Var/100 + 5</code>. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="../misc/Arrays.htm">¹è¿­</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ì´ ëª…ë ¹ì–´ì™€ ê·¸ë¦¬ê³  <em>OuputVar</em>ë¥¼ ë°›ëŠ” ë‹¤ë¥¸ ëª…ë ¹ì–´ë¡œ <a href="../misc/Arrays.htm#pseudo">ì˜ì‚¬-ë°°ì—´</a>ì„ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <em>OutputVar</em>ì— ë˜ë‹¤ë¥¸ ë³€ìˆ˜ë¥¼ ê°€ë¦¬í‚¤ëŠ” ì°¸ì¡°ë¥¼ ë‹´ë„ë¡ ë§Œë“¤ë©´ ë©ë‹ˆë‹¤. ì˜ˆ, <code>Array%i% := Var/100 + 5</code>. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="../misc/Arrays.htm">ë°°ì—´</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
-<a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>, <a href="IfExpression.htm">IF (Ç¥Çö½Ä)</a>, <a href="../Functions.htm">Functions</a>, <a href="SetEnv.htm">SetEnv</a>, <a href="EnvSet.htm">EnvSet</a>, <a href="EnvAdd.htm">EnvAdd</a>, <a href="EnvSub.htm">EnvSub</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="IfEqual.htm">If</a>, <a href="../misc/Arrays.htm">¹è¿­</a></p>
+<a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>, <a href="IfExpression.htm">IF (í‘œí˜„ì‹)</a>, <a href="../Functions.htm">Functions</a>, <a href="SetEnv.htm">SetEnv</a>, <a href="EnvSet.htm">EnvSet</a>, <a href="EnvAdd.htm">EnvAdd</a>, <a href="EnvSub.htm">EnvSub</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="IfEqual.htm">If</a>, <a href="../misc/Arrays.htm">ë°°ì—´</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">Var := 3
 Var := &quot;literal string&quot;
 Var := Price * (1 - Discount/100)

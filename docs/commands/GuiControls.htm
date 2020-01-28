@@ -1,18 +1,17 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>GUI Control Types</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1><a href="Gui.htm">GUI</a> ÄÜÆ®·Ñ À¯Çü</h1>
+<h1><a href="Gui.htm">GUI</a> ì½˜íŠ¸ë¡¤ ìœ í˜•</h1>
 
-<h2>¸ñÂ÷</h2>
+<h2>ëª©ì°¨</h2>
 <ul>
   <li><a href="#Text">Text</a>, <a href="#Edit">Edit</a>, <a href="#UpDown">UpDown</a>, <a href="#Picture">Picture</a></li>
   <li><a href="#Button">Button</a>, <a href="#Checkbox">Checkbox</a>, <a href="#Radio">Radio</a></li>
@@ -27,21 +26,21 @@
 
 <h2 id="Text">Text</h2>
 <p>
-¼³¸í: Å×µÎ¸® ¾ø´Â ÅØ½ºÆ®¸¦ Æ÷ÇÔÇÑ ±¸¿ª. »ç¿ëÀÚ°¡ ÆíÁýÇÒ ¼ö ¾ø½À´Ï´Ù. Á¾Á¾ ´Ù¸¥ ÄÜÆ®·Ñ¿¡ ¶óº§ ¿ëµµ·Î »ç¿ëµË´Ï´Ù. ¿¹Á¦:</p>
-<pre>Gui, Add, Text,, ÀÌ¸§À» ÀÔ·ÂÇÏ½Ê½Ã¿À:</pre>
+ì„¤ëª…: í…Œë‘ë¦¬ ì—†ëŠ” í…ìŠ¤íŠ¸ë¥¼ í¬í•¨í•œ êµ¬ì—­. ì‚¬ìš©ìžê°€ íŽ¸ì§‘í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ì¢…ì¢… ë‹¤ë¥¸ ì½˜íŠ¸ë¡¤ì— ë¼ë²¨ ìš©ë„ë¡œ ì‚¬ìš©ë©ë‹ˆë‹¤. ì˜ˆì œ:</p>
+<pre>Gui, Add, Text,, ì´ë¦„ì„ ìž…ë ¥í•˜ì‹­ì‹œì˜¤:</pre>
 <p>
-ÀÌ °æ¿ì, °¡Àå ¸¶Áö¸· ¸Å°³º¯¼ö´Â º¸¿©ÁÙ ¹®ÀÚ¿­ÀÔ´Ï´Ù. ¶óÀÎÇÇµå(`n)¸¦ Æ÷ÇÔÇØ »õ ÁÙÀ» ½ÃÀÛÇÒ ¼ö ÀÖ½À´Ï´Ù. °Ô´Ù°¡, <a href="../Scripts.htm#continuation">°è¼Ó ¼½¼Ç</a>À» ¼ö´ÜÀ¸·Î ÇÏ¿© ÇÏ³ªÀÇ ±â´Ù¶õ ÁÙÀ» ¿©·¯ °³ÀÇ ÂªÀº ÁÙ·Î ³ª´­ ¼ö ÀÖ½À´Ï´Ù.</p>
+ì´ ê²½ìš°, ê°€ìž¥ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” ë³´ì—¬ì¤„ ë¬¸ìžì—´ìž…ë‹ˆë‹¤. ë¼ì¸í”¼ë“œ(`n)ë¥¼ í¬í•¨í•´ ìƒˆ ì¤„ì„ ì‹œìž‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, <a href="../Scripts.htm#continuation">ê³„ì† ì„¹ì…˜</a>ì„ ìˆ˜ë‹¨ìœ¼ë¡œ í•˜ì—¬ í•˜ë‚˜ì˜ ê¸°ë‹¤ëž€ ì¤„ì„ ì—¬ëŸ¬ ê°œì˜ ì§§ì€ ì¤„ë¡œ ë‚˜ëˆŒ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-³Êºñ (W)°¡ <em>Options</em>¿¡ ÁöÁ¤µÇ¾úÁö¸¸ <a href="Gui.htm#R">Çà (R)</a>ÀÌ³ª ³ôÀÌ (H)°¡ ÁöÁ¤µÇÁö ¾Ê¾Ò´Ù¸é, ÅØ½ºÆ®´Â ÇÊ¿äÇÏ¸é ¿öµå·¦ÀÌ µð°í, ÄÜÆ®·ÑÀÇ ³ôÀÌ´Â ÀÚµ¿À¸·Î ¼³Á¤µË´Ï´Ù.</p>
+ë„ˆë¹„ (W)ê°€ <em>Options</em>ì— ì§€ì •ë˜ì—ˆì§€ë§Œ <a href="Gui.htm#R">í–‰ (R)</a>ì´ë‚˜ ë†’ì´ (H)ê°€ ì§€ì •ë˜ì§€ ì•Šì•˜ë‹¤ë©´, í…ìŠ¤íŠ¸ëŠ” í•„ìš”í•˜ë©´ ì›Œë“œëž©ì´ ë””ê³ , ì½˜íŠ¸ë¡¤ì˜ ë†’ì´ëŠ” ìžë™ìœ¼ë¡œ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 <p>
-ÄÜÆ®·ÑÀÇ ³»¿ëÀº Gui ¸í·É¾îÀÇ ¸¶Áö¸· ¸Å°³º¯¼ö¿¡ ÀÖÀ¸¹Ç·Î, ±âÈ£ ±×´ë·ÎÀÇ ½°Ç¥´Â ÇÇ½Å½ÃÅ³ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù. ÀÌ ±ÔÄ¢Àº ´Ù¸¥ ¸ðµç ¸í·É¾îÀÇ ¸¶Áö¸· ¸Å°³º¯¼ö¿¡µµ Àû¿ëµË´Ï´Ù.</p>
+ì½˜íŠ¸ë¡¤ì˜ ë‚´ìš©ì€ Gui ëª…ë ¹ì–´ì˜ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì— ìžˆìœ¼ë¯€ë¡œ, ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ ì‰¼í‘œëŠ” í”¼ì‹ ì‹œí‚¬ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤. ì´ ê·œì¹™ì€ ë‹¤ë¥¸ ëª¨ë“  ëª…ë ¹ì–´ì˜ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì—ë„ ì ìš©ë©ë‹ˆë‹¤.</p>
 <p>
-<code><strong>g</strong>MySubroutine</code>°ú °°Àº <a href="Gui.htm#label">g-label</a>Àº ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é »ç¿ëÀÚ°¡ ÅØ½ºÆ®¸¦ Å¬¸¯ÇÒ ¶§¸¶´Ù <em>MySubroutine</em> ¶óº§ÀÌ ÀÚµ¿À¸·Î ±âµ¿ÇÕ´Ï´Ù. ÀÌ°ÍÀ» »ç¿ëÇÏ¸é ´ÙÀ½ ¿¹Á¦ ½ºÅ©¸³Æ®¿Í °°ÀÌ Çª¸¥»ö ¹ØÁÙ ÇÏÀÌÆÛ¸µÅ©¸¦ Èä³»³¾ ¼ö ÀÖ½À´Ï´Ù:</p>
+<code><strong>g</strong>MySubroutine</code>ê³¼ ê°™ì€ <a href="Gui.htm#label">g-label</a>ì€ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ì‚¬ìš©ìžê°€ í…ìŠ¤íŠ¸ë¥¼ í´ë¦­í•  ë•Œë§ˆë‹¤ <em>MySubroutine</em> ë¼ë²¨ì´ ìžë™ìœ¼ë¡œ ê¸°ë™í•©ë‹ˆë‹¤. ì´ê²ƒì„ ì‚¬ìš©í•˜ë©´ ë‹¤ìŒ ì˜ˆì œ ìŠ¤í¬ë¦½íŠ¸ì™€ ê°™ì´ í‘¸ë¥¸ìƒ‰ ë°‘ì¤„ í•˜ì´í¼ë§í¬ë¥¼ í‰ë‚´ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 <pre>Gui, Font, underline
-Gui, Add, Text, cBlue gLaunchGoogle, ±¸±ÛÀ» ±âµ¿ÇÏ·Á¸é ¿©±â¸¦ Å¬¸¯ÇÏ½Ê½Ã¿À.
+Gui, Add, Text, cBlue gLaunchGoogle, êµ¬ê¸€ì„ ê¸°ë™í•˜ë ¤ë©´ ì—¬ê¸°ë¥¼ í´ë¦­í•˜ì‹­ì‹œì˜¤.
 
-<em>; ´ë¾ÈÀ¸·Î, Link ÄÜÆ®·ÑÀ» »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù:</em>
-Gui, Add, Link,, ±¸±ÛÀ» ±âµ¿ÇÏ·Á¸é &lt;a href="www.google.com"&gt;¿©±â¸¦&lt;/a&gt; Å¬¸¯ÇÏ½Ê½Ã¿À.
+<em>; ëŒ€ì•ˆìœ¼ë¡œ, Link ì½˜íŠ¸ë¡¤ì„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</em>
+Gui, Add, Link,, êµ¬ê¸€ì„ ê¸°ë™í•˜ë ¤ë©´ &lt;a href="www.google.com"&gt;ì—¬ê¸°ë¥¼&lt;/a&gt; í´ë¦­í•˜ì‹­ì‹œì˜¤.
 Gui, Font, norm
 Gui, Show
 return
@@ -50,589 +49,589 @@ LaunchGoogle:
 Run www.google.com
 return</pre>
 <p>
-´õºí Å¬¸¯Àº <a href="../Variables.htm#GuiEvent">A_GuiEvent</a>¿¡ ´Ü¾î DoubleClickÀÌ µé¾î ÀÖ´ÂÁö Á¡°ËÇÏ¿© Å½ÁöÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ë”ë¸” í´ë¦­ì€ <a href="../Variables.htm#GuiEvent">A_GuiEvent</a>ì— ë‹¨ì–´ DoubleClickì´ ë“¤ì–´ ìžˆëŠ”ì§€ ì ê²€í•˜ì—¬ íƒì§€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-¾ÚÆÛ¼¾µå (&amp;)¸¦ ÅØ½ºÆ®¿¡ »ç¿ëÇÏ¸é ¹®ÀÚ Áß ÇÏ³ª¿¡ ¹ØÁÙÀ» ±×À» ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì•°í¼ì„¼ë“œ (&amp;)ë¥¼ í…ìŠ¤íŠ¸ì— ì‚¬ìš©í•˜ë©´ ë¬¸ìž ì¤‘ í•˜ë‚˜ì— ë°‘ì¤„ì„ ê·¸ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre>Gui, Add, Text,, &amp;First Name:
 Gui, Add, Edit</pre>
 <p>
-À§ÀÇ ¿¹Á¦¿¡¼­, ±âÈ£ F´Â ¹ØÁÙÀÌ ±×¾îÁý´Ï´Ù. »ç¿ëÀÚ´Â <a href="Gui.htm#ShortcutKey">´ÜÃàÅ°</a> Alt+F¸¦ ´­·¯ ÅØ½ºÆ® ÄÜÆ®·Ñ ´ÙÀ½¿¡ Ãß°¡µÈ Ã¹ ¹øÂ° ÀÔ·Â °¡´É ÄÜÆ®·Ñ¿¡ Å°º¸µå ÃÊÁ¡À» ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù. 
-´ë½Å¿¡ ±âÈ£ ±×´ë·Î ¾ÚÆÛ¼¾µå¸¦ º¸¿©ÁÖ·Á¸é, µÎ °³ÀÇ ¿¬¼Ó ¾ÚÆÛ¼¾µå¸¦ ÁöÁ¤ÇÏ¸é µË´Ï´Ù (&amp;&amp;). ¾ÚÆÛ¼¾µå¸¦ Æ¯¼ö Ãë±ÞÇÏÁö ¾Êµµ·Ï ÇÏ·Á¸é, ÄÜÆ®·Ñ ¿É¼Ç¿¡ <a href="../misc/Styles.htm#SS_NOPREFIX">0x80</a>À» Æ÷ÇÔ½ÃÅ°½Ê½Ã¿À.</p>
+ìœ„ì˜ ì˜ˆì œì—ì„œ, ê¸°í˜¸ FëŠ” ë°‘ì¤„ì´ ê·¸ì–´ì§‘ë‹ˆë‹¤. ì‚¬ìš©ìžëŠ” <a href="Gui.htm#ShortcutKey">ë‹¨ì¶•í‚¤</a> Alt+Fë¥¼ ëˆŒëŸ¬ í…ìŠ¤íŠ¸ ì½˜íŠ¸ë¡¤ ë‹¤ìŒì— ì¶”ê°€ëœ ì²« ë²ˆì§¸ ìž…ë ¥ ê°€ëŠ¥ ì½˜íŠ¸ë¡¤ì— í‚¤ë³´ë“œ ì´ˆì ì„ ì„¤ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 
+ëŒ€ì‹ ì— ê¸°í˜¸ ê·¸ëŒ€ë¡œ ì•°í¼ì„¼ë“œë¥¼ ë³´ì—¬ì£¼ë ¤ë©´, ë‘ ê°œì˜ ì—°ì† ì•°í¼ì„¼ë“œë¥¼ ì§€ì •í•˜ë©´ ë©ë‹ˆë‹¤ (&amp;&amp;). ì•°í¼ì„¼ë“œë¥¼ íŠ¹ìˆ˜ ì·¨ê¸‰í•˜ì§€ ì•Šë„ë¡ í•˜ë ¤ë©´, ì½˜íŠ¸ë¡¤ ì˜µì…˜ì— <a href="../misc/Styles.htm#SS_NOPREFIX">0x80</a>ì„ í¬í•¨ì‹œí‚¤ì‹­ì‹œì˜¤.</p>
 <p>
-<em>Right</em>, <em>Center</em>, ±×¸®°í <em>Hidden</em>°ú °°Àº ´Ù¸¥ ¿É¼ÇÀº <a href="Gui.htm#OtherOptions">ÀÏ¹Ý ¿É¼Ç</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À. ´ÙÀ½µµ ÂüÁ¶ÇÏ½Ê½Ã¿À: <a href="Gui.htm#PosSize">ÄÜÆ®·ÑÀÇ À§Ä¡ ÁöÁ¤°ú Å©±â Á¶Àý</a>.</p>
+<em>Right</em>, <em>Center</em>, ê·¸ë¦¬ê³  <em>Hidden</em>ê³¼ ê°™ì€ ë‹¤ë¥¸ ì˜µì…˜ì€ <a href="Gui.htm#OtherOptions">ì¼ë°˜ ì˜µì…˜</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤. ë‹¤ìŒë„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤: <a href="Gui.htm#PosSize">ì½˜íŠ¸ë¡¤ì˜ ìœ„ì¹˜ ì§€ì •ê³¼ í¬ê¸° ì¡°ì ˆ</a>.</p>
 
 <h2 id="Edit">Edit</h2>
 <p>
-¼³¸í: »ç¿ëÀÚ°¡ ÀÚÀ¯·Ó°Ô ÅØ½ºÆ®¸¦ Å¸ÀÚÇÒ ¼ö ÀÖ´Â ±¸¿ª. ¿¹Á¦:</p>
-<pre>Gui, Add, Edit, r9 vMyEdit, ÆíÁý ÄÜÆ®·Ñ ¾È¿¡ ³ªÅ¸³¯ ÅØ½ºÆ® (ÀÌ ¸Å°³º¯¼ö¸¦ »ý·«ÇÏ¸é ºó Ã¤·Î ½ÃÀÛÇÔ).</pre>
+ì„¤ëª…: ì‚¬ìš©ìžê°€ ìžìœ ë¡­ê²Œ í…ìŠ¤íŠ¸ë¥¼ íƒ€ìží•  ìˆ˜ ìžˆëŠ” êµ¬ì—­. ì˜ˆì œ:</p>
+<pre>Gui, Add, Edit, r9 vMyEdit, íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ ì•ˆì— ë‚˜íƒ€ë‚  í…ìŠ¤íŠ¸ (ì´ ë§¤ê°œë³€ìˆ˜ë¥¼ ìƒëžµí•˜ë©´ ë¹ˆ ì±„ë¡œ ì‹œìž‘í•¨).</pre>
 <p>
-ÀÌ ÄÜÆ®·ÑÀº ¿©·¯ ÁÙÀÇ ÅØ½ºÆ®°¡ ÀÖÀ¸¸é ¿©·¯ ÁÙ ¸ðµå°¡ µË´Ï´Ù. ¿¹¸¦ µé¾î <code>r3</code>À» <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é 3-ÁÙ Â¥¸® ÆíÁý ÄÜÆ®·ÑÀÌ »ý¼ºµË´Ï´Ù. ±âº» Æ¯¼ºÀº ´ÙÀ½°ú °°½À´Ï´Ù: ¼öÁ÷ ½ºÅ©·Ñ¹Ù, ´Ü¾î ÁÙ³Ñ±â±â È°¼ºÈ­, ±×¸®°í ¿£ÅÍ Å°¸¦ ÀÔ·ÂÀ¸·Î ¹Þ½À´Ï´Ù. Ã¢ÀÇ <a href="#DefaultButton">±âº» ¹öÆ°</a>À» ÃË¹ß½ÃÅ°Áö ¾Ê½À´Ï´Ù.</p>
+ì´ ì½˜íŠ¸ë¡¤ì€ ì—¬ëŸ¬ ì¤„ì˜ í…ìŠ¤íŠ¸ê°€ ìžˆìœ¼ë©´ ì—¬ëŸ¬ ì¤„ ëª¨ë“œê°€ ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ <code>r3</code>ì„ <em>Options</em>ì— ì§€ì •í•˜ë©´ 3-ì¤„ ì§œë¦¬ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì´ ìƒì„±ë©ë‹ˆë‹¤. ê¸°ë³¸ íŠ¹ì„±ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤: ìˆ˜ì§ ìŠ¤í¬ë¡¤ë°”, ë‹¨ì–´ ì¤„ë„˜ê¸°ê¸° í™œì„±í™”, ê·¸ë¦¬ê³  ì—”í„° í‚¤ë¥¼ ìž…ë ¥ìœ¼ë¡œ ë°›ìŠµë‹ˆë‹¤. ì°½ì˜ <a href="#DefaultButton">ê¸°ë³¸ ë²„íŠ¼</a>ì„ ì´‰ë°œì‹œí‚¤ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-¿©·¯-ÁÙ ÆíÁý ÄÜÆ®·Ñ¿¡¼­ »õ ÁÙÀ» ½ÃÀÛÇÏ¸é, ¸¶Áö¸· ¸Å°³º¯¼ö¿¡ (³»¿ë) ¶óÀÎÇÇµå ÇÏ³ª(`n) ¶Ç´Â Ä³¸®Áö ¸®ÅÏ°ú ¶óÀÎÇÇµåÀÇ Á¶ÇÕ (`r`n)ÀÌ Æ÷ÇÔµË´Ï´Ù. µÎ ¹æ¹ý ¸ðµÎ ±âÈ£ ±×´ë·ÎÀÇ  `r`n ½ÖÀ» ÆíÁý ÄÜÆ®·Ñ ¾È¿¡ »ý»êÇÕ´Ï´Ù. ±×·¸Áö¸¸, <a href="Gui.htm#Submit">Gui Submit</a>ÀÌ³ª <a href="GuiControlGet.htm">GuiControlGet</a>¸¦ ÅëÇÏ¿© ÄÜÆ®·ÑÀÌ º¯¼ö·Î ÀúÀåµÉ ¶§, °¢ `r`nÀº ÅØ½ºÆ®¿¡¼­ ¾ðÁ¦³ª Æò¹üÇÑ ¶óÀÎÇÇµå·Î (`n) º¯È¯µË´Ï´Ù. ±× ÅØ½ºÆ®¸¦ ÆÄÀÏ¿¡ ¾²·Á¸é, ´ÙÀ½ ¿¹Á¦¸¦ µû¸£½Ê½Ã¿À: 
+ì—¬ëŸ¬-ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì—ì„œ ìƒˆ ì¤„ì„ ì‹œìž‘í•˜ë©´, ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì— (ë‚´ìš©) ë¼ì¸í”¼ë“œ í•˜ë‚˜(`n) ë˜ëŠ” ìºë¦¬ì§€ ë¦¬í„´ê³¼ ë¼ì¸í”¼ë“œì˜ ì¡°í•© (`r`n)ì´ í¬í•¨ë©ë‹ˆë‹¤. ë‘ ë°©ë²• ëª¨ë‘ ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜  `r`n ìŒì„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ ì•ˆì— ìƒì‚°í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, <a href="Gui.htm#Submit">Gui Submit</a>ì´ë‚˜ <a href="GuiControlGet.htm">GuiControlGet</a>ë¥¼ í†µí•˜ì—¬ ì½˜íŠ¸ë¡¤ì´ ë³€ìˆ˜ë¡œ ì €ìž¥ë  ë•Œ, ê° `r`nì€ í…ìŠ¤íŠ¸ì—ì„œ ì–¸ì œë‚˜ í‰ë²”í•œ ë¼ì¸í”¼ë“œë¡œ (`n) ë³€í™˜ë©ë‹ˆë‹¤. ê·¸ í…ìŠ¤íŠ¸ë¥¼ íŒŒì¼ì— ì“°ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¥´ì‹­ì‹œì˜¤: 
 
 <code><a href="FileAppend.htm">FileAppend</a>, %MyEdit%, C:\Saved File.txt</code>.</p>
 <p>
-ÄÜÆ®·Ñ¿¡ ´Ü¾î ³Ñ±â±â°¡ ÄÑÁ® ÀÖÀ¸¸é (¿©·¯-ÁÙ ÆíÁý ÄÜÆ®·Ñ¿¡ ±âº»°ª), »ç¿ëÀÚ°¡ Å¸ÀÚÇÒ ¶§ ÀÏ¾î³ª´Â ÁÙ³Ñ±â±â´Â ¶óÀÎÇÇµå ¹®ÀÚ¸¦ »ý»êÇÏÁö ¾Ê½À´Ï´Ù (¿£ÅÍ Å°¸¦ ´­·¯¾ß¸¸ »ðÀÔµË´Ï´Ù).</p>
+ì½˜íŠ¸ë¡¤ì— ë‹¨ì–´ ë„˜ê¸°ê¸°ê°€ ì¼œì ¸ ìžˆìœ¼ë©´ (ì—¬ëŸ¬-ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì— ê¸°ë³¸ê°’), ì‚¬ìš©ìžê°€ íƒ€ìží•  ë•Œ ì¼ì–´ë‚˜ëŠ” ì¤„ë„˜ê¸°ê¸°ëŠ” ë¼ì¸í”¼ë“œ ë¬¸ìžë¥¼ ìƒì‚°í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ (ì—”í„° í‚¤ë¥¼ ëˆŒëŸ¬ì•¼ë§Œ ì‚½ìž…ë©ë‹ˆë‹¤).</p>
 <p>
-<code><strong>g</strong>MySubroutine</code>°ú °°Àº <a href="Gui.htm#label">g-label</a>Àº ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é »ç¿ëÀÚ³ª ½ºÅ©¸³Æ®°¡ ÄÜÆ®·ÑÀÇ ³»¿ëÀ» º¯°æÇÒ ¶§¸¶´Ù ÀÚµ¿À¸·Î <em>MySubroutine</em> ¶óº§ÀÌ ±âµ¿ÇÕ´Ï´Ù.</p>
+<code><strong>g</strong>MySubroutine</code>ê³¼ ê°™ì€ <a href="Gui.htm#label">g-label</a>ì€ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ì‚¬ìš©ìžë‚˜ ìŠ¤í¬ë¦½íŠ¸ê°€ ì½˜íŠ¸ë¡¤ì˜ ë‚´ìš©ì„ ë³€ê²½í•  ë•Œë§ˆë‹¤ ìžë™ìœ¼ë¡œ <em>MySubroutine</em> ë¼ë²¨ì´ ê¸°ë™í•©ë‹ˆë‹¤.</p>
 <p>
-ÆÁ: ÅØ½ºÆ® ÆÄÀÏÀ» ÆíÁý ÄÜÆ®·Ñ ¾ÈÀ¸·Î ÀûÀçÇÏ·Á¸é <a href="FileRead.htm">FileRead</a> ±×¸®°í <a href="GuiControl.htm">GuiControl</a>À» »ç¿ëÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î:</p>
+íŒ: í…ìŠ¤íŠ¸ íŒŒì¼ì„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ ì•ˆìœ¼ë¡œ ì ìž¬í•˜ë ¤ë©´ <a href="FileRead.htm">FileRead</a> ê·¸ë¦¬ê³  <a href="GuiControl.htm">GuiControl</a>ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 <pre>Gui, Add, Edit, R20 vMyEdit
 FileRead, FileContents, C:\My File.txt
 GuiControl,, MyEdit, %FileContents%</pre>
 <h3>Edit Options</h3>
 <p>
-¿É¼ÇÀ» Ãß°¡ÇÏ´Â°Ô ¾Æ´Ï¶ó Á¦°ÅÇÏ·Á¸é, ¾Õ¿¡´Ù ¸¶ÀÌ³Ê½º ±âÈ£¸¦ ¹èÄ¡ÇÏ½Ê½Ã¿À:</p>
+ì˜µì…˜ì„ ì¶”ê°€í•˜ëŠ”ê²Œ ì•„ë‹ˆë¼ ì œê±°í•˜ë ¤ë©´, ì•žì—ë‹¤ ë§ˆì´ë„ˆìŠ¤ ê¸°í˜¸ë¥¼ ë°°ì¹˜í•˜ì‹­ì‹œì˜¤:</p>
 <p>
-<strong>ÇÑ°è</strong>: »ç¿ëÀÚÀÇ ÀÔ·ÂÀº ÆíÁý ÇÊµå¿¡¼­ º¸ÀÌ´Â ³Êºñ¿¡ Á¦ÇÑµË´Ï´Ù. ´ë¾ÈÀ¸·Î, Æ¯Á¤ °³¼öÀÇ ¹®ÀÚ·Î ÀÔ·ÂÀ» Á¦ÇÑÇÏ·Á¸é, ¹Ù·Î ´ÙÀ½¿¡ ¼ýÀÚ¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, <code>Limit10</code>´Â 10 ¹®ÀÚ°¡ ³ÑÀ¸¸é ´õ ÀÌ»ó ÀÔ·ÂµÇÁö ¾Ê½À´Ï´Ù.</p>
+<strong>í•œê³„</strong>: ì‚¬ìš©ìžì˜ ìž…ë ¥ì€ íŽ¸ì§‘ í•„ë“œì—ì„œ ë³´ì´ëŠ” ë„ˆë¹„ì— ì œí•œë©ë‹ˆë‹¤. ëŒ€ì•ˆìœ¼ë¡œ, íŠ¹ì • ê°œìˆ˜ì˜ ë¬¸ìžë¡œ ìž…ë ¥ì„ ì œí•œí•˜ë ¤ë©´, ë°”ë¡œ ë‹¤ìŒì— ìˆ«ìžë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Limit10</code>ëŠ” 10 ë¬¸ìžê°€ ë„˜ìœ¼ë©´ ë” ì´ìƒ ìž…ë ¥ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>Lowercase</strong>: »ç¿ëÀÚ°¡ Å¸ÀÚÇÏ´Â ¹®ÀÚµéÀº ÀÚµ¿À¸·Î ¼Ò¹®ÀÚ·Î º¯È¯µË´Ï´Ù.</p>
+<strong>Lowercase</strong>: ì‚¬ìš©ìžê°€ íƒ€ìží•˜ëŠ” ë¬¸ìžë“¤ì€ ìžë™ìœ¼ë¡œ ì†Œë¬¸ìžë¡œ ë³€í™˜ë©ë‹ˆë‹¤.</p>
 <p>
-<strong><a name="EditMulti" id="EditMulti"></a>Multi</strong>: ¿©·¯ ÁÙ ÆíÁýÀ» Çã¿ëÇÕ´Ï´Ù. ±×·¸Áö¸¸, º¸Åë ÁöÁ¤ÇÒ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù. ¿Ö³ÄÇÏ¸é ³ôÀÌ (H), <a href="Gui.htm#R">Çà (R)</a>, ¶Ç´Â ³»¿ë(<em>Text</em>)¿¡ ±â¹ÝÇÏ¿© ÀÚµ¿À¸·Î Å½ÁöÇÏ±â ¶§¹®ÀÔ´Ï´Ù.</p>
+<strong><a name="EditMulti" id="EditMulti"></a>Multi</strong>: ì—¬ëŸ¬ ì¤„ íŽ¸ì§‘ì„ í—ˆìš©í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ë³´í†µ ì§€ì •í•  í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ ë†’ì´ (H), <a href="Gui.htm#R">í–‰ (R)</a>, ë˜ëŠ” ë‚´ìš©(<em>Text</em>)ì— ê¸°ë°˜í•˜ì—¬ ìžë™ìœ¼ë¡œ íƒì§€í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 <p>
-<strong><a name="EditNum"></a>Number</strong>: »ç¿ëÀÚ°¡ ÇÊµå¿¡ ¼ýÀÚ¸»°í ´Ù¸¥ °ÍÀº Å¸ÀÚÇÏÁö ¸øÇÏµµ·Ï ¸·½À´Ï´Ù (±×·¸Áö¸¸, ¿©ÀüÈ÷ ºñ-¼ýÀÚ¸¦ ¾È¿¡ ºÙ¿© ³Ö´Â °ÍÀº °¡´ÉÇÕ´Ï´Ù). ¼ýÀÚ ÀÔ·ÂÀ» °­Á¦ÇÏ´Â ¶Ç´Ù¸¥ ¹æ¹ýÀº <a href="#UpDown">UpDown</a> ÄÜÆ®·ÑÀ» Edit ÄÜÆ®·Ñ¿¡ ºÙÀÌ´Â °ÍÀÔ´Ï´Ù.</p>
+<strong><a name="EditNum"></a>Number</strong>: ì‚¬ìš©ìžê°€ í•„ë“œì— ìˆ«ìžë§ê³  ë‹¤ë¥¸ ê²ƒì€ íƒ€ìží•˜ì§€ ëª»í•˜ë„ë¡ ë§‰ìŠµë‹ˆë‹¤ (ê·¸ë ‡ì§€ë§Œ, ì—¬ì „ížˆ ë¹„-ìˆ«ìžë¥¼ ì•ˆì— ë¶™ì—¬ ë„£ëŠ” ê²ƒì€ ê°€ëŠ¥í•©ë‹ˆë‹¤). ìˆ«ìž ìž…ë ¥ì„ ê°•ì œí•˜ëŠ” ë˜ë‹¤ë¥¸ ë°©ë²•ì€ <a href="#UpDown">UpDown</a> ì½˜íŠ¸ë¡¤ì„ Edit ì½˜íŠ¸ë¡¤ì— ë¶™ì´ëŠ” ê²ƒìž…ë‹ˆë‹¤.</p>
 <p>
-<strong>Password</strong>: »ç¿ëÀÚÀÇ ÀÔ·ÂÀ» °¨Ãä´Ï´Ù (¿¹¸¦ µé¾î ¾ÏÈ£ ÀÔ·Â). »ç¿ëÀÚ°¡ Å¸ÀÚÇÏ´Â ¹®ÀÚ¸¦ ÀºÆó ¹®ÀÚ·Î ±³Ã¼ÇÕ´Ï´Ù. ¸ÂÃã ÀºÆó ¹®ÀÚ°¡ ÇÊ¿äÇÏ´Ù¸é, ±× ¹®ÀÚ¸¦ ´Ü¾î Password ´ÙÀ½¿¡ ¹èÄ¡ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, <code>Password*</code>´Â ÀºÆó ¹®ÀÚ¸¦ °ËÀº»ö ¿ø (ºÒ¸´)ÀÌ ¾Æ´Ï¶ó º°Ç¥·Î ¸¸µì´Ï´Ù. ºÒ¸´Àº  Windows XP¿¡¼­ ±âº»°ªÀÔ´Ï´Ù. ÁÖÀÇ: ÀÌ ¿É¼ÇÀº ¿©·¯-ÁÙ ÆíÁý ÄÜÆ®·Ñ¿¡ ¾Æ¹« È¿°ú°¡ ¾ø½À´Ï´Ù.</p>
+<strong>Password</strong>: ì‚¬ìš©ìžì˜ ìž…ë ¥ì„ ê°ì¶¥ë‹ˆë‹¤ (ì˜ˆë¥¼ ë“¤ì–´ ì•”í˜¸ ìž…ë ¥). ì‚¬ìš©ìžê°€ íƒ€ìží•˜ëŠ” ë¬¸ìžë¥¼ ì€í ë¬¸ìžë¡œ êµì²´í•©ë‹ˆë‹¤. ë§žì¶¤ ì€í ë¬¸ìžê°€ í•„ìš”í•˜ë‹¤ë©´, ê·¸ ë¬¸ìžë¥¼ ë‹¨ì–´ Password ë‹¤ìŒì— ë°°ì¹˜í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Password*</code>ëŠ” ì€í ë¬¸ìžë¥¼ ê²€ì€ìƒ‰ ì› (ë¶ˆë¦¿)ì´ ì•„ë‹ˆë¼ ë³„í‘œë¡œ ë§Œë“­ë‹ˆë‹¤. ë¶ˆë¦¿ì€  Windows XPì—ì„œ ê¸°ë³¸ê°’ìž…ë‹ˆë‹¤. ì£¼ì˜: ì´ ì˜µì…˜ì€ ì—¬ëŸ¬-ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì— ì•„ë¬´ íš¨ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>ReadOnly</strong>: »ç¿ëÀÚ°¡ ÄÜÆ®·ÑÀÇ ³»¿ëÀ» º¯°æÇÏÁö ¸øÇÏµµ·Ï ¸·½À´Ï´Ù. ±×·¸Áö¸¸, ÅØ½ºÆ®´Â ¿©ÀüÈ÷ ½ºÅ©·ÑÇÒ ¼ö ÀÖ°í, ¼±ÅÃÇØ¼­ Å¬¸³º¸µå·Î º¹»çÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong>ReadOnly</strong>: ì‚¬ìš©ìžê°€ ì½˜íŠ¸ë¡¤ì˜ ë‚´ìš©ì„ ë³€ê²½í•˜ì§€ ëª»í•˜ë„ë¡ ë§‰ìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, í…ìŠ¤íŠ¸ëŠ” ì—¬ì „ížˆ ìŠ¤í¬ë¡¤í•  ìˆ˜ ìžˆê³ , ì„ íƒí•´ì„œ í´ë¦½ë³´ë“œë¡œ ë³µì‚¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>Tn</strong>: ±âÈ£ T¸¦ »ç¿ëÇÏ¸é ÅÇ ½ºÅ¾À» <a href="#EditMulti">¿©·¯-ÁÙ ÆíÁý ÄÜÆ®·Ñ</a> ¾È¿¡ ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù (ÅÇ ½ºÅ¾Àº ±âÈ£ ±×´ë·ÎÀÇ TAB ¹®ÀÚ°¡ Á¡ÇÁÇØ °¥ ¿­ À§Ä¡¸¦ °áÁ¤ÇÏ±â ¶§¹®¿¡, ÅØ½ºÆ®¸¦ ¿­ ¾ÈÀ¸·Î Æ÷¸ËÇØ ³Ö´Â µ¥ »ç¿ëµË´Ï´Ù). ±âÈ£ T°¡ ¾øÀ¸¸é, ÅÇ ½ºÅ¾Àº ¸Å 32 ´ëÈ­»óÀÚ ´ÜÀ§¸¶´Ù ¼³Á¤µË´Ï´Ù (°¢ &quot;´ëÈ­»óÀÚ ´ÜÀ§&quot;ÀÇ ³Êºñ´Â ¿î¿µ Ã¼Á¦¿¡ ÀÇÇÏ¿© °áÁ¤µË´Ï´Ù). ±âÈ£ T¸¸ »ç¿ëÇÏ¸é, ÅÇ ½ºÅ¾Àº ÄÜÆ®·Ñ ÀüÃ¼ ³Êºñ¿¡ °ÉÃÄ¼­ ¸Å <strong>n</strong> ´ÜÀ§¸¶´Ù ¼³Á¤µË´Ï´Ù. ¿¹¸¦ µé¾î, <code>Gui, Add, Edit, vMyEdit r16 t64</code>ÀÌ¸é ÅÇ »çÀÌÀÇ °Å¸®°¡ µÎ ¹è°¡ µË´Ï´Ù. ¸ÂÃã ÅÇ ½ºÅ¾À» ÁöÁ¤ÇÏ·Á¸é ±âÈ£ T¸¦ ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ¿©·¯ ¹ø ÁöÁ¤ÇÏ½Ê½Ã¿À: <code>Gui, Add, Edit, vMyEdit r16 t8 t16 t32 t64 t128</code>. ÅÇ ½ºÅ¾ 1¹øÀº ¸®½ºÆ®ÀÇ Àý´ë ¿­ À§Ä¡¿¡ ¼³Á¤µÇ°í, ÃÖ´ë 50°³ÀÇ ÅÇ ½ºÅ¾±îÁö ¼³Á¤µË´Ï´Ù. ÁÖÀÇ: ÅÇ ½ºÅ¾Àº ¿©·¯ ÁÙ ÆíÁý Å«Æ®·ÑÀ» ¿ä±¸ÇÕ´Ï´Ù.</p>
+<strong>Tn</strong>: ê¸°í˜¸ Të¥¼ ì‚¬ìš©í•˜ë©´ íƒ­ ìŠ¤íƒ‘ì„ <a href="#EditMulti">ì—¬ëŸ¬-ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤</a> ì•ˆì— ì„¤ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (íƒ­ ìŠ¤íƒ‘ì€ ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ TAB ë¬¸ìžê°€ ì í”„í•´ ê°ˆ ì—´ ìœ„ì¹˜ë¥¼ ê²°ì •í•˜ê¸° ë•Œë¬¸ì—, í…ìŠ¤íŠ¸ë¥¼ ì—´ ì•ˆìœ¼ë¡œ í¬ë§·í•´ ë„£ëŠ” ë° ì‚¬ìš©ë©ë‹ˆë‹¤). ê¸°í˜¸ Tê°€ ì—†ìœ¼ë©´, íƒ­ ìŠ¤íƒ‘ì€ ë§¤ 32 ëŒ€í™”ìƒìž ë‹¨ìœ„ë§ˆë‹¤ ì„¤ì •ë©ë‹ˆë‹¤ (ê° &quot;ëŒ€í™”ìƒìž ë‹¨ìœ„&quot;ì˜ ë„ˆë¹„ëŠ” ìš´ì˜ ì²´ì œì— ì˜í•˜ì—¬ ê²°ì •ë©ë‹ˆë‹¤). ê¸°í˜¸ Të§Œ ì‚¬ìš©í•˜ë©´, íƒ­ ìŠ¤íƒ‘ì€ ì½˜íŠ¸ë¡¤ ì „ì²´ ë„ˆë¹„ì— ê±¸ì³ì„œ ë§¤ <strong>n</strong> ë‹¨ìœ„ë§ˆë‹¤ ì„¤ì •ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Gui, Add, Edit, vMyEdit r16 t64</code>ì´ë©´ íƒ­ ì‚¬ì´ì˜ ê±°ë¦¬ê°€ ë‘ ë°°ê°€ ë©ë‹ˆë‹¤. ë§žì¶¤ íƒ­ ìŠ¤íƒ‘ì„ ì§€ì •í•˜ë ¤ë©´ ê¸°í˜¸ Të¥¼ ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ì—¬ëŸ¬ ë²ˆ ì§€ì •í•˜ì‹­ì‹œì˜¤: <code>Gui, Add, Edit, vMyEdit r16 t8 t16 t32 t64 t128</code>. íƒ­ ìŠ¤íƒ‘ 1ë²ˆì€ ë¦¬ìŠ¤íŠ¸ì˜ ì ˆëŒ€ ì—´ ìœ„ì¹˜ì— ì„¤ì •ë˜ê³ , ìµœëŒ€ 50ê°œì˜ íƒ­ ìŠ¤íƒ‘ê¹Œì§€ ì„¤ì •ë©ë‹ˆë‹¤. ì£¼ì˜: íƒ­ ìŠ¤íƒ‘ì€ ì—¬ëŸ¬ ì¤„ íŽ¸ì§‘ í°íŠ¸ë¡¤ì„ ìš”êµ¬í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>Uppercase</strong>: »ç¿ëÀÚ°¡ Å¸ÀÚÇÑ ¹®ÀÚµéÀº ÀÚµ¿À¸·Î ´ë¹®ÀÚ·Î º¯È¯µË´Ï´Ù.</p>
+<strong>Uppercase</strong>: ì‚¬ìš©ìžê°€ íƒ€ìží•œ ë¬¸ìžë“¤ì€ ìžë™ìœ¼ë¡œ ëŒ€ë¬¸ìžë¡œ ë³€í™˜ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>WantCtrlA</strong> <span class="ver">[v1.0.44+]:</span> WantCtrlA (¸¶ÀÌ³Ê½º WantCtrlA)¸¦ ÁöÁ¤ÇÏ¸é »ç¿ëÀÚ°¡ Control-A¸¦ ´­·¯¼­ ÆíÁý ÄÜÆ®·Ñ ¾ÈÀÇ ¸ðµç ÅØ½ºÆ®¸¦ ¼±ÅÃÇÏÁö ¸øÇÏµµ·Ï ¸·½À´Ï´Ù.</p>
+<strong>WantCtrlA</strong> <span class="ver">[v1.0.44+]:</span> WantCtrlA (ë§ˆì´ë„ˆìŠ¤ WantCtrlA)ë¥¼ ì§€ì •í•˜ë©´ ì‚¬ìš©ìžê°€ Control-Aë¥¼ ëˆŒëŸ¬ì„œ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ ì•ˆì˜ ëª¨ë“  í…ìŠ¤íŠ¸ë¥¼ ì„ íƒí•˜ì§€ ëª»í•˜ë„ë¡ ë§‰ìŠµë‹ˆë‹¤.</p>
 <p>
-<strong><a name="WantReturn"></a>WantReturn</strong>: -WantReturn (Áï, ¸¶ÀÌ³Ê½º »çÀÎ ´ÙÀ½¿¡ WantReturn)À» ÁöÁ¤ÇÏ¸é ¿©·¯-ÁÙ ÆíÁý ÄÜÆ®·ÑÀÌ Enter Å°´­¸²À» ÀâÁö ¸øÇÏµµ·Ï ¸·½À´Ï´Ù. ±×·¯¸é Enter¸¦ ´­·¯°í Ã¢ÀÇ <a href="#DefaultButton">±âº» ¹öÆ°</a>À» ´©¸¥ °Í°ú °°°Ô µË´Ï´Ù. ÀÌ °æ¿ì, »ç¿ëÀÚ´Â Control-Enter¸¦ ´­·¯ »õ ÁÙÀ» ½ÃÀÛÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong><a name="WantReturn"></a>WantReturn</strong>: -WantReturn (ì¦‰, ë§ˆì´ë„ˆìŠ¤ ì‚¬ì¸ ë‹¤ìŒì— WantReturn)ì„ ì§€ì •í•˜ë©´ ì—¬ëŸ¬-ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì´ Enter í‚¤ëˆŒë¦¼ì„ ìž¡ì§€ ëª»í•˜ë„ë¡ ë§‰ìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë©´ Enterë¥¼ ëˆŒëŸ¬ê³  ì°½ì˜ <a href="#DefaultButton">ê¸°ë³¸ ë²„íŠ¼</a>ì„ ëˆ„ë¥¸ ê²ƒê³¼ ê°™ê²Œ ë©ë‹ˆë‹¤. ì´ ê²½ìš°, ì‚¬ìš©ìžëŠ” Control-Enterë¥¼ ëˆŒëŸ¬ ìƒˆ ì¤„ì„ ì‹œìž‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>WantTab</strong>: ÅÇ Å°´­¸²ÀÌ ´ÙÀ½ ÄÜÆ®·Ñ·Î Ç×ÇØÇÏ´Â ´ë½Å¿¡ ÅÇ ¹®ÀÚ¸¦ »ý»êÇÏ°Ô ¸¸µì´Ï´Ù. ÀÌ ¿É¼ÇÀÌ ¾ø´Ù¸é, »ç¿ëÀÚ´Â Control-TabÀ» ´­·¯ ÅÇ ¹®ÀÚ¸¦ ¿©·¯-ÁÙ ÆíÁý ÄÜÆ®·Ñ ¾È¿¡ »ý»êÇÒ ¼ö ÀÖ½À´Ï´Ù. ÁÖÀÇ: <em>WantTab</em>Àº ÇÑ-ÁÙ ÆíÁý ÄÜÆ®·Ñ ¾È¿¡¼­µµ ÀÛµ¿ÇÏÁö¸¸, °¢ ÅÇ ¹®ÀÚ´Â ºó ³×¸ð ¹®ÀÚ·Î º¸¿©Áý´Ï´Ù (¹°·Ð ½ÇÁ¦ ÅÇÀ¸·Î ÀúÀåµÇ¾î ÀÖ½À´Ï´Ù).</p>
+<strong>WantTab</strong>: íƒ­ í‚¤ëˆŒë¦¼ì´ ë‹¤ìŒ ì½˜íŠ¸ë¡¤ë¡œ í•­í•´í•˜ëŠ” ëŒ€ì‹ ì— íƒ­ ë¬¸ìžë¥¼ ìƒì‚°í•˜ê²Œ ë§Œë“­ë‹ˆë‹¤. ì´ ì˜µì…˜ì´ ì—†ë‹¤ë©´, ì‚¬ìš©ìžëŠ” Control-Tabì„ ëˆŒëŸ¬ íƒ­ ë¬¸ìžë¥¼ ì—¬ëŸ¬-ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ ì•ˆì— ìƒì‚°í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì£¼ì˜: <em>WantTab</em>ì€ í•œ-ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ ì•ˆì—ì„œë„ ìž‘ë™í•˜ì§€ë§Œ, ê° íƒ­ ë¬¸ìžëŠ” ë¹ˆ ë„¤ëª¨ ë¬¸ìžë¡œ ë³´ì—¬ì§‘ë‹ˆë‹¤ (ë¬¼ë¡  ì‹¤ì œ íƒ­ìœ¼ë¡œ ì €ìž¥ë˜ì–´ ìžˆìŠµë‹ˆë‹¤).</p>
 <p>
-<strong>-Wrap</strong> (¸¶ÀÌ³Ê½º  Wrap): ¿©·¯-ÁÙ ÆíÁý ÄÜÆ®·Ñ¿¡ ´Ü¾î ³Ñ±â±â¸¦ ²ü´Ï´Ù. ÀÌ ½ºÅ¸ÀÏÀº ÄÜÆ®·ÑÀÌ »ý¼ºµÈ ÈÄ¿¡´Â º¯°æÇÒ ¼ö ¾ø±â ¶§¹®¿¡, ´ÙÀ½ Áß ÇÑ ¹æ¹ýÀ» »ç¿ëÇØ º¯°æÇÏ½Ê½Ã¿À: 1) Ã¢°ú ±×ÀÇ ÄÜÆ®·ÑµéÀ» ÆÄ±«(<a href="Gui.htm#Destroy">Destroy</a>)ÇÑ ´ÙÀ½ ´Ù½Ã »ý¼ºÇÏ½Ê½Ã¿À; ¶Ç´Â 2) ÇÏ³ª´Â ´Ü¾î ³Ñ±â±â¸¦ È°¼ºÈ­ÇÏ°í ´Ù¸¥ ÇÏ³ª´Â ²¨¼­ µÎ °³ÀÇ ÁßÃ¸ ÆíÁý ÄÜÆ®·ÑÀ» »ý¼ºÇÏ½Ê½Ã¿À. ÇöÀç »ç¿ëµÇÁö ¾Ê´Â ÄÜÆ®·ÑÀ» ºñ¿ì°Å³ª ¶Ç´Â ¼û±æ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong>-Wrap</strong> (ë§ˆì´ë„ˆìŠ¤  Wrap): ì—¬ëŸ¬-ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì— ë‹¨ì–´ ë„˜ê¸°ê¸°ë¥¼ ë•ë‹ˆë‹¤. ì´ ìŠ¤íƒ€ì¼ì€ ì½˜íŠ¸ë¡¤ì´ ìƒì„±ëœ í›„ì—ëŠ” ë³€ê²½í•  ìˆ˜ ì—†ê¸° ë•Œë¬¸ì—, ë‹¤ìŒ ì¤‘ í•œ ë°©ë²•ì„ ì‚¬ìš©í•´ ë³€ê²½í•˜ì‹­ì‹œì˜¤: 1) ì°½ê³¼ ê·¸ì˜ ì½˜íŠ¸ë¡¤ë“¤ì„ íŒŒê´´(<a href="Gui.htm#Destroy">Destroy</a>)í•œ ë‹¤ìŒ ë‹¤ì‹œ ìƒì„±í•˜ì‹­ì‹œì˜¤; ë˜ëŠ” 2) í•˜ë‚˜ëŠ” ë‹¨ì–´ ë„˜ê¸°ê¸°ë¥¼ í™œì„±í™”í•˜ê³  ë‹¤ë¥¸ í•˜ë‚˜ëŠ” êº¼ì„œ ë‘ ê°œì˜ ì¤‘ì²© íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì„ ìƒì„±í•˜ì‹­ì‹œì˜¤. í˜„ìž¬ ì‚¬ìš©ë˜ì§€ ì•ŠëŠ” ì½˜íŠ¸ë¡¤ì„ ë¹„ìš°ê±°ë‚˜ ë˜ëŠ” ìˆ¨ê¸¸ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="Gui.htm#OtherOptions">ÀÏ¹Ý ¿É¼Ç</a>¿¡¼­ ´Ù¸¥ ¿É¼Çµé ¿¹¸¦ µé¾î <em>Right</em>, <em>Center</em>, ±×¸®°í <em>Hidden</em>À» Âü°íÇÏ½Ê½Ã¿À. ´ÙÀ½µµ ÂüÁ¶ÇÏ½Ê½Ã¿À: <a href="Gui.htm#PosSize">ÄÜÆ®·ÑÀÇ À§Ä¡¿Í Å©±â º¯°æ</a>.</p>
+<a href="Gui.htm#OtherOptions">ì¼ë°˜ ì˜µì…˜</a>ì—ì„œ ë‹¤ë¥¸ ì˜µì…˜ë“¤ ì˜ˆë¥¼ ë“¤ì–´ <em>Right</em>, <em>Center</em>, ê·¸ë¦¬ê³  <em>Hidden</em>ì„ ì°¸ê³ í•˜ì‹­ì‹œì˜¤. ë‹¤ìŒë„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤: <a href="Gui.htm#PosSize">ì½˜íŠ¸ë¡¤ì˜ ìœ„ì¹˜ì™€ í¬ê¸° ë³€ê²½</a>.</p>
 <p>
-<strong>´õ °­·ÂÇÑ ÆíÁý ÄÜÆ®·Ñ</strong>: HiEditÀº ¸ÖÆ¼ ÅÇÀ» Áö¿øÇÏ´Â ´ë¿ë·® ÆÄÀÏ ÆíÁý ÄÜÆ®·ÑÀÔ´Ï´Ù. ¹«·áÀÌ¸ç ¸Þ¸ð¸®¸¦ ¾ÆÁÖ Àû°Ô ¼ÒºñÇÕ´Ï´Ù. ÅØ½ºÆ®¿Í ÀÌÁø ÆÄÀÏÀ» ¸ðµÎ ÆíÁýÇÒ ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸¿Í µ¥¸ð´Â ´ÙÀ½À» ÂüÁ¶ÇÏ½Ê½Ã¿À: <a href="http://www.autohotkey.com/forum/topic19141.html">www.autohotkey.com/forum/topic19141.html</a></p>
+<strong>ë” ê°•ë ¥í•œ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤</strong>: HiEditì€ ë©€í‹° íƒ­ì„ ì§€ì›í•˜ëŠ” ëŒ€ìš©ëŸ‰ íŒŒì¼ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ìž…ë‹ˆë‹¤. ë¬´ë£Œì´ë©° ë©”ëª¨ë¦¬ë¥¼ ì•„ì£¼ ì ê²Œ ì†Œë¹„í•©ë‹ˆë‹¤. í…ìŠ¤íŠ¸ì™€ ì´ì§„ íŒŒì¼ì„ ëª¨ë‘ íŽ¸ì§‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ì™€ ë°ëª¨ëŠ” ë‹¤ìŒì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤: <a href="http://www.autohotkey.com/forum/topic19141.html">www.autohotkey.com/forum/topic19141.html</a></p>
 <h2 id="UpDown">UpDown</h2>
 <p>
-¼³¸í: »ç¿ëÀÚ°¡ Å¬¸¯ÇØ °ªÀ» Áõ°¡½ÃÅ°°Å³ª °¨¼Ò ½ÃÅ³ ¼ö ÀÖ´Â ÇÑ ½ÖÀÇ È­»ìÇ¥ ¹öÆ°. ±âº»°ªÀ¸·Î UpDown ÄÜÆ®·ÑÀº ÀÚµ¿À¸·Î ÀÌÀü¿¡ Ãß°¡µÈ ÄÜÆ®·Ñ¿¡ ºÎÂøµË´Ï´Ù. ÀÌ ÀÌÀüÀÇ ÄÜÆ®·ÑÀ» UpDownÀÇ <em>Ä£±¸ ÄÜÆ®·Ñ</em>ÀÌ¶ó°í ºÎ¸¨´Ï´Ù. °¡Àå ÈçÇÑ ¿¹´Â ½ºÇÇ³Ê(&quot;spinner&quot;)ÀÎµ¥, UpDown ÄÜÆ®·ÑÀÌ <a href="#Edit">Edit ÄÜÆ®·Ñ</a>¿¡ ºÎÂøµË´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì„¤ëª…: ì‚¬ìš©ìžê°€ í´ë¦­í•´ ê°’ì„ ì¦ê°€ì‹œí‚¤ê±°ë‚˜ ê°ì†Œ ì‹œí‚¬ ìˆ˜ ìžˆëŠ” í•œ ìŒì˜ í™”ì‚´í‘œ ë²„íŠ¼. ê¸°ë³¸ê°’ìœ¼ë¡œ UpDown ì½˜íŠ¸ë¡¤ì€ ìžë™ìœ¼ë¡œ ì´ì „ì— ì¶”ê°€ëœ ì½˜íŠ¸ë¡¤ì— ë¶€ì°©ë©ë‹ˆë‹¤. ì´ ì´ì „ì˜ ì½˜íŠ¸ë¡¤ì„ UpDownì˜ <em>ì¹œêµ¬ ì½˜íŠ¸ë¡¤</em>ì´ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤. ê°€ìž¥ í”í•œ ì˜ˆëŠ” ìŠ¤í”¼ë„ˆ(&quot;spinner&quot;)ì¸ë°, UpDown ì½˜íŠ¸ë¡¤ì´ <a href="#Edit">Edit ì½˜íŠ¸ë¡¤</a>ì— ë¶€ì°©ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
 <pre>Gui, Add, Edit
 Gui, Add, UpDown, vMyUpDown Range1-10, 5</pre>
 <p>
-À§ÀÇ ¿¹Á¦¾î¼­, Edit ÄÜÆ®·ÑÀº UpDownÀÇ Ä£±¸ ÄÜÆ®·ÑÀÔ´Ï´Ù. »ç¿ëÀÚ°¡ È­»ìÇ¥ ¹öÆ° Áß ÇÏ³ª¸¦ ´©¸¦ ¶§¸¶´Ù, Edit ÄÜÆ®·Ñ ¾ÈÀÇ ¼ýÀÚ°¡ ÀÚµ¿À¸·Î ´Ã¾î³ª°Å³ª ÁÙ¾îµì´Ï´Ù.</p>
+ìœ„ì˜ ì˜ˆì œì–´ì„œ, Edit ì½˜íŠ¸ë¡¤ì€ UpDownì˜ ì¹œêµ¬ ì½˜íŠ¸ë¡¤ìž…ë‹ˆë‹¤. ì‚¬ìš©ìžê°€ í™”ì‚´í‘œ ë²„íŠ¼ ì¤‘ í•˜ë‚˜ë¥¼ ëˆ„ë¥¼ ë•Œë§ˆë‹¤, Edit ì½˜íŠ¸ë¡¤ ì•ˆì˜ ìˆ«ìžê°€ ìžë™ìœ¼ë¡œ ëŠ˜ì–´ë‚˜ê±°ë‚˜ ì¤„ì–´ë“­ë‹ˆë‹¤.</p>
 <p>
-UpDownÀÇ Ä£±¸ ÄÜÆ®·ÑÀº <a href="#Text">Text</a> ¶Ç´Â <a href="#ListBox">ListBox</a> ÄÜÆ®·Ñµµ °¡´ÉÇÕ´Ï´Ù. ±×·¸Áö¸¸, OS Á¦ÇÑ ¶§¹®¿¡, ÀÌ·± ÄÜÆ®·Ñ ¸»°í ´Ù¸¥ ÄÜÆ®·ÑµéÀº (¿¹¸¦ µé¾î ComboBox¿Í DropDownList) <a href="Gui.htm#label">g-¶óº§</a> ±×¸®°í ±âÅ¸ Æ¯Â¡°ú Á¦´ë·Î ÀÛµ¿ÇÏÁö ¾Ê½À´Ï´Ù.</p>
+UpDownì˜ ì¹œêµ¬ ì½˜íŠ¸ë¡¤ì€ <a href="#Text">Text</a> ë˜ëŠ” <a href="#ListBox">ListBox</a> ì½˜íŠ¸ë¡¤ë„ ê°€ëŠ¥í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, OS ì œí•œ ë•Œë¬¸ì—, ì´ëŸ° ì½˜íŠ¸ë¡¤ ë§ê³  ë‹¤ë¥¸ ì½˜íŠ¸ë¡¤ë“¤ì€ (ì˜ˆë¥¼ ë“¤ì–´ ComboBoxì™€ DropDownList) <a href="Gui.htm#label">g-ë¼ë²¨</a> ê·¸ë¦¬ê³  ê¸°íƒ€ íŠ¹ì§•ê³¼ ì œëŒ€ë¡œ ìž‘ë™í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-UpDownÀÇ ½ÃÀÛ À§Ä¡¸¦ ¸¶Áö¸· ¸Å°³º¯¼ö·Î ÁöÁ¤ÇÏ½Ê½Ã¿À (»ý·«ÇÏ¸é, 0¿¡¼­ ½ÃÀÛÇÏ°Å³ª Çã¿ë ¹üÀ§ ¾È¿¡¼­ 0¿¡ °¡Àå °¡±î¿î ¼ýÀÚ¿¡¼­ ½ÃÀÛÇÕ´Ï´Ù).</p>
+UpDownì˜ ì‹œìž‘ ìœ„ì¹˜ë¥¼ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ë¡œ ì§€ì •í•˜ì‹­ì‹œì˜¤ (ìƒëžµí•˜ë©´, 0ì—ì„œ ì‹œìž‘í•˜ê±°ë‚˜ í—ˆìš© ë²”ìœ„ ì•ˆì—ì„œ 0ì— ê°€ìž¥ ê°€ê¹Œìš´ ìˆ«ìžì—ì„œ ì‹œìž‘í•©ë‹ˆë‹¤).</p>
 <p>
-<a href="Gui.htm#Submit">Gui Submit</a> ¸í·É¾î¸¦ »ç¿ëÇÏ¸é, ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ÇöÀç UpDownÀÇ À§Ä¡¸¦ ¼ýÄ¡·Î ¹Þ½À´Ï´Ù. UpDownÀÌ Edit ÄÜÆ®·Ñ¿¡ ºÎÂøµÇ¾î ÀÖ°í »ç¿ëÀÚÀÇ ÀÔ·ÂÀ» Æò°¡ÇÏ°í ½ÍÁö ¾Ê´Ù¸é, EditÀÇ °ª ¸»°í UpDownÀÇ °ªÀ» »ç¿ëÇÏ´Â °ÍÀÌ ÁÁ½À´Ï´Ù. ¿Ö³ÄÇÏ¸é »ç¿ëÀÚ°¡ Edit ÄÜÆ®·Ñ¿¡ ºñ-¼ýÀÚ¸¦ ÀÔ·ÂÇÏ°Å³ª ¹üÀ§¸¦ ¹þ¾î³­ °ªÀ» ÀÔ·ÂÇÏ´õ¶óµµ UpDownÀº ¾ðÁ¦³ª ¹üÀ§ ¾È¿¡¼­ ¼ýÀÚ¸¦ »êÃâÇÏ±â ¶§¹®ÀÔ´Ï´Ù. °ü·ÃÇÏ¿© ¸»ÇÏÀÚ¸é, ¼¼ ÀÚ¸® ÀÌ»óÀÇ ¼ýÀÚ´Â ±âº»°ªÀ¸·Î <a href="../misc/Styles.htm#UpDownSep">ÃµÀÇ ÀÚ¸® °¡¸§ÀÚ</a> (¿¹¸¦ µé¾î ½°Ç¥)°¡ ÀÖ½À´Ï´Ù. ÀÌ·± °¡¸§ÀÚµéÀº UpDownÀÇ Ãâ·Â º¯¼ö°¡ ¾Æ´Ï¶ó EditÀÇ Ãâ·Â º¯¼ö¿¡ ÀúÀåµË´Ï´Ù.</p>
+<a href="Gui.htm#Submit">Gui Submit</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ë©´, ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) í˜„ìž¬ UpDownì˜ ìœ„ì¹˜ë¥¼ ìˆ«ì¹˜ë¡œ ë°›ìŠµë‹ˆë‹¤. UpDownì´ Edit ì½˜íŠ¸ë¡¤ì— ë¶€ì°©ë˜ì–´ ìžˆê³  ì‚¬ìš©ìžì˜ ìž…ë ¥ì„ í‰ê°€í•˜ê³  ì‹¶ì§€ ì•Šë‹¤ë©´, Editì˜ ê°’ ë§ê³  UpDownì˜ ê°’ì„ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ì¢‹ìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ ì‚¬ìš©ìžê°€ Edit ì½˜íŠ¸ë¡¤ì— ë¹„-ìˆ«ìžë¥¼ ìž…ë ¥í•˜ê±°ë‚˜ ë²”ìœ„ë¥¼ ë²—ì–´ë‚œ ê°’ì„ ìž…ë ¥í•˜ë”ë¼ë„ UpDownì€ ì–¸ì œë‚˜ ë²”ìœ„ ì•ˆì—ì„œ ìˆ«ìžë¥¼ ì‚°ì¶œí•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ê´€ë ¨í•˜ì—¬ ë§í•˜ìžë©´, ì„¸ ìžë¦¬ ì´ìƒì˜ ìˆ«ìžëŠ” ê¸°ë³¸ê°’ìœ¼ë¡œ <a href="../misc/Styles.htm#UpDownSep">ì²œì˜ ìžë¦¬ ê°€ë¦„ìž</a> (ì˜ˆë¥¼ ë“¤ì–´ ì‰¼í‘œ)ê°€ ìžˆìŠµë‹ˆë‹¤. ì´ëŸ° ê°€ë¦„ìžë“¤ì€ UpDownì˜ ì¶œë ¥ ë³€ìˆ˜ê°€ ì•„ë‹ˆë¼ Editì˜ ì¶œë ¥ ë³€ìˆ˜ì— ì €ìž¥ë©ë‹ˆë‹¤.</p>
 <p>
-UpDown¿¡ <a href="Gui.htm#label">g-¶óº§</a>ÀÌ ÀÖ´Ù¸é, »ç¿ëÀÚ°¡ È­»ìÇ¥ ¹öÆ°À» Å¬¸¯ÇÏ°Å³ª Å°º¸µå¿¡¼­ È­»ìÇ¥ Å°¸¦ ´©¸¦ ¶§¸¶´Ù ±âµ¿µË´Ï´Ù. g-¶óº§ÀÌ ±âµ¿ÇÒ ¶§¸¶´Ù UpDownÀÇ À§Ä¡¸¦ ±×ÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>¿¡ (ÀÖ´Ù¸é) ÀúÀåÇÕ´Ï´Ù.</p>
+UpDownì— <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ ìžˆë‹¤ë©´, ì‚¬ìš©ìžê°€ í™”ì‚´í‘œ ë²„íŠ¼ì„ í´ë¦­í•˜ê±°ë‚˜ í‚¤ë³´ë“œì—ì„œ í™”ì‚´í‘œ í‚¤ë¥¼ ëˆ„ë¥¼ ë•Œë§ˆë‹¤ ê¸°ë™ë©ë‹ˆë‹¤. g-ë¼ë²¨ì´ ê¸°ë™í•  ë•Œë§ˆë‹¤ UpDownì˜ ìœ„ì¹˜ë¥¼ ê·¸ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ì— (ìžˆë‹¤ë©´) ì €ìž¥í•©ë‹ˆë‹¤.</p>
 
-<h3>UpDown ¿É¼Ç</h3>
+<h3>UpDown ì˜µì…˜</h3>
 <p>
-<strong><a name="Horz"></a>Horz</strong>: ÄÜÆ®·ÑÀÇ ¹öÆ° ¹æÇâÀ» ÁÂ/¿ì·Î ¸¸µì´Ï´Ù. 
-±âº»°ªÀ¸·Î, <em>Horz</em>´Â ¶Ç ÄÜÆ®·ÑÀ» ºÐ¸®½ÃÅµ´Ï´Ù (Ä£±¸ ¾øÀ½). 
-ÀÌ ÇàÀ§´Â <code>Horz 16</code>¸¦ ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ÁöÁ¤ÇÏ¸é ¿À¹ö¶óÀÌµåÇÒ ¼ö ¾ø½À´Ï´Ù.</p>
+<strong><a name="Horz"></a>Horz</strong>: ì½˜íŠ¸ë¡¤ì˜ ë²„íŠ¼ ë°©í–¥ì„ ì¢Œ/ìš°ë¡œ ë§Œë“­ë‹ˆë‹¤. 
+ê¸°ë³¸ê°’ìœ¼ë¡œ, <em>Horz</em>ëŠ” ë˜ ì½˜íŠ¸ë¡¤ì„ ë¶„ë¦¬ì‹œí‚µë‹ˆë‹¤ (ì¹œêµ¬ ì—†ìŒ). 
+ì´ í–‰ìœ„ëŠ” <code>Horz 16</code>ë¥¼ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ì§€ì •í•˜ë©´ ì˜¤ë²„ë¼ì´ë“œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>Left</strong>: UpDownÀ» ±×ÀÇ Ä£±¸ÀÇ ¿ÞÂÊ¿¡ ¹èÄ¡ÇÕ´Ï´Ù.</p>
+<strong>Left</strong>: UpDownì„ ê·¸ì˜ ì¹œêµ¬ì˜ ì™¼ìª½ì— ë°°ì¹˜í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>Range</strong>: ¹üÀ§¸¦ 0°ú 100 ¸»°í ÁöÁ¤ÇÕ´Ï´Ù. ´Ü¾î Range ´ÙÀ½¿¡, ÃÖ¼Ò°ª, ¿·ÁÙ, ±×¸®°í ÃÖ´ë°ªÀ» ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î <code>Range1-1000</code>ÀÌ¸é ¼ýÀÚ¸¦ 1ºÎÅÍ 1000±îÁö ¼±ÅÃµÇµµ·Ï Çã¿ëÇÕ´Ï´Ù; <code>Range-50-50</code>ÀÌ¸é ¼ýÀÚ¸¦ -50ºÎÅÍ 50±îÁö Çã¿ëÇÕ´Ï´Ù; ±×¸®°í <code>Range-10--5</code>ÀÌ¸é ¼ýÀÚ¸¦ -10ºÎÅÍ -5±îÁö Çã¿ëÇÕ´Ï´Ù. ÃÖ¼Ò°ª°ú ÃÖ´ë°ªÀ» ¹Ù²Ù¸é È­»ìÇ¥°¡ Á¤»ó ¹æÇâ°ú ¹Ý´ë ¹æÇâÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù. ÃÖ´ë Çã¿ë ¹üÀ§´Â -2147483648-2147483647ÀÔ´Ï´Ù. ¸¶Áö¸·À¸·Î, Ä£±¸ ÄÜÆ®·ÑÀÌ <a href="#ListBox">ListBox</a>ÀÌ¸é, ¹üÀ§´Â ±âº»°ªÀÌ ¼öÁ÷¿¡ 32767-0ÀÌ°í ¼öÆò¿¡ ±× ¹Ý´ëÀÔ´Ï´Ù (<a href="#Horz">Horz</a>).</p>
+<strong>Range</strong>: ë²”ìœ„ë¥¼ 0ê³¼ 100 ë§ê³  ì§€ì •í•©ë‹ˆë‹¤. ë‹¨ì–´ Range ë‹¤ìŒì—, ìµœì†Œê°’, ì˜†ì¤„, ê·¸ë¦¬ê³  ìµœëŒ€ê°’ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´ <code>Range1-1000</code>ì´ë©´ ìˆ«ìžë¥¼ 1ë¶€í„° 1000ê¹Œì§€ ì„ íƒë˜ë„ë¡ í—ˆìš©í•©ë‹ˆë‹¤; <code>Range-50-50</code>ì´ë©´ ìˆ«ìžë¥¼ -50ë¶€í„° 50ê¹Œì§€ í—ˆìš©í•©ë‹ˆë‹¤; ê·¸ë¦¬ê³  <code>Range-10--5</code>ì´ë©´ ìˆ«ìžë¥¼ -10ë¶€í„° -5ê¹Œì§€ í—ˆìš©í•©ë‹ˆë‹¤. ìµœì†Œê°’ê³¼ ìµœëŒ€ê°’ì„ ë°”ê¾¸ë©´ í™”ì‚´í‘œê°€ ì •ìƒ ë°©í–¥ê³¼ ë°˜ëŒ€ ë°©í–¥ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤. ìµœëŒ€ í—ˆìš© ë²”ìœ„ëŠ” -2147483648-2147483647ìž…ë‹ˆë‹¤. ë§ˆì§€ë§‰ìœ¼ë¡œ, ì¹œêµ¬ ì½˜íŠ¸ë¡¤ì´ <a href="#ListBox">ListBox</a>ì´ë©´, ë²”ìœ„ëŠ” ê¸°ë³¸ê°’ì´ ìˆ˜ì§ì— 32767-0ì´ê³  ìˆ˜í‰ì— ê·¸ ë°˜ëŒ€ìž…ë‹ˆë‹¤ (<a href="#Horz">Horz</a>).</p>
 <p>
 <strong>Wrap</strong>: 
-»ç¿ëÀÚ°¡ ÃÖ¼Ò°ª ¶Ç´Â ÃÖ´ë°ªÀ» ³Ñ¾î¼­·Á°í ½ÃµµÇÏ¸é ÄÜÆ®·ÑÀº ±×ÀÇ ¹üÀ§ ¹Ý´ë ³¡À¸·Î µ¹¸³´Ï´Ù. 
-<em>Wrap</em>ÀÌ ¾ø´Ù¸é, ÄÜÆ®·ÑÀº ÃÖ´ë ÃÖ¼Ò °ª¿¡ µµ´ÞÇÏ¸é ¸ØÃä´Ï´Ù</p>
+ì‚¬ìš©ìžê°€ ìµœì†Œê°’ ë˜ëŠ” ìµœëŒ€ê°’ì„ ë„˜ì–´ì„œë ¤ê³  ì‹œë„í•˜ë©´ ì½˜íŠ¸ë¡¤ì€ ê·¸ì˜ ë²”ìœ„ ë°˜ëŒ€ ëìœ¼ë¡œ ëŒë¦½ë‹ˆë‹¤. 
+<em>Wrap</em>ì´ ì—†ë‹¤ë©´, ì½˜íŠ¸ë¡¤ì€ ìµœëŒ€ ìµœì†Œ ê°’ì— ë„ë‹¬í•˜ë©´ ë©ˆì¶¥ë‹ˆë‹¤</p>
 <p>
-<strong>-16</strong> (¸¶ÀÌ³Ê½º 16): ¼öÁ÷ UpDownÀ» ºÐ¸®½ÃÅµ´Ï´Ù; Áï, Ä£±¸°¡ ¾ø½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é ¶ÇÇÑ ÄÜÆ®·ÑÀÌ Ä£±¸ ÄÜÆ®·ÑÀÇ Å©±â¸¦ µû¸£Áö ¾Ê°í ÁöÁ¤µÈ ³Êºñ¿Í ³ôÀÌ ±×¸®°í À§Ä¡¸¦ ÁØ¼öÇÕ´Ï´Ù. °Ô´Ù°¡, ºÐ¸®µÈ UpDownÀº ÀÚ½Å¸¸ÀÇ À§Ä¡¸¦ ³»ºÎÀûÀ¸·Î ÃßÀû °ü¸®ÇÕ´Ï´Ù. ÀÌ À§Ä¡´Â <a href="Gui.htm#Submit">Gui Submit</a>¿Í °°Àº ¼ö´ÜÀ» ÅëÇÏ¿© Á¤»óÀûÀ¸·Î ¿­¶÷ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong>-16</strong> (ë§ˆì´ë„ˆìŠ¤ 16): ìˆ˜ì§ UpDownì„ ë¶„ë¦¬ì‹œí‚µë‹ˆë‹¤; ì¦‰, ì¹œêµ¬ê°€ ì—†ìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ë˜í•œ ì½˜íŠ¸ë¡¤ì´ ì¹œêµ¬ ì½˜íŠ¸ë¡¤ì˜ í¬ê¸°ë¥¼ ë”°ë¥´ì§€ ì•Šê³  ì§€ì •ëœ ë„ˆë¹„ì™€ ë†’ì´ ê·¸ë¦¬ê³  ìœ„ì¹˜ë¥¼ ì¤€ìˆ˜í•©ë‹ˆë‹¤. ê²Œë‹¤ê°€, ë¶„ë¦¬ëœ UpDownì€ ìžì‹ ë§Œì˜ ìœ„ì¹˜ë¥¼ ë‚´ë¶€ì ìœ¼ë¡œ ì¶”ì  ê´€ë¦¬í•©ë‹ˆë‹¤. ì´ ìœ„ì¹˜ëŠ” <a href="Gui.htm#Submit">Gui Submit</a>ì™€ ê°™ì€ ìˆ˜ë‹¨ì„ í†µí•˜ì—¬ ì •ìƒì ìœ¼ë¡œ ì—´ëžŒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong><a name="UpDownSep"></a>0x80</strong>: <code>0x80</code>À» <em>Options</em>¿¡ Æ÷ÇÔÇÏ¸é ÃµÀÇ ÀÚ¸® °¡¸§ÀÚ¸¦ »ý·«ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ °¡¸§ÀÚ´Â º¸Åë Ä£±¸ ÄÜÆ®·ÑÀÇ ¼Ò¼öÁ¡ ¼¼ ÀÚ¸®¸¶´Ù ³ªÅ¸³³´Ï´Ù. ±×·¸Áö¸¸, ÀÌ ½ºÅ¸ÀÏÀº º¸Åë »ç¿ëµÇÁö ¾Ê½À´Ï´Ù. ¿Ö³ÄÇÏ¸é ½ºÅ©¸³Æ®°¡ (±×ÀÇ Ä£±¸ ÄÜÆ®·ÑÀÌ ¾Æ´Ï¶ó) UpDown ÄÜÆ®·Ñ ÀÚÃ¼·ÎºÎÅÍ ¿­¶÷ÇÒ ¶§ °¡¸§ÀÚ¸¦ ¼ýÀÚ·ÎºÎÅÍ Á¦¿ÜÇÏ±â ¶§¹®ÀÔ´Ï´Ù.</p>
+<strong><a name="UpDownSep"></a>0x80</strong>: <code>0x80</code>ì„ <em>Options</em>ì— í¬í•¨í•˜ë©´ ì²œì˜ ìžë¦¬ ê°€ë¦„ìžë¥¼ ìƒëžµí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ ê°€ë¦„ìžëŠ” ë³´í†µ ì¹œêµ¬ ì½˜íŠ¸ë¡¤ì˜ ì†Œìˆ˜ì  ì„¸ ìžë¦¬ë§ˆë‹¤ ë‚˜íƒ€ë‚©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì´ ìŠ¤íƒ€ì¼ì€ ë³´í†µ ì‚¬ìš©ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ ìŠ¤í¬ë¦½íŠ¸ê°€ (ê·¸ì˜ ì¹œêµ¬ ì½˜íŠ¸ë¡¤ì´ ì•„ë‹ˆë¼) UpDown ì½˜íŠ¸ë¡¤ ìžì²´ë¡œë¶€í„° ì—´ëžŒí•  ë•Œ ê°€ë¦„ìžë¥¼ ìˆ«ìžë¡œë¶€í„° ì œì™¸í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 <p>
-<strong>1 ¸»°í ´Ù¸¥ °ª ¸¸Å­ Áõ°¡½ÃÅ°±â</strong>: 
-<a href="http://numeric.nerim.net/AutoHotkey/Scripts/UpDown%20-%20Non-unitary%20increments.ahk">ÀÌ ½ºÅ©¸³Æ®</a>¿¡¼­, NumEricÀº UpDownÀÇ Áõ°¨°ªÀ» 1 ¾Æ´Ñ °ªÀ¸·Î (¿¹¸¦ µé¾î 5 ¶Ç´Â 0.1) º¯°æÇÏ´Â ¹ýÀ» º¸¿©ÁÝ´Ï´Ù..</p>
-<p>´ÙÀ½ ÂüÁ¶: <a href="Gui.htm#PosSize">ÄÜÆ®·ÑÀÇ À§Ä¡¿Í Å©±â º¯°æ</a>.</p>
+<strong>1 ë§ê³  ë‹¤ë¥¸ ê°’ ë§Œí¼ ì¦ê°€ì‹œí‚¤ê¸°</strong>: 
+<a href="http://numeric.nerim.net/AutoHotkey/Scripts/UpDown%20-%20Non-unitary%20increments.ahk">ì´ ìŠ¤í¬ë¦½íŠ¸</a>ì—ì„œ, NumEricì€ UpDownì˜ ì¦ê°ê°’ì„ 1 ì•„ë‹Œ ê°’ìœ¼ë¡œ (ì˜ˆë¥¼ ë“¤ì–´ 5 ë˜ëŠ” 0.1) ë³€ê²½í•˜ëŠ” ë²•ì„ ë³´ì—¬ì¤ë‹ˆë‹¤..</p>
+<p>ë‹¤ìŒ ì°¸ì¡°: <a href="Gui.htm#PosSize">ì½˜íŠ¸ë¡¤ì˜ ìœ„ì¹˜ì™€ í¬ê¸° ë³€ê²½</a>.</p>
 
-<h2 id="Picture">Picture (¶Ç´Â Pic)</h2>
+<h2 id="Picture">Picture (ë˜ëŠ” Pic)</h2>
 <p>
-¼³Á¤: ÀÌ¹ÌÁö¸¦ ´ã°í ÀÖ´Â ±¸¿ª (Áö¿øµÇ´Â ÆÄÀÏ À¯ÇüÀº ¸¶Áö¸· µÎ ¹®´ÜÀ» ÂüÁ¶). ¸¶Áö¸· ¸Å°³º¯¼ö´Â ÀÌ¹ÌÁöÀÇ ÆÄÀÏÀÌ¸§ÀÔ´Ï´Ù. Àý´ë °æ·Î¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>¿¡ ÀÖ´Ù°í °£ÁÖµË´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì„¤ì •: ì´ë¯¸ì§€ë¥¼ ë‹´ê³  ìžˆëŠ” êµ¬ì—­ (ì§€ì›ë˜ëŠ” íŒŒì¼ ìœ í˜•ì€ ë§ˆì§€ë§‰ ë‘ ë¬¸ë‹¨ì„ ì°¸ì¡°). ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” ì´ë¯¸ì§€ì˜ íŒŒì¼ì´ë¦„ìž…ë‹ˆë‹¤. ì ˆëŒ€ ê²½ë¡œë¥¼ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>ì— ìžˆë‹¤ê³  ê°„ì£¼ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
 <pre>Gui, Add, Picture, w300 h-1, C:\My Pictures\Company Logo.gif</pre>
 <p>
-ÀÌ¹ÌÁöÀÇ ½ÇÁ¦ ³Êºñ ±×¸®°í/¶Ç´Â ³ôÀÌ¸¦ À¯ÁöÇÏ·Á¸é, W ±×¸®°í/¶Ç´Â H ¿É¼ÇÀ» »ý·«ÇÏ½Ê½Ã¿À. ±×·¸Áö ¾ÊÀ¸¸é, ÀÌ¹ÌÁö´Â ÁöÁ¤µÈ ³Êºñ ±×¸®°í/¶Ç´Â ³ôÀÌµµ Å©±â°¡ Á¶ÀýµË´Ï´Ù (ÀÌ ³Êºñ¿Í ³ôÀÌ´Â ¶ÇÇÑ ¾î´À ¾ÆÀÌÄÜÀ» ´ÙÁß-¾ÆÀÌÄÜ .ICO ÆÄÀÏ·ÎºÎÅÍ ÀûÀçÇÒÁö °áÁ¤ÇÏ±âµµ ÇÕ´Ï´Ù). ±×ÀÇ È­¸é ºñÀ²À» À¯ÁöÇÑ Ã¤·Î ÀÌ¹ÌÁö¸¦ ´Ã¸®°Å³ª ÁÙÀÌ·Á¸é,  -1À» Â÷¿ø Áß ÇÏ³ª¿¡ ÁöÁ¤ÇÏ°í ¾ç¼ö¸¦ ³ª¸ÓÁö Â÷¿ø¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, <code>w200 h-1</code>À¸·Î ÁöÁ¤ÇÏ¸é ÀÌ¹ÌÁö¸¦ 200 ÇÈ¼¿ ³Êºñ·Î ¸¸µé°í ³ôÀÌ´Â ÀÚµ¿À¸·Î ¼³Á¤ÇÕ´Ï´Ù. ±×¸²À» ÀûÀçÇÒ ¼ö ¾ø°Å³ª º¸¿©ÁÙ ¼ö ¾øÀ¸¸é (¿¹, ÆÄÀÏÀÌ ¾øÀ¸¸é), ÄÜÆ®·ÑÀº ºó Ã¤·Î ÀÖ°í ±×ÀÇ ³Êºñ¿Í ³ôÀÌ´Â 0À¸·Î ¼³Á¤µË´Ï´Ù.</p>
+ì´ë¯¸ì§€ì˜ ì‹¤ì œ ë„ˆë¹„ ê·¸ë¦¬ê³ /ë˜ëŠ” ë†’ì´ë¥¼ ìœ ì§€í•˜ë ¤ë©´, W ê·¸ë¦¬ê³ /ë˜ëŠ” H ì˜µì…˜ì„ ìƒëžµí•˜ì‹­ì‹œì˜¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ì´ë¯¸ì§€ëŠ” ì§€ì •ëœ ë„ˆë¹„ ê·¸ë¦¬ê³ /ë˜ëŠ” ë†’ì´ë„ í¬ê¸°ê°€ ì¡°ì ˆë©ë‹ˆë‹¤ (ì´ ë„ˆë¹„ì™€ ë†’ì´ëŠ” ë˜í•œ ì–´ëŠ ì•„ì´ì½˜ì„ ë‹¤ì¤‘-ì•„ì´ì½˜ .ICO íŒŒì¼ë¡œë¶€í„° ì ìž¬í• ì§€ ê²°ì •í•˜ê¸°ë„ í•©ë‹ˆë‹¤). ê·¸ì˜ í™”ë©´ ë¹„ìœ¨ì„ ìœ ì§€í•œ ì±„ë¡œ ì´ë¯¸ì§€ë¥¼ ëŠ˜ë¦¬ê±°ë‚˜ ì¤„ì´ë ¤ë©´,  -1ì„ ì°¨ì› ì¤‘ í•˜ë‚˜ì— ì§€ì •í•˜ê³  ì–‘ìˆ˜ë¥¼ ë‚˜ë¨¸ì§€ ì°¨ì›ì— ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, <code>w200 h-1</code>ìœ¼ë¡œ ì§€ì •í•˜ë©´ ì´ë¯¸ì§€ë¥¼ 200 í”½ì…€ ë„ˆë¹„ë¡œ ë§Œë“¤ê³  ë†’ì´ëŠ” ìžë™ìœ¼ë¡œ ì„¤ì •í•©ë‹ˆë‹¤. ê·¸ë¦¼ì„ ì ìž¬í•  ìˆ˜ ì—†ê±°ë‚˜ ë³´ì—¬ì¤„ ìˆ˜ ì—†ìœ¼ë©´ (ì˜ˆ, íŒŒì¼ì´ ì—†ìœ¼ë©´), ì½˜íŠ¸ë¡¤ì€ ë¹ˆ ì±„ë¡œ ìžˆê³  ê·¸ì˜ ë„ˆë¹„ì™€ ë†’ì´ëŠ” 0ìœ¼ë¡œ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 <p>
-<code><strong>g</strong>MySubroutine</code>°ú °°Àº <a href="Gui.htm#label">g-¶óº§</a>À» ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é <em>MySubroutine</em> ¶óº§ÀÌ »ç¿ëÀÚ°¡ ±×¸²À» Å¬¸¯ÇÒ ¶§¸¶´Ù ÀÚµ¿À¸·Î ±âµ¿µË´Ï´Ù. ´õºí-Å¬¸¯Àº <a href="../Variables.htm#GuiEvent">A_GuiEvent</a>¿¡ ´Ü¾î DoubleClickÀÌ µé¾î ÀÖ´ÂÁö Á¡°ËÇØ º¸¸é Å½ÁöÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<code><strong>g</strong>MySubroutine</code>ê³¼ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì„ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ <em>MySubroutine</em> ë¼ë²¨ì´ ì‚¬ìš©ìžê°€ ê·¸ë¦¼ì„ í´ë¦­í•  ë•Œë§ˆë‹¤ ìžë™ìœ¼ë¡œ ê¸°ë™ë©ë‹ˆë‹¤. ë”ë¸”-í´ë¦­ì€ <a href="../Variables.htm#GuiEvent">A_GuiEvent</a>ì— ë‹¨ì–´ DoubleClickì´ ë“¤ì–´ ìžˆëŠ”ì§€ ì ê²€í•´ ë³´ë©´ íƒì§€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-±×¸²À» ´Ù¸¥ ÄÜÆ®·Ñ¿¡ ¹è°æÀ¸·Î »ç¿ëÇÏ·Á¸é, ±×¸²Àº º¸Åë ±×·± ÄÜÆ®·Ñº¸´Ù ¸ÕÀú ÀûÀçÇØ¾ß ÇÕ´Ï´Ù. ±×·¸Áö¸¸, ±×·± ÄÜÆ®·ÑÀÌ ÀÔ·Â °¡´ÉÇÏ°í ±×¸²Àº <a href="Gui.htm#label">g-¶óº§</a>ÀÌ ÀÖ´Â °æ¿ì¶ó¸é, ´Ù¸¥ ÄÜÆ®·Ñ µÚ¿¡ ±×¸² ÄÜÆ®·ÑÀ» »ý¼ºÇÏ°í <code>0x4000000</code>¸¦ (WS_CLIPSIBLINGSÀÓ) ±×¸²ÀÇ <em>Options</em>¿¡ Æ÷ÇÔ½ÃÅ°½Ê½Ã¿À. ÀÌ Æ®¸¯À¸·Î ±×¸²Àº ¶ÇÇÑ <a href="#Tab">Tab ÄÜÆ®·Ñ</a> ¶Ç´Â <a href="ListView.htm">ListView</a> µÚÀÇ ¹è°æÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù.</p>
+ê·¸ë¦¼ì„ ë‹¤ë¥¸ ì½˜íŠ¸ë¡¤ì— ë°°ê²½ìœ¼ë¡œ ì‚¬ìš©í•˜ë ¤ë©´, ê·¸ë¦¼ì€ ë³´í†µ ê·¸ëŸ° ì½˜íŠ¸ë¡¤ë³´ë‹¤ ë¨¼ì € ì ìž¬í•´ì•¼ í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ê·¸ëŸ° ì½˜íŠ¸ë¡¤ì´ ìž…ë ¥ ê°€ëŠ¥í•˜ê³  ê·¸ë¦¼ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ ìžˆëŠ” ê²½ìš°ë¼ë©´, ë‹¤ë¥¸ ì½˜íŠ¸ë¡¤ ë’¤ì— ê·¸ë¦¼ ì½˜íŠ¸ë¡¤ì„ ìƒì„±í•˜ê³  <code>0x4000000</code>ë¥¼ (WS_CLIPSIBLINGSìž„) ê·¸ë¦¼ì˜ <em>Options</em>ì— í¬í•¨ì‹œí‚¤ì‹­ì‹œì˜¤. ì´ íŠ¸ë¦­ìœ¼ë¡œ ê·¸ë¦¼ì€ ë˜í•œ <a href="#Tab">Tab ì½˜íŠ¸ë¡¤</a> ë˜ëŠ” <a href="ListView.htm">ListView</a> ë’¤ì˜ ë°°ê²½ì´ ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>¾ÆÀÌÄÜ, Ä¿¼­, ±×¸®°í ¾Ö´Ï¸ÞÀÌ¼Ç Ä¿¼­</strong>: ¾ÆÀÌÄÜ°ú Ä¿¼­´Â ´ÙÀ½ À¯ÇüÀÇ ÆÄÀÏ·ÎºÎÅÍ ÀûÀçÇÒ ¼ö ÀÖ½À´Ï´Ù: ICO, CUR, ANI, EXE, DLL, CPL, SCR, ±×¸®°í ¾ÆÀÌÄÜ ÀÚ¿øÀ» ´ãÀº ±âÅ¸ À¯Çüµé. ÆÄÀÏÀÇ Ã¹ ¹øÂ° ¾ÆÀÌÄÜÀÌ ¾Æ´Ï¶ó ¾ÆÀÌÄÜ ±×·ìÀ» »ç¿ëÇÏ·Á¸é, <em>Options</em>¿¡ ´Ü¾î Icon°ú ÀÌ¾î¼­ ¹Ù·Î ±× ±×·ì ¹øÈ£¸¦ Æ÷ÇÔ½ÃÅ°½Ê½Ã¿À. ´ÙÀ½ ¿¹Á¦¿¡¼­, µÎ ¹øÂ° ¾ÆÀÌÄÜ ±×·ìÀ¸·ÎºÎÅÍ ±âº» ¾ÆÀÌÄÜÀÌ »ç¿ëµË´Ï´Ù: <code>Gui, Add, Picture, Icon2, C:\My Application.exe</code>.</p>
+<strong>ì•„ì´ì½˜, ì»¤ì„œ, ê·¸ë¦¬ê³  ì• ë‹ˆë©”ì´ì…˜ ì»¤ì„œ</strong>: ì•„ì´ì½˜ê³¼ ì»¤ì„œëŠ” ë‹¤ìŒ ìœ í˜•ì˜ íŒŒì¼ë¡œë¶€í„° ì ìž¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤: ICO, CUR, ANI, EXE, DLL, CPL, SCR, ê·¸ë¦¬ê³  ì•„ì´ì½˜ ìžì›ì„ ë‹´ì€ ê¸°íƒ€ ìœ í˜•ë“¤. íŒŒì¼ì˜ ì²« ë²ˆì§¸ ì•„ì´ì½˜ì´ ì•„ë‹ˆë¼ ì•„ì´ì½˜ ê·¸ë£¹ì„ ì‚¬ìš©í•˜ë ¤ë©´, <em>Options</em>ì— ë‹¨ì–´ Iconê³¼ ì´ì–´ì„œ ë°”ë¡œ ê·¸ ê·¸ë£¹ ë²ˆí˜¸ë¥¼ í¬í•¨ì‹œí‚¤ì‹­ì‹œì˜¤. ë‹¤ìŒ ì˜ˆì œì—ì„œ, ë‘ ë²ˆì§¸ ì•„ì´ì½˜ ê·¸ë£¹ìœ¼ë¡œë¶€í„° ê¸°ë³¸ ì•„ì´ì½˜ì´ ì‚¬ìš©ë©ë‹ˆë‹¤: <code>Gui, Add, Picture, Icon2, C:\My Application.exe</code>.</p>
 <p>
-<a name="PicAltSubmit"></a>´Ü¾î AltSubmitÀ» <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é ÇÁ·Î±×·¥Àº ¸¶ÀÌÅ©·Î¼ÒÇÁÆ®»çÀÇ GDIPlus.dllÀ» ÀÌ¿ëÇÏ¿© ÀÌ¹ÌÁö¸¦ ÀûÀçÇÕ´Ï´Ù. ÀÌ ¶§¹®¿¡ GIF, BMP, ±×¸®°í ¾ÆÀÌÄÜ ÀÌ¹ÌÁö¿¡ ´Ù¸¥ ¸ð½ÀÀÌ »ý±æ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, Åõ¸í ¹è°æÀ» °¡Áø ICO/GIF¸¦ Åõ¸í ºñÆ®¸ÊÀ¸·Î ÀûÀçÇÏ·Á°í ÇÕ´Ï´Ù. ÀÌ ¶§¹®¿¡ <a href="Gui.htm#BackgroundTrans">BackgroundTrans</a> ¿É¼ÇÀÌ ÄÑÁý´Ï´Ù. GDIPlus¸¦ »ç¿ëÇÒ ¼ö ¾øÀ¸¸é (´ÙÀ½ ¹®´Ü ÂüÁ¶), AltSubmitÀº ¹«½ÃµÇ°í ÀÌ¹ÌÁö´Â º¸ÅëÀÇ ¹æ¹ýÀ» »ç¿ëÇÏ¿© ÀûÀçµË´Ï´Ù.</p>
+<a name="PicAltSubmit"></a>ë‹¨ì–´ AltSubmitì„ <em>Options</em>ì— ì§€ì •í•˜ë©´ í”„ë¡œê·¸ëž¨ì€ ë§ˆì´í¬ë¡œì†Œí”„íŠ¸ì‚¬ì˜ GDIPlus.dllì„ ì´ìš©í•˜ì—¬ ì´ë¯¸ì§€ë¥¼ ì ìž¬í•©ë‹ˆë‹¤. ì´ ë•Œë¬¸ì— GIF, BMP, ê·¸ë¦¬ê³  ì•„ì´ì½˜ ì´ë¯¸ì§€ì— ë‹¤ë¥¸ ëª¨ìŠµì´ ìƒê¸¸ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, íˆ¬ëª… ë°°ê²½ì„ ê°€ì§„ ICO/GIFë¥¼ íˆ¬ëª… ë¹„íŠ¸ë§µìœ¼ë¡œ ì ìž¬í•˜ë ¤ê³  í•©ë‹ˆë‹¤. ì´ ë•Œë¬¸ì— <a href="Gui.htm#BackgroundTrans">BackgroundTrans</a> ì˜µì…˜ì´ ì¼œì§‘ë‹ˆë‹¤. GDIPlusë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ìœ¼ë©´ (ë‹¤ìŒ ë¬¸ë‹¨ ì°¸ì¡°), AltSubmitì€ ë¬´ì‹œë˜ê³  ì´ë¯¸ì§€ëŠ” ë³´í†µì˜ ë°©ë²•ì„ ì‚¬ìš©í•˜ì—¬ ì ìž¬ë©ë‹ˆë‹¤.</p>
 <p>
-¸ðµç ¿î¿µ Ã¼Á¦´Â GIF, JPG,  BMP, ICO, CUR, ±×¸®°í ANI ÀÌ¹ÌÁö¸¦ Áö¿øÇÕ´Ï´Ù. Windows XP ÀÌÈÄ¿¡, PNG, TIF, Exif, WMF, ±×¸®°í EMF¿Í °°Àº ÀÌ¹ÌÁö¸¦ Ãß°¡·Î Áö¿øÇÕ´Ï´Ù. XP º¸´Ù ¿À·¡µÈ ¿î¿µ Ã¼Á¦´Â ¸¶ÀÌÅ©·Î¼ÒÇÁÆ®»çÀÇ ¹«·á GDI+ DLLÀ»  AutoHotkey.exe Æú´õ ¾ÈÀ¸·Î º¹»çÇØ Áö¿øÇÒ ¼ö ÀÖ½À´Ï´Ù (±×·¯³ª <a href="../Scripts.htm#ahk2exe">ÄÄÆÄÀÏ ½ºÅ©¸³Æ®</a>ÀÇ °æ¿ì´Â, ±× DLLÀ» ½ºÅ©¸³Æ®ÀÇ Æú´õ ¾ÈÀ¸·Î º¹»çÇØ ³ÖÀ¸½Ê½Ã¿À). ÀÌ DLLÀ»³»·Á ¹ÞÀ¸·Á¸é, <a href="http://www.microsoft.com">www.microsoft.com</a>¿¡ ´ÙÀ½ ¹®±¸¸¦ °Ë»öÇÏ½Ê½Ã¿À: gdi redistributable</p>
+ëª¨ë“  ìš´ì˜ ì²´ì œëŠ” GIF, JPG,  BMP, ICO, CUR, ê·¸ë¦¬ê³  ANI ì´ë¯¸ì§€ë¥¼ ì§€ì›í•©ë‹ˆë‹¤. Windows XP ì´í›„ì—, PNG, TIF, Exif, WMF, ê·¸ë¦¬ê³  EMFì™€ ê°™ì€ ì´ë¯¸ì§€ë¥¼ ì¶”ê°€ë¡œ ì§€ì›í•©ë‹ˆë‹¤. XP ë³´ë‹¤ ì˜¤ëž˜ëœ ìš´ì˜ ì²´ì œëŠ” ë§ˆì´í¬ë¡œì†Œí”„íŠ¸ì‚¬ì˜ ë¬´ë£Œ GDI+ DLLì„  AutoHotkey.exe í´ë” ì•ˆìœ¼ë¡œ ë³µì‚¬í•´ ì§€ì›í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ê·¸ëŸ¬ë‚˜ <a href="../Scripts.htm#ahk2exe">ì»´íŒŒì¼ ìŠ¤í¬ë¦½íŠ¸</a>ì˜ ê²½ìš°ëŠ”, ê·¸ DLLì„ ìŠ¤í¬ë¦½íŠ¸ì˜ í´ë” ì•ˆìœ¼ë¡œ ë³µì‚¬í•´ ë„£ìœ¼ì‹­ì‹œì˜¤). ì´ DLLì„ë‚´ë ¤ ë°›ìœ¼ë ¤ë©´, <a href="http://www.microsoft.com">www.microsoft.com</a>ì— ë‹¤ìŒ ë¬¸êµ¬ë¥¼ ê²€ìƒ‰í•˜ì‹­ì‹œì˜¤: gdi redistributable</p>
 <p>
-<strong>¾Ö´Ï¸ÞÀÌ¼Ç GIF</strong>: ¾Ö´Ï¸ÞÀÌ¼Ç GIF ÆÄÀÏÀ» ±×¸² ÄÜÆ®·Ñ¿¡ º¸¿©ÁÙ ¼ö ÀÖÁö¸¸, ½ÇÁ¦·Î´Â ¿òÁ÷ÀÌÁö ¾Ê½À´Ï´Ù. ÀÌ¸¦ ÇØ°áÇÏ·Á¸é, AniGIF DLLÀ» »ç¿ëÇÏ½Ê½Ã¿À (ºñ »ó¾÷Àû ¸ñÀûÀ¸·Î´Â ¹«·áÀÔ´Ï´Ù). ´ÙÀ½¿¡ ½Ã¿¬ÇÕ´Ï´Ù: <a href="http://www.autohotkey.com/forum/topic19264.html">www.autohotkey.com/forum/topic19264.html</a></p>
+<strong>ì• ë‹ˆë©”ì´ì…˜ GIF</strong>: ì• ë‹ˆë©”ì´ì…˜ GIF íŒŒì¼ì„ ê·¸ë¦¼ ì½˜íŠ¸ë¡¤ì— ë³´ì—¬ì¤„ ìˆ˜ ìžˆì§€ë§Œ, ì‹¤ì œë¡œëŠ” ì›€ì§ì´ì§€ ì•ŠìŠµë‹ˆë‹¤. ì´ë¥¼ í•´ê²°í•˜ë ¤ë©´, AniGIF DLLì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤ (ë¹„ ìƒì—…ì  ëª©ì ìœ¼ë¡œëŠ” ë¬´ë£Œìž…ë‹ˆë‹¤). ë‹¤ìŒì— ì‹œì—°í•©ë‹ˆë‹¤: <a href="http://www.autohotkey.com/forum/topic19264.html">www.autohotkey.com/forum/topic19264.html</a></p>
 <h2 id="Button">Button</h2>
 <p>
-¼³¸í: ´­·¯¼­ Á¶Ä¡¸¦ ÃË¹ßÇÒ ¼ö ÀÖ´Â Çª½Ã¹öÆ°. ÀÌ °æ¿ì, ¸¶Áö¸· ¸Å°³º¯¼ö´Â ¹öÆ°ÀÇ ÀÌ¸§ÀÔ´Ï´Ù (¹öÆ° ÀÚÃ¼¿¡ º¸¿©Áü). ÀÌ¸§¿¡ ¶óÀÎÇÇµå (`n)¸¦ Æ÷ÇÔÇÏ¸é »õ ÁÙÀ» ½ÃÀÛÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì„¤ëª…: ëˆŒëŸ¬ì„œ ì¡°ì¹˜ë¥¼ ì´‰ë°œí•  ìˆ˜ ìžˆëŠ” í‘¸ì‹œë²„íŠ¼. ì´ ê²½ìš°, ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” ë²„íŠ¼ì˜ ì´ë¦„ìž…ë‹ˆë‹¤ (ë²„íŠ¼ ìžì²´ì— ë³´ì—¬ì§). ì´ë¦„ì— ë¼ì¸í”¼ë“œ (`n)ë¥¼ í¬í•¨í•˜ë©´ ìƒˆ ì¤„ì„ ì‹œìž‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
 <pre>Gui, Add, Button, Default, OK</pre>
 <p>
-<a name="DefaultButton"></a>À§ÀÇ ¿¹Á¦´Â ±×ÀÇ <em>Options</em>¿¡ ´Ü¾î <strong>Default</strong>¸¦ Æ÷ÇÔ½ÃÄÑ &quot;OK&quot;¸¦ ±âº» ¹öÆ°À¸·Î ¸¸µì´Ï´Ù. ±âº» ¹öÆ°ÀÇ ÇàÀ§´Â »ç¿ëÀÚ°¡ ENTER¸¦ ´©¸¦ ¶§¸¶´Ù ÀÚµ¿À¸·Î ÃË¹ßµË´Ï´Ù. ´Ü, Å°º¸µå ÃÊÁ¡ÀÌ ´Ù¸¥ ¹öÆ°¿¡ ÀÖ°Å³ª ¿©·¯ÁÙ ÆíÁý ÄÜÆ®·Ñ¿¡ <a href="#WantReturn">WantReturn</a> ½ºÅ¸ÀÏÀÌ ÀÖ´Â °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù. ³ªÁß¿¡ ±âº» ¹öÆ°À» ´Ù¸¥ ¹öÆ°À¸·Î ¹Ù²Ù·Á¸é, ´ÙÀ½ ¿¹Á¦¸¦ µû¸£½Ê½Ã¿À. Cancel ¹öÆ°À» ±âº» ¹öÆ°À¸·Î ¸¸µì´Ï´Ù: <code><a href="GuiControl.htm">GuiControl</a>, +Default, Cancel</code>. ³ªÁß¿¡ Ã¢À» ±âº» ¹öÆ°ÀÌ ¾øµµ·Ï º¯°æÇÏ·Á¸é, ´ÙÀ½ ¿¹Á¦¸¦ µû¸£½Ê½Ã¿À: <code>GuiControl, -default, OK</code>.</p>
+<a name="DefaultButton"></a>ìœ„ì˜ ì˜ˆì œëŠ” ê·¸ì˜ <em>Options</em>ì— ë‹¨ì–´ <strong>Default</strong>ë¥¼ í¬í•¨ì‹œì¼œ &quot;OK&quot;ë¥¼ ê¸°ë³¸ ë²„íŠ¼ìœ¼ë¡œ ë§Œë“­ë‹ˆë‹¤. ê¸°ë³¸ ë²„íŠ¼ì˜ í–‰ìœ„ëŠ” ì‚¬ìš©ìžê°€ ENTERë¥¼ ëˆ„ë¥¼ ë•Œë§ˆë‹¤ ìžë™ìœ¼ë¡œ ì´‰ë°œë©ë‹ˆë‹¤. ë‹¨, í‚¤ë³´ë“œ ì´ˆì ì´ ë‹¤ë¥¸ ë²„íŠ¼ì— ìžˆê±°ë‚˜ ì—¬ëŸ¬ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì— <a href="#WantReturn">WantReturn</a> ìŠ¤íƒ€ì¼ì´ ìžˆëŠ” ê²½ìš°ëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤. ë‚˜ì¤‘ì— ê¸°ë³¸ ë²„íŠ¼ì„ ë‹¤ë¥¸ ë²„íŠ¼ìœ¼ë¡œ ë°”ê¾¸ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¥´ì‹­ì‹œì˜¤. Cancel ë²„íŠ¼ì„ ê¸°ë³¸ ë²„íŠ¼ìœ¼ë¡œ ë§Œë“­ë‹ˆë‹¤: <code><a href="GuiControl.htm">GuiControl</a>, +Default, Cancel</code>. ë‚˜ì¤‘ì— ì°½ì„ ê¸°ë³¸ ë²„íŠ¼ì´ ì—†ë„ë¡ ë³€ê²½í•˜ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¥´ì‹­ì‹œì˜¤: <code>GuiControl, -default, OK</code>.</p>
 <p>
-¾ÚÆÛ¼¾µå (&amp;)¸¦ ÀÌ¸§ ¹öÆ°¿¡ »ç¿ëÇÏ¸é ±×ÀÇ ±ÛÀÚ¿¡ ¹ØÁÙÀ» ±×À» ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì•°í¼ì„¼ë“œ (&amp;)ë¥¼ ì´ë¦„ ë²„íŠ¼ì— ì‚¬ìš©í•˜ë©´ ê·¸ì˜ ê¸€ìžì— ë°‘ì¤„ì„ ê·¸ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
 <pre>Gui, Add, Button,, &amp;Pause</pre>
 <p>
-À§ÀÇ ¿¹Á¦¿¡¼­, ±âÈ£ P¿¡ ¹ØÁÙÀÌ ±×¾îÁý´Ï´Ù. ±×·¯¸é »ç¿ëÀÚ´Â Alt+P¸¦ ´­·¯¼­ <a href="Gui.htm#ShortcutKey">´ÜÃà Å°</a>·Î »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ±âÈ£ ±×´ë·Î ¾ÚÆÛ¼¾µå¸¦ º¸¿©ÁÖ·Á¸é, ¾ÚÆÛ¼¾µå µÎ °³¸¦ ¿¬¼ÓÇØ ÁöÁ¤ÇÏ½Ê½Ã¿À (&amp;&amp;).</p>
+ìœ„ì˜ ì˜ˆì œì—ì„œ, ê¸°í˜¸ Pì— ë°‘ì¤„ì´ ê·¸ì–´ì§‘ë‹ˆë‹¤. ê·¸ëŸ¬ë©´ ì‚¬ìš©ìžëŠ” Alt+Pë¥¼ ëˆŒëŸ¬ì„œ <a href="Gui.htm#ShortcutKey">ë‹¨ì¶• í‚¤</a>ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê¸°í˜¸ ê·¸ëŒ€ë¡œ ì•°í¼ì„¼ë“œë¥¼ ë³´ì—¬ì£¼ë ¤ë©´, ì•°í¼ì„¼ë“œ ë‘ ê°œë¥¼ ì—°ì†í•´ ì§€ì •í•˜ì‹­ì‹œì˜¤ (&amp;&amp;).</p>
 <p>
-¹öÆ°¿¡ ¸í½ÃÀûÀÎ <a href="Gui.htm#label">g-¶óº§</a>ÀÌ ¾ø´Ù¸é, ÀÚµ¿ ¶óº§ÀÌ ÀÖ´Ù°í °£ÁÖµË´Ï´Ù. ¿¹¸¦ µé¾î Ã¹ ¹øÂ° GUI Ã¢¿¡ OK ¹öÆ°ÀÌ ÀÖ´Ù¸é, ±× ButtonOK ¶óº§ÀÌ (Á¸ÀçÇÑ´Ù¸é) ±× ¹öÆ°ÀÌ ´­¸± ¶§ ±âµ¿µË´Ï´Ù. <a href="Gui.htm#MultiWin">Ã¹ ¹øÂ° Ã¢ ¸»°í</a> ´Ù¸¥ GUI Ã¢¿¡ ´ëÇÏ¿©, Ã¢ ¹øÈ£°¡ ¹öÆ°ÀÇ ÀÚµ¿ ¶óº§ ¾Õ¿¡ Æ÷ÇÔµË´Ï´Ù; ¿¹¸¦ µé¾î: <code>2ButtonOK</code>.</p>
+ë²„íŠ¼ì— ëª…ì‹œì ì¸ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ ì—†ë‹¤ë©´, ìžë™ ë¼ë²¨ì´ ìžˆë‹¤ê³  ê°„ì£¼ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ ì²« ë²ˆì§¸ GUI ì°½ì— OK ë²„íŠ¼ì´ ìžˆë‹¤ë©´, ê·¸ ButtonOK ë¼ë²¨ì´ (ì¡´ìž¬í•œë‹¤ë©´) ê·¸ ë²„íŠ¼ì´ ëˆŒë¦´ ë•Œ ê¸°ë™ë©ë‹ˆë‹¤. <a href="Gui.htm#MultiWin">ì²« ë²ˆì§¸ ì°½ ë§ê³ </a> ë‹¤ë¥¸ GUI ì°½ì— ëŒ€í•˜ì—¬, ì°½ ë²ˆí˜¸ê°€ ë²„íŠ¼ì˜ ìžë™ ë¼ë²¨ ì•žì— í¬í•¨ë©ë‹ˆë‹¤; ì˜ˆë¥¼ ë“¤ì–´: <code>2ButtonOK</code>.</p>
 <p>
-¹öÆ°ÀÇ ÅØ½ºÆ®¿¡ ½ºÆäÀÌ½º³ª <strong>&amp;`r`n`t`</strong> ÁýÇÕ¿¡ ÀÖ´Â ¹®ÀÚ°¡ µé¾î ÀÖ´Ù¸é, ±×ÀÇ ÀÚµ¿ ¶óº§Àº ±×·± ¹®ÀÚµéÀ» »ý·«ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, ¹öÆ° Á¦¸ñÀÌ &quot;&amp;Pause&quot;ÀÌ¶ó¸é ÀÚµ¿ ¶óº§Àº ButtonPause°¡ µË´Ï´Ù. ºñ½ÁÇÏ°Ô, ¹öÆ° Á¦¸ñ &quot;Save &amp;&amp; Exit&quot;ÀÌ¶ó¸é ÀÚµ¿ ¶óº§Àº ButtonSaveExitÀÌ µË´Ï´Ù (µÎ °³ÀÇ ¿¬¼Ó ¾ÚÆÛ»÷µå´Â ¾ÚÆÛ¼¾µå ÇÏ³ª¸¦ ±âÈ£ ±×´ë·Î ³ªÅ¸³»´Â µ¥ »ç¿ëµË´Ï´Ù).</p>
+ë²„íŠ¼ì˜ í…ìŠ¤íŠ¸ì— ìŠ¤íŽ˜ì´ìŠ¤ë‚˜ <strong>&amp;`r`n`t`</strong> ì§‘í•©ì— ìžˆëŠ” ë¬¸ìžê°€ ë“¤ì–´ ìžˆë‹¤ë©´, ê·¸ì˜ ìžë™ ë¼ë²¨ì€ ê·¸ëŸ° ë¬¸ìžë“¤ì„ ìƒëžµí•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ë²„íŠ¼ ì œëª©ì´ &quot;&amp;Pause&quot;ì´ë¼ë©´ ìžë™ ë¼ë²¨ì€ ButtonPauseê°€ ë©ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, ë²„íŠ¼ ì œëª© &quot;Save &amp;&amp; Exit&quot;ì´ë¼ë©´ ìžë™ ë¼ë²¨ì€ ButtonSaveExitì´ ë©ë‹ˆë‹¤ (ë‘ ê°œì˜ ì—°ì† ì•°í¼ìƒŒë“œëŠ” ì•°í¼ì„¼ë“œ í•˜ë‚˜ë¥¼ ê¸°í˜¸ ê·¸ëŒ€ë¡œ ë‚˜íƒ€ë‚´ëŠ” ë° ì‚¬ìš©ë©ë‹ˆë‹¤).</p>
 <p>
-<b>¾Ë·ÁÁø ÇÑ°è</b>: ¾î¶² ¹ÙÅÁÈ­¸é Å×¸¶´Â ¹öÆ°ÀÇ ÅØ½ºÆ®¸¦ Á¦´ë·Î º¸¿©ÁÖÁö ¸øÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·± ÀÏÀÌ ÀÏ¾î³ª¸é, <code>-Wrap</code> (¸¶ÀÌ³Ê½º Wrap)À» ¹öÆ°ÀÇ ¿É¼Ç¿¡ Æ÷ÇÔ½ÃÄÑ º¸½Ê½Ã¿À. ±×·¸Áö¸¸, ÀÌ·¸°Ô ÇÏ¸é ¿©·¯ ÁÙ ÅØ½ºÆ®´Â Æ÷±âÇØ¾ß ÇÕ´Ï´Ù.</p>
+<b>ì•Œë ¤ì§„ í•œê³„</b>: ì–´ë–¤ ë°”íƒ•í™”ë©´ í…Œë§ˆëŠ” ë²„íŠ¼ì˜ í…ìŠ¤íŠ¸ë¥¼ ì œëŒ€ë¡œ ë³´ì—¬ì£¼ì§€ ëª»í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ëŸ° ì¼ì´ ì¼ì–´ë‚˜ë©´, <code>-Wrap</code> (ë§ˆì´ë„ˆìŠ¤ Wrap)ì„ ë²„íŠ¼ì˜ ì˜µì…˜ì— í¬í•¨ì‹œì¼œ ë³´ì‹­ì‹œì˜¤. ê·¸ë ‡ì§€ë§Œ, ì´ë ‡ê²Œ í•˜ë©´ ì—¬ëŸ¬ ì¤„ í…ìŠ¤íŠ¸ëŠ” í¬ê¸°í•´ì•¼ í•©ë‹ˆë‹¤.</p>
 
 <h2 id="Checkbox">Checkbox</h2>
 <p>
-¼³¸í:  Ã¼Å©ÇÏ°Å³ª ÇØÁ¦ÇØ On/Off, Yes/No, µîµîÀ» Ç¥ÇöÇÒ ¼ö ÀÖ´Â ÀÛÀº ¹Ú½º. ¿¹Á¦:</p>
-<pre>Gui, Add, Checkbox, vShipToBillingAddress, Ã»±¸Áö ÁÖ¼Ò·Î ¹è¼ÛÇÒ±î¿ä?</pre>
+ì„¤ëª…:  ì²´í¬í•˜ê±°ë‚˜ í•´ì œí•´ On/Off, Yes/No, ë“±ë“±ì„ í‘œí˜„í•  ìˆ˜ ìžˆëŠ” ìž‘ì€ ë°•ìŠ¤. ì˜ˆì œ:</p>
+<pre>Gui, Add, Checkbox, vShipToBillingAddress, ì²­êµ¬ì§€ ì£¼ì†Œë¡œ ë°°ì†¡í• ê¹Œìš”?</pre>
 <p>
-¸¶Áö¸· ¸Å°³º¯¼ö´Â ¹Ú½º ¿·¿¡ º¸¿©Áö´Â ¶óº§ÀÔ´Ï´Ù. ÀüÇüÀûÀ¸·Î ÇÁ·ÒÇÁÆ®·Î »ç¿ëµÇ°Å³ª Ã¼Å©¹Ú½º°¡ ¹«¾ùÀ» ÇÏ´ÂÁö ¼³¸íÇÏ´Âµ¥ »ç¿ëµË´Ï´Ù. ¶óÀÎÇÇµå¸¦ (`n) Æ÷ÇÔÇÏ¸é »õ ÁÙÀ» ½ÃÀÛÇÒ ¼ö ÀÖ½À´Ï´Ù. ³Êºñ (W)°¡ <em>Options</em>¿¡ ÁöÁ¤µÇ¾úÁö¸¸ <a href="Gui.htm#R">Çà(R)</a>ÀÌ³ª ³ôÀÌ(H)°¡ ¾ø´Ù¸é, ÄÜÆ®·ÑÀÇ ÅØ½ºÆ®´Â ÇÊ¿äÇÏ¸é ´Ü¾î-³Ñ±â±â µË´Ï´Ù. ±×¸®°í ÄÜÆ®·ÑÀÇ ³ôÀÌ´Â ÀÚµ¿À¸·Î ¼³Á¤µË´Ï´Ù. Ã¼Å©¹Ú½ºÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>´Â (ÀÖ´Ù¸é) Ã¼Å©µÇ¾î ÀÖÀ» °æ¿ì 1, ÇØÁ¦µÇ¾î ÀÖÀ¸¸é 0, ±×¸®°í È¸»öÃ³¸®µÈ/¹Ì°áÁ¤ »óÅÂÀÌ¸é -1À» ¹Þ½À´Ï´Ù.</p>
+ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” ë°•ìŠ¤ ì˜†ì— ë³´ì—¬ì§€ëŠ” ë¼ë²¨ìž…ë‹ˆë‹¤. ì „í˜•ì ìœ¼ë¡œ í”„ë¡¬í”„íŠ¸ë¡œ ì‚¬ìš©ë˜ê±°ë‚˜ ì²´í¬ë°•ìŠ¤ê°€ ë¬´ì—‡ì„ í•˜ëŠ”ì§€ ì„¤ëª…í•˜ëŠ”ë° ì‚¬ìš©ë©ë‹ˆë‹¤. ë¼ì¸í”¼ë“œë¥¼ (`n) í¬í•¨í•˜ë©´ ìƒˆ ì¤„ì„ ì‹œìž‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë„ˆë¹„ (W)ê°€ <em>Options</em>ì— ì§€ì •ë˜ì—ˆì§€ë§Œ <a href="Gui.htm#R">í–‰(R)</a>ì´ë‚˜ ë†’ì´(H)ê°€ ì—†ë‹¤ë©´, ì½˜íŠ¸ë¡¤ì˜ í…ìŠ¤íŠ¸ëŠ” í•„ìš”í•˜ë©´ ë‹¨ì–´-ë„˜ê¸°ê¸° ë©ë‹ˆë‹¤. ê·¸ë¦¬ê³  ì½˜íŠ¸ë¡¤ì˜ ë†’ì´ëŠ” ìžë™ìœ¼ë¡œ ì„¤ì •ë©ë‹ˆë‹¤. ì²´í¬ë°•ìŠ¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ëŠ” (ìžˆë‹¤ë©´) ì²´í¬ë˜ì–´ ìžˆì„ ê²½ìš° 1, í•´ì œë˜ì–´ ìžˆìœ¼ë©´ 0, ê·¸ë¦¬ê³  íšŒìƒ‰ì²˜ë¦¬ëœ/ë¯¸ê²°ì • ìƒíƒœì´ë©´ -1ì„ ë°›ìŠµë‹ˆë‹¤.</p>
 <p>
-´Ü¾î <strong>Check3</strong>À» <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é ¼¼ ¹øÂ° »óÅÂ¸¦ ÄÓ ¼ö ÀÖ½À´Ï´Ù. ÀÌ »óÅÂ¸¦ ±î¸¸»öÀÌ ¾Æ´Ï¶ó È¸»ö Ã¼Å©Ç¥½ÄÀ» º¸¿©ÁÝ´Ï´Ù (È¸»öÀº Ã¼Å©¹Ú½º°¡ Ã¼Å©µÇÁöµµ ÇØÁ¦µÇÁöµµ ¾ÊÀº »óÅÂ¶ó´Â °ÍÀ» ³ªÅ¸³À´Ï´Ù). ´Ü¾î <strong>Checked</strong> ¶Ç´Â <strong>CheckedGray</strong>À» <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é Ã¼Å©¹Ú½º¸¦ °¢°¢ °ËÁ¤»ö ¶Ç´Â È¸»ö Ã¼Å©Ç¥½ÄÀ» °¡Áö°í ½ÃÀÛÇÏµµ·Ï ¸¸µé ¼ö ÀÖ½À´Ï´Ù. ´Ü¾î Checked´Â ´ÙÀ½¿¡ ¼±ÅÃÀûÀ¸·Î  0, 1, ¶Ç´Â -1ÀÌ µû¶ó¿Í ½ÃÀÛ »óÅÂ¸¦ ³ªÅ¸³¾ ¼ö ÀÖ½À´Ï´Ù. ´Ù¸¥ ¸»·Î, <code>Checked</code> ±×¸®°í <code>Checked%VarContainingOne%</code>´Â °°½À´Ï´Ù.</p>
+ë‹¨ì–´ <strong>Check3</strong>ì„ <em>Options</em>ì— ì§€ì •í•˜ë©´ ì„¸ ë²ˆì§¸ ìƒíƒœë¥¼ ì¼¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ ìƒíƒœë¥¼ ê¹Œë§Œìƒ‰ì´ ì•„ë‹ˆë¼ íšŒìƒ‰ ì²´í¬í‘œì‹ì„ ë³´ì—¬ì¤ë‹ˆë‹¤ (íšŒìƒ‰ì€ ì²´í¬ë°•ìŠ¤ê°€ ì²´í¬ë˜ì§€ë„ í•´ì œë˜ì§€ë„ ì•Šì€ ìƒíƒœë¼ëŠ” ê²ƒì„ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤). ë‹¨ì–´ <strong>Checked</strong> ë˜ëŠ” <strong>CheckedGray</strong>ì„ <em>Options</em>ì— ì§€ì •í•˜ë©´ ì²´í¬ë°•ìŠ¤ë¥¼ ê°ê° ê²€ì •ìƒ‰ ë˜ëŠ” íšŒìƒ‰ ì²´í¬í‘œì‹ì„ ê°€ì§€ê³  ì‹œìž‘í•˜ë„ë¡ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¨ì–´ CheckedëŠ” ë‹¤ìŒì— ì„ íƒì ìœ¼ë¡œ  0, 1, ë˜ëŠ” -1ì´ ë”°ë¼ì™€ ì‹œìž‘ ìƒíƒœë¥¼ ë‚˜íƒ€ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ, <code>Checked</code> ê·¸ë¦¬ê³  <code>Checked%VarContainingOne%</code>ëŠ” ê°™ìŠµë‹ˆë‹¤.</p>
 <p>
-<code><strong>g</strong>MySubroutine</code>¿Í °°Àº <a href="Gui.htm#label">g-¶óº§</a>À» ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é »ç¿ëÀÚ°¡ Ã¼Å©¹Ú½º¸¦ Å¬¸¯ÇÏ°Å³ª º¯°æÇÒ ¶§¸¶´Ù <em>MySubroutine</em> ¶óº§ÀÌ Áöµ¿À¸·Î ±âµ¿µË´Ï´Ù.</p>
+<code><strong>g</strong>MySubroutine</code>ì™€ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì„ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ì‚¬ìš©ìžê°€ ì²´í¬ë°•ìŠ¤ë¥¼ í´ë¦­í•˜ê±°ë‚˜ ë³€ê²½í•  ë•Œë§ˆë‹¤ <em>MySubroutine</em> ë¼ë²¨ì´ ì§€ë™ìœ¼ë¡œ ê¸°ë™ë©ë‹ˆë‹¤.</p>
 <p>
-<b>¾Ë·ÁÁø ÇÑ°è</b>: ¾î¶² ¹ÙÅÁÈ­¸é Å×¸¶´Â ¹öÆ°ÀÇ ÅØ½ºÆ®¸¦ Á¦´ë·Î º¸¿©ÁÖÁö ¸øÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·± ÀÏÀÌ ÀÏ¾î³ª¸é, <code>-Wrap</code> (¸¶ÀÌ³Ê½º Wrap)À» ¹öÆ°ÀÇ ¿É¼Ç¿¡ Æ÷ÇÔ½ÃÄÑ º¸½Ê½Ã¿À. ±×·¸Áö¸¸, ÀÌ·¸°Ô ÇÏ¸é ¿©·¯ ÁÙ ÅØ½ºÆ®´Â Æ÷±âÇØ¾ß ÇÕ´Ï´Ù.</p>
+<b>ì•Œë ¤ì§„ í•œê³„</b>: ì–´ë–¤ ë°”íƒ•í™”ë©´ í…Œë§ˆëŠ” ë²„íŠ¼ì˜ í…ìŠ¤íŠ¸ë¥¼ ì œëŒ€ë¡œ ë³´ì—¬ì£¼ì§€ ëª»í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ëŸ° ì¼ì´ ì¼ì–´ë‚˜ë©´, <code>-Wrap</code> (ë§ˆì´ë„ˆìŠ¤ Wrap)ì„ ë²„íŠ¼ì˜ ì˜µì…˜ì— í¬í•¨ì‹œì¼œ ë³´ì‹­ì‹œì˜¤. ê·¸ë ‡ì§€ë§Œ, ì´ë ‡ê²Œ í•˜ë©´ ì—¬ëŸ¬ ì¤„ í…ìŠ¤íŠ¸ëŠ” í¬ê¸°í•´ì•¼ í•©ë‹ˆë‹¤.</p>
 
 <h2 id="Radio">Radio</h2>
 <p>
-¶óµð¿À ¹öÆ°Àº Ã¼Å©ÇÏ°Å³ª ÇØÁ¦ÇÒ ¼ö ÀÖ´Â ÀÛÀº ºó µ¿±×¶ó¹ÌÀÔ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
-<pre>Gui, Add, Radio, vMyRadioGroup, ¹è¼ÛÇÏ±â Àü¿¡ ¸ðµç ¹°Ç°ÀÌ ÁØºñµÇ±â¸¦ ±â´Ù¸³´Ï´Ù.</pre>
+ë¼ë””ì˜¤ ë²„íŠ¼ì€ ì²´í¬í•˜ê±°ë‚˜ í•´ì œí•  ìˆ˜ ìžˆëŠ” ìž‘ì€ ë¹ˆ ë™ê·¸ë¼ë¯¸ìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
+<pre>Gui, Add, Radio, vMyRadioGroup, ë°°ì†¡í•˜ê¸° ì „ì— ëª¨ë“  ë¬¼í’ˆì´ ì¤€ë¹„ë˜ê¸°ë¥¼ ê¸°ë‹¤ë¦½ë‹ˆë‹¤.</pre>
 <p>
-ÀÌ ÄÜÆ®·ÑÀº º¸Åë <em>¶óµð¿À ±×·ì</em> ÇüÅÂ·Î ³ªÅ¸³³´Ï´Ù. °¢ ±×·ì¸¶´Ù µÎ °³ ÀÌ»óÀÇ ¹öÆ°À» ´ã°í ÀÖ½À´Ï´Ù. »ç¿ëÀÚ°¡ ¶óµð¿À ¹öÆ°À» Å¬¸¯ÇØ ÄÑ¸é, ±× ±×·ìÀÇ ´Ù¸¥ ¹öÆ°Àº ÀÚµ¿À¸·Î ²¨Áý´Ï´Ù (»ç¿ëÀÚ´Â È­»ìÇ¥ Å°·Î ±×·ì ¾ÈÀ» Ç×ÇØÇÒ ¼ö ÀÖ½À´Ï´Ù). ¿¬ÀÌ¾î Ãß°¡µÇ´Â ¸ðµç ¶óµð¿À ¹öÆ°¿¡ ¶óµð¿À ±×·ìÀÌ ÀÚµ¿À¸·Î »ý¼ºµË´Ï´Ù. »õ ±×·ìÀ» ½ÃÀÛÇÏ·Á¸é, ´Ü¾î <strong>Group</strong>À» »õ ±×·ìÀÇ Ã¹ ¹øÂ° ¹öÆ°ÀÇ <em>Options</em>¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À -- ¶Ç´Â ±×³É ºñ-¶óµð¿À ÄÜÆ®·ÑÀ» ±× »çÀÌ¿¡ Ãß°¡ÇÏ½Ê½Ã¿À. ±×·¯¸é ÀÚµ¿À¸·Î »õ ±×·ìÀÌ ½ÃÀÛÇÏ±â ¶§¹®ÀÔ´Ï´Ù.</p>
+ì´ ì½˜íŠ¸ë¡¤ì€ ë³´í†µ <em>ë¼ë””ì˜¤ ê·¸ë£¹</em> í˜•íƒœë¡œ ë‚˜íƒ€ë‚©ë‹ˆë‹¤. ê° ê·¸ë£¹ë§ˆë‹¤ ë‘ ê°œ ì´ìƒì˜ ë²„íŠ¼ì„ ë‹´ê³  ìžˆìŠµë‹ˆë‹¤. ì‚¬ìš©ìžê°€ ë¼ë””ì˜¤ ë²„íŠ¼ì„ í´ë¦­í•´ ì¼œë©´, ê·¸ ê·¸ë£¹ì˜ ë‹¤ë¥¸ ë²„íŠ¼ì€ ìžë™ìœ¼ë¡œ êº¼ì§‘ë‹ˆë‹¤ (ì‚¬ìš©ìžëŠ” í™”ì‚´í‘œ í‚¤ë¡œ ê·¸ë£¹ ì•ˆì„ í•­í•´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤). ì—°ì´ì–´ ì¶”ê°€ë˜ëŠ” ëª¨ë“  ë¼ë””ì˜¤ ë²„íŠ¼ì— ë¼ë””ì˜¤ ê·¸ë£¹ì´ ìžë™ìœ¼ë¡œ ìƒì„±ë©ë‹ˆë‹¤. ìƒˆ ê·¸ë£¹ì„ ì‹œìž‘í•˜ë ¤ë©´, ë‹¨ì–´ <strong>Group</strong>ì„ ìƒˆ ê·¸ë£¹ì˜ ì²« ë²ˆì§¸ ë²„íŠ¼ì˜ <em>Options</em>ì— ì§€ì •í•˜ì‹­ì‹œì˜¤ -- ë˜ëŠ” ê·¸ëƒ¥ ë¹„-ë¼ë””ì˜¤ ì½˜íŠ¸ë¡¤ì„ ê·¸ ì‚¬ì´ì— ì¶”ê°€í•˜ì‹­ì‹œì˜¤. ê·¸ëŸ¬ë©´ ìžë™ìœ¼ë¡œ ìƒˆ ê·¸ë£¹ì´ ì‹œìž‘í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 <p>
-¸¶Áö¸· ¸Å°³º¯¼ö¿¡, ¶óµð¿À ¹öÆ°ÀÇ ¿À¸¥ÂÊ¿¡ º¸¿© ÁÙ ¶óº§À» ÁöÁ¤ÇÏ½Ê½Ã¿À. ÀÌ ¶óº§Àº ÀüÇüÀûÀ¸·Î ÇÁ·ÒÇÁÆ®³ª ¼³¸íÀ¸·Î »ç¿ëµË´Ï´Ù. ¶óÀÎÇÇµå¸¦ Æ÷ÇÔÇÏ¸é (`n) »õ ÁÙÀ» ½ÃÀÛÇÒ ¼ö ÀÖ½À´Ï´Ù. ³Êºñ (W)°¡ <em>Options</em>¿¡ ÁöÁ¤µÇ¾úÁö¸¸ Çà (R)µµ ³ôÀÌ (H)µµ ÁöÁ¤µÇÁö ¾Ê¾Ò´Ù¸é, ÄÜÆ®·ÑÀÇ ÅØ½ºÆ®´Â ÇÊ¿äÇÏ¸é ´Ü¾î ³Ñ±â±â°¡ µÇ°í, ³ôÀÌ´Â ÀÚµ¿À¸·Î ¼³Á¤µË´Ï´Ù.</p>
+ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì—, ë¼ë””ì˜¤ ë²„íŠ¼ì˜ ì˜¤ë¥¸ìª½ì— ë³´ì—¬ ì¤„ ë¼ë²¨ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì´ ë¼ë²¨ì€ ì „í˜•ì ìœ¼ë¡œ í”„ë¡¬í”„íŠ¸ë‚˜ ì„¤ëª…ìœ¼ë¡œ ì‚¬ìš©ë©ë‹ˆë‹¤. ë¼ì¸í”¼ë“œë¥¼ í¬í•¨í•˜ë©´ (`n) ìƒˆ ì¤„ì„ ì‹œìž‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë„ˆë¹„ (W)ê°€ <em>Options</em>ì— ì§€ì •ë˜ì—ˆì§€ë§Œ í–‰ (R)ë„ ë†’ì´ (H)ë„ ì§€ì •ë˜ì§€ ì•Šì•˜ë‹¤ë©´, ì½˜íŠ¸ë¡¤ì˜ í…ìŠ¤íŠ¸ëŠ” í•„ìš”í•˜ë©´ ë‹¨ì–´ ë„˜ê¸°ê¸°ê°€ ë˜ê³ , ë†’ì´ëŠ” ìžë™ìœ¼ë¡œ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 <p>
-´Ü¾î <strong>Checked</strong>¸¦ <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é ¹öÆ°À» ÄÑÁø(&quot;on&quot;) »óÅÂ·Î ½ÃÀÛÇÒ ¼ö ÀÖ½À´Ï´Ù. ´Ü¾î Checked ´ÙÀ½¿¡ ¼±ÅÃÀûÀ¸·Î ¹Ù·Î 0 ¶Ç´Â 1ÀÌ µû¶ó¿Í ½ÃÀÛ »óÅÂ¸¦ ¾Ë¸± ¼ö ÀÖ½À´Ï´Ù: 0ÀÌ¸é ÇØÁ¦µÇ¾î ÀÖ´Â °ÍÀÌ°í 1ÀÌ¸é Ã¼Å©µÇ¾î ÀÖ´Â °ÍÀÔ´Ï´Ù. ´Ù¸¥ ¸»·Î, <code>Checked</code> ±×¸®°í <code>Checked%VarContainingOne%</code>´Â °°½À´Ï´Ù.</p>
+ë‹¨ì–´ <strong>Checked</strong>ë¥¼ <em>Options</em>ì— ì§€ì •í•˜ë©´ ë²„íŠ¼ì„ ì¼œì§„(&quot;on&quot;) ìƒíƒœë¡œ ì‹œìž‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¨ì–´ Checked ë‹¤ìŒì— ì„ íƒì ìœ¼ë¡œ ë°”ë¡œ 0 ë˜ëŠ” 1ì´ ë”°ë¼ì™€ ì‹œìž‘ ìƒíƒœë¥¼ ì•Œë¦´ ìˆ˜ ìžˆìŠµë‹ˆë‹¤: 0ì´ë©´ í•´ì œë˜ì–´ ìžˆëŠ” ê²ƒì´ê³  1ì´ë©´ ì²´í¬ë˜ì–´ ìžˆëŠ” ê²ƒìž…ë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ, <code>Checked</code> ê·¸ë¦¬ê³  <code>Checked%VarContainingOne%</code>ëŠ” ê°™ìŠµë‹ˆë‹¤.</p>
 <p>
-¶óµð¿À ¹öÆ°ÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>´Â (ÀÖ´Ù¸é) &quot;on&quot;¿¡ ¼ýÀÚ 1À» ¹Þ°í &quot;off&quot;¿¡ 0À» ¹Þ½À´Ï´Ù. ±×·¸Áö¸¸, ¶óµð¿À ±×·ì¿¡ ¹öÆ° ÇÏ³ª¸¸ º¯¼ö°¡ÀÖ´Ù¸é ´ë½Å ±× º¯¼ö°¡ ÇöÀç ¼±ÅÃµÈ ¹öÆ°ÀÇ ¹øÈ£¸¦ ¹Þ½À´Ï´Ù: 1ÀÌ¸é Ã¹ ¹øÂ° ¶óµð¿À ¹öÆ° (¿ø·¡ »ý¼º ¼ø¼­´ë·Î), 2ÀÌ¸é µÎ ¹øÂ° ¶óµð¿À ¹öÆ° µîµî. ¼±ÅÃµÈ ¹öÆ°ÀÌ ¾øÀ¸¸é, 0ÀÌ ÀúÀåµË´Ï´Ù.</p>
+ë¼ë””ì˜¤ ë²„íŠ¼ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ëŠ” (ìžˆë‹¤ë©´) &quot;on&quot;ì— ìˆ«ìž 1ì„ ë°›ê³  &quot;off&quot;ì— 0ì„ ë°›ìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ë¼ë””ì˜¤ ê·¸ë£¹ì— ë²„íŠ¼ í•˜ë‚˜ë§Œ ë³€ìˆ˜ê°€ìžˆë‹¤ë©´ ëŒ€ì‹  ê·¸ ë³€ìˆ˜ê°€ í˜„ìž¬ ì„ íƒëœ ë²„íŠ¼ì˜ ë²ˆí˜¸ë¥¼ ë°›ìŠµë‹ˆë‹¤: 1ì´ë©´ ì²« ë²ˆì§¸ ë¼ë””ì˜¤ ë²„íŠ¼ (ì›ëž˜ ìƒì„± ìˆœì„œëŒ€ë¡œ), 2ì´ë©´ ë‘ ë²ˆì§¸ ë¼ë””ì˜¤ ë²„íŠ¼ ë“±ë“±. ì„ íƒëœ ë²„íŠ¼ì´ ì—†ìœ¼ë©´, 0ì´ ì €ìž¥ë©ë‹ˆë‹¤.</p>
 <p>
-<code><strong>g</strong>MySubroutine</code>¿Í °°Àº <a href="Gui.htm#label">g-¶óº§</a>À» ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é »ç¿ëÀÚ°¡ ¹öÆ°À» ÄÓ ¶§¸¶´Ù <em>MySubroutine</em> ¶óº§ÀÌ ÀÚµ¿À¸·Î ±âµ¿µË´Ï´Ù. ÀÌÀü ¹®´Ü¿¡¼­ ´ÜÀÏ-º¯¼ö ¸ðµå¿Í ´Ù¸£°Ô, g-¶óº§Àº ¶óµð¿À ±×·ì¿¡¼­ °¢ ¹öÆ°¸¶´Ù ÁöÁ¤ÇØ¾ß ±âµ¿µË´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é À¯¿¬ÇÏ°Ô ¾î¶² ¹öÆ°ÀÇ Å¬¸¯Àº ¹«½ÃÇÒ ¼ö ÀÖ½À´Ï´Ù. ¸¶Áö¸·À¸·Î, ´õºíÅ¬¸¯À» Å½ÁöÇÏ·Á¸é <a href="../Variables.htm#GuiEvent">A_GuiEvent</a>¿¡ ´Ü¾î DoubleClickÀÌ ´ã°Ü ÀÖ´ÂÁö Á¡°ËÇÏ¸é µË´Ï´Ù.</p>
+<code><strong>g</strong>MySubroutine</code>ì™€ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì„ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ì‚¬ìš©ìžê°€ ë²„íŠ¼ì„ ì¼¤ ë•Œë§ˆë‹¤ <em>MySubroutine</em> ë¼ë²¨ì´ ìžë™ìœ¼ë¡œ ê¸°ë™ë©ë‹ˆë‹¤. ì´ì „ ë¬¸ë‹¨ì—ì„œ ë‹¨ì¼-ë³€ìˆ˜ ëª¨ë“œì™€ ë‹¤ë¥´ê²Œ, g-ë¼ë²¨ì€ ë¼ë””ì˜¤ ê·¸ë£¹ì—ì„œ ê° ë²„íŠ¼ë§ˆë‹¤ ì§€ì •í•´ì•¼ ê¸°ë™ë©ë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ìœ ì—°í•˜ê²Œ ì–´ë–¤ ë²„íŠ¼ì˜ í´ë¦­ì€ ë¬´ì‹œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë§ˆì§€ë§‰ìœ¼ë¡œ, ë”ë¸”í´ë¦­ì„ íƒì§€í•˜ë ¤ë©´ <a href="../Variables.htm#GuiEvent">A_GuiEvent</a>ì— ë‹¨ì–´ DoubleClickì´ ë‹´ê²¨ ìžˆëŠ”ì§€ ì ê²€í•˜ë©´ ë©ë‹ˆë‹¤.</p>
 <p>
-<b>¾Ë·ÁÁø ÇÑ°è</b>: ¾î¶² ¹ÙÅÁÈ­¸é Å×¸¶´Â ¹öÆ°ÀÇ ÅØ½ºÆ®¸¦ Á¦´ë·Î º¸¿©ÁÖÁö ¸øÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·± ÀÏÀÌ ÀÏ¾î³ª¸é, <code>-Wrap</code> (¸¶ÀÌ³Ê½º Wrap)À» ¹öÆ°ÀÇ ¿É¼Ç¿¡ Æ÷ÇÔ½ÃÄÑ º¸½Ê½Ã¿À. ±×·¸Áö¸¸, ÀÌ·¸°Ô ÇÏ¸é ¿©·¯ ÁÙ ÅØ½ºÆ®´Â Æ÷±âÇØ¾ß ÇÕ´Ï´Ù.</p>
+<b>ì•Œë ¤ì§„ í•œê³„</b>: ì–´ë–¤ ë°”íƒ•í™”ë©´ í…Œë§ˆëŠ” ë²„íŠ¼ì˜ í…ìŠ¤íŠ¸ë¥¼ ì œëŒ€ë¡œ ë³´ì—¬ì£¼ì§€ ëª»í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ëŸ° ì¼ì´ ì¼ì–´ë‚˜ë©´, <code>-Wrap</code> (ë§ˆì´ë„ˆìŠ¤ Wrap)ì„ ë²„íŠ¼ì˜ ì˜µì…˜ì— í¬í•¨ì‹œì¼œ ë³´ì‹­ì‹œì˜¤. ê·¸ë ‡ì§€ë§Œ, ì´ë ‡ê²Œ í•˜ë©´ ì—¬ëŸ¬ ì¤„ í…ìŠ¤íŠ¸ëŠ” í¬ê¸°í•´ì•¼ í•©ë‹ˆë‹¤.</p>
 
-<h2 id="DropDownList">DropDownList (¶Ç´Â DDL)</h2>
+<h2 id="DropDownList">DropDownList (ë˜ëŠ” DDL)</h2>
 <p>
-¼³¸í: ÀÛÀº ¹öÆ°À» ´©¸£¸é ÀÀ´äÇÏ¿© º¸¿©ÁÖ´Â ¼±ÅÃ ¸®½ºÆ®. ÀÌ °æ¿ì ¸¶Áö¸· ¸Å°³º¯¼ö´Â ÆÄÀÌÇÁ·Î ±¸ºÐµÈ ¼±ÅÃ ¸®½ºÆ®ÀÔ´Ï´Ù. ¿¹, <code>Choice1|Choice2|Choice3</code>. ¿¹Á¦:</p>
+ì„¤ëª…: ìž‘ì€ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì‘ë‹µí•˜ì—¬ ë³´ì—¬ì£¼ëŠ” ì„ íƒ ë¦¬ìŠ¤íŠ¸. ì´ ê²½ìš° ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” íŒŒì´í”„ë¡œ êµ¬ë¶„ëœ ì„ íƒ ë¦¬ìŠ¤íŠ¸ìž…ë‹ˆë‹¤. ì˜ˆ, <code>Choice1|Choice2|Choice3</code>. ì˜ˆì œ:</p>
 
 <pre>Gui, Add, DropDownList, vColorChoice, Black|White|Red|Green|Blue</pre>
 <p>
-Ã¢ÀÌ Ã³À½ ³ªÅ¸³¯ ¶§ Ç×¸ñ Áß¿¡ ÇÏ³ª¸¦ ¹Ì¸® ¼±ÅÃÇÏ·Á¸é, µÎ °³ÀÇ ÆÄÀÌÇÁ ¹®ÀÚ¸¦ ±× ´ÙÀ½¿¡ ºÙÀÌ½Ê½Ã¿À (¿¹, <code>Red|Green||Blue</code>). ´Ù¸¥ ¹æ¹ýÀ¸·Î, <em>Options</em>¿¡ ´Ü¾î <strong>Choose</strong> ¿Í ¹Ù·Î ÀÌ¾î¼­ ¹Ì¸®-¼±ÅÃÇÒ ¹øÈ£¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, <code>Choose5</code>ÀÌ¸é ´Ù¼¸ ¹øÂ° Ç×¸ñÀ» ¹Ì¸® ¼±ÅÃÇÕ´Ï´Ù (´Ù¸¥ ¿É¼Ç°ú ¸¶Âù°¡Áö·Î, <code>Choose%Var%</code>¿Í °°Àº º¯¼öµµ °¡´ÉÇÕ´Ï´Ù). ÄÜÆ®·ÑÀÌ »ý¼ºµÈ ÀÌÈÄ¿¡ ¼±ÅÃÀ» º¯°æÇÏ°Å³ª ¶Ç´Â ¸®½ºÆ®·ÎºÎÅÍ Ç×¸ñÀ» Á¦°ÅÇÏ°Å³ª/Ãß°¡ÇÏ·Á¸é, <a href="GuiControl.htm">GuiControl</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+ì°½ì´ ì²˜ìŒ ë‚˜íƒ€ë‚  ë•Œ í•­ëª© ì¤‘ì— í•˜ë‚˜ë¥¼ ë¯¸ë¦¬ ì„ íƒí•˜ë ¤ë©´, ë‘ ê°œì˜ íŒŒì´í”„ ë¬¸ìžë¥¼ ê·¸ ë‹¤ìŒì— ë¶™ì´ì‹­ì‹œì˜¤ (ì˜ˆ, <code>Red|Green||Blue</code>). ë‹¤ë¥¸ ë°©ë²•ìœ¼ë¡œ, <em>Options</em>ì— ë‹¨ì–´ <strong>Choose</strong> ì™€ ë°”ë¡œ ì´ì–´ì„œ ë¯¸ë¦¬-ì„ íƒí•  ë²ˆí˜¸ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Choose5</code>ì´ë©´ ë‹¤ì„¯ ë²ˆì§¸ í•­ëª©ì„ ë¯¸ë¦¬ ì„ íƒí•©ë‹ˆë‹¤ (ë‹¤ë¥¸ ì˜µì…˜ê³¼ ë§ˆì°¬ê°€ì§€ë¡œ, <code>Choose%Var%</code>ì™€ ê°™ì€ ë³€ìˆ˜ë„ ê°€ëŠ¥í•©ë‹ˆë‹¤). ì½˜íŠ¸ë¡¤ì´ ìƒì„±ëœ ì´í›„ì— ì„ íƒì„ ë³€ê²½í•˜ê±°ë‚˜ ë˜ëŠ” ë¦¬ìŠ¤íŠ¸ë¡œë¶€í„° í•­ëª©ì„ ì œê±°í•˜ê±°ë‚˜/ì¶”ê°€í•˜ë ¤ë©´, <a href="GuiControl.htm">GuiControl</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-´Ü¾î <strong>Uppercase</strong> ¶Ç´Â <strong>Lowercase</strong>¸¦ <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é ÀÚµ¿À¸·Î ¸®½ºÆ® ¾ÈÀÇ ¸ðµç Ç×¸ñµéÀ» ´ë¹®ÀÚ ¶Ç´Â ¼Ò¹®ÀÚ·Î º¯È¯ÇÕ´Ï´Ù. ´Ü¾î <strong>Sort</strong>¸¦ ÁöÁ¤ÇÏ¸é ¸®½ºÆ®ÀÇ ³»¿ëÀ» ÀÚµ¿À¸·Î ¾ËÆÄºª ¼ø¼­·Î Á¤·ÄÇÕ´Ï´Ù (ÀÌ°ÍÀº ³ªÁß¿¡ <a href="GuiControl.htm">GuiControl</a>À» ÅëÇÏ¿© Ãß°¡µÇ´Â Ç×¸ñµé¿¡µµ ¸ðµÎ ¿µÇâÀ» ¹ÌÄ¨´Ï´Ù). Sort ¿É¼ÇÀº ¶ÇÇÑ ¸®½ºÆ®°¡ µå·Ó ´Ù¿îµÉ ¶§¸¶´Ù Á¡Áø °Ë»öÀ» È°¼ºÈ­ ÇÕ´Ï´Ù; ´öºÐ¿¡ ±×ÀÇ ÀÌ¸§ Áß ¾Õ ¸î ±ÛÀÚ¸¸ Å¸ÀÚÇØµµ Ç×¸ñÀ» ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ë‹¨ì–´ <strong>Uppercase</strong> ë˜ëŠ” <strong>Lowercase</strong>ë¥¼ <em>Options</em>ì— ì§€ì •í•˜ë©´ ìžë™ìœ¼ë¡œ ë¦¬ìŠ¤íŠ¸ ì•ˆì˜ ëª¨ë“  í•­ëª©ë“¤ì„ ëŒ€ë¬¸ìž ë˜ëŠ” ì†Œë¬¸ìžë¡œ ë³€í™˜í•©ë‹ˆë‹¤. ë‹¨ì–´ <strong>Sort</strong>ë¥¼ ì§€ì •í•˜ë©´ ë¦¬ìŠ¤íŠ¸ì˜ ë‚´ìš©ì„ ìžë™ìœ¼ë¡œ ì•ŒíŒŒë²³ ìˆœì„œë¡œ ì •ë ¬í•©ë‹ˆë‹¤ (ì´ê²ƒì€ ë‚˜ì¤‘ì— <a href="GuiControl.htm">GuiControl</a>ì„ í†µí•˜ì—¬ ì¶”ê°€ë˜ëŠ” í•­ëª©ë“¤ì—ë„ ëª¨ë‘ ì˜í–¥ì„ ë¯¸ì¹©ë‹ˆë‹¤). Sort ì˜µì…˜ì€ ë˜í•œ ë¦¬ìŠ¤íŠ¸ê°€ ë“œë¡­ ë‹¤ìš´ë  ë•Œë§ˆë‹¤ ì ì§„ ê²€ìƒ‰ì„ í™œì„±í™” í•©ë‹ˆë‹¤; ë•ë¶„ì— ê·¸ì˜ ì´ë¦„ ì¤‘ ì•ž ëª‡ ê¸€ìžë§Œ íƒ€ìží•´ë„ í•­ëª©ì„ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="Gui.htm#Submit">Gui Submit</a> ¸í·É¾î°¡ »ç¿ëµÉ ¶§, ±× ÄÜÆ²·ÎÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ÇöÀç ¼±ÅÃµÈ Ç×¸ñÀÇ ÅØ½ºÆ®¸¦ ¹Þ½À´Ï´Ù. ±×·¸Áö¸¸, ÄÜÆ®·Ñ¿¡ <a href="Gui.htm#AltSubmit">AltSubmit</a> Æ¯¼ºÀÌ ÀÖ´Ù¸é, ±× Ãâ·Â º¯¼ö´Â ´ë½Å¿¡ ±× Ç×¸ñÀÇ À§Ä¡ ¹øÈ£¸¦ ¹Þ½À´Ï´Ù (Ã¹ Ç×¸ñÀº 1ÀÌ°í, µÎ ¹øÂ° Ç×¸ñÀº 2ÀÔ´Ï´Ù. µîµî).</p>
+<a href="Gui.htm#Submit">Gui Submit</a> ëª…ë ¹ì–´ê°€ ì‚¬ìš©ë  ë•Œ, ê·¸ ì½˜í‹€ë¡œì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) í˜„ìž¬ ì„ íƒëœ í•­ëª©ì˜ í…ìŠ¤íŠ¸ë¥¼ ë°›ìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì½˜íŠ¸ë¡¤ì— <a href="Gui.htm#AltSubmit">AltSubmit</a> íŠ¹ì„±ì´ ìžˆë‹¤ë©´, ê·¸ ì¶œë ¥ ë³€ìˆ˜ëŠ” ëŒ€ì‹ ì— ê·¸ í•­ëª©ì˜ ìœ„ì¹˜ ë²ˆí˜¸ë¥¼ ë°›ìŠµë‹ˆë‹¤ (ì²« í•­ëª©ì€ 1ì´ê³ , ë‘ ë²ˆì§¸ í•­ëª©ì€ 2ìž…ë‹ˆë‹¤. ë“±ë“±).</p>
 <p>
-<code><strong>g</strong>MySubroutine</code>¿Í °°Àº <a href="Gui.htm#label">g-¶óº§</a>Àº ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é  »ç¿ëÀÚ°¡ »õ Ç×¸ñÀ» ¼±ÅÃÇÒ ¶§¸¶´Ù ÀÚµ¿À¸·Î <em>MySubroutine</em> ¶óº§ÀÌ ±âµ¿µË´Ï´Ù.</p>
+<code><strong>g</strong>MySubroutine</code>ì™€ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì€ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´  ì‚¬ìš©ìžê°€ ìƒˆ í•­ëª©ì„ ì„ íƒí•  ë•Œë§ˆë‹¤ ìžë™ìœ¼ë¡œ <em>MySubroutine</em> ë¼ë²¨ì´ ê¸°ë™ë©ë‹ˆë‹¤.</p>
 <p>
-<a href="Gui.htm#R">R ¶Ç´Â H ¿É¼Ç</a>À» »ç¿ëÇÏ¸é ÆË¾÷ ¸®½ºÆ®ÀÇ ³ôÀÌ¸¦ Á¦¾îÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î <code>R5</code>¸¦ ÁöÁ¤ÇÏ¸é ¸®½ºÆ®°¡ 5 Çà ³ôÀÌ°¡ µË´Ï´Ù. ¹Ý¸é¿¡ <code>H400</code>ÀÌ¸é ¼±ÅÃ ÇÊµå¿Í ¸®½ºÆ®ÀÇ ÃÑ ³ôÀÌ°¡ 400 ÇÈ¼¿·Î ¼³Á¤µË´Ï´Ù. R°ú H¸¦ ¸ðµÎ »ý·«ÇÏ¸é, ¸®½ºÆ®´Â ÀÚµ¿À¸·Î È®´ëµÇ¾î »ç¿ëÀÚÀÇ ¹ÙÅÁÈ­¸é ³ôÀÌ¸¦ È°¿ëÇÕ´Ï´Ù (±×·¸Áö¸¸, Windows XPº¸´Ù ¿À·¡µÈ ¿î¿µ Ã¼Á¦´Â ±âº»À¸·Î 3 ÇàÀ» º¸¿©ÁÝ´Ï´Ù).</p>
+<a href="Gui.htm#R">R ë˜ëŠ” H ì˜µì…˜</a>ì„ ì‚¬ìš©í•˜ë©´ íŒì—… ë¦¬ìŠ¤íŠ¸ì˜ ë†’ì´ë¥¼ ì œì–´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ <code>R5</code>ë¥¼ ì§€ì •í•˜ë©´ ë¦¬ìŠ¤íŠ¸ê°€ 5 í–‰ ë†’ì´ê°€ ë©ë‹ˆë‹¤. ë°˜ë©´ì— <code>H400</code>ì´ë©´ ì„ íƒ í•„ë“œì™€ ë¦¬ìŠ¤íŠ¸ì˜ ì´ ë†’ì´ê°€ 400 í”½ì…€ë¡œ ì„¤ì •ë©ë‹ˆë‹¤. Rê³¼ Hë¥¼ ëª¨ë‘ ìƒëžµí•˜ë©´, ë¦¬ìŠ¤íŠ¸ëŠ” ìžë™ìœ¼ë¡œ í™•ëŒ€ë˜ì–´ ì‚¬ìš©ìžì˜ ë°”íƒ•í™”ë©´ ë†’ì´ë¥¼ í™œìš©í•©ë‹ˆë‹¤ (ê·¸ë ‡ì§€ë§Œ, Windows XPë³´ë‹¤ ì˜¤ëž˜ëœ ìš´ì˜ ì²´ì œëŠ” ê¸°ë³¸ìœ¼ë¡œ 3 í–‰ì„ ë³´ì—¬ì¤ë‹ˆë‹¤).</p>
 <p id="ComboBoxHeight">
-¼±ÅÃ ÇÊµå³ª ¸®½ºÆ® Ç×¸ñÀÇ ³ôÀÌ¸¦ ¼³Á¤ÇÏ·Á¸é, ¾Æ·¡ ¿¹Á¦¿Í °°ÀÌ <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb775911">CB_SETITEMHEIGHT</a> ¸Þ½ÃÁö¸¦ »ç¿ëÇÏ½Ê½Ã¿À:</p>
+ì„ íƒ í•„ë“œë‚˜ ë¦¬ìŠ¤íŠ¸ í•­ëª©ì˜ ë†’ì´ë¥¼ ì„¤ì •í•˜ë ¤ë©´, ì•„ëž˜ ì˜ˆì œì™€ ê°™ì´ <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb775911">CB_SETITEMHEIGHT</a> ë©”ì‹œì§€ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤:</p>
 
 <pre>Gui Add, DDL, vcbx w200 hwndhcbx, One||Two
 <em>; CB_SETITEMHEIGHT = 0x153</em>
-PostMessage, 0x153, -1, 50,, ahk_id %hcbx%  <em>; ¼±ÅÃ ÇÊµåÀÇ ³ôÀÌ¸¦ ¼³Á¤ÇÕ´Ï´Ù.</em>
-PostMessage, 0x153,  0, 50,, ahk_id %hcbx%  <em>; ¸®½ºÆ® Ç×¸ñÀÇ ³ôÀÌ¸¦ ¼³Á¤ÇÕ´Ï´Ù.</em>
+PostMessage, 0x153, -1, 50,, ahk_id %hcbx%  <em>; ì„ íƒ í•„ë“œì˜ ë†’ì´ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤.</em>
+PostMessage, 0x153,  0, 50,, ahk_id %hcbx%  <em>; ë¦¬ìŠ¤íŠ¸ í•­ëª©ì˜ ë†’ì´ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤.</em>
 Gui Show, h70, Test</pre>
 <p>
-ÇÊµå »çÀÌÀÇ °¡¸§ÀÚ´Â ÆÄÀÌÇÁ (|) ¸»°í ´Ù¸¥ °ÍÀ¸·Î ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î <code><a href="Gui.htm#Delimiter">Gui +Delimiter`n</a></code>ÀÌ¸é ¶óÀÎÇÇµå·Î ¹Ù²î°í <code>Gui +DelimiterTab</code>ÀÌ¸é ÅÇ ¹®ÀÚ·Î ¹Ù²ò´Ï´Ù (`t).</p>
+í•„ë“œ ì‚¬ì´ì˜ ê°€ë¦„ìžëŠ” íŒŒì´í”„ (|) ë§ê³  ë‹¤ë¥¸ ê²ƒìœ¼ë¡œ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ <code><a href="Gui.htm#Delimiter">Gui +Delimiter`n</a></code>ì´ë©´ ë¼ì¸í”¼ë“œë¡œ ë°”ë€Œê³  <code>Gui +DelimiterTab</code>ì´ë©´ íƒ­ ë¬¸ìžë¡œ ë°”ë€ë‹ˆë‹¤ (`t).</p>
 
 <h2 id="ComboBox">ComboBox</h2>
 <p>
-¼³¸í: DropDownList¿Í µ¿ÀÏÇÏÁö¸¸ ¸®½ºÆ®·ÎºÎÅÍ Ç×¸ñÀ» °í¸£´Â ´ë½Å¿¡ ÀÚÀ¯·Î¿î Çü½ÄÀÇ ÅØ½ºÆ® ÀÔ·ÂÀ» Çã¿ëÇÕ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì„¤ëª…: DropDownListì™€ ë™ì¼í•˜ì§€ë§Œ ë¦¬ìŠ¤íŠ¸ë¡œë¶€í„° í•­ëª©ì„ ê³ ë¥´ëŠ” ëŒ€ì‹ ì— ìžìœ ë¡œìš´ í˜•ì‹ì˜ í…ìŠ¤íŠ¸ ìž…ë ¥ì„ í—ˆìš©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
 <pre>Gui, Add, ComboBox, vColorChoice, Red|Green|Blue|Black|White</pre>
 <p>
-À§ÀÇ DropDownList¿Í °°Àº ¿É¼ÇÀ» ¸ðµÎ Çã¿ëÇÏ´Â ¿Ü¿¡µµ, ´Ü¾î <strong>Limit</strong>À» <em>Options</em>¿¡ Æ÷ÇÔÇÏ¸é »ç¿ëÀÚÀÇ ÀÔ·ÂÀ» ComboBoxÀÇ ÆíÁý ÇÊµåÀÇ °¡½Ã ³Êºñ·Î Á¦ÇÑÇÒ ¼ö ÀÖ½À´Ï´Ù. ¶ÇÇÑ, ´Ü¾î <strong>Simple</strong>À» ÁöÁ¤ÇÏ¸é ComboBox¸¦ ¸¶Ä¡ ±× ¾Æ·¡¿¡ ListBox¸¦ °¡Áø ÆíÁý ÇÊµåÃ³·³ ÇàÀ§ÇÏµµ·Ï ¸¸µé ¼ö ÀÖ½À´Ï´Ù.</p>
+ìœ„ì˜ DropDownListì™€ ê°™ì€ ì˜µì…˜ì„ ëª¨ë‘ í—ˆìš©í•˜ëŠ” ì™¸ì—ë„, ë‹¨ì–´ <strong>Limit</strong>ì„ <em>Options</em>ì— í¬í•¨í•˜ë©´ ì‚¬ìš©ìžì˜ ìž…ë ¥ì„ ComboBoxì˜ íŽ¸ì§‘ í•„ë“œì˜ ê°€ì‹œ ë„ˆë¹„ë¡œ ì œí•œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë˜í•œ, ë‹¨ì–´ <strong>Simple</strong>ì„ ì§€ì •í•˜ë©´ ComboBoxë¥¼ ë§ˆì¹˜ ê·¸ ì•„ëž˜ì— ListBoxë¥¼ ê°€ì§„ íŽ¸ì§‘ í•„ë“œì²˜ëŸ¼ í–‰ìœ„í•˜ë„ë¡ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="Gui.htm#Submit">Gui Submit</a> ¸í·É¾î¸¦ »ç¿ëÇÏ¸é, ±× ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ÇöÀç ¼±ÅÃµÈ Ç×¸ñÀÇ ÅØ½ºÆ®¸¦ ¹Þ½À´Ï´Ù. ±×·¸Áö¸¸, ÄÜÆ®·Ñ¿¡ <a href="Gui.htm#AltSubmit">AltSubmit</a> Æ¯¼ºÀÌ ÀÖ´Ù¸é, ±× Ãâ·Â º¯¼ö´Â ´ë½Å¿¡ Ç×¸ñÀÇ À§Ä¡ ¹øÈ£¸¦ ¹Þ½À´Ï´Ù (Ã¹ Ç×¸ñÀº 1ÀÌ°í, µÎ ¹øÂ° Ç×¸ñÀº 2ÀÌ¸ç µîµî.). ¾î´À °æ¿ìµç, ¼±ÅÃµÈ Ç×¸ñÀÌ ¾ø´Ù¸é, ±× Ãâ·Â º¯¼ö´Â ComboBoxÀÇ ÆíÁý ÇÊµå ³»¿ëÀÌ ¼³Á¤µË´Ï´Ù.</p>
+<a href="Gui.htm#Submit">Gui Submit</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ë©´, ê·¸ ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) í˜„ìž¬ ì„ íƒëœ í•­ëª©ì˜ í…ìŠ¤íŠ¸ë¥¼ ë°›ìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì½˜íŠ¸ë¡¤ì— <a href="Gui.htm#AltSubmit">AltSubmit</a> íŠ¹ì„±ì´ ìžˆë‹¤ë©´, ê·¸ ì¶œë ¥ ë³€ìˆ˜ëŠ” ëŒ€ì‹ ì— í•­ëª©ì˜ ìœ„ì¹˜ ë²ˆí˜¸ë¥¼ ë°›ìŠµë‹ˆë‹¤ (ì²« í•­ëª©ì€ 1ì´ê³ , ë‘ ë²ˆì§¸ í•­ëª©ì€ 2ì´ë©° ë“±ë“±.). ì–´ëŠ ê²½ìš°ë“ , ì„ íƒëœ í•­ëª©ì´ ì—†ë‹¤ë©´, ê·¸ ì¶œë ¥ ë³€ìˆ˜ëŠ” ComboBoxì˜ íŽ¸ì§‘ í•„ë“œ ë‚´ìš©ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 <p>
-<code><strong>g</strong>MySubroutine</code> °°Àº <a href="Gui.htm#label">g-¶óº§</a>À» ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é »ç¿ëÀÚ°¡ »õ Ç×¸ñÀ» ¼±ÅÃÇÒ ¶§¸¶´Ù <em>MySubroutine</em> ¶óº§ÀÌ ÀÚµ¿À¸·Î ±âµ¿µË´Ï´Ù.</p>
+<code><strong>g</strong>MySubroutine</code> ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì„ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ì‚¬ìš©ìžê°€ ìƒˆ í•­ëª©ì„ ì„ íƒí•  ë•Œë§ˆë‹¤ <em>MySubroutine</em> ë¼ë²¨ì´ ìžë™ìœ¼ë¡œ ê¸°ë™ë©ë‹ˆë‹¤.</p>
 
 <h2 id="ListBox">ListBox</h2>
 <p>
-¼³¸í: ¼±ÅÃÀÌ °¡´ÉÇÑ ¸®½ºÆ®¸¦ ´ã°í ÀÖ´Â »ó´ëÀûÀ¸·Î ³ôÀº ¹Ú½º. ÀÌ °æ¿ì, ¸¶Áö¸· ¸Å°³º¯¼ö´Â ÆÄÀÌÇÁ ¹®ÀÚ·Î ±¸ºÐµÈ ¼±ÅÃ ¸®½ºÆ®ÀÔ´Ï´Ù. ¿¹¸¦ µé¾î <code>Choice1|Choice2|Choice3</code>. ¿¹Á¦:</p>
+ì„¤ëª…: ì„ íƒì´ ê°€ëŠ¥í•œ ë¦¬ìŠ¤íŠ¸ë¥¼ ë‹´ê³  ìžˆëŠ” ìƒëŒ€ì ìœ¼ë¡œ ë†’ì€ ë°•ìŠ¤. ì´ ê²½ìš°, ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” íŒŒì´í”„ ë¬¸ìžë¡œ êµ¬ë¶„ëœ ì„ íƒ ë¦¬ìŠ¤íŠ¸ìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ <code>Choice1|Choice2|Choice3</code>. ì˜ˆì œ:</p>
 
 <pre>Gui, Add, ListBox, vColorChoice, Red|Green|Blue|Black|White</pre>
 <p>
-<a name="ChooseLB"></a>Ã¢ÀÌ Ã³À½ ³ªÅ¸³¯ ¶§ ¹Ì¸® ¸®½ºÆ®ÀÇ Ç×¸ñÀ» ¼±ÅÃÇØ µÎ·Á¸é, µÎ °³ÀÇ ÆÄÀÌÇÁ ¹®ÀÚ¸¦ °¢°¢ÀÇ Ç×¸ñ µÚ¿¡ Æ÷ÇÔ½ÃÅ°½Ê½Ã¿À. (¿©·¯ Ç×¸ñÀ» ¹Ì¸® ¼±ÅÃÇÏ·Á¸é <a href="#ListBoxMulti">Multi</a> ¿É¼ÇÀÌ ÇÊ¿äÇÕ´Ï´Ù). ´ë¾ÈÀ¸·Î, <em>Options</em>¿¡ ´Ü¾î<strong>Choose</strong>¿Í ¹Ù·Î ÀÌ¾î¼­ ÇÏ³ªÀÇ Ç×¸ñ ¹øÈ£¸¦ ÁöÁ¤ÇÏ¸é ¹Ì¸® ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, <code>Choose5</code>ÀÌ¸é ´Ù¼¸ ¹øÂ° Ç×¸ñÀÌ ¹Ì¸® ¼±ÅÃµË´Ï´Ù. ÄÜÆ®·ÑÀÌ »ý¼ºµÈ µÚ¿¡ ¸®½ºÆ®·ÎºÎÅÍ ¿£Æ®¸®¸¦ Ãß°¡/Á¦°ÅÇÏ°Å³ª ¼±ÅÃÀ» º¯°æÇÏ·Á¸é, <a href="GuiControl.htm">GuiControl</a>À» »ç¿ëÇÏ½Ê½Ã¿À.</p>
+<a name="ChooseLB"></a>ì°½ì´ ì²˜ìŒ ë‚˜íƒ€ë‚  ë•Œ ë¯¸ë¦¬ ë¦¬ìŠ¤íŠ¸ì˜ í•­ëª©ì„ ì„ íƒí•´ ë‘ë ¤ë©´, ë‘ ê°œì˜ íŒŒì´í”„ ë¬¸ìžë¥¼ ê°ê°ì˜ í•­ëª© ë’¤ì— í¬í•¨ì‹œí‚¤ì‹­ì‹œì˜¤. (ì—¬ëŸ¬ í•­ëª©ì„ ë¯¸ë¦¬ ì„ íƒí•˜ë ¤ë©´ <a href="#ListBoxMulti">Multi</a> ì˜µì…˜ì´ í•„ìš”í•©ë‹ˆë‹¤). ëŒ€ì•ˆìœ¼ë¡œ, <em>Options</em>ì— ë‹¨ì–´<strong>Choose</strong>ì™€ ë°”ë¡œ ì´ì–´ì„œ í•˜ë‚˜ì˜ í•­ëª© ë²ˆí˜¸ë¥¼ ì§€ì •í•˜ë©´ ë¯¸ë¦¬ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Choose5</code>ì´ë©´ ë‹¤ì„¯ ë²ˆì§¸ í•­ëª©ì´ ë¯¸ë¦¬ ì„ íƒë©ë‹ˆë‹¤. ì½˜íŠ¸ë¡¤ì´ ìƒì„±ëœ ë’¤ì— ë¦¬ìŠ¤íŠ¸ë¡œë¶€í„° ì—”íŠ¸ë¦¬ë¥¼ ì¶”ê°€/ì œê±°í•˜ê±°ë‚˜ ì„ íƒì„ ë³€ê²½í•˜ë ¤ë©´, <a href="GuiControl.htm">GuiControl</a>ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<a href="Gui.htm#Submit">Gui Submit</a> ¸í·É¾î¸¦ »ç¿ëÇÒ ¶§, ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ÇöÀç ¼±ÅÃµÈ Ç×¸ñÀÇ ÅØ½ºÆ®¸¦ ¹Þ½À´Ï´Ù. ±×·¸Áö¸¸, ÄÜÆ®·Ñ¿¡ <a href="Gui.htm#AltSubmit">AltSubmit</a> Æ¯¼ºÀÌ ÀÖ´Ù¸é, ±× Ãâ·Â º¯¼ö´Â ´ë½Å¿¡ ±× Ç×¸ñÀÇ À§Ä¡ ¹øÈ£¸¦ ¹Þ½À´Ï´Ù (Ã¹ ¹øÂ° Ç×¸ñÀº 1, µÎ ¹øÂ°´Â 2 µîµî).</p>
+<a href="Gui.htm#Submit">Gui Submit</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•  ë•Œ, ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) í˜„ìž¬ ì„ íƒëœ í•­ëª©ì˜ í…ìŠ¤íŠ¸ë¥¼ ë°›ìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì½˜íŠ¸ë¡¤ì— <a href="Gui.htm#AltSubmit">AltSubmit</a> íŠ¹ì„±ì´ ìžˆë‹¤ë©´, ê·¸ ì¶œë ¥ ë³€ìˆ˜ëŠ” ëŒ€ì‹ ì— ê·¸ í•­ëª©ì˜ ìœ„ì¹˜ ë²ˆí˜¸ë¥¼ ë°›ìŠµë‹ˆë‹¤ (ì²« ë²ˆì§¸ í•­ëª©ì€ 1, ë‘ ë²ˆì§¸ëŠ” 2 ë“±ë“±).</p>
 <p>
-<code><strong>g</strong>MySubroutine</code>°ú °°Àº <a href="Gui.htm#label">g-¶óº§</a>Àº ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é »ç¿ëÀÚ°¡ »õ Ç×¸ñÀ» ¼±ÅÃÇÒ ¶§¸¶´Ù <em>MySubroutine</em> ¶óº§ÀÌ ÀÚµ¿À¸·Î ±âµ¿µË´Ï´Ù. »ç¿ëÀÚ°¡ Ç×¸ñÀ» ´õºí Å¬¸¯ÇÏ¸é, ³»Àå º¯¼ö A_GuiEvent¿¡ NormalÀÌ ¾Æ´Ï¶ó ¹®ÀÚ¿­ DoubleClickÀÌ ´ã±é´Ï´Ù. ¶ÇÇÑ, º¯¼ö A_EventInfo¿¡´Â ´õºí Å¬¸¯µÈ ±× Ç×¸ñÀÇ À§Ä¡°¡ ´ã±é´Ï´Ù (1Àº Ã¹ Ç×¸ñ, 2ÀÌ¸é µÎ ¹øÂ° Ç×¸ñ µîµî.).</p>
+<code><strong>g</strong>MySubroutine</code>ê³¼ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì€ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ì‚¬ìš©ìžê°€ ìƒˆ í•­ëª©ì„ ì„ íƒí•  ë•Œë§ˆë‹¤ <em>MySubroutine</em> ë¼ë²¨ì´ ìžë™ìœ¼ë¡œ ê¸°ë™ë©ë‹ˆë‹¤. ì‚¬ìš©ìžê°€ í•­ëª©ì„ ë”ë¸” í´ë¦­í•˜ë©´, ë‚´ìž¥ ë³€ìˆ˜ A_GuiEventì— Normalì´ ì•„ë‹ˆë¼ ë¬¸ìžì—´ DoubleClickì´ ë‹´ê¹ë‹ˆë‹¤. ë˜í•œ, ë³€ìˆ˜ A_EventInfoì—ëŠ” ë”ë¸” í´ë¦­ëœ ê·¸ í•­ëª©ì˜ ìœ„ì¹˜ê°€ ë‹´ê¹ë‹ˆë‹¤ (1ì€ ì²« í•­ëª©, 2ì´ë©´ ë‘ ë²ˆì§¸ í•­ëª© ë“±ë“±.).</p>
 <p>
-<a name="LBRedraw"></a>¹æ´ëÇÑ °³¼öÀÇ Ç×¸ñÀ» ListBox¿¡ Ãß°¡ÇÒ ¶§, ¿¬»ê Àü¿¡ <code>GuiControl, -Redraw, MyListBox</code>¸¦ ¹Ì¸® »ç¿ëÇÏ°í ³ªÁß¿¡ <code>GuiControl, +Redraw, MyListBox</code>¸¦ »ç¿ëÇÏ¸é ¼öÇà¼º´É Çâ»óÀ» ²ÒÇÒ ¼ö ÀÖ½À´Ï´Ù .</p>
+<a name="LBRedraw"></a>ë°©ëŒ€í•œ ê°œìˆ˜ì˜ í•­ëª©ì„ ListBoxì— ì¶”ê°€í•  ë•Œ, ì—°ì‚° ì „ì— <code>GuiControl, -Redraw, MyListBox</code>ë¥¼ ë¯¸ë¦¬ ì‚¬ìš©í•˜ê³  ë‚˜ì¤‘ì— <code>GuiControl, +Redraw, MyListBox</code>ë¥¼ ì‚¬ìš©í•˜ë©´ ìˆ˜í–‰ì„±ëŠ¥ í–¥ìƒì„ ê¾€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ .</p>
 
-<h3>ListBox ¿É¼Ç</h3>
+<h3>ListBox ì˜µì…˜</h3>
 <p>
-<strong>Choose</strong>: <a href="#ChooseLB">À§</a> ÂüÁ¶.</p>
+<strong>Choose</strong>: <a href="#ChooseLB">ìœ„</a> ì°¸ì¡°.</p>
 <p>
-<strong><a name="ListBoxMulti"></a>Multi</strong>: ½¬ÇÁÆ®-Å¬¸¯ ¶Ç´Â ÄÜÆ®·Ñ-Å¬¸¯À» ÅëÇÏ¿© ¿©·¯ Ç×¸ñÀ» ¼±ÅÃÇÏµµ·Ï Çã¿ëÇÕ´Ï´Ù (½¬ÇÁÆ®/ÄÜÆ®·Ñ Å¬¸¯À» ÇÇÇÏ·Á¸é, ´Ü¾î Multi ´ë½Å¿¡ <a href="../misc/Styles.htm#LBS_MULTI">¼ýÀÚ 8</a>À» »ç¿ëÇÏ½Ê½Ã¿À). ÀÌ °æ¿ì, <a href="Gui.htm#Submit">Gui Submit</a>Àº ÆÄÀÌÇÁ·Î ±¸ºÐµÈ Ç×¸ñ-¹®ÀÚ¿­ ¸®½ºÆ®¸¦ ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">Ãâ·Â º¯¼ö</a>¿¡ ÀúÀåÇÕ´Ï´Ù. ±×·¸Áö¸¸, <a href="Gui.htm#AltSubmit">AltSubmit</a> ¿É¼ÇÀÌ ÄÑÁ® ÀÖÀ¸¸é, <a href="Gui.htm#Submit">Gui Submit</a>Àº ÆÄÀÌÇÁ·Î ±¸ºÐµÈ Ç×¸ñ ¹øÈ£ ¸®½ºÆ®¸¦ ´ë½Å »ç¿ëÇÕ´Ï´Ù. ¿¹¸¦ µé¾î, <code>1|2|3</code>ÀÌ¶ó¸é ¾ÕÂÊ ¼¼ Ç×¸ñÀÌ ¼±ÅÃµÇ¾ú´Ù´Â °ÍÀ» ³ªÅ¸³À´Ï´Ù. °³º°ÀûÀ¸·Î Ç×¸ñÀ» ¹®ÀÚ¿­·ÎºÎÅÍ ÃßÃâÇÏ·Á¸é, ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ <a href="LoopParse.htm">ÆÄ½Ì È¸µ¹ÀÌ</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À:</p>
+<strong><a name="ListBoxMulti"></a>Multi</strong>: ì‰¬í”„íŠ¸-í´ë¦­ ë˜ëŠ” ì½˜íŠ¸ë¡¤-í´ë¦­ì„ í†µí•˜ì—¬ ì—¬ëŸ¬ í•­ëª©ì„ ì„ íƒí•˜ë„ë¡ í—ˆìš©í•©ë‹ˆë‹¤ (ì‰¬í”„íŠ¸/ì½˜íŠ¸ë¡¤ í´ë¦­ì„ í”¼í•˜ë ¤ë©´, ë‹¨ì–´ Multi ëŒ€ì‹ ì— <a href="../misc/Styles.htm#LBS_MULTI">ìˆ«ìž 8</a>ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤). ì´ ê²½ìš°, <a href="Gui.htm#Submit">Gui Submit</a>ì€ íŒŒì´í”„ë¡œ êµ¬ë¶„ëœ í•­ëª©-ë¬¸ìžì—´ ë¦¬ìŠ¤íŠ¸ë¥¼ ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì¶œë ¥ ë³€ìˆ˜</a>ì— ì €ìž¥í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, <a href="Gui.htm#AltSubmit">AltSubmit</a> ì˜µì…˜ì´ ì¼œì ¸ ìžˆìœ¼ë©´, <a href="Gui.htm#Submit">Gui Submit</a>ì€ íŒŒì´í”„ë¡œ êµ¬ë¶„ëœ í•­ëª© ë²ˆí˜¸ ë¦¬ìŠ¤íŠ¸ë¥¼ ëŒ€ì‹  ì‚¬ìš©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>1|2|3</code>ì´ë¼ë©´ ì•žìª½ ì„¸ í•­ëª©ì´ ì„ íƒë˜ì—ˆë‹¤ëŠ” ê²ƒì„ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤. ê°œë³„ì ìœ¼ë¡œ í•­ëª©ì„ ë¬¸ìžì—´ë¡œë¶€í„° ì¶”ì¶œí•˜ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ <a href="LoopParse.htm">íŒŒì‹± íšŒëŒì´</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤:</p>
 <pre>Loop, parse, MyListBox, |
 {
     MsgBox Selection number %A_Index% is %A_LoopField%.
 }</pre>
-<p>ÇÊµå »çÀÌÀÇ °¡¸§ÀÚ´Â ÆÄÀÌÇÁ ¹®ÀÚ (|) ´ë½Å ´Ù¸¥ °ÍÀ¸·Î ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î <code><a href="Gui.htm#Delimiter">Gui +Delimiter`n</a></code>ÀÌ¸é ¶óÀÎÇÇµå·Î ¹Ù²Ù°í <code>Gui +DelimiterTab</code>ÀÌ¸é ÅÇ ¹®ÀÚ (`t)·Î ¹Ù²ò´Ï´Ù.</p>
+<p>í•„ë“œ ì‚¬ì´ì˜ ê°€ë¦„ìžëŠ” íŒŒì´í”„ ë¬¸ìž (|) ëŒ€ì‹  ë‹¤ë¥¸ ê²ƒìœ¼ë¡œ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ <code><a href="Gui.htm#Delimiter">Gui +Delimiter`n</a></code>ì´ë©´ ë¼ì¸í”¼ë“œë¡œ ë°”ê¾¸ê³  <code>Gui +DelimiterTab</code>ì´ë©´ íƒ­ ë¬¸ìž (`t)ë¡œ ë°”ë€ë‹ˆë‹¤.</p>
 <p>
-<strong>ReadOnly</strong>: Ç×¸ñµéÀÌ ¼±ÅÃµÉ ¶§ ½Ã°¢ÀûÀ¸·Î °­Á¶µÇÁö ¸øÇÏµµ·Ï ¸·½À´Ï´Ù (±×·¯³ª <a href="Gui.htm#Submit">Gui Submit</a>´Â ¿©ÀüÈ÷ ±× ¼±ÅÃµÈ Ç×¸ñÀ» ÀúÀåÇÕ´Ï´Ù).</p>
+<strong>ReadOnly</strong>: í•­ëª©ë“¤ì´ ì„ íƒë  ë•Œ ì‹œê°ì ìœ¼ë¡œ ê°•ì¡°ë˜ì§€ ëª»í•˜ë„ë¡ ë§‰ìŠµë‹ˆë‹¤ (ê·¸ëŸ¬ë‚˜ <a href="Gui.htm#Submit">Gui Submit</a>ëŠ” ì—¬ì „ížˆ ê·¸ ì„ íƒëœ í•­ëª©ì„ ì €ìž¥í•©ë‹ˆë‹¤).</p>
 <p>
-<strong>Sort</strong>: ÀÚµ¿À¸·Î ¸®½ºÆ®ÀÇ ³»¿ëÀ» ¾ËÆÄºª ¼ø¼­·Î Á¤·ÄÇÕ´Ï´Ù (ÀÌ°ÍÀº ¶ÇÇÑ ³ªÁß¿¡ <a href="GuiControl.htm">GuiControl</a>À» ÅëÇÏ¿© Ãß°¡µÇ´Â ¸ðµç Ç×¸ñ¿¡µµ ¿µÇâÀ» ÁÝ´Ï´Ù). Sort ¿É¼ÇÀº ¶ÇÇÑ Á¡Áõ °Ë»öÀ» È°¼ºÈ­ ÇÕ´Ï´Ù. ±× ´öºÐ¿¡ Ç×¸ñÀ» ±×ÀÇ ÀÌ¸§ ¾Õ ¸î ±ÛÀÚ¸¸ Å¸ÀÚÇØ¼­ ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong>Sort</strong>: ìžë™ìœ¼ë¡œ ë¦¬ìŠ¤íŠ¸ì˜ ë‚´ìš©ì„ ì•ŒíŒŒë²³ ìˆœì„œë¡œ ì •ë ¬í•©ë‹ˆë‹¤ (ì´ê²ƒì€ ë˜í•œ ë‚˜ì¤‘ì— <a href="GuiControl.htm">GuiControl</a>ì„ í†µí•˜ì—¬ ì¶”ê°€ë˜ëŠ” ëª¨ë“  í•­ëª©ì—ë„ ì˜í–¥ì„ ì¤ë‹ˆë‹¤). Sort ì˜µì…˜ì€ ë˜í•œ ì ì¦ ê²€ìƒ‰ì„ í™œì„±í™” í•©ë‹ˆë‹¤. ê·¸ ë•ë¶„ì— í•­ëª©ì„ ê·¸ì˜ ì´ë¦„ ì•ž ëª‡ ê¸€ìžë§Œ íƒ€ìží•´ì„œ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>Tn</strong>: ±âÈ£ T¸¦ »ç¿ëÇÏ¸é ÅÇ ½ºÅ¾À» ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÅÇ ½ºÅ¾Àº ÅØ½ºÆ®¸¦ ¿­ ¾ÈÀ¸·Î Æ÷¸ËÇØ ³Ö´Âµ¥ »ç¿ëµË´Ï´Ù. ±âÈ£ T¸¦ »ç¿ëÇÏÁö ¾ÊÀ¸¸é, ÅÇ ½ºÅ¾Àº ¸Å 32 ´ëÈ­»óÀÚ ´ÜÀ§¸¶´Ù ¼³Á¤µË´Ï´Ù (°¢ &quot;´ëÈ­»óÀÚ ´ÜÀ§&quot;ÀÇ ³Êºñ´Â ¿î¿µ Ã¼Á¦°¡ °áÁ¤ÇÕ´Ï´Ù). ±âÈ£ T¸¦ ÇÑ ¹ø¸¸ »ç¿ëÇÏ¸é, ÅÇ ½ºÅ¾Àº ÄÜÆ®·ÑÀÇ ÀüÃ¼ ³Êºñ¿¡ °ÉÃÄ¼­ ¸Å <strong>n</strong> ´ÜÀ§¸¶´Ù ¼³Á¤µË´Ï´Ù. ¿¹¸¦ µé¾î, <code>Gui, Add, ListBox, vMyListBox t64</code>ÀÌ¸é ÅÇ ½ºÅ¾ »çÀÌÀÇ ±âº» °Å¸®°¡ µÎ ¹è°¡ µË´Ï´Ù. ¸ÂÃã ÅÇ½ºÅ¾Àº ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ±âÈ£ T¸¦ ¿©·¯ ¹ø ÁöÁ¤ÇÏ½Ê½Ã¿À: <code>Gui, Add, ListBox, vMyListBox t8 t16 t32 t64 t128</code>. ÅÇ ½ºÅ¾Àº ¸®½ºÆ®¿¡¼­ Àý´ë ¿­ À§Ä¡¸¶´Ù ÇÏ³ª¾¿ ¼³Á¤µÇ°í ÃÖ´ë 50°³±îÁö ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong>Tn</strong>: ê¸°í˜¸ Të¥¼ ì‚¬ìš©í•˜ë©´ íƒ­ ìŠ¤íƒ‘ì„ ì„¤ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. íƒ­ ìŠ¤íƒ‘ì€ í…ìŠ¤íŠ¸ë¥¼ ì—´ ì•ˆìœ¼ë¡œ í¬ë§·í•´ ë„£ëŠ”ë° ì‚¬ìš©ë©ë‹ˆë‹¤. ê¸°í˜¸ Të¥¼ ì‚¬ìš©í•˜ì§€ ì•Šìœ¼ë©´, íƒ­ ìŠ¤íƒ‘ì€ ë§¤ 32 ëŒ€í™”ìƒìž ë‹¨ìœ„ë§ˆë‹¤ ì„¤ì •ë©ë‹ˆë‹¤ (ê° &quot;ëŒ€í™”ìƒìž ë‹¨ìœ„&quot;ì˜ ë„ˆë¹„ëŠ” ìš´ì˜ ì²´ì œê°€ ê²°ì •í•©ë‹ˆë‹¤). ê¸°í˜¸ Të¥¼ í•œ ë²ˆë§Œ ì‚¬ìš©í•˜ë©´, íƒ­ ìŠ¤íƒ‘ì€ ì½˜íŠ¸ë¡¤ì˜ ì „ì²´ ë„ˆë¹„ì— ê±¸ì³ì„œ ë§¤ <strong>n</strong> ë‹¨ìœ„ë§ˆë‹¤ ì„¤ì •ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Gui, Add, ListBox, vMyListBox t64</code>ì´ë©´ íƒ­ ìŠ¤íƒ‘ ì‚¬ì´ì˜ ê¸°ë³¸ ê±°ë¦¬ê°€ ë‘ ë°°ê°€ ë©ë‹ˆë‹¤. ë§žì¶¤ íƒ­ìŠ¤íƒ‘ì€ ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ê¸°í˜¸ Të¥¼ ì—¬ëŸ¬ ë²ˆ ì§€ì •í•˜ì‹­ì‹œì˜¤: <code>Gui, Add, ListBox, vMyListBox t8 t16 t32 t64 t128</code>. íƒ­ ìŠ¤íƒ‘ì€ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì ˆëŒ€ ì—´ ìœ„ì¹˜ë§ˆë‹¤ í•˜ë‚˜ì”© ì„¤ì •ë˜ê³  ìµœëŒ€ 50ê°œê¹Œì§€ ì„¤ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>0x100</strong>: ¿É¼Ç¿¡ 0x100À» Æ÷ÇÔÇÏ¸é LBS_NOINTEGRALHEIGHT ½ºÅ¸ÀÏÀ» ÄÓ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é ÇàÀÌ ¾Æ·¡¿¡ ºÎºÐÀûÀ¸·Î ³ªÅ¸³ªÁö ¾Êµµ·Ï °­Á¦·Î ListBox¸¦ ÁöÁ¤µÈ ³ôÀÌ¿Í Á¤È®ÇÏ°Ô °°°Ô ¸¸µì´Ï´Ù. ÀÌ ¿É¼ÇÀº ¶ÇÇÑ ListBox°¡ ±×ÀÇ ±Û²ÃÀÌ º¯ÇÒ ¶§ ÁÙ¾îµéÁö ¸øÇÏ°Ô ¸·½À´Ï´Ù.</p>
+<strong>0x100</strong>: ì˜µì…˜ì— 0x100ì„ í¬í•¨í•˜ë©´ LBS_NOINTEGRALHEIGHT ìŠ¤íƒ€ì¼ì„ ì¼¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ í–‰ì´ ì•„ëž˜ì— ë¶€ë¶„ì ìœ¼ë¡œ ë‚˜íƒ€ë‚˜ì§€ ì•Šë„ë¡ ê°•ì œë¡œ ListBoxë¥¼ ì§€ì •ëœ ë†’ì´ì™€ ì •í™•í•˜ê²Œ ê°™ê²Œ ë§Œë“­ë‹ˆë‹¤. ì´ ì˜µì…˜ì€ ë˜í•œ ListBoxê°€ ê·¸ì˜ ê¸€ê¼´ì´ ë³€í•  ë•Œ ì¤„ì–´ë“¤ì§€ ëª»í•˜ê²Œ ë§‰ìŠµë‹ˆë‹¤.</p>
 <p>
-ÅØ½ºÆ® ÇàÀÇ °³¼ö¸¦ ÁöÁ¤ÇÏ·Á¸é (¶Ç´Â ³ôÀÌ¿Í ³Êºñ¸¦ ÁöÁ¤ÇÏ·Á¸é), <a href="Gui.htm#PosSize">ÄÜÆ®·ÑÀÇ À§Ä¡¿Í Å©±â º¯°æ</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+í…ìŠ¤íŠ¸ í–‰ì˜ ê°œìˆ˜ë¥¼ ì§€ì •í•˜ë ¤ë©´ (ë˜ëŠ” ë†’ì´ì™€ ë„ˆë¹„ë¥¼ ì§€ì •í•˜ë ¤ë©´), <a href="Gui.htm#PosSize">ì½˜íŠ¸ë¡¤ì˜ ìœ„ì¹˜ì™€ í¬ê¸° ë³€ê²½</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h2>ListView ±×¸®°í TreeView</h2>
+<h2>ListView ê·¸ë¦¬ê³  TreeView</h2>
 <p>
-º°µµ·Î <a href="ListView.htm">ListView</a> ÆäÀÌÁö¿Í <a href="TreeView.htm">TreeView</a> ÆäÀÌÁö¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ë³„ë„ë¡œ <a href="ListView.htm">ListView</a> íŽ˜ì´ì§€ì™€ <a href="TreeView.htm">TreeView</a> íŽ˜ì´ì§€ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
 <h2 id="Link">Link <span class="ver">[v1.1.06+]</span></h2>
 <p>
-¼³¸í: Å¬¸¯ÀÌ °¡´ÉÇÑ ¸µÅ©µéÀ» ´ã°í ÀÖ´Â ÅØ½ºÆ® ÄÜÆ®·Ñ. ¸µÅ© ÄÜÆ®·ÑÀº HTML-ºñ½ÁÇÑ Á¶ÆÇ ¾ð¾î¸¦ »ç¿ëÇÕ´Ï´Ù. ±×·¯³ª ¿ÀÁ÷ &lt;A&gt; ÅÂ±×¸¸ Áö¿øÇÕ´Ï´Ù. ¿©´Â ÅÂ±× ¾È¿¡, Attribute="value" ÇüÅÂÀÇ ¼Ó¼ºÀ» ÁöÁ¤ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº ÀüÇüÀûÀ¸·Î ID ¶Ç´Â HREF ¼Ó¼ºÀÔ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì„¤ëª…: í´ë¦­ì´ ê°€ëŠ¥í•œ ë§í¬ë“¤ì„ ë‹´ê³  ìžˆëŠ” í…ìŠ¤íŠ¸ ì½˜íŠ¸ë¡¤. ë§í¬ ì½˜íŠ¸ë¡¤ì€ HTML-ë¹„ìŠ·í•œ ì¡°íŒ ì–¸ì–´ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ ì˜¤ì§ &lt;A&gt; íƒœê·¸ë§Œ ì§€ì›í•©ë‹ˆë‹¤. ì—¬ëŠ” íƒœê·¸ ì•ˆì—, Attribute="value" í˜•íƒœì˜ ì†ì„±ì„ ì§€ì •í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ê²ƒì€ ì „í˜•ì ìœ¼ë¡œ ID ë˜ëŠ” HREF ì†ì„±ìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
-<pre>Gui, Add, Link,, ´ÙÀ½Àº &lt;a href="http://ahkscript.org"&gt;¸µÅ©&lt;/a&gt;ÀÇ ¿¹ÀÔ´Ï´Ù.
-Gui, Add, Link,, ¸µÅ©´Â ÅØ½ºÆ® ¾Æ¹«µ¥³ª &lt;a id="1"&gt;ÀÌ·¸°Ô&lt;/a&gt; ¶Ç´Â &lt;a id="2"&gt;ÀÌ·¸°Ô&lt;/a&gt; »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</pre>
+<pre>Gui, Add, Link,, ë‹¤ìŒì€ &lt;a href="http://ahkscript.org"&gt;ë§í¬&lt;/a&gt;ì˜ ì˜ˆìž…ë‹ˆë‹¤.
+Gui, Add, Link,, ë§í¬ëŠ” í…ìŠ¤íŠ¸ ì•„ë¬´ë°ë‚˜ &lt;a id="1"&gt;ì´ë ‡ê²Œ&lt;/a&gt; ë˜ëŠ” &lt;a id="2"&gt;ì´ë ‡ê²Œ&lt;/a&gt; ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</pre>
 <p>
-HREF ¼Ó¼ºÀÌ ¼³Á¤µÇ¾î ÀÖ°í ½ÇÇàÀÌ °¡´ÉÇÏ´Ù¸é (URLÀÌ³ª ¸í·É¾îÃ³·³) ¸µÅ©¸¦ Å¬¸¯ÇÏ¸é ÀÚµ¿À¸·Î Ã³¸®µË´Ï´Ù. HREF ¼Ó¼ºÀÌ »ç¿ëµÇÁö ¾Ê°Å³ª ½ÇÇàÇÒ ¼ö ¾ø´Ù¸é <code><strong>g</strong>MySubroutine</code>°ú °°Àº <a href="Gui.htm#label">g-¶óº§</a>ÀÌ Á¦°øµÇ¾î ÀÖ´Ù¸é ÀÌ ¶óº§ÀÌ ±âµ¿µË´Ï´Ù. ±×·¯¸é <a href="../misc/ErrorLevel.htm">ErrorLevel</a> º¯¼ö¿¡ ±× ¼Ó¼ºÀÇ °ªÀÌ ´ã±é´Ï´Ù. ±×·¡¼­ Å¬¸¯µÈ ¸µÅ©¸¦ ½Äº°ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+HREF ì†ì„±ì´ ì„¤ì •ë˜ì–´ ìžˆê³  ì‹¤í–‰ì´ ê°€ëŠ¥í•˜ë‹¤ë©´ (URLì´ë‚˜ ëª…ë ¹ì–´ì²˜ëŸ¼) ë§í¬ë¥¼ í´ë¦­í•˜ë©´ ìžë™ìœ¼ë¡œ ì²˜ë¦¬ë©ë‹ˆë‹¤. HREF ì†ì„±ì´ ì‚¬ìš©ë˜ì§€ ì•Šê±°ë‚˜ ì‹¤í–‰í•  ìˆ˜ ì—†ë‹¤ë©´ <code><strong>g</strong>MySubroutine</code>ê³¼ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ ì œê³µë˜ì–´ ìžˆë‹¤ë©´ ì´ ë¼ë²¨ì´ ê¸°ë™ë©ë‹ˆë‹¤. ê·¸ëŸ¬ë©´ <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ë³€ìˆ˜ì— ê·¸ ì†ì„±ì˜ ê°’ì´ ë‹´ê¹ë‹ˆë‹¤. ê·¸ëž˜ì„œ í´ë¦­ëœ ë§í¬ë¥¼ ì‹ë³„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
 <h2 id="Hotkey">Hotkey</h2>
 <p>
-¼³¸í: ÇÑ ÁÙÂ¥¸® ÆíÁý ÄÜÆ®·ÑÃ³·³ º¸ÀÌÁö¸¸ ´ë½Å¿¡ »ç¿ëÀÚ°¡ ´©¸¥ Å°º¸µå Á¶ÇÕÀ» ¹Þ´Â ¹Ú½º. ¿¹¸¦ µé¾î, »ç¿ëÀÚ°¡  Control+Alt+C¸¦ ¿µ¾î Å°º¸µå ·¹ÀÌ¾Æ¿ô¿¡¼­ ´­·¶´Ù¸é, ¹Ú½º´Â &quot;Ctrl + Alt + C&quot;¸¦ º¸¿©ÁÝ´Ï´Ù.</p>
+ì„¤ëª…: í•œ ì¤„ì§œë¦¬ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì²˜ëŸ¼ ë³´ì´ì§€ë§Œ ëŒ€ì‹ ì— ì‚¬ìš©ìžê°€ ëˆ„ë¥¸ í‚¤ë³´ë“œ ì¡°í•©ì„ ë°›ëŠ” ë°•ìŠ¤. ì˜ˆë¥¼ ë“¤ì–´, ì‚¬ìš©ìžê°€  Control+Alt+Cë¥¼ ì˜ì–´ í‚¤ë³´ë“œ ë ˆì´ì•„ì›ƒì—ì„œ ëˆŒë €ë‹¤ë©´, ë°•ìŠ¤ëŠ” &quot;Ctrl + Alt + C&quot;ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤.</p>
 
 <pre>Gui, Add, Hotkey, vChosenHotkey</pre>
 <p>
-<a href="Gui.htm#Submit">Gui Submit</a> ¸í·É¾î¸¦ »ç¿ëÇÏ¸é, ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ÇÖÅ° ¼ö½ÄÅ°¿Í ÀÌ¸§À» ¹Þ½À´Ï´Ù. <a href="Hotkey.htm">Hotkey</a> ¸í·É¾î¿Í È£È¯µË´Ï´Ù. 
+<a href="Gui.htm#Submit">Gui Submit</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ë©´, ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) í•«í‚¤ ìˆ˜ì‹í‚¤ì™€ ì´ë¦„ì„ ë°›ìŠµë‹ˆë‹¤. <a href="Hotkey.htm">Hotkey</a> ëª…ë ¹ì–´ì™€ í˜¸í™˜ë©ë‹ˆë‹¤. 
 
-¿¹¸¦ µé¾î: <code>^!C</code>, <code>+!Home</code>, <code>+^Down</code>, <code>^Numpad1</code>, <code>!NumpadEnd</code>. ÄÜÆ®·Ñ¿¡ ÇÖÅ°°¡ ¾ø´Ù¸é, ±× Ãâ·Â º¯¼ö´Â ºñ¿öÁý´Ï´Ù. ÁÖÀÇ: ¾î¶² Å°µéÀº ´Ù¸¥ ÀÌ¸§À¸·Î ¿­¶÷µÇ¾úÀ½¿¡µµ ¶È °°ÀÌ º¸ÀÔ´Ï´Ù. ¿¹¸¦ µé¾î, <code>^Numpad7</code>¿Í <code>^NumpadHome</code>´Â µÑ ´Ù <code>Ctrl + Num 7</code>·Î º¸ÀÔ´Ï´Ù.</p>
+ì˜ˆë¥¼ ë“¤ì–´: <code>^!C</code>, <code>+!Home</code>, <code>+^Down</code>, <code>^Numpad1</code>, <code>!NumpadEnd</code>. ì½˜íŠ¸ë¡¤ì— í•«í‚¤ê°€ ì—†ë‹¤ë©´, ê·¸ ì¶œë ¥ ë³€ìˆ˜ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. ì£¼ì˜: ì–´ë–¤ í‚¤ë“¤ì€ ë‹¤ë¥¸ ì´ë¦„ìœ¼ë¡œ ì—´ëžŒë˜ì—ˆìŒì—ë„ ë˜‘ ê°™ì´ ë³´ìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>^Numpad7</code>ì™€ <code>^NumpadHome</code>ëŠ” ë‘˜ ë‹¤ <code>Ctrl + Num 7</code>ë¡œ ë³´ìž…ë‹ˆë‹¤.</p>
 <p>
-±âº»°ªÀ¸·Î, ÄÜÆ®·ÑÀº ÇÖÅ°¸¦ ÁöÁ¤ÇÏÁö ¾Ê°í ½ÃÀÛÇÕ´Ï´Ù. ´ë½Å¿¡ ±âº»°ª ÇÖÅ°¸¦ ÁöÁ¤ÇÏ·Á¸é, ±×ÀÇ ¼ö½ÄÅ°¿Í ÀÌ¸§À» ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ¸¶Áö¸· ¸Å°³º¯¼ö¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À: <code>Gui, Add, Hotkey, vChosenHotkey, ^!p</code><br>
-Áö¿øµÇ´Â À¯ÀÏÇÑ ¼ö½ÄÅ°´Â ^ (Control), ! (Alt), ±×¸®°í + (Shift)ÀÔ´Ï´Ù. °¡´ÉÇÑ Å° ÀÌ¸§Àº <a href="../KeyList.htm">Å° ¸®½ºÆ®</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ê¸°ë³¸ê°’ìœ¼ë¡œ, ì½˜íŠ¸ë¡¤ì€ í•«í‚¤ë¥¼ ì§€ì •í•˜ì§€ ì•Šê³  ì‹œìž‘í•©ë‹ˆë‹¤. ëŒ€ì‹ ì— ê¸°ë³¸ê°’ í•«í‚¤ë¥¼ ì§€ì •í•˜ë ¤ë©´, ê·¸ì˜ ìˆ˜ì‹í‚¤ì™€ ì´ë¦„ì„ ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì— ì§€ì •í•˜ì‹­ì‹œì˜¤: <code>Gui, Add, Hotkey, vChosenHotkey, ^!p</code><br>
+ì§€ì›ë˜ëŠ” ìœ ì¼í•œ ìˆ˜ì‹í‚¤ëŠ” ^ (Control), ! (Alt), ê·¸ë¦¬ê³  + (Shift)ìž…ë‹ˆë‹¤. ê°€ëŠ¥í•œ í‚¤ ì´ë¦„ì€ <a href="../KeyList.htm">í‚¤ ë¦¬ìŠ¤íŠ¸</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<code><strong>g</strong>MySubroutine</code>¿Í °°Àº <a href="Gui.htm#label">g-¶óº§</a>À» ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é »ç¿ëÀÚ°¡ ÇÖÅ°¸¦ º¯°æÇÒ ¶§¸¶´Ù ÀÚµ¿À¸·Î <em>MySubroutine</em> ¶óº§ÀÌ ±âµ¿µË´Ï´Ù.  g-¶óº§ÀÌ ±âµ¿ÇÒ ¶§¸¶´Ù ±× ÇÖÅ°°¡ ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>¿¡ ÀúÀåµË´Ï´Ù. ÁÖÀÇ: g-¶óº§Àº ºÒ¿ÏÀüÇÑ ÇÖÅ°°¡ Á¸ÀçÇÒ ¶§¿¡µµ ±âµ¿µË´Ï´Ù. ¿¹¸¦ µé¾î »ç¿ëÀÚ°¡ Control Å°¸¦ ´©¸£°í ÀÖ´Ù¸é, g-¶óº§Àº ÇÑ ¹ø ±âµ¿µÇ°í ±× Ãâ·Â º¯¼ö¿¡ ¿ÀÁ÷ À­²©¼è (^)¸¸ ´ã±é´Ï´Ù. »ç¿ëÀÚ°¡ ±× ÇÖÅ°¸¦ ¿Ï·áÇÏ¸é, ¶óº§ÀÌ ´Ù½Ã ±âµ¿µÇ°í ºñ·Î¼­ º¯¼ö¿¡ ¿ÏÀüÇÑ ÇÖÅ°°¡ ´ã±é´Ï´Ù.</p>
+<code><strong>g</strong>MySubroutine</code>ì™€ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì„ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ì‚¬ìš©ìžê°€ í•«í‚¤ë¥¼ ë³€ê²½í•  ë•Œë§ˆë‹¤ ìžë™ìœ¼ë¡œ <em>MySubroutine</em> ë¼ë²¨ì´ ê¸°ë™ë©ë‹ˆë‹¤.  g-ë¼ë²¨ì´ ê¸°ë™í•  ë•Œë§ˆë‹¤ ê·¸ í•«í‚¤ê°€ ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ì— ì €ìž¥ë©ë‹ˆë‹¤. ì£¼ì˜: g-ë¼ë²¨ì€ ë¶ˆì™„ì „í•œ í•«í‚¤ê°€ ì¡´ìž¬í•  ë•Œì—ë„ ê¸°ë™ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ ì‚¬ìš©ìžê°€ Control í‚¤ë¥¼ ëˆ„ë¥´ê³  ìžˆë‹¤ë©´, g-ë¼ë²¨ì€ í•œ ë²ˆ ê¸°ë™ë˜ê³  ê·¸ ì¶œë ¥ ë³€ìˆ˜ì— ì˜¤ì§ ìœ—êº½ì‡  (^)ë§Œ ë‹´ê¹ë‹ˆë‹¤. ì‚¬ìš©ìžê°€ ê·¸ í•«í‚¤ë¥¼ ì™„ë£Œí•˜ë©´, ë¼ë²¨ì´ ë‹¤ì‹œ ê¸°ë™ë˜ê³  ë¹„ë¡œì„œ ë³€ìˆ˜ì— ì™„ì „í•œ í•«í‚¤ê°€ ë‹´ê¹ë‹ˆë‹¤.</p>
 <p>
-»ç¿ëÀÚ°¡ ÀÔ·ÂÇÏ´Â ÇÖÅ°ÀÇ À¯ÇüÀ» Á¦ÇÑÇÏ·Á¸é, ´Ü¾î <strong>Limit</strong> µÚ¿¡ ´ÙÀ½ ¼ýÀÚ Áß ÇÏ³ª ¶Ç´Â ±× ÇÕÀ» ÁöÁ¤ÇÏ½Ê½Ã¿À:</p>
+ì‚¬ìš©ìžê°€ ìž…ë ¥í•˜ëŠ” í•«í‚¤ì˜ ìœ í˜•ì„ ì œí•œí•˜ë ¤ë©´, ë‹¨ì–´ <strong>Limit</strong> ë’¤ì— ë‹¤ìŒ ìˆ«ìž ì¤‘ í•˜ë‚˜ ë˜ëŠ” ê·¸ í•©ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤:</p>
 <p>
-1: ¼ö½ÄÅ°°¡ ¾øÀ¸¸é ºÒ°¡<br>
-2: Shift-Å° ´Üµ¶ ºÒ°¡ <br>
-4: Control-Å° ´Üµ¶ ºÒ°¡<br>
-8: Alt-Å° ´Üµ¶ ºÒ°¡<br>
-16: Shift-Control Å° ºÒ°¡ <br>
-32: Shift-Alt Å° ºÒ°¡ <br>
-64: ÀÌ °ªÀº Áö¿øÇÏÁö ¾ÊÀ½ (¿Ã¹Ù¸£°Ô ÀÛµ¿ÇÏÁö ¾ÊÀ» °ÍÀÓ).<br>
-128: Shift-Control-Alt Å° ºÒ°¡.</p>
+1: ìˆ˜ì‹í‚¤ê°€ ì—†ìœ¼ë©´ ë¶ˆê°€<br>
+2: Shift-í‚¤ ë‹¨ë… ë¶ˆê°€ <br>
+4: Control-í‚¤ ë‹¨ë… ë¶ˆê°€<br>
+8: Alt-í‚¤ ë‹¨ë… ë¶ˆê°€<br>
+16: Shift-Control í‚¤ ë¶ˆê°€ <br>
+32: Shift-Alt í‚¤ ë¶ˆê°€ <br>
+64: ì´ ê°’ì€ ì§€ì›í•˜ì§€ ì•ŠìŒ (ì˜¬ë°”ë¥´ê²Œ ìž‘ë™í•˜ì§€ ì•Šì„ ê²ƒìž„).<br>
+128: Shift-Control-Alt í‚¤ ë¶ˆê°€.</p>
 <p>
-¿¹¸¦ µé¾î, <code>Limit1</code>Àº ¼ö½ÄÅ°°¡ ¾øÀÌ ¼ýÀÚ³ª ¹®ÀÚ°¡ ÀÔ·ÂµÇÁö ¸øÇÏµµ·Ï ¸·½À´Ï´Ù. <code>Limit15</code>ÀÌ¸é Àû¾îµµ µÎ °³ÀÇ ¼ö½Ä Å°¸¦ ¿ä±¸ÇÕ´Ï´Ù. »ç¿ëÀÚ°¡ ±ÝÁö ¼ö½Ä Å° Á¶ÇÕÀ» Å¸ÀÚÇÏ¸é, Control+Alt Á¶ÇÕÀÌ ÀÚµ¿À¸·Î ±×¸®°í ½Ã°¢ÀûÀ¸·Î ´ë½ÅÇÕ´Ï´Ù.</p>
+ì˜ˆë¥¼ ë“¤ì–´, <code>Limit1</code>ì€ ìˆ˜ì‹í‚¤ê°€ ì—†ì´ ìˆ«ìžë‚˜ ë¬¸ìžê°€ ìž…ë ¥ë˜ì§€ ëª»í•˜ë„ë¡ ë§‰ìŠµë‹ˆë‹¤. <code>Limit15</code>ì´ë©´ ì ì–´ë„ ë‘ ê°œì˜ ìˆ˜ì‹ í‚¤ë¥¼ ìš”êµ¬í•©ë‹ˆë‹¤. ì‚¬ìš©ìžê°€ ê¸ˆì§€ ìˆ˜ì‹ í‚¤ ì¡°í•©ì„ íƒ€ìží•˜ë©´, Control+Alt ì¡°í•©ì´ ìžë™ìœ¼ë¡œ ê·¸ë¦¬ê³  ì‹œê°ì ìœ¼ë¡œ ëŒ€ì‹ í•©ë‹ˆë‹¤.</p>
 <p>
-ÇÖÅ° ÄÜÆ®·ÑÀº ´É·Â¿¡ Á¦ÇÑÀÌ ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, ¸¶¿ì½º/Á¶ÀÌ½ºÆ½ ÇÖÅ°¸¦ Áö¿øÇÏÁö ¾ÊÀ¸¸ç À©µµ¿ìÁî Å° (LWin ±×¸®°í RWin)¸¦ Áö¿øÇÏÁö ¾Ê½À´Ï´Ù. ÀÌ¸¦ ¿ìÈ¸ÇÏ´Â ÇÑ °¡Áö ¹æ¹ýÀº ¿©·¯ <a href="#Checkbox">Ã¼Å©¹Ú½º</a>¸¦ ¼ö´ÜÀ¸·Î »ç¿ëÀÚ¿¡°Ô Á¦°øÇÏ´Â °ÍÀÔ´Ï´Ù. ±×·¯¸é »ç¿ëÀÚ´Â À©µµ¿ìÁî Å°¿Í °°Àº Ãß°¡ ¼ö½ÄÅ°¸¦ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+í•«í‚¤ ì½˜íŠ¸ë¡¤ì€ ëŠ¥ë ¥ì— ì œí•œì´ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ë§ˆìš°ìŠ¤/ì¡°ì´ìŠ¤í‹± í•«í‚¤ë¥¼ ì§€ì›í•˜ì§€ ì•Šìœ¼ë©° ìœˆë„ìš°ì¦ˆ í‚¤ (LWin ê·¸ë¦¬ê³  RWin)ë¥¼ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì´ë¥¼ ìš°íšŒí•˜ëŠ” í•œ ê°€ì§€ ë°©ë²•ì€ ì—¬ëŸ¬ <a href="#Checkbox">ì²´í¬ë°•ìŠ¤</a>ë¥¼ ìˆ˜ë‹¨ìœ¼ë¡œ ì‚¬ìš©ìžì—ê²Œ ì œê³µí•˜ëŠ” ê²ƒìž…ë‹ˆë‹¤. ê·¸ëŸ¬ë©´ ì‚¬ìš©ìžëŠ” ìœˆë„ìš°ì¦ˆ í‚¤ì™€ ê°™ì€ ì¶”ê°€ ìˆ˜ì‹í‚¤ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
 <h2 id="DateTime">DateTime</h2>
 <p>
-¼³¸í: ÇÑ ÁÙ ÆíÁý ÄÜÆ®·ÑÃ³·³ º¸ÀÌ´Â ¹Ú½º. ±×·¯³ª ³¯Â¥¿Í ½Ã°£À» ¹Þ½À´Ï´Ù. µå·Ó-´Ù¿î ´Þ·Âµµ Á¦°øÇÕ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì„¤ëª…: í•œ ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì²˜ëŸ¼ ë³´ì´ëŠ” ë°•ìŠ¤. ê·¸ëŸ¬ë‚˜ ë‚ ì§œì™€ ì‹œê°„ì„ ë°›ìŠµë‹ˆë‹¤. ë“œë¡­-ë‹¤ìš´ ë‹¬ë ¥ë„ ì œê³µí•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
 <pre>Gui, Add, DateTime, vMyDateTime, LongDate</pre>
 <p>
-<a name="DateTimeFormat"></a>¸¶Áö¸· ¸Å°³º¯¼ö´Â ´ÙÀ½ Áß ÇÏ³ªÀÔ´Ï´Ù:</p>
+<a name="DateTimeFormat"></a>ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” ë‹¤ìŒ ì¤‘ í•˜ë‚˜ìž…ë‹ˆë‹¤:</p>
 <p>
-<strong>(»ý·«)</strong>: »ý·«ÇÏ¸é, ·ÎÄÉÀÏÀÇ ÂªÀº ³¯Â¥ Çü½ÄÀÌ »ç¿ëµË´Ï´Ù. ¿¹¸¦ µé¾î, ¾î¶² ·ÎÄÉÀÏ¿¡¼­´Â ´ÙÀ½°ú °°ÀÌ º¸ÀÔ´Ï´Ù: 6/1/2005</p>
+<strong>(ìƒëžµ)</strong>: ìƒëžµí•˜ë©´, ë¡œì¼€ì¼ì˜ ì§§ì€ ë‚ ì§œ í˜•ì‹ì´ ì‚¬ìš©ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ì–´ë–¤ ë¡œì¼€ì¼ì—ì„œëŠ” ë‹¤ìŒê³¼ ê°™ì´ ë³´ìž…ë‹ˆë‹¤: 6/1/2005</p>
 <p>
-<strong>LongDate</strong>: ·ÎÄÉÀÏÀÇ ±ä ³¯Â¥ Çü½ÄÀ» »ç¿ëÇÏ´Ï´Ù. ¿¹¸¦ µé¾î, ¾î¶² ·ÎÄÉÀÏ¿¡¼­ ´ÙÀ½°ú °°ÀÌ º¸ÀÔ´Ï´Ù: Wednesday, June 01, 2005</p>
+<strong>LongDate</strong>: ë¡œì¼€ì¼ì˜ ê¸´ ë‚ ì§œ í˜•ì‹ì„ ì‚¬ìš©í•˜ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ì–´ë–¤ ë¡œì¼€ì¼ì—ì„œ ë‹¤ìŒê³¼ ê°™ì´ ë³´ìž…ë‹ˆë‹¤: Wednesday, June 01, 2005</p>
 <p>
-<strong>Time</strong>: ·ÎÄÉÀÏÀÇ ½Ã°£ Çü½ÄÀ» »ç¿ëÇÏ¿© ½Ã°£¸¸ º¸¿©ÁÝ´Ï´Ù. ³¯Â¥´Â º¸ÀÌÁö ¾ÊÁö¸¸, ¿©ÀüÈ÷ ÄÜÆ®·Ñ¿¡ Á¸ÀçÇÏ¸ç ½Ã°£°ú ÇÔ²² <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> Çü½ÄÀ¸·Î ¿­¶÷ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong>Time</strong>: ë¡œì¼€ì¼ì˜ ì‹œê°„ í˜•ì‹ì„ ì‚¬ìš©í•˜ì—¬ ì‹œê°„ë§Œ ë³´ì—¬ì¤ë‹ˆë‹¤. ë‚ ì§œëŠ” ë³´ì´ì§€ ì•Šì§€ë§Œ, ì—¬ì „ížˆ ì½˜íŠ¸ë¡¤ì— ì¡´ìž¬í•˜ë©° ì‹œê°„ê³¼ í•¨ê»˜ <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> í˜•ì‹ìœ¼ë¡œ ì—´ëžŒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>(¸ÂÃã Çü½Ä)</strong>: <a href="FormatTime.htm">³¯Â¥¿Í ½Ã°£ Çü½Ä</a>À» Á¶ÇÕÇØ ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, <code>M/d/yy HH:mm</code>ÀÌ¸é 6/1/05 21:37¿Í °°ÀÌ º¸ÀÔ´Ï´Ù. ºñ½ÁÇÏ°Ô, <code>dddd MMMM d, yyyy hh:mm:ss tt</code>ÀÌ¸é  "Wednesday June 1, 2005 09:37:45 PM" Ã³·³ º¸ÀÔ´Ï´Ù. ±âÈ£¿Í ¼ýÀÚ¸¦ ±×´ë·Î º¸¿© ÁÖ·Á¸é È¬µû¿ÈÇ¥·Î ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ µÑ·¯ ½Î¾ß ÇÕ´Ï´Ù: <code>'Date:' MM/dd/yy 'Time:' hh:mm:ss tt</code>. ´ëÁ¶ÀûÀ¸·Î, ºñ-¾ËÆÄºª¼ýÀÚ´Â ½ºÆäÀÌ½º, ÅÇ, Á¤»ç¼±, ½ÖÁ¡, ½°Ç¥, ±âÅ¸µîµîÀÇ ±¸µÎÁ¡ ±âÈ£´Â È¬µû¿ÈÇ¥·Î µÑ·¯½Ò ÇÊ¿ä°¡ ¾ø½À´Ï´Ù. ÀÌ¿¡ ´ëÇÑ ¿¹¿Ü´Â È¬µû¿ÈÇ¥ ÀÚÃ¼ÀÔ´Ï´Ù: ±âÈ£ ±×´ë·ÎÀÇ È¬µû¿ÈÇ¥¸¦ »ç¿ëÇÏ·Á¸é, ¿¬¼ÓÇØ¼­ È¬µû¿ÈÇ¥¸¦ µÎ°³ ('''') »ç¿ëÇÏ°Å³ª, ¾Æ´Ï¸é ±×³É ¹Ù±ù¿¡ µû¿ÈÇ¥ ½ÖÀÌ ÀÌ¹Ì ÀÖ´Â °æ¿ì ±×³É µÎ °³¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+<strong>(ë§žì¶¤ í˜•ì‹)</strong>: <a href="FormatTime.htm">ë‚ ì§œì™€ ì‹œê°„ í˜•ì‹</a>ì„ ì¡°í•©í•´ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, <code>M/d/yy HH:mm</code>ì´ë©´ 6/1/05 21:37ì™€ ê°™ì´ ë³´ìž…ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, <code>dddd MMMM d, yyyy hh:mm:ss tt</code>ì´ë©´  "Wednesday June 1, 2005 09:37:45 PM" ì²˜ëŸ¼ ë³´ìž…ë‹ˆë‹¤. ê¸°í˜¸ì™€ ìˆ«ìžë¥¼ ê·¸ëŒ€ë¡œ ë³´ì—¬ ì£¼ë ¤ë©´ í™‘ë”°ì˜´í‘œë¡œ ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ë‘˜ëŸ¬ ì‹¸ì•¼ í•©ë‹ˆë‹¤: <code>'Date:' MM/dd/yy 'Time:' hh:mm:ss tt</code>. ëŒ€ì¡°ì ìœ¼ë¡œ, ë¹„-ì•ŒíŒŒë²³ìˆ«ìžëŠ” ìŠ¤íŽ˜ì´ìŠ¤, íƒ­, ì •ì‚¬ì„ , ìŒì , ì‰¼í‘œ, ê¸°íƒ€ë“±ë“±ì˜ êµ¬ë‘ì  ê¸°í˜¸ëŠ” í™‘ë”°ì˜´í‘œë¡œ ë‘˜ëŸ¬ìŒ€ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤. ì´ì— ëŒ€í•œ ì˜ˆì™¸ëŠ” í™‘ë”°ì˜´í‘œ ìžì²´ìž…ë‹ˆë‹¤: ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ í™‘ë”°ì˜´í‘œë¥¼ ì‚¬ìš©í•˜ë ¤ë©´, ì—°ì†í•´ì„œ í™‘ë”°ì˜´í‘œë¥¼ ë‘ê°œ ('''') ì‚¬ìš©í•˜ê±°ë‚˜, ì•„ë‹ˆë©´ ê·¸ëƒ¥ ë°”ê¹¥ì— ë”°ì˜´í‘œ ìŒì´ ì´ë¯¸ ìžˆëŠ” ê²½ìš° ê·¸ëƒ¥ ë‘ ê°œë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3>DateTime »ç¿ë¹ý</h3>
+<h3>DateTime ì‚¬ìš©ë²•</h3>
 <p>
-<a name="ChooseDT"></a>¿À´Ã ¸»°í ´Ù¸¥ ³¯Â¥¸¦ ¹Ì¸® ¼±ÅÃÇÏ·Á¸é, <em>Options</em>¿¡ ´Ü¾î <strong>Choose</strong>¿Í ±× ´ÙÀ½¿¡ ¹Ù·Î ³¯Â¥¸¦ YYYYMMDD Çü½ÄÀ¸·Î Æ÷ÇÔ½ÃÅ°½Ê½Ã¿À. ¿¹¸¦ µé¾î,, <code>Choose20050531</code>ÀÌ¸é May 31, 2005¸¦ ¹Ì¸® ¼±ÅÃÇÕ´Ï´Ù (´Ù¸¥ ¿É¼Ç°ú ¸¶Âù°¡Áö·Î, <code>Choose%Var%</code>¿Í °°Àº º¯¼öµµ °¡´ÉÇÏ´Ï´Ù). ³¯Â¥/½Ã°£À» ¼±ÅÃÇÏÁö ¾ÊÀ¸·Á¸é, <strong>ChooseNone</strong>À» ÁöÁ¤ÇÏ½Ê½Ã¿À. <em>ChooseNone</em>´Â ¶Ç ÄÜÆ®·Ñ¿¡ ³¯Â¥°¡ ¾øÀ» ¶§¸¶´Ù ÄÜÆ®·Ñ ¾È¿¡ Ã¼Å©°¡ ÇØÁ¦µÇ¾î ÀÖ´Â Ã¼Å©¹Ú½º¸¦ »ý¼ºÇÕ´Ï´Ù. ÄÜÆ®·Ñ¿¡ ³¯Â¥°¡ ¾øÀ» ¶§¸¶´Ù, <a href="Gui.htm#Submit">Gui Submit</a> ±×¸®°í <a href="GuiControlGet.htm">GuiControlGet</a>Àº ºó °ªÀ» ¿­¶÷ÇÕ´Ï´Ù (ºó ¹®ÀÚ¿­).</p>
+<a name="ChooseDT"></a>ì˜¤ëŠ˜ ë§ê³  ë‹¤ë¥¸ ë‚ ì§œë¥¼ ë¯¸ë¦¬ ì„ íƒí•˜ë ¤ë©´, <em>Options</em>ì— ë‹¨ì–´ <strong>Choose</strong>ì™€ ê·¸ ë‹¤ìŒì— ë°”ë¡œ ë‚ ì§œë¥¼ YYYYMMDD í˜•ì‹ìœ¼ë¡œ í¬í•¨ì‹œí‚¤ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´,, <code>Choose20050531</code>ì´ë©´ May 31, 2005ë¥¼ ë¯¸ë¦¬ ì„ íƒí•©ë‹ˆë‹¤ (ë‹¤ë¥¸ ì˜µì…˜ê³¼ ë§ˆì°¬ê°€ì§€ë¡œ, <code>Choose%Var%</code>ì™€ ê°™ì€ ë³€ìˆ˜ë„ ê°€ëŠ¥í•˜ë‹ˆë‹¤). ë‚ ì§œ/ì‹œê°„ì„ ì„ íƒí•˜ì§€ ì•Šìœ¼ë ¤ë©´, <strong>ChooseNone</strong>ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. <em>ChooseNone</em>ëŠ” ë˜ ì½˜íŠ¸ë¡¤ì— ë‚ ì§œê°€ ì—†ì„ ë•Œë§ˆë‹¤ ì½˜íŠ¸ë¡¤ ì•ˆì— ì²´í¬ê°€ í•´ì œë˜ì–´ ìžˆëŠ” ì²´í¬ë°•ìŠ¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤. ì½˜íŠ¸ë¡¤ì— ë‚ ì§œê°€ ì—†ì„ ë•Œë§ˆë‹¤, <a href="Gui.htm#Submit">Gui Submit</a> ê·¸ë¦¬ê³  <a href="GuiControlGet.htm">GuiControlGet</a>ì€ ë¹ˆ ê°’ì„ ì—´ëžŒí•©ë‹ˆë‹¤ (ë¹ˆ ë¬¸ìžì—´).</p>
 <p>
-³¯Â¥¿¡ ½Ã°£Àº ¼±ÅÃÀûÀ¸·Î ³ªÅ¸³³´Ï´Ù. ±×·¸Áö¸¸ ÄÜÆ®·Ñ¿¡¼­ ³ª¿À°Å³ª µé¾î°¥ ¶§ ¹Ýµå½Ã ³¯Â¥°¡ ¸ÕÀú ¿Í¾ß ÇÕ´Ï´Ù. ½Ã°£ ºÎºÐÀÇ Çü½ÄÀº HH24MISS (½Ã°£, ºÐ, ÃÊ)ÀÌ°í, ¿©±â¿¡¼­ HH24´Â 24-½Ã°£ Çü½ÄÀ¸·Î ³ªÅ¸³³´Ï´Ù; ¿¹¸¦ µé¾î, 09´Â ¿ÀÀü 9½ÃÀÌ°í 21ÀÌ¸é ¿ÀÈÄ 9½ÃÀÔ´Ï´Ù. ±×·¡¼­, ¿ÏÀüÇÑ ³¯Â¥-½Ã°£ ¹®ÀÚ¿­Àº ´ÙÀ½ <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>ÀÇ Çü½ÄÀÔ´Ï´Ù.</p>
+ë‚ ì§œì— ì‹œê°„ì€ ì„ íƒì ìœ¼ë¡œ ë‚˜íƒ€ë‚©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ ì½˜íŠ¸ë¡¤ì—ì„œ ë‚˜ì˜¤ê±°ë‚˜ ë“¤ì–´ê°ˆ ë•Œ ë°˜ë“œì‹œ ë‚ ì§œê°€ ë¨¼ì € ì™€ì•¼ í•©ë‹ˆë‹¤. ì‹œê°„ ë¶€ë¶„ì˜ í˜•ì‹ì€ HH24MISS (ì‹œê°„, ë¶„, ì´ˆ)ì´ê³ , ì—¬ê¸°ì—ì„œ HH24ëŠ” 24-ì‹œê°„ í˜•ì‹ìœ¼ë¡œ ë‚˜íƒ€ë‚©ë‹ˆë‹¤; ì˜ˆë¥¼ ë“¤ì–´, 09ëŠ” ì˜¤ì „ 9ì‹œì´ê³  21ì´ë©´ ì˜¤í›„ 9ì‹œìž…ë‹ˆë‹¤. ê·¸ëž˜ì„œ, ì™„ì „í•œ ë‚ ì§œ-ì‹œê°„ ë¬¸ìžì—´ì€ ë‹¤ìŒ <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>ì˜ í˜•ì‹ìž…ë‹ˆë‹¤.</p>
 <p>
-³¯Â¥¸¦ YYYYMMDDHH24MISS Çü½ÄÀ¸·Î ÁöÁ¤ÇÒ ¶§, ¿ÀÁ÷ ¾Õ ºÎºÐ¸¸ º¸¿©ÁÙ ÇÊ¿ä°¡ ÀÖ½À´Ï´Ù. »ý·«µÈ ³ª¸ÓÁö ºÎºÐÀº ´ÙÀ½ÀÇ ±âº»°ªÀÌ °ø±ÞµË´Ï´Ù:<br>
+ë‚ ì§œë¥¼ YYYYMMDDHH24MISS í˜•ì‹ìœ¼ë¡œ ì§€ì •í•  ë•Œ, ì˜¤ì§ ì•ž ë¶€ë¶„ë§Œ ë³´ì—¬ì¤„ í•„ìš”ê°€ ìžˆìŠµë‹ˆë‹¤. ìƒëžµëœ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì€ ë‹¤ìŒì˜ ê¸°ë³¸ê°’ì´ ê³µê¸‰ë©ë‹ˆë‹¤:<br>
 MM: Month 01<br>
 DD: Day 01<br>
 HH24: Hour 00<br>
 MI: Minute 00<br>
 SS: Second 00</p>
 <p>
-µå·Ó-´Ù¿î ´Þ·Â ¾È¿¡¼­, ¾Æ·¡¿¡ ÀÖ´Â ¿À´Ã-¹®ÀÚ¿­À» Å¬¸¯ÇÏ¸é ¿À´Ã ³¯Â¥¸¦ ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù. °Ô´Ù°¡, ÇØ¿Í ´Þ ÀÌ¸§À» Å¬¸¯ÇÏ¸é ½±°Ô ÇØ¿Í ´ÞÀ» Ç×ÇØÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ë“œë¡­-ë‹¤ìš´ ë‹¬ë ¥ ì•ˆì—ì„œ, ì•„ëž˜ì— ìžˆëŠ” ì˜¤ëŠ˜-ë¬¸ìžì—´ì„ í´ë¦­í•˜ë©´ ì˜¤ëŠ˜ ë‚ ì§œë¥¼ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, í•´ì™€ ë‹¬ ì´ë¦„ì„ í´ë¦­í•˜ë©´ ì‰½ê²Œ í•´ì™€ ë‹¬ì„ í•­í•´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<b>Å°º¸µå Ç×ÇØ</b>: Up/Down È­»ìÇ¥ Å°, NumpadPlus/Minus, ±×¸®°í Home/End¸¦ »ç¿ëÇÏ¸é ÄÜÆ®·ÑÀÇ °ªÀ» ´Ã¸®°Å³ª ÁÙÀÏ ¼ö ÀÖ½À´Ï´Ù. LeftArrow ±×¸®°í RightArrow¸¦ »ç¿ëÇÏ¸é ÄÜÆ®·Ñ ¾ÈÀÇ ÇÊµå¿¡¼­ ÇÊµå·Î ÀÌµ¿ÇÒ ¼ö ÀÖ½À´Ï´Ù. µå·Ó-´Ù¿î ´Þ·Â ¾È¿¡¼­, È­»ìÇ¥ Å°¸¦ »ç¿ëÇÏ¸é ³¯¿¡¼­ ³¯·Î ÀÌµ¿ÇÒ ¼ö ÀÖ½À´Ï´Ù; PageUp/Down¸¦ »ç¿ëÇÏ¸é ÇÑ ´Þ¾¿ µÚ·Î ¾ÕÀ¸·Î ÀÌµ¿ÇÒ ¼ö ÀÖ½À´Ï´Ù; Ctrl-PageUp/Down¸¦ »ç¿ëÇÏ¸é ÇÑ ÇØ¾¿ ¾ÕÀ¸·Î µÚ·Î ÀÌµ¿ÇÒ ¼ö ÀÖ½À´Ï´Ù; ±×¸®°í Home/EndÀ» »ç¿ëÇÏ¸é ±× ´ÞÀÇ Ã¹ ³¯°ú ¸¶Áö¸· ³¯À» ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<b>í‚¤ë³´ë“œ í•­í•´</b>: Up/Down í™”ì‚´í‘œ í‚¤, NumpadPlus/Minus, ê·¸ë¦¬ê³  Home/Endë¥¼ ì‚¬ìš©í•˜ë©´ ì½˜íŠ¸ë¡¤ì˜ ê°’ì„ ëŠ˜ë¦¬ê±°ë‚˜ ì¤„ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. LeftArrow ê·¸ë¦¬ê³  RightArrowë¥¼ ì‚¬ìš©í•˜ë©´ ì½˜íŠ¸ë¡¤ ì•ˆì˜ í•„ë“œì—ì„œ í•„ë“œë¡œ ì´ë™í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë“œë¡­-ë‹¤ìš´ ë‹¬ë ¥ ì•ˆì—ì„œ, í™”ì‚´í‘œ í‚¤ë¥¼ ì‚¬ìš©í•˜ë©´ ë‚ ì—ì„œ ë‚ ë¡œ ì´ë™í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤; PageUp/Downë¥¼ ì‚¬ìš©í•˜ë©´ í•œ ë‹¬ì”© ë’¤ë¡œ ì•žìœ¼ë¡œ ì´ë™í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤; Ctrl-PageUp/Downë¥¼ ì‚¬ìš©í•˜ë©´ í•œ í•´ì”© ì•žìœ¼ë¡œ ë’¤ë¡œ ì´ë™í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤; ê·¸ë¦¬ê³  Home/Endì„ ì‚¬ìš©í•˜ë©´ ê·¸ ë‹¬ì˜ ì²« ë‚ ê³¼ ë§ˆì§€ë§‰ ë‚ ì„ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="Gui.htm#Submit">Gui Submit</a>À» »ç¿ëÇÏ¸é, ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ¼±ÅÃµÈ ³¯Â¥¿Í ½Ã°£À» <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> Çü½ÄÀ¸·Î ¹Þ½À´Ï´Ù. ³¯Â¥¿Í ½Ã°£ ¸ðµÎ ³ªÅ¸³³´Ï´Ù. ½ÇÁ¦·Î ÄÜÆ®·Ñ ¾È¿¡ º¸ÀÌ´ÂÁö ¾Ê´ÂÁö¿¡ »ó°üÀÌ ¾ø½À´Ï´Ù.</p>
+<a href="Gui.htm#Submit">Gui Submit</a>ì„ ì‚¬ìš©í•˜ë©´, ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) ì„ íƒëœ ë‚ ì§œì™€ ì‹œê°„ì„ <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> í˜•ì‹ìœ¼ë¡œ ë°›ìŠµë‹ˆë‹¤. ë‚ ì§œì™€ ì‹œê°„ ëª¨ë‘ ë‚˜íƒ€ë‚©ë‹ˆë‹¤. ì‹¤ì œë¡œ ì½˜íŠ¸ë¡¤ ì•ˆì— ë³´ì´ëŠ”ì§€ ì•ŠëŠ”ì§€ì— ìƒê´€ì´ ì—†ìŠµë‹ˆë‹¤.</p>
 <p>
-ÄÜÆ®·Ñ¿¡ <a href="Gui.htm#label">g-¶óº§</a>ÀÌ ÀÖ´Ù¸é, »ç¿ëÀÚ°¡ ³¯Â¥³ª ½Ã°£À» º¯°æÇÒ ¶§¸¶´Ù ±× ¶óº§ÀÌ ±âµ¿µË´Ï´Ù. ±âµ¿µÉ ¶§¸¶´Ù, ±× ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ÀÚµ¿À¸·Î ÇöÀç ¼±ÅÃµÈ ³¯Â¥/½Ã°£À¸·Î ÀÚµ¿ ¾÷µ¥ÀÌÆ® µË´Ï´Ù.</p>
+ì½˜íŠ¸ë¡¤ì— <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ ìžˆë‹¤ë©´, ì‚¬ìš©ìžê°€ ë‚ ì§œë‚˜ ì‹œê°„ì„ ë³€ê²½í•  ë•Œë§ˆë‹¤ ê·¸ ë¼ë²¨ì´ ê¸°ë™ë©ë‹ˆë‹¤. ê¸°ë™ë  ë•Œë§ˆë‹¤, ê·¸ ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) ìžë™ìœ¼ë¡œ í˜„ìž¬ ì„ íƒëœ ë‚ ì§œ/ì‹œê°„ìœ¼ë¡œ ìžë™ ì—…ë°ì´íŠ¸ ë©ë‹ˆë‹¤.</p>
 
-<h3>DateTime ¿É¼Ç</h3>
+<h3>DateTime ì˜µì…˜</h3>
 <p>
-<strong>Choose</strong>: <a href="#ChooseDT">À§</a> ÂüÁ¶.</p>
+<strong>Choose</strong>: <a href="#ChooseDT">ìœ„</a> ì°¸ì¡°.</p>
 <p>
-<strong>Range</strong>: ¼±ÅÃµÈ ³¯Â¥ÀÇ ¹üÀ§¸¦ Á¦ÇÑÇÕ´Ï´Ù. ´Ü¾î Range ´ÙÀ½¿¡, ÃÖ¼Ò ³¯Â¥¿Í ÃÖ´ë ³¯Â¥¸¦ YYYYMMDD Çü½ÄÀ¸·Î ÁöÁ¤ÇÏ½Ê½Ã¿À (±× »çÀÌ¿¡ ¿·ÁÙ). ¿¹¸¦ µé¾î, <code>Range20050101-20050615</code>ÀÌ¸é ³¯Â¥¸¦ 2005³âÀÇ Àü¹Ý 5.5 ´Þ·Î Á¦ÇÑÇÕ´Ï´Ù. ÃÖ¼Ò ³¯Â¥ ¶Ç´Â ÃÖ´ë ³¯Â¥¸¦ »ý·«ÇÏ¸é ±× ¹æÇâÀ¸·Î ÄÜÆ®·ÑÀ» Á¦¾îÇÏÁö ¾Ê°í ±×´ë·Î µÓ´Ï´Ù. ¿¹¸¦ µé¾î, <code>Range20010101</code>ÀÌ¸é ³¯Â¥¸¦ 2001³â ¹Ì¸¸ÀÌ ¼±ÅÃµÇÁö ¸øÇÏµµ·Ï ¸·°í <code>Range-20091231</code> (¾Õ¿¡ ¿·ÁÙ)ÀÌ¸é ³¯Â¥¸¦ 2009³âÀ» ÃÊ°úÇÏ¿© ¼±ÅÃµÇÁö ¸øÇÏ°Ô ¸·½À´Ï´Ù. Range ¿É¼ÇÀÌ ¾ø´Ù¸é, 1601°ú 9999 »çÀÌÀÇ ³¯Â¥¸¦ ¾ó¸¶µçÁö ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù. ³¯Â¥ ¾ÈÀÇ ½Ã°£Àº Á¦ÇÑÇÒ ¼ö ¾ø½À´Ï´Ù.</p>
+<strong>Range</strong>: ì„ íƒëœ ë‚ ì§œì˜ ë²”ìœ„ë¥¼ ì œí•œí•©ë‹ˆë‹¤. ë‹¨ì–´ Range ë‹¤ìŒì—, ìµœì†Œ ë‚ ì§œì™€ ìµœëŒ€ ë‚ ì§œë¥¼ YYYYMMDD í˜•ì‹ìœ¼ë¡œ ì§€ì •í•˜ì‹­ì‹œì˜¤ (ê·¸ ì‚¬ì´ì— ì˜†ì¤„). ì˜ˆë¥¼ ë“¤ì–´, <code>Range20050101-20050615</code>ì´ë©´ ë‚ ì§œë¥¼ 2005ë…„ì˜ ì „ë°˜ 5.5 ë‹¬ë¡œ ì œí•œí•©ë‹ˆë‹¤. ìµœì†Œ ë‚ ì§œ ë˜ëŠ” ìµœëŒ€ ë‚ ì§œë¥¼ ìƒëžµí•˜ë©´ ê·¸ ë°©í–¥ìœ¼ë¡œ ì½˜íŠ¸ë¡¤ì„ ì œì–´í•˜ì§€ ì•Šê³  ê·¸ëŒ€ë¡œ ë‘¡ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Range20010101</code>ì´ë©´ ë‚ ì§œë¥¼ 2001ë…„ ë¯¸ë§Œì´ ì„ íƒë˜ì§€ ëª»í•˜ë„ë¡ ë§‰ê³  <code>Range-20091231</code> (ì•žì— ì˜†ì¤„)ì´ë©´ ë‚ ì§œë¥¼ 2009ë…„ì„ ì´ˆê³¼í•˜ì—¬ ì„ íƒë˜ì§€ ëª»í•˜ê²Œ ë§‰ìŠµë‹ˆë‹¤. Range ì˜µì…˜ì´ ì—†ë‹¤ë©´, 1601ê³¼ 9999 ì‚¬ì´ì˜ ë‚ ì§œë¥¼ ì–¼ë§ˆë“ ì§€ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‚ ì§œ ì•ˆì˜ ì‹œê°„ì€ ì œí•œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>Right</strong>: Ä¶¸°´õ°¡ ÄÜÆ®·Ñ¿¡ ¿À¸¥ÂÊ¿¡ µå·Ó ´Ù¿îµË´Ï´Ù.</p>
+<strong>Right</strong>: ìº˜ë¦°ë”ê°€ ì½˜íŠ¸ë¡¤ì— ì˜¤ë¥¸ìª½ì— ë“œë¡­ ë‹¤ìš´ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>1</strong>: ¼ýÀÚ 1À» <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é ¾÷-´Ù¿î ÄÜÆ®·ÑÀ» ÄÜÆ®·ÑÀÇ ¿À¸¥ÂÊ¿¡ Á¦°øÇØ ³¯Â¥-½Ã°£ °ªÀ» º¯°æÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×·¯¸é µå·Ó-´Ù¿î ´Þ·ÂÀÌ ±³Ã¼µË´Ï´Ù. ÀÌ°ÍÀº À§¿¡ ±â¼úÇÑ ±ä ³¯Â¥(LongDate) ¿É¼Ç Çü½Ä°ú ÀÛµ¿ÇÏÁö ¾Ê½À´Ï´Ù.</p>
+<strong>1</strong>: ìˆ«ìž 1ì„ <em>Options</em>ì— ì§€ì •í•˜ë©´ ì—…-ë‹¤ìš´ ì½˜íŠ¸ë¡¤ì„ ì½˜íŠ¸ë¡¤ì˜ ì˜¤ë¥¸ìª½ì— ì œê³µí•´ ë‚ ì§œ-ì‹œê°„ ê°’ì„ ë³€ê²½í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë©´ ë“œë¡­-ë‹¤ìš´ ë‹¬ë ¥ì´ êµì²´ë©ë‹ˆë‹¤. ì´ê²ƒì€ ìœ„ì— ê¸°ìˆ í•œ ê¸´ ë‚ ì§œ(LongDate) ì˜µì…˜ í˜•ì‹ê³¼ ìž‘ë™í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-<strong><a name="ChooseNone"></a>2</strong>: ¼ýÀÚ 2¸¦ <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é Ã¼Å©¹Ú½º¸¦ ÄÜÆ®·Ñ ¾È¿¡ Á¦°øÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×·¯¸é »ç¿ëÀÚ´Â Ã¼Å© Ç¥½ÄÀ» ÇØÁ¦ÇØ ³¯Â¥/½Ã°£ÀÌ ¼±ÅÃµÇÁö ¾Ê¾ÒÀ½À» ¾Ë¸± ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong><a name="ChooseNone"></a>2</strong>: ìˆ«ìž 2ë¥¼ <em>Options</em>ì— ì§€ì •í•˜ë©´ ì²´í¬ë°•ìŠ¤ë¥¼ ì½˜íŠ¸ë¡¤ ì•ˆì— ì œê³µí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë©´ ì‚¬ìš©ìžëŠ” ì²´í¬ í‘œì‹ì„ í•´ì œí•´ ë‚ ì§œ/ì‹œê°„ì´ ì„ íƒë˜ì§€ ì•Šì•˜ìŒì„ ì•Œë¦´ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
 <h2 id="MonthCal">MonthCal</h2>
 <p>
-¼³¸í: ´Þ·Â Çü½ÄÀ¸·Î ÇÑ ´ÞÀÇ ¸ðµç ³¯Â¥¸¦ º¸¿©ÁÖ´Â ³ô°í ³ÐÀº ÄÜÆ®·Ñ. »ç¿ëÀÚ´Â ³¯Â¥ ¶Ç´Â ÇÑ ¹üÀ§ÀÇ ³¯Â¥¸¦ ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ì„¤ëª…: ë‹¬ë ¥ í˜•ì‹ìœ¼ë¡œ í•œ ë‹¬ì˜ ëª¨ë“  ë‚ ì§œë¥¼ ë³´ì—¬ì£¼ëŠ” ë†’ê³  ë„“ì€ ì½˜íŠ¸ë¡¤. ì‚¬ìš©ìžëŠ” ë‚ ì§œ ë˜ëŠ” í•œ ë²”ìœ„ì˜ ë‚ ì§œë¥¼ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
 <pre>Gui, Add, MonthCal, vMyCalendar</pre>
 <p>
-¿À´Ã ¸»°í ´Ù¸¥ ³¯Â¥¸¦ ¹Ì¸® ¼±ÅÃÇÏ·Á¸é, ¸¶Áö¸· ¸Å°³º¯¼ö¿¡ YYYYMMDD Çü½ÄÀ¸·Î ÁöÁ¤ÇÏ½Ê½Ã¿À (¿¹, <code>20050531</code>). ÇÑ ¹üÀ§ÀÇ ³¯Â¥µµ ¹Ì¸® ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù. »çÀÌ¿¡ ¿· ÁÙÀ» µÎ°í µÎ ³¯Â¥¸¦ Æ÷ÇÔÇÏ¸é µË´Ï´Ù (¿¹, <code>20050525-20050531</code>).</p>
+ì˜¤ëŠ˜ ë§ê³  ë‹¤ë¥¸ ë‚ ì§œë¥¼ ë¯¸ë¦¬ ì„ íƒí•˜ë ¤ë©´, ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì— YYYYMMDD í˜•ì‹ìœ¼ë¡œ ì§€ì •í•˜ì‹­ì‹œì˜¤ (ì˜ˆ, <code>20050531</code>). í•œ ë²”ìœ„ì˜ ë‚ ì§œë„ ë¯¸ë¦¬ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì‚¬ì´ì— ì˜† ì¤„ì„ ë‘ê³  ë‘ ë‚ ì§œë¥¼ í¬í•¨í•˜ë©´ ë©ë‹ˆë‹¤ (ì˜ˆ, <code>20050525-20050531</code>).</p>
 <p>
-MonthCal¿¡ ´ëÇÏ¿© º¸Åë ³Êºñ (W)¿Í ³ôÀÌ (H)¸¦ »ý·«ÇÏ´Â °ÍÀÌ ÁÁ½À´Ï´Ù. ¿Ö³ÄÇÏ¸é ÇÑ ´Þ¿¡ Á¤È®ÇÏ°Ô ¸Âµµ·Ï ÀÚµ¿À¸·Î Å©±â°¡ Á¶ÀýµÇ±â ¶§¹®ÀÔ´Ï´Ù. ¼öÁ÷À¸·Î ¿©·¯ ´ÞÀ» º¸¿©ÁÖ·Á¸é, specify <code>R2</code> ÀÌ»óÀ» <em>Options</em>¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿©·¯ ´ÞÀ» ¼öÆòÀ¸·Î º¸¿©ÁÖ·Á¸é, <code>W-2</code> (W À½¼ö 2) ÀÌ»óÀ» ÁöÁ¤ÇÏ½Ê½Ã¿À. ÀÌ ¿É¼ÇµéÀº ¸ðµÎ ¾ç ¹æÇâÀ¸·Î È®´ëÇÏ±â À§ÇØ Á¸ÀçÇÕ´Ï´Ù.</p>
+MonthCalì— ëŒ€í•˜ì—¬ ë³´í†µ ë„ˆë¹„ (W)ì™€ ë†’ì´ (H)ë¥¼ ìƒëžµí•˜ëŠ” ê²ƒì´ ì¢‹ìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ í•œ ë‹¬ì— ì •í™•í•˜ê²Œ ë§žë„ë¡ ìžë™ìœ¼ë¡œ í¬ê¸°ê°€ ì¡°ì ˆë˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ìˆ˜ì§ìœ¼ë¡œ ì—¬ëŸ¬ ë‹¬ì„ ë³´ì—¬ì£¼ë ¤ë©´, specify <code>R2</code> ì´ìƒì„ <em>Options</em>ì— ì§€ì •í•˜ì‹­ì‹œì˜¤. ì—¬ëŸ¬ ë‹¬ì„ ìˆ˜í‰ìœ¼ë¡œ ë³´ì—¬ì£¼ë ¤ë©´, <code>W-2</code> (W ìŒìˆ˜ 2) ì´ìƒì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì´ ì˜µì…˜ë“¤ì€ ëª¨ë‘ ì–‘ ë°©í–¥ìœ¼ë¡œ í™•ëŒ€í•˜ê¸° ìœ„í•´ ì¡´ìž¬í•©ë‹ˆë‹¤.</p>
 <p>
-ÄÜÆ®·Ñ ¾Æ·¡ÀÇ ¿À´Ã-¹®ÀÚ¿­À» Å¬¸¯ÇÏ¸é ¿À´Ã ³¯Â¥¸¦ ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù. °Ô´Ù°¡, ÇØ¿Í ´Þ ÀÌ¸§À» Å¬¸¯ÇÏ¸é ½±°Ô »õ ÇØ¿Í ´ÞÀ» ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ì½˜íŠ¸ë¡¤ ì•„ëž˜ì˜ ì˜¤ëŠ˜-ë¬¸ìžì—´ì„ í´ë¦­í•˜ë©´ ì˜¤ëŠ˜ ë‚ ì§œë¥¼ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, í•´ì™€ ë‹¬ ì´ë¦„ì„ í´ë¦­í•˜ë©´ ì‰½ê²Œ ìƒˆ í•´ì™€ ë‹¬ì„ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="#DateTime">DateTime</a>ÀÇ Ä¶¸°´õ¿Í ´Ù¸£°Ô, Å°º¸µå Ç×ÇØ´Â º¸Åë MonthCal¿¡ Áö¿øµÇÁö ¾Ê½À´Ï´Ù.</p>
+<a href="#DateTime">DateTime</a>ì˜ ìº˜ë¦°ë”ì™€ ë‹¤ë¥´ê²Œ, í‚¤ë³´ë“œ í•­í•´ëŠ” ë³´í†µ MonthCalì— ì§€ì›ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="Gui.htm#Submit">Gui Submit</a> ¸í·É¾î¸¦ »ç¿ëÇÏ¸é, ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ¼±ÅÃµÈ ³¯Â¥¸¦ YYYYMMDD ÇüÅÂ·Î ¹Þ½À´Ï´Ù (½Ã°£ ºÎºÐ ¾øÀÌ). ±×·¸Áö¸¸, <a href="#MonthCalMulti">´ÙÁß-¼±ÅÃ</a> ¿É¼ÇÀÌ ÄÑÁ® ÀÖ´Ù¸é, ÃÖ¼Ò ³¯Â¥¿Í ÃÖ´ë ³¯Â¥°¡ »çÀÌ¿¡ ¿·ÁÙÀ» µÎ°í ¿­¶÷µË´Ï´Ù (¿¹, <code>20050101-20050108</code>). ´ÙÁß-¼±ÅÃ ´Þ·Â¿¡¼­ ÇÏ³ªÀÇ ³¯Â¥¸¸ ¼±ÅÃµÇ¾ú´Ù¸é, ÃÖ´ë ³¯Â¥¿Í ÃÖ¼Ò ³¯Â¥´Â µ¿ÀÏÇÕ´Ï´Ù. <a href="StringSplit.htm">StringSplit</a>À» »ç¿ëÇÏ¸é ³¯Â¥¸¦ ºÐÇØÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, ´ÙÀ½Àº ÃÖ¼Ò ³¯Â¥¸¦ Date1¿¡ ÃÖ´ë ³¯Â¥¸¦ Date2¿¡ ¹èÁ¤ÇÕ´Ï´Ù: <code>StringSplit, Date, MyMonthCal, -</code>.</p>
+<a href="Gui.htm#Submit">Gui Submit</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ë©´, ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) ì„ íƒëœ ë‚ ì§œë¥¼ YYYYMMDD í˜•íƒœë¡œ ë°›ìŠµë‹ˆë‹¤ (ì‹œê°„ ë¶€ë¶„ ì—†ì´). ê·¸ë ‡ì§€ë§Œ, <a href="#MonthCalMulti">ë‹¤ì¤‘-ì„ íƒ</a> ì˜µì…˜ì´ ì¼œì ¸ ìžˆë‹¤ë©´, ìµœì†Œ ë‚ ì§œì™€ ìµœëŒ€ ë‚ ì§œê°€ ì‚¬ì´ì— ì˜†ì¤„ì„ ë‘ê³  ì—´ëžŒë©ë‹ˆë‹¤ (ì˜ˆ, <code>20050101-20050108</code>). ë‹¤ì¤‘-ì„ íƒ ë‹¬ë ¥ì—ì„œ í•˜ë‚˜ì˜ ë‚ ì§œë§Œ ì„ íƒë˜ì—ˆë‹¤ë©´, ìµœëŒ€ ë‚ ì§œì™€ ìµœì†Œ ë‚ ì§œëŠ” ë™ì¼í•©ë‹ˆë‹¤. <a href="StringSplit.htm">StringSplit</a>ì„ ì‚¬ìš©í•˜ë©´ ë‚ ì§œë¥¼ ë¶„í•´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ë‹¤ìŒì€ ìµœì†Œ ë‚ ì§œë¥¼ Date1ì— ìµœëŒ€ ë‚ ì§œë¥¼ Date2ì— ë°°ì •í•©ë‹ˆë‹¤: <code>StringSplit, Date, MyMonthCal, -</code>.</p>
 <p>
-MonthCal¿¡ <a href="Gui.htm#label">g-¶óº§</a>ÀÌ ÀÖ´Ù¸é, ±âµ¿ÇÒ ¶§¸¶´Ù ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ÇöÀç ¼±ÅÃµÈ ³¯Â¥ ¶Ç´Â ¹üÀ§·Î ¾÷µ¥ÀÌÆ® µË´Ï´Ù. ±âº»°ªÀ¸·Î, g-¶óº§Àº ´ÙÀ½°ú °°Àº °æ¿ì¿¡¸¸ ±âµ¿ÇÕ´Ï´Ù: 1) »ç¿ëÀÚ°¡ ¼±ÅÃÀ» º¯°æÇÑ °æ¿ì; ¶Ç´Â 2) 2 ºÐ¸¶´Ù »õ ³¯Â¥°¡ µµÂøÇÏ´Â °æ¿ì (ÀÌ ÇàÀ§´Â OSÀÇ ±â¹¦ÇÑ ÇàÀ§ÀÔ´Ï´Ù). ±×·¸Áö¸¸, ´Ü¾î AltSubmit°¡ ÄÜÆ®·ÑÀÇ <em>Options</em>¿¡ ÀÖ´Ù¸é, <a href="Gui.htm#label">g-¶óº§</a>ÀÌ ´õ ÀÚÁÖ ±âµ¿µË´Ï´Ù. ±×¸®°í ³»Àå º¯¼ö A_GuiEvent¿¡ ³¯Â¥¸¦ º¯°æÇÏ¸é ´Ü¾î NormalÀÌ ´ã±é´Ï´Ù. ³¯Â¥¸¦ Å¬¸¯ÇÏ¸é ¼ýÀÚ 1ÀÌ ´ã±â°í, MonthCalÀÌ &quot;¸¶¿ì½º ³ªÆ÷&quot;¸¦ ³õÀ¸¸é ¼ýÀÚ 2°¡ ´ã±é´Ï´Ù. ¿¹¸¦ µé¾î, »ç¿ëÀÚ°¡ »õ ³¯Â¥¸¦ ´õºí Å¬¸¯ÇÏ¸é, Áö-¶óº§ÀÌ ´Ù¼¸ ¹ø ±âµ¿µË´Ï´Ù: ÇÑ¹øÀº Normal·Î, µÎ ¹øÂ°´Â 1, ±×¸®°í ¼¼ ¹øÂ°´Â 2ÀÔ´Ï´Ù. ÀÌ¸¦ ÀÌ¿ëÇÏ¸é ´õºí Å¬¸¯À» Å½ÁöÇÒ ¼ö ÀÖ½À´Ï´Ù. ¼ýÀÚ°¡ 1ÀÎ ½ÇÃ¼ »çÀÌÀÇ <a href="../Variables.htm#TickCount">½Ã°£À» ÃøÁ¤ÇÏ¸é</a> µË´Ï´Ù.</p>
+MonthCalì— <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ ìžˆë‹¤ë©´, ê¸°ë™í•  ë•Œë§ˆë‹¤ ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) í˜„ìž¬ ì„ íƒëœ ë‚ ì§œ ë˜ëŠ” ë²”ìœ„ë¡œ ì—…ë°ì´íŠ¸ ë©ë‹ˆë‹¤. ê¸°ë³¸ê°’ìœ¼ë¡œ, g-ë¼ë²¨ì€ ë‹¤ìŒê³¼ ê°™ì€ ê²½ìš°ì—ë§Œ ê¸°ë™í•©ë‹ˆë‹¤: 1) ì‚¬ìš©ìžê°€ ì„ íƒì„ ë³€ê²½í•œ ê²½ìš°; ë˜ëŠ” 2) 2 ë¶„ë§ˆë‹¤ ìƒˆ ë‚ ì§œê°€ ë„ì°©í•˜ëŠ” ê²½ìš° (ì´ í–‰ìœ„ëŠ” OSì˜ ê¸°ë¬˜í•œ í–‰ìœ„ìž…ë‹ˆë‹¤). ê·¸ë ‡ì§€ë§Œ, ë‹¨ì–´ AltSubmitê°€ ì½˜íŠ¸ë¡¤ì˜ <em>Options</em>ì— ìžˆë‹¤ë©´, <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ ë” ìžì£¼ ê¸°ë™ë©ë‹ˆë‹¤. ê·¸ë¦¬ê³  ë‚´ìž¥ ë³€ìˆ˜ A_GuiEventì— ë‚ ì§œë¥¼ ë³€ê²½í•˜ë©´ ë‹¨ì–´ Normalì´ ë‹´ê¹ë‹ˆë‹¤. ë‚ ì§œë¥¼ í´ë¦­í•˜ë©´ ìˆ«ìž 1ì´ ë‹´ê¸°ê³ , MonthCalì´ &quot;ë§ˆìš°ìŠ¤ ë‚˜í¬&quot;ë¥¼ ë†“ìœ¼ë©´ ìˆ«ìž 2ê°€ ë‹´ê¹ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ì‚¬ìš©ìžê°€ ìƒˆ ë‚ ì§œë¥¼ ë”ë¸” í´ë¦­í•˜ë©´, ì§€-ë¼ë²¨ì´ ë‹¤ì„¯ ë²ˆ ê¸°ë™ë©ë‹ˆë‹¤: í•œë²ˆì€ Normalë¡œ, ë‘ ë²ˆì§¸ëŠ” 1, ê·¸ë¦¬ê³  ì„¸ ë²ˆì§¸ëŠ” 2ìž…ë‹ˆë‹¤. ì´ë¥¼ ì´ìš©í•˜ë©´ ë”ë¸” í´ë¦­ì„ íƒì§€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ìˆ«ìžê°€ 1ì¸ ì‹¤ì²´ ì‚¬ì´ì˜ <a href="../Variables.htm#TickCount">ì‹œê°„ì„ ì¸¡ì •í•˜ë©´</a> ë©ë‹ˆë‹¤.</p>
 <p>
-³¯Â¥¸¦ YYYYMMDD Çü½ÄÀ¸·Î ÁöÁ¤ÇÒ ¶§, MM ±×¸®°í/¶Ç´Â DD ºÎºÐÀº »ý·«ÀÌ °¡´ÉÇÕ´Ï´Ù. ÀÌ °æ¿ì 1ÀÌ¶ó°í °£ÁÖµË´Ï´Ù. ¿¹¸¦ µé¾î, <code>200205</code>´Â 20020501·Î °£ÁÖµÇ°í, <code>2005</code>´Â 20050101·Î °£ÁÖµË´Ï´Ù.</p>
+ë‚ ì§œë¥¼ YYYYMMDD í˜•ì‹ìœ¼ë¡œ ì§€ì •í•  ë•Œ, MM ê·¸ë¦¬ê³ /ë˜ëŠ” DD ë¶€ë¶„ì€ ìƒëžµì´ ê°€ëŠ¥í•©ë‹ˆë‹¤. ì´ ê²½ìš° 1ì´ë¼ê³  ê°„ì£¼ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>200205</code>ëŠ” 20020501ë¡œ ê°„ì£¼ë˜ê³ , <code>2005</code>ëŠ” 20050101ë¡œ ê°„ì£¼ë©ë‹ˆë‹¤.</p>
 
 <h3>MonthCal Options</h3>
 <p>
-<strong><a name="MonthCalMulti"></a>Multi</strong>: ´ÙÁß-¼±ÅÃ. »ç¿ëÀÚ´Â ½¬ÇÁÆ® Å¬¸¯ÀÌ³ª Å¬¸¯ ²ø±â·Î ÇÑ ¹üÀ§ÀÇ ÀÎÁ¢ÇÑ ³¯Â¥µéÀ» ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù (»ç¿ëÀÚ´Â ¿©ÀüÈ÷ ÇÏ³ªÀÇ ³¯Â¥¸¦ ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù). ÀÌ ¿É¼ÇÀ» ¸í½ÃÀûÀ¸·Î ÁöÁ¤ÇÏ°Å³ª ÀÚµ¿À¸·Î ÄÓ ¼ö ÀÖ½À´Ï´Ù ÄÜÆ®·ÑÀÌ »ý¼ºµÉ ¶§ ¼±ÅÃ ¹üÀ§¸¦ ÁöÁ¤ÇÏ¸é µË´Ï´Ù. ¿¹¸¦ µé¾î: <code>Gui, Add, MonthCal, vMyCal, 20050101-20050108</code>. ÄÜÆ®·ÑÀÌ »ý¼ºµÇ¸é, ÀÌ ¿É¼ÇÀº ¹Ù²Ü ¼ö ¾ø½À´Ï´Ù.</p>
+<strong><a name="MonthCalMulti"></a>Multi</strong>: ë‹¤ì¤‘-ì„ íƒ. ì‚¬ìš©ìžëŠ” ì‰¬í”„íŠ¸ í´ë¦­ì´ë‚˜ í´ë¦­ ëŒê¸°ë¡œ í•œ ë²”ìœ„ì˜ ì¸ì ‘í•œ ë‚ ì§œë“¤ì„ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì‚¬ìš©ìžëŠ” ì—¬ì „ížˆ í•˜ë‚˜ì˜ ë‚ ì§œë¥¼ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤). ì´ ì˜µì…˜ì„ ëª…ì‹œì ìœ¼ë¡œ ì§€ì •í•˜ê±°ë‚˜ ìžë™ìœ¼ë¡œ ì¼¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤ ì½˜íŠ¸ë¡¤ì´ ìƒì„±ë  ë•Œ ì„ íƒ ë²”ìœ„ë¥¼ ì§€ì •í•˜ë©´ ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>Gui, Add, MonthCal, vMyCal, 20050101-20050108</code>. ì½˜íŠ¸ë¡¤ì´ ìƒì„±ë˜ë©´, ì´ ì˜µì…˜ì€ ë°”ê¿€ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>Range</strong>: ´Þ·ÂÀÌ ÀÌµ¿ÇÒ ¼ö ÀÖ´Â ¹üÀ§¸¦ Á¦ÇÑÇÕ´Ï´Ù. ´Ü¾î Range ´ÙÀ½¿¡, YYYYMMDD Çü½ÄÀ¸·Î ÃÖ¼Ò ³¯Â¥¿Í (»çÀÌ¿¡ ¿·ÁÙ) ÃÖ¼Ò ³¯Â¥¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, <code>Range20050101-20050615</code>ÀÌ¸é ¼±ÅÃÀÌ 2005 ³âÀÇ Àü¹Ý 5.5 ´Þ·Î Á¦ÇÑµË´Ï´Ù. ÃÖ¼Ò ³¯Â¥³ª ÃÖ´ë ³¯Â¥¸¦ »ý·«ÇÏ¸é ´Þ·ÂÀ» ±× ¹æÇâÀ¸·Î Á¦ÇÑÇÏÁö ¾Ê°í ±×´ë·Î µÓ´Ï´Ù. ¿¹¸¦ µé¾î, <code>Range20010101</code>ÀÌ¸é 2001 ¹Ì¸¸ÀÇ ³¯Â¥´Â ¼±ÅÃÇÏÁö ¸øÇÕ´Ï´Ù. ±×¸®°í <code>Range-20091231</code>ÀÌ¸é (¾Õ¿¡ ¿·ÁÙ) 2009³âÀ» ÃÊ°úÇÑ ³¯Â¥´Â ¼±ÅÃÇÏÁö ¸øÇÕ´Ï´Ù. Range ¿É¼ÇÀÌ ¾ø´Ù¸é, 1601°ú 9999 »çÀÌÀÇ ³¯Â¥¸¦ ¾ó¸¶µçÁö ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong>Range</strong>: ë‹¬ë ¥ì´ ì´ë™í•  ìˆ˜ ìžˆëŠ” ë²”ìœ„ë¥¼ ì œí•œí•©ë‹ˆë‹¤. ë‹¨ì–´ Range ë‹¤ìŒì—, YYYYMMDD í˜•ì‹ìœ¼ë¡œ ìµœì†Œ ë‚ ì§œì™€ (ì‚¬ì´ì— ì˜†ì¤„) ìµœì†Œ ë‚ ì§œë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Range20050101-20050615</code>ì´ë©´ ì„ íƒì´ 2005 ë…„ì˜ ì „ë°˜ 5.5 ë‹¬ë¡œ ì œí•œë©ë‹ˆë‹¤. ìµœì†Œ ë‚ ì§œë‚˜ ìµœëŒ€ ë‚ ì§œë¥¼ ìƒëžµí•˜ë©´ ë‹¬ë ¥ì„ ê·¸ ë°©í–¥ìœ¼ë¡œ ì œí•œí•˜ì§€ ì•Šê³  ê·¸ëŒ€ë¡œ ë‘¡ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Range20010101</code>ì´ë©´ 2001 ë¯¸ë§Œì˜ ë‚ ì§œëŠ” ì„ íƒí•˜ì§€ ëª»í•©ë‹ˆë‹¤. ê·¸ë¦¬ê³  <code>Range-20091231</code>ì´ë©´ (ì•žì— ì˜†ì¤„) 2009ë…„ì„ ì´ˆê³¼í•œ ë‚ ì§œëŠ” ì„ íƒí•˜ì§€ ëª»í•©ë‹ˆë‹¤. Range ì˜µì…˜ì´ ì—†ë‹¤ë©´, 1601ê³¼ 9999 ì‚¬ì´ì˜ ë‚ ì§œë¥¼ ì–¼ë§ˆë“ ì§€ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>4</strong>: ¼ýÀÚ 4¸¦ <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é °¢°¢ÀÇ ³¯Â¥ Çà ¿ÞÂÊ¿¡ ÁÖ ¹øÈ£¸¦ º¸¿©ÁÙ ¼ö ÀÖ½À´Ï´Ù (1-52) . ÁÖ 1Àº Ã¹ ÁÖ¿¡ Àû¾îµµ 4ÀÏ ÀÌ»ó ÀÖ¾î¾ß ÇÕ´Ï´Ù.</p>
+<strong>4</strong>: ìˆ«ìž 4ë¥¼ <em>Options</em>ì— ì§€ì •í•˜ë©´ ê°ê°ì˜ ë‚ ì§œ í–‰ ì™¼ìª½ì— ì£¼ ë²ˆí˜¸ë¥¼ ë³´ì—¬ì¤„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (1-52) . ì£¼ 1ì€ ì²« ì£¼ì— ì ì–´ë„ 4ì¼ ì´ìƒ ìžˆì–´ì•¼ í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>8</strong>: ¼ýÀÚ 8À» <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é ¿À´Ã ³¯Â¥¿¡ µ¿±×¶ó¹Ì¸¦ Ä¡Áö ¾Ê½À´Ï´Ù.</p>
-<p><strong>16</strong>: ¼ýÀÚ 16À» <em>Options</em>¿¡ ÁöÁ¤ÇÏ¸é ¿À´Ã ³¯Â¥°¡ ÄÜÆ®·Ñ ¾Æ·¡¿¡ ³ªÅ¸³ªÁö ¾Ê½À´Ï´Ù.</p>
+<strong>8</strong>: ìˆ«ìž 8ì„ <em>Options</em>ì— ì§€ì •í•˜ë©´ ì˜¤ëŠ˜ ë‚ ì§œì— ë™ê·¸ë¼ë¯¸ë¥¼ ì¹˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
+<p><strong>16</strong>: ìˆ«ìž 16ì„ <em>Options</em>ì— ì§€ì •í•˜ë©´ ì˜¤ëŠ˜ ë‚ ì§œê°€ ì½˜íŠ¸ë¡¤ ì•„ëž˜ì— ë‚˜íƒ€ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 
 <h2 id="Slider">Slider</h2>
 <p>
-¼³¸í: »ç¿ëÀÚ°¡ ¼öÁ÷ ¶Ç´Â ¼öÆòÀ¸·Î Æ®·¢À» µû¶ó°¡¸ç ÀÌµ¿ÇÒ ¼ö ÀÖ´Â ½½¶óÀÌµù ¹Ù. ÅÂ½ºÅ©¹Ù Æ®·¹ÀÌ¿¡ ÀÖ´Â Ç¥ÁØ º¼·ý ÄÜÆ®·ÑÀÌ ½½¶óÀÌ´õÀÇ ÇÑ ¿¹ÀÔ´Ï´Ù. ¿¹Á¦:</p>
+ì„¤ëª…: ì‚¬ìš©ìžê°€ ìˆ˜ì§ ë˜ëŠ” ìˆ˜í‰ìœ¼ë¡œ íŠ¸ëž™ì„ ë”°ë¼ê°€ë©° ì´ë™í•  ìˆ˜ ìžˆëŠ” ìŠ¬ë¼ì´ë”© ë°”. íƒœìŠ¤í¬ë°” íŠ¸ë ˆì´ì— ìžˆëŠ” í‘œì¤€ ë³¼ë¥¨ ì½˜íŠ¸ë¡¤ì´ ìŠ¬ë¼ì´ë”ì˜ í•œ ì˜ˆìž…ë‹ˆë‹¤. ì˜ˆì œ:</p>
 
 <pre>Gui, Add, Slider, vMySlider, 50</pre>
 <p>
-½½¶óÀÌ´õÀÇ ½ÃÀÛ À§Ä¡¸¦ ¸¶Áö¸· ¸Å°³º¯¼ö·Î ÁöÁ¤ÇÏ½Ê½Ã¿À. ¸¶Áö¸· ¸Å°³º¯¼ö¸¦ »ý·«ÇÏ¸é, ½½¶óÀÌ´õ´Â 0¿¡¼­ ½ÃÀÛÇÏ°Å³ª Çã¿ë °¡´ÉÇÑ ¹üÀ§¿¡¼­ 0¿¡ °¡±î¿î ¼ö¿¡¼­ ½ÃÀÛÇÕ´Ï´Ù.</p>
+ìŠ¬ë¼ì´ë”ì˜ ì‹œìž‘ ìœ„ì¹˜ë¥¼ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ë¡œ ì§€ì •í•˜ì‹­ì‹œì˜¤. ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ë¥¼ ìƒëžµí•˜ë©´, ìŠ¬ë¼ì´ë”ëŠ” 0ì—ì„œ ì‹œìž‘í•˜ê±°ë‚˜ í—ˆìš© ê°€ëŠ¥í•œ ë²”ìœ„ì—ì„œ 0ì— ê°€ê¹Œìš´ ìˆ˜ì—ì„œ ì‹œìž‘í•©ë‹ˆë‹¤.</p>
 <p>
-»ç¿ëÀÚ´Â ÄÜÆ®·ÑÀ» ´ÙÀ½°ú °°Àº ¼ö´ÜÀ» »ç¿ëÇÏ¿© ½½¶óÀÌµåÇÒ ¼ö ÀÖ½À´Ï´Ù: 1) ¹Ù¸¦ ¸¶¿ì½º·Î ²ø¾î¼­; 2) ¹ÙÀÇ Æ®·¢ ±¸¿ª¿¡ Å¬¸¯ÇØ¼­; 3) ÄÜÆ®·Ñ¿¡ ÃÊÁ¡ÀÌ ÀÖ´Â µ¿¾È ¸¶¿ì½º ÈÙÀ» µ¹·Á¼­; ¶Ç´Â 4) ÄÜÆ®·Ñ¿¡ ÃÊÁ¡ÀÌ ÀÖ´Â µ¿¾È ´ÙÀ½ Å°¸¦ ´­·¯¼­: Arrow keys, Page-up, Page-down, Home, ±×¸®°í End.</p>
+ì‚¬ìš©ìžëŠ” ì½˜íŠ¸ë¡¤ì„ ë‹¤ìŒê³¼ ê°™ì€ ìˆ˜ë‹¨ì„ ì‚¬ìš©í•˜ì—¬ ìŠ¬ë¼ì´ë“œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤: 1) ë°”ë¥¼ ë§ˆìš°ìŠ¤ë¡œ ëŒì–´ì„œ; 2) ë°”ì˜ íŠ¸ëž™ êµ¬ì—­ì— í´ë¦­í•´ì„œ; 3) ì½˜íŠ¸ë¡¤ì— ì´ˆì ì´ ìžˆëŠ” ë™ì•ˆ ë§ˆìš°ìŠ¤ íœ ì„ ëŒë ¤ì„œ; ë˜ëŠ” 4) ì½˜íŠ¸ë¡¤ì— ì´ˆì ì´ ìžˆëŠ” ë™ì•ˆ ë‹¤ìŒ í‚¤ë¥¼ ëˆŒëŸ¬ì„œ: Arrow keys, Page-up, Page-down, Home, ê·¸ë¦¬ê³  End.</p>
 <p>
-<a href="Gui.htm#Submit">Gui Submit</a> ¸í·É¾î¸¦ »ç¿ëÇÏ¸é, ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ½½¶óÀÌ´õÀÇ ÇöÀç À§Ä¡¸¦ ¹Þ½À´Ï´Ù. ±× À§Ä¡´Â ¶ÇÇÑ ÄÜÆ®·ÑÀÇ <a href="Gui.htm#label">g-¶óº§</a>ÀÌ ±âµ¿µÉ ¶§¸¶´Ù  Ãâ·Â º¯¼ö¿¡ ÀúÀåµË´Ï´Ù.</p>
+<a href="Gui.htm#Submit">Gui Submit</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ë©´, ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) ìŠ¬ë¼ì´ë”ì˜ í˜„ìž¬ ìœ„ì¹˜ë¥¼ ë°›ìŠµë‹ˆë‹¤. ê·¸ ìœ„ì¹˜ëŠ” ë˜í•œ ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ ê¸°ë™ë  ë•Œë§ˆë‹¤  ì¶œë ¥ ë³€ìˆ˜ì— ì €ìž¥ë©ë‹ˆë‹¤.</p>
 <p>
-½½¶óÀÌ´õ¿¡ <a href="Gui.htm#label">g-¶óº§</a>ÀÌ ÀÖ´Ù¸é, ±âº»°ªÀ¸·Î ¿ÀÁ÷ »ç¿ëÀÚ°¡ ½½¶óÀÌ´õ ÀÌµ¿À» ¸ØÃß¾úÀ» °æ¿ì¿¡¸¸ (¿¹¸¦ µé¾î ¸¶¿ì½º¸¦ ²ø´Ù°¡ ¹öÆ°À» ³õÀº °æ¿ì) ±âµ¿µË´Ï´Ù. ±×·¸Áö¸¸, ´Ü¾î AltSubmitÀÌ ÄÜÆ®·ÑÀÇ <em>Options</em>¿¡ ÀÖ´Ù¸é,  g-¶óº§Àº ¸ðµç ½½¶óÀÌ´õ ÀÌº¥Æ®¿¡ ±âµ¿µË´Ï´Ù. ±×¸®°í ³»Àå º¯¼ö A_GuiEvent¿¡ ´ÙÀ½ ¼ýÀÚ ¶Ç´Â ¹®ÀÚ¿­ Áß ÇÏ³ª°¡ ´ã±é´Ï´Ù:</p>
+ìŠ¬ë¼ì´ë”ì— <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ ìžˆë‹¤ë©´, ê¸°ë³¸ê°’ìœ¼ë¡œ ì˜¤ì§ ì‚¬ìš©ìžê°€ ìŠ¬ë¼ì´ë” ì´ë™ì„ ë©ˆì¶”ì—ˆì„ ê²½ìš°ì—ë§Œ (ì˜ˆë¥¼ ë“¤ì–´ ë§ˆìš°ìŠ¤ë¥¼ ëŒë‹¤ê°€ ë²„íŠ¼ì„ ë†“ì€ ê²½ìš°) ê¸°ë™ë©ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ë‹¨ì–´ AltSubmitì´ ì½˜íŠ¸ë¡¤ì˜ <em>Options</em>ì— ìžˆë‹¤ë©´,  g-ë¼ë²¨ì€ ëª¨ë“  ìŠ¬ë¼ì´ë” ì´ë²¤íŠ¸ì— ê¸°ë™ë©ë‹ˆë‹¤. ê·¸ë¦¬ê³  ë‚´ìž¥ ë³€ìˆ˜ A_GuiEventì— ë‹¤ìŒ ìˆ«ìž ë˜ëŠ” ë¬¸ìžì—´ ì¤‘ í•˜ë‚˜ê°€ ë‹´ê¹ë‹ˆë‹¤:</p>
 <p>
-  0: »ç¿ëÀÚ°¡ ¿Þ-È­»ìÇ¥ Å° ¶Ç´Â À§-È­»ìÇ¥ Å°¸¦ ´­·¶½À´Ï´Ù.<br>
-  1: »ç¿ëÀÚ°¡ ¿ì-È­»ìÇ¥ Å° µµ´Â ¾Æ·¡-È­»ìÇ¥ Å°¸¦ ´­·¶½À´Ï´Ù.<br>
-  2: »ç¿ëÀÚ°¡ ÆäÀÌÁö-¾÷ Å°¸¦ ´­·¶½À´Ï´Ù.<br>
-  3: »ç¿ëÀÚ°¡ ÆäÀÌÁö-´Ù¿î Å°¸¦ ´­·¶½À´Ï´Ù.<br>
-  4: »ç¿ëÀÚ°¡ ¸¶¿ì½º ÈÙÀ» »ç¿ëÇÏ¿© ½½¶óÀÌ´õ¸¦ ÀÌµ¿½ÃÄ×½À´Ï´Ù. ¶Ç´Â »õ·Î¿î À§Ä¡¿¡ ²ø¾î ¶³±¸±â¸¦ ³¡³Â½À´Ï´Ù.<br>
-  5: »ç¿ëÀÚ°¡ ÇöÀç ¸¶¿ì½º·Î ½½¶óÀÌ´õ¸¦ ²ø°í ÀÖ½À´Ï´Ù; Áï, ¸¶¿ì½º ¹öÆ°ÀÌ ÇöÀç ´­·Á ÀÖ½À´Ï´Ù.<br>
-  6: »ç¿ëÀÚ°¡ È¨Å°¸¦ ´­·¯ ½½¶óÀÌ´õ¸¦ ¿ÞÂÊ ¶Ç´Â À§ÂÊÀ¸·Î º¸³Â½À´Ï´Ù. <br>
-  7: »ç¿ëÀÚ°¡ ¿£µå Å°¸¦ ´­·¯ ½½¶óÀÌ´õ¸¦ ¿À¸¥ÂÊÀÌ³ª ¾Æ·§ÂÊÀ¸·Î º¸³Â½À´Ï´Ù. <br>
-  Normal: »ç¿ëÀÚ°¡ ¸¶¿ì½º³ª Å°º¸µå¸¦ ÅëÇÏ¿© ½½¶óÀÌ´õ ÀÌµ¿À» ¸¶ÃÆ½À´Ï´Ù. <u>ÁÖÀÇ</u>: ¸¶¿ì½º ÈÙ ÀÌµ¿ÀÇ ¿¹¿Ü·Î (#4), À§ÀÇ ¼ýÀÚ-ÀÌº¥Æ® Áß ÇÏ³ª¿¡ ÀÌ¹Ì ±âµ¿µÇ¾úÀ½¿¡µµ ºÒ±¸ÇÏ°í <a href="Gui.htm#label">g-¶óº§</a>ÀÌ &quot;Á¤»ó&quot; ÀÌº¥Æ®¿¡ ´ëÇÏ¿© ´Ù½Ã ±âµ¿ÇÕ´Ï´Ù.</p>
+  0: ì‚¬ìš©ìžê°€ ì™¼-í™”ì‚´í‘œ í‚¤ ë˜ëŠ” ìœ„-í™”ì‚´í‘œ í‚¤ë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.<br>
+  1: ì‚¬ìš©ìžê°€ ìš°-í™”ì‚´í‘œ í‚¤ ë„ëŠ” ì•„ëž˜-í™”ì‚´í‘œ í‚¤ë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.<br>
+  2: ì‚¬ìš©ìžê°€ íŽ˜ì´ì§€-ì—… í‚¤ë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.<br>
+  3: ì‚¬ìš©ìžê°€ íŽ˜ì´ì§€-ë‹¤ìš´ í‚¤ë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.<br>
+  4: ì‚¬ìš©ìžê°€ ë§ˆìš°ìŠ¤ íœ ì„ ì‚¬ìš©í•˜ì—¬ ìŠ¬ë¼ì´ë”ë¥¼ ì´ë™ì‹œì¼°ìŠµë‹ˆë‹¤. ë˜ëŠ” ìƒˆë¡œìš´ ìœ„ì¹˜ì— ëŒì–´ ë–¨êµ¬ê¸°ë¥¼ ëëƒˆìŠµë‹ˆë‹¤.<br>
+  5: ì‚¬ìš©ìžê°€ í˜„ìž¬ ë§ˆìš°ìŠ¤ë¡œ ìŠ¬ë¼ì´ë”ë¥¼ ëŒê³  ìžˆìŠµë‹ˆë‹¤; ì¦‰, ë§ˆìš°ìŠ¤ ë²„íŠ¼ì´ í˜„ìž¬ ëˆŒë ¤ ìžˆìŠµë‹ˆë‹¤.<br>
+  6: ì‚¬ìš©ìžê°€ í™ˆí‚¤ë¥¼ ëˆŒëŸ¬ ìŠ¬ë¼ì´ë”ë¥¼ ì™¼ìª½ ë˜ëŠ” ìœ„ìª½ìœ¼ë¡œ ë³´ëƒˆìŠµë‹ˆë‹¤. <br>
+  7: ì‚¬ìš©ìžê°€ ì—”ë“œ í‚¤ë¥¼ ëˆŒëŸ¬ ìŠ¬ë¼ì´ë”ë¥¼ ì˜¤ë¥¸ìª½ì´ë‚˜ ì•„ëž«ìª½ìœ¼ë¡œ ë³´ëƒˆìŠµë‹ˆë‹¤. <br>
+  Normal: ì‚¬ìš©ìžê°€ ë§ˆìš°ìŠ¤ë‚˜ í‚¤ë³´ë“œë¥¼ í†µí•˜ì—¬ ìŠ¬ë¼ì´ë” ì´ë™ì„ ë§ˆì³¤ìŠµë‹ˆë‹¤. <u>ì£¼ì˜</u>: ë§ˆìš°ìŠ¤ íœ  ì´ë™ì˜ ì˜ˆì™¸ë¡œ (#4), ìœ„ì˜ ìˆ«ìž-ì´ë²¤íŠ¸ ì¤‘ í•˜ë‚˜ì— ì´ë¯¸ ê¸°ë™ë˜ì—ˆìŒì—ë„ ë¶ˆêµ¬í•˜ê³  <a href="Gui.htm#label">g-ë¼ë²¨</a>ì´ &quot;ì •ìƒ&quot; ì´ë²¤íŠ¸ì— ëŒ€í•˜ì—¬ ë‹¤ì‹œ ê¸°ë™í•©ë‹ˆë‹¤.</p>
 
-<h3>½½¶óÀÌ´õ ¿É¼Ç</h3>
+<h3>ìŠ¬ë¼ì´ë” ì˜µì…˜</h3>
 <p>
-<strong>Buddy1</strong> ±×¸®°í <strong>Buddy2</strong>: ÃÖ´ë µÎ °³ÀÇ ±âÁ¸ÀÇ ÄÜÆ®·ÑÀ» ÁöÁ¤ÇÏ¸é ÀÚµ¿À¸·Î ½½¶óÀÌ´õÀÇ ¾ç ³¡¿¡ Àç¹èÄ¡µË´Ï´Ù. Buddy1Àº ÁÂº¯ ¶Ç´Â »óº¯¿¡ º¸¿©Áý´Ï´Ù (Vertical ¿É¼Ç ¿©ºÎ¿¡ µû¶ó ´Þ¶óÁü). Buddy2´Â ¿ìº¯ ¶Ç´Â ÇÏº¯¿¡ º¸¿©Áý´Ï´Ù. ´Ü¾î Buddy1 ¶Ç´Â Buddy2 ´ÙÀ½¿¡, ±âÁ¸ÀÇ ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">º¯¼ö ÀÌ¸§</a>À» ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, Buddy1MyTopTextÀÌ¶ó¸é º¯¼ö ÀÌ¸§ÀÌ MyTopTextÀÎ ÄÜÆ®·ÑÀ» ÇÒ´çÇÕ´Ï´Ù.</p>
+<strong>Buddy1</strong> ê·¸ë¦¬ê³  <strong>Buddy2</strong>: ìµœëŒ€ ë‘ ê°œì˜ ê¸°ì¡´ì˜ ì½˜íŠ¸ë¡¤ì„ ì§€ì •í•˜ë©´ ìžë™ìœ¼ë¡œ ìŠ¬ë¼ì´ë”ì˜ ì–‘ ëì— ìž¬ë°°ì¹˜ë©ë‹ˆë‹¤. Buddy1ì€ ì¢Œë³€ ë˜ëŠ” ìƒë³€ì— ë³´ì—¬ì§‘ë‹ˆë‹¤ (Vertical ì˜µì…˜ ì—¬ë¶€ì— ë”°ë¼ ë‹¬ë¼ì§). Buddy2ëŠ” ìš°ë³€ ë˜ëŠ” í•˜ë³€ì— ë³´ì—¬ì§‘ë‹ˆë‹¤. ë‹¨ì–´ Buddy1 ë˜ëŠ” Buddy2 ë‹¤ìŒì—, ê¸°ì¡´ì˜ ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ë³€ìˆ˜ ì´ë¦„</a>ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, Buddy1MyTopTextì´ë¼ë©´ ë³€ìˆ˜ ì´ë¦„ì´ MyTopTextì¸ ì½˜íŠ¸ë¡¤ì„ í• ë‹¹í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>Center</strong>: ¾öÁö ¼ÕÀâÀÌ´Â (»ç¿ëÀÚ°¡ ÀÌµ¿ÇÏ´Â ¸·´ë) ¾çÂÊÀÌ »ÏÁ·ÇÏÁö ¾Ê°í ¹¶¶×ÇØÁý´Ï´Ù.</p>
+<strong>Center</strong>: ì—„ì§€ ì†ìž¡ì´ëŠ” (ì‚¬ìš©ìžê°€ ì´ë™í•˜ëŠ” ë§‰ëŒ€) ì–‘ìª½ì´ ë¾°ì¡±í•˜ì§€ ì•Šê³  ë­‰ëš±í•´ì§‘ë‹ˆë‹¤.</p>
 <p>
-<strong>Invert</strong>: ÄÜÆ®·ÑÀ» µÚÁý½À´Ï´Ù. ³·Àº °ªÀÌ ÁÂ/»óÀÌ ¾Æ´Ï¶ó ¿ì/ÇÏ¿¡ ÀÖ´Ù°í °£ÁÖµË´Ï´Ù. ÀÌ°ÍÀº ÀüÇüÀûÀ¸·Î ¼öÁ÷ ½½¶óÀÌ´õ¸¦ ÀüÅëÀûÀÎ º¼·ý ÄÜÆ®·ÑÀÇ ¹æÇâÀ¸·Î ÀÌµ¿½ÃÅ°´Âµ¥ »ç¿ëµË´Ï´Ù. ÁÖÀÇ: ¾Æ·¡¿¡ ±â¼úÇÑ ToolTip ¿É¼ÇÀº µÚÁý±â¸¦ ÁØ¼öÇÏÁö ¾Ê½À´Ï´Ù. ±×·¯¹Ç·Î ÀÌ °æ¿ì´Â »ç¿ëÇÏ¸é ¾È µË´Ï´Ù.</p>
+<strong>Invert</strong>: ì½˜íŠ¸ë¡¤ì„ ë’¤ì§‘ìŠµë‹ˆë‹¤. ë‚®ì€ ê°’ì´ ì¢Œ/ìƒì´ ì•„ë‹ˆë¼ ìš°/í•˜ì— ìžˆë‹¤ê³  ê°„ì£¼ë©ë‹ˆë‹¤. ì´ê²ƒì€ ì „í˜•ì ìœ¼ë¡œ ìˆ˜ì§ ìŠ¬ë¼ì´ë”ë¥¼ ì „í†µì ì¸ ë³¼ë¥¨ ì½˜íŠ¸ë¡¤ì˜ ë°©í–¥ìœ¼ë¡œ ì´ë™ì‹œí‚¤ëŠ”ë° ì‚¬ìš©ë©ë‹ˆë‹¤. ì£¼ì˜: ì•„ëž˜ì— ê¸°ìˆ í•œ ToolTip ì˜µì…˜ì€ ë’¤ì§‘ê¸°ë¥¼ ì¤€ìˆ˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë¯€ë¡œ ì´ ê²½ìš°ëŠ” ì‚¬ìš©í•˜ë©´ ì•ˆ ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>Left</strong>: ¾öÁö ¼ÕÀâÀÌ´Â (»ç¿ëÀÚ¿¡ ÀÇÇÏ¿© ÀÌµ¿µÇ´Â ¸·´ë) ¾Æ·¡°¡ ¾Æ´Ï¶ó À§ÂÊÀ¸·Î »ÏÁ·ÇÕ´Ï´Ù. ±×·¯³ª Vertical ¿É¼ÇÀ» ÄÑ¸é, ¾öÁö ¼ÕÀâÀÌ´Â ¿À¸¥ÂÊÀÌ ¾Æ´Ï¶ó ¿ÞÂÊÀ¸·Î »ÏÁ·ÇÕ´Ï´Ù.</p>
+<strong>Left</strong>: ì—„ì§€ ì†ìž¡ì´ëŠ” (ì‚¬ìš©ìžì— ì˜í•˜ì—¬ ì´ë™ë˜ëŠ” ë§‰ëŒ€) ì•„ëž˜ê°€ ì•„ë‹ˆë¼ ìœ„ìª½ìœ¼ë¡œ ë¾°ì¡±í•©ë‹ˆë‹¤. ê·¸ëŸ¬ë‚˜ Vertical ì˜µì…˜ì„ ì¼œë©´, ì—„ì§€ ì†ìž¡ì´ëŠ” ì˜¤ë¥¸ìª½ì´ ì•„ë‹ˆë¼ ì™¼ìª½ìœ¼ë¡œ ë¾°ì¡±í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>Line</strong>: »ç¿ëÀÚ°¡ È­»ìÇ¥ Å°¸¦ ´©¸¦ ¶§ ÀÌµ¿ÇÒ À§Ä¡ ¹øÈ£¸¦ ÁöÁ¤ÇÕ´Ï´Ù. ´Ü¾î Line ´ÙÀ½¿¡, ÀÌµ¿ÇÒ À§Ä¡ ¹øÈ£¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î: <code>Line2</code>.</p>
+<strong>Line</strong>: ì‚¬ìš©ìžê°€ í™”ì‚´í‘œ í‚¤ë¥¼ ëˆ„ë¥¼ ë•Œ ì´ë™í•  ìœ„ì¹˜ ë²ˆí˜¸ë¥¼ ì§€ì •í•©ë‹ˆë‹¤. ë‹¨ì–´ Line ë‹¤ìŒì—, ì´ë™í•  ìœ„ì¹˜ ë²ˆí˜¸ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´: <code>Line2</code>.</p>
 <p>
-<strong>NoTicks</strong>: Æ®·¢À» µû¶ó Æ½Ç¥½ÄÀ» »ý·«ÇÕ´Ï´Ù.</p>
+<strong>NoTicks</strong>: íŠ¸ëž™ì„ ë”°ë¼ í‹±í‘œì‹ì„ ìƒëžµí•©ë‹ˆë‹¤.</p>
 <p>
-<strong>Page</strong>: »ç¿ëÀÚ°¡ Page-up ¶Ç´Â Page-down Å°¸¦ ´©¸¦ ¶§ ÀÌµ¿ÇÒ À§Ä¡ÀÇ ¹øÈ£¸¦ ÁöÁ¤ÇÕ´Ï´Ù. ´Ü¾î Page ´ÙÀ½¿¡, ÀÌµ¿ÇÒ À§Ä¡ÀÇ ¹øÈ£¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î: <code>Page10</code>.</p>
+<strong>Page</strong>: ì‚¬ìš©ìžê°€ Page-up ë˜ëŠ” Page-down í‚¤ë¥¼ ëˆ„ë¥¼ ë•Œ ì´ë™í•  ìœ„ì¹˜ì˜ ë²ˆí˜¸ë¥¼ ì§€ì •í•©ë‹ˆë‹¤. ë‹¨ì–´ Page ë‹¤ìŒì—, ì´ë™í•  ìœ„ì¹˜ì˜ ë²ˆí˜¸ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´: <code>Page10</code>.</p>
 <p>
-<strong>Range</strong>: ¹üÀ§¸¦ 0ºÎÅÍ 100¸»°í ´Ù¸£°Ô ÁöÁ¤ÇÕ´Ï´Ù. ´Ü¾î Range ´ÙÀ½¿¡, ÃÖ¼Ò°ª, ¿· ÁÙ, ÃÖ´ë°ªÀ» ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, 
-<code>Range1-1000</code>ÀÌ¸é ¼ýÀÚ¸¦ 1ºÎÅÍ 1000±îÁö ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù; <code>Range-50-50</code>ÀÌ¸é ¼ýÀÚ¸¦ -50ºÎÅÍ 50±îÁö ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù; ±×¸®°í <code>Range-10--5</code>ÀÌ¸é ¼ýÀÚ¸¦ -10ºÎÅÍ -5±îÁö Çã¿ëÇÕ´Ï´Ù.</p>
+<strong>Range</strong>: ë²”ìœ„ë¥¼ 0ë¶€í„° 100ë§ê³  ë‹¤ë¥´ê²Œ ì§€ì •í•©ë‹ˆë‹¤. ë‹¨ì–´ Range ë‹¤ìŒì—, ìµœì†Œê°’, ì˜† ì¤„, ìµœëŒ€ê°’ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, 
+<code>Range1-1000</code>ì´ë©´ ìˆ«ìžë¥¼ 1ë¶€í„° 1000ê¹Œì§€ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤; <code>Range-50-50</code>ì´ë©´ ìˆ«ìžë¥¼ -50ë¶€í„° 50ê¹Œì§€ ì„ íƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤; ê·¸ë¦¬ê³  <code>Range-10--5</code>ì´ë©´ ìˆ«ìžë¥¼ -10ë¶€í„° -5ê¹Œì§€ í—ˆìš©í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>Thick</strong>: ¾öÁö ³×¸ðÀÇ ±æÀÌ¸¦ ÁöÁ¤ÇÕ´Ï´Ù (»ç¿ëÀÚ°¡ ÀÌµ¿ÇÏ´Â »ç°¢Çü ¸·´ë). ´Ü¾î Thick ´ÙÀ½¿¡, ÇÈ¼¿ ´ÜÀ§·Î µÎ²²¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À (¿¹, <code>Thick30</code>). Windows XP ÀÌ»ó¿¡¼­ ÀÏÁ¤ µÎ²²¸¦ ³Ñ¾î¼­¸é, ¾Æ¸¶µµ Center ¿É¼ÇÀ» ÁöÁ¤ÇÏ°Å³ª ¾Æ´Ï¸é ÄÜÆ®·Ñ¿¡¼­ Á¦°ÅÇÒ ÇÊ¿ä°¡ ÀÖÀ» °ÍÀÔ´Ï´Ù (ÄÜÆ®·Ñ ¿É¼Ç¿¡ <code>-Theme</code>À» ÁöÁ¤ÇÏ¸é ÇØ°áÇÒ ¼ö ÀÖ½À´Ï´Ù).</p>
+<strong>Thick</strong>: ì—„ì§€ ë„¤ëª¨ì˜ ê¸¸ì´ë¥¼ ì§€ì •í•©ë‹ˆë‹¤ (ì‚¬ìš©ìžê°€ ì´ë™í•˜ëŠ” ì‚¬ê°í˜• ë§‰ëŒ€). ë‹¨ì–´ Thick ë‹¤ìŒì—, í”½ì…€ ë‹¨ìœ„ë¡œ ë‘ê»˜ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤ (ì˜ˆ, <code>Thick30</code>). Windows XP ì´ìƒì—ì„œ ì¼ì • ë‘ê»˜ë¥¼ ë„˜ì–´ì„œë©´, ì•„ë§ˆë„ Center ì˜µì…˜ì„ ì§€ì •í•˜ê±°ë‚˜ ì•„ë‹ˆë©´ ì½˜íŠ¸ë¡¤ì—ì„œ ì œê±°í•  í•„ìš”ê°€ ìžˆì„ ê²ƒìž…ë‹ˆë‹¤ (ì½˜íŠ¸ë¡¤ ì˜µì…˜ì— <code>-Theme</code>ì„ ì§€ì •í•˜ë©´ í•´ê²°í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤).</p>
 <p>
-<strong>TickInterval</strong>: ÁöÁ¤µÈ °£°ÝÀ¸·Î Æ®·¢À» µû¶ó Æ½Ç¥½ÄÀ» Á¦°øÇÕ´Ï´Ù. ´Ü¾î TickInterval ´ÙÀ½¿¡, Ãß°¡ Æ½ Ç¥½ÄÀ» º¸¿©ÁÙ °£°ÝÀ» ÁöÁ¤ÇÕ´Ï´Ù (°£°ÝÀ» »ý·«ÇÏ¸é, 1ÀÌ¶ó°í °£ÁÖÇÕ´Ï´Ù). ¿¹¸¦ µé¾î, <code>TickInterval10</code>ÀÌ¸é Æ½Ç¥½ÄÀÌ ¸Å 10 À§Ä¡¸¶´Ù ÇÏ³ª¾¿ º¸ÀÔ´Ï´Ù.</p>
+<strong>TickInterval</strong>: ì§€ì •ëœ ê°„ê²©ìœ¼ë¡œ íŠ¸ëž™ì„ ë”°ë¼ í‹±í‘œì‹ì„ ì œê³µí•©ë‹ˆë‹¤. ë‹¨ì–´ TickInterval ë‹¤ìŒì—, ì¶”ê°€ í‹± í‘œì‹ì„ ë³´ì—¬ì¤„ ê°„ê²©ì„ ì§€ì •í•©ë‹ˆë‹¤ (ê°„ê²©ì„ ìƒëžµí•˜ë©´, 1ì´ë¼ê³  ê°„ì£¼í•©ë‹ˆë‹¤). ì˜ˆë¥¼ ë“¤ì–´, <code>TickInterval10</code>ì´ë©´ í‹±í‘œì‹ì´ ë§¤ 10 ìœ„ì¹˜ë§ˆë‹¤ í•˜ë‚˜ì”© ë³´ìž…ë‹ˆë‹¤.</p>
 <p>
-<strong>ToolTip</strong>: »ç¿ëÀÚ°¡ ½½¶óÀÌ´õ¸¦ ²ô´Â µ¿¾È À§Ä¡¸¦ ¼ýÀÚ·Î º¸°íÇÏ´Â ÅøÆÁÀ» »ý¼ºÇÕ´Ï´Ù. ÅøÆÁÀ» ±âº» À§Ä¡ ¾Æ´Ñ °÷¿¡ º¸¿©ÁÖ·Á¸é, ´ë½Å ´ÙÀ½ Áß ÇÏ³ª¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À: <code>ToolTipLeft</code> ¶Ç´Â <code>ToolTipRight</code> (¼öÁ÷ ½½¶óÀÌ´õ ¿ë); <code>ToolTipTop</code> ¶Ç´Â <code>ToolTipBottom</code> (¼öÆò ½½¶óÀÌ´õ ¿ë).</p>
-<p><strong>Vertical</strong>: ÄÜÆ®·ÑÀ» À§ ¾Æ·¡·Î ¿òÁ÷ÀÔ´Ï´Ù.</p>
+<strong>ToolTip</strong>: ì‚¬ìš©ìžê°€ ìŠ¬ë¼ì´ë”ë¥¼ ë„ëŠ” ë™ì•ˆ ìœ„ì¹˜ë¥¼ ìˆ«ìžë¡œ ë³´ê³ í•˜ëŠ” íˆ´íŒì„ ìƒì„±í•©ë‹ˆë‹¤. íˆ´íŒì„ ê¸°ë³¸ ìœ„ì¹˜ ì•„ë‹Œ ê³³ì— ë³´ì—¬ì£¼ë ¤ë©´, ëŒ€ì‹  ë‹¤ìŒ ì¤‘ í•˜ë‚˜ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤: <code>ToolTipLeft</code> ë˜ëŠ” <code>ToolTipRight</code> (ìˆ˜ì§ ìŠ¬ë¼ì´ë” ìš©); <code>ToolTipTop</code> ë˜ëŠ” <code>ToolTipBottom</code> (ìˆ˜í‰ ìŠ¬ë¼ì´ë” ìš©).</p>
+<p><strong>Vertical</strong>: ì½˜íŠ¸ë¡¤ì„ ìœ„ ì•„ëž˜ë¡œ ì›€ì§ìž…ë‹ˆë‹¤.</p>
 <p>
-À§ÀÇ ¿É¼ÇµéÀº ÄÜÆ®·ÑÀÌ »ý¼ºµÈ ÈÄ¿¡ <a href="GuiControl.htm">GuiControl</a>À» ÅëÇÏ¿© ¹Ù²Ü ¼ö ÀÖÀÖ½À´Ï´Ù.</p>
+ìœ„ì˜ ì˜µì…˜ë“¤ì€ ì½˜íŠ¸ë¡¤ì´ ìƒì„±ëœ í›„ì— <a href="GuiControl.htm">GuiControl</a>ì„ í†µí•˜ì—¬ ë°”ê¿€ ìˆ˜ ìžˆìžˆìŠµë‹ˆë‹¤.</p>
 
 <h2 id="Progress">Progress</h2>
 <p>
-¼³¸í: ÀüÇüÀûÀ¸·Î ¿¬»êÀÇ ¿Ï¼ºÀ» ÇâÇØ  ¾ó¸¶³ª ¸¹ÀÌ Áøµµ°¡ ³ª°¬´ÂÁö ³ªÅ¸³»´Â µ¥ »ç¿ëµÇ´Â ÀÌÁß ÄÃ·¯ ¹Ù. ¿¹Á¦:</p>
+ì„¤ëª…: ì „í˜•ì ìœ¼ë¡œ ì—°ì‚°ì˜ ì™„ì„±ì„ í–¥í•´  ì–¼ë§ˆë‚˜ ë§Žì´ ì§„ë„ê°€ ë‚˜ê°”ëŠ”ì§€ ë‚˜íƒ€ë‚´ëŠ” ë° ì‚¬ìš©ë˜ëŠ” ì´ì¤‘ ì»¬ëŸ¬ ë°”. ì˜ˆì œ:</p>
 
 <pre>Gui, Add, Progress, w300 h20 cBlue vMyProgress</pre>
 <p>
-¹ÙÀÇ ½ÃÀÛ À§Ä¡¸¦ ¸¶Áö¸· ¸Å°³º¯¼ö¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À (»ý·«ÇÏ¸é, ¹Ù´Â 0¿¡¼­ ½ÃÀÛÇÏ°Å³ª Çã¿ëÇÏ´Â ¹üÀ§ ³»¿¡¼­ 0¿¡ °¡Àå ±î±î¿î ¼ýÀÚ¿¡¼­ ½ÃÀÛÇÕ´Ï´Ù). ³ªÁß¿¡ ¹ÙÀÇ À§Ä¡¸¦ ¹Ù²Ù·Á¸é, ´ÙÀ½ ¿¹Á¦¸¦ µû¸£½Ê½Ã¿À. ¸ðµç ¿¹Á¦°¡  <a href="Gui.htm#var">¿¬°ü º¯¼ö ÀÌ¸§</a>ÀÌ MyProgressÀÎ ÇÁ·Î±×·¹½º ¹Ù¿¡ ÀÛµ¿ÇÕ´Ï´Ù:</p>
+ë°”ì˜ ì‹œìž‘ ìœ„ì¹˜ë¥¼ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì— ì§€ì •í•˜ì‹­ì‹œì˜¤ (ìƒëžµí•˜ë©´, ë°”ëŠ” 0ì—ì„œ ì‹œìž‘í•˜ê±°ë‚˜ í—ˆìš©í•˜ëŠ” ë²”ìœ„ ë‚´ì—ì„œ 0ì— ê°€ìž¥ ê¹Œê¹Œìš´ ìˆ«ìžì—ì„œ ì‹œìž‘í•©ë‹ˆë‹¤). ë‚˜ì¤‘ì— ë°”ì˜ ìœ„ì¹˜ë¥¼ ë°”ê¾¸ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¥´ì‹­ì‹œì˜¤. ëª¨ë“  ì˜ˆì œê°€  <a href="Gui.htm#var">ì—°ê´€ ë³€ìˆ˜ ì´ë¦„</a>ì´ MyProgressì¸ í”„ë¡œê·¸ë ˆìŠ¤ ë°”ì— ìž‘ë™í•©ë‹ˆë‹¤:</p>
 
-<pre><a href="GuiControl.htm">GuiControl</a>,, MyProgress, +20  <em>; ÇöÀç À§Ä¡¸¦ 20¸¸Å­ Áõ°¡½ÃÅµ´Ï´Ù.</em>
-<a href="GuiControl.htm">GuiControl</a>,, MyProgress, 50  <em>; ÇöÀç À§Ä¡¸¦ 50À¸·Î ¼³Á¤ÇÕ´Ï´Ù.</em></pre>
+<pre><a href="GuiControl.htm">GuiControl</a>,, MyProgress, +20  <em>; í˜„ìž¬ ìœ„ì¹˜ë¥¼ 20ë§Œí¼ ì¦ê°€ì‹œí‚µë‹ˆë‹¤.</em>
+<a href="GuiControl.htm">GuiControl</a>,, MyProgress, 50  <em>; í˜„ìž¬ ìœ„ì¹˜ë¥¼ 50ìœ¼ë¡œ ì„¤ì •í•©ë‹ˆë‹¤.</em></pre>
 <p>
-¼öÆò ÇÁ·Î±×·¹½º ¹Ù¿¡ ´ëÇÏ¿©, ¹ÙÀÇ µÎ²²´Â ±× ÄÜÆ®·ÑÀÇ ³ôÀÌ¿Í °°½À´Ï´Ù. ¼öÁ÷ ½ºÅ©·Ñ ¹Ù¿¡ ´ëÇÏ¿©, ¹ÙÀÇ ³Êºñ´Â ±× ÄÜÆ®·ÑÀÇ ³Êºñ¿Í °°½À´Ï´Ù.</p>
+ìˆ˜í‰ í”„ë¡œê·¸ë ˆìŠ¤ ë°”ì— ëŒ€í•˜ì—¬, ë°”ì˜ ë‘ê»˜ëŠ” ê·¸ ì½˜íŠ¸ë¡¤ì˜ ë†’ì´ì™€ ê°™ìŠµë‹ˆë‹¤. ìˆ˜ì§ ìŠ¤í¬ë¡¤ ë°”ì— ëŒ€í•˜ì—¬, ë°”ì˜ ë„ˆë¹„ëŠ” ê·¸ ì½˜íŠ¸ë¡¤ì˜ ë„ˆë¹„ì™€ ê°™ìŠµë‹ˆë‹¤.</p>
 
-<h3>Progress ¿É¼Ç</h3>
+<h3>Progress ì˜µì…˜</h3>
 <p>
-<strong>Cn</strong>: ¹ÙÀÇ ÄÃ·¯¸¦ ¹Ù²ß´Ï´Ù. <strong>n</strong>¿¡ 16°¡Áö ±âº» HTML <a href="Progress.htm#colors">ÄÃ·¯ ÀÌ¸§</a>Áß ÇÏ³ª ¶Ç´Â 6-ÀÚ¸® RGB ÄÃ·¯ °ªÀ» ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹Á¦: <code>cRed</code>, <code>cFFFF33</code>, <code>cDefault</code>. C ¿É¼ÇÀ» »ç¿ëÇÏÁö ¾ÊÀ¸¸é (¶Ç´Â <code>cDefault</code>¸¦ ÁöÁ¤ÇÏ¸é), ½Ã½ºÅÛÀÇ ±âº» ¹Ù ÄÃ·¯°¡ »ç¿ëµË´Ï´Ù.</p>
+<strong>Cn</strong>: ë°”ì˜ ì»¬ëŸ¬ë¥¼ ë°”ê¿‰ë‹ˆë‹¤. <strong>n</strong>ì— 16ê°€ì§€ ê¸°ë³¸ HTML <a href="Progress.htm#colors">ì»¬ëŸ¬ ì´ë¦„</a>ì¤‘ í•˜ë‚˜ ë˜ëŠ” 6-ìžë¦¬ RGB ì»¬ëŸ¬ ê°’ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆì œ: <code>cRed</code>, <code>cFFFF33</code>, <code>cDefault</code>. C ì˜µì…˜ì„ ì‚¬ìš©í•˜ì§€ ì•Šìœ¼ë©´ (ë˜ëŠ” <code>cDefault</code>ë¥¼ ì§€ì •í•˜ë©´), ì‹œìŠ¤í…œì˜ ê¸°ë³¸ ë°” ì»¬ëŸ¬ê°€ ì‚¬ìš©ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>BackgroundN</strong>: ¹ÙÀÇ ¹è°æ»öÀ» º¯°æÇÕ´Ï´Ù. <strong>n</strong>¿¡ 16°¡Áö ±âº» HTML <a href="Progress.htm#colors">ÄÃ·¯ ÀÌ¸§</a>Áß ÇÏ³ª ¶Ç´Â  6-ÀÚ¸® RGB °ªÀ» ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹Á¦: <code>BackgroundGreen</code>, <code>BackgroundFFFF33</code>, <code>BackgroundDefault</code>. Background ¿É¼ÇÀ» »ç¿ëÇÏÁö ¾ÊÀ¸¸é (¶Ç´Â <code>BackgroundDefault</code>¸¦ ÁöÁ¤ÇÏ¸é), ¹è°æ»öÀº ±× µÚ¿¡ ÀÖ´Â Ã¢ÀÇ ¹è°æ»ö ¶Ç´Â <a href="#Tab">ÅÇ ÄÜÆ®·Ñ</a>ÀÇ ¹è°æ»öÀÌ »ç¿ëµË´Ï´Ù.</p>
+<strong>BackgroundN</strong>: ë°”ì˜ ë°°ê²½ìƒ‰ì„ ë³€ê²½í•©ë‹ˆë‹¤. <strong>n</strong>ì— 16ê°€ì§€ ê¸°ë³¸ HTML <a href="Progress.htm#colors">ì»¬ëŸ¬ ì´ë¦„</a>ì¤‘ í•˜ë‚˜ ë˜ëŠ”  6-ìžë¦¬ RGB ê°’ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆì œ: <code>BackgroundGreen</code>, <code>BackgroundFFFF33</code>, <code>BackgroundDefault</code>. Background ì˜µì…˜ì„ ì‚¬ìš©í•˜ì§€ ì•Šìœ¼ë©´ (ë˜ëŠ” <code>BackgroundDefault</code>ë¥¼ ì§€ì •í•˜ë©´), ë°°ê²½ìƒ‰ì€ ê·¸ ë’¤ì— ìžˆëŠ” ì°½ì˜ ë°°ê²½ìƒ‰ ë˜ëŠ” <a href="#Tab">íƒ­ ì½˜íŠ¸ë¡¤</a>ì˜ ë°°ê²½ìƒ‰ì´ ì‚¬ìš©ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>Range</strong>: ¹üÀ§¸¦ 0ºÎÅÍ 100¸»°í ´Ù¸¥ °ªÀ¸·Î ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù. ´Ü¾î Range ´ÙÀ½¿¡, ÃÖ¼Ò°ª, ¿·ÁÙ ÇÏ³ª, ±×¸®°í ÃÖ´ë °ªÀ» ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, <code>Range0-1000</code>ÀÌ¸é ¼ýÀÚ¸£ 0ºÎÅÍ 1000±îÁö Áö¿øÇÕ´Ï´Ù; <code>Range-50-50</code>ÀÌ¸é ¼ýÀÚ¸¦ -50ºÎÅÍ 50±îÁö Çã¿ëÇÕ´Ï´Ù; ±×¸®°í <code>Range-10--5</code>ÀÌ¸é -10ºÎÅÍ -5 ±îÁöÀÇ ¼ýÀÚ¸¦ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong>Range</strong>: ë²”ìœ„ë¥¼ 0ë¶€í„° 100ë§ê³  ë‹¤ë¥¸ ê°’ìœ¼ë¡œ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¨ì–´ Range ë‹¤ìŒì—, ìµœì†Œê°’, ì˜†ì¤„ í•˜ë‚˜, ê·¸ë¦¬ê³  ìµœëŒ€ ê°’ì„ ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Range0-1000</code>ì´ë©´ ìˆ«ìžë¥´ 0ë¶€í„° 1000ê¹Œì§€ ì§€ì›í•©ë‹ˆë‹¤; <code>Range-50-50</code>ì´ë©´ ìˆ«ìžë¥¼ -50ë¶€í„° 50ê¹Œì§€ í—ˆìš©í•©ë‹ˆë‹¤; ê·¸ë¦¬ê³  <code>Range-10--5</code>ì´ë©´ -10ë¶€í„° -5 ê¹Œì§€ì˜ ìˆ«ìžë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>-Smooth</strong> (¸¶ÀÌ³Ê½º Smooth): ºÎµå·´°Ô ¿¬¼ÓµÈ ¹Ù°¡ ¾Æ´Ï¶ó ¼¼Å©¸ÕÆ®ÀÇ ±æÀÌ¸¦ º¸¿©ÁÝ´Ï´Ù. <code>-Smooth</code>¸¦ ÁöÁ¤ÇØ¾ß¸¸ Windows XP ÀÌÈÄ¿¡¼­ Å×¸¶ ÇÁ·Î±×·¹½º ¹Ù¸¦ º¸¿©ÁÙ ¼ö ÀÖ½À´Ï´Ù. ´Ù¸¥ Á¶°ÇÀ¸·Î´Â ¹Ù¿¡ ¸ÂÃã ÄÃ·¯°¡ ¾ø¾î¾ß ÇÑ´Ù´Â °ÍÀÔ´Ï´Ù; Áï, C ±×¸®°í Background ¿É¼ÇÀº »ý·«ÇØ¾ß ÇÕ´Ï´Ù.</p>
+<strong>-Smooth</strong> (ë§ˆì´ë„ˆìŠ¤ Smooth): ë¶€ë“œëŸ½ê²Œ ì—°ì†ëœ ë°”ê°€ ì•„ë‹ˆë¼ ì„¸í¬ë¨¼íŠ¸ì˜ ê¸¸ì´ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤. <code>-Smooth</code>ë¥¼ ì§€ì •í•´ì•¼ë§Œ Windows XP ì´í›„ì—ì„œ í…Œë§ˆ í”„ë¡œê·¸ë ˆìŠ¤ ë°”ë¥¼ ë³´ì—¬ì¤„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ë¥¸ ì¡°ê±´ìœ¼ë¡œëŠ” ë°”ì— ë§žì¶¤ ì»¬ëŸ¬ê°€ ì—†ì–´ì•¼ í•œë‹¤ëŠ” ê²ƒìž…ë‹ˆë‹¤; ì¦‰, C ê·¸ë¦¬ê³  Background ì˜µì…˜ì€ ìƒëžµí•´ì•¼ í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>Vertical</strong>: ¹Ù¸¦ ¼¼¿ì°Å³ª ¼öÁ÷À¸·Î ´Ã¾î¶ß¸³´Ï´Ù.</p>
+<strong>Vertical</strong>: ë°”ë¥¼ ì„¸ìš°ê±°ë‚˜ ìˆ˜ì§ìœ¼ë¡œ ëŠ˜ì–´ëœ¨ë¦½ë‹ˆë‹¤.</p>
 <p>
-À§ÀÇ ¿É¼ÇÀº ÄÜÆ®·ÑÀÌ »ý¼ºµÈ ÈÄ¿¡ <a href="GuiControl.htm">GuiControl</a>¸¦ ÅëÇÏ¿© ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù.</p>
+ìœ„ì˜ ì˜µì…˜ì€ ì½˜íŠ¸ë¡¤ì´ ìƒì„±ëœ í›„ì— <a href="GuiControl.htm">GuiControl</a>ë¥¼ í†µí•˜ì—¬ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
 <h2 id="GroupBox">GroupBox</h2>
 <p>
-¼³¸í: »ç°¢ Å×µÎ¸®/ÇÁ·¹ÀÓ, Á¾Á¾ ´Ù¸¥ ÄÜÆ®·Ñ µÑ·¹¿¡ ¼­·Î °ü·ÃÀÌ ÀÖÀ½À» ³ªÅ¸³»´Â µ¥ »ç¿ëµÊ. ÀÌ °æ¿ì, ¸¶Áö¸· ¸Å°³º¯¼ö´Â ¹Ú½ºÀÇ Á¦¸ñÀÌ°í, Á¸ÀçÇÑ´Ù¸é, ÁÂ»ó ¸ð¼­¸®¿¡ º¸¿©Áý´Ï´Ù. ¿¹Á¦:</p>
+ì„¤ëª…: ì‚¬ê° í…Œë‘ë¦¬/í”„ë ˆìž„, ì¢…ì¢… ë‹¤ë¥¸ ì½˜íŠ¸ë¡¤ ë‘˜ë ˆì— ì„œë¡œ ê´€ë ¨ì´ ìžˆìŒì„ ë‚˜íƒ€ë‚´ëŠ” ë° ì‚¬ìš©ë¨. ì´ ê²½ìš°, ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” ë°•ìŠ¤ì˜ ì œëª©ì´ê³ , ì¡´ìž¬í•œë‹¤ë©´, ì¢Œìƒ ëª¨ì„œë¦¬ì— ë³´ì—¬ì§‘ë‹ˆë‹¤. ì˜ˆì œ:</p>
 
 <pre>Gui, Add, GroupBox, w400 h300, Geographic Criteria</pre>
 <p>
-±âº»°ªÀ¸·Î GroupBoxÀÇ Á¦¸ñÀº ¿ÀÁ÷ ÇÑÁÙÀÇ ÅØ½ºÆ®¸¸ °¡Áú ¼ö ÀÖ½À´Ï´Ù. ÀÌ´Â ¿É¼Ç¿¡ <code>Wrap</code> À» ÁöÁ¤ÇÏ¸é ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù.</p>
+ê¸°ë³¸ê°’ìœ¼ë¡œ GroupBoxì˜ ì œëª©ì€ ì˜¤ì§ í•œì¤„ì˜ í…ìŠ¤íŠ¸ë§Œ ê°€ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ëŠ” ì˜µì…˜ì— <code>Wrap</code> ì„ ì§€ì •í•˜ë©´ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-ÄÜÆ®·Ñ ¾È¿¡ ÇàÀÇ °³¼ö¸¦ ÁöÁ¤ÇÏ·Á¸é (¶Ç´Â ±×ÀÇ ³Êºñ¿Í ³ôÀÌ¸¦ ÁöÁ¤ÇÏ·Á¸é), <a href="Gui.htm#PosSize">ÄÜÆ®·ÑÀÇ À§Ä¡¿Í Å©±â º¯°æ</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ì½˜íŠ¸ë¡¤ ì•ˆì— í–‰ì˜ ê°œìˆ˜ë¥¼ ì§€ì •í•˜ë ¤ë©´ (ë˜ëŠ” ê·¸ì˜ ë„ˆë¹„ì™€ ë†’ì´ë¥¼ ì§€ì •í•˜ë ¤ë©´), <a href="Gui.htm#PosSize">ì½˜íŠ¸ë¡¤ì˜ ìœ„ì¹˜ì™€ í¬ê¸° ë³€ê²½</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
 <h2 id="Tab"><a name="Tab2"></a>Tab2</h2>
 <p>
-¼³¸í: ¿©·¯ ÆäÀÌÁö¸¦ ´ã°í ÀÖ´Â Ä¿´Ù¶õ ÄÜÆ®·Ñ. °¢ ÆäÀÌÁö¿¡ ´Ù¸¥ ÄÜÆ®·ÑÀÌ ´ã°Ü ÀÖ½À´Ï´Ù. ÀÌ °üÁ¡¿¡¼­ ÇÑ ¹ß ´õ ³ª¾Æ°¡ ÀÌ·± ÆäÀÌÁöµéÀ» &quot;ÅÇ&quot;ÀÌ¶ó°í ºÎ¸¨´Ï´Ù.</p>
+ì„¤ëª…: ì—¬ëŸ¬ íŽ˜ì´ì§€ë¥¼ ë‹´ê³  ìžˆëŠ” ì»¤ë‹¤ëž€ ì½˜íŠ¸ë¡¤. ê° íŽ˜ì´ì§€ì— ë‹¤ë¥¸ ì½˜íŠ¸ë¡¤ì´ ë‹´ê²¨ ìžˆìŠµë‹ˆë‹¤. ì´ ê´€ì ì—ì„œ í•œ ë°œ ë” ë‚˜ì•„ê°€ ì´ëŸ° íŽ˜ì´ì§€ë“¤ì„ &quot;íƒ­&quot;ì´ë¼ê³  ë¶€ë¦…ë‹ˆë‹¤.</p>
 <p>
-<strong>Tab2 vs. Tab</strong>: v1.0.47.05¿¡¼­ &quot;Tab2&quot; ÄÜÆ®·ÑÀÌ Ãß°¡µÇ¾ú½À´Ï´Ù. ¿ø·¡ &quot;Tab&quot; ÄÜÆ®·ÑÀÇ Èñ±ÍÇÑ Àç±×¸®±â ¹®Á¦¸¦ ÇØ°áÇÏ¿´½À´Ï´Ù (¿¹, ±×ÀÇ ÄÜÆ®·ÑÀÇ ¾î¶² ºÎºÐÀ» ¿¹¸¦ µé¾î ½ºÅ©·Ñ¹Ù¸¦ Å¬¸¯ÇÏ¿© GUI¸¦ È°¼ºÈ­ ÇÏ¸é Á¦´ë·Î ´Ù½Ã ±×¸®Áö ¸øÇß½À´Ï´Ù). ¿ø·¡ÀÇ ÅÇ ÄÜÆ®·ÑÀº ÇÏÀ§ È£È¯À» À§ÇØ À¯ÁöµË´Ï´Ù. ¿Ö³ÄÇÏ¸é Tab2´Â ÀÚ½ÅÀÇ ÅÇ ÄÜÆ®·ÑÀ» ÀÚ½Å¿¡°Ô Æ÷ÇÔµÈ ÄÜÆ®·Ñµé ´ÙÀ½¿¡ ÅÇ-Å° Ç×ÇØ ¼ø¼­·Î ¹èÄ¡ÇÏ±â ¶§¹®ÀÔ´Ï´Ù. »õ ½ºÅ©¸³Æ®´Â °¡´ÉÇÏ¸é Tab2¸¦ »ç¿ëÇØ¾ß ÇÕ´Ï´Ù. ¿¹Á¦:</p>
+<strong>Tab2 vs. Tab</strong>: v1.0.47.05ì—ì„œ &quot;Tab2&quot; ì½˜íŠ¸ë¡¤ì´ ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤. ì›ëž˜ &quot;Tab&quot; ì½˜íŠ¸ë¡¤ì˜ í¬ê·€í•œ ìž¬ê·¸ë¦¬ê¸° ë¬¸ì œë¥¼ í•´ê²°í•˜ì˜€ìŠµë‹ˆë‹¤ (ì˜ˆ, ê·¸ì˜ ì½˜íŠ¸ë¡¤ì˜ ì–´ë–¤ ë¶€ë¶„ì„ ì˜ˆë¥¼ ë“¤ì–´ ìŠ¤í¬ë¡¤ë°”ë¥¼ í´ë¦­í•˜ì—¬ GUIë¥¼ í™œì„±í™” í•˜ë©´ ì œëŒ€ë¡œ ë‹¤ì‹œ ê·¸ë¦¬ì§€ ëª»í–ˆìŠµë‹ˆë‹¤). ì›ëž˜ì˜ íƒ­ ì½˜íŠ¸ë¡¤ì€ í•˜ìœ„ í˜¸í™˜ì„ ìœ„í•´ ìœ ì§€ë©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ Tab2ëŠ” ìžì‹ ì˜ íƒ­ ì½˜íŠ¸ë¡¤ì„ ìžì‹ ì—ê²Œ í¬í•¨ëœ ì½˜íŠ¸ë¡¤ë“¤ ë‹¤ìŒì— íƒ­-í‚¤ í•­í•´ ìˆœì„œë¡œ ë°°ì¹˜í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ìƒˆ ìŠ¤í¬ë¦½íŠ¸ëŠ” ê°€ëŠ¥í•˜ë©´ Tab2ë¥¼ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤. ì˜ˆì œ:</p>
 
 <pre>Gui, Add, Tab2,, General|View|Appearance|Settings</pre>
 <p>
-<a name="ChooseTab"></a>À§ÀÇ ¸¶Áö¸· ¸Å°³º¯¼ö´Â ÆÄÀÌÇÁ·Î ±¸ºÐµÈ ÅÇ ÀÌ¸§ ¸®½ºÆ®ÀÔ´Ï´Ù. Ã¢ÀÌ Ã³À½ ³ªÅ¸³¯ ¶§ ÅÇ Áß¿¡ ÇÏ³ª¸¦ ¹Ì¸® ¼±ÅÃÇÏ·Á¸é, µÎ °³ÀÇ ÆÄÀÌÇÁ ¹®ÀÚ¸¦ ±× ´ÙÀ½¿¡ Æ÷ÇÔÇÏ½Ê½Ã¿À (¿¹, <code>Red|Green||Blue</code>). ´Ù¸¥ ¹æ¹ýÀ¸·Î, <em>Options</em>¿¡ ´Ü¾î <strong>Choose</strong>¿Í ¹Ù·Î ´ÙÀ½¿¡ ¹Ì¸® ¼±ÅÃÇÒ ¼ýÀÚ¸¦ ÁöÁ¤ÇÒ ¼öÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, <code>Choose5</code>´Â ´Ù¼¸ ¹øÂ° ÅÇÀ» ¹Ì¸® ¼±ÅÃÇÕ´Ï´Ù (´Ù¸¥ ¿É¼ÇµéÃ³·³,  <code>Choose%Var%</code>¿Í °°Àº º¯¼ö°¡ µÉ ¼öµµ ÀÖ½À´Ï´Ù). ÄÜÆ®·ÑÀÌ »ý¼ºµÈ ´ÙÀ½¿¡ ¼±ÅÃµÈ ÅÇÀ» º¯°æÇÏ·Á¸é, ¶Ç´Â ÅÇÀ» Ãß°¡ÇÏ°Å³ª Á¦°ÅÇÏ·Á¸é, <a href="GuiControl.htm">GuiControl</a>À» »ç¿ëÇÏ½Ê½Ã¿À.</p>
+<a name="ChooseTab"></a>ìœ„ì˜ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” íŒŒì´í”„ë¡œ êµ¬ë¶„ëœ íƒ­ ì´ë¦„ ë¦¬ìŠ¤íŠ¸ìž…ë‹ˆë‹¤. ì°½ì´ ì²˜ìŒ ë‚˜íƒ€ë‚  ë•Œ íƒ­ ì¤‘ì— í•˜ë‚˜ë¥¼ ë¯¸ë¦¬ ì„ íƒí•˜ë ¤ë©´, ë‘ ê°œì˜ íŒŒì´í”„ ë¬¸ìžë¥¼ ê·¸ ë‹¤ìŒì— í¬í•¨í•˜ì‹­ì‹œì˜¤ (ì˜ˆ, <code>Red|Green||Blue</code>). ë‹¤ë¥¸ ë°©ë²•ìœ¼ë¡œ, <em>Options</em>ì— ë‹¨ì–´ <strong>Choose</strong>ì™€ ë°”ë¡œ ë‹¤ìŒì— ë¯¸ë¦¬ ì„ íƒí•  ìˆ«ìžë¥¼ ì§€ì •í•  ìˆ˜ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>Choose5</code>ëŠ” ë‹¤ì„¯ ë²ˆì§¸ íƒ­ì„ ë¯¸ë¦¬ ì„ íƒí•©ë‹ˆë‹¤ (ë‹¤ë¥¸ ì˜µì…˜ë“¤ì²˜ëŸ¼,  <code>Choose%Var%</code>ì™€ ê°™ì€ ë³€ìˆ˜ê°€ ë  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤). ì½˜íŠ¸ë¡¤ì´ ìƒì„±ëœ ë‹¤ìŒì— ì„ íƒëœ íƒ­ì„ ë³€ê²½í•˜ë ¤ë©´, ë˜ëŠ” íƒ­ì„ ì¶”ê°€í•˜ê±°ë‚˜ ì œê±°í•˜ë ¤ë©´, <a href="GuiControl.htm">GuiControl</a>ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<a name="TabCmd"></a>ÅÇ ÄÜÆ®·ÑÀ» ¸¸µé°í ³­ ÈÄ, ÀÌ¾î¼­ Ãß°¡µÇ´Â ÄÜÆ®·ÑµéÀº ÀÚµ¿À¸·Î ±×ÀÇ Ã¹ ¹øÂ° ÅÇ¿¡ ¼ÓÇÕ´Ï´Ù. ÀÌ°ÍÀº ´ÙÀ½ ¿¹Á¦¸¦ µû¶ó ¾ðÁ¦µçÁö ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù:</p>
+<a name="TabCmd"></a>íƒ­ ì½˜íŠ¸ë¡¤ì„ ë§Œë“¤ê³  ë‚œ í›„, ì´ì–´ì„œ ì¶”ê°€ë˜ëŠ” ì½˜íŠ¸ë¡¤ë“¤ì€ ìžë™ìœ¼ë¡œ ê·¸ì˜ ì²« ë²ˆì§¸ íƒ­ì— ì†í•©ë‹ˆë‹¤. ì´ê²ƒì€ ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¼ ì–¸ì œë“ ì§€ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 
-<pre>Gui, Tab  <em>; ¹Ì·¡ÀÇ ÄÜÆ®·ÑµéÀº ÅÇ ÄÜÆ®·ÑÀÇ ÀÏºÎ°¡ ¾Æ´Õ´Ï´Ù.</em>
-Gui, Tab, 3  <em>; ¹Ì·¡ÀÇ ÄÜÆ®·ÑµéÀº ÇöÀç ÅÇ ÄÜÆ®·ÑÀÇ ¼¼ ¹øÂ° ÅÇ¿¡ ¼ÓÇÕ´Ï´Ù.</em>
-Gui, Tab, 3, 2  <em>; ¹Ì·¡ÀÇ ÄÜÆ®·ÑµéÀº µÎ ¹øÂ° ÅÇ ÄÜÆ®·ÑÀÇ ¼¼ ¹øÂ° ÅÇÀÌ ¼ÒÀ¯ÇÕ´Ï´Ù.</em>
-Gui, Tab, Name  <em>; ¹Ì·¡ÀÇ ÄÜÆ®·ÑµéÀº ÀÌ¸§ÀÌ <i>Name</i> (´ë¼Ò¹®ÀÚ ±¸ºÐ ¾øÀ½)À¸·Î ½ÃÀÛÇÏ´Â ÅÇÀÌ ¼ÒÀ¯ÇÕ´Ï´Ù.</em>
-Gui, Tab, Name,, Exact  <em>; À§¿Í µ¿ÀÏÇÏÁö¸¸ Á¤È®ÇÏ°Ô ºÎÇÕÇØ¾ß ÇÕ´Ï´Ù (´ë¼Ò¹®ÀÚµµ ±¸ºÐ).</em></pre>
+<pre>Gui, Tab  <em>; ë¯¸ëž˜ì˜ ì½˜íŠ¸ë¡¤ë“¤ì€ íƒ­ ì½˜íŠ¸ë¡¤ì˜ ì¼ë¶€ê°€ ì•„ë‹™ë‹ˆë‹¤.</em>
+Gui, Tab, 3  <em>; ë¯¸ëž˜ì˜ ì½˜íŠ¸ë¡¤ë“¤ì€ í˜„ìž¬ íƒ­ ì½˜íŠ¸ë¡¤ì˜ ì„¸ ë²ˆì§¸ íƒ­ì— ì†í•©ë‹ˆë‹¤.</em>
+Gui, Tab, 3, 2  <em>; ë¯¸ëž˜ì˜ ì½˜íŠ¸ë¡¤ë“¤ì€ ë‘ ë²ˆì§¸ íƒ­ ì½˜íŠ¸ë¡¤ì˜ ì„¸ ë²ˆì§¸ íƒ­ì´ ì†Œìœ í•©ë‹ˆë‹¤.</em>
+Gui, Tab, Name  <em>; ë¯¸ëž˜ì˜ ì½˜íŠ¸ë¡¤ë“¤ì€ ì´ë¦„ì´ <i>Name</i> (ëŒ€ì†Œë¬¸ìž êµ¬ë¶„ ì—†ìŒ)ìœ¼ë¡œ ì‹œìž‘í•˜ëŠ” íƒ­ì´ ì†Œìœ í•©ë‹ˆë‹¤.</em>
+Gui, Tab, Name,, Exact  <em>; ìœ„ì™€ ë™ì¼í•˜ì§€ë§Œ ì •í™•í•˜ê²Œ ë¶€í•©í•´ì•¼ í•©ë‹ˆë‹¤ (ëŒ€ì†Œë¬¸ìžë„ êµ¬ë¶„).</em></pre>
 <p>
-À§ÀÇ ¿¹Á¦¸¦ »ç¿ëÇØ ¾ÆÁ÷ Á¸ÀçÇÏÁö ¾Ê´Â ÅÇÀÌ³ª ÅÇ ÄÜÆ®·Ñ¿¡ ÇÒ´çÇÏ´Â °Íµµ °¡´ÉÇÕ´Ï´Ù (<em>Name</em> ¹æ¹ýÀº ¿¹¿ÜÀÓ). ±×·¯³ª ±× °æ¿ì, ¾Æ·¡¿¡ ±â¼úµÈ »óÅÂÀûÀÎ À§Ä¡ ÁöÁ¤ ¿É¼ÇÀ» Áö¿øÇÏÁö ¾Ê½À´Ï´Ù.</p>
+ìœ„ì˜ ì˜ˆì œë¥¼ ì‚¬ìš©í•´ ì•„ì§ ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” íƒ­ì´ë‚˜ íƒ­ ì½˜íŠ¸ë¡¤ì— í• ë‹¹í•˜ëŠ” ê²ƒë„ ê°€ëŠ¥í•©ë‹ˆë‹¤ (<em>Name</em> ë°©ë²•ì€ ì˜ˆì™¸ìž„). ê·¸ëŸ¬ë‚˜ ê·¸ ê²½ìš°, ì•„ëž˜ì— ê¸°ìˆ ëœ ìƒíƒœì ì¸ ìœ„ì¹˜ ì§€ì • ì˜µì…˜ì„ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-<b>¹èÄ¡</b>: ÅÇ ÄÜÆ®·ÑÀÇ °¢ ÅÇÀÌ ±×ÀÇ Ã¹ ºÎ-ÄÜÆ®·ÑÀ» ¹ÞÀ» ¶§, ±× ºÎ-ÄÜÆ®·ÑÀº Æ¯¼öÇÑ ±âº» À§Ä¡°¡ ÀÖ½À´Ï´Ù. ±âº» À§Ä¡´Â ´ÙÀ½ Á¶°Ç¿¡ µû¸¨´Ï´Ù: 
+<b>ë°°ì¹˜</b>: íƒ­ ì½˜íŠ¸ë¡¤ì˜ ê° íƒ­ì´ ê·¸ì˜ ì²« ë¶€-ì½˜íŠ¸ë¡¤ì„ ë°›ì„ ë•Œ, ê·¸ ë¶€-ì½˜íŠ¸ë¡¤ì€ íŠ¹ìˆ˜í•œ ê¸°ë³¸ ìœ„ì¹˜ê°€ ìžˆìŠµë‹ˆë‹¤. ê¸°ë³¸ ìœ„ì¹˜ëŠ” ë‹¤ìŒ ì¡°ê±´ì— ë”°ë¦…ë‹ˆë‹¤: 
 <ol>
-	<li> X¿Í Y ÁÂÇ¥°¡ µÑ ´Ù »ý·«µÇ¸é,  ±× Ã¹ ºÎ-ÄÜÆ®·ÑÀº (Ç¥ÁØ <a href="Gui.htm#Margin">¿©¹é</a>À» °¡Áø) ÅÇ ÄÜÆ®·Ñ ³»ºÎÀÇ ÁÂ»ó ¸ð¼­¸®¿¡ ¹èÄ¡µË´Ï´Ù. ±×¸®°í Ã¹ ºÎÄÜÆ®·Ñ ¿ÜÀÇ ºÎÄÜÆ®·ÑµéÀº ±× ¾Æ·¡·Î ¹èÄ¡µË´Ï´Ù;
-	<li> <a href="Gui.htm#PosPlus">X+n ±×¸®°í/¶Ç´Â Y+n</a> ¿É¼ÇÀÌ ÁöÁ¤µÇ¾úÀ¸¸é, ±× Ã¹ ºÎ ÄÜÆ®·ÑÀº ÅÇ ÄÜÆ®·Ñ ³»ºÎÀÇ ÁÂ»ó ¸ð¼­¸®¿¡ »ó´ëÀûÀ¸·Î ¹èÄ¡µË´Ï´Ù. ¿¹¸¦ µé¾î, <code>x+10 y+10</code>À» ÁöÁ¤ÇÏ¸é ±× ºÎÄÜÆ®·ÑÀÌ ÁÂ»ó ¸ð¼­¸®·ÎºÎÅÍ 10 ÇÈ¼¿ ¿À¸¥ÂÊ ±×¸®°í 10 ÇÈ¼¿ ¾Æ·¡ÂÊ¿¡ ÀÚ¸®¸¦ Àâ½À´Ï´Ù.
+	<li> Xì™€ Y ì¢Œí‘œê°€ ë‘˜ ë‹¤ ìƒëžµë˜ë©´,  ê·¸ ì²« ë¶€-ì½˜íŠ¸ë¡¤ì€ (í‘œì¤€ <a href="Gui.htm#Margin">ì—¬ë°±</a>ì„ ê°€ì§„) íƒ­ ì½˜íŠ¸ë¡¤ ë‚´ë¶€ì˜ ì¢Œìƒ ëª¨ì„œë¦¬ì— ë°°ì¹˜ë©ë‹ˆë‹¤. ê·¸ë¦¬ê³  ì²« ë¶€ì½˜íŠ¸ë¡¤ ì™¸ì˜ ë¶€ì½˜íŠ¸ë¡¤ë“¤ì€ ê·¸ ì•„ëž˜ë¡œ ë°°ì¹˜ë©ë‹ˆë‹¤;
+	<li> <a href="Gui.htm#PosPlus">X+n ê·¸ë¦¬ê³ /ë˜ëŠ” Y+n</a> ì˜µì…˜ì´ ì§€ì •ë˜ì—ˆìœ¼ë©´, ê·¸ ì²« ë¶€ ì½˜íŠ¸ë¡¤ì€ íƒ­ ì½˜íŠ¸ë¡¤ ë‚´ë¶€ì˜ ì¢Œìƒ ëª¨ì„œë¦¬ì— ìƒëŒ€ì ìœ¼ë¡œ ë°°ì¹˜ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, <code>x+10 y+10</code>ì„ ì§€ì •í•˜ë©´ ê·¸ ë¶€ì½˜íŠ¸ë¡¤ì´ ì¢Œìƒ ëª¨ì„œë¦¬ë¡œë¶€í„° 10 í”½ì…€ ì˜¤ë¥¸ìª½ ê·¸ë¦¬ê³  10 í”½ì…€ ì•„ëž˜ìª½ì— ìžë¦¬ë¥¼ ìž¡ìŠµë‹ˆë‹¤.
 </ol>
 </p>
 <p>
-ºÎ-ÄÜÆ®·ÑµéÀº ¹Ýµå½Ã ÅÇ ÄÜÆ®·ÑÀÇ °æ°è ¾È¿¡ Á¸ÀçÇØ¾ß ÇÒ ÇÊ¿ä´Â ¾ø½À´Ï´Ù: ÅÇÀÌ ¼±ÅÃµÇ°Å³ª ÇØÁ¦µÉ ¶§ ¿©ÀüÈ÷ ¼û°Å³ª º¸¿©Áý´Ï´Ù. ÀÌ ÇàÀ§´Â Æ¯È÷ ¾Æ·¡¿¡ ±â¼úµÈ &quot;¹öÆ°&quot; ½ºÅ¸ÀÏÀÇ ÇàÀ§¿¡ ÀûÇÕÇÕ´Ï´Ù.</p>
+ë¶€-ì½˜íŠ¸ë¡¤ë“¤ì€ ë°˜ë“œì‹œ íƒ­ ì½˜íŠ¸ë¡¤ì˜ ê²½ê³„ ì•ˆì— ì¡´ìž¬í•´ì•¼ í•  í•„ìš”ëŠ” ì—†ìŠµë‹ˆë‹¤: íƒ­ì´ ì„ íƒë˜ê±°ë‚˜ í•´ì œë  ë•Œ ì—¬ì „ížˆ ìˆ¨ê±°ë‚˜ ë³´ì—¬ì§‘ë‹ˆë‹¤. ì´ í–‰ìœ„ëŠ” íŠ¹ížˆ ì•„ëž˜ì— ê¸°ìˆ ëœ &quot;ë²„íŠ¼&quot; ìŠ¤íƒ€ì¼ì˜ í–‰ìœ„ì— ì í•©í•©ë‹ˆë‹¤.</p>
 <p>
-<a href="Gui.htm#Submit">Gui Submit</a> ¸í·É¾î¸¦ »ç¿ëÇÏ¸é, ÄÜÆ®·ÑÀÇ <a href="Gui.htm#var">¿¬°ü Ãâ·Â º¯¼ö</a>°¡ (ÀÖ´Ù¸é) ÇöÀç ¼±ÅÃµÈ ÅÇÀÇ ÀÌ¸§À» ¹Þ½À´Ï´Ù. ±×·¸Áö¸¸, ±× ÄÜÆ®·Ñ¿¡ <a href="Gui.htm#AltSubmit">AltSubmit</a> Æ¯¼ºÀÌ ÀÖ´Ù¸é, ±× Ãâ·Â º¯¼ö´Â ´ë½Å¿¡ ÅÇÀÇ À§Ä¡¸¦ ¹Þ½À´Ï´Ù (Ã¹¹øÂ° ÅÇÀº 1ÀÌ°í, µÎ ¹øÂ°´Â 2ÀÌ°í, µîµî.).</p>
+<a href="Gui.htm#Submit">Gui Submit</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ë©´, ì½˜íŠ¸ë¡¤ì˜ <a href="Gui.htm#var">ì—°ê´€ ì¶œë ¥ ë³€ìˆ˜</a>ê°€ (ìžˆë‹¤ë©´) í˜„ìž¬ ì„ íƒëœ íƒ­ì˜ ì´ë¦„ì„ ë°›ìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ê·¸ ì½˜íŠ¸ë¡¤ì— <a href="Gui.htm#AltSubmit">AltSubmit</a> íŠ¹ì„±ì´ ìžˆë‹¤ë©´, ê·¸ ì¶œë ¥ ë³€ìˆ˜ëŠ” ëŒ€ì‹ ì— íƒ­ì˜ ìœ„ì¹˜ë¥¼ ë°›ìŠµë‹ˆë‹¤ (ì²«ë²ˆì§¸ íƒ­ì€ 1ì´ê³ , ë‘ ë²ˆì§¸ëŠ” 2ì´ê³ , ë“±ë“±.).</p>
 <p>
-<code><strong>g</strong>MySubroutine</code>°ú °°Àº <a href="Gui.htm#label">g-¶óº§</a>À» ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é <em>MySubroutine</em> ¶óº§ÀÌ »ç¿ëÀÚ°¡ »õ ÅÇÀ¸·Î º¯°æÇÒ ¶§¸¶´Ù ÀÚµ¿À¸·Î ±âµ¿µË´Ï´Ù. ÅÇ ÄÜÆ®·Ñ¿¡ <a href="Gui.htm#label">g-¶óº§</a>°ú <a href="Gui.htm#var">Ãâ·Â º¯¼ö</a>°¡ µÑ ´Ù ÀÖ´Ù¸é, »ç¿ëÀÚ°¡ »õ ÅÇÀ¸·Î ÀüÈ¯ÇÒ ¶§¸¶´Ù, Ãâ·Â º¯¼ö´Â ÀÌÀü¿¡ ¼±ÅÃµÈ ÅÇ ÀÌ¸§ÀÌ ¼³Á¤µË´Ï´Ù (¶Ç´Â <a href="Gui.htm#AltSubmit">AltSubmit</a>ÀÇ °æ¿ì¶ó¸é ¹øÈ£°¡ ¼³Á¤µË´Ï´Ù).</p>
+<code><strong>g</strong>MySubroutine</code>ê³¼ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì„ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ <em>MySubroutine</em> ë¼ë²¨ì´ ì‚¬ìš©ìžê°€ ìƒˆ íƒ­ìœ¼ë¡œ ë³€ê²½í•  ë•Œë§ˆë‹¤ ìžë™ìœ¼ë¡œ ê¸°ë™ë©ë‹ˆë‹¤. íƒ­ ì½˜íŠ¸ë¡¤ì— <a href="Gui.htm#label">g-ë¼ë²¨</a>ê³¼ <a href="Gui.htm#var">ì¶œë ¥ ë³€ìˆ˜</a>ê°€ ë‘˜ ë‹¤ ìžˆë‹¤ë©´, ì‚¬ìš©ìžê°€ ìƒˆ íƒ­ìœ¼ë¡œ ì „í™˜í•  ë•Œë§ˆë‹¤, ì¶œë ¥ ë³€ìˆ˜ëŠ” ì´ì „ì— ì„ íƒëœ íƒ­ ì´ë¦„ì´ ì„¤ì •ë©ë‹ˆë‹¤ (ë˜ëŠ” <a href="Gui.htm#AltSubmit">AltSubmit</a>ì˜ ê²½ìš°ë¼ë©´ ë²ˆí˜¸ê°€ ì„¤ì •ë©ë‹ˆë‹¤).</p>
 <p>
-<b>Å°º¸µå Ç×ÇØ</b>: »ç¿ëÀÚ´Â Control-PageDown/PageUpÀ» ´­·¯ ÅÇ ÄÜÆ®·ÑÀÇ ÆäÀÌÁö¿¡¼­ ÆäÀÌÁö·Î Ç×ÇØÇÒ ¼ö ÀÖ½À´Ï´Ù; Å°º¸µå ÃÊÁ¡ÀÌ ÅÇ ÄÜÆ®·Ñ¿¡ ¼ÓÇÏÁö ¾Ê´Â ÄÜÆ®·Ñ¿¡ ÀÖ´Ù¸é, ±× Ã¢ÀÇ Ã¹ ÅÇ ÄÜÆ®·Ñ·Î ÃÊÁ¡ÀÌ ÀÌµ¿ÇÕ´Ï´Ù. Control-Tab ±×¸®°í Control-Shift-TabÀ» »ç¿ëÇÒ ¼öµµ ÀÖ½À´Ï´Ù. ´Ü, ÇöÀç ÃÊÁ¡ÀÌ ÀÖ´Â ÄÜÆ®·ÑÀÌ ¿©·¯-ÁÙ ÆíÁý ÄÜÆ®·ÑÀÌ¶ó¸é Àß ÀÛµ¿ÇÏÁö ¾Ê½À´Ï´Ù.</p>
+<b>í‚¤ë³´ë“œ í•­í•´</b>: ì‚¬ìš©ìžëŠ” Control-PageDown/PageUpì„ ëˆŒëŸ¬ íƒ­ ì½˜íŠ¸ë¡¤ì˜ íŽ˜ì´ì§€ì—ì„œ íŽ˜ì´ì§€ë¡œ í•­í•´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤; í‚¤ë³´ë“œ ì´ˆì ì´ íƒ­ ì½˜íŠ¸ë¡¤ì— ì†í•˜ì§€ ì•ŠëŠ” ì½˜íŠ¸ë¡¤ì— ìžˆë‹¤ë©´, ê·¸ ì°½ì˜ ì²« íƒ­ ì½˜íŠ¸ë¡¤ë¡œ ì´ˆì ì´ ì´ë™í•©ë‹ˆë‹¤. Control-Tab ê·¸ë¦¬ê³  Control-Shift-Tabì„ ì‚¬ìš©í•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤. ë‹¨, í˜„ìž¬ ì´ˆì ì´ ìžˆëŠ” ì½˜íŠ¸ë¡¤ì´ ì—¬ëŸ¬-ì¤„ íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì´ë¼ë©´ ìž˜ ìž‘ë™í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-°¢ Ã¢Àº ÃÖ´ë 255 ÅÇ ÄÜÆ®·ÑÀ» °¡Áú ¼ö ÀÖ½À´Ï´Ù. °¢ ÅÇ ÄÜÆ®·ÑÀº 256 ÅÇ (ÆäÀÌÁö) ÀÌ»óÀ» °¡Áú ¼ö ¾ø½À´Ï´Ù. °Ô´Ù°¡, ÅÇ ÄÜÆ®·ÑÀº ¶Ç´Ù¸¥ ÅÇ ÄÜÆ®·ÑÀ» ´ãÀ» ¼ö ¾ø½À´Ï´Ù.</p>
+ê° ì°½ì€ ìµœëŒ€ 255 íƒ­ ì½˜íŠ¸ë¡¤ì„ ê°€ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê° íƒ­ ì½˜íŠ¸ë¡¤ì€ 256 íƒ­ (íŽ˜ì´ì§€) ì´ìƒì„ ê°€ì§ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, íƒ­ ì½˜íŠ¸ë¡¤ì€ ë˜ë‹¤ë¥¸ íƒ­ ì½˜íŠ¸ë¡¤ì„ ë‹´ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</p>
 
-<h3>Tab ¿É¼Ç</h3>
+<h3>Tab ì˜µì…˜</h3>
 <p>
-<strong>Choose</strong>: <a href="#ChooseTab">À§</a> ÂüÁ¶.</p>
-<p><strong>-Background</strong> (¸¶ÀÌ³Ê½º ´ÙÀ½¿¡ ´Ü¾î Background): <a href="Gui.htm#Color">Ã¢ÀÇ ¸ÂÃã ¹è°æ»ö</a>À» ¿À¹ö¶óÀÌµå ÇÏ°í ½Ã½ºÅÛÀÇ ±âº» ÅÇ ÄÜÆ®·ÑÀ» »ç¿ëÇÕ´Ï´Ù. <code>+Theme -Background</code>¸¦ ÁöÁ¤ÇÏ¸é ÅÇ ÄÜÆ®·ÑÀÌ ÇöÀç ¹ÙÅÁÈ­¸é Å×¸¶¸¦ ÁØ¼öÇÏµµ·Ï ¸¸µé ¼ö ÀÖ½À´Ï´Ù. ±×·¸Áö¸¸, ´ëºÎºÐÀÇ ÄÜÆ®·Ñ À¯ÇüÀº ±×·± ÅÇ ÄÜÆ®·Ñ ¾È¿¡¼­ ÀÌ»óÇÏ°Ô º¸ÀÏ °ÍÀÔ´Ï´Ù. ¿Ö³ÄÇÏ¸é ¹è°æ»öÀÌ ÅÇ ÄÜÆ®·ÑÀÇ ¹è°æ»ö°ú ¾î¿ï¸®Áö ¾Ê±â ¶§¹®ÀÔ´Ï´Ù. ¾î¶² ÄÜÆ®·Ñ À¯Çü¿¡ ´ëÇØ¼­´Â BackgroundTransÀ» ¿É¼Ç¿¡ Ãß°¡ÇÏ¸é ÀÌ ¹®Á¦¸¦ ÇØ°áÇÒ ¼ö ÀÖ½À´Ï´Ù (¿¹¸¦ µé¾î <a href="#Text">Text</a>).</p>
+<strong>Choose</strong>: <a href="#ChooseTab">ìœ„</a> ì°¸ì¡°.</p>
+<p><strong>-Background</strong> (ë§ˆì´ë„ˆìŠ¤ ë‹¤ìŒì— ë‹¨ì–´ Background): <a href="Gui.htm#Color">ì°½ì˜ ë§žì¶¤ ë°°ê²½ìƒ‰</a>ì„ ì˜¤ë²„ë¼ì´ë“œ í•˜ê³  ì‹œìŠ¤í…œì˜ ê¸°ë³¸ íƒ­ ì½˜íŠ¸ë¡¤ì„ ì‚¬ìš©í•©ë‹ˆë‹¤. <code>+Theme -Background</code>ë¥¼ ì§€ì •í•˜ë©´ íƒ­ ì½˜íŠ¸ë¡¤ì´ í˜„ìž¬ ë°”íƒ•í™”ë©´ í…Œë§ˆë¥¼ ì¤€ìˆ˜í•˜ë„ë¡ ë§Œë“¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ëŒ€ë¶€ë¶„ì˜ ì½˜íŠ¸ë¡¤ ìœ í˜•ì€ ê·¸ëŸ° íƒ­ ì½˜íŠ¸ë¡¤ ì•ˆì—ì„œ ì´ìƒí•˜ê²Œ ë³´ì¼ ê²ƒìž…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ë°°ê²½ìƒ‰ì´ íƒ­ ì½˜íŠ¸ë¡¤ì˜ ë°°ê²½ìƒ‰ê³¼ ì–´ìš¸ë¦¬ì§€ ì•Šê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ì–´ë–¤ ì½˜íŠ¸ë¡¤ ìœ í˜•ì— ëŒ€í•´ì„œëŠ” BackgroundTransì„ ì˜µì…˜ì— ì¶”ê°€í•˜ë©´ ì´ ë¬¸ì œë¥¼ í•´ê²°í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì˜ˆë¥¼ ë“¤ì–´ <a href="#Text">Text</a>).</p>
 <p>
-<strong>Buttons</strong>: ÀÏ·ÃÀÇ ÅÇÀÌ ¾Æ´Ï¶ó ÀÏ·ÃÀÇ ¹öÆ°µéÀ» ÄÜÆ®·Ñ »ó´Ü¿¡ »ý¼ºÇÕ´Ï´Ù (ÀÌ °æ¿ì, ±âº»ÀûÀ¸·Î Å×µÎ¸®°¡ ¾ø½À´Ï´Ù. ¿Ö³ÄÇÏ¸é º¸¿©ÁÖ±â ±¸¿ª¿¡ ÀüÇüÀûÀ¸·Î ÄÜÆ®·ÑÀÌ µé¾î ÀÖÁö ¾Ê±â ¶§¹®ÀÔ´Ï´Ù).</p>
+<strong>Buttons</strong>: ì¼ë ¨ì˜ íƒ­ì´ ì•„ë‹ˆë¼ ì¼ë ¨ì˜ ë²„íŠ¼ë“¤ì„ ì½˜íŠ¸ë¡¤ ìƒë‹¨ì— ìƒì„±í•©ë‹ˆë‹¤ (ì´ ê²½ìš°, ê¸°ë³¸ì ìœ¼ë¡œ í…Œë‘ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ ë³´ì—¬ì£¼ê¸° êµ¬ì—­ì— ì „í˜•ì ìœ¼ë¡œ ì½˜íŠ¸ë¡¤ì´ ë“¤ì–´ ìžˆì§€ ì•Šê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤).</p>
 <p>
-<strong>Left/Right/Bottom</strong>: ´ÙÀ½ ´Ü¾î Áß ÇÏ³ª¸¦ ÁöÁ¤ÇÏ¸é ÅÇÀ» »ó´Ü ´ë½Å¿¡ ¿ÞÂÊ, ¿À¸¥ÂÊ, ¾Æ·¡ÂÊ¿¡ ¹èÄ¡ÇÒ ¼ö ÀÖ½À´Ï´Ù. Left¿Í RightÀÇ  ÇÑ°è¿¡ °üÇÑ °ÍÀº <a href="../misc/Styles.htm#tcs_vertical">TCS_VERTICAL</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<strong>Left/Right/Bottom</strong>: ë‹¤ìŒ ë‹¨ì–´ ì¤‘ í•˜ë‚˜ë¥¼ ì§€ì •í•˜ë©´ íƒ­ì„ ìƒë‹¨ ëŒ€ì‹ ì— ì™¼ìª½, ì˜¤ë¥¸ìª½, ì•„ëž˜ìª½ì— ë°°ì¹˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. Leftì™€ Rightì˜  í•œê³„ì— ê´€í•œ ê²ƒì€ <a href="../misc/Styles.htm#tcs_vertical">TCS_VERTICAL</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<strong>-Wrap</strong>: ÅÇÀÌ ÇÑ ÇàÀ» ³Ñ°Ô Â÷ÁöÇÏÁö ¸øÇÏµµ·Ï ¸·½À´Ï´Ù (ÀÌ °æ¿ì ÅÇÀÌ ³Ê¹« ¸¹ÀÌ ¸ÂÃâ ¼ö ¾øÀ¸¸é, È­»ìÇ¥ ¹öÆ°ÀÌ ³ªÅ¸³ª »ç¿ëÀÚ´Â ±×¸¦ ¿­¾î ´õ ¸¹Àº ÅÇÀ» º¼ ¼ö ÀÖ½À´Ï´Ù).</p>
+<strong>-Wrap</strong>: íƒ­ì´ í•œ í–‰ì„ ë„˜ê²Œ ì°¨ì§€í•˜ì§€ ëª»í•˜ë„ë¡ ë§‰ìŠµë‹ˆë‹¤ (ì´ ê²½ìš° íƒ­ì´ ë„ˆë¬´ ë§Žì´ ë§žì¶œ ìˆ˜ ì—†ìœ¼ë©´, í™”ì‚´í‘œ ë²„íŠ¼ì´ ë‚˜íƒ€ë‚˜ ì‚¬ìš©ìžëŠ” ê·¸ë¥¼ ì—´ì–´ ë” ë§Žì€ íƒ­ì„ ë³¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤).</p>
 <p>
-ÄÜÆ®·Ñ ¾È¿¡ ÅØ½ºÆ® ÇàÀÇ °³¼ö¸¦ (¶Ç´Â ±×ÀÇ ³ôÀÌ¿Í ³Êºñ¸¦) ÁöÁ¤ÇÏ·Á¸é, <a href="Gui.htm#PosSize">ÄÜÆ®·ÑÀÇ À§Ä¡¿Í Å©±â º¯°æ</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+ì½˜íŠ¸ë¡¤ ì•ˆì— í…ìŠ¤íŠ¸ í–‰ì˜ ê°œìˆ˜ë¥¼ (ë˜ëŠ” ê·¸ì˜ ë†’ì´ì™€ ë„ˆë¹„ë¥¼) ì§€ì •í•˜ë ¤ë©´, <a href="Gui.htm#PosSize">ì½˜íŠ¸ë¡¤ì˜ ìœ„ì¹˜ì™€ í¬ê¸° ë³€ê²½</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<strong>ÅÇ ¾ÈÀÇ ¾ÆÀÌÄÜ</strong>: <a href="PostMessage.htm">SendMessage</a>¸¦ ÅëÇÏ¿© ¾ÆÀÌÄÜÀ» °¢ ÅÇÀÇ ÀÌ¸§/ÅØ½ºÆ® ¿·¿¡ º¸¿©ÁÙ ¼ö ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº Æ÷·³ ÁÖÁ¦ <a href="http://www.autohotkey.com/forum/topic6060.html">ÅÇ ¾ÈÀÇ ¾ÆÀÌÄÜ</a>¿¡¼­ ´Ù·ì´Ï´Ù.</p>
+<strong>íƒ­ ì•ˆì˜ ì•„ì´ì½˜</strong>: <a href="PostMessage.htm">SendMessage</a>ë¥¼ í†µí•˜ì—¬ ì•„ì´ì½˜ì„ ê° íƒ­ì˜ ì´ë¦„/í…ìŠ¤íŠ¸ ì˜†ì— ë³´ì—¬ì¤„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ê²ƒì€ í¬ëŸ¼ ì£¼ì œ <a href="http://www.autohotkey.com/forum/topic6060.html">íƒ­ ì•ˆì˜ ì•„ì´ì½˜</a>ì—ì„œ ë‹¤ë£¹ë‹ˆë‹¤.</p>
 
 <h2 id="StatusBar">StatusBar<span class="ver">[v1.0.44+]</span></h2>
 <p>
-¼³¸í: Ã¢ÀÇ ÇÏ´Ü¿¡ ºÎÂøµÇ´Â ÇÑ ÇàÀÇ ÅØ½ºÆ® ±×¸®°í/¶Ç´Â ¾ÆÀÌÄÜµé, ÀüÇüÀûÀ¸·Î »óÈ² º¯È­¸¦ º¸°íÇÏ´Â µ¥ »ç¿ëµË´Ï´Ù. ¿¹Á¦:</p>
+ì„¤ëª…: ì°½ì˜ í•˜ë‹¨ì— ë¶€ì°©ë˜ëŠ” í•œ í–‰ì˜ í…ìŠ¤íŠ¸ ê·¸ë¦¬ê³ /ë˜ëŠ” ì•„ì´ì½˜ë“¤, ì „í˜•ì ìœ¼ë¡œ ìƒí™© ë³€í™”ë¥¼ ë³´ê³ í•˜ëŠ” ë° ì‚¬ìš©ë©ë‹ˆë‹¤. ì˜ˆì œ:</p>
 
-<pre>Gui, Add, StatusBar,, »óÅÂ ¹ÙÀÇ ½ÃÀÛ ÅØ½ºÆ® (»ý·«ÇÏ¸é ºó Ã¤·Î ½ÃÀÛÇÔ).
-SB_SetText(&quot;ÇöÀç &quot; . RowCount . &quot; ÇàÀÌ ¼±ÅÃµÇ¾ú½À´Ï´Ù.&quot;)</pre>
+<pre>Gui, Add, StatusBar,, ìƒíƒœ ë°”ì˜ ì‹œìž‘ í…ìŠ¤íŠ¸ (ìƒëžµí•˜ë©´ ë¹ˆ ì±„ë¡œ ì‹œìž‘í•¨).
+SB_SetText(&quot;í˜„ìž¬ &quot; . RowCount . &quot; í–‰ì´ ì„ íƒë˜ì—ˆìŠµë‹ˆë‹¤.&quot;)</pre>
 <p>
-»óÅÂ¹ÙÀÇ °¡Àå °£´ÜÇÑ »ç¿ë¹ýÀº ¹«¾ð°¡ ¹Ù²ð ¶§¸¶´Ù »ç¿ëÀÚ¿¡°Ô º¸°íÇØ¾ß ÇÑ´Ù¸é <a href="#SB_SetText">SB_SetText()</a>¸¦ È£ÃâÇÏ´Â °ÍÀÔ´Ï´Ù. ¿©·¯ Á¤º¸¸¦ º¸°íÇØ¾ß ÇÑ´Ù¸é, <a href="#SB_SetParts">SB_SetParts()</a>¸¦ ÅëÇÏ¿© ¹Ù¸¦ ¿©·¯ ±¸¿ªÀ¸·Î ³ª´©½Ê½Ã¿À. ¾ÆÀÌÄÜÀ» ¹Ù¿¡ º¸¿©ÁÖ·Á¸é, <a href="#SB_SetIcon">SB_SetIcon()</a>¸¦ È£ÃâÇÏ½Ê½Ã¿À.</p>
+ìƒíƒœë°”ì˜ ê°€ìž¥ ê°„ë‹¨í•œ ì‚¬ìš©ë²•ì€ ë¬´ì–¸ê°€ ë°”ë€” ë•Œë§ˆë‹¤ ì‚¬ìš©ìžì—ê²Œ ë³´ê³ í•´ì•¼ í•œë‹¤ë©´ <a href="#SB_SetText">SB_SetText()</a>ë¥¼ í˜¸ì¶œí•˜ëŠ” ê²ƒìž…ë‹ˆë‹¤. ì—¬ëŸ¬ ì •ë³´ë¥¼ ë³´ê³ í•´ì•¼ í•œë‹¤ë©´, <a href="#SB_SetParts">SB_SetParts()</a>ë¥¼ í†µí•˜ì—¬ ë°”ë¥¼ ì—¬ëŸ¬ êµ¬ì—­ìœ¼ë¡œ ë‚˜ëˆ„ì‹­ì‹œì˜¤. ì•„ì´ì½˜ì„ ë°”ì— ë³´ì—¬ì£¼ë ¤ë©´, <a href="#SB_SetIcon">SB_SetIcon()</a>ë¥¼ í˜¸ì¶œí•˜ì‹­ì‹œì˜¤.</p>
 <p>
-´ÙÀ½ÀÇ ¸ðµç StatusBar ÇÔ¼öµéÀº ÇöÀç ¾²·¹µåÀÇ <a href="Gui.htm#DefaultWin">±âº» GUI Ã¢</a>¿¡ ÀÛµ¿ÇÕ´Ï´Ù (ÀÌ´Â <a href="Gui.htm#Default"><code>Gui, 2:Default</code></a>¸¦ ÅëÇÏ¿© ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù). ±âº» Ã¢ÀÌ Á¸ÀçÇÏÁö ¾Ê°Å³ª »óÅÂ ¹Ù°¡ ¾øÀ¸¸é, ¸ðµç SB ÇÔ¼öµéÀº 0À» µ¹·ÁÁÖ¾î ¹®Á¦°¡ ÀÖÀ½À» ¾Ë¸³´Ï´Ù.</p>
+ë‹¤ìŒì˜ ëª¨ë“  StatusBar í•¨ìˆ˜ë“¤ì€ í˜„ìž¬ ì“°ë ˆë“œì˜ <a href="Gui.htm#DefaultWin">ê¸°ë³¸ GUI ì°½</a>ì— ìž‘ë™í•©ë‹ˆë‹¤ (ì´ëŠ” <a href="Gui.htm#Default"><code>Gui, 2:Default</code></a>ë¥¼ í†µí•˜ì—¬ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤). ê¸°ë³¸ ì°½ì´ ì¡´ìž¬í•˜ì§€ ì•Šê±°ë‚˜ ìƒíƒœ ë°”ê°€ ì—†ìœ¼ë©´, ëª¨ë“  SB í•¨ìˆ˜ë“¤ì€ 0ì„ ëŒë ¤ì£¼ì–´ ë¬¸ì œê°€ ìžˆìŒì„ ì•Œë¦½ë‹ˆë‹¤.</p>
 
 <h3><a name="SB_SetText"></a>SB_SetText(NewText [, PartNumber, Style])</h3>
 <p>
-»óÅÂ ¹ÙÀÇ ÁöÁ¤µÈ ºÎºÐ¿¡ <em>NewText</em>¸¦ º¸¿©ÁÝ´Ï´Ù. <em>PartNumber</em>¸¦ »ý·«ÇÏ¸é, ±âº»°ªÀº 1ÀÔ´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é, 1°ú 256 »çÀÌÀÇ Á¤¼ö¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. <em>Style</em>À» »ý·«ÇÏ¸é, ±âº»°ªÀº 0ÀÔ´Ï´Ù. ±âº»À¸·Î ¹Ù°¡ µé¾î°¡ º¸ÀÌ°Ô ¸¸µå´Â ÀüÅëÀûÀÎ Å×µÎ¸®¸¦ »ç¿ëÇÕ´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é,  1À» ÁöÁ¤ÇÏ¸é Å×Åõ¸®°¡ ¾ø°í 2¸¦ ÁöÁ¤ÇÏ¸é ¹Ù°¡ Æ¢¾î ³ª¿À°Ô º¸ÀÌ°Ô ¸¸µå´Â Å×Åõ¸®¸¦ °¡Áý´Ï´Ù. ¸¶Áö¸·À¸·Î, <em>NewText</em>ÀÇ ¾îµð¿¡³ª ÃÖ´ë µÎ °³ÀÇ ÅÇ ¹®ÀÚ (`t)°¡ ³ªÅ¸³¯ ¼ö ÀÖ½À´Ï´Ù: Ã¹ ¹øÂ° ÅÇÀÇ ¿À¸¥ÂÊ¿¡ ÀÖ´Â °ÍµéÀº ¸ðµÎ ±× ºÎºÐ ¾È¿¡¼­ Áß¾Ó¿¡ Á¤·ÄµË´Ï´Ù. ±×¸®°í µÎ ¹øÂ° ÅÇ ¿À¸¥ÂÊÀ¸·Î ÀÖ´Â °ÍµéÀº ¸ðµÎ ¿À¸¥ÂÊ¿¡ Á¤·ÄµË´Ï´Ù. SB_SetText()´Â ¼º°øÇÏ¸é 1 ½ÇÆÐÇÏ¸é 0À» µ¹·ÁÁÝ´Ï´Ù.</p>
+ìƒíƒœ ë°”ì˜ ì§€ì •ëœ ë¶€ë¶„ì— <em>NewText</em>ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤. <em>PartNumber</em>ë¥¼ ìƒëžµí•˜ë©´, ê¸°ë³¸ê°’ì€ 1ìž…ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, 1ê³¼ 256 ì‚¬ì´ì˜ ì •ìˆ˜ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. <em>Style</em>ì„ ìƒëžµí•˜ë©´, ê¸°ë³¸ê°’ì€ 0ìž…ë‹ˆë‹¤. ê¸°ë³¸ìœ¼ë¡œ ë°”ê°€ ë“¤ì–´ê°€ ë³´ì´ê²Œ ë§Œë“œëŠ” ì „í†µì ì¸ í…Œë‘ë¦¬ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´,  1ì„ ì§€ì •í•˜ë©´ í…Œíˆ¬ë¦¬ê°€ ì—†ê³  2ë¥¼ ì§€ì •í•˜ë©´ ë°”ê°€ íŠ€ì–´ ë‚˜ì˜¤ê²Œ ë³´ì´ê²Œ ë§Œë“œëŠ” í…Œíˆ¬ë¦¬ë¥¼ ê°€ì§‘ë‹ˆë‹¤. ë§ˆì§€ë§‰ìœ¼ë¡œ, <em>NewText</em>ì˜ ì–´ë””ì—ë‚˜ ìµœëŒ€ ë‘ ê°œì˜ íƒ­ ë¬¸ìž (`t)ê°€ ë‚˜íƒ€ë‚  ìˆ˜ ìžˆìŠµë‹ˆë‹¤: ì²« ë²ˆì§¸ íƒ­ì˜ ì˜¤ë¥¸ìª½ì— ìžˆëŠ” ê²ƒë“¤ì€ ëª¨ë‘ ê·¸ ë¶€ë¶„ ì•ˆì—ì„œ ì¤‘ì•™ì— ì •ë ¬ë©ë‹ˆë‹¤. ê·¸ë¦¬ê³  ë‘ ë²ˆì§¸ íƒ­ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ìžˆëŠ” ê²ƒë“¤ì€ ëª¨ë‘ ì˜¤ë¥¸ìª½ì— ì •ë ¬ë©ë‹ˆë‹¤. SB_SetText()ëŠ” ì„±ê³µí•˜ë©´ 1 ì‹¤íŒ¨í•˜ë©´ 0ì„ ëŒë ¤ì¤ë‹ˆë‹¤.</p>
 
 <h3><a name="SB_SetParts"></a>SB_SetParts([Width1, Width2, ... Width255])</h3>
 <p>
-¹Ù¸¦ ÁöÁ¤µÈ ³Êºñ¿¡ ¸Â°Ô ¿©·¯ ºÎºÐÀ¸·Î ³ª´¯´Ï´Ù (ÇÈ¼¿ ´ÜÀ§). ¸ðµç ¸Å°³º¯¼ö¸¦ »ý·«ÇÏ¸é, ¹Ù´Â ÇÑ °³Â¥¸® ±ä ºÎºÐÀ¸·Î º¹±¸µË´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é, ¸¶Áö¸·Àº Á¦¿ÜÇÏ°í °¢ ºÎºÐÀÇ ³Êºñ¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À (¸¶Áö¸·Àº ¹ÙÀÇ ³ª¸ÓÁö ³Êºñ°¡ Ã¤¿ó´Ï´Ù). ¿¹¸¦ µé¾î, <code>SB_SetParts(50, 50)</code>´Â ¼¼ ºÎºÐÀ» »ý¼ºÇÕ´Ï´Ù: ¾ÕÂÊ µÎ ºÐÀº °¢°¢ ³Êºñ°¡ 50ÇÈ¼¿ÀÌ°í ¸¶Áö¸·Àº ³ª¸ÓÁö ³Êºñ°¡ ´Ù Ã¤¿ó´Ï´Ù. ÁÖÀÇ: SB_SetParts()·Î &quot;»èÁ¦µÈ&quot; ºÎºÐÀº ´ÙÀ½¿¡ º¸¿©Áú ¶§ ÅØ½ºÆ® ¾øÀÌ ½ÃÀÛÇÕ´Ï´Ù. (¶Ç, ±×ÀÇ ¾ÆÀÌÄÜµéÀº ÀÚµ¿À¸·Î ÆÄ±«µË´Ï´Ù). ¼º°øÇÏ¸é, SB_SetParts()´Â 0 ¾Æ´Ñ °ªÀ» µ¹·ÁÁÝ´Ï´Ù (»óÅÂ ¹ÙÀÇ <a href="ControlGet.htm#Hwnd">HWND</a>). ½ÇÆÐÇÏ¸é 0À» µ¹·ÁÁÝ´Ï´Ù.</p>
+ë°”ë¥¼ ì§€ì •ëœ ë„ˆë¹„ì— ë§žê²Œ ì—¬ëŸ¬ ë¶€ë¶„ìœ¼ë¡œ ë‚˜ëˆ•ë‹ˆë‹¤ (í”½ì…€ ë‹¨ìœ„). ëª¨ë“  ë§¤ê°œë³€ìˆ˜ë¥¼ ìƒëžµí•˜ë©´, ë°”ëŠ” í•œ ê°œì§œë¦¬ ê¸´ ë¶€ë¶„ìœ¼ë¡œ ë³µêµ¬ë©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ë§ˆì§€ë§‰ì€ ì œì™¸í•˜ê³  ê° ë¶€ë¶„ì˜ ë„ˆë¹„ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤ (ë§ˆì§€ë§‰ì€ ë°”ì˜ ë‚˜ë¨¸ì§€ ë„ˆë¹„ê°€ ì±„ì›ë‹ˆë‹¤). ì˜ˆë¥¼ ë“¤ì–´, <code>SB_SetParts(50, 50)</code>ëŠ” ì„¸ ë¶€ë¶„ì„ ìƒì„±í•©ë‹ˆë‹¤: ì•žìª½ ë‘ ë¶„ì€ ê°ê° ë„ˆë¹„ê°€ 50í”½ì…€ì´ê³  ë§ˆì§€ë§‰ì€ ë‚˜ë¨¸ì§€ ë„ˆë¹„ê°€ ë‹¤ ì±„ì›ë‹ˆë‹¤. ì£¼ì˜: SB_SetParts()ë¡œ &quot;ì‚­ì œëœ&quot; ë¶€ë¶„ì€ ë‹¤ìŒì— ë³´ì—¬ì§ˆ ë•Œ í…ìŠ¤íŠ¸ ì—†ì´ ì‹œìž‘í•©ë‹ˆë‹¤. (ë˜, ê·¸ì˜ ì•„ì´ì½˜ë“¤ì€ ìžë™ìœ¼ë¡œ íŒŒê´´ë©ë‹ˆë‹¤). ì„±ê³µí•˜ë©´, SB_SetParts()ëŠ” 0 ì•„ë‹Œ ê°’ì„ ëŒë ¤ì¤ë‹ˆë‹¤ (ìƒíƒœ ë°”ì˜ <a href="ControlGet.htm#Hwnd">HWND</a>). ì‹¤íŒ¨í•˜ë©´ 0ì„ ëŒë ¤ì¤ë‹ˆë‹¤.</p>
 
 <h3><a name="SB_SetIcon"></a>SB_SetIcon(Filename [, IconNumber, PartNumber])</h3>
 <p>
-ÀÛÀº ¾ÆÀÌÄÜÀ» ÁöÁ¤µÈ ºÎºÐ¿¡ ÀÖ´Â ÅØ½ºÆ® ¿ÞÂÊ¿¡ º¸¿©ÁÝ´Ï´Ù (<em>PartNumber</em>¸¦ »ý·«ÇÏ¸é, ±âº»°ªÀº 1ÀÔ´Ï´Ù). <em>Filename</em>Àº ¾ÆÀÌÄÜ (.ICO), Ä¿¼­ (.CUR), ¶Ç´Â ¿¡´Ï¸ÞÀÌ¼Ç Ä¿¼­ (.ANI) ÆÄÀÏÀÇ ÀÌ¸§ÀÔ´Ï´Ù (¾Ö´Ï¸ÞÀÌ¼Ç Ä¿¼­´Â ½ÇÁ¦·Î ¹Ù¿¡¼­ ¿òÁ÷ÀÓÀÌ ¾ø½À´Ï´Ù). ´Ù¸¥ ¾ÆÀÌÄÜ ÀÚ¿øÀ¸·Î´Â ´ÙÀ½ À¯ÇüÀÇ ÆÄÀÏÀÌ Æ÷ÇÔµË´Ï´Ù: EXE, DLL, CPL, SCR, ±×¸®°í ±âÅ¸ ¾ÆÀÌÄÜ ÀÚ¿øÀ» º¸À¯ÇÑ À¯Çüµé. ÆÄÀÏ¿¡ ÀÖ´Â Ã¹ ¹øÂ° ¾ÆÀÌÄÜ ¸»°í ¾ÆÀÌÄÜ  ±×·ìÀ» »ç¿ëÇÏ·Á¸é, ±×ÀÇ ¹øÈ£¸¦ <em>IconNumber</em>¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î, <code>SB_SetIcon(&quot;Shell32.dll&quot;, 2)</code>ÀÌ¸é µÎ ¹øÂ° ¾ÆÀÌÄÜ ±×·ìÀÇ ±âº» ¾ÆÀÌÄÜÀ» »ç¿ëÇÕ´Ï´Ù. <em>IconNumber</em>°¡ À½¼öÀÌ¸é, ±×ÀÇ Àý´ë°ªÀÌ ½ÇÇà ÆÄÀÏ ¾È¿¡ ÀÖ´Â ¾ÆÀÌÄÜÀÇ ÀÚ¿ø ID¶ó°í °£ÁÖµË´Ï´Ù. SB_SetIcon()´Â ¼º°øÇÏ¸é ±× ¾ÆÀÌÄÜÀÇ HICON¸¦ µ¹·ÁÁÝ´Ï´Ù. ½ÇÆÐÇÏ¸é 0À» µ¹·ÁÁÝ´Ï´Ù. HICONÀº ´ëºÎºÐÀÇ ½ºÅ©¸³Æ®¿¡¼­ ¹«½ÃÇØµµ ¾ÈÀüÇÑ ½Ã½ºÅÛ ÀÚ¿øÀÔ´Ï´Ù. ¿Ö³ÄÇÏ¸é »óÅÂ ¹Ù Ã¢ÀÌ ÆÄ±«µÉ ¶§ ÀÚµ¿À¸·Î ÆÄ±«µÇ±â ¶§¹®ÀÔ´Ï´Ù. ºñ½ÁÇÏ°Ô, SB_SetIcon()ÀÌ ¿¹Àü ¾ÆÀÌÄÜÀ» »õ ¾ÆÀÌÄÜÀ¸·Î ±³Ã¼ÇÏ¸é ÀÚµ¿À¸·Î ¿¹Àü ¾ÆÀÌÄÜÀÌ ÆÄ±«µË´Ï´Ù. ÀÌ´Â ´ÙÀ½°ú °°ÀÌ ÇÇÇÒ ¼ö ÀÖ½À´Ï´Ù:</p>
+ìž‘ì€ ì•„ì´ì½˜ì„ ì§€ì •ëœ ë¶€ë¶„ì— ìžˆëŠ” í…ìŠ¤íŠ¸ ì™¼ìª½ì— ë³´ì—¬ì¤ë‹ˆë‹¤ (<em>PartNumber</em>ë¥¼ ìƒëžµí•˜ë©´, ê¸°ë³¸ê°’ì€ 1ìž…ë‹ˆë‹¤). <em>Filename</em>ì€ ì•„ì´ì½˜ (.ICO), ì»¤ì„œ (.CUR), ë˜ëŠ” ì—ë‹ˆë©”ì´ì…˜ ì»¤ì„œ (.ANI) íŒŒì¼ì˜ ì´ë¦„ìž…ë‹ˆë‹¤ (ì• ë‹ˆë©”ì´ì…˜ ì»¤ì„œëŠ” ì‹¤ì œë¡œ ë°”ì—ì„œ ì›€ì§ìž„ì´ ì—†ìŠµë‹ˆë‹¤). ë‹¤ë¥¸ ì•„ì´ì½˜ ìžì›ìœ¼ë¡œëŠ” ë‹¤ìŒ ìœ í˜•ì˜ íŒŒì¼ì´ í¬í•¨ë©ë‹ˆë‹¤: EXE, DLL, CPL, SCR, ê·¸ë¦¬ê³  ê¸°íƒ€ ì•„ì´ì½˜ ìžì›ì„ ë³´ìœ í•œ ìœ í˜•ë“¤. íŒŒì¼ì— ìžˆëŠ” ì²« ë²ˆì§¸ ì•„ì´ì½˜ ë§ê³  ì•„ì´ì½˜  ê·¸ë£¹ì„ ì‚¬ìš©í•˜ë ¤ë©´, ê·¸ì˜ ë²ˆí˜¸ë¥¼ <em>IconNumber</em>ì— ì§€ì •í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´, <code>SB_SetIcon(&quot;Shell32.dll&quot;, 2)</code>ì´ë©´ ë‘ ë²ˆì§¸ ì•„ì´ì½˜ ê·¸ë£¹ì˜ ê¸°ë³¸ ì•„ì´ì½˜ì„ ì‚¬ìš©í•©ë‹ˆë‹¤. <em>IconNumber</em>ê°€ ìŒìˆ˜ì´ë©´, ê·¸ì˜ ì ˆëŒ€ê°’ì´ ì‹¤í–‰ íŒŒì¼ ì•ˆì— ìžˆëŠ” ì•„ì´ì½˜ì˜ ìžì› IDë¼ê³  ê°„ì£¼ë©ë‹ˆë‹¤. SB_SetIcon()ëŠ” ì„±ê³µí•˜ë©´ ê·¸ ì•„ì´ì½˜ì˜ HICONë¥¼ ëŒë ¤ì¤ë‹ˆë‹¤. ì‹¤íŒ¨í•˜ë©´ 0ì„ ëŒë ¤ì¤ë‹ˆë‹¤. HICONì€ ëŒ€ë¶€ë¶„ì˜ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ë¬´ì‹œí•´ë„ ì•ˆì „í•œ ì‹œìŠ¤í…œ ìžì›ìž…ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ìƒíƒœ ë°” ì°½ì´ íŒŒê´´ë  ë•Œ ìžë™ìœ¼ë¡œ íŒŒê´´ë˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, SB_SetIcon()ì´ ì˜ˆì „ ì•„ì´ì½˜ì„ ìƒˆ ì•„ì´ì½˜ìœ¼ë¡œ êµì²´í•˜ë©´ ìžë™ìœ¼ë¡œ ì˜ˆì „ ì•„ì´ì½˜ì´ íŒŒê´´ë©ë‹ˆë‹¤. ì´ëŠ” ë‹¤ìŒê³¼ ê°™ì´ í”¼í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 
 <pre>Gui +LastFound
 <a href="PostMessage.htm">SendMessage</a>, 0x40F, part_number - 1, my_hIcon, msctls_statusbar321  <em>; 0x40F is SB_SETICON.</em></pre>
 
 <h3><a name="SB_SetProgress"></a>SB_SetProgress()</h3>
 <p>
-»óÅÂ ¹Ù ¾È¿¡ ÇÁ·Î±×·¹½º ¹Ù¸¦ ¸¸µé°í Á¦¾îÇÕ´Ï´Ù. ÀÌ ±â´ÉÀº ´ÙÀ½¿¡¼­ ¾òÀ» ¼ö ÀÖ½À´Ï´Ù: <a href="http://www.autohotkey.com/forum/topic37754.html">www.autohotkey.com/forum/topic37754.html</a></p>
+ìƒíƒœ ë°” ì•ˆì— í”„ë¡œê·¸ë ˆìŠ¤ ë°”ë¥¼ ë§Œë“¤ê³  ì œì–´í•©ë‹ˆë‹¤. ì´ ê¸°ëŠ¥ì€ ë‹¤ìŒì—ì„œ ì–»ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤: <a href="http://www.autohotkey.com/forum/topic37754.html">www.autohotkey.com/forum/topic37754.html</a></p>
 
-<h3>G-Label °íÁö</h3>
+<h3>G-Label ê³ ì§€</h3>
 <p>
-<code><strong>g</strong>MySubroutine</code>°ú °°Àº <a href="Gui.htm#label">g-¶óº§</a>À» ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é »ç¿ëÀÚ°¡ ¹Ù¸¦ Å¬¸¯ÇÒ ¶§¸¶´Ù <em>MySubroutine</em> ¶óº§ÀÌ ÀÚµ¿À¸·Î ±âµ¿µË´Ï´Ù. ÀÌ ¼­ºê·çÆ¾Àº ³»Àå º¯¼ö <a href="../Variables.htm#Gui">A_Gui</a>¿Í <a href="../Variables.htm#GuiControl">A_GuiControl</a>¸¦ Âü°íÇÒ ¼ö ÀÖ½À´Ï´Ù. ´õ¿í Áß¿äÇÑ °ÍÀº <strong>A_GuiEvent</strong>¸¦ Âü°íÇÒ ¼ö ÀÖ´Ù´Â °ÍÀÎµ¥, ÀÌ ¾È¿¡ ´ÙÀ½ ¹®ÀÚ¿­ Áß ÇÏ³ª°¡ µé¾î ÀÖ½À´Ï´Ù (¹Ì·¡ ¹öÀü°úÀÇ È£È¯À» À§ÇØ, ½ºÅ©¸³Æ®´Â ÀÌ °ªµé¸¸ÀÌ °¡´ÉÇÑ À¯ÀÏÇÑ °ªÀÌ¶ó°í °£ÁÖÇÏ¸é ¾È µË´Ï´Ù):</p>
+<code><strong>g</strong>MySubroutine</code>ê³¼ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì„ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ì‚¬ìš©ìžê°€ ë°”ë¥¼ í´ë¦­í•  ë•Œë§ˆë‹¤ <em>MySubroutine</em> ë¼ë²¨ì´ ìžë™ìœ¼ë¡œ ê¸°ë™ë©ë‹ˆë‹¤. ì´ ì„œë¸Œë£¨í‹´ì€ ë‚´ìž¥ ë³€ìˆ˜ <a href="../Variables.htm#Gui">A_Gui</a>ì™€ <a href="../Variables.htm#GuiControl">A_GuiControl</a>ë¥¼ ì°¸ê³ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë”ìš± ì¤‘ìš”í•œ ê²ƒì€ <strong>A_GuiEvent</strong>ë¥¼ ì°¸ê³ í•  ìˆ˜ ìžˆë‹¤ëŠ” ê²ƒì¸ë°, ì´ ì•ˆì— ë‹¤ìŒ ë¬¸ìžì—´ ì¤‘ í•˜ë‚˜ê°€ ë“¤ì–´ ìžˆìŠµë‹ˆë‹¤ (ë¯¸ëž˜ ë²„ì „ê³¼ì˜ í˜¸í™˜ì„ ìœ„í•´, ìŠ¤í¬ë¦½íŠ¸ëŠ” ì´ ê°’ë“¤ë§Œì´ ê°€ëŠ¥í•œ ìœ ì¼í•œ ê°’ì´ë¼ê³  ê°„ì£¼í•˜ë©´ ì•ˆ ë©ë‹ˆë‹¤):</p>
 <ul>
-  <li><strong>Normal</strong>: »ç¿ëÀÚ°¡ ¹Ù¸¦ ¿ÞÅ¬¸¯ Çß½À´Ï´Ù. º¯¼ö A_EventInfo¿¡ ±× ºÎºÐ ¹øÈ£°¡ ´ã±é´Ï´Ù (±×·¸Áö¸¸, ºÎºÐ ¹øÈ£´Â »ç¿ëÀÚ°¡ ¹ÙÀÇ ¿À¸¥ÂÊ º¯¿¡ ÀÖ´Â Å©±â Á¶Àý ¼ÕÀâÀÌ ±ÙÃ³¸¦ Å¬¸¯ÇÏ¸é ¾ÆÁÖ Å« Á¤¼öÀÏ ¼ö ÀÖ½À´Ï´Ù).</li>
-  <li><strong>RightClick</strong>: »ç¿ëÀÚ°¡ ¹Ù¸¦ ¿ìÅ¬¸¯ Çß½À´Ï´Ù. º¯¼ö A_EventInfo¿¡ ºÎºÐ ¹øÈ£°¡ ´ã±é´Ï´Ù. ÁÖÀÇ: <a href="Gui.htm#GuiContextMenu">GuiContextMenu</a>´Â »óÅÂ ¹Ù¿¡ g-¶óº§ÀÌ ÀÖ´õ¶óµµ È£ÃâµÇÁö ¾Ê½À´Ï´Ù. ¶ÇÇÑ »ç¿ëÀÚ°¡ ¾î´À ºÎºÐÀ» Å¬¸¯Çß´ÂÁö ½ºÅ©¸³Æ®°¡ ¾Ë¾Æ¾ß ÇÒ ÇÊ¿ä°¡ ÀÖÀ» ¶§ (A_EventInfo) <a href="Gui.htm#GuiContextMenu">GuiContextMenu</a> ´ë½Å¿¡ g-¶óº§ÀÇ RightClick ÀÌº¥Æ®¸¦ »ç¿ëÇØ¾ß ÇÕ´Ï´Ù.</li>
-  <li><strong>DoubleClick</strong>: »ç¿ëÀÚ°¡ ¹Ù¸¦ ´õºíÅ¬¸¯ Çß½À´Ï´Ù. º¯¼ö A_EventInfo¿¡ ±× ºÎºÐ ¹øÈ£°¡ ´ã±é´Ï´Ù.</li>
-  <li><strong>R</strong>: »ç¿ëÀÚ°¡ ¹Ù¸¦ <em>´õºí-¿ìÅ¬¸¯</em> Çß½À´Ï´Ù. º¯¼ö A_EventInfo¿¡ ±× ºÎºÐ ¹øÈ£°¡ ´ã±é´Ï´Ù.</li>
+  <li><strong>Normal</strong>: ì‚¬ìš©ìžê°€ ë°”ë¥¼ ì™¼í´ë¦­ í–ˆìŠµë‹ˆë‹¤. ë³€ìˆ˜ A_EventInfoì— ê·¸ ë¶€ë¶„ ë²ˆí˜¸ê°€ ë‹´ê¹ë‹ˆë‹¤ (ê·¸ë ‡ì§€ë§Œ, ë¶€ë¶„ ë²ˆí˜¸ëŠ” ì‚¬ìš©ìžê°€ ë°”ì˜ ì˜¤ë¥¸ìª½ ë³€ì— ìžˆëŠ” í¬ê¸° ì¡°ì ˆ ì†ìž¡ì´ ê·¼ì²˜ë¥¼ í´ë¦­í•˜ë©´ ì•„ì£¼ í° ì •ìˆ˜ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤).</li>
+  <li><strong>RightClick</strong>: ì‚¬ìš©ìžê°€ ë°”ë¥¼ ìš°í´ë¦­ í–ˆìŠµë‹ˆë‹¤. ë³€ìˆ˜ A_EventInfoì— ë¶€ë¶„ ë²ˆí˜¸ê°€ ë‹´ê¹ë‹ˆë‹¤. ì£¼ì˜: <a href="Gui.htm#GuiContextMenu">GuiContextMenu</a>ëŠ” ìƒíƒœ ë°”ì— g-ë¼ë²¨ì´ ìžˆë”ë¼ë„ í˜¸ì¶œë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë˜í•œ ì‚¬ìš©ìžê°€ ì–´ëŠ ë¶€ë¶„ì„ í´ë¦­í–ˆëŠ”ì§€ ìŠ¤í¬ë¦½íŠ¸ê°€ ì•Œì•„ì•¼ í•  í•„ìš”ê°€ ìžˆì„ ë•Œ (A_EventInfo) <a href="Gui.htm#GuiContextMenu">GuiContextMenu</a> ëŒ€ì‹ ì— g-ë¼ë²¨ì˜ RightClick ì´ë²¤íŠ¸ë¥¼ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤.</li>
+  <li><strong>DoubleClick</strong>: ì‚¬ìš©ìžê°€ ë°”ë¥¼ ë”ë¸”í´ë¦­ í–ˆìŠµë‹ˆë‹¤. ë³€ìˆ˜ A_EventInfoì— ê·¸ ë¶€ë¶„ ë²ˆí˜¸ê°€ ë‹´ê¹ë‹ˆë‹¤.</li>
+  <li><strong>R</strong>: ì‚¬ìš©ìžê°€ ë°”ë¥¼ <em>ë”ë¸”-ìš°í´ë¦­</em> í–ˆìŠµë‹ˆë‹¤. ë³€ìˆ˜ A_EventInfoì— ê·¸ ë¶€ë¶„ ë²ˆí˜¸ê°€ ë‹´ê¹ë‹ˆë‹¤.</li>
 </ul>
-<h3>±Û²Ã ±×¸®°í »ö</h3>
+<h3>ê¸€ê¼´ ê·¸ë¦¬ê³  ìƒ‰</h3>
 <p>
-±Û²Ã Å©±â, ¸ð¾ç, ±×¸®°í ½ºÅ¸ÀÏÀ» (´Ù¸¥ º¸ÅëÀÇ ÄÜÆ®·ÑÃ³·³) <a href="Gui.htm#Font">Gui Font</a>¸¦ ÅëÇÏ¿© ¼³Á¤ÇÒ ¼ö ÀÖÁö¸¸, ÅØ½ºÆ® ÄÃ·¯´Â ¹Ù²Ü ¼ö ¾ø½À´Ï´Ù. ¶ÇÇÑ, <a href="Gui.htm#Color">Gui Color</a>¸¦ ÁØ¼öÇÏÁö ¾Ê½À´Ï´Ù; ´ë½Å¿¡, <em>Options</em>¿¡ ´Ü¾î <strong>Background</strong>¿Í Áï½Ã ÄÃ·¯ ÀÌ¸§ (<a href="Progress.htm#colors">ÄÃ·¯-Â÷Æ®</a> ÂüÁ¶) ¶Ç´Â RGB °ªÀ» ÁöÁ¤ÇÏ¸é (0x Á¢µÎ»ç´Â ¼±ÅÃÀû) »óÅÂ ¹ÙÀÇ ¹è°æ »öÀ» ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù. ¿¹Á¦: <code>BackgroundSilver</code>, <code>BackgroundFFDD99</code>, <code>BackgroundDefault</code>.</p>
+ê¸€ê¼´ í¬ê¸°, ëª¨ì–‘, ê·¸ë¦¬ê³  ìŠ¤íƒ€ì¼ì„ (ë‹¤ë¥¸ ë³´í†µì˜ ì½˜íŠ¸ë¡¤ì²˜ëŸ¼) <a href="Gui.htm#Font">Gui Font</a>ë¥¼ í†µí•˜ì—¬ ì„¤ì •í•  ìˆ˜ ìžˆì§€ë§Œ, í…ìŠ¤íŠ¸ ì»¬ëŸ¬ëŠ” ë°”ê¿€ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë˜í•œ, <a href="Gui.htm#Color">Gui Color</a>ë¥¼ ì¤€ìˆ˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤; ëŒ€ì‹ ì—, <em>Options</em>ì— ë‹¨ì–´ <strong>Background</strong>ì™€ ì¦‰ì‹œ ì»¬ëŸ¬ ì´ë¦„ (<a href="Progress.htm#colors">ì»¬ëŸ¬-ì°¨íŠ¸</a> ì°¸ì¡°) ë˜ëŠ” RGB ê°’ì„ ì§€ì •í•˜ë©´ (0x ì ‘ë‘ì‚¬ëŠ” ì„ íƒì ) ìƒíƒœ ë°”ì˜ ë°°ê²½ ìƒ‰ì„ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆì œ: <code>BackgroundSilver</code>, <code>BackgroundFFDD99</code>, <code>BackgroundDefault</code>.</p>
 
-<h3>StatusBar °¨Ãß±â</h3>
+<h3>StatusBar ê°ì¶”ê¸°</h3>
 <p>
-»óÅÂ ¹Ù´Â »ý¼º½Ã <code>Gui, Add, StatusBar, Hidden vMyStatusBar</code>¸¦ ÅëÇÏ¿© ¼ûÀ» ¼ö ÀÖ½À´Ï´Ù. »ý¼º ÈÄ¿¡ ¼û±â·Á¸é <code>GuiControl, Hide, MyStatusBar</code>¸¦ »ç¿ëÇÏ½Ê½Ã¿À. º¸¿©ÁÖ·Á¸é, <code>GuiControl, Show, MyStatusBar</code>¸¦ »ç¿ëÇÏ½Ê½Ã¿À. ÁÖÀÇ: »óÅÂ¹Ù¸¦ ¼û°Üµµ Ã¢ÀÇ ³ôÀÌ´Â ÁÙÁö ¾Ê½À´Ï´Ù. ÁÙÀÌ°í ½Í´Ù¸é, ´ÙÀ½ ¹æ¹ýÀÌ ½±½À´Ï´Ù: <code><a href="Gui.htm#AutoSize">Gui, Show, AutoSize</a></code>.</p>
+ìƒíƒœ ë°”ëŠ” ìƒì„±ì‹œ <code>Gui, Add, StatusBar, Hidden vMyStatusBar</code>ë¥¼ í†µí•˜ì—¬ ìˆ¨ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ìƒì„± í›„ì— ìˆ¨ê¸°ë ¤ë©´ <code>GuiControl, Hide, MyStatusBar</code>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤. ë³´ì—¬ì£¼ë ¤ë©´, <code>GuiControl, Show, MyStatusBar</code>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤. ì£¼ì˜: ìƒíƒœë°”ë¥¼ ìˆ¨ê²¨ë„ ì°½ì˜ ë†’ì´ëŠ” ì¤„ì§€ ì•ŠìŠµë‹ˆë‹¤. ì¤„ì´ê³  ì‹¶ë‹¤ë©´, ë‹¤ìŒ ë°©ë²•ì´ ì‰½ìŠµë‹ˆë‹¤: <code><a href="Gui.htm#AutoSize">Gui, Show, AutoSize</a></code>.</p>
 
-<h3>½ºÅ¸ÀÏ (º°·Î »ç¿ë ¾ÈµÊ)</h3>
+<h3>ìŠ¤íƒ€ì¼ (ë³„ë¡œ ì‚¬ìš© ì•ˆë¨)</h3>
 <p>
-<a href="../misc/Styles.htm#StatusBar">StatusBar ½ºÅ¸ÀÏ Å×ÀÌºí</a> ÂüÁ¶.</p>
+<a href="../misc/Styles.htm#StatusBar">StatusBar ìŠ¤íƒ€ì¼ í…Œì´ë¸”</a> ì°¸ì¡°.</p>
 
-<h3>¾Ë·ÁÁø ÇÑ°è</h3>
+<h3>ì•Œë ¤ì§„ í•œê³„</h3>
 <p>
-1) »óÅÂ ¹Ù¿Í ÁßÃ¸µÇ´Â ÄÜÆ®·ÑÀº Á¾Á¾ »óÅÂ ¹Ù À§¿¡ ±×·ÁÁú ¼ö ÀÖ½À´Ï´Ù. ÀÌ¸¦ ÇÇÇÏ´Â ÇÑ °¡Áö ¹æ¹ýÀº <a href="Gui.htm#GuiSize">GuiSize label</a>À» ÅëÇÏ¿© µ¿ÀûÀ¸·Î ±×·± ÄÜÆ®·ÑÀ» ÁÙÀÌ´Â °ÍÀÔ´Ï´Ù. 2) Ã¢ ´ç »óÅÂ ¹Ù°¡ ÇÏ³ª »ÓÀÌ¶ó´Â Á¦ÇÑÀÌ ÀÖ½À´Ï´Ù.</p>
+1) ìƒíƒœ ë°”ì™€ ì¤‘ì²©ë˜ëŠ” ì½˜íŠ¸ë¡¤ì€ ì¢…ì¢… ìƒíƒœ ë°” ìœ„ì— ê·¸ë ¤ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë¥¼ í”¼í•˜ëŠ” í•œ ê°€ì§€ ë°©ë²•ì€ <a href="Gui.htm#GuiSize">GuiSize label</a>ì„ í†µí•˜ì—¬ ë™ì ìœ¼ë¡œ ê·¸ëŸ° ì½˜íŠ¸ë¡¤ì„ ì¤„ì´ëŠ” ê²ƒìž…ë‹ˆë‹¤. 2) ì°½ ë‹¹ ìƒíƒœ ë°”ê°€ í•˜ë‚˜ ë¿ì´ë¼ëŠ” ì œí•œì´ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3><strong>¿¹Á¦</strong></h3>
+<h3><strong>ì˜ˆì œ</strong></h3>
 <p>
-<a href="TreeView.htm#Examples">TreeView ÆäÀÌÁö</a> ¾Æ·¡¿¡ ¿©·¯ ºÎºÐ »óÅÂ ¹Ù¸¦ ½Ã¿¬ÇÕ´Ï´Ù.</p>
+<a href="TreeView.htm#Examples">TreeView íŽ˜ì´ì§€</a> ì•„ëž˜ì— ì—¬ëŸ¬ ë¶€ë¶„ ìƒíƒœ ë°”ë¥¼ ì‹œì—°í•©ë‹ˆë‹¤.</p>
 
 <h2 id="ActiveX"><a name="IE_Control"></a>ActiveX <span class="ver">[v1.1.03+]</span></h2>
 <p>
-ActiveX ÄÄÆ÷³ÍÆ®´Â MSIE ºê¶ó¿ìÀú ÄÜÆ®·Ñ °°ÀÌ ´ÙÀ½ ¿¹Á¦¸¦ µû¶ó GUI Ã¢¿¡ ³»ÀåÇÒ ¼ö ÀÖ½À´Ï´Ù:</p>
+ActiveX ì»´í¬ë„ŒíŠ¸ëŠ” MSIE ë¸Œë¼ìš°ì € ì½˜íŠ¸ë¡¤ ê°™ì´ ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¼ GUI ì°½ì— ë‚´ìž¥í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 
-<pre>Gui Add, ActiveX, w980 h640 vWB, <a href="http://msdn.microsoft.com/en-us/library/aa752085">Shell.Explorer</a>  <em>; ¸¶Áö¸· ¸Å°³º¯¼ö´Â ActiveX ÄÄÆ÷³ÍÆ®ÀÇ ÀÌ¸§ÀÔ´Ï´Ù.</em>
-WB.<a href="http://msdn.microsoft.com/en-us/library/aa752093">Navigate</a>("http://ahkscript.org/boards/")  <em>; ÀÌ°ÍÀº À¥ ºê¶ó¿ìÀú ÄÜÆ®·Ñ¿¡ Á¾¼ÓÀûÀÔ´Ï´Ù.</em>
+<pre>Gui Add, ActiveX, w980 h640 vWB, <a href="http://msdn.microsoft.com/en-us/library/aa752085">Shell.Explorer</a>  <em>; ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ëŠ” ActiveX ì»´í¬ë„ŒíŠ¸ì˜ ì´ë¦„ìž…ë‹ˆë‹¤.</em>
+WB.<a href="http://msdn.microsoft.com/en-us/library/aa752093">Navigate</a>("http://ahkscript.org/boards/")  <em>; ì´ê²ƒì€ ì›¹ ë¸Œë¼ìš°ì € ì½˜íŠ¸ë¡¤ì— ì¢…ì†ì ìž…ë‹ˆë‹¤.</em>
 Gui Show</pre>
 <p>
-ÄÜÆ®·ÑÀÌ »ý¼ºµÉ ¶§, ActiveX °´Ã¼´Â ÄÜÆ®·ÑÀÇ ¿¬°ü º¯¼ö¿¡ ÀúÀåµË´Ï´Ù. <a href="GuiControlGet.htm">GuiControlGet</a>À» »ç¿ëÇÏ¸é ±× °´Ã¼¸¦ ¿­¶÷ÇÒ ¼öµµ ÀÖ½À´Ï´Ù.</p>
+ì½˜íŠ¸ë¡¤ì´ ìƒì„±ë  ë•Œ, ActiveX ê°ì²´ëŠ” ì½˜íŠ¸ë¡¤ì˜ ì—°ê´€ ë³€ìˆ˜ì— ì €ìž¥ë©ë‹ˆë‹¤. <a href="GuiControlGet.htm">GuiControlGet</a>ì„ ì‚¬ìš©í•˜ë©´ ê·¸ ê°ì²´ë¥¼ ì—´ëžŒí•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-ÀÌ °´Ã¼°¡ ³ëÃâÇÏ´Â ÀÌº¥Æ®¸¦ Ã³¸®ÇÏ·Á¸é, ¾Æ·¡¿¡ º¸¿©ÁÖ´Â ¹Ù¿Í °°ÀÌ <a href="ComObjConnect.htm">ComObjConnect</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À:</p>
+ì´ ê°ì²´ê°€ ë…¸ì¶œí•˜ëŠ” ì´ë²¤íŠ¸ë¥¼ ì²˜ë¦¬í•˜ë ¤ë©´, ì•„ëž˜ì— ë³´ì—¬ì£¼ëŠ” ë°”ì™€ ê°™ì´ <a href="ComObjConnect.htm">ComObjConnect</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤:</p>
 
 <pre>Gui Add, Edit, w930 r1 vURL, http://ahkscript.org/boards/
 Gui Add, Button, x+6 yp w44 Default, Go
 Gui Add, ActiveX, xm w980 h640 vWB, Shell.Explorer
-<strong>ComObjConnect</strong>(WB, WB_events)  <em>; WBÀÇ ÀÌº¥Æ®¸¦ WB_events Å¬·¡½º °´Ã¼¿¡ ¿¬°áÇÕ´Ï´Ù.</em>
+<strong>ComObjConnect</strong>(WB, WB_events)  <em>; WBì˜ ì´ë²¤íŠ¸ë¥¼ WB_events í´ëž˜ìŠ¤ ê°ì²´ì— ì—°ê²°í•©ë‹ˆë‹¤.</em>
 Gui Show
-<em>; °è¼ÓÇØ¼­ ÃÖÃÊÀÇ ÆäÀÌÁö¸¦ ÀûÀçÇÕ´Ï´Ù:</em>
+<em>; ê³„ì†í•´ì„œ ìµœì´ˆì˜ íŽ˜ì´ì§€ë¥¼ ì ìž¬í•©ë‹ˆë‹¤:</em>
 ButtonGo:
 Gui Submit, NoHide
 WB.Navigate(URL)
@@ -642,29 +641,29 @@ class WB_events
 {
     <a href="http://msdn.microsoft.com/en-us/library/aa768334">NavigateComplete2</a>(wb, NewURL)
     {
-        GuiControl,, URL, %NewURL%  <em>; URL ÆíÁý ÄÜÆ®·ÑÀ» ¾÷µ¥ÀÌÆ® ÇÕ´Ï´Ù.</em>
+        GuiControl,, URL, %NewURL%  <em>; URL íŽ¸ì§‘ ì½˜íŠ¸ë¡¤ì„ ì—…ë°ì´íŠ¸ í•©ë‹ˆë‹¤.</em>
     }
 }
 
 GuiClose:
 ExitApp</pre>
 <p>
-<a href="ComObjType.htm">ComObjType</a>À» »ç¿ëÇÏ¸é ÄÜÆ®·ÑÀÇ º¯¼ö¿¡ ÀúÀåµÈ °´Ã¼ÀÇ À¯ÇüÀ» ¾Ë¾Æ³¾ ¼ö ÀÖ½À´Ï´Ù.</p>
+<a href="ComObjType.htm">ComObjType</a>ì„ ì‚¬ìš©í•˜ë©´ ì½˜íŠ¸ë¡¤ì˜ ë³€ìˆ˜ì— ì €ìž¥ëœ ê°ì²´ì˜ ìœ í˜•ì„ ì•Œì•„ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
 <h2 id="Custom">Custom <span class="ver">[v1.1.10+]</span></h2>
 <p>
-AutoHotkey°¡ Á÷Á¢ÀûÀ¸·Î Áö¿øÇÏÁö ¾Ê´Â ÄÜÆ®·Ñµµ GUI Ã¢ ¾È¿¡ ÀÓº£µåÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÓº£µå ÇÏ·Á¸é, <code>Gui, Add</code>¿¡ <code>Class</code> ¿É¼ÇÀ» ÅëÇÏ¿© Win32 Å¬·¡½º ÀÌ¸§À» ÁöÁ¤ÇØ¾ß ÇÕ´Ï´Ù. ¿¹Á¦:</p>
-<pre>Gui, Add, Custom, ClassComboBoxEx32  <em>; <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb775740.aspx">ComboBoxEx</a> ÄÜÆ®·ÑÀ» Ãß°¡ÇÕ´Ï´Ù.</em>
-Gui, Add, Custom, ClassScintilla  <em>; <a href="http://scintilla.org/">Scintilla</a> ÄÜÆ®·ÑÀ» Ãß°¡ÇÕ´Ï´Ù.  SciLexer.dll ¶óÀÌºê·¯¸®¸¦ ¸ÕÀú ÀûÀçÇÑ ÈÄ¿¡ ÄÜÆ®·ÑÀ» Ãß°¡ÇÒ ¼ö ÀÖ½À´Ï´Ù.</em></pre>
+AutoHotkeyê°€ ì§ì ‘ì ìœ¼ë¡œ ì§€ì›í•˜ì§€ ì•ŠëŠ” ì½˜íŠ¸ë¡¤ë„ GUI ì°½ ì•ˆì— ìž„ë² ë“œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ìž„ë² ë“œ í•˜ë ¤ë©´, <code>Gui, Add</code>ì— <code>Class</code> ì˜µì…˜ì„ í†µí•˜ì—¬ Win32 í´ëž˜ìŠ¤ ì´ë¦„ì„ ì§€ì •í•´ì•¼ í•©ë‹ˆë‹¤. ì˜ˆì œ:</p>
+<pre>Gui, Add, Custom, ClassComboBoxEx32  <em>; <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb775740.aspx">ComboBoxEx</a> ì½˜íŠ¸ë¡¤ì„ ì¶”ê°€í•©ë‹ˆë‹¤.</em>
+Gui, Add, Custom, ClassScintilla  <em>; <a href="http://scintilla.org/">Scintilla</a> ì½˜íŠ¸ë¡¤ì„ ì¶”ê°€í•©ë‹ˆë‹¤.  SciLexer.dll ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ë¨¼ì € ì ìž¬í•œ í›„ì— ì½˜íŠ¸ë¡¤ì„ ì¶”ê°€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</em></pre>
 <p>
-<code>Gui, Add</code> ¶Ç´Â <code>GuiControl/Get</code>¸¦ ÅëÇÏ¿© ÅØ½ºÆ®¸¦ ÄÜÆ®·Ñ¿¡¼­ ¿­¶÷ÇÏ°Å³ª ±³Ã¼ÇÒ ¶§ ¿ÀÅäÇÖÅ°´Â Ç¥ÁØ À©µµ¿ìÁî ÄÜÆ®·Ñ ÅØ½ºÆ® ·çÆ¾À» »ç¿ëÇÕ´Ï´Ù.</p>
+<code>Gui, Add</code> ë˜ëŠ” <code>GuiControl/Get</code>ë¥¼ í†µí•˜ì—¬ í…ìŠ¤íŠ¸ë¥¼ ì½˜íŠ¸ë¡¤ì—ì„œ ì—´ëžŒí•˜ê±°ë‚˜ êµì²´í•  ë•Œ ì˜¤í† í•«í‚¤ëŠ” í‘œì¤€ ìœˆë„ìš°ì¦ˆ ì½˜íŠ¸ë¡¤ í…ìŠ¤íŠ¸ ë£¨í‹´ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.</p>
 <p>
-<strong>G-¶óº§ °íÁö</strong>: <code><strong>g</strong>MySubroutine</code>¿Í °°Àº <a href="Gui.htm#label">g-¶óº§</a>À» ÄÜÆ®·ÑÀÇ ¿É¼Ç¿¡ ³ª¿­ÇÏ¸é ±× ÄÜÆ®·ÑÀ¸·ÎºÎÅÍ µé¾î¿À´Â ÀÌº¥Æ®µéÀ» ³ªÆ÷ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ ¼­ºê·çÆ¾Àº ³»Àå º¯¼ö <a href="../Variables.htm#Gui">A_Gui</a>¿Í <a href="../Variables.htm#GuiControl">A_GuiControl</a>¸¦ Âü°íÇÒ ¼ö ÀÖ½À´Ï´Ù. ´õ¿í Áß¿äÇÑ °ÍÀº <strong>A_GuiEvent</strong>µµ Âü°íÇÒ ¼ö ÀÖ´Ù´Â °ÍÀÎµ¥, ±× ¾È¿¡ ´ÙÀ½ ¹®ÀÚ¿­ Áß ÇÏ³ª°¡ µé¾î ÀÖ½À´Ï´Ù (¹Ì·¡ ¹öÀü°úÀÇ È£È¯À» À§ÇØ, ½ºÅ©¸³Æ®´Â ÀÌ °ªµé¸¸ÀÌ À¯ÀÏÇÑ °ªÀÌ¶ó°í °£ÁÖÇÏ¸é ¾È µË´Ï´Ù):</p>
+<strong>G-ë¼ë²¨ ê³ ì§€</strong>: <code><strong>g</strong>MySubroutine</code>ì™€ ê°™ì€ <a href="Gui.htm#label">g-ë¼ë²¨</a>ì„ ì½˜íŠ¸ë¡¤ì˜ ì˜µì…˜ì— ë‚˜ì—´í•˜ë©´ ê·¸ ì½˜íŠ¸ë¡¤ìœ¼ë¡œë¶€í„° ë“¤ì–´ì˜¤ëŠ” ì´ë²¤íŠ¸ë“¤ì„ ë‚˜í¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ ì„œë¸Œë£¨í‹´ì€ ë‚´ìž¥ ë³€ìˆ˜ <a href="../Variables.htm#Gui">A_Gui</a>ì™€ <a href="../Variables.htm#GuiControl">A_GuiControl</a>ë¥¼ ì°¸ê³ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë”ìš± ì¤‘ìš”í•œ ê²ƒì€ <strong>A_GuiEvent</strong>ë„ ì°¸ê³ í•  ìˆ˜ ìžˆë‹¤ëŠ” ê²ƒì¸ë°, ê·¸ ì•ˆì— ë‹¤ìŒ ë¬¸ìžì—´ ì¤‘ í•˜ë‚˜ê°€ ë“¤ì–´ ìžˆìŠµë‹ˆë‹¤ (ë¯¸ëž˜ ë²„ì „ê³¼ì˜ í˜¸í™˜ì„ ìœ„í•´, ìŠ¤í¬ë¦½íŠ¸ëŠ” ì´ ê°’ë“¤ë§Œì´ ìœ ì¼í•œ ê°’ì´ë¼ê³  ê°„ì£¼í•˜ë©´ ì•ˆ ë©ë‹ˆë‹¤):</p>
 <ul>
-  <li><strong>Normal</strong>: <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms647591.aspx"><code>WM_COMMAND</code></a> ¸Þ½ÃÁö¸¦ ¹Þ¾Ò½À´Ï´Ù. <code>A_EventInfo</code>¿¡ ÄÜÆ®·Ñ¿¡-Á¤ÀÇµÈ °íÁö ÄÚµå°¡ ´ã±é´Ï´Ù ( C/C++¿¡¼­ <code>HIWORD(wParam)</code>¿Í µ¿µî).</li>
-  <li><strong>N</strong>: <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb775583.aspx"><code>WM_NOTIFY</code></a> ¸Þ½ÃÁö¸¦ ¹Þ¾Ò½À´Ï´Ù. <code>A_EventInfo</code>¿¡ ÄÜÆ®·Ñ °íÁö ±¸Á¶Ã¼¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ°¡ ´ã±é´Ï´Ù (<code>NMHDR</code>). <code>ErrorLevel</code>¿¡ ÇÒ´çÇØ¼­ 32-ºñÆ® ºÎÈ£ ÀÖ´Â Á¤¼ö °ªÀÌ ÄÜÆ®·Ñ¿¡ ¹ÝÈ¯µÉ ¼ö ÀÖ½À´Ï´Ù. (±âº»°ªÀ¸·Î, g-¶óº§ ¾²·¹µåÀÇ <code>ErrorLevel</code>Àº 0À¸·Î ¼³Á¤µË´Ï´Ù). ¹«È¿ÇÑ °ªÀº 0À¸·Î °£ÁÖµË´Ï´Ù.</li>
+  <li><strong>Normal</strong>: <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms647591.aspx"><code>WM_COMMAND</code></a> ë©”ì‹œì§€ë¥¼ ë°›ì•˜ìŠµë‹ˆë‹¤. <code>A_EventInfo</code>ì— ì½˜íŠ¸ë¡¤ì—-ì •ì˜ëœ ê³ ì§€ ì½”ë“œê°€ ë‹´ê¹ë‹ˆë‹¤ ( C/C++ì—ì„œ <code>HIWORD(wParam)</code>ì™€ ë™ë“±).</li>
+  <li><strong>N</strong>: <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb775583.aspx"><code>WM_NOTIFY</code></a> ë©”ì‹œì§€ë¥¼ ë°›ì•˜ìŠµë‹ˆë‹¤. <code>A_EventInfo</code>ì— ì½˜íŠ¸ë¡¤ ê³ ì§€ êµ¬ì¡°ì²´ë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°ê°€ ë‹´ê¹ë‹ˆë‹¤ (<code>NMHDR</code>). <code>ErrorLevel</code>ì— í• ë‹¹í•´ì„œ 32-ë¹„íŠ¸ ë¶€í˜¸ ìžˆëŠ” ì •ìˆ˜ ê°’ì´ ì½˜íŠ¸ë¡¤ì— ë°˜í™˜ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. (ê¸°ë³¸ê°’ìœ¼ë¡œ, g-ë¼ë²¨ ì“°ë ˆë“œì˜ <code>ErrorLevel</code>ì€ 0ìœ¼ë¡œ ì„¤ì •ë©ë‹ˆë‹¤). ë¬´íš¨í•œ ê°’ì€ 0ìœ¼ë¡œ ê°„ì£¼ë©ë‹ˆë‹¤.</li>
 </ul>
-<p>´ÙÀ½ ¿¹Á¦´Â <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb761374.aspx">IP ÁÖ¼Ò ÄÜÆ®·Ñ</a>À» Ãß°¡ÇÏ°í »ç¿ëÇÏ´Â ¹ýÀ» º¸¿©ÁÝ´Ï´Ù:</p>
+<p>ë‹¤ìŒ ì˜ˆì œëŠ” <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb761374.aspx">IP ì£¼ì†Œ ì½˜íŠ¸ë¡¤</a>ì„ ì¶”ê°€í•˜ê³  ì‚¬ìš©í•˜ëŠ” ë²•ì„ ë³´ì—¬ì¤ë‹ˆë‹¤:</p>
 
 <pre>Gui, Add, Custom, ClassSysIPAddress32 r1 w150 hwndhIPControl gIPControlEvent
 Gui, Add, Button, Default, OK
@@ -684,22 +683,22 @@ ExitApp
 IPControlEvent:
 if A_GuiEvent = Normal
 {
-    <em>; WM_COMMAND ¸Þ½ÃÁö¸¦ ¹Þ¾Ò½À´Ï´Ù.</em>
+    <em>; WM_COMMAND ë©”ì‹œì§€ë¥¼ ë°›ì•˜ìŠµë‹ˆë‹¤.</em>
 
     if (A_EventInfo = 0x0300)  <em>; EN_CHANGE</em>
         ToolTip Control changed!
 }
 else if A_GuiEvent = N
 {
-    <em>; WM_NOTIFY ¸Þ½ÃÁö¸¦ ¹Þ¾Ò½À´Ï´Ù.
+    <em>; WM_NOTIFY ë©”ì‹œì§€ë¥¼ ë°›ì•˜ìŠµë‹ˆë‹¤.
 
-    ; °íÁö ÄÚµå¸¦ ¾ò½À´Ï´Ù. º¸Åë ÀÌ ÇÊµå´Â UIntÀÌÁö¸¸  IP ÁÖ¼Ò ÄÜÆ®·ÑÀº
-    ; À½¼ö ÄÚµå¸¦ »ç¿ëÇÕ´Ï´Ù. ±×·¡¼­ ÆíÀÇ»ó ºÎÈ£ÀÖ´Â Á¤¼ö·Î ÀÐ½À´Ï´Ù.</em>
+    ; ê³ ì§€ ì½”ë“œë¥¼ ì–»ìŠµë‹ˆë‹¤. ë³´í†µ ì´ í•„ë“œëŠ” UIntì´ì§€ë§Œ  IP ì£¼ì†Œ ì½˜íŠ¸ë¡¤ì€
+    ; ìŒìˆ˜ ì½”ë“œë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤. ê·¸ëž˜ì„œ íŽ¸ì˜ìƒ ë¶€í˜¸ìžˆëŠ” ì •ìˆ˜ë¡œ ì½ìŠµë‹ˆë‹¤.</em>
     nmhdr_code := NumGet(A_EventInfo + 2*A_PtrSize, &quot;int&quot;)
     if (nmhdr_code != -860)  <em>; IPN_FIELDCHANGED</em>
         return
 
-    <em>; NMIPADDRESS ±¸Á¶Ã¼·ÎºÎÅÍ Á¤º¸¸¦ ÃßÃâÇÕ´Ï´Ù</em>
+    <em>; NMIPADDRESS êµ¬ì¡°ì²´ë¡œë¶€í„° ì •ë³´ë¥¼ ì¶”ì¶œí•©ë‹ˆë‹¤</em>
     iField := NumGet(A_EventInfo + 2*A_PtrSize + 4, &quot;int&quot;)
     iValue := NumGet(A_EventInfo + 2*A_PtrSize + 8, &quot;int&quot;)
     if iValue &gt;= 0
@@ -714,7 +713,7 @@ IPCtrlSetAddress(hControl, ipaddress)
     static WM_USER := 0x400
     static IPM_SETADDRESS := WM_USER + 101
 
-    <em>; SendMessage¿¡ »ç¿ëÇÏ±â À§ÇØ IP ÁÖ¼Ò¸¦ 32-ºñÆ® ¿öµå·Î ÆÑÇÕ´Ï´Ù.</em>
+    <em>; SendMessageì— ì‚¬ìš©í•˜ê¸° ìœ„í•´ IP ì£¼ì†Œë¥¼ 32-ë¹„íŠ¸ ì›Œë“œë¡œ íŒ©í•©ë‹ˆë‹¤.</em>
     ipaddrword := 0
     Loop, Parse, ipaddress, .
         ipaddrword := (ipaddrword * 256) + A_LoopField
@@ -731,7 +730,7 @@ IPCtrlGetAddress(hControl)
     return NumGet(addrword, 3, &quot;UChar&quot;) &quot;.&quot; NumGet(addrword, 2, &quot;UChar&quot;) &quot;.&quot; NumGet(addrword, 1, &quot;UChar&quot;) &quot;.&quot; NumGet(addrword, 0, &quot;UChar&quot;)
 }</pre>
 
-<h2>°ü·Ã Ç×¸ñ</h2>
+<h2>ê´€ë ¨ í•­ëª©</h2>
 <p><a href="ListView.htm">ListView</a>, <a href="TreeView.htm">TreeView</a>, <a href="Gui.htm">Gui</a>, <a href="GuiControl.htm">GuiControl</a>, <a href="GuiControlGet.htm">GuiControlGet</a>, <a href="Menu.htm">Menu</a></p>
 
 </body>

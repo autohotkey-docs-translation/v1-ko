@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>ControlClick</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,96 +11,96 @@
 
 <h1>ControlClick</h1>
 
-<p>¸¶¿ì½º ¹öÆ°ÀÌ³ª ¸¶¿ì½º ÈÙ ÀÌº¥Æ®¸¦ ÄÜÆ®·Ñ¿¡ º¸³À´Ï´Ù.</p>
+<p>ë§ˆìš°ìŠ¤ ë²„íŠ¼ì´ë‚˜ ë§ˆìš°ìŠ¤ íœ  ì´ë²¤íŠ¸ë¥¼ ì½˜íŠ¸ë¡¤ì— ë³´ëƒ…ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">ControlClick [, Control-or-Pos, WinTitle, WinText, WhichButton, ClickCount, Options, ExcludeTitle, ExcludeText]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Control-or-Pos</dt>
-  <dd><p>ÀÌ ¸Å°³º¯¼ö°¡ ºñ¾î ÀÖÀ¸¸é, ¸ñÇ¥ Ã¢ÀÇ ÃÖ»óÀ§ ÄÜÆ®·ÑÀÌ Å¬¸¯µË´Ï´Ù (¶Ç´Â ÄÜÆ®·ÑÀÌ ¾øÀ¸¸é ¸ñÇ¥ Ã¢ ÀÚÃ¼°¡ Å¬¸¯µË´Ï´Ù). ±×·¸Áö ¾ÊÀ¸¸é, ¾Æ·¡ÀÇ µÎ ¸ðµå Áß ÇÏ³ª°¡ »ç¿ëµË´Ï´Ù.</p>
+  <dd><p>ì´ ë§¤ê°œë³€ìˆ˜ê°€ ë¹„ì–´ ìžˆìœ¼ë©´, ëª©í‘œ ì°½ì˜ ìµœìƒìœ„ ì½˜íŠ¸ë¡¤ì´ í´ë¦­ë©ë‹ˆë‹¤ (ë˜ëŠ” ì½˜íŠ¸ë¡¤ì´ ì—†ìœ¼ë©´ ëª©í‘œ ì°½ ìžì²´ê°€ í´ë¦­ë©ë‹ˆë‹¤). ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ì•„ëž˜ì˜ ë‘ ëª¨ë“œ ì¤‘ í•˜ë‚˜ê°€ ì‚¬ìš©ë©ë‹ˆë‹¤.</p>
       <p>
-	  Mode 1 (Position): ¸ñÇ¥ Ã¢ÀÇ ÁÂ»ó ¸ð¼­¸®¿¡ »ó´ëÀûÀÎ X¿Í Y ÁÂÇ¥¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. X ÁÂÇ¥°¡ Y ÁÂÇ¥º¸´Ù ¸ÕÀú ³ª¿Í¾ß ÇÏ°í Àû¾îµµ ÇÏ³ªÀÇ ÅÇÀÌ³ª ½ºÆäÀÌ½º°¡ ±× »çÀÌ¿¡ ÀÖ¾î¾ß ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î: <code>X55 Y33</code>. ÁöÁ¤µÈ ÁÂÇ¥¿¡ ÄÜÆ®·ÑÀÌ ÀÖ´Ù¸é, ±× ÁÂÇ¥¿¡ Á¤È®ÇÏ°Ô Å¬¸¯ ÀÌº¥Æ®°¡ Àü¼ÛµË´Ï´Ù. ÄÜÆ®·ÑÀÌ ¾ø´Ù¸é, ¸ñÇ¥ Ã¢ ÀÚÃ¼¿¡ ±× ÀÌº¥Æ®°¡ Àü¼ÛµË´Ï´Ù (Ã¢ÀÇ ¼ºÁú¿¡ µû¶ó ¾Æ¹« È¿°ú°¡ ¾øÀ» ¼ö ÀÖ½À´Ï´Ù). ÁÖÀÇ: ÀÌ ¸ðµå¿¡¼­, <em>Options</em> ¸Å°³º¯¼öÀÇ X¿Í Y ¿É¼Ç ±âÈ£´Â ¹«½ÃµË´Ï´Ù.</p>      
+	  Mode 1 (Position): ëª©í‘œ ì°½ì˜ ì¢Œìƒ ëª¨ì„œë¦¬ì— ìƒëŒ€ì ì¸ Xì™€ Y ì¢Œí‘œë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. X ì¢Œí‘œê°€ Y ì¢Œí‘œë³´ë‹¤ ë¨¼ì € ë‚˜ì™€ì•¼ í•˜ê³  ì ì–´ë„ í•˜ë‚˜ì˜ íƒ­ì´ë‚˜ ìŠ¤íŽ˜ì´ìŠ¤ê°€ ê·¸ ì‚¬ì´ì— ìžˆì–´ì•¼ í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>X55 Y33</code>. ì§€ì •ëœ ì¢Œí‘œì— ì½˜íŠ¸ë¡¤ì´ ìžˆë‹¤ë©´, ê·¸ ì¢Œí‘œì— ì •í™•í•˜ê²Œ í´ë¦­ ì´ë²¤íŠ¸ê°€ ì „ì†¡ë©ë‹ˆë‹¤. ì½˜íŠ¸ë¡¤ì´ ì—†ë‹¤ë©´, ëª©í‘œ ì°½ ìžì²´ì— ê·¸ ì´ë²¤íŠ¸ê°€ ì „ì†¡ë©ë‹ˆë‹¤ (ì°½ì˜ ì„±ì§ˆì— ë”°ë¼ ì•„ë¬´ íš¨ê³¼ê°€ ì—†ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤). ì£¼ì˜: ì´ ëª¨ë“œì—ì„œ, <em>Options</em> ë§¤ê°œë³€ìˆ˜ì˜ Xì™€ Y ì˜µì…˜ ê¸°í˜¸ëŠ” ë¬´ì‹œë©ë‹ˆë‹¤.</p>      
       <p>
-	  Mode 2 (ClassNN ¶Ç´Â Text): ClassNN (ÄÜÆ®·ÑÀÇ Å¬·¡½ºÀÌ¸§°ú ½ÇÃ¼ ¹øÈ£) ¶Ç´Â ÄÜÆ®·ÑÀÇ ÀÌ¸§/ÅØ½ºÆ®¸¦ ÁöÁ¤ÇÏ½Ê½Ã¿À. µÑ ¸ðµÎ Window Spy·Î ¾Ë¾Æ³¾ ¼ö ÀÖ½À´Ï´Ù. ÀÌ¸§/ÅØ½ºÆ®¸¦ »ç¿ëÇÒ ¶§, ºÎÇÕÇÏ´Â Ã¢Àº <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>·Î °áÁ¤µË´Ï´Ù.</p>
+	  Mode 2 (ClassNN ë˜ëŠ” Text): ClassNN (ì½˜íŠ¸ë¡¤ì˜ í´ëž˜ìŠ¤ì´ë¦„ê³¼ ì‹¤ì²´ ë²ˆí˜¸) ë˜ëŠ” ì½˜íŠ¸ë¡¤ì˜ ì´ë¦„/í…ìŠ¤íŠ¸ë¥¼ ì§€ì •í•˜ì‹­ì‹œì˜¤. ë‘˜ ëª¨ë‘ Window Spyë¡œ ì•Œì•„ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë¦„/í…ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©í•  ë•Œ, ë¶€í•©í•˜ëŠ” ì°½ì€ <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>ë¡œ ê²°ì •ë©ë‹ˆë‹¤.</p>
       <p>
-	  ±âº»°ªÀ¸·Î ¸ðµå 2°¡ ¸ðµå 1º¸´Ù ¿ì¼± ¼øÀ§°¡ ³ô½À´Ï´Ù. 
+	  ê¸°ë³¸ê°’ìœ¼ë¡œ ëª¨ë“œ 2ê°€ ëª¨ë“œ 1ë³´ë‹¤ ìš°ì„  ìˆœìœ„ê°€ ë†’ìŠµë‹ˆë‹¤. 
 	  
-	  ¿¹¸¦ µé¾î, È¤½Ã¶óµµ ÇÑ ÄÜÆ®·ÑÀÇ ÅØ½ºÆ®³ª ClassNNÀÌ &quot;Xnnn Ynnn&quot; Çü½ÄÀÌ¶ó¸é, ±×·¯¸é Mode 2ÀÎ °ÍÃ³·³ ÀÛµ¿ÇÒ °ÍÀÔ´Ï´Ù. 
+	  ì˜ˆë¥¼ ë“¤ì–´, í˜¹ì‹œë¼ë„ í•œ ì½˜íŠ¸ë¡¤ì˜ í…ìŠ¤íŠ¸ë‚˜ ClassNNì´ &quot;Xnnn Ynnn&quot; í˜•ì‹ì´ë¼ë©´, ê·¸ëŸ¬ë©´ Mode 2ì¸ ê²ƒì²˜ëŸ¼ ìž‘ë™í•  ê²ƒìž…ë‹ˆë‹¤. 
 	  
-	  ÀÌ¸¦ ¿À¹ö¶óÀÌµåÇØ¼­ ¹«Á¶°Ç ¸ðµå 1À» »ç¿ëÇÏ·Á¸é, ´Ü¾î Pos¸¦ <em>Options</em>¿¡ ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ÁöÁ¤ÇÏ½Ê½Ã¿À: <code>ControlClick, x255 y152, WinTitle,,,, Pos</code>.</p>
+	  ì´ë¥¼ ì˜¤ë²„ë¼ì´ë“œí•´ì„œ ë¬´ì¡°ê±´ ëª¨ë“œ 1ì„ ì‚¬ìš©í•˜ë ¤ë©´, ë‹¨ì–´ Posë¥¼ <em>Options</em>ì— ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ì§€ì •í•˜ì‹­ì‹œì˜¤: <code>ControlClick, x255 y152, WinTitle,,,, Pos</code>.</p>
       <p>
-	  ÄÜÆ®·ÑÀÇ HWND (Ã¢ ÇÚµé)¿¡ ÀÛµ¿½ÃÅ°¶ó¸é, ÀÌ ¸Å°³º¯¼ö¸¦ ºó Ã¤·Î µÎ°í  <code>ahk_id %ControlHwnd%</code>¸¦ <em>WinTitle</em> ¸Å°³º¯¼ö¿¡ ÁöÁ¤ÇÏ½Ê½Ã¿À (ÀÌ°ÍÀº ¶ÇÇÑ ¼ûÀº Ã¢¿¡µµ ÀÛµ¿ÇÕ´Ï´Ù. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>°¡ ²¨Á® ÀÖ¾îµµ µË´Ï´Ù). ÄÜÆ®·ÑÀÇ HWND´Â ÀüÇüÀûÀ¸·Î<a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, ¶Ç´Â <a href="DllCall.htm">DllCall</a>À» ÅëÇÏ¿© ¿­¶÷µË´Ï´Ù.</p></dd>
+	  ì½˜íŠ¸ë¡¤ì˜ HWND (ì°½ í•¸ë“¤)ì— ìž‘ë™ì‹œí‚¤ë¼ë©´, ì´ ë§¤ê°œë³€ìˆ˜ë¥¼ ë¹ˆ ì±„ë¡œ ë‘ê³   <code>ahk_id %ControlHwnd%</code>ë¥¼ <em>WinTitle</em> ë§¤ê°œë³€ìˆ˜ì— ì§€ì •í•˜ì‹­ì‹œì˜¤ (ì´ê²ƒì€ ë˜í•œ ìˆ¨ì€ ì°½ì—ë„ ìž‘ë™í•©ë‹ˆë‹¤. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>ê°€ êº¼ì ¸ ìžˆì–´ë„ ë©ë‹ˆë‹¤). ì½˜íŠ¸ë¡¤ì˜ HWNDëŠ” ì „í˜•ì ìœ¼ë¡œ<a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, ë˜ëŠ” <a href="DllCall.htm">DllCall</a>ì„ í†µí•˜ì—¬ ì—´ëžŒë©ë‹ˆë‹¤.</p></dd>
 
   <dt>WinTitle</dt>
-  <dd><p>Ã¢ Á¦¸ñ ¶Ç´Â ¸ñÇ¥ Ã¢À» ½Äº°ÇÏ´Â ±âÅ¸ ±âÁØ. <a href="../misc/WinTitle.htm">WinTitle</a> ÂüÁ¶.</p></dd>
+  <dd><p>ì°½ ì œëª© ë˜ëŠ” ëª©í‘œ ì°½ì„ ì‹ë³„í•˜ëŠ” ê¸°íƒ€ ê¸°ì¤€. <a href="../misc/WinTitle.htm">WinTitle</a> ì°¸ì¡°.</p></dd>
 
   <dt>WinText</dt>
-  <dd><p>Á¸ÀçÇÏ¸é, ÀÌ ¸Å°³º¯¼ö´Â ¸ñÇ¥ Ã¢ ÅØ½ºÆ®ÀÇ ºÎ¹®ÀÚ¿­ÀÔ´Ï´Ù (Window Spy¿¡ ³ëÃâµÊ). ¼ûÀº ÅØ½ºÆ®´Â <a href="DetectHiddenText.htm">DetectHiddenText</a>°¡ ÄÑÁ® ÀÖ¾î¾ß Å½ÁöµË´Ï´Ù.</p></dd>
+  <dd><p>ì¡´ìž¬í•˜ë©´, ì´ ë§¤ê°œë³€ìˆ˜ëŠ” ëª©í‘œ ì°½ í…ìŠ¤íŠ¸ì˜ ë¶€ë¬¸ìžì—´ìž…ë‹ˆë‹¤ (Window Spyì— ë…¸ì¶œë¨). ìˆ¨ì€ í…ìŠ¤íŠ¸ëŠ” <a href="DetectHiddenText.htm">DetectHiddenText</a>ê°€ ì¼œì ¸ ìžˆì–´ì•¼ íƒì§€ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>WhichButton</dt>
-  <dd><p>Å¬¸¯ÇÒ ¹öÆ°: LEFT, RIGHT, MIDDLE (¶Ç´Â ±×³É °¢ Ã¹ ¹®ÀÚ). »ý·«ÇÏ°Å³ª ºñ¾î ÀÖÀ¸¸é,  LEFT ¹öÆ°ÀÌ »ç¿ëµË´Ï´Ù.</p>
-      <p>X1 (XButton1, ³× ¹øÂ° ¸¶¿ì½º ¹öÆ°) ±×¸®°í X2 (XButton2, ´Ù¼¸ ¹øÂ° ¸¶¿ì½º ¹öÆ°)µµ Áö¿øµË´Ï´Ù.</p>
-      <p>WheelUp (¶Ç´Â WU) ±×¸®°í WheelDown (¶Ç´Â WD)µµ Áö¿øµË´Ï´Ù. ÀÌ °æ¿ì, <em>ClickCount</em>´Â ÈÙÀ» µ¹¸± ´«±ÝÀÇ °³¼öÀÔ´Ï´Ù.</p>
-      <p>Windows Vista ÀÌ»ó <span class="ver">[v1.0.48+]:</span> WheelLeft (¶Ç´Â WL) and WheelRight (¶Ç´Â WR)µµ Áö¿øµË´Ï´Ù (¿¹Àü ¿î¿µ Ã¼Á¦¿¡¼­´Â ¾Æ¹« È¿°úµµ ¾ø½À´Ï´Ù). ÀÌ °æ¿ì, <em>ClickCount</em>´Â ÈÙÀ» µ¹¸± ´«±ÝÀÇ °³¼öÀÔ´Ï´Ù.</p>
+  <dd><p>í´ë¦­í•  ë²„íŠ¼: LEFT, RIGHT, MIDDLE (ë˜ëŠ” ê·¸ëƒ¥ ê° ì²« ë¬¸ìž). ìƒëžµí•˜ê±°ë‚˜ ë¹„ì–´ ìžˆìœ¼ë©´,  LEFT ë²„íŠ¼ì´ ì‚¬ìš©ë©ë‹ˆë‹¤.</p>
+      <p>X1 (XButton1, ë„¤ ë²ˆì§¸ ë§ˆìš°ìŠ¤ ë²„íŠ¼) ê·¸ë¦¬ê³  X2 (XButton2, ë‹¤ì„¯ ë²ˆì§¸ ë§ˆìš°ìŠ¤ ë²„íŠ¼)ë„ ì§€ì›ë©ë‹ˆë‹¤.</p>
+      <p>WheelUp (ë˜ëŠ” WU) ê·¸ë¦¬ê³  WheelDown (ë˜ëŠ” WD)ë„ ì§€ì›ë©ë‹ˆë‹¤. ì´ ê²½ìš°, <em>ClickCount</em>ëŠ” íœ ì„ ëŒë¦´ ëˆˆê¸ˆì˜ ê°œìˆ˜ìž…ë‹ˆë‹¤.</p>
+      <p>Windows Vista ì´ìƒ <span class="ver">[v1.0.48+]:</span> WheelLeft (ë˜ëŠ” WL) and WheelRight (ë˜ëŠ” WR)ë„ ì§€ì›ë©ë‹ˆë‹¤ (ì˜ˆì „ ìš´ì˜ ì²´ì œì—ì„œëŠ” ì•„ë¬´ íš¨ê³¼ë„ ì—†ìŠµë‹ˆë‹¤). ì´ ê²½ìš°, <em>ClickCount</em>ëŠ” íœ ì„ ëŒë¦´ ëˆˆê¸ˆì˜ ê°œìˆ˜ìž…ë‹ˆë‹¤.</p>
     </dd>
 
   <dt>ClickCount</dt>
-  <dd><p>º¸³¾ Å¬¸¯ È½¼ö, <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>ÀÌ °¡´ÉÇÕ´Ï´Ù. »ý·«µÇ°Å³ª ºñ¾î ÀÖÀ¸¸é, 1 Å¬¸¯ÀÌ Àü¼ÛµË´Ï´Ù.</p></dd>
+  <dd><p>ë³´ë‚¼ í´ë¦­ íšŸìˆ˜, <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤. ìƒëžµë˜ê±°ë‚˜ ë¹„ì–´ ìžˆìœ¼ë©´, 1 í´ë¦­ì´ ì „ì†¡ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>Options</dt>
-  <dd><p>´ÙÀ½ ±âÈ£µéÀÌ ¿É¼ÇÀ¸·Î »ç¿ëµË´Ï´Ù. ¿¹¸¦ µé¾î: <code>d x50 y25</code>.</p>
-      <p><strong>NA</strong> <span class="ver">[v1.0.45+]:</span> ½Å·Ú¼ºÀ» °³¼±ÇÒ ¼ö ÀÖ½À´Ï´Ù. ¾Æ·¡ÀÇ <a href="#Reliability">½Å·Ú¼º</a>À» ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-      <p><strong>D</strong>: ¸¶¿ì½º ¹öÆ°À» ´©¸£Áö¸¸ ¶¼Áö ¾Ê½À´Ï´Ù (Áï, ´©¸£±â-ÀÌº¥Æ® ¹ß»ý). <strong>D</strong>¿Í <strong>U</strong> ¿É¼ÇÀÌ ¸ðµÎ ¾øÀ¸¸é, (´©¸£°í ¶¾) ¿ÏÀüÇÑ Å¬¸¯ÀÌ Àü¼ÛµË´Ï´Ù.</p>
-      <p><strong>U</strong>: ¸¶¿ì½º ¹öÆ°À» ¶Á´Ï´Ù (Áï ¶À-ÀÌº¥Æ® ¹ß»ý). ÀÌ ¿É¼ÇÀº <strong>D</strong> ¿É¼ÇÀÌ ÀÌ¹Ì ÀÖÀ¸¸é ³ªÅ¸³ª¸é ¾ÈµË´Ï´Ù (±× ¹Ý´ëµµ ¸¶Âù°¡ÁöÀÔ´Ï´Ù).</p>
-      <p><strong>Pos</strong>: ´Ü¾î Pos¸¦ <em>Options</em> ¾Æ¹«µ¥³ª ÁöÁ¤ÇÏ¸é, À§ÀÇ <em>Control-or-Pos</em> ¸Å°³º¯¼ö¿¡ ±â¼úµÇ¾î ÀÖµíÀÌ ¹«Á¶°Ç X/Y À§Ä¡ ÁöÁ¤ ¸ðµå¸¦ »ç¿ëÇÕ´Ï´Ù.</p>
-      <p><strong>Xn</strong>: <strong>n</strong>¿¡´Ù Å¬¸¯ÇÒ X À§Ä¡¸¦ ÁöÁ¤ÇÕ´Ï´Ù. ÀÌ À§Ä¡´Â ÄÜÆ®·ÑÀÇ ÁÂ»ó ¸ð¼­¸®¿¡ »ó´ëÀûÀÔ´Ï´Ù. ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é, Å¬¸¯ÀÌ ÄÜÆ®·ÑÀÇ ¼öÆò-Áß¾Ó¿¡ ÀÏ¾î³³´Ï´Ù.</p>
-      <p><strong>Yn</strong>: <strong>n</strong>¿¡´Ù Å¬¸¯ÇÒ Y À§Ä¡¸¦ ÁöÁ¤ÇÕ´Ï´Ù. ÀÌ À§Ä¡´Â ÄÜÆ®·ÑÀÇ ÁÂ»ó ¸ð¼­¸®¿¡ »ó´ëÀûÀÔ´Ï´Ù. ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é Å¬¸¯ÀÌ ¼öÁ÷-Áß¾Ó¿¡ ÀÏ¾î³³´Ï´Ù.</p>
-      <p><strong>X</strong>¿Í <strong>Y</strong> ¿É¼Ç¿¡ ½ÊÁø¼ö¸¦ »ç¿ëÇÕ´Ï´Ù (½ÊÀ°Áø¼ö ºÒ°¡).</p></dd>
+  <dd><p>ë‹¤ìŒ ê¸°í˜¸ë“¤ì´ ì˜µì…˜ìœ¼ë¡œ ì‚¬ìš©ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>d x50 y25</code>.</p>
+      <p><strong>NA</strong> <span class="ver">[v1.0.45+]:</span> ì‹ ë¢°ì„±ì„ ê°œì„ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì•„ëž˜ì˜ <a href="#Reliability">ì‹ ë¢°ì„±</a>ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+      <p><strong>D</strong>: ë§ˆìš°ìŠ¤ ë²„íŠ¼ì„ ëˆ„ë¥´ì§€ë§Œ ë–¼ì§€ ì•ŠìŠµë‹ˆë‹¤ (ì¦‰, ëˆ„ë¥´ê¸°-ì´ë²¤íŠ¸ ë°œìƒ). <strong>D</strong>ì™€ <strong>U</strong> ì˜µì…˜ì´ ëª¨ë‘ ì—†ìœ¼ë©´, (ëˆ„ë¥´ê³  ë—€) ì™„ì „í•œ í´ë¦­ì´ ì „ì†¡ë©ë‹ˆë‹¤.</p>
+      <p><strong>U</strong>: ë§ˆìš°ìŠ¤ ë²„íŠ¼ì„ ë—ë‹ˆë‹¤ (ì¦‰ ë—Œ-ì´ë²¤íŠ¸ ë°œìƒ). ì´ ì˜µì…˜ì€ <strong>D</strong> ì˜µì…˜ì´ ì´ë¯¸ ìžˆìœ¼ë©´ ë‚˜íƒ€ë‚˜ë©´ ì•ˆë©ë‹ˆë‹¤ (ê·¸ ë°˜ëŒ€ë„ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤).</p>
+      <p><strong>Pos</strong>: ë‹¨ì–´ Posë¥¼ <em>Options</em> ì•„ë¬´ë°ë‚˜ ì§€ì •í•˜ë©´, ìœ„ì˜ <em>Control-or-Pos</em> ë§¤ê°œë³€ìˆ˜ì— ê¸°ìˆ ë˜ì–´ ìžˆë“¯ì´ ë¬´ì¡°ê±´ X/Y ìœ„ì¹˜ ì§€ì • ëª¨ë“œë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤.</p>
+      <p><strong>Xn</strong>: <strong>n</strong>ì—ë‹¤ í´ë¦­í•  X ìœ„ì¹˜ë¥¼ ì§€ì •í•©ë‹ˆë‹¤. ì´ ìœ„ì¹˜ëŠ” ì½˜íŠ¸ë¡¤ì˜ ì¢Œìƒ ëª¨ì„œë¦¬ì— ìƒëŒ€ì ìž…ë‹ˆë‹¤. ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´, í´ë¦­ì´ ì½˜íŠ¸ë¡¤ì˜ ìˆ˜í‰-ì¤‘ì•™ì— ì¼ì–´ë‚©ë‹ˆë‹¤.</p>
+      <p><strong>Yn</strong>: <strong>n</strong>ì—ë‹¤ í´ë¦­í•  Y ìœ„ì¹˜ë¥¼ ì§€ì •í•©ë‹ˆë‹¤. ì´ ìœ„ì¹˜ëŠ” ì½˜íŠ¸ë¡¤ì˜ ì¢Œìƒ ëª¨ì„œë¦¬ì— ìƒëŒ€ì ìž…ë‹ˆë‹¤. ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ í´ë¦­ì´ ìˆ˜ì§-ì¤‘ì•™ì— ì¼ì–´ë‚©ë‹ˆë‹¤.</p>
+      <p><strong>X</strong>ì™€ <strong>Y</strong> ì˜µì…˜ì— ì‹­ì§„ìˆ˜ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤ (ì‹­ìœ¡ì§„ìˆ˜ ë¶ˆê°€).</p></dd>
 
   <dt>ExcludeTitle</dt>
-  <dd><p>Á¦¸ñ¿¡ ÀÌ °ªÀÌ ÀÖ´Â Ã¢Àº ¹«½ÃÇÕ´Ï´Ù.</p></dd>
+  <dd><p>ì œëª©ì— ì´ ê°’ì´ ìžˆëŠ” ì°½ì€ ë¬´ì‹œí•©ë‹ˆë‹¤.</p></dd>
 
   <dt>ExcludeText</dt>
-  <dd><p>ÅØ½ºÆ®¿¡ ÀÌ °ªÀÌ ÀÖ´Â Ã¢Àº ¹«½ÃÇÕ´Ï´Ù.</p></dd>
+  <dd><p>í…ìŠ¤íŠ¸ì— ì´ ê°’ì´ ìžˆëŠ” ì°½ì€ ë¬´ì‹œí•©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
 <p>
-<span class="ver">[v1.1.04+]</span> ÀÌ ¸í·É¾î´Â ½ÇÆÐÇÏ¸é ¿¹¿Ü¸¦ ´øÁú ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="Catch.htm#RuntimeErrors">½ÇÇà½Ã°£ ¿¡·¯</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<span class="ver">[v1.1.04+]</span> ì´ ëª…ë ¹ì–´ëŠ” ì‹¤íŒ¨í•˜ë©´ ì˜ˆì™¸ë¥¼ ë˜ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="Catch.htm#RuntimeErrors">ì‹¤í–‰ì‹œê°„ ì—ëŸ¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº ¹®Á¦°¡ ÀÖÀ¸¸é 1, ±×·¸Áö ¾ÊÀ¸¸é 0ÀÌ ¼³Á¤µË´Ï´Ù.</p>
+<a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ ë¬¸ì œê°€ ìžˆìœ¼ë©´ 1, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 
-<h3 id="Reliability">½Å·Ú¼º</h3>
+<h3 id="Reliability">ì‹ ë¢°ì„±</h3>
 <p>
-½Å·Ú¼ºÀ» °³¼±ÇÏ·Á¸é -- Æ¯È÷ ControlClickÀÌ ÀÛµ¿ÇÏ´Â µ¿¾È »ç¿ëÀÚ°¡ ¹°¸®ÀûÀ¸·Î ¸¶¿ì½º¸¦ ¿òÁ÷ÀÌ¸é -- ´ÙÀ½ ¹æ¹ýÀÌ µµ¿òÀÌ µÉ °ÍÀÔ´Ï´Ù:</p>
-<p>1) ControlClick Àü¿¡ <code><a href="SetControlDelay.htm">SetControlDelay -1</a></code>¸¦ »ç¿ëÇÕ´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é Å¬¸¯ÇÏ´Â µ¿¾È ¸¶¿ì½º¸¦ ´©¸£°í ÀÖÀ» ÇÊ¿ä°¡ ¾ø½À´Ï´Ù. ÀÌ ´öºÐ¿¡ »ç¿ëÀÚÀÇ ¹°¸®Àû ¸¶¿ì½º ÀÌµ¿°úÀÇ °£¼· °¡´É¼ºÀÌ ÁÙ¾îµì´Ï´Ù.</p>
-<p>2) ¾Æ·¡¿Í °°ÀÌ ¹®ÀÚ¿­ NA¸¦ ¿©¼¸ ¹øÂ° ¸Å°³º¯¼ö ¾Æ¹«µ¥³ª (<em>Options</em>) ÁöÁ¤ÇÕ´Ï´Ù:</p>
+ì‹ ë¢°ì„±ì„ ê°œì„ í•˜ë ¤ë©´ -- íŠ¹ížˆ ControlClickì´ ìž‘ë™í•˜ëŠ” ë™ì•ˆ ì‚¬ìš©ìžê°€ ë¬¼ë¦¬ì ìœ¼ë¡œ ë§ˆìš°ìŠ¤ë¥¼ ì›€ì§ì´ë©´ -- ë‹¤ìŒ ë°©ë²•ì´ ë„ì›€ì´ ë  ê²ƒìž…ë‹ˆë‹¤:</p>
+<p>1) ControlClick ì „ì— <code><a href="SetControlDelay.htm">SetControlDelay -1</a></code>ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ í´ë¦­í•˜ëŠ” ë™ì•ˆ ë§ˆìš°ìŠ¤ë¥¼ ëˆ„ë¥´ê³  ìžˆì„ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤. ì´ ë•ë¶„ì— ì‚¬ìš©ìžì˜ ë¬¼ë¦¬ì  ë§ˆìš°ìŠ¤ ì´ë™ê³¼ì˜ ê°„ì„­ ê°€ëŠ¥ì„±ì´ ì¤„ì–´ë“­ë‹ˆë‹¤.</p>
+<p>2) ì•„ëž˜ì™€ ê°™ì´ ë¬¸ìžì—´ NAë¥¼ ì—¬ì„¯ ë²ˆì§¸ ë§¤ê°œë³€ìˆ˜ ì•„ë¬´ë°ë‚˜ (<em>Options</em>) ì§€ì •í•©ë‹ˆë‹¤:</p>
 <pre>SetControlDelay -1
 ControlClick, Toolbar321, WinTitle,,,, NA</pre>
 <p>
-<code>NA</code>¸¦ ÁöÁ¤ÇÏ¸é ¸ñÇ¥ Ã¢À» È°¼ºÈ­ »óÅÂ·Î Ç¥½ÄÀ» ÇÒ ÇÊ¿ä°¡ ¾ø°í ±×ÀÇ ÀÔ·Â Ã³¸®¸¦ ½ºÅ©¸³Æ®ÀÌ ÀÔ·Â Ã³¸®¿Í º´ÇÕÇÒ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù. ÀÌ ´öºÐ¿¡ ¸¶¿ì½ºÀÇ ¹°¸®Àû ÀÌµ¿ ¶§¹®¿¡ °£¼· ¹ÞÁö ¾Ê¾Æµµ µË´Ï´Ù (±×·¯³ª º¸Åë ¸ñÇ¥ Ã¢ÀÌ ºñÈ°¼ºÈ­ »óÅÂÀÏ °æ¿ì¿¡¸¸ ±×·¸½À´Ï´Ù). ±×·¸Áö¸¸, ÀÌ ¹æ¹ýÀº ¸ðµç À¯ÇüÀÇ Ã¢°ú ÄÜÆ®·Ñ¿¡ ÀÛµ¿ÇÏ´Â °ÍÀº ¾Æ´Õ´Ï´Ù.</p>
+<code>NA</code>ë¥¼ ì§€ì •í•˜ë©´ ëª©í‘œ ì°½ì„ í™œì„±í™” ìƒíƒœë¡œ í‘œì‹ì„ í•  í•„ìš”ê°€ ì—†ê³  ê·¸ì˜ ìž…ë ¥ ì²˜ë¦¬ë¥¼ ìŠ¤í¬ë¦½íŠ¸ì´ ìž…ë ¥ ì²˜ë¦¬ì™€ ë³‘í•©í•  í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤. ì´ ë•ë¶„ì— ë§ˆìš°ìŠ¤ì˜ ë¬¼ë¦¬ì  ì´ë™ ë•Œë¬¸ì— ê°„ì„­ ë°›ì§€ ì•Šì•„ë„ ë©ë‹ˆë‹¤ (ê·¸ëŸ¬ë‚˜ ë³´í†µ ëª©í‘œ ì°½ì´ ë¹„í™œì„±í™” ìƒíƒœì¼ ê²½ìš°ì—ë§Œ ê·¸ë ‡ìŠµë‹ˆë‹¤). ê·¸ë ‡ì§€ë§Œ, ì´ ë°©ë²•ì€ ëª¨ë“  ìœ í˜•ì˜ ì°½ê³¼ ì½˜íŠ¸ë¡¤ì— ìž‘ë™í•˜ëŠ” ê²ƒì€ ì•„ë‹™ë‹ˆë‹¤.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-¸ðµç ¾îÇÃ¸®ÄÉÀÌ¼ÇÀÌ ¸¶¿ì½º ÈÙÀ» µ¹¸± ¶§ 1º¸´Ù Å« <em>ClickCount</em>¸¦ ÁØ¼öÇÏ´Â °ÍÀº ¾Æ´Õ´Ï´Ù. ±×·± ¾îÇÃ¸®ÄÉÀÌ¼ÇÀÌ¶ó¸é Loop¸¦ »ç¿ëÇØ ÇÑ ´«±Ý ÀÌ»ó ÈÙÀ» µ¹¸®½Ê½Ã¿À. ´ÙÀ½ ¿¹Á¦´Â ´Ù¼¸ ´«±ÝÀ» µ¹¸®°í ÀÖ½À´Ï´Ù:</p>
+ëª¨ë“  ì–´í”Œë¦¬ì¼€ì´ì…˜ì´ ë§ˆìš°ìŠ¤ íœ ì„ ëŒë¦´ ë•Œ 1ë³´ë‹¤ í° <em>ClickCount</em>ë¥¼ ì¤€ìˆ˜í•˜ëŠ” ê²ƒì€ ì•„ë‹™ë‹ˆë‹¤. ê·¸ëŸ° ì–´í”Œë¦¬ì¼€ì´ì…˜ì´ë¼ë©´ Loopë¥¼ ì‚¬ìš©í•´ í•œ ëˆˆê¸ˆ ì´ìƒ íœ ì„ ëŒë¦¬ì‹­ì‹œì˜¤. ë‹¤ìŒ ì˜ˆì œëŠ” ë‹¤ì„¯ ëˆˆê¸ˆì„ ëŒë¦¬ê³  ìžˆìŠµë‹ˆë‹¤:</p>
 <pre>Loop, 5
     ControlClick, <i>Control</i>, <i>WinTitle</i>, <i>WinText</i>, WheelUp</pre>
 <p>
-Ã¢ Á¦¸ñ ¶Ç´Â ÅØ½ºÆ®´Â ´ë¼Ò¹®ÀÚ¿¡ ¹Î°¨ÇÕ´Ï´Ù. ¼ûÀº Ã¢Àº <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>°¡ ÄÑÁ® ÀÖ¾î¾ß Å½ÁöµË´Ï´Ù.</p>
+ì°½ ì œëª© ë˜ëŠ” í…ìŠ¤íŠ¸ëŠ” ëŒ€ì†Œë¬¸ìžì— ë¯¼ê°í•©ë‹ˆë‹¤. ìˆ¨ì€ ì°½ì€ <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>ê°€ ì¼œì ¸ ìžˆì–´ì•¼ íƒì§€ë©ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
 <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="Control.htm">Control</a>, <a href="ControlGet.htm">ControlGet</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlGetPos.htm">ControlGetPos</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="Click.htm">Click</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent">ControlClick, OK, Some Window Title  <em>; OK ¹öÆ°À» Å¬¸¯ÇÕ´Ï´Ù</em>
-ControlClick, x55 y77, WinTitle  <em>; ÁÂÇ¥ ¼¼Æ®¸¦ Å¬¸¯ÇÕ´Ï´Ù. X¿Í Y »çÀÌ¿¡ ½°Ç¥°¡ ¾ø´Â °Í¿¡ ÁÖ¸ñÇÏ½Ê½Ã¿À.</em>
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent">ControlClick, OK, Some Window Title  <em>; OK ë²„íŠ¼ì„ í´ë¦­í•©ë‹ˆë‹¤</em>
+ControlClick, x55 y77, WinTitle  <em>; ì¢Œí‘œ ì„¸íŠ¸ë¥¼ í´ë¦­í•©ë‹ˆë‹¤. Xì™€ Y ì‚¬ì´ì— ì‰¼í‘œê°€ ì—†ëŠ” ê²ƒì— ì£¼ëª©í•˜ì‹­ì‹œì˜¤.</em>
 
-<em>; ´ÙÀ½ ¹æ¹ýÀº ½Å·Ú¼ºÀ» °³¼±ÇÏ°í ºÎÀÛ¿ëÀ» ÁÙ¿©ÁÝ´Ï´Ù:</em>
+<em>; ë‹¤ìŒ ë°©ë²•ì€ ì‹ ë¢°ì„±ì„ ê°œì„ í•˜ê³  ë¶€ìž‘ìš©ì„ ì¤„ì—¬ì¤ë‹ˆë‹¤:</em>
 SetControlDelay -1
-ControlClick, Toolbar321, WinTitle,,,, NA x192 y10  <em>; ÁöÁ¤ÇÑ ÀÌ¸§ÀÇ ÄÜÆ®·Ñ¿¡ »ó´ëÀûÀÎ ÁÂÇ¥¸¦ NA ¸ðµå¿¡¼­ Å¬¸¯ÇÕ´Ï´Ù.</em></pre>
+ControlClick, Toolbar321, WinTitle,,,, NA x192 y10  <em>; ì§€ì •í•œ ì´ë¦„ì˜ ì½˜íŠ¸ë¡¤ì— ìƒëŒ€ì ì¸ ì¢Œí‘œë¥¼ NA ëª¨ë“œì—ì„œ í´ë¦­í•©ë‹ˆë‹¤.</em></pre>
 
 </body>
 </html>

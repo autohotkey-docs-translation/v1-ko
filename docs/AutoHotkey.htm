@@ -1,7 +1,8 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>AutoHotkey</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
 <script src="static/content.js" type="text/javascript"></script>
@@ -12,53 +13,53 @@
 <h1>Version <a href="AHKL_ChangeLog.htm">v<!--ver-->1.1.22.07<!--/ver--></a></h1>
 <p><a href="http://ahkscript.org">http://ahkscript.org</a></p>
 <p>&copy;2003-2014 Chris Mallett, portions &copy;<a href="http://www.autoitscript.com/">AutoIt Team</a> and the AHK community</p>
-<p>ÇÑ±ÛÆÇ johjnsonj 151111</p>
+<p>í•œê¸€íŒ johjnsonj 151111</p>
 <p style="font-size:85%">Software License: <a href="license.htm">GNU General Public License</a></p>
 
-<h2>Áß¿äÇÑ °íÁö »çÇ×</h2>
-<p>AutoHotkey 1.0°ú AutoHotkey 1.1 »çÀÌÀÇ ±Ùº»ÀûÀÎ Â÷ÀÌ ¶§¹®¿¡ (Æ¯È÷ À¯´ÏÄÚµå¿Í x64 ½ÇÇàÆÄÀÏ¿¡¼­), 
-AutoHotkey 1.0À¸·Î ÀÛ¼ºµÈ ½ºÅ©¸³Æ®´Â AutoHotkey 1.1 À§¿¡¼­ ¿¹»ó´ë·Î ÀÛµ¿ÇÏÁö ¾ÊÀ» ¼ö ÀÖ½À´Ï´Ù. 
-¾Ë·ÁÁø È£È¯¼º ¹®Á¦¿Í ÇØ°áÃ¥¿¡ °üÇÑ ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â ´ÙÀ½ ¸µÅ©¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À:</p>
+<h2>ì¤‘ìš”í•œ ê³ ì§€ ì‚¬í•­</h2>
+<p>AutoHotkey 1.0ê³¼ AutoHotkey 1.1 ì‚¬ì´ì˜ ê·¼ë³¸ì ì¸ ì°¨ì´ ë•Œë¬¸ì— (íŠ¹ížˆ ìœ ë‹ˆì½”ë“œì™€ x64 ì‹¤í–‰íŒŒì¼ì—ì„œ), 
+AutoHotkey 1.0ìœ¼ë¡œ ìž‘ì„±ëœ ìŠ¤í¬ë¦½íŠ¸ëŠ” AutoHotkey 1.1 ìœ„ì—ì„œ ì˜ˆìƒëŒ€ë¡œ ìž‘ë™í•˜ì§€ ì•Šì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 
+ì•Œë ¤ì§„ í˜¸í™˜ì„± ë¬¸ì œì™€ í•´ê²°ì±…ì— ê´€í•œ ë” ìžì„¸í•œ ì •ë³´ëŠ” ë‹¤ìŒ ë§í¬ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤:</p>
 <ul>
-  <li><a href="Compat.htm">½ºÅ©¸³Æ® È£È¯¼º</a> - À¯´ÏÄÚµå vs ANSI, DllCall, NumPut/Get, ±âÅ¸ º¯°æ»çÇ×µé</li>
-  <li><a href="Scripts.htm#cp">½ºÅ©¸³Æ® ÆÄÀÏÀÇ ÄÚµå ÆäÀÌÁö</a> - ½ºÅ©¸³Æ®´Â UTF-8·Î ÀúÀåÇÏ½Ê½Ã¿À!</li>
+  <li><a href="Compat.htm">ìŠ¤í¬ë¦½íŠ¸ í˜¸í™˜ì„±</a> - ìœ ë‹ˆì½”ë“œ vs ANSI, DllCall, NumPut/Get, ê¸°íƒ€ ë³€ê²½ì‚¬í•­ë“¤</li>
+  <li><a href="Scripts.htm#cp">ìŠ¤í¬ë¦½íŠ¸ íŒŒì¼ì˜ ì½”ë“œ íŽ˜ì´ì§€</a> - ìŠ¤í¬ë¦½íŠ¸ëŠ” UTF-8ë¡œ ì €ìž¥í•˜ì‹­ì‹œì˜¤!</li>
 </ul>
 
-<h2>ºü¸¥ ÂüÁ¶</h2>
-<p>±âº»:</p>
+<h2>ë¹ ë¥¸ ì°¸ì¡°</h2>
+<p>ê¸°ë³¸:</p>
 <ul>
-  <li><a href="Tutorial.htm">ÃÊº¸ÀÚ¸¦ À§ÇÑ ÀÚ½À¼­</a></li>
-  <li><a href="commands/Edit.htm#Editors">¿ÀÅäÇÖÅ°¸¦ Áö¿øÇÏ´Â ÅØ½ºÆ® ÆíÁý±â</a></li>
-  <li><a href="FAQ.htm">ÀÚÁÖ ¹¯´Â Áú¹®</a></li>
-  <li><a href="Scripts.htm">½ºÅ©¸³Æ®</a>
+  <li><a href="Tutorial.htm">ì´ˆë³´ìžë¥¼ ìœ„í•œ ìžìŠµì„œ</a></li>
+  <li><a href="commands/Edit.htm#Editors">ì˜¤í† í•«í‚¤ë¥¼ ì§€ì›í•˜ëŠ” í…ìŠ¤íŠ¸ íŽ¸ì§‘ê¸°</a></li>
+  <li><a href="FAQ.htm">ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸</a></li>
+  <li><a href="Scripts.htm">ìŠ¤í¬ë¦½íŠ¸</a>
     <ul>
-      <li><a href="commands/index.htm">¸í·É¾î</a></li>
-      <li><a href="Variables.htm">º¯¼ö¿Í Ç¥Çö½Ä</a></li>
-      <li><a href="Functions.htm">ÇÔ¼ö</a></li>
-      <li><a href="Objects.htm">°´Ã¼</a></li>
-      <li><a href="Scripts.htm#idebug">»óÈ£´ëÈ­ µð¹ö±ë</a></li>
+      <li><a href="commands/index.htm">ëª…ë ¹ì–´</a></li>
+      <li><a href="Variables.htm">ë³€ìˆ˜ì™€ í‘œí˜„ì‹</a></li>
+      <li><a href="Functions.htm">í•¨ìˆ˜</a></li>
+      <li><a href="Objects.htm">ê°ì²´</a></li>
+      <li><a href="Scripts.htm#idebug">ìƒí˜¸ëŒ€í™” ë””ë²„ê¹…</a></li>
     </ul>
   </li>
 </ul>
-<p>Å°º¸µå¿Í ¸¶¿ì½º:</p>
+<p>í‚¤ë³´ë“œì™€ ë§ˆìš°ìŠ¤:</p>
 <ul>
-  <li><a href="Hotkeys.htm">ÇÖÅ° (¸¶¿ì½º, Á¶ÀÌ½ºÆ½ ±×¸®°í Å°º¸µå ´ÜÃàÅ°)</a></li>
-  <li><a href="Hotstrings.htm">ÇÖ½ºÆ®¸µ°ú ÀÚµ¿ ±³Ã¼</a></li>
-  <li><a href="misc/Remap.htm">Å°¿Í ¹öÆ° ¸®¸ÊÇÏ±â</a></li>
-  <li><a href="KeyList.htm">Å°, ¸¶¿ì½º ¹öÆ° ±×¸®°í Á¶ÀÌ½ºÆ½ ÄÜÆ®·Ñ ¸ñ·Ï</a></li>
+  <li><a href="Hotkeys.htm">í•«í‚¤ (ë§ˆìš°ìŠ¤, ì¡°ì´ìŠ¤í‹± ê·¸ë¦¬ê³  í‚¤ë³´ë“œ ë‹¨ì¶•í‚¤)</a></li>
+  <li><a href="Hotstrings.htm">í•«ìŠ¤íŠ¸ë§ê³¼ ìžë™ êµì²´</a></li>
+  <li><a href="misc/Remap.htm">í‚¤ì™€ ë²„íŠ¼ ë¦¬ë§µí•˜ê¸°</a></li>
+  <li><a href="KeyList.htm">í‚¤, ë§ˆìš°ìŠ¤ ë²„íŠ¼ ê·¸ë¦¬ê³  ì¡°ì´ìŠ¤í‹± ì½˜íŠ¸ë¡¤ ëª©ë¡</a></li>
 </ul>
-<p>±âÅ¸:</p>
+<p>ê¸°íƒ€:</p>
 <ul>
   <li><a href="commands/DllCall.htm">DllCall</a></li>
-  <li><a href="misc/RegEx-QuickRef.htm">RegEx °£Æí ÂüÁ¶¼­</a></li>
-  <li><a href="AHKL_Features.htm">AutoHotkey_L (AutoHotkey 1.1) Æ¯Â¡</a></li>
+  <li><a href="misc/RegEx-QuickRef.htm">RegEx ê°„íŽ¸ ì°¸ì¡°ì„œ</a></li>
+  <li><a href="AHKL_Features.htm">AutoHotkey_L (AutoHotkey 1.1) íŠ¹ì§•</a></li>
 </ul>
 
-<h2>°¨»çÀÇ ¸»</h2>
-<p>Á¶³ª´Ü º£³×Æ®(Jonathan Bennett)¿¡°Ô Æ¯È÷ °¨»çµå¸³´Ï´Ù. ±×´Â ³ÐÀº ¸¶À½À¸·Î AutoIt v2¸¦ 1999³â¿¡ ÀÚÀ¯ ¼ÒÇÁÆ®¿þ¾î·Î ¹èÆ÷ÇØ ÁÖ¼Ì½À´Ï´Ù.  ±× ´öºÐ¿¡ ÇÊÀÚ´Â ¿µ°¨À» ¹Þ¾Ò°í º»ÀÎÀº ¹°·Ð ¼¼»óÀÇ ¸ðµç »ç¶÷µéÀº ½Ã°£À» Àý¾àÇÏ°Ô µÇ¾ú½À´Ï´Ù. °Ô´Ù°¡, ¿ÀÅäÇÖÅ°ÀÇ °³¼± »çÇ×µéÀ» AutoIt v2 ¸í·É¾î ¼¼Æ®¿¡ Àû¿ëÇØ ÁÖ¼Ì°í, »Ó¸¸ ¾Æ´Ï¶ó Window Spy ±×¸®°í ¿¹Àü ½ºÅ©¸³Æ® ÄÄÆÄÀÏ·¯¸¦ AutoIt v3 ¼Ò½º ÄÚµå·ÎºÎÅÍ Á÷Á¢ Àû¿ëÇØ ÁÖ¼Ë½À´Ï´Ù. ±×·¡¼­ Á¸°ú ±×ÀÇ AutoIt ÀúÀÚµé¿¡°Ôµµ °¨»çÀÇ ¸»¾¸À» ÀüÇÏ´Â ¹ÙÀÔ´Ï´Ù.<br>
+<h2>ê°ì‚¬ì˜ ë§</h2>
+<p>ì¡°ë‚˜ë‹¨ ë² ë„¤íŠ¸(Jonathan Bennett)ì—ê²Œ íŠ¹ížˆ ê°ì‚¬ë“œë¦½ë‹ˆë‹¤. ê·¸ëŠ” ë„“ì€ ë§ˆìŒìœ¼ë¡œ AutoIt v2ë¥¼ 1999ë…„ì— ìžìœ  ì†Œí”„íŠ¸ì›¨ì–´ë¡œ ë°°í¬í•´ ì£¼ì…¨ìŠµë‹ˆë‹¤.  ê·¸ ë•ë¶„ì— í•„ìžëŠ” ì˜ê°ì„ ë°›ì•˜ê³  ë³¸ì¸ì€ ë¬¼ë¡  ì„¸ìƒì˜ ëª¨ë“  ì‚¬ëžŒë“¤ì€ ì‹œê°„ì„ ì ˆì•½í•˜ê²Œ ë˜ì—ˆìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, ì˜¤í† í•«í‚¤ì˜ ê°œì„  ì‚¬í•­ë“¤ì„ AutoIt v2 ëª…ë ¹ì–´ ì„¸íŠ¸ì— ì ìš©í•´ ì£¼ì…¨ê³ , ë¿ë§Œ ì•„ë‹ˆë¼ Window Spy ê·¸ë¦¬ê³  ì˜ˆì „ ìŠ¤í¬ë¦½íŠ¸ ì»´íŒŒì¼ëŸ¬ë¥¼ AutoIt v3 ì†ŒìŠ¤ ì½”ë“œë¡œë¶€í„° ì§ì ‘ ì ìš©í•´ ì£¼ì…§ìŠµë‹ˆë‹¤. ê·¸ëž˜ì„œ ì¡´ê³¼ ê·¸ì˜ AutoIt ì €ìžë“¤ì—ê²Œë„ ê°ì‚¬ì˜ ë§ì”€ì„ ì „í•˜ëŠ” ë°”ìž…ë‹ˆë‹¤.<br>
 <br>
-¸¶Áö¸·À¸·Î, AutoHotkey´Â ¿À´Ã³¯ <a href="misc/Acknowledgements.htm">ÀÌ ºÐµéÀÌ ¾ø¾ú´Ù¸é</a> Á¸ÀçÇÏÁö ¸øÇßÀ» °ÍÀÔ´Ï´Ù.<br>
+ë§ˆì§€ë§‰ìœ¼ë¡œ, AutoHotkeyëŠ” ì˜¤ëŠ˜ë‚  <a href="misc/Acknowledgements.htm">ì´ ë¶„ë“¤ì´ ì—†ì—ˆë‹¤ë©´</a> ì¡´ìž¬í•˜ì§€ ëª»í–ˆì„ ê²ƒìž…ë‹ˆë‹¤.<br>
 <br>
-<em>~ Chris Mallett(Å©¸®½º ¸Ö¸´)</em></p>
+<em>~ Chris Mallett(í¬ë¦¬ìŠ¤ ë©€ë¦¿)</em></p>
 </body>
 </html>

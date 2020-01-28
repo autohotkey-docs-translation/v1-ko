@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>StringSplit / StrSplit()</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,7 +11,7 @@
 
 <h1>StringSplit / StrSplit()</h1>
 
-<p>¹®ÀÚ¿­À» ÁöÁ¤µÈ ±¸ºÐÀÚ·Î °¥¶ó ºÎ¹®ÀÚ¿­ÀÇ ¹è¿­·Î ¸¸µì´Ï´Ù.</p>
+<p>ë¬¸ìžì—´ì„ ì§€ì •ëœ êµ¬ë¶„ìžë¡œ ê°ˆë¼ ë¶€ë¬¸ìžì—´ì˜ ë°°ì—´ë¡œ ë§Œë“­ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">StringSplit, OutputArray, InputVar [, Delimiters, OmitChars]
 Array := StrSplit(String [, Delimiters, OmitChars])  <em>; [v1.1.13+]</em></pre>
@@ -21,77 +20,77 @@ Array := StrSplit(String [, Delimiters, OmitChars])  <em>; [v1.1.13+]</em></pre>
 <dl>
 
   <dt>OutputArray</dt>
-  <dd><p><em>InputVar</em>·ÎºÎÅÍ ÃßÃâµÈ °¢ ºÎ¹®ÀÚ¿­À» ÀúÀåÇÒ <a href="../misc/Arrays.htm#pseudo">ÀÇ»ç-¹è¿­</a>ÀÇ ÀÌ¸§. ¿¹¸¦ µé¾î, MyArray°¡ ÁöÁ¤µÇ¸é, ÀÌ ¸í·É¾î´Â »ý»êµÈ ºÎ¹®ÀÚ¿­ÀÇ °³¼ö¸¦ (¾øÀ¸¸é 0) MyArray0¿¡ ¹èÄ¡ÇÕ´Ï´Ù. Ã¹ ¹øÂ° ºÎºÐÀÚ¿­Àº MyArray1¿¡, µÎ ¹øÂ° ºÎ¹®ÀÚ¿­Àº MyArray2¿¡, µîµî ¹èÄ¡ÇÕ´Ï´Ù.</p>
+  <dd><p><em>InputVar</em>ë¡œë¶€í„° ì¶”ì¶œëœ ê° ë¶€ë¬¸ìžì—´ì„ ì €ìž¥í•  <a href="../misc/Arrays.htm#pseudo">ì˜ì‚¬-ë°°ì—´</a>ì˜ ì´ë¦„. ì˜ˆë¥¼ ë“¤ì–´, MyArrayê°€ ì§€ì •ë˜ë©´, ì´ ëª…ë ¹ì–´ëŠ” ìƒì‚°ëœ ë¶€ë¬¸ìžì—´ì˜ ê°œìˆ˜ë¥¼ (ì—†ìœ¼ë©´ 0) MyArray0ì— ë°°ì¹˜í•©ë‹ˆë‹¤. ì²« ë²ˆì§¸ ë¶€ë¶„ìžì—´ì€ MyArray1ì—, ë‘ ë²ˆì§¸ ë¶€ë¬¸ìžì—´ì€ MyArray2ì—, ë“±ë“± ë°°ì¹˜í•©ë‹ˆë‹¤.</p>
   <p>
-  <a href="../Functions.htm">ÇÔ¼ö</a> ¾È¿¡¼­, Áö¿ªÀÌ ¾Æ´Ï¶ó Àü¿ªÀûÀÎ ÀÇ»ç-¹è¿­À» »ý¼ºÇÏ·Á¸é, ÇÔ¼ö ¾È¿¡¼­ MyArray0¸¦ Àü¿ª º¯¼ö·Î <a href="../Functions.htm#Global">¼±¾ð</a>ÇÏ½Ê½Ã¿À (<a href="../Functions.htm#AssumeGlobal">Àü¿ª-°£ÁÖ</a> ÇÔ¼ö¿¡ ´ëÇÏ¿© ±× ¹Ý´ëµµ ¸¶Âù°¡ÁöÀÔ´Ï´Ù). ±×·¸Áö¸¸, <a href="../Functions.htm#ArrayConfusion">ÈçÇÑ È¥¶õÀÇ ±Ù¿ø</a> ¶§¹®¿¡, °¢ ¿ø¼Ò¸¶´Ù µû·Îµû·Î ¼±¾ðÇØ¾ß ÇÒ °æ¿ìµµ Á¾Á¾ ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â <a href="../Functions.htm#PseudoArrays">ÇÔ¼ö</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p></dd>
+  <a href="../Functions.htm">í•¨ìˆ˜</a> ì•ˆì—ì„œ, ì§€ì—­ì´ ì•„ë‹ˆë¼ ì „ì—­ì ì¸ ì˜ì‚¬-ë°°ì—´ì„ ìƒì„±í•˜ë ¤ë©´, í•¨ìˆ˜ ì•ˆì—ì„œ MyArray0ë¥¼ ì „ì—­ ë³€ìˆ˜ë¡œ <a href="../Functions.htm#Global">ì„ ì–¸</a>í•˜ì‹­ì‹œì˜¤ (<a href="../Functions.htm#AssumeGlobal">ì „ì—­-ê°„ì£¼</a> í•¨ìˆ˜ì— ëŒ€í•˜ì—¬ ê·¸ ë°˜ëŒ€ë„ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤). ê·¸ë ‡ì§€ë§Œ, <a href="../Functions.htm#ArrayConfusion">í”í•œ í˜¼ëž€ì˜ ê·¼ì›</a> ë•Œë¬¸ì—, ê° ì›ì†Œë§ˆë‹¤ ë”°ë¡œë”°ë¡œ ì„ ì–¸í•´ì•¼ í•  ê²½ìš°ë„ ì¢…ì¢… ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ” <a href="../Functions.htm#PseudoArrays">í•¨ìˆ˜</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p></dd>
 
   <dt>InputVar</dt>
-  <dd><p>³»¿ëÀ» ºÐ¼®ÇÒ º¯¼öÀÇ ÀÌ¸§. ÀÌ¸§À» ÆÛ¼¾Æ® »çÀÎÀ¸·Î µÑ·¯ ½ÎÁö ¸¶½Ê½Ã¿À. ´Ü, º¯¼öÀÇ  <em>³»¿ë</em>ÀÌ ÀÌ¸§À¸·Î »ç¿ëµÇ±â¸¦ ¿øÇÏ´Â °æ¿ì¶ó¸é ¿¹¿ÜÀÔ´Ï´Ù. ÁÖÀÇ: <em>InputVar</em>´Â <em>OutputArray</em> ¾È¿¡ ÀÖ´Â º¯¼ö Áß ÇÏ³ª°¡ µÇ¾î¾ß ÇÕ´Ï´Ù.</p></dd>
+  <dd><p>ë‚´ìš©ì„ ë¶„ì„í•  ë³€ìˆ˜ì˜ ì´ë¦„. ì´ë¦„ì„ í¼ì„¼íŠ¸ ì‚¬ì¸ìœ¼ë¡œ ë‘˜ëŸ¬ ì‹¸ì§€ ë§ˆì‹­ì‹œì˜¤. ë‹¨, ë³€ìˆ˜ì˜  <em>ë‚´ìš©</em>ì´ ì´ë¦„ìœ¼ë¡œ ì‚¬ìš©ë˜ê¸°ë¥¼ ì›í•˜ëŠ” ê²½ìš°ë¼ë©´ ì˜ˆì™¸ìž…ë‹ˆë‹¤. ì£¼ì˜: <em>InputVar</em>ëŠ” <em>OutputArray</em> ì•ˆì— ìžˆëŠ” ë³€ìˆ˜ ì¤‘ í•˜ë‚˜ê°€ ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.</p></dd>
 
   <dt>Delimiters</dt>
   <dd><p>
-  ÀÌ ¸Å°³º¯¼ö°¡ ºñ¾î ÀÖ°Å³ª »ý·«µÇ¸é, <em>InputVar</em>ÀÇ °¢ ¹®ÀÚ´Â º°µµÀÇ ºÎ¹®ÀÚ¿­·Î °£ÁÖµË´Ï´Ù.</p>
-      <p>±×·¸Áö ¾ÊÀ¸¸é, <em>Delimiters</em>´Â ÇÏ³ª ÀÌ»óÀÇ ¹®ÀÚ¸¦ ´ã½À´Ï´Ù (´ë¼Ò¹®ÀÚ ±¸ºÐ). °¢ ±¸ºÐÀÚ´Â <em>InputVar</em>¿¡¼­ ºÎ¹®ÀÚ¿­ »çÀÌÀÇ °æ°è°¡ ³ªÅ¸³ª´Â °÷À» °áÁ¤ÇÏ´Â µ¥ »ç¿ëµË´Ï´Ù. ±¸ºÐ ¹®ÀÚµéÀº ºÎ¹®ÀÚ¿­ÀÇ ÀÏºÎºÐÀ¸·Î °£ÁÖµÇÁö ¾Ê±â ¶§¹®¿¡, <em>OutputArray</em>¿¡ Àý´ë·Î º¹»çµÇÁö ¾Ê½À´Ï´Ù. ¶ÇÇÑ, <em>InputVar</em> ¾È¿¡¼­ ±¸ºÐÀÚ »çÀÌ¿¡ ¾Æ¹« °Íµµ ¾øÀ¸¸é, ±×¿¡ »óÀÀÇÏ´Â ¿ø¼Ò´Â ºó ¿ø¼ÒÀÔ´Ï´Ù.</p>      
+  ì´ ë§¤ê°œë³€ìˆ˜ê°€ ë¹„ì–´ ìžˆê±°ë‚˜ ìƒëžµë˜ë©´, <em>InputVar</em>ì˜ ê° ë¬¸ìžëŠ” ë³„ë„ì˜ ë¶€ë¬¸ìžì—´ë¡œ ê°„ì£¼ë©ë‹ˆë‹¤.</p>
+      <p>ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, <em>Delimiters</em>ëŠ” í•˜ë‚˜ ì´ìƒì˜ ë¬¸ìžë¥¼ ë‹´ìŠµë‹ˆë‹¤ (ëŒ€ì†Œë¬¸ìž êµ¬ë¶„). ê° êµ¬ë¶„ìžëŠ” <em>InputVar</em>ì—ì„œ ë¶€ë¬¸ìžì—´ ì‚¬ì´ì˜ ê²½ê³„ê°€ ë‚˜íƒ€ë‚˜ëŠ” ê³³ì„ ê²°ì •í•˜ëŠ” ë° ì‚¬ìš©ë©ë‹ˆë‹¤. êµ¬ë¶„ ë¬¸ìžë“¤ì€ ë¶€ë¬¸ìžì—´ì˜ ì¼ë¶€ë¶„ìœ¼ë¡œ ê°„ì£¼ë˜ì§€ ì•Šê¸° ë•Œë¬¸ì—, <em>OutputArray</em>ì— ì ˆëŒ€ë¡œ ë³µì‚¬ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë˜í•œ, <em>InputVar</em> ì•ˆì—ì„œ êµ¬ë¶„ìž ì‚¬ì´ì— ì•„ë¬´ ê²ƒë„ ì—†ìœ¼ë©´, ê·¸ì— ìƒì‘í•˜ëŠ” ì›ì†ŒëŠ” ë¹ˆ ì›ì†Œìž…ë‹ˆë‹¤.</p>      
       <p>
-	  ¿¹¸¦ µé¾î: <code>`,</code> (ÇÇ½ÅµÈ ½°Ç¥)´Â ½°Ç¥°¡ ³ªÅ¸³¯ ¶§¸¶´Ù ¹®ÀÚ¿­À» ºÐ¸®ÇÕ´Ï´Ù. ºñ½ÁÇÏ°Ô, <code>%A_Tab%%A_Space%</code>´Â <em>InputVar</em> ¾È¿¡¼­ ½ºÆäÀÌ½º³ª ÅÇÀ» ¸¸³¯ ¶§¸¶´Ù »õ·Î¿î ¹è¿­ ¿ø¼Ò¸¦ »ý¼ºÇÕ´Ï´Ù.</p>
+	  ì˜ˆë¥¼ ë“¤ì–´: <code>`,</code> (í”¼ì‹ ëœ ì‰¼í‘œ)ëŠ” ì‰¼í‘œê°€ ë‚˜íƒ€ë‚  ë•Œë§ˆë‹¤ ë¬¸ìžì—´ì„ ë¶„ë¦¬í•©ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, <code>%A_Tab%%A_Space%</code>ëŠ” <em>InputVar</em> ì•ˆì—ì„œ ìŠ¤íŽ˜ì´ìŠ¤ë‚˜ íƒ­ì„ ë§Œë‚  ë•Œë§ˆë‹¤ ìƒˆë¡œìš´ ë°°ì—´ ì›ì†Œë¥¼ ìƒì„±í•©ë‹ˆë‹¤.</p>
       <p>
-	  ¹®ÀÚ¿­À» ¹®ÀÚ°¡ ¾Æ´Ï¶ó ±¸ºÐÀÚ·Î »ç¿ëÇÏ·Á¸é, ¸ÕÀú <a href="StringReplace.htm">StringReplace</a>¸¦ »ç¿ëÇØ ±× ¹®ÀÚ¿­ÀÌ ³ªÅ¸³ª¸é ¸ðµÎ, ÅØ½ºÆ®¿¡¼­ Àý´ë·Î ±âÈ£ ±×´ë·Î »ç¿ëµÇÁö ¾Ê´Â ÇÏ³ªÀÇ ¹®ÀÚ·Î ±³Ã¼ÇÏ½Ê½Ã¿À. ´ÙÀ½ ¿¹Á¦¸¦ ¿¬±¸ÇØ º¸½Ê½Ã¿À. ´ÙÀ½ ¿¹Á¦´Â ¹®ÀÚ¿­ &lt;br&gt;À» ±¸ºÐÀÚ·Î »ç¿ëÇÕ´Ï´Ù:</p>
+	  ë¬¸ìžì—´ì„ ë¬¸ìžê°€ ì•„ë‹ˆë¼ êµ¬ë¶„ìžë¡œ ì‚¬ìš©í•˜ë ¤ë©´, ë¨¼ì € <a href="StringReplace.htm">StringReplace</a>ë¥¼ ì‚¬ìš©í•´ ê·¸ ë¬¸ìžì—´ì´ ë‚˜íƒ€ë‚˜ë©´ ëª¨ë‘, í…ìŠ¤íŠ¸ì—ì„œ ì ˆëŒ€ë¡œ ê¸°í˜¸ ê·¸ëŒ€ë¡œ ì‚¬ìš©ë˜ì§€ ì•ŠëŠ” í•˜ë‚˜ì˜ ë¬¸ìžë¡œ êµì²´í•˜ì‹­ì‹œì˜¤. ë‹¤ìŒ ì˜ˆì œë¥¼ ì—°êµ¬í•´ ë³´ì‹­ì‹œì˜¤. ë‹¤ìŒ ì˜ˆì œëŠ” ë¬¸ìžì—´ &lt;br&gt;ì„ êµ¬ë¶„ìžë¡œ ì‚¬ìš©í•©ë‹ˆë‹¤:</p>
 
-<pre>StringReplace, NewHTML, HTMLString, &lt;br&gt;, ``, All  <em>; &lt;br&gt;ÀÌ ³ªÅ¸³¯ ¶§¸¶´Ù ¾×¼¾Æ® ¹®ÀÚ·Î ¹Ù²ß´Ï´Ù.</em>
-StringSplit, MyArray, NewHTML, ``  <em>; ¾×¼¾Æ® ¹®ÀÚ¿¡ ±â¹ÝÇØ ¹®ÀÚ¿­À» °¡¸¨´Ï´Ù.</em></pre></dd>
+<pre>StringReplace, NewHTML, HTMLString, &lt;br&gt;, ``, All  <em>; &lt;br&gt;ì´ ë‚˜íƒ€ë‚  ë•Œë§ˆë‹¤ ì•¡ì„¼íŠ¸ ë¬¸ìžë¡œ ë°”ê¿‰ë‹ˆë‹¤.</em>
+StringSplit, MyArray, NewHTML, ``  <em>; ì•¡ì„¼íŠ¸ ë¬¸ìžì— ê¸°ë°˜í•´ ë¬¸ìžì—´ì„ ê°€ë¦…ë‹ˆë‹¤.</em></pre></dd>
 
 </dl>
 
 <h4>StrSplit() <span class="ver">[v1.1.13+]</span></h4>
 <dl>
 
-  <dt>Array<br>(¹ÝÈ¯ °ª)</dt>
-  <dd><p>¹®ÀÚ¿­ (°´Ã¼)ÀÇ <a href="../Objects.htm#Usage_Simple_Arrays">¹è¿­</a>.</p></dd>
+  <dt>Array<br>(ë°˜í™˜ ê°’)</dt>
+  <dd><p>ë¬¸ìžì—´ (ê°ì²´)ì˜ <a href="../Objects.htm#Usage_Simple_Arrays">ë°°ì—´</a>.</p></dd>
 
   <dt>String</dt>
-  <dd><p>ºÐ¸®ÇÒ ¹®ÀÚ¿­.</p></dd>
+  <dd><p>ë¶„ë¦¬í•  ë¬¸ìžì—´.</p></dd>
 
   <dt>Delimiters</dt>
-  <dd><p>ÀÌ ¸Å°³º¯¼ö°¡ ºñ¾î ÀÖ°Å³ª »ý·«µÇ¸é, ÀÔ·Â ¹®ÀÚ¿­ÀÇ °¢ ¹®ÀÚ´Â º°µµÀÇ ºÎ¹®ÀÚ¿­·Î °£ÁÖµË´Ï´Ù.</p>
-      <p>±×·¸Áö ¾ÊÀ¸¸é, <em>Delimiters</em>´Â ´ÜÀÏ ¹®ÀÚ¿­ÀÌ°Å³ª ¹®ÀÚ¿­ ¹è¿­ÀÏ ¼ö ÀÖ½À´Ï´Ù. °¢ ±¸ºÐÀÚ´Â ºÎ¹®ÀÚ¿­ »çÀÌÀÇ °æ°è°¡ ³ªÅ¸³ª´Â °÷À» °áÁ¤ÇÏ´Âµ¥ »ç¿ëµË´Ï´Ù. ±¸ºÐÀÚ´Â ºÎ¹®ÀÚ¿­ÀÇ ÀÏºÎºÐÀ¸·Î °£ÁÖµÇÁö ¾ÊÀ¸¹Ç·Î, Àý´ë·Î ¹ÝÈ¯µÈ ¹è¿­¿¡ Æ÷ÇÔµÇÁö ¾Ê½À´Ï´Ù. ¶ÇÇÑ, ÀÔ·Â ¹®ÀÚ¿­¿¡¼­ ±¸ºÐÀÚ ÇÑ ½Ö »çÀÌ¿¡ ¾Æ¹«°Íµµ ¾ø´Ù¸é, ±×¿¡ »óÀÀÇÏ´Â ¹è¿­ ¿ø¼Ò´Â ºó ¿ø¼ÒÀÔ´Ï´Ù.</p>      
+  <dd><p>ì´ ë§¤ê°œë³€ìˆ˜ê°€ ë¹„ì–´ ìžˆê±°ë‚˜ ìƒëžµë˜ë©´, ìž…ë ¥ ë¬¸ìžì—´ì˜ ê° ë¬¸ìžëŠ” ë³„ë„ì˜ ë¶€ë¬¸ìžì—´ë¡œ ê°„ì£¼ë©ë‹ˆë‹¤.</p>
+      <p>ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, <em>Delimiters</em>ëŠ” ë‹¨ì¼ ë¬¸ìžì—´ì´ê±°ë‚˜ ë¬¸ìžì—´ ë°°ì—´ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê° êµ¬ë¶„ìžëŠ” ë¶€ë¬¸ìžì—´ ì‚¬ì´ì˜ ê²½ê³„ê°€ ë‚˜íƒ€ë‚˜ëŠ” ê³³ì„ ê²°ì •í•˜ëŠ”ë° ì‚¬ìš©ë©ë‹ˆë‹¤. êµ¬ë¶„ìžëŠ” ë¶€ë¬¸ìžì—´ì˜ ì¼ë¶€ë¶„ìœ¼ë¡œ ê°„ì£¼ë˜ì§€ ì•Šìœ¼ë¯€ë¡œ, ì ˆëŒ€ë¡œ ë°˜í™˜ëœ ë°°ì—´ì— í¬í•¨ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë˜í•œ, ìž…ë ¥ ë¬¸ìžì—´ì—ì„œ êµ¬ë¶„ìž í•œ ìŒ ì‚¬ì´ì— ì•„ë¬´ê²ƒë„ ì—†ë‹¤ë©´, ê·¸ì— ìƒì‘í•˜ëŠ” ë°°ì—´ ì›ì†ŒëŠ” ë¹ˆ ì›ì†Œìž…ë‹ˆë‹¤.</p>      
       <p>
-	  ¿¹¸¦ µé¾î: <code>&quot;,&quot;</code>´Â ¹®ÀÚ¿­À» ½°Ç¥°¡ ³ªÅ¸³¯ ¶§¸¶´Ù ºÐ¸®ÇÕ´Ï´Ù. ºñ½ÁÇÏ°Ô, <code>[A_Tab, A_Space]</code>´Â ÀÔ·Â ¹®ÀÚ¿­¿¡¼­ ½ºÆäÀÌ½º³ª ÅÇÀ» ¸¸³¯ ¶§¸¶´Ù »õ ¹è¿­ ¿ø¼Ò¸¦ »ý¼ºÇÕ´Ï´Ù.</p></dd>
+	  ì˜ˆë¥¼ ë“¤ì–´: <code>&quot;,&quot;</code>ëŠ” ë¬¸ìžì—´ì„ ì‰¼í‘œê°€ ë‚˜íƒ€ë‚  ë•Œë§ˆë‹¤ ë¶„ë¦¬í•©ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, <code>[A_Tab, A_Space]</code>ëŠ” ìž…ë ¥ ë¬¸ìžì—´ì—ì„œ ìŠ¤íŽ˜ì´ìŠ¤ë‚˜ íƒ­ì„ ë§Œë‚  ë•Œë§ˆë‹¤ ìƒˆ ë°°ì—´ ì›ì†Œë¥¼ ìƒì„±í•©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 <h4>Both</h4>
 <dl>
 
   <dt>OmitChars</dt>
-  <dd><p>°¢ ¹è¿­ ¿ø¼ÒÀÇ ¾Õ°ú µÚ·ÎºÎÅÍ ¹èÁ¦ÇÒ ¹®ÀÚ¿­ÀÇ ¸®½ºÆ® (´ë¼Ò¹®ÀÚ ±¸ºÐ, ¼±ÅÃÀû). ¿¹¸¦ µé¾î, <em>OmitChars</em>°¡ <code>%A_Space%%A_Tab%</code> (StringSplit) ¶Ç´Â <code>" `t"</code> (StrSplit)ÀÌ¸é, ½ºÆäÀÌ½º¿Í ÅÇÀº ¸ðµç ¿ø¼ÒÀÇ ¾Õ°ú µÚ·ÎºÎÅÍ Á¦°ÅµË´Ï´Ù (°¡¿îµ¥´Â ¾Æ´Ô).</p>
+  <dd><p>ê° ë°°ì—´ ì›ì†Œì˜ ì•žê³¼ ë’¤ë¡œë¶€í„° ë°°ì œí•  ë¬¸ìžì—´ì˜ ë¦¬ìŠ¤íŠ¸ (ëŒ€ì†Œë¬¸ìž êµ¬ë¶„, ì„ íƒì ). ì˜ˆë¥¼ ë“¤ì–´, <em>OmitChars</em>ê°€ <code>%A_Space%%A_Tab%</code> (StringSplit) ë˜ëŠ” <code>" `t"</code> (StrSplit)ì´ë©´, ìŠ¤íŽ˜ì´ìŠ¤ì™€ íƒ­ì€ ëª¨ë“  ì›ì†Œì˜ ì•žê³¼ ë’¤ë¡œë¶€í„° ì œê±°ë©ë‹ˆë‹¤ (ê°€ìš´ë°ëŠ” ì•„ë‹˜).</p>
     <p>
-	<em>Delimiters</em>°¡ ºñ¾î ÀÖÀ¸¸é, <em>OmitChars</em>´Â ¹è¿­·ÎºÎÅÍ ¾î´À ¹®ÀÚ¸¦ ¹èÁ¦ÇØ¾ß ÇÏ´ÂÁö¸¦ ³ªÅ¸³À´Ï´Ù.</p>
+	<em>Delimiters</em>ê°€ ë¹„ì–´ ìžˆìœ¼ë©´, <em>OmitChars</em>ëŠ” ë°°ì—´ë¡œë¶€í„° ì–´ëŠ ë¬¸ìžë¥¼ ë°°ì œí•´ì•¼ í•˜ëŠ”ì§€ë¥¼ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤.</p>
     <p>
-	´ëºÎºÐÀÇ ´Ù¸¥ ¸í·É¾îÀÇ ¸¶Áö¸· ¸Å°³º¯¼ö¿Í ´Ù¸£°Ô, StringSplit¿¡ ´ëÇÏ¿© <em>OmitChars</em>¿¡¼­ ½°Ç¥´Â ¹Ýµå½Ã ÇÇ½Å½ÃÄÑ¾ß ÇÕ´Ï´Ù (`,).</p></dd>
+	ëŒ€ë¶€ë¶„ì˜ ë‹¤ë¥¸ ëª…ë ¹ì–´ì˜ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì™€ ë‹¤ë¥´ê²Œ, StringSplitì— ëŒ€í•˜ì—¬ <em>OmitChars</em>ì—ì„œ ì‰¼í‘œëŠ” ë°˜ë“œì‹œ í”¼ì‹ ì‹œì¼œì•¼ í•©ë‹ˆë‹¤ (`,).</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÀÇ»ç ¹è¿­ÀÌ ÀÌ¹Ì Á¸ÀçÇÏ¸é, StringSplit ¸í·É¾î´Â ¾ÕÂÊºÎÅÍ N°³ÀÇ ¿ø¼ÒÀÇ °ª¸¸ º¯°æÇÕ´Ï´Ù. ¿©±â¿¡¼­  NÀº <em>InputVar</em>¿¡¼­ ÃâÇöÇÏ´Â ºÎ¹®ÀÚ¿­ÀÇ °³¼öÀÔ´Ï´Ù. N ¹øÂ° ÀÌÈÄÀÇ ¿ø¼Ò´Â º¯°æµÇÁö ¾Ê½À´Ï´Ù. ±×·¯¹Ç·Î, ¾ó¸¶³ª ¸¹Àº Ç×¸ñÀÌ ½ÇÁ¦·Î ÀÌ ¸í·É¾î·Î »ý»êµÇ¾ú´Â°¡¸¦ ¾Ë¾Æ³»·Á¸é, 0 ¿ø¼Ò¸¦ »ç¿ëÇÏ´Â °ÍÀÌ °¡Àå ¾ÈÀüÇÕ´Ï´Ù (MyArray0). </p>
+ì˜ì‚¬ ë°°ì—´ì´ ì´ë¯¸ ì¡´ìž¬í•˜ë©´, StringSplit ëª…ë ¹ì–´ëŠ” ì•žìª½ë¶€í„° Nê°œì˜ ì›ì†Œì˜ ê°’ë§Œ ë³€ê²½í•©ë‹ˆë‹¤. ì—¬ê¸°ì—ì„œ  Nì€ <em>InputVar</em>ì—ì„œ ì¶œí˜„í•˜ëŠ” ë¶€ë¬¸ìžì—´ì˜ ê°œìˆ˜ìž…ë‹ˆë‹¤. N ë²ˆì§¸ ì´í›„ì˜ ì›ì†ŒëŠ” ë³€ê²½ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ê·¸ëŸ¬ë¯€ë¡œ, ì–¼ë§ˆë‚˜ ë§Žì€ í•­ëª©ì´ ì‹¤ì œë¡œ ì´ ëª…ë ¹ì–´ë¡œ ìƒì‚°ë˜ì—ˆëŠ”ê°€ë¥¼ ì•Œì•„ë‚´ë ¤ë©´, 0 ì›ì†Œë¥¼ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ê°€ìž¥ ì•ˆì „í•©ë‹ˆë‹¤ (MyArray0). </p>
 <p>
-½ºÆäÀÌ½º¿Í ÅÇ °°Àº °ø¹é ¹®ÀÚµéÀº À¯ÁöµË´Ï´Ù. ´Ü, ±× ¹®ÀÚ ÀÚÃ¼°¡ ±¸ºÐÀÚÀÌ°Å³ª <em>OmitChars</em>¿¡ Æ÷ÇÔµÇ´Â °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù. ÅÇ°ú ½ºÆäÀÌ½º´Â <a href="Trim.htm">Trim</a> ÇÔ¼ö¸¦ È£ÃâÇØ º¯¼öÀÇ ¾çÂÊ ³¡À¸·ÎºÎÅÍ ´ÙµëÀ» ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î: <code>MyArray1 := Trim(MyArray1)</code>.</p>
+ìŠ¤íŽ˜ì´ìŠ¤ì™€ íƒ­ ê°™ì€ ê³µë°± ë¬¸ìžë“¤ì€ ìœ ì§€ë©ë‹ˆë‹¤. ë‹¨, ê·¸ ë¬¸ìž ìžì²´ê°€ êµ¬ë¶„ìžì´ê±°ë‚˜ <em>OmitChars</em>ì— í¬í•¨ë˜ëŠ” ê²½ìš°ëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤. íƒ­ê³¼ ìŠ¤íŽ˜ì´ìŠ¤ëŠ” <a href="Trim.htm">Trim</a> í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•´ ë³€ìˆ˜ì˜ ì–‘ìª½ ëìœ¼ë¡œë¶€í„° ë‹¤ë“¬ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>MyArray1 := Trim(MyArray1)</code>.</p>
 <p>
-Ç¥ÁØ CSV (½°Ç¥·Î °¡¸¥ °ª(comma separated value)) Çü½ÄÀÇ ¹®ÀÚ¿­À» °¡¸£·Á¸é, <a href="LoopParse.htm">ÆÄ½Ì È¸µ¹ÀÌ</a>¸¦ »ç¿ëÇÏ½Ê½Ã¿À. CSV Ã³¸®°¡ ³»ÀåµÇ¾î ÀÖ½À´Ï´Ù.</p>
+í‘œì¤€ CSV (ì‰¼í‘œë¡œ ê°€ë¥¸ ê°’(comma separated value)) í˜•ì‹ì˜ ë¬¸ìžì—´ì„ ê°€ë¥´ë ¤ë©´, <a href="LoopParse.htm">íŒŒì‹± íšŒëŒì´</a>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤. CSV ì²˜ë¦¬ê°€ ë‚´ìž¥ë˜ì–´ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-¹®ÀÚ¿­À» °¡¸£±â Àü¿¡ ÇÊµå¸¦ ´Ù¸¥ ¼ø¼­·Î Á¤·ÄÇÏ·Á¸é, <a href="Sort.htm">Sort</a> ¸í·É¾î¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+ë¬¸ìžì—´ì„ ê°€ë¥´ê¸° ì „ì— í•„ë“œë¥¼ ë‹¤ë¥¸ ìˆœì„œë¡œ ì •ë ¬í•˜ë ¤ë©´, <a href="Sort.htm">Sort</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-ºÎ¹®ÀÚ¿­À» ¸Þ¸ð¸®¿¡ ¿µ¿øÈ÷ ÀúÀåÇÒ ÇÊ¿ä°¡ ¾ø´Ù¸é, <a href="LoopParse.htm">ÆÄ½Ì È¸µ¹ÀÌ</a>ÀÇ »ç¿ëÀ» °í·ÁÇØ º¸½Ê½Ã¿À -- Æ¯È÷ <em>InputVar</em>°¡ ¸Å¿ì ¹æ´ëÇÏ´Ù¸é ²À °í·ÁÇØ º¸½Ã±â¸¦ ¹Ù¶ø´Ï´Ù. ±×·± °æ¿ì´Â ¹æ´ëÇÑ ¾çÀÇ ¸Þ¸ð¸®°¡ ÀúÀåµÉ °ÍÀÔ´Ï´Ù. ¿¹¸¦ µé¾î:</p>
+ë¶€ë¬¸ìžì—´ì„ ë©”ëª¨ë¦¬ì— ì˜ì›ížˆ ì €ìž¥í•  í•„ìš”ê°€ ì—†ë‹¤ë©´, <a href="LoopParse.htm">íŒŒì‹± íšŒëŒì´</a>ì˜ ì‚¬ìš©ì„ ê³ ë ¤í•´ ë³´ì‹­ì‹œì˜¤ -- íŠ¹ížˆ <em>InputVar</em>ê°€ ë§¤ìš° ë°©ëŒ€í•˜ë‹¤ë©´ ê¼­ ê³ ë ¤í•´ ë³´ì‹œê¸°ë¥¼ ë°”ëžë‹ˆë‹¤. ê·¸ëŸ° ê²½ìš°ëŠ” ë°©ëŒ€í•œ ì–‘ì˜ ë©”ëª¨ë¦¬ê°€ ì €ìž¥ë  ê²ƒìž…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
 <pre>Colors = red,green,blue
 Loop, parse, Colors, `,
     MsgBox Color number %A_Index% is %A_LoopField%.</pre>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
-<p><a href="LoopParse.htm">ÆÄ½Ì È¸µ¹ÀÌ</a>, <a href="../misc/Arrays.htm">¹è¿­</a>, <a href="Sort.htm">Sort</a>, <a href="SplitPath.htm">SplitPath</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
+<h3>ê´€ë ¨ í•­ëª©</h3>
+<p><a href="LoopParse.htm">íŒŒì‹± íšŒëŒì´</a>, <a href="../misc/Arrays.htm">ë°°ì—´</a>, <a href="Sort.htm">Sort</a>, <a href="SplitPath.htm">SplitPath</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">TestString = This is a test.
-StringSplit, word_array, TestString, %A_Space%, .  <em>; Á¡Àº Á¦¿ÜÇÕ´Ï´Ù.</em>
+StringSplit, word_array, TestString, %A_Space%, .  <em>; ì ì€ ì œì™¸í•©ë‹ˆë‹¤.</em>
 MsgBox, The 4th word is %word_array4%.
 
 Colors = red,green,blue
@@ -102,7 +101,7 @@ Loop, %ColorArray0%
     MsgBox, Color number %a_index% is %this_color%.
 }</pre>
 <pre class="NoIndent">TestString := "This is a test."
-word_array := StrSplit(TestString, A_Space, ".")  <em>; Á¡Àº Á¦¿ÜÇÕ´Ï´Ù.</em>
+word_array := StrSplit(TestString, A_Space, ".")  <em>; ì ì€ ì œì™¸í•©ë‹ˆë‹¤.</em>
 MsgBox % "The 4th word is " word_array[4]
 
 Colors := "red,green,blue"

@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>MouseMove</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,50 +11,50 @@
 
 <h1>MouseMove</h1>
 
-<p>¸¶¿ì½º Ä¿¼­¸¦ ÀÌµ¿½ÃÅµ´Ï´Ù.</p>
+<p>ë§ˆìš°ìŠ¤ ì»¤ì„œë¥¼ ì´ë™ì‹œí‚µë‹ˆë‹¤.</p>
 
 <pre class="Syntax">MouseMove, X, Y [, Speed, R]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>X, Y</dt>
-  <dd><p>¸¶¿ì½º¸¦ ÀÌµ¿ÇÒ x/y ÁÂÇ¥, <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É. Á¶Ç¥´Â È°¼º Ã¢¿¡ »ó´ëÀûÀÔ´Ï´Ù. ´Ü, <a href="CoordMode.htm">CoordMode</a>¸¦ »ç¿ëÇÏ¿© ÁÂÇ¥ Ã¼°è¸¦ ¹Ù²Ù¾ú´Ù¸é ¿¹¿ÜÀÔ´Ï´Ù.</p></dd>
+  <dd><p>ë§ˆìš°ìŠ¤ë¥¼ ì´ë™í•  x/y ì¢Œí‘œ, <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥. ì¡°í‘œëŠ” í™œì„± ì°½ì— ìƒëŒ€ì ìž…ë‹ˆë‹¤. ë‹¨, <a href="CoordMode.htm">CoordMode</a>ë¥¼ ì‚¬ìš©í•˜ì—¬ ì¢Œí‘œ ì²´ê³„ë¥¼ ë°”ê¾¸ì—ˆë‹¤ë©´ ì˜ˆì™¸ìž…ë‹ˆë‹¤.</p></dd>
 
   <dt>Speed</dt>
-  <dd><p>¸¶¿ì½º¸¦ ÀÌµ¿ÇÒ ¼Óµµ. ¹üÀ§´Â 0 (°¡Àå ºü¸§)ºÎÅÍ 100 (°¡Àå ´À¸²)±îÁö. <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É. ÁÖÀÇ: ¼Óµµ°¡ 0ÀÌ¸é ¸¶¿ì½º´Â ¼ø°£ ÀÌµ¿ÇÕ´Ï´Ù. »ý·«ÇÏ¸é, ±âº» ¼Óµµ°¡ (<a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>°¡ ¼³Á¤ÇÑ ¶Ç´Â 2) »ç¿ëµË´Ï´Ù.</p>
-      <p><em>Speed</em>´Â <a href="SendMode.htm">SendInput/Play ¸ðµå</a>¿¡ ´ëÇØ¼­´Â ¹«½ÃµË´Ï´Ù; ¸¶¿ì½º¸¦ ¼ø°£ ÀÌµ¿½ÃÅµ´Ï´Ù  (±×·¸Áö¸¸ <a href="SetMouseDelay.htm">SetMouseDelay</a>´Â SendPlay¿¡ Àû¿ëÇÒ ¸ðµå°¡ ÀÖ½À´Ï´Ù). ½Ã°¢ÀûÀ¸·Î ¸¶¿ì½º¸¦ ´õ ´À¸®°Ô ÀÌµ¿½ÃÅ°·Á¸é -- Ã»ÁßÀ» À§ÇØ µ¥¸ð¸¦ ¼öÇàÇÏ´Â ½ºÅ©¸³Æ®¶ó¸é -- <code><a href="Send.htm#Click">SendEvent {Click 100, 200}</a></code> ¶Ç´Â <code><a href="SendMode.htm">SendMode Event</a></code> (¼±ÅÃÀûÀ¸·Î <a href="BlockInput.htm">BlockInput</a>°ú ÇÔ²²) »ç¿ëÇÏ½Ê½Ã¿À.</p></dd>
+  <dd><p>ë§ˆìš°ìŠ¤ë¥¼ ì´ë™í•  ì†ë„. ë²”ìœ„ëŠ” 0 (ê°€ìž¥ ë¹ ë¦„)ë¶€í„° 100 (ê°€ìž¥ ëŠë¦¼)ê¹Œì§€. <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥. ì£¼ì˜: ì†ë„ê°€ 0ì´ë©´ ë§ˆìš°ìŠ¤ëŠ” ìˆœê°„ ì´ë™í•©ë‹ˆë‹¤. ìƒëžµí•˜ë©´, ê¸°ë³¸ ì†ë„ê°€ (<a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>ê°€ ì„¤ì •í•œ ë˜ëŠ” 2) ì‚¬ìš©ë©ë‹ˆë‹¤.</p>
+      <p><em>Speed</em>ëŠ” <a href="SendMode.htm">SendInput/Play ëª¨ë“œ</a>ì— ëŒ€í•´ì„œëŠ” ë¬´ì‹œë©ë‹ˆë‹¤; ë§ˆìš°ìŠ¤ë¥¼ ìˆœê°„ ì´ë™ì‹œí‚µë‹ˆë‹¤  (ê·¸ë ‡ì§€ë§Œ <a href="SetMouseDelay.htm">SetMouseDelay</a>ëŠ” SendPlayì— ì ìš©í•  ëª¨ë“œê°€ ìžˆìŠµë‹ˆë‹¤). ì‹œê°ì ìœ¼ë¡œ ë§ˆìš°ìŠ¤ë¥¼ ë” ëŠë¦¬ê²Œ ì´ë™ì‹œí‚¤ë ¤ë©´ -- ì²­ì¤‘ì„ ìœ„í•´ ë°ëª¨ë¥¼ ìˆ˜í–‰í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸ë¼ë©´ -- <code><a href="Send.htm#Click">SendEvent {Click 100, 200}</a></code> ë˜ëŠ” <code><a href="SendMode.htm">SendMode Event</a></code> (ì„ íƒì ìœ¼ë¡œ <a href="BlockInput.htm">BlockInput</a>ê³¼ í•¨ê»˜) ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p></dd>
 
   <dt>R</dt>
-  <dd><p>ÀÌ ¸Å°³º¯¼ö°¡ ±âÈ£ RÀÌ¸é, X¿Í Y ÁÂÇ¥´Â ÇöÀç ¸¶¿ì½º À§Ä¡·ÎºÎÅÍÀÇ »ó´ë°Å¸®(offsets)·Î Ãë±ÞµË´Ï´Ù. ´Ù¸¥ ¸»·Î, Ä¿¼­´Â °ÅÀÇ ÇöÀç À§Ä¡ X ÇÈ¼¿ ¸¸Å­ ¿À¸£ÂÊÀ¸·Î (À½¼öÀÌ¸é ¿ÞÂÊÀ¸·Î) ±×¸®°í Y ÇÈ¼¿ ¸¸Å­ ¾Æ·¡ÂÊÀ¸·Î (À½¼öÀÌ¸é À§·Î) ÀÌµ¿ÇÕ´Ï´Ù.</p></dd>
+  <dd><p>ì´ ë§¤ê°œë³€ìˆ˜ê°€ ê¸°í˜¸ Rì´ë©´, Xì™€ Y ì¢Œí‘œëŠ” í˜„ìž¬ ë§ˆìš°ìŠ¤ ìœ„ì¹˜ë¡œë¶€í„°ì˜ ìƒëŒ€ê±°ë¦¬(offsets)ë¡œ ì·¨ê¸‰ë©ë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ, ì»¤ì„œëŠ” ê±°ì˜ í˜„ìž¬ ìœ„ì¹˜ X í”½ì…€ ë§Œí¼ ì˜¤ë¥´ìª½ìœ¼ë¡œ (ìŒìˆ˜ì´ë©´ ì™¼ìª½ìœ¼ë¡œ) ê·¸ë¦¬ê³  Y í”½ì…€ ë§Œí¼ ì•„ëž˜ìª½ìœ¼ë¡œ (ìŒìˆ˜ì´ë©´ ìœ„ë¡œ) ì´ë™í•©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÀÌ ¸í·É¾î´Â <a href="SendMode.htm">SendMode</a>°¡ ¼³Á¤ÇÑ Àü¼Û ¹æ¹ýÀ» »ç¿ëÇÕ´Ï´Ù.</p>
+ì´ ëª…ë ¹ì–´ëŠ” <a href="SendMode.htm">SendMode</a>ê°€ ì„¤ì •í•œ ì „ì†¡ ë°©ë²•ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.</p>
 <p>
-<a href="SendMode.htm">SendPlay ¸ðµå</a>´Â ´Ù¸¥ ¸ðµåº¸´Ù ´õ ±¤¹üÀ§ÇÑ °ÔÀÓ¿¡¼­ ¼º°øÀûÀ¸·Î ¸¶¿ì½º ÀÌº¥Æ®¸¦ ¹ß»ý½ÃÅ³ ¼ö ÀÖ½À´Ï´Ù. °Ô´Ù°¡, ¾î¶² ¾îÇÃ¸®ÄÉÀÌ¼Ç°ú °ÔÀÓÀº ¸¶¿ì½º°¡ ³Ê¹« ºü¸£°Ô ¿òÁ÷ÀÎ´Ù¸é ÃßÀûÇÏ´Â µ¥ ¾î·Á¿òÀÌ ÀÖÀ» ¼ö ÀÖ½À´Ï´Ù. <em>speed</em> ¸Å°³º¯¼ö³ª <a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>¸¦ »ç¿ëÇÏ¸é ±× ¼Óµµ¸¦ ÁÙÀÏ ¼ö ÀÖ½À´Ï´Ù (±âº» <a href="SendMode.htm">SendEvent ¸ðµå</a> Àü¿ë).</p>
+<a href="SendMode.htm">SendPlay ëª¨ë“œ</a>ëŠ” ë‹¤ë¥¸ ëª¨ë“œë³´ë‹¤ ë” ê´‘ë²”ìœ„í•œ ê²Œìž„ì—ì„œ ì„±ê³µì ìœ¼ë¡œ ë§ˆìš°ìŠ¤ ì´ë²¤íŠ¸ë¥¼ ë°œìƒì‹œí‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, ì–´ë–¤ ì–´í”Œë¦¬ì¼€ì´ì…˜ê³¼ ê²Œìž„ì€ ë§ˆìš°ìŠ¤ê°€ ë„ˆë¬´ ë¹ ë¥´ê²Œ ì›€ì§ì¸ë‹¤ë©´ ì¶”ì í•˜ëŠ” ë° ì–´ë ¤ì›€ì´ ìžˆì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <em>speed</em> ë§¤ê°œë³€ìˆ˜ë‚˜ <a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>ë¥¼ ì‚¬ìš©í•˜ë©´ ê·¸ ì†ë„ë¥¼ ì¤„ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ê¸°ë³¸ <a href="SendMode.htm">SendEvent ëª¨ë“œ</a> ì „ìš©).</p>
 <p>
-<a href="BlockInput.htm">BlockInput</a> ¸í·É¾îÀ» »ç¿ëÇÏ¸é »ç¿ëÀÚÀÇ ¹°¸®ÀûÀÎ ¸¶¿ì½º È°µ¿ ¶§¹®¿¡ ¸¶¿ì½º ¸í·É¾î·Î »ý»êÇÑ Èä³»³½ ¸¶¿ì½º ÀÌº¥Æ®°¡ ¾îÁö·´°Ô µÇ´Â °ÍÀ» ¸·À» ¼ö ÀÖ½À´Ï´Ù. ±×·¸Áö¸¸, ÀÌ°ÍÀº º¸Åë <a href="SendMode.htm">SendInput/Play</a> ¸ðµå¿¡´Â ºÒÇÊ¿äÇÕ´Ï´Ù. ¿Ö³ÄÇÏ¸é ÀÚµ¿À¸·Î »ç¿ëÀÚÀÇ ¹°¸®Àû ¸¶¿ì½º È°µ¿À» ³ªÁßÀ¸·Î ¿¬±âÇÏ±â ¶§¹®ÀÔ´Ï´Ù.</p>
+<a href="BlockInput.htm">BlockInput</a> ëª…ë ¹ì–´ì„ ì‚¬ìš©í•˜ë©´ ì‚¬ìš©ìžì˜ ë¬¼ë¦¬ì ì¸ ë§ˆìš°ìŠ¤ í™œë™ ë•Œë¬¸ì— ë§ˆìš°ìŠ¤ ëª…ë ¹ì–´ë¡œ ìƒì‚°í•œ í‰ë‚´ë‚¸ ë§ˆìš°ìŠ¤ ì´ë²¤íŠ¸ê°€ ì–´ì§€ëŸ½ê²Œ ë˜ëŠ” ê²ƒì„ ë§‰ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì´ê²ƒì€ ë³´í†µ <a href="SendMode.htm">SendInput/Play</a> ëª¨ë“œì—ëŠ” ë¶ˆí•„ìš”í•©ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ìžë™ìœ¼ë¡œ ì‚¬ìš©ìžì˜ ë¬¼ë¦¬ì  ë§ˆìš°ìŠ¤ í™œë™ì„ ë‚˜ì¤‘ìœ¼ë¡œ ì—°ê¸°í•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 <p>
-¸¶¿ì½ºÀÇ ¸Å ¿òÁ÷ÀÓ¸¶´Ù ÀÚµ¿À¸·Î Áö¿¬ ½Ã°£ÀÌ »ðÀÔµË´Ï´Ù (<a href="SendMode.htm">SendInput ¸ðµå</a>´Â ¿¹¿Ü). <a href="SetMouseDelay.htm">SetMouseDelay</a>¸¦ »ç¿ëÇÏ¸é Áö¿¬ ½Ã°£ÀÇ ±æÀÌ¸¦ º¯°æÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ë§ˆìš°ìŠ¤ì˜ ë§¤ ì›€ì§ìž„ë§ˆë‹¤ ìžë™ìœ¼ë¡œ ì§€ì—° ì‹œê°„ì´ ì‚½ìž…ë©ë‹ˆë‹¤ (<a href="SendMode.htm">SendInput ëª¨ë“œ</a>ëŠ” ì˜ˆì™¸). <a href="SetMouseDelay.htm">SetMouseDelay</a>ë¥¼ ì‚¬ìš©í•˜ë©´ ì§€ì—° ì‹œê°„ì˜ ê¸¸ì´ë¥¼ ë³€ê²½í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-´ÙÀ½Àº ¸¶¿ì½º Ä¿¼­¸¦ ÀÌµ¿ÇÏ´Â ´Ù¸¥ ¹æ¹ýÀÔ´Ï´Ù. ¾î¶² ´ÙÁß-¸ð´ÏÅÍ ±¸¼º¿¡¼­´Â ´õ Àß ÀÛµ¿ÇÒ ¼öµµ ÀÖ½À´Ï´Ù:</p>
+ë‹¤ìŒì€ ë§ˆìš°ìŠ¤ ì»¤ì„œë¥¼ ì´ë™í•˜ëŠ” ë‹¤ë¥¸ ë°©ë²•ìž…ë‹ˆë‹¤. ì–´ë–¤ ë‹¤ì¤‘-ëª¨ë‹ˆí„° êµ¬ì„±ì—ì„œëŠ” ë” ìž˜ ìž‘ë™í•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤:</p>
 
-<pre><a href="DllCall.htm">DllCall</a>(&quot;SetCursorPos&quot;, int, 100, int, 400)  <em>; Ã¹ ¹øÂ° ¼ýÀÚ´Â X-ÁÂÇ¥ÀÌ°í µÎ ¹øÂ° ÁÂÇ¥´Â YÀÔ´Ï´Ù (È­¸é¿¡ »ó´ëÀûÀÔ´Ï´Ù).</em></pre>
+<pre><a href="DllCall.htm">DllCall</a>(&quot;SetCursorPos&quot;, int, 100, int, 400)  <em>; ì²« ë²ˆì§¸ ìˆ«ìžëŠ” X-ì¢Œí‘œì´ê³  ë‘ ë²ˆì§¸ ì¢Œí‘œëŠ” Yìž…ë‹ˆë‹¤ (í™”ë©´ì— ìƒëŒ€ì ìž…ë‹ˆë‹¤).</em></pre>
 <p>
-°ü·ÃÇÏ¿© ¸»¾¸µå¸®¸é, ¸¶¿ì½º Ä¿¼­´Â <a href="DllCall.htm#HideCursor">Ä¿¼­-¼û±â±â ¿¹Á¦</a>¿Í °°ÀÌ ÀÓ½Ã·Î ¼ûÀ» ¼ö ÀÖ½À´Ï´Ù.</p>
+ê´€ë ¨í•˜ì—¬ ë§ì”€ë“œë¦¬ë©´, ë§ˆìš°ìŠ¤ ì»¤ì„œëŠ” <a href="DllCall.htm#HideCursor">ì»¤ì„œ-ìˆ¨ê¸°ê¸° ì˜ˆì œ</a>ì™€ ê°™ì´ ìž„ì‹œë¡œ ìˆ¨ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
 <a href="CoordMode.htm">CoordMode</a>, <a href="SendMode.htm">SendMode</a>, <a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, <a href="Click.htm">Click</a>, <a href="MouseClick.htm">MouseClick</a>, <a href="MouseClickDrag.htm">MouseClickDrag</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, <a href="BlockInput.htm">BlockInput</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent"><em>; ¸¶¿ì½º¸¦ »õ À§Ä¡·Î ÀÌµ¿ÇÕ´Ï´Ù:</em>
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent"><em>; ë§ˆìš°ìŠ¤ë¥¼ ìƒˆ ìœ„ì¹˜ë¡œ ì´ë™í•©ë‹ˆë‹¤:</em>
 MouseMove, 200, 100
 
-<em>; ¸¶¿ì½º¸¦ ÃµÃµÈ÷ (¼Óµµ 50 vs. 2) ÇöÀç À§Ä¡·ÎºÎÅÍ
-; 20 ÇÈ¼¿¸¸Å­ ¿À¸¥ÂÊÀ¸·Î ±×¸®°í 30 ÇÈ¼¿ ¸¸Å­ ¾Æ·¡ÂÊÀ¸·Î ÀÌµ¿½ÃÅµ´Ï´Ù:</em>
+<em>; ë§ˆìš°ìŠ¤ë¥¼ ì²œì²œížˆ (ì†ë„ 50 vs. 2) í˜„ìž¬ ìœ„ì¹˜ë¡œë¶€í„°
+; 20 í”½ì…€ë§Œí¼ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ê·¸ë¦¬ê³  30 í”½ì…€ ë§Œí¼ ì•„ëž˜ìª½ìœ¼ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤:</em>
 MouseMove, 20, 30, 50, R</pre>
 
 </body>

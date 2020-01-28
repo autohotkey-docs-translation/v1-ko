@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Random</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,54 +11,54 @@
 
 <h1>Random</h1>
 
-<p>ÀÇ»ç-¹«ÀÛÀ§ ¼ö¸¦ ¹ß»ý½ÃÅµ´Ï´Ù.</p>
+<p>ì˜ì‚¬-ë¬´ìž‘ìœ„ ìˆ˜ë¥¼ ë°œìƒì‹œí‚µë‹ˆë‹¤.</p>
 
 <pre class="Syntax">Random, OutputVar [, Min, Max]
 Random, , NewSeed</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>°á°ú¸¦ ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§. ÀúÀåµÈ ºÎµ¿ ¼Ò¼öÁ¡ ¼öÀÇ Çü½ÄÀº <a href="SetFormat.htm">SetFormat</a>¿¡ ÀÇÇÏ¿© °áÁ¤µË´Ï´Ù.</p></dd>
+  <dd><p>ê²°ê³¼ë¥¼ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„. ì €ìž¥ëœ ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ì˜ í˜•ì‹ì€ <a href="SetFormat.htm">SetFormat</a>ì— ì˜í•˜ì—¬ ê²°ì •ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>Min</dt>
-  <dd>»ý¼ºµÉ °¡Àå ÀÛÀº ¼ö. À½¼ö³ª ºÎµ¿ ¼Ò¼öÁ¡¼ö ¶Ç´Â <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É. »ý·«ÇÏ¸é, °¡Àå ÀÛÀº °ªÀº 0ÀÔ´Ï´Ù. Á¤¼ö¿¡ ´ëÇÏ¿© Çã¿ëµÇ´Â °¡Àå ³·Àº °ªÀº -2147483648 for integersÀÌÁö¸¸, ºÎµ¿ ¼Ò¼öÁ¡ ¼ö´Â Á¦ÇÑÀÌ ¾ø½À´Ï´Ù.</dd>
+  <dd>ìƒì„±ë  ê°€ìž¥ ìž‘ì€ ìˆ˜. ìŒìˆ˜ë‚˜ ë¶€ë™ ì†Œìˆ˜ì ìˆ˜ ë˜ëŠ” <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥. ìƒëžµí•˜ë©´, ê°€ìž¥ ìž‘ì€ ê°’ì€ 0ìž…ë‹ˆë‹¤. ì •ìˆ˜ì— ëŒ€í•˜ì—¬ í—ˆìš©ë˜ëŠ” ê°€ìž¥ ë‚®ì€ ê°’ì€ -2147483648 for integersì´ì§€ë§Œ, ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ëŠ” ì œí•œì´ ì—†ìŠµë‹ˆë‹¤.</dd>
 
   <dt>Max</dt>
-  <dd><p>»ý¼ºµÉ °¡Àå Å« ¼ö, À½¼ö³ª ºÎµ¿ ¼Ò¼öÁ¡ ¼ö ¶Ç´Â <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É. »ý·«ÇÏ¸é, °¡Àå Å« ¼ö´Â Á¤¼ö¿¡ ´ëÇÏ¿© 2147483647ÀÔ´Ï´Ù (±×·¯³ª ºÎµ¿ ¼Ò¼öÁ¡ ¼ö´Â Á¦ÇÑÀÌ ¾ø½À´Ï´Ù).</p></dd>
+  <dd><p>ìƒì„±ë  ê°€ìž¥ í° ìˆ˜, ìŒìˆ˜ë‚˜ ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ ë˜ëŠ” <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥. ìƒëžµí•˜ë©´, ê°€ìž¥ í° ìˆ˜ëŠ” ì •ìˆ˜ì— ëŒ€í•˜ì—¬ 2147483647ìž…ë‹ˆë‹¤ (ê·¸ëŸ¬ë‚˜ ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ëŠ” ì œí•œì´ ì—†ìŠµë‹ˆë‹¤).</p></dd>
 
   <dt>NewSeed</dt>
-  <dd><p>ÀÌ ¸ðµå´Â ¹«ÀÛÀ§ ¼ö ¹ß»ýÀÚ¿¡ <em>NewSeed</em>·Î ´Ù½Ã ¾¾¾ÑÀ» ¸ÔÀÔ´Ï´Ù (<a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É). ÀÌ°ÍÀº ÀÌ¾î ¹ß»ýµÇ´Â ¸ðµç ¹«ÀÛÀ§ ¼ö¿¡ ¿µÇâÀ» ¹ÌÄ¨´Ï´Ù. <em>NewSeed</em>´Â 0ºÎÅÍ 4294967295 (0xFFFFFFFF) »çÀÌÀÇ Á¤¼ö¿©¾ß ÇÕ´Ï´Ù. ´Ù½Ã ¾¾¾Ñ ¸Ô±â±â´Â ¹ß»ýµÈ ¹«ÀÛÀ§ ¼öÀÇ Ç°Áú/º¸¾È¼ºÀ» Çâ»ó½ÃÅ³ ¼ö ÀÖ½À´Ï´Ù. Æ¯È÷ <em>NewSeed</em>°¡ Ç°ÁúÀÌ ¶³¾îÁö´Â ÀÇ»ç-¹«ÀÛÀ§ ¼ö°¡ ¾Æ´Ï¶ó ÁøÂ¥ ¹«ÀÛÀ§¼öÀÌ¸é ´õ ÁÁ½À´Ï´Ù. ÀÏ¹ÝÀûÀ¸·Î, ¾¾¾Ñ ´Ù½Ã ¸ÔÀÌ±â´Â ÇÑ ¹ø ÀÌ»ó ÇÒ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.</p>
+  <dd><p>ì´ ëª¨ë“œëŠ” ë¬´ìž‘ìœ„ ìˆ˜ ë°œìƒìžì— <em>NewSeed</em>ë¡œ ë‹¤ì‹œ ì”¨ì•—ì„ ë¨¹ìž…ë‹ˆë‹¤ (<a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥). ì´ê²ƒì€ ì´ì–´ ë°œìƒë˜ëŠ” ëª¨ë“  ë¬´ìž‘ìœ„ ìˆ˜ì— ì˜í–¥ì„ ë¯¸ì¹©ë‹ˆë‹¤. <em>NewSeed</em>ëŠ” 0ë¶€í„° 4294967295 (0xFFFFFFFF) ì‚¬ì´ì˜ ì •ìˆ˜ì—¬ì•¼ í•©ë‹ˆë‹¤. ë‹¤ì‹œ ì”¨ì•— ë¨¹ê¸°ê¸°ëŠ” ë°œìƒëœ ë¬´ìž‘ìœ„ ìˆ˜ì˜ í’ˆì§ˆ/ë³´ì•ˆì„±ì„ í–¥ìƒì‹œí‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. íŠ¹ížˆ <em>NewSeed</em>ê°€ í’ˆì§ˆì´ ë–¨ì–´ì§€ëŠ” ì˜ì‚¬-ë¬´ìž‘ìœ„ ìˆ˜ê°€ ì•„ë‹ˆë¼ ì§„ì§œ ë¬´ìž‘ìœ„ìˆ˜ì´ë©´ ë” ì¢‹ìŠµë‹ˆë‹¤. ì¼ë°˜ì ìœ¼ë¡œ, ì”¨ì•— ë‹¤ì‹œ ë¨¹ì´ê¸°ëŠ” í•œ ë²ˆ ì´ìƒ í•  í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.</p>
       <p>
-	  ½ºÅ©¸³Æ®¿¡¼­ ´Ù½Ã ¾¾¾Ñ ¸ÔÀÌ±â°¡ »ç¿ëµÇÁö ¾Ê¾Ò´Ù¸é, ¾¾¾ÑÀº 64-ºñÆ® °ªÀÇ ¾Æ·¡ÂÊ 32-ºñÆ®·Î ½ÃÀÛÇÕ´Ï´Ù. ÀÌ °ªÀº 1601³â 1¿ù 1ÀÏ ÀÌÈÄ·Î 100-³ª³ëÃÊ °£°ÝÀ¸·Î ³ª´« °³¼öÀÔ´Ï´Ù. 
-	  ÀÌ °ªÀº ~7.2 ºÐ¸¶´Ù 0ºÎÅÍ 4294967295 »çÀÌ¸¦ ¿Ô´Ù °¬´Ù ÇÕ´Ï´Ù.</p></dd>
+	  ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ë‹¤ì‹œ ì”¨ì•— ë¨¹ì´ê¸°ê°€ ì‚¬ìš©ë˜ì§€ ì•Šì•˜ë‹¤ë©´, ì”¨ì•—ì€ 64-ë¹„íŠ¸ ê°’ì˜ ì•„ëž˜ìª½ 32-ë¹„íŠ¸ë¡œ ì‹œìž‘í•©ë‹ˆë‹¤. ì´ ê°’ì€ 1601ë…„ 1ì›” 1ì¼ ì´í›„ë¡œ 100-ë‚˜ë…¸ì´ˆ ê°„ê²©ìœ¼ë¡œ ë‚˜ëˆˆ ê°œìˆ˜ìž…ë‹ˆë‹¤. 
+	  ì´ ê°’ì€ ~7.2 ë¶„ë§ˆë‹¤ 0ë¶€í„° 4294967295 ì‚¬ì´ë¥¼ ì™”ë‹¤ ê°”ë‹¤ í•©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÀÌ ¸í·É¾î´Â ÀÇ»ç-¹«ÀÛÀ§ ¼ö¸¦ »êÃâÇÕ´Ï´Ù. ÀÌ ¼ö´Â ÁøÂ¥ ¹«ÀÛÀ§ ¼ö¸¦ Èä³» ³»Áö¸¸ ½ÇÁ¦·Î´Â ´ÙÀ½ ¼ýÀÚ°¡ ¹«¾ùÀÎÁö ÃßÃø/°áÁ¤ÇÏ±â°¡ Áö±ØÈ÷ ¾î·Á¿î º¹ÀâÇÑ °ø½Ä¿¡ ±â¹ÝÇÑ ¼ýÀÚÀÏ »ÓÀÔ´Ï´Ù.</p>
+ì´ ëª…ë ¹ì–´ëŠ” ì˜ì‚¬-ë¬´ìž‘ìœ„ ìˆ˜ë¥¼ ì‚°ì¶œí•©ë‹ˆë‹¤. ì´ ìˆ˜ëŠ” ì§„ì§œ ë¬´ìž‘ìœ„ ìˆ˜ë¥¼ í‰ë‚´ ë‚´ì§€ë§Œ ì‹¤ì œë¡œëŠ” ë‹¤ìŒ ìˆ«ìžê°€ ë¬´ì—‡ì¸ì§€ ì¶”ì¸¡/ê²°ì •í•˜ê¸°ê°€ ì§€ê·¹ížˆ ì–´ë ¤ìš´ ë³µìž¡í•œ ê³µì‹ì— ê¸°ë°˜í•œ ìˆ«ìžì¼ ë¿ìž…ë‹ˆë‹¤.</p>
 <p>
-ÁöÁ¤µÈ ¹üÀ§ ¾ÈÀÇ ¼ýÀÚ´Â ¸ðµÎ ´ë·« ºñ½ÁÇÑ ºóµµ·Î ¹ß»ýµË´Ï´Ù (±×·¸Áö¸¸, ¾Æ·¡ÀÇ &quot;¾Ë·ÁÁø ÇÑ°è&quot;¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À).</p>
+ì§€ì •ëœ ë²”ìœ„ ì•ˆì˜ ìˆ«ìžëŠ” ëª¨ë‘ ëŒ€ëžµ ë¹„ìŠ·í•œ ë¹ˆë„ë¡œ ë°œìƒë©ë‹ˆë‹¤ (ê·¸ë ‡ì§€ë§Œ, ì•„ëž˜ì˜ &quot;ì•Œë ¤ì§„ í•œê³„&quot;ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤).</p>
 <p>
-<em>Min</em> ¶Ç´Â <em>Max</em>¿¡ ¼Ò¼ö Á¡ÀÌ µé¾î ÀÖ´Ù¸é, ÃÖÁ¾ °á°ú´Â ºÎµ¿ ¼Ò¼öÁ¡ ¼ö°¡ µË´Ï´Ù. Çü½ÄÀº <a href="SetFormat.htm">SetFormat</a>¿¡ ÀÇÇÏ¿© °áÁ¤µË´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é, ±× °á°ú´Â Á¤¼öÀÔ´Ï´Ù.</p>
+<em>Min</em> ë˜ëŠ” <em>Max</em>ì— ì†Œìˆ˜ ì ì´ ë“¤ì–´ ìžˆë‹¤ë©´, ìµœì¢… ê²°ê³¼ëŠ” ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ê°€ ë©ë‹ˆë‹¤. í˜•ì‹ì€ <a href="SetFormat.htm">SetFormat</a>ì— ì˜í•˜ì—¬ ê²°ì •ë©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ê·¸ ê²°ê³¼ëŠ” ì •ìˆ˜ìž…ë‹ˆë‹¤.</p>
 <p>
-<b>¾Ë·ÁÁø ÇÑ°è</b>: ºÎµ¿ ¼Ò¼öÁ¡ ¼ö¿¡ ´ëÇÏ¿© 
+<b>ì•Œë ¤ì§„ í•œê³„</b>: ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ì— ëŒ€í•˜ì—¬ 
 <ol>
-	<li> Æ¯Á¤ ¹üÀ§¿¡ ´ëÇÏ¿© ´ë·« 4,294,967,296°³ÀÇ ±¸ºÐµÈ ¼ýÀÚ¸¸ ¹ß»ý½ÃÅ³ ¼ö ÀÖ½À´Ï´Ù. ±×·¡¼­ ¹üÀ§ ¾ÈÀÇ ´Ù¸¥ ¸ðµç ¼ýÀÚµéÀº Àý´ë·Î ¹ß»ýµÇÁö ¾Ê½À´Ï´Ù; 
-	<li>°¡²û °á°ú°¡ ÁöÁ¤µÈ ÃÖ´ë°ª(<em>Max</em>)º¸´Ù ´õ Å« °æ¿ì°¡ ÀÖ½À´Ï´Ù. (ÀÌ°ÍÀº ºÎºÐÀûÀ¸·Î ºÎµ¿ ¼Ò¼öÁ¡ ¼ö·ÎºÎÅÍ Á¤¹Ðµµ¸¦ ¹°·Á ¹Þ¾Ò±â ¶§¹®ÀÔ´Ï´Ù).
+	<li> íŠ¹ì • ë²”ìœ„ì— ëŒ€í•˜ì—¬ ëŒ€ëžµ 4,294,967,296ê°œì˜ êµ¬ë¶„ëœ ìˆ«ìžë§Œ ë°œìƒì‹œí‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ëž˜ì„œ ë²”ìœ„ ì•ˆì˜ ë‹¤ë¥¸ ëª¨ë“  ìˆ«ìžë“¤ì€ ì ˆëŒ€ë¡œ ë°œìƒë˜ì§€ ì•ŠìŠµë‹ˆë‹¤; 
+	<li>ê°€ë” ê²°ê³¼ê°€ ì§€ì •ëœ ìµœëŒ€ê°’(<em>Max</em>)ë³´ë‹¤ ë” í° ê²½ìš°ê°€ ìžˆìŠµë‹ˆë‹¤. (ì´ê²ƒì€ ë¶€ë¶„ì ìœ¼ë¡œ ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ë¡œë¶€í„° ì •ë°€ë„ë¥¼ ë¬¼ë ¤ ë°›ì•˜ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤).
 </ol>
 </p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="SetFormat.htm">SetFormat</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 
 <pre class="NoIndent">Random, rand, 1, 10
 Random, rand, 0.0, 1.0</pre>
 
-<h3>¿øº»¿¡ ÀÖ´Â ÁÖ¼® ÀÎ¿ë</h3>
+<h3>ì›ë³¸ì— ìžˆëŠ” ì£¼ì„ ì¸ìš©</h3>
 
 <P>This function uses the Mersenne Twister random number generator, MT19937, written
   by Takuji Nishimura and Makoto Matsumoto, Shawn Cokus, Matthe Bellew and Isaku

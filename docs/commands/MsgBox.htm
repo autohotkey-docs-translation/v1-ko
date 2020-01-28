@@ -1,10 +1,9 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>MsgBox</title>
 <meta name="description" content="Display MsgBox windows easily in this free scripting language. You can also create custom data entry forms, user interfaces, and menu bars.">
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -13,47 +12,47 @@
 
 <h1>MsgBox</h1>
 
-<p>ÁöÁ¤µÈ ÅØ½ºÆ®¸¦ ÀÛÀº Ã¢¿¡ º¸¿©ÁÝ´Ï´Ù. ±× ¾È¿¡ ÇÏ³ª ÀÌ»óÀÇ ¹öÆ°ÀÌ µé¾î ÀÖ½À´Ï´Ù (¿¹¸¦ µé¾î Yes ±×¸®°í No).</p>
+<p>ì§€ì •ëœ í…ìŠ¤íŠ¸ë¥¼ ìž‘ì€ ì°½ì— ë³´ì—¬ì¤ë‹ˆë‹¤. ê·¸ ì•ˆì— í•˜ë‚˜ ì´ìƒì˜ ë²„íŠ¼ì´ ë“¤ì–´ ìžˆìŠµë‹ˆë‹¤ (ì˜ˆë¥¼ ë“¤ì–´ Yes ê·¸ë¦¬ê³  No).</p>
 
 <pre class="Syntax">MsgBox, Text
 MsgBox [, Options, Title, Text, Timeout]</pre>
 
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Text</dt>
-  <dd><p>¸ðµç ¸Å°³º¯¼ö¸¦ »ý·«ÇÏ¸é, MsgBox´Â ÅØ½ºÆ® &quot;°è¼ÓÇÏ·Á¸é OK¸¦ ´©¸£½Ê½Ã¿À.&quot;¸¦ º¸¿©ÁÝ´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é, ÀÌ ¸Å°³º¯¼ö´Â »ç¿ëÀÚ¿¡°Ô ¹«¾ùÀ» ÇØ¾ß ÇÏ´ÂÁö ¶Ç´Â Á¤º¸¸¦ Á¦°øÇÏ±â À§ÇØ ¸Þ½ÃÁö ¹Ú½º ¾È¿¡ º¸¿©ÁÖ´Â ÅØ½ºÆ®ÀÔ´Ï´Ù.</p>
-    <p><a href="_EscapeChar.htm">ÇÇ½Å ¿¬¼Ó¿­</a>À» »ç¿ëÇÏ¸é Æ¯¼ö ¹®ÀÚ¸¦ Ç¥±âÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î, `nÀº ¶óÀÎÇÇµå ¹®ÀÚ¸¦ ³ªÅ¸³À´Ï´Ù. ÀÌ ¹®ÀÚ´Â ÇöÀç ÁÙÀ» ³¡³»°í »õ ÁÙÀ» ½ÃÀÛÇÕ´Ï´Ù. ±×¸®ÇÏ¿©,  <code>text1`n`ntext2</code>´Â text1°ú text2 »çÀÌ¿¡ ºó ÁÙÀ» ¸¸µì´Ï´Ù.</p>
+  <dd><p>ëª¨ë“  ë§¤ê°œë³€ìˆ˜ë¥¼ ìƒëžµí•˜ë©´, MsgBoxëŠ” í…ìŠ¤íŠ¸ &quot;ê³„ì†í•˜ë ¤ë©´ OKë¥¼ ëˆ„ë¥´ì‹­ì‹œì˜¤.&quot;ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ì´ ë§¤ê°œë³€ìˆ˜ëŠ” ì‚¬ìš©ìžì—ê²Œ ë¬´ì—‡ì„ í•´ì•¼ í•˜ëŠ”ì§€ ë˜ëŠ” ì •ë³´ë¥¼ ì œê³µí•˜ê¸° ìœ„í•´ ë©”ì‹œì§€ ë°•ìŠ¤ ì•ˆì— ë³´ì—¬ì£¼ëŠ” í…ìŠ¤íŠ¸ìž…ë‹ˆë‹¤.</p>
+    <p><a href="_EscapeChar.htm">í”¼ì‹  ì—°ì†ì—´</a>ì„ ì‚¬ìš©í•˜ë©´ íŠ¹ìˆ˜ ë¬¸ìžë¥¼ í‘œê¸°í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, `nì€ ë¼ì¸í”¼ë“œ ë¬¸ìžë¥¼ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤. ì´ ë¬¸ìžëŠ” í˜„ìž¬ ì¤„ì„ ëë‚´ê³  ìƒˆ ì¤„ì„ ì‹œìž‘í•©ë‹ˆë‹¤. ê·¸ë¦¬í•˜ì—¬,  <code>text1`n`ntext2</code>ëŠ” text1ê³¼ text2 ì‚¬ì´ì— ë¹ˆ ì¤„ì„ ë§Œë“­ë‹ˆë‹¤.</p>
     <p>
-	<em>Text</em>°¡ ±æ¸é, <a href="../Scripts.htm#continuation">°è¼Ó ¼½¼Ç</a>À» ¼ö´ÜÀ¸·Î ¿©·¯ ÂªÀº ÁÙµé·Î °¡¸¦ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é °¡µ¶¼º°ú À¯Áö°ü¸®¼ºÀÌ °³¼±µË´Ï´Ù.</p></dd>
+	<em>Text</em>ê°€ ê¸¸ë©´, <a href="../Scripts.htm#continuation">ê³„ì† ì„¹ì…˜</a>ì„ ìˆ˜ë‹¨ìœ¼ë¡œ ì—¬ëŸ¬ ì§§ì€ ì¤„ë“¤ë¡œ ê°€ë¥¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ ê°€ë…ì„±ê³¼ ìœ ì§€ê´€ë¦¬ì„±ì´ ê°œì„ ë©ë‹ˆë‹¤.</p></dd>
 
   <dt>Options</dt>
-  <dd><p>¸Þ½ÃÁö ¹Ú½ºÀÇ Á¾·ù¿Í °¡´ÉÇÑ ¹öÆ° Á¶ÇÕÀ» ³ªÅ¸³À´Ï´Ù. ºñ¾î ÀÖ°Å³ª »ý·«ÇÏ¸é, ±âº»°ªÀº 0ÀÔ´Ï´Ù. Çã¿ëµÇ´Â °ªµéÀº ¾Æ·¡ÀÇ Ç¥¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+  <dd><p>ë©”ì‹œì§€ ë°•ìŠ¤ì˜ ì¢…ë¥˜ì™€ ê°€ëŠ¥í•œ ë²„íŠ¼ ì¡°í•©ì„ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤. ë¹„ì–´ ìžˆê±°ë‚˜ ìƒëžµí•˜ë©´, ê¸°ë³¸ê°’ì€ 0ìž…ë‹ˆë‹¤. í—ˆìš©ë˜ëŠ” ê°’ë“¤ì€ ì•„ëž˜ì˜ í‘œë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
     <p>
-	ÀÌ ¸Å°³º¯¼ö´Â ±âÈ£ ±×´ë·ÎÀÇ ¼ýÀÚÀÌ°Å³ª (v1.1.06+) ¶Ç´Â <code>% Options</code>¿Í °°Àº °­Á¦ Ç¥Çö½ÄÀÔ´Ï´Ù. ºñ¾î ÀÖÁö ¾ÊÀº ´Ù¸¥ °ªµéÀº ÀÌ ¸Å°³º¯¼ö·Î ÀÎÁöÇÏÁö ¾Ê°í, ´ÜÀÏ-¸Å°³º¯¼öÀÇ <em>Text</em>ÀÇ ÀÏºÎ·Î ÀÎÁöÇÕ´Ï´Ù.</p></dd>
+	ì´ ë§¤ê°œë³€ìˆ˜ëŠ” ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ ìˆ«ìžì´ê±°ë‚˜ (v1.1.06+) ë˜ëŠ” <code>% Options</code>ì™€ ê°™ì€ ê°•ì œ í‘œí˜„ì‹ìž…ë‹ˆë‹¤. ë¹„ì–´ ìžˆì§€ ì•Šì€ ë‹¤ë¥¸ ê°’ë“¤ì€ ì´ ë§¤ê°œë³€ìˆ˜ë¡œ ì¸ì§€í•˜ì§€ ì•Šê³ , ë‹¨ì¼-ë§¤ê°œë³€ìˆ˜ì˜ <em>Text</em>ì˜ ì¼ë¶€ë¡œ ì¸ì§€í•©ë‹ˆë‹¤.</p></dd>
 
   <dt>Title</dt>
-  <dd><p>¸Þ½ÃÁö ¹Ú½º Ã¢ÀÇ Á¦¸ñ. »ý·«ÇÏ°Å³ª ºñ¾î ÀÖÀ¸¸é, ±âº»°ªÀº ½ºÅ©¸³Æ®ÀÇ (°æ·Î ¾øÀÌ) ÀÌ¸§ÀÔ´Ï´Ù.</p></dd>
+  <dd><p>ë©”ì‹œì§€ ë°•ìŠ¤ ì°½ì˜ ì œëª©. ìƒëžµí•˜ê±°ë‚˜ ë¹„ì–´ ìžˆìœ¼ë©´, ê¸°ë³¸ê°’ì€ ìŠ¤í¬ë¦½íŠ¸ì˜ (ê²½ë¡œ ì—†ì´) ì´ë¦„ìž…ë‹ˆë‹¤.</p></dd>
 
   <dt>Timeout</dt>
-  <dd><p><a name="Timeout"></a>(¼±ÅÃÀû) ÃÊ´ÜÀ§ ½Ã°£ Á¦ÇÑ, ¾È¿¡ ½ÊÁø ¼Ò¼öÁ¡ÀÌ µé¾î ÀÖÁö¸¸ ±âº»ÀûÀ¸·Î Ç¥Çö½ÄÀÌ ¾Æ´Õ´Ï´Ù. v1.1.06+¿¡¼­, <code>% mins*60</code>¿Í °°Àº °­Á¦ Ç¥Çö½ÄÀÏ ¼ö ÀÖ½À´Ï´Ù.</p>
+  <dd><p><a name="Timeout"></a>(ì„ íƒì ) ì´ˆë‹¨ìœ„ ì‹œê°„ ì œí•œ, ì•ˆì— ì‹­ì§„ ì†Œìˆ˜ì ì´ ë“¤ì–´ ìžˆì§€ë§Œ ê¸°ë³¸ì ìœ¼ë¡œ í‘œí˜„ì‹ì´ ì•„ë‹™ë‹ˆë‹¤. v1.1.06+ì—ì„œ, <code>% mins*60</code>ì™€ ê°™ì€ ê°•ì œ í‘œí˜„ì‹ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
     <p>
-	°ªÀÌ 2147483 (24.8 ÀÏ)À» ³Ñ¾î¼­¸é, 2147483ÀÌ ¼³Á¤µË´Ï´Ù. ½Ã°£Á¦ÇÑÀÌ °æ°úÇÑ ÈÄ¿¡ ¸Þ½ÃÁö ¹Ú½º´Â ÀÚµ¿À¸·Î ´ÝÈü´Ï´Ù. ±×¸®°í <a href="IfMsgBox.htm">IfMsgBox</a> ¸í·É¾î°¡ ±× °ª TIMEOUTÀ» º¸°Ô µË´Ï´Ù.</p>
+	ê°’ì´ 2147483 (24.8 ì¼)ì„ ë„˜ì–´ì„œë©´, 2147483ì´ ì„¤ì •ë©ë‹ˆë‹¤. ì‹œê°„ì œí•œì´ ê²½ê³¼í•œ í›„ì— ë©”ì‹œì§€ ë°•ìŠ¤ëŠ” ìžë™ìœ¼ë¡œ ë‹«íž™ë‹ˆë‹¤. ê·¸ë¦¬ê³  <a href="IfMsgBox.htm">IfMsgBox</a> ëª…ë ¹ì–´ê°€ ê·¸ ê°’ TIMEOUTì„ ë³´ê²Œ ë©ë‹ˆë‹¤.</p>
       <p>
-	  <b>¾Ë·ÁÁø ÇÑ°è</b>: MsgBox¿¡ ¿ÀÁ÷ OK ¹öÆ°¸¸ ÀÖÀ» °æ¿ì, ¶Ç´Ù¸¥ ¾²·¹µå¿¡ ÀÇÇØ ÀÚ½ÅÀÇ <a href="../misc/Threads.htm">¾²·¹µå</a>°¡ ÀÎÅÍ·´Æ® µÇ¾î ÀÖ´Â µ¿¾È¿¡ MsgBox ½Ã°£Á¦ÇÑÀÌ ³¡³ª¸é <a href="IfMsgBox.htm">IfMsgBox</a>´Â  OK ¹öÆ°ÀÌ ´­·È´Ù°í »ý°¢ÇÕ´Ï´Ù.</p></dd>
+	  <b>ì•Œë ¤ì§„ í•œê³„</b>: MsgBoxì— ì˜¤ì§ OK ë²„íŠ¼ë§Œ ìžˆì„ ê²½ìš°, ë˜ë‹¤ë¥¸ ì“°ë ˆë“œì— ì˜í•´ ìžì‹ ì˜ <a href="../misc/Threads.htm">ì“°ë ˆë“œ</a>ê°€ ì¸í„°ëŸ½íŠ¸ ë˜ì–´ ìžˆëŠ” ë™ì•ˆì— MsgBox ì‹œê°„ì œí•œì´ ëë‚˜ë©´ <a href="IfMsgBox.htm">IfMsgBox</a>ëŠ”  OK ë²„íŠ¼ì´ ëˆŒë ¸ë‹¤ê³  ìƒê°í•©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
 <p>
-<em>Options</em> ¸Å°³º¯¼ö´Â ´ÙÀ½ °ªÀ» Á¶ÇÕ(ÇÕ)À¸·Î ±¸¼ºµË´Ï´Ù.</p>
+<em>Options</em> ë§¤ê°œë³€ìˆ˜ëŠ” ë‹¤ìŒ ê°’ì„ ì¡°í•©(í•©)ìœ¼ë¡œ êµ¬ì„±ë©ë‹ˆë‹¤.</p>
 <table class="info" style="width:55%">
   <tr>
-    <th width="287">±â´É</th>
-    <th>½ÊÁø¼ö °ª</th>
-    <th>½ÊÀ°Áø¼ö °ª</th>
+    <th width="287">ê¸°ëŠ¥</th>
+    <th>ì‹­ì§„ìˆ˜ ê°’</th>
+    <th>ì‹­ìœ¡ì§„ìˆ˜ ê°’</th>
   </tr>
   <tr>
-    <td>OK (Áï, OK ¹öÆ°ÀÌ º¸¿©Áý´Ï´Ù)</td>
+    <td>OK (ì¦‰, OK ë²„íŠ¼ì´ ë³´ì—¬ì§‘ë‹ˆë‹¤)</td>
     <td align="center">0</td>
     <td align="center">0x0</td>
   </tr>
@@ -88,7 +87,7 @@ MsgBox [, Options, Title, Text, Timeout]</pre>
     <td align="center">0x6</td>
   </tr>
   <tr>
-    <td>µµ¿ò¸» ¹öÆ° Ãß±â (¾Æ·¡ ³íÆò ÂüÁ¶)</td>
+    <td>ë„ì›€ë§ ë²„íŠ¼ ì¶”ê¸° (ì•„ëž˜ ë…¼í‰ ì°¸ì¡°)</td>
     <td align="center">16384</td>
     <td align="center">0x4000</td>
   </tr>
@@ -98,22 +97,22 @@ MsgBox [, Options, Title, Text, Timeout]</pre>
     <td align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td>¼Õ ¾ÆÀÌÄÜ (ÁßÁö/¿¡·¯)</td>
+    <td>ì† ì•„ì´ì½˜ (ì¤‘ì§€/ì—ëŸ¬)</td>
     <td align="center">16</td>
     <td align="center">0x10</td>
   </tr>
   <tr>
-    <td>Áú¹® ¾ÆÀÌÄÜ</td>
+    <td>ì§ˆë¬¸ ì•„ì´ì½˜</td>
     <td align="center">32</td>
     <td align="center">0x20</td>
   </tr>
   <tr>
-    <td>°¨Åº ¾ÆÀÌÄÜ</td>
+    <td>ê°íƒ„ ì•„ì´ì½˜</td>
     <td align="center">48</td>
     <td align="center">0x30</td>
   </tr>
   <tr>
-    <td>º°Ç¥ ¾ÆÀÌÄÜ (Á¤º¸)</td>
+    <td>ë³„í‘œ ì•„ì´ì½˜ (ì •ë³´)</td>
     <td align="center">64</td>
     <td align="center">0x40</td>
   </tr>
@@ -123,12 +122,12 @@ MsgBox [, Options, Title, Text, Timeout]</pre>
     <td align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td>2nd ¹öÆ°ÀÌ ±âº»°ª</td>
+    <td>2nd ë²„íŠ¼ì´ ê¸°ë³¸ê°’</td>
     <td align="center">256</td>
     <td align="center">0x100</td>
   </tr>
   <tr>
-    <td>3rd ¹öÆ°ÀÌ ±âº»°ª</td>
+    <td>3rd ë²„íŠ¼ì´ ê¸°ë³¸ê°’</td>
     <td align="center">512</td>
     <td align="center">0x200</td>
   </tr>
@@ -138,7 +137,7 @@ MsgBox [, Options, Title, Text, Timeout]</pre>
     <td align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td>System Modal (Ç×»ó À§)</td>
+    <td>System Modal (í•­ìƒ ìœ„)</td>
     <td align="center">4096</td>
     <td align="center">0x1000</td>
   </tr>
@@ -148,8 +147,8 @@ MsgBox [, Options, Title, Text, Timeout]</pre>
     <td align="center">0x2000</td>
   </tr>
   <tr>
-    <td>Ç×»ó À§ (½ºÅ¸ÀÏ WS_EX_TOPMOST)<br>
-      (½Ã½ºÅÛ ¸ðµ¨°ú °°Áö¸¸ Á¦¸ñ ¹Ù ¾ÆÀÌÄÜÀÌ »ý·«µË´Ï´Ù)</td>
+    <td>í•­ìƒ ìœ„ (ìŠ¤íƒ€ì¼ WS_EX_TOPMOST)<br>
+      (ì‹œìŠ¤í…œ ëª¨ë¸ê³¼ ê°™ì§€ë§Œ ì œëª© ë°” ì•„ì´ì½˜ì´ ìƒëžµë©ë‹ˆë‹¤)</td>
     <td align="center">262144</td>
     <td align="center">0x40000</td>
   </tr>
@@ -159,71 +158,71 @@ MsgBox [, Options, Title, Text, Timeout]</pre>
     <td align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td>ÅØ½ºÆ®¸¦ ¿ìÃø Á¤·Ä</td>
+    <td>í…ìŠ¤íŠ¸ë¥¼ ìš°ì¸¡ ì •ë ¬</td>
     <td align="center">524288</td>
     <td align="center">0x80000</td>
   </tr>
   <tr>
-    <td>Hebrew/Arabic¿¡ ´ëÇÏ¿© ¿À¸¥ÂÊ¿¡¼­ ¿ÞÂÊÀ¸·Î ÀÐÀ½ </td>
+    <td>Hebrew/Arabicì— ëŒ€í•˜ì—¬ ì˜¤ë¥¸ìª½ì—ì„œ ì™¼ìª½ìœ¼ë¡œ ì½ìŒ </td>
     <td align="center">1048576</td>
     <td align="center">0x100000</td>
   </tr>
 </table>
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-À§ÀÇ Ç¥¿¡¼­ MsgBox¿¡ º¸¿©ÁÙ °ªµéÀ» ´õÇØ¼­ »ç¿ëµË´Ï´Ù. ¿¹¸¦ µé¾î, ±âº» ¹öÆ°À» Yes ´ë½Å¿¡ No·Î ÇÏ¿© Yes/No ¹Ú½º¸¦ ÁöÁ¤ÇÏ·Á¸é, <em>Options</em> °ªÀº 256+4 (260)°¡ µË´Ï´Ù. ½ÊÀ°Áø¼ö·Î 0x100+0x4 (0x104)°¡ µË´Ï´Ù.</p>
+ìœ„ì˜ í‘œì—ì„œ MsgBoxì— ë³´ì—¬ì¤„ ê°’ë“¤ì„ ë”í•´ì„œ ì‚¬ìš©ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, ê¸°ë³¸ ë²„íŠ¼ì„ Yes ëŒ€ì‹ ì— Noë¡œ í•˜ì—¬ Yes/No ë°•ìŠ¤ë¥¼ ì§€ì •í•˜ë ¤ë©´, <em>Options</em> ê°’ì€ 256+4 (260)ê°€ ë©ë‹ˆë‹¤. ì‹­ìœ¡ì§„ìˆ˜ë¡œ 0x100+0x4 (0x104)ê°€ ë©ë‹ˆë‹¤.</p>
 <p>
-MsgBox´Â ¶È¶ÈÇÏ°Ô ½°Ç¥¸¦ Ã³¸®ÇÕ´Ï´Ù. ±×·¡¼­ º¸Åë <em>Text</em> ¸Å°³º¯¼ö ¾È¿¡ ÀÖ´Â ½°Ç¥¸¦ <a href="_EscapeChar.htm">ÇÇ½Å</a> ½ÃÅ³ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.</p>
+MsgBoxëŠ” ë˜‘ë˜‘í•˜ê²Œ ì‰¼í‘œë¥¼ ì²˜ë¦¬í•©ë‹ˆë‹¤. ê·¸ëž˜ì„œ ë³´í†µ <em>Text</em> ë§¤ê°œë³€ìˆ˜ ì•ˆì— ìžˆëŠ” ì‰¼í‘œë¥¼ <a href="_EscapeChar.htm">í”¼ì‹ </a> ì‹œí‚¬ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.</p>
 <p>
-ÃÖ±ÙÀÇ MsgBox¿¡¼­ »ç¿ëÀÚ°¡ ¾î´À ¹öÆ°À» ´­·¶´ÂÁö ¾Ë¾Æ ³»·Á¸é, <a href="IfMsgBox.htm">IfMsgBox</a> ¸í·É¾î¸¦ »ç¿ëÇÏ½Ê½Ã¿À. ¿¹¸¦ µé¾î:</p>
+ìµœê·¼ì˜ MsgBoxì—ì„œ ì‚¬ìš©ìžê°€ ì–´ëŠ ë²„íŠ¼ì„ ëˆŒë €ëŠ”ì§€ ì•Œì•„ ë‚´ë ¤ë©´, <a href="IfMsgBox.htm">IfMsgBox</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤. ì˜ˆë¥¼ ë“¤ì–´:</p>
 
-<pre>MsgBox, 4,, °è¼Ó ÇÏ½Ã°Ú½À´Ï±î? (Yes ¶Ç´Â No¸¦ ´©¸£½Ê½Ã¿À)
+<pre>MsgBox, 4,, ê³„ì† í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Yes ë˜ëŠ” Noë¥¼ ëˆ„ë¥´ì‹­ì‹œì˜¤)
 IfMsgBox Yes
-    MsgBox Yes¸¦ ´©¸£¼Ì½À´Ï´Ù.
+    MsgBox Yesë¥¼ ëˆ„ë¥´ì…¨ìŠµë‹ˆë‹¤.
 else
-    MsgBox No¸¦ ´©¸£¼Ì½À´Ï´Ù.</pre>
+    MsgBox Noë¥¼ ëˆ„ë¥´ì…¨ìŠµë‹ˆë‹¤.</pre>
 <p>
-¹öÆ°ÀÇ ÀÌ¸§µéÀº <a href="../scripts/MsgBoxButtonNames.htm">´ÙÀ½ ¿¹Á¦</a>¸¦ µû¶ó Àç´ÜÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ë²„íŠ¼ì˜ ì´ë¦„ë“¤ì€ <a href="../scripts/MsgBoxButtonNames.htm">ë‹¤ìŒ ì˜ˆì œ</a>ë¥¼ ë”°ë¼ ìž¬ë‹¨í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>Á¤º¸</strong>: MsgBox Ã¢ÀÌ È°¼ºÈ­µÇ¾î ÀÖ´Â µ¿¾È Control-C¸¦ ´©¸£¸é ±×ÀÇ ÅØ½ºÆ®¸¦ Å¬¸³º¸µå·Î º¹»çÇÕ´Ï´Ù. ÀÌ°ÍÀº AutoHotkey°¡ »ý»êÇÑ MsgBox´Â ¹°·ÐÀÌ°í ¸ðµç MsgBox¿¡ Àû¿ëµË´Ï´Ù.</p>
+<strong>ì •ë³´</strong>: MsgBox ì°½ì´ í™œì„±í™”ë˜ì–´ ìžˆëŠ” ë™ì•ˆ Control-Cë¥¼ ëˆ„ë¥´ë©´ ê·¸ì˜ í…ìŠ¤íŠ¸ë¥¼ í´ë¦½ë³´ë“œë¡œ ë³µì‚¬í•©ë‹ˆë‹¤. ì´ê²ƒì€ AutoHotkeyê°€ ìƒì‚°í•œ MsgBoxëŠ” ë¬¼ë¡ ì´ê³  ëª¨ë“  MsgBoxì— ì ìš©ë©ë‹ˆë‹¤.</p>
 <p>
-<strong>GUI Ã¢°ú ÇÔ²² MsgBox »ç¿ëÇÏ±â</strong>: GUI Ã¢Àº <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>¸¦ »ç¿ëÇÏ¸é <em>¸ð´Þ</em> MsgBox¸¦ º¸¿©ÁÙ ¼ö ÀÖ½À´Ï´Ù. <em>¸ð´Þ</em> MsgBox¿¡¼­ »ç¿ëÀÚ´Â MsgBox¸¦ ³¡³¾ ¶§±îÁö GUI Ã¢°ú »óÈ£ ÀÛ¿ëÇÒ ¼ö ¾ø½À´Ï´Ù. ±×·± °æ¿ì, À§ÀÇ Å×ÀÌºí¿¡ ÀÖ´Â System Modal ¶Ç´Â Task Modal ¿É¼ÇÀ» ÁöÁ¤ÇÒ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.</p>
+<strong>GUI ì°½ê³¼ í•¨ê»˜ MsgBox ì‚¬ìš©í•˜ê¸°</strong>: GUI ì°½ì€ <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>ë¥¼ ì‚¬ìš©í•˜ë©´ <em>ëª¨ë‹¬</em> MsgBoxë¥¼ ë³´ì—¬ì¤„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <em>ëª¨ë‹¬</em> MsgBoxì—ì„œ ì‚¬ìš©ìžëŠ” MsgBoxë¥¼ ëë‚¼ ë•Œê¹Œì§€ GUI ì°½ê³¼ ìƒí˜¸ ìž‘ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ê·¸ëŸ° ê²½ìš°, ìœ„ì˜ í…Œì´ë¸”ì— ìžˆëŠ” System Modal ë˜ëŠ” Task Modal ì˜µì…˜ì„ ì§€ì •í•  í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>°¡ °ÜÁ® ÀÖÁö <em>¾ÊÀ¸¸é</em>, Task Modal ¿É¼Ç(8192)À» »ç¿ëÇÏ¸é »ç¿ëÀÚ°¡ MsgBox¸¦ ³¡³¾ ¶§±îÁö ½ºÅ©¸³Æ®ÀÇ ¸ðµç Ã¢À» ²ø ¼ö ÀÖ½À´Ï´Ù.</p>
+<a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>ê°€ ê²¨ì ¸ ìžˆì§€ <em>ì•Šìœ¼ë©´</em>, Task Modal ì˜µì…˜(8192)ì„ ì‚¬ìš©í•˜ë©´ ì‚¬ìš©ìžê°€ MsgBoxë¥¼ ëë‚¼ ë•Œê¹Œì§€ ìŠ¤í¬ë¦½íŠ¸ì˜ ëª¨ë“  ì°½ì„ ëŒ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>µµ¿ò¸» ¹öÆ°</strong>: µµ¿ò¸» ¹öÆ° ¿É¼Ç (83)ÀÌ <em>Options</em>¿¡ Á¸ÀçÇÏ¸é, µµ¿ò¸» ¹öÆ°À» Å¬¸¯ÇØµµ ¾Æ¹« È¿°úµµ ¾ø½À´Ï´Ù. ´Ü, ´ÙÀ½ µÎ Á¶°ÇÀÌ ¸ðµÎ ÂüÀÎ °æ¿ì´Â ¿¹¿ÜÀÔ´Ï´Ù:</p>
+<strong>ë„ì›€ë§ ë²„íŠ¼</strong>: ë„ì›€ë§ ë²„íŠ¼ ì˜µì…˜ (83)ì´ <em>Options</em>ì— ì¡´ìž¬í•˜ë©´, ë„ì›€ë§ ë²„íŠ¼ì„ í´ë¦­í•´ë„ ì•„ë¬´ íš¨ê³¼ë„ ì—†ìŠµë‹ˆë‹¤. ë‹¨, ë‹¤ìŒ ë‘ ì¡°ê±´ì´ ëª¨ë‘ ì°¸ì¸ ê²½ìš°ëŠ” ì˜ˆì™¸ìž…ë‹ˆë‹¤:</p>
 <ol>
-  <li><a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>¸¦ ¼ö´ÜÀ¸·Î MsgBox¸¦ GUI Ã¢ÀÌ ¼ÒÀ¯ÇÕ´Ï´Ù.</li>
-  <li>½ºÅ©¸³Æ®°¡  WM_HELP ¸Þ½ÃÁö (0x53)¸¦ °¨½ÃÇÏ°í ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î: <code><a href="OnMessage.htm">OnMessage(0x53, &quot;WM_HELP&quot;)</a></code>. WM_HELP() ÇÔ¼ö°¡ È£ÃâµÉ ¶§, »ç¿ëÀÚ¸¦ ¾È³» ÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¹¸¦ µé¾î ¶Ç´Ù¸¥ Ã¢ÀÌ³ª MsgBox¸¦ º¸¿©ÁÝ´Ï´Ù.</li>
+  <li><a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>ë¥¼ ìˆ˜ë‹¨ìœ¼ë¡œ MsgBoxë¥¼ GUI ì°½ì´ ì†Œìœ í•©ë‹ˆë‹¤.</li>
+  <li>ìŠ¤í¬ë¦½íŠ¸ê°€  WM_HELP ë©”ì‹œì§€ (0x53)ë¥¼ ê°ì‹œí•˜ê³  ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code><a href="OnMessage.htm">OnMessage(0x53, &quot;WM_HELP&quot;)</a></code>. WM_HELP() í•¨ìˆ˜ê°€ í˜¸ì¶œë  ë•Œ, ì‚¬ìš©ìžë¥¼ ì•ˆë‚´ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ ë˜ë‹¤ë¥¸ ì°½ì´ë‚˜ MsgBoxë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤.</li>
 </ol>
 <p>
-<strong>´Ý±â ¹öÆ° (MsgBoxÀÇ Á¦¸ñ ¹Ù¿¡ ÀÖ´Â)</strong>: MsgBox Ã¢Àº ¿î¿µ Ã¼Á¦ÀÇ ³»Àå Æ¯Â¡ÀÌ±â ¶§¹®¿¡ , ±×ÀÇ <strong>X</strong> ¹öÆ°Àº ¾î¶² ¹öÆ°ÀÌ Á¸ÀçÇÒ °æ¿ì¿¡¸¸ È°¼º È­µË´Ï´Ù. ¿ÀÁ÷ OK ¹öÆ°¸¸ ÀÖ´Ù¸é, <strong>X</strong> ¹öÆ°À» Å¬¸¯ÇÏ´õ¶óµµ OK¸¦ Å¬¸¯ÇÑ °Í°ú °°½À´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é, X ¹öÆ°Àº ºñÈ°¼ºÈ­ µË´Ï´Ù. ´Ü, Cancel ¹öÆ°ÀÌ ÀÖ´Ù¸é ¿¹¿ÜÀÎµ¥, ÀÌ °æ¿ì <strong>X</strong>¸¦ Å¬¸¯ÇÑ °ÍÀº Cancel¸¦ ´©¸¥ °Í°ú °°½À´Ï´Ù.</p>
+<strong>ë‹«ê¸° ë²„íŠ¼ (MsgBoxì˜ ì œëª© ë°”ì— ìžˆëŠ”)</strong>: MsgBox ì°½ì€ ìš´ì˜ ì²´ì œì˜ ë‚´ìž¥ íŠ¹ì§•ì´ê¸° ë•Œë¬¸ì— , ê·¸ì˜ <strong>X</strong> ë²„íŠ¼ì€ ì–´ë–¤ ë²„íŠ¼ì´ ì¡´ìž¬í•  ê²½ìš°ì—ë§Œ í™œì„± í™”ë©ë‹ˆë‹¤. ì˜¤ì§ OK ë²„íŠ¼ë§Œ ìžˆë‹¤ë©´, <strong>X</strong> ë²„íŠ¼ì„ í´ë¦­í•˜ë”ë¼ë„ OKë¥¼ í´ë¦­í•œ ê²ƒê³¼ ê°™ìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, X ë²„íŠ¼ì€ ë¹„í™œì„±í™” ë©ë‹ˆë‹¤. ë‹¨, Cancel ë²„íŠ¼ì´ ìžˆë‹¤ë©´ ì˜ˆì™¸ì¸ë°, ì´ ê²½ìš° <strong>X</strong>ë¥¼ í´ë¦­í•œ ê²ƒì€ Cancelë¥¼ ëˆ„ë¥¸ ê²ƒê³¼ ê°™ìŠµë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="IfMsgBox.htm">IfMsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a>, <a href="ToolTip.htm">ToolTip</a>, <a href="Gui.htm">GUI</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent">MsgBox ÀÌ°ÍÀº ¸Å°³º¯¼ö°¡ ÇÑ °³ÀÎ ¹æ¹ýÀÔ´Ï´Ù. ½°Ç¥ (,)´Â ÇÇ½Å½ÃÅ³ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.
-MsgBox, 4, , ÀÌ°ÍÀº ¸Å°³º¯¼ö°¡ ¼¼ °³ÀÎ ¹æ¹ýÀÔ´Ï´Ù. ½°Ç¥ (,)´Â ÇÇ½Å ½ÃÅ³ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.
-MsgBox, 4, , °è¼ÓÇÏ½Ã°Ú½À´Ï±î? (YES ¶Ç´Â NO¸¦ ´©¸¨´Ï´Ù)
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent">MsgBox ì´ê²ƒì€ ë§¤ê°œë³€ìˆ˜ê°€ í•œ ê°œì¸ ë°©ë²•ìž…ë‹ˆë‹¤. ì‰¼í‘œ (,)ëŠ” í”¼ì‹ ì‹œí‚¬ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.
+MsgBox, 4, , ì´ê²ƒì€ ë§¤ê°œë³€ìˆ˜ê°€ ì„¸ ê°œì¸ ë°©ë²•ìž…ë‹ˆë‹¤. ì‰¼í‘œ (,)ëŠ” í”¼ì‹  ì‹œí‚¬ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.
+MsgBox, 4, , ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (YES ë˜ëŠ” NOë¥¼ ëˆ„ë¦…ë‹ˆë‹¤)
 IfMsgBox No
     return
-MsgBox, 4, , ¸Å°³º¯¼ö°¡ ³× °³ÀÎ ¹æ¹ý: ÀÌ MsgBox´Â ½Ã°£Á¦ÇÑÀÌ 5ÃÊÀÔ´Ï´Ù. °è¼ÓÇÏ½Ã°Ú½À´Ï±î?, 5
+MsgBox, 4, , ë§¤ê°œë³€ìˆ˜ê°€ ë„¤ ê°œì¸ ë°©ë²•: ì´ MsgBoxëŠ” ì‹œê°„ì œí•œì´ 5ì´ˆìž…ë‹ˆë‹¤. ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?, 5
 IfMsgBox Timeout
-    MsgBox 5 ÃÊ ¾È¿¡ YES ¶Ç´Â NO¸¦ ´©¸£Áö ¾Ê¾Ò½À´Ï´Ù.
+    MsgBox 5 ì´ˆ ì•ˆì— YES ë˜ëŠ” NOë¥¼ ëˆ„ë¥´ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.
 else IfMsgBox No
     return
     
-<em>; ¸Å°³º¯¼ö ¾Õ¿¡ &quot;% &quot;¸¦ ¹èÄ¡ÇÏ¸é, <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>ÀÌ µË´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿¡¼­,
-; °è»êÀÌ ¼öÇàµÇ°í, <a href="../misc/Arrays.htm#pseudo">ÀÇ½Ã-¹è¿­</a> ¿ø¼Ò¿¡ Á¢±ÙÇÕ´Ï´Ù. ±×¸®°í ÇÔ¼ö¸¦ È£ÃâÇÕ´Ï´Ù.
-; ÀÌ ¸ðµç Ç×¸ñµéÀº &quot;.&quot; ¿¬»êÀÚ·Î °áÇÕµÇ¾î ÇÏ³ªÀÇ ¹®ÀÚ¿­À» Çü¼ºÇØ MsgBox¿¡ º¸¿©Áý´Ï´Ù:</em>
+<em>; ë§¤ê°œë³€ìˆ˜ ì•žì— &quot;% &quot;ë¥¼ ë°°ì¹˜í•˜ë©´, <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ì´ ë©ë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì—ì„œ,
+; ê³„ì‚°ì´ ìˆ˜í–‰ë˜ê³ , <a href="../misc/Arrays.htm#pseudo">ì˜ì‹œ-ë°°ì—´</a> ì›ì†Œì— ì ‘ê·¼í•©ë‹ˆë‹¤. ê·¸ë¦¬ê³  í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•©ë‹ˆë‹¤.
+; ì´ ëª¨ë“  í•­ëª©ë“¤ì€ &quot;.&quot; ì—°ì‚°ìžë¡œ ê²°í•©ë˜ì–´ í•˜ë‚˜ì˜ ë¬¸ìžì—´ì„ í˜•ì„±í•´ MsgBoxì— ë³´ì—¬ì§‘ë‹ˆë‹¤:</em>
 MsgBox % &quot;New width for object #&quot; . A_Index . &quot; is: &quot; . RestrictWidth(ObjectWidth%A_Index% * ScalingFactor)
 
-<em>; ´ÙÀ½ ¿¹Á¦´Â MsgBox°¡ ÃÊÁ¡À» ÈÉÄ¡°í ÀÖ´Ù°í »ç¿ëÀÚ¿¡°Ô °æ°íÇÕ´Ï´Ù (ÀÌ °æ¿ì »ç¿ëÀÚ°¡ Å¸ÀÚÇÏ°í ÀÖÀ½).</em>
-SplashTextOn,,, MsgBox°¡ °ð »ç¶óÁý´Ï´Ù.
+<em>; ë‹¤ìŒ ì˜ˆì œëŠ” MsgBoxê°€ ì´ˆì ì„ í›”ì¹˜ê³  ìžˆë‹¤ê³  ì‚¬ìš©ìžì—ê²Œ ê²½ê³ í•©ë‹ˆë‹¤ (ì´ ê²½ìš° ì‚¬ìš©ìžê°€ íƒ€ìží•˜ê³  ìžˆìŒ).</em>
+SplashTextOn,,, MsgBoxê°€ ê³§ ì‚¬ë¼ì§‘ë‹ˆë‹¤.
 Sleep 3000
 SplashTextOff
-MsgBox ¹é¾÷ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.</pre>
+MsgBox ë°±ì—…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.</pre>
 
 </body>
 </html>

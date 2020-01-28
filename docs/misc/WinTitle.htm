@@ -1,7 +1,8 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>WinTitle &amp; Last Found Window</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -23,128 +24,128 @@
 </style>
 </head>
 <body>
-<h1><em>WinTitle</em> ¸Å°³º¯¼ö &amp; °¡Àå ¸¶Áö¸·À¸·Î ¹ß°ßµÈ Ã¢</h1>
+<h1><em>WinTitle</em> ë§¤ê°œë³€ìˆ˜ &amp; ê°€ìž¥ ë§ˆì§€ë§‰ìœ¼ë¡œ ë°œê²¬ëœ ì°½</h1>
 
 <p>
-¸¹Àº ¸í·É¾î¿Í ¸î¸î ÇÔ¼ö´Â <em>WinTitle</em> ¸Å°³º¯¼ö°¡ ÀÖ½À´Ï´Ù. ÀÌ ¸Å°³º¯¼ö´Â ÀÛ¾÷ÇÒ Ã¢À» ½Äº°ÇÏ´Â µ¥ »ç¿ëµË´Ï´Ù. ÀÌ ¸Å°³º¯¼ö´Â Ã¢ÀÇ Á¦¸ñ ¶Ç´Â Á¦¸ñ ÀÏºÎÀÏ ¼öµµ ÀÖ°í ÀÌ ÆäÀÌÁö¿¡ ±â¼úµÈ ´Ù¸¥ ±âÁØÀÏ ¼öµµ ÀÖ½À´Ï´Ù.</p>
+ë§Žì€ ëª…ë ¹ì–´ì™€ ëª‡ëª‡ í•¨ìˆ˜ëŠ” <em>WinTitle</em> ë§¤ê°œë³€ìˆ˜ê°€ ìžˆìŠµë‹ˆë‹¤. ì´ ë§¤ê°œë³€ìˆ˜ëŠ” ìž‘ì—…í•  ì°½ì„ ì‹ë³„í•˜ëŠ” ë° ì‚¬ìš©ë©ë‹ˆë‹¤. ì´ ë§¤ê°œë³€ìˆ˜ëŠ” ì°½ì˜ ì œëª© ë˜ëŠ” ì œëª© ì¼ë¶€ì¼ ìˆ˜ë„ ìžˆê³  ì´ íŽ˜ì´ì§€ì— ê¸°ìˆ ëœ ë‹¤ë¥¸ ê¸°ì¤€ì¼ ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<strong>°£Æí ÂüÁ¶</strong>
+<strong>ê°„íŽ¸ ì°¸ì¡°</strong>
 <table id="QuickRef">
-  <tr><td><em>Title</em></td><td><a href="#Matching">ºÎÇÕ ÇàÀ§</a></td></tr>
-  <tr><td>A</td><td><a href="#ActiveWindow">È°¼º Ã¢</a></td></tr>
-  <tr><td>ahk_class</td><td><a href="#ahk_class">Ã¢ Å¬·¡½º</a></td></tr>
-  <tr><td>ahk_id</td><td><a href="#ahk_id">À¯ÀÏÇÑ ID/HWND</a></td></tr>
-  <tr><td>ahk_pid</td><td><a href="#ahk_pid">ÇÁ·Î¼¼½º ID</a></td></tr>
-  <tr><td>ahk_exe</td><td><a href="#ahk_exe">ÇÁ·Î¼¼½º ÀÌ¸§/°æ·Î</a></td></tr>
-  <tr><td>ahk_group</td><td><a href="#ahk_group">Ã¢ ±×·ì</a></td></tr>
-  <tr><td>&nbsp;</td><td><a href="#multi">´ÙÁß ±âÁØ</a></td></tr>
-  <tr><td>(All empty)</td><td><a href="#LastFoundWindow">¸¶Áö¸·À¸·Î ¹ß°ßµÈ Ã¢</a></td></tr>
+  <tr><td><em>Title</em></td><td><a href="#Matching">ë¶€í•© í–‰ìœ„</a></td></tr>
+  <tr><td>A</td><td><a href="#ActiveWindow">í™œì„± ì°½</a></td></tr>
+  <tr><td>ahk_class</td><td><a href="#ahk_class">ì°½ í´ëž˜ìŠ¤</a></td></tr>
+  <tr><td>ahk_id</td><td><a href="#ahk_id">ìœ ì¼í•œ ID/HWND</a></td></tr>
+  <tr><td>ahk_pid</td><td><a href="#ahk_pid">í”„ë¡œì„¸ìŠ¤ ID</a></td></tr>
+  <tr><td>ahk_exe</td><td><a href="#ahk_exe">í”„ë¡œì„¸ìŠ¤ ì´ë¦„/ê²½ë¡œ</a></td></tr>
+  <tr><td>ahk_group</td><td><a href="#ahk_group">ì°½ ê·¸ë£¹</a></td></tr>
+  <tr><td>&nbsp;</td><td><a href="#multi">ë‹¤ì¤‘ ê¸°ì¤€</a></td></tr>
+  <tr><td>(All empty)</td><td><a href="#LastFoundWindow">ë§ˆì§€ë§‰ìœ¼ë¡œ ë°œê²¬ëœ ì°½</a></td></tr>
 </table>
 
-<h2 id="Matching">ºÎÇÕ ÇàÀ§</h2>
-<p><a href="../commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>Àº °¢ Ã¢ÀÇ Á¦¸ñ¿¡ ºÎºÐ ¶Ç´Â ÀüÃ¼ Á¦¸ñÀ» ¾î¶»°Ô ºñ±³ÇÒÁö Á¦¾îÇÕ´Ï´Ù. ¼³Á¤¿¡ µû¶ó, <em>WinTitle</em>Àº Á¤È­ÇÏ°Ô ÀÏÄ¡ÇÏ´Â Á¦¸ñÀÌ µÉ ¼öµµ ÀÖ°í, ¾Æ´Ï¸é Á¦¸ñ¿¡ ¾îµð¿¡³ª ³ªÅ¸³ª´Â ºÎ¹®ÀÚ¿­, ¶Ç´Â <a href="RegEx-QuickRef.htm">RegEx ÆÐÅÏ</a>ÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù. ÀÌ ¼³Á¤Àº ¶Ç <a href="#ahk_class">ahk_class</a>¸¦ Á¤È®ÇÑ Å¬·¡½º ÀÌ¸§À¸·Î ÀÌÇØÇÒÁö ¾Æ´Ï¸é RegEx ÆÐÅÏÀ¸·Î ÀÌÇØÇÒÁö Á¦¾îÇÕ´Ï´Ù.</p>
+<h2 id="Matching">ë¶€í•© í–‰ìœ„</h2>
+<p><a href="../commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>ì€ ê° ì°½ì˜ ì œëª©ì— ë¶€ë¶„ ë˜ëŠ” ì „ì²´ ì œëª©ì„ ì–´ë–»ê²Œ ë¹„êµí• ì§€ ì œì–´í•©ë‹ˆë‹¤. ì„¤ì •ì— ë”°ë¼, <em>WinTitle</em>ì€ ì •í™”í•˜ê²Œ ì¼ì¹˜í•˜ëŠ” ì œëª©ì´ ë  ìˆ˜ë„ ìžˆê³ , ì•„ë‹ˆë©´ ì œëª©ì— ì–´ë””ì—ë‚˜ ë‚˜íƒ€ë‚˜ëŠ” ë¶€ë¬¸ìžì—´, ë˜ëŠ” <a href="RegEx-QuickRef.htm">RegEx íŒ¨í„´</a>ì´ ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ ì„¤ì •ì€ ë˜ <a href="#ahk_class">ahk_class</a>ë¥¼ ì •í™•í•œ í´ëž˜ìŠ¤ ì´ë¦„ìœ¼ë¡œ ì´í•´í• ì§€ ì•„ë‹ˆë©´ RegEx íŒ¨í„´ìœ¼ë¡œ ì´í•´í• ì§€ ì œì–´í•©ë‹ˆë‹¤.</p>
 <p>
-¼ûÀº Ã¢Àº <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>ÀÌ ÄÑÁ® ÀÖÀ» ¶§¸¸ Å½ÁöµË´Ï´Ù. ¾ðÁ¦³ª ¼ûÀ» ÂüÀ» Å½ÁöÇÏ´Â <a href="../commands/WinShow.htm">WinShow</a>´Â Á¦¿ÜÇÕ´Ï´Ù.</p>
+ìˆ¨ì€ ì°½ì€ <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>ì´ ì¼œì ¸ ìžˆì„ ë•Œë§Œ íƒì§€ë©ë‹ˆë‹¤. ì–¸ì œë‚˜ ìˆ¨ì„ ì°¸ì„ íƒì§€í•˜ëŠ” <a href="../commands/WinShow.htm">WinShow</a>ëŠ” ì œì™¸í•©ë‹ˆë‹¤.</p>
 <p>
-¿©·¯ Ã¢ÀÌ <em>WinTitle</em>°ú ±âÅ¸ ±âÁØ¿¡ ºÎÇÕÇÏ¸é, °¡Àå À§¿¡ ºÎÇÕÇÑ Ã¢ÀÌ »ç¿ëµË´Ï´Ù. È°¼º Ã¢ÀÌ ±âÁØ¿¡ ºÎÇÕÇÏ¸é, º¸Åë ´Ù¸¥ ¸ðµç Ã¢º¸´Ù À§¿¡ ÀÖ±â ¶§¹®¿¡ ¿ì¼± ¼øÀ§¸¦ °®½À´Ï´Ù. ±×·¸Áö¸¸, <a href="../commands/WinSet.htm#AlwaysOnTop">Ç×»ó ÃÖ»ó´Ü</a> Ã¢ÀÌ ºÎÇÕÇÏ¸é (±×¸®°í È°¼º Ã¢Àº ÃÖ»ó´Ü Ã¢ÀÌ ¾Æ´Ï¸é), ´ë½Å¿¡ ±×°ÍÀÌ »ç¿ëµË´Ï´Ù.</p>
+ì—¬ëŸ¬ ì°½ì´ <em>WinTitle</em>ê³¼ ê¸°íƒ€ ê¸°ì¤€ì— ë¶€í•©í•˜ë©´, ê°€ìž¥ ìœ„ì— ë¶€í•©í•œ ì°½ì´ ì‚¬ìš©ë©ë‹ˆë‹¤. í™œì„± ì°½ì´ ê¸°ì¤€ì— ë¶€í•©í•˜ë©´, ë³´í†µ ë‹¤ë¥¸ ëª¨ë“  ì°½ë³´ë‹¤ ìœ„ì— ìžˆê¸° ë•Œë¬¸ì— ìš°ì„  ìˆœìœ„ë¥¼ ê°–ìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, <a href="../commands/WinSet.htm#AlwaysOnTop">í•­ìƒ ìµœìƒë‹¨</a> ì°½ì´ ë¶€í•©í•˜ë©´ (ê·¸ë¦¬ê³  í™œì„± ì°½ì€ ìµœìƒë‹¨ ì°½ì´ ì•„ë‹ˆë©´), ëŒ€ì‹ ì— ê·¸ê²ƒì´ ì‚¬ìš©ë©ë‹ˆë‹¤.</p>
 
-<h2 id="ActiveWindow">È°¼º Ã¢ (A)</h2>
+<h2 id="ActiveWindow">í™œì„± ì°½ (A)</h2>
 <p>
-<em>WinTitle</em>ÀÌ ±âÈ£ <code>A</code>ÀÌ°í ´Ù¸¥ ¼¼ °³ÀÇ Ã¢ ¸Å°³º¯¼ö°¡ ºñ¾î ÀÖ°Å³ª »ý·«µÇ¸é, ±× È°¼º Ã¢ÀÌ »ç¿ëµË´Ï´Ù (<em>WinText</em>, <em>ExcludeTitle</em> ±×¸®°í <em>ExcludeText</em>).</p>
+<em>WinTitle</em>ì´ ê¸°í˜¸ <code>A</code>ì´ê³  ë‹¤ë¥¸ ì„¸ ê°œì˜ ì°½ ë§¤ê°œë³€ìˆ˜ê°€ ë¹„ì–´ ìžˆê±°ë‚˜ ìƒëžµë˜ë©´, ê·¸ í™œì„± ì°½ì´ ì‚¬ìš©ë©ë‹ˆë‹¤ (<em>WinText</em>, <em>ExcludeTitle</em> ê·¸ë¦¬ê³  <em>ExcludeText</em>).</p>
 <pre>
-<em>; È°¼º Ã¢ÀÇ ID/HWND¸¦ ¿­¶÷ÇÕ´Ï´Ù</em>
+<em>; í™œì„± ì°½ì˜ ID/HWNDë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤</em>
 id := WinExist("A")
 MsgBox % id
 
-<em>; Win+&uarrÀ» ´­·¯; È°¼º Ã¢À» ÃÖ´ëÈ­ÇÕ´Ï´Ù</em>
+<em>; Win+&uarrì„ ëˆŒëŸ¬; í™œì„± ì°½ì„ ìµœëŒ€í™”í•©ë‹ˆë‹¤</em>
 #Up::WinMaximize, A</pre>
 
-<h2 id="ahk_class">ahk_class Ã¢ Å¬·¡½º</h2>
+<h2 id="ahk_class">ahk_class ì°½ í´ëž˜ìŠ¤</h2>
 <p>
-Ã¢ Å¬·¡½º´Â ½Ã½ºÅÛÀÌ Ã¢À» »ý¼ºÇÏ±â À§ÇÏ¿© ÁÖÇüÆ²·Î »ç¿ëÇÏ´Â ¼Ó¼ºÀÇ ÁýÇÕÀÔ´Ï´Ù. ´Ù¸¥ ¸»·Î, Ã¢ÀÇ Å¬·¡½º ÀÌ¸§Àº ¾î¶² <em>À¯ÇüÀÇ</em> Ã¢ÀÎÁö ½Äº°ÇÕ´Ï´Ù. Ã¢ Å¬·¡½º¸¦ »ç¿ëÇÏ·Á¸é, Window Spy°¡ º¸¿©ÁÖ´Â °ÍÃ³·³  <code>ahk_class ExactClassName</code>¸¦ »ç¿ëÇÏ½Ê½Ã¿À. <em>ExactClassName</em>Àº <a href="../commands/WinGetClass.htm">WinGetClass</a>·Î ¿­¶÷ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ì°½ í´ëž˜ìŠ¤ëŠ” ì‹œìŠ¤í…œì´ ì°½ì„ ìƒì„±í•˜ê¸° ìœ„í•˜ì—¬ ì£¼í˜•í‹€ë¡œ ì‚¬ìš©í•˜ëŠ” ì†ì„±ì˜ ì§‘í•©ìž…ë‹ˆë‹¤. ë‹¤ë¥¸ ë§ë¡œ, ì°½ì˜ í´ëž˜ìŠ¤ ì´ë¦„ì€ ì–´ë–¤ <em>ìœ í˜•ì˜</em> ì°½ì¸ì§€ ì‹ë³„í•©ë‹ˆë‹¤. ì°½ í´ëž˜ìŠ¤ë¥¼ ì‚¬ìš©í•˜ë ¤ë©´, Window Spyê°€ ë³´ì—¬ì£¼ëŠ” ê²ƒì²˜ëŸ¼  <code>ahk_class ExactClassName</code>ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤. <em>ExactClassName</em>ì€ <a href="../commands/WinGetClass.htm">WinGetClass</a>ë¡œ ì—´ëžŒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-RegEx <a href="../commands/SetTitleMatchMode.htm">Á¦¸ñ ºÎÇÕ ¸ðµå</a>°¡ ÄÑÁ® ÀÖÀ¸¸é, ahk_class´Â <a href="../misc/RegEx-QuickRef.htm">Á¤±Ô Ç¥Çö½Ä</a>À» ¹Þ½À´Ï´Ù.</p>
+RegEx <a href="../commands/SetTitleMatchMode.htm">ì œëª© ë¶€í•© ëª¨ë“œ</a>ê°€ ì¼œì ¸ ìžˆìœ¼ë©´, ahk_classëŠ” <a href="../misc/RegEx-QuickRef.htm">ì •ê·œ í‘œí˜„ì‹</a>ì„ ë°›ìŠµë‹ˆë‹¤.</p>
 <pre>
-<em>; ÄÜ¼Ö Ã¢À» È°¼ºÈ­ÇÕ´Ï´Ù (¿¹, cmd.exe)</em>
+<em>; ì½˜ì†” ì°½ì„ í™œì„±í™”í•©ë‹ˆë‹¤ (ì˜ˆ, cmd.exe)</em>
 WinActivate, ahk_class ConsoleWindowClass
 </pre>
 
 <h2 id="ahk_id">ahk_id Unique ID / HWND</h2>
 <p>
-°¢ Ã¢ÀÌ³ª ÄÜÆ®·Ñ¿¡ À¯ÀÏÇÑ ID°¡ ÀÖ½À´Ï´Ù. ÀÌ¸¦ HWND (Handle to WiNDow)¶ó°íµµ ÇÕ´Ï´Ù. ÀÌ ID¸¦ »ç¿ëÇÏ¸é Á¦¸ñÀÌ º¯ÇØµµ Ã¢ÀÌ³ª ÄÜÆ®·ÑÀ» ½Äº°ÇÒ ¼ö ÀÖ½À´Ï´Ù.  Ã¢ÀÇ ID´Â ÀüÇüÀûÀ¸·Î <a href="../commands/WinExist.htm">WinExist()</a>³ª <a href="../commands/WinGet.htm">WinGet</a>À» ÅëÇÏ¿© ¿­¶÷ÇÕ´Ï´Ù. ÄÜÆ®·ÑÀÇ ID´Â ÀüÇüÀûÀ¸·Î <a href="../commands/ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="../commands/MouseGetPos.htm">MouseGetPos</a>, ¶Ç´Â <a href="../commands/DllCall.htm">DllCall</a>À» ÅëÇÏ¿© ¿­¶÷ÇÕ´Ï´Ù. ¶ÇÇÑ, ahk_id´Â ÄÜÆ®·ÑÀÌ º¸ÀÌÁö ¾Ê¾Æµµ ÀÛµ¿ÇÕ´Ï´Ù; Áï, <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a> ¼³Á¤Àº ÄÜÆ®·Ñ¿¡ ¹®Á¦°¡ µÇÁö ¾Ê½À´Ï´Ù.</p>
+ê° ì°½ì´ë‚˜ ì½˜íŠ¸ë¡¤ì— ìœ ì¼í•œ IDê°€ ìžˆìŠµë‹ˆë‹¤. ì´ë¥¼ HWND (Handle to WiNDow)ë¼ê³ ë„ í•©ë‹ˆë‹¤. ì´ IDë¥¼ ì‚¬ìš©í•˜ë©´ ì œëª©ì´ ë³€í•´ë„ ì°½ì´ë‚˜ ì½˜íŠ¸ë¡¤ì„ ì‹ë³„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.  ì°½ì˜ IDëŠ” ì „í˜•ì ìœ¼ë¡œ <a href="../commands/WinExist.htm">WinExist()</a>ë‚˜ <a href="../commands/WinGet.htm">WinGet</a>ì„ í†µí•˜ì—¬ ì—´ëžŒí•©ë‹ˆë‹¤. ì½˜íŠ¸ë¡¤ì˜ IDëŠ” ì „í˜•ì ìœ¼ë¡œ <a href="../commands/ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="../commands/MouseGetPos.htm">MouseGetPos</a>, ë˜ëŠ” <a href="../commands/DllCall.htm">DllCall</a>ì„ í†µí•˜ì—¬ ì—´ëžŒí•©ë‹ˆë‹¤. ë˜í•œ, ahk_idëŠ” ì½˜íŠ¸ë¡¤ì´ ë³´ì´ì§€ ì•Šì•„ë„ ìž‘ë™í•©ë‹ˆë‹¤; ì¦‰, <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a> ì„¤ì •ì€ ì½˜íŠ¸ë¡¤ì— ë¬¸ì œê°€ ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <pre>
 WinActivate, ahk_id %VarContainingID%
 </pre>
 
-<h2 id="ahk_pid">ahk_pid ÇÁ·Î¼¼½º ID</h2>
+<h2 id="ahk_pid">ahk_pid í”„ë¡œì„¸ìŠ¤ ID</h2>
 <p>
-ahk_pid¸¦ »ç¿ëÇÏ¸é Æ¯Á¤ ÇÁ·Î¼¼½º¿¡ ¼ÓÇÑ Ã¢À» ½Äº°ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÇÁ·Î¼¼½º ½Äº°ÀÚ (PID)´Â ÀüÇüÀûÀ¸·Î <a href="../commands/WinGet.htm">WinGet</a>, <a href="../commands/Run.htm">Run</a> ¶Ç´Â <a href="../commands/Process.htm">Process</a>À¸·Î ¿­¶÷ÇÕ´Ï´Ù.</p>
+ahk_pidë¥¼ ì‚¬ìš©í•˜ë©´ íŠ¹ì • í”„ë¡œì„¸ìŠ¤ì— ì†í•œ ì°½ì„ ì‹ë³„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í”„ë¡œì„¸ìŠ¤ ì‹ë³„ìž (PID)ëŠ” ì „í˜•ì ìœ¼ë¡œ <a href="../commands/WinGet.htm">WinGet</a>, <a href="../commands/Run.htm">Run</a> ë˜ëŠ” <a href="../commands/Process.htm">Process</a>ìœ¼ë¡œ ì—´ëžŒí•©ë‹ˆë‹¤.</p>
 <pre>
 WinActivate, ahk_pid %VarContainingPID%
 </pre>
 
-<h2 id="ahk_exe">ahk_exe ÇÁ·Î¼¼½º ÀÌ¸§/°æ·Î <span class="ver">[v1.1.01+]</span></h2>
+<h2 id="ahk_exe">ahk_exe í”„ë¡œì„¸ìŠ¤ ì´ë¦„/ê²½ë¡œ <span class="ver">[v1.1.01+]</span></h2>
 <p>
-ahk_exe¸¦ »ç¿ëÇÏ¸é ÁÖ¾îÁø °æ·Î³ª ÀÌ¸§ÀÇ ÇÁ·Î¼¼½º¿¡ ¼ÓÇÑ Ã¢À» ½Äº°ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ahk_exeë¥¼ ì‚¬ìš©í•˜ë©´ ì£¼ì–´ì§„ ê²½ë¡œë‚˜ ì´ë¦„ì˜ í”„ë¡œì„¸ìŠ¤ì— ì†í•œ ì°½ì„ ì‹ë³„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="#ahk_pid">ahk_pid</a>´Â Æ¯Á¤ÇÑ ÇÁ·Î¼¼½º ÇÏ³ª·Î Á¦ÇÑµÇ´Â ¹Ý¸é¿¡, ahk_exe´Â ÁÖ¾îÁø ¹®ÀÚ¿­¿¡ ºÎÇÕÇÏ´Â ÀÌ¸§ ¶Ç´Â ÀüÃ¼ °æ·Î¸¦ °¡Áø ¸ðµç ÇÁ·Î¼¼½º¸¦ °í·ÁÇÕ´Ï´Ù. RegEx <a href="../commands/SetTitleMatchMode.htm">Á¦¸ñ ÀÏÄ¡ ¸ðµå</a>°¡ ÄÑÁ® ÀÖ´Ù¸é, ahk_exe´Â <a href="../misc/RegEx-QuickRef.htm">Á¤±Ô Ç¥Çö½Ä</a>À» ¹Þ½À´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é, ahk_exe´Â ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÏ´Â ÀÌ¸§ÀÌ³ª ÀüÃ¼ °æ·Î¸¦ ¹Þ½À´Ï´Ù; ¿¹¸¦ µé¾î, <code>ahk_exe notepad.exe</code>´Â <code>ahk_exe C:\Windows\Notepad.exe</code>, <code>ahk_exe C:\Windows\System32\Notepad.exe</code> ±×¸®°í ±âÅ¸ º¯Á¾µéÀ» Æ÷°ýÇÕ´Ï´Ù.</p>
+<a href="#ahk_pid">ahk_pid</a>ëŠ” íŠ¹ì •í•œ í”„ë¡œì„¸ìŠ¤ í•˜ë‚˜ë¡œ ì œí•œë˜ëŠ” ë°˜ë©´ì—, ahk_exeëŠ” ì£¼ì–´ì§„ ë¬¸ìžì—´ì— ë¶€í•©í•˜ëŠ” ì´ë¦„ ë˜ëŠ” ì „ì²´ ê²½ë¡œë¥¼ ê°€ì§„ ëª¨ë“  í”„ë¡œì„¸ìŠ¤ë¥¼ ê³ ë ¤í•©ë‹ˆë‹¤. RegEx <a href="../commands/SetTitleMatchMode.htm">ì œëª© ì¼ì¹˜ ëª¨ë“œ</a>ê°€ ì¼œì ¸ ìžˆë‹¤ë©´, ahk_exeëŠ” <a href="../misc/RegEx-QuickRef.htm">ì •ê·œ í‘œí˜„ì‹</a>ì„ ë°›ìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ahk_exeëŠ” ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•˜ëŠ” ì´ë¦„ì´ë‚˜ ì „ì²´ ê²½ë¡œë¥¼ ë°›ìŠµë‹ˆë‹¤; ì˜ˆë¥¼ ë“¤ì–´, <code>ahk_exe notepad.exe</code>ëŠ” <code>ahk_exe C:\Windows\Notepad.exe</code>, <code>ahk_exe C:\Windows\System32\Notepad.exe</code> ê·¸ë¦¬ê³  ê¸°íƒ€ ë³€ì¢…ë“¤ì„ í¬ê´„í•©ë‹ˆë‹¤.</p>
 <pre>
-<em>; ±âÁ¸ÀÇ notepad.exe Ã¢À» È°¼ºÈ­ÇÏ°Å³ª, »õ·Î ¿±´Ï´Ù</em>
+<em>; ê¸°ì¡´ì˜ notepad.exe ì°½ì„ í™œì„±í™”í•˜ê±°ë‚˜, ìƒˆë¡œ ì—½ë‹ˆë‹¤</em>
 if WinExist("ahk_exe notepad.exe")
     WinActivate, ahk_exe notepad.exe
 else
     Run, notepad.exe
 </pre>
 
-<h2 id="ahk_group">ahk_group Ã¢ ±×·ì</h2>
+<h2 id="ahk_group">ahk_group ì°½ ê·¸ë£¹</h2>
 <p>
-ahk_groupÀ» »ç¿ëÇÏ¸é ÀÌÀü¿¡ Á¤ÀÇµÈ <a href="../commands/GroupAdd.htm">Ã¢ ±×·ì</a>¿¡ Æ÷ÇÔµÈ ±ÔÄ¢¿¡ ºÎÇÕÇÏ´ÂÃ¢À» ½Äº°ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ahk_groupì„ ì‚¬ìš©í•˜ë©´ ì´ì „ì— ì •ì˜ëœ <a href="../commands/GroupAdd.htm">ì°½ ê·¸ë£¹</a>ì— í¬í•¨ëœ ê·œì¹™ì— ë¶€í•©í•˜ëŠ”ì°½ì„ ì‹ë³„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<a href="../commands/WinMinimize.htm">WinMinimize</a>, <a href="../commands/WinMaximize.htm">WinMaximize</a>, <a href="../commands/WinRestore.htm">WinRestore</a>, <a href="../commands/WinHide.htm">WinHide</a>, <a href="../commands/WinShow.htm">WinShow</a>, <a href="../commands/WinClose.htm">WinClose</a>, ±×¸®°í <a href="../commands/WinKill.htm">WinKill</a> ¸í·É¾î´Â <strong>¸ðµç</strong> ±×·ì Ã¢¿¡ ÀÛµ¿ÇÕ´Ï´Ù. ´ëÁ¶ÀûÀ¸·Î, <a href="../commands/WinActivate.htm">WinActivate</a>¿Í <a href="../commands/WinExist.htm">IfWinExist</a> °°Àº ´Ù¸¥ Ã¢ ¸í·É¾î´Â ±×·ìÀÇ ÃÖ»óÀ§ Ã¢¿¡¸¸ ÀÛµ¿ÇÕ´Ï´Ù.</p>
+<a href="../commands/WinMinimize.htm">WinMinimize</a>, <a href="../commands/WinMaximize.htm">WinMaximize</a>, <a href="../commands/WinRestore.htm">WinRestore</a>, <a href="../commands/WinHide.htm">WinHide</a>, <a href="../commands/WinShow.htm">WinShow</a>, <a href="../commands/WinClose.htm">WinClose</a>, ê·¸ë¦¬ê³  <a href="../commands/WinKill.htm">WinKill</a> ëª…ë ¹ì–´ëŠ” <strong>ëª¨ë“ </strong> ê·¸ë£¹ ì°½ì— ìž‘ë™í•©ë‹ˆë‹¤. ëŒ€ì¡°ì ìœ¼ë¡œ, <a href="../commands/WinActivate.htm">WinActivate</a>ì™€ <a href="../commands/WinExist.htm">IfWinExist</a> ê°™ì€ ë‹¤ë¥¸ ì°½ ëª…ë ¹ì–´ëŠ” ê·¸ë£¹ì˜ ìµœìƒìœ„ ì°½ì—ë§Œ ìž‘ë™í•©ë‹ˆë‹¤.</p>
 <pre>
-<em>; ±×·ìÀ» Á¤ÀÇÇÕ´Ï´Ù: À©µµ¿ìÁî Å½»ö±â Ã¢</em>
-GroupAdd, Explorer, ahk_class ExploreWClass <em>; ºñ½ºÅ¸ ÀÌÈÄ¿¡ »ç¿ë¾ÈµÊ</em>
+<em>; ê·¸ë£¹ì„ ì •ì˜í•©ë‹ˆë‹¤: ìœˆë„ìš°ì¦ˆ íƒìƒ‰ê¸° ì°½</em>
+GroupAdd, Explorer, ahk_class ExploreWClass <em>; ë¹„ìŠ¤íƒ€ ì´í›„ì— ì‚¬ìš©ì•ˆë¨</em>
 GroupAdd, Explorer, ahk_class CabinetWClass
 
-<em>; À§ÀÇ ±âÁØ¿¡ ºÎÇÕÇÏ´Â Ã¢Àº ¸ðµÎ È°¼ºÈ­ÇÕ´Ï´Ù</em>
+<em>; ìœ„ì˜ ê¸°ì¤€ì— ë¶€í•©í•˜ëŠ” ì°½ì€ ëª¨ë‘ í™œì„±í™”í•©ë‹ˆë‹¤</em>
 WinActivate, ahk_group Explorer
 </pre>
 
-<h2 id="multi">´ÙÁß ±âÁØ</h2>
+<h2 id="multi">ë‹¤ì¤‘ ê¸°ì¤€</h2>
 <p>
-(°Ë»öÀ» È®´ëÇÏ´Â) <a href="#ahk_group">ahk_group</a>°ú ´ëÁ¶ÀûÀ¸·Î, WinTitle ¸Å°³º¯¼ö ¾È¿¡ ÇÏ³ª ÀÌ»óÀÇ ±âÁØÀ» Æ¯Á¤ÇØ °Ë»öÀÇ ¹üÀ§¸¦ Á¼Èú ¼ö ÀÖ½À´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿¡¼­, ½ºÅ©¸³Æ®´Â Á¦¸ñ¿¡ <em>My File.txt</em>ÀÌ Æ÷ÇÔµÇ¾î ÀÖ°í <strong>±×¸®°í </strong> ±×ÀÇ Å¬·¡½º°¡ <em>Notepad</em>ÀÎ Ã¢À» ±â´Ù¸³´Ï´Ù:</p>
+(ê²€ìƒ‰ì„ í™•ëŒ€í•˜ëŠ”) <a href="#ahk_group">ahk_group</a>ê³¼ ëŒ€ì¡°ì ìœ¼ë¡œ, WinTitle ë§¤ê°œë³€ìˆ˜ ì•ˆì— í•˜ë‚˜ ì´ìƒì˜ ê¸°ì¤€ì„ íŠ¹ì •í•´ ê²€ìƒ‰ì˜ ë²”ìœ„ë¥¼ ì¢íž ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì—ì„œ, ìŠ¤í¬ë¦½íŠ¸ëŠ” ì œëª©ì— <em>My File.txt</em>ì´ í¬í•¨ë˜ì–´ ìžˆê³  <strong>ê·¸ë¦¬ê³  </strong> ê·¸ì˜ í´ëž˜ìŠ¤ê°€ <em>Notepad</em>ì¸ ì°½ì„ ê¸°ë‹¤ë¦½ë‹ˆë‹¤:</p>
 <pre>WinWait <strong>My File.txt</strong> ahk_class <strong>Notepad</strong>
-WinActivate  <em>; ¹ß°ßµÈ Ã¢À» È°¼ºÈ­ÇÕ´Ï´Ù.</em></pre>
+WinActivate  <em>; ë°œê²¬ëœ ì°½ì„ í™œì„±í™”í•©ë‹ˆë‹¤.</em></pre>
 <p>
-ÀÌ ¸ðµå¸¦ »ç¿ëÇÒ ¶§, Á¦¸ñ ÅØ½ºÆ®¸¦ (¿øÇÏ´Â ¼ø¼­´ë·Î) Á¦ÀÏ ¸ÕÀú ³ª¿­ÇØ¾ß ÇÏ°í, ´ÙÀ½¿¡ ÇÏ³ª ÀÌ»óÀÇ ±âÁØÀÌ µû¶ó ¿Í¾ß ÇÕ´Ï´Ù. Ã¹ ¹øÂ° ±âÁØ ÀÌÈÄ·Î´Â ¼­·Î Á¤È®ÇÏ°Ô ÇÏ³ªÀÇ ½ºÆäÀÌ½º³ª ÅÇÀ¸·Î °¥¶ó¾ß ÇÕ´Ï´Ù (´Ù¸¥ ½ºÆäÀÌ½º³ª ÅÇÀº ÀÌÀü ±âÁØÀÇ ±âÈ£ ±×´ë·ÎÀÇ ºÎºÐÀ¸·Î Ãë±ÞµË´Ï´Ù).</p>
-<p><a href="#ahk_id">ahk_id</a>¸¦ ´Ù¸¥ ±âÁØ°ú Á¶ÇÕÇØ Ã¢ Á¦¸ñ, Å¬·¡½º ¶Ç´Â ±âÅ¸ Æ¯¼ºÀ» Å×½ºÆ®ÇÒ ¼ö ÀÖ½À´Ï´Ù:</p>
+ì´ ëª¨ë“œë¥¼ ì‚¬ìš©í•  ë•Œ, ì œëª© í…ìŠ¤íŠ¸ë¥¼ (ì›í•˜ëŠ” ìˆœì„œëŒ€ë¡œ) ì œì¼ ë¨¼ì € ë‚˜ì—´í•´ì•¼ í•˜ê³ , ë‹¤ìŒì— í•˜ë‚˜ ì´ìƒì˜ ê¸°ì¤€ì´ ë”°ë¼ ì™€ì•¼ í•©ë‹ˆë‹¤. ì²« ë²ˆì§¸ ê¸°ì¤€ ì´í›„ë¡œëŠ” ì„œë¡œ ì •í™•í•˜ê²Œ í•˜ë‚˜ì˜ ìŠ¤íŽ˜ì´ìŠ¤ë‚˜ íƒ­ìœ¼ë¡œ ê°ˆë¼ì•¼ í•©ë‹ˆë‹¤ (ë‹¤ë¥¸ ìŠ¤íŽ˜ì´ìŠ¤ë‚˜ íƒ­ì€ ì´ì „ ê¸°ì¤€ì˜ ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ ë¶€ë¶„ìœ¼ë¡œ ì·¨ê¸‰ë©ë‹ˆë‹¤).</p>
+<p><a href="#ahk_id">ahk_id</a>ë¥¼ ë‹¤ë¥¸ ê¸°ì¤€ê³¼ ì¡°í•©í•´ ì°½ ì œëª©, í´ëž˜ìŠ¤ ë˜ëŠ” ê¸°íƒ€ íŠ¹ì„±ì„ í…ŒìŠ¤íŠ¸í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 <pre>
 MouseGetPos,,, id
 if WinExist("ahk_class Notepad ahk_id " id)
-    MsgBox ¸¶¿ì½º°¡ ³ëÆ®ÆÐµå À§¿¡ ÀÖ½À´Ï´Ù.
+    MsgBox ë§ˆìš°ìŠ¤ê°€ ë…¸íŠ¸íŒ¨ë“œ ìœ„ì— ìžˆìŠµë‹ˆë‹¤.
 </pre>
 
 
-<h2 id="LastFoundWindow">&quot;°¡Àå ¸¶Áö¸·À¸·Î ¹ß°ßµÈ&quot; Ã¢</h2>
+<h2 id="LastFoundWindow">&quot;ê°€ìž¥ ë§ˆì§€ë§‰ìœ¼ë¡œ ë°œê²¬ëœ&quot; ì°½</h2>
 
 <p>
-ÀÌ°ÍÀº ´ÙÀ½ÀÌ °¡Àå ¸¶Áö¸·À¸·Î ¹ß°ßÇÑ Ã¢ÀÔ´Ï´Ù: <a href="../commands/WinExist.htm">IfWin[Not]Exist</a>, <a href="../commands/WinExist.htm">WinExist()</a>, <a href="../commands/WinActive.htm">IfWin[Not]Active</a>, <a href="../commands/WinActive.htm">WinActive()</a>, <a href="../commands/WinWaitActive.htm">WinWait[Not]Active</a>, ¶Ç´Â <a href="../commands/WinWait.htm">WinWait</a>. </p>
+ì´ê²ƒì€ ë‹¤ìŒì´ ê°€ìž¥ ë§ˆì§€ë§‰ìœ¼ë¡œ ë°œê²¬í•œ ì°½ìž…ë‹ˆë‹¤: <a href="../commands/WinExist.htm">IfWin[Not]Exist</a>, <a href="../commands/WinExist.htm">WinExist()</a>, <a href="../commands/WinActive.htm">IfWin[Not]Active</a>, <a href="../commands/WinActive.htm">WinActive()</a>, <a href="../commands/WinWaitActive.htm">WinWait[Not]Active</a>, ë˜ëŠ” <a href="../commands/WinWait.htm">WinWait</a>. </p>
 <p>
-½ºÅ©¸³Æ®¸¦ ½±°Ô ¸¸µé°í °ü¸®ÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿Ö³ÄÇÏ¸é ¸ñÇ¥ Ã¢ÀÇ WinTitle°ú WinText°¡ ¸Å Ã¢ ¸í·É¾î¸¶´Ù ¹Ýº¹µÉ ÇÊ¿ä°¡ ¾ø±â ¶§¹®ÀÔ´Ï´Ù. °Ô´Ù°¡, ½ºÅ©¸³Æ®ÀÇ ¼öÇà¼º´Éµµ ´õ ÁÁ¾ÆÁý´Ï´Ù. ¿Ö³ÄÇÏ¸é ¸ñÇ¥ Ã¢À» Ã³À½ ¹ß°ßÇÏ¸é ±× ´ÙÀ½ºÎÅÍ´Â ¹Ýº¹ÇØ¼­ °Ë»öÇÒ ÇÊ¿ä°¡ ¾ø±â ¶§¹®ÀÔ´Ï´Ù.</p>
+ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì‰½ê²Œ ë§Œë“¤ê³  ê´€ë¦¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì™œëƒí•˜ë©´ ëª©í‘œ ì°½ì˜ WinTitleê³¼ WinTextê°€ ë§¤ ì°½ ëª…ë ¹ì–´ë§ˆë‹¤ ë°˜ë³µë  í•„ìš”ê°€ ì—†ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤. ê²Œë‹¤ê°€, ìŠ¤í¬ë¦½íŠ¸ì˜ ìˆ˜í–‰ì„±ëŠ¥ë„ ë” ì¢‹ì•„ì§‘ë‹ˆë‹¤. ì™œëƒí•˜ë©´ ëª©í‘œ ì°½ì„ ì²˜ìŒ ë°œê²¬í•˜ë©´ ê·¸ ë‹¤ìŒë¶€í„°ëŠ” ë°˜ë³µí•´ì„œ ê²€ìƒ‰í•  í•„ìš”ê°€ ì—†ê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 <p>
-&quot;°¡Àå ¸¶Áö¸·¿¡ ¹ß°ßµÈ&quot; Ã¢Àº <a href="../commands/WinWait.htm">WinWait</a>, <a href="../commands/WinActivateBottom.htm">WinActivateBottom</a>, ±×¸®°í <a href="../commands/GroupAdd.htm">GroupAdd</a>¸¦ Á¦¿ÜÇÏ°í ´Ù¸¥ ¸ðµç Ã¢ °ü·Ã ¸í·É¾î°¡ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. »ç¿ëÇÏ·Á¸é, ±×³É ³× °³ÀÇ Ã¢ ¸Å°³º¯¼ö¸¦ »ý·«ÇÏ¸é µË´Ï´Ù (WinTitle, WinText, ExcludeTitle, ±×¸®°í ExcludeText).</p>
+&quot;ê°€ìž¥ ë§ˆì§€ë§‰ì— ë°œê²¬ëœ&quot; ì°½ì€ <a href="../commands/WinWait.htm">WinWait</a>, <a href="../commands/WinActivateBottom.htm">WinActivateBottom</a>, ê·¸ë¦¬ê³  <a href="../commands/GroupAdd.htm">GroupAdd</a>ë¥¼ ì œì™¸í•˜ê³  ë‹¤ë¥¸ ëª¨ë“  ì°½ ê´€ë ¨ ëª…ë ¹ì–´ê°€ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì‚¬ìš©í•˜ë ¤ë©´, ê·¸ëƒ¥ ë„¤ ê°œì˜ ì°½ ë§¤ê°œë³€ìˆ˜ë¥¼ ìƒëžµí•˜ë©´ ë©ë‹ˆë‹¤ (WinTitle, WinText, ExcludeTitle, ê·¸ë¦¬ê³  ExcludeText).</p>
 <p>
-°¢ <a href="../misc/Threads.htm">¾²·¹µå</a>¸¶´Ù ÀÚ½ÅÀÇ &quot;¸¶Áö¸·À¸·Î ¹ß°ßµÈ&quot; Ã¢ÀÇ °ªÀ» À¯ÁöÇÕ´Ï´Ù. Áï, <a href="../misc/Threads.htm">ÇöÀç ¾²·¹µå</a> ¶Ç´Ù¸¥ ¾²·¹µå¿¡ ÀÇÇØ ÀÎÅÍ·´Æ® µÇ´õ¶óµµ, ¿ø·¡ ¾²·¹µå°¡ Àç°³ÇÒ ¶§ ÀÎÅÍ·´Æ®ÇÑ ¾²·¹µåÀÇ °ÍÀÌ ¾Æ´Ï¶ó ¿©ÀüÈ÷ ¿ø·¡ÀÇ &quot;¸¶Áö¸·À¸·Î ¹ß°ßµÈ&quot; Ã¢ÀÇ °ªÀ» °¡Áø´Ù´Â ¶æÀÔ´Ï´Ù..</p>
+ê° <a href="../misc/Threads.htm">ì“°ë ˆë“œ</a>ë§ˆë‹¤ ìžì‹ ì˜ &quot;ë§ˆì§€ë§‰ìœ¼ë¡œ ë°œê²¬ëœ&quot; ì°½ì˜ ê°’ì„ ìœ ì§€í•©ë‹ˆë‹¤. ì¦‰, <a href="../misc/Threads.htm">í˜„ìž¬ ì“°ë ˆë“œ</a> ë˜ë‹¤ë¥¸ ì“°ë ˆë“œì— ì˜í•´ ì¸í„°ëŸ½íŠ¸ ë˜ë”ë¼ë„, ì›ëž˜ ì“°ë ˆë“œê°€ ìž¬ê°œí•  ë•Œ ì¸í„°ëŸ½íŠ¸í•œ ì“°ë ˆë“œì˜ ê²ƒì´ ì•„ë‹ˆë¼ ì—¬ì „ížˆ ì›ëž˜ì˜ &quot;ë§ˆì§€ë§‰ìœ¼ë¡œ ë°œê²¬ëœ&quot; ì°½ì˜ ê°’ì„ ê°€ì§„ë‹¤ëŠ” ëœ»ìž…ë‹ˆë‹¤..</p>
 <p>
-¸¶Áö¸·À¸·Î ¹ß°ßµÈ Ã¢ÀÌ º¸ÀÌÁö ¾Ê´Â <a href="../commands/Gui.htm">Gui Ã¢</a>ÀÌ¸é, <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>°¡ ²¨Á® ÀÖ´õ¶óµµ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº Á¾Á¾ <code><a href="../commands/Gui.htm#LastFound">Gui +LastFound</a></code>¿Í ÇÔ²² Á¶ÇÕÇØ¼­ »ç¿ëµË´Ï´Ù.</p>
+ë§ˆì§€ë§‰ìœ¼ë¡œ ë°œê²¬ëœ ì°½ì´ ë³´ì´ì§€ ì•ŠëŠ” <a href="../commands/Gui.htm">Gui ì°½</a>ì´ë©´, <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>ê°€ êº¼ì ¸ ìžˆë”ë¼ë„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ê²ƒì€ ì¢…ì¢… <code><a href="../commands/Gui.htm#LastFound">Gui +LastFound</a></code>ì™€ í•¨ê»˜ ì¡°í•©í•´ì„œ ì‚¬ìš©ë©ë‹ˆë‹¤.</p>
 <pre class="NoIndent">Run Notepad
 WinWait Untitled - Notepad
-WinActivate  <em>; °¡Àå ¸¶Áö¸·¿¡ ¹ß°ßµÈ Ã¢À» »ç¿ëÇÕ´Ï´Ù.</em>
+WinActivate  <em>; ê°€ìž¥ ë§ˆì§€ë§‰ì— ë°œê²¬ëœ ì°½ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.</em>
 
 IfWinExist, Untitled - Notepad
 {
-    WinActivate  <em>; À§¿¡¼­ ¹ß°ßµÈ Ã¢À» ÀÚµ¿À¸·Î »ç¿ëÇÕ´Ï´Ù.</em>
-    WinMaximize  <em>; °°½À´Ï´Ù</em>
+    WinActivate  <em>; ìœ„ì—ì„œ ë°œê²¬ëœ ì°½ì„ ìžë™ìœ¼ë¡œ ì‚¬ìš©í•©ë‹ˆë‹¤.</em>
+    WinMaximize  <em>; ê°™ìŠµë‹ˆë‹¤</em>
     Send, Some text.{Enter}
     return
 }
@@ -153,8 +154,8 @@ IfWinNotExist, Calculator
     return
 else
 {
-    WinActivate  <em>; À§ÀÇ &quot;IfWinNotExist&quot;´Â ¶Ç  &quot;°¡Àå ¸¶Áö¸· ¹ß°ß&quot; Ã¢À» ¼³Á¤ÇÕ´Ï´Ù.</em>
-    WinMove, 40, 40  <em>; »õ À§Ä¡·Î ÀÌµ¿ÇÕ´Ï´Ù.</em>
+    WinActivate  <em>; ìœ„ì˜ &quot;IfWinNotExist&quot;ëŠ” ë˜  &quot;ê°€ìž¥ ë§ˆì§€ë§‰ ë°œê²¬&quot; ì°½ì„ ì„¤ì •í•©ë‹ˆë‹¤.</em>
+    WinMove, 40, 40  <em>; ìƒˆ ìœ„ì¹˜ë¡œ ì´ë™í•©ë‹ˆë‹¤.</em>
     return
 }</pre>
 

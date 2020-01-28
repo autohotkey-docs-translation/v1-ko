@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>StringLeft / StringRight</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,37 +11,37 @@
 
 <h1>StringLeft / StringRight</h1>
 
-<p>¹®ÀÚ¿­ÀÇ ¿ŞÂÊÀÌ³ª ¿À¸¥ÂÊÀ¸·ÎºÎÅÍ ¹®ÀÚµéÀ» ¿­¶÷ÇÕ´Ï´Ù.</p>
+<p>ë¬¸ìì—´ì˜ ì™¼ìª½ì´ë‚˜ ì˜¤ë¥¸ìª½ìœ¼ë¡œë¶€í„° ë¬¸ìë“¤ì„ ì—´ëŒí•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">StringLeft, OutputVar, InputVar, Count
 StringRight, OutputVar, InputVar, Count
-NewStr := <a href="../Functions.htm#SubStr">SubStr</a>(String, StartPos [, Length]) <em>; ÀÚ¼¼ÇÑ °ÍÀº <a href="../Functions.htm#SubStr">SubStr() ÇÔ¼ö</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</em></pre>
+NewStr := <a href="../Functions.htm#SubStr">SubStr</a>(String, StartPos [, Length]) <em>; ìì„¸í•œ ê²ƒì€ <a href="../Functions.htm#SubStr">SubStr() í•¨ìˆ˜</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</em></pre>
 
 <h3>Parameters</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p><em>InputVar</em>À¸·ÎºÎÅÍ ÃßÃâÇÑ ºÎ¹®ÀÚ¿­À» ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§.</p></dd>
+  <dd><p><em>InputVar</em>ìœ¼ë¡œë¶€í„° ì¶”ì¶œí•œ ë¶€ë¬¸ìì—´ì„ ì €ì¥í•  ë³€ìˆ˜ì˜ ì´ë¦„.</p></dd>
 
   <dt>InputVar</dt>
-  <dd><p>³»¿ëÀ» ÃßÃâÇÒ º¯¼öÀÇ ÀÌ¸§. ÀÌ¸§À» ÆÛ¼¾Æ® »çÀÎÀ¸·Î µÑ·¯ ½ÎÁö ¸¶½Ê½Ã¿À. ´Ü, º¯¼öÀÇ <em>³»¿ë</em>ÀÌ ÀÌ¸§ÀÌ±â¸¦ ¹Ù¶ó´Â °æ¿ì¶ó¸é ¿¹¿ÜÀÔ´Ï´Ù.</p></dd>
+  <dd><p>ë‚´ìš©ì„ ì¶”ì¶œí•  ë³€ìˆ˜ì˜ ì´ë¦„. ì´ë¦„ì„ í¼ì„¼íŠ¸ ì‚¬ì¸ìœ¼ë¡œ ë‘˜ëŸ¬ ì‹¸ì§€ ë§ˆì‹­ì‹œì˜¤. ë‹¨, ë³€ìˆ˜ì˜ <em>ë‚´ìš©</em>ì´ ì´ë¦„ì´ê¸°ë¥¼ ë°”ë¼ëŠ” ê²½ìš°ë¼ë©´ ì˜ˆì™¸ì…ë‹ˆë‹¤.</p></dd>
 
   <dt>Count</dt>
-  <dd><p>ÃßÃâÇÒ ¹®ÀÚÀÇ °³¼ö, <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a> °¡´É.  <em>Count</em>°¡ 0º¸´Ù ÀÛ°Å³ª °°À¸¸é, <em>OutputVar</em>´Â ºñ¿öÁı´Ï´Ù. <em>Count</em>°¡ <em>InputVar</em>ÀÇ ±æÀÌ¸¦ ÃÊ°úÇÏ¸é, <em>OutputVar</em>´Â <em>InputVar</em> ÀüÃ¼¿Í °°°Ô ¼³Á¤µË´Ï´Ù.</p></dd>
+  <dd><p>ì¶”ì¶œí•  ë¬¸ìì˜ ê°œìˆ˜, <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a> ê°€ëŠ¥.  <em>Count</em>ê°€ 0ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ìœ¼ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. <em>Count</em>ê°€ <em>InputVar</em>ì˜ ê¸¸ì´ë¥¼ ì´ˆê³¼í•˜ë©´, <em>OutputVar</em>ëŠ” <em>InputVar</em> ì „ì²´ì™€ ê°™ê²Œ ì„¤ì •ë©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-ÀÌ ¸í·É¾î¿Í ´Ù¸¥ ¸ğµç ¸í·É¾î¿¡ ´ëÇÏ¿©, <em>OutputVar</em>´Â <em>InputVar</em>¿Í °°Àº º¯¼ö°¡ µÇ¾îµµ Çã¿ëÇÕ´Ï´Ù.</p>
+ì´ ëª…ë ¹ì–´ì™€ ë‹¤ë¥¸ ëª¨ë“  ëª…ë ¹ì–´ì— ëŒ€í•˜ì—¬, <em>OutputVar</em>ëŠ” <em>InputVar</em>ì™€ ê°™ì€ ë³€ìˆ˜ê°€ ë˜ì–´ë„ í—ˆìš©í•©ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p><a href="../Functions.htm#SubStr">SubStr()</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">String = This is a test. 
-StringLeft, OutputVar, String, 4  <em>; ¹®ÀÚ¿­ &quot;This&quot;¸¦ OutputVar¿¡ ÀúÀåÇÕ´Ï´Ù.</em>
-StringRight, OutputVar, String, 5  <em>; ¹®ÀÚ¿­ &quot;test.&quot;¸¦ OutputVar¿¡ ÀúÀåÇÕ´Ï´Ù.</em></pre>
+StringLeft, OutputVar, String, 4  <em>; ë¬¸ìì—´ &quot;This&quot;ë¥¼ OutputVarì— ì €ì¥í•©ë‹ˆë‹¤.</em>
+StringRight, OutputVar, String, 5  <em>; ë¬¸ìì—´ &quot;test.&quot;ë¥¼ OutputVarì— ì €ì¥í•©ë‹ˆë‹¤.</em></pre>
 
 </body>
 </html>

@@ -1,47 +1,46 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>While-loop</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>While-È¸µ¹ÀÌ <span class="ver">[v1.0.48+]</span></h1>
+<h1>While-íšŒëŒì´ <span class="ver">[v1.0.48+]</span></h1>
 
-<p>ÁöÁ¤µÈ <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>ÀÌ °ÅÁþÀ¸·Î Æò°¡µÉ ¶§±îÁö ÀÏ·ÃÀÇ ¸í·É¾îµéÀ» ¹Ýº¹ÀûÀ¸·Î ½ÇÇàÇÕ´Ï´Ù.</p>
+<p>ì§€ì •ëœ <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ì´ ê±°ì§“ìœ¼ë¡œ í‰ê°€ë  ë•Œê¹Œì§€ ì¼ë ¨ì˜ ëª…ë ¹ì–´ë“¤ì„ ë°˜ë³µì ìœ¼ë¡œ ì‹¤í–‰í•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">While <i>Expression</i></pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Expression</dt>
-  <dd><p>À¯È¿ÇÑ <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>. ¿¹¸¦ µé¾î: <code>while x &lt; y</code>.</p></dd>
+  <dd><p>ìœ íš¨í•œ <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>. ì˜ˆë¥¼ ë“¤ì–´: <code>while x &lt; y</code>.</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-Ç¥Çö½ÄÀº ¹Ýº¹À» ÇÏ±â Àü¿¡ °¢°¢ ÇÑ ¹ø¾¿ Æò°¡µË´Ï´Ù. Ç¥Çö½ÄÀÌ ÂüÀ¸·Î Æò°¡µÇ¸é (±× °á°ú°¡ ºó¹®ÀÚ¿­ÀÌ³ª 0¸¸ ¾Æ´Ï¸é), È¸µ¹ÀÌÀÇ ¸öÃ¼°¡ ½ÇÇàµË´Ï´Ù; ±×·¸Áö ¾ÊÀ¸¸é, ½ÇÇàÀº È¸µ¹ÀÌ ¸öÃ¼ ´ÙÀ½ ÁÙ·Î Á¡ÇÁÇÕ´Ï´Ù.</p>
+í‘œí˜„ì‹ì€ ë°˜ë³µì„ í•˜ê¸° ì „ì— ê°ê° í•œ ë²ˆì”© í‰ê°€ë©ë‹ˆë‹¤. í‘œí˜„ì‹ì´ ì°¸ìœ¼ë¡œ í‰ê°€ë˜ë©´ (ê·¸ ê²°ê³¼ê°€ ë¹ˆë¬¸ìžì—´ì´ë‚˜ 0ë§Œ ì•„ë‹ˆë©´), íšŒëŒì´ì˜ ëª¸ì²´ê°€ ì‹¤í–‰ë©ë‹ˆë‹¤; ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, ì‹¤í–‰ì€ íšŒëŒì´ ëª¸ì²´ ë‹¤ìŒ ì¤„ë¡œ ì í”„í•©ë‹ˆë‹¤.</p>
 <p>
-while-È¸µ¹ÀÌ´Â º¸Åë ´ÙÀ½¿¡ <a href="Block.htm">ºí·Ï</a>ÀÌ µû¶ó¿É´Ï´Ù. ºí·ÏÀº È¸µ¹ÀÌÀÇ <em>¸öÃ¼</em>¸¦ Çü¼ºÇÏ´Â ¼­¼ú¹®ÀÇ Áý´ÜÀÔ´Ï´Ù. ±×·¸Áö¸¸, ¼­¼ú¹®ÀÌ ÇÏ³ª¸¸ ÀÖ´Â È¸µ¹ÀÌ´Â ºí·ÏÀ» ¿ä±¸ÇÏÁö ¾Ê½À´Ï´Ù (ÀÌ·± ¸ñÀûÀ¸·Î &quot;if&quot;¿Í ±×ÀÇ &quot;else&quot;´Â ÇÏ³ªÀÇ ¼­¼ú¹®À¸·Î °£ÁÖµË´Ï´Ù).</p>
+while-íšŒëŒì´ëŠ” ë³´í†µ ë‹¤ìŒì— <a href="Block.htm">ë¸”ë¡</a>ì´ ë”°ë¼ì˜µë‹ˆë‹¤. ë¸”ë¡ì€ íšŒëŒì´ì˜ <em>ëª¸ì²´</em>ë¥¼ í˜•ì„±í•˜ëŠ” ì„œìˆ ë¬¸ì˜ ì§‘ë‹¨ìž…ë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ì„œìˆ ë¬¸ì´ í•˜ë‚˜ë§Œ ìžˆëŠ” íšŒëŒì´ëŠ” ë¸”ë¡ì„ ìš”êµ¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ (ì´ëŸ° ëª©ì ìœ¼ë¡œ &quot;if&quot;ì™€ ê·¸ì˜ &quot;else&quot;ëŠ” í•˜ë‚˜ì˜ ì„œìˆ ë¬¸ìœ¼ë¡œ ê°„ì£¼ë©ë‹ˆë‹¤).</p>
 <p>
-<a name="otb"></a> ¼±ÅÃÀûÀ¸·Î One True Brace (OTB) ½ºÅ¸ÀÏÀ»»ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ ½ºÅ¸ÀÏÀº ÁÙ ¾Æ·¡°¡ ¾Æ´Ï¶ó °°Àº ÁÙ¿¡ ¿©´Â °ýÈ£¸¦ Çã¿ëÇÕ´Ï´Ù. ¿¹¸¦ µé¾î: <code>while x &lt; y {</code>.</p>
+<a name="otb"></a> ì„ íƒì ìœ¼ë¡œ One True Brace (OTB) ìŠ¤íƒ€ì¼ì„ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ ìŠ¤íƒ€ì¼ì€ ì¤„ ì•„ëž˜ê°€ ì•„ë‹ˆë¼ ê°™ì€ ì¤„ì— ì—¬ëŠ” ê´„í˜¸ë¥¼ í—ˆìš©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>while x &lt; y {</code>.</p>
 <p>
-³»Àå º¯¼ö <strong>A_Index</strong>´Â ÇöÀç È¸µ¹ÀÌ È½¼ö°¡ µé¾î ÀÖ½À´Ï´Ù. 1À» ´ã°í ÀÖÀ¸¸é Ã³À½À¸·Î È¸µ¹ÀÌÀÇ Ç¥Çö½Ä°ú ¸öÃ¼°¡ ½ÇÇàµÈ °ÍÀÔ´Ï´Ù. µÎ ¹øÂ°¶ó¸é 2°¡ µé¾î ÀÖ½À´Ï´Ù; µîµî. ¾ÈÂÊ È¸µ¹ÀÌ°¡ ¹Ù±ùÂÊ È¸µ¹ÀÌ¿¡ µÑ·¯ ½Î¿© ÀÖ´Ù¸é, ¾ÈÂÊ È¸µ¹ÀÌ°¡ ¿ì¼±±ÇÀ» °¡Áý´Ï´Ù. A_Index´Â ¸ðµç À¯ÇüÀÇ È¸µ¹ÀÌ ¾È¿¡¼­ ÀÛµ¿ÇÏÁö¸¸, 0ÀÌ¸é È¸µ¹ÀÌ ¹Ù±ù¿¡ ÀÖ´Â °ÍÀÔ´Ï´Ù.</p>
+ë‚´ìž¥ ë³€ìˆ˜ <strong>A_Index</strong>ëŠ” í˜„ìž¬ íšŒëŒì´ íšŸìˆ˜ê°€ ë“¤ì–´ ìžˆìŠµë‹ˆë‹¤. 1ì„ ë‹´ê³  ìžˆìœ¼ë©´ ì²˜ìŒìœ¼ë¡œ íšŒëŒì´ì˜ í‘œí˜„ì‹ê³¼ ëª¸ì²´ê°€ ì‹¤í–‰ëœ ê²ƒìž…ë‹ˆë‹¤. ë‘ ë²ˆì§¸ë¼ë©´ 2ê°€ ë“¤ì–´ ìžˆìŠµë‹ˆë‹¤; ë“±ë“±. ì•ˆìª½ íšŒëŒì´ê°€ ë°”ê¹¥ìª½ íšŒëŒì´ì— ë‘˜ëŸ¬ ì‹¸ì—¬ ìžˆë‹¤ë©´, ì•ˆìª½ íšŒëŒì´ê°€ ìš°ì„ ê¶Œì„ ê°€ì§‘ë‹ˆë‹¤. A_IndexëŠ” ëª¨ë“  ìœ í˜•ì˜ íšŒëŒì´ ì•ˆì—ì„œ ìž‘ë™í•˜ì§€ë§Œ, 0ì´ë©´ íšŒëŒì´ ë°”ê¹¥ì— ìžˆëŠ” ê²ƒìž…ë‹ˆë‹¤.</p>
 <p>
-¸ðµç È¸µ¹ÀÌ¿Í ¸¶Âù°¡Áö·Î, <a href="Break.htm">Break</a>´Â È¸µ¹ÀÌ¸¦ ÀÏÂï ºüÁ® ³ª¿À´Â µ¥ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ¶ÇÇÑ, <a href="Continue.htm">Continue</a>´Â ÇöÀç ½ÇÇàÀÇ ³ª¸ÓÁö¸¦ °Ç³Ê ¶Ù´Â µ¥ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ±× ¶§¸¶´Ù A_Index´Â  1 ¸¸Å­¾¿ Áõ°¡ÇÏ°í while-È¸µ¹ÀÌÀÇ Ç¥Çö½ÄÀÌ ÀçÆò°¡µË´Ï´Ù. ¿©ÀüÈ÷ ÂüÀÌ¸é, »õ·Î ¹Ýº¹À» ½ÃÀÛÇÕ´Ï´Ù; ±×·¸Áö ¾ÊÀ¸¸é È¸µ¹ÀÌ¸¦ ³¡³À´Ï´Ù.</p>
+ëª¨ë“  íšŒëŒì´ì™€ ë§ˆì°¬ê°€ì§€ë¡œ, <a href="Break.htm">Break</a>ëŠ” íšŒëŒì´ë¥¼ ì¼ì° ë¹ ì ¸ ë‚˜ì˜¤ëŠ” ë° ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë˜í•œ, <a href="Continue.htm">Continue</a>ëŠ” í˜„ìž¬ ì‹¤í–‰ì˜ ë‚˜ë¨¸ì§€ë¥¼ ê±´ë„ˆ ë›°ëŠ” ë° ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ ë•Œë§ˆë‹¤ A_IndexëŠ”  1 ë§Œí¼ì”© ì¦ê°€í•˜ê³  while-íšŒëŒì´ì˜ í‘œí˜„ì‹ì´ ìž¬í‰ê°€ë©ë‹ˆë‹¤. ì—¬ì „ížˆ ì°¸ì´ë©´, ìƒˆë¡œ ë°˜ë³µì„ ì‹œìž‘í•©ë‹ˆë‹¤; ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ íšŒëŒì´ë¥¼ ëëƒ…ë‹ˆë‹¤.</p>
 <p>
-<strong>Àü¹®È­µÈ È¸µ¹ÀÌ</strong>: È¸µ¹ÀÌ´Â ÆÄÀÏ, Æú´õ, ¶Ç´Â ·¹Áö½ºÆ®¸® Ç×¸ñÀ» ÀÚµ¿À¸·Î (ÇÑ ¹ø¿¡ ÇÏ³ª¾¿) ¿­¶÷ÇÏ´Â µ¥ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÚ¼¼ÇÑ °ÍÀº <a href="LoopFile.htm">ÆÄÀÏ-È¸µ¹ÀÌ</a>¿Í <a href="LoopReg.htm">·¹Áö½ºÆ®¸®-È¸µ¹ÀÌ</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À. °Ô´Ù°¡, <a href="LoopReadFile.htm">ÆÄÀÏ-ÀÐ±â È¸µ¹ÀÌ</a>´Â ÆÄÀÏ ÀüÃ¼ÀÇ ³»¿ëÀ», ÇÑ ¹ø¿¡ ÇÑ ÁÙ¾¿ Ã³¸®ÇÒ ¼ö ÀÖ½À´Ï´Ù. ¸¶Áö¸·À¸·Î, <a href="LoopParse.htm">ÆÄ½Ì È¸µ¹ÀÌ</a>´Â ±¸ºÐµÈ ¹®ÀÚ¿­ ¾ÈÀÇ °¢ ÇÊµå¸¦ Ã³¸®ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong>ì „ë¬¸í™”ëœ íšŒëŒì´</strong>: íšŒëŒì´ëŠ” íŒŒì¼, í´ë”, ë˜ëŠ” ë ˆì§€ìŠ¤íŠ¸ë¦¬ í•­ëª©ì„ ìžë™ìœ¼ë¡œ (í•œ ë²ˆì— í•˜ë‚˜ì”©) ì—´ëžŒí•˜ëŠ” ë° ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ìžì„¸í•œ ê²ƒì€ <a href="LoopFile.htm">íŒŒì¼-íšŒëŒì´</a>ì™€ <a href="LoopReg.htm">ë ˆì§€ìŠ¤íŠ¸ë¦¬-íšŒëŒì´</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤. ê²Œë‹¤ê°€, <a href="LoopReadFile.htm">íŒŒì¼-ì½ê¸° íšŒëŒì´</a>ëŠ” íŒŒì¼ ì „ì²´ì˜ ë‚´ìš©ì„, í•œ ë²ˆì— í•œ ì¤„ì”© ì²˜ë¦¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë§ˆì§€ë§‰ìœ¼ë¡œ, <a href="LoopParse.htm">íŒŒì‹± íšŒëŒì´</a>ëŠ” êµ¬ë¶„ëœ ë¬¸ìžì—´ ì•ˆì˜ ê° í•„ë“œë¥¼ ì²˜ë¦¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
-<p><a href="Until.htm">Until</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">Blocks</a>, <a href="Loop.htm">Loop</a>, <a href="For.htm">For-È¸µ¹ÀÌ</a>, <a href="LoopFile.htm">ÆÄÀÏ-Æú´õ È¸µ¹ÀÌ</a>, <a href="LoopReg.htm">·¹Áö½ºÆ®¸® È¸µ¹ÀÌ</a>, <a href="LoopReadFile.htm">ÆÄÀÏ-ÀÐ±â È¸µ¹ÀÌ</a>, <a href="LoopParse.htm">ÆÄ½Ì È¸µ¹ÀÌ</a>, <a href="IfExpression.htm">If (expression)</a></p>
+<h3>ê´€ë ¨ í•­ëª©</h3>
+<p><a href="Until.htm">Until</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">Blocks</a>, <a href="Loop.htm">Loop</a>, <a href="For.htm">For-íšŒëŒì´</a>, <a href="LoopFile.htm">íŒŒì¼-í´ë” íšŒëŒì´</a>, <a href="LoopReg.htm">ë ˆì§€ìŠ¤íŠ¸ë¦¬ íšŒëŒì´</a>, <a href="LoopReadFile.htm">íŒŒì¼-ì½ê¸° íšŒëŒì´</a>, <a href="LoopParse.htm">íŒŒì‹± íšŒëŒì´</a>, <a href="IfExpression.htm">If (expression)</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent"><em>; »ç¿ëÀÚ°¡ ¿Þ¹öÆ°À» ²ô´Â µ¿¾È, ToolTipÀÌ ²ø±â-±¸¿ª ¾È¿¡ ±× Å©±â¸¦ º¸¿©ÁÝ´Ï´Ù.</em>
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent"><em>; ì‚¬ìš©ìžê°€ ì™¼ë²„íŠ¼ì„ ë„ëŠ” ë™ì•ˆ, ToolTipì´ ëŒê¸°-êµ¬ì—­ ì•ˆì— ê·¸ í¬ê¸°ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤.</em>
 
 CoordMode, Mouse, Screen
 

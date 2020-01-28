@@ -1,18 +1,19 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Clipboard and ClipboardAll</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 
 <body>
-<h1>Clipboard ±×¸®°í <a href="#ClipboardAll">ClipboardAll</a></h1>
+<h1>Clipboard ê·¸ë¦¬ê³  <a href="#ClipboardAll">ClipboardAll</a></h1>
 
-<p><em>Clipboard</em>´Â ³»Àå <a href="../Variables.htm">º¯¼ö</a>·Î¼­ Ã¢ÀÇ Å¬¸³º¸µåÀÇ ÇöÀç ³»¿ëÀ» ¹Ý¿µÇÕ´Ï´Ù. ±× ³»¿ëÀÌ ÅØ½ºÆ®·Î Ç¥Çö °¡´ÉÇÏ¸é ¸»ÀÔ´Ï´Ù. ´ëÁ¶ÀûÀ¸·Î, <em><a href="#ClipboardAll">ClipboardAll</a></em>Àº ±×¸²ÀÌµç ±¸Á¶Àû ÅØ½ºÆ®ÀÌµç ¹«¾ùÀÌµç Å¬¸³º¸µå¿¡ ´ãÀ» ¼ö ÀÖ½À´Ï´Ù.</p>
-<p><a name="CopiedFiles"></a><em>Clipboard</em>¿¡¼­ ÅØ½ºÆ®ÀÇ °¢ ÁÙÀº ÀüÇüÀûÀ¸·Î Ä³¸®Áö ¸®ÅÏ°ú ¶óÀÎÇÇµå(CR+LF)·Î ³¡³³´Ï´Ù. ½ºÅ©¸³Æ®¿¡¼­´Â <code>`r`n</code>À¸·Î Ç¥ÇöÇÒ ¼ö ÀÖ½À´Ï´Ù. (Å½»ö±â Ã¢À¸·ÎºÎÅÍ Control-C¸¦ ÅëÇÏ¿© º¹»çµÈ) ÆÄÀÏÀº ÅØ½ºÆ®·Î °£ÁÖµË´Ï´Ù: ½ºÅ©¸³Æ®¿¡¼­ <em>Clipboard</em>¸¦ ÂüÁ¶ÇÒ ¶§¸¶´Ù ÀÚµ¿À¸·Î (¿ÏÀüÇÑ °æ·Î¿Í ÇÔ²²) ±×ÀÇ ÆÄÀÏÀÌ¸§À¸·Î º¯È¯µË´Ï´Ù. 
-ÆÄÀÏÀ» ÇÏ³ª¾¿ ÃßÃâÇÏ·Á¸é ´ÙÀ½ ¿¹Á¦¸¦ µû¸£½Ê½Ã¿À:</p>
+<p><em>Clipboard</em>ëŠ” ë‚´ìž¥ <a href="../Variables.htm">ë³€ìˆ˜</a>ë¡œì„œ ì°½ì˜ í´ë¦½ë³´ë“œì˜ í˜„ìž¬ ë‚´ìš©ì„ ë°˜ì˜í•©ë‹ˆë‹¤. ê·¸ ë‚´ìš©ì´ í…ìŠ¤íŠ¸ë¡œ í‘œí˜„ ê°€ëŠ¥í•˜ë©´ ë§ìž…ë‹ˆë‹¤. ëŒ€ì¡°ì ìœ¼ë¡œ, <em><a href="#ClipboardAll">ClipboardAll</a></em>ì€ ê·¸ë¦¼ì´ë“  êµ¬ì¡°ì  í…ìŠ¤íŠ¸ì´ë“  ë¬´ì—‡ì´ë“  í´ë¦½ë³´ë“œì— ë‹´ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
+<p><a name="CopiedFiles"></a><em>Clipboard</em>ì—ì„œ í…ìŠ¤íŠ¸ì˜ ê° ì¤„ì€ ì „í˜•ì ìœ¼ë¡œ ìºë¦¬ì§€ ë¦¬í„´ê³¼ ë¼ì¸í”¼ë“œ(CR+LF)ë¡œ ëë‚©ë‹ˆë‹¤. ìŠ¤í¬ë¦½íŠ¸ì—ì„œëŠ” <code>`r`n</code>ìœ¼ë¡œ í‘œí˜„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. (íƒìƒ‰ê¸° ì°½ìœ¼ë¡œë¶€í„° Control-Cë¥¼ í†µí•˜ì—¬ ë³µì‚¬ëœ) íŒŒì¼ì€ í…ìŠ¤íŠ¸ë¡œ ê°„ì£¼ë©ë‹ˆë‹¤: ìŠ¤í¬ë¦½íŠ¸ì—ì„œ <em>Clipboard</em>ë¥¼ ì°¸ì¡°í•  ë•Œë§ˆë‹¤ ìžë™ìœ¼ë¡œ (ì™„ì „í•œ ê²½ë¡œì™€ í•¨ê»˜) ê·¸ì˜ íŒŒì¼ì´ë¦„ìœ¼ë¡œ ë³€í™˜ë©ë‹ˆë‹¤. 
+íŒŒì¼ì„ í•˜ë‚˜ì”© ì¶”ì¶œí•˜ë ¤ë©´ ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¥´ì‹­ì‹œì˜¤:</p>
 
 <pre><a href="../commands/LoopParse.htm">Loop, parse</a>, clipboard, `n, `r
 {
@@ -20,65 +21,65 @@
     IfMsgBox, No, break
 }</pre>
 <p>
-ÆÄÀÏ ÀÌ¸§À» ¾ËÆÄºª ¼ø¼­·Î Á¤·ÄÇÏ·Á¸é, <a href="../commands/Sort.htm">Sort</a> ¸í·É¾î¸¦ »ç¿ëÇÕ´Ï´Ù. Å¬¸³º¸µå¿¡ Á¸ÀçÇÏ´Â ÆÄÀÏ ÀÌ¸§À» ÆÄÀÏ¿¡ ¾²·Á¸é, <code><a href="../commands/FileAppend.htm">FileAppend</a>, %clipboard%`r`n, C:\My File.txt</code>¸¦ »ç¿ëÇÕ´Ï´Ù. ¾ó¸¶³ª ¿À·§µ¿¾È ½ºÅ©¸³Æ®°¡ Å¬¸³º¸µå¸¦ ¿­·Á°í ½ÃµµÇÒ Áö º¯°æÇÏ·Á¸é -- ´Ù¸¥ ¾îÇÃ¸®ÄÉÀÌ¼Ç¿¡¼­ »ç¿ëÇÏ°í ÀÖ´Â °æ¿ì -- <a href="../commands/_ClipboardTimeout.htm">#ClipboardTimeOut</a>À» »ç¿ëÇÕ´Ï´Ù.</p>
-<strong>±âº» ¿¹Á¦:</strong>
-<pre>clipboard = my text   <em>; Å¬¸³º¸µå¿¡ ¿ÏÀüÈ÷ »õ·Î¿î ³»¿ëÀ» ºÎ¿©ÇÕ´Ï´Ù.</em>
+íŒŒì¼ ì´ë¦„ì„ ì•ŒíŒŒë²³ ìˆœì„œë¡œ ì •ë ¬í•˜ë ¤ë©´, <a href="../commands/Sort.htm">Sort</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤. í´ë¦½ë³´ë“œì— ì¡´ìž¬í•˜ëŠ” íŒŒì¼ ì´ë¦„ì„ íŒŒì¼ì— ì“°ë ¤ë©´, <code><a href="../commands/FileAppend.htm">FileAppend</a>, %clipboard%`r`n, C:\My File.txt</code>ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤. ì–¼ë§ˆë‚˜ ì˜¤ëž«ë™ì•ˆ ìŠ¤í¬ë¦½íŠ¸ê°€ í´ë¦½ë³´ë“œë¥¼ ì—´ë ¤ê³  ì‹œë„í•  ì§€ ë³€ê²½í•˜ë ¤ë©´ -- ë‹¤ë¥¸ ì–´í”Œë¦¬ì¼€ì´ì…˜ì—ì„œ ì‚¬ìš©í•˜ê³  ìžˆëŠ” ê²½ìš° -- <a href="../commands/_ClipboardTimeout.htm">#ClipboardTimeOut</a>ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.</p>
+<strong>ê¸°ë³¸ ì˜ˆì œ:</strong>
+<pre>clipboard = my text   <em>; í´ë¦½ë³´ë“œì— ì™„ì „ížˆ ìƒˆë¡œìš´ ë‚´ìš©ì„ ë¶€ì—¬í•©ë‹ˆë‹¤.</em>
 clipboard =   <em>; Empty the clipboard.</em>
-clipboard = %clipboard%   <em>; º¹»çµÈ ÆÄÀÏ, HTML, ¶Ç´Â ±âÅ¸ Çü½ÄÀÇ ÅØ½ºÆ®¸¦ Æò¹üÇÑ ÅØ½ºÆ®·Î º¯È¯ÇÕ´Ï´Ù.</em>
-clipboard = %clipboard% Text to append.   <em>; ÅØ½ºÆ®¸¦ Å¬¸³º¸µå¿¡ Ãß°¡ÇÕ´Ï´Ù.</em>
-StringReplace, clipboard, clipboard, ABC, DEF, All   <em>; ABC°¡ ³ªÅ¸³ª¸é ¸ðµÎ DEF·Î ¹Ù²ß´Ï´Ù (¶Ç Å¬¸³º¸µå¸¦ Æò¹üÇÑ ÅØ½ºÆ®·Î º¯È¯ÇÕ´Ï´Ù).</em></pre>
+clipboard = %clipboard%   <em>; ë³µì‚¬ëœ íŒŒì¼, HTML, ë˜ëŠ” ê¸°íƒ€ í˜•ì‹ì˜ í…ìŠ¤íŠ¸ë¥¼ í‰ë²”í•œ í…ìŠ¤íŠ¸ë¡œ ë³€í™˜í•©ë‹ˆë‹¤.</em>
+clipboard = %clipboard% Text to append.   <em>; í…ìŠ¤íŠ¸ë¥¼ í´ë¦½ë³´ë“œì— ì¶”ê°€í•©ë‹ˆë‹¤.</em>
+StringReplace, clipboard, clipboard, ABC, DEF, All   <em>; ABCê°€ ë‚˜íƒ€ë‚˜ë©´ ëª¨ë‘ DEFë¡œ ë°”ê¿‰ë‹ˆë‹¤ (ë˜ í´ë¦½ë³´ë“œë¥¼ í‰ë²”í•œ í…ìŠ¤íŠ¸ë¡œ ë³€í™˜í•©ë‹ˆë‹¤).</em></pre>
 
-<p><strong>ClipWait¸¦ »ç¿ëÇÏ¿© ½ºÅ©¸³Æ®ÀÇ ½Å·Ú¼º ³ôÀÌ±â:</strong></p>
-<pre>clipboard =  <em>; ÅØ½ºÆ®°¡ µµÂøÇÒ ¶§¸¦ Å½ÁöÇÏµµ·Ï ÇÏ±â À§ÇØ ClipWait¸¦ ºñ¿î Ã¤·Î ½ÃÀÛÇÕ´Ï´Ù. </em>
+<p><strong>ClipWaitë¥¼ ì‚¬ìš©í•˜ì—¬ ìŠ¤í¬ë¦½íŠ¸ì˜ ì‹ ë¢°ì„± ë†’ì´ê¸°:</strong></p>
+<pre>clipboard =  <em>; í…ìŠ¤íŠ¸ê°€ ë„ì°©í•  ë•Œë¥¼ íƒì§€í•˜ë„ë¡ í•˜ê¸° ìœ„í•´ ClipWaitë¥¼ ë¹„ìš´ ì±„ë¡œ ì‹œìž‘í•©ë‹ˆë‹¤. </em>
 Send ^c
-<a href="../commands/ClipWait.htm">ClipWait</a>  <em>; Å¬¸³º¸µå¿¡ ÅØ½ºÆ®°¡ ´ã±â±â¸¦ ±â´Ù¸³´Ï´Ù.</em>
-MsgBox Control-C ´ÙÀ½ ³»¿ëÀÌ Å¬¸³º¸µå¿¡ º¹»çµÇ¾ú½À´Ï´Ù:`n`n%clipboard%</pre>
+<a href="../commands/ClipWait.htm">ClipWait</a>  <em>; í´ë¦½ë³´ë“œì— í…ìŠ¤íŠ¸ê°€ ë‹´ê¸°ê¸°ë¥¼ ê¸°ë‹¤ë¦½ë‹ˆë‹¤.</em>
+MsgBox Control-C ë‹¤ìŒ ë‚´ìš©ì´ í´ë¦½ë³´ë“œì— ë³µì‚¬ë˜ì—ˆìŠµë‹ˆë‹¤:`n`n%clipboard%</pre>
 
-<h2 id="ClipboardAll">ClipboardAll <span class="ver">(Å¬¸³º¸µå¿¡ ¹«¾ùÀÌµç ÀúÀåÇÏ°í º¹±¸ÇÏ±â)</span></h2>
+<h2 id="ClipboardAll">ClipboardAll <span class="ver">(í´ë¦½ë³´ë“œì— ë¬´ì—‡ì´ë“  ì €ìž¥í•˜ê³  ë³µêµ¬í•˜ê¸°)</span></h2>
 <p>
-<em>ClipboardAll</em>Àº Å¬¸³º¸µå¿¡ ¹«¾ùÀÌµç ´ã½À´Ï´Ù (±×¸²°ú ±¸Á¶È­ ÅØ½ºÆ®). Å¬¸³º¸µåÀÇ ³»¿ëÀ» ÀúÀåÇÏ´Âµ¥ ÁÖ·Î »ç¿ëµË´Ï´Ù. ½ºÅ©¸³Æ®°¡ ÀÓ½Ã·Î ±× Å¬¸³º¸µå¸¦ ¿¬»ê¿¡ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. ¿¬»êÀÌ ¿Ï·áµÇ¸é, ½ºÅ©¸³Æ®´Â ¿ø·¡ÀÇ Å¬¸³º¸µå ³»¿ëÀ» ¾Æ·¡¿¡ º¸¿©ÁÖ´Â ¹Ù¿Í °°ÀÌ º¹±¸ÇÕ´Ï´Ù:</p>
-<pre>ClipSaved := ClipboardAll   <em>; ÀüÃ¼ Å¬¸³º¸µå¸¦ ¿©·¯ºÐÀÇ º¯¼ö¿¡ ÀúÀåÇÕ´Ï´Ù.
-; ... ¿©±â¿¡¼­ ÀÓ½Ã·Î Å¬¸³º¸µå¸¦ »ç¿ëÇÕ´Ï´Ù. ¿¹¸¦ µé¾î <a href="../commands/Transform.htm#Unicode">Transform Unicode</a>¸¦ ÅëÇÏ¿© À¯´ÏÄÚµå ÅØ½ºÆ®¸¦ ÇØ¼®ÇÒ ¼ö ÀÖ½À´Ï´Ù ...</em>
-Clipboard := ClipSaved   <em>; ¿ø·¡ Å¬¸³º¸µå¸¦ º¹±¸ÇÕ´Ï´Ù. ( <i>ClipboardAll</i>ÀÌ ¾Æ´Ï¶ó) <i>Clipboard</i>ÀÇ »ç¿ë¿¡ ÁÖ¸ñÇÏ½Ê½Ã¿À.</em>
-ClipSaved =   <em>; Å¬¸³º¸µå°¡ ¾ÆÁÖ Å« °æ¿ì ¸Þ¸ð¸®¸¦ ÇØÁ¦ÇÕ´Ï´Ù.</em></pre>
+<em>ClipboardAll</em>ì€ í´ë¦½ë³´ë“œì— ë¬´ì—‡ì´ë“  ë‹´ìŠµë‹ˆë‹¤ (ê·¸ë¦¼ê³¼ êµ¬ì¡°í™” í…ìŠ¤íŠ¸). í´ë¦½ë³´ë“œì˜ ë‚´ìš©ì„ ì €ìž¥í•˜ëŠ”ë° ì£¼ë¡œ ì‚¬ìš©ë©ë‹ˆë‹¤. ìŠ¤í¬ë¦½íŠ¸ê°€ ìž„ì‹œë¡œ ê·¸ í´ë¦½ë³´ë“œë¥¼ ì—°ì‚°ì— ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì—°ì‚°ì´ ì™„ë£Œë˜ë©´, ìŠ¤í¬ë¦½íŠ¸ëŠ” ì›ëž˜ì˜ í´ë¦½ë³´ë“œ ë‚´ìš©ì„ ì•„ëž˜ì— ë³´ì—¬ì£¼ëŠ” ë°”ì™€ ê°™ì´ ë³µêµ¬í•©ë‹ˆë‹¤:</p>
+<pre>ClipSaved := ClipboardAll   <em>; ì „ì²´ í´ë¦½ë³´ë“œë¥¼ ì—¬ëŸ¬ë¶„ì˜ ë³€ìˆ˜ì— ì €ìž¥í•©ë‹ˆë‹¤.
+; ... ì—¬ê¸°ì—ì„œ ìž„ì‹œë¡œ í´ë¦½ë³´ë“œë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ <a href="../commands/Transform.htm#Unicode">Transform Unicode</a>ë¥¼ í†µí•˜ì—¬ ìœ ë‹ˆì½”ë“œ í…ìŠ¤íŠ¸ë¥¼ í•´ì„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ ...</em>
+Clipboard := ClipSaved   <em>; ì›ëž˜ í´ë¦½ë³´ë“œë¥¼ ë³µêµ¬í•©ë‹ˆë‹¤. ( <i>ClipboardAll</i>ì´ ì•„ë‹ˆë¼) <i>Clipboard</i>ì˜ ì‚¬ìš©ì— ì£¼ëª©í•˜ì‹­ì‹œì˜¤.</em>
+ClipSaved =   <em>; í´ë¦½ë³´ë“œê°€ ì•„ì£¼ í° ê²½ìš° ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•©ë‹ˆë‹¤.</em></pre>
 <p>
-<em>ClipboardAll</em>¸¦ ÆÄÀÏ¿¡ ÀúÀåÇÒ ¼öµµ ÀÖ½À´Ï´Ù (ÀÌ ¸ðµå¿¡¼­, FileAppend´Â ¾ðÁ¦³ª ±âÁ¸ÀÇ ÆÄÀÏÀ» µ¤¾î¾¹´Ï´Ù):</p>
-<pre><a href="../commands/FileAppend.htm">FileAppend</a>, %ClipboardAll%, C:\Company Logo.clip <em>; ÆÄÀÏ È®ÀåÀÚ´Â ¹®Á¦°¡ µÇÁö ¾Ê½À´Ï´Ù.</em></pre>
+<em>ClipboardAll</em>ë¥¼ íŒŒì¼ì— ì €ìž¥í•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤ (ì´ ëª¨ë“œì—ì„œ, FileAppendëŠ” ì–¸ì œë‚˜ ê¸°ì¡´ì˜ íŒŒì¼ì„ ë®ì–´ì”ë‹ˆë‹¤):</p>
+<pre><a href="../commands/FileAppend.htm">FileAppend</a>, %ClipboardAll%, C:\Company Logo.clip <em>; íŒŒì¼ í™•ìž¥ìžëŠ” ë¬¸ì œê°€ ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</em></pre>
 <p>
-³ªÁß¿¡ ´Ù½Ã ±× ÆÄÀÏÀ» Å¬¸³º¸µå·Î (¶Ç´Â º¯¼ö ¾ÈÀ¸·Î) ÀûÀçÇÏ·Á¸é, ´ÙÀ½ ¿¹Á¦¸¦ µû¸£½Ê½Ã¿À:</p>
-<pre><a href="../commands/FileRead.htm">FileRead</a>, Clipboard, <strong>*c</strong> C:\Company Logo.clip <em>; *cÀÇ »ç¿ë¿¡ ÁÖ¸ñÇÏ½Ê½Ã¿À. ¹Ýµå½Ã ÆÄÀÏÀÌ¸§ ¾Õ¿¡ ¿Í¾ß ÇÕ´Ï´Ù.</em></pre>
+ë‚˜ì¤‘ì— ë‹¤ì‹œ ê·¸ íŒŒì¼ì„ í´ë¦½ë³´ë“œë¡œ (ë˜ëŠ” ë³€ìˆ˜ ì•ˆìœ¼ë¡œ) ì ìž¬í•˜ë ¤ë©´, ë‹¤ìŒ ì˜ˆì œë¥¼ ë”°ë¥´ì‹­ì‹œì˜¤:</p>
+<pre><a href="../commands/FileRead.htm">FileRead</a>, Clipboard, <strong>*c</strong> C:\Company Logo.clip <em>; *cì˜ ì‚¬ìš©ì— ì£¼ëª©í•˜ì‹­ì‹œì˜¤. ë°˜ë“œì‹œ íŒŒì¼ì´ë¦„ ì•žì— ì™€ì•¼ í•©ë‹ˆë‹¤.</em></pre>
 
-<h3>ÁÖÀÇ</h3>
+<h3>ì£¼ì˜</h3>
 <p>
-<em>ClipboardAll</em>´Â À§¿¡ ±â¼úµÈ ¹æ½Ä ¿Ü¿¡ ´Ù¸¥ ¹æ½ÄÀ¸·Î »ç¿ëµÇ¸é ºñ¾î ÀÖ½À´Ï´Ù. °Ô´Ù°¡, <em>ClipboardAll</em>´Â <a href="../Variables.htm#comma">½°Ç¥·Î-°¡¸¥ Ç¥Çö½Ä</a> ¾È¿¡¼­ Áö¿øÇÏÁö ¾Ê½À´Ï´Ù. Áï, <code>ClipSaved := ClipboardAll</code>°ú °°ÀÌ ÇÑ ÁÙ¿¡ ÀÚÃ¼¸¸ ÇÒ´çÇØ¾ß ÇÕ´Ï´Ù.</p>
+<em>ClipboardAll</em>ëŠ” ìœ„ì— ê¸°ìˆ ëœ ë°©ì‹ ì™¸ì— ë‹¤ë¥¸ ë°©ì‹ìœ¼ë¡œ ì‚¬ìš©ë˜ë©´ ë¹„ì–´ ìžˆìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, <em>ClipboardAll</em>ëŠ” <a href="../Variables.htm#comma">ì‰¼í‘œë¡œ-ê°€ë¥¸ í‘œí˜„ì‹</a> ì•ˆì—ì„œ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì¦‰, <code>ClipSaved := ClipboardAll</code>ê³¼ ê°™ì´ í•œ ì¤„ì— ìžì²´ë§Œ í• ë‹¹í•´ì•¼ í•©ë‹ˆë‹¤.</p>
 <p>
-<em>ClipboardAll</em>ÀÌ ÇÒ´çµÈ º¯¼ö´Â ÀÌÁø Çü½ÄÀÌ¸ç ±×·¡¼­  <a href="../commands/MsgBox.htm">MsgBox</a>°°Àº °ÍÀ¸·Î º¸¸é ¾²·¹±âÃ³·³ º¸ÀÔ´Ï´Ù. ¶Ç, ÀÌÁø-Å¬¸³º¸µå º¯¼ö (<a href="../commands/StringReplace.htm">StringReplace</a>¿Í °°Àº ¼ö´ÜÀ¸·Î) º¸Åë º¯¼ö·Î È¯¿øÇÏ¸é, °á°úÀûÀ¸·Î ±×ÀÇ Å¬¸³º¸µå µ¥ÀÌÅÍ°¡ ¼Ò½ÇµË´Ï´Ù. v1.0.46+¿¡¼­, ÀÌÁø-Å¬¸³º¸µå º¯¼ö´Â °ªÀ¸·Î <a href="../Functions.htm#ByRef">ÇÔ¼ö</a>¿¡ °Ç³×µµ µË´Ï´Ù (ÀÌÀü¿¡´Â <a href="../Functions.htm#ByRef">ByRef</a>·Î¸¸ ÀÛµ¿Çß½À´Ï´Ù).</p>
+<em>ClipboardAll</em>ì´ í• ë‹¹ëœ ë³€ìˆ˜ëŠ” ì´ì§„ í˜•ì‹ì´ë©° ê·¸ëž˜ì„œ  <a href="../commands/MsgBox.htm">MsgBox</a>ê°™ì€ ê²ƒìœ¼ë¡œ ë³´ë©´ ì“°ë ˆê¸°ì²˜ëŸ¼ ë³´ìž…ë‹ˆë‹¤. ë˜, ì´ì§„-í´ë¦½ë³´ë“œ ë³€ìˆ˜ (<a href="../commands/StringReplace.htm">StringReplace</a>ì™€ ê°™ì€ ìˆ˜ë‹¨ìœ¼ë¡œ) ë³´í†µ ë³€ìˆ˜ë¡œ í™˜ì›í•˜ë©´, ê²°ê³¼ì ìœ¼ë¡œ ê·¸ì˜ í´ë¦½ë³´ë“œ ë°ì´í„°ê°€ ì†Œì‹¤ë©ë‹ˆë‹¤. v1.0.46+ì—ì„œ, ì´ì§„-í´ë¦½ë³´ë“œ ë³€ìˆ˜ëŠ” ê°’ìœ¼ë¡œ <a href="../Functions.htm#ByRef">í•¨ìˆ˜</a>ì— ê±´ë„¤ë„ ë©ë‹ˆë‹¤ (ì´ì „ì—ëŠ” <a href="../Functions.htm#ByRef">ByRef</a>ë¡œë§Œ ìž‘ë™í–ˆìŠµë‹ˆë‹¤).</p>
 <p>
-<em>ClipboardAll</em>ÀÌ Å¬¸³º¸µå¿¡¼­ ÇÏ³ª ÀÌ»óÀÇ µ¥ÀÌÅÍ °´Ã¼(±¸Á¶Àû ÅØ½ºÆ®)¸¦ ¿­¶÷ÇÒ ¼ö ¾øÀ¸¸é, ±×°ÍÀº »ý·«µÇÁö¸¸ ³ª¸ÓÁö °´Ã¼´Â ±×´ë·Î ÀúÀåµË´Ï´Ù.</p>
+<em>ClipboardAll</em>ì´ í´ë¦½ë³´ë“œì—ì„œ í•˜ë‚˜ ì´ìƒì˜ ë°ì´í„° ê°ì²´(êµ¬ì¡°ì  í…ìŠ¤íŠ¸)ë¥¼ ì—´ëžŒí•  ìˆ˜ ì—†ìœ¼ë©´, ê·¸ê²ƒì€ ìƒëžµë˜ì§€ë§Œ ë‚˜ë¨¸ì§€ ê°ì²´ëŠ” ê·¸ëŒ€ë¡œ ì €ìž¥ë©ë‹ˆë‹¤.</p>
 <p>
-Å¬¸³º¸µå µ¥ÀÌÅÍ¸¦ ´ã°í ÀÖ´Â º¯¼ö´Â ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ´Ù¸¥ º¯¼ö¿¡ º¹»çÇÒ ¼ö ÀÖ½À´Ï´Ù: <code>ClipSaved2 := ClipSaved</code>.</p>
+í´ë¦½ë³´ë“œ ë°ì´í„°ë¥¼ ë‹´ê³  ìžˆëŠ” ë³€ìˆ˜ëŠ” ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ë‹¤ë¥¸ ë³€ìˆ˜ì— ë³µì‚¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤: <code>ClipSaved2 := ClipSaved</code>.</p>
 <p>
-<a href="../commands/ClipWait.htm">ClipWait</a>À» »ç¿ëÇÏ¸é Å¬¸³º¸µå¿¡ µ¥ÀÌÅÍ°¡ ´ã±â´Â ¶§¸¦ Å½ÁöÇÒ ¼ö ÀÖ½À´Ï´Ù (¼±ÅÃÀûÀ¸·Î ÅØ½ºÆ®-¾Æ´Ñ µ¥ÀÌÅÍ Æ÷ÇÔ).</p>
-<p><a href="../commands/StringLen.htm">StrLen / StringLen</a>¸¦ »ç¿ëÇÏ¸é <em>ClipboardAll</em>ÀÌ ÇÒ´çµÈ º¯¼öÀÇ ÃÑ Å©±â¸¦ ¹ß°ßÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×·¸Áö¸¸, À¯´ÏÄÚµå ¹öÀüÀÇ ÇÖÅ°¿¡¼­ ¹ÙÀÌÆ® ´ÜÀ§·Î ±× Å©±â¸¦ ¾òÀ¸·Á¸é, ±× Å©±â¿¡ 2¸¦ °öÇØ¾ß ¾òÀ» ¼ö ÀÖ½À´Ï´Ù. <a href="../Variables.htm#IsUnicode">A_IsUnicode</a>¸¦ »ç¿ëÇÏ¸é ANSI¿Í Unicode ¹öÀüÀ» ´ÙÀ½ ¿¹Á¦¿Í °°ÀÌ ¼±ÅÃÀûÀ¸·Î Áö¿øÇÒ ¼ö ÀÖ½À´Ï´Ù: <code>size := StrLen(ClipSaved) * (A_IsUnicode ? 2 : 1)</code>.</p>
+<a href="../commands/ClipWait.htm">ClipWait</a>ì„ ì‚¬ìš©í•˜ë©´ í´ë¦½ë³´ë“œì— ë°ì´í„°ê°€ ë‹´ê¸°ëŠ” ë•Œë¥¼ íƒì§€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì„ íƒì ìœ¼ë¡œ í…ìŠ¤íŠ¸-ì•„ë‹Œ ë°ì´í„° í¬í•¨).</p>
+<p><a href="../commands/StringLen.htm">StrLen / StringLen</a>ë¥¼ ì‚¬ìš©í•˜ë©´ <em>ClipboardAll</em>ì´ í• ë‹¹ëœ ë³€ìˆ˜ì˜ ì´ í¬ê¸°ë¥¼ ë°œê²¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ê·¸ë ‡ì§€ë§Œ, ìœ ë‹ˆì½”ë“œ ë²„ì „ì˜ í•«í‚¤ì—ì„œ ë°”ì´íŠ¸ ë‹¨ìœ„ë¡œ ê·¸ í¬ê¸°ë¥¼ ì–»ìœ¼ë ¤ë©´, ê·¸ í¬ê¸°ì— 2ë¥¼ ê³±í•´ì•¼ ì–»ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <a href="../Variables.htm#IsUnicode">A_IsUnicode</a>ë¥¼ ì‚¬ìš©í•˜ë©´ ANSIì™€ Unicode ë²„ì „ì„ ë‹¤ìŒ ì˜ˆì œì™€ ê°™ì´ ì„ íƒì ìœ¼ë¡œ ì§€ì›í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤: <code>size := StrLen(ClipSaved) * (A_IsUnicode ? 2 : 1)</code>.</p>
 <p>
-<em>ClipboardAll</em>ÀÌ ÇÒ´çµÈ º¯¼ö´Â &lt;&gt; ±×¸®°í = ¿¬»êÀÚ¸¦ »ç¿ëÇÏ¿© ´Ù¸¥ º¯¼ö¿Í ºñ±³ÇÒ ¼ö ÀÖ½À´Ï´Ù (±×·¯³ª Á÷Á¢ <em>ClipboardAll</em>°ú ºñ±³ÇÒ ¼ö´Â ¾ø½À´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿¡¼­, °¢ º¯¼öÀÇ Å©±â¸¦ ¸ÕÀú Á¡°ËÇÕ´Ï´Ù. Å©±â°¡ ÃæºÐÇÏÁö ¾Ê¾Æ °áÁ¤ÇÒ ¼ö ¾øÀ¸¸é, ±× ³»¿ëÀ» ºñ±³ÇØ ½ÂºÎ¸¦ °áÁ¤ÁöÀ» ¼ö ÀÖ½À´Ï´Ù:</p>
+<em>ClipboardAll</em>ì´ í• ë‹¹ëœ ë³€ìˆ˜ëŠ” &lt;&gt; ê·¸ë¦¬ê³  = ì—°ì‚°ìžë¥¼ ì‚¬ìš©í•˜ì—¬ ë‹¤ë¥¸ ë³€ìˆ˜ì™€ ë¹„êµí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ê·¸ëŸ¬ë‚˜ ì§ì ‘ <em>ClipboardAll</em>ê³¼ ë¹„êµí•  ìˆ˜ëŠ” ì—†ìŠµë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì—ì„œ, ê° ë³€ìˆ˜ì˜ í¬ê¸°ë¥¼ ë¨¼ì € ì ê²€í•©ë‹ˆë‹¤. í¬ê¸°ê°€ ì¶©ë¶„í•˜ì§€ ì•Šì•„ ê²°ì •í•  ìˆ˜ ì—†ìœ¼ë©´, ê·¸ ë‚´ìš©ì„ ë¹„êµí•´ ìŠ¹ë¶€ë¥¼ ê²°ì •ì§€ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 
-<pre>if ClipSaved1 &lt;&gt; %ClipSaved2%   <em>; ÀÌ°ÍÀº  <u>¿¹Àü ½ºÅ¸ÀÏÀÇ IF ¼­¼ú¹®</u>ÀÔ´Ï´Ù. Ç¥Çö½ÄÀÌ ¾Æ´Õ´Ï´Ù.</em>
-    MsgBox ÀúÀåµÈ µÎ °³ÀÇ Å¬¸³º¸µå°¡ ¼­·Î ´Ù¸¨´Ï´Ù.</pre>
+<pre>if ClipSaved1 &lt;&gt; %ClipSaved2%   <em>; ì´ê²ƒì€  <u>ì˜ˆì „ ìŠ¤íƒ€ì¼ì˜ IF ì„œìˆ ë¬¸</u>ìž…ë‹ˆë‹¤. í‘œí˜„ì‹ì´ ì•„ë‹™ë‹ˆë‹¤.</em>
+    MsgBox ì €ìž¥ëœ ë‘ ê°œì˜ í´ë¦½ë³´ë“œê°€ ì„œë¡œ ë‹¤ë¦…ë‹ˆë‹¤.</pre>
 <p>
-<em>ClipboardAll</em>À» º¯¼ö¿¡ ÀúÀåÇÏ´Â °ÍÀº <a href="../commands/_MaxMem.htm">#MaxMem</a>¿¡ ¼³Á¤µÈ ¸Þ¸ð¸® ÇÑ°è¿¡ Á¦ÇÑÀ» ¹ÞÁö ¾Ê½À´Ï´Ù.</p>
+<em>ClipboardAll</em>ì„ ë³€ìˆ˜ì— ì €ìž¥í•˜ëŠ” ê²ƒì€ <a href="../commands/_MaxMem.htm">#MaxMem</a>ì— ì„¤ì •ëœ ë©”ëª¨ë¦¬ í•œê³„ì— ì œí•œì„ ë°›ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
 <p>
-ÀúÀåµÈ Å¬¸³º¸µå ÆÄÀÏÀº ³»ºÎÀûÀ¸·Î 4 ¹ÙÀÌÆ® Æ÷¸Ë À¯Çü, ´ÙÀ½¿¡ 4 ¹ÙÀÌÆ® µ¥ÀÌÅÍ ºí·Ï Å©±â, ±× ´ÙÀ½¿¡ ±× Æ÷¸Ë¿¡ ´ëÇÑ µ¥ÀÌÅÍ ºí·ÏÀ¸·Î ±¸¼ºµË´Ï´Ù. Å¬¸³º¸µå¿¡ ÇÏ³ª ÀÌ»óÀÇ Æ÷¸ËÀÌ µé¾î ÀÖ´Ù¸é (°ÅÀÇ ¸ðµç °æ¿ì¿¡ ±×·¸½À´Ï´Ù), ÀÌ ¼¼ °³ÀÇ Ç×¸ñÀº ¸ðµç Æ÷¸ËÀÌ Æ÷ÇÔµÉ ¶§±îÁö ¹Ýº¹µË´Ï´Ù. ÆÄÀÏÀº 4 ¹ÙÀÌÆ® Æ÷¸Ë À¯ÇüÀÌ 0À¸·Î ³¡³³´Ï´Ù.</p>
+ì €ìž¥ëœ í´ë¦½ë³´ë“œ íŒŒì¼ì€ ë‚´ë¶€ì ìœ¼ë¡œ 4 ë°”ì´íŠ¸ í¬ë§· ìœ í˜•, ë‹¤ìŒì— 4 ë°”ì´íŠ¸ ë°ì´í„° ë¸”ë¡ í¬ê¸°, ê·¸ ë‹¤ìŒì— ê·¸ í¬ë§·ì— ëŒ€í•œ ë°ì´í„° ë¸”ë¡ìœ¼ë¡œ êµ¬ì„±ë©ë‹ˆë‹¤. í´ë¦½ë³´ë“œì— í•˜ë‚˜ ì´ìƒì˜ í¬ë§·ì´ ë“¤ì–´ ìžˆë‹¤ë©´ (ê±°ì˜ ëª¨ë“  ê²½ìš°ì— ê·¸ë ‡ìŠµë‹ˆë‹¤), ì´ ì„¸ ê°œì˜ í•­ëª©ì€ ëª¨ë“  í¬ë§·ì´ í¬í•¨ë  ë•Œê¹Œì§€ ë°˜ë³µë©ë‹ˆë‹¤. íŒŒì¼ì€ 4 ë°”ì´íŠ¸ í¬ë§· ìœ í˜•ì´ 0ìœ¼ë¡œ ëë‚©ë‹ˆë‹¤.</p>
 <p>
-¾Ë·ÁÁø ÇÑ°è: ¸¶ÀÌÅ©·Î¼ÒÇÁÆ® ¿¢¼¿ÀÇ ¼¿ÀÌ Å¬¸³º¸µå¿¡ ÀÖÀ» ¶§ <em>ClipboardAll</em>¸¦ ¿­¶÷ÇÏ¸é ¿¢¼¿ÀÌ &quot;ÇÁ¸°ÅÍ ¾øÀ½&quot; ´ëÈ­»óÀÚ¸¦ º¸¿©ÁÖ´Â ¹ö±×°¡ ÀÖ½À´Ï´Ù.</p>
-<p>¿ÀÅäÇÖÅ°·Î ÀÛ¼ºµÈ Å¬¸³º¸µå À¯Æ¿¸®Æ¼:</p>
+ì•Œë ¤ì§„ í•œê³„: ë§ˆì´í¬ë¡œì†Œí”„íŠ¸ ì—‘ì…€ì˜ ì…€ì´ í´ë¦½ë³´ë“œì— ìžˆì„ ë•Œ <em>ClipboardAll</em>ë¥¼ ì—´ëžŒí•˜ë©´ ì—‘ì…€ì´ &quot;í”„ë¦°í„° ì—†ìŒ&quot; ëŒ€í™”ìƒìžë¥¼ ë³´ì—¬ì£¼ëŠ” ë²„ê·¸ê°€ ìžˆìŠµë‹ˆë‹¤.</p>
+<p>ì˜¤í† í•«í‚¤ë¡œ ìž‘ì„±ëœ í´ë¦½ë³´ë“œ ìœ í‹¸ë¦¬í‹°:</p>
 <ul>
-  <li>Deluxe Clipboard: ¹«Á¦ÇÑ °³¼öÀÇ »çÀûÀÎ, ÀÌ¸§ºÙÀº Å¬¸³º¸µå¸¦ Á¦°øÇÕ´Ï´Ù. ¼±ÅÃµÈ ÅØ½ºÆ®¸¦ Copy, Cut, Paste, Append ¶Ç´Â CutAppend ÇÒ ¼ö ÀÖ½À´Ï´Ù. <a href="http://www.autohotkey.com/forum/topic2665.html">www.autohotkey.com/forum/topic2665.html</a></li>
-  <li>ClipStep: ¿©·¯ Å¬¸³º¸µå¸¦ Á¦¾îÇÕ´Ï´Ù. ¿ÀÁ÷ Å°º¸µåÀÇ Ctrl-X-C-V ¸¸ »ç¿ëÇÕ´Ï´Ù. <a href="http://www.autohotkey.com/forum/topic4836.html">www.autohotkey.com/forum/topic4836.html</a></li>
+  <li>Deluxe Clipboard: ë¬´ì œí•œ ê°œìˆ˜ì˜ ì‚¬ì ì¸, ì´ë¦„ë¶™ì€ í´ë¦½ë³´ë“œë¥¼ ì œê³µí•©ë‹ˆë‹¤. ì„ íƒëœ í…ìŠ¤íŠ¸ë¥¼ Copy, Cut, Paste, Append ë˜ëŠ” CutAppend í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <a href="http://www.autohotkey.com/forum/topic2665.html">www.autohotkey.com/forum/topic2665.html</a></li>
+  <li>ClipStep: ì—¬ëŸ¬ í´ë¦½ë³´ë“œë¥¼ ì œì–´í•©ë‹ˆë‹¤. ì˜¤ì§ í‚¤ë³´ë“œì˜ Ctrl-X-C-V ë§Œ ì‚¬ìš©í•©ë‹ˆë‹¤. <a href="http://www.autohotkey.com/forum/topic4836.html">www.autohotkey.com/forum/topic4836.html</a></li>
 </ul>
 
 <h2 id="OnClipboardChange">OnClipboardChange</h2>
-<p><a href="../commands/OnClipboardChange.htm">OnClipboardChange</a>¸¦ »ç¿ëÇÏ¸é ½ºÅ©¸³Æ®´Â Å¬¸³º¸µåÀÇ ³»¿ëÀÌ º¯ÇÏ¸é Å½ÁöÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<p><a href="../commands/OnClipboardChange.htm">OnClipboardChange</a>ë¥¼ ì‚¬ìš©í•˜ë©´ ìŠ¤í¬ë¦½íŠ¸ëŠ” í´ë¦½ë³´ë“œì˜ ë‚´ìš©ì´ ë³€í•˜ë©´ íƒì§€í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 
 </body>
 </html>

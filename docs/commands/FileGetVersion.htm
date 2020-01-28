@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>FileGetVersion</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,34 +11,34 @@
 
 <h1>FileGetVersion</h1>
 
-<p>ÆÄÀÏÀÇ ¹öÀüÀ» ¿­¶÷ÇÕ´Ï´Ù.</p>
+<p>íŒŒì¼ì˜ ë²„ì „ì„ ì—´ëžŒí•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">FileGetVersion, OutputVar [, Filename]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>¹öÀü ¹øÈ£/¹®ÀÚ¿­À» ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§.</p></dd>
+  <dd><p>ë²„ì „ ë²ˆí˜¸/ë¬¸ìžì—´ì„ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„.</p></dd>
 
   <dt>Filename</dt>
-  <dd><p>¸ñÇ¥ ÆÄÀÏÀÇ ÀÌ¸§, Àý´ë °æ·Î¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>¿¡ ÀÖ´Ù°í °£ÁÖµË´Ï´Ù. »ý·«µÇ¸é, <a href="LoopFile.htm">ÆÄÀÏ-È¸µ¹ÀÌ</a>ÀÇ °¡Àå ¾ÈÂÊ¿¡ ½ÎÀÎ ÇöÀç ÆÄÀÏÀÌ ´ë½Å »ç¿ëµË´Ï´Ù.</p></dd>
+  <dd><p>ëª©í‘œ íŒŒì¼ì˜ ì´ë¦„, ì ˆëŒ€ ê²½ë¡œë¥¼ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>ì— ìžˆë‹¤ê³  ê°„ì£¼ë©ë‹ˆë‹¤. ìƒëžµë˜ë©´, <a href="LoopFile.htm">íŒŒì¼-íšŒëŒì´</a>ì˜ ê°€ìž¥ ì•ˆìª½ì— ì‹¸ì¸ í˜„ìž¬ íŒŒì¼ì´ ëŒ€ì‹  ì‚¬ìš©ë©ë‹ˆë‹¤.</p></dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> ÀÌ ¸í·É¾î´Â ½ÇÆÐ½Ã ¿¹¿Ü¸¦ ´øÁú ¼ö ÀÖ½À´Ï´Ù. ´õ ÀÚ¼¼ÇÑ Á¤º¸´Â  <a href="Catch.htm#RuntimeErrors">½ÇÇà½Ã°£ ¿¡·¯</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>Àº ¹®Á¦°¡ ÀÖÀ¸¸é 1 ¾øÀ¸¸é 0ÀÌ ¼³Á¤µË´Ï´Ù.</p>
-<p><a href="../Variables.htm#LastError">A_LastError</a>Àº ¿î¿µ Ã¼Á¦ÀÇ GetLastError() ÇÔ¼öÀÇ °á°ú°¡ ¼³Á¤µË´Ï´Ù.</p>
+<p><span class="ver">[v1.1.04+]</span> ì´ ëª…ë ¹ì–´ëŠ” ì‹¤íŒ¨ì‹œ ì˜ˆì™¸ë¥¼ ë˜ì§ˆ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë” ìžì„¸í•œ ì •ë³´ëŠ”  <a href="Catch.htm#RuntimeErrors">ì‹¤í–‰ì‹œê°„ ì—ëŸ¬</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>ì€ ë¬¸ì œê°€ ìžˆìœ¼ë©´ 1 ì—†ìœ¼ë©´ 0ì´ ì„¤ì •ë©ë‹ˆë‹¤.</p>
+<p><a href="../Variables.htm#LastError">A_LastError</a>ì€ ìš´ì˜ ì²´ì œì˜ GetLastError() í•¨ìˆ˜ì˜ ê²°ê³¼ê°€ ì„¤ì •ë©ë‹ˆë‹¤.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-´ëºÎºÐÀÇ ºñ-½ÇÇà ÆÄÀÏ (½ÉÁö¾î ¾î¶² EXE ÆÄÀÏ)Àº ¹öÀüÀÌ ¾ø½À´Ï´Ù. ±×·¡¼­ ÀÌ·± °æ¿ì´Â OutputVar°¡ ºñ¾î ÀÖ½À´Ï´Ù.</p>
+ëŒ€ë¶€ë¶„ì˜ ë¹„-ì‹¤í–‰ íŒŒì¼ (ì‹¬ì§€ì–´ ì–´ë–¤ EXE íŒŒì¼)ì€ ë²„ì „ì´ ì—†ìŠµë‹ˆë‹¤. ê·¸ëž˜ì„œ ì´ëŸ° ê²½ìš°ëŠ” OutputVarê°€ ë¹„ì–´ ìžˆìŠµë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
-<a href="FileGetAttrib.htm">FileGetAttrib</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="FileSetTime.htm">FileSetTime</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="LoopFile.htm">File-È¸µ¹ÀÌ</a></p>
+<a href="FileGetAttrib.htm">FileGetAttrib</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="FileSetTime.htm">FileSetTime</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="LoopFile.htm">File-íšŒëŒì´</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 <pre class="NoIndent">FileGetVersion, version, C:\My Application.exe
 FileGetVersion, version, %A_ProgramFiles%\AutoHotkey\AutoHotkey.exe</pre>
 

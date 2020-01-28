@@ -1,85 +1,84 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Loop (parse a string)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>Loop (¹®ÀÚ¿­À» ÇØ¼®ÇÔ)</h1>
+<h1>Loop (ë¬¸ìžì—´ì„ í•´ì„í•¨)</h1>
 
 <p>
-¹®ÀÚ¿­·ÎºÎÅÍ ºÎ¹®ÀÚ¿­(ÇÊµå)¸¦ ÇÑ ¹ø¿¡ ÇÏ³ª¾¿ ¿­¶÷ÇÕ´Ï´Ù.</p>
+ë¬¸ìžì—´ë¡œë¶€í„° ë¶€ë¬¸ìžì—´(í•„ë“œ)ë¥¼ í•œ ë²ˆì— í•˜ë‚˜ì”© ì—´ëžŒí•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">Loop, Parse, InputVar [, Delimiters, OmitChars]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>Parse</dt>
-  <dd><p>ÀÌ °³º¯¼ö´Â ´Ü¾î PARSE¸¸ µË´Ï´Ù. ´Ù¸¥ È¸µ¹ÀÌ À¯Çü°ú ´Ù¸£°Ô, º¯¼ö ÂüÁ¶´Â ´Ü¾î PARSE·Î °áÁ¤µÈ´Ù°í ÇÒÁö¶óµµ Çã¿ëÇÏÁö ¾Ê½À´Ï´Ù.</p></dd>
+  <dd><p>ì´ ê°œë³€ìˆ˜ëŠ” ë‹¨ì–´ PARSEë§Œ ë©ë‹ˆë‹¤. ë‹¤ë¥¸ íšŒëŒì´ ìœ í˜•ê³¼ ë‹¤ë¥´ê²Œ, ë³€ìˆ˜ ì°¸ì¡°ëŠ” ë‹¨ì–´ PARSEë¡œ ê²°ì •ëœë‹¤ê³  í• ì§€ë¼ë„ í—ˆìš©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</p></dd>
 
   <dt>InputVar</dt>
   <dd>
-    <p>³»¿ëÀ» ºÐ¼®ÇÒ º¯¼öÀÇ ÀÌ¸§. ÀÌ¸§À» ÆÛ¼¾Æ® »çÀÎÀ¸·Î µÑ·¯ ½ÎÁö ¸¶½Ê½Ã¿À.  º¯¼öÀÇ <em>³»¿ë</em>À» ÀÌ¸§À¸·Î »ç¿ëÇÏ°í ½Í´Ù¸é ¿¹¿ÜÀÔ´Ï´Ù.</p>
-    <p><span class="ver">[v1.1.21+]:</span> ÀÌ ¸Å°³º¯¼ö´Â <code>% <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a></code>ÀÌ µÉ ¼ö ÀÖÁö¸¸, ÆÛ¼¾Æ®-½ºÆäÀÌ½º Á¢µÎ»ç°¡ ¹Ýµå½Ã »ç¿ëµÇ¾î¾ß ÇÕ´Ï´Ù.</p>
+    <p>ë‚´ìš©ì„ ë¶„ì„í•  ë³€ìˆ˜ì˜ ì´ë¦„. ì´ë¦„ì„ í¼ì„¼íŠ¸ ì‚¬ì¸ìœ¼ë¡œ ë‘˜ëŸ¬ ì‹¸ì§€ ë§ˆì‹­ì‹œì˜¤.  ë³€ìˆ˜ì˜ <em>ë‚´ìš©</em>ì„ ì´ë¦„ìœ¼ë¡œ ì‚¬ìš©í•˜ê³  ì‹¶ë‹¤ë©´ ì˜ˆì™¸ìž…ë‹ˆë‹¤.</p>
+    <p><span class="ver">[v1.1.21+]:</span> ì´ ë§¤ê°œë³€ìˆ˜ëŠ” <code>% <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a></code>ì´ ë  ìˆ˜ ìžˆì§€ë§Œ, í¼ì„¼íŠ¸-ìŠ¤íŽ˜ì´ìŠ¤ ì ‘ë‘ì‚¬ê°€ ë°˜ë“œì‹œ ì‚¬ìš©ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.</p>
   </dd>
 
   <dt>Delimiters</dt>
-  <dd><p>ÀÌ ¸Å°³º¯¼ö°¡ ºñ¾î ÀÖ°Å³ª »ý·«µÇ¸é, <em>InputVar</em>ÀÇ °¢ ¹®ÀÚ´Â º°µµÀÇ ºÎ¹®ÀÚ¿­·Î °£ÁÖµË´Ï´Ù.</p>
+  <dd><p>ì´ ë§¤ê°œë³€ìˆ˜ê°€ ë¹„ì–´ ìžˆê±°ë‚˜ ìƒëžµë˜ë©´, <em>InputVar</em>ì˜ ê° ë¬¸ìžëŠ” ë³„ë„ì˜ ë¶€ë¬¸ìžì—´ë¡œ ê°„ì£¼ë©ë‹ˆë‹¤.</p>
       <p>
-	  ÀÌ ¸Å°³º¯¼ö°¡ <strong>CSV</strong>ÀÌ¸é, <em>InputVar</em>´Â Ç¥ÁØÀÇ ½°Ç¥·Î °¡¸¥ °ª Çü½ÄÀ¸·Î ÇØ¼®µË´Ï´Ù. ´ÙÀ½Àº CSVÁÙÀÇ ¿¹·Î¼­ MS Excel·Î »ý»êÇß½À´Ï´Ù:</p>
+	  ì´ ë§¤ê°œë³€ìˆ˜ê°€ <strong>CSV</strong>ì´ë©´, <em>InputVar</em>ëŠ” í‘œì¤€ì˜ ì‰¼í‘œë¡œ ê°€ë¥¸ ê°’ í˜•ì‹ìœ¼ë¡œ í•´ì„ë©ë‹ˆë‹¤. ë‹¤ìŒì€ CSVì¤„ì˜ ì˜ˆë¡œì„œ MS Excelë¡œ ìƒì‚°í–ˆìŠµë‹ˆë‹¤:</p>
 
 <pre>&quot;first field&quot;,SecondField,&quot;the word &quot;&quot;special&quot;&quot; is quoted literally&quot;,,&quot;last field, has literal comma&quot;</pre>
       
 	  <p>
-	  ±×·¸Áö ¾ÊÀ¸¸é, <em>Delimiters</em>¿¡´Â ÇÏ³ª ÀÌ»óÀÇ ¹®ÀÚ°¡ ´ã±é´Ï´Ù (´ë¼Ò¹®ÀÚ ±¸º°), °¢ ¹®ÀÚ¸¶´Ù <em>InputVar</em>¿¡¼­ ºÎ¹®ÀÚ¿­ÀÌ ÀÏ¾î³ª´Â °æ°è¸¦ °áÁ¤ÇÕ´Ï´Ù.</p>
+	  ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, <em>Delimiters</em>ì—ëŠ” í•˜ë‚˜ ì´ìƒì˜ ë¬¸ìžê°€ ë‹´ê¹ë‹ˆë‹¤ (ëŒ€ì†Œë¬¸ìž êµ¬ë³„), ê° ë¬¸ìžë§ˆë‹¤ <em>InputVar</em>ì—ì„œ ë¶€ë¬¸ìžì—´ì´ ì¼ì–´ë‚˜ëŠ” ê²½ê³„ë¥¼ ê²°ì •í•©ë‹ˆë‹¤.</p>
       <p>
-	  Delimiter ¹®ÀÚµéÀº ºÎ¹®ÀÚ¿­ ÀÚÃ¼ÀÇ ÀÏºÎ·Î °£ÁÖµÇÁö ¾Ê½À´Ï´Ù. ¶Ç, <em>InputVar</em> ¾È¿¡¼­ ÇÑ ½ÖÀÇ ±¸ºÐÀÚ »çÀÌ¿¡ ¾Æ¹«°Íµµ ¾ø´Ù¸é, »óÀÀÇÏ´Â ¹®ÀÚ¿­Àº ºñ¾î ÀÖ½À´Ï´Ù.</p>
-      <p>¿¹¸¦ µé¾î: <code>`,</code> (ÇÇ½ÅµÈ ½°Ç¥)´Â ¹®ÀÚ¿­À» ½°Ç¥°¡ ÃâÇöÇÒ ¶§¸¶´Ù °¡¸¨´Ï´Ù. ºñ½ÁÇÏ°Ô, <code>%A_Tab%%A_Space%</code>´Â <em>InputVar</em>¿¡¼­ ½ºÆäÀÌ½º³ª ÅÇÀ» ¸¸³¯ ¶§¸¶´Ù »õ ¹®ÀÚ¿­À» ½ÃÀÛ½ÃÅµ´Ï´Ù.</p>
+	  Delimiter ë¬¸ìžë“¤ì€ ë¶€ë¬¸ìžì—´ ìžì²´ì˜ ì¼ë¶€ë¡œ ê°„ì£¼ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë˜, <em>InputVar</em> ì•ˆì—ì„œ í•œ ìŒì˜ êµ¬ë¶„ìž ì‚¬ì´ì— ì•„ë¬´ê²ƒë„ ì—†ë‹¤ë©´, ìƒì‘í•˜ëŠ” ë¬¸ìžì—´ì€ ë¹„ì–´ ìžˆìŠµë‹ˆë‹¤.</p>
+      <p>ì˜ˆë¥¼ ë“¤ì–´: <code>`,</code> (í”¼ì‹ ëœ ì‰¼í‘œ)ëŠ” ë¬¸ìžì—´ì„ ì‰¼í‘œê°€ ì¶œí˜„í•  ë•Œë§ˆë‹¤ ê°€ë¦…ë‹ˆë‹¤. ë¹„ìŠ·í•˜ê²Œ, <code>%A_Tab%%A_Space%</code>ëŠ” <em>InputVar</em>ì—ì„œ ìŠ¤íŽ˜ì´ìŠ¤ë‚˜ íƒ­ì„ ë§Œë‚  ë•Œë§ˆë‹¤ ìƒˆ ë¬¸ìžì—´ì„ ì‹œìž‘ì‹œí‚µë‹ˆë‹¤.</p>
       <p>
-	  ¹®ÀÚ ÇÏ³ª°¡ ¾Æ´Ï¶ó ¹®ÀÚ¿­À» ±¸ºÐÀÚ·Î »ç¿ëÇÏ·Á¸é, ¸ÕÀú <a href="StringReplace.htm">StringReplace</a>¸¦ »ç¿ëÇØ ÇØ´ç ¹®ÀÚ¿­ÀÌ ³ªÅ¸³ª¸é ¸ðµÎ ÅØ½ºÆ®¿¡¼­ Àý´ë·Î ¹®ÀÚ ±×´ë·Î »ç¿ëµÇÁö ¾Ê´Â ¹®ÀÚ ÇÏ³ª·Î ±³Ã¼ÇÕ´Ï´Ù. ¿¹¸¦ µé¾î ´ÙÀ½ÀÇ Æ¯¼ö ¹®ÀÚµé Áß ÇÏ³ª: <code>&cent;&curren;&yen;&brvbar;&sect;&copy;&ordf;&laquo;&reg;&micro;&para;</code>. ´ÙÀ½ ¿¹Á¦¸¦ ¿¬±¸ÇØ º¸½Ê½Ã¿À. ¹®ÀÚ¿­ &lt;br&gt;À» ±¸ºÐÀÚ·Î »ç¿ëÇÕ´Ï´Ù:</p>
+	  ë¬¸ìž í•˜ë‚˜ê°€ ì•„ë‹ˆë¼ ë¬¸ìžì—´ì„ êµ¬ë¶„ìžë¡œ ì‚¬ìš©í•˜ë ¤ë©´, ë¨¼ì € <a href="StringReplace.htm">StringReplace</a>ë¥¼ ì‚¬ìš©í•´ í•´ë‹¹ ë¬¸ìžì—´ì´ ë‚˜íƒ€ë‚˜ë©´ ëª¨ë‘ í…ìŠ¤íŠ¸ì—ì„œ ì ˆëŒ€ë¡œ ë¬¸ìž ê·¸ëŒ€ë¡œ ì‚¬ìš©ë˜ì§€ ì•ŠëŠ” ë¬¸ìž í•˜ë‚˜ë¡œ êµì²´í•©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´ ë‹¤ìŒì˜ íŠ¹ìˆ˜ ë¬¸ìžë“¤ ì¤‘ í•˜ë‚˜: <code>&cent;&curren;&yen;&brvbar;&sect;&copy;&ordf;&laquo;&reg;&micro;&para;</code>. ë‹¤ìŒ ì˜ˆì œë¥¼ ì—°êµ¬í•´ ë³´ì‹­ì‹œì˜¤. ë¬¸ìžì—´ &lt;br&gt;ì„ êµ¬ë¶„ìžë¡œ ì‚¬ìš©í•©ë‹ˆë‹¤:</p>
       
 	  <pre>StringReplace, NewHTML, HTMLString, &lt;br&gt;, &cent;, All
-Loop, parse, NewHTML, &cent; <em>; ¼¾Æ® ½Éº¼¿¡ ±â¹ÝÇÏ¿© ¹®ÀÚ¿­À» ÇØ¼®ÇÕ´Ï´Ù.</em>
+Loop, parse, NewHTML, &cent; <em>; ì„¼íŠ¸ ì‹¬ë³¼ì— ê¸°ë°˜í•˜ì—¬ ë¬¸ìžì—´ì„ í•´ì„í•©ë‹ˆë‹¤.</em>
 {
 ...
 }</pre></dd>
 
   <dt>OmitChars</dt>
   <dd><p>
- °¢ ºÎ¹®ÀÚ¿­ÀÇ ¼±µÎ¿Í ÈÄ¹Ì¿¡¼­ ¹èÁ¦ÇÒ ¹®ÀÚÀÇ (¼±ÅÃÀû) ¸®½ºÆ® (´ë¼Ò¹®ÀÚ ±¸ºÐ). ¿¹¸¦ µé¾î,  <em>OmitChars</em>°¡ %A_Space%%A_Tab%ÀÌ¸é, ½ºÆäÀÌ½º¿Í ÅÇÀÌ ¿­¶÷µÈ ¸Å ºÎ¹®ÀÚ¿­·ÎºÎÅÍ ¼±µÎ¿Í ÈÄ¹Ì¿¡¼­ Á¦°ÅµË´Ï´Ù (°¡¿îµ¥´Â ¾Æ´Ô).</p>
+ ê° ë¶€ë¬¸ìžì—´ì˜ ì„ ë‘ì™€ í›„ë¯¸ì—ì„œ ë°°ì œí•  ë¬¸ìžì˜ (ì„ íƒì ) ë¦¬ìŠ¤íŠ¸ (ëŒ€ì†Œë¬¸ìž êµ¬ë¶„). ì˜ˆë¥¼ ë“¤ì–´,  <em>OmitChars</em>ê°€ %A_Space%%A_Tab%ì´ë©´, ìŠ¤íŽ˜ì´ìŠ¤ì™€ íƒ­ì´ ì—´ëžŒëœ ë§¤ ë¶€ë¬¸ìžì—´ë¡œë¶€í„° ì„ ë‘ì™€ í›„ë¯¸ì—ì„œ ì œê±°ë©ë‹ˆë‹¤ (ê°€ìš´ë°ëŠ” ì•„ë‹˜).</p>
     <p>
-	<em>Delimiters</em>°¡ ºñ¾î ÀÖÀ¸¸é, <em>OmitChars</em>´Â °í·Á ´ë»ó¿¡¼­ ¹èÁ¦ÇÒ ¹®ÀÚµéÀ» °¡¸®Åµ´Ï´Ù (È¸µ¹ÀÌ´Â ±×·± ¹®ÀÚµéÀ» º¸Áö ¸øÇÕ´Ï´Ù).</p>
+	<em>Delimiters</em>ê°€ ë¹„ì–´ ìžˆìœ¼ë©´, <em>OmitChars</em>ëŠ” ê³ ë ¤ ëŒ€ìƒì—ì„œ ë°°ì œí•  ë¬¸ìžë“¤ì„ ê°€ë¦¬í‚µë‹ˆë‹¤ (íšŒëŒì´ëŠ” ê·¸ëŸ° ë¬¸ìžë“¤ì„ ë³´ì§€ ëª»í•©ë‹ˆë‹¤).</p>
     <p>
-	´ëºÎºÐÀÇ ´Ù¸¥ ¸í·É¾îÀÇ ¸¶Áö¸· ¸Å°³º¯¼ö¿Í ´Ù¸£°Ô, <em>OmitChars</em>¿¡¼­ ½°Ç¥´Â ¹Ýµå½Ã ÇÇ½Å½ÃÄÑ¾ß ÇÕ´Ï´Ù (`,).</p></dd>
+	ëŒ€ë¶€ë¶„ì˜ ë‹¤ë¥¸ ëª…ë ¹ì–´ì˜ ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì™€ ë‹¤ë¥´ê²Œ, <em>OmitChars</em>ì—ì„œ ì‰¼í‘œëŠ” ë°˜ë“œì‹œ í”¼ì‹ ì‹œì¼œì•¼ í•©ë‹ˆë‹¤ (`,).</p></dd>
 
 </dl>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-¹®ÀÚ¿­ ÆÄ½Ì È¸µ¹ÀÌ´Â ¹®ÀÚ¿­¿¡ µé¾î ÀÖ´Â °¢ ÇÊµå¸¦ ÇÑ ¹ø¿¡ ÇÏ³ª¾¿ Ã³¸®ÇÒ ¶§ À¯¿ëÇÕ´Ï´Ù. (StringSplitÀº ¿µ±¸ÀûÀÎ <a href="../misc/Arrays.htm#pseudo">ÀÇ»ç-¹è¿­</a>À» »ý¼ºÇÏ±â ¶§¹®¿¡) ÆÄ½Ì È¸µ¹ÀÌ´Â  <a href="StringSplit.htm">StringSplit</a> º¸´Ù ¸Þ¸ð¸®¸¦ ´ú »ç¿ëÇÏ°í ´ëºÎºÐÀÇ °æ¿ì ´õ »ç¿ëÇÏ±â ½±½À´Ï´Ù.</p>
+ë¬¸ìžì—´ íŒŒì‹± íšŒëŒì´ëŠ” ë¬¸ìžì—´ì— ë“¤ì–´ ìžˆëŠ” ê° í•„ë“œë¥¼ í•œ ë²ˆì— í•˜ë‚˜ì”© ì²˜ë¦¬í•  ë•Œ ìœ ìš©í•©ë‹ˆë‹¤. (StringSplitì€ ì˜êµ¬ì ì¸ <a href="../misc/Arrays.htm#pseudo">ì˜ì‚¬-ë°°ì—´</a>ì„ ìƒì„±í•˜ê¸° ë•Œë¬¸ì—) íŒŒì‹± íšŒëŒì´ëŠ”  <a href="StringSplit.htm">StringSplit</a> ë³´ë‹¤ ë©”ëª¨ë¦¬ë¥¼ ëœ ì‚¬ìš©í•˜ê³  ëŒ€ë¶€ë¶„ì˜ ê²½ìš° ë” ì‚¬ìš©í•˜ê¸° ì‰½ìŠµë‹ˆë‹¤.</p>
 <p>
-<a name="LoopField"></a>³»Àå º¯¼ö <strong>A_LoopField</strong>´Â ¸ðµç ÆÄ½Ì È¸µ¹ÀÌ ¾È¿¡ Á¸ÀçÇÕ´Ï´Ù. ¾È¿¡ <em>InputVar</em>·ÎºÎÅÍ ÆÄ½ÌÇÑ ÇöÀçÀÇ ºÎ¹®ÀÚ¿­(ÇÊµå)°¡ µé¾î ÀÖ½À´Ï´Ù. ³»ºÎ ÆÄ½Ì È¸µ¹ÀÌ°¡ ¹Ù±ù ÆÄ½Ì È¸µ¹ÀÌ·Î µÑ·¯ ½Î¿© ÀÖ´Ù¸é ³»ºÎ È¸µ¹ÀÌÀÇ ÇÊµå°¡ ¿ì¼± ¼øÀ§°¡ ³ô½À´Ï´Ù.</p>
+<a name="LoopField"></a>ë‚´ìž¥ ë³€ìˆ˜ <strong>A_LoopField</strong>ëŠ” ëª¨ë“  íŒŒì‹± íšŒëŒì´ ì•ˆì— ì¡´ìž¬í•©ë‹ˆë‹¤. ì•ˆì— <em>InputVar</em>ë¡œë¶€í„° íŒŒì‹±í•œ í˜„ìž¬ì˜ ë¶€ë¬¸ìžì—´(í•„ë“œ)ê°€ ë“¤ì–´ ìžˆìŠµë‹ˆë‹¤. ë‚´ë¶€ íŒŒì‹± íšŒëŒì´ê°€ ë°”ê¹¥ íŒŒì‹± íšŒëŒì´ë¡œ ë‘˜ëŸ¬ ì‹¸ì—¬ ìžˆë‹¤ë©´ ë‚´ë¶€ íšŒëŒì´ì˜ í•„ë“œê°€ ìš°ì„  ìˆœìœ„ê°€ ë†’ìŠµë‹ˆë‹¤.</p>
 <p>
-³»Àå º¯¼ö &quot;A_LoopDelimiter&quot;´Â ÀüÇô ¾øÁö¸¸, ÀÌ ÆäÀÌÁö ¸Ç ¾Æ·¡ ¿¹Á¦´Â °¢ ÇÊµå¸¶´Ù ¾î´À ±¸ºÐÀÚ¸¦ »ç¿ëÇÏ°í ÀÖ´Â º¸¿©ÁÝ´Ï´Ù.</p>
+ë‚´ìž¥ ë³€ìˆ˜ &quot;A_LoopDelimiter&quot;ëŠ” ì „í˜€ ì—†ì§€ë§Œ, ì´ íŽ˜ì´ì§€ ë§¨ ì•„ëž˜ ì˜ˆì œëŠ” ê° í•„ë“œë§ˆë‹¤ ì–´ëŠ êµ¬ë¶„ìžë¥¼ ì‚¬ìš©í•˜ê³  ìžˆëŠ” ë³´ì—¬ì¤ë‹ˆë‹¤.</p>
 <p>
-<em>InputVar</em>ÀÇ Å©±â ¶Ç´Â ±×ÀÇ ÇÊµåÀÇ Å©±â¿¡´Â Á¦ÇÑÀÌ ¾ø½À´Ï´Ù. °Ô´Ù°¡, <em>InputVar</em>ÀÇ ³»¿ëÀÌ È¸µ¹ÀÌ¸¦ ½ÇÇàÇÏ´Â µ¿¾È¿¡ ¹Ù²ï´Ù¸é, ±× È¸µ¹ÀÌ´Â ±× º¯È­¸¦ &quot;º¸Áö ¸øÇÕ´Ï´Ù&quot;. ¿Ö³ÄÇÏ¸é ¿ø·¡ ³»¿ëÀÇ ÀÓ½Ã »çº»À» Ã³¸®ÇÏ°í ÀÖ±â ¶§¹®ÀÔ´Ï´Ù.</p>
+<em>InputVar</em>ì˜ í¬ê¸° ë˜ëŠ” ê·¸ì˜ í•„ë“œì˜ í¬ê¸°ì—ëŠ” ì œí•œì´ ì—†ìŠµë‹ˆë‹¤. ê²Œë‹¤ê°€, <em>InputVar</em>ì˜ ë‚´ìš©ì´ íšŒëŒì´ë¥¼ ì‹¤í–‰í•˜ëŠ” ë™ì•ˆì— ë°”ë€ë‹¤ë©´, ê·¸ íšŒëŒì´ëŠ” ê·¸ ë³€í™”ë¥¼ &quot;ë³´ì§€ ëª»í•©ë‹ˆë‹¤&quot;. ì™œëƒí•˜ë©´ ì›ëž˜ ë‚´ìš©ì˜ ìž„ì‹œ ì‚¬ë³¸ì„ ì²˜ë¦¬í•˜ê³  ìžˆê¸° ë•Œë¬¸ìž…ë‹ˆë‹¤.</p>
 <p>
-ÇØ¼®ÇÏ±â Àü¿¡ ÇÊµå¸¦ ´Ù¸¥ ¼ø¼­·Î Á¤µ·ÇÏ·Á¸é, <a href="Sort.htm">Sort</a> ¸í·É¾î¸¦ »ç¿ëÇÏ½Ê½Ã¿À.</p>
+í•´ì„í•˜ê¸° ì „ì— í•„ë“œë¥¼ ë‹¤ë¥¸ ìˆœì„œë¡œ ì •ëˆí•˜ë ¤ë©´, <a href="Sort.htm">Sort</a> ëª…ë ¹ì–´ë¥¼ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<a href="Block.htm">Blocks</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, ±×¸®°í A_Index º¯¼ö (¸ðµç È¸µ¹ÀÌ¿¡ Á¸Àç)¿¡ °üÇÑ Á¤º¸´Â <a href="Loop.htm">Loop</a>¸¦ ÂüÁ¶ÇÏ½Ê½Ã¿À.</p>
+<a href="Block.htm">Blocks</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, ê·¸ë¦¬ê³  A_Index ë³€ìˆ˜ (ëª¨ë“  íšŒëŒì´ì— ì¡´ìž¬)ì— ê´€í•œ ì •ë³´ëŠ” <a href="Loop.htm">Loop</a>ë¥¼ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
 <a href="StringSplit.htm">StringSplit</a>, <a href="LoopReadFile.htm">file-reading loop</a>, <a href="Loop.htm">Loop</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">Blocks</a>, <a href="Sort.htm">Sort</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileSetTime.htm">FileSetTime</a></p>
 
-<h3>¿¹Á¦</h3>
+<h3>ì˜ˆì œ</h3>
 
-<pre class="NoIndent"><em>; ¿¹Á¦ #1:</em>
+<pre class="NoIndent"><em>; ì˜ˆì œ #1:</em>
 Colors = red,green,blue
 Loop, parse, Colors, `,
 {
@@ -87,24 +86,24 @@ Loop, parse, Colors, `,
 }</pre>
 <p>&nbsp;</p>
 
-<pre class="NoIndent"><em>; ¿¹Á¦ #2: º¯¼ö ¾È¿¡ ÁÙµéÀ» ÇÏ³ª¾¿ ÀÐ¾î µéÀÔ´Ï´Ù (<a href="LoopReadFile.htm">ÆÄÀÏ-ÀÐ±â</a> È¸µ¹ÀÌ¿Í À¯»ç).
-; <a href="FileRead.htm">FileRead</a>¸¦ ÅëÇÏ¿© ÆÄÀÏÀ» º¯¼ö ¾È¿¡ ÀûÀçÇÒ ¼ö ÀÖ½À´Ï´Ù:</em>
-Loop, parse, FileContents, `n, `r  <em>; `nÀ» ¸ÕÀú `rÀ» ´ÙÀ½¿¡ ÁöÁ¤ÇØ¾ß Windows¿Í Unix ÆÄÀÏÀ» ¸ðµÎ ÇØ¼®ÇÒ ¼ö ÀÖ½À´Ï´Ù.</em>
+<pre class="NoIndent"><em>; ì˜ˆì œ #2: ë³€ìˆ˜ ì•ˆì— ì¤„ë“¤ì„ í•˜ë‚˜ì”© ì½ì–´ ë“¤ìž…ë‹ˆë‹¤ (<a href="LoopReadFile.htm">íŒŒì¼-ì½ê¸°</a> íšŒëŒì´ì™€ ìœ ì‚¬).
+; <a href="FileRead.htm">FileRead</a>ë¥¼ í†µí•˜ì—¬ íŒŒì¼ì„ ë³€ìˆ˜ ì•ˆì— ì ìž¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</em>
+Loop, parse, FileContents, `n, `r  <em>; `nì„ ë¨¼ì € `rì„ ë‹¤ìŒì— ì§€ì •í•´ì•¼ Windowsì™€ Unix íŒŒì¼ì„ ëª¨ë‘ í•´ì„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</em>
 {
     MsgBox, 4, , Line number %A_Index% is %A_LoopField%.`n`nContinue?
     IfMsgBox, No, break
 }</pre>
 <p>&nbsp;</p>
-<pre class="NoIndent"><em>; ¿¹Á¦ #3: À§ÀÇ ¿¹Á¦¿Í °°Áö¸¸ Å¬¸³º¸µå¿ëÀÔ´Ï´Ù.
-; Å¬¸³º¸µå¿¡ ÆÄÀÏÀÌ ´ã°Ü ÀÖÀ» ¶§ À¯¿ëÇÕ´Ï´Ù. ±×·± ÆÄÀÏÀº º¸Åë Å½»öÃ¢À¸·ÎºÎÅÍ º¹»çµË´Ï´Ù 
-; (ÇÁ·Î±×·¥Àº ÀÚµ¿À¸·Î ±×·± ÆÄÀÏÀ» ±×µéÀÇ ÆÄÀÏ ÀÌ¸§À¸·Î º¯È¯ÇÕ´Ï´Ù):</em>
+<pre class="NoIndent"><em>; ì˜ˆì œ #3: ìœ„ì˜ ì˜ˆì œì™€ ê°™ì§€ë§Œ í´ë¦½ë³´ë“œìš©ìž…ë‹ˆë‹¤.
+; í´ë¦½ë³´ë“œì— íŒŒì¼ì´ ë‹´ê²¨ ìžˆì„ ë•Œ ìœ ìš©í•©ë‹ˆë‹¤. ê·¸ëŸ° íŒŒì¼ì€ ë³´í†µ íƒìƒ‰ì°½ìœ¼ë¡œë¶€í„° ë³µì‚¬ë©ë‹ˆë‹¤ 
+; (í”„ë¡œê·¸ëž¨ì€ ìžë™ìœ¼ë¡œ ê·¸ëŸ° íŒŒì¼ì„ ê·¸ë“¤ì˜ íŒŒì¼ ì´ë¦„ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤):</em>
 Loop, parse, clipboard, `n, `r
 {
     MsgBox, 4, , File number %A_Index% is %A_LoopField%.`n`nContinue?
     IfMsgBox, No, break
 }</pre>
 <p>&nbsp;</p>
-<pre class="NoIndent"><em>; Example #4: ½°Ç¥·Î °¡¸¥ °ª (CSV) ÆÄÀÏÀ» ÇØ¼®ÇÕ´Ï´Ù:</em>
+<pre class="NoIndent"><em>; Example #4: ì‰¼í‘œë¡œ ê°€ë¥¸ ê°’ (CSV) íŒŒì¼ì„ í•´ì„í•©ë‹ˆë‹¤:</em>
 Loop, read, C:\Database Export.csv
 {
     LineNumber = %A_Index%
@@ -116,18 +115,18 @@ Loop, read, C:\Database Export.csv
     }
 }</pre>
 <p>&nbsp;</p>
-<pre class="NoIndent"><em>; ¿¹Á¦ #5: ¾î´À ±¸ºÐÀÚ¿¡ ¸¶ÁÖÇß´ÂÁö ¾Ë¾Æ³»±â.</em>
+<pre class="NoIndent"><em>; ì˜ˆì œ #5: ì–´ëŠ êµ¬ë¶„ìžì— ë§ˆì£¼í–ˆëŠ”ì§€ ì•Œì•„ë‚´ê¸°.</em>
 
-<em>; °Ë»öÇÒ ¹®ÀÚ¿­À» ÃÊ±âÈ­ ÇÕ´Ï´Ù.</em>
+<em>; ê²€ìƒ‰í•  ë¬¸ìžì—´ì„ ì´ˆê¸°í™” í•©ë‹ˆë‹¤.</em>
 Colors = red,green|blue;yellow|cyan,magenta
-<em>; ¹®ÀÚ¿­¿¡¼­ À§Ä¡¸¦ ÃßÀûÇÒ °è¼ö¸¦ ÃÊ±âÈ­ÇÕ´Ï´Ù.</em>
+<em>; ë¬¸ìžì—´ì—ì„œ ìœ„ì¹˜ë¥¼ ì¶”ì í•  ê³„ìˆ˜ë¥¼ ì´ˆê¸°í™”í•©ë‹ˆë‹¤.</em>
 Position := 0
 
 Loop, Parse, Colors, `,|;
 {
-    <em>; ÀÌ ÇÊµåÀÇ ³¡¿¡¼­ ±¸ºÐÀÚÀÇ À§Ä¡¸¦ °è»êÇÕ´Ï´Ù.</em>
+    <em>; ì´ í•„ë“œì˜ ëì—ì„œ êµ¬ë¶„ìžì˜ ìœ„ì¹˜ë¥¼ ê³„ì‚°í•©ë‹ˆë‹¤.</em>
     Position += StrLen(A_LoopField) + 1
-    <em>; ÇØ¼® È¸µ¹ÀÌ°¡ ¹ß°ßÇÑ ±¸ºÐÀÚ¸¦ ¿­¶÷ÇÕ´Ï´Ù.</em>
+    <em>; í•´ì„ íšŒëŒì´ê°€ ë°œê²¬í•œ êµ¬ë¶„ìžë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤.</em>
     Delimiter := SubStr(Colors, Position, 1)
 
     MsgBox Field: %A_LoopField%`nDelimiter: %Delimiter%

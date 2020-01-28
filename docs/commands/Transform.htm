@@ -1,9 +1,8 @@
-
-
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Transform</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,138 +11,138 @@
 
 <h1>Transform</h1>
 
-<p>´Ù¾çÇÑ ¼öÇÐ ±â´É°ú ºñÆ®º° ¿¬»ê ±×¸®°í ASCII/Unicode º¯È¯ °°Àº ÀÛ¾÷À» ¼öÇàÇÕ´Ï´Ù.</p>
+<p>ë‹¤ì–‘í•œ ìˆ˜í•™ ê¸°ëŠ¥ê³¼ ë¹„íŠ¸ë³„ ì—°ì‚° ê·¸ë¦¬ê³  ASCII/Unicode ë³€í™˜ ê°™ì€ ìž‘ì—…ì„ ìˆ˜í–‰í•©ë‹ˆë‹¤.</p>
 
 <pre class="Syntax">Transform, OutputVar, Cmd, Value1 [, Value2]</pre>
-<h3>¸Å°³º¯¼ö</h3>
+<h3>ë§¤ê°œë³€ìˆ˜</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p><em>Cmd</em>ÀÇ °á°ú¸¦ ÀúÀåÇÒ º¯¼öÀÇ ÀÌ¸§. <a href="SetFormat.htm">SetFormat</a>Àº Á¤¼ö°¡ ½ÊÀ°Áø¼ö·Î ÀúÀåµÉÁö ¾Æ´Ï¸é ½ÊÁø¼ö·Î ÀúÀåµÉÁö °áÁ¤ÇÕ´Ï´Ù.</p></dd>
+  <dd><p><em>Cmd</em>ì˜ ê²°ê³¼ë¥¼ ì €ìž¥í•  ë³€ìˆ˜ì˜ ì´ë¦„. <a href="SetFormat.htm">SetFormat</a>ì€ ì •ìˆ˜ê°€ ì‹­ìœ¡ì§„ìˆ˜ë¡œ ì €ìž¥ë ì§€ ì•„ë‹ˆë©´ ì‹­ì§„ìˆ˜ë¡œ ì €ìž¥ë ì§€ ê²°ì •í•©ë‹ˆë‹¤.</p></dd>
 
   <dt>Cmd, Value1/2</dt>
-  <dd><p>¾Æ·¡ ¸®½ºÆ® ÂüÁ¶.</p></dd>
+  <dd><p>ì•„ëž˜ ë¦¬ìŠ¤íŠ¸ ì°¸ì¡°.</p></dd>
 
 </dl>
 
 <h3>Cmd, Value1, Value2</h3>
 <p>
-<em>Cmd</em>, <em>Value1</em> ±×¸®°í <em>Value2</em> ¸Å°³º¯¼ö´Â ¼­·Î ÀÇÁ¸ÀûÀÔ´Ï´Ù. ±×¸®°í ±× »ç¿ë¹ýÀº ¾Æ·¡¿¡ ±â¼úÇÕ´Ï´Ù.</p>
+<em>Cmd</em>, <em>Value1</em> ê·¸ë¦¬ê³  <em>Value2</em> ë§¤ê°œë³€ìˆ˜ëŠ” ì„œë¡œ ì˜ì¡´ì ìž…ë‹ˆë‹¤. ê·¸ë¦¬ê³  ê·¸ ì‚¬ìš©ë²•ì€ ì•„ëž˜ì— ê¸°ìˆ í•©ë‹ˆë‹¤.</p>
 <p>
-<strong><a name="Unicode"></a>Unicode [, String]</strong>: <em>(ÀÌ ¸í·É¾î´Â À¯´ÏÄÚµå ¹öÀüÀÇ ¿ÀÅäÇÖÅ°¿¡´Â ¾ø½À´Ï´Ù.)</em> Å¬¸³º¸µåÀÇ À¯´ÏÄÚµå ÅØ½ºÆ®¸¦ ¿­¶÷ÇÏ°Å³ª ÀúÀåÇÕ´Ï´Ù. ÁÖÀÇ: ÀüÃ¼ Å¬¸³º¸µå´Â <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>À» »ç¿ëÇÏ¿© ¿­¶÷ÇÏ°í ÀúÀåÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ·¸°Ô ÇÏ¸é Å¬¸³º¸µåÀÇ ¿øº» ³»¿ëÀÇ ¼Õ½Ç ¾øÀÌ &quot;Transform Unicode&quot;°¡ ÀÛµ¿ÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+<strong><a name="Unicode"></a>Unicode [, String]</strong>: <em>(ì´ ëª…ë ¹ì–´ëŠ” ìœ ë‹ˆì½”ë“œ ë²„ì „ì˜ ì˜¤í† í•«í‚¤ì—ëŠ” ì—†ìŠµë‹ˆë‹¤.)</em> í´ë¦½ë³´ë“œì˜ ìœ ë‹ˆì½”ë“œ í…ìŠ¤íŠ¸ë¥¼ ì—´ëžŒí•˜ê±°ë‚˜ ì €ìž¥í•©ë‹ˆë‹¤. ì£¼ì˜: ì „ì²´ í´ë¦½ë³´ë“œëŠ” <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>ì„ ì‚¬ìš©í•˜ì—¬ ì—´ëžŒí•˜ê³  ì €ìž¥í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ë ‡ê²Œ í•˜ë©´ í´ë¦½ë³´ë“œì˜ ì›ë³¸ ë‚´ìš©ì˜ ì†ì‹¤ ì—†ì´ &quot;Transform Unicode&quot;ê°€ ìž‘ë™í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-´ÙÀ½ ¿¹Á¦¿¡ º¸¿©ÁÖ´Â ¹Ù¿Í °°ÀÌ µÎ °¡Áö ¿¬»ê ¸ðµå°¡ ÀÖ½À´Ï´Ù:</p>
+ë‹¤ìŒ ì˜ˆì œì— ë³´ì—¬ì£¼ëŠ” ë°”ì™€ ê°™ì´ ë‘ ê°€ì§€ ì—°ì‚° ëª¨ë“œê°€ ìžˆìŠµë‹ˆë‹¤:</p>
 
-<pre>Transform, OutputVar, Unicode  <em>; Å¬¸³º¸µåÀÇ À¯´ÏÄÚµå ÅØ½ºÆ®¸¦ UTF-8 ¹®ÀÚ¿­·Î ¿­¶÷ÇÕ´Ï´Ù.</em>
-Transform, Clipboard, Unicode, %MyUTF_String%  <em>; À¯´ÏÄÚµå ÅØ½ºÆ®¸¦ Å¬¸³º¸µå¿¡ ¹èÄ¡ÇÕ´Ï´Ù.</em></pre>
+<pre>Transform, OutputVar, Unicode  <em>; í´ë¦½ë³´ë“œì˜ ìœ ë‹ˆì½”ë“œ í…ìŠ¤íŠ¸ë¥¼ UTF-8 ë¬¸ìžì—´ë¡œ ì—´ëžŒí•©ë‹ˆë‹¤.</em>
+Transform, Clipboard, Unicode, %MyUTF_String%  <em>; ìœ ë‹ˆì½”ë“œ í…ìŠ¤íŠ¸ë¥¼ í´ë¦½ë³´ë“œì— ë°°ì¹˜í•©ë‹ˆë‹¤.</em></pre>
 <p>
-À§ÀÇ µÎ ¹øÂ° ¿¹Á¦¿¡¼­ %MyUTF_String% ´ë½Å¿¡, ±âÈ£ ±×´ë·ÎÀÇ UTF-8 ¹®ÀÚ¿­À» ¼±ÅÃÀûÀ¸·Î »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.</p>
+ìœ„ì˜ ë‘ ë²ˆì§¸ ì˜ˆì œì—ì„œ %MyUTF_String% ëŒ€ì‹ ì—, ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜ UTF-8 ë¬¸ìžì—´ì„ ì„ íƒì ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-´ÙÀ½°ú °°Àº ÇÖÅ°¸¦ »ç¿ëÇÏ¸é ÁÖ¾îÁø À¯´ÏÄÚµå ¹®ÀÚ¿­¿¡ »óÀÀÇÏ´Â UTF-8 ¹®ÀÚ¿­À» ¾Ë¾Æ³¾ ¼ö ÀÖ½À´Ï´Ù:</p>
+ë‹¤ìŒê³¼ ê°™ì€ í•«í‚¤ë¥¼ ì‚¬ìš©í•˜ë©´ ì£¼ì–´ì§„ ìœ ë‹ˆì½”ë“œ ë¬¸ìžì—´ì— ìƒì‘í•˜ëŠ” UTF-8 ë¬¸ìžì—´ì„ ì•Œì•„ë‚¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤:</p>
 
-<pre>^!u::  <em>; Control+Alt+U ÇÖÅ°.</em>
-MsgBox À¯´ÏÄÚµå ÅØ½ºÆ®¸¦ Å¬¸³º¸µå¿¡ º¹»çÇÑ ´ÙÀ½, ÀÌ Ã¢À¸·Î µ¹¾Æ¿É´Ï´Ù. °è¼ÓÇÏ·Á¸é OK¸¦ ´©¸£½Ê½Ã¿À.
+<pre>^!u::  <em>; Control+Alt+U í•«í‚¤.</em>
+MsgBox ìœ ë‹ˆì½”ë“œ í…ìŠ¤íŠ¸ë¥¼ í´ë¦½ë³´ë“œì— ë³µì‚¬í•œ ë‹¤ìŒ, ì´ ì°½ìœ¼ë¡œ ëŒì•„ì˜µë‹ˆë‹¤. ê³„ì†í•˜ë ¤ë©´ OKë¥¼ ëˆ„ë¥´ì‹­ì‹œì˜¤.
 Transform, ClipUTF, Unicode
 Clipboard = Transform, Clipboard, Unicode, %ClipUTF%`r`n
-MsgBox Å¬¸³º¸µå¿¡ ÀÌÁ¦ ´ÙÀ½ ÁÙÀÌ ´ã°Ü ÀÖ½À´Ï´Ù. ½ºÅ©¸³Æ®¿¡ ºÙ¿© ³ÖÀ» ¼ö ÀÖ½À´Ï´Ù. ½ÇÇàÇÏ¸é, ÀÌ ÁÙÀº ¿©·¯ºÐÀÌ º¹»çÇÑ ¿ø·¡ÀÇ À¯´ÏÄÚµå ¹®ÀÚ¿­À» Å¬¸³º¸µå¿¡ ¹èÄ¡ÇÕ´Ï´Ù:`n`n%Clipboard%
+MsgBox í´ë¦½ë³´ë“œì— ì´ì œ ë‹¤ìŒ ì¤„ì´ ë‹´ê²¨ ìžˆìŠµë‹ˆë‹¤. ìŠ¤í¬ë¦½íŠ¸ì— ë¶™ì—¬ ë„£ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì‹¤í–‰í•˜ë©´, ì´ ì¤„ì€ ì—¬ëŸ¬ë¶„ì´ ë³µì‚¬í•œ ì›ëž˜ì˜ ìœ ë‹ˆì½”ë“œ ë¬¸ìžì—´ì„ í´ë¦½ë³´ë“œì— ë°°ì¹˜í•©ë‹ˆë‹¤:`n`n%Clipboard%
 return</pre>
 <p>
-ÁÖÀÇ: <code><a href="Send.htm#sendu">Send {U+nnnn}</a></code> ¸í·É¾î´Â À¯´ÏÄÚµå ¹®ÀÚ¸¦ »ý»êÇÏ´Â ¶Ç´Ù¸¥ ¹æ¹ýÀÔ´Ï´Ù.</p>
+ì£¼ì˜: <code><a href="Send.htm#sendu">Send {U+nnnn}</a></code> ëª…ë ¹ì–´ëŠ” ìœ ë‹ˆì½”ë“œ ë¬¸ìžë¥¼ ìƒì‚°í•˜ëŠ” ë˜ë‹¤ë¥¸ ë°©ë²•ìž…ë‹ˆë‹¤.</p>
 <p>
-<strong>Asc, String</strong>: <em>String</em>ÀÇ Ã¹ ¹®ÀÚ¿¡ ´ëÇÏ¿© ASCII ÄÚµå¸¦ ¿­¶÷ÇÕ´Ï´Ù (1ºÎÅÍ 255 »çÀÌÀÇ ¼ýÀÚ). <em>String</em>ÀÌ ºñ¾î ÀÖÀ¸¸é, <em>OutputVar</em>µµ ºñ¿öÁý´Ï´Ù. ¿¹¸¦ µé¾î: <code>Transform, OutputVar, Asc, %VarContainingString%</code>. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Asc">Asc(String)</a>.</p>
+<strong>Asc, String</strong>: <em>String</em>ì˜ ì²« ë¬¸ìžì— ëŒ€í•˜ì—¬ ASCII ì½”ë“œë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤ (1ë¶€í„° 255 ì‚¬ì´ì˜ ìˆ«ìž). <em>String</em>ì´ ë¹„ì–´ ìžˆìœ¼ë©´, <em>OutputVar</em>ë„ ë¹„ì›Œì§‘ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>Transform, OutputVar, Asc, %VarContainingString%</code>. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Asc">Asc(String)</a>.</p>
 <p>
-<strong>Chr, Value1</strong>: <em>Value1</em>·Î ÁöÁ¤ÇÑ ASCII ÄÚµå¿¡ »óÀÀÇÏ´Â ¹®ÀÚ ÇÏ³ª¸¦ ¿­¶÷ÇÕ´Ï´Ù. <em>Value1</em>ÀÌ 1°ú 255 »çÀÌ¿¡ ÀÖÁö ¾ÊÀ¸¸é, <em>OutputVar</em>´Â ºñ¿öÁ®¼­ ¹®Á¦°¡ ÀÖÀ½À» ³ªÅ¸³À´Ï´Ù. ¿¹¸¦ µé¾î: <code>Transform, OutputVar, Chr, 130</code>. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Chr">Chr(Number)</a>.</p>
+<strong>Chr, Value1</strong>: <em>Value1</em>ë¡œ ì§€ì •í•œ ASCII ì½”ë“œì— ìƒì‘í•˜ëŠ” ë¬¸ìž í•˜ë‚˜ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤. <em>Value1</em>ì´ 1ê³¼ 255 ì‚¬ì´ì— ìžˆì§€ ì•Šìœ¼ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì ¸ì„œ ë¬¸ì œê°€ ìžˆìŒì„ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´: <code>Transform, OutputVar, Chr, 130</code>. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Chr">Chr(Number)</a>.</p>
 <p>
-<strong><a name="Deref"></a>Deref, String</strong>: º¯¼ö ÂüÁ¶ ±×¸®°í ´Ù¸¥ º¯¼ö ¾È¿¡ µé¾î ÀÖ´Â <a href="_EscapeChar.htm">ÇÇ½Å ¿¬¼Ó¿­</a>À» È®´ëÇÕ´Ï´Ù. Çü½ÄÀÌ ³ª»Û º¯¼ö ÂüÁ¶´Â È®´ë °á°ú¿¡¼­ »ý·«µË´Ï´Ù. <em>OutputVar</em>°¡ ÀÚ½ÅÀ¸·Î È®´ëµÇ´Â °æ¿ì¿¡µµ ¸¶Âù°¡ÁöÀÔ´Ï´Ù; ´Ù¸¥ ¸»·Î, <em>String</em>ÀÇ º¯¼ö ¾È¿¡¼­ <em>OutputVar</em>¸¦ ÂüÁ¶ÇÏ¸é È®´ë °á°ú·ÎºÎÅÍ Á¦¿ÜµË´Ï´Ù (±×·¸Áö¸¸ <em>String</em> ÀÚÃ¼´Â %<em>OutputVar</em>%°¡ <u>µÉ ¼ö ÀÖ½À´Ï´Ù</u>). 
-´ÙÀ½ ¿¹Á¦¿¡¼­, var1¿¡ ¹®ÀÚ¿­ &quot;test&quot;°¡ ´ã°Ü ÀÖ°í var2¿¡ <u>±âÈ£ ±×´ë·ÎÀÇ</u> ¹®ÀÚ¿­ &quot;%var1%&quot;ÀÌ ´ã°Ü ÀÖ´Ù¸é, <em>OutputVar</em>´Â ¹®ÀÚ¿­ &quot;test&quot;°¡ ¼³Á¤µÉ °ÍÀÔ´Ï´Ù: <code>Transform, OutputVar, deref, %var2%</code>. 
+<strong><a name="Deref"></a>Deref, String</strong>: ë³€ìˆ˜ ì°¸ì¡° ê·¸ë¦¬ê³  ë‹¤ë¥¸ ë³€ìˆ˜ ì•ˆì— ë“¤ì–´ ìžˆëŠ” <a href="_EscapeChar.htm">í”¼ì‹  ì—°ì†ì—´</a>ì„ í™•ëŒ€í•©ë‹ˆë‹¤. í˜•ì‹ì´ ë‚˜ìœ ë³€ìˆ˜ ì°¸ì¡°ëŠ” í™•ëŒ€ ê²°ê³¼ì—ì„œ ìƒëžµë©ë‹ˆë‹¤. <em>OutputVar</em>ê°€ ìžì‹ ìœ¼ë¡œ í™•ëŒ€ë˜ëŠ” ê²½ìš°ì—ë„ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤; ë‹¤ë¥¸ ë§ë¡œ, <em>String</em>ì˜ ë³€ìˆ˜ ì•ˆì—ì„œ <em>OutputVar</em>ë¥¼ ì°¸ì¡°í•˜ë©´ í™•ëŒ€ ê²°ê³¼ë¡œë¶€í„° ì œì™¸ë©ë‹ˆë‹¤ (ê·¸ë ‡ì§€ë§Œ <em>String</em> ìžì²´ëŠ” %<em>OutputVar</em>%ê°€ <u>ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤</u>). 
+ë‹¤ìŒ ì˜ˆì œì—ì„œ, var1ì— ë¬¸ìžì—´ &quot;test&quot;ê°€ ë‹´ê²¨ ìžˆê³  var2ì— <u>ê¸°í˜¸ ê·¸ëŒ€ë¡œì˜</u> ë¬¸ìžì—´ &quot;%var1%&quot;ì´ ë‹´ê²¨ ìžˆë‹¤ë©´, <em>OutputVar</em>ëŠ” ë¬¸ìžì—´ &quot;test&quot;ê°€ ì„¤ì •ë  ê²ƒìž…ë‹ˆë‹¤: <code>Transform, OutputVar, deref, %var2%</code>. 
 
-<a href="../Functions.htm">ÇÔ¼ö</a> ¾È¿¡¼­, <em>String</em> ¾ÈÀÇ °¢ º¯¼ö´Â ¾ðÁ¦³ª Áö¿ª º¯¼ö·Î °áÁ¤³³´Ï´Ù. ´Ü, ±×·± º¯¼ö°¡ ¾øÀ» °æ¿ì´Â Àü¿ª º¯¼ö·Î °áÁ¤µË´Ï´Ù (¶Ç´Â ¾Æ¹«°Íµµ ¾ø´Ù¸é ºñ¿öÁý´Ï´Ù).</p>
+<a href="../Functions.htm">í•¨ìˆ˜</a> ì•ˆì—ì„œ, <em>String</em> ì•ˆì˜ ê° ë³€ìˆ˜ëŠ” ì–¸ì œë‚˜ ì§€ì—­ ë³€ìˆ˜ë¡œ ê²°ì •ë‚©ë‹ˆë‹¤. ë‹¨, ê·¸ëŸ° ë³€ìˆ˜ê°€ ì—†ì„ ê²½ìš°ëŠ” ì „ì—­ ë³€ìˆ˜ë¡œ ê²°ì •ë©ë‹ˆë‹¤ (ë˜ëŠ” ì•„ë¬´ê²ƒë„ ì—†ë‹¤ë©´ ë¹„ì›Œì§‘ë‹ˆë‹¤).</p>
 <p>
 <strong><a name="HTML"></a>HTML, String [, Flags]</strong>:</p>
 <p>
-<em>ANSI ½ÇÇàÆÄÀÏ¿¡ ´ëÇÏ¿©:</em> ¹®ÀÚ¿­(<em>String</em>)À» ±×ÀÇ HTML µ¿µî¹°·Î º¯È¯ÇÕ´Ï´Ù. ASCII °ªÀÌ 127ÀÌ ³Ñ´Â ¹®ÀÚ¸¦ »óÀÀÇÏ´Â HTML ÀÌ¸§À¸·Î º¯È¯ÇÕ´Ï´Ù (¿¹, &pound;´Â &amp;pound;°¡ µË´Ï´Ù). °Ô´Ù°¡, ´ÙÀ½ ³× °³ÀÇ <code>&quot;&amp;&lt;&gt;</code> ¹®ÀÚ´Â &amp;quot;&amp;amp;&amp;lt;&amp;gt;·Î º¯È¯µË´Ï´Ù. ¸¶Áö¸·À¸·Î, °¢ ¶óÀÎÇÇµå(`n)´Â &lt;br&gt;`nÀ¸·Î º¯È¯µË´Ï´Ù (Áï, &lt;br&gt; ´ÙÀ½¿¡ ¶óÀÎÇÇµå). <em>Flags</em> ¸Å°³º¯¼ö´Â ¹«½ÃµË´Ï´Ù.</p>
+<em>ANSI ì‹¤í–‰íŒŒì¼ì— ëŒ€í•˜ì—¬:</em> ë¬¸ìžì—´(<em>String</em>)ì„ ê·¸ì˜ HTML ë™ë“±ë¬¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤. ASCII ê°’ì´ 127ì´ ë„˜ëŠ” ë¬¸ìžë¥¼ ìƒì‘í•˜ëŠ” HTML ì´ë¦„ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤ (ì˜ˆ, &pound;ëŠ” &amp;pound;ê°€ ë©ë‹ˆë‹¤). ê²Œë‹¤ê°€, ë‹¤ìŒ ë„¤ ê°œì˜ <code>&quot;&amp;&lt;&gt;</code> ë¬¸ìžëŠ” &amp;quot;&amp;amp;&amp;lt;&amp;gt;ë¡œ ë³€í™˜ë©ë‹ˆë‹¤. ë§ˆì§€ë§‰ìœ¼ë¡œ, ê° ë¼ì¸í”¼ë“œ(`n)ëŠ” &lt;br&gt;`nìœ¼ë¡œ ë³€í™˜ë©ë‹ˆë‹¤ (ì¦‰, &lt;br&gt; ë‹¤ìŒì— ë¼ì¸í”¼ë“œ). <em>Flags</em> ë§¤ê°œë³€ìˆ˜ëŠ” ë¬´ì‹œë©ë‹ˆë‹¤.</p>
 <p>
-<em>À¯´ÏÄÚµå ½ÇÇàÆÄÀÏ¿¡ ´ëÇÏ¿©:</em> À§ÀÇ ±â´É ¸»°íµµ, <em>Flags</em>´Â 0ÀÌ µÇ°Å³ª ¾Æ´Ï¸é ´ÙÀ½ °ªµéÀÌ Á¶ÇÕ(ÇÕ)ÀÌ µÉ ¼ö ÀÖ½À´Ï´Ù. »ý·«ÇÏ¸é, ±âº»°ªÀº 1ÀÔ´Ï´Ù.</p>
+<em>ìœ ë‹ˆì½”ë“œ ì‹¤í–‰íŒŒì¼ì— ëŒ€í•˜ì—¬:</em> ìœ„ì˜ ê¸°ëŠ¥ ë§ê³ ë„, <em>Flags</em>ëŠ” 0ì´ ë˜ê±°ë‚˜ ì•„ë‹ˆë©´ ë‹¤ìŒ ê°’ë“¤ì´ ì¡°í•©(í•©)ì´ ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ìƒëžµí•˜ë©´, ê¸°ë³¸ê°’ì€ 1ìž…ë‹ˆë‹¤.</p>
 <ul>
-    <li>1: ¾î¶² ¹®ÀÚµéÀ» ÀÌ¸§ºÙÀÎ Ç¥Çö½ÄÀ¸·Î º¯È¯ÇÕ´Ï´Ù. ¿¹, &euro;´Â <code>&amp;euro;</code>À¸·Î º¯È¯µË´Ï´Ù</li>
-    <li>2: ¾î¶² ¹®ÀÚµéÀ» ¹øÈ£ºÙÀÎ Ç¥Çö½ÄÀ¸·Î º¯È¯ÇÕ´Ï´Ù. ¿¹, &#8364;´Â <code>&amp;#8364;</code>À¸·Î º¯È¯µË´Ï´Ù</li>
+    <li>1: ì–´ë–¤ ë¬¸ìžë“¤ì„ ì´ë¦„ë¶™ì¸ í‘œí˜„ì‹ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤. ì˜ˆ, &euro;ëŠ” <code>&amp;euro;</code>ìœ¼ë¡œ ë³€í™˜ë©ë‹ˆë‹¤</li>
+    <li>2: ì–´ë–¤ ë¬¸ìžë“¤ì„ ë²ˆí˜¸ë¶™ì¸ í‘œí˜„ì‹ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤. ì˜ˆ, &#8364;ëŠ” <code>&amp;#8364;</code>ìœ¼ë¡œ ë³€í™˜ë©ë‹ˆë‹¤</li>
 </ul>
 <p>
-¿ÀÁ÷ ºñ-ASCII ¹®ÀÚ¸¸ ¿µÇâÀ» ¹Þ½À´Ï´Ù. <i>Flags</i> = 3ÀÌ¸é, ¹øÈ£ºÙÀÎ Ç¥Çö½ÄÀº ÀÌ¸§ºÙÀÎ Ç¥Çö½ÄÀÌ »ç¿ë ºÒ°¡´ÉÇÒ °æ¿ì¿¡¸¸ »ç¿ëµË´Ï´Ù. ´ÙÀ½ ¹®ÀÚµéÀº ¾ðÁ¦³ª º¯È¯µË´Ï´Ù: <code>&lt;&gt;&quot;&amp;</code> ±×¸®°í <code>`n</code> (¶óÀÎÇÇµå).</p>
+ì˜¤ì§ ë¹„-ASCII ë¬¸ìžë§Œ ì˜í–¥ì„ ë°›ìŠµë‹ˆë‹¤. <i>Flags</i> = 3ì´ë©´, ë²ˆí˜¸ë¶™ì¸ í‘œí˜„ì‹ì€ ì´ë¦„ë¶™ì¸ í‘œí˜„ì‹ì´ ì‚¬ìš© ë¶ˆê°€ëŠ¥í•  ê²½ìš°ì—ë§Œ ì‚¬ìš©ë©ë‹ˆë‹¤. ë‹¤ìŒ ë¬¸ìžë“¤ì€ ì–¸ì œë‚˜ ë³€í™˜ë©ë‹ˆë‹¤: <code>&lt;&gt;&quot;&amp;</code> ê·¸ë¦¬ê³  <code>`n</code> (ë¼ì¸í”¼ë“œ).</p>
 <p>
-<strong><a name="FromCodePage"></a>FromCodePage</strong> / <strong><a name="ToCodePage"></a>ToCodePage</strong>: ºñÃßÃµ.  ´ë½Å <a href="StrPutGet.htm">StrPut() / StrGet()</a>À» »ç¿ëÇÏ½Ê½Ã¿À.</p>
+<strong><a name="FromCodePage"></a>FromCodePage</strong> / <strong><a name="ToCodePage"></a>ToCodePage</strong>: ë¹„ì¶”ì²œ.  ëŒ€ì‹  <a href="StrPutGet.htm">StrPut() / StrGet()</a>ì„ ì‚¬ìš©í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-<strong>Mod, Dividend, Divisor</strong>: ³ª´µ´Â¼ö(<em>Dividend</em>)¸¦ ³ª´©´Â¼ö(<em>Divisor</em>)·Î ³ª´« ³ª¸ÓÁö¸¦ ¿­¶÷ÇÕ´Ï´Ù. <em>Divisor</em>°¡ 0ÀÌ¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. <em>Dividend</em>¿Í <em>Divisor</em>°¡ ¸ðµÎ ¼Ò¼öÁ¡À» ´ãÀ» ¼ö ÀÖ½À´Ï´Ù. À½¼öÀÌ¸é, <em>Divisor</em>´Â °è»êÀ» À§ÇØ ¾ç¼ö·Î Ãë±ÞµË´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿¡¼­, °á°ú´Â 2ÀÔ´Ï´Ù: <code>Transform, OutputVar, mod, 5, 3</code>. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Mod"><code>Mod(Dividend, Divisor)</code></a>.</p>
+<strong>Mod, Dividend, Divisor</strong>: ë‚˜ë‰˜ëŠ”ìˆ˜(<em>Dividend</em>)ë¥¼ ë‚˜ëˆ„ëŠ”ìˆ˜(<em>Divisor</em>)ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤. <em>Divisor</em>ê°€ 0ì´ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. <em>Dividend</em>ì™€ <em>Divisor</em>ê°€ ëª¨ë‘ ì†Œìˆ˜ì ì„ ë‹´ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ìŒìˆ˜ì´ë©´, <em>Divisor</em>ëŠ” ê³„ì‚°ì„ ìœ„í•´ ì–‘ìˆ˜ë¡œ ì·¨ê¸‰ë©ë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì—ì„œ, ê²°ê³¼ëŠ” 2ìž…ë‹ˆë‹¤: <code>Transform, OutputVar, mod, 5, 3</code>. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Mod"><code>Mod(Dividend, Divisor)</code></a>.</p>
 <p>
-<strong>Pow, Base, Exponent</strong>: ¹Ø¼ö(<em>Base</em>)¸¦ Áö¼ö(<em>Exponent</em>) Á¦°öÇÏ¿© ¿­¶÷ÇÕ´Ï´Ù. 
+<strong>Pow, Base, Exponent</strong>: ë°‘ìˆ˜(<em>Base</em>)ë¥¼ ì§€ìˆ˜(<em>Exponent</em>) ì œê³±í•˜ì—¬ ì—´ëžŒí•©ë‹ˆë‹¤. 
 
-<em>Base</em>¿Í <em>Exponent</em> ¸ðµÎ ¼Ò¼öÁ¡À» Æ÷ÇÔÇÒ ¼ö ÀÖ½À´Ï´Ù. <em>Exponent</em>°¡ À½¼öÀÌ¸é, <em>OutputVar</em>´Â ºÎµ¿ ¼Ò¼öÁ¡ ¼ö·Î Æ÷¸ËµË´Ï´Ù. <em>Base</em>¿Í <em>Exponent</em> µÑ ´Ù Á¤¼ö¶óµµ ¸¶Âù°¡ÁöÀÔ´Ï´Ù. 1.5¿Í °°ÀÌ ¼Ò¼öÇü Áö¼ö(<em>Exponent</em>)¿Í °áÇÕµÈ À½ÀÇ <em>Base</em>´Â Áö¿øÇÏÁö ¾Ê½À´Ï´Ù; ±×·¯¸é <em>OutputVar</em>°¡ ºñ¿öÁý´Ï´Ù. ¶Ç ´ÙÀ½µµ ÂüÁ¶ÇÏ½Ê½Ã¿À: <a href="../Variables.htm#pow">** operator</a>.</p>
+<em>Base</em>ì™€ <em>Exponent</em> ëª¨ë‘ ì†Œìˆ˜ì ì„ í¬í•¨í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. <em>Exponent</em>ê°€ ìŒìˆ˜ì´ë©´, <em>OutputVar</em>ëŠ” ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ë¡œ í¬ë§·ë©ë‹ˆë‹¤. <em>Base</em>ì™€ <em>Exponent</em> ë‘˜ ë‹¤ ì •ìˆ˜ë¼ë„ ë§ˆì°¬ê°€ì§€ìž…ë‹ˆë‹¤. 1.5ì™€ ê°™ì´ ì†Œìˆ˜í˜• ì§€ìˆ˜(<em>Exponent</em>)ì™€ ê²°í•©ëœ ìŒì˜ <em>Base</em>ëŠ” ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤; ê·¸ëŸ¬ë©´ <em>OutputVar</em>ê°€ ë¹„ì›Œì§‘ë‹ˆë‹¤. ë˜ ë‹¤ìŒë„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤: <a href="../Variables.htm#pow">** operator</a>.</p>
 <p>
-<strong>Exp, N</strong>: e¸¦ (´ë·« 2.71828182845905) <em>N</em> Á¦°öÇØ ¿­¶÷ÇÕ´Ï´Ù. <em>N</em>Àº À½¼öÀÏ ¼ö ÀÖÀ¸¸ç ¼Ò¼ö Á¡À» Æ÷ÇÔÇÒ ¼ö ÀÖ½À´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Exp">Exp(N)</a>.</p>
+<strong>Exp, N</strong>: eë¥¼ (ëŒ€ëžµ 2.71828182845905) <em>N</em> ì œê³±í•´ ì—´ëžŒí•©ë‹ˆë‹¤. <em>N</em>ì€ ìŒìˆ˜ì¼ ìˆ˜ ìžˆìœ¼ë©° ì†Œìˆ˜ ì ì„ í¬í•¨í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Exp">Exp(N)</a>.</p>
 <p>
-<strong>Sqrt, Value1</strong>:  Value1ÀÇ Á¦°ö±ÙÀ» ±¸ÇÕ´Ï´Ù. <em>Value1</em>°¡ À½¼öÀÌ¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Sqrt">Sqrt(Number)</a>.</p>
+<strong>Sqrt, Value1</strong>:  Value1ì˜ ì œê³±ê·¼ì„ êµ¬í•©ë‹ˆë‹¤. <em>Value1</em>ê°€ ìŒìˆ˜ì´ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Sqrt">Sqrt(Number)</a>.</p>
 <p>
-<strong>Log, Value1</strong>: <em>Value1</em>ÀÇ (¹Ø¼ö°¡ 10ÀÎ) »ó¿ë ·Î±×¸¦ ±¸ÇÕ´Ï´Ù. <em>Value1</em>°¡ À½¼öÀÌ¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Log">Log(Number)</a>.</p>
+<strong>Log, Value1</strong>: <em>Value1</em>ì˜ (ë°‘ìˆ˜ê°€ 10ì¸) ìƒìš© ë¡œê·¸ë¥¼ êµ¬í•©ë‹ˆë‹¤. <em>Value1</em>ê°€ ìŒìˆ˜ì´ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Log">Log(Number)</a>.</p>
 <p>
-<strong>Ln, Vaue1</strong>: <em>Value1</em>ÀÇ (¹Ø¼ö°¡ eÀÎ) ÀÚ¿¬ ·Î±×¸¦ ¿­¶÷ÇÕ´Ï´Ù. <em>Value1</em>ÀÌ À½¼öÀÌ¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Ln">Ln(Number)</a>.</p>
+<strong>Ln, Vaue1</strong>: <em>Value1</em>ì˜ (ë°‘ìˆ˜ê°€ eì¸) ìžì—° ë¡œê·¸ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤. <em>Value1</em>ì´ ìŒìˆ˜ì´ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Ln">Ln(Number)</a>.</p>
 <p>
-<strong>Round, Value1 [, N]</strong>: <em>N</em>À» »ý·«ÇÏ¸é, <em>OutputVar</em>´Â <em>Value1</em>ÀÌ °¡Àå °¡±î¿î Á¤¼ö·Î ¹Ý¿Ã¸²µÇ¾î ¼³Á¤µË´Ï´Ù. <em>N</em>ÀÌ ¾ç¼öÀÌ¸é, <em>Value1</em>Àº <em>N</em> ¼Ò¼öÁ¡ ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²µË´Ï´Ù. <em>N</em>ÀÌ À½¼öÀÌ¸é, <em>Value1</em>´Â <em>N</em> ÀÚ¸®¸¸Å­ ¼Ò¼öÁ¡ ¿ÞÂÊ¿¡¼­ ¹Ý¿Ã¸²µË´Ï´Ù. ¿¹¸¦ µé¾î, -1ÀÌ¸é Ã¹ Â° ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²µÇ°í,  -2ÀÌ¸é 10ÀÌ ÀÚ¸®¿¡¼­, ±×¸®°í -3ÀÌ¸é ¹éÀÇ ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²µË´Ï´Ù. ÁÖÀÇ: Round´Â ¼Ò¼ö ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²ÇÒ ¶§ µÚ¿¡ µû¸£´Â 0À» Á¦°ÅÇÏÁö ¾Ê½À´Ï´Ù. ¿¹¸¦ µé¾î, 12.333À» ¼Ò¼ö Ã¹ Â° ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²ÇÏ¸é 12.300000ÀÌ µË´Ï´Ù. ÀÌ ÇàÀ§´Â ¿¬»êÀ» ÇÏ±â Àü¿¡<code><a href="SetFormat.htm">SetFormat</a>, Float, 0.1</code>°ú °°ÀÌ ¼³Á¤ÇÏ¸é ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù (½ÇÁ¦·Î, <a href="SetFormat.htm">SetFormat</a>À» »ç¿ëÇÏ¸é Ã¹ Â° ÀÚ¸®¿¡¼­ Round¸¦ »ç¿ëÇÒ ÇÊ¿äÁ¶Â÷ ¾ø½À´Ï´Ù). »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Round">Round(Number [, N])</a>.</p>
+<strong>Round, Value1 [, N]</strong>: <em>N</em>ì„ ìƒëžµí•˜ë©´, <em>OutputVar</em>ëŠ” <em>Value1</em>ì´ ê°€ìž¥ ê°€ê¹Œìš´ ì •ìˆ˜ë¡œ ë°˜ì˜¬ë¦¼ë˜ì–´ ì„¤ì •ë©ë‹ˆë‹¤. <em>N</em>ì´ ì–‘ìˆ˜ì´ë©´, <em>Value1</em>ì€ <em>N</em> ì†Œìˆ˜ì  ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼ë©ë‹ˆë‹¤. <em>N</em>ì´ ìŒìˆ˜ì´ë©´, <em>Value1</em>ëŠ” <em>N</em> ìžë¦¬ë§Œí¼ ì†Œìˆ˜ì  ì™¼ìª½ì—ì„œ ë°˜ì˜¬ë¦¼ë©ë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, -1ì´ë©´ ì²« ì§¸ ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼ë˜ê³ ,  -2ì´ë©´ 10ì´ ìžë¦¬ì—ì„œ, ê·¸ë¦¬ê³  -3ì´ë©´ ë°±ì˜ ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼ë©ë‹ˆë‹¤. ì£¼ì˜: RoundëŠ” ì†Œìˆ˜ ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼í•  ë•Œ ë’¤ì— ë”°ë¥´ëŠ” 0ì„ ì œê±°í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì˜ˆë¥¼ ë“¤ì–´, 12.333ì„ ì†Œìˆ˜ ì²« ì§¸ ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼í•˜ë©´ 12.300000ì´ ë©ë‹ˆë‹¤. ì´ í–‰ìœ„ëŠ” ì—°ì‚°ì„ í•˜ê¸° ì „ì—<code><a href="SetFormat.htm">SetFormat</a>, Float, 0.1</code>ê³¼ ê°™ì´ ì„¤ì •í•˜ë©´ ë°”ê¿€ ìˆ˜ ìžˆìŠµë‹ˆë‹¤ (ì‹¤ì œë¡œ, <a href="SetFormat.htm">SetFormat</a>ì„ ì‚¬ìš©í•˜ë©´ ì²« ì§¸ ìžë¦¬ì—ì„œ Roundë¥¼ ì‚¬ìš©í•  í•„ìš”ì¡°ì°¨ ì—†ìŠµë‹ˆë‹¤). ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Round">Round(Number [, N])</a>.</p>
 <p>
-<strong>Ceil, Value1</strong>: <em>Value1</em>À» °¡Àå °¡±î¿î Á¤¼ö·Î ¿Ã¸²ÇÏ¿© ¿­¶÷ÇÕ´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Ceil">Ceil(Number)</a>.</p>
+<strong>Ceil, Value1</strong>: <em>Value1</em>ì„ ê°€ìž¥ ê°€ê¹Œìš´ ì •ìˆ˜ë¡œ ì˜¬ë¦¼í•˜ì—¬ ì—´ëžŒí•©ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Ceil">Ceil(Number)</a>.</p>
 <p>
-<strong>Floor, Value1</strong>: <em>Value1</em>À» °¡Àå °¡±î¿î Á¤¼ö·Î ³»¸²ÇÏ¿© ¿­¶÷ÇÕ´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Floor">Floor(Number)</a>.</p>
+<strong>Floor, Value1</strong>: <em>Value1</em>ì„ ê°€ìž¥ ê°€ê¹Œìš´ ì •ìˆ˜ë¡œ ë‚´ë¦¼í•˜ì—¬ ì—´ëžŒí•©ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Floor">Floor(Number)</a>.</p>
 <p>
-<strong>Abs, Value1</strong>: <em>Value1</em>ÀÇ Àý´ë °ªÀ» ¿­¶÷ÇÕ´Ï´Ù. <em>Value1</em>¿¡¼­ ¸¶ÀÌ³Ê½º°¡ ¾Õ¿¡ ÀÖ´Ù¸é Á¦°ÅÇØ ¹ö¸®°í µ¹·ÁÁÝ´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Abs">Abs(Number)</a>.</p>
+<strong>Abs, Value1</strong>: <em>Value1</em>ì˜ ì ˆëŒ€ ê°’ì„ ì—´ëžŒí•©ë‹ˆë‹¤. <em>Value1</em>ì—ì„œ ë§ˆì´ë„ˆìŠ¤ê°€ ì•žì— ìžˆë‹¤ë©´ ì œê±°í•´ ë²„ë¦¬ê³  ëŒë ¤ì¤ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Abs">Abs(Number)</a>.</p>
 <p>
-<strong>Sin, Value1</strong>: <em>Value1</em>ÀÇ »çÀÎ °ªÀ» ¿­¶÷ÇÕ´Ï´Ù. <em>Value1</em>Àº È£µµ·Î Ç¥ÇöµÇ¾î¾ß ÇÕ´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Sin">Sin(Number)</a>.</p>
+<strong>Sin, Value1</strong>: <em>Value1</em>ì˜ ì‚¬ì¸ ê°’ì„ ì—´ëžŒí•©ë‹ˆë‹¤. <em>Value1</em>ì€ í˜¸ë„ë¡œ í‘œí˜„ë˜ì–´ì•¼ í•©ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Sin">Sin(Number)</a>.</p>
 <p>
-<strong>Cos, Value1</strong>: <em>Value1</em>ÀÇ ÄÚ»çÀÎ °ªÀ» ¿­¶÷ÇÕ´Ï´Ù. <em>Value1</em>Àº È£µµ·Î Ç¥ÇöµÇ¾î¾ß ÇÕ´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Cos">Cos(Number)</a>.</p>
+<strong>Cos, Value1</strong>: <em>Value1</em>ì˜ ì½”ì‚¬ì¸ ê°’ì„ ì—´ëžŒí•©ë‹ˆë‹¤. <em>Value1</em>ì€ í˜¸ë„ë¡œ í‘œí˜„ë˜ì–´ì•¼ í•©ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Cos">Cos(Number)</a>.</p>
 <p>
-<strong>Tan, Value1</strong>: em>Value1</em>ÀÇ ÅºÁ¨Æ® °ªÀ» ¿­¶÷ÇÕ´Ï´Ù. <em>Value1</em>Àº È£µµ·Î Ç¥ÇöµÇ¾î¾ß ÇÕ´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#Tan">Tan(Number)</a>.</p>
+<strong>Tan, Value1</strong>: em>Value1</em>ì˜ íƒ„ì  íŠ¸ ê°’ì„ ì—´ëžŒí•©ë‹ˆë‹¤. <em>Value1</em>ì€ í˜¸ë„ë¡œ í‘œí˜„ë˜ì–´ì•¼ í•©ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#Tan">Tan(Number)</a>.</p>
 <p>
-<strong>ASin, Value1</strong>: È£µµ ´ÜÀ§·Î ¾ÆÅ©»çÀÎ °ªÀ» ¿­¶÷ÇÕ´Ï´Ù (<em>Value1</em>Àº »çÀÎ °ª). 
-<em>Value1</em>°¡ -1º¸´Ù ÀÛ°Å³ª 1º¸´Ù Å©¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#ASin">ASin(Number)</a>.</p>
+<strong>ASin, Value1</strong>: í˜¸ë„ ë‹¨ìœ„ë¡œ ì•„í¬ì‚¬ì¸ ê°’ì„ ì—´ëžŒí•©ë‹ˆë‹¤ (<em>Value1</em>ì€ ì‚¬ì¸ ê°’). 
+<em>Value1</em>ê°€ -1ë³´ë‹¤ ìž‘ê±°ë‚˜ 1ë³´ë‹¤ í¬ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#ASin">ASin(Number)</a>.</p>
 <p>
-<strong>ACos, Value1</strong>: È£µµ ´ÜÀ§·Î ¾ÆÅ©ÄÚ»çÀÎÀ» ¿­¶÷ÇÕ´Ï´Ù (<em>Value1</em>Àº ÄÚ»çÀÎ °ª).
-<em>Value1</em>ÀÌ -1º¸´Ù ÀÛ°Å³ª 1º¸´Ù Å©¸é, <em>OutputVar</em>´Â ºñ¿öÁý´Ï´Ù. »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#ACos">ACos(Number)</a>.</p>
+<strong>ACos, Value1</strong>: í˜¸ë„ ë‹¨ìœ„ë¡œ ì•„í¬ì½”ì‚¬ì¸ì„ ì—´ëžŒí•©ë‹ˆë‹¤ (<em>Value1</em>ì€ ì½”ì‚¬ì¸ ê°’).
+<em>Value1</em>ì´ -1ë³´ë‹¤ ìž‘ê±°ë‚˜ 1ë³´ë‹¤ í¬ë©´, <em>OutputVar</em>ëŠ” ë¹„ì›Œì§‘ë‹ˆë‹¤. ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#ACos">ACos(Number)</a>.</p>
 <p>
-<strong>ATan, Value1</strong>: È£µµ ´ÜÀ§·Î ¾ÆÅ©ÅºÁ¨Æ®¸¦ ¿­¶÷ÇÕ´Ï´Ù (<em>Value1</em>Àº ÅºÁ¨Æ® °ª). »óÀÀÇÏ´Â ÇÔ¼ö: <a href="../Functions.htm#ATan">ATan(Number)</a>.</p>
+<strong>ATan, Value1</strong>: í˜¸ë„ ë‹¨ìœ„ë¡œ ì•„í¬íƒ„ì  íŠ¸ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤ (<em>Value1</em>ì€ íƒ„ì  íŠ¸ ê°’). ìƒì‘í•˜ëŠ” í•¨ìˆ˜: <a href="../Functions.htm#ATan">ATan(Number)</a>.</p>
 <br>
 <p>
-<b>ÁÖÀÇ</b>: ´ÙÀ½ÀÇ ºñÆ®º° ¿¬»êÀº Ç¥Çö½Ä¿¡ »ç¿ëÇÏ±â À§ÇØ ´õ °£°áÇÑ <a href="../Variables.htm#bitwise">ºñÆ®º° ¿¬»êÀÚ</a>¸¦ °¡Áö°í ÀÖ½À´Ï´Ù.</p>
+<b>ì£¼ì˜</b>: ë‹¤ìŒì˜ ë¹„íŠ¸ë³„ ì—°ì‚°ì€ í‘œí˜„ì‹ì— ì‚¬ìš©í•˜ê¸° ìœ„í•´ ë” ê°„ê²°í•œ <a href="../Variables.htm#bitwise">ë¹„íŠ¸ë³„ ì—°ì‚°ìž</a>ë¥¼ ê°€ì§€ê³  ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<strong>BitNot, Value1</strong>: <em>Value1</em>À» ºñÆ®º°·Î µÚÁý¾î¼­ <em>OutputVar</em>¿¡ ÀúÀåÇÕ´Ï´Ù (<em>Value1</em>ÀÌ ºÎµ¿ ¼Ò¼öÁ¡ ¼öÀÌ¸é, °è»ê Àü¿¡ Á¤¼ö·Î Àß¶ó³À´Ï´Ù). 
+<strong>BitNot, Value1</strong>: <em>Value1</em>ì„ ë¹„íŠ¸ë³„ë¡œ ë’¤ì§‘ì–´ì„œ <em>OutputVar</em>ì— ì €ìž¥í•©ë‹ˆë‹¤ (<em>Value1</em>ì´ ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ì´ë©´, ê³„ì‚° ì „ì— ì •ìˆ˜ë¡œ ìž˜ë¼ëƒ…ë‹ˆë‹¤). 
 
-<em>Value1</em>ÀÌ 0ºÎÅÍ 4294967295 (0xffffffff) »çÀÌÀÌ¸é, <u>ºÎÈ£ ¾ø´Â</u> 32-ºñÆ® °ªÀ¸·Î Ãë±ÞµË´Ï´Ù. ±×·¸Áö ¾ÊÀ¸¸é <u>ºÎÈ£ ÀÖ´Â</u> 64-ºñÆ® °ªÀ¸·Î Ãë±ÞµË´Ï´Ù. ´ÙÀ½ ¿¹Á¦¿¡¼­, ±× °á°ú´Â 0xfffff0f0 (4294963440)ÀÔ´Ï´Ù: <code>Transform, OutputVar, BitNot, 0xf0f</code>.</p>
+<em>Value1</em>ì´ 0ë¶€í„° 4294967295 (0xffffffff) ì‚¬ì´ì´ë©´, <u>ë¶€í˜¸ ì—†ëŠ”</u> 32-ë¹„íŠ¸ ê°’ìœ¼ë¡œ ì·¨ê¸‰ë©ë‹ˆë‹¤. ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ <u>ë¶€í˜¸ ìžˆëŠ”</u> 64-ë¹„íŠ¸ ê°’ìœ¼ë¡œ ì·¨ê¸‰ë©ë‹ˆë‹¤. ë‹¤ìŒ ì˜ˆì œì—ì„œ, ê·¸ ê²°ê³¼ëŠ” 0xfffff0f0 (4294963440)ìž…ë‹ˆë‹¤: <code>Transform, OutputVar, BitNot, 0xf0f</code>.</p>
 <p>
-<strong>BitAnd, Value1, Value2</strong>: <em>Value1</em>°ú <em>Value2</em>¸¦ ºñÆ®º°-ANDÇÑ °á°ú¸¦ ¿­¶÷ÇÕ´Ï´Ù (ºÎµ¿ ¼Ò¼öÁ¡ °ªÀº °è»ê Àü¿¡ Á¤¼ö·Î Àß·Á ³ª°©´Ï´Ù). ´ÙÀ½ ¿¹Á¦¿¡¼­, ±× °á°ú´Â 0xff00 (65280)ÀÔ´Ï´Ù: <code>Transform, OutputVar, BitAnd, 0xff0f, 0xfff0</code>.</p>
+<strong>BitAnd, Value1, Value2</strong>: <em>Value1</em>ê³¼ <em>Value2</em>ë¥¼ ë¹„íŠ¸ë³„-ANDí•œ ê²°ê³¼ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤ (ë¶€ë™ ì†Œìˆ˜ì  ê°’ì€ ê³„ì‚° ì „ì— ì •ìˆ˜ë¡œ ìž˜ë ¤ ë‚˜ê°‘ë‹ˆë‹¤). ë‹¤ìŒ ì˜ˆì œì—ì„œ, ê·¸ ê²°ê³¼ëŠ” 0xff00 (65280)ìž…ë‹ˆë‹¤: <code>Transform, OutputVar, BitAnd, 0xff0f, 0xfff0</code>.</p>
 <p>
-<strong>BitOr, Value1, Value2</strong>: <em>Value1</em>°ú <em>Value2</em>¸¦ ºñÆ®º°-ORÇÑ °á°ú¸¦ ¿­¶÷ÇÕ´Ï´Ù (ºÎµ¿ ¼Ò¼öÁ¡ °ªÀº Á¤¼ö·Î Àß¶ó ³½ ´ÙÀ½ °è»êÇÕ´Ï´Ù). ´ÙÀ½ ¿¹Á¦¿¡¼­ ±× °á°ú´Â 0xf0f0 (61680)ÀÔ´Ï´Ù: <code>Transform, OutputVar, BitOr, 0xf000, 0x00f0</code>.</p>
+<strong>BitOr, Value1, Value2</strong>: <em>Value1</em>ê³¼ <em>Value2</em>ë¥¼ ë¹„íŠ¸ë³„-ORí•œ ê²°ê³¼ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤ (ë¶€ë™ ì†Œìˆ˜ì  ê°’ì€ ì •ìˆ˜ë¡œ ìž˜ë¼ ë‚¸ ë‹¤ìŒ ê³„ì‚°í•©ë‹ˆë‹¤). ë‹¤ìŒ ì˜ˆì œì—ì„œ ê·¸ ê²°ê³¼ëŠ” 0xf0f0 (61680)ìž…ë‹ˆë‹¤: <code>Transform, OutputVar, BitOr, 0xf000, 0x00f0</code>.</p>
 <p>
-<strong>BitXOr, Value1, Value2</strong>:<em>Value1</em>°í <em>Value2</em>¸¦ ºñÆ®º°-EXCLUSIVE-ORÇÑ °á°ú¸¦ ¿­¶÷ÇÕ´Ï´Ù (ºÎµ¿ ¼Ò¼öÁ¡ °ªÀº Á¤¼ö·Î Àß¶ó³½ ´ÙÀ½ °è»êÇÕ´Ï´Ù). ´ÙÀ½ ¿¹Á¦¿¡¼­ ±× °á°ú´Â 0xff00 (65280)ÀÔ´Ï´Ù: <code>Transform, OutputVar, BitXOr, 0xf00f, 0x0f0f</code>.</p>
+<strong>BitXOr, Value1, Value2</strong>:<em>Value1</em>ê³  <em>Value2</em>ë¥¼ ë¹„íŠ¸ë³„-EXCLUSIVE-ORí•œ ê²°ê³¼ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤ (ë¶€ë™ ì†Œìˆ˜ì  ê°’ì€ ì •ìˆ˜ë¡œ ìž˜ë¼ë‚¸ ë‹¤ìŒ ê³„ì‚°í•©ë‹ˆë‹¤). ë‹¤ìŒ ì˜ˆì œì—ì„œ ê·¸ ê²°ê³¼ëŠ” 0xff00 (65280)ìž…ë‹ˆë‹¤: <code>Transform, OutputVar, BitXOr, 0xf00f, 0x0f0f</code>.</p>
 <p>
-<strong>BitShiftLeft, Value1, Value2</strong>: <em>Value1</em>À» ¿ÞÂÊÀ¸·Î <em>Value2</em> ºñÆ® À§Ä¡ ¸¸Å­ ÀÌµ¿ÇÑ °á°ú¸¦ ¿­¶÷ÇÕ´Ï´Ù. ÀÌ °ªÀº <em>Value1</em>À» &quot;<em>Value2</em> Á¦°ö¸¸Å­ °öÇÑ&quot; °Í°ú µ¿µîÇÕ´Ï´Ù.
-(ºÎµ¿ ¼Ò¼öÁ¡ °ªÀº Á¤¼ö·Î Àß¶ó³½ ´ÙÀ½ °è»êÇÕ´Ï´Ù). ´ÙÀ½ ¿¹Á¦¿¡¼­ ±× °á°ú´Â 8ÀÔ´Ï´Ù: <code>Transform, OutputVar, BitShiftLeft, 1, 3</code>.</p>
+<strong>BitShiftLeft, Value1, Value2</strong>: <em>Value1</em>ì„ ì™¼ìª½ìœ¼ë¡œ <em>Value2</em> ë¹„íŠ¸ ìœ„ì¹˜ ë§Œí¼ ì´ë™í•œ ê²°ê³¼ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤. ì´ ê°’ì€ <em>Value1</em>ì„ &quot;<em>Value2</em> ì œê³±ë§Œí¼ ê³±í•œ&quot; ê²ƒê³¼ ë™ë“±í•©ë‹ˆë‹¤.
+(ë¶€ë™ ì†Œìˆ˜ì  ê°’ì€ ì •ìˆ˜ë¡œ ìž˜ë¼ë‚¸ ë‹¤ìŒ ê³„ì‚°í•©ë‹ˆë‹¤). ë‹¤ìŒ ì˜ˆì œì—ì„œ ê·¸ ê²°ê³¼ëŠ” 8ìž…ë‹ˆë‹¤: <code>Transform, OutputVar, BitShiftLeft, 1, 3</code>.</p>
 <p>
-<strong>BitShiftRight, Value1, Value2</strong>: <em>Value1</em>À» ¿À¸¥ÂÊÀ¸·Î <em>Value2</em> ºñÆ® À§Ä¡¸¸Å­ ÀÌµ¿ÇÑ °á°ú¸¦ ¿­¶÷ÇÕ´Ï´Ù. ÀÌ °ªÀº <em>Value1</em>À» &quot; <em>Value2</em> Á¦°ö¸¸Å­ ³ª´«&quot; °Í°ú µ¿µîÇÕ´Ï´Ù. ³ª¸ÓÁö´Â Àß¶ó³» ¹ö¸³´Ï´Ù. 
-(ºÎµ¿ ¼Ò¼öÁ¡ °ªÀº Á¤¼ö·Î Àß¶ó³½ ´ÙÀ½ °è»êÇÕ´Ï´Ù). ´ÙÀ½ ¿¹Á¦¿¡¼­ ±× °á°ú´Â 2ÀÔ´Ï´Ù: <code>Transform, OutputVar, BitShiftRight, 17, 3</code>.</p>
+<strong>BitShiftRight, Value1, Value2</strong>: <em>Value1</em>ì„ ì˜¤ë¥¸ìª½ìœ¼ë¡œ <em>Value2</em> ë¹„íŠ¸ ìœ„ì¹˜ë§Œí¼ ì´ë™í•œ ê²°ê³¼ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤. ì´ ê°’ì€ <em>Value1</em>ì„ &quot; <em>Value2</em> ì œê³±ë§Œí¼ ë‚˜ëˆˆ&quot; ê²ƒê³¼ ë™ë“±í•©ë‹ˆë‹¤. ë‚˜ë¨¸ì§€ëŠ” ìž˜ë¼ë‚´ ë²„ë¦½ë‹ˆë‹¤. 
+(ë¶€ë™ ì†Œìˆ˜ì  ê°’ì€ ì •ìˆ˜ë¡œ ìž˜ë¼ë‚¸ ë‹¤ìŒ ê³„ì‚°í•©ë‹ˆë‹¤). ë‹¤ìŒ ì˜ˆì œì—ì„œ ê·¸ ê²°ê³¼ëŠ” 2ìž…ë‹ˆë‹¤: <code>Transform, OutputVar, BitShiftRight, 17, 3</code>.</p>
 
-<h3>³íÆò</h3>
+<h3>ë…¼í‰</h3>
 <p>
-¼ýÄ¡ ¸Å°³º¯¼ö¸¦ ¹Þ´Â ºÎ-¸í·É¾î´Â ±×·± ¸Å°³º¯¼ö¿¡ ´ëÇÏ¿© <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>µµ ¹ÞÀ» ¼ö ÀÖ½À´Ï´Ù.</p>
+ìˆ«ì¹˜ ë§¤ê°œë³€ìˆ˜ë¥¼ ë°›ëŠ” ë¶€-ëª…ë ¹ì–´ëŠ” ê·¸ëŸ° ë§¤ê°œë³€ìˆ˜ì— ëŒ€í•˜ì—¬ <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>ë„ ë°›ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</p>
 <p>
-<em>Value1</em> ¶Ç´Â <em>Value2</em>°¡ ºÎµ¿ ¼Ò¼öÁ¡ ¼öÀÌ¸é, ´ÙÀ½ ¸í·É¾î(<em>Cmd</em>)µéÀº Á¤¼ö°¡ ¾Æ´Ï¶ó ºÎµ¿ ¼Ò¼öÁ¡ ¼ö¸¦ ¿­¶÷ÇÕ´Ï´Ù: Mod, Pow, Round, ±×¸®°í Abs. ¿­¶÷µÈ ¼Ò¼ö ºÎºÐÀÇ ÀÚ¸®¼ö´Â <a href="SetFormat.htm">SetFormat</a>À¸·Î °áÁ¤µË´Ï´Ù.</p>
+<em>Value1</em> ë˜ëŠ” <em>Value2</em>ê°€ ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ì´ë©´, ë‹¤ìŒ ëª…ë ¹ì–´(<em>Cmd</em>)ë“¤ì€ ì •ìˆ˜ê°€ ì•„ë‹ˆë¼ ë¶€ë™ ì†Œìˆ˜ì  ìˆ˜ë¥¼ ì—´ëžŒí•©ë‹ˆë‹¤: Mod, Pow, Round, ê·¸ë¦¬ê³  Abs. ì—´ëžŒëœ ì†Œìˆ˜ ë¶€ë¶„ì˜ ìžë¦¬ìˆ˜ëŠ” <a href="SetFormat.htm">SetFormat</a>ìœ¼ë¡œ ê²°ì •ë©ë‹ˆë‹¤.</p>
 <p>
-È£µµ °ªÀ» °¢µµ·Î º¯È¯ÇÏ·Á¸é, 180/pi (´ë·« 57.29578)¸¦ °öÇÏ½Ê½Ã¿À. °¢µµ¸¦ È£µµ·Î º¯È¯ÇÏ·Á¸é pi/180 (´ë·« 0.01745329252)¸¦ °öÇÏ½Ê½Ã¿À.</p>
+í˜¸ë„ ê°’ì„ ê°ë„ë¡œ ë³€í™˜í•˜ë ¤ë©´, 180/pi (ëŒ€ëžµ 57.29578)ë¥¼ ê³±í•˜ì‹­ì‹œì˜¤. ê°ë„ë¥¼ í˜¸ë„ë¡œ ë³€í™˜í•˜ë ¤ë©´ pi/180 (ëŒ€ëžµ 0.01745329252)ë¥¼ ê³±í•˜ì‹­ì‹œì˜¤.</p>
 <p>
-piÀÇ °ªÀº (´ë·« 3.141592653589793) 1 ¾ÆÅ©ÅºÁ¨Æ®ÀÇ 4 ¹èÀÔ´Ï´Ù.</p>
+piì˜ ê°’ì€ (ëŒ€ëžµ 3.141592653589793) 1 ì•„í¬íƒ„ì  íŠ¸ì˜ 4 ë°°ìž…ë‹ˆë‹¤.</p>
 
-<h3>°ü·Ã Ç×¸ñ</h3>
+<h3>ê´€ë ¨ í•­ëª©</h3>
 <p>
-<a href="SetFormat.htm">SetFormat</a>, <a href="../Variables.htm#Expressions">Ç¥Çö½Ä</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="StringLower.htm">StringLower</a>, <a href="IfIs.htm">if var is type</a></p>
+<a href="SetFormat.htm">SetFormat</a>, <a href="../Variables.htm#Expressions">í‘œí˜„ì‹</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="StringLower.htm">StringLower</a>, <a href="IfIs.htm">if var is type</a></p>
 
-<h3>¿¹Á¦</h3>
-<pre class="NoIndent">Transform, OutputVar, Asc, A  <em>; ±âÈ£ AÀÇ ASCII ÄÚµå¸¦ ¾ò½À´Ï´Ù.</em></pre>
+<h3>ì˜ˆì œ</h3>
+<pre class="NoIndent">Transform, OutputVar, Asc, A  <em>; ê¸°í˜¸ Aì˜ ASCII ì½”ë“œë¥¼ ì–»ìŠµë‹ˆë‹¤.</em></pre>
 
 </body>
 </html>

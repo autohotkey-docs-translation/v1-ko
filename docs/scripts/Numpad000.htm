@@ -1,7 +1,8 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
 <title>Numpad 000 Key</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -10,63 +11,63 @@
 
 <h1>Numpad 000 Key</h1>
 
-<p>�� ���� ��ũ��Ʈ�� � Ű���忡 ��Ÿ���� Ư���� 000 Ű�� ��ȣ Ű�� ���Ž�ŵ�ϴ�. ������ �ٲٷ���
- <code>Send, =</code> ���� �������� ��ȣ��� �����Ͻʽÿ�.
+<p>이 예제 스크립트는 어떤 키보드에 나타나는 특수한 000 키를 등호 키로 변신시킵니다. 행위를 바꾸려면
+ <code>Send, =</code> 줄을 여러분의 기호대로 변경하십시오.
 </p>
-<p><a href="Numpad000.ahk">�� ��ũ��Ʈ ���� �ޱ�</a> &nbsp;| &nbsp;<a href="index.htm">�ٸ� ���� ��ũ��Ʈ</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Ȩ����</a></p>
+<p><a href="Numpad000.ahk">이 스크립트 내려 받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
 
-<pre class="NoIndent">#MaxThreadsPerHotkey 5  <em>; �� ��Ű�� ���Ͽ� ���� �����带 ����մϴ�.</em>
+<pre class="NoIndent">#MaxThreadsPerHotkey 5  <em>; 이 핫키에 대하여 여러 쓰레드를 허용합니다.</em>
 $Numpad0::
 #MaxThreadsPerHotkey 1
-<em>; ������: $�� ����� ������ ����� �����մϴ�. �̷��� �ϸ� ���� ȸ���̸� �����մϴ�.
-; �����ƾ ��ü�� Numpad0�� �����ϱ� �����ε�, �� ������
-; �ڱ� �ڽ��� ȣ���ϴ� ���� ��Ϳ� ���� �� �ֽ��ϴ�.</em>
-SetBatchLines, 100 <em>; �� ��� �ణ �� ���� �����ϵ��� ����ϴ�.</em>
-DelayBetweenKeys = 30 <em>; �۵����� ���� ��� �� ���� �����մϴ�.</em>
+<em>; 위에서: $를 사용해 갈고리 사용을 강제합니다. 이렇게 하면 무한 회돌이를 방지합니다.
+; 서브루틴 자체가 Numpad0를 전송하기 때문인데, 이 때문에
+; 자기 자신을 호출하는 무한 재귀에 빠질 수 있습니다.</em>
+SetBatchLines, 100 <em>; 이 경우 약간 더 빨리 실행하도록 만듭니다.</em>
+DelayBetweenKeys = 30 <em>; 작동하지 않을 경우 이 값을 조절합니다.</em>
 if A_PriorHotkey = %A_ThisHotkey%
 {
     if A_TimeSincePriorHotkey &lt; %DelayBetweenKeys%
     {
         if Numpad0Count =
-            Numpad0Count = 2 <em>; ��, �տ� �Ϳ��� �̰��� ���� ���Դϴ�.</em>
+            Numpad0Count = 2 <em>; 즉, 앞에 것에다 이것을 더한 것입니다.</em>
         else if Numpad0Count = 0
             Numpad0Count = 2
         else
         {
-            <em>; ���⿡ �����Ƿ�, Numpad0Count�� ���� ȣ�⿡��</em>
-            <em>; �ݵ�� 2�� �����Ǿ� �־�� �մϴ�.</em>
-            <em>; ��, �� ���� Ű�� �� ��° ���� ���̶�� ���Դϴ�</em>
-            <em>; �׷��Ƿ�, ��Ű ���ӿ��� �˹ߵǾ�� �մϴ�:</em>
+            <em>; 여기에 있으므로, Numpad0Count가 이전 호출에서</em>
+            <em>; 반드시 2로 설정되어 있어야 합니다.</em>
+            <em>; 즉, 이 번에 키가 세 번째 눌린 것이라는 뜻입니다</em>
+            <em>; 그러므로, 핫키 연속열이 촉발되어야 합니다:</em>
             Numpad0Count = 0
-            Send, = <em>; ******* �̰��� 000 Ű�� ���� ��ġ�Դϴ�</em>
+            Send, = <em>; ******* 이것이 000 키에 대한 조치입니다</em>
         }
-        <em>; ���� ��� ��쿡, �� �̻� ��ġ ���� ���ư��ϴ�:</em>
+        <em>; 위의 모든 경우에, 더 이상 조치 없이 돌아갑니다:</em>
         CalledReentrantly = y
         return
     }
 }
-<em>; �׷��� ������, �� Numpad0 �̺�Ʈ�� �Ϸ��� ���ӿ��� ù ��°�̰ų�
-; �ƴϸ� ��¼�ٰ� ù ��° �̺�Ʈ ������ �ʹ� ���� �ɸ� ���Դϴ�.
-; (��, ����ڰ� Numpad0 Ű�� ��� ������ �ڵ� �ݺ��� �ϴ� ��찡 �׷��ٵ�, 
-; �̰��� ����ϰ� ���� ���Դϴ�).  �׷��Ƿ�, ª�� ���� �ð� �Ŀ�
-; -- �� ���̿� �Ǵٸ� Numpad0 ��Ű �̺�Ʈ�� �������Ͽ�
-;  �� �����ƾ�� ȣ���� ���� ������ -- 
-; ������ ȣ���� �Ͼ���� �ʴ´ٸ� �� Ű�� ��� �����ϴ�:</em>
+<em>; 그렇지 않으면, 이 Numpad0 이벤트는 일련의 연속에서 첫 번째이거나
+; 아니면 어쩌다가 첫 번째 이벤트 다음에 너무 오래 걸린 것입니다.
+; (예, 사용자가 Numpad0 키를 계속 눌러서 자동 반복을 하는 경우가 그럴텐데, 
+; 이것을 허용하고 싶은 것입니다).  그러므로, 짧은 지연 시간 후에
+; -- 그 사이에 또다른 Numpad0 핫키 이벤트가 재진입하여
+;  이 서브루틴을 호출할 수도 있지만 -- 
+; 재진입 호출이 일어나지만 않는다면 그 키를 계속 보냅니다:</em>
 Numpad0Count = 0
 CalledReentrantly = n
-<em>; �̷��� �ڴ� ����, �� �����ƾ�� ������ ȣ��� �� �ֽ��ϴ�
-; (��, ���� &quot;������&quot;�μ� ���� ȣ�� ���¿� �ִ� �������
-; ���������� ����˴ϴ�):</em>
+<em>; 이렇게 자는 동안, 이 서브루틴은 재진입 호출될 수 있습니다
+; (즉, 동시 &quot;쓰레드&quot;로서 현재 호출 상태에 있는 쓰레드와
+; 병행적으로 실행됩니다):</em>
 Sleep, %DelayBetweenKeys%
-if CalledReentrantly = y <em>; �Ǵٸ� &quot;������&quot;�� ���� �����߽��ϴ�.</em>
+if CalledReentrantly = y <em>; 또다른 &quot;쓰레드&quot;가 값을 변경했습니다.</em>
 {
-    <em>; ������ ȣ��Ǿ����Ƿ�, �� Ű �̺�Ʈ�� ���ӿ�����</em>
-    <em>; ù ��° �̺�Ʈ�����ϴ�. �׷��� �ﴭ���� �մϴ� (�ý������κ��� ���ܾ� �մϴ�):</em>
+    <em>; 재진입 호출되었으므로, 이 키 이벤트는 연속열에서</em>
+    <em>; 첫 번째 이벤트였습니다. 그래서 억눌러야 합니다 (시스템으로부터 숨겨야 합니다):</em>
     CalledReentrantly = n
     return
 }
-<em>; �׷��� ������, ���ӿ��� ���Ե��� �ʽ��ϴ�. �׷��� �� Ű�� ����ó�� �����մϴ�.
-; �ٸ� ����, *��¥* Numpad0 Ű�� ���Ƚ��ϴ�. �׷��� ����ó�� ȿ���� �ֱ⸦ ���մϴ�.:</em>
+<em>; 그렇지 않으면, 연속열에 포함되지 않습니다. 그래서 그 키를 보통처럼 전송합니다.
+; 다른 말로, *진짜* Numpad0 키가 눌렸습니다. 그래서 정상처럼 효과가 있기를 원합니다.:</em>
 Send, {Numpad0}
 return
 </pre>
