@@ -25,7 +25,7 @@ translateData = {
   "v1":true,
   "Change AHK version":true,
   "Edit page on GitHub":true,
-  "https://github.com/Lexikos/AutoHotkey_L-Docs/edit/master/docs/":"https://github.com/ahkscript/AHK-Docs_KR/edit/master/docs/",
+  "https://github.com/Lexikos/AutoHotkey_L-Docs/edit/master/docs/":"https://github.com/ahkscript/AHK-Docs_KO/edit/master/docs/",
   "Go back":true,
   "Go forward":true,
   "Change font size":true,
