@@ -1,4 +1,9 @@
-; requires AHK v2 32-bit
+#Requires AutoHotkey v2.0-a113
+if (A_PtrSize != 4)
+{
+    MsgBox "This script only works with the 32-bit version of AutoHotkey."
+    ExitApp
+}
 #Warn
 SetWorkingDir A_ScriptDir "\..\.."
 FileEncoding "UTF-8"
@@ -221,10 +226,6 @@ ScanFile(filename)
         throw Exception("Duplicate title: " h1 "`n  " files[file_index] "`n  " files[titles_map[h1_]])
     titles_map[h1_] := file_index
     
-    SplitPath filename, name
-    FileDelete "test\" name
-    FileAppend text, "test\" name
-    
     ScanText(text, words)
     
     ; Put lots of extra weight on words in headings, depending on the h-level
@@ -368,5 +369,5 @@ encode_number(n, length := "")
 
 
 D(s) {  ; debug output.
-    FileAppend s "`n", "*"
+    try FileAppend s "`n", "*"
 }
