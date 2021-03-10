@@ -1,8 +1,10 @@
 translateData = {
   // sidebar
   "C̲ontent":"목차(C)",
+  "Content tab":true,
   "Shortcut: ALT+C":true,
   "In̲dex":"색인(N)",
+  "Index tab":true,
   "Shortcut: ALT+N":true,
   "Filter":true,
   "Directives":true,
@@ -13,11 +15,13 @@ translateData = {
   "Operators":true,
   "Commands":true,
   "S̲earch":"검색(S)",
+  "Search tab":true,
   "Shortcut: ALT+S":true,
   "Search":"검색",
   "Highlight keywords":true,
   "Go to previous/next occurrence":true,
   // header
+  "Skip navigation":true,
   "Hide or show the sidebar":true,
   "Go to the homepage":true,
   "en":"ko",
@@ -42,5 +46,6 @@ translateData = {
   "Download code":true,
   "Back to top":true,
   "Applies to:\nAutoHotkey_L Revision {0} and later\nAutoHotkey v1.0.90.00 and later":"다음에 적용됩니다:\nAutoHotkey_L Revision {0} 이후\nAutoHotkey v1.0.90.00 이후",
-  "Applies to AutoHotkey {0} and later":"AutoHotkey {0} 이후에 적동됩니다"
+  "Applies to AutoHotkey {0} and later":"AutoHotkey {0} 이후에 적동됩니다",
+  "Deprecated. New scripts should use {0} instead.":true
 };
