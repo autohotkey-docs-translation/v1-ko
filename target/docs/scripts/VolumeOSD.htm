@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>Volume On-Screen-Display (OSD) -- by Rajat</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>화면 위 디스플레이에서 볼륨 조절하는 법 (OSD) -- by Rajat</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,9 +12,9 @@
 
 <h1>화면 위 디스플레이에서 볼륨 조절하는 법 (OSD) -- by Rajat</h1>
 
-<p>이 스크립트는 여러분이 선택한 핫키를 마스터 또는 웨이브 볼륨을 높이거나 내리는 데 할당합니다. 두 볼륨 모두 다른 색의 바 그래프로 보여줍니다.
+<p>이 스크립트는 여러분의 핫키를 마스터 불륨과 웨이브 볼륨을 올리거나 내리는 데 할당합니다. 두 볼륨 모두 각각 다른 바 그래프로 보여줍니다.
 </p>
-<p><a href="VolumeOSD.ahk">이 스크립트 내려 받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
+<p><a href="VolumeOSD.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
 
 <pre class="NoIndent"><em>;_________________________________________________ 
 ;_______사용자 설정_____________________________</em>
@@ -105,7 +106,7 @@ Gosub, vol_ShowBars
 return
 
 vol_ShowBars:
-<em>; &quot;번쩍임&quot; 효과를 방지하려면, 아직 존재하지 않은 경우,
+<em>; "번쩍임" 효과를 방지하려면, 아직 존재하지 않은 경우,
 ; 바 창만 생성하십시오:</em>
 IfWinNotExist, vol_Wave
     Progress, %vol_BarOptionsWave%, , , vol_Wave

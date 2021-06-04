@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>SetBatchLines</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@
 
 <h1>SetBatchLines</h1>
 
-<p>스크립트가 얼마나 빨리 실행될지 결정합니다 (CPU 이용에 영향을 줌).</p>
+<p>얼마나 빨리 스크립트를 실행할지 결정합니다 (CPU 이용에 영향을 미칩니다).</p>
 
 <pre class="Syntax">SetBatchLines, 20ms
 SetBatchLines, LineCount</pre>
@@ -27,25 +28,15 @@ SetBatchLines, LineCount</pre>
 </dl>
 
 <h3>논평</h3>
-<p>
-<code>SetBatchLines -1</code>를 사용하면 절대 잠자지 않습니다 (즉, 스크립트는 최대 속도로 실행됩니다).</p>
-<p>
-기본 설정은 10ms입니다. 단 v1.0.16 이전 버전에서는 대신에 10 (줄)을 사용했습니다.</p>
-<p>
- &quot;ms&quot; 방법은 속도와 협력이 중요한 스크립트에 권장합니다. 예를 들어, 대부분의 시스템에서 설정이 10ms이면 스크립트는 CPU 휴식 시간의 50%를 넘지 않게 사용합니다. 이렇게 하면 스크립트는 빠르게 실행되면서 동시에 예를 들어 게임과 비디오캡쳐/상연과 같이 CPU에 민감한 작업과 여전히 높은 수준의 협력을 유지할 수 있습니다.</p>
-<p>
-내장 변수 <strong>A_BatchLines</strong>에 현재 설정이 담겨 있습니다.</p>
-<p>
-스크립트의 속도는 또한 스크립트의 성질에 따라 다음 명령어들에 영향을 받습니다: <a href="SetWinDelay.htm">SetWinDelay</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="SendMode.htm">SendMode</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, 그리고 <a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>.</p>
-<p>
-새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>는 (예를 들어 <a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본 설정을 가지고 새롭게 시작합니다. 이 기본값은 자동 실행 섹션 (스크립트의 상단)에서 이 명령어를 사용하면 바꿀 수 있습니다.</p>
-
+<p><code>SetBatchLines -1</code>를 사용하면 절대 잠자지 않습니다 (즉, 스크립트는 최대 속도로 실행됩니다).</p>
+<p>기본 설정은 10ms입니다. 단 v1.0.16 이전 버전에서는 대신에 10 (줄)을 사용했습니다.</p>
+<p>"ms" 방법은 속도와 협력이 중요한 스크립트에 권장합니다. 예를 들어, 대부분의 시스템에서 설정이 10ms이면 스크립트는 CPU 휴식 시간의 50%를 넘지 않게 사용합니다. 이렇게 하면 스크립트는 빠르게 실행되면서 동시에 예를 들어 게임과 비디오캡쳐/상연과 같이 CPU에 민감한 작업과 여전히 높은 수준의 협력을 유지할 수 있습니다.</p>
+<p>내장 변수 <strong>A_BatchLines</strong>에 현재 설정이 담겨 있습니다.</p>
+<p>스크립트의 속도는 또한 스크립트의 성질에 따라 다음 명령어들에 영향을 받습니다: <a href="SetWinDelay.htm">SetWinDelay</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="SendMode.htm">SendMode</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, 그리고 <a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>.</p>
+<p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
 <h3>관련 항목</h3>
-<p>
-<a href="SetWinDelay.htm">SetWinDelay</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="SendMode.htm">SendMode</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, <a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="Critical.htm">Critical</a></p>
-
+<p><a href="SetWinDelay.htm">SetWinDelay</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="SendMode.htm">SendMode</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, <a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="Critical.htm">Critical</a></p>
 <h3>예제</h3>
-
 <pre class="NoIndent">SetBatchLines, 10ms 
 SetBatchLines, 1000</pre>
 

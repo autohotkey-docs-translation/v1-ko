@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>SysGet</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@
 
 <h1>SysGet</h1>
 
-<p>화면 해상도, 다중-모니터 정보, 시스템 객체의 크기, 그리고 기타 시스템 특성들을 열람합니다.</p>
+<p>화면 해상도, 다중-모니터 정보, 시스템 객체의 크기, 그리고 기타 시스템 특성을 열람합니다.</p>
 
 <pre class="Syntax">SysGet, OutputVar, Sub-command [, Param3]</pre>
 <h3>매개변수</h3>
@@ -29,18 +30,16 @@
 
 </dl>
 
-<h3>Sub-commands</h3>
+<h3>부-명령어</h3>
 <p><strong>MonitorCount</strong>: 모니터의 총 개수를 열람합니다. 아래 테이블에 기술한 SM_CMONITORS와 다르게, <em>MonitorCount</em>에는 모든 모니터가 포함됩니다. 심지어 바탕화면의 일부분으로 사용되지 않는 모니터도 포함됩니다.</p>
 <p><strong>MonitorPrimary</strong>: 기본 모니터의 번호를 열람합니다. 단일-모니터 시스템이라면 1입니다.</p>
 <p><strong>Monitor [, N]</strong>: <strong>N</strong>번 모니터의 둘레 좌표를 열람합니다 ( <strong>N</strong>을 생략하면, 기본 모니터가 사용됩니다). 정보는 네 개의 변수에 저장됩니다. 이 변수는 모두 <em>OutputVar</em>로 시작합니다. <strong>N</strong>이 너무 크거나 정보를 열람하는 데 문제가 있으면, 이 네 변수는 모두 비워집니다. 예를 들어:</p>
-
 <pre>SysGet, Mon2, Monitor, 2
 MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2Bottom%.</pre>
-<p>
-<a href="../Functions.htm">함수</a> 안에서, 지역 변수가 아닌 전역 변수의 집합을 만들려면, 이 명령어를 사용하기 전에 먼저 Mon2를 전역 변수로 <a href="../Functions.htm#Global">선언</a> 하십시오 (<a href="../Functions.htm#AssumeGlobal">전역-간주</a> 함수에 대하여 그 반대도 마찬가지입니다). 그렇지만, <a href="../Functions.htm#ArrayConfusion">흔한 혼란의 근원</a> 때문에 종종 집합에서 각 변수를 따로 선언할 필요가 있는 경우도 있습니다.</p>
+<p><a href="../Functions.htm">함수</a> 안에서, 지역 변수가 아닌 전역 변수의 집합을 만들려면, 이 명령어를 사용하기 전에 먼저 Mon2를 전역 변수로 <a href="../Functions.htm#Global">선언</a> 하십시오 (<a href="../Functions.htm#AssumeGlobal">전역-간주</a> 함수에 대하여 그 반대도 마찬가지입니다). 그렇지만, <a href="../Functions.htm#ArrayConfusion">흔한 혼란의 근원</a> 때문에 종종 집합에서 각 변수를 따로 선언할 필요가 있는 경우도 있습니다.</p>
 <p><strong>MonitorWorkArea [, N]</strong>: 위와 같지만 구역이 축소됩니다. 태스크바와 기타 등록된 바탕화면 툴바를 제외합니다.</p>
 <p><strong>MonitorName [, N]</strong>: <strong>N</strong>번 모니터에 대한 운영 체제의 이름 (<strong>N</strong>을 생략하면, 기본 모니터가 사용됩니다).</p>
-<p><strong>(Numeric)</strong>: <em>Sub-command</em>에 아래 테이블에 있는 숫자 중 하나를 지정하면 상응하는 값을 열람할 수 있습니다. 다음 예제는 마우스 버튼의 개수를 이름이 &quot;MouseButtonCount&quot;인 변수에 저장합니다: <code>SysGet, MouseButtonCount, 43</code>.</p>
+<p><strong>(Numeric)</strong>: <em>Sub-command</em>에 아래 테이블에 있는 숫자 중 하나를 지정하면 상응하는 값을 열람할 수 있습니다. 다음 예제는 마우스 버튼의 개수를 이름이 "MouseButtonCount"인 변수에 저장합니다: <code>SysGet, MouseButtonCount, 43</code>.</p>
 <h3>자주 사용됨</h3>
 <table class="info">
 <tr>
@@ -49,7 +48,7 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
 </tr>
 <tr>
 <td>80</TD>
-<td>SM_CMONITORS: 바탕화면의 디스플레이 모니터의 번호 (&quot;비-디스플레이 의사-모니터는 제외&quot;).</TD>
+<td>SM_CMONITORS: 바탕화면의 디스플레이 모니터의 번호 ("비-디스플레이 의사-모니터는 제외").</TD>
 </TR>
 <tr>
 <td>43</TD>
@@ -65,7 +64,7 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
 </TR>
 <tr>
 <td>59, 60</TD>
-<td>SM_CXMAXTRACK, SM_CYMAXTRACK:  캡션과 크기 조절 테두리가 있는 창의 픽셀 단위로 기본 최대 크기. 이 크기는 전체 바탕화면을 가리킵니다. 사용자는 창 프레임을 끌어 이 크기보다 더 크게 만들 수 없습니다.</TD>
+<td>SM_CXMAXTRACK, SM_CYMAXTRACK: 캡션과 크기 조절 테두리가 있는 창의 픽셀 단위로 기본 최대 크기. 이 크기는 전체 바탕화면을 가리킵니다. 사용자는 창 프레임을 끌어 이 크기보다 더 크게 만들 수 없습니다.</TD>
 </TR>
 <tr>
 <td>28, 29</TD>
@@ -162,8 +161,7 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
   </TR>
   <tr>
     <td>68, 69</TD>
-    <td>SM_CXDRAG, SM_CYDRAG: 
-	드래그 지점 가운데에 놓이는 사각형의 너비와 높이. 드래그 연산이 시작되기 전에 마우스 포인터의 제한된 이동을 허용합니다. 그 덕분에 사용자는 의도치 않게 드래그 연산을 할 필요 없이 마우스를 쉽게 클릭하고 놓을 수 있습니다.</TD>
+    <td>SM_CXDRAG, SM_CYDRAG: 드래그 지점 가운데에 놓이는 사각형의 너비와 높이. 드래그 연산이 시작되기 전에 마우스 포인터의 제한된 이동을 허용합니다. 그 덕분에 사용자는 의도치 않게 드래그 연산을 할 필요 없이 마우스를 쉽게 클릭하고 놓을 수 있습니다.</TD>
   </TR>
   <tr>
     <td>45, 46</TD>
@@ -175,7 +173,7 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
   </TR>
   <tr>
     <td>83, 84</TD>
-    <td>SM_CXFOCUSBORDER, SM_CYFOCUSBORDER: 초점이 있는 한 콘트롤의 사각 구역의 좌우 가장자리 너비 그리고 상하 가장자리 높이 (픽셀 단위). <B>Windows 2000:</B> 반환된 값은 언제나 0입니다.</TD>
+    <td>SM_CXFOCUSBORDER, SM_CYFOCUSBORDER: 초점이 있는 한 콘트롤의 사각 구역의 좌우 가장자리 너비 그리고 상하 가장자리 높이 (픽셀 단위). <B>Windows 2000:</B> 반환된 값은 항상 0입니다.</TD>
   </TR>
   <tr>
     <td>21, 3</TD>
@@ -211,7 +209,7 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
   </TR>
   <tr>
     <td>32, 33</TD>
-    <td>SM_CXSIZEFRAME, SM_CYSIZEFRAME: 크기 조절이 가능한 창 외곽의 크기 조절 테두리의 두께, 픽셀 단위. 	SM_CXSIZEFRAME는 수평 테두리의 너비이고, SM_CYSIZEFRAME는 수직 테두리의 높이입니다. SM_CXFRAME 그리고 SM_CYFRAME와 동의어.</TD>
+    <td>SM_CXSIZEFRAME, SM_CYSIZEFRAME: 크기 조절이 가능한 창 외곽의 크기 조절 테두리의 두께, 픽셀 단위. SM_CXSIZEFRAME는 수평 테두리의 너비이고, SM_CYSIZEFRAME는 수직 테두리의 높이입니다. SM_CXFRAME 그리고 SM_CYFRAME와 동의어.</TD>
   </TR>
   <tr>
     <td>49, 50</TD>
@@ -288,11 +286,9 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
   </TR>
 </TABLE>
 <h3>논평</h3>
-<p>
-내장 변수 <a href="../Variables.htm#Screen">A_ScreenWidth</a>와 <a href="../Variables.htm#Screen">A_ScreenHeight</a>에 픽셀 단위로 기본 모니터의 크기가 들어 있습니다.</p>
+<p>내장 변수 <a href="../Variables.htm#Screen">A_ScreenWidth</a>와 <a href="../Variables.htm#Screen">A_ScreenHeight</a>에 픽셀 단위로 기본 모니터의 크기가 들어 있습니다.</p>
 <h3>관련 항목</h3>
-<p>
-<a href="DllCall.htm">DllCall</a>, <a href="WinGet.htm">WinGet</a></p>
+<p><a href="DllCall.htm">DllCall</a>, <a href="WinGet.htm">WinGet</a></p>
 <h3>예제</h3>
 <pre class="NoIndent"><em>; 예제 #1:</em>
 SysGet, MouseButtonCount, 43

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>Creating a Keyboard Macro or Mouse Macro</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>키보드 매크로나 마우스 매크로 만들기</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Record and play back a keyboard macro or mouse macro with this free macro program. Each macro may optionally be assigned to a hotkey.">
 <meta name="keywords" content="macro,macros,keyboard macro,mouse macro">
@@ -13,12 +14,9 @@
 <body>
 <h1>키보드 매크로나 마우스 매크로 만들기</h1>
 
-<p>
-매크로는 요구하면 &quot;플레이되는&quot 스크립트된 일련의 조치입니다; 가장 흔한 매크로 조치는 하나 이상의 창에 <a href="../commands/Send.htm">흉내낸 키눌림</a> 그리고 <a href="../commands/Click.htm">마우스 클릭</a>을 전송하는 것입니다. 그런 창은 각 키눌림과 마우스 클릭에 마치 여러분이 손수 수행한 것처럼 반응합니다. 그러므로 반복 작업을 빠르게 그리고 신뢰성 있게 자동화할 수 있습니다.</p>
-<p>
-매크로는 손으로 작성할 수 있지만, 기다란 매크로를 작성하려면 매크로 레코더의 도움을 받은 편이 쉬울 것입니다. 예를 들어 Titan/polyethene가 작성한 <a href="http://www.autohotkey.com/forum/topic23671.html">레코더 스크립트</a>가 있습니다. 여러분이 타자하고 클릭하는 것을 지켜 보면서 <a href="../commands/WinActivate.htm">활성</a> 창을 추적 관리합니다. 이 조치를 작동하는 매크로로 변환하면 나중에 더 빠른 속도로 &quot;다시 플레이 할&quot; 수 있습니다.</p>
-<p>
-매크로를 다시 플레이하는 가장 편리한 방법중 하나는 그것을 <a href="../Hotkeys.htm">핫키</a>나 <a href="../Hotstrings.htm">핫스트링</a>에 할당하는 것입니다. 예를 들어, 다음 핫키는 빈 이메일 메시지를 생성하고 그것을 특정 유형의 수신인을 위해 준비합니다. 그것을 보내기 전에 개별적으로 바꿀 수 있습니다:</p>
+<p>매크로는 요구하면 "플레이되는" 스크립트된 일련의 조치입니다; 가장 흔한 매크로 조치는 하나 이상의 창에 <a href="../commands/Send.htm">흉내낸 키눌림</a> 그리고 <a href="../commands/Click.htm">마우스 클릭</a>을 전송하는 것입니다. 그런 창은 각 키눌림과 마우스 클릭에 마치 여러분이 손수 수행한 것처럼 반응합니다. 그러므로 반복 작업을 빠르게 그리고 신뢰성 있게 자동화할 수 있습니다.</p>
+<p>매크로는 손으로 작성할 수 있지만, 기다란 매크로를 작성하려면 매크로 레코더의 도움을 받은 편이 쉬울 것입니다. 예를 들어 Titan/polyethene가 작성한 <a href="http://www.autohotkey.com/forum/topic23671.html">레코더 스크립트</a>가 있습니다. 여러분이 타자하고 클릭하는 것을 지켜 보면서 <a href="../commands/WinActivate.htm">활성</a> 창을 추적 관리합니다. 이 조치를 작동하는 매크로로 변환하면 나중에 더 빠른 속도로 "다시 플레이 할" 수 있습니다.</p>
+<p>매크로를 다시 플레이하는 가장 편리한 방법중 하나는 그것을 <a href="../Hotkeys.htm">핫키</a>나 <a href="../Hotstrings.htm">핫스트링</a>에 할당하는 것입니다. 예를 들어, 다음 핫키는 빈 이메일 메시지를 생성하고 그것을 특정 유형의 수신인을 위해 준비합니다. 그것을 보내기 전에 개별적으로 바꿀 수 있습니다:</p>
 <pre>^!s::  <em>; Control+Alt+S 핫키.</em>
 IfWinNotExist Inbox - Microsoft Outlook
     return  <em>; Outlook이 오른쪽에 열리지 않았습니다. 그래서 아무것도 하지 않습니다.</em>
@@ -28,11 +26,9 @@ WinWaitActive Untitled Message
 Send {Tab 2}Product Recall for ACME Rocket Skates  <em>; 제목 줄을 설정합니다.</em>
 Send {Tab}Dear Sir or Madam,{Enter 2}We have recently discovered a minor defect ...  <em>; 등등.</em>
 return  <em>; 이 줄은 핫키를 종료하는 데 기여합니다.</em></pre>
-<p>
-위와 같은 핫키 매크로는 매일 자주 수행해야 하는 작업에 특히 유용합니다. 대조적으로, 자주 사용하지 않는 매크로는 각각 별도의 파일에 보관하고 바탕화면이나 시작 메뉴의 단축 아이콘을 통하여 접근합니다.</p>
-<p>
-매크로나 핫키를 지금 즉시 만들고 싶다면, <a href="../Tutorial.htm">빠르게 시작하기 자습서</a>를 읽어 보십시오.</p>
+<p>위와 같은 핫키 매크로는 매일 자주 수행해야 하는 작업에 특히 유용합니다. 대조적으로, 자주 사용하지 않는 매크로는 각각 별도의 파일에 보관하고 바탕화면이나 시작 메뉴의 단축 아이콘을 통하여 접근합니다.</p>
+<p>매크로나 핫키를 지금 즉시 만들고 싶다면, <a href="../Tutorial.htm">빠르게 시작하기 자습서</a>를 읽어 보십시오.</p>
 <p>&nbsp;</p>
-<p><a href="../AutoHotkey.htm">-- 홈으로 --</a></p>
+<p><a href="../AutoHotkey.htm">-- 홈으로 이동 --</a></p>
 </body>
 </html>

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>ComObjValue()</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -22,15 +23,13 @@
   <dd><p>64-비트 부호있는 정수.</p></dd>
 
   <dt>ComObject</dt>
-  <dd><p>COM 객체 또는 유형이 있는 값을 담고 있는 포장 객체.</p></dd>
+  <dd><p>COM 객체 또는 유형 있는 값을 담고 있는 포장 객체.</p></dd>
 
 </dl>
 
 <h3>총평</h3>
-<p>
-이 함수는 범용 목적이 아닙니다.</p>
-<p>
-ComObjValue를 호출하는 것은 <code><i>variant</i>.llVal</code>와 동등합니다. 여기에서 <i>ComObject</i>는 <a href="http://msdn.microsoft.com/en-us/library/ms221627.aspx">VARIANT 구조체</a>로 취급됩니다. 이 함수를 사용하는 스크립트는 모두 반드시 어떤 <a href="ComObjType.htm">유형의 값</a>을 포장 객체가 가지고 있는지 그리고 어떻게 취급해야 할지 알고 있어야 합니다. 예를 들어, 인터페이스 포인터가 반환되면, <a href="ObjAddRef.htm">Release</a>는 호출하지 말아야 합니다. 그러나 <a href="ObjAddRef.htm">AddRef</a>는 스크립트가 그 포인터를 가지고 무엇을 하는가에 따라 필요할 수도 있습니다.</p>
+<p>이 함수는 범용 목적이 아닙니다.</p>
+<p>ComObjValue를 호출하는 것은 <code><i>variant</i>.llVal</code>와 동등합니다. 여기에서 <i>ComObject</i>는 <a href="http://msdn.microsoft.com/en-us/library/ms221627.aspx">VARIANT 구조체</a>로 취급됩니다. 이 함수를 사용하는 스크립트는 모두 반드시 어떤 <a href="ComObjType.htm">유형의 값</a>을 포장 객체가 가지고 있는지 그리고 어떻게 취급해야 할지 알고 있어야 합니다. 예를 들어, 인터페이스 포인터가 반환되면, <a href="ObjAddRef.htm">Release</a>는 호출하지 말아야 합니다. 그러나 <a href="ObjAddRef.htm">AddRef</a>는 스크립트가 그 포인터를 가지고 무엇을 하는가에 따라 필요할 수도 있습니다.</p>
 
 <h3>관련 항목</h3>
 <p><a href="ComObjType.htm">ComObjType</a>, <a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjGet.htm">ComObjGet</a>, <a href="ComObjActive.htm">ComObjActive</a></p>

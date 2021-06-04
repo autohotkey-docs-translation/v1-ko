@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Drive</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -14,26 +15,19 @@
 <p>CD 또는 DVD 드라이브의 트레이를 꺼내고 넣습니다. 또는 드라이브의 볼륨 라벨을 설정합니다.</p>
 
 <pre class="Syntax">Drive, Sub-command [, Drive , Value]</pre>
-<p>
-부-명령어, 드라이브, 그리고 볼륨 매개변수는 서로 의존적입니다. 그의 사용법은 아래에 기술합니다.</p>
-<p>
-<strong>Label, Drive [, NewLabel]</strong>: <em>Drive</em>의 볼륨 라벨을 <em>NewLabel</em>로 바꿉니다 (<em>NewLabel</em>을 생략하면, 드라이브는 라벨이 없습니다). <em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다 (UNC와 맵핑된 드라이브에서도 작동). 예를 들어: <code>Drive, Label, C:, Seagate200</code>.</p>
-<p>
-현재 라벨을 열람하려면, 다음 예제를 따르십시오: 
-<code><a href="DriveGet.htm">DriveGet</a>, OutputVar, Label, C:</code>.</p>
+<p>부-명령어, 드라이브, 그리고 볼륨 매개변수는 서로 의존적입니다. 그의 사용법은 아래에 기술합니다.</p>
+<p><strong>Label, Drive [, NewLabel]</strong>: <em>Drive</em>의 볼륨 라벨을 <em>NewLabel</em>로 바꿉니다 (<em>NewLabel</em>을 생략하면, 드라이브는 라벨이 없습니다). <em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다 (UNC와 맵핑된 드라이브에서도 작동). 예를 들어: <code>Drive, Label, C:, Seagate200</code>.</p>
+<p>현재 라벨을 열람하려면, 다음 예제를 따르십시오: <code><a href="DriveGet.htm">DriveGet</a>, OutputVar, Label, C:</code>.</p>
 <br>
-<p><strong>Lock, Drive</strong>: 드라이브의 꺼내기 기능이 작동하지 못 하도록 막습니다. 예를 들어: <code>Drive, Lock, D:</code>. 대부분의 드라이브는 &quot;열어둔 채로 잠글 수&quot; 없습니다. 그렇지만, 열려 있는 동안에 드라이브를 잠그면 아마도 그 결과는 닫히는 순간 잠기게 될 것입니다. 이 명령어는 잠금을 지원하지 않는 드라이브에는 아무 효과가 없습니다 (대부분의 읽기-전용 드라이브). 드라이브가 스크립트에 의해 잠기고 그리고 그 스크립트가 끝나버리면, 그 드라이브는 또 다른 스크립트나 프로그램이 풀어줄 때까지 또는 시스템이 재시작할 때까지 그대로 잠겨 있습니다. 지정된 드라이브가 존재하지 않거나 잠금 특징을 지원하지 않으면, ErrorLevel에 1이 설정됩니다. 그렇지 않으면 0이 설정됩니다.</p>
+<p><strong>Lock, Drive</strong>: 드라이브의 꺼내기 기능이 작동하지 못 하도록 막습니다. 예를 들어: <code>Drive, Lock, D:</code>. 대부분의 드라이브는 "열어둔 채로 잠글 수" 없습니다. 그렇지만, 열려 있는 동안에 드라이브를 잠그면 아마도 그 결과는 닫히는 순간 잠기게 될 것입니다. 이 명령어는 잠금을 지원하지 않는 드라이브에는 아무 효과가 없습니다 (대부분의 읽기-전용 드라이브). 드라이브가 스크립트에 의해 잠기고 그리고 그 스크립트가 끝나버리면, 그 드라이브는 또 다른 스크립트나 프로그램이 풀어줄 때까지 또는 시스템이 재시작할 때까지 그대로 잠겨 있습니다. 지정된 드라이브가 존재하지 않거나 잠금 특징을 지원하지 않으면, ErrorLevel에 1이 설정됩니다. 그렇지 않으면 0이 설정됩니다.</p>
 <br>
-<p><strong>Unlock, Drive</strong>: 위와 반대입니다. 드라이브가 여러 번 잠겼다면 <em>Unlock</em>은 여러 번 실행할 필요가 있습니다 (적어도 어떤 드라이브는 해당됩니다). 예를 들어, <code>Drive, Lock, D:</code>이 세번 실행되었다면, <code>Drive, Unlock, D:</code>를 세 번 실행해야 잠금이 풀릴 것입니다. 이 때문에 그리고 드라이브가 현재 잠겨 있는지 확인할 방법이 없기 때문에, 그의 잠금 상태를 <a href="../Variables.htm">변수</a>에 추적 관리하는 것이 유용합니다.</p>
+<p><strong>Unlock, Drive</strong>: 위를 반대로 합니다. 드라이브가 여러 번 잠겼다면 <em>Unlock</em>은 여러 번 실행할 필요가 있습니다 (적어도 어떤 드라이브는 해당됩니다). 예를 들어, <code>Drive, Lock, D:</code>이 세번 실행되었다면, <code>Drive, Unlock, D:</code>를 세 번 실행해야 잠금이 풀릴 것입니다. 이 때문에 그리고 드라이브가 현재 잠겨 있는지 확인할 방법이 없기 때문에, 그의 잠금 상태를 <a href="../Variables.htm">변수</a>에 추적 관리하는 것이 유용합니다.</p>
 <br>
-<p><strong>Eject [, Drive, 1]</strong>:  CD 또는 DVD 드라이브의 트레이를 꺼냅니다 (다른 미디어 또는 장치의 유형을 꺼내려면, 이 페이지 하단의 DllCall 예제를 참조하십시오).</p>
-<p>
-<em>Drive</em> 생략되면, 기본 값은 CD/DVD 드라이브가 사용됩니다. 트레이를 꺼내려면, 마지막 매개변수를 생략합니다. 트레이를 닫으려면  1을 마지막 매개변수에 지정합니다; 예를 들어: <code>Drive, Eject, D:, 1</code>.</p>
-<p>
-<em>Drive Eject</em> 스크립트를 계속 진행하기 전에 꺼내기가 완료되기를 기다립니다. 트레이가 이미 올바른 상태에 있다면 (열려 있거나 또는 닫혀 있거나), <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 0이 설정됩니다 (즉, &quot;에러 없음&quot;).</p>
+<p><strong>Eject [, Drive, 1]</strong>: CD 또는 DVD 드라이브의 트레이를 꺼냅니다 (다른 미디어 또는 장치의 유형을 꺼내려면, 이 페이지 하단의 DllCall 예제를 참조하십시오).</p>
+<p><em>Drive</em> 생략되면, 기본 값은 CD/DVD 드라이브가 사용됩니다. 트레이를 꺼내려면, 마지막 매개변수를 생략합니다. 트레이를 닫으려면 1을 마지막 매개변수에 지정합니다; 예를 들어: <code>Drive, Eject, D:, 1</code>.</p>
+<p><em>Drive Eject</em> 스크립트를 계속 진행하기 전에 꺼내기가 완료되기를 기다립니다. 트레이가 이미 올바른 상태에 있다면 (열려 있거나 또는 닫혀 있거나), <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 0이 설정됩니다 (즉, "에러 없음").</p>
 <p><em>Drive Eject</em> 네트워크 드라이브나 CD/DVD 드라이브가 아니면 작동하지 않습니다. 실패하면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 1이 설정됩니다.</p>
-<p>
-이전의 트레이 상태를 탐지하는 것도 가능합니다. 명령어가 완료에 소비되는 시간을 측정해 보면 압니다. 예를 들어, 다음 핫키는 트레이가 반대 상태가 되도록 토글합니다:</p>
+<p>이전의 트레이 상태를 탐지하는 것도 가능합니다. 명령어가 완료에 소비되는 시간을 측정해 보면 압니다. 예를 들어, 다음 핫키는 트레이가 반대 상태가 되도록 토글합니다:</p>
 <pre>#c::
 Drive, Eject
 <em>; 명령어가 빨리 완료되었다면, 트레이는 아마도 이미 꺼내져 있을 것입니다.
@@ -41,23 +35,17 @@ Drive, Eject
 if A_TimeSinceThisHotkey &lt; 1000  <em>; 필요하면 이 시간을 조절합니다.</em>
     Drive, Eject,, 1
 return</pre>
-<p>
-CD나 DVD 드라이브의 미디어의 상태를 결정하려면 (연주, 정지, 열림, 등등), <a href="DriveGet.htm">DriveGet</a>을 참조하십시오.</p>
-
+<p>CD나 DVD 드라이브의 미디어의 상태를 결정하려면 (연주, 정지, 열림, 등등), <a href="DriveGet.htm">DriveGet</a>을 참조하십시오.</p>
 <h3>ErrorLevel</h3>
-<p>
-<span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1 없으면 0이 설정됩니다.</p>
-
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
 <h3>논평</h3>
-<p>
-다음은 또다른 꺼내기 방법입니다. CD/DVD 말고도 다른 유형의 미디어/장치에도 작동합니다:</p>
-
+<p>다음은 또다른 꺼내기 방법입니다. CD/DVD 말고도 다른 유형의 미디어/장치에도 작동합니다:</p>
 <pre><em>; 원하는 드라이브 기호에 일치시키려면 아래의 첫 줄을 갱신하십시오 (그 아래 다른 줄은 모두 무시해도 좋습니다).</em>
 Driveletter = I:  <em>; 여기에 꺼내고 싶은 드라이브 기호를 설정하십시오.</em>
 
-hVolume := DllCall(&quot;CreateFile&quot;
-    , Str, &quot;\\.\&quot; . Driveletter
+hVolume := DllCall("CreateFile"
+    , Str, "\\.\" . Driveletter
     , UInt, 0x80000000 | 0x40000000  <em>; GENERIC_READ | GENERIC_WRITE</em>
     , UInt, 0x1 | 0x2  <em>; FILE_SHARE_READ | FILE_SHARE_WRITE</em>
     , UInt, 0
@@ -65,18 +53,16 @@ hVolume := DllCall(&quot;CreateFile&quot;
     , UInt, 0, UInt, 0)
 if hVolume &lt;&gt; -1
 {
-    DllCall(&quot;DeviceIoControl&quot;
+    DllCall("DeviceIoControl"
         , UInt, hVolume
         , UInt, 0x2D4808   <em>; IOCTL_STORAGE_EJECT_MEDIA</em>
         , UInt, 0, UInt, 0, UInt, 0, UInt, 0
         , UIntP, dwBytesReturned  <em>; Unused.</em>
         , UInt, 0)
-    DllCall(&quot;CloseHandle&quot;, UInt, hVolume)
+    DllCall("CloseHandle", UInt, hVolume)
 }</pre>
-
 <h3>관련 항목</h3>
 <p><a href="DriveGet.htm">DriveGet</a>, <a href="DriveSpaceFree.htm">DriveSpaceFree</a></p>
-
 <h3>예제</h3>
 <pre class="NoIndent">Drive, Label, D:, BackupDrive
 Drive, Eject,, 1 <em>; 기본 CD 또는 DVD 드라이브의 트레이를 닫습니다(넣습니다).</em></pre>

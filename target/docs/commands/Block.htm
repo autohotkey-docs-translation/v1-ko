@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Blocks</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -17,10 +18,8 @@
 {
 0개 이상의 명령어 나열
 }</pre>
-
 <h3>논평</h3>
-<p>
-블록은 두 개 이상의 명령어들을 하나로 묶는 데 사용됩니다. 또 어느 IF에 <a href="Else.htm">ELSE</a>가 속하는지 바꾸는 데에도 사용됩니다. 다음 예제와 같이 블록은 <a href="Else.htm">ELSE</a>를 두 번째가 아니라 첫 번째 IF에 속하게 만듭니다:</p>
+<p>블록은 두 개 이상의 명령어들을 하나로 묶는 데 사용됩니다. 또 어느 IF에 <a href="Else.htm">ELSE</a>가 속하는지 바꾸는 데에도 사용됩니다. 다음 예제와 같이 블록은 <a href="Else.htm">ELSE</a>를 두 번째가 아니라 첫 번째 IF에 속하게 만듭니다:</p>
 <pre>if var1 = 1
 {
     if var2 = abc
@@ -28,14 +27,10 @@
 }
 else
     return</pre>
-<p>
-블록은 아무데나 사용할 수 있지만, 현재는 오직 <a href="../Functions.htm">functions</a>, <a href="Else.htm">Else</a>, <a href="Loop.htm">Loop</a>, 또는 IF-유형의 명령어들 (예를 들어 <a href="IfEqual.htm">IfEqual</a> 또는 <a href="WinExist.htm">IfWinExist</a>)과 사용될 때만 의미가 있습니다.</p>
-<p>
-만약 <a href="IfEqual.htm">IF</a>, <a href="Else.htm">ELSE</a>, <a href="Loop.htm">Loop</a>, <a href="While.htm">While-회돌이</a>, 또는 <a href="For.htm">For-회돌이</a>에 명령어가 하나 밖에 없다면, 그 명령어는 블록에 쌀 필요가 없습니다. 그렇지만, 스크립트의 가독성을 향상시키고 유지관리성을 용이하게 하기 위해 그래야 할 경우가 있습니다.</p>
-<p>
-블록은 비어 있어도 됩니다 (명령어가 없음). 이 경우는 블록 자체를 제거하지 않고 블록의 내용을 주석 처리하고 싶을 때 유용합니다.</p>
-<p>
-<a name="otb"></a><strong>One True Brace (OTB, K&amp;R 스타일):</strong> OTB 스타일을 선택적으로 다음과 같은 경우에 사용할 수 있습니다: <a href="IfExpression.htm">if-서술문의 표현식</a>, <a href="Else.htm">else</a> 키워드, <a href="While.htm">while-회돌이</a>, <a href="For.htm">For-회돌이</a>, <a href="Loop.htm">보통 회돌이</a>, <a href="../Functions.htm#define">함수 정의</a>, <a href="Try.htm">Try</a>, <a href="Catch.htm">Catch</a>, 그리고 <a href="Finally.htm">Finally</a>. 이 스타일은 블록의 시작 활괄호를 블록의 제어 서술문과 같은 줄에 배치합니다. 그 줄 아래 따로 두지 않습니다. 예를 들어:</p>
+<p>블록은 아무데나 사용할 수 있지만, 현재는 오직 <a href="../Functions.htm">functions</a>, <a href="Else.htm">Else</a>, <a href="Loop.htm">Loop</a>, 또는 IF-유형의 명령어들 (예를 들어 <a href="IfEqual.htm">IfEqual</a> 또는 <a href="WinExist.htm">IfWinExist</a>)과 사용될 때만 의미가 있습니다.</p>
+<p>만약 <a href="IfEqual.htm">IF</a>, <a href="Else.htm">ELSE</a>, <a href="Loop.htm">Loop</a>, <a href="While.htm">While-회돌이</a>, 또는 <a href="For.htm">For-회돌이</a>에 명령어가 하나 밖에 없다면, 그 명령어는 블록에 쌀 필요가 없습니다. 그렇지만, 스크립트의 가독성을 향상시키고 유지관리성을 용이하게 하기 위해 그래야 할 경우가 있습니다.</p>
+<p>블록은 비어 있어도 됩니다 (명령어가 없음). 이 경우는 블록 자체를 제거하지 않고 블록의 내용을 주석 처리하고 싶을 때 유용합니다.</p>
+<p><a name="otb"></a><strong>One True Brace (OTB, K&amp;R 스타일):</strong> OTB 스타일을 선택적으로 다음과 같은 경우에 사용할 수 있습니다: <a href="IfExpression.htm">if-서술문의 표현식</a>, <a href="Else.htm">else</a> 키워드, <a href="While.htm">while-회돌이</a>, <a href="For.htm">For-회돌이</a>, <a href="Loop.htm">보통 회돌이</a>, <a href="../Functions.htm#define">함수 정의</a>, <a href="Try.htm">Try</a>, <a href="Catch.htm">Catch</a>, 그리고 <a href="Finally.htm">Finally</a>. 이 스타일은 블록의 시작 활괄호를 블록의 제어 서술문과 같은 줄에 배치합니다. 그 줄 아래 따로 두지 않습니다. 예를 들어:</p>
 <pre>if (x &lt; y) <strong>{</strong>
     ...
 <strong>}</strong> else <strong>{</strong>
@@ -65,11 +60,8 @@ Try <strong>{</strong>
 { MsgBox 이 줄은 여는 괄호의 오른쪽에 나타납니다. IF-서술문이 참일 때마다 실행됩니다.
     MsgBox 이 줄은 다음 줄입니다.
 } MsgBox 이 줄은 닫는 괄호의 오른쪽에 나타납니다. 무조건 실행됩니다.</pre>
-
 <h3>관련 항목</h3>
-<p>
-<a href="../Functions.htm">Functions</a>, <a href="While.htm">While-회돌이</a>, <a href="Loop.htm">Loop</a>, <a href="Else.htm">Else</a>, <a href="IfEqual.htm">If</a>, <a href="IfExpression.htm">If(Expression)</a></p>
-
+<p><a href="../Functions.htm">Functions</a>, <a href="While.htm">While-회돌이</a>, <a href="Loop.htm">Loop</a>, <a href="Else.htm">Else</a>, <a href="IfEqual.htm">If</a>, <a href="IfExpression.htm">If(Expression)</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">if x = 1
 {

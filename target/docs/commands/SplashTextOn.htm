@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>SplashTextOn/SplashTextOff</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -15,7 +16,6 @@
 
 <pre class="Syntax">SplashTextOff
 SplashTextOn [, Width, Height, Title, Text]</pre>
-
 <h3>매개변수</h3>
 <dl>
 
@@ -26,34 +26,23 @@ SplashTextOn [, Width, Height, Title, Text]</pre>
   <dd><p>창의 픽셀 단위 높이 (제목 바 제외). 기본값은 0 (즉, 제목 바만 보여줍니다). 이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다.</p></dd>
 
   <dt>Title</dt>
-  <dd><p>창의 제목, 기본 값은 비어 있습니다.</p></dd>
+  <dd><p>창의 제목. 기본값은 비어 있습니다 (공백).</p></dd>
 
   <dt>Text</dt>
-  <dd><p>창의 텍스트, 기본값은 비어 있습니다. <em>Text</em>가 길면, <a href="../Scripts.htm#continuation">계속 섹션</a>을 수단으로 더 짧은 줄로 가를 수 있습니다. 이렇게 하면 가독성과 유지관리성이 향상됩니다.</p></dd>
+  <dd><p>창의 텍스트입니다. 기본값은 비어 있습니다 (공백). <em>Text</em>가 길면, <a href="../Scripts.htm#continuation">계속 섹션</a>을 수단으로 여러 짧은 줄들로 가를 수 있습니다. 이렇게 하면 가독성과 유지관리성이 개선됩니다.</p></dd>
 
 </dl>
 <h3>논평</h3>
-<p>
-레이이웃과 글꼴 이름/색/크기에 대하여 더 섬세하게 통제하려면, <a href="Progress.htm">Progress</a> 명령어에 <code>zh0</code> 옵션을 함께 사용하십시오. 그러면 제목 바를 생략하고 텍스트만 보여줍니다. 
-예를 들어: <code>Progress, zh0 fs18, 보여 줄 18-포인트 텍스트 약간</code>.</p>
-<p>
-SplashTextOff 명령어를 사용하면 기존의 스플래시 창을 제거할 수 있습니다.</p>
-<p>
-스플래시 창은 &quot;언제나 위에&quot;있습니다. 즉, 다른 모든 정상 창보다 위에 있다는 뜻입니다. 이를 바꾸려면 <code><a href="WinSet.htm">WinSet</a>, AlwaysOnTop, Off, &lt;스플래시 창의 제목을 삽입하십시오&gt;</code>를 사용하십시오. <a href="WinSet.htm">WinSet</a>은 또 스플래시 창을 투명하게 만들 수도 있습니다.</p>
-<p>
-<a href="WinMove.htm">WinMove</a>를 사용하면 이 명령어로 화면에 보여준 후에 SplashText 창의 위치와 크기를 조절할 수 있습니다.</p>
-<p>
-<a href="Progress.htm">Progress</a>, <a href="Progress.htm">SplashImage</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, 그리고 <a href="FileSelectFolder.htm">FileSelectFolder</a>와 다르게, 스크립트당 오직 하나의 SplashText 창만 가능합니다.</p>
-<p>
-스플래시 창이 이미 화면에 보이는 동안에 SplashTextOn이 사용되면, 그 창은 새 매개변수 값을 가지고 다시 생성됩니다. 그렇지만, 제목 바나 텍스트를 변경할 때마다 스플래시 창을 다시 생성하기 보다, 다음과 같이 하면 더 수행성능이 좋습니다. 특히 창이 자주 바뀔 필요가 있다면 다음과 같이 하십시오:</p>
-
+<p>레이이웃과 글꼴 이름/색/크기에 대하여 더 섬세하게 통제하려면, <a href="Progress.htm">Progress</a> 명령어에 <code>zh0</code> 옵션을 함께 사용하십시오. 그러면 제목 바를 생략하고 텍스트만 보여줍니다. 예를 들어: <code>Progress, zh0 fs18, 보여 줄 18-포인트 텍스트 약간</code>.</p>
+<p>SplashTextOff 명령어를 사용하면 기존의 스플래시 창을 제거할 수 있습니다.</p>
+<p>스플래시 창은 "언제나 위에"있습니다. 즉, 다른 모든 정상 창보다 위에 있다는 뜻입니다. 이를 바꾸려면 <code><a href="WinSet.htm">WinSet</a>, AlwaysOnTop, Off, &lt;스플래시 창의 제목을 삽입하십시오&gt;</code>를 사용하십시오. <a href="WinSet.htm">WinSet</a>은 또 스플래시 창을 투명하게 만들 수도 있습니다.</p>
+<p><a href="WinMove.htm">WinMove</a>를 사용하면 이 명령어로 화면에 보여준 후에 SplashText 창의 위치와 크기를 조절할 수 있습니다.</p>
+<p><a href="Progress.htm">Progress</a>, <a href="Progress.htm">SplashImage</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, 그리고 <a href="FileSelectFolder.htm">FileSelectFolder</a>와 다르게, 스크립트당 오직 하나의 SplashText 창만 가능합니다.</p>
+<p>스플래시 창이 이미 화면에 보이는 동안에 SplashTextOn이 사용되면, 그 창은 새 매개변수 값을 가지고 다시 생성됩니다. 그렇지만, 제목 바나 텍스트를 변경할 때마다 스플래시 창을 다시 생성하기 보다, 다음과 같이 하면 더 수행성능이 좋습니다. 특히 창이 자주 바뀔 필요가 있다면 다음과 같이 하십시오:</p>
 <pre><a href="WinSetTitle.htm">WinSetTitle</a>, &lt;스플래시 창의 제목을 삽입하십시오&gt;, , NewTitle
 <a href="ControlSetText.htm">ControlSetText</a>, Static1, NewText, &lt;스플래시 창의 제목을 입력하십시오&gt;</pre>
-
 <h3>관련 항목</h3>
-<p>
-<a href="Progress.htm">Progress</a>, <a href="Progress.htm">SplashImage</a>, <a href="ToolTip.htm">ToolTip</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a>, <a href="WinMove.htm">WinMove</a>, <a href="WinSet.htm">WinSet</a></p>
-
+<p><a href="Progress.htm">Progress</a>, <a href="Progress.htm">SplashImage</a>, <a href="ToolTip.htm">ToolTip</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a>, <a href="WinMove.htm">WinMove</a>, <a href="WinSet.htm">WinSet</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">SplashTextOn, , , 제목 바를 보여줍니다.
 Sleep, 2000

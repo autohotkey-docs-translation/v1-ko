@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>File Object</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@
 
 <h1>파일 객체 <span class="ver">[AHK_L 42+]</span></h1>
 
-<p>파일 입/출력을 위한 인터페이스를 제공합니다. <a href="../commands/FileOpen.htm">FileOpen</a>이 이 유형의 객체를 돌려줍니다.</p>
+<p>파일 입/출력을 위한 인터페이스를 제공합니다. <a href="../commands/FileOpen.htm">FileOpen</a>은 이 유형의 객체를 돌려줍니다.</p>
 
 <div class="methodShort" id="Read"><h2>Read</h2>
 <p>문자열을 파일로부터 읽고 파일 포인터를 앞으로 이동시킵니다.</p>
@@ -33,7 +34,7 @@
 <p>파일로부터 텍스트 한 줄을 읽고 파일 포인터를 앞으로 이동시킵니다.</p>
 <pre class="Syntax">Line := File.ReadLine()</pre>
 <table class="info">
-  <tr><td width="15%"><b>Returns</b></td><td width="85%">텍스트 한 줄.  여기에는 파일과 그 파일을 여는 데 사용된 EOL 플래그에 따라 <code>`n</code>, <code>`r`n</code> 또는 <code>`r</code>이 포함될 수 있습니다.</td></tr>
+  <tr><td width="15%"><b>Returns</b></td><td width="85%">한 줄의 텍스트. 여기에는 파일과 그 파일을 여는 데 사용된 EOL 플래그에 따라 <code>`n</code>, <code>`r`n</code> 또는 <code>`r</code>이 포함될 수 있습니다.</td></tr>
 </table></div>
 
 <div class="methodShort" id="WriteLine"><h2>WriteLine</h2>
@@ -74,9 +75,9 @@
 <p>날 이진 데이터를 파일에 씁니다.</p>
 <pre class="Syntax">File.RawWrite(VarOrAddress, Bytes)</pre>
 <table class="info">
-  <tr><td width="15%">VarOrAddress</td><td width="85%">데이터를 담고 있는 변수 또는 메모리의 데이터 주소.  사용법은 <a href="../commands/NumPut.htm">NumPut</a>과 비슷합니다.</td></tr>
+  <tr><td width="15%">VarOrAddress</td><td width="85%">데이터를 담고 있는 변수 또는 메모리의 데이터 주소. 사용법은 <a href="../commands/NumPut.htm">NumPut</a>과 비슷합니다.</td></tr>
   <tr><td>Bytes</td><td>쓸 바이트 개수.</td></tr>
-  <tr><td><b>Returns</b></td><td>읽은 바이트 개수.</td></tr>
+  <tr><td><b>Returns</b></td><td>씌여진 바이트 개수.</td></tr>
 </table></div>
 
 <div class="methodShort" id="Seek"><h2>Seek</h2>
@@ -117,8 +118,7 @@ File.Length := NewSize</pre>
 <table class="info">
   <tr><td width="15%"><b>Returns</b></td><td width="85%">파일 포인터가 파일의 끝에 도달하면 0 아닌 값을, 그렇지 않으면 0을 돌려줍니다.</td></tr>
 </table>
-<p>
-이 특성은 실제 파일에만 사용해야 합니다. 콘솔 버퍼나 파이프 같은 포인터-이동 없는 장치를 가리키는 핸들로부터 파일 객체가 생성되었다면, 반환 값은 의미가 없습니다. 그런 장치는 논리적으로 "파일 끝"이 없기 때문입니다.</p></div>
+<p>이 특성은 실제 파일에만 사용해야 합니다. 콘솔 버퍼나 파이프 같은 포인터-이동 없는 장치를 가리키는 핸들로부터 파일 객체가 생성되었다면, 반환 값은 의미가 없습니다. 그런 장치는 논리적으로 "파일 끝"이 없기 때문입니다.</p></div>
 
 <div class="methodShort" id="Close"><h2>Close</h2>
 <p>파일을 닫습니다. 캐쉬에 있는 데이터를 디스크로 비웁니다. 공유 잠금을 해제합니다. 객체가 해제되면 자동으로 파일이 닫히지만, 가능하면 빨리 닫기를 권장합니다.</p>
@@ -132,13 +132,12 @@ File.Encoding := Encoding</pre>
 <table class="info">
   <tr><td width="15%">Encoding</td><td width="85%">숫자 코드 페이지 식별자 (<a href="http://msdn.microsoft.com/en-us/library/dd317756.aspx">MSDN</a> 참조) 또는 다음 문자열 중 하나:<br>
   <ul>
-	<li><code>UTF-8</code>: Unicode UTF-8, CP65001와 동등함.</li>
-	<li><code>UTF-16</code>: Unicode UTF-16 작은 값 종료형 바이트 순서r, CP1200와 동등함.</li>
-	<li><code>CP<i>nnn</i></code>: 숫치 식별자 <i>nnn</i>를 가진 코드 페이지.</li>
+	<li><code>UTF-8</code>: Unicode UTF-8, CP65001과 동등.</li>
+	<li><code>UTF-16</code>: Unicode UTF-16 작은값 종료형. CP1200과 동등.</li>
+	<li><code>CP<i>nnn</i></code>: 숫치 식별자 <i>nnn</i>이 있는 코드 페이지.</li>
   </ul>
-  <p><em>인코딩</em>은 <code>-RAW</code> 접미사를 붙이면 값을 돌려주지 않습니다. 파일이 어떻게 열렸든지 또는 안에 바이트 순서 표식 (BOM)이 들어 있든 말든 상관하지 않습니다. <em>인코딩</em> 설정만으로 BOM이 붙거나 제거되지 않습니다.  BOM은 보통 처음 파일이 생성될 때 씌여집니다.</p>
-  <p>
-  <em>v1.1.15.04+에서, 인코딩</em>을 <code>UTF-8-RAW</code>이나 <code>UTF-16-RAW</code>으로 설정할 수 있습니다. 그러나 <code>-RAW</code> 접미사는 무시됩니다. 이전 버전에서, <code>UTF-8-RAW</code>와 <code>UTF-16-RAW</code>은 무효한  8-비트 인코딩처럼 행위하므로, 모든 비-ASCII 문자들이 폐기됩니다. 이것은 오직 <code>File.Encoding</code>에만 적용되지, <a href="../commands/FileOpen.htm">FileOpen()</a>에는 적용되지 않습니다.</p>
+  <p><em>인코딩</em>은 <code>-RAW</code> 접미사를 붙이면 값을 돌려주지 않습니다. 파일이 어떻게 열렸든지 또는 안에 바이트 순서 표식 (BOM)이 들어 있든 말든 상관하지 않습니다. <em>인코딩</em> 설정만으로 BOM이 붙거나 제거되지 않습니다. BOM은 보통 처음 파일이 생성될 때 씌여집니다.</p>
+  <p><em>v1.1.15.04+에서, 인코딩</em>을 <code>UTF-8-RAW</code>이나 <code>UTF-16-RAW</code>으로 설정할 수 있습니다. 그러나 <code>-RAW</code> 접미사는 무시됩니다. 이전 버전에서, <code>UTF-8-RAW</code>와 <code>UTF-16-RAW</code>은 무효한 8-비트 인코딩처럼 행위하므로, 모든 비-ASCII 문자들이 폐기됩니다. 이것은 오직 <code>File.Encoding</code>에만 적용되지, <a href="../commands/FileOpen.htm">FileOpen()</a>에는 적용되지 않습니다.</p>
   </td></tr>
 </table></div>
 
@@ -147,8 +146,7 @@ File.Encoding := Encoding</pre>
 <table class="info">
   <tr><td width="15%"><b>Returns</b></td><td width="85%">시스템 파일 핸들, DllCall과 함께 사용하는 것이 목적입니다. <a href="http://msdn.microsoft.com/en-us/library/aa363858.aspx">CreateFile</a>을 참조하십시오.</td></tr>
 </table>
-<p>
-파일 객체는 내부적으로 읽기와 쓰기를 버퍼 처리합니다. 데이터가 객체의 내부 버퍼에 씌여졌다면, 핸들을 반환하기 전에 디스크에 써야 합니다. 버퍼에 파일로부터 읽은 데이터가 들어 있다면, 그 데이터는 폐기되고 <code>File.Pos</code>가 가리키는 실제 파일 포인터는 논리 위치로 재설정됩니다.</p></div>
+<p>파일 객체는 내부적으로 읽기와 쓰기를 버퍼 처리합니다. 데이터가 객체의 내부 버퍼에 씌여졌다면, 핸들을 반환하기 전에 디스크에 써야 합니다. 버퍼에 파일로부터 읽은 데이터가 들어 있다면, 그 데이터는 폐기되고 <code>File.Pos</code>가 가리키는 실제 파일 포인터는 논리 위치로 재설정됩니다.</p></div>
 
 </body>
 </html>

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>ExitApp</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -18,16 +19,14 @@
 <dl>
 
   <dt>ExitCode</dt>
-  <dd><p> -2147483648부터 2147483647 사이의 정수 ( v1.0.48.01+에서 <a href="../Variables.htm#Expressions">표현식</a> 가능). 이 값은 스크립트가 종료할 호출자에게 반환됩니다. 이 코드는 스크립트를 부화시킨 어느 프로그램도 접급할 수 있습니다. 예를 들어 (RunWait를 통한) 스크립트 또는 배치 파일(.bat). 생략하면, <em>ExitCode</em>는 기본값으로 0이 설정됩니다. 전통적으로 0은 성공을 나타내는 데 사용됩니다.</dd>
+  <dd><p>-2147483648부터 2147483647 사이의 정수 ( v1.0.48.01+에서 <a href="../Variables.htm#Expressions">표현식</a> 가능). 이 값은 스크립트가 종료할 호출자에게 반환됩니다. 이 코드는 스크립트를 부화시킨 어느 프로그램도 접급할 수 있습니다. 예를 들어 (RunWait를 통한) 스크립트 또는 배치 파일(.bat). 생략하면, <em>ExitCode</em>는 기본값으로 0이 설정됩니다. 전통적으로 0은 성공을 나타내는 데 사용됩니다.</dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>스크립트는 즉시 종료합니다. <a href="OnExit.htm">OnExit</a> 서브루틴이 있는 경우는 제외입니다. 이는 스크립트의 트레이 아이콘이나 메인 메뉴에서 &quot;Exit&quot;를 선택한 것과 동등합니다.</p>
+<p>스크립트는 즉시 종료합니다. <a href="OnExit.htm">OnExit</a> 서브루틴이 있는 경우는 제외입니다. 이는 스크립트의 트레이 아이콘이나 메인 메뉴에서 "Exit"를 선택한 것과 동등합니다.</p>
 <p><a href="Exit.htm">Exit</a> 그리고 ExitApp는 스크립트에 핫키가 없고, 스크립트가 <a href="_Persistent.htm">영구적</a>이 아니며, 그리고 Num/Scroll/Capslock 키가 항상 AlwaysOn 또는 AlwaysOff를 유지하기를 요청하지 않는 경우는 행위가 동일합니다.</p>
-<p>
-스크립트에 <a href="OnExit.htm">OnExit</a> 서브루틴이 있다면, ExitApp에 응답하여 실행됩니다.</p>
-
+<p>스크립트에 <a href="OnExit.htm">OnExit</a> 서브루틴이 있다면, ExitApp에 응답하여 실행됩니다.</p>
 <h3>관련 항목</h3>
 <p><a href="Exit.htm">Exit</a>, <a href="OnExit.htm">OnExit</a>, <a href="_Persistent.htm">#Persistent</a></p>
 <h3>예제</h3>

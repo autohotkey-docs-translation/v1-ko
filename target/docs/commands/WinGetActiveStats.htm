@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>WinGetActiveStats</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@
 
 <h1>WinGetActiveStats</h1>
 
-<p><a href="WinGetActiveTitle.htm">WinGetActiveTitle</a>의 기능과 <a href="WinGetPos.htm">WinGetPos</a>의 기능을 하나의 명령어로 조합합니다.</p>
+<p><a href="WinGetActiveTitle.htm">WinGetActiveTitle</a> 기능과 <a href="WinGetPos.htm">WinGetPos</a>기능을 하나의 명령어로 결합합니다.</p>
 
 <pre class="Syntax">WinGetActiveStats, Title, Width, Height, X, Y</pre>
 <h3>매개변수</h3>
@@ -29,22 +30,16 @@
 </dl>
 
 <h3>논평</h3>
-<p>
-부합하는 창이 없으면, 출력 변수는 비워집니다.</p>
-<p>
-이 명령어는 다음 코드와 동등합니다:</p>
-
+<p>부합하는 창이 없으면, 출력 변수는 비워집니다.</p>
+<p>이 명령어는 다음 코드와 동등합니다:</p>
 <pre><a href="WinGetTitle.htm">WinGetTitle</a>, Title, A
 <a href="WinGetPos.htm">WinGetPos</a>, X, Y, Width, Height, A</pre>
-<p>
-활성 창이 숨어 있고 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있으면 (기본값), <a href="WinShow.htm">WinShow</a>를 제외하고 모든 명령어는 그 활성창을 &quot;보지 못합니다&quot;. 이런 저런 이유로 활성 창이 없다면, 이 명령어는 그의 모든 출력 변수들을 비워버립니다.</p>
-
+<p>활성 창이 숨어 있고 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있으면 (기본값), <a href="WinShow.htm">WinShow</a>를 제외하고 모든 명령어는 그 활성창을 "보지 못합니다". 이런 저런 이유로 활성 창이 없다면, 이 명령어는 그의 모든 출력 변수들을 비워버립니다.</p>
 <h3>관련 항목</h3>
 <p><a href="WinGetPos.htm">WinGetPos</a>, <a href="WinGetActiveTitle.htm">WinGetActiveTitle</a>, <a href="WinGetTitle.htm">WinGetTitle</a>, <a href="WinGetClass.htm">WinGetClass</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="ControlGetText.htm">ControlGetText</a></p>
-
 <h3>예제</h3>
 <pre class="NoIndent">WinGetActiveStats, Title, Width, Height, X, Y
-MsgBox, &quot;%Title%&quot; 활성 창은 너비가 %Width%이고`, 너비가 %Height%`, 그리고 %X%`,%Y%에 위치합니다.</pre>
+MsgBox, "%Title%" 활성 창은 너비가 %Width%이고`, 너비가 %Height%`, 그리고 %X%`,%Y%에 위치합니다.</pre>
 
 </body>
 </html>

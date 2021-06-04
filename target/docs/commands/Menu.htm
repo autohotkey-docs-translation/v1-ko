@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Menu</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,8 +12,7 @@
 
 <h1>Menu</h1>
 
-<p>
-메뉴와 메뉴 항목을 만들고, 제거하고, 변경하고 그리고 보여줍니다. 트레이 아이콘과 툴팁을 변경합니다. <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>의 메인 창이 열릴지 말지 제어합니다.</p>
+<p>메뉴와 메뉴 항목을 생성, 삭제, 변경 그리고 보여줍니다. 트레이 아이콘과 그의 툴팁을 변경합니다. <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>의 메인 창을 열지 말지 제어합니다.</p>
 
 <pre class="Syntax">Menu, MenuName, Cmd [, P3, P4, P5]</pre>
 <h3>매개변수</h3>
@@ -28,125 +28,65 @@
 </dl>
 
 <h2>메뉴에 항목을 추가하거나 변경하기</h2>
-<p>
-<strong>Add [, MenuItemName, Label-or-Submenu, Pn]</strong>: 이것은 다중 목적의 명령어로서 메뉴 항목을 추가하거나, 부메뉴를 새로운 부메뉴 또는 라벨로 갱신하거나 또는 한 항목을 정상 항목에서 부메뉴로 (또는 그 반대로) 변환합니다. <em>MenuItemName</em>이 아직 존재하지 않으면, 메뉴에 추가됩니다. 그렇지 않으면, <em>MenuItemName</em>은 새로 지정된 <em>라벨 또는 부메뉴(Label-or-Submenu)</em>로 갱신됩니다.</p>
-<p>
-메뉴 가름줄을 추가하려면, 세 개의 매개변수를 모두 생략하십시오.</p>
-<p>
-라벨 서브루틴은 사용자가 메뉴 항목을 선택할 때 새 <a href="../misc/Threads.htm">쓰레드</a>로 실행됩니다 (<a href="Gosub.htm">Gosub</a> 그리고 <a href="../Hotkeys.htm">핫키 서브루틴</a>과 비슷합니다). <em>Label-or-Submenu</em>를 생략하면, <em>MenuItemName</em>이 라벨과 메뉴 항목의 이름으로 사용됩니다.</p>
-<p id="Functor"><span class="ver">[v1.1.20+]:</span> 기존의 라벨 이름이 아니면, <em>Label-or-Submenu</em>는 함수의 이름이거나, 아니면 <a href="../objects/Functor.htm">함수 객체</a>를 담고 있는 단일 변수 참조일 수 있습니다. 예를 들어, <code>%funcobj%</code> 또는 <code>% funcobj</code>. 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다. 함수는 아래에 보여주는 바와 같이 선택적으로 매개변수를 정의할 수 있습니다:</p>
-
+<p><strong>Add [, MenuItemName, Label-or-Submenu, Pn]</strong>: 이것은 다중 목적의 명령어로서 메뉴 항목을 추가하거나, 부메뉴를 새로운 부메뉴 또는 라벨로 갱신하거나 또는 한 항목을 정상 항목에서 부메뉴로 (또는 그 반대로) 변환합니다. <em>MenuItemName</em>이 아직 존재하지 않으면, 메뉴에 추가됩니다. 그렇지 않으면, <em>MenuItemName</em>은 새로 지정된 <em>라벨 또는 부메뉴(Label-or-Submenu)</em>로 갱신됩니다.</p>
+<p>메뉴 가름줄을 추가하려면, 세 개의 매개변수를 모두 생략하십시오.</p>
+<p>라벨 서브루틴은 사용자가 메뉴 항목을 선택할 때 새 <a href="../misc/Threads.htm">쓰레드</a>로 실행됩니다 (<a href="Gosub.htm">Gosub</a> 그리고 <a href="../Hotkeys.htm">핫키 서브루틴</a>과 비슷합니다). <em>Label-or-Submenu</em>를 생략하면, <em>MenuItemName</em>이 라벨과 메뉴 항목의 이름으로 사용됩니다.</p>
+<p id="Functor"><span class="ver">[v1.1.20+]:</span> 기존의 라벨 이름이 아니면, <em>Label-or-Submenu</em>는 함수의 이름이거나, 아니면 <a href="../objects/Functor.htm">함수 객체</a>를 담고 있는 단일 변수 참조일 수 있습니다. 예를 들어, <code>%funcobj%</code> 또는 <code>% funcobj</code>. 함수 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다. 함수는 아래에 보여주는 바와 같이 선택적으로 매개변수를 정의할 수 있습니다:</p>
 <pre class="Syntax"><i>FunctionName</i>(ItemName, ItemPos, MenuName)</pre>
-<p>
-<em>MenuItemName</em>를 부메뉴가 되게 만들려면 -- 선택되면 새 메뉴를 여는 메뉴 항목을 만들려면 -- <em>Label-or-Submenu</em>에 쌍점 그리고 기존 맞춤 메뉴의 <em>MenuName</em>을 지정하십시오. 예를 들어:</p>
-
+<p><em>MenuItemName</em>를 부메뉴가 되게 만들려면 -- 선택되면 새 메뉴를 여는 메뉴 항목을 만들려면 -- <em>Label-or-Submenu</em>에 쌍점 그리고 기존 맞춤 메뉴의 <em>MenuName</em>을 지정하십시오. 예를 들어:</p>
 <pre>Menu, MySubmenu, add, Item1
 Menu, tray, add, 이 메뉴 항목은 부메뉴입니다, :MySubmenu</pre>
-<p>
-마지막 매개변수에는 기호 P 그리고 다음에 메뉴의 <a href="../misc/Threads.htm">쓰레드 우선순위</a>가 담길 수 있습니다. 예, <code>P1</code>. 메뉴 항목을 추가할 때 이 매개변수를 생략하면, 우선순위는 0이 될 텐데, 이것이 기본값입니다. 메뉴 항목을 갱신할 때 생략하면, 항목의 우선순위는 바뀌지 않습니다. 기존 항목의 우선 순위만 바꾸려면, <em>Label-or-Submenu</em> 매개변수를 생략하십시오. 우선 순위에 십진수를 사용하십시오 (십육진수는 불가).</p>
-<p>
-<strong><a name="Delete"></a>Delete [, MenuItemName]</strong>: 메뉴로부터 <em>MenuItemName</em>을 삭제합니다. Exit (아래 참조)와 같은 표준 메뉴 항목은 개별적으로 삭제할 수 없습니다. <em>기본</em> 메뉴 항목이 삭제되면, 그 효과는 <em>NoDefault</em> 옵션을 사용한 것과 비슷합니다. <em>MenuItemName</em>을 생략하면, 전체 <em>MenuName</em> 메뉴가 삭제됩니다. <em>MenuName</em>을 부메뉴로 사용하고 있는 다른 메뉴에 있는 메뉴 항목도 마찬가지로 삭제됩니다.</p>
-<p>
-<strong>DeleteAll</strong>: 메뉴로부터 모든 맞춤 메뉴 항목을 제거하고, 메뉴를 빈 채로 둡니다. 단, <em>표준</em> 항목들이 담겨 있는 경우는 예외입니다 (아래 참조). <em>Delete</em> 명령어로 완전히 삭제되는 메뉴와 다르게 (위 참조), 빈 메뉴는 여전히 존재합니다. 그래서 그 메뉴를 부메뉴로 사용하는 다른 메뉴도 여전히 그 부메뉴를 유지합니다.</p>
-<p>
-<strong>Rename, MenuItemName [, NewName]</strong>: <em>MenuItemName</em>을 <em>NewName</em>으로 변경합니다 (<em>NewName</em>이 비어 있다면, <em>MenuItemName</em>는 가름줄로 변환됩니다). <em>NewName</em>는 기존의 맞춤 메뉴 항목과 같으면 안됩니다. 그 메뉴 항목의 현재 목표 라벨이나 부메뉴는 바뀌지 않습니다.</p>
-<p>
-<strong>Check, MenuItemName</strong>: 보이는 체크표식을 (아직 없다면) <em>MenuItemName</em>옆의 메뉴에 추가합니다.</p>
-<p>
-<strong>Uncheck, MenuItemName</strong>: <em>MenuItemName</em>으로부터 체크표식을 (있다면) 제거합니다.</p>
-<p>
-<strong>ToggleCheck, MenuItemName</strong>: 체크표식을 없다면 추가합니다; 그렇지 않으면, 제거합니다.</p>
-<p>
-<strong>Enable, MenuItemName</strong>: 이전에 꺼져 있었다면 (회색처리) <em>MenuItemName</em>을 사용자가 다시 한 번 선택하도록 허용합니다.</p>
-<p>
-<strong>Disable, MenuItemName</strong>: <em>MenuItemName</em>를 회색으로 바꾸어서 사용자가 선택할 수 없다는 것을 나타냅니다.</p>
-<p>
-<strong>ToggleEnable, MenuItemName</strong>: 이전에 켜져 있었다면 <em>MenuItemName</em>를 끕니다; 그렇지 않으면 켭니다.</p>
-<p>
-<strong>Default [, MenuItemName]</strong>: 메뉴의 기본 항목을 <em>MenuItemName</em>으로 바꾸고 그 항목의 글꼴을 볼드체로 만듭니다 (TRAY 말고 메뉴에 기본 항목을 설정하는 것은 순전히 장식적인 효과입니다). 사용자가 트레이 아이콘을 클릭할 때, 그의 기본 메뉴 항목이 기동됩니다. 기본 항목이 없다면, 더블클릭해도 아무 효과가 없습니다. <em>MenuItemName</em>를 생략하면, 그 효과는 아래의<em>NoDefault</em>를 사용한 것과 동일합니다.</p>
-<p>
-<strong>NoDefault</strong>: 트레이 메뉴에 대하여: 메뉴가 다시 표준의 기본 메뉴 항목을 가지도록 바꿉니다. 비-컴파일 스크립트에 기본 메뉴 항목은 OPEN이고 <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>에 대해서는 없습니다 (단, <em>MainWindow</em> 옵션이 켜져 있을 경우는 제외합니다). 이전에 NoStandard 명령어를 사용했기 때문에 (아래 참조) OPEN 메뉴 항목이 존재하지 않으면, 기본 항목이 없으므로 트레이 아이콘을 더블 클릭해도 아무 효과가 없습니다. TRAY 말고 다른 메뉴에 대하여: 기존의 기본 항목에는 볼드체가-아닌 글꼴을 돌려줍니다.</p>
-<p>
-<strong>Standard</strong>: 표준 메뉴 항목을 (아직 존재하지 않으면) 메뉴 아래에 삽입합니다. 이 명령어는 트레이 메뉴나 기타 메뉴에 사용될 수 있습니다.</p>
-<p>
-<strong>NoStandard</strong>: 모든 표준 (맞춤-아닌) 메뉴 항목을 (존재한다면) 트레이 메뉴로부터 제거합니다.</p>
-
+<p>마지막 매개변수에는 기호 P 그리고 다음에 메뉴의 <a href="../misc/Threads.htm">쓰레드 우선순위</a>가 담길 수 있습니다. 예, <code>P1</code>. 메뉴 항목을 추가할 때 이 매개변수를 생략하면, 우선순위는 0이 될 텐데, 이것이 기본값입니다. 메뉴 항목을 갱신할 때 생략하면, 항목의 우선순위는 바뀌지 않습니다. 기존 항목의 우선 순위만 바꾸려면, <em>Label-or-Submenu</em> 매개변수를 생략하십시오. 우선 순위에 십진수를 사용하십시오 (십육진수는 불가).</p>
+<p><strong><a name="Delete"></a>Delete [, MenuItemName]</strong>: 메뉴로부터 <em>MenuItemName</em>을 삭제합니다. Exit (아래 참조)와 같은 표준 메뉴 항목은 개별적으로 삭제할 수 없습니다. <em>기본</em> 메뉴 항목이 삭제되면, 그 효과는 <em>NoDefault</em> 옵션을 사용한 것과 비슷합니다. <em>MenuItemName</em>을 생략하면, 전체 <em>MenuName</em> 메뉴가 삭제됩니다. <em>MenuName</em>을 부메뉴로 사용하고 있는 다른 메뉴에 있는 메뉴 항목도 마찬가지로 삭제됩니다.</p>
+<p><strong>DeleteAll</strong>: 메뉴로부터 모든 맞춤 메뉴 항목을 제거하고, 메뉴를 빈 채로 둡니다. 단, <em>표준</em> 항목들이 담겨 있는 경우는 예외입니다 (아래 참조). <em>Delete</em> 명령어로 완전히 삭제되는 메뉴와 다르게 (위 참조), 빈 메뉴는 여전히 존재합니다. 그래서 그 메뉴를 부메뉴로 사용하는 다른 메뉴도 여전히 그 부메뉴를 유지합니다.</p>
+<p><strong>Rename, MenuItemName [, NewName]</strong>: <em>MenuItemName</em>을 <em>NewName</em>으로 변경합니다 (<em>NewName</em>이 비어 있다면, <em>MenuItemName</em>는 가름줄로 변환됩니다). <em>NewName</em>는 기존의 맞춤 메뉴 항목과 같으면 안됩니다. 그 메뉴 항목의 현재 목표 라벨이나 부메뉴는 바뀌지 않습니다.</p>
+<p><strong>Check, MenuItemName</strong>: 보이는 체크표식을 (아직 없다면) <em>MenuItemName</em>옆의 메뉴에 추가합니다.</p>
+<p><strong>Uncheck, MenuItemName</strong>: <em>MenuItemName</em>으로부터 체크표식을 (있다면) 제거합니다.</p>
+<p><strong>ToggleCheck, MenuItemName</strong>: 체크표식을 없다면 추가합니다; 그렇지 않으면, 제거합니다.</p>
+<p><strong>Enable, MenuItemName</strong>: 이전에 꺼져 있었다면 (회색처리) <em>MenuItemName</em>을 사용자가 다시 한 번 선택하도록 허용합니다.</p>
+<p><strong>Disable, MenuItemName</strong>: <em>MenuItemName</em>를 회색으로 바꾸어서 사용자가 선택할 수 없다는 것을 나타냅니다.</p>
+<p><strong>ToggleEnable, MenuItemName</strong>: 이전에 켜져 있었다면 <em>MenuItemName</em>를 끕니다; 그렇지 않으면 켭니다.</p>
+<p><strong>Default [, MenuItemName]</strong>: 메뉴의 기본 항목을 <em>MenuItemName</em>으로 바꾸고 그 항목의 글꼴을 볼드체로 만듭니다 (TRAY 말고 메뉴에 기본 항목을 설정하는 것은 순전히 장식적인 효과입니다). 사용자가 트레이 아이콘을 클릭할 때, 그의 기본 메뉴 항목이 기동됩니다. 기본 항목이 없다면, 더블클릭해도 아무 효과가 없습니다. <em>MenuItemName</em>를 생략하면, 그 효과는 아래의<em>NoDefault</em>를 사용한 것과 동일합니다.</p>
+<p><strong>NoDefault</strong>: 트레이 메뉴에 대하여: 메뉴가 다시 표준의 기본 메뉴 항목을 가지도록 바꿉니다. 비-컴파일 스크립트에 기본 메뉴 항목은 OPEN이고 <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>에 대해서는 없습니다 (단, <em>MainWindow</em> 옵션이 켜져 있을 경우는 제외합니다). 이전에 NoStandard 명령어를 사용했기 때문에 (아래 참조) OPEN 메뉴 항목이 존재하지 않으면, 기본 항목이 없으므로 트레이 아이콘을 더블 클릭해도 아무 효과가 없습니다. TRAY 말고 다른 메뉴에 대하여: 기존의 기본 항목에는 볼드체가-아닌 글꼴을 돌려줍니다.</p>
+<p><strong>Standard</strong>: 표준 메뉴 항목을 (아직 존재하지 않으면) 메뉴 아래에 삽입합니다. 이 명령어는 트레이 메뉴나 기타 메뉴에 사용될 수 있습니다.</p>
+<p><strong>NoStandard</strong>: 모든 표준 (맞춤-아닌) 메뉴 항목을 (존재한다면) 트레이 메뉴로부터 제거합니다.</p>
 <h2 id="MenuIcon">메뉴 항목의 아이콘을 추가하거나 제거하기<span class="ver">[AHK_L 17+]</span></h2>
-<p>
-<strong>Icon, MenuItemName, FileName [, IconNumber, IconWidth]</strong>:  <em>MenuItemName</em>의 아이콘을 설정합니다. <em>FileName</em>은 아이콘 파일이거나 AutoHotkey가 지원하는 형식이 이미지일 수 있습니다. 파일에서 첫 번째 아이콘 말고 아이콘 그룹을 사용하려면, 그 번호를 <em>IconNumber</em>에 지정하십시오 (생략하면, 기본 값은 1입니다). <em>IconNumber</em>가 음수이면, 그의 절대 값이 실행 파일 안에 존재하는 아이콘의 자원 ID일 거라고 간주합니다. 아이콘의 너비는 <em>IconWidth</em>에 지정하십시오. <em>IconNumber</em>이 나타내는 아이콘 그룹 안에 여러 아이콘 크기가 있다면, 가장 근접하게 부합하는 아이콘이 사용되고 그 아이콘이 지정된 크기에 맞게 조절됩니다. 사용법은 예제 섹션을 참조하십시오.</p>
-<p>
-현재 Windows Vista 이후에서 아이콘에 투명성을 유지하도록 설정하려면 "실제 크기"를 지정하는 것이 필요합니다. 예를 들어:</p>
-
+<p><strong>Icon, MenuItemName, FileName [, IconNumber, IconWidth]</strong>: <em>MenuItemName</em>의 아이콘을 설정합니다. <em>FileName</em>은 아이콘 파일이거나 AutoHotkey가 지원하는 형식이 이미지일 수 있습니다. 파일에서 첫 번째 아이콘 말고 아이콘 그룹을 사용하려면, 그 번호를 <em>IconNumber</em>에 지정하십시오 (생략하면, 기본 값은 1입니다). <em>IconNumber</em>가 음수이면, 그의 절대값이 실행 파일 안에 있는 아이콘의 자원 ID라고 간주됩니다. 아이콘의 너비는 <em>IconWidth</em>에 지정하십시오. <em>IconNumber</em>이 나타내는 아이콘 그룹 안에 여러 아이콘 크기가 있다면, 가장 근접하게 부합하는 아이콘이 사용되고 그 아이콘이 지정된 크기에 맞게 조절됩니다. 사용법은 예제 섹션을 참조하십시오.</p>
+<p>현재 Windows Vista 이후에서 아이콘에 투명성을 유지하도록 설정하려면 "실제 크기"를 지정하는 것이 필요합니다. 예를 들어:</p>
 <pre>Menu, MenuName, Icon, MenuItemName, Filename.png,, 0</pre>
-<p>
-<b>알려진 한계</b>: Gui 메뉴 바의 아이콘들은 Windows XP 이전에서 올바르게 배치되지 않습니다.</p>
-<p>
-<strong>NoIcon, MenuItemName</strong>: <em>MenuItemName</em>의 아이콘을, 있다면 제거합니다.
-
+<p>알려진 한계: Gui 메뉴 바의 아이콘들은 Windows XP 이전에서 올바르게 배치되지 않습니다.</p>
+<p><strong>NoIcon, MenuItemName</strong>: <em>MenuItemName</em>의 아이콘을, 있다면 제거합니다.
 <h2>트레이 아이콘 또는 툴팁 변경하기 <span class="ver">(<em>MenuName</em>이 반드시TRAY이어야 함)</span></h2>
-<p>
-<strong><a name="Icon"></a>Icon [, FileName, IconNumber, 1]</strong>: 스크립트의 아이콘을  <em>FileName</em>의 아이콘 중 하나로 바꿉니다. 다음 유형의 파일을 지원합니다: ICO, CUR, ANI, EXE, DLL, CPL, SCR, 그리고 아이콘 자원을 보유한 기타 유형들. 파일의 첫 번째 아이콘 말고 아이콘 그룹을 사용하려면, 그의 번호를 <em>IconNumber</em>에 지정하십시오 (생략하면, 기본값은 1입니다). 예를 들어, <strong>2</strong>이면 기본 아이콘을 두 번째 아이콘 그룹으로부터 적재할 것입니다. <em>IconNumber</em>가 음수이면, 그의 절대 값이 실행 파일 안에 있는 아이콘의 자원 ID일 거라고 간주합니다. 별표 (*)를 <em>FileName</em>에 지정하면 스크립트를 기본 아이콘으로 복구할 수 있습니다.</p>
-<p>
-마지막 매개변수:  1을 지정하면 아이콘을 동결합니다. 또는 0이면 그 아이콘을 해동합니다 (또는 비워 두면 동결/해동 상태를 바꾸지 않고 그대로 유지할 수 있습니다). 아이콘이 동결될 때, <a href="Pause.htm">Pause</a>와 <a href="Suspend.htm">Suspend</a>는 그것을 바꾸지 않습니다. 주의: <em>현재 아이콘</em>을 동결하거나 해동하려면, 1 또는 0을 다음 예제와 같이 사용하십시오: <code>Menu, Tray, Icon,,, 1</code>.</p>
-<p>
-트레이 아이콘을 변경하면 <a href="InputBox.htm">InputBox</a>, <a href="Progress.htm">Progress</a>, 그리고 이어서-생성되는 <a href="Gui.htm">GUI</a> 창이 보여주는 아이콘도 변경됩니다. <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>도 영향을 받습니다. 컴파일할 때 맞춤 아이콘을 지정했더라도 마찬가지입니다. 주의: 아이콘을 변경하더라도 트레이 아이콘은 언하이드되지 않습니다. 이전에 <a href="_NoTrayIcon.htm">#NoTrayIcon</a>과 같은 수단으로 숨겼다면 말입니다; 언하이드 하려면, (매개변수 없이) <code>Menu, Tray, Icon</code>를 사용하십시오.</p>
-<p>
-<a name="distort"></a> .ICO 말고 다른 유형으로부터 트레이 아이콘을 적재할 때 약간 왜곡이 발생할 수 있습니다. 특히 16x16 아이콘이 그렇습니다. 이를 피하려면, 원하는 트레이 아이콘을 .ICO 파일에 저장하십시오.</p>
-<p>
-어떤 아이콘들은 운영 체제의 DLL과 CPL에 내장되어 있어서 유용합니다. 예를 들어: <code>Menu, Tray, Icon, Shell32.dll, 174</code>.</p>
-<p>
-내장 변수 <strong>A_IconNumber</strong>와 <strong>A_IconFile</strong>에는 현재 아이콘의 번호와 (완전한 경로) 이름이 들어 있습니다 (기본 아이콘이면 둘 다 비어 있습니다).</p>
-<p>
-<strong>Icon</strong> (매개변수 없음): 아직 존재하지 않으면 트레이 아이콘을 생성합니다. 이렇게 하면 <a href="_NoTrayIcon.htm">#NoTrayIcon</a>이 오버라이드 됩니다. 이 지시어가 스크립트에 존재해도 마찬가지입니다.</p>
-<p>
-<strong>NoIcon</strong>: 트레이 아이콘이 존재하면 제거합니다. 이 명령어를 스크립트 맨 꼭대기에 사용하면, 스크립트가 기동할 때 트레이 아이콘이 잠깐 보일 수 있습니다. 이를 피하려면 , 대신 <a href="_NoTrayIcon.htm">#NoTrayIcon</a>을 사용하십시오. 트레이 아이콘이 현재 숨어 있으면 내장 변수 <strong>A_IconHidden</strong> 안에 1이 담깁니다. 그렇지 않으면 0이 담깁니다.</p>
-<p>
-<strong>Tip [, Text]</strong>: 트레이 아이콘의 툴팁을 변경합니다 -- 툴팁은 마우스가 위를 지나갈 때 보여집니다. 여러-줄 툴팁을 생성하려면, 각 줄 사이에 라인피드 (`n) 문자를 사용하십시오. 예, <code>Line1`nLine2</code>. <em>Text</em>에서 앞쪽 127 개만 보여줍니다. 그리고 <em>Text</em>는 (존재하면) 첫 번째 탭 문자에서 잘려 나갑니다. <em>Text</em>를 생략하면, 툴팁은 그의 기본 텍스트로 복구됩니다. 내장 변수 <strong>A_IconTip</strong>에는 툴팁의 현재 텍스트가 담깁니다 (텍스트가 기본 값이면 비어 있습니다).</p>
-
+<p><strong><a name="Icon"></a>Icon [, FileName, IconNumber, 1]</strong>: 스크립트의 아이콘을 <em>FileName</em>의 아이콘 중 하나로 바꿉니다. 다음 유형의 파일을 지원합니다: ICO, CUR, ANI, EXE, DLL, CPL, SCR, 그리고 아이콘 자원을 담은 기타 유형들. 파일에서 첫 번째 아이콘 말고 아이콘 그룹을 사용하려면, 그 번호를 <em>IconNumber</em>에 지정하십시오 (생략하면, 기본 값은 1입니다). 예를 들어, <strong>2</strong>이면 기본 아이콘을 두 번째 아이콘 그룹으로부터 적재할 것입니다. <em>IconNumber</em>가 음수이면, 그의 절대 값이 실행 파일 안에 있는 아이콘의 자원 ID일 거라고 간주합니다. 별표 (*)를 <em>FileName</em>에 지정하면 스크립트를 기본 아이콘으로 복구할 수 있습니다.</p>
+<p>마지막 매개변수: 1을 지정하면 아이콘을 동결합니다. 또는 0이면 그 아이콘을 해동합니다 (또는 비워 두면 동결/해동 상태를 바꾸지 않고 그대로 유지할 수 있습니다). 아이콘이 동결될 때, <a href="Pause.htm">Pause</a>와 <a href="Suspend.htm">Suspend</a>는 그것을 바꾸지 않습니다. 주의: <em>현재 아이콘</em>을 동결하거나 해동하려면, 1 또는 0을 다음 예제와 같이 사용하십시오: <code>Menu, Tray, Icon,,, 1</code>.</p>
+<p>트레이 아이콘을 변경하면 <a href="InputBox.htm">InputBox</a>, <a href="Progress.htm">Progress</a>, 그리고 이어서-생성되는 <a href="Gui.htm">GUI</a> 창이 보여주는 아이콘도 변경됩니다. <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>도 영향을 받습니다. 컴파일할 때 맞춤 아이콘을 지정했더라도 마찬가지입니다. 주의: 아이콘을 변경하더라도 트레이 아이콘은 언하이드되지 않습니다. 이전에 <a href="_NoTrayIcon.htm">#NoTrayIcon</a>과 같은 수단으로 숨겼다면 말입니다; 언하이드 하려면, (매개변수 없이) <code>Menu, Tray, Icon</code>를 사용하십시오.</p>
+<p><a name="distort"></a>.ICO 말고 다른 유형으로부터 트레이 아이콘을 적재할 때 약간 왜곡이 발생할 수 있습니다. 특히 16x16 아이콘이 그렇습니다. 이를 피하려면, 원하는 트레이 아이콘을 .ICO 파일에 저장하십시오.</p>
+<p>어떤 아이콘들은 운영 체제의 DLL과 CPL에 내장되어 있어서 유용합니다. 예를 들어: <code>Menu, Tray, Icon, Shell32.dll, 174</code>.</p>
+<p>내장 변수 <strong>A_IconNumber</strong>와 <strong>A_IconFile</strong>에는 현재 아이콘의 번호와 (완전한 경로) 이름이 들어 있습니다 (기본 아이콘이면 둘 다 비어 있습니다).</p>
+<p><strong>Icon</strong> (매개변수 없음): 아직 존재하지 않으면 트레이 아이콘을 생성합니다. 이렇게 하면 <a href="_NoTrayIcon.htm">#NoTrayIcon</a>이 오버라이드 됩니다. 이 지시어가 스크립트에 존재해도 마찬가지입니다.</p>
+<p><strong>NoIcon</strong>: 트레이 아이콘이 존재하면 제거합니다. 이 명령어를 스크립트 맨 꼭대기에 사용하면, 스크립트가 기동할 때 트레이 아이콘이 잠깐 보일 수 있습니다. 이를 피하려면 , 대신 <a href="_NoTrayIcon.htm">#NoTrayIcon</a>을 사용하십시오. 트레이 아이콘이 현재 숨어 있으면 내장 변수 <strong>A_IconHidden</strong> 안에 1이 담깁니다. 그렇지 않으면 0이 담깁니다.</p>
+<p><strong>Tip [, Text]</strong>: 트레이 아이콘의 툴팁을 변경합니다 -- 툴팁은 마우스가 위를 지나갈 때 보여집니다. 여러-줄 툴팁을 생성하려면, 각 줄 사이에 라인피드 (`n) 문자를 사용하십시오. 예, "Line1`nLine2". <em>Text</em>에서 앞쪽 127 개만 보여줍니다. 그리고 <em>Text</em>는 (존재하면) 첫 번째 탭 문자에서 잘려 나갑니다. <em>Text</em>를 생략하면, 툴팁은 그의 기본 텍스트로 복구됩니다. 내장 변수 <strong>A_IconTip</strong>에는 툴팁의 현재 텍스트가 담깁니다 (텍스트가 기본 값이면 비어 있습니다).</p>
 <h2>기타 명령어</h2>
-<p><strong><a name="Show"></a>Show [, X, Y]</strong>: <em>MenuName</em>을 보여주므로, 사용자는 화살표 키, 메뉴 단축키 (밑줄 기호), 또는 마우스로 항목을 선택할 수 있습니다. 어떤 메뉴도 보여줄 수 있습니다. 여기에는 트레이 메뉴도 포함되지만, <a href="Gui.htm">GUI</a> 메뉴 바는 예외입니다. X와 Y를 모두 생략하면, 메뉴는 마우스 커서의 현재 위치에 보여집니다. 둘 중에 하나만 생략하면, 생략된 위치에 마우스 커서의 위치가 대신 사용됩니다. X와 Y는 활성 창에 상대적입니다. 전체 화면에 상대적으로 만들려면 미리 <code>&quot;<a href="CoordMode.htm">CoordMode</a>, Menu&quot;</code>를 지정하십시오.</p>
-<p>
-<strong>Color, ColorValue [, Single]</strong>: 메뉴의 배경색을 <em>ColorValue</em>로 바꿉니다. 이 색은 16 가지 기본 HTML 색상 이름 또는 6-자리 RGB 컬러 값입니다 (<a href="Progress.htm#colors">컬러 차트</a> 참조). 
-<em>ColorValue</em>를 비워 두면 (또는 단어 Default를 지정하면) 메뉴를 그의 기본 컬러로 복구할 수 있습니다. 단어 Single이 다음 매개변수에 존재하지 않으면, 이 메뉴에 부착된 부메뉴들도 모두 색이 바뀝니다.</p>
-<p>
-<strong>Click, ClickCount</strong>: 1을 <em>ClickCount</em>에 지정하면 한 번 클릭으로 트레이 메뉴의 기본 메뉴 항목을 활성화 할 수 있습니다. 2를 <em>ClickCount</em>에 지정하면 (더블-클릭해) 기본 행위로 돌아올 수 있습니다. 예를 들어: <code>Menu, Tray, Click, 1</code>.</p>
-<p>
-<strong><a name="MainWindow"></a>MainWindow</strong>: 이 명령어는 <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>에만 영향을 줍니다. 스크립트의 메인 창을 트레이 아이콘을 통하여 열 수 있습니다. 그렇지 않으면 불가능합니다. 
-
-또한 예를 들어 &quot;최근에 실행된 줄&quot;과 같이, 메인 창의 View 메뉴에 있는 항목들을 활성화 합니다. 이 메뉴는 스크립트의 소스 코드와 기타 정보를 보여줍니다. 
-<em>MenuName</em>는 반드시 TRAY이어야 합니다.</p>
-<p>
-<strong>NoMainWindow</strong> (default): 이 명령어는 <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>에만 영향을 줍니다. 스크립트를 그의 기본 행위로 복구합니다. 즉, 메인 창이 열리지 못하도록 막습니다. 이 옵션이 켜져 있는 동안에도, 다음 명령어들은 스크립트에서 실행시간에 만나면 여전히 메인 창을 보여줄 수 있습니다: <a href="ListLines.htm">ListLines</a>, <a href="ListVars.htm">ListVars</a>, <a href="ListHotkeys.htm">ListHotkeys</a>, 그리고 <a href="KeyHistory.htm">KeyHistory</a>. <em>MenuName</em>은 반드시 TRAY이어야 합니다.</p>
-<p>
-<strong>UseErrorLevel [, off]</strong>: 이 옵션이 스크립트에 사용되지 않으면, 기본 값은 OFF입니다. OFF 설정은 Menu 명령어가 에러를 발생시킬 때마다 대화상자를 보여주고 <a href="../misc/Threads.htm">현재 쓰레드</a>를 종료합니다. <code>Menu, Tray, UseErrorLevel</code>를 지정하면 그 대화상자와 쓰레드 종료를 막을 수 있습니다; 대신에, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1이 없으면 0이 설정됩니다. 이 옵션을 다시 끄려면, 다음 매개변수에 OFF를 지정하십시오. 이 설정은 전역적입니다. <em>MenuName</em>은 물론이고, 모든 메뉴에 영향을 미친다는 뜻입니다.</p>
-
+<p><strong><a name="Show"></a>Show [, X, Y]</strong>: <em>MenuName</em>을 보여주므로, 사용자는 화살표 키, 메뉴 단축키 (밑줄 기호), 또는 마우스로 항목을 선택할 수 있습니다. 어떤 메뉴도 보여줄 수 있습니다. 여기에는 트레이 메뉴도 포함되지만, <a href="Gui.htm">GUI</a> 메뉴 바는 예외입니다. X와 Y를 모두 생략하면, 메뉴는 마우스 커서의 현재 위치에 보여집니다. 둘 중에 하나만 생략하면, 생략된 위치에 마우스 커서의 위치가 대신 사용됩니다. X와 Y는 활성 창에 상대적입니다. 전체 화면에 상대적으로 만들려면 미리 "<a href="CoordMode.htm">CoordMode</a>, Menu"를 지정하십시오.</p>
+<p><strong>Color, ColorValue [, Single]</strong>: 메뉴의 배경색을 <em>ColorValue</em>로 바꿉니다. 이 색은 16 가지 기본 HTML 색상 이름 또는 6-자리 RGB 컬러 값입니다 (<a href="Progress.htm#colors">컬러 차트</a> 참조). <em>ColorValue</em>를 비워 두면 (또는 단어 Default를 지정하면) 메뉴를 그의 기본 컬러로 복구할 수 있습니다. 단어 Single이 다음 매개변수에 존재하지 않으면, 이 메뉴에 부착된 부메뉴들도 모두 색이 바뀝니다.</p>
+<p><strong>Click, ClickCount</strong>: 1을 <em>ClickCount</em>에 지정하면 한 번 클릭으로 트레이 메뉴의 기본 메뉴 항목을 활성화 할 수 있습니다. 2를 <em>ClickCount</em>에 지정하면 (더블-클릭해) 기본 행위로 돌아올 수 있습니다. 예를 들어: <code>Menu, Tray, Click, 1</code>.</p>
+<p><strong><a name="MainWindow"></a>MainWindow</strong>: 이 명령어는 <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>에만 영향을 줍니다. 스크립트의 메인 창을 트레이 아이콘을 통하여 열 수 있습니다. 그렇지 않으면 불가능합니다. 또한 예를 들어 "최근에 실행된 줄"과 같이, 메인 창의 View 메뉴에 있는 항목들을 활성화 합니다. 이 메뉴는 스크립트의 소스 코드와 기타 정보를 보여줍니다. <em>MenuName</em>는 반드시 TRAY이어야 합니다.</p>
+<p><strong>NoMainWindow</strong> (default): 이 명령어는 <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>에만 영향을 줍니다. 스크립트를 그의 기본 행위로 복구합니다. 즉, 메인 창이 열리지 못하도록 막습니다. 이 옵션이 켜져 있는 동안에도, 다음 명령어들은 스크립트에서 실행시간에 만나면 여전히 메인 창을 보여줄 수 있습니다: <a href="ListLines.htm">ListLines</a>, <a href="ListVars.htm">ListVars</a>, <a href="ListHotkeys.htm">ListHotkeys</a>, 그리고 <a href="KeyHistory.htm">KeyHistory</a>. <em>MenuName</em>은 반드시 TRAY이어야 합니다.</p>
+<p><strong>UseErrorLevel [, off]</strong>: 이 옵션이 스크립트에 사용되지 않으면, 기본 값은 OFF입니다. OFF 설정은 Menu 명령어가 에러를 발생시킬 때마다 대화상자를 보여주고 <a href="../misc/Threads.htm">현재 쓰레드</a>를 종료합니다. <code>Menu, Tray, UseErrorLevel</code>를 지정하면 그 대화상자와 쓰레드 종료를 막을 수 있습니다; 대신에, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1이 없으면 0이 설정됩니다. 이 옵션을 다시 끄려면, 다음 매개변수에 OFF를 지정하십시오. 이 설정은 전역적입니다. <em>MenuName</em>은 물론이고, 모든 메뉴에 영향을 미친다는 뜻입니다.</p>
 <h2>논평</h2>
-<p>
-<em>메뉴 항목</em> 의 이름에 있는 글자 중 하나에 밑줄을 그으려면, 그 글자 앞에 앰퍼센드를 (&amp;) 배치하십시오. 메뉴가 나타날 때, 그런 항목은 키보드에서 상응하는 키를 눌러서 선택할 수 있습니다. 글자 그대로 앰퍼센드를 보여주려면, 연속적으로 앰퍼센드 두 개를 다음 예제와 같이 지정하십시오: <code>&quot;Save &amp;&amp; Exit&quot;</code></p>
-<p>
-메뉴와 메뉴 항목의 이름은 최대 260 문자까지 허용됩니다.</p>
-<p>
-기존의 메뉴나 메뉴 항목을 참조할 때, 그 이름은 대소문자를 구별하지 않지만 앰퍼센드는 반드시 포함시켜야 합니다. 예를 들어: &amp;Open</p>
-<p>
-가름 줄은 <code>Menu, Tray, Add</code>를 사용하면 메뉴에 추가할 수 있습니다 (즉, 다른 모든 매개변수 생략). 그렇지만, 가름 줄은 현재 개별적으로 제거할 수 없습니다. 이를 우회하려면, <code>Menu, Tray, DeleteAll</code>를 사용한 다음 여러분의 맞움 메뉴 항목을 다시 부착하십시오.</p>
-<p>
-새 메뉴 항목은 언제나 메뉴 아래에 추가됩니다. 트레이 메뉴에 대하여: 여러분이 메뉴 항목을 표준 메뉴 항목보다 위에 놓으려면 (여러분의 메뉴 항목을 추가한 후) <code>Menu, Tray, NoStandard</code>를 실행한 다음에 <code>Menu, Tray, Standard</code>를 실행하십시오.</p>
-<p>
-&quot;Pause Script&quot; 그리고 &quot;Suspend Hotkeys&quot;와 같은 표준 메뉴 항목은 메뉴 부-명령어로 개별적으로 작동시킬 수 없습니다.</p>
-<p>
-메뉴가 완전히 비게 되면 -- 예를 들어 <code>Menu, MyMenu, DeleteAll</code>을 사용하여 -- 보여줄 수 없습니다. 트레이 메뉴가 비게 되면, 트레이 아이콘에 우클릭과 더블클릭이 아무 효과가 없습니다 (그런 경우 보통 <a href="_NoTrayIcon.htm">#NoTrayIcon</a>을 사용하는 편이 더 좋습니다).</p>
-<p>
-메뉴 항목의 서브루틴이 이미 실행 중이고 사용자가 같은 메뉴를 다시 선택한다면, 새 <a href="../misc/Threads.htm">쓰레드</a>가 생성되고 이전의 쓰레드를 가로채어 같은 서브루틴을 실행합니다.  대신에 그런 이벤트를 나중으로 버퍼 처리하려면, <a href="Critical.htm">Critical</a>을 서브루틴의 첫 줄에 사용하십시오 (그렇지만, 이렇게 하면 또 핫키 누름과 같은 다른 쓰레드도 역시 버퍼/연기 처리됩니다).</p>
-<p>
-서브루틴이 메뉴 항목을 통하여 기동할 때마다 그 서브루틴은 예를 들어 <a href="SendMode.htm">SendMode</a>에 설정된 기본 값을 가지고 새롭게 시작합니다. 이런 기본 값은 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에서 바꿀 수 있습니다.</p>
-<p>
-내장 변수 <strong><a href="../Variables.htm#ThisMenuItem">A_ThisMenuItem</a></strong> 그리고 <strong><a href="../Variables.htm#ThisMenuItemPos">A_ThisMenuItemPos</a></strong>에 사용자가 최근에 선택한 맞춤 메뉴 항목의 이름과 위치가 담겨 있습니다 (비어 있으면 선택 없음). 비슷하게, <strong>A_ThisMenu</strong>는 <strong>A_ThisMenuItem</strong>가 선택된 메뉴의 이름입니다. 이런 변수들은 내용이 언제나 같지 않은 메뉴를 구성할 때 유용합니다. 그런 경우, 보통 그런 모든 메뉴 항목이 같은 라벨을 가리키도록 만들고 그 라벨이 위의 변수들을 참조해서 어떤 행위를 취할지 결정하는 것이 좋습니다.</p>
-<p>
-비-핫키, 비-<a href="Gui.htm">GUI</a> 스크립트를 계속 실행되도록 유지하려면 -- 예를 들어 오직 맞춤 메뉴나 메뉴 항목만 담고 있는 스크립트 -- <a href="_Persistent.htm">#Persistent</a>를 사용하십시오.</p>
-
+<p><em>메뉴 항목</em> 의 이름에 있는 글자 중 하나에 밑줄을 그으려면, 그 글자 앞에 앰퍼센드를 (&amp;) 배치하십시오. 메뉴가 나타날 때, 그런 항목은 키보드에서 상응하는 키를 눌러서 선택할 수 있습니다. 글자 그대로 앰퍼센드를 보여주려면, 연속적으로 앰퍼센드 두 개를 다음 예제와 같이 지정하십시오: "Save &amp;&amp; Exit"</p>
+<p>메뉴와 메뉴 항목의 이름은 최대 260 문자까지 허용됩니다.</p>
+<p>기존의 메뉴나 메뉴 항목을 참조할 때, 그 이름은 대소문자를 구별하지 않지만 앰퍼센드는 반드시 포함시켜야 합니다. 예를 들어: &amp;Open</p>
+<p>가름 줄은 <code>Menu, Tray, Add</code>를 사용하면 메뉴에 추가할 수 있습니다 (즉, 다른 모든 매개변수 생략). 그렇지만, 가름 줄은 현재 개별적으로 제거할 수 없습니다. 이를 우회하려면, <code>Menu, Tray, DeleteAll</code>를 사용한 다음 여러분의 맞움 메뉴 항목을 다시 부착하십시오.</p>
+<p>새 메뉴 항목은 언제나 메뉴 아래에 추가됩니다. 트레이 메뉴에 대하여: 여러분이 메뉴 항목을 표준 메뉴 항목보다 위에 놓으려면 (여러분의 메뉴 항목을 추가한 후) <code>Menu, Tray, NoStandard</code>를 실행한 다음에 <code>Menu, Tray, Standard</code>를 실행하십시오.</p>
+<p>"Pause Script" 그리고 "Suspend Hotkeys"와 같은 표준 메뉴 항목은 메뉴 부-명령어로 개별적으로 작동시킬 수 없습니다.</p>
+<p>메뉴가 완전히 비게 되면 -- 예를 들어 <code>Menu, MyMenu, DeleteAll</code>을 사용하여 -- 보여줄 수 없습니다. 트레이 메뉴가 비게 되면, 트레이 아이콘에 우클릭과 더블클릭이 아무 효과가 없습니다 (그런 경우 보통 <a href="_NoTrayIcon.htm">#NoTrayIcon</a>을 사용하는 편이 더 좋습니다).</p>
+<p>메뉴 항목의 서브루틴이 이미 실행 중이고 사용자가 같은 메뉴를 다시 선택한다면, 새 <a href="../misc/Threads.htm">쓰레드</a>가 생성되고 이전의 쓰레드를 가로채어 같은 서브루틴을 실행합니다. 대신에 그런 이벤트를 나중으로 버퍼 처리하려면, <a href="Critical.htm">Critical</a>을 서브루틴의 첫 줄에 사용하십시오 (그렇지만, 이렇게 하면 또 핫키 누름과 같은 다른 쓰레드도 역시 버퍼/연기 처리됩니다).</p>
+<p>서브루틴이 메뉴 항목을 통하여 기동할 때마다 그 서브루틴은 예를 들어 <a href="SendMode.htm">SendMode</a>에 설정된 기본 값을 가지고 새롭게 시작합니다. 이런 기본 값은 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에서 바꿀 수 있습니다.</p>
+<p>내장 변수 <strong><a href="../Variables.htm#ThisMenuItem">A_ThisMenuItem</a></strong> 그리고 <strong><a href="../Variables.htm#ThisMenuItemPos">A_ThisMenuItemPos</a></strong>에 사용자가 최근에 선택한 맞춤 메뉴 항목의 이름과 위치가 담겨 있습니다 (비어 있으면 선택 없음). 비슷하게, <strong>A_ThisMenu</strong>는 <strong>A_ThisMenuItem</strong>가 선택된 메뉴의 이름입니다. 이런 변수들은 내용이 언제나 같지 않은 메뉴를 구성할 때 유용합니다. 그런 경우, 보통 그런 모든 메뉴 항목이 같은 라벨을 가리키도록 만들고 그 라벨이 위의 변수들을 참조해서 어떤 행위를 취할지 결정하는 것이 좋습니다.</p>
+<p>비-핫키, 비-<a href="Gui.htm">GUI</a> 스크립트를 계속 실행되도록 유지하려면 -- 예를 들어 오직 맞춤 메뉴나 메뉴 항목만 담고 있는 스크립트 -- <a href="_Persistent.htm">#Persistent</a>를 사용하십시오.</p>
 <h2>관련 항목</h2>
 <p><a href="Gui.htm">GUI</a>, <a href="../misc/Threads.htm">Threads</a>, <a href="Thread.htm">Thread</a>, <a href="Critical.htm">Critical</a>, <a href="_NoTrayIcon.htm">#NoTrayIcon</a>, <a href="Gosub.htm">Gosub</a>, <a href="Return.htm">Return</a>, <a href="SetTimer.htm">SetTimer</a>, <a href="_Persistent.htm">#Persistent</a></p>
-
 <h2>예제</h2>
 <pre class="NoIndent"><em>; 예제 #1: 이 스크립트는 새 메뉴 항목을 트레이 아이콘 메뉴의 아래에 부착합니다.</em>
 
@@ -183,7 +123,6 @@ return
 
 #z::Menu, MyMenu, Show  <em>; 즉, Win-Z 핫키를 누르면 메뉴가 나타납니다.</em></pre>
 <p>&nbsp;</p>
-
 <pre class="NoIndent"><em>; 예제 #3: 이 스크립트는 다양한 메뉴 명령어의 예를 보여줍니다.</em>
 
 #Persistent
@@ -260,9 +199,8 @@ menu, tray, rename, %OldName%, %NewName%
 return
 
 Test:
-MsgBox, You selected &quot;%A_ThisMenuItem%&quot; in menu &quot;%A_ThisMenu%&quot;.
+MsgBox, You selected "%A_ThisMenuItem%" in menu "%A_ThisMenu%".
 return</pre>
-
 <pre class="NoIndent"><em>; 예제 #4: 이 스크립트는 아이콘을 그의 메뉴 항목에 추가합니다.</em>
 Menu, FileMenu, Add, Script Icon, MenuHandler
 Menu, FileMenu, Add, Suspend Icon, MenuHandler

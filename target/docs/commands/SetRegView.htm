@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>SetRegView</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -25,16 +26,13 @@
 </dl>
 
 <h3>총평</h3>
-<p>
-이 명령어는 Windows 64-비트에만 유용합니다. Windows 32-비트에서는 효과가 없습니다.</p>
-<p>
-64-비트 시스템에서, 32-비트 어플리케이션은 <a href="http://msdn.microsoft.com/en-us/library/aa384249">WOW64</a>라고 부르는 Windows 서브시스템 위에서 실행됩니다. 기본으로, 시스템은 충돌을 피하기 위해 어떤 <a href="http://msdn.microsoft.com/en-us/library/aa384253">레지스트리 키</a>는 방향전환합니다. 예를 들어, 32-비트 스크립트에서<code>HKLM\SOFTWARE\AutoHotkey</code>는 <code>HKLM\SOFTWARE\Wow6432Node\AutoHotkey</code>으로 방향전환됩니다. SetRegView를 사용하면 32-비트 스크크립트의 레지스트리 명령어가 64-비트 레지스트리 뷰로 방향전환된 키에 그리고 그 반대로 접근할 수 있습니다.</p>
+<p>이 명령어는 Windows 64-비트에만 유용합니다. Windows 32-비트에서는 효과가 없습니다.</p>
+<p>64-비트 시스템에서, 32-비트 어플리케이션은 <a href="http://msdn.microsoft.com/en-us/library/aa384249">WOW64</a>라고 부르는 Windows 서브시스템 위에서 실행됩니다. 기본으로, 시스템은 충돌을 피하기 위해 어떤 <a href="http://msdn.microsoft.com/en-us/library/aa384253">레지스트리 키</a>는 방향전환합니다. 예를 들어, 32-비트 스크립트에서<code>HKLM\SOFTWARE\AutoHotkey</code>는 <code>HKLM\SOFTWARE\Wow6432Node\AutoHotkey</code>으로 방향전환됩니다. SetRegView를 사용하면 32-비트 스크크립트의 레지스트리 명령어가 64-비트 레지스트리 뷰로 방향전환된 키에 그리고 그 반대로 접근할 수 있습니다.</p>
 
-<p>내장 변수 <em>A_RegView</em>에 현재 설정이 담깁니다. 새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>는 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본 설정을 가지고 새롭게 시작합니다. 기본값은 이 명령어를 자동-실행 섹션 (스크립트 상단)에서 사용하면 바꿀 수 있습니다.</p>
+<p>내장 변수 <em>A_RegView</em>에 현재 설정이 담깁니다. 새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>는 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본 설정을 가지고 새롭게 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
 
 <h3>관련 항목</h3>
-<p>
-<a href="RegRead.htm">RegRead</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="RegDelete.htm">RegDelete</a>, <a href="LoopReg.htm">Loop (레지스트리)</a></p>
+<p><a href="RegRead.htm">RegRead</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="RegDelete.htm">RegDelete</a>, <a href="LoopReg.htm">Loop (레지스트리)</a></p>
 
 <h3>예제</h3>
 <p id="example1">예제 1은 특정한 레지스트리 뷰를 설정하는 법과 레지스트리 방향전환으로 스크립트에 영향을 주는 법을 보여줍니다.</p>
@@ -49,7 +47,7 @@ RegDelete HKLM, SOFTWARE\Wow6432Node\Test.ahk
 
 MsgBox Read value '%value%' via Wow6432Node.
 
-<em>; 레지스트리 뷰를 기본값으로 복구합니다. 
+<em>; 레지스트리 뷰를 기본값으로 복구합니다.
 ; 기본값은 스크립트가 32-비트인가 64-비트인가에 따라 다릅니다.</em>
 SetRegView Default
 <em>;...</em>

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>OnMessage</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,25 +12,23 @@
 
 <h1>OnMessage()</h1>
 
-<p>
-스크립트가 지정된 메시지를 받을 때 자동으로 호출할 <a href="../Functions.htm">함수</a> 또는 <a href="../objects/Functor.htm">함수 객체</a>를 지정합니다 .</p>
+<p>스크립트가 지정된 메시지를 받을 때 자동으로 호출할 <a href="../Functions.htm">함수</a> 또는 <a href="../objects/Functor.htm">함수 객체</a>를 지정합니다 .</p>
+
 <pre class="Syntax">OnMessage(MsgNumber [, Function, MaxThreads])</pre>
 <h3>매개변수</h3>
 <dl>
 
   <dt>MsgNumber</dt>
-  <dd><p>감시 또는 질의할 메시지 번호, 범위는 0부터 4294967295 (0xFFFFFFFF)까지. <a href="../misc/SendMessageList.htm">시스템 메시지</a> (즉,  0x400 아래의 메시지)를 감시하고 싶지 않으면, 가능하면 4096 (0x1000)보다 더 큰 번호를 고르는 것이 제일 좋습니다. 이렇게 하면 오토핫키에 내부적으로 사용되는 메시지를 간섭할 기회가 줄어듭니다.</p></dd>
+  <dd><p>감시 또는 질의할 메시지 번호, 범위는 0부터 4294967295 (0xFFFFFFFF)까지. <a href="../misc/SendMessageList.htm">시스템 메시지</a> (즉, 0x400 아래의 메시지)를 감시하고 싶지 않으면, 가능하면 4096 (0x1000)보다 더 큰 번호를 고르는 것이 제일 좋습니다. 이렇게 하면 오토핫키에 내부적으로 사용되는 메시지를 간섭할 기회가 줄어듭니다.</p></dd>
 
   <dt>Function</dt>
   <dd><p><a href="../Functions.htm">함수</a>의 이름, <span class="ver">[v1.1.20+]</span>에서는 <a href="../objects/Functor.htm">함수 객체</a>. 기호 그대로의 함수 이름을 건네려면, 따옴표로 둘러 싸야 합니다.</p>
-  <p>
-  어떻게 함수가 등록되는가 그리고 OnMessage의 반환 값은 이 매개변수가 문자열인가 아니면 함수 객체인가에 달려 있습니다. 더 자세한 것은 <a href="#Name_v_Object">함수 이름 vs 객체</a>를 참조하십시오.</p>
+  <p>어떻게 함수가 등록되는가 그리고 OnMessage의 반환 값은 이 매개변수가 문자열인가 아니면 함수 객체인가에 달려 있습니다. 더 자세한 것은 <a href="#Name_v_Object">함수 이름 vs 객체</a>를 참조하십시오.</p>
   </dd>
 
   <dt>MaxThreads <span class="ver">[v1.0.47+]</span></dt>
   <dd><p><a name="MaxThreads"></a>이 정수는 보통 생략됩니다. 이 경우 감시 함수는 한 번에 한 <a href="../misc/Threads.htm">쓰레드</a>로 제한됩니다. 이것이 보통 제일 좋습니다. 그렇지 않으면 스크립트가 감시 함수가 자신을 호출하면 시간 순서가 엉망인 채로 메시지들을 처리하기 때문입니다. 그러므로, <em>MaxThreads</em>에 대한 대안으로서, <a href="#Critical">아래에</a> 기술하는 것처럼 <em>Critical</em>을 사용을 고려해 보십시오.</p>
-  <p>
-  <span class="ver">[v1.1.20+]:</span> 기본값으로, 여러 함수가 하나의 <em>MsgNumber</em>에 등록되어 있으면, 등록된 순서대로 호출됩니다. 이전에 등록된 함수보다 먼저 호출될 함수를 등록하려면, <em>MaxThreads</em>에 음수를 지정하십시오. 예를 들어, <code>OnMessage(Msg, Fn, -2)</code>는 이전에 <em>Msg</em>에 등록된 다른 어떤 함수보다도 먼저 <code>Fn</code>을 호출되도록 등록합니다. 그리고 <em>Fn</em>에 최대 2 개의 쓰레드를 허용합니다. 그렇지만, 그 함수가 이미 등록되어 있으면, 등록을 해제하고 다시 재등록 하지 않은 한 순서가 바뀌지 않습니다.</p></dd>
+  <p><span class="ver">[v1.1.20+]:</span> 기본값으로, 여러 함수가 하나의 <em>MsgNumber</em>에 등록되어 있으면, 등록된 순서대로 호출됩니다. 이전에 등록된 함수보다 먼저 호출될 함수를 등록하려면, <em>MaxThreads</em>에 음수를 지정하십시오. 예를 들어, <code>OnMessage(Msg, Fn, -2)</code>는 이전에 <em>Msg</em>에 등록된 다른 어떤 함수보다도 먼저 <code>Fn</code>을 호출되도록 등록합니다. 그리고 <em>Fn</em>에 최대 2 개의 쓰레드를 허용합니다. 그렇지만, 그 함수가 이미 등록되어 있으면, 등록을 해제하고 다시 재등록 하지 않은 한 순서가 바뀌지 않습니다.</p></dd>
 
 </dl>
 
@@ -37,46 +36,31 @@
 <p>OnMessage의 반환 값과 행위는 <em>Function</em> 매개변수가 함수 이름인가 아니면 객체인가에 따라 다릅니다.</p>
 
 <h4>함수 이름</h4>
-<p>
-하위 호환을 위해, 각각의 유일한 <em>MsgNumber</em>를 감시하려면 기껏해야 한 개의 함수만 이름으로 등록할 수 있습니다 -- 이것을 "legacy" 감시라고 부릅니다.</p>
-<p>
-legacy 감시 함수가 처음 등록되면, 이전에 등록된 감시 함수들 앞에 호출될지 뒤에 호출될지는 <em>MaxThreads</em> 매개변수에 달려 있습니다. 이 감시 함수가 다른 함수를 호출하도록 업데이트하더라도 먼저 등록해제 하지 않는 한 순서에 영향을 주지 않습니다.</p>
-<p>
-다음 코드는 <em>MsgNumber</em>에 대하여 현재 legacy 감시 함수를 등록하거나 업데이트합니다 (변수를 건넨다면 따옴표는 생략합니다):</p>
-
+<p>하위 호환을 위해, 각각의 유일한 <em>MsgNumber</em>를 감시하려면 기껏해야 한 개의 함수만 이름으로 등록할 수 있습니다 -- 이것을 "legacy" 감시라고 부릅니다.</p>
+<p>legacy 감시 함수가 처음 등록되면, 이전에 등록된 감시 함수들 앞에 호출될지 뒤에 호출될지는 <em>MaxThreads</em> 매개변수에 달려 있습니다. 이 감시 함수가 다른 함수를 호출하도록 업데이트하더라도 먼저 등록해제 하지 않는 한 순서에 영향을 주지 않습니다.</p>
+<p>다음 코드는 <em>MsgNumber</em>에 대하여 현재 legacy 감시 함수를 등록하거나 업데이트합니다 (변수를 건넨다면 따옴표는 생략합니다):</p>
 <pre class="Syntax">Name := OnMessage(MsgNumber, "FunctionName")</pre>
-
 <p>반환 값은 다음 중 하나입니다:</p>
 <ul>
   <li><a href="#Failure">실패</a>시 빈 문자열</li>
   <li>있었다면, 이전 함수의 이름</li>
   <li>그렇지 않으면, 새 함수의 이름.</li>
 </ul>
-<p>
-다음은 <em>MsgNumber</em>에 대하여 현재의 legacy 감시자를 (있다면) 등록을 해제하고 그의 이름을 돌려줍니다 (없으면 빈 값을 돌려줌):</p>
-
+<p>다음은 <em>MsgNumber</em>에 대하여 현재의 legacy 감시자를 (있다면) 등록을 해제하고 그의 이름을 돌려줍니다 (없으면 빈 값을 돌려줌):</p>
 <pre class="Syntax">Name := OnMessage(MsgNumber, "")</pre>
-<p>
-다음은 <em>MsgNumber</em>에 대하여 현재의 legacy 감시자의 이름을 돌려줍니다 (없다면 빈 값을 돌려줌):</p>
-
+<p>다음은 <em>MsgNumber</em>에 대하여 현재의 legacy 감시자의 이름을 돌려줍니다 (없다면 빈 값을 돌려줌):</p>
 <pre class="Syntax">Name := OnMessage(MsgNumber)</pre>
 
 <h4>함수 객체</h4>
-<p>
- (<a href="../objects/Func.htm">정상 함수</a>를 포함하여) 갯수에 상관없이 얼마든지 <a href="../objects/Functor.htm">함수 객체</a>는 주어진  <em>MsgNumber</em>를 감시할 수 있습니다.</p>
-<p>
-다음 두 줄은 이전에 등록한 함수들 <strong>다음에</strong> 호출될 함수 객체를 등록합니다:</p>
-
+<p>(<a href="../objects/Func.htm">정상 함수</a>를 포함하여) 갯수에 상관없이 얼마든지 <a href="../objects/Functor.htm">함수 객체</a>는 주어진 <em>MsgNumber</em>를 감시할 수 있습니다.</p>
+<p>다음 두 줄은 이전에 등록한 함수들 <strong>다음에</strong> 호출될 함수 객체를 등록합니다:</p>
 <pre class="Syntax">
 OnMessage(MsgNumber, FuncObj)     <em>; Option 1</em>
 OnMessage(MsgNumber, FuncObj, 1)  <em>; Option 2 (MaxThreads = 1)</em>
 </pre>
-<p>
-다음은 이전에 등록된 함수보다 <strong>먼저</strong> 호출될 함수 객체를 등록합니다:</p>
-
+<p>다음은 이전에 등록된 함수보다 <strong>먼저</strong> 호출될 함수 객체를 등록합니다:</p>
 <pre class="Syntax">OnMessage(MsgNumber, FuncObj, -1)</pre>
-<p>
-함수 객체를 등록 해제하려면 <em>MaxThreads</em>에 0을 지정하십시오:</p>
+<p>함수 객체를 등록 해제하려면 <em>MaxThreads</em>에 0을 지정하십시오:</p>
 <pre class="Syntax">OnMessage(MsgNumber, FuncObj, 0)</pre>
 
 <h3 id="Failure">실패</h3>
@@ -86,38 +70,27 @@ OnMessage(MsgNumber, FuncObj, 1)  <em>; Option 2 (MaxThreads = 1)</em>
   <li>매개변수를 다섯 개 이상 요구한다고 알려져 있습니다</li>
   <li>또는 v1.0.48.05 이전에서, <a href="../Functions.htm#ByRef">ByRef</a> 또는 <a href="../Functions.htm#optional">선택적</a> 매개변수를 가지고 있습니다.</li>
 </ol>
-<p>
-v1.1.19.03 이전에서 실패는 이미 500 개의 메시지를 감시 중인데 스크립트가 새 메시지를 감시하려고 시도하는 경우에도 일어납니다.</p>
-<p>
-<em>Function</em>이 객체이면, 실패시 예외를 던집니다. 그렇지 않으면, 빈 문자열을 돌려줍니다.</p>
+<p>v1.1.19.03 이전에서 실패는 이미 500 개의 메시지를 감시 중인데 스크립트가 새 메시지를 감시하려고 시도하는 경우에도 일어납니다.</p>
+<p><em>Function</em>이 객체이면, 실패시 예외를 던집니다. 그렇지 않으면, 빈 문자열을 돌려줍니다.</p>
 
 <h3>함수의 매개변수</h3>
-<p>
-여러 메시지를 감시하도록 할당된 <a href="../Functions.htm">함수</a>는 최대 네 개까지 매개변수를 받을 수 있습니다:</p>
-
+<p>여러 메시지를 감시하도록 할당된 <a href="../Functions.htm">함수</a>는 최대 네 개까지 매개변수를 받을 수 있습니다:</p>
 <pre>MyMessageMonitor(wParam, lParam, msg, hwnd)
 {
     ... body of function...
 }</pre>
-<p>
-매개변수에 건넨 이름에 상관 없이, 다음 정보가 순서대로 매개변수에 할당됩니다.:</p>
-<p>
-매개변수 #1: 메시지의 WPARAM 값.<br>
+<p>매개변수에 건넨 이름에 상관 없이, 다음 정보가 순서대로 매개변수에 할당됩니다.:</p>
+<p>매개변수 #1: 메시지의 WPARAM 값.<br>
 매개변수 #2: 메시지의 LPARAM 값.<br>
 매개변수 #3: 메시지 번호, 함수가 여러 메시지를 감시할 때 유용합니다.<br>
 매개변수 #4: 메시지가 전송된 창이나 콘트롤의 HWND (유일한 ID). HWND는 <a href="../misc/WinTitle.htm#ahk_id">ahk_id</a>와 함께 사용할 수 있습니다.</p>
-<p>
-WPARAM 그리고 LPARAM은 스크립트의 실행 파일이 32-비트인지 64-비트인지에 따라 부호 없는 32-비트 정수이거나 (0부터 2<sup>32</sup>-1까지) 또는 부호 있는 64-비트 정수입니다 (-2<sup>63</sup>부터 2<sup>63</sup>-1까지). 
-32-비트 스크립트에 대하여, 들어오는 매개변수가 부호 있는 정수를 의도한다면, 음수는 다음 예제를 따라 노출시킬 수 있습니다:</p>
-
+<p>WPARAM 그리고 LPARAM은 스크립트의 실행 파일이 32-비트인지 64-비트인지에 따라 부호 없는 32-비트 정수이거나 (0부터 2<sup>32</sup>-1까지) 또는 부호 있는 64-비트 정수입니다 (-2<sup>63</sup>부터 2<sup>63</sup>-1까지). 32-비트 스크립트에 대하여, 들어오는 매개변수가 부호 있는 정수를 의도한다면, 음수는 다음 예제를 따라 노출시킬 수 있습니다:</p>
 <pre>if (A_PtrSize = 4 &amp;&amp; wParam &gt; 0x7FFFFFFF)  <em>; <a href="../Variables.htm#PtrSize">A_PtrSize</a>를 점검해 스크립트가 32-비트임을 확인합니다.</em>
     wParam := -(~wParam) - 1</pre>
-<p>
-상응하는 정보가 필요하지 않으면 리스트의 끝으로부터 하나 이상의 매개변수를 생략할 수 있습니다. 예를 들어, <code>MyMsgMonitor(wParam, lParam)</code>로 정의된 함수는 앞에서 두 개의 매개변수만 받습니다. 그리고 <code>MyMsgMonitor()</code>로 정의된 함수는 매개변수를 전혀 받지 않습니다.</p>
+<p>상응하는 정보가 필요하지 않으면 리스트의 끝으로부터 하나 이상의 매개변수를 생략할 수 있습니다. 예를 들어, <code>MyMsgMonitor(wParam, lParam)</code>로 정의된 함수는 앞에서 두 개의 매개변수만 받습니다. 그리고 <code>MyMsgMonitor()</code>로 정의된 함수는 매개변수를 전혀 받지 않습니다.</p>
 
 <h3>함수에서 사용가능한 추가 정보</h3>
-<p>
-위에서 받은 매개변수 말고도, 함수는 다음 내장 변수로부터 값들을 참고할 수도 있습니다:</p>
+<p>위에서 받은 매개변수 말고도, 함수는 다음 내장 변수로부터 값들을 참고할 수도 있습니다:</p>
 <ul>
   <li><a href="../Variables.htm#Gui">A_Gui</a>: 메시지가 GUI 창 또는 콘트롤에 전송되지 않았다면 비어 있습니다. 이 경우 A_Gui는 <a href="Gui.htm#MultiWin">Gui 창 번호</a>입니다 (이 창은 또 함수의 <a href="Gui.htm#DefaultWin">기본 GUI 창</a>으로 설정됩니다).</li>
   <li><a href="../Variables.htm#GuiControl">A_GuiControl</a>: 메시지가 GUI 콘트롤에 전송되지 않았다면 비어 있습니다. 이 경우 안에 콘트롤의 변수 이름이나 다른 값이 들어 있습니다. 자세한 것은 <a href="../Variables.htm#GuiControl">A_GuiControl</a>에 기술합니다. 어떤 콘트롤들은 어떤 종류의 메시지도 받지 않습니다. 예를 들어, 사용자가 <a href="GuiControls.htm#Text">텍스트 콘트롤</a>을 클릭할 때, 운영 체제는 WM_LBUTTONDOWN을 그 콘트롤이 아니라 부모 창에 전송합니다. A_GuiControl는 비어 있습니다.</li>
@@ -128,51 +101,32 @@ WPARAM 그리고 LPARAM은 스크립트의 실행 파일이 32-비트인지 64-�
 <pre>DetectHiddenWindows On
 MsgParentWindow := WinExist()  <em>; 메시지가 전송된 창의 유일한 ID를 저장합니다.</em></pre>
 
-<h3>함수는 무엇을<em>돌려주어야 하는가</em></h3>
-<p>
-감시 함수가 매개변수 없이 <a href="Return.htm">Return</a>을 사용하거나, &quot;&quot;와 같은 빈 값을 지정하면 (또는 전혀 Return을 사용하지 않으면), 들어오는 메시지는 함수가 끝날 때 정상적으로 처리됩니다. 
-함수가 종료하거나(<a href="Exit.htm">Exits</a>) 존재하지 않는 파일을 <a href="Run.htm">실행하는</a> 실행시간 에러를 야기하더라도 같은 일이 일어납니다. 대조적으로, 정수를 돌려주면, 그 메시지는 즉시 반송됩니다; 즉, 프로그램은 메시지를 더 이상 처리하지 않습니다. 예를 들어, WM_LBUTTONDOWN (0x201)을 감시하는 함수가 정수를 돌려주면 목표 창은 마우스 클릭이 일어난 사실을 고지 받지 못합니다. 많은 경우 (예를 들어 <a href="PostMessage.htm">PostMessage</a>를 통하여 도착하는 메시지의 경우), 어떤 정수가 반환되어도 상관하지 않습니다; 그러나 잘 모르겠다면, 0이 보통 가장 안전합니다.</p>
-<p>
-유효한 반환 값의 범위는 스크립트의 실행파일이 32-비트인가 64-비트인가에 따라 다릅니다. 비어 있지 않은 값은 반드시 범위가 32비트-스크립트에 대하여 (<code><a href="../Variables.htm#PtrSize">A_PtrSize</a> = 4</code>) -2<sup>31</sup>부터 2<sup>32</sup>-1까지 그리고 64-비트 스크립트에 대하여(<code><a href="../Variables.htm#PtrSize">A_PtrSize</a> = 8</code>) -2<sup>63</sup>부터 2<sup>63</sup>-1까지입니다.</p>
-<p>
-<span class="ver">[v1.1.20+]:</span> 하나의 메시지에 대하여 여러 감시 함수가 있다면, 비어 있지 않은 값을 돌려줄 때까지 하나씩 호출됩니다.</p>
+<h3>함수는 무엇을<em>돌려주어야 하는가 </em></h3>
+<p>감시 함수가 매개변수 없이 <a href="Return.htm">Return</a>을 사용하거나, ""와 같은 빈 값을 지정하면 (또는 전혀 Return을 사용하지 않으면), 들어오는 메시지는 함수가 끝날 때 정상적으로 처리됩니다. 함수가 종료하거나(<a href="Exit.htm">Exits</a>) 존재하지 않는 파일을 <a href="Run.htm">실행하는</a> 실행시간 에러를 야기하더라도 같은 일이 일어납니다. 대조적으로, 정수를 돌려주면, 그 메시지는 즉시 반송됩니다; 즉, 프로그램은 메시지를 더 이상 처리하지 않습니다. 예를 들어, WM_LBUTTONDOWN (0x201)을 감시하는 함수가 정수를 돌려주면 목표 창은 마우스 클릭이 일어난 사실을 고지 받지 못합니다. 많은 경우 (예를 들어 <a href="PostMessage.htm">PostMessage</a>를 통하여 도착하는 메시지의 경우), 어떤 정수가 반환되어도 상관하지 않습니다; 그러나 잘 모르겠다면, 0이 보통 가장 안전합니다.</p>
+<p>유효한 반환 값의 범위는 스크립트의 실행파일이 32-비트인가 64-비트인가에 따라 다릅니다. 비어 있지 않은 값은 반드시 범위가 32비트-스크립트에 대하여 (<code><a href="../Variables.htm#PtrSize">A_PtrSize</a> = 4</code>) -2<sup>31</sup>부터 2<sup>32</sup>-1까지 그리고 64-비트 스크립트에 대하여(<code><a href="../Variables.htm#PtrSize">A_PtrSize</a> = 8</code>) -2<sup>63</sup>부터 2<sup>63</sup>-1까지입니다.</p>
+<p><span class="ver">[v1.1.20+]:</span> 하나의 메시지에 대하여 여러 감시 함수가 있다면, 비어 있지 않은 값을 돌려줄 때까지 하나씩 호출됩니다.</p>
 
 <h3 id="Remarks">총평</h3>
-<p>
-정상 함수-호출과 다르게, 감시 메시지가 도착하면 함수는 새로운 <a href="../misc/Threads.htm">쓰레드</a>로 호출됩니다. 이 때문에, 함수는 <a href="SendMode.htm">SendMode</a> 그리고 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>과 같은 기본값을 가지고 새롭게 시작합니다. 이 기본값은 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에서 바꿀 수 있습니다.</p>
-<p>
-콘트롤에 (포스트 방식이 아니라) 센드 방식으로 전송되는 메시지는 관제되지 않습니다. 왜냐하면 시스템은 그런 메시지들을 화면 뒤의 콘트롤에 직접 보내 버리기 때문입니다. 이런 일은 시스템에서-생성되는 메시지들에는 별로 문제가 되지 않습니다. 왜냐하면 대부분 포스트 방식으로 전송되기 때문입니다..</p>
-<p>
-OnMessage를 호출하는 스크립트는 자동으로 <a href="_Persistent.htm">영속적</a>이 됩니다. 또한 단일 실체이기도 합니다. 단, <a href="_SingleInstance.htm">#SingleInstance</a>를 사용하여 오버라이드된 경우는 예외입니다.</p>
-<p>
-<a name="Critical"></a>함수가 여전히 실행중인 동안에 또 같은 메시지가 도착하면, 그 함수는 다시 호출되지 않습니다 (단, <a href="#MaxThreads">MaxThreads</a>가 1보다 큰 경우는 예외입니다); 대신에, 그 메시지는 감시되지 않은 것으로 취급됩니다. 이것이 마음에 들지 않으면, 0x312 이상의 메시지는 그의 함수가 완료할 때까지 버퍼 처리할 수 있습니다. 함수의 첫 줄에 <a href="Critical.htm">Critical</a>을 지정하면 됩니다. 대안으로, 감시 함수가 일을 끝낼만큼 충분히 긴 시간을 지속하기만 하면 <a href="Thread.htm">쓰레드 인터럽트</a>로 같은 일을 달성할 수 있습니다. 대조적으로, 0x312보다 작은 메시지는 Critical 또는 Thread Interrupt으로 버퍼 처리할 수 없습니다 (그렇지만,  v1.0.46+에서, Critical은 도움이 됩니다. 왜냐하면 메시지를 <a href="Critical.htm#Interval">덜</a> 점검하기 때문에, 함수가 더 많은 시간을 가지고 일을 끝낼 수 있습니다). 그런 메시지를 놓치지 않도록 보장하는 유일한 방법은 함수가 6밀리초 아래에서 일을 끝내도록 확인하는 것입니다 (물론 이 제한은 <a href="Critical.htm#Interval"><em>Critical 30</em></a>을 통하여 더 올릴 수 있습니다). 
-
-이렇게 하는 한 가지 방법은  0x312보다 큰 감시 메시지를 자신의 스크립트에 <a href="PostMessage.htm">포스트</a>해서 미래의 쓰레드를 미리 큐에 준비하는 것입니다. 그 메시지의 함수는 <a href="Critical.htm">임계구역</a>을 그의 첫 줄에 지정해서 그의 메시지가 버퍼 처리 되도록 확인해야 합니다.</p>
-<p>
-스크립트가 절대적으로 인터럽트가 불가능한 동안에 0x312보다 작은 감시 메시지가 도착하면 -- 예를 들어 <a href="Menu.htm">메뉴</a>가 보여지거나, <a href="SetKeyDelay.htm">KeyDelay</a>/<a href="SetMouseDelay.htm">MouseDelay</a>가 진행 중이거나, 또는 클립보드가 <a href="_ClipboardTimeout.htm">열려 있다면</a> -- 그 메시지의 함수는 호출되지 않습니다. 그리고 그 메시지는 관제되지 않은 것으로 처리됩니다. 대조적으로 0x312 이상의 감시 메시지는 이런 인터럽트 불가능 기간동안에 버퍼 처리됩니디; 즉, 그의 함수는 스크립트가 인터럽트 가능해질 때 호출됩니다.</p>
-<p>
-  <a href="Thread.htm">쓰레드 인터럽트</a> 또는 <a href="Critical.htm">임계구역</a>의 설정 때문에 스크립트가 인터럽트가 불가능한 동안에 0x312 보다 작은 감시 메시지가 도착하면, 현재 쓰레드가 인터럽트 되어 그의 감시 함수를 호출할 수 있습니다. 대조적으로 0x312 이상의 감시 메시지는 쓰레드가 일을 끝내거나 인터럽트가 가능해질 때까지 버퍼 처리됩니다.</p>
-<p>
-OnMessage 쓰레드의 <a href="../misc/Threads.htm">우선 순위</a>는 언제나 0입니다. 결과적으로 현재 쓰레드의 우선 순위가 0보다 높으면 어떤 메시지도 관제되지 않고 버퍼 처리되지 않습니다.</p>
-<p>
-(0x400미만의) 시스템 메시지는 주의해서 사용해야 합니다. 예를 들어, 감시 함수가 빨리 일을 끝내지 못하면, 그 메시지에 대한 응답은 시스템의 예상보다 훨씬 더 걸립니다. 이 때문에 부작용을 야기할 수 있습니다. 감시 프로그램이 더 이상의 메시지 처리를 억누르기 위해 정수를 돌려주면 원하지 않는 행위가 일어날 수도 있습니다. 시스템은 다른 처리 다른 응답을 예상하고 있기 때문입니다.</p>
-<p>
-스크립트가 <a href="MsgBox.htm">MsgBox</a>와 같은 시스템 창을 보여주고 있을 때, 콘트롤에 포스트되는 메시지는 모두 관제가 되지 않습니다. 예를 들어, 스크립트가 MsgBox를 보여주고 있고 사용자가 GUI 창에 버튼을 클릭하면, WM_LBUTTONDOWN 메시지는 감시 함수를 호출하지 않고 직접 버튼에 전송됩니다.</p>
-<p>
-외부 프로그램은 PostThreadMessage() 또는 기타 API 호출을 통하여 메시지를 직접 스크립트의 쓰레드에 포스트할 수 있지만, 이것은 권장하지 않습니다. 왜냐하면 그 메시지들은 스크립트가 <a href="MsgBox.htm">MsgBox</a> 같은 시스템 창을 보여주고 있는 중이라면 소실되어 버리기 때문입니다. 대신에, 보통 스크립트의 메인 창이나 그의 GUI 창 중의 하나에 메시지를 보내는 것이 가장 좋습니다 (send vs post).</p>
-
+<p>정상 함수-호출과 다르게, 감시 메시지가 도착하면 함수는 새로운 <a href="../misc/Threads.htm">쓰레드</a>로 호출됩니다. 이 때문에, 함수는 <a href="SendMode.htm">SendMode</a> 그리고 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>과 같은 기본값을 가지고 새롭게 시작합니다. 이 기본값은 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에서 바꿀 수 있습니다.</p>
+<p>콘트롤에 (포스트 방식이 아니라) 센드 방식으로 전송되는 메시지는 관제되지 않습니다. 왜냐하면 시스템은 그런 메시지들을 화면 뒤의 콘트롤에 직접 보내 버리기 때문입니다. 이런 일은 시스템에서-생성되는 메시지들에는 별로 문제가 되지 않습니다. 왜냐하면 대부분 포스트 방식으로 전송되기 때문입니다..</p>
+<p>OnMessage를 호출하는 스크립트는 자동으로 <a href="_Persistent.htm">영속적</a>이 됩니다. 또한 단일 실체이기도 합니다. 단, <a href="_SingleInstance.htm">#SingleInstance</a>를 사용하여 오버라이드된 경우는 예외입니다.</p>
+<p><a name="Critical"></a>함수가 여전히 실행중인 동안에 또 같은 메시지가 도착하면, 그 함수는 다시 호출되지 않습니다 (단, <a href="#MaxThreads">MaxThreads</a>가 1보다 큰 경우는 예외입니다); 대신에, 그 메시지는 감시되지 않은 것으로 취급됩니다. 이것이 마음에 들지 않으면, 0x312 이상의 메시지는 그의 함수가 완료할 때까지 버퍼 처리할 수 있습니다. 함수의 첫 줄에 <a href="Critical.htm">Critical</a>을 지정하면 됩니다. 대안으로, 감시 함수가 일을 끝낼만큼 충분히 긴 시간을 지속하기만 하면 <a href="Thread.htm">쓰레드 인터럽트</a>로 같은 일을 달성할 수 있습니다. 대조적으로, 0x312보다 작은 메시지는 Critical 또는 Thread Interrupt으로 버퍼 처리할 수 없습니다 (그렇지만, v1.0.46+에서, Critical은 도움이 됩니다. 왜냐하면 메시지를 <a href="Critical.htm#Interval">덜</a> 점검하기 때문에, 함수가 더 많은 시간을 가지고 일을 끝낼 수 있습니다). 그런 메시지를 놓치지 않도록 보장하는 유일한 방법은 함수가 6밀리초 아래에서 일을 끝내도록 확인하는 것입니다 (물론 이 제한은 <a href="Critical.htm#Interval"><em>Critical 30</em></a>을 통하여 더 올릴 수 있습니다). 이렇게 하는 한 가지 방법은 0x312보다 큰 감시 메시지를 자신의 스크립트에 <a href="PostMessage.htm">포스트</a>해서 미래의 쓰레드를 미리 큐에 준비하는 것입니다. 그 메시지의 함수는 <a href="Critical.htm">임계구역</a>을 그의 첫 줄에 지정해서 그의 메시지가 버퍼 처리 되도록 확인해야 합니다.</p>
+<p>스크립트가 절대적으로 인터럽트가 불가능한 동안에 0x312보다 작은 감시 메시지가 도착하면 -- 예를 들어 <a href="Menu.htm">메뉴</a>가 보여지거나, <a href="SetKeyDelay.htm">KeyDelay</a>/<a href="SetMouseDelay.htm">MouseDelay</a>가 진행 중이거나, 또는 클립보드가 <a href="_ClipboardTimeout.htm">열려 있다면</a> -- 그 메시지의 함수는 호출되지 않습니다. 그리고 그 메시지는 관제되지 않은 것으로 처리됩니다. 대조적으로 0x312 이상의 감시 메시지는 이런 인터럽트 불가능 기간동안에 버퍼 처리됩니디; 즉, 그의 함수는 스크립트가 인터럽트 가능해질 때 호출됩니다.</p>
+<p><a href="Thread.htm">쓰레드 인터럽트</a> 또는 <a href="Critical.htm">임계구역</a>의 설정 때문에 스크립트가 인터럽트가 불가능한 동안에 0x312 보다 작은 감시 메시지가 도착하면, 현재 쓰레드가 인터럽트 되어 그의 감시 함수를 호출할 수 있습니다. 대조적으로 0x312 이상의 감시 메시지는 쓰레드가 일을 끝내거나 인터럽트가 가능해질 때까지 버퍼 처리됩니다.</p>
+<p>OnMessage 쓰레드의 <a href="../misc/Threads.htm">우선 순위</a>는 언제나 0입니다. 결과적으로 현재 쓰레드의 우선 순위가 0보다 높으면 어떤 메시지도 관제되지 않고 버퍼 처리되지 않습니다.</p>
+<p>(0x400미만의) 시스템 메시지는 주의해서 사용해야 합니다. 예를 들어, 감시 함수가 빨리 일을 끝내지 못하면, 그 메시지에 대한 응답은 시스템의 예상보다 훨씬 더 걸립니다. 이 때문에 부작용을 야기할 수 있습니다. 감시 프로그램이 더 이상의 메시지 처리를 억누르기 위해 정수를 돌려주면 원하지 않는 행위가 일어날 수도 있습니다. 시스템은 다른 처리 다른 응답을 예상하고 있기 때문입니다.</p>
+<p>스크립트가 <a href="MsgBox.htm">MsgBox</a>와 같은 시스템 창을 보여주고 있을 때, 콘트롤에 포스트되는 메시지는 모두 관제가 되지 않습니다. 예를 들어, 스크립트가 MsgBox를 보여주고 있고 사용자가 GUI 창에 버튼을 클릭하면, WM_LBUTTONDOWN 메시지는 감시 함수를 호출하지 않고 직접 버튼에 전송됩니다.</p>
+<p>외부 프로그램은 PostThreadMessage() 또는 기타 API 호출을 통하여 메시지를 직접 스크립트의 쓰레드에 포스트할 수 있지만, 이것은 권장하지 않습니다. 왜냐하면 그 메시지들은 스크립트가 <a href="MsgBox.htm">MsgBox</a> 같은 시스템 창을 보여주고 있는 중이라면 소실되어 버리기 때문입니다. 대신에, 보통 스크립트의 메인 창이나 그의 GUI 창 중의 하나에 메시지를 보내는 것이 가장 좋습니다 (send vs post).</p>
 <h3>관련 항목</h3>
 <p><a href="RegisterCallback.htm">RegisterCallback()</a>, <a href="OnExit.htm">OnExit</a>, <a href="OnClipboardChange.htm">OnClipboardChange</a>, <a href="PostMessage.htm">Post/SendMessage</a>, <a href="../Functions.htm">함수</a>, <a href="../misc/SendMessageList.htm">창 메시지 목록</a>, <a href="../misc/Threads.htm">쓰레드</a>, <a href="Critical.htm">Critical</a>, <a href="DllCall.htm">DllCall()</a></p>
-
 <h3>예제</h3>
-
 <pre class="NoIndent"><em>; 예제: 다음의 작동하는 스크립트는 GUI 창에서 마우스 클릭을 감시합니다
 ; 관련 주제: <a href="Gui.htm#GuiContextMenu">GuiContextMenu</a></em>
 
 Gui, Add, Text,, 이 창 아무데나 클릭하십시오.
 Gui, Add, Edit, w200 vMyEdit
 Gui, Show
-OnMessage(0x201, &quot;WM_LBUTTONDOWN&quot;)
+OnMessage(0x201, "WM_LBUTTONDOWN")
 return
 
 WM_LBUTTONDOWN(wParam, lParam)
@@ -180,7 +134,7 @@ WM_LBUTTONDOWN(wParam, lParam)
     X := lParam &amp; 0xFFFF
     Y := lParam &gt;&gt; 16
     if A_GuiControl
-        Control := &quot;`n(in control &quot; . A_GuiControl . &quot;)&quot;
+        Control := "`n(in control " . A_GuiControl . ")"
     ToolTip Gui #%A_Gui% 창에서 클라이언트 좌표 %X%x%Y%.%Control%에 왼클릭 했습니다.
 }
 
@@ -192,8 +146,8 @@ ExitApp</pre>
 ; 관련 주제: <a href="OnExit.htm">OnExit</a></em>
 
 <em>; 다음 DllCall은 선택적입니다: OS에게 이 스크립트를 (다른 모든 어플리케이션보다) <i>먼저</i> 닫으라고 명령합니다.</em>
-DllCall(&quot;kernel32.dll\SetProcessShutdownParameters&quot;, UInt, 0x4FF, UInt, 0)
-OnMessage(0x11, &quot;WM_QUERYENDSESSION&quot;)
+DllCall("kernel32.dll\SetProcessShutdownParameters", UInt, 0x4FF, UInt, 0)
+OnMessage(0x11, "WM_QUERYENDSESSION")
 return
 
 WM_QUERYENDSESSION(wParam, lParam)
@@ -213,8 +167,8 @@ WM_QUERYENDSESSION(wParam, lParam)
 <pre class="NoIndent"><em>; 예제: 스크립트에게 다른 스크립트나 프로그램으로부터 맞춤 메시지와 최대 두 개의 숫자를 받도록 만듭니다.
 ; (숫자 대신에 문자열을 전송하려면, 이 다음 예제를 보십시오).</em>
 
-OnMessage(0x5555, &quot;MsgMonitor&quot;)
-OnMessage(0x5556, &quot;MsgMonitor&quot;)
+OnMessage(0x5555, "MsgMonitor")
+OnMessage(0x5556, "MsgMonitor")
 
 MsgMonitor(wParam, lParam, msg)
 {
@@ -226,17 +180,17 @@ MsgMonitor(wParam, lParam, msg)
 <em>; 다음을 다른 스크립트 안에서 사용하면 위의 스크립트 안에서 함수를 실행할 수 있습니다:</em>
 SetTitleMatchMode 2
 DetectHiddenWindows On
-if WinExist(&quot;Name of Receiving Script.ahk ahk_class AutoHotkey&quot;)
-    PostMessage, 0x5555, 11, 22  <em>; 이 메시지는 위의 WinExist() 때문에 &quot;<a href="../misc/WinTitle.htm#LastFoundWindow">마지막 발견 창</a>&quot;으로 전송됩니다.</em>
+if WinExist("Name of Receiving Script.ahk ahk_class AutoHotkey")
+    PostMessage, 0x5555, 11, 22  <em>; 이 메시지는 위의 WinExist() 때문에 "<a href="../misc/WinTitle.htm#LastFoundWindow">마지막 발견 창</a>"으로 전송됩니다.</em>
 DetectHiddenWindows Off  <em>; PostMessage가 끝날 때까지 끄면 안됩니다.</em></pre>
 
 <pre class="NoIndent"><a name="SendString"></a><em>; 예제: 문자열을 길이에 상관없이 한 스크립트에서 다른 스크립트로 전송합니다.  다음은 작동하는 예제입니다.
-; 사용하려며니, 다음 스크립트들을 저장하고 실행한 다음 Win+Space를 누르면 
+; 사용하려며니, 다음 스크립트들을 저장하고 실행한 다음 Win+Space를 누르면
 ; InputBox를 볼수 있습니다. 그 안에 문자열을 타자해 넣으면 됩니다.</em>
 
-<em>; 다음 스크립트를 &quot;<strong>Receiver.ahk</strong>&quot;로 저장하고 기동시키십시오:</em>
+<em>; 다음 스크립트를 "<strong>Receiver.ahk</strong>"로 저장하고 기동시키십시오:</em>
 #SingleInstance
-OnMessage(0x4a, &quot;Receive_WM_COPYDATA&quot;)  <em>; 0x4a is WM_COPYDATA</em>
+OnMessage(0x4a, "Receive_WM_COPYDATA")  <em>; 0x4a is WM_COPYDATA</em>
 return
 
 Receive_WM_COPYDATA(wParam, lParam)
@@ -248,7 +202,7 @@ Receive_WM_COPYDATA(wParam, lParam)
     return true  <em>;  1 (true)을 돌려주는 것이 이 메시지를 승인하는 전통적인 방식입니다.</em>
 }
 
-<em>; 다음 스크립트를 &quot;<strong>Sender.ahk</strong>&quot;로 저장한 다음 기동시키십시오. 그 다음, Win+Space 핫키를 누르십시오.</em>
+<em>; 다음 스크립트를 "<strong>Sender.ahk</strong>"로 저장한 다음 기동시키십시오.  그 다음, Win+Space 핫키를 누르십시오.</em>
 TargetScriptTitle = Receiver.ahk ahk_class AutoHotkey
 
 #space::  <em>; Win+Space 핫키. 누르면 메시지 문자열을 입력할 InputBox가 나타납니다.</em>

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>ComObjQuery()</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -10,8 +11,7 @@
 <body>
 
 <h1>ComObjQuery() <span class="ver">[v1.0.96.00+]</span></h1>
-<p>COM 객체에 인터페이스나 서비스가 있는지 질의합니다.</p>
-
+<p>COM 객체에 인터페이스 또는 서비스를 질의합니다.</p>
 <pre class="Syntax">InterfacePointer := ComObjQuery(ComObject, [SID,] IID)</pre>
 
 <h3>매개변수</h3>
@@ -29,8 +29,7 @@
 </dl>
 
 <h3>총평</h3>
-<p>
-그의 두-매개변수 모드에서, 이 함수는 <a href="http://msdn.microsoft.com/en-us/library/ms682521.aspx">IUnknown::QueryInterface</a>와 동등합니다. SID와 IID 모두 지정되면, 내부적으로 <a href="http://msdn.microsoft.com/en-us/library/cc678965.aspx">IServiceProvider</a> 인터페이스에 질의한 다음, <a href="http://msdn.microsoft.com/en-us/library/cc678966.aspx">IServiceProvider::QueryService</a>를 호출합니다. 어느 경우든, 반환 값은 0 이거나 아니면 요청된 인터페이스를 가리키는 포인터입니다. 일반적으로 이 포인터는 반드시 스크립트가 일을 마칠 때 <a href="ObjAddRef.htm">해제</a>되어야 합니다.</p>
+<p>그의 두-매개변수 모드에서, 이 함수는 <a href="http://msdn.microsoft.com/en-us/library/ms682521.aspx">IUnknown::QueryInterface</a>와 동등합니다. SID와 IID 모두 지정되면, 내부적으로 <a href="http://msdn.microsoft.com/en-us/library/cc678965.aspx">IServiceProvider</a> 인터페이스에 질의한 다음, <a href="http://msdn.microsoft.com/en-us/library/cc678966.aspx">IServiceProvider::QueryService</a>를 호출합니다. 어느 경우든, 반환 값은 0 이거나 아니면 요청된 인터페이스를 가리키는 포인터입니다. 일반적으로 이 포인터는 반드시 스크립트가 일을 마칠 때 <a href="ObjAddRef.htm">해제</a>되어야 합니다.</p>
 
 <h3>관련 항목</h3>
 <a href="ObjAddRef.htm">ObjRelease</a>, <a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjGet.htm">ComObjGet</a>, <a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjError.htm">ComObjError</a>
@@ -112,7 +111,7 @@ GetWebBrowser()
 GUID(ByRef GUID, sGUID) <em>; 문자열을 이진 GUID로 변환하고 그의 주소를 돌려줍니다.</em>
 {
     VarSetCapacity(GUID, 16, 0)
-    return DllCall("ole32\CLSIDFromString", "wstr", sGUID, "ptr", &amp;GUID) >= 0 ? &amp;GUID : ""
+    return DllCall("ole32\CLSIDFromString", "wstr", sGUID, "ptr", &amp;GUID) &gt;= 0 ? &amp;GUID : ""
 }
 </pre>
 

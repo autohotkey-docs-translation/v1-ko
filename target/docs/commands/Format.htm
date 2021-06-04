@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Format</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -19,17 +20,11 @@
 
   <dt>FormatStr</dt>
   <dd>
-    <p>
-	<code>{<i>Index</i>:<i><a href="#FormatSpec">Format</a></i>}</code>의 형태로 기호 텍스트와 위치보유자로 구성된 형식 문자열 .</p>
-    <p>
-	<em>Index</em>는 사용할 입력 값을 가리키는 정수입니다. 1이면 첫 번째 값입니다.</p>
-    <p>
-	<em>Format</em>은, 아래에 기술하는 바와 같이, 선택적 형식 지정자입니다..</p>
-    <p>(이전에 문자열에 사용되었을지라도) 다음 입력 값을 연속열로 사용하려면 인덱스를 생략하십시오. 
-	
-	예를 들어, <code>"{2:i} {:i}"</code>는 두 번째와 세 번째 입력 값을 십진 정수로, 스페이스로 분리하여, 포맷합니다. <em>Index</em>를 생략하더라도, <em>Format</em>은 여전히 <code>:</code> 앞에 와야 합니다. 빈 활괄호를 지정하면 다음 입력 값을 기본 형식으로 사용할 수 있습니다: <code>{}</code></p>
-    <p>
-	<code>{{}</code>와 <code>{}}</code>를 사용하면 문자열에 문자 그대로의 활괄호를 포함할 수 있습니다. 다른 무효한 위치보유자는 결과에 있는 그대로 포함됩니다.</p>
+    <p><code>{<i>Index</i>:<i><a href="#FormatSpec">Format</a></i>}</code>의 형태로 기호 텍스트와 위치보유자로 구성된 형식 문자열 .</p>
+    <p><em>Index</em>는 사용할 입력 값을 가리키는 정수입니다. 1이면 첫 번째 값입니다.</p>
+    <p><em>Format</em>은, 아래에 기술하는 바와 같이, 선택적 형식 지정자입니다..</p>
+    <p>(이전에 문자열에 사용되었을지라도) 다음 입력 값을 연속열로 사용하려면 인덱스를 생략하십시오. 예를 들어, <code>"{2:i} {:i}"</code>는 두 번째와 세 번째 입력 값을 십진 정수로, 스페이스로 분리하여, 포맷합니다. <em>Index</em>를 생략하더라도, <em>Format</em>은 여전히 <code>:</code> 앞에 와야 합니다. 빈 활괄호를 지정하면 다음 입력 값을 기본 형식으로 사용할 수 있습니다: <code>{}</code></p>
+    <p><code>{{}</code>와 <code>{}}</code>를 사용하면 문자열에 문자 그대로의 활괄호를 포함할 수 있습니다. 다른 무효한 위치보유자는 결과에 있는 그대로 포함됩니다.</p>
     <p>공백은 활괄호 안에 허용되지 않습니다 (플래그로서 나타나는 것은 예외).</p>
   </dd>
 
@@ -44,15 +39,11 @@ MsgBox % Format("{2:x}{1:02x}", arr*)</pre>
 </dl>
 
 <h3 id="FormatSpec">형식 지정자</h3>
-<p>
-각 형식 지정자는 (스페이스 없이) 순서대로 다음 구성요소를 포함할 수 있습니다:</p>
+<p>각 형식 지정자는 (스페이스 없이) 순서대로 다음 구성요소를 포함할 수 있습니다:</p>
 <pre class="Syntax">Flags Width .Precision ULT Type</pre>
 <p><a href="#Flags"><strong>Flags</strong></a> 출력 정렬과 접두사에 영향을 줍니다: <code>-</code> <code>+</code> <code>0</code> space <code>#</code></p>
-<p>
-<strong>Width</strong>: 포맷 값의최소 너비를, 문자단위로 제어하는 십진 정수. 
-기본으로, 값들은 오른쪽에 정렬되고 스페이스가 패딩에 사용됩니다. 이것은<code>-</code> (왼쪽-정렬) 그리고 <code>0</code> (zero prefix) 플래그를 사용하여 오버라이드 할 수 있습니다.</p>
-<p>
-<strong>.Precision</strong>: 문자열의 최대 개수, 십진 자리수, 또는 출력될 유효 자리를 제어하는 십진 정수. 출력 유형에 따라 달라집니다. 앞에 반드시 십진 소수점이 있어야 합니다. 정밀도를 지정하면 값이 잘려 나가거나 올림 내림 처리됩니다.</p>
+<p><strong>Width</strong>: 포맷 값의최소 너비를, 문자단위로 제어하는 십진 정수. 기본으로, 값들은 오른쪽에 정렬되고 스페이스가 패딩에 사용됩니다. 이것은<code>-</code> (왼쪽-정렬) 그리고 <code>0</code> (zero prefix) 플래그를 사용하여 오버라이드 할 수 있습니다.</p>
+<p><strong>.Precision</strong>: 문자열의 최대 개수, 십진 자리수, 또는 출력될 유효 자리를 제어하는 십진 정수. 출력 유형에 따라 달라집니다. 앞에 반드시 십진 소수점이 있어야 합니다. 정밀도를 지정하면 값이 잘려 나가거나 올림 내림 처리됩니다.</p>
 <ul>
   <li><code>f</code>, <code>e</code>, <code>E</code>: <em>Precision</em>는 십진 소수점 다음의 자리수를 지정합니다. 기본 값은 6입니다.</li>
   <li><code>g</code>, <code>G</code>: <em>Precision</em>는 유효 자리의 최대 개수를 지정합니다. 기본 값은 6입니다.</li>
@@ -63,7 +54,7 @@ MsgBox % Format("{2:x}{1:02x}", arr*)</pre>
 <p><a href="#Types"><strong>Type</strong></a>: 입력 값을 어떻게 번역할지 나타내는 문자. 생략하면, 기본값은 <code>s</code>입니다.</p>
 
 <table class="info" id="Flags">
-  <tr><th>플래그</th><th>의미</th><th>기본 행위</th></tr>
+  <tr><th>플래그</th><th>의미</th><th>Default</th></tr>
   <tr>
     <td><code>-</code></td>
     <td>주어진 필드 너비 안에서 결과를 왼쪽 정렬합니다 (필요하면 스페이스를 오른쪽에 삽입합니다).</td>
@@ -71,7 +62,7 @@ MsgBox % Format("{2:x}{1:02x}", arr*)</pre>
   </tr>
   <tr>
     <td><code>+</code></td>
-    <td>출력 결과가 부호 있는 유형이면  부호 (+ 또는 -)를 앞에 둘 수 있습니다.</td>
+    <td>출력 결과가 부호 있는 유형이면 부호 (+ 또는 -)를 앞에 둘 수 있습니다.</td>
     <td>부호는 음의 부호 값일 경우에만 나타납니다 (-).</td>
   </tr>
   <tr>
@@ -81,15 +72,14 @@ MsgBox % Format("{2:x}{1:02x}", arr*)</pre>
   </tr>
   <tr>
     <td>space</td>
-    <td>스페이스 하나를 사용하면 출력 결과가 양의 값일 경우 앞에 스페이스를 하나 둘 수 있습니다. 	스페이스와 <code>+</code> 플래그가 모두 나타나면 그 스페이스는 무시됩니다. .</td>
+    <td>스페이스 하나를 사용하면 출력 결과가 양의 값일 경우 앞에 스페이스를 하나 둘 수 있습니다. 스페이스와 <code>+</code> 플래그가 모두 나타나면 그 스페이스는 무시됩니다.</td>
     <td>스페이스 나타나지 않음.</td>
   </tr>
   <tr>
     <td><code>#</code></td>
     <td>
-      <p>o, x, or X 형식과 사용될 때, # 플래그는  0이 아닌 출력 값 앞에 <code>0</code>, <code>0x</code>, 또는 <code>0X</code>를 사용합니다.</p>
-      <p>
-	  e, E, f, a 또는 A 형식과 사용될 때, # 프래그는 강제로 출력 값이 소수점을 가지도록 만듭니다.</p>
+      <p>o, x, or X 형식과 사용될 때, # 플래그는 0이 아닌 출력 값 앞에 <code>0</code>, <code>0x</code>, 또는 <code>0X</code>를 사용합니다.</p>
+      <p>e, E, f, a 또는 A 형식과 사용될 때, # 프래그는 강제로 출력 값이 소수점을 가지도록 만듭니다.</p>
       <p>g 또는 G 형식과 사용될 때, # 플래그는 강제로 출력 값에 소수점을 포함하도록 만들고 뒤에 따르는 0을 자르지 못하도록 방지합니다.</p>
       <p>c, d, i, u, 또는 s와 사용될 때는 무시됩니다.</p>
     </td>
@@ -121,12 +111,12 @@ MsgBox % Format("{2:x}{1:02x}", arr*)</pre>
   <tr>
     <td><code>f</code></td>
     <td>Floating-point</td>
-    <td>부호 있는 값. 형태가 <code>[ - ]<em>dddd</em>.<em>dddd</em></code>입니다. 여기에서 <em>dddd</em>는 하나 이상의 십진 자리입니다. 십진 소수점 앞의 자리수는 숫자의 크기에 따라 다릅니다. 그리고 십진 소수점 뒤의 자리수는 요청한 정밀도에 따라 달라집니다.</td>
+    <td>부호 있는 값. 형태가 "[ - ]<em>dddd</em>.<em>dddd</em>"입니다. 여기에서 <em>dddd</em>는 하나 이상의 십진 자리입니다. 십진 소수점 앞의 자리수는 숫자의 크기에 따라 다릅니다. 그리고 십진 소수점 뒤의 자리수는 요청한 정밀도에 따라 달라집니다.</td>
   </tr>
   <tr>
     <td><code>e</code></td>
     <td>Floating-point</td>
-    <td>부호 있는 값. 형태가 <code>[ - ]<em>d.dddd</em> e [<em>sign</em>]<em>dd[d]</em> </code>입니다. 여기에서 <em>d</em>는 하나의 십진 자리이고, <em>dddd</em>는 하나 이상의 십진 자리이며, <em>dd[d]</em>는 두 세 개의 십진 자리로서 출력 형식과 지수의 크기, 그리고 부호가 +인가 - 인가에 따라 달라집니다.</td>
+    <td>부호 있는 값. 형태가 "[ - ]<em>d.dddd</em> e [<em>sign</em>]<em>dd[d]</em>"입니다. 여기에서 <em>d</em>는 하나의 십진 자리이고, <em>dddd</em>는 하나 이상의 십진 자리이며, <em>dd[d]</em>는 두 세 개의 십진 자리로서 출력 형식과 지수의 크기, 그리고 부호가 +인가 - 인가에 따라 달라집니다.</td>
   </tr>
   <tr>
     <td><code>E</code></td>
@@ -136,17 +126,17 @@ MsgBox % Format("{2:x}{1:02x}", arr*)</pre>
   <tr>
     <td><code>g</code></td>
     <td>Floating-point</td>
-    <td>부호 있는 값은 <code>f</code> 또는 <code>e</code> 형식으로 보여집니다. 어느 쪽이든 주어진 값과 정밀도에 대하여 더 간결합니다. <code>e</code> 형식은 값의 지수가  -4보다 작거나 <em>precision</em> 인자보다 크거나 같을 경우에만 사용됩니다. 뒤따르는 0은 잘려 나가고, 십진 소수점은 다음에 하나 이상의 자리가 따라올 때만 나타납니다..</td>
+    <td>부호 있는 값은 <code>f</code> 또는 <code>e</code> 형식으로 보여집니다. 어느 쪽이든 주어진 값과 정밀도에 대하여 더 간결합니다. <code>e</code> 형식은 값의 지수가 -4보다 작거나 <em>precision</em> 인자보다 크거나 같을 경우에만 사용됩니다. 뒤따르는 0은 잘려 나가고, 십진 소수점은 다음에 하나 이상의 자리가 따라올 때만 나타납니다..</td>
   </tr>
   <tr>
     <td><code>G</code></td>
     <td>Floating-point</td>
-    <td><code>g</code> 형식과 동일합니다. 단,  e말고 E이면 지수가 초래됩니다.</td>
+    <td><code>g</code> 형식과 동일합니다. 단, e말고 E이면 지수가 초래됩니다.</td>
   </tr>
   <tr>
     <td><code>a</code></td>
     <td>Floating-point</td>
-    <td>부호 있는 십육진 배-정밀로 부동 소수점 값. 형태는 <code>[?]0x<em>h.hhhh</em> <strong>p</strong><em>dd</em></code>입니다. 여기에서 <em>h.hhhh</em>는 가수(mantissa)의 십육진 자리입니다 (소문자 기호 사용). 그리고 <em>dd</em>는 지수를 위한 하나 이상의 자리입니다. 정밀도는 소수점 다음의 자리 수를 지정합니다.</td>
+    <td>부호 있는 십육진 배-정밀로 부동 소수점 값. 형태는 "[?]0x<em>h.hhhh</em> <strong>p</strong><em>dd</em>"입니다. 여기에서 <em>h.hhhh</em>는 가수(mantissa)의 십육진 자리입니다 (소문자 기호 사용). 그리고 <em>dd</em>는 지수를 위한 하나 이상의 자리입니다. 정밀도는 소수점 다음의 자리 수를 지정합니다.</td>
   </tr>
   <tr>
     <td><code>A</code></td>
@@ -171,8 +161,7 @@ MsgBox % Format("{2:x}{1:02x}", arr*)</pre>
 </table>
 
 <h3>논평</h3>
-<p>
-<a href="http://msdn.microsoft.com/en-us/library/56e442dc">printf</a>와 다르게, 크기 지정자는 지원되지 않습니다. 모든 정수와 부동 소수점 값은 64-비트입니다.</p>
+<p><a href="http://msdn.microsoft.com/en-us/library/56e442dc">printf</a>와 다르게, 크기 지정자는 지원되지 않습니다. 모든 정수와 부동 소수점 값은 64-비트입니다.</p>
 
 <h3>관련 항목</h3>
 <p><a href="SetFormat.htm">SetFormat</a>, <a href="FormatTime.htm">FormatTime</a></p>

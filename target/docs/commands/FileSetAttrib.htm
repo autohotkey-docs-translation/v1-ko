@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>FileSetAttrib</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -39,15 +40,12 @@
 </dl>
 
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 변경에 <u>실패한</u> 파일의 개수가 설정되고 그렇지 않으면 0이 설정됩니다.</p>
-<p>
-파일이 발견되면, <a href="../Variables.htm#LastError">A_LastError</a>는 0 (영)이 설정되거나 또는 마지막 실패후 즉시 운영 체제의 GetLastError() 함수의 결과가 설정됩니다. 그렇지 않으면 A_LastError는 왜 파일이 발견되지 않았는지 알려줄 에러 코드가 담깁니다.</p>
+<p>파일이 발견되면, <a href="../Variables.htm#LastError">A_LastError</a>는 0 (0) 또는 마지막 실패 후에 곧바로 운영 체제의 GetLastError() 함수의 결과가 설정됩니다. 그렇지 않으면 A_LastError에는 왜 파일이 발견되지 않았는지 알려주는 에러 코드가 담깁니다.</p>
 
 <h3>논평</h3>
-<p>
-<em>Attributes</em> 매개변수는 연산자와 속성 기호의 집단으로 구성됩니다.</p>
-
+<p><em>Attributes</em> 매개변수는 연산자와 속성 기호의 집단으로 구성됩니다.</p>
 <p><em>연산자</em>:</p>
 <table class="info" style="width:574px">
   <tr>
@@ -65,21 +63,19 @@
 </table>
 <p><br>
   <em>속성 기호</em>:<br>
-  R = READONLY<br>
-  A = ARCHIVE<br>
-  S = SYSTEM<br>
-  H = HIDDEN<br>
+  R = READONLY(읽기 전용)<br>
+  A = ARCHIVE(보관)<br>
+  S = SYSTEM(시스템)<br>
+  H = HIDDEN(감춤)<br>
   N = NORMAL (다른 속성과 사용하지 않을 경우에만 유효)<br>
-  O = OFFLINE<br>
-T = TEMPORARY</p>
+  O = OFFLINE(오프라인)<br>
+T = TEMPORARY(임시)</p>
 <p>주의: 현재, 파일의 압축 상태는 다음 명령어로 바꿀 수 있습니다.</p>
-
 <h3>관련 항목</h3>
 <p><a href="FileGetAttrib.htm">FileGetAttrib</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="FileSetTime.htm">FileSetTime</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="FileGetVersion.htm">FileGetVersion</a>, <a href="LoopFile.htm">File-회돌이</a></p>
-
 <h3>예제</h3>
 <pre class="NoIndent">FileSetAttrib, +RH, C:\MyFiles\*.*, 1  <em>; +RH는 +R+H와 동일합니다.</em>
-FileSetAttrib, ^H, C:\MyFiles  <em>; 폴더의 &quot;hidden&quot; 속성을 토글합니다.</em>
+FileSetAttrib, ^H, C:\MyFiles  <em>; 폴더의 "hidden" 속성을 토글합니다.</em>
 FileSetAttrib, -R+A, C:\New Text File.txt
 FileSetAttrib, +A, C:\*.ini, , 1  <em>; C 드라이브의 모든 .ini 파일을 재귀합니다.</em></pre>
 

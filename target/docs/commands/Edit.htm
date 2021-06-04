@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Edit</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -14,13 +15,9 @@
 <p>현재 스크립트를 연관된 편집기에 열어 편집합니다.</p>
 
 <pre class="Syntax">Edit</pre>
-<p>Edit 명령어는 현재 스크립트를 열어 편집합니다. 레지스트리의 &quot;edit&quot; 명령어를 사용합니다. (아무것도 지정되어 있지 않으면 Notepad를 사용함). 
-그렇지만, 편집기 창에 이미 해당 스크립트가 열려 있는 것 같으면 (그의 창 제목을 보고 유추함), 새 편집기 실체를 여는 대신에 그 창이 활성화됩니다.</p>
+<p>Edit 명령어는 현재 스크립트를 열어 편집합니다. 레지스트리의 "edit" 명령어를 사용합니다. (아무것도 지정되어 있지 않으면 Notepad를 사용함). 그렇지만, 편집기 창에 이미 해당 스크립트가 열려 있는 것 같으면 (그의 창 제목을 보고 유추함), 새 편집기 실체를 여는 대신에 그 창이 활성화됩니다.</p>
 <p>이 명령어는 컴파일된 스크립트 안에서 실행하면 아무 효과가 없습니다.</p>
-<p>관련해서 한 마디 하자면, 오토핫키 문법 강조는 다양한 편집기에서 사용할 수 있습니다 - 아래를 참조하십시오. 
-게다가, 편집기에서 오토핫키 명령어에 대한 문맥 감지 도움말은 <a href="../scripts/ContextSensitiveHelp.htm">다음 예제를 통하여</a> 활성화할 수 있습니다. 
-마지막으로, 여러분의 생산성을 개선할 수 있습니다. <a href="http://www.autohotkey.com/forum/topic12985.html">ISense</a>와 같은 자동-완성 기능을 사용하면 좋습니다. 이 기능은 거의 모든 편집기에서 작동합니다.
- 타자하는 것을 지켜 보다가 메뉴와 메개변수 목록을 보여줍니다. 덕분에 타자 수를 절약할 수 있고 매개변수의 순서를 기억하는 데에도 도움이 됩니다.</p>
+<p>관련해서 한 마디 하자면, 오토핫키 문법 강조는 다양한 편집기에서 사용할 수 있습니다 - 아래를 참조하십시오. 게다가, 편집기에서 오토핫키 명령어에 대한 문맥 감지 도움말은 <a href="../scripts/ContextSensitiveHelp.htm">다음 예제를 통하여</a> 활성화할 수 있습니다. 마지막으로, 여러분의 생산성을 개선할 수 있습니다. <a href="http://www.autohotkey.com/forum/topic12985.html">ISense</a>와 같은 자동-완성 기능을 사용하면 좋습니다. 이 기능은 거의 모든 편집기에서 작동합니다. 타자하는 것을 지켜 보다가 메뉴와 메개변수 목록을 보여줍니다. 덕분에 타자 수를 절약할 수 있고 매개변수의 순서를 기억하는 데에도 도움이 됩니다.</p>
 
 <h3>관련 항목</h3>
 <p><a href="Reload.htm">Reload</a></p>
@@ -40,14 +37,14 @@ if ErrorLevel
 RegWrite REG_SZ, HKCR, AutoHotkeyScript\Shell\Edit\Command,, "%Editor%" "`%1"</pre>
 
 <h3 id="Editors">오토핫키를 지원하는 편집기</h3>
-<p>SciTE4AutoHotkey는 SciTE라고 불리우는 편집기를  AutoHotkey스크립트를 위해 특별히 재단한 버전입니다. 다음과 같은 특징이 있습니다:</p>
+<p>SciTE4AutoHotkey는 SciTE라고 불리우는 편집기를 AutoHotkey스크립트를 위해 특별히 재단한 버전입니다. 다음과 같은 특징이 있습니다:</p>
 <ul>
   <li>구문 강조</li>
   <li>똑똑한 자동-들여쓰기</li>
   <li>자동-완성</li>
   <li>콜팁 (인텔리센스(IntelliSense)라고도 함)</li>
   <li>코드 접기</li>
-  <li><a href="../Scripts.htm#idebug">상호대화 디버깅 지원</a></li>
+  <li><a href="../Scripts.htm#idebug">상호대화 디버깅</a> 지원</li>
   <li>기타 오토핫키 스크립트를 위한 도구들</li>
 </ul>
 <p>SciTE4AutoHotkey는 다음에서 얻을 수 있습니다: <a href="http://fincs.ahk4.net/scite4ahk/">http://fincs.ahk4.net/scite4ahk/</a></p>
@@ -76,7 +73,7 @@ RegWrite REG_SZ, HKCR, AutoHotkeyScript\Shell\Edit\Command,, "%Editor%" "`%1"</p
   <li>Vim</li>
 </ul>
 <p>여러분의 편집기가 목록에 없다면, <a href="http://ahkscript.org/boards/">포럼</a>을 검색해서 여러분의 운을 시험해 보십시오.</p>
-<p>이 페이지에 추가된 편집기를 얻으려면, <a href="http://ahkscript.org/boards/ucp.php?i=pm&mode=compose&u=77">포럼을 통한</a> Lexikos 또는 <a href="https://github.com/Lexikos/AutoHotkey_L-Docs/">GitHub</a>를 방문해 보십시오.</p>
+<p>이 페이지에 추가된 편집기를 얻으려면, <a href="http://ahkscript.org/boards/ucp.php?i=pm&amp;mode=compose&amp;u=77">포럼을 통한</a> Lexikos 또는 <a href="https://github.com/Lexikos/AutoHotkey_L-Docs/">GitHub</a>를 방문해 보십시오.</p>
 
 </body>
 </html>

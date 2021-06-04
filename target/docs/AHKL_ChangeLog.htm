@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>Changes &amp; New Features</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>변경 사항 &amp; 새로운 특징</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
 <script src="static/content.js" type="text/javascript"></script>
@@ -127,7 +128,7 @@
 <p>Added ** (stderr) support to FileAppend.</p>
 <p>Added <a href="commands/ObjBindMethod.htm">ObjBindMethod(obj, method, args*)</a> and <a href="objects/Func.htm#Bind">Func.Bind(args*)</a>.</p>
 
-<h4>Changes:</h4>
+<h4>변경:</h4>
 <p>Changed the default behavior when the main script file is not found:</p>
 <ul>
   <li>If no script was specified and the default script files are not found, show the new <a href="Welcome.htm">Welcome</a> page in the help file.</li>
@@ -187,7 +188,7 @@
 <p>Fixed some issues with hotkey validation at load time.</p>
 <ul>
 	<li>Hotkeys which are never valid, like foo::, are now always treated as errors instead of giving a misleading warning about keyboard layout.</li>
-	<li>Hotkeys like ^!&auml;:: which are inactive because of the current keyboard layout are now allowed to have a same-line action, and the label is registered correctly (e.g. as "^!&auml;" and not as "^!&auml;:"). If the /iLib command line switch is used, the warning is suppressed.</li>
+	<li>Hotkeys like ^!ä:: which are inactive because of the current keyboard layout are now allowed to have a same-line action, and the label is registered correctly (e.g. as "^!ä" and not as "^!ä:"). If the /iLib command line switch is used, the warning is suppressed.</li>
 	<li>Remappings which are inactive because of the current keyboard layout now show two warnings instead of an unrecoverable error.</li>
 	<li>If a Wheel hotkey is used as a prefix key, there is only one error message instead of two, and it respects /ErrorStdOut.</li>
 </ul>
@@ -671,7 +672,7 @@
 <p>Added <a href="Functions.htm#Func">Func()</a> for retrieving a reference to an existing function and improved <a href="Functions.htm#IsFunc">IsFunc</a> to recognize <a href="Objects.htm#Function_References">function references</a>.</p>
 <p>Added support for <code>++</code> and <code>--</code> with object fields, such as <code>x.y[z]++</code>.</p>
 
-<h4>Changes:</h4>
+<h4>변경:</h4>
 <p>Changed __Delete to not trigger __Call.</p>
 <p>Changed OnClipboardChange to use AddClipboardFormatListener when available (i.e. on Windows Vista and later) to improve reliability.</p>
 <p>Auto-concat with <code>(</code> is more selective, so some invalid expressions like <code>12(34)</code> will no longer work.</p>
@@ -695,16 +696,16 @@
 <p>Added <code>{key: value}</code> as syntax sugar for <code>Object("key", value)</code>.</p>
 <p>Added <code>[x, y, z]</code> as syntax sugar for <code>Array(x, y, z)</code>, which is a new function equivalent to  <code>Object(1, x, 2, y, 3, z)</code>.</p>
 <p>Added slight optimization: resolve any reference to True, False, A_PtrSize or A_IsUnicode in expressions at load-time.</p>
-<p>Fixed hotkey parser to treat <code>x & ^y</code> as an error instead of ignoring <code>^</code>.</p>
+<p>Fixed hotkey parser to treat <code>x &amp; ^y</code> as an error instead of ignoring <code>^</code>.</p>
 
 <h2 id="v1.0.96.00">1.0.96.00 - March 21, 2011</h2>
 <h4><b>New features:</b></h4>
-<p><a href="commands/ComObjQuery.htm">ComObjQuery</a>: Queries a COM object for an interface or service.</p>
-<p><a href="commands/ComObjFlags.htm">ComObjFlags</a>: Retrieves or changes flags which control a COM wrapper object's behaviour.</p>
+<p><a href="commands/ComObjQuery.htm">ComObjQuery</a>: COM 객체에 인터페이스 또는 서비스를 질의합니다.</p>
+<p><a href="commands/ComObjFlags.htm">ComObjFlags</a>: COM 포장 객체의 행위를 제어하는 플래그를 열람하거나 변경합니다.</p>
 <p><a href="commands/ComObjCreate.htm">ComObjCreate</a> allows non-dispatch objects to be created if an interface identifier (IID) is given.</p>
 <p><a href="commands/ComObjArray.htm">COM arrays</a> support for-loops and the Clone() method.</p>
 <p>ListVars shows the inner variant type and value of each COM wrapper object, in addition to the wrapper's address.</p>
-<h4><b>Changes:</b></h4>
+<h4><b>변경:</b></h4>
 <p>When a literal integer or variable containing both a numeric string and cached binary integer is assigned to a field of an object, an integer is stored instead of a string. This particularly benefits scripts calling COM methods which accept integers but not strings, or have different behaviour depending on the type of value.</p>
 <p>NULL values are now allowed with ComObjParameter for the VT_UNKNOWN and VT_DISPATCH types.</p>
 <p>Improved support for Common Language Runtime (.NET) objects via COM.</p>
@@ -723,7 +724,7 @@
 <p>Added <a href="commands/_Warn.htm">#Warn</a> to assist with debugging; initial design by <a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=48847">ac</a>.</p>
 <p>By default, if <i>name_var</i> contains a function name, <code>name_var.()</code> calls the function. This can be overidden via the <a href="Objects.htm#Default_Base_Object">default base object</a>, as before.</p>
 <p>Run supports verbs with parameters, such as <code>Run *RunAs %A_ScriptFullPath% /Param</code>.</p>
-<p>If an operator which can accept either one operand (<code>&amp;x</code>) or two <i>numeric</i> operands (<code>x & y</code>) follows a quoted literal string, auto-concat occurs and the operator is applied only to the right-hand operand. This is because quoted literal strings are always considered non-numeric and are therefore not valid input for numeric operators. For example, expressions like <code>"x" &amp;y</code> and <code>"x" ++y</code> now work.</p>
+<p>If an operator which can accept either one operand (<code>&amp;x</code>) or two <i>numeric</i> operands (<code>x &amp; y</code>) follows a quoted literal string, auto-concat occurs and the operator is applied only to the right-hand operand. This is because quoted literal strings are always considered non-numeric and are therefore not valid input for numeric operators. For example, expressions like <code>"x" &amp;y</code> and <code>"x" ++y</code> now work.</p>
 <p><b>Fixed:</b></p>
 <ul>
 <li>Wildcard hotkeys were not respecting modifiers such as <code>^!+</code> in specific cases.</li>
@@ -731,10 +732,10 @@
 <li>File.AtEOF was incorrectly true in some cases.</li>
 <li>COM wrapper objects left A_LastError unset in some cases.</li>
 <li>Gui submenu icons did not work on Windows 2000/XP/Server 2003.</li>
-<li>SplashImage clipped the image if height > width.</li>
+<li>SplashImage clipped the image if height &gt; width.</li>
 <li>ComObjConnect did not alert when the first parameter is invalid.</li>
 <li>SplashImage now uses GDI+ only when the other methods fail, for compatibility.</li>
-<li>Tilde in <code>~x::</code> now affects <code>x & y::</code> in the same way that <code>~x & z::</code> would, instead of having no effect.</li>
+<li>Tilde in <code>~x::</code> now affects <code>x &amp; y::</code> in the same way that <code>~x &amp; z::</code> would, instead of having no effect.</li>
 <li>A_PriorHotkey and A_TimeSincePriorHotkey now have the expected values when used with #If.</li>
 <li>RegExReplace did not advance through the string correctly after a match failure if the string contained non-ASCII characters.</li>
 </ul>
@@ -825,7 +826,7 @@
 <p>Fixed: ComEvent (ComObjConnect) not working on the ANSI build.</p>
 <p>Fixed: ComEvent (ComObjConnect) not correctly backing up/restoring local vars when calling a function which is already running.</p>
 <p>Fixed: Buffer overflow in A_EndChar when there is no end char.</p>
-<p>Fixed: Func->mNextFunc not inititialized to NULL (used only by LowLevel scripts).</p>
+<p>Fixed: Func-&gt;mNextFunc not inititialized to NULL (used only by LowLevel scripts).</p>
 <p>Debugger: Added the capability to retrieve an object's contents (with a supported debugger client).</p>
 <p>Debugger: Fixed a few bugs.</p>
 
@@ -980,7 +981,7 @@
 
 <h2 id="L48">Revision 48 - February 21, 2010</h2>
 <p>Fixed: Standalone <code>obj.()</code> was not recognized as a valid expression.</p>
-<p>ControlSend now uses WM_CHAR to support characters which have no associated keycode.  For instance, this applies to "&#133;" (en-US), "&#x221e;" in a Unicode build and <code>{U+221e}</code> in either build.</p>
+<p>ControlSend now uses WM_CHAR to support characters which have no associated keycode.  For instance, this applies to "" (en-US), "∞" in a Unicode build and <code>{U+221e}</code> in either build.</p>
 <p>KeyHistory now shows the full 16-bit character code for VK_PACKET (VK=E7) events.  <a href="commands/Send.htm#Unicode">Send</a> may indirectly cause these to be generated for Unicode characters.</p>
 
 <h2 id="L47">Revision 47 - February 13, 2010</h2>
@@ -994,7 +995,7 @@
 <p>Added _GetAddress; _SetCapacity/_GetCapacity may now operate on a given field.  <a href="objects/Object.htm">[more info]</a></p>
 <p>Added workaround for WM_PAINT infinite loop often caused by subclassing.</p>
 <p>Allow <code>obj.()</code> as a means to call the default method of an object; equivalent to <code>obj[""]()</code>.</p>
-<p>Dev: Added solution and project files for MSBuild 4.0 & VS2010.  <a href="http://github.com/Lexikos/AutoHotkey_L/commit/ed81ea089c223b46c883036c14454aa4386d3801">[more info]</a></p>
+<p>Dev: Added solution and project files for MSBuild 4.0 &amp; VS2010.  <a href="http://github.com/Lexikos/AutoHotkey_L/commit/ed81ea089c223b46c883036c14454aa4386d3801">[more info]</a></p>
 <p>Fixed (Unicode): 'Running' column in ListHotkeys.</p>
 
 <h2 id="L44">Revision 44 - February 7, 2010</h2>
@@ -1078,7 +1079,7 @@
 <p>Updated from v1.0.48.02 to v1.0.48.03.</p>
 
 <h2 id="L29">Revision 29 - May 2, 2009</h2>
-<p>All supported image formats may now be used as menu icons.  Currently it is necessary to specify "actual size" when setting the icon to preserve transparency on Windows Vista and later. For example:</p>
+<p>All supported image formats may now be used as menu icons. 현재 Windows Vista 이후에서 아이콘에 투명성을 유지하도록 설정하려면 "실제 크기"를 지정하는 것이 필요합니다. 예를 들어:</p>
 <pre>Menu, Icon, MenuItemName, Filename.png,, 0</pre>  
 
 <h2 id="L28">Revision 28 - May 2, 2009</h2>

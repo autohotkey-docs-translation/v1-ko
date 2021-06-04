@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>FileSetTime</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -18,13 +19,12 @@
 <dl>
 
   <dt>YYYYMMDDHH24MISS</dt>
-  <dd><p>비어 있거나 생략하면, 현재 시간이 기본값입니다. 그렇지 않으면, 연산에 사용할 시간을 지정하십시오 (형식에 관해서는 논평을 참조하십시오).
-  1601년 미만은 지원하지 않습니다.</p>
+  <dd><p>비어 있거나 생략하면, 현재 시간이 기본값입니다. 그렇지 않으면, 연산에 사용할 시간을 지정하십시오 (형식에 관해서는 논평을 참조하십시오). 1601년 미만은 지원하지 않습니다.</p>
     <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>입니다. 결과적으로, 여러 변수를 결합해서 하나의 시간도장을 형성할 필요가 있다면, 퍼센트 사인 대신에 <a href="../Variables.htm#concat">점 연산자</a>를 사용해야 합니다. 예를 들어: <code>FileSetTime, Year <strong>.</strong> Month <strong>.</strong> Day, C:\My File.txt</code>.</p></dd>
 
   <dt>FilePattern</dt>
-  <dd><p>파일이나 폴더의 이름. 또는 C:\Temp\*.tmp와 같은 와일드카드 패턴. <em>FilePattern</em>은 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다.</p>
-    <p>생략하면, 대신에 <a href="LoopFile.htm">파일-회돌이</a> 가장 안쪽에 싸인 현재 파일이 사용됩니다.</p></dd>
+  <dd><p>단일 파일이나 폴더 또는 C:\Temp\*.tmp 같으 와일드 카드 패턴. <em>FilePattern</em>은 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다.</p>
+    <p>생략되면, <a href="LoopFile.htm">파일-회돌이</a> 가장 안쪽에 싸인 현재 파일이 대신 사용됩니다.</p></dd>
 
   <dt>WhichTime</dt>
   <dd>설정할 시간도장:<br>
@@ -33,28 +33,26 @@
       A = 마지막 접근 시간</dd>
 
   <dt>OperateOnFolders?</dt>
-  <dd><p>0 (기본값) 폴더는 처리되지 않습니다 (파일 전용). <br>
-1 와일드카드 패턴에 부합하는 모든 파일과 폴더를 처리합니다.<br>
-2 폴더만 처리합니다 (파일 불가).</p>
-      <p>주의: FilePattern이 와일드카드 패턴이 아니라 단일 폴더라면, 언제나 이 설정에 상관없이 처리됩니다.</p>
+  <dd><p>0 (기본값) 폴더는 처리하지 않습니다 (파일만 처리). <br>
+1 와일드카드 패턴에 부합하는 모든 파일과 폴더는 처리됩니다.<br>
+2 오직 폴더만 처리됩니다 (파일 불가).</p>
+      <p>주의: FilePattern이 와일드카드 패턴이 아니라 단일 폴더이면, 이 설정에 상관 없이 언제나 처리됩니다.</p>
       <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다.</p></dd>
 
   <dt>Recurse?</dt>
-  <dd><p>0 (기본값) 하위폴더 안으로 재귀하지 않습니다.<br>
-  1 하위폴더 안으로 재귀해 들어가 거기에서 <em>FilePattern</em>에 부합하는 모든 파일과 폴더를 처리합니다. 그렇지만, 파일과 폴더에 259 문자가 넘는 완전 경로가 지정되어 있으면 마치 존재하지 않는 것처럼 무시합니다. 그런 파일은 거의 없습니다. 왜냐하면 보통 운영 체제가 그런 파일은 생성을 허용하지 않기 때문입니다.</p>
+  <dd><p>0 (기본값) 하위폴더에 재귀해 들어가지 않습니다.<br>
+  1 하위폴더에 재귀해 들어가 거기에서 <em>FilePattern</em>에 부합하는 모든 파일과 폴더를 처리합니다. 모든 하위폴더에 재귀해 들어갑니다. <em>FilePattern</em>에 부합하는 폴더에만 재귀하는 것이 아닙니다. 그렇지만, 파일과 폴더의 완전한 경로가 259 문자를 넘어가면 마치 존재하지 않는 듯 건너 뜁니다. 그런 파일은 거의 없습니다. 왜냐하면, 보통 운영 체제가 그런 파일은 생성을 허용하지 않기 때문입니다.</p>
       <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다.</p></dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 변경에 <u>실패한</u> 파일의 개수가 설정되고 그렇지 않으면 0이 설정됩니다. 지정된 시간도장이 유효하지 않으면, 또는 <em>FilePattern</em>이 빈 값으로 결정되면, ErrorLevel은 1이 설정됩니다.</p>
-<p>
-파일이 발견되면, <a href="../Variables.htm#LastError">A_LastError</a>는 0 (영)이 설정됩니다. 또는 마지막 실패후 즉시 운영 체제의 GetLastError() 함수의 결과가 설정됩니다. 그렇지 않으면 A_LastError에는 파일이 발견되지 않은 이유를 나타내는 에러 코드가 담깁니다.</p>
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 변경에 <u>실패한</u> 파일의 개수가 설정되고 그렇지 않으면 0이 설정됩니다. 지정된 시간도장이 유효하지 않으면, 또는 <em>FilePattern</em>이 빈 값으로 결정되면, ErrorLevel은 1이 설정됩니다.</p>
+<p>파일이 발견되면, <a href="../Variables.htm#LastError">A_LastError</a>는 0 (0) 또는 마지막 실패 후에 곧바로 운영 체제의 GetLastError() 함수의 결과가 설정됩니다. 그렇지 않으면 A_LastError에는 왜 파일이 발견되지 않았는지 알려주는 에러 코드가 담깁니다.</p>
 
 <h3>논평</h3>
-<p>
-파일의 마지막 접근 시간은 NTFS 불륨에 비해 FAT16 &amp; FAT32 볼륨에서는 정확하지 않을 수 있습니다.</p>
+<p>파일의 마지막 접근 시간은 NTFS 불륨에 비해 FAT16 &amp; FAT32 볼륨에서는 정확하지 않을 수 있습니다.</p>
 <p><a name="YYYYMMDD"></a>YYYYMMDDHH24MISS 형식의 요소들은 다음과 같습니다:</p>
 <table class="info">
   <tr>
@@ -71,7 +69,7 @@
   </tr>
   <tr>
     <td>HH24</td>
-    <td> 24-시간 형식의 2-자리 시각(00-23). 예를 들어, 09는 오전 9시이고  21은 오후 9시.</td>
+    <td>24-시간 형식의 2-자리 시각(00-23). 예를 들어, 09는 오전 9시이고 21은 오후 9시.</td>
   </tr>
   <tr>
     <td>MI</td>
@@ -82,21 +80,16 @@
     <td>2-자리 초 (00-59)</td>
   </tr>
 </table>
-<p>
-YYYYMMDDHH24MISS에 대하여 부분적으로 문자열이 주어지면 (예, 200403), 생략된 나머지 요소들은 다음의 기본 값으로 체워집니다:</p>
+<p>YYYYMMDDHH24MISS에 대하여 부분적으로 문자열이 주어지면 (예, 200403), 생략된 나머지 요소들은 다음의 기본 값으로 체워집니다:</p>
 <p>MM: Month 01<br>
   DD: Day 01<br>
   HH24: Hour 00<br>
   MI: Minute 00<br>
 SS: Second 00</p>
-<p>
-내장 변수 <a href="../Variables.htm#Now">A_Now</a>에 현지 지역 시각이 위의 형식으로 담겨 있습니다. 비슷하게, <a href="../Variables.htm#NowUTC">A_NowUTC</a>에는 현재 표준시(Coordinated Universal Time)가 담겨 있습니다.</p>
-<p><strong>주의:</strong> 날짜-시간 값은 비교하고 더하고 뺄 수 있습니다. <a href="EnvAdd.htm">EnvAdd</a>와 <a href="EnvSub.htm">EnvSub</a>를 사용하면 됩니다.
-또, 시간을 비교할 때는 보다 크다와 보다 작다를 사용하지 않는 것이 좋습니다. 왜냐하면 둘 모두 문자열 길이가 같기 때문입니다. 숫자로 비교해야 합니다; 예를 들어, 20040201는 언제나 200401010533보다 숫치상 작습니다 (그러나 년대기 상으로는 더 큽니다). 그래서 대신에 <a href="EnvSub.htm">EnvSub</a>를 사용하여 둘 사이의 시간의 양이 음수인지 양수인지 알아내십시오.</p>
-
+<p>내장 변수 <a href="../Variables.htm#Now">A_Now</a>에 현지 지역 시각이 위의 형식으로 담겨 있습니다. 비슷하게, <a href="../Variables.htm#NowUTC">A_NowUTC</a>에는 현재 표준시(Coordinated Universal Time)가 담겨 있습니다.</p>
+<p><strong>주의:</strong> 날짜-시간 값은 비교하고 더하고 뺄 수 있습니다. <a href="EnvAdd.htm">EnvAdd</a>와 <a href="EnvSub.htm">EnvSub</a>를 사용하면 됩니다. 또, 시간을 비교할 때는 보다 크다와 보다 작다를 사용하지 않는 것이 좋습니다. 왜냐하면 둘 모두 문자열 길이가 같기 때문입니다. 숫자로 비교해야 합니다; 예를 들어, 20040201는 언제나 200401010533보다 숫치상 작습니다 (그러나 년대기 상으로는 더 큽니다). 그래서 대신에 <a href="EnvSub.htm">EnvSub</a>를 사용하여 둘 사이의 시간의 양이 음수인지 양수인지 알아내십시오.</p>
 <h3>관련 항목</h3>
 <p><a href="FileGetTime.htm">FileGetTime</a>, <a href="FileGetAttrib.htm">FileGetAttrib</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="FileGetVersion.htm">FileGetVersion</a>, <a href="FormatTime.htm">FormatTime</a>, <a href="LoopFile.htm">File-loop</a>, <a href="EnvAdd.htm">EnvAdd</a>, <a href="EnvSub.htm">EnvSub</a></p>
-
 <h3>예제</h3>
 <pre class="NoIndent"><em>; 부합하는 모든 파일에 대하여 수정 시간을 현재 시간으로 설정합니다:</em>
 FileSetTime, , C:\temp\*.txt

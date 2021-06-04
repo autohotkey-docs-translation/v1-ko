@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>WinGetPos</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -21,41 +22,35 @@
   <dd><p>목표 창의 좌상 모서리 X 좌표와 Y 좌표를 저장할 이름. 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
 
   <dt>Width/Height</dt>
-  <dd><p>목표 창의 높이와 너비를 저장할 변수의 이름. 생략하면 상응하는 값이 저장되지 않습니다.</p></dd>
+  <dd><p>목표 창의 높이와 너비를 저장할 변수의 이름. 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
 
   <dt>WinTitle</dt>
   <dd><p>목표 창을 식별하는 창 제목 또는 다른 기준. <a href="../misc/WinTitle.htm">WinTitle</a> 참조.</p></dd>
- 
+
   <dt>WinText</dt>
-  <dd><p>존재하면, 목표 창 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>가 켜져 있으면(ON) 탐지됩니다.</p></dd>
+  <dd><p>존재하면, 이 매개변수는 목표 창 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>가 켜져 있어야 탐지됩니다.</p></dd>
 
   <dt>ExcludeTitle</dt>
-  <dd><p>제목에 이 값이 있는 창은 제외합니다.</p></dd>
+  <dd><p>제목에 이 값이 있는 창은 무시합니다.</p></dd>
 
   <dt>ExcludeText</dt>
-  <dd><p>텍스트에 이 값이 있는 창은 제외합니다.</p></dd>
+  <dd><p>텍스트에 이 값이 있는 창은 무시합니다.</p></dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>
-부합하는 창이 없으면, 출력 변수는 비워집니다.</p>
-<p>
-<em>WinTitle</em> &quot;프로그램 관리자r&quot;가 사용되면, 이 명령어는 바탕화면의 크기를 열람합니다. 이는 보통 현재 화면 해상도와 같습니다.</p>
-<p>
-최소화된 창은 여전히 크기와 위치가 있습니다. 이 경우 반환된 값은 OS와 환경 구성에 따라 달라질 수 있습니다.</p>
-<p>
-마우스가 현재 선회 중인 창의 이름과 콘트롤을 발견하려면, <a href="MouseGetPos.htm">MouseGetPos</a>를 사용하십시오.</p>
-<p>
-창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있으면 탐지됩니다.</p>
-
+<p>부합하는 창이 없으면, 출력 변수는 비워집니다.</p>
+<p><em>WinTitle</em> "프로그램 관리자r"가 사용되면, 이 명령어는 바탕화면의 크기를 열람합니다. 이는 보통 현재 화면 해상도와 같습니다.</p>
+<p>최소화된 창은 여전히 크기와 위치가 있습니다. 이 경우 반환된 값은 OS와 환경 구성에 따라 달라질 수 있습니다.</p>
+<p>마우스가 현재 선회 중인 창의 이름과 콘트롤을 발견하려면, <a href="MouseGetPos.htm">MouseGetPos</a>를 사용하십시오.</p>
+<p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
 <h3>관련 항목</h3>
 <p><a href="WinMove.htm">WinMove</a>, <a href="ControlGetPos.htm">ControlGetPos</a>, <a href="WinGetActiveStats.htm">WinGetActiveStats</a>, <a href="WinGetActiveTitle.htm">WinGetActiveTitle</a>, <a href="WinGetTitle.htm">WinGetTitle</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="ControlGetText.htm">ControlGetText</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">WinGetPos, X, Y, Width, Height, Calculator
 MsgBox, Calculator is at %X%`,%Y%
 
-WinGetPos, X, Y, , , A  <em>; &quot;A&quot;는 활성 창의 위치를 얻습니다.</em>
+WinGetPos, X, Y, , , A  <em>; "A"는 활성 창의 위치를 얻습니다.</em>
 MsgBox, 활성 창의 위치: %X%`,%Y%
 
 IfWinExist, Untitled - Notepad

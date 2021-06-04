@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>WinLIRC Client</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WinLIRC 클라이언트</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,8 +13,7 @@
 
 <h1>WinLIRC 클라이언트</h1>
 
-<p>
-이 스크립트는 리모트 콘트롤에 버튼을 누를 때마다 <a href="http://winlirc.sourceforge.net">WinLIRC</a> 로부터 고지를 받습니다. Winamp, Windows Media Player, 등등을 자동화 하는 데 사용할 수 있습니다. 쉽게 환경을 구성할 수 있습니다. 예를 들어 WinLIRC가 리모트 콘트롤에서 이름이 &quot;VolUp&quot;인 버튼을 인지하면, 이름이 VolUp인 라벨을 생성하고 그 아래에 명령어 <code>SoundSet +5</code>를 사용하여 사운드카드의 볼륨을 5%만큼 높입니다.
+<p>이 스크립트는 리모트 콘트롤에 버튼을 누를 때마다 <a href="http://winlirc.sourceforge.net">WinLIRC</a> 로부터 고지를 받습니다. 이것을 이용해 Winamp, Windows Media Player, 등등을 자동화 할 수 있습니다. 쉽게 환경을 구성할 수 있습니다. 예를 들어 WinLIRC가 리모트 콘트롤에서 이름이 "VolUp"인 버튼을 인지하면, 이름이 VolUp인 라벨을 생성하고 그 아래에 명령어 <code>SoundSet +5</code>를 사용하여 사운드카드의 볼륨을 5%만큼 높입니다.
 </p>
 <p><a href="WinLIRC.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
 
@@ -22,7 +22,7 @@
 ;    WinLIRC는 다음에 있습니다: <a href="http://winlirc.sourceforge.net">http://winlirc.sourceforge.net</a>
 ; 2) 아래의 CONFIG 섹션에서 WinLIRC 경로, 주소, 그리고 포트 번호를 편집합니다.
 ; 3) 이 스크립트를 기동시킵니다. 필요하면 WinLIRC 서버가 자동으로 기동됩니다.
-; 4) 리모트 콘트롤에서 버튼을 눌러 봅니다. 버튼을 누를 때마다 
+; 4) 리모트 콘트롤에서 버튼을 눌러 봅니다. 버튼을 누를 때마다
 ;    작은 창이 나타나 그 버튼의 이름을 보여줍니다.
 ; 5) 버튼을 구성해 Winamp, Media Player, 등등과 같은 창에
 ;     키눌림과 마우스 클릭을 전송합니다. 아래 예제를 참조하십시오.</em>
@@ -30,10 +30,10 @@
 <em>; 이 스크립트는 AutoHotkey 1.0.38.04 이상을 요구합니다.
 ; 변경 이력
 ; March 2, 2007:
-; - ReceiveData()에 &quot;Critical&quot;를 통하여 신뢰성 개선.
+; - ReceiveData()에 "Critical"를 통하여 신뢰성 개선.
 ; October 5, 2005:
-; - 시스템이 셧다운/로그오프할 때 Winsock 경고 대화상자 &quot;10054&quot;가 나타나는 것을 제거.
-; - 반복 속도를 감소시키기 위해 옵션 &quot;DelayBetweenButtonRepeats&quot;를 추가.</em>
+; - 시스템이 셧다운/로그오프할 때 Winsock 경고 대화상자 "10054"가 나타나는 것을 제거.
+; - 반복 속도를 감소시키기 위해 옵션 "DelayBetweenButtonRepeats"를 추가.</em>
 
 <em>; -------------------------------------------------------------
 ; CONFIGURATION SECTION: 여기에 원하는 대로 설정합니다.
@@ -41,8 +41,8 @@
 ; 어떤 리모콘은 버튼을 누르고 있는 동안 신호를 빠르게 반복해 보냅니다.
 ; 이 때문에 리모트 콘트롤이 오직 하나의 신호만 전송하도록 만들기가 어렵습니다
 ; 다음 설정은  지정된 시간이 경과할 때까지 반복된 신호를 무시함으로써
-; 이 문제를 해결합니다. 200이면 보통 좋은 설정입니다.
-; 0으로 설정하면 이 특징을 불능으로 만듭니다.</em>
+; 이 문제를 해결합니다. 200이면 보통 좋은 설정입니다.  Set it
+; to 0 to disable this feature.</em>
 DelayBetweenButtonRepeats = 200
 
 <em>; 경로를 WinLIRC에 지정합니다. 예를 들어 C:\WinLIRC\winlirc.exe</em>
@@ -124,7 +124,7 @@ if not ErrorLevel  <em>; WinLIRC에 대한 PID가 발견되지 않았습니다.<
 {
     IfNotExist, %WinLIRC_Path%
     {
-        MsgBox 파일 &quot;%WinLIRC_Path%&quot;가 존재하지 않습니다. 이 스크립트를 편집해 그 위치를 지정하십시오.
+        MsgBox 파일 "%WinLIRC_Path%"가 존재하지 않습니다. 이 스크립트를 편집해 그 위치를 지정하십시오.
         ExitApp
     }
     Run %WinLIRC_Path%
@@ -139,21 +139,21 @@ if socket = -1  <em>; 접속 실패 (이미 이유는 보여주었습니다).</e
 <em>; 이 스크립트의 메인 창을 찾습니다:</em>
 Process, Exist  <em>; 이렇게 하면 ErrorLevel에 이 스크립트의 PID가 설정됩니다 (이런식으로 하면 컴파일된 스크립트를 지원할 수 있습니다).</em>
 DetectHiddenWindows On
-ScriptMainWindowId := WinExist(&quot;ahk_class AutoHotkey ahk_pid &quot; . ErrorLevel)
+ScriptMainWindowId := WinExist("ahk_class AutoHotkey ahk_pid " . ErrorLevel)
 DetectHiddenWindows Off
 
 <em>; OS가 스크립트에게 들어오는 데이터가 수신되기를 기다리고 있다고 고지할 때,
 ; 다음은 그 데이터를 읽기 위하여 함수를 기동시킵니다:</em>
 NotificationMsg = 0x5555  <em>; 임의의 메시지 번호, 그러나 0x1000 보다는 커야 합니다.</em>
-OnMessage(NotificationMsg, &quot;ReceiveData&quot;)
+OnMessage(NotificationMsg, "ReceiveData")
 
 <em>; 접속을 설정해 이 스크립트에게 새로 데이터가 도착할 때마다 메시지를 통하여 고지합니다.
 ; 이렇게 하면 접속을 폴할 필요가 없으므로, 자원 낭비가 감소합니다.</em>
 FD_READ = 1     <em>; 데이터를 읽을 수 있을 때 수신됩니다.</em>
 FD_CLOSE = 32   <em>; 접속이 닫힐 때 수신됩니다.</em>
-if DllCall(&quot;Ws2_32\WSAAsyncSelect&quot;, &quot;UInt&quot;, socket, &quot;UInt&quot;, ScriptMainWindowId, &quot;UInt&quot;, NotificationMsg, &quot;Int&quot;, FD_READ|FD_CLOSE)
+if DllCall("Ws2_32\WSAAsyncSelect", "UInt", socket, "UInt", ScriptMainWindowId, "UInt", NotificationMsg, "Int", FD_READ|FD_CLOSE)
 {
-    MsgBox % &quot;WSAAsyncSelect() indicated Winsock error &quot; . DllCall(&quot;Ws2_32\WSAGetLastError&quot;)
+    MsgBox % "WSAAsyncSelect() indicated Winsock error " . DllCall("Ws2_32\WSAGetLastError")
     ExitApp
 }
 return
@@ -165,7 +165,7 @@ ConnectToAddress(IPAddress, Port)
 ; 실패하면 -1 (INVALID_SOCKET)을 돌려주고 성공하면 소켓 ID를 돌려줍니다.</em>
 {
     VarSetCapacity(wsaData, 400)
-    result := DllCall(&quot;Ws2_32\WSAStartup&quot;, &quot;UShort&quot;, 0x0002, &quot;UInt&quot;, &amp;wsaData) <em>; Winsock 2.0 (0x0002)을 요구합니다</em>
+    result := DllCall("Ws2_32\WSAStartup", "UShort", 0x0002, "UInt", &amp;wsaData) <em>; Winsock 2.0 (0x0002)을 요구합니다</em>
     <em>; WSAStartup()이 이스크립트가 첫 번째로 호출한 Winsock 함수일 가능성이 높으므로,</em>
     <em>; ErrorLevel을 점검해 OS에 Winsock 2.0이 있는지 알아 봅니다:</em>
     if ErrorLevel
@@ -175,17 +175,17 @@ ConnectToAddress(IPAddress, Port)
     }
     if result  <em>; 0이 아니라면, 실패했다는 뜻입니다 (대부분의 Winsock 함수는 성공하면 0을 돌려줍니다).</em>
     {
-        MsgBox % &quot;WSAStartup() indicated Winsock error &quot; . DllCall(&quot;Ws2_32\WSAGetLastError&quot;)
+        MsgBox % "WSAStartup() indicated Winsock error " . DllCall("Ws2_32\WSAGetLastError")
         return -1
     }
 
     AF_INET = 2
     SOCK_STREAM = 1
     IPPROTO_TCP = 6
-    socket := DllCall(&quot;Ws2_32\socket&quot;, &quot;Int&quot;, AF_INET, &quot;Int&quot;, SOCK_STREAM, &quot;Int&quot;, IPPROTO_TCP)
+    socket := DllCall("Ws2_32\socket", "Int", AF_INET, "Int", SOCK_STREAM, "Int", IPPROTO_TCP)
     if socket = -1
     {
-        MsgBox % &quot;socket() indicated Winsock error &quot; . DllCall(&quot;Ws2_32\WSAGetLastError&quot;)
+        MsgBox % "socket() indicated Winsock error " . DllCall("Ws2_32\WSAGetLastError")
         return -1
     }
 
@@ -193,13 +193,13 @@ ConnectToAddress(IPAddress, Port)
     SizeOfSocketAddress = 16
     VarSetCapacity(SocketAddress, SizeOfSocketAddress)
     InsertInteger(2, SocketAddress, 0, AF_INET)   <em>; sin_family</em>
-    InsertInteger(DllCall(&quot;Ws2_32\htons&quot;, &quot;UShort&quot;, Port), SocketAddress, 2, 2)   <em>; sin_port</em>
-    InsertInteger(DllCall(&quot;Ws2_32\inet_addr&quot;, &quot;AStr&quot;, IPAddress), SocketAddress, 4, 4)   <em>; sin_addr.s_addr</em>
+    InsertInteger(DllCall("Ws2_32\htons", "UShort", Port), SocketAddress, 2, 2)   <em>; sin_port</em>
+    InsertInteger(DllCall("Ws2_32\inet_addr", "AStr", IPAddress), SocketAddress, 4, 4)   <em>; sin_addr.s_addr</em>
 
     <em>; 접속을 시도합니다:</em>
-    if DllCall(&quot;Ws2_32\connect&quot;, &quot;UInt&quot;, socket, &quot;UInt&quot;, &amp;SocketAddress, &quot;Int&quot;, SizeOfSocketAddress)
+    if DllCall("Ws2_32\connect", "UInt", socket, "UInt", &amp;SocketAddress, "Int", SizeOfSocketAddress)
     {
-        MsgBox % &quot;connect() indicated Winsock error &quot; . DllCall(&quot;Ws2_32\WSAGetLastError&quot;) . &quot;. Is WinLIRC running?&quot;
+        MsgBox % "connect() indicated Winsock error " . DllCall("Ws2_32\WSAGetLastError") . ". Is WinLIRC running?"
         return -1
     }
     return socket  <em>; -1 말고 유효한 소켓 ID를 돌려주어 성공을 알립니다.</em>
@@ -217,18 +217,18 @@ ReceiveData(wParam, lParam)
     ReceivedDataSize = 4096  <em>; 이전 데이터를 처리하는데 지연 시간이 있어서 많은 데이터가 버퍼에 찰 경우를 대비해 크게 잡습니다.</em>
 
     VarSetCapacity(ReceivedData, ReceivedDataSize, 0)  <em>; recv()에 사용하기 위해 0을 마지막 매개변수에 지정해 문자열을 종료합니다.</em>
-    ReceivedDataLength := DllCall(&quot;Ws2_32\recv&quot;, &quot;UInt&quot;, socket, &quot;Str&quot;, ReceivedData, &quot;Int&quot;, ReceivedDataSize, &quot;Int&quot;, 0)
+    ReceivedDataLength := DllCall("Ws2_32\recv", "UInt", socket, "Str", ReceivedData, "Int", ReceivedDataSize, "Int", 0)
     if ReceivedDataLength = 0  <em>; 접속이 우아하게 닫혔습니다. 아마도 WinLIRC를 끝냈기 때문일 것입니다.</em>
         ExitApp  <em>; OnExit 루틴이 우리를 대신하여 WSACleanup()을 호출해 줍니다.</em>
     if ReceivedDataLength = -1
     {
-        WinsockError := DllCall(&quot;Ws2_32\WSAGetLastError&quot;)
-        if WinsockError = 10035  <em>; WSAEWOULDBLOCK, &quot;더 이상 읽을 데이터가 없다&quot;는 뜻입니다.</em>
+        WinsockError := DllCall("Ws2_32\WSAGetLastError")
+        if WinsockError = 10035  <em>; WSAEWOULDBLOCK, "더 이상 읽을 데이터가 없다"는 뜻입니다.</em>
             return 1
         if WinsockError &lt;&gt; 10054 <em>; WSAECONNRESET, WinLIRC가 시스템 셧다운/로그오프를 통하여 닫힐 때 일어납니다.</em>
             <em>; 예측 하지 못한 에러이므로 보고합니다.  또 무한 회돌이를 피하기 위해 종료합니다.</em>
-            MsgBox % &quot;recv() indicated Winsock error &quot; . WinsockError
-        ExitApp  <em>; OnExit 루틴이 우리를 대신에 WSACleanup()를 호출합니다.</em>
+            MsgBox % "recv() indicated Winsock error " . WinsockError
+        ExitApp  <em>; OnExit 루틴이 우리를 대신하여 WSACleanup()을 호출해 줍니다.</em>
     }
     <em>; 그렇지 않으면, 수신된 데이터를 처리합니다. 테스트에 의하면 한 번에 한 줄 이상을 얻을 수 있습니다</em>
     <em>; (명시적으로-전송된 IR 신호에 대해서도 마찬가지입니다), 다음 메쏘드가 적절하게 처리합니다.</em>
@@ -278,15 +278,15 @@ InsertInteger(pInteger, ByRef pDest, pOffset = 0, pSize = 4)
 ; pOffset에서 시작해서 오직 pSize 개수의 바이트만 변경됩니다.</em>
 {
     Loop %pSize%  <em>; 각 바이트를 구조체 안으로 날 이진 데이터로 복사합니다.</em>
-        DllCall(&quot;RtlFillMemory&quot;, &quot;UInt&quot;, &amp;pDest + pOffset + A_Index-1, &quot;UInt&quot;, 1, &quot;UChar&quot;, pInteger &gt;&gt; 8*(A_Index-1) &amp; 0xFF)
+        DllCall("RtlFillMemory", "UInt", &amp;pDest + pOffset + A_Index-1, "UInt", 1, "UChar", pInteger &gt;&gt; 8*(A_Index-1) &amp; 0xFF)
 }
 
 
 
 ExitSub:  <em>; 이 서브루틴은 스크립트가 어떤 이유로 종료될 때 자동으로 호출됩니다.
-; MSDN에 의하면: &quot;WSACleanup이 호출될 때 열린 소켓은 모두 리셋되고 
-; 마치 closesocket 이 호출될 것처럼 자동으로 할당이 해제됩니다.&quot;</em>
-DllCall(&quot;Ws2_32\WSACleanup&quot;)
+; MSDN에 의하면: "WSACleanup이 호출될 때 열린 소켓은 모두 리셋되고
+; 마치 closesocket 이 호출될 것처럼 자동으로 할당이 해제됩니다."</em>
+DllCall("Ws2_32\WSACleanup")
 ExitApp
 </pre>
 </body>

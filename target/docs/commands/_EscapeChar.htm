@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>#EscapeChar (and explanation of escape sequences)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>#EscapeChar (피신 연속열 설명)</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -22,11 +23,8 @@
 
 </dl>
 <h3>논평</h3>
-<p>
-피신 문자는 바로 다음에 오는 문자가 정상과 다르게 번역되어야 한다는 것을 나타내는 데 사용됩니다.</p>
-<p>
-기본 피신 문자는 액센트/백틱입니다 (`).</p>
-
+<p>피신 문자는 바로 다음에 오는 문자가 정상과 다르게 번역되어야 한다는 것을 나타내는 데 사용됩니다.</p>
+<p>기본 피신 문자는 액센트/백틱입니다 (`).</p>
 <h3>피신 연속열 (액센트가 피신 문자일 때)</h3>
 <table class="info">
   <tr>
@@ -83,23 +81,17 @@
   </tr>
   <tr>
     <td>Send</td>
-    <td>
-	<a href="Send.htm">Send 명령어</a>나 <a href="../Hotstrings.htm">핫스트링</a>이 기본 모드 (비-날 모드)에서 사용될 때, {}^!+#와 같은 문자들은 특별한 의미가 있습니다. 그러므로, 이런 경우 문자 그대로 사용하려면, 활괄호로 둘러 싸십시오. 예를 들어: <code>Send {<strong>^</strong>}{<strong>!</strong>}{<strong>{</strong>}</code>.</td>
+    <td><a href="Send.htm">Send 명령어</a>나 <a href="../Hotstrings.htm">핫스트링</a>이 기본 모드 (비-날 모드)에서 사용될 때, {}^!+#와 같은 문자들은 특별한 의미가 있습니다. 그러므로, 이런 경우 문자 그대로 사용하려면, 활괄호로 둘러 싸십시오. 예를 들어: <code>Send {<strong>^</strong>}{<strong>!</strong>}{<strong>{</strong>}</code>.</td>
   </tr>
   <tr>
-    <td>&quot;&quot;</td>
-    <td><a href="../Variables.htm#Expressions">표현식</a> 안에서, 기호 그대로의 문자열 안에 둘러 싸인 두 개의 연속 따옴표는 문자 그대로의 하나의 따옴표로 결정됩니다.
-	예를 들어: <code>Var := &quot;The color &quot;&quot;red&quot;&quot; was found.&quot;</code>.</td>
+    <td>""</td>
+    <td><a href="../Variables.htm#Expressions">표현식</a> 안에서, 기호 그대로의 문자열 안에 둘러 싸인 두 개의 연속 따옴표는 문자 그대로의 하나의 따옴표로 결정됩니다. 예를 들어: <code>Var := "The color ""red"" was found."</code>.</td>
   </tr>
 </table>
 <h3>관련 항목</h3>
-<p>
-<a name="DerefChar"></a><a name="Delimiter"></a>
-잘 사용되지 않는 다음 지시어도 존재합니다; 사용법은 다음 예제에 보여줍니다:</p>
-
+<p><a name="DerefChar"></a><a name="Delimiter"></a>잘 사용되지 않는 다음 지시어도 존재합니다; 사용법은 다음 예제에 보여줍니다:</p>
 <pre>#DerefChar #  <em>; 보통의 기본값 퍼센트를 샵으로 바꿉니다.</em>
 #Delimiter /  <em>; 보통의 기본값 쉼표를 정사선으로 바꿉니다</em></pre>
-
 <h3>예제</h3>
 <pre class="NoIndent">#EscapeChar \  <em>; 기본 값 액센트 (`) 대신에 역사선으로 변경합니다.</em></pre>
 

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Progress/SplashImage</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -32,7 +33,7 @@ Progress, ProgressParam1 [, SubText, MainText, WinTitle, FontName]</pre>
   <dd><p>단어 OFF이면, 창은 파괴됩니다. 단어 SHOW이면, 창이 현재 숨어 있을 경우 보여집니다.</p>
       <p>그렇지 않으면, 이것은 보여줄 BMP, GIF, 또는 JPG 이미지의 파일이름입니다 (PNG, TIF, 그리고 ICO와 같이 다른 파일 형식을 보여주려면, <a href="Gui.htm">Gui</a> 명령어를 사용하여 그림 콘트롤이 들어 있는 창을 생성하는 방법을 고려하십시오).</p>
       <p><span class="ver">[AHK_L 59+]:</span> Gui가 지원하는 포맷이면 모두 SplashImage와 사용할 수 있습니다.</p>
-      <p><em>ImageFile</em>은 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주합니다.  <em>ImageFile</em> 그리고 <em>Options</em>이 비어 있고 창이 이미 존재하면, 그의 이미지는 바뀌지 않지만 텍스트는 업데이트되어 <em>SubText</em>, <em>MainText</em>, 그리고 <em>WinTitle</em>에 제공된 새 문자열을 반영합니다.</p>
+      <p><em>ImageFile</em>은 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주합니다. <em>ImageFile</em> 그리고 <em>Options</em>이 비어 있고 창이 이미 존재하면, 그의 이미지는 바뀌지 않지만 텍스트는 업데이트되어 <em>SubText</em>, <em>MainText</em>, 그리고 <em>WinTitle</em>에 제공된 새 문자열을 반영합니다.</p>
       <p>새로 생성된 창에 대하여, <em>ImageFile</em>이 비어 있거나 이미지를 적재하는데 문제가 있으면, 창은 그림 없이 보여집니다.</p></dd>
 
   <dt>ProgressParam1</dt>
@@ -61,69 +62,40 @@ Progress, ProgressParam1 [, SubText, MainText, WinTitle, FontName]</pre>
 </dl>
 
 <h2>창 크기, 위치, 그리고 행위</h2>
-<p>
-<strong>A</strong>: 창은 언제나 위에 있지 <u>않습니다</u>.</p>
-<p>
-<strong>B</strong>: Borderless: 창에 테두리가 없고 제목 바가 없습니다. 테두리는 있지만 제목 바는 필요 없다면, 얇은 테두리에 <strong>B1</strong>을 사용하고 대화상자 스타일의 테두리에 <strong>B2</strong>를 사용하십시오.</p>
-<p>
-<strong>M</strong>: 사용자가 창을 이동할 수 있습니다 (테두리가 없는 경우는 예외). 추가로 (테두리를 끌어서) 창의 크기를 바꾸려면, <strong>M1</strong>을 지정하십시오. 추가로 시스템 메뉴를 포함하고 제목 바에 최소화/최대화/닫기 버튼 집합을 포함하려면, <strong>M2</strong>를 지정하십시오.</p>
-<p>
-<strong>Pn</strong>: 프로그레스 창에 대하여, <strong>n</strong>에 제목 바의 시작 위치를 지정하십시오 (기본값은 0입니다. 또는 허용되는 범위 안에서 0에 가장 가까운 숫자입니다). 
-나중에 바의 위치를 바꾸려면, 다음 예제를 따르십시오: <code>Progress, 50</code>.</p>
-<p>
-<strong>Rx-y</strong>: 프로그레스 창에 대하여, <strong>x-y</strong>에 바의 범위를 지정하십시오 (<strong>R</strong> 옵션이 없으면, 기본 값은 0-100입니다). 예를 들어, <code>R0-1000</code>이면 0부터 1000까지이 숫자를 허용합니다; <code>R-50-50</code>이면 -50부터 50까지 허용합; 그리고 <code>R-10--5</code>이면 -10부터 -5까지 허용합니다.</p>
-<p>
-<strong>T</strong>: 창의 태스크 바에 버튼이 하나 주어집니다. 그리고 소유주가 없습니다. 보통, 창은 스크립트의 메인 창에 속하기 때문에 버튼이 없습니다. 이 설정은 또한 GUI 창의 <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a> 설정이 스플레시 또는 프로그레스 창을 소유하지 못하도록 막습니다.</p>
-<p>
-<strong>Hn</strong>: <strong>n</strong>에 창의 클라이언트 구역의 높이를 지정하십시오 (제목 바와 테두리를 제외한 구역입니다). 지정하지 않으면, 창의 텍스트와 이미지/바의 높이에 기반하여 그 높이가 <u>자동으로</u> 계산됩니다.</p>
-<p>
-<strong>Wn</strong>: <strong>n</strong>에 창의 클라이언트 구역의 너비를 지정하십시오. 지정하지 않으면, (이미지가 있다면) SplashImage에 대하여 너비가 <u>자동으로</u> 계산됩니다. 그렇지 않으면, 기본값은 300입니다.</p>
-<p>
-<strong>Xn</strong>: <strong>n</strong>에 창의 좌상 모서리의 x-좌표를 지정하십시오. 지정하지 않으면, 창은 수평으로 화면 가운데에 놓입니다.</p>
+<p><strong>A</strong>: 창은 언제나 위에 있지 <u>않습니다</u>.</p>
+<p><strong>B</strong>: Borderless: 창에 테두리가 없고 제목 바가 없습니다. 테두리는 있지만 제목 바는 필요 없다면, 얇은 테두리에 <strong>B1</strong>을 사용하고 대화상자 스타일의 테두리에 <strong>B2</strong>를 사용하십시오.</p>
+<p><strong>M</strong>: 사용자가 창을 이동할 수 있습니다 (테두리가 없는 경우는 예외). 추가로 (테두리를 끌어서) 창의 크기를 바꾸려면, <strong>M1</strong>을 지정하십시오. 추가로 시스템 메뉴를 포함하고 제목 바에 최소화/최대화/닫기 버튼 집합을 포함하려면, <strong>M2</strong>를 지정하십시오.</p>
+<p><strong>Pn</strong>: 프로그레스 창에 대하여, <strong>n</strong>에 제목 바의 시작 위치를 지정하십시오 (기본값은 0입니다. 또는 허용되는 범위 안에서 0에 가장 가까운 숫자입니다). 나중에 바의 위치를 바꾸려면, 다음 예제를 따르십시오: <code>Progress, 50</code>.</p>
+<p><strong>Rx-y</strong>: 프로그레스 창에 대하여, <strong>x-y</strong>에 바의 범위를 지정하십시오 (<strong>R</strong> 옵션이 없으면, 기본 값은 0-100입니다). 예를 들어, <code>R0-1000</code>이면 0부터 1000까지이 숫자를 허용합니다; <code>R-50-50</code>이면 -50부터 50까지 허용합; 그리고 <code>R-10--5</code>이면 -10부터 -5까지 허용합니다.</p>
+<p><strong>T</strong>: 창의 태스크 바에 버튼이 하나 주어집니다. 그리고 소유주가 없습니다. 보통, 창은 스크립트의 메인 창에 속하기 때문에 버튼이 없습니다. 이 설정은 또한 GUI 창의 <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a> 설정이 스플레시 또는 프로그레스 창을 소유하지 못하도록 막습니다.</p>
+<p><strong>Hn</strong>: <strong>n</strong>에 창의 클라이언트 구역의 높이를 지정하십시오 (제목 바와 테두리를 제외한 구역입니다). 지정하지 않으면, 창의 텍스트와 이미지/바의 높이에 기반하여 그 높이가 <u>자동으로</u> 계산됩니다.</p>
+<p><strong>Wn</strong>: <strong>n</strong>에 창의 클라이언트 구역의 너비를 지정하십시오. 지정하지 않으면, (이미지가 있다면) SplashImage에 대하여 너비가 <u>자동으로</u> 계산됩니다. 그렇지 않으면, 기본값은 300입니다.</p>
+<p><strong>Xn</strong>: <strong>n</strong>에 창의 좌상 모서리의 x-좌표를 지정하십시오. 지정하지 않으면, 창은 수평으로 화면 가운데에 놓입니다.</p>
 <p><strong>Yn</strong>: <strong>n</strong>에 창의 좌상 모서리의 y-좌표를 지정하십시오. 지정하지 않으면, 창은 수직으로 화면 가운데에 놓입니다.</p>
-<p>
-<strong>Hide</strong>: 창은 최초에 숨어 있습니다. <code>Progress Show</code> 또는 <code>SplashImage Show</code>를 사용해 나중에 보여줄 수 있습니다.</p>
-
+<p><strong>Hide</strong>: 창은 최초에 숨어 있습니다. <code>Progress Show</code> 또는 <code>SplashImage Show</code>를 사용해 나중에 보여줄 수 있습니다.</p>
 <h2>창에 객체 배치하기</h2>
 <p><strong>Cxy</strong>: Centered: 이 옵션이 없으면, <em>SubText</em> 그리고 <em>MainText</em> 모두 창 한 가운데에 놓입니다. 0을 <strong>x</strong>에 지정하면 <em>SubText</em>가 왼쪽 정렬됩니다. 1을 지정하면 중앙에 정렬됩니다. <strong>y</strong>에도 마찬가지입니다. 단, <em>MainText</em>에 적용되는 경우는 예외입니다 (<strong>y</strong>는 생략할 수 있습니다). 예를 들어: <code>c10</code>.</p>
-<p>
-<strong>ZHn</strong>: 객체의 높이: 프로그레스 창에 대하여, <strong>n</strong>에 프로그레스 바의 두께를 지정하십시오 (기본값 20). SplashImage 창에 대하여, <strong>n</strong>에 이미지를 조절할 높이를 지정하십시오. -1을 지정하면 높이를 ZWn 지정된 너비에 비례하도록 조절할 수 있습니다 (즉, &quot;화면 비율 유지&quot;). 지정하지 않으면, 실제 이미지 높이가 사용됩니다. 어느 경우든, 값을 0으로 지정하면 객체를 완전히 생략할 수 있습니다. 그러면 맞춤 글꼴과 크기 그리고 색으로 오직 텍스트만 보여주는 데 창을 사용할 수 있습니다.</p>
-<p>
-<strong>ZWn</strong>: 객체의 너비 (SplashImage 창 전용): <strong>n</strong>에 이미지를 조절할 너비를 지정하시십시오. -1을 지정하면 너비를 ZHn에 지정된 너비에 비례하여 조절할 수 있습니다. (즉, &quot;화면 비율 유지&quot;). 지정하지 않으면, 실제 이미지 너비가 사용됩니다.</p>
-<p>
-<strong>ZXn</strong>: <strong>n</strong>에 창의 좌우에 남길 여백의 양을 지정하십시오. 기본 값은 10 픽셀입니다. 단, SplashImage 창은 텍스트가 없고, 기본 값은 0입니다.</p>
-<p>
-<strong>ZYn</strong>: <strong>n</strong>에 창의 상하 그리고 콘트롤 사이에 남길 빈 수직 공간의 양을 지정하십시오. 기본 값은 5픽셀입니다. 단, SplashImage 창은 텍스트가 없고, 기본값은 0입니다.</p>
-<p>
-주의: 수직 프로그레스 바를 만들거나 레이아웃을 좀 더 유연하게 제어하려면, 다음 예제와 같이 <a href="Gui.htm">Gui</a> 명령어를 사용하십시오:</p>
-
+<p><strong>ZHn</strong>: 객체의 높이: 프로그레스 창에 대하여, <strong>n</strong>에 프로그레스 바의 두께를 지정하십시오 (기본값 20). SplashImage 창에 대하여, <strong>n</strong>에 이미지를 조절할 높이를 지정하십시오. -1을 지정하면 높이를 ZWn 지정된 너비에 비례하도록 조절할 수 있습니다 (즉, "화면 비율 유지"). 지정하지 않으면, 실제 이미지 높이가 사용됩니다. 어느 경우든, 값을 0으로 지정하면 객체를 완전히 생략할 수 있습니다. 그러면 맞춤 글꼴과 크기 그리고 색으로 오직 텍스트만 보여주는 데 창을 사용할 수 있습니다.</p>
+<p><strong>ZWn</strong>: 객체의 너비 (SplashImage 창 전용): <strong>n</strong>에 이미지를 조절할 너비를 지정하시십시오. -1을 지정하면 너비를 ZHn에 지정된 너비에 비례하여 조절할 수 있습니다. (즉, "화면 비율 유지"). 지정하지 않으면, 실제 이미지 너비가 사용됩니다.</p>
+<p><strong>ZXn</strong>: <strong>n</strong>에 창의 좌우에 남길 여백의 양을 지정하십시오. 기본 값은 10 픽셀입니다. 단, SplashImage 창은 텍스트가 없고, 기본 값은 0입니다.</p>
+<p><strong>ZYn</strong>: <strong>n</strong>에 창의 상하 그리고 콘트롤 사이에 남길 빈 수직 공간의 양을 지정하십시오. 기본 값은 5픽셀입니다. 단, SplashImage 창은 텍스트가 없고, 기본값은 0입니다.</p>
+<p>주의: 수직 프로그레스 바를 만들거나 레이아웃을 좀 더 유연하게 제어하려면, 다음 예제와 같이 <a href="Gui.htm">Gui</a> 명령어를 사용하십시오:</p>
 <pre>Gui, Add, Progress, Vertical vMyProgress
 Gui, Show
 return
 <em>; ... later...</em>
 GuiControl,, MyProgress, +10  <em>; 바를 위로10 퍼센트 이동시키빈다. +를 생랴갛면 절대 위치를 지정할 수 있습니다.</em></pre>
-
 <h2>글꼴 크기와 무게</h2>
-<p>
-<strong>FMn</strong>: <em>MainText</em>에 대한 글꼴 크기를 <strong>n</strong>에 지정하십시오. 기본값은 0이고, 대부분의 시스템에서 10 포인트가 사용됩니다. 이 기본값은 제어판 &gt; 화면 설정에서 시스템이 선택한 글꼴 크기에 영향을 받지 않습니다.</p>
-<p>
-<strong>FSn</strong>: <em>SubText</em>에 대한 글꼴 크기를 <strong>n</strong>에 지정하십시오. 기본값은 0입이고 대부분의 시스템에서 0 포인트가 사용됩니다.</p>
-<p>
-<strong>WMn</strong>: <em>MainText</em>에 대하여 글꼴 무게를 <strong>n</strong>에 지정하십시오. 이 두께는 범위가 1부터 1000까지입니다. 지정하지 않으면, 600 (반-볼드체)이 사용됩니다.</p>
-<p>
-<strong>WSn</strong>: <em>SubText</em>에 대하여 글꼴 무게를 <strong>n</strong>에 지정하십시오. 두께는 범윅 1부터 1000까지 입니다 (700은 전통적으로 &quot;볼드체&quot;로 간주됩니다). 지정하지않으면, 400 (보통)이 사용됩니다.</p>
-
+<p><strong>FMn</strong>: <em>MainText</em>에 대한 글꼴 크기를 <strong>n</strong>에 지정하십시오. 기본값은 0이고, 대부분의 시스템에서 10 포인트가 사용됩니다. 이 기본값은 제어판 &gt; 화면 설정에서 시스템이 선택한 글꼴 크기에 영향을 받지 않습니다.</p>
+<p><strong>FSn</strong>: <em>SubText</em>에 대한 글꼴 크기를 <strong>n</strong>에 지정하십시오. 기본값은 0입이고 대부분의 시스템에서 0 포인트가 사용됩니다.</p>
+<p><strong>WMn</strong>: <em>MainText</em>에 대하여 글꼴 무게를 <strong>n</strong>에 지정하십시오. 이 두께는 범위가 1부터 1000까지입니다. 지정하지 않으면, 600 (반-볼드체)이 사용됩니다.</p>
+<p><strong>WSn</strong>: <em>SubText</em>에 대하여 글꼴 무게를 <strong>n</strong>에 지정하십시오. 두께는 범윅 1부터 1000까지 입니다 (700은 전통적으로 "볼드체"로 간주됩니다). 지정하지않으면, 400 (보통)이 사용됩니다.</p>
 <h2>객체 색</h2>
-<p>
-색은 아래 리스트의 색 이름 중 하나이거나 <u>또는</u> 여섯-자리 십육진 RGB 값입니다. 예를 들어, <code>cw1A00FF</code>를 지정하면 창 배경색이 적색은 1A, 녹색은 00, 그리고 청색은 FF로 설정됩니다.</p>
-<p>
-그 다음에 옵션이 더 있으면 각 컬러 옵션 다음에 스페이스를 추가하십시오. 예를 들어: <code>cbRed ct900000 cwBlue</code>.</p>
-<p>
-<strong>CBn</strong>: 프로그레스 바의 컬러: <strong>n</strong>에 16가지 기본 HTML 컬럼 이름 중 하나 또는 6-자리 RGB 컬러 값을 지정하십시오. 지정하지 않으면, 시스템의 기본 바 컬러가 사용됩니다. 단어 Default를 지정하면 시스템이 기본 프로그레스 바 컬러로 되돌아 올 수 있습니다.</p>
-<p>
-<strong>CTn</strong>: 텍스트 컬러: <strong>n</strong>에 16가지 기본 HTML 컬러 이름 중 하나 또는 6-자리 RGB 컬러 값을 지정하십시오. 지정하지 않으면, 시스템의 기본 텍스트 컬러가 사용됩니다 (보통 검정색). 단어 Default를 지정하면 시스템의 기본 텍스트 컬러로 돌아올 수 있습니다.</p>
-<p>
-<strong>CWn</strong>: 창의 컬러 (배경색): S<strong>n</strong>에 16가지 기본 HTML 컬러 이름 중 하나 또는 6-자리 RGB 칼러 값을 지정하십시오. 지정하지 않으면, 시스템의 버튼 색이 사용됩니다 (단어 Default 를 지정하면 나중에 이 컬러로 되돌아 올 수 있습니다). 배경색을 투명하게 만들려면, <a href="WinSet.htm#TransColor">WinSet TransColor</a>를 사용하십시오.</p>
+<p>색은 아래 리스트의 색 이름 중 하나이거나 <u>또는</u> 여섯-자리 십육진 RGB 값입니다. 예를 들어, <code>cw1A00FF</code>를 지정하면 창 배경색이 적색은 1A, 녹색은 00, 그리고 청색은 FF로 설정됩니다.</p>
+<p>그 다음에 옵션이 더 있으면 각 컬러 옵션 다음에 스페이스를 추가하십시오. 예를 들어: <code>cbRed ct900000 cwBlue</code>.</p>
+<p><strong>CBn</strong>: 프로그레스 바의 컬러: <strong>n</strong>에 16가지 기본 HTML 컬럼 이름 중 하나 또는 6-자리 RGB 컬러 값을 지정하십시오. 지정하지 않으면, 시스템의 기본 바 컬러가 사용됩니다. 단어 Default를 지정하면 시스템이 기본 프로그레스 바 컬러로 되돌아 올 수 있습니다.</p>
+<p><strong>CTn</strong>: 텍스트 컬러: <strong>n</strong>에 16가지 기본 HTML 컬럼 이름 중 하나 또는 6-자리 RGB 컬러 값을 지정하십시오. 지정하지 않으면, 시스템의 기본 텍스트 컬러가 사용됩니다 (보통 검정색). 단어 Default를 지정하면 시스템의 기본 텍스트 컬러로 돌아올 수 있습니다.</p>
+<p><strong>CWn</strong>: 창의 컬러 (배경색): <strong>n</strong>에 16가지 기본 HTML 컬럼 이름 중 하나 또는 6-자리 RGB 컬러 값을 지정하십시오. 지정하지 않으면, 시스템의 버튼 색이 사용됩니다 (단어 Default 를 지정하면 나중에 이 컬러로 되돌아 올 수 있습니다). 배경색을 투명하게 만들려면, <a href="WinSet.htm#TransColor">WinSet TransColor</a>를 사용하십시오.</p>
 <table align="center" width="80%" border="0" cellspacing="10" cellpadding="0">
   <caption>
   <b><a name="colors"></a>컬러 이름과 RGB 값</b>
@@ -178,30 +150,18 @@ GuiControl,, MyProgress, +10  <em>; 바를 위로10 퍼센트 이동시키빈다
   </tr>
 </table>
 <h2>논평</h2>
-<p>
-첫 매개변수가 단어 <strong>OFF</strong>이면, 그 창은 파괴됩니다.</p>
-<p>
-각 스크립트는 최대 10개의 프로그레스 창 그리고 10 개의 SplashImage 창을 보여줄 수 있습니다. 각 창마다 생성 순간에 할당된 번호가 있습니다. 지정되지 않으면 그 번호는 1 (첫 번째)입니다. 그렇지 않으면, 첫 매개변수 앞에 청 번호와 쌍점을 배치하십시오. 예를 들어, <code>2:Off</code>로 Progress 명령어를 사용하면 2 번 프로그래스 창이 꺼집니다, <code>2:75</code>이면 그의 바를 75%로 설정합니다, <code>2:</code>이면 그의 텍스트 필드가 바뀝니다. 그리고 <code>2:B</code>이면 테투리 없는 새 프로그레스 창이 생성됩니다. 비슷하게, SplashImage 명령어를 <code>2:Off</code>와 함께 사용하면 2 번 SplashImage 창이 꺼지고, <code>2:</code>이면 그의 텍스트 필드가 바뀝니다. 그리고 <code>2:C:\My Images\Picture1.jpg</code> 이면 새로 2 번 SplashImage 창이 생성됩니다.</p>
-<p>
-생성될 때, 바탕화면보다 큰 창은 자동으로 바탕화면에 맞게 줄어듭니다.</p>
-<p>
-맨 프로그레스 바를 보여 주려면 <em>SubText</em>도 <em>MainText</em>도 지정하지 않고, 다음 옵션을 포함하면 됩니다: <code>b zx0 zy0</code>. 맨 이미지를 보여주려면 같은 방식으로 하되 B 옵션이 더 필요합니다.</p>
+<p>첫 매개변수가 단어 <strong>OFF</strong>이면, 그 창은 파괴됩니다.</p>
+<p>각 스크립트는 최대 10개의 프로그레스 창 그리고 10 개의 SplashImage 창을 보여줄 수 있습니다. 각 창마다 생성 순간에 할당된 번호가 있습니다. 지정되지 않으면 그 번호는 1 (첫 번째)입니다. 그렇지 않으면, 첫 매개변수 앞에 청 번호와 쌍점을 배치하십시오. 예를 들어, <code>2:Off</code>로 Progress 명령어를 사용하면 2 번 프로그래스 창이 꺼집니다, <code>2:75</code>이면 그의 바를 75%로 설정합니다, <code>2:</code>이면 그의 텍스트 필드가 바뀝니다. 그리고 <code>2:B</code>이면 테투리 없는 새 프로그레스 창이 생성됩니다. 비슷하게, SplashImage 명령어를 <code>2:Off</code>와 함께 사용하면 2 번 SplashImage 창이 꺼지고, <code>2:</code>이면 그의 텍스트 필드가 바뀝니다. 그리고 <code>2:C:\My Images\Picture1.jpg</code> 이면 새로 2 번 SplashImage 창이 생성됩니다.</p>
+<p>생성될 때, 바탕화면보다 큰 창은 자동으로 바탕화면에 맞게 줄어듭니다.</p>
+<p>맨 프로그레스 바를 보여 주려면 <em>SubText</em>도 <em>MainText</em>도 지정하지 않고, 다음 옵션을 포함하면 됩니다: <code>b zx0 zy0</code>. 맨 이미지를 보여주려면 같은 방식으로 하되 B 옵션이 더 필요합니다.</p>
 
-<p>
-Windows XP 이후로, 비-클래식 테마가 켜져 있으면, 프로그레스 바의 내부가 부드럽게 이어지는 바가 아니라 딱딱하게 일련 구획으로 보일 수 있습니다. 이를 피하려면, cbBlue와 같이 바 컬러를 명시적으로 지정하십시오.</p>
-<p>
-옵션 기호에 필요할 경우 (십육진수가 아니라) 십진수를 사용하십시오. 단, 따로 고지하는 경우는 예외입니다.</p>
-<p>
-<a href="WinSet.htm">WinSet</a> 그리고 <a href="WinMove.htm">WinMove</a> 같은 명령어를 사용하면 다시 생성할 필요없이 기존 창의 속성을 바꿀 수 있습니다.</p>
-<p>
-GUI 창이 <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a> 수단을 사용하여 프로그레스 창이나 스플레시 창을 소유할 수 있습니다. 이렇게 하면 스플레시나 프로그레스 창이 소유창 보다 언제나 위에 있게 됩니다. 게다가, 그 GUI 창이 파괴될 때 프로그레스 창이나 스플레시 창도 자동으로 파괴됩니다.</p>
-
+<p>Windows XP 이후로, 비-클래식 테마가 켜져 있으면, 프로그레스 바의 내부가 부드럽게 이어지는 바가 아니라 딱딱하게 일련 구획으로 보일 수 있습니다. 이를 피하려면, cbBlue와 같이 바 컬러를 명시적으로 지정하십시오.</p>
+<p>옵션 기호에 필요할 경우 (십육진수가 아니라) 십진수를 사용하십시오. 단, 따로 고지하는 경우는 예외입니다.</p>
+<p><a href="WinSet.htm">WinSet</a> 그리고 <a href="WinMove.htm">WinMove</a> 같은 명령어를 사용하면 다시 생성할 필요없이 기존 창의 속성을 바꿀 수 있습니다.</p>
+<p>GUI 창이 <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a> 수단을 사용하여 프로그레스 창이나 스플레시 창을 소유할 수 있습니다. 이렇게 하면 스플레시나 프로그레스 창이 소유창 보다 언제나 위에 있게 됩니다. 게다가, 그 GUI 창이 파괴될 때 프로그레스 창이나 스플레시 창도 자동으로 파괴됩니다.</p>
 <h2>관련 항목</h2>
-<p>
-<a href="Gui.htm">GUI</a>, <a href="SplashTextOn.htm">SplashTextOn</a>, <a href="ToolTip.htm">ToolTip</a></p>
-
+<p><a href="Gui.htm">GUI</a>, <a href="SplashTextOn.htm">SplashTextOn</a>, <a href="ToolTip.htm">ToolTip</a></p>
 <h2>예제</h2>
-
 <pre class="NoIndent">Progress, b w200, My SubText, My MainText, My Title
 Progress, 50 <em>; 바의 위치를 50%로 설정합니다.</em>
 Sleep, 4000

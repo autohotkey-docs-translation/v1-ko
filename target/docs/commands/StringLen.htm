@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>StrLen / StringLen</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@
 
 <h1>StrLen / StringLen</h1>
 
-<p>문자열에 있는 문자의 개수를 열람합니다.</p>
+<p>문자열에 들은 문자의 갯수를 열람합니다.</p>
 
 <pre class="Syntax">OutputVar := StrLen(InputVar)
 StringLen, OutputVar, InputVar
@@ -23,20 +24,17 @@ StringLen, OutputVar, InputVar
   <dd><p>길이를 저장할 변수의 이름.</p></dd>
 
   <dt>InputVar</dt>
-  <dd><p>측정할 내용이 들어 있는 변수의 이름. 퍼센트 사인에 이름을 둘러싸지 마십시오. 그러면 변수의 <em>내용</em>이 이름으로 사용됩니다.</p></dd>
+  <dd><p>측정할 내용이 들어 있는 변수의 이름. 이름을 퍼센트 사인으로 둘러 싸지 마십시오. 변수의 <em>내용</em>을 이름으로 사용하고 싶다면 예외입니다.</p></dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>
-<em>InputVar</em>가 이전에 <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>에 할당된 변수이면, StringLen은 그의 전체 크기를 보고합니다.</p>
-
+<p><em>InputVar</em>가 이전에 <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>에 할당된 변수이면, StringLen은 그의 전체 크기를 보고합니다.</p>
 <h3>관련 항목</h3>
 <p><a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
-
 <h3>예제</h3>
 <pre class="NoIndent">InputVar := "재빠른 갈색 여우, 게으른 개를 덮쳤네"
-MsgBox % &quot;InputVar의 길이는 &quot; . StrLen(InputVar) <em>; 결과: 21</em>
+MsgBox % "InputVar의 길이는 " . StrLen(InputVar) <em>; 결과: 21</em>
 StringLen, length, InputVar
 MsgBox, InputVar의 길이는 %length%입니다.</pre>
 

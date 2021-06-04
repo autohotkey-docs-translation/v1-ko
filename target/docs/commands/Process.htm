@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Process</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,8 +12,7 @@
 
 <h1>Process</h1>
 
-<p>
-다음 연산 중 하나를 프로세스에 수행합니다: 존재하는가; 우선 순위 변경; 닫기; 닫히기를 기다리기.</p>
+<p>프로세스에 다음 연산 중 하나를 수행합니다: 존재하는지 점검합니다; 우선순위를 변경합니다; 닫습니다; 끝나기를 기다립니다.</p>
 
 <pre class="Syntax">Process, Cmd [, PID-or-Name, Param3]</pre>
 <h3>매개변수</h3>
@@ -20,20 +20,13 @@
 
   <dt>Cmd</dt>
   <dd><p>다음 단어 중 하나:</p>
-    <p>
-	<strong>Exist</strong>: 부합하는 프로세스가 존재하면 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 Process ID (PID)를 설정합니다. 그렇지 않으면 0이 설정됩니다.  <em>PID-or-Name</em> 매개변수가 비어 있으면, 그 스크립트의 PID가 열람됩니다. 다른 방법으로 스크립트의 PID를 열람하는 한줄 짜리 방법이 있습니다: <code>PID := DllCall(&quot;GetCurrentProcessId&quot;)</code>.</p>
-    <p>
-	<strong>Close</strong>: 부합하는 프로세스가 성공적으로 종료하면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 그의 이전 Process ID (PID)가 설정됩니다. 그렇지 않으면 (부합하는 프로세스가 없거나 종료에 문제가 있었으면), 0이 설정됩니다. 프로세스는 갑자기 종료하기 때문에 -- 임계 지점에서 그의 작업이 인터럽트 된다거나 그의 창에 데이터를 저장하지 못하고 잃어버린다거나할 가능성이 있기 때문에 -- 이 방법은 그의 창 중에 하나에 <a href="WinClose.htm">WinClose</a>를 사용해서 프로세스를 닫을 수 없을 경우에만 사용해야 합니다.</p>
-    <p>
-	<strong>List</strong>: <em>List</em>는 아직 지원하지 않지만, <a href="#ListEx">예제 섹션</a>에서 DllCall을 통하여 프로세스 목록을 열람하는 법을 보여줍니다.</p>
-    <p>
-	<strong><a name="Priority"><em>Param3</em>에 처음 부합하는 프로세스의 </a>Priority</strong>: 우선 순위를 (윈도우즈의 작업 관리자에 보여주는 순위) 변경하고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 그의 Process ID (PID)를 설정합니다. <em>PID-or-Name</em> 매개변수가 비어 있으면, 스크립트의 자신의 우선 순위가 변경됩니다. 부합하는 프로세스가 없거나 우선 순위를 변경하는 데 문제가 있었으면, ErrorLevel은 0이 설정됩니다.</p>
-    <p>
-	<em>Param3</em>은 다음 기호나 단어중 하나가 되어야 합니다: L (Low), B (BelowNormal), N (Normal), A (AboveNormal), H (High), R (Realtime). <b>주의</b>: 실시간 우선 순위를 가지고 실행되도록 설계되지 않은 프로세스는 시스템의 안정성을 훼손할 수 있습니다.</p>
-    <p>
-	<strong>Wait</strong>: 부합하는 프로세스가 끝나기를 <em>Param3</em> 초까지 기다립니다 (소수점 포함 가능). <em>Param3</em>을 생략하면, 무한정 기다립니다. 부합하는 프로세스를 발견하면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 그의 Process ID (PID)가 설정됩니다. 명령어가 시간제한에 걸리면, ErrorLevel에 0이 설정됩니다.</p>
-    <p>
-	<strong>WaitClose</strong>: 부합하는 모든 프로세스가 닫힐 때까지 <em>Param3</em> 초까지 기다립니다 (소수점 포함 가능). <em>Param3</em>을 생략하면, 무한정 기다립니다. 부합하는 프로세스가 모두 닫히면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 0이 설정됩니다. 명령어가 시간 제한에 걸리면, ErrorLevel에 여전히 존재하는 첫 번째 부합 Process ID (PID)가 설정됩니다.</p></dd>
+    <p><strong>Exist</strong>: 부합하는 프로세스가 존재하면 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 Process ID (PID)를 설정합니다. 그렇지 않으면 0이 설정됩니다. <em>PID-or-Name</em> 매개변수가 비어 있으면, 그 스크립트의 PID가 열람됩니다. 다른 방법으로 스크립트의 PID를 열람하는 한줄 짜리 방법이 있습니다: <code>PID := DllCall("GetCurrentProcessId")</code>.</p>
+    <p><strong>Close</strong>: 부합하는 프로세스가 성공적으로 종료하면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 그의 이전 Process ID (PID)가 설정됩니다. 그렇지 않으면 (부합하는 프로세스가 없거나 종료에 문제가 있었으면), 0이 설정됩니다. 프로세스는 갑자기 종료하기 때문에 -- 임계 지점에서 그의 작업이 인터럽트 된다거나 그의 창에 데이터를 저장하지 못하고 잃어버린다거나할 가능성이 있기 때문에 -- 이 방법은 그의 창 중에 하나에 <a href="WinClose.htm">WinClose</a>를 사용해서 프로세스를 닫을 수 없을 경우에만 사용해야 합니다.</p>
+    <p><strong>List</strong>: <em>List</em>는 아직 지원하지 않지만, <a href="#ListEx">예제 섹션</a>에서 DllCall을 통하여 프로세스 목록을 열람하는 법을 보여줍니다.</p>
+    <p><strong><a name="Priority"></a>Priority</strong>: Changes the priority (as seen in Windows Task Manager) of the first matching process to <em>Param3</em> and sets <a href="../misc/ErrorLevel.htm">ErrorLevel</a> to its Process ID (PID). <em>PID-or-Name</em> 매개변수가 비어 있으면, 스크립트의 자신의 우선 순위가 변경됩니다. 부합하는 프로세스가 없거나 우선 순위를 변경하는 데 문제가 있었으면, ErrorLevel은 0이 설정됩니다.</p>
+    <p><em>Param3</em>은 다음 기호나 단어중 하나가 되어야 합니다: L (Low), B (BelowNormal), N (Normal), A (AboveNormal), H (High), R (Realtime). 주의: 실시간 우선 순위를 가지고 실행되도록 설계되지 않은 프로세스는 시스템의 안정성을 훼손할 수 있습니다.</p>
+    <p><strong>Wait</strong>: 부합하는 프로세스가 끝나기를 <em>Param3</em> 초까지 기다립니다 (소수점 포함 가능). <em>Param3</em>을 생략하면, 무한정 기다립니다. 부합하는 프로세스를 발견하면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 그의 Process ID (PID)가 설정됩니다. 명령어가 시간제한에 걸리면, ErrorLevel에 0이 설정됩니다.</p>
+    <p><strong>WaitClose</strong>: 부합하는 모든 프로세스가 닫힐 때까지 <em>Param3</em> 초까지 기다립니다 (소수점 포함 가능). <em>Param3</em>을 생략하면, 무한정 기다립니다. 부합하는 프로세스가 모두 닫히면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 0이 설정됩니다. 명령어가 시간 제한에 걸리면, ErrorLevel에 여전히 존재하는 첫 번째 부합 Process ID (PID)가 설정됩니다.</p></dd>
 
   <dt>PID-or-Name</dt>
   <dd><p>이 매개변수는 아래에 기술하는 것처럼 숫자 (PID)이거나 프로세스 이름일 수 있습니다. 또 비워 두면 스크립트 자체의 우선 순위를 변경할 수도 있습니다.</p>
@@ -47,14 +40,11 @@
 
 <h3>ErrorLevel</h3>
 <p>자세한 것은 위에서 <em>Cmd</em>를 참조.</p>
-
 <h3>논평</h3>
-<p>
-<em>Wait</em> 그리고 <em>WaitClose</em>에 대하여: 프로세스는 100 밀리초마다 점검됩니다; 조건이 만족되는 순간, 명령어는 기다리기를 멈춥니다. 다른 말로, 시간제한이 경과하기를 기다리지 않고, 즉시 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 위에 기술한 대로 설정한 다음, 계속해서 스크립트를 실행합니다. 또한, 명령어가 대기 상태에 있은 동안에, <a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a>를 통하여 새 <a href="../misc/Threads.htm">쓰레드</a>를 기동할 수 있습니다.</p>
+<p><em>Wait</em> 그리고 <em>WaitClose</em>에 대하여: 프로세스는 100 밀리초마다 점검됩니다; 조건이 만족되는 순간, 명령어는 기다리기를 멈춥니다. 다른 말로, 시간제한이 경과하기를 기다리지 않고, 즉시 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 위에 기술한 대로 설정한 다음, 계속해서 스크립트를 실행합니다. 또한, 명령어가 대기 상태에 있은 동안에, <a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a>를 통하여 새 <a href="../misc/Threads.htm">쓰레드</a>를 기동할 수 있습니다.</p>
 
 <h3>관련 항목</h3>
 <p><a href="Run.htm">Run</a>, <a href="WinGet.htm">WinGet</a>, <a href="WinClose.htm">WinClose</a>, <a href="WinKill.htm">WinKill</a>, <a href="WinWait.htm">WinWait</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="WinExist.htm">IfWinExist</a></p>
-
 <h3>예제</h3>
 <pre class="NoIndent"><em>; 예제 #1:</em>
 
@@ -105,9 +95,9 @@ GuiControlGet, MyListBox
 Gui, Destroy
 Process, Priority, %active_pid%, %MyListBox%
 if ErrorLevel
-    MsgBox 성공:  &quot;%MyListBox%&quot;에 우선순위가바뀌었습니다.
+    MsgBox 성공: "%MyListBox%"에 우선순위가바뀌었습니다.
 else
-    MsgBox 에러: &quot;%MyListBox%&quot;에 우선 순위를 바꾸지 못했습니다.
+    MsgBox 에러: "%MyListBox%"에 우선 순위를 바꾸지 못했습니다.
 return</pre>
 <p>&nbsp;</p>
 <pre class="NoIndent" id="ListEx"><em>; 예제 #4: DllCall을 통하여 실행 프로세스 목록을 열람하고 그 목록을 MsgBox에 보여줍니다.</em>

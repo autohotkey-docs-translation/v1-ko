@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>#If</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,7 +13,7 @@
 
 <h1>#If <span class="ver">[AHK_L]</span></h1>
 
-<p>문맥-감지 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 만듭니다. 문맥 감지 핫키는 표현식의 결과에 따라 다르게  조치를 수행합니다 (또는 아무것도 하지 않습니다).</p>
+<p>문맥-감지 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 만듭니다. 문맥 감지 핫키는 표현식의 결과에 따라 다르게 조치를 수행합니다 (또는 아무것도 하지 않습니다).</p>
 
 <pre class="Syntax">#If [, Expression ]</pre>
 <h3>매개변수</h3>
@@ -24,31 +25,22 @@
 </dl>
 
 <h3>기본 연산</h3>
-<p>
-유효한 연산식이면 핫키가 활성화 될 문맥을 정의하는 데 사용할 수 있습니다. 예를 들어:</p>
-
+<p>유효한 연산식이면 핫키가 활성화 될 문맥을 정의하는 데 사용할 수 있습니다. 예를 들어:</p>
 <pre>#If WinActive("ahk_class Notepad") or WinActive(MyWindowTitle)
 #Space::MsgBox You pressed Win+Spacebar in Notepad or %MyWindowTitle%.</pre>
-<p>
-#IfWin 지시어처럼, #If도 위치에 민감합니다: 스크립트에서 물리적으로 아래에 있는 모든 핫키와 핫스트링에 영향을 줍니다. #If 그리고 #IfWin는 또 상호 배타적입니다; 즉, 가장 최근의 #If 또는 #IfWin만 효과가 있습니다.</p>
-<p>
-문맥 감지를 끄려면, 모든 매개변수를 생략하고  #If 또는 #IfWin 지시어를 지정하면 됩니다. 예를 들어:</p>
+<p>#IfWin 지시어처럼, #If도 위치에 민감합니다: 스크립트에서 물리적으로 아래에 있는 모든 핫키와 핫스트링에 영향을 줍니다. #If 그리고 #IfWin는 또 상호 배타적입니다; 즉, 가장 최근의 #If 또는 #IfWin만 효과가 있습니다.</p>
+<p>문맥 감지를 끄려면, 모든 매개변수를 생략하고 #If 또는 #IfWin 지시어를 지정하면 됩니다. 예를 들어:</p>
 <pre>#If</pre>
 
 <h3>총평</h3>
-<p>
-핫키를 구성하는 키 조합이 눌리면,  #If 표현식을 평가하여 그 핫키를 활성화 할지 말지를 결정합니다. 표현식의 평가가 완료될 때까지 또는 <a href="_IfTimeout.htm">시간제한</a>이 풀릴 때까지 시스템은 키보드나 마우스 입력에 응답하지 않을 가능성이 있습니다. 표현식이 평가되고 있는 동안에  (예를 들어 표현식이 호출한 함수로부터) 키눌림이나 마우스 클릭을 전송하면 복잡한 일이 야기되므로 피하는 편이 좋습니다.</p>
-<p>
-표현식은 프로그램이 핫키가 활성화되어 있는지 알 필요가 있을 때마다 평가될 수도 있습니다. 예를 들어, <code>a &amp; b::</code>와 같은 맞춤 조합에 대하여 #If 표현식은 접두 키가 (이 예제에서는 <code>a</code>) 눌릴 때 평가되어, 맞춤 수식 키로 행위해야 할지 말지 결정합니다.</p>
-<p>
-위에 기술한 이유 때문에, 표현식은 반드시 빨리 완료되도록 그리고 부작용이 없도록 작성해야 합니다.</p>
-<p>
-<span class="ver">[AHK_L 53+]:</span> <a href="../Variables.htm#ThisHotkey">A_ThisHotkey</a>와 <a href="../Variables.htm#TimeSinceThisHotkey">A_TimeSinceThisHotkey</a>는 현재 #If 표현식이 평가되고 있는 핫키에 기반하도록 설정됩니다.</p>
-<p><span class="ver">[v1.0.95.00+]:</span> <a href="../Variables.htm#PriorHotkey">A_PriorHotkey</a>와  <a href="../Variables.htm#TimeSincePriorHotkey">A_TimeSincePriorHotkey</a>는 임시로 "This" 변수에 상응하는 이전의 값을 담고 있습니다.</p>
+<p>핫키를 구성하는 키 조합이 눌리면, #If 표현식을 평가하여 그 핫키를 활성화 할지 말지를 결정합니다. 표현식의 평가가 완료될 때까지 또는 <a href="_IfTimeout.htm">시간제한</a>이 풀릴 때까지 시스템은 키보드나 마우스 입력에 응답하지 않을 가능성이 있습니다. 표현식이 평가되고 있는 동안에 (예를 들어 표현식이 호출한 함수로부터) 키눌림이나 마우스 클릭을 전송하면 복잡한 일이 야기되므로 피하는 편이 좋습니다.</p>
+<p>표현식은 프로그램이 핫키가 활성화되어 있는지 알 필요가 있을 때마다 평가될 수도 있습니다. 예를 들어, <code>a &amp; b::</code>와 같은 맞춤 조합에 대하여 #If 표현식은 접두 키가 (이 예제에서는 <code>a</code>) 눌릴 때 평가되어, 맞춤 수식 키로 행위해야 할지 말지 결정합니다.</p>
+<p>위에 기술한 이유 때문에, 표현식은 반드시 빨리 완료되도록 그리고 부작용이 없도록 작성해야 합니다.</p>
+<p><span class="ver">[AHK_L 53+]:</span> <a href="../Variables.htm#ThisHotkey">A_ThisHotkey</a>와 <a href="../Variables.htm#TimeSinceThisHotkey">A_TimeSinceThisHotkey</a>는 현재 #If 표현식이 평가되고 있는 핫키에 기반하도록 설정됩니다.</p>
+<p><span class="ver">[v1.0.95.00+]:</span> <a href="../Variables.htm#PriorHotkey">A_PriorHotkey</a>와 <a href="../Variables.htm#TimeSincePriorHotkey">A_TimeSincePriorHotkey</a>는 임시로 "This" 변수에 상응하는 이전의 값을 담고 있습니다.</p>
 
 <h3>관련 항목</h3>
-<p>
-<a href="_IfWinActive.htm">#IfWin</a> 지시어의 행위 특성은 대부분 #If에도 적용됩니다.</p>
+<p><a href="_IfWinActive.htm">#IfWin</a> 지시어의 행위 특성은 대부분 #If에도 적용됩니다.</p>
 <p><a href="_IfTimeout.htm">#IfTimeout</a>을 사용하면 기본 시간제한 값을 바꿀 수 있습니다.</p>
 
 <h3 id="Examples">예제</h3>

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Debugging Features</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
 <script src="static/content.js" type="text/javascript"></script>
@@ -11,15 +12,13 @@
 
 <h1>디버거 클라이언트</h1>
 
-<p>추가 디버깅 특징은 <a href="http://xdebug.org/docs-dbgp.php">DBGp</a>를 통하여 지원합니다.  <a href="http://xdebug.org/docs-dbgp.php">DBGp</a>는 프로그래밍 언어와 사용자 사이의 디버거 UI 통신을 위한 공통 디버거 프로토콜입니다. 더 자세한 것은 <a href="Scripts.htm#idebug">상호대화 디버깅</a>을 참조하십시오. 오토핫키와 호환된다고 알려진 "클라이언트"를 이 페이지에 나열 합니다.</p>
+<p>추가 디버깅 특징은 <a href="http://xdebug.org/docs-dbgp.php">DBGp</a>를 통하여 지원합니다. <a href="http://xdebug.org/docs-dbgp.php">DBGp</a>는 프로그래밍 언어와 사용자 사이의 디버거 UI 통신을 위한 공통 디버거 프로토콜입니다. 더 자세한 것은 <a href="Scripts.htm#idebug">상호대화 디버깅</a>을 참조하십시오. 오토핫키와 호환된다고 알려진 "클라이언트"를 이 페이지에 나열 합니다.</p>
 
 <h2>SciTE4AutoHotkey</h2>
-<p>
-<a href="http://fincs.ahk4.net/scite4ahk/">SciTE4AutoHotkey</a>는 무료의, <a href="http://www.scintilla.org/SciTE.html">SciTE</a>-기반의 AutoHotkey 스크립트 편집기입니다.  DBGp 지원 외에도, 구문 강조, 콜팁/매개변수 정보 그리고 자동 완성, 그리고 기타 유용한 편집 특징과 스크립팅 도구를 지원합니다.</p>
-
+<p><a href="http://fincs.ahk4.net/scite4ahk/">SciTE4AutoHotkey</a>는 무료의, <a href="http://www.scintilla.org/SciTE.html">SciTE</a>-기반의 AutoHotkey 스크립트 편집기입니다. DBGp 지원 외에도, 구문 강조, 콜팁/매개변수 정보 그리고 자동 완성, 그리고 기타 유용한 편집 특징과 스크립팅 도구를 지원합니다.</p>
 <p>디버깅 특징은 다음과 같습니다:</p>
 <ul>
-  <li>정지점 설정.</li>
+  <li>정지점.</li>
   <li>Run, Step Over/Into/Out.</li>
   <li>호출 스택 보기.</li>
   <li>전역/지역 영역에 있는 변수의 이름과 내용 보여주기.</li>
@@ -30,8 +29,7 @@
 <p><a href="http://fincs.ahk4.net/scite4ahk/">http://fincs.ahk4.net/scite4ahk/</a></p>
 
 <h2>XDebugClient</h2>
-<p>
-<a href="http://code.google.com/p/xdebugclient/">XDebugClient</a>는 간단한 오픈 소스 전방 DBGp 클라이언트로서 <b>.NET Framework 2.0</b>에 기반하고 있습니다. XDebugClient는 원래 Xdebug로 PHP를 위해 설계되었지만, AutoHotkey와 호환되도록 맞춤 빌드를 하였습니다.</p>
+<p><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a>는 간단한 오픈 소스 전방 DBGp 클라이언트로서 <b>.NET Framework 2.0</b>에 기반하고 있습니다. XDebugClient는 원래 Xdebug로 PHP를 위해 설계되었지만, AutoHotkey와 호환되도록 맞춤 빌드를 하였습니다.</p>
 <p><b>변경:</b></p>
 <ul>
   <li>디버거 엔진이 "php" 말고 다른 언어를 보고할 수 있습니다.</li>
@@ -63,8 +61,7 @@
 </ul>
 
 <h2>Notepad++ DBGp 플러그인</h2>
-<p>
-<a href="http://notepad-plus-plus.org/">Notepad++</a>의 플러그인으로 사용할 수 있는 DBGp 클라이언트가 있습니다. PHP 용으로 디자인되었지만, AutoHotkey와도 잘 작동합니다.</p>
+<p><a href="http://notepad-plus-plus.org/">Notepad++</a>의 플러그인으로 사용할 수 있는 DBGp 클라이언트가 있습니다. PHP 용으로 디자인되었지만, AutoHotkey와도 잘 작동합니다.</p>
 <p><b>내려받기:</b> <a href="http://sourceforge.net/apps/mediawiki/notepad-plus/index.php?title=Plugin_Central#D"> Notepad++ 플러그인 디렉토리</a>를 참조하십시오.</p>
 <p><b>사용법:</b></p>
 <ul>
@@ -91,7 +88,7 @@
 </ul>
 <p><b>문제:</b></p>
 <ul>
-  <li>단일 문자 변수 이름 위에 마우스를 올려도 작동하지 않습니다.  - 예를 들면, "a"에 올리면 " a" 또는 "a "를 시도합니다.</li>
+  <li>단일 문자 변수 이름 위에 마우스를 올려도 작동하지 않습니다. - 예를 들면, "a"에 올리면 " a" 또는 "a "를 시도합니다.</li>
   <li>텍스트 위에 올리면 그 텍스트에 무효한 문자가 들어 있어도 상관하지 않고 변수를 열람하려고 시도합니다.</li>
   <li>property_get이 실패하면 Notepad++가 불안정해집니다. 이것은 위의 사실에 비추어 보면 특히 문제가 됩니다. 우회책으로써, AutoHotkey는 존재하지 않는 또는 무효한 변수를 요구받으면 에러 코드 대신에 빈 특성을 전송합니다.</li>
 </ul>

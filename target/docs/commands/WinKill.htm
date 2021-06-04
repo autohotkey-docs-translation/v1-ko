@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>WinKill</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -21,34 +22,27 @@
   <dd><p>목표 창을 식별하는 창 제목 또는 다른 기준. <a href="../misc/WinTitle.htm">WinTitle</a> 참조.</p></dd>
 
   <dt>WinText</dt>
-  <dd><p>존재하면, 목표 창 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>가 켜져 있으면(ON) 탐지됩니다.</p></dd>
+  <dd><p>존재하면, 이 매개변수는 목표 창 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>가 켜져 있어야 탐지됩니다.</p></dd>
 
   <dt>SecondsToWait</dt>
-  <dd>
-  <p>생략되거나 비어 있으면, 전혀 기다리지 않습니다. 0이면 500ms를 기다리립니다. 그렇지 않으면, 창이 닫히기를 지정된 개수의 초 동안 기다립니다 (소수점을 허용하고 <a href="../Variables.htm#Expressions">표현식</a>도 가능합니다). 창이 그 기간 안에 닫히지 않더라도, 스크립트는 실행을 계속합니다. ErrorLevel은 이 명령어로 <strong>설정되지 않습니다</strong>. 그래서 창이 확실하게 닫혔는지 확인할 필요가 있다면 <a href="WinExist.htm">IfWinExist</a> 또는 <a href="WinWaitClose.htm">WinWaitClose</a>를 사용하십시오.</p></dd>
+  <dd><p>생략되거나 비어 있으면, 전혀 기다리지 않습니다. 0이면 500ms 동안 기다립니다. 그렇지 않으면, 지정 개수의 초 동안 창이 닫히기를 기다립니다 (소수점을 허용하고 <a href="../Variables.htm#Expressions">표현식</a>도 가능합니다). 창이 그 동안 닫히지 않더라도, 스크립트는 실행을 계속합니다. ErrorLevel은 이 명령어로 <strong>설정되지 않습니다</strong>. 그래서 창이 닫혔는지 확실하게 알 필요가 있다면 <a href="WinExist.htm">IfWinExist</a>나 <a href="WinWaitClose.htm">WinWaitClose</a>를 사용하십시오.</p></dd>
 
   <dt>ExcludeTitle</dt>
-  <dd><p>제목에 이 값이 있는 창은 제외합니다.</p></dd>
+  <dd><p>제목에 이 값이 있는 창은 무시합니다.</p></dd>
 
   <dt>ExcludeText</dt>
-  <dd><p>텍스트에 이 값이 있는 창은 제외합니다.</p></dd>
+  <dd><p>텍스트에 이 값이 있는 창은 무시합니다.</p></dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>
-이 명령어는 먼저 창을 정상적으로 닫으려고 간략하게 시도합니다. 실패하면, 그의 프로세스를 종료하여 그 창을 강제로 닫으려고 시도합니다.</p>
-<p>
-부합한 창이 활성화되어 있다면, 그 창은 그 아래에 부합한 다른 창보다 우선적으로 닫힙니다. 일반적으로, 여러 창이 부합하면, (가장 최근에 사용된) 최상위 창이 닫힙니다.</p>
-<p>
-이 명령어는 최상위에 부합한 창에만 작동합니다. 단, <em>WinTitle</em>이 <a href="GroupAdd.htm">ahk_group GroupName</a>인 경우는 제외합니다. 이 경우, 그룹 안의 모든 창이 영향을 받습니다.</p>
-<p>
-창 제목과 텍스트는 대소문자를 구별합니다. 숨은 텍스트는 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>를 켜면 탐지됩니다.</p>
+<p>이 명령어는 먼저 창을 정상적으로 닫으려고 간략하게 시도합니다. 실패하면, 그의 프로세스를 종료하여 그 창을 강제로 닫으려고 시도합니다.</p>
+<p>부합하는 창이 활성화되어 있다면, 그 아래에 부합하는 어떤 창보다 우선 그 창이 닫힙니다. 일반적으로, 여러 창이 부합하면, 최상위 (가장 최근에 사용된) 창이 닫힙니다.</p>
+<p>이 명령어는 부합하는 최상위 창에만 작동합니다. 단, <em>WinTitle</em>이 <a href="GroupAdd.htm">ahk_group GroupName</a>일 경우는 제외합니다. 이 경우 그룹 안의 모든 창이 영향을 받습니다.</p>
+<p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
 
 <h3>관련 항목</h3>
-<p>
-<a href="WinClose.htm">WinClose</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="Process.htm">Process</a>, <a href="WinActivate.htm">WinActivate</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="../misc/WinTitle.htm#LastFoundWindow">Last Found Window</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinWaitActive.htm">WinWaitActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="GroupActivate.htm">GroupActivate</a></p>
-
+<p><a href="WinClose.htm">WinClose</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="Process.htm">Process</a>, <a href="WinActivate.htm">WinActivate</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="../misc/WinTitle.htm#LastFoundWindow">Last Found Window</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinWaitActive.htm">WinWaitActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="GroupActivate.htm">GroupActivate</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">IfWinExist, Untitled - Notepad
     WinKill <em>; 위에서 발견한 창을 사용합니다</em>

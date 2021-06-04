@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>ComObjFlags()</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@
 
 
 <h1>ComObjFlags() <span class="ver">[v1.0.96.00+]</span></h1>
-<p>COM 포장 객체의 행위를 제어하는 플래그를 열람하거나 바꿉니다.</p>
+<p>COM 포장 객체의 행위를 제어하는 플래그를 열람하거나 변경합니다.</p>
 <pre class="Syntax">Flags := ComObjFlags(ComObject [, NewFlags, Mask])</pre>
 
 <h3>매개변수</h3>
@@ -35,14 +36,12 @@
 <table class="info">
   <tr>
     <td>F_OWNVALUE<br>1</td>
-    <td>
-	현재는 오직 SafeArrays에만 영향을 줍니다. 이 플래그가 설정되면, SafeArray는 포장 객체가 해제될 때 파괴됩니다. SafeArrays는 참조 횟수 세기 메커니즘이 없으므로, 만약 이 플래그를 가진 SafeArray가 또다른 SafeArray의 한 원소에 할당되면, 따로 사본이 생성됩니다.</td>
+    <td>현재는 오직 SafeArrays에만 영향을 줍니다. 이 플래그가 설정되면, SafeArray는 포장 객체가 해제될 때 파괴됩니다. SafeArrays는 참조 횟수 세기 메커니즘이 없으므로, 만약 이 플래그를 가진 SafeArray가 또다른 SafeArray의 한 원소에 할당되면, 따로 사본이 생성됩니다.</td>
   </tr>
 </table>
 
 <h3>총평</h3>
-<p>
-<i>Mask</i>를 생략하면, <i>NewFlags</i>는 (양수이면) 더할 플래그, (음수이면) 제거할 플래그를 지정합니다. 예를 들어, <code>ComObjFlags(obj, -1)</code>는 F_OWNVALUE 플래그를 제거합니다.  <i>Mask</i>에는 0이나 1말고 다른 값을 지정하지 마십시오; 다른 모든 비트는 미래에 사용할 목적으로 예약되어 있습니다.</p>
+<p><i>Mask</i>를 생략하면, <i>NewFlags</i>는 (양수이면) 더할 플래그, (음수이면) 제거할 플래그를 지정합니다. 예를 들어, <code>ComObjFlags(obj, -1)</code>는 F_OWNVALUE 플래그를 제거합니다. <i>Mask</i>에는 0이나 1말고 다른 값을 지정하지 마십시오; 다른 모든 비트는 미래에 사용할 목적으로 예약되어 있습니다.</p>
 
 <h3>관련 항목</h3>
 <p><a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjArray.htm">ComObjArray</a></p>

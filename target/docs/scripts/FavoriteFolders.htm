@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>Easy Access to Favorite Folders -- by Savage</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>자주 가는 폴더에 쉽게 접근하는 법 -- by Savage</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,13 +12,12 @@
 
 <h1>자주 가는 폴더에 쉽게 접근하는 법 -- by Savage</h1>
 
-<p>어떠 유형이 창이 활성화되어 있는 동안에 마우스 가운데 버튼을 클릭하면, 이 스크립트는 자주 가는 폴더의 메뉴를 보여줍니다. 자주 가는 폴더를 선택하는 순간 그 활성 창 안의 폴더로 순간 이동합니다. 다음 유형의 창을 지원합니다: 1) 표준 파일 열기 또는 저장 대화상자; 2) 탐색 창; 3) 콘솔 (명령어 프롬프트) 창.
-메뉴는 또 선택적으로 지원되는 않는 유형의 창에 대해서도 보여줄 수 있습니다. 이 경우 선택된 폴더는 새 탐색 창에 열립니다.
+<p>어떠 유형이 창이 활성화되어 있는 동안에 마우스 가운데 버튼을 클릭하면, 이 스크립트는 자주 가는 폴더의 메뉴를 보여줍니다. 자주 가는 폴더를 선택하는 순간 그 활성 창 안의 폴더로 순간 이동합니다. 다음 유형의 창을 지원합니다: 1) 표준 파일 열기 또는 저장 대화상자; 2) 탐색 창; 3) 콘솔 (명령어 프롬프트) 창. 메뉴는 또 선택적으로 지원되는 않는 유형의 창에 대해서도 보여줄 수 있습니다. 이 경우 선택된 폴더는 새 탐색 창에 열립니다. 그 경우 자주가는 폴더가 새 탐색 창으로 열립니다.
 </p>
-<p><a href="FavoriteFolders.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Home</a></p>
+<p><a href="FavoriteFolders.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
 
-<pre class="NoIndent"><em>; 주의: 탐색 창에서, &quot;View &gt; Toolbars &gt; Address Bar&quot;가 활성화되어 있지 않을 때
-; 아래의 핫키에 틸드가 있는 경우 그 메뉴는 보여지지 않습니다. 
+<pre class="NoIndent"><em>; 주의: 탐색 창에서, "View &gt; Toolbars &gt; Address Bar"가 활성화되어 있지 않을 때
+; 아래의 핫키에 틸드가 있는 경우 그 메뉴는 보여지지 않습니다.
 ; 틸드가 있어도 메뉴는 보일 수도 있지만
 ; 자주 가는 폴더는 새 탐색 창에 열립니다.
 ; 활성화되어 있는 창이 그 폴더로 전환되지 않습니다.</em>
@@ -94,7 +94,7 @@ Loop, Read, %f_FavoritesFile%
             break  <em>; 회돌이를 끝냅니다</em>
     }
     <em>; A_ThisMenuItemPos와의 호환을 위해</em>
-    <em>; 메뉴 가름 줄들도 세어야 합니다: </em>
+    <em>; 메뉴 가름 줄들도 세어야 합니다:</em>
     f_MenuItemCount++
     if A_LoopReadLine =  <em>; 빈 줄은 가름 줄을 뜻합니다.</em>
         Menu, Favorites, Add
@@ -142,13 +142,13 @@ else if f_class in ExploreWClass,CabinetWClass  <em>; 탐색 창이므로, 폴�
     if f_Edit1Pos &lt;&gt;   <em>; 그리고 Edit1 콘트롤이 있습니다.</em>
     {
         ControlSetText, Edit1, %f_path%, ahk_id %f_window_id%
-        <em>; Tekl의 보고에 의하면: &quot;만약 폴더 L:\folder로 바꾸고 싶다면</em>
+        <em>; Tekl의 보고에 의하면: "만약 폴더 L:\folder로 바꾸고 싶다면</em>
         <em>; 주소바는 http://www.L:\folder.com를 보여준다. 이를 해결하기 위해,</em>
-        <em>; 나는 {Enter} 앞에 {right}를 추가했다&quot;:</em>
+        <em>; 나는 {Enter} 앞에 {right}를 추가했다":</em>
         ControlSend, Edit1, {Right}{Enter}, ahk_id %f_window_id%
         return
     }
-    <em>; 그렇지 않으면 서브루틴의 아래로 가서 표준 행위를 취합니다.</em>
+    <em>; 그렇지 않으면 서브루틴의 아래로 가 표준 조치를 취합니다.</em>
 }
 else if f_class = ConsoleWindowClass <em>; 콘솔 창이므로, 그 디렉토리로 CD 합니다</em>
 {

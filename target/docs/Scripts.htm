@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>AutoHotkey Scripts and Macros</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
 <script src="static/content.js" type="text/javascript"></script>
@@ -25,83 +26,48 @@
   <li><a href="#port">AutoHotkey.exe의 이식성</a>: AutoHotkey.exe 사본만 있어도 .ahk 파일을 실행시키는 데 충분합니다.</li>
   <li><a href="#install">설치기 옵션</a>: 조용하게 설치하거나 제거하는 법.</li>
 </ul>
-
 <h2 id="intro">들어가는 말</h2>
-<p>
-각 스크립트는 평범한 텍스트 파일로서 안에 있는 줄들을 프로그램이 실행합니다 (AutoHotkey.exe).  스크립트는 또 <a href="Hotkeys.htm">핫키</a>와 <a href="Hotstrings.htm">핫스트링</a> 심지어 모조리 그것들로 구성되기도 합니다. 그렇지만, 핫키와 핫스링이 없다면 스크립트는 기동된 순간 그의 명령어들을 순서대로 위에서부터 아래로 수행합니다.</p>
-<p>
-프로그램은 스크립트를 메모리 안으로 한 줄씩 적재합니다. 각 줄은 길이가 16,383 문자입니다. 적재하는 동안, 스크립트는 <a href="misc/Performance.htm">최적화되고</a> 평가됩니다. 구문 에러는 화면에 보여지고 그 에러를 반드시 수정해야 스크립트를 실행할 수 있습니다.</p>
-
+<p>각 스크립트는 평범한 텍스트 파일로서 안에 있는 줄들을 프로그램이 실행합니다 (AutoHotkey.exe). 스크립트는 또 <a href="Hotkeys.htm">핫키</a>와 <a href="Hotstrings.htm">핫스트링</a> 심지어 모조리 그것들로 구성되기도 합니다. 그렇지만, 핫키와 핫스링이 없다면 스크립트는 기동된 순간 그의 명령어들을 순서대로 위에서부터 아래로 수행합니다.</p>
+<p>프로그램은 스크립트를 메모리 안으로 한 줄씩 적재합니다. 각 줄은 길이가 16,383 문자입니다. 적재하는 동안, 스크립트는 <a href="misc/Performance.htm">최적화되고</a> 평가됩니다. 구문 에러는 화면에 보여지고 그 에러를 반드시 수정해야 스크립트를 실행할 수 있습니다.</p>
 <h2><a name="auto" id="auto"></a>스크립트의 상단 (자동-실행 섹션)</h2>
-<p>
-스크립트가 적재된 후, 제일 윗 줄부터 실행을 시작해 <a href="commands/Return.htm">Return</a>, <a href="commands/Exit.htm">Exit</a>, <a href="Hotkeys.htm">핫키/핫스트링 라벨</a>, 또는 물리적으로 끝에 다다를 때까지 실행을 계속합니다 (순서에 상관이 없습니다).  스크립트에서 이 상단 부분을 <em>자동-실행</em> 섹션이라고 지칭합니다.</p>
-<p>
-<a href="commands/_Persistent.htm">영속적이지</a> 않은 그리고 <a href="Hotkeys.htm">hotkeys</a>, <a href="Hotstrings.htm">hotstrings</a>, <a href="commands/OnMessage.htm">OnMessage</a>, 그리고 <a href="commands/Gui.htm">GUI</a>가 없는 스크립트는 자동-실행 섹션이 완료되면 바로 끝납니다. 그렇지 않으면, 휴식 상태로 실행을 계속하면서, 핫키나 핫스트링, <a href="commands/Gui.htm#label">GUI 이벤트</a>, <a href="commands/Menu.htm">맞춤 메뉴 항목</a>, 그리고 <a href="commands/SetTimer.htm">타이머</a> 같은 이벤트에 반응합니다.</p>
-<p>
-<a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, <a href="commands/Menu.htm">메뉴 항목</a>, <a href="commands/Gui.htm#label">GUI 이벤트</a>, 또는 <a href="commands/SetTimer.htm">타이머</a>가 기동하는 <a href="misc/Threads.htm">쓰레드</a>마다 새롭게 기본 값을 가지고 시작합니다. 다음과 같은 속성들이 자동-실행 섹션에 설정되어 있습니다. 언셋하면,  (각 페이지 문서에 기재된 대로) 표준 기본 값이 적용됩니다: <a href="commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>,  <a href="commands/DetectHiddenText.htm">DetectHiddenText</a>,  <a href="commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>,  <a href="commands/SetBatchLines.htm">SetBatchLines</a>, <a href="commands/SendMode.htm">SendMode</a>, <a href="commands/SetKeyDelay.htm">SetKeyDelay</a>,  <a href="commands/SetMouseDelay.htm">SetMouseDelay</a>,
-  <a href="commands/SetWinDelay.htm">SetWinDelay</a>,
-  <a href="commands/SetControlDelay.htm">SetControlDelay</a>,
-  <a href="commands/SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>,
-  <a href="commands/CoordMode.htm">CoordMode</a>,
-  <a href="commands/SetStoreCapslockMode.htm">SetStoreCapslockMode</a>,
-<a href="commands/AutoTrim.htm">AutoTrim</a>, <a href="commands/SetFormat.htm">SetFormat</a>, <a href="commands/StringCaseSense.htm">StringCaseSense</a>, <a href="commands/Thread.htm">Thread</a>, 그리고 <a href="commands/Critical.htm">Critical</a>.</p>
-<p>
-자동-실행 섹션을 완료하는데 시간이 많이 걸린다면 (또는 완료되지 않는다면), 위의 설정에 대한 기본값은 100 밀리초 후에 효과를 발휘합니다. 자동-실행 섹션이 마침내 완료될 때, 기본 값은 자동-실행 섹션의 끝에서 효과가 있던 값들로 다시 갱신됩니다. 
-그리하여, 보통 제일 좋은 방법은 스크립트의 상단에 있는 기본 값들을 변경하는 것입니다. 여기에 <a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, <a href="commands/SetTimer.htm">타이머</a>, 또는 <a href="commands/Menu.htm">맞춤 메뉴 항목</a>이 들어 있습니다. 또 각 <a href="misc/Threads.htm">쓰레드</a>마다 따로 위의 설정을 보유하고 있다는 것을 주목하십시오. 그런 설정은 변경해도 다른 <a href="misc/Threads.htm">쓰레드</a>에 영향을 미치지 않습니다.</p>
-
+<p>스크립트가 적재된 후, 제일 윗 줄부터 실행을 시작해 <a href="commands/Return.htm">Return</a>, <a href="commands/Exit.htm">Exit</a>, <a href="Hotkeys.htm">핫키/핫스트링 라벨</a>, 또는 물리적으로 끝에 다다를 때까지 실행을 계속합니다 (순서에 상관이 없습니다). 스크립트에서 이 상단 부분을 <em>자동-실행</em> 섹션이라고 지칭합니다.</p>
+<p><a href="commands/_Persistent.htm">영속적이지</a> 않은 그리고 <a href="Hotkeys.htm">hotkeys</a>, <a href="Hotstrings.htm">hotstrings</a>, <a href="commands/OnMessage.htm">OnMessage</a>, 그리고 <a href="commands/Gui.htm">GUI</a>가 없는 스크립트는 자동-실행 섹션이 완료되면 바로 끝납니다. 그렇지 않으면, 휴식 상태로 실행을 계속하면서, 핫키나 핫스트링, <a href="commands/Gui.htm#label">GUI 이벤트</a>, <a href="commands/Menu.htm">맞춤 메뉴 항목</a>, 그리고 <a href="commands/SetTimer.htm">타이머</a> 같은 이벤트에 반응합니다.</p>
+<p><a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, <a href="commands/Menu.htm">메뉴 항목</a>, <a href="commands/Gui.htm#label">GUI 이벤트</a>, 또는 <a href="commands/SetTimer.htm">타이머</a>가 기동하는 <a href="misc/Threads.htm">쓰레드</a>마다 새롭게 기본 값을 가지고 시작합니다. 다음과 같은 속성들이 자동-실행 섹션에 설정되어 있습니다. 언셋하면, (각 페이지 문서에 기재된 대로) 표준 기본 값이 적용됩니다: <a href="commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="commands/DetectHiddenText.htm">DetectHiddenText</a>, <a href="commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="commands/SetBatchLines.htm">SetBatchLines</a>, <a href="commands/SendMode.htm">SendMode</a>, <a href="commands/SetKeyDelay.htm">SetKeyDelay</a>, <a href="commands/SetMouseDelay.htm">SetMouseDelay</a>, <a href="commands/SetWinDelay.htm">SetWinDelay</a>, <a href="commands/SetControlDelay.htm">SetControlDelay</a>, <a href="commands/SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="commands/CoordMode.htm">CoordMode</a>, <a href="commands/SetStoreCapslockMode.htm">SetStoreCapslockMode</a>, <a href="commands/AutoTrim.htm">AutoTrim</a>, <a href="commands/SetFormat.htm">SetFormat</a>, <a href="commands/StringCaseSense.htm">StringCaseSense</a>, <a href="commands/Thread.htm">Thread</a>, 그리고 <a href="commands/Critical.htm">Critical</a>.</p>
+<p>자동-실행 섹션을 완료하는데 시간이 많이 걸린다면 (또는 완료되지 않는다면), 위의 설정에 대한 기본값은 100 밀리초 후에 효과를 발휘합니다. 자동-실행 섹션이 마침내 완료될 때, 기본 값은 자동-실행 섹션의 끝에서 효과가 있던 값들로 다시 갱신됩니다. 그리하여, 보통 제일 좋은 방법은 스크립트의 상단에 있는 기본 값들을 변경하는 것입니다. 여기에 <a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, <a href="commands/SetTimer.htm">타이머</a>, 또는 <a href="commands/Menu.htm">맞춤 메뉴 항목</a>이 들어 있습니다. 또 각 <a href="misc/Threads.htm">쓰레드</a>마다 따로 위의 설정을 보유하고 있다는 것을 주목하십시오. 그런 설정은 변경해도 다른 <a href="misc/Threads.htm">쓰레드</a>에 영향을 미치지 않습니다.</p>
 <h2 id="esc">피신 연속열</h2>
-<p>
-오토핫키의 기본 <a href="commands/_EscapeChar.htm">피신 문자</a>는 액센트/백틱(`)입니다. 영문 키보드의 좌상 모서리에 있습니다. 역사선보다 이 문자를 사용하면 파일 경로에 이중으로 역사선을 배치할 필요가 없습니다.</p>
-<p>
-쉼표와 퍼센트 기호는 오토핫키에서 특별한 의미를 가지기 때문에, <code>`,</code>을 사용해 문자 그대로의 쉼표를 지정하고 <code>`%</code>를 사용해 문자 그대로의 퍼센트 기호를 지정합니다. 한 가지 예외는 <a href="commands/MsgBox.htm">MsgBox</a>입니다. 쉼표를 피신시키지 않아도 됩니다. 또다른 예외는 명령어의 마지막 매개변수에 있는 쉼표입니다: 피신시킬 필요가 없습니다. 피신 연속열의 완전한 목록은 <a href="commands/_EscapeChar.htm">#EscapeChar</a>를 참조하십시오.</p>
-<p>
-어떤 특수 문자는 피신 연속열을 사용하여 만들기도 합니다. 가장 흔한 예는 <code>`t</code> (tab), <code>`n</code> (라인피드), 그리고 <code>`r</code> (캐리지 리턴)입니다.</p>
-<p>
-팁: 명령어의 첫 번째 쉼표는 생략해도 됩니다 (첫 매개변수가 비어 있거나  :=나 =로 시작할 때, 또는 그 명령어가 <a href="#continuation">계속 섹션</a>의 상단에 홀로 있을 때는 제외합니다.). 예를 들어:</p>
+<p>오토핫키의 기본 <a href="commands/_EscapeChar.htm">피신 문자</a>는 액센트/백틱(`)입니다. 영문 키보드의 좌상 모서리에 있습니다. 역사선보다 이 문자를 사용하면 파일 경로에 이중으로 역사선을 배치할 필요가 없습니다.</p>
+<p>쉼표와 퍼센트 기호는 오토핫키에서 특별한 의미를 가지기 때문에, <code>`,</code>을 사용해 문자 그대로의 쉼표를 지정하고 <code>`%</code>를 사용해 문자 그대로의 퍼센트 기호를 지정합니다. 한 가지 예외는 <a href="commands/MsgBox.htm">MsgBox</a>입니다. 쉼표를 피신시키지 않아도 됩니다. 또다른 예외는 명령어의 마지막 매개변수에 있는 쉼표입니다: 피신시킬 필요가 없습니다. 피신 연속열의 완전한 목록은 <a href="commands/_EscapeChar.htm">#EscapeChar</a>를 참조하십시오.</p>
+<p>어떤 특수 문자는 피신 연속열을 사용하여 만들기도 합니다. 가장 흔한 예는 <code>`t</code> (tab), <code>`n</code> (라인피드), 그리고 <code>`r</code> (캐리지 리턴)입니다.</p>
+<p>팁: 명령어의 첫 번째 쉼표는 생략해도 됩니다 (첫 매개변수가 비어 있거나 :=나 =로 시작할 때, 또는 그 명령어가 <a href="#continuation">계속 섹션</a>의 상단에 홀로 있을 때는 제외합니다.). 예를 들어:</p>
 <pre>MsgBox 이것은 괜찮습니다.
 MsgBox<strong>,</strong> 이 역시 괜찮습니다 (명시적으로 쉼표를 사용합니다).</pre>
-
 <h2 id="Comments">스크립트 안의 주석</h2>
 <p>스크립트는 줄의 처음에 쌍반점을 두어 주석 처리할 수 있습니다. 예를 들어:</p>
 <pre><em>; 이 줄은 전체가 주석입니다.</em></pre>
-<p>
-주석은 명령어의 끝에 추가해도 됩니다. 이 경우 쌍반점은 적어도 하나의 공간 또는 탭이 왼쪽에 있어야 합니다. 예를 들어:</p>
-
+<p>주석은 명령어의 끝에 추가해도 됩니다. 이 경우 쌍반점은 적어도 하나의 공간 또는 탭이 왼쪽에 있어야 합니다. 예를 들어:</p>
 <pre>Run Notepad  <em>; 이것은 명령어와 같은 줄에 있는 주석입니다.</em></pre>
-<p>
-게다가, /* and */ 심볼은 전체 섹션에 주석을 붙이는데 사용할 수 있습니다. <em>그러나 다음 예제와 같이 줄이 시작하는 곳에 나타나야 합니다</em>:</p>
+<p>게다가, /* and */ 심볼은 전체 섹션에 주석을 붙이는데 사용할 수 있습니다. <em>그러나 다음 예제와 같이 줄이 시작하는 곳에 나타나야 합니다</em>:</p>
 <pre><em>/*
 MsgBox, 이 줄은 주석 처리되어 있습니다 (불능상태).
 MsgBox, 이 줄도 마찬가지입니다. 
 */</em></pre>
-<p>
-주석은 스크립트가 시작하면 무시됩니다. 그래서 수행성능이나 메모리 사용에 영향을 주지 않습니다.</p>
-<p>
-기본 주석 문자 (쌍반점)은 <a href="commands/_CommentFlag.htm">#CommentFlag</a>을 통하여 다른 문자나 문자열로 바꿀 수 있습니다.</p>
-
+<p>주석은 스크립트가 시작하면 무시됩니다. 그래서 수행성능이나 메모리 사용에 영향을 주지 않습니다.</p>
+<p>기본 주석 문자 (쌍반점)은 <a href="commands/_CommentFlag.htm">#CommentFlag</a>을 통하여 다른 문자나 문자열로 바꿀 수 있습니다.</p>
 <h2 id="continuation">긴 줄을 여러 개의 짧은 줄로 가르기</h2>
-<p>
-긴 줄은 작은 줄들로 쪼개어 가독성과 유지관리성을 향상시킬 수 있습니다. 이렇게 하더라도 스크립트의 실행 속도는 감소하지 않습니다. 왜냐하면 그런 줄들은 스크립트가 기동하는 순간 메모리에서 합병되기 때문입니다.</p>
-<p>
-<strong>방법 #1</strong>: 줄이 &quot;and&quot;, &quot;or&quot;,  ||, &amp;&amp;, 쉼표, 또는 <a href="Variables.htm#concat">마침표</a>로 시작하면 자동으로 윗 줄과 합병됩니다 (v1.0.46+에서,  ++와 --를 제외하고 다른 모든 <a href="Variables.htm#Operators">표현식 연산자</a>에도 마찬가지로 적용됩니다). 
-다음 예제에서, 두 번째 줄은 첫 번째 줄에 붙는데 쉼표로 시작하기 때문입니다:</p>
+<p>긴 줄은 작은 줄들로 쪼개어 가독성과 유지관리성을 향상시킬 수 있습니다. 이렇게 하더라도 스크립트의 실행 속도는 감소하지 않습니다. 왜냐하면 그런 줄들은 스크립트가 기동하는 순간 메모리에서 합병되기 때문입니다.</p>
+<p><strong>방법 #1</strong>: 줄이 "and", "or", ||, &amp;&amp;, 쉼표, 또는 <a href="Variables.htm#concat">마침표</a>로 시작하면 자동으로 윗 줄과 합병됩니다 (v1.0.46+에서, ++와 --를 제외하고 다른 모든 <a href="Variables.htm#Operators">표현식 연산자</a>에도 마찬가지로 적용됩니다). 다음 예제에서, 두 번째 줄은 첫 번째 줄에 붙는데 쉼표로 시작하기 때문입니다:</p>
 <pre>FileAppend, 이것은 추가할 텍스트입니다.`n   <em>; 여기에 주석이 허용됩니다.</em>
     <strong>,</strong> %A_ProgramFiles%\SomeApplication\LogFile.txt  <em>; 주석입니다.</em></pre>
-<p>
-비슷하게, 다음의 줄들은 하나의 줄로 합병될 것입니다. 왜냐하면 마지막 두 줄이 &quot;and&quot; 또는 &quot;or&quot;로 시작하기 때문입니다:</p>
-<pre>if (Color = &quot;Red&quot; or Color = &quot;Green&quot;  or Color = &quot;Blue&quot;   <em>; 주석.</em>
-    <strong>or</strong> Color = &quot;Black&quot; or Color = &quot;Gray&quot; or Color = &quot;White&quot;)   <em>; 주석.</em>
-    <strong>and</strong> ProductIsAvailableInColor(Product, Color)   <em>; 주석.</em></pre>
-<p>
-<a href="Variables.htm#ternary">삼진 연산자</a>도 훌륭한 후보입니다:</p>
-<pre>ProductIsAvailable := (Color = &quot;Red&quot;)
+<p>비슷하게, 다음의 줄들은 하나의 줄로 합병될 것입니다. 왜냐하면 마지막 두 줄이 "and" 또는 "or"로 시작하기 때문입니다:</p>
+<pre>if (Color = "Red" or Color = "Green"  or Color = "Blue"   <em>; 주석입니다.</em>
+    <strong>or</strong> Color = "Black" or Color = "Gray" or Color = "White")   <em>; 주석입니다.</em>
+    <strong>and</strong> ProductIsAvailableInColor(Product, Color)   <em>; 주석입니다.</em></pre>
+<p><a href="Variables.htm#ternary">삼진 연산자</a>도 훌륭한 후보입니다:</p>
+<pre>ProductIsAvailable := (Color = "Red")
     <strong>?</strong> false  <em>; 우리는 바이러스 제품이 없습니다. 그러니 걱정하지 말고 함수를 호출하십시오.</em>
     <strong>:</strong> ProductIsAvailableInColor(Product, Color)</pre>
-<p>
-위의 예제에 사용된 들여쓰기는 선택적이지만, 어느 줄이 위의 어느 줄에 속하는지 보여주기 때문에 가독성이 향상됩니다. 또, &quot;AND&quot; 그리고 &quot;OR&quot; 같은 단어로 시작하는 줄들은 따로 더 스페이스를 포함할 필요가 없습니다; 오토핫키가 자동으로 추가해 줍니다. 
-마지막으로, 빈 줄이나 <a href="#Comments">주석</a>은 위의 예제에서 줄 사이 또는 줄 끝에 추가할 수 있습니다.</p>
-<p>
-<strong>방법 #2</strong>: 엄청나게 많은 줄을 병합하려면 또는 방법 #1이 적당하지 않을 때 이 방법을 사용해야 합니다. <a href="Hotstrings.htm">자동-교체 핫스트링</a>에 이 방법이 특별히 유용하지만, 명령어 또는 <a href="Variables.htm#Expressions">표현식</a>에도 사용할 수 있습니다. 예를 들어:</p>
+<p>위의 예제에 사용된 들여쓰기는 선택적이지만, 어느 줄이 위의 어느 줄에 속하는지 보여주기 때문에 가독성이 향상됩니다. 또, "AND" 그리고 "OR" 같은 단어로 시작하는 줄들은 따로 더 스페이스를 포함할 필요가 없습니다; 오토핫키가 자동으로 추가해 줍니다. 마지막으로, 빈 줄이나 <a href="#Comments">주석</a>은 위의 예제에서 줄 사이 또는 줄 끝에 추가할 수 있습니다.</p>
+<p><strong>방법 #2</strong>: 엄청나게 많은 줄을 병합하려면 또는 방법 #1이 적당하지 않을 때 이 방법을 사용해야 합니다. <a href="Hotstrings.htm">자동-교체 핫스트링</a>에 이 방법이 특별히 유용하지만, 명령어 또는 <a href="Variables.htm#Expressions">표현식</a>에도 사용할 수 있습니다. 예를 들어:</p>
 <pre><em>; 예제 #1:</em>
 Var =
 (
@@ -110,61 +76,34 @@ Var =
 )
 
 <em>; 예제 #2:</em>
-FileAppend<strong>,</strong>  <em>; 이 경우는 쉼표가 필요합니다.</em>
+FileAppend<strong>,</strong>  <em>; 이 경우 쉼표가 필요합니다.</em>
 (
-텍스트 한 줄.
+한 줄의 텍스트.
 <i>기본값으로</i>, 이 줄과 이전 줄 사이의 하드 캐리지 리턴 (Enter)이 파일에 라인피드 (`n)로 씌여질 것입니다.
     <i>기본값으로</i>, 이 줄의 왼쪽에 있는 탭도 파일에 씌여질 것입니다 (스페이스에 대해서도 마찬가지입니다).
 <i>기본값으로</i>, %Var%과 같은 변수 참조는 변수의 내용으로 결정됩니다.
 ), C:\My File.txt</pre>
-<p>
-위의 예제에서, 일련의 줄들은 한 쌍의 괄호로 상단과 하단에 경계가 있습니다. 이런 것을 <em>계속 섹션</em>이라고 부릅니다. 하단 줄에 닫는 괄호 다음에 <a href="commands/FileAppend.htm">FileAppend</a>의 마지막 매개변수가 있음에 주목하십시오. 이 관례는 선택적입니다; 이와 같은 경우에 쉼표는 문자 그대로의 쉼표가 아니라 매개변수-가름자로 보이게 됩니다.</p>
-<p>
-계속 섹션의 기본 행위를 오버라이드 할 수 있습니다. 계속 섹션의 여는 괄호의 오른쪽에 다음 옵션 중 하나 또는 여러개를 포함하면 됩니다. 옵션이 여럿 존재하면, 스페이스로 앞의 옵션과 각각 구별합니다. 예를 들어: <code>( LTrim Join| %</code>.</p>
-<p>
-<strong><a name="Join"></a>Join</strong>: 어떻게 줄을 연결할지 지정합니다. 이 옵션이 생략되면, 각 줄은 마지막 줄을 제외하고 다음에 줄넘김 문자 (`n)가 따라옵니다. 
-단어 <em>Join</em> 자체만 지정하면, 줄들은 직접적으로 그 사이에 아무 문자 없이 서로 결합합니다. 그렇지 않으면 단어 <em>Join</em> 다음에 즉시 15개 까지의 문자가 따라와야 합니다. 
-<p>
-예를 들어, <code>Join`s</code>는 마지막 줄을 제외하고 각 줄 뒤에 스페이스를 삽입합니다 -- 오로지 <em>Join</em>만 인식하는 특별한 피신 연속열입니다). 
-
-또다른 예는 <code>Join`r`n</code>인데, 이것은 줄과 줄 사이에 CR+LF를 삽입합니다. 비슷하게, <code>Join|</code>는 줄 사이에 파이프를 삽입합니다. 계속 섹션의 마지막 줄도 연결-문자로 끝내려면, 계속 섹션의 닫는 괄호 바로 위에 즉시 빈줄을 포함시킵니다.</p>
-<p>
-<b>알려진 한계</b>: 문자열 Join이 쌍점으로 끝나면, 그 줄에서 마지막 옵션으로 취급하면 안됩니다. 
-예를 들어, <code>(Join:</code>은 라벨 "(Join"으로 취급되고 <code>(LTrim Join:</code>은 지원하지 않습니다. 그러나 <code>(Join: C</code>는 좋습니다.</p>
-<p>
-<strong><a name="LTrim"></a>LTrim</strong>: 각 줄의 선두에서 스페이스와 탭을 걷어냅니다. 스페이스와 탭은  주로 계속 섹션을 들여쓰기 하는 데 사용됩니다. 또, 이 옵션은 여러 계속 섹션에 대해서도 활성화할 수 있습니다. 한 줄에 <code>#LTrim</code>만 지정하면 됩니다. 
-<code>#LTrim</code>은 위치에 영향을 받습니다: 물리적으로 그 아래에 있는 모든 계속 섹션에 영향을 미칩니다. 
-<code>#LTrim Off</code>를 통하여 설정을 끌 수 있습니다.</p>
-<p>
-<strong>RTrim0</strong> (RTrim 다음에 0): 각 줄의 끝으로부터 스페이스와 탭을 걷어내지 못하게 막습니다.</p>
-<p>
-<strong><a name="CommentOption"></a>Comments</strong> (또는 <strong>Comment</strong> 또는 <strong>Com</strong> 또는 <strong>C</strong>) <span class="ver">[v1.0.45.03+]</span>: 
-
-<a href="#Comments">쌍반점 주석</a>을 계속 섹션 안에 허용합니다 (그러나 <code>/*..*/</code> 안에는 허용하지 않습니다). 그런 주석들은 (왼쪽에 있는 스페이스와 탭과 함께) 결합된 결과로부터 모조리 제거됩니다. 기호 텍스트로 취급되지 않습니다. 각 주석은 줄의 오른쪽 또는 그 자체로 새 줄에 나타날 수 있습니다.</p>
-<p>
-<strong>%</strong> (퍼센트 사인): 퍼센트 사인을 변수 참조가 아니라 기호 그대로 취급합니다. 그래서 각 퍼센트 사인을 기호 그대로 만들기 위해 <a href="commands/_EscapeChar.htm">피신시킬</a> 필요가 없습니다. <a href="Hotstrings.htm">자동-교체 핫스트링</a>과 같이, 이미 퍼센트 사인이 기호인 경우에 이 옵션은 필요하지 않습니다.</p>
-<p>
-<strong>,</strong> (쉼표): 쉼표를 문자 그대로의 쉼표가 아니라 가름자로 취급합니다. 별로 사용되지 않는 이 옵션은 명령어 매개변수 사이의 쉼표에 대해서만 꼭 필요합니다. 왜냐하면 <a href="Functions.htm">함수 호출</a>에서, 쉼표의 종류는 문제가 되지 않기 때문입니다. 또 이 옵션은 실제로 매개변수 사이를 가르는 쉼표들만 변형합니다. 다른 말로 하면, 일단 명령어의 마지막 매개변수에 다다르면 (즉, 더 이상 매개변수가 없으면), 연이어 나오는 쉼표는 이 옵션에 상관 없이 문자 그대로 쉼표로 취급됩니다.</p>
-<p>
-<a name="accent"></a><strong>`</strong> (액센트): 각 백틱 문자를 <a href="commands/_EscapeChar.htm">피신 문자</a>가 아니라 문자 그대로 취급합니다. 이것은 또 쉼표와 퍼센트 사인이 명시적으로 그리고 개별적으로 피신되지 못하도록 막습니다. 게다가, `r 그리고 `t와 같이 명시적으로 지정된 피신 연속열을 변환하지 못하도록 막습니다.</p>
-<p>
-<a name="non-continuation"></a><strong>)</strong> <span class="ver">[v1.1.01+]</span>: 
-닫는 괄호가 계속 섹션의 옵션에 나타나면 (<a href="#Join">Join</a> 옵션의 매개변수로 나타나면 제외), 그 줄은 계속 섹션의 시작이 아니라 표현식으로 재번역됩니다. 이렇게 하면 여는 괄호를 피신시킬 필요 없이 <code>(x.y)[z]()</code>와 같은 표현식을 작동시킬 수 있습니다.</p>
-
+<p>위의 예제에서, 일련의 줄들은 한 쌍의 괄호로 상단과 하단에 경계가 있습니다. 이런 것을 <em>계속 섹션</em>이라고 부릅니다. 하단 줄에 닫는 괄호 다음에 <a href="commands/FileAppend.htm">FileAppend</a>의 마지막 매개변수가 있음에 주목하십시오. 이 관례는 선택적입니다; 이와 같은 경우에 쉼표는 문자 그대로의 쉼표가 아니라 매개변수-가름자로 보이게 됩니다.</p>
+<p>계속 섹션의 기본 행위를 오버라이드 할 수 있습니다. 계속 섹션의 여는 괄호의 오른쪽에 다음 옵션 중 하나 또는 여러개를 포함하면 됩니다. 옵션이 여럿 존재하면, 스페이스로 앞의 옵션과 각각 구별합니다. 예를 들어: <code>( LTrim Join| %</code>.</p>
+<p><strong><a name="Join"></a>Join</strong>: 어떻게 줄을 연결할지 지정합니다. 이 옵션이 생략되면, 각 줄은 마지막 줄을 제외하고 다음에 줄넘김 문자 (`n)가 따라옵니다. 단어 <em>Join</em> 자체만 지정하면, 줄들은 직접적으로 그 사이에 아무 문자 없이 서로 결합합니다. 그렇지 않으면 단어 <em>Join</em> 다음에 즉시 15개 까지의 문자가 따라와야 합니다. 예를 들어, <code>Join`s</code>는 마지막 줄을 제외하고 각 줄 뒤에 스페이스를 삽입합니다 -- 오로지 <em>Join</em>만 인식하는 특별한 피신 연속열입니다). 또다른 예는 <code>Join`r`n</code>인데, 이것은 줄과 줄 사이에 CR+LF를 삽입합니다. 비슷하게, <code>Join|</code>는 줄 사이에 파이프를 삽입합니다. 계속 섹션의 마지막 줄도 연결-문자로 끝내려면, 계속 섹션의 닫는 괄호 바로 위에 즉시 빈줄을 포함시킵니다.</p>
+<p>알려진 한계: 문자열 Join이 쌍점으로 끝나면, 그 줄에서 마지막 옵션으로 취급하면 안됩니다. 예를 들어, <code>(Join:</code>은 라벨 "(Join"으로 취급되고 <code>(LTrim Join:</code>은 지원하지 않습니다. 그러나 <code>(Join: C</code>는 좋습니다.</p>
+<p><strong><a name="LTrim"></a>LTrim</strong>: 각 줄의 선두에서 스페이스와 탭을 걷어냅니다. 스페이스와 탭은 주로 계속 섹션을 들여쓰기 하는 데 사용됩니다. 또, 이 옵션은 여러 계속 섹션에 대해서도 활성화할 수 있습니다. 한 줄에 <code>#LTrim</code>만 지정하면 됩니다. <code>#LTrim</code>은 위치에 영향을 받습니다: 물리적으로 그 아래에 있는 모든 계속 섹션에 영향을 미칩니다. <code>#LTrim Off</code>를 통하여 설정을 끌 수 있습니다.</p>
+<p><strong>RTrim0</strong> (RTrim 다음에 0): 각 줄의 끝으로부터 스페이스와 탭을 걷어내지 못하게 막습니다.</p>
+<p><strong><a name="CommentOption"></a>Comments</strong> (또는 <strong>Comment</strong> 또는 <strong>Com</strong> 또는 <strong>C</strong>) <span class="ver">[v1.0.45.03+]</span>: <a href="#Comments">쌍반점 주석</a>을 계속 섹션 안에 허용합니다 (그러나 <code>/*..*/</code> 안에는 허용하지 않습니다). 그런 주석들은 (왼쪽에 있는 스페이스와 탭과 함께) 결합된 결과로부터 모조리 제거됩니다. 기호 텍스트로 취급되지 않습니다. 각 주석은 줄의 오른쪽 또는 그 자체로 새 줄에 나타날 수 있습니다.</p>
+<p><strong>%</strong> (퍼센트 사인): 퍼센트 사인을 변수 참조가 아니라 기호 그대로 취급합니다. 그래서 각 퍼센트 사인을 기호 그대로 만들기 위해 <a href="commands/_EscapeChar.htm">피신시킬</a> 필요가 없습니다. <a href="Hotstrings.htm">자동-교체 핫스트링</a>과 같이, 이미 퍼센트 사인이 기호인 경우에 이 옵션은 필요하지 않습니다.</p>
+<p><strong>,</strong> (쉼표): 쉼표를 문자 그대로의 쉼표가 아니라 가름자로 취급합니다. 별로 사용되지 않는 이 옵션은 명령어 매개변수 사이의 쉼표에 대해서만 꼭 필요합니다. 왜냐하면 <a href="Functions.htm">함수 호출</a>에서, 쉼표의 종류는 문제가 되지 않기 때문입니다. 또 이 옵션은 실제로 매개변수 사이를 가르는 쉼표들만 변형합니다. 다른 말로 하면, 일단 명령어의 마지막 매개변수에 다다르면 (즉, 더 이상 매개변수가 없으면), 연이어 나오는 쉼표는 이 옵션에 상관 없이 문자 그대로 쉼표로 취급됩니다.</p>
+<p><a name="accent"></a><strong>`</strong> (액센트): 각 백틱 문자를 <a href="commands/_EscapeChar.htm">피신 문자</a>가 아니라 문자 그대로 취급합니다. 이것은 또 쉼표와 퍼센트 사인이 명시적으로 그리고 개별적으로 피신되지 못하도록 막습니다. 게다가, `r 그리고 `t와 같이 명시적으로 지정된 피신 연속열을 변환하지 못하도록 막습니다.</p>
+<p><a name="non-continuation"></a><strong>)</strong> <span class="ver">[v1.1.01+]</span>: 닫는 괄호가 계속 섹션의 옵션에 나타나면 (<a href="#Join">Join</a> 옵션의 매개변수로 나타나면 제외), 그 줄은 계속 섹션의 시작이 아니라 표현식으로 재번역됩니다. 이렇게 하면 여는 괄호를 피신시킬 필요 없이 <code>(x.y)[z]()</code>와 같은 표현식을 작동시킬 수 있습니다.</p>
 <p><u>논평</u></p>
-<p>
-`n (줄넘김)와 `t (탭) 같은 <a href="commands/_EscapeChar.htm">피신 연속열</a>은 계속 섹션 안에서 지원됩니다. 단 <a href="#accent">accent (`) 옵션이</a> 지정되어 있는 경우는 제외합니다.</p>
-<p>
-<a href="#CommentOption">주석 옵션</a>이 없으면, 쌍반점과 /*..*/ 주석이 계속 섹션 안에서 지원되지 않습니다. 왜냐하면 기호 텍스트로 보이기 때문입니다. 그렇지만, 주석은 계속 섹션의 상단 줄과 하단 줄에 포함될 수 있습니다. 예를 들어:</p>
+<p>`n (줄넘김)와 `t (탭) 같은 <a href="commands/_EscapeChar.htm">피신 연속열</a>은 계속 섹션 안에서 지원됩니다. 단 <a href="#accent">accent (`) 옵션이</a> 지정되어 있는 경우는 제외합니다.</p>
+<p><a href="#CommentOption">주석 옵션</a>이 없으면, 쌍반점과 /*..*/ 주석이 계속 섹션 안에서 지원되지 않습니다. 왜냐하면 기호 텍스트로 보이기 때문입니다. 그렇지만, 주석은 계속 섹션의 상단 줄과 하단 줄에 포함될 수 있습니다. 예를 들어:</p>
 <pre>FileAppend<strong>,</strong>   <em>; 주석입니다.
-; Comment.</em>
+; 주석입니다.</em>
 ( LTrim Join    <em>; 주석입니다.</em>
     &nbsp;; 이것은 주석이 <strong>아닙니다</strong>; 문자 그대로입니다. 윗 줄에 단어 <i>Comments</i>를 포함하면 주석이 됩니다.
 ), C:\File.txt   <em>; 주석입니다.</em></pre>
-<p>
-위의 결과로, 쌍반점은 계속 섹션 안에서 <a href="commands/_EscapeChar.htm">피신시킬</a> 필요가 없습니다.</p>
-<p>
-계속 섹션은 16,383 문자가 넘는 줄을 생산하지 못합니다 (시도하면, 프로그램은 스크립트가 기동하는 순간 경고를 보냅니다). 이를 돌아가는 한 가지 방법은 일렬로 결합해서 변수에 넣는 것입니다. 예를 들어:</p>
+<p>위의 결과로, 쌍반점은 계속 섹션 안에서 <a href="commands/_EscapeChar.htm">피신시킬</a> 필요가 없습니다.</p>
+<p>계속 섹션은 16,383 문자가 넘는 줄을 생산하지 못합니다 (시도하면, 프로그램은 스크립트가 기동하는 순간 경고를 보냅니다). 이를 돌아가는 한 가지 방법은 일렬로 결합해서 변수에 넣는 것입니다. 예를 들어:</p>
 <pre>Var =
 (
 ...
@@ -174,23 +113,16 @@ Var = %Var%`n  <em>; 또다른 계속 섹션을 통하여 변수에 더 많은 �
 ...
 )
 FileAppend, %Var%, C:\My File.txt</pre>
-<p>
-닫는 괄호는 연속 섹션의 끝을 나타내기 때문에, 줄을 닫는 괄호로 시작하려면, 앞에다 액센트/백틱을 배치해야 합니다: <code>`)</code>.</p>
-<p>
-계속 섹션 다음에 즉시 따라오는 줄에 또다른 계속 섹션을 여는 괄호가 담길 수 있습니다. 이렇게 하면 한 개의 줄을 구성하는 동안 위에 언급한 옵션들이 달라질 수 있습니다.</p>
-<p>
-<a href="commands/_Include.htm">#Include</a>를 이용하여 계속 섹션을 구성하는 방법은 지원하지 않습니다.</p>
-
+<p>닫는 괄호는 연속 섹션의 끝을 나타내기 때문에, 줄을 닫는 괄호로 시작하려면, 앞에다 액센트/백틱을 배치해야 합니다: <code>`)</code>.</p>
+<p>계속 섹션 다음에 즉시 따라오는 줄에 또다른 계속 섹션을 여는 괄호가 담길 수 있습니다. 이렇게 하면 한 개의 줄을 구성하는 동안 위에 언급한 옵션들이 달라질 수 있습니다.</p>
+<p><a href="commands/_Include.htm">#Include</a>를 이용하여 계속 섹션을 구성하는 방법은 지원하지 않습니다.</p>
 <h2 id="ahk2exe">스크립트를 EXE (ahk2exe)로 변환하기</h2>
-<p>
-스크립트 컴파일러 (fincs 제공)가 프로그램에 포함되어 있습니다.</p>
-<p>
-스크립트가 컴파일되면, 독립 실행화일이 됩니다; 즉, 오토핫키가 설치되어 있지 않은 머신에서도 사용할 수 있습니다 (그런 EXE 실행 파일은 아무 제한 없이 배포하거나 판매할 수 있습니다). 컴파일 과정을 통해 실행 파일이 생성됩니다. 안에 다음과 같이 포함됩니다. 오토핫키 인터프리터, 스크립트, 그리고 기타 <a href="commands/_Include.htm">포함된</a> 파일, 그리고 <a href="commands/FileInstall.htm">FileInstall</a> 명령어를 통하여 병합한 파일들.</p>
-<p>
-Ahk2Exe는 다음과 같은 방식으로 사용할 수 있습니다:</p>
+<p>스크립트 컴파일러 (fincs 제공)가 프로그램에 포함되어 있습니다.</p>
+<p>스크립트가 컴파일되면, 독립 실행화일이 됩니다; 즉, 오토핫키가 설치되어 있지 않은 머신에서도 사용할 수 있습니다 (그런 EXE 실행 파일은 아무 제한 없이 배포하거나 판매할 수 있습니다). 컴파일 과정을 통해 실행 파일이 생성됩니다. 안에 다음과 같이 포함됩니다. 오토핫키 인터프리터, 스크립트, 그리고 기타 <a href="commands/_Include.htm">포함된</a> 파일, 그리고 <a href="commands/FileInstall.htm">FileInstall</a> 명령어를 통하여 병합한 파일들.</p>
+<p>Ahk2Exe는 다음과 같은 방식으로 사용할 수 있습니다:</p>
 <ol>
-  <li><strong>GUI 인터페이스</strong>: 시작 메뉴에서 &quot;Convert .ahk to .exe&quot; 항목을 선택합니다.</li>
-  <li><strong>우클릭</strong>: 익스플로러 창 안에서 .ahk 파일에 우클릭하고 &quot;Compile Script&quot;를 선택합니다 (오토핫키를 설치할 때 스크립트 컴파일 옵션을 선택했을 경우에만 메뉴가 있습니다). 이렇게 하면 스크립트와 기본 이름이 같은 EXE 파일이 생성됩니다. 잠시 후에 같은 디렉토리에 나타납니다. 주의: EXE 파일은 위의 방법 #1에 의하여 마지막으로 사용된 것과 같은 아이콘, .bin 파일 그리고 MPRESS 설정을 사용하여 생성됩니다.</li>
+  <li><strong>GUI 인터페이스</strong>: 시작 메뉴에서 "Convert .ahk to .exe" 항목을 선택합니다.</li>
+  <li><strong>우클릭</strong>: 익스플로러 창 안에서 .ahk 파일에 우클릭하고 "Compile Script"를 선택합니다 (오토핫키를 설치할 때 스크립트 컴파일 옵션을 선택했을 경우에만 메뉴가 있습니다). 이렇게 하면 스크립트와 기본 이름이 같은 EXE 파일이 생성됩니다. 잠시 후에 같은 디렉토리에 나타납니다. 주의: EXE 파일은 위의 방법 #1에 의하여 마지막으로 사용된 것과 같은 아이콘, .bin 파일 그리고 MPRESS 설정을 사용하여 생성됩니다.</li>
   <li><a name="ahk2exeCmd"></a><strong>명령 줄</strong>: 컴파일러를 다음 매개변수를 가지고 명령 줄에서 실행할 수 있습니다:
   <pre>Ahk2Exe.exe /in MyScript.ahk [/out MyScript.exe] [/icon MyIcon.ico] [/bin AutoHotkeySC.bin] [/mpress 0or1]</pre>
   예를 들어:
@@ -198,32 +130,29 @@ Ahk2Exe는 다음과 같은 방식으로 사용할 수 있습니다:</p>
 사용법:
 <ul>
 <li>스페이스가 들어 있는 매개변수는 겹따옴표로 둘러싸야 합니다.</li>
-<li>&quot;out&quot; 파일을 생략하면, EXE 파일은 스크립트와 기본 파일이름이 같습니다.</li>
+<li>"out" 파일을 생략하면, EXE 파일은 스크립트와 기본 파일이름이 같습니다.</li>
 </ul></li>
 </ol>
 <p>주의:</p>
 <ul>
   <li>컴파일링은 전형적으로 스크립트의 수행성능을 개선하지 않습니다.</li>
   <li>v1.1.01 버전에서, 암호 보호와 /NoDecompile 스위치를 지원하지 않습니다.</li>
-  <li><a href="http://www.matcode.com/mpress.htm">mpress.exe</a>가 오토핫키가 설치되어 있는 &quot;Compiler&quot; 하위폴더에 존재하면, 스크립트 실행파일을 압축하는데 사용됩니다. <code>/mpress 0</code> 또는 GUI 설정으로 꺼버릴 수 있습니다. 이는 또한 스크립트 소스 코드도 (주석은 제외하고) 압축합니다. 그렇지 않으면 PE 리소스 에디터를 사용하여 실행 파일로부터 소스를 추출할 수 있습니다.</li>
-  <li>명령어 <a href="commands/_NoTrayIcon.htm">#NoTrayIcon</a> 그리고 &quot;<a href="commands/Menu.htm">Menu, Tray, ShowMainWindow</a>&quot; 는 컴파일된 스크립트의 행위에 영향을 미칩니다.</li>
-  <li>맞춤 버전 정보는 (익스플로러의 파일-특성 대화상자에 나타나는데) 컴파일된 스크립트에 추가할 수 있습니다. 리소스 해커 같은 유틸을 사용하여 &quot;AutoHotkeySC.bin&quot;. 파일을 편집하면 됩니다. 이 파일은 오토핫키가 설치된 &quot;Compiler&quot; 하위 폴더에 들어 있습니다. <a href="http://www.autohotkey.com/forum/topic22975.html">Compile_AHK II</a>를 사용하면 이 과정을 손쉽게 처리할 수 있습니다.  v1.1.01버전에서,  AutoHotkeySC.bin 대신에 컴파일 스크립트를 편집할 수 있습니다.</li>
+  <li><a href="http://www.matcode.com/mpress.htm">mpress.exe</a>가 오토핫키가 설치되어 있는 "Compiler" 하위폴더에 존재하면, 스크립트 실행파일을 압축하는데 사용됩니다. <code>/mpress 0</code> 또는 GUI 설정으로 꺼버릴 수 있습니다. 이는 또한 스크립트 소스 코드도 (주석은 제외하고) 압축합니다. 그렇지 않으면 PE 리소스 에디터를 사용하여 실행 파일로부터 소스를 추출할 수 있습니다.</li>
+  <li>명령어 <a href="commands/_NoTrayIcon.htm">#NoTrayIcon</a> 그리고 "<a href="commands/Menu.htm">Menu, Tray, ShowMainWindow</a>" 는 컴파일된 스크립트의 행위에 영향을 미칩니다.</li>
+  <li>맞춤 버전 정보는 (익스플로러의 파일-특성 대화상자에 나타나는데) 컴파일된 스크립트에 추가할 수 있습니다. 리소스 해커 같은 유틸을 사용하여 "AutoHotkeySC.bin". 파일을 편집하면 됩니다. 이 파일은 오토핫키가 설치된 "Compiler" 하위 폴더에 들어 있습니다. <a href="http://www.autohotkey.com/forum/topic22975.html">Compile_AHK II</a>를 사용하면 이 과정을 손쉽게 처리할 수 있습니다. v1.1.01버전에서, AutoHotkeySC.bin 대신에 컴파일 스크립트를 편집할 수 있습니다.</li>
   <li>위의 방법을 사용하면 또 기존의 아이콘을 바꾸거나 모든 컴파일된 스크립트에 새로운 아이콘을 추가할 수 있습니다.</li>
   <li>스크립트가 컴파일된 형태로 실행 중이면 내장 변수 A_IsCompiled에 1이 담깁니다. 아니면 비어 있습니다.</li>
-  <li>매개변수를 Ahk2Exe에 건네면, 컴파일 과정의 성패 여부를 알리는 메시지가 표준출력으로 나타납니다. 메시지가 명령어 프롬프트에 나타나지 않더라도, 출력을 파일로 방향 전환하는 것과 같은 수단을 써서  &quot;잡을 수 있습니다&quot; <span class="ver">[v1.0.43+]</span></li>
+  <li>매개변수를 Ahk2Exe에 건네면, 컴파일 과정의 성패 여부를 알리는 메시지가 표준출력으로 나타납니다. 메시지가 명령어 프롬프트에 나타나지 않더라도, 출력을 파일로 방향 전환하는 것과 같은 수단을 써서 "잡을 수 있습니다" <span class="ver">[v1.0.43+]</span></li>
   <li>추가로 실패할 경우, Ahk2Exe는 종료 코드에 일어난 에러의 종류를 알려줍니다. 이런 에러 코드는 <a href="https://github.com/fincs/Ahk2Exe/blob/master/ErrorCodes.md">GitHub (ErrorCodes.md)</a>에서 보실 수 있습니다. <span class="ver">[v1.1.22.03+]</span></li>
 </ul>
 <p>컴파일러의 소스 코드와 새 버전은 <a href="https://github.com/fincs/Ahk2Exe">GitHub</a>에서 얻을 수 있습니다.</p>
 
 <h2 id="cmd">스크립트에 명령 줄 매개변수 건네기</h2>
-<p>
-스크립트는 명령줄 매개변수를 지원합니다. 형식은 다음과 같습니다:</p>
+<p>스크립트는 명령줄 매개변수를 지원합니다. 형식은 다음과 같습니다:</p>
 <pre>AutoHotkey.exe [<i>Switches</i>] [<i>Script Filename</i>] [<i>Script Parameters</i>]</pre>
-<p>
-그리고 컴파일된 스크립트라면 그 형식은 다음과 같습니다:</p>
+<p>그리고 컴파일된 스크립트라면 그 형식은 다음과 같습니다:</p>
 <pre>CompiledScript.exe [<i>스위치</i>] [<i>스크립트 매개변수</i>]</pre>
-<p>
-<strong>스위치:</strong> 다음 중 하나 또는 그 이상:</p>
+<p><strong>스위치:</strong> 다음 중 하나 또는 그 이상:</p>
 <table class="info">
   <tr><th>스위치</th><th>의미</th></tr>
   <tr id="SlashF">
@@ -236,7 +165,7 @@ Ahk2Exe는 다음과 같은 방식으로 사용할 수 있습니다:</p>
   </tr>
   <tr id="ErrorStdOut">
     <td>/ErrorStdOut</td>
-    <td>스크립트를 기동시키지 못하게 방해하는 구문 에러를 대화상자를 보여주는 대신에 표준에러(stderr)로 전송합니다. 자세한 것은 <a href="commands/_ErrorStdOut.htm">#ErrorStdOut</a>를 참조하십시오. 이것을  /iLib와 조합하면 스크립트를 실행하지 않고 평가할 수 있습니다.</td>
+    <td>스크립트를 기동시키지 못하게 방해하는 구문 에러를 대화상자를 보여주는 대신에 표준에러(stderr)로 전송합니다. 자세한 것은 <a href="commands/_ErrorStdOut.htm">#ErrorStdOut</a>를 참조하십시오. 이것을 /iLib와 조합하면 스크립트를 실행하지 않고 평가할 수 있습니다.</td>
   </tr>
   <tr><th></th><th>컴파일된 스크립트가 지원하지 않는 것:</th></tr>
   <tr id="SlashDebug">
@@ -253,52 +182,44 @@ Ahk2Exe는 다음과 같은 방식으로 사용할 수 있습니다:</p>
       <p><span class="ver">[v1.0.47+]:</span> AutoHotkey는 스크립트를 적재하지만 실행하지는 않습니다. <a href="Functions.htm#lib">라이브러리 메커니즘</a>을 통하여 자동으로-포함된 각 스크립트 파일에 대하여, <em>OutFile</em>이 지정한 파일에 두 줄이 씌여집니다. 다음과 같은 형식으로 작성됩니다. <em>LibDir</em>은 Lib 폴더의 완전한 경로이고 <em>LibFile</em>은 그 라이브러리의 파일이름입니다:</p>
 <pre>#Include LibDir\
 #IncludeAgain LibDir\LibFile.ahk</pre>
-      <p>
-	  출력 파일에 존재하면, 덮어씁니다. <em>OutFile</em>이 <code>*</code>이면 표준출력(stdout)에 씁니다.</p>
-      <p>스크립트에 구문에러가 있다면, 출력 파일은 비어 있을 수 있습니다. 프로세스 종료 코드를 사용하면 이 상황을 탐지할 수 있습니다; 구문에러가 있다면, 종료 코드는 2입니다.  /ErrorStdOut 스위치를 사용하면 에러 메시지를 누르거나 나포할 수 있습니다.</p>
+      <p>출력 파일에 존재하면, 덮어씁니다. <em>OutFile</em>이 <code>*</code>이면 표준출력(stdout)에 씁니다.</p>
+      <p>스크립트에 구문에러가 있다면, 출력 파일은 비어 있을 수 있습니다. 프로세스 종료 코드를 사용하면 이 상황을 탐지할 수 있습니다; 구문에러가 있다면, 종료 코드는 2입니다. /ErrorStdOut 스위치를 사용하면 에러 메시지를 누르거나 나포할 수 있습니다.</p>
     </td>
   </tr>
 </table>
 
-<p><a name="defaultfile"></a><strong>스크립트 파일이름:</strong> 
-<em>스크립트 매개변수</em>가 없다면 생략할 수 있습니다. 생략되면 (예를 들어 오토핫키를 시작 메뉴로부터 직접 실행하면), 프로그램은 <code><i>AutoHotkey</i>.ahk</code>를 다음 위치에서 순서대로 찾습니다:</p>
+<p><a name="defaultfile"></a><strong>스크립트 파일이름:</strong> <em>스크립트 매개변수</em>가 없다면 생략할 수 있습니다. 생략되면 (예를 들어 오토핫키를 시작 메뉴로부터 직접 실행하면), 프로그램은 <code><i>AutoHotkey</i>.ahk</code>를 다음 위치에서 순서대로 찾습니다:</p>
 <ul>
   <li><a href="Variables.htm#AhkPath">AutoHotkey 실행파일</a>이 들어 있는 디렉토리.</li>
   <li>현재 사용자의 <a href="Variables.htm#MyDocuments">나의 문서</a> 폴더.</li>
 </ul>
 <p>파일이름 <code><i>AutoHotkey</i>.ahk</code>는 스크립트를 실행하는 데 사용된 실행파일의 이름에 따라 다릅니다. 예를 들어, AutoHotkey.exe를 MyScript.exe로 이름을 바꾸었다면, <code>MyScript.ahk</code>를 찾으려고 시도합니다. AutoHotkeyU32.exe를 매개변수 없이 실행하면 AutoHotkeyU32.ahk를 찾습니다.</p>
-<p>
-주의: <a href="AHKL_ChangeLog.htm#L51">revision 51</a> 이전의 버전에서는 AutoHotkey.ini를 작업 디렉토리에서 찾거나 AutoHotkey.ahk를 나의 문서에서 찾았습니다.</p>
+<p>주의: <a href="AHKL_ChangeLog.htm#L51">revision 51</a> 이전의 버전에서는 AutoHotkey.ini를 작업 디렉토리에서 찾거나 AutoHotkey.ahk를 나의 문서에서 찾았습니다.</p>
 <p><span class="ver">[v1.1.17+]:</span> 별표(*)를 파일이름에 지정해 표준 입력(stdin)으로부터 스크립트 텍스트를 읽어 들입니다. 예를 들어, <a href="commands/Run.htm#ExecScript">ExecScript()</a>를 참조하십시오.</p>
-<p>
-<strong>스크립트 매개변수:</strong> 스크립트에 건네고 싶은 문자열(들), 각각 스페이스로 구분됩니다. 스페이스가 포함된 매개변수는 인용부호로 둘러싸야 합니다. 기호 그대로의 인용부호는 역사선(\&quot;)을 앞에 붙여서 건넬 수 있습니다. 결과적으로, 인용부호 매개변수에 뒤따르는 역사선은 (예를 들어 &quot;C:\My Documents<span class="red">\&quot;</span>) 기호 그대로의 인용부호로 취급됩니다 (즉, 스크립트는 문자열 C:\My Documents<span class="red">&quot;</span>를 받습니다). 그런 따옴표를 제거하려면, <code><a href="commands/StringReplace.htm">StringReplace, 1, 1, <span class="red">&quot;</span>,, All</a></code>를 사용하십시오.</p>
-<p>
-스크립트는 들어오는 매개변수를 <a href="Variables.htm">변수</a> %1%, %2%, 등등으로 봅니다. 게다가, %0%에는 건네어진 매개변수의 개수가 담겨 있습니다 (없으면 0). 그렇지만, 이런 변수들은 표현식 안에서 직접적으로 참조할 수 없습니다. 왜냐하면 변수가 아니라 숫자로 보이기 때문입니다. 다음 예제는 너무 매개변수가 적게 건네어지면 스크립트를 종료합니다:</p>
-
+<p><strong>스크립트 매개변수:</strong> 스크립트에 건네고 싶은 문자열(들), 각각 스페이스로 구분됩니다. 스페이스가 포함된 매개변수는 인용부호로 둘러싸야 합니다. 기호 그대로의 인용부호는 역사선(\")을 앞에 붙여서 건넬 수 있습니다. 결과적으로, 인용부호 매개변수에 뒤따르는 역사선은 (예를 들어 "C:\My Documents<span class="red">\"</span>) 기호 그대로의 인용부호로 취급됩니다 (즉, 스크립트는 문자열 C:\My Documents<span class="red">"</span>를 받습니다). 그런 따옴표를 제거하려면, <code><a href="commands/StringReplace.htm">StringReplace, 1, 1, <span class="red">"</span>,, All</a></code>를 사용하십시오.</p>
+<p>스크립트는 들어오는 매개변수를 <a href="Variables.htm">변수</a> %1%, %2%, 등등으로 봅니다. 게다가, %0%에는 건네어진 매개변수의 개수가 담겨 있습니다 (없으면 0). 그렇지만, 이런 변수들은 표현식 안에서 직접적으로 참조할 수 없습니다. 왜냐하면 변수가 아니라 숫자로 보이기 때문입니다. 다음 예제는 너무 매개변수가 적게 건네어지면 스크립트를 종료합니다:</p>
 <pre>if 0 &lt; 3  <em>; <a href="commands/IfEqual.htm">비-표현식 if-서술문</a>의 왼쪽은 언제나 변수의 이름입니다.</em>
 {
     MsgBox 이 스크립트는 적어도 3 개의 매개변수가 들어오기를 요구하지만, 겨우 %0% 개를 받았습니다.
     ExitApp
 }</pre>
-<p>
-스크립트로 건네지는 매개변수의 개수가 달라지면 (사용자가 스크립트에 파일들을 끌어 떨구는 경우), 다음 예제는 매개변수를 하나씩 추출합니다:</p>
+<p>스크립트로 건네지는 매개변수의 개수가 달라지면 (사용자가 스크립트에 파일들을 끌어 떨구는 경우), 다음 예제는 매개변수를 하나씩 추출합니다:</p>
 <pre>Loop, %0%  <em>; 각 매개변수에 대하여:</em>
 {
     param := %A_Index%  <em>; A_Index에 포함된 이름의 변수의 내용을 가져옵니다.</em>
-    MsgBox, 4,, 매개변수 번호 %A_Index%는 %param%입니다. 계속하시겠습니까?
+    MsgBox, 4,, 매개변수 번호 %A_Index%는 %param%입니다.  계속할까요?
     IfMsgBox, No
         break
 }</pre>
-<p>
-매개변수가 파일 이름이면, 다음 예제와 같이 그 이름을 완전한/절대 경로를 포함하여 대소문자를 교정한 기다란 이름으로 변환할 수 있습니다 (파일 시스템에 저장된 것과 같은):</p>
+<p>매개변수가 파일 이름이면, 다음 예제와 같이 그 이름을 완전한/절대 경로를 포함하여 대소문자를 교정한 기다란 이름으로 변환할 수 있습니다 (파일 시스템에 저장된 것과 같은):</p>
 <pre>Loop %0%  <em>; 각 매개변수에 대하여 (또는 스크립트에 떨군 각 파일에 대하여):</em>
 {
-    GivenPath := %A_Index%  <em>;  A_Index에 포함된 이름을 가진 변수의 내용을 가져옵니다.</em>
+    GivenPath := %A_Index%  <em>; A_Index에 포함된 이름의 변수의 내용을 가져옵니다.</em>
     Loop %GivenPath%, 1
         LongPath = %A_LoopFileLongPath%
     MsgBox 대소문자를 교정한 기다란 경로의 파일이름은`n%GivenPath%`n다음과 같습니다:`n%LongPath%
 }</pre>
-<p><b>알려진 한계</b>: 파일을 끌어 .ahk 스크립트에 떨어트릴 때 NTFS 파일 시스템에서 8-점-3 (짧은) 이름이 꺼져 있으면 제대로 작동하지 못할 가능성이 높습니다. 한 가지 우회책은 스크립트를 <a href="#ahk2exe">컴파일</a>한 다음 그 결과 파일을 그 결과 EXE 파일 위에 끌어 떨구는 것입니다.</p>
+<p>알려진 한계: 파일을 끌어 .ahk 스크립트에 떨어트릴 때 NTFS 파일 시스템에서 8-점-3 (짧은) 이름이 꺼져 있으면 제대로 작동하지 못할 가능성이 높습니다. 한 가지 우회책은 스크립트를 <a href="#ahk2exe">컴파일</a>한 다음 그 결과 파일을 그 결과 EXE 파일 위에 끌어 떨구는 것입니다.</p>
 
 <h2 id="cp">스크립트 파일 코드페이지 <span class="ver">[AHK_L 51+]</span></h2>
 <p>스크립트 파일에 포함되는 문자는 그 파일을 적재하는데 사용된 코드페이지에 제한됩니다.</p>
@@ -308,7 +229,7 @@ Ahk2Exe는 다음과 같은 방식으로 사용할 수 있습니다:</p>
   <li>다른 경우는 모두 시스템 기본 ANSI 코드 페이지가 사용됩니다.</li>
 </ul>
 <p>이 원칙은 오토핫키가 적재하는 스크립트 파일에만 적용됩니다. 스크립트 자체의 파일 I/O에는 적용되지 않는다는 것을 주의하십시오. <a href="commands/FileEncoding.htm">파일인코딩</a>은 스크립트가 읽고 쓰는 기본 인코딩을 제어합니다. 반면에 <a href="commands/IniRead.htm">IniRead</a>와 <a href="commands/IniWrite.htm">IniWrite</a>는 언제나 UTF-16 또는 ANSI를 취급합니다.</p>
-<p>모든 텍스트가 (필요하면) <a href="Compat.htm#Format">고유의 문자열 형식</a>으로 변환되므로, 유효하지 않거나 고유의 코드페이지에 존재하지 않는 문자는 위치보유자로 교체됩니다: ANSI라면 '?'로 교체되고 Unicode는 '&#65533;'로 교체됩니다. 유니코드 빌드본은 오직 스크립트 파일에 인코딩 에러가 있을 경우 또는 파일을 적재하고 저장하는 데 사용된 코드 페이지가 일치하지 않을 경우에만 교체가 일어납니다.</p>
+<p>모든 텍스트가 (필요하면) <a href="Compat.htm#Format">고유의 문자열 형식</a>으로 변환되므로, 유효하지 않거나 고유의 코드페이지에 존재하지 않는 문자는 위치보유자로 교체됩니다: ANSI라면 '?'로 교체되고 Unicode는 '�'로 교체됩니다. 유니코드 빌드본은 오직 스크립트 파일에 인코딩 에러가 있을 경우 또는 파일을 적재하고 저장하는 데 사용된 코드 페이지가 일치하지 않을 경우에만 교체가 일어납니다.</p>
 <p><a href="commands/RegWrite.htm">RegWrite</a>는 익스플로러로 기동된 스크립트에 대하여 기본값을 설정하는 데 사용할 수 있습니다(예, 더블클릭 실행):</p>
 <pre><em>; 아래의 적절한 줄에 주석을 걷어내고 모두 주석 처리해서
 ; 현재 빌드의 기본값으로 리셋합니다. 필요한 대로 변경합니다:
@@ -327,21 +248,14 @@ else            <em>; 현재 사용자에 대해서만 설정합니다.</em>
 <p>이미 오토핫키가 설치되어 있다고 가정합니다. 그렇지 않다면 결과가 불만족스러울 수도 있습니다.</p>
 
 <h2 id="debug">스크립트 디버깅하기</h2>
-<p>
-<a href="commands/ListVars.htm">ListVars</a>와 <a href="commands/Pause.htm">Pause</a>같은 명령어들은 스크립트를 디버그하는 데 도움을 줄 수 있습니다. 예를 들어, 다음의 두 줄을 주의 깊게 선택된 위치에 임시로 삽입하면, 스크립트에 &quot;정지 점&quot;을 만듭니다:</p>
+<p><a href="commands/ListVars.htm">ListVars</a>와 <a href="commands/Pause.htm">Pause</a>같은 명령어들은 스크립트를 디버그하는 데 도움을 줄 수 있습니다. 예를 들어, 다음의 두 줄을 주의 깊게 선택된 위치에 임시로 삽입하면, 스크립트에 "정지 점"을 만듭니다:</p>
 <pre>ListVars<br>Pause</pre>
-<p>
-스크립트가 이 두 줄을 만나면, 모든 변수의 현재 내용을 화면에 보여주므로 조사할 수 있습니다. 재개할 준비가 되면, File이나 Tray 메뉴를 통하여 재개합니다. 그러면 스크립트는 (혹 있다면) 다음 &quot;정지 점&quot;에 도달할 때까지 계속 진행합니다.</p>
-<p>
-일반적으로 이런 &quot;정지 점&quot;들을 활성 창이 스크립트에 영향을 주지 않는 곳에 배치하는 것이 제일 좋습니다. 예를 들어 WinActivate 명령어 바로 다음이 좋습니다. 이렇게 하면 스크립트는 적절하게 연산을 재개할 수 있습니다.</p>
-<p>
-다음 명령어들도 또한 디버깅에 유용합니다: <a href="commands/ListLines.htm">ListLines</a>, <a href="commands/KeyHistory.htm">KeyHistory</a>, 그리고 <a href="commands/OutputDebug.htm">OutputDebug</a>.</p>
-<p>
-아주 흔한 에러로, 철자 오류나 "global" 선언을 빼먹는 경우, <a href="commands/_Warn.htm">경고를 켜면</a> 탐지할 수 있습니다.</p>
-
+<p>스크립트가 이 두 줄을 만나면, 모든 변수의 현재 내용을 화면에 보여주므로 조사할 수 있습니다. 재개할 준비가 되면, File이나 Tray 메뉴를 통하여 재개합니다. 그러면 스크립트는 (혹 있다면) 다음 "정지 점"에 도달할 때까지 계속 진행합니다.</p>
+<p>일반적으로 이런 "정지 점"들을 활성 창이 스크립트에 영향을 주지 않는 곳에 배치하는 것이 제일 좋습니다. 예를 들어 WinActivate 명령어 바로 다음이 좋습니다. 이렇게 하면 스크립트는 적절하게 연산을 재개할 수 있습니다.</p>
+<p>다음 명령어들도 또한 디버깅에 유용합니다: <a href="commands/ListLines.htm">ListLines</a>, <a href="commands/KeyHistory.htm">KeyHistory</a>, 그리고 <a href="commands/OutputDebug.htm">OutputDebug</a>.</p>
+<p>아주 흔한 에러로, 철자 오류나 "global" 선언을 빼먹는 경우, <a href="commands/_Warn.htm">경고를 켜면</a> 탐지할 수 있습니다.</p>
 <h3 id="idebug">상호대화 디버깅 <span class="ver">[AHK_L 11+]</span></h3>
-<p>
-상호대화 디버깅은 지원되는 <a href="AHKL_DBGPClients.htm">DBGp 클라이언트</a>로 가능합니다. 전형적으로 다음 조치가 가능합니다:</p>
+<p>상호대화 디버깅은 지원되는 <a href="AHKL_DBGPClients.htm">DBGp 클라이언트</a>로 가능합니다. 전형적으로 다음 조치가 가능합니다:</p>
 <ul>
   <li>줄에 정지점을 설치하고 제거합니다 - <a href="http://en.wikipedia.org/wiki/Breakpoint">정지점</a>에 도달하면 실행을 정지합니다.</li>
   <li>줄 단위로 코드를 밟아갑니다 - 함수와 서브루틴 안으로 들어가고, 건너 뛰고, 나옵니다.</li>
@@ -349,16 +263,12 @@ else            <em>; 현재 사용자에 대해서만 설정합니다.</em>
   <li>실행중인 서브루틴과 함수의 스택을 봅니다.</li>
 </ul>
 <p>이 기능은 컴파일된 스크립트에는 꺼져 있음에 유의하십시오.</p>
-<p>
-상호대화 디버깅을 켜려면, 먼저 지원되는 디버거 클라이언트를 기동한 다음, 그 스크립트를 <b>/Debug</b> 명령어 줄 스위치와 함께 기동합니다.</p>
+<p>상호대화 디버깅을 켜려면, 먼저 지원되는 디버거 클라이언트를 기동한 다음, 그 스크립트를 <b>/Debug</b> 명령어 줄 스위치와 함께 기동합니다.</p>
 <pre class="Syntax">AutoHotkey.exe /Debug[=<i>SERVER</i>:<i>PORT</i>] ...</pre>
-<p>
-<i>SERVER</i>와 <i>PORT</i>는 생략해도 됩니다. 예를 들어, 다음은 동등합니다:</p>
+<p><i>SERVER</i>와 <i>PORT</i>는 생략해도 됩니다. 예를 들어, 다음은 서로 동등합니다:</p>
 <pre>AutoHotkey /Debug "myscript.ahk"
 AutoHotkey /Debug=localhost:9000 "myscript.ahk"</pre>
-
-<p id="debug_attach"><span class="ver">[AHK_L 59+]:</span> 
-디버거를 이미 실행중인 스크립트에 붙이려면, 아래와 같은 메시지를 전송하십시오:</p>
+<p id="debug_attach"><span class="ver">[AHK_L 59+]:</span> 디버거를 이미 실행중인 스크립트에 붙이려면, 아래와 같은 메시지를 전송하십시오:</p>
 <pre>ScriptPath = <em>; 여기에 스크립트의 전체 경로를 설정하십시오</em>
 DetectHiddenWindows On
 ifWinExist %ScriptPath% ahk_class AutoHotkey
@@ -367,25 +277,17 @@ ifWinExist %ScriptPath% ahk_class AutoHotkey
     ;   lParam  = 디버거 클라이언트가 주시하고 있는 포트.</em>
     PostMessage DllCall("RegisterWindowMessage", "str", "AHK_ATTACH_DEBUGGER")
 </pre>
-<p>
-디버거 클라이언트가 접속되면, 스크립트를 종료하지 않고도 뗄 수 있습니다. "detach" DBGp 명령어를 전송하면 됩니다.</p>
+<p>디버거 클라이언트가 접속되면, 스크립트를 종료하지 않고도 뗄 수 있습니다. "detach" DBGp 명령어를 전송하면 됩니다.</p>
 
 <h2 id="port">AutoHotkey.exe의 호환성</h2>
-<p>
-AutoHotkey.exe 파일만 있으면 어떤 .ahk 스크립트도 실행할 수 있습니다.</p>
-<p><span class="ver">[AHK_L 51+]:</span> 
-AutoHotkey.exe 이름을 바꾸면 <a href="#defaultfile">기본값으로</a> 실행되는 스크립트의 이름도 바뀝니다. 오토핫키를 설치하지 않고 컴퓨터에 사용하기 위해 스크립트를 컴파일하는 방법의 대안이 될 수 있습니다. 예를 들면, <i>MyScript</i>.exe는 파일이름이 주어지지 않으면 자동으로 <i>MyScript</i>.ahk를 실행합니다. 그러나 다른 스크립트도 역시 실행할 수 있습니다.</p>
-
+<p>AutoHotkey.exe 파일만 있으면 어떤 .ahk 스크립트도 실행할 수 있습니다.</p>
+<p><span class="ver">[AHK_L 51+]:</span> AutoHotkey.exe 이름을 바꾸면 <a href="#defaultfile">기본값으로</a> 실행되는 스크립트의 이름도 바뀝니다. 오토핫키를 설치하지 않고 컴퓨터에 사용하기 위해 스크립트를 컴파일하는 방법의 대안이 될 수 있습니다. 예를 들면, <i>MyScript</i>.exe는 파일이름이 주어지지 않으면 자동으로 <i>MyScript</i>.ahk를 실행합니다. 그러나 다른 스크립트도 역시 실행할 수 있습니다.</p>
 <h2 id="install">설치 옵션</h2>
-<p>
-조용하게 오토핫키는 기본 디렉토리에 설치하려면 (유/소음 모드에서 보여주는 디렉토리), 매개변수 /S를 설치기에 건네면 됩니다. 예를 들어:</p>
+<p>조용하게 오토핫키는 기본 디렉토리에 설치하려면 (유/소음 모드에서 보여주는 디렉토리), 매개변수 /S를 설치기에 건네면 됩니다. 예를 들어:</p>
 <pre>AutoHotkey110800_Install.exe /S</pre>
-<p>
-기본 디렉토리 말고 다른 디렉토리에 설치하려면 /D 매개변수로 지정합니다 ( /S가 없을 경우, 설치기가 보여주는 기본 디렉토리가 변경됩니다). 예를 들어:</p>
-
+<p>기본 디렉토리 말고 다른 디렉토리에 설치하려면 /D 매개변수로 지정합니다 ( /S가 없을 경우, 설치기가 보여주는 기본 디렉토리가 변경됩니다). 예를 들어:</p>
 <pre>AutoHotkey110800_Install.exe /S /D=C:\Program Files\AutoHotkey</pre>
-<p>
-오토핫키가 벌써 설치되어 있다면, 자동으로 어느 버전의 AutoHotkey.exe인지 탐지하여 기본값으로 설정합니다. 그렇지 않으면, 기본값은 유니코 32-비트 또는 유니코드 64-비트로서 OS가 64-비트인가 아닌가에 따라 달라집니다. 기본값으로 설정된 AutoHotkey.exe 버전을 오버라이드 하려면, 다음 스위치 중 하나를 건네면 됩니다:</p>
+<p>오토핫키가 벌써 설치되어 있다면, 자동으로 어느 버전의 AutoHotkey.exe인지 탐지하여 기본값으로 설정합니다. 그렇지 않으면, 기본값은 유니코 32-비트 또는 유니코드 64-비트로서 OS가 64-비트인가 아닌가에 따라 달라집니다. 기본값으로 설정된 AutoHotkey.exe 버전을 오버라이드 하려면, 다음 스위치 중 하나를 건네면 됩니다:</p>
 <ul>
   <li><code>/A32</code> 또는 <code>/ANSI</code>: ANSI 32-비트.</li>
   <li><code>/U64</code> 또는 <code>/x64</code>: 유니코드 64-비트 (64-비트 운영체제에서만 유효함).</li>
@@ -393,22 +295,14 @@ AutoHotkey.exe 이름을 바꾸면 <a href="#defaultfile">기본값으로</a> �
 </ul>
 <p>예를 들어, 다음은 조용하게 ANSI 32-비트를 기본값으로 설정하고 설치합니다:</p>
 <pre>AutoHotkey110800_Install.exe /S /A32</pre>
-<p>
-조용하게 AutoHotkey를 제거하려면, <code>/Uninstall</code> 매개변수를 Installer.ahk에 건넵니다. 예를 들어:</p>
+<p>조용하게 AutoHotkey를 제거하려면, <code>/Uninstall</code> 매개변수를 Installer.ahk에 건넵니다. 예를 들어:</p>
 <pre>"C:\Program Files\AutoHotkey\AutoHotkey.exe" "C:\Program Files\AutoHotkey\Installer.ahk" /Uninstall</pre>
-<p>
-AutoHotkey가 1.1.08.00 이전 버전이라면, <code>uninst.exe /S</code>를 사용하십시오. 예를 들어:</p>
-
-<pre>&quot;C:\Program Files\AutoHotkey\uninst.exe&quot; /S</pre>
-<p>
-<strong>주의:</strong> Installer.ahk는 관리자 권한으로 실행해야 제대로 작동합니다.</p>
-<p>
-이후 버전은 우하 모서리에 링크가 포함되어 있어서 설치할 필요 없이 설정 파일을 추출할 수 있습니다. 이 기능이 있으면 <code>/E</code> 스위치를 사용해 명령 줄에서 추출할 수 있습니다. 예를 들어:</p>
-
+<p>AutoHotkey가 1.1.08.00 이전 버전이라면, <code>uninst.exe /S</code>를 사용하십시오. 예를 들어:</p>
+<pre>"C:\Program Files\AutoHotkey\uninst.exe" /S</pre>
+<p><strong>주의:</strong> Installer.ahk는 관리자 권한으로 실행해야 제대로 작동합니다.</p>
+<p>이후 버전은 우하 모서리에 링크가 포함되어 있어서 설치할 필요 없이 설정 파일을 추출할 수 있습니다. 이 기능이 있으면 <code>/E</code> 스위치를 사용해 명령 줄에서 추출할 수 있습니다. 예를 들어:</p>
 <pre>AutoHotkey110903_Install.exe /D=F:\AutoHotkey /E</pre>
-<p>
-조용한 설치/제거 모드에서 스크립트를 실행하면 필요한 경우 자동으로 닫힙니다. <code>/R</code> 스위치를 건네면 (v1.1.19.02+ 필요) 실행 중인 EXE를 이용하여 자동으로 이런 스크립트를 재적재할 수 있습니다. 명령어 줄 인자가 <strong>필요 없습니다</strong>. 
-Installer.ahk를 사용하여 설정을 변경할 때 이 옵션은 현재 지원하지 않습니다.</p>
+<p>조용한 설치/제거 모드에서 스크립트를 실행하면 필요한 경우 자동으로 닫힙니다. <code>/R</code> 스위치를 건네면 (v1.1.19.02+ 필요) 실행 중인 EXE를 이용하여 자동으로 이런 스크립트를 재적재할 수 있습니다. 명령어 줄 인자가 <strong>필요 없습니다</strong>. Installer.ahk를 사용하여 설정을 변경할 때 이 옵션은 현재 지원하지 않습니다.</p>
 
 <h2>스크립트 예제</h2>
 <p>유용한 스크립트는 <a href="scripts/">이 페이지</a>에서 보실 수 있습니다.</p>

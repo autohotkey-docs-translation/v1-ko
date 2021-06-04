@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>ComObjConnect()</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -13,7 +14,7 @@
 <p>객체의 이벤트 소스를 주어진 접두사를 가진 함수에 연결합니다.</p>
 <pre class="Syntax">ComObjConnect(ComObject [, Prefix])</pre>
 
-<h3>매개변변수</h3>
+<h3>매개변수</h3>
 <dl>
 
   <dt>ComObject</dt>
@@ -33,23 +34,18 @@
 </dl>
 
 <h3 id="Usage">사용법</h3>
-<p>
-효과적으로 ComObjConnect를 사용하려면, 먼저 관심을 둔 이벤트를 처리할 함수를 스크립트에 작성해야 합니다.  "이벤트-처리자"라고 하는 그런 함수는 구조가 다음과 같습니다:</p>
+<p>효과적으로 ComObjConnect를 사용하려면, 먼저 관심을 둔 이벤트를 처리할 함수를 스크립트에 작성해야 합니다. "이벤트-처리자"라고 하는 그런 함수는 구조가 다음과 같습니다:</p>
 <pre class="Syntax Short NoIndent"><i>Prefix</i><b>EventName</b>([<i>Params...</i>, ComObject])
 {
     <i class="dull">... event-handling code ...</i>
     return <i>returnValue</i>
 }</pre>
 <p><i>Prefix</i>는 여러분이 고른 접두사입니다. 반면에 <b>EventName</b>은 함수가 처리해야 하는 이벤트의 이름입니다.</p>
-<p><i>Params</i>는 이벤트가 가진 매개변수에 상응합니다. 이벤트에 매개변수가 없으면, <i>Params</i>도 완전히 생략되어야 합니다. <i>ComObject</i>는 선택적입니다. 그리고 <i>Params</i>의 개수가 올바르게 정의되어 있을 경우에만 사용해야 합니다; 그 안에 ComObjConnect에 건넸던 원래 포장 객체를 가리키는 참조가 들어 있습니다. &quot;ComObject&quot;는 여러분의 스크립트 문맥에 맞게 보다 의미있는 이름으로 교체되어야 합니다.</p>
-<p>
-이벤트 처리자는 반환 값이 있을 수 있다는 사실에 주목하십시오. COM-종속적 유형의 값을 돌려주려면,  <a href="ComObjActive.htm#param">ComObject(type, value)</a>를 사용하십시오. 예를 들어, <code>return ComObject(0,0)</code>는 variant 유형의 VT_EMPTY를 돌려줍니다. 이것은 자바스크립트에서 <code>undefined</code>를 돌려주는 것 (또는 아무것도 돌려주지 않는 것)과 동등합니다.</p>
-<p>
-이벤트 처리를 켜려면 <code>ComObjConnect(yourObject, "<i>Prefix</i>")</code>를 호출합니다.</p>
-<p>
-객체와 연결을 끊으려면 (이벤트 처리를 중지하려면) <code>ComObjConnect(yourObject)</code>를 호출합니다.</p>
-<p>
-매개변수 개수를 알지 못하면, <a href="../Functions.htm#Variadic">가변 함수</a>를 사용할 수 있습니다.</p>
+<p><i>Params</i>는 이벤트가 가진 매개변수에 상응합니다. 이벤트에 매개변수가 없으면, <i>Params</i>도 완전히 생략되어야 합니다. <i>ComObject</i>는 선택적입니다. 그리고 <i>Params</i>의 개수가 올바르게 정의되어 있을 경우에만 사용해야 합니다; 그 안에 ComObjConnect에 건넸던 원래 포장 객체를 가리키는 참조가 들어 있습니다. "ComObject"는 여러분의 스크립트 문맥에 맞게 보다 의미있는 이름으로 교체되어야 합니다.</p>
+<p>이벤트 처리자는 반환 값이 있을 수 있다는 사실에 주목하십시오. COM-종속적 유형의 값을 돌려주려면, <a href="ComObjActive.htm#param">ComObject(type, value)</a>를 사용하십시오. 예를 들어, <code>return ComObject(0,0)</code>는 variant 유형의 VT_EMPTY를 돌려줍니다. 이것은 자바스크립트에서 <code>undefined</code>를 돌려주는 것 (또는 아무것도 돌려주지 않는 것)과 동등합니다.</p>
+<p>이벤트 처리를 켜려면 <code>ComObjConnect(yourObject, "<i>Prefix</i>")</code>를 호출합니다.</p>
+<p>객체와 연결을 끊으려면 (이벤트 처리를 중지하려면) <code>ComObjConnect(yourObject)</code>를 호출합니다.</p>
+<p>매개변수 개수를 알지 못하면, <a href="../Functions.htm#Variadic">가변 함수</a>를 사용할 수 있습니다.</p>
 
 <h3>관련 항목</h3>
 <p><a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjGet.htm">ComObjGet</a>, <a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjError.htm">ComObjError</a>, <a href="http://msdn.microsoft.com/en-us/library/ccxe1xe6.aspx">WScript.ConnectObject (MSDN)</a></p>

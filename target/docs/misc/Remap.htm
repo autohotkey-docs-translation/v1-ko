@@ -1,10 +1,11 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>Remapping Keys and Buttons</title>
+<title>키와 버튼 리맵하기</title>
 <meta name="description" content="Free keyboard remapper that can also remap mouse and joystick buttons. It can also automate repetitive tasks by sending keystrokes &amp; mouse clicks.">
 <meta name="keywords" content="keyboard,remapper,remap,remapping,keys,key,keystrokes,clicks,mouse,buttons,button,joystick,hotkeys,hotkey">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -14,22 +15,17 @@
 <h1>키와 버튼 리맵하기</h1>
 
 <h2>들어가는 말</h2>
-<p>
-<strong>한계</strong>: 아래에 기술하는 오토핫키의 리맵핑 특징은 일반적으로 윈도우즈 레지스트리를 통하여 리맵핑 하는 것에 비해 순수하지 못하며 효과도 그에 못 미칩니다. 각 접근법의 장점과 단점에 관한 것은 <a href="#registry">레지스트리 리맵핑</a>을 참조하십시오.</p>
-
+<p><strong>한계</strong>: 아래에 기술하는 오토핫키의 리맵핑 특징은 일반적으로 윈도우즈 레지스트리를 통하여 리맵핑 하는 것에 비해 순수하지 못하며 효과도 그에 못 미칩니다. 각 접근법의 장점과 단점에 관한 것은 <a href="#registry">레지스트리 리맵핑</a>을 참조하십시오.</p>
 <h2 id="Remap">키보드와 마우스 리맵하기</h2>
-<p>내장 리맵핑 특징의 구문은 <code>OriginKey::DestinationKey</code>입니다. 예를 들어, 다음 줄만 들어있는 <a href="../Scripts.htm">스크립트</a>는 &quot;a&quot; 키를 마치 &quot;b&quot; 키처럼 행동하게 만듭니다:</p>
+<p>내장 리맵핑 특징의 구문은 <code>OriginKey::DestinationKey</code>입니다. 예를 들어, 다음 줄만 들어있는 <a href="../Scripts.htm">스크립트</a>는 "a" 키를 마치 "b" 키처럼 행동하게 만듭니다:</p>
 <pre>a::b</pre>
-<p>
-위의 예제는 &quot;b&quot; 키 자체를 변경하지 않습니다. &quot;b&quot; 키는 계속해서 &quot;b&quot; 키눌림을 전송합니다. 다음 예제와 같이 다른 것에 리맵하지만 않는다면 말입니다:</p>
+<p>위의 예제는 "b" 키 자체를 변경하지 않습니다. "b" 키는 계속해서 "b" 키눌림을 전송합니다. 다음 예제와 같이 다른 것에 리맵하지만 않는다면 말입니다:</p>
 <pre>a::b
 b::a</pre>
-<p>
-위의 예제는 소문자를 사용합니다. 대부분의 목적에 소문자를 권합니다. 왜냐하면 상응하는 대문자도 리맵되기 때문입니다 (즉, Capslock이 &quot;켜져&quot; 있거나 Shift 키가 눌리면 대문자가 전송됩니다). 대조적으로, 대문자를 오른쪽에 지정하면 대문자를 강제합니다. 예를 들어, 다음 줄은 (Capslock이 꺼져 있는 한) &quot;a&quot;나 &quot;A&quot;를 누를 때 대문자  B를 생산합니다:</p>
+<p>위의 예제는 소문자를 사용합니다. 대부분의 목적에 소문자를 권합니다. 왜냐하면 상응하는 대문자도 리맵되기 때문입니다 (즉, Capslock이 "켜져" 있거나 Shift 키가 눌리면 대문자가 전송됩니다). 대조적으로, 대문자를 오른쪽에 지정하면 대문자를 강제합니다. 예를 들어, 다음 줄은 (Capslock이 꺼져 있는 한) "a"나 "A"를 누를 때 대문자 B를 생산합니다:</p>
 <pre>a::B</pre>
 <p>&nbsp;</p>
-<p>
-<strong><a name="RemapMouse"></a>마우스 리맵핑</strong>: 키보드 대신에 마우스를 리맵하려면 같은 접근법을 사용합니다. 예를 들어:</p>
+<p><strong><a name="RemapMouse"></a>마우스 리맵핑</strong>: 키보드 대신에 마우스를 리맵하려면 같은 접근법을 사용합니다. 예를 들어:</p>
 <table class="info">
   <tr>
     <td>MButton::Shift</td>
@@ -76,35 +72,27 @@ b::a</pre>
     <td>오른쪽 Windows 키를 불능으로 만듭니다. 단순히 <a href="../commands/Return.htm">return</a>을 할당했습니다.</td>
   </tr>
 </table>
-<p>
-이 예제들을 시험해 볼 수 있습니다. 새 텍스트 파일로 &quot;Remap.ahk&quot;와 같이 복사한 다음, 그 파일을 기동시킵니다.</p>
-<p>
-완전한 키목록과 마우스 버튼 이름 목록은 <a href="../KeyList.htm">키 리스트</a>를 참조하십시오.</p>
-
+<p>이 예제들을 시험해 볼 수 있습니다. 새 텍스트 파일로 "Remap.ahk"와 같이 복사한 다음, 그 파일을 기동시킵니다.</p>
+<p>완전한 키목록과 마우스 버튼 이름 목록은 <a href="../KeyList.htm">키 리스트</a>를 참조하십시오.</p>
 <h2>논평</h2>
-<p>
-지시어 <a href="../commands/_IfWinActive.htm">#IfWinActive/Exist</a>를 사용하면 선택된 리맵핑을 지정한 창에 대해서만 켤 수 있습니다. 예를 들어:</p>
-
+<p>지시어 <a href="../commands/_IfWinActive.htm">#IfWinActive/Exist</a>를 사용하면 선택된 리맵핑을 지정한 창에 대해서만 켤 수 있습니다. 예를 들어:</p>
 <pre>#IfWinActive ahk_class Notepad
 a::b  <em>;  'a'키가 'b' 키를 전송하도록 만들지만, 오직 노트 패드 안에서만 일어납니다.</em>
 #IfWinActive  <em>; 잇다르는 리맵핑과 핫키가 모든 창에 효력을 미칩니다.</em></pre>
-<p>
-키나 마우스를 리맵핑 하는 일은 다음과 같은 관점에서 &quot;완벽합니다&quot;:</p>
+<p>키나 마우스를 리맵핑 하는 일은 다음과 같은 관점에서 "완벽합니다":</p>
 <ul>
-  <li>Control나 Shift 같은 수식 키를 누른 채로 원래의 키를  타자하면 그 수식키가 목표 키에 효과를 발휘합니다. 예를 들어, <code>b::a</code>는 Control-B를 누르면 Control-A를 생산합니다 .</li>
+  <li>Control나 Shift 같은 수식 키를 누른 채로 원래의 키를 타자하면 그 수식키가 목표 키에 효과를 발휘합니다. 예를 들어, <code>b::a</code>는 Control-B를 누르면 Control-A를 생산합니다 .</li>
   <li>Capslock은 일반적으로 리맵된 키에 정상 키와 마찬가지 방식으로 영향을 미칩니다.</li>
   <li>원래 키를 계속 누르고 있는 동안 목표 키나 목표 버튼이 눌려집니다. 그렇지만, 어떤 게임은 리맵핑을 지원하지 않습니다; 그런 경우, 키보드와 마우스는 리맵되지 않은 것처럼 행위합니다.</li>
   <li>리맵된 키는 눌려 있는 동안 자동으로 반복합니다 (마우스 버튼이 되도록 리맵된 키는 제외).</li>
 </ul>
-<p><a name="HookHotkeys"></a>리맵된 키를 정상 키처럼 촉발시킬 수 있지만, 기본값으로 마우스 핫키나 <a href="../commands/_UseHook.htm">갈고리 핫키</a>는 촉발시킬 수 없습니다.
-(<a href="../commands/ListHotkeys.htm">ListHotkeys</a>를 사용하면 어느 핫키가 &quot;갈고리&quot;)인지 알 수 있습니다. 예를 들어, 리맵핑 <code>a::b</code>가 작동 중일 때, Ctrl-Alt-A를 누르면 <code>^!b</code> 핫키가 촉발됩니다. 오직 <code>^!b</code>가 갈고리 핫키가 아닐 경우에만 그렇습니다.  <code>^!b</code>가 갈고리 핫키일 경우, <code>^!a</code>를 핫키로 정의하면 Ctrl-Alt-A 는 Ctrl-Alt-B와 같은 행위를 수행합니다. 예를 들어:</p>
+<p><a name="HookHotkeys"></a>리맵된 키를 정상 키처럼 촉발시킬 수 있지만, 기본값으로 마우스 핫키나 <a href="../commands/_UseHook.htm">갈고리 핫키</a>는 촉발시킬 수 없습니다. (<a href="../commands/ListHotkeys.htm">ListHotkeys</a>를 사용하면 어느 핫키가 "갈고리")인지 알 수 있습니다. 예를 들어, 리맵핑 <code>a::b</code>가 작동 중일 때, Ctrl-Alt-A를 누르면 <code>^!b</code> 핫키가 촉발됩니다. 오직 <code>^!b</code>가 갈고리 핫키가 아닐 경우에만 그렇습니다. <code>^!b</code>가 갈고리 핫키일 경우, <code>^!a</code>를 핫키로 정의하면 Ctrl-Alt-A 는 Ctrl-Alt-B와 같은 행위를 수행합니다. 예를 들어:</p>
 <pre>a::b
 ^!a::
 ^!b::
 ToolTip You pressed %A_ThisHotkey%.
 return</pre>
-<p>
-대안적으로, v1.1.06 이후에서, <a href="../commands/_InputLevel.htm">#InputLevel</a>를 사용하면 기본 행위를 오버라이드할 수 있습니다. 예를 들어:</p>
+<p>대안적으로, v1.1.06 이후에서, <a href="../commands/_InputLevel.htm">#InputLevel</a>를 사용하면 기본 행위를 오버라이드할 수 있습니다. 예를 들어:</p>
 <pre>#InputLevel 1
 a::b
 
@@ -112,13 +100,11 @@ a::b
 ^!b::
 ToolTip You pressed %A_ThisHotkey%.
 return</pre>
-<p>
-<a name="SendPlay"></a><a href="../commands/SendMode.htm">SendMode</a>가 자동 실행 섹션에 사용중이면 (스크립트 상단 부분), 모든 리맵핑에 영향을 미칩니다. 그렇지만, 리맵핑은 <a href="../commands/Send.htm#blind">Send {Blind}</a>를 사용하고 <a href="../commands/SendMode.htm">SendPlay mode</a>는 완전하게 {Blind}를 지원하지는 못하기 때문에, 어떤 리맵핑은 SendPlay 모드에서 제대로 작동하지 않을 수도 있습니다 (특,  Control, Shift, Alt, 그리고 Win). 이를 돌아가려면, 리맵핑을 사용할 때 SendPlay를 자동-실행 섹션에 사용하지 마십시오; 그 다음부터 다른 곳에는 명령어 <a href="../commands/Send.htm#SendPlay">SendPlay</a> vs. Send를 사용하시면 됩니다. 대안적으로, 리맵핑을 핫키로 번역할 수 있습니다. (아래에 기술하는 바와 같이) 명시적으로 SendEvent vs. Send를 호출합니다.</p>
-<p>
-스크립트가 기동할 때, 각 리맵핑은 한 쌍의 <a href="../Hotkeys.htm">핫키</a>로 번역됩니다. 예를 들어, <code>a::b</code>가 들어있는 스크립트는 실제로는 대신에 다음의 두 핫키가 들어 있습니다:</p>
+<p><a name="SendPlay"></a><a href="../commands/SendMode.htm">SendMode</a>가 자동 실행 섹션에 사용중이면 (스크립트 상단 부분), 모든 리맵핑에 영향을 미칩니다. 그렇지만, 리맵핑은 <a href="../commands/Send.htm#blind">Send {Blind}</a>를 사용하고 <a href="../commands/SendMode.htm">SendPlay mode</a>는 완전하게 {Blind}를 지원하지는 못하기 때문에, 어떤 리맵핑은 SendPlay 모드에서 제대로 작동하지 않을 수도 있습니다 (특, Control, Shift, Alt, 그리고 Win). 이를 돌아가려면, 리맵핑을 사용할 때 SendPlay를 자동-실행 섹션에 사용하지 마십시오; 그 다음부터 다른 곳에는 명령어 <a href="../commands/Send.htm#SendPlay">SendPlay</a> vs. Send를 사용하시면 됩니다. 대안적으로, 리맵핑을 핫키로 번역할 수 있습니다. (아래에 기술하는 바와 같이) 명시적으로 SendEvent vs. Send를 호출합니다.</p>
+<p>스크립트가 기동할 때, 각 리맵핑은 한 쌍의 <a href="../Hotkeys.htm">핫키</a>로 번역됩니다. 예를 들어, <code>a::b</code>가 들어있는 스크립트는 실제로는 대신에 다음의 두 핫키가 들어 있습니다:</p>
 <pre>*<strong>a</strong>::
 SetKeyDelay -1   <em>; 목표 키가 마우스 버튼이면, 대신에 SetMouseDelay가 사용됩니다.</em>
-Send <a href="../commands/Send.htm#blind">{Blind}</a>{<strong>b</strong> DownTemp}  <em>; DownTemp는 Down과 같습니다. 단 다른 Send 명령어는 &quot;b&quot; 가 Send하는 동안 눌려 있을 것이라고 가정하지 않습니다.</em>
+Send <a href="../commands/Send.htm#blind">{Blind}</a>{<strong>b</strong> DownTemp}  <em>; DownTemp는 Down과 같습니다. 단 다른 Send 명령어는 "b" 가 Send하는 동안 눌려 있을 것이라고 가정하지 않습니다.</em>
 return
 
 *<strong>a up</strong>::
@@ -127,41 +113,33 @@ Send {Blind}{<strong>b</strong> Up}
 return</pre>
 <p>그렇지만, 위의 핫키는 다음과 같은 상황에서 달라집니다:</p>
 <ol>
-  <li>소스 키가 LCtrl이고 목표 키가 Alt 키일 때,  줄 <code>Send {Blind}{LAlt DownTemp}</code>는 <code>Send {Blind}<strong>{LCtrl Up}</strong>{LAlt DownTemp}</code>로 교체됩니다. 소스가 RCtrl일 경우도 마찬가지입니다. 단, <code>{RCtrl up}</code>이 사용되는 경우는 예외입니다.</li>
+  <li>소스 키가 LCtrl이고 목표 키가 Alt 키일 때, 줄 <code>Send {Blind}{LAlt DownTemp}</code>는 <code>Send {Blind}<strong>{LCtrl Up}</strong>{LAlt DownTemp}</code>로 교체됩니다. 소스가 RCtrl일 경우도 마찬가지입니다. 단, <code>{RCtrl up}</code>이 사용되는 경우는 예외입니다.</li>
   <li>키보드 키가 마우스 버튼으로 리맵중일 때 (예, <code>RCtrl::RButton</code>), 위의 핫키는 SetKeyDelay 대신에 SetMouseDelay를 사용합니다. 게다가, 위의 첫 핫키는 다음으로 교체됩니다. 이 때문에 키보드의 자동-반복 특징은 반복적인 마우스 클릭을 만들어 내지 못합니다:
     <pre>*RCtrl::
 SetMouseDelay -1
-if not GetKeyState(&quot;RButton&quot;)  <em>; 즉, 오른쪽 버튼이 아직 눌리지 않았습다.</em>
+if not GetKeyState("RButton")  <em>; 즉, 오른쪽 버튼이 아직 눌리지 않았습다.</em>
     Send {Blind}{RButton DownTemp}
 return</pre>
   </li>
 </ol>
 <p>SetKeyDelay의 두 번째 매개변수는 (<a href="../commands/SetKeyDelay.htm#dur">눌림 지속 시간</a>) 위의 핫키에서 생략됩니다. <code>{b down}</code>과 <code>{b up}</code>과 같이 누름만 있거나 뗌만 있는 이벤트에는 눌림 지속 시간이 적용되지 않기 때문입니다. 그렇지만, Shift/Ctrl/Alt/Win 키의 상태 변화에는 적용됩니다. 예를 들어 <code>a::B</code>나 <code>a::^b</code>와 같은 리맵핑에 영향을 미칩니다. 결론적으로, 스크립트가 <a href="../Scripts.htm#auto">자동-실행 섹션</a>를 통하여 효과를 준 모든 누름 지속 시간은 모든 리맵핑에 적용됩니다.</p>
-<p>
-한 쌍의 키를 직접적으로 하나의 키에 리맵할 수는 없지만 (예, <code>a &amp; c::b</code>과 같이 작성하는 것은 무효입니다), 명시적으로 저 위에 있는 예제로부터 위 아래 핫키를 추가하면 이 효과를 얻을 수 있습니다: 그냥 <code>*a::</code>를 with <code>a &amp; c::</code>로, 그리고 <code>*a up::</code>를 <code>a &amp; c up::</code>로 교체하기만 하면 됩니다.</p>
-<p>
-리맵핑은 위에 기술한 바와 같이 핫키로 번역되기 때문에, <a href="../commands/Suspend.htm">Suspend</a> 명령어에 영향을 받습니다. 비슷하게, <a href="../commands/Hotkey.htm">Hotkey</a> 명령어는 리맵핑을 변경하거나 끌 수 있습니다. 예를 들어, 다음 두 명령어는 리맵핑 <code>a::b</code>를 끕니다.</p>
+<p>한 쌍의 키를 직접적으로 하나의 키에 리맵할 수는 없지만 (예, <code>a &amp; c::b</code>과 같이 작성하는 것은 무효입니다), 명시적으로 저 위에 있는 예제로부터 위 아래 핫키를 추가하면 이 효과를 얻을 수 있습니다: 그냥 <code>*a::</code>를 with <code>a &amp; c::</code>로, 그리고 <code>*a up::</code>를 <code>a &amp; c up::</code>로 교체하기만 하면 됩니다.</p>
+<p>리맵핑은 위에 기술한 바와 같이 핫키로 번역되기 때문에, <a href="../commands/Suspend.htm">Suspend</a> 명령어에 영향을 받습니다. 비슷하게, <a href="../commands/Hotkey.htm">Hotkey</a> 명령어는 리맵핑을 변경하거나 끌 수 있습니다. 예를 들어, 다음 두 명령어는 리맵핑 <code>a::b</code>를 끕니다.</p>
 <pre>Hotkey, *a, off
 Hotkey, *a up, off</pre>
-<p>
-<a name="AltTab"></a><b>Alt-tab 문제</b>: 
-키나 마우스 버튼을 Alt 키가 되도록 리맵했다면, 그 키는 아마도 제대로 alt-tab을 작동시키지 못할 것입니다.   가능한 해결책은 핫키 <code>*Tab::Send {Blind}{Tab}</code>를 추가하는 것입니다 -- 그러나 진짜 핫키가 알트 탭을 수행할 때 간섭을 일으킬 가능성이 높다는 점을 명심하십시오. 그러므로, 오직 리맵된 <a href="../Hotkeys.htm#alttab">alt-tab 핫키</a>만 단독으로 사용할 경우에만 사용을 고려해야 합니다.</p>
-<p>
-<a href="../KeyList.htm">키 리스트</a> 페이지에 나열된 키와 마우스 버튼 말고도, 소스 키로는 가상 키 (VKnn) 또는 스캔 코드 (SCnnn)도 가능합니다. 이는 <a href="../KeyList.htm#SpecialKeys">특수 키</a> 페이지에 기술되어 있습니다. 목표 키도 마찬가지입니다. 단, 목표 키는 선택적으로 가상 키 다음에 스캔 코드를 지정할 수도 있습니다. 예를 들어, <code>sc01e::vk42sc030</code>는 대부분의 키보드 배치도에서 <code>a::b</code>과 동등합니다.</p>
-<p>
-키를 리맵하기 보다 끄려면, 그냥 <a href="../commands/Return.htm">반환되는</a> 핫키로 만들면 됩니다. 예를 들어, <code>F1::return</code>는 F1 키를 불능으로 만듭니다.</p>
-<p>
-다음 키는 내장 리맵핑 메쏘드가 지원하지 않습니다:</p>
+<p><a name="AltTab"></a>Alt-tab 문제: 키나 마우스 버튼을 Alt 키가 되도록 리맵했다면, 그 키는 아마도 제대로 alt-tab을 작동시키지 못할 것입니다. 가능한 해결책은 핫키 <code>*Tab::Send {Blind}{Tab}</code>를 추가하는 것입니다 -- 그러나 진짜 핫키가 알트 탭을 수행할 때 간섭을 일으킬 가능성이 높다는 점을 명심하십시오. 그러므로, 오직 리맵된 <a href="../Hotkeys.htm#alttab">alt-tab 핫키</a>만 단독으로 사용할 경우에만 사용을 고려해야 합니다.</p>
+<p><a href="../KeyList.htm">키 리스트</a> 페이지에 나열된 키와 마우스 버튼 말고도, 소스 키로는 가상 키 (VKnn) 또는 스캔 코드 (SCnnn)도 가능합니다. 이는 <a href="../KeyList.htm#SpecialKeys">특수 키</a> 페이지에 기술되어 있습니다. 목표 키도 마찬가지입니다. 단, 목표 키는 선택적으로 가상 키 다음에 스캔 코드를 지정할 수도 있습니다. 예를 들어, <code>sc01e::vk42sc030</code>는 대부분의 키보드 배치도에서 <code>a::b</code>과 동등합니다.</p>
+<p>키를 리맵하기 보다 끄려면, 그냥 <a href="../commands/Return.htm">반환되는</a> 핫키로 만들면 됩니다. 예를 들어, <code>F1::return</code>는 F1 키를 불능으로 만듭니다.</p>
+<p>다음 키는 내장 리맵핑 메쏘드가 지원하지 않습니다:</p>
 <ul>
   <li>마우스 휠 (WheelUp/Down/Left/Right).</li>
   <li>Pause 그리고 Break를 목표 키로 불가 (명령어 이름에 일치하기 때문에 불가).</li>
   <li>활괄호 {}를 목표 키로 불가. 대신에 <a href="../commands/Send.htm#vk">VK/SC 방법</a>을 사용하십시오; 예, <code>x::+sc01A</code> 그리고 <code>y::+sc01B</code>.</li>
   <li>퍼센트 사인(%)을 목표 키로 불가. 대신에 <a href="../commands/Send.htm#vk">VK/SC 방법</a>을 사용하십시오.</li>
-  <li>&quot;Return&quot;을 목표 키로 불가. 대신에 &quot;Enter&quot;를 사용하십시오.</li>
+  <li>"Return"을 목표 키로 불가. 대신에 "Enter"를 사용하십시오.</li>
 </ul>
 <h2>키보드로 마우스 커서 이동하기</h2>
-<p>
-키보드를 사용하여 마우스 커서를 이동할 수 있습니다. 예제는 완벽하게 기능을 갖춘 <a href="../scripts/NumpadMouse.htm">Keyboard-To-Mouse 스크립트</a>를 보십시오. 스크립트는 부드러운 마우스 이동과, 가속, 기타 특징을 제공하기 때문에, 키보드로 마우스 작업을 많이 할 계획이 있다면 권장하는 접근법입니다. 대조적으로, 다음 예제는 좀 간단합니다:</p>
+<p>키보드를 사용하여 마우스 커서를 이동할 수 있습니다. 예제는 완벽하게 기능을 갖춘 <a href="../scripts/NumpadMouse.htm">Keyboard-To-Mouse 스크립트</a>를 보십시오. 스크립트는 부드러운 마우스 이동과, 가속, 기타 특징을 제공하기 때문에, 키보드로 마우스 작업을 많이 할 계획이 있다면 권장하는 접근법입니다. 대조적으로, 다음 예제는 좀 간단합니다:</p>
 <pre>*#up::MouseMove, 0, -10, 0, R  <em>; Win+UpArrow hotkey =&gt; 커서를 위로 이동시킵니다</em>
 *#Down::MouseMove, 0, 10, 0, R  <em>; Win+DownArrow =&gt; 커서를 아래로 이동시킵니다</em>
 *#Left::MouseMove, -10, 0, 0, R  <em>; Win+LeftArrow =&gt; 커서를 위로 왼쪽으로시킵니다</em>
@@ -178,12 +156,11 @@ SendEvent {Blind}{RButton down}
 KeyWait AppsKey  <em>; 키보드 자동-반복이 마우스 클릭을 반복시키지 못하도록 막습니다.</em>
 SendEvent {Blind}{RButton up}
 return</pre>
-
-<h2 id="registry">레지스트리의  &quot;스캔코드 맵&quot; 리맵핑하기</h2>
+<h2 id="registry">레지스트리의 "스캔코드 맵" 리맵핑하기</h2>
 <p><strong>장점:</strong></p>
 <ul>
-  <li>레지스트리 리맵핑은 일반적으로 <a href="#Remap">오토핫키의 리맵핑</a>보다 더 순수하고 효과적입니다. 예를 들어 더 넓은 범위의 게임에 작동하고, <a href="#AltTab">alt-tab 문제</a>도 없는 것으로 알려져 있으며, 그리고 AutoHotkey의 갈고리 핫키를 촉발시킬 수 있습니다  (반면 오토핫키의 리맵핑은  <a href="#HookHotkeys">우회책</a>이 필요합니다).</li>
-  <li>레지스트리 엔트리를 손수 만들기로 결정했더라도 (아래에 설명), 키보드를 리맵하는데 절대 외부 소프트웨어가 필요하지 않습니다.<a href="http://webpages.charter.net/krumsick/">KeyTweak</a>을 사용하여 레지스트리 엔트리를 만든다고 할지라도, KeyTweak이 항상 실행중이어야 할 필요는 없습니다 (AutoHotkey와 다릅니다).</li>
+  <li>레지스트리 리맵핑은 일반적으로 <a href="#Remap">오토핫키의 리맵핑</a>보다 더 순수하고 효과적입니다. 예를 들어 더 넓은 범위의 게임에 작동하고, <a href="#AltTab">alt-tab 문제</a>도 없는 것으로 알려져 있으며, 그리고 AutoHotkey의 갈고리 핫키를 촉발시킬 수 있습니다 (반면 오토핫키의 리맵핑은 <a href="#HookHotkeys">우회책</a>이 필요합니다).</li>
+  <li>레지스트리 엔트리를 손수 만들기로 결정했더라도 (아래에 설명), 키보드를 리맵하는데 절대 외부 소프트웨어가 필요하지 않습니다. <a href="http://webpages.charter.net/krumsick/">KeyTweak</a>을 사용하여 레지스트리 엔트리를 만든다고 할지라도, KeyTweak이 항상 실행중이어야 할 필요는 없습니다 (AutoHotkey와 다릅니다).</li>
 </ul>
 <p><strong>단점:</strong></p>
 <ul>
@@ -195,7 +172,7 @@ return</pre>
 <p><strong>레지스트리에 변경을 적용하는 법:</strong> 레지스트리를 통하여 키를 리맵하는 데 적어도 두 가지 방법이 있습니다:</p>
 <ol>
   <li><a href="http://webpages.charter.net/krumsick/">KeyTweak</a> (무료웨어)와 같은 프로그램을 사용하여 시각적으로 키를 리맵합니다. 대신 레지스트리를 변경해 줍니다.</li>
-  <li>수동으로 키를 리맵합니다.  .reg 파일 (평범한 텍스트)를 만들어 레지스트리 안으로 적재하면 됩니다. 이 방법은 <a href="http://www.autohotkey.com/forum/post-56216.html#56216">www.autohotkey.com/forum/post-56216.html#56216</a>에 예시되어 있습니다.</li>
+  <li>수동으로 키를 리맵합니다. .reg 파일 (평범한 텍스트)를 만들어 레지스트리 안으로 적재하면 됩니다. 이 방법은 <a href="http://www.autohotkey.com/forum/post-56216.html#56216">www.autohotkey.com/forum/post-56216.html#56216</a>에 예시되어 있습니다.</li>
 </ol>
 <h2>관련 주제</h2>
 <p><a href="../KeyList.htm#Joystick">키와 마우스 버튼 목록</a><br>

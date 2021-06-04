@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>#NoEnv</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,26 +13,19 @@
 <h1>#NoEnv <span class="ver">[v1.0.43.08+]</span></h1>
 
 <p>빈 문자열이 환경 변수인지 점검하는 것을 회피합니다 (모든 새 스크립트에 권장).</p>
-
 <pre class="Syntax">#NoEnv</pre>
-<p>
-스크립트 아무데나 <code>#NoEnv</code> 줄을 지정하면 빈 문자열이 잠재적으로 환경 변수인지 찾아 보지 못하도록 막습니다. 예를 들어:</p>
+<p>스크립트 아무데나 <code>#NoEnv</code> 줄을 지정하면 빈 문자열이 잠재적으로 환경 변수인지 찾아 보지 못하도록 막습니다. 예를 들어:</p>
 <pre>#NoEnv
 MsgBox %WinDir%</pre>
-<p>
-위 코드는 &quot;WinDir&quot; 환경변수를 <strong>열람하지 않습니다</strong> (물론 스크립트 상단 근처에 <code>WinDir := A_WinDir</code>와 같이 처리하면 해결할 수 있습니다).</p>
-<p>
-모든 새 스크립트에 <code>#NoEnv</code>을 지정하는 것을 권장합니다. 왜냐하면:</p>
+<p>위 코드는 "WinDir" 환경변수를 <strong>열람하지 않습니다</strong> (물론 스크립트 상단 근처에 <code>WinDir := A_WinDir</code>와 같이 처리하면 해결할 수 있습니다).</p>
+<p>모든 새 스크립트에 <code>#NoEnv</code>을 지정하는 것을 권장합니다. 왜냐하면:</p>
 <ol>
-  <li>빈 문자열이 표현식이나 명령어에 사용될 때마다 수행성능이 눈에 띄게 개선됩니다. 또한 따옴표 없는 매개변수 유형을 사용할 때 <a href="DllCall.htm">DllCall</a>의 수행성능도 향상됩니다. (예, int vs. &quot;int&quot;).</li>
+  <li>빈 문자열이 표현식이나 명령어에 사용될 때마다 수행성능이 눈에 띄게 개선됩니다. 또한 따옴표 없는 매개변수 유형을 사용할 때 <a href="DllCall.htm">DllCall</a>의 수행성능도 향상됩니다. (예, int vs. "int").</li>
   <li>환경 변수 때문에 스크립트에 버그가 생기는 것을 방지합니다. 그 이름이 예상치 못하게 스크립트에 사용되는 변수에 일치할 수 있기 때문입니다.</li>
   <li>AutoHotkey v2는 이 행위를 기본값으로 사용할 것입니다.</li>
 </ol>
-<p>
-쉽게 #NoEnv로 이전하기 위해, 내장 변수 <a href="../Variables.htm#ComSpec">Comspec</a>과 <a href="../Variables.htm#ProgramFiles">ProgramFiles</a>이 추가되었습니다. 상응하는 환경변수와 똑 같은 문자열이 안에 들어 있습니다.</p>
-<p>
-#NoEnv가 효과를 발휘하면, 스크립트는 <a href="EnvGet.htm">EnvGet</a>을 사용하여 환경 변수를 열람해야 합니다. 아니면 <a href="../Variables.htm#WinDir">A_WinDir</a>과 같은 내장 변수를 사용하십시오.</p>
-
+<p>쉽게 #NoEnv로 이전하기 위해, 내장 변수 <a href="../Variables.htm#ComSpec">Comspec</a>과 <a href="../Variables.htm#ProgramFiles">ProgramFiles</a>이 추가되었습니다. 상응하는 환경변수와 똑 같은 문자열이 안에 들어 있습니다.</p>
+<p>#NoEnv가 효과를 발휘하면, 스크립트는 <a href="EnvGet.htm">EnvGet</a>을 사용하여 환경 변수를 열람해야 합니다. 아니면 <a href="../Variables.htm#WinDir">A_WinDir</a>과 같은 내장 변수를 사용하십시오.</p>
 <h3>관련 항목</h3>
 <p><a href="EnvGet.htm">EnvGet</a>, <a href="../Variables.htm#ComSpec">Comspec</a>, <a href="../Variables.htm#ProgramFiles">ProgramFiles</a>, <a href="../Variables.htm#WinDir">A_WinDir</a></p>
 

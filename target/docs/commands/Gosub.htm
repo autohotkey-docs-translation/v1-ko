@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Gosub</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -18,23 +19,18 @@
 <dl>
 
   <dt>Label</dt>
-  <dd><p>점프해 갈 <a href="../misc/Labels.htm">라벨</a>, <a href="../Hotkeys.htm">핫키 라벨</a>, 또는 <a href="../Hotstrings.htm#label">핫스트링 라벨</a>의 이름. 그 결과 <em>Label</em> 아래의 명령어들이 Return이나 Exit을 만날 때까지 실행됩니다. <a href="Return.htm">&quot;Return&quot;</a>은 스크립트를 다시 Gosub 아래의 첫 명령어로 점프해서 거기에서 실행을 재개하게 만듭니다. <a href="Exit.htm">&quot;Exit&quot;</a>은 <a href="../misc/Threads.htm">현재 쓰레드</a>를 종료합니다.</p></dd>
+  <dd><p>점프해 갈 <a href="../misc/Labels.htm">라벨</a>, <a href="../Hotkeys.htm">핫키 라벨</a>, 또는 <a href="../Hotstrings.htm#label">핫스트링 라벨</a>의 이름. 그 결과 <em>Label</em> 아래의 명령어들이 Return이나 Exit을 만날 때까지 실행됩니다. <a href="Return.htm">"Return"</a>은 스크립트를 다시 Gosub 아래의 첫 명령어로 점프해서 거기에서 실행을 재개하게 만듭니다. <a href="Exit.htm">"Exit"</a>은 <a href="../misc/Threads.htm">현재 쓰레드</a>를 종료합니다.</p></dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>
-거의 모든 명령어의 매개변수와 마찬가지로, <em>라벨</em>은 <a href="../Variables.htm">변수</a> 참조일 수 있습니다. %MyLabel%와 같은 경우 변수에 저장된 이름이 목표로 사용됩니다. 그렇지만, 수행성능은 약간 줄어듭니다. 왜냐하면 목표 라벨을 스크립트가 처음 적재될 때 &quot;한 번만 찾아 보는 것이 아니라&quot; 매번 찾아 보아야 하기 때문입니다.</p>
-<p>
-%MyLabel%와 같은 동적 라벨을 사용할 때, 라벨이 존재하지 않으면 에러 대화상자가 나타납니다. 이를 피하려면, 미리 <a href="../Functions.htm#IsLabel">IsLabel()</a>을 호출하십시오. 예를 들어:</p>
+<p>거의 모든 명령어의 매개변수와 마찬가지로, <em>라벨</em>은 <a href="../Variables.htm">변수</a> 참조일 수 있습니다. %MyLabel%와 같은 경우 변수에 저장된 이름이 목표로 사용됩니다. 그렇지만, 수행성능은 약간 줄어듭니다. 왜냐하면 목표 라벨을 스크립트가 처음 적재될 때 "한 번만 찾아 보는 것이 아니라" 매번 찾아 보아야 하기 때문입니다.</p>
+<p>%MyLabel%와 같은 동적 라벨을 사용할 때, 라벨이 존재하지 않으면 에러 대화상자가 나타납니다. 이를 피하려면, 미리 <a href="../Functions.htm#IsLabel">IsLabel()</a>을 호출하십시오. 예를 들어:</p>
 <pre>if IsLabel(VarContainingLabelName)
     Gosub %VarContainingLabelName%</pre>
-<p>
-Gosub가 간단하고 일반적인 목적의 서브루틴에는 유용하지만, 보다 복잡한 목적으로는 <a href="../Functions.htm">함수</a>의 사용을 권장합니다.</p>
-
+<p>Gosub가 간단하고 일반적인 목적의 서브루틴에는 유용하지만, 보다 복잡한 목적으로는 <a href="../Functions.htm">함수</a>의 사용을 권장합니다.</p>
 <h3>관련 항목</h3>
-<p>
-<a href="Return.htm">Return</a>, <a href="../Functions.htm">함수</a>, <a href="../Functions.htm#IsLabel">IsLabel()</a>, <a href="Block.htm">블록</a>, <a href="Loop.htm">Loop</a>, <a href="Goto.htm">Goto</a></p>
+<p><a href="Return.htm">Return</a>, <a href="../Functions.htm">함수</a>, <a href="../Functions.htm#IsLabel">IsLabel()</a>, <a href="Block.htm">블록</a>, <a href="Loop.htm">Loop</a>, <a href="Goto.htm">Goto</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">Gosub, Label1 
 MsgBox, Label1 서브루틴이 반환되었습니다 (종료됨).

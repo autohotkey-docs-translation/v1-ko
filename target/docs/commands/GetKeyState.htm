@@ -1,9 +1,10 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>GetKeyState</title>
 <meta name="description" content="Use GetKeyState in this free macro program to easily determine whether a keyboard key or mouse/joystick button is currently down or up.">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -15,15 +16,14 @@
 <p>키보드 키나 마우스/조이스틱 버튼이 눌려 있는지 여부를 점검합니다. 또 조이스틱 상태를 열람합니다.</p>
 
 <pre class="Syntax">GetKeyState, OutputVar, KeyName [, Mode]
-KeyIsDown := <a href="../Functions.htm#GetKeyState">GetKeyState</a>(&quot;KeyName&quot; [, &quot;Mode&quot;])</pre>
+KeyIsDown := <a href="../Functions.htm#GetKeyState">GetKeyState</a>("KeyName" [, "Mode"])</pre>
 <h3>매개변수</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>
-  열람된 키 상태를 저장할 변수의 이름. D이면 눌려 있고 U이면 뗀 상태입니다 (그러나 <a href="../Functions.htm#GetKeyState">GetKeyState()</a> 함수는 눌려 있으면 true (1)를 그렇지 않으면 false (0)를 돌려줍니다). 키 상태를 결정할 수 없으면 이 변수는 비어 있습니다.</p>
+  <dd><p>열람된 키 상태를 저장할 변수의 이름. D이면 눌려 있고 U이면 뗀 상태입니다 (그러나 <a href="../Functions.htm#GetKeyState">GetKeyState()</a> 함수는 눌려 있으면 true (1)를 그렇지 않으면 false (0)를 돌려줍니다). 키 상태를 결정할 수 없으면 이 변수는 비어 있습니다.</p>
       <p>아래의 항목은 조이스틱에만 적용됩니다:</p>
-    <p>1) JoyX와 같이 조이스틱 축에 대하여, <em>OutputVar</em>는 부동 소수점 수로 설정됩니다. 범위는 0 부터 100 사이이고 조이스틱의 위치를 축의 이동 범위의 백분률로 나타냅니다.  숫자 형식은 <a href="SetFormat.htm">SetFormat</a>을 통하여 바꿀 수 있습니다. 다음 <a href="../scripts/JoystickTest.htm">테스트 스크립트</a>를 사용하면 조이스틱을 분석할 수 있습니다.</p>
+    <p>1) JoyX와 같이 조이스틱 축에 대하여, <em>OutputVar</em>는 부동 소수점 수로 설정됩니다. 범위는 0 부터 100 사이이고 조이스틱의 위치를 축의 이동 범위의 백분률로 나타냅니다. 숫자 형식은 <a href="SetFormat.htm">SetFormat</a>을 통하여 바꿀 수 있습니다. 다음 <a href="../scripts/JoystickTest.htm">테스트 스크립트</a>를 사용하면 조이스틱을 분석할 수 있습니다.</p>
     <p>2) <em>KeyName</em>이 JoyPOV이면, 열람된 값은 범위가 0부터 35900 사이 입니다. 많은 조이스틱에 다음에 근접한 POV 값들이 사용됩니다:<br>
     -1: 보고할 각도 없음<br>
     0: 앞으로 POV<br>
@@ -32,40 +32,27 @@ KeyIsDown := <a href="../Functions.htm#GetKeyState">GetKeyState</a>(&quot;KeyNam
 18000 (즉, 180 도): 뒤로 POV</p></dd>
 
   <dt>KeyName</dt>
-  <dd><p>
-  단순히 키보드의 문자 하나이거나 또는 마우스/조이스틱 버튼과 같이 <a href="../KeyList.htm">키 목록</a>의 키 이름 중 하나일 수 있습니다. 예: B, 5, LWin, RControl, Alt, Enter, Escape, LButton, MButton, Joy1.</p>
-      <p>
-	  대안으로, vkFF와 같은 명시적인 가상 키 코드를 지정해도 됩니다. 아주 희귀한 경우로 키에 이름이 없을 경우 유용합니다. 그런 키의 가상 키코드는 다음 <a href="../KeyList.htm#SpecialKeys">키 리스트</a> 페이지 하단에 있는 단계를 밟아 알아볼 수 있습니다.</p> 
-      <p>
-	  <b>알려진 한계:</b> 이 함수는 Left와 NumpadLeft 같이, 같은 가상 키 코드를 공유하면 두 키를 구별하지 못합니다.</p></dd>
+  <dd><p>단순히 키보드의 문자 하나이거나 또는 마우스/조이스틱 버튼과 같이 <a href="../KeyList.htm">키 목록</a>의 키 이름 중 하나일 수 있습니다. 예제: B, 5, LWin, RControl, Alt, Enter, Escape, LButton, MButton, Joy1.</p>
+      <p>대안으로, vkFF와 같은 명시적인 가상 키 코드를 지정해도 됩니다. 아주 희귀한 경우로 키에 이름이 없을 경우 유용합니다. 그런 키의 가상 키코드는 다음 <a href="../KeyList.htm#SpecialKeys">키 리스트</a> 페이지 하단에 있는 단계를 밟아 알아볼 수 있습니다.</p> 
+      <p><b>알려진 한계:</b> 이 함수는 Left와 NumpadLeft 같이, 같은 가상 키 코드를 공유하면 두 키를 구별하지 못합니다.</p></dd>
 
   <dt>Mode</dt>
   <dd><p>이 매개변수는 조이스틱 상태를 열람할 때 무시됩니다.</p>
-      <p>생략하면, 모드는 기본으로 키의 논리적 상태를 열람하는 모드가 됩니다.
-	  논리적 상태는 OS와 활성 창이 그 키의 상태라고 믿고 있는 상태를 말합니다. 그러나 반드시 물리적 상태와 같은 것은 아닙니다.</p>
-	  <p>
-	  대안으로 다음 기호 중 하나를 지정할 수 있습니다:</p>
-      <p>
-	  <strong>P</strong>: 물리적 상태를 열람합니다 (즉, 사용자가 물리적으로 키를 누르고 있는지 알아봅니다). 키나 마우스 버튼의 물리적 상태는 보통 논리적 상태와 같습니다. 단 키보드/마우스 갈고리가 설치되어 있어야 합니다.  그래야 (스크립트가 실행 중인 동안 키를 누르기만 한다면) 사용자가 물리적으로 키나 버튼을 누르고 있는지 아닌지 정확하게 반영됩니다. 스크립트가 갈고리를 사용하고 있는지 <a href="KeyHistory.htm">KeyHistory</a> 명령어나 메뉴 항목을 통하여 알아볼 수 있습니다. 갈고리를 강제로 설치하려면 스크립트에 <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a> 또는 <a href="_InstallMouseHook.htm">#InstallMouseHook</a> 지시어를 지정해야 합니다.</p>
-      <p>
-	  <strong>T</strong>: 토글 상태를 열람합니다 (토글이 가능한 키에만 유효합니다. 토글 키로는 Capslock, Numlock, Scrolllock, 그리고 Insert가 있습니다). 열람된 값이 D이면 그 키가 &quot;on&quot;이라는 뜻이고, 반면에 U이면 &quot;off&quot;라는 뜻입니다 (그러나 <a href="../Functions.htm#GetKeyState">GetKeyState()</a> 함수는 &quot;on&quot;에 true (1)를 &quot;off&quot; false (0)를 돌려줍니다).</p>
+      <p>생략하면, 모드는 기본으로 키의 논리적 상태를 열람하는 모드가 됩니다. 논리적 상태는 OS와 활성 창이 그 키의 상태라고 믿고 있는 상태를 말합니다. 그러나 반드시 물리적 상태와 같은 것은 아닙니다.</p>
+	  <p>대안으로 다음 기호 중 하나를 지정할 수 있습니다:</p>
+      <p><strong>P</strong>: 물리적 상태를 열람합니다 (즉, 사용자가 물리적으로 키를 누르고 있는지 알아봅니다). 키나 마우스 버튼의 물리적 상태는 보통 논리적 상태와 같습니다. 단 키보드/마우스 갈고리가 설치되어 있어야 합니다. 그래야 (스크립트가 실행 중인 동안 키를 누르기만 한다면) 사용자가 물리적으로 키나 버튼을 누르고 있는지 아닌지 정확하게 반영됩니다. 스크립트가 갈고리를 사용하고 있는지 <a href="KeyHistory.htm">KeyHistory</a> 명령어나 메뉴 항목을 통하여 알아볼 수 있습니다. 갈고리를 강제로 설치하려면 스크립트에 <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a> 또는 <a href="_InstallMouseHook.htm">#InstallMouseHook</a> 지시어를 지정해야 합니다.</p>
+      <p><strong>T</strong>: 토글 상태를 열람합니다 (토글이 가능한 키에만 유효합니다. 토글 키로는 Capslock, Numlock, Scrolllock, 그리고 Insert가 있습니다). 열람된 값이 D이면 그 키가 "on"이라는 뜻이고, 반면에 U이면 "off"라는 뜻입니다 (그러나 <a href="../Functions.htm#GetKeyState">GetKeyState()</a> 함수는 "on"에 true (1)를 "off" false (0)를 돌려줍니다).</p>
     </dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>
-키나 마우스/조이스틱 버튼이 새로운 상태가 되기를 기다리려면 보통 GetKeyState 회돌이 대신에 <a href="KeyWait.htm">KeyWait</a>을 사용하는 것이 더 쉽습니다.</p>
-<p>
-비정상적인 키보드 드라이버가 설치된 시스템은 키의 상태를, 특히 Capslock 같은 키의 토글 상태를 느리게 갱신할 가능성이 있습니다. 키의 상태가 변경되면 바로 점검해야 하는 스크립트는 미리 <a href="Sleep.htm">Sleep</a>을 사용해 시스템이 키 상태를 갱신할 시간을 주는 것이 좋습니다.</p>
-<p>
-조이스틱에 GetKeyState를 사용하는 예는 <a href="../misc/RemapJoystick.htm">조이스틱 리맵핑</a> 페이지와 <a href="../scripts/JoystickMouse.htm">Joystick-To-Mouse 스크립트</a>를 참조하십시오.</p>
-
+<p>키나 마우스/조이스틱 버튼이 새로운 상태가 되기를 기다리려면 보통 GetKeyState 회돌이 대신에 <a href="KeyWait.htm">KeyWait</a>을 사용하는 것이 더 쉽습니다.</p>
+<p>비정상적인 키보드 드라이버가 설치된 시스템은 키의 상태를, 특히 Capslock 같은 키의 토글 상태를 느리게 갱신할 가능성이 있습니다. 키의 상태가 변경되면 바로 점검해야 하는 스크립트는 미리 <a href="Sleep.htm">Sleep</a>을 사용해 시스템이 키 상태를 갱신할 시간을 주는 것이 좋습니다.</p>
+<p>조이스틱에 GetKeyState를 사용하는 예는 <a href="../misc/RemapJoystick.htm">조이스틱 리맵핑</a> 페이지와 <a href="../scripts/JoystickMouse.htm">Joystick-To-Mouse 스크립트</a>를 참조하십시오.</p>
 <h3>관련 항목</h3>
 <p><a href="../Functions.htm#GetKeyState">GetKeyState()</a>, <a href="KeyWait.htm">KeyWait</a>, <a href="../KeyList.htm">Key List</a>, <a href="../misc/RemapJoystick.htm">조이스틱 리맵핑</a>, <a href="KeyHistory.htm">KeyHistory</a>, <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>, <a href="_InstallMouseHook.htm">#InstallMouseHook</a></p>
-
 <h3>예제</h3>
-
 <pre class="NoIndent"><em>; 기본 예제들:</em>
 GetKeyState, state, RButton  <em>; 우측 마우스 버튼.</em>
 GetKeyState, state, Joy2  <em>; 첫 번째 조이스틱의 두 번째 버튼.</em>
@@ -77,7 +64,7 @@ else
     MsgBox Shift 키가 어느 쪽도 눌려 있지 않습니다.
 
 GetKeyState, state, CapsLock, T <em>;  CapsLock이 켜져 있으면 D, 그렇지 않으면 U입니다.</em>
-state := GetKeyState(&quot;Capslock&quot;, &quot;T&quot;)  <em>; CapsLock이 켜져 있으면 참, 그렇지 않으면 거짓입니다.</em>
+state := GetKeyState("Capslock", "T")  <em>; CapsLock이 켜져 있으면 참, 그렇지 않으면 거짓입니다.</em>
 
 <em>; 리맵핑 예제 (이 예제는 오로지 보여주기 위한 용도입니다.
 ; <a href="../misc/Remap.htm">내장된 리맵핑 특징</a>을 사용하는 편이 더 쉽습니다):

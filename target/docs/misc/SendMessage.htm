@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>PostMessage/SendMessage Tutorial</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,48 +13,37 @@
 <h1>메시지를 창이나 그의 콘트롤에 보내기<br>
 <span class="small80">by Rajat</span></h1>
 
-<p>
-이 페이지는 <a href="../commands/PostMessage.htm">PostMessage</a>와 <a href="../commands/PostMessage.htm">SendMessage</a> 명령어를 연구하고 다음과 같은 질문에 답합니다:</p>
-<p>&quot;어떻게 최소화된 창에 버튼을 누르는가?&quot; <br>
-&quot;<a href="../commands/WinMenuSelectItem.htm">WinMenuSelectItem</a>이 메뉴 항목과 작동하지 않을 때 어떻게 메뉴 항목을 선택하는가?!&quot;<br>
-&quot;이것은 겉모습을 바꿀 수 있는 창이다.... 어떻게 해야 항상 작동하는 명령어를 전송하는가?&quot;<br>
-&quot;<strong>숨은</strong> 창은 어떻게 하는가?!&quot;<br>
+<p>이 페이지는 <a href="../commands/PostMessage.htm">PostMessage</a>와 <a href="../commands/PostMessage.htm">SendMessage</a> 명령어를 연구하고 다음과 같은 질문에 답합니다:</p>
+<p>"어떻게 최소화된 창에 버튼을 누르는가?" <br>
+"<a href="../commands/WinMenuSelectItem.htm">WinMenuSelectItem</a>이 메뉴 항목과 작동하지 않을 때 어떻게 메뉴 항목을 선택하는가?!"<br>
+"이것은 겉모습을 바꿀 수 있는 창이다.... 어떻게 해야 항상 작동하는 명령어를 전송하는가?"<br>
+"<strong>숨은</strong> 창은 어떻게 하는가?!"<br>
 <br>
 <br>
 필수 조건: AutoHotkey v1.0.09+ 그리고 Winspector Spy (<a href="http://www.softpedia.com/get/Security/Security-Related/Winspector.shtml">http://www.softpedia.com/get/Security/Security-Related/Winspector.shtml</a>)</p>
-<p>
-첫 예제로서, <a href="../commands/WinMenuSelectItem.htm">WinMenuSelectItem</a>가 아웃룩 익스프레스의 &quot;New Message&quot 창의 메뉴 바와 작동하는 데 실패한다는 사실을 주목하십시오; 
-다시 말해, 다음 코드는 작동하지 않습니다:</p>
+<p>첫 예제로서, <a href="../commands/WinMenuSelectItem.htm">WinMenuSelectItem</a>가 아웃룩 익스프레스의 "New Message" 창의 메뉴 바와 작동하는 데 실패한다는 사실을 주목하십시오; 다시 말해, 다음 코드는 작동하지 않습니다:</p>
 <pre>WinMenuSelectItem, New Message,, &amp;Insert, &amp;Picture...</pre>
 <p>&nbsp;</p>
-<p>
-그러나 <a href="../commands/PostMessage.htm">PostMessage</a>가 그 일을 해 줄 수 있습니다:</p>
+<p>그러나 <a href="../commands/PostMessage.htm">PostMessage</a>가 그 일을 해 줄 수 있습니다:</p>
 <pre>PostMessage, 0x111, 40239, 0, , New Message</pre>
-<p>
-마법처럼 작동합니다! 그러나 도데체 이것은 무엇인가? 0x111는 <a href="SendMessageList.htm">wm_command 메시지</a>의 십육진 코드이고 40239는 이 특정한 창이 메뉴 항목 'Insert Picture' 선택으로 이해하는 코드입니다. 이제 어떻게 40239와 같은 값을 찾는지 알려 드리겠습니다:</p>
+<p>마법처럼 작동합니다! 그러나 도데체 이것은 무엇인가? 0x111는 <a href="SendMessageList.htm">wm_command 메시지</a>의 십육진 코드이고 40239는 이 특정한 창이 메뉴 항목 'Insert Picture' 선택으로 이해하는 코드입니다. 이제 어떻게 40239와 같은 값을 찾는지 알려 드리겠습니다:</p>
 <ol>
-  <li>Winspector Spy를 열고 &quot;New Message&quot; 창을 엽니다.</li>
-  <li>십자가 표식을 Winspector Spy 창으로부터 &quot;New Message&quot; 창의 타이틀바로 끕니다 (Winspector Spy에 덮히지 않는 부분으로 끄십시오).</li>
+  <li>Winspector Spy를 열고 "New Message" 창을 엽니다.</li>
+  <li>십자가 표식을 Winspector Spy 창으로부터 "New Message" 창의 타이틀바로 끕니다 (Winspector Spy에 덮히지 않는 부분으로 끄십시오).</li>
   <li>왼쪽에 있는 리스트에서 선택된 창을 우클릭하고 'Messages'를 선택합니다.</li>
   <li>빈 창에 우클릭하고 'Edit message filter'를 선택합니다.</li>
   <li>'filter all' 버튼을 클릭한 다음 왼쪽 리스트에서 'wm_command'를 더블클릭합니다. 이런 식으로 하면 오직 이 메시지만 관제할 수 있습니다.</li>
-  <li>이제 &quot;New Message&quot; 창으로 가서 메뉴 바로부터 Insert &gt; Picture를 선택합니다.</li>
+  <li>이제 "New Message" 창으로 가서 메뉴 바로부터 선택합니다: Insert &gt; Picture.</li>
   <li>다시 Winspector Spy로 돌아와 신호등 버튼을 눌러 관제를 정지합니다.</li>
   <li>그 동안 축적된 wm_command 메시지들을 확대합니다 (다른 것은 있더라도 무시합니다).</li>
   <li>(보통) 보고 싶은 것은 코드 0 메시지입니다. 종종 wm_command 메시지에 'win activated' or 'win destroyed' 기타 등등이 있을 수 있는데.. 필요하지 않습니다. 'Control ID: 40239'라고 말해주는 메시지를 발견했다면 ...바로 그것입니다!</li>
   <li>이제 그것을 위의 명령어에 배치하면 완성입니다! 그것이 바로 wParam 값입니다.</li>
 </ol>
-<p>
-다음 예제로 페인트 프로그램을 택하겠습니다. 왜냐하면 누구나가 있을 것이기 때문입니다. 이제 어플이 하나 있는데 오토핫키를 사용하여 툴바로부터 툴을 하나 선택해야 한다고 가정해 보겠습니다.</p>
-<p>
-다음은 무엇을 할 것인가? 대부분은 아마도 툴바 버튼에 마우스 클릭을 예상할 겁니다. 그러나 툴바는 이동하고 숨을 수 있습니다! 페인트 툴바도 마찬가지입니다. 그래서 해당 사용자가 이렇게 구성해 두었다면, 스크립트는 그 시점에 바로 실패합니다. 그러나 다음 명령어는 여전히 작동합니다:</p>
-
+<p>다음 예제로 페인트 프로그램을 택하겠습니다. 왜냐하면 누구나가 있을 것이기 때문입니다. 이제 어플이 하나 있는데 오토핫키를 사용하여 툴바로부터 툴을 하나 선택해야 한다고 가정해 보겠습니다.</p>
+<p>다음은 무엇을 할 것인가? 대부분은 아마도 툴바 버튼에 마우스 클릭을 예상할 겁니다. 그러나 툴바는 이동하고 숨을 수 있습니다! 페인트 툴바도 마찬가지입니다. 그래서 해당 사용자가 이렇게 구성해 두었다면, 스크립트는 그 시점에 바로 실패합니다. 그러나 다음 명령어는 여전히 작동합니다:</p>
 <pre>PostMessage, 0x111, 639,,,untitled - Paint</pre>
-<p>
-<a href="../commands/PostMessage.htm">PostMessage</a>의 또다른 장점은 창이 배경에 있을 수 있다는 것입니다; 대조적으로, 마우스 클릭은 창이 활성화되어 있기를 요구합니다.</p>
-<p>
-다음에 몇 가지 예를 더 보여드리겠습니다. 주의: 필자는 WinXP Pro (SP1)을 사용합니다 ... 다른 OS를 사용한다면 매개변수가 다를 수 있습니다 (윈도우즈에 따라 오는 Wordpad 그리고 Notepad에만 적용할 수 있습니다; 다른 것은 매개변수가 다르지 않을 것입니다):</p>
-
+<p><a href="../commands/PostMessage.htm">PostMessage</a>의 또다른 장점은 창이 배경에 있을 수 있다는 것입니다; 대조적으로, 마우스 클릭은 창이 활성화되어 있기를 요구합니다.</p>
+<p>다음에 몇 가지 예를 더 보여드리겠습니다. 주의: 필자는 WinXP Pro (SP1)을 사용합니다 ... 다른 OS를 사용한다면 매개변수가 다를 수 있습니다 (윈도우즈에 따라 오는 Wordpad 그리고 Notepad에만 적용할 수 있습니다; 다른 것은 매개변수가 다르지 않을 것입니다):</p>
 <pre><em>;Wordpad 에 군청색 쓰기를 설정합니다</em>
 <a href="../commands/PostMessage.htm">PostMessage</a>, 0x111, 32788, 0, , Document - WordPad</pre>
 <pre><em>;Notepad의 관하여 상자를 엽니다</em>
@@ -66,8 +56,7 @@
 DetectHiddenWindows, on
 SetTitleMatchMode, 2
 <a href="../commands/PostMessage.htm">PostMessage</a>, 0x111, 65305,,, MyScript.ahk - AutoHotkey <em>; 65306를 사용하면 정지(Pause) vs. 보류(Suspend)할 수 있습니다.</em></pre>
-<p>
-위는 PostMessage용이었습니다. <a href="../commands/PostMessage.htm">SendMessage</a>도 똑같이 작동하지만 추가로 반환 값을 기다립니다. 이 값을 사용하면 Winamp에서 현재 연주 중인 트랙을 얻을 수 있습니다 (예제는 <a href="Winamp.htm">Winamp 자동화하기</a>를 참조하십시오).</p>
+<p>위는 PostMessage용이었습니다. <a href="../commands/PostMessage.htm">SendMessage</a>도 똑같이 작동하지만 추가로 반환 값을 기다립니다. 이 값을 사용하면 Winamp에서 현재 연주 중인 트랙을 얻을 수 있습니다 (예제는 <a href="Winamp.htm">Winamp 자동화하기</a>를 참조하십시오).</p>
 <p>다음에 몇 가지 더 주의 사항이 있습니다:</p>
 <ul>
   <li>위에서 OS가 XP이고 메시지 값이 OS 마다 다를 수 있다고 주의를 준 것은 순전히 경계 차원입니다. 여러분의 시스템에서 (특정 소프트웨어 버전과 함께) 작동하는 메시지를 발견했다면. 다른 시스템에도 같은 버전이 역시 작동할 것이라고 확신할 수 있습니다. 게다가, 대부분의 어플은 버전이 다르더라도 이 메시지 값을 똑 같이 유지합니다 (예, Windows Media Player 그리고 Winamp).</li>
@@ -79,10 +68,8 @@ SetTitleMatchMode, 2
     <code>DetectHiddenWindows, On</code></li>
 </ul>
 <p>주의: 이 테크닉으로도 작동하지 않는 어플이 있습니다. VB 어플과 Delphi 어플에서 그런 경우를 만났습니다. 이 테크닉은 C, C++ 어플에 사용하는 것이 제일 좋습니다. VB 어플은 같은 명령어인데도 'LParam'이 실행할 때마다 끊임없이 변합니다. Delphi 어플은 GUI가 전혀 wm_command를 사용하지 않기도 합니다. 아마도 마우스의 위치와 클릭을 사용하는 듯 보입니다.</p>
-<p>
-오토핫키 포럼에 가셔서 탐험해 보고 여러분의 경험을 공유하십시오. 피드백은 언제나 환영합니다!</p>
-<p>
-이 자습서는 초보자를 위한 것이 아닙니다 (기분 나쁘게 할 의도는 없습니다). 왜냐하면 이 명령어들은 고급 특징으로 간주되기 때문입니다. 그래서 위의 글을 읽어 본 후에 잘 모르겠다면, 그냥 잊어 버리십시오.</p>
+<p>오토핫키 포럼에 가셔서 탐험해 보고 여러분의 경험을 공유하십시오. 피드백은 언제나 환영합니다!</p>
+<p>이 자습서는 초보자를 위한 것이 아닙니다 (기분 나쁘게 할 의도는 없습니다). 왜냐하면 이 명령어들은 고급 특징으로 간주되기 때문입니다. 그래서 위의 글을 읽어 본 후에 잘 모르겠다면, 그냥 잊어 버리십시오.</p>
 <p>-Rajat</p>
 </body>
 </html>

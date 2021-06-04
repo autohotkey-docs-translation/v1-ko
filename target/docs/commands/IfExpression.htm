@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>if (expression)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>if (표현식)</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -13,21 +14,16 @@
 
 <p><a href="../Variables.htm#Expressions">표현식</a>이 TRUE로 평가되면 수행할 명령어(들)을 지정합니다.</p>
 
-<pre class="Syntax">if (expression)</pre>
+<pre class="Syntax">if (표현식)</pre>
 <h3>논평</h3>
-<p>
-표현식이 있는 if-서술문은 <a href="IfEqual.htm">전통적인-if</a>와 다릅니다. <code>If FoundColor &lt;&gt; Blue</code>와 같은 경우 단어 &quot;if&quot; 다음 문자가 여는 활괄호가 아닙니다. 
-보통 전체 표현식을 활괄호 안에 싸 넣으면 이렇게 할 수 있지만, <code>if (x &gt; 0) and (y &gt; 0)</code>와 같이 해도 달성할 수 있습니다. 게다가, 단어 &quot;if&quot; 다음의 첫 항목이 <a href="../Functions.htm">함수 호출</a>이거나 또는 &quot;not&quot;이나 &quot;!&quot;와 같은 연산자일 경우 여는-활괄호는 완전히 생략해도 됩니다.</p>
-<p>
-if-서술문의 표현식이 참으로 평가되면 (빈 문자열 또는 숫자 0만 아니면 어떤 결과도 참이므로), 그 줄 또는 그 밑의 <a href="Block.htm">블록</a>이 실행됩니다. 그렇지 않고, 상응하는 ELSE가 있다면, 실행은 그 줄 또는 그 밑의 블록으로 점프합니다.</p>
-<p>
-IF 또는 <a href="Else.htm">ELSE</a>가 여러 줄을 소유하면, 그런 줄들은 반드시 <a href="Block.htm">활괄호</a> 안에 둘러싸야 합니다. 그렇지만, 한 줄만 IF나 ELSE에 속한다면, 활괄호는 없어도 됩니다. 이 페이지 아래의 예제들을 참조하십시오.</p>
-<p>
-<a name="otb"></a>One True Brace (OTB) 스타일은 선택적으로 표현식 if-서술문과 함께 사용할 수 있습니다 (그러나 <a href="IfEqual.htm">전통적인 if-서술문은 안 됩니다</a>). 예를 들어:</p>
+<p>표현식이 있는 if-서술문은 <a href="IfEqual.htm">전통적인-if</a>와 다릅니다. <code>If FoundColor &lt;&gt; Blue</code>와 같은 경우 단어 "if" 다음 문자가 여는 활괄호가 아닙니다. 보통 전체 표현식을 활괄호 안에 싸 넣으면 이렇게 할 수 있지만, <code>if (x &gt; 0) and (y &gt; 0)</code>와 같이 해도 달성할 수 있습니다. 게다가, 단어 "if" 다음의 첫 항목이 <a href="../Functions.htm">함수 호출</a>이거나 또는 "not"이나 "!"와 같은 연산자일 경우 여는-활괄호는 완전히 생략해도 됩니다.</p>
+<p>if-서술문의 표현식이 참으로 평가되면 (빈 문자열 또는 숫자 0만 아니면 어떤 결과도 참이므로), 그 줄 또는 그 밑의 <a href="Block.htm">블록</a>이 실행됩니다. 그렇지 않고, 상응하는 ELSE가 있다면, 실행은 그 줄 또는 그 밑의 블록으로 점프합니다.</p>
+<p>IF 또는 <a href="Else.htm">ELSE</a>가 여러 줄을 소유하면, 그런 줄들은 반드시 <a href="Block.htm">활괄호</a> 안에 둘러싸야 합니다. 그렇지만, 한 줄만 IF 또는 ELSE에 속해 있다면, 활괄호는 선택적입니다. 이 페이지 아래의 예제들을 참조하십시오.</p>
+<p><a name="otb"></a>One True Brace (OTB) 스타일은 선택적으로 표현식 if-서술문과 함께 사용할 수 있습니다 (그러나 <a href="IfEqual.htm">전통적인 if-서술문은 안 됩니다</a>). 예를 들어:</p>
 <pre>if (x &lt; y) <strong>{</strong>
     ...
 <strong>}</strong>
-if WinExist(&quot;Untitled - Notepad&quot;) <strong>{</strong>
+if WinExist("Untitled - Notepad") <strong>{</strong>
     WinActivate
 <strong>}</strong>
 if IsDone <strong>{</strong>
@@ -35,15 +31,10 @@ if IsDone <strong>{</strong>
 <strong>}</strong> else <strong>{</strong>
     ...
 <strong>}</strong></pre>
-<p>
-&quot;else&quot; 서술문과 다르게 -- 그의 오른쪽에 오기만 하면 서술문에 종류에 상관없이 지원하는 --  if-서술문은 오직 그의 오른쪽에 오는 &quot;{&quot;만 지원합니다.</p>
-<p>
-관련하여, 명령어 <code><a href="IfBetween.htm">if var [not] between LowerBound and UpperBound</a> </code>는 변수가 두 변수 사이에 있는지 점검합니다. 그리고 <code><a href="IfIn.htm">if var [not] in value1,value2</a></code>는 변수의 내용이 값 목록 안에 존재하는지 점검하는 데 사용할 수 있습니다.</p>
-
+<p>"else" 서술문과 다르게 -- 그의 오른쪽에 오기만 하면 서술문에 종류에 상관없이 지원하는 -- if-서술문은 오직 그의 오른쪽에 오는 "{"만 지원합니다.</p>
+<p>관련하여 말씀드리자면, 다음 명령어 "<a href="IfBetween.htm">if var [not] between LowerBound and UpperBound</a>"는 변수가 두 값 사이에 있는지 점검합니다. 그리고 "<a href="IfIn.htm">if var [not] in value1,value2</a>"는 변수의 내용이 값 목록 안에 존재하는지 점검하는 데 사용할 수 있습니다.</p>
 <h3>관련 항목</h3>
-<p>
-<a href="../Variables.htm#Expressions">표현식</a>, <a href="SetExpression.htm">할당 표현식 (:=)</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfInString.htm">IfInString</a>, <a href="Block.htm">블록</a>, <a href="Else.htm">Else</a>, <a href="While.htm">While-회돌이</a></p>
-
+<p><a href="../Variables.htm#Expressions">표현식</a>, <a href="SetExpression.htm">할당 표현식 (:=)</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfInString.htm">IfInString</a>, <a href="Block.htm">블록</a>, <a href="Else.htm">Else</a>, <a href="While.htm">While-회돌이</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">if (A_Index &gt; 100 or Done)
     return
@@ -54,12 +45,12 @@ if (A_TickCount - StartTime &gt; 2*MaxTime + 100)
     ExitApp
 }
 
-if (Color = &quot;Blue&quot; or Color = &quot;White&quot;)
+if (Color = "Blue" or Color = "White")
 {
     MsgBox 컬러는 허용된 값 중 하나입니다.
     ExitApp
 }
-else if (Color = &quot;Silver&quot;)
+else if (Color = "Silver")
 {
     MsgBox 회색은 허용하지 않는 색입니다.
     return

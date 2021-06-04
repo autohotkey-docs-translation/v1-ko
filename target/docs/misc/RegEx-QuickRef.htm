@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>Regular Expressions (RegEx) - Quick Reference</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>정규표현식 (RegEx) - 간편 참조서</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -17,15 +18,12 @@
 <h1>정규표현식 (RegEx) - 간편 참조서</h1>
 
 <h2>기본 지식</h2>
-<p>
-<strong>어디에나 부합</strong>: 기본값으로, 정규 표현식에서 부분문자열은 검색될 문자열 안 어디에나 부합합니다. 예를 들어, 정규 표현식 <span class="regex">abc</span>는 <span class="subj">abc</span>123, 123<span class="subj">abc</span>, 그리고 123<span class="subj">abc</span>xyz에 부합합니다. 부합을 처음이나 끝에서만 일어나도록 하려면  <a href="#anchor">닻</a>을 사용합니다.</p>
-<p>
-<strong>피신 문자</strong>: abc123과 같이 대부분의 문자는 정규 표현식 안에 문자 그대로 사용할 수 있습니다. 그렇지만, <strong>\.*?+[{|()^$</strong>의 문자들은 반드시 앞에 역사선을 배치해야 문자 그대로 보일 수 있습니다. 예를 들어, <span class="regex">\.</span>는 문자 그대로의 마침표이고 <span class="regex">\\</span>는 문자 그대로의 역사선입니다. 피신을 피하려면 \Q...\E을 사용합니다. 예를 들어: \QLiteral Text\E.</p>
-<p>
-<strong>대소문자 구분</strong>: 기본값으로 정규 표현식은 대소문자를 구분합니다. 이 행위는 &quot;i&quot; 옵션으로 바꿀 수 있습니다. 예를 들어, 패턴 <span class="regex">i)abc</span>는 대소문자를 구분하지 않고 &quot;abc&quot;를 검색합니다. 다른 수식자들은 아래를 참조하십시오.</p>
+<p><strong>어디에나 부합</strong>: 기본값으로, 정규 표현식에서 부분문자열은 검색될 문자열 안 <em>어디에나</em> 부합합니다. 예를 들어, 정규 표현식 <span class="regex">abc</span>는 <span class="subj">abc</span>123, 123<span class="subj">abc</span>, 그리고 123<span class="subj">abc</span>xyz에 부합합니다. 부합을 처음이나 끝에서만 일어나도록 하려면 <a href="#anchor">닻</a>을 사용합니다.</p>
+<p><strong>피신 문자</strong>: abc123과 같이 대부분의 문자는 정규 표현식 안에 문자 그대로 사용할 수 있습니다. 그렇지만, <strong>\.*?+[{|()^$</strong>의 문자들은 반드시 앞에 역사선을 배치해야 문자 그대로 보일 수 있습니다. 예를 들어, <span class="regex">\.</span>는 문자 그대로의 마침표이고 <span class="regex">\\</span>는 문자 그대로의 역사선입니다. 피신을 피하려면 \Q...\E을 사용합니다. 예를 들어: \QLiteral Text\E.</p>
+<p><strong>대소문자 구분</strong>: 기본값으로 정규 표현식은 대소문자를 구분합니다. 이 행위는 "i" 옵션으로 바꿀 수 있습니다. 예를 들어, 패턴 <span class="regex">i)abc</span>는 대소문자를 구분하지 않고 "abc"를 검색합니다. 다른 수식자들은 아래를 참조하십시오.</p>
 
 <h2 id="Options">옵션 (대소문자 구분)</h2>
-<p>정규 표현식 맨 앞에 다음 옵션을 지정하고 다음에 반괄호로 닫아 옵션을 지정합니다. 예를 들어, 패턴 &quot;<span class="red">im)</span>abc&quot;는 여러 줄 옵션을 가지고 대소문자를 구분하여 <em>abc</em>를 검색합니다 (아무 옵션이 없으면 닫는 반괄호는 생략합니다.). 이 구문은 전통을 어기지만, 특수한 구분자를 요구하지 않습니다 (예를 들어 역사선). 그래서 패턴 안에서 그런 구분자를 피신시킬 필요가 없습니다. 게다가 수행성능이 향상됩니다. 왜냐하면 옵션을 해석하기가 더 쉽기 때문입니다.</p>
+<p>정규 표현식 맨 앞에 다음 옵션을 지정하고 다음에 반괄호로 닫아 옵션을 지정합니다. 예를 들어, 패턴 "<span class="red">im)</span>abc"는 여러 줄 옵션을 가지고 대소문자를 구분하여 <em>abc</em>를 검색합니다 (아무 옵션이 없으면 닫는 반괄호는 생략합니다.). 이 구문은 전통을 어기지만, 특수한 구분자를 요구하지 않습니다 (예를 들어 역사선). 그래서 패턴 안에서 그런 구분자를 피신시킬 필요가 없습니다. 게다가 수행성능이 향상됩니다. 왜냐하면 옵션을 해석하기가 더 쉽기 때문입니다.</p>
 <table class="info">
   <tr id="opt_i">
     <td><strong>i</strong></td>
@@ -36,8 +34,8 @@
     <td><p><a name="Multiline"></a>여러 줄에 부합합니다. (새줄 문자가 포함되어 있다면) 목표 문자열(<em>Haystack</em>)을 하나의 연속적인 줄로 보지 않고 각 줄이 모인 집단으로 봅니다. 특히, 다음과 같이 변경됩니다:</p>
       <p>1) 윗꺽쇠(^)는 모든 내부 새줄 문자 뒤에 즉시 부합합니다 -- 뿐만 아니라 <em>Haystack</em>의 시작에도 언제나 부합합니다 (그러나 <em>Haystack</em>의 <em>맨 끝에 있는</em> 새줄 문자 다음에는 부합하지 않습니다).</p>
       <p>2) 달러 사인 ($)은 <em>Haystack</em> 안의 어떤 새줄 문자 앞에도 부합합니다. (뿐만 아니라 맨 끝의 새줄 문자에도 언제나 부합합니다).</p>
-      <p>예를 들어, 패턴 &quot;<span class="red">m)</span>^abc$&quot;는 &quot;m&quot; 옵션이 존재하지 않으면 목표문자열(<em>Haystack</em>) &quot;xyz`r`nabc&quot;에 부합하지 않습니다.</p>
-      <p>&quot;D&quot; 옵션은 &quot;m&quot; 옵션이 있으면 무시됩니다.</p></td>
+      <p>예를 들어, 패턴 "<span class="red">m)</span>^abc$"는 "m" 옵션이 존재하지 않으면 목표문자열(<em>Haystack</em>) "xyz`r`nabc"에 부합하지 않습니다.</p>
+      <p>"D" 옵션은 "m" 옵션이 있으면 무시됩니다.</p></td>
   </tr>
   <tr id="opt_s">
     <td><strong>s</strong></td>
@@ -45,36 +43,27 @@
   </tr>
   <tr id="opt_x">
     <td><strong>x</strong></td>
-    <td>문자 부류 안이나 피신시킨 경우를 제외하고 패턴에서 공백 문자를 무시합니다. 문자 `n과 `t이 무시되는데 왜냐하면 PCRE에 도착할 때 쯤이면, 이미 날/기호 공백 문자이기 때문입니다 (대조적으로, \n와 \t는 PCRE 피신 연속열이기 때문에 무시되지 않습니다). <strong>x</strong> 옵션은 또 문자 부류 밖의 피신되지 않은 #부터 다음 새줄문자(포함) 사이의 문자들을 무시합니다. 이 덕분에 복잡한 패턴 안에 주석을 삽입할 수 있습니다. 그렇지만, 이것은 오직 데이터 문자에만 적용됩니다; 조건적 부패턴을 시작하는  (?(와 같은 특수 문자 연속열 안에 공백문자는 나타나지 않습니다.</td>
+    <td>문자 부류 안이나 피신시킨 경우를 제외하고 패턴에서 공백 문자를 무시합니다. 문자 `n과 `t이 무시되는데 왜냐하면 PCRE에 도착할 때 쯤이면, 이미 날/기호 공백 문자이기 때문입니다 (대조적으로, \n와 \t는 PCRE 피신 연속열이기 때문에 무시되지 않습니다). <strong>x</strong> 옵션은 또 문자 부류 밖의 피신되지 않은 #부터 다음 새줄문자(포함) 사이의 문자들을 무시합니다. 이 덕분에 복잡한 패턴 안에 주석을 삽입할 수 있습니다. 그렇지만, 이것은 오직 데이터 문자에만 적용됩니다; 조건적 부패턴을 시작하는 (?(와 같은 특수 문자 연속열 안에 공백문자는 나타나지 않습니다.</td>
   </tr>
   <tr id="opt_A">
     <td><strong>A</strong></td>
-    <td>패턴을 강제로 고정합니다; 즉, <em>Haystack</em>의 시작에만 부합할 수 있습니다. 대부분의 상황에서, 이것은 &quot;^&quot;와 같은 수단을 사용하여 명시적으로 패턴을 고정한 것과 동등합니다.</td>
+    <td>패턴을 강제로 고정합니다; 즉, <em>Haystack</em>의 시작에만 부합할 수 있습니다. 대부분의 상황에서, 이것은 "^"와 같은 수단을 사용하여 명시적으로 패턴을 고정한 것과 동등합니다.</td>
   </tr>
   <tr id="opt_D">
     <td><strong>D</strong></td>
-    <td>달러 사인($)을 강제로 목표 문자열(<em>Haystack</em>)의 맨 끝에 부합시킵니다. 목표 문자열(<em>Haystack</em>)의 마지막이 새줄 문자여도 부합합니다. 
-	이 옵션에 없다면, 대신에 $는 (있다면) 마지막 새줄 문자 바로 앞에 부합합니다. 주의: 이 옵션은 &quot;m&quot; 옵션이 있으면 무시됩니다.</td>
+    <td>달러 사인($)을 강제로 목표 문자열(<em>Haystack</em>)의 맨 끝에 부합시킵니다. 목표 문자열(<em>Haystack</em>)의 마지막이 새줄 문자여도 부합합니다. 이 옵션에 없다면, 대신에 $는 (있다면) 마지막 새줄 문자 바로 앞에 부합합니다. 주의: 이 옵션은 "m" 옵션이 있으면 무시됩니다.</td>
   </tr>
   <tr id="opt_J">
     <td><strong>J</strong></td>
-    <td><a href="../commands/RegExMatch.htm#NamedSubPat">이름붙인 부패턴</a>의 중복을 허용합니다. 
-
-
-이것은 같은-이름의 부패턴 중 하나만 부합할 수 있는  패턴에 유용하게 사용할 수 있습니다. 
-주의: 무엇이든 특정 이름이 한 번 이상 부합하면, 왼쪽에 있는 것만 저장됩니다. 또, 변수 이름은 대소문자를 구분하지 않습니다.</td>
+    <td><a href="../commands/RegExMatch.htm#NamedSubPat">이름붙인 부패턴</a>의 중복을 허용합니다. 이것은 같은-이름의 부패턴 중 하나만 부합할 수 있는 패턴에 유용하게 사용할 수 있습니다. 주의: 무엇이든 특정 이름이 한 번 이상 부합하면, 왼쪽에 있는 것만 저장됩니다. 또, 변수 이름은 대소문자를 구분하지 않습니다.</td>
   </tr>
   <tr id="opt_U">
     <td><strong>U</strong></td>
-    <td>비탐욕적. 
-
-
-수량자 *+?{}가 부합을 형성하는데 절대적으로 필요한 문자들만 소비합니다. 나머지 부합은 다음 패턴을 위해 남겨둡니다. &quot;U&quot; 옵션이 효과가 없으면, 각 수량자 다음에 물음표를 추가하면 비탐욕적으로 만들 수 있습니다. 반대로, &quot;U&quot;가 <em>효과가 있으면</em>, 물음표는 각 수량자를 탐욕적으로 만듭니다.</td>
+    <td>비탐욕적. 수량자 *+?{}가 부합을 형성하는데 절대적으로 필요한 문자들만 소비합니다. 나머지 부합은 다음 패턴을 위해 남겨둡니다. "U" 옵션이 효과가 없으면, 각 수량자 다음에 물음표를 추가하면 비탐욕적으로 만들 수 있습니다. 반대로, "U"가 <em>효과가 있으면</em>, 물음표는 각 수량자를 탐욕적으로 만듭니다.</td>
   </tr>
   <tr id="opt_extra">
     <td><strong>X</strong></td>
-    <td>PCRE_EXTRA. 펄과 호환되지 않는 PCRE 특징을 활성화합니다. 현재, 지원되는 유일한 특징은 다음과 같습니다. 패턴에서 역사선 다음에 아무 특수 의미가 없는 기호가 따라오면 부합은 실패하고 그에 맞게  ErrorLevel이 설정됩니다. 
-	이 옵션은 사용하지 않는 역사선 문자열을 미래에 사용하기 위해 예약하는데 도움을 줍니다. 이 옵션이 없다면, 역사선 다음에 아무 특수 의미가 없는 기호가 따라오면 기호 그대로 취급합니다 (예, \g와 g는 모두 기호 그대로의 g로 인식됩니다). 이 옵션에 상관없이, 아무 의미가 없는 알파벳-아닌 연속열은 언제나 기호 그대로 취급됩니다 (예, \/ 그리고 / 는 모두 정사선으로 인지됩니다).</td>
+    <td>PCRE_EXTRA. 펄과 호환되지 않는 PCRE 특징을 활성화합니다. 현재, 지원되는 유일한 특징은 다음과 같습니다. 패턴에서 역사선 다음에 아무 특수 의미가 없는 기호가 따라오면 부합은 실패하고 그에 맞게 ErrorLevel이 설정됩니다. 이 옵션은 사용하지 않는 역사선 문자열을 미래에 사용하기 위해 예약하는데 도움을 줍니다. 이 옵션이 없다면, 역사선 다음에 아무 특수 의미가 없는 기호가 따라오면 기호 그대로 취급합니다 (예, \g와 g는 모두 기호 그대로의 g로 인식됩니다). 이 옵션에 상관없이, 아무 의미가 없는 알파벳-아닌 연속열은 언제나 기호 그대로 취급됩니다 (예, \/ 그리고 / 는 모두 정사선으로 인지됩니다).</td>
   </tr>
   <tr id="opt_P">
     <td><strong>P</strong></td>
@@ -82,9 +71,7 @@
   </tr>
   <tr>
     <td><strong>S</strong></td>
-    <td><a name="Study"></a>패턴을 연구하여 수행성능을 향상시키려고 시도합니다. 이 특징은 특정 패턴이 (특히 복잡한 패턴이) 여러 번 수행될 때 유용합니다.  PCRE가 수행성능을 향상시키는 법을 발견하면, 그 발견은 패턴과 함께 캐쉬에 저장됩니다. 같은 패턴이 연이어 실행되면 저장된 발견을 사용합니다.
-	
-	(패턴을 연이어 사용하면 S 옵션을 지정해야 합니다. 왜냐하면 캐쉬에서 부합을 발견하려면 그 옵션 기호가 정확하게 일치해야 하며, 순서까지 일치해야 하기 때문입니다).</td>
+    <td><a name="Study"></a>패턴을 연구하여 수행성능을 향상시키려고 시도합니다. 이 특징은 특정 패턴이 (특히 복잡한 패턴이) 여러 번 수행될 때 유용합니다. PCRE가 수행성능을 향상시키는 법을 발견하면, 그 발견은 패턴과 함께 캐쉬에 저장됩니다. 같은 패턴이 연이어 실행되면 저장된 발견을 사용합니다. (패턴을 연이어 사용하면 S 옵션을 지정해야 합니다. 왜냐하면 캐쉬에서 부합을 발견하려면 그 옵션 기호가 정확하게 일치해야 하며, 순서까지 일치해야 하기 때문입니다).</td>
   </tr>
   <tr id="opt_Callout">
     <td><strong>C</strong></td>
@@ -100,7 +87,7 @@
   </tr>
   <tr>
     <td><strong>`a</strong></td>
-    <td><a name="NEWLINE_ANY"></a>v1.0.46.06+에서, `a는 새줄이면 어떤 종류든지 모두 인지합니다. 즉, `r, `n, `r`n, `v/VT/vertical tab/chr(0xB), `f/FF/formfeed/chr(0xC), 그리고 NEL/next-line/chr(0x85).  v1.0.47.05+에서, 새줄은 CR, LF, 그리고 CRLF로 제한할 수 있습니다. 패턴의 시작에 (옵션 뒤에) 대문자로 (*ANYCRLF)를 지정하면 됩니다; 예, <code>im)(*ANYCRLF)^abc$</code>.</td>
+    <td><a name="NEWLINE_ANY"></a>v1.0.46.06+에서, `a는 새줄이면 어떤 종류든지 모두 인지합니다. 즉, `r, `n, `r`n, `v/VT/vertical tab/chr(0xB), `f/FF/formfeed/chr(0xC), 그리고 NEL/next-line/chr(0x85). v1.0.47.05+에서, 새줄은 CR, LF, 그리고 CRLF로 제한할 수 있습니다. 패턴의 시작에 (옵션 뒤에) 대문자로 (*ANYCRLF)를 지정하면 됩니다; 예, <code>im)(*ANYCRLF)^abc$</code>.</td>
   </tr>
 </table>
 <p>주의: 각 옵션을 다음 옵션과 가르는데 스페이스와 탭을 선택적으로 사용할 수 있습니다.</p>
@@ -109,29 +96,29 @@
 <table class="info">
 	<tr>
 		<td align="center"><strong>.</strong></td>
-		<td><a name="dot"></a>기본값으로, 점은 문자 하나에 부합합니다. 새줄문자 (`r`n) 연속열은 제외합니다. 그러나  <a href="#opt_s">DotAll (s)</a>, <a href="#opt_esc_n">라인피드 (`n)</a>, <a href="#opt_esc_r">캐리지 리턴 (`r)</a>, <a href="#NEWLINE_ANY">`a 또는 (*ANYCRLF)</a> 옵션을 사용하여 이 행위를 변경할 수 있습니다. 예를 들어, <span class="regex">ab.</span>는 <span class="subj">abc</span> and <span class="subj">abz</span> 그리고 <span class="subj">ab_</span>에 부합합니다.</td>
+		<td><a name="dot"></a>기본값으로, 점은 문자 하나에 부합합니다. 새줄문자 (`r`n) 연속열은 제외합니다. 그러나 <a href="#opt_s">DotAll (s)</a>, <a href="#opt_esc_n">라인피드 (`n)</a>, <a href="#opt_esc_r">캐리지 리턴 (`r)</a>, <a href="#NEWLINE_ANY">`a 또는 (*ANYCRLF)</a> 옵션을 사용하여 이 행위를 변경할 수 있습니다. 예를 들어, <span class="regex">ab.</span>는 <span class="subj">abc</span> and <span class="subj">abz</span> 그리고 <span class="subj">ab_</span>에 부합합니다.</td>
 	</tr>
 	<tr>
 		<td align="center"><strong>*</strong></td>
-		<td><p>별표는 0개 이상의 이전 문자, <a href="#class">부류</a>, 또는 <a href="#subpat">부패턴</a>에 부합합니다. 예를 들어, <span class="regex">a*</span>는 <span class="subj">a</span>b 그리고 <span class="subj">aaa</span>b에 부합합니다. 또 &quot;a&quot;가 전혀 없는 문자열의 맨 앞에도 부합합니다.</p>
+		<td><p>별표는 0개 이상의 이전 문자, <a href="#class">부류</a>, 또는 <a href="#subpat">부패턴</a>에 부합합니다. 예를 들어, <span class="regex">a*</span>는 <span class="subj">a</span>b 그리고 <span class="subj">aaa</span>b에 부합합니다. 또 "a"가 전혀 없는 문자열의 맨 앞에도 부합합니다.</p>
 	      <p><strong>만능문자:</strong> 점-별 패턴 <span class="regex">.*</span>은 가장 많이 사용되는 패턴입니다. 왜냐하면 <em>어떤 문자든지</em> 0 회 이상 부합하기 때문입니다 (새줄 문자는 제외합니다: `r 그리고 `n). 예를 들어, <span class="regex">abc.*123</span>은 <span class="subj">abcAnything123</span>는 물론 <span class="subj">abc123</span>에도 부합합니다.</p>		  </td>
 	</tr>
 	<tr>
 	  <td align="center"><strong>?</strong></td>
-	  <td>물음표는 이전 문자, <a href="#set">부류</a>, 또는 <a href="#subpat">부패턴</a>이 0 또는 1개에 부합합니다. 이것을 &quot;앞의 문자는 선택적이다&quot라고 간주하십시오; 예를 들어, <span class="regex">colou?r</span>는 <span class="subj">color</span>와 <span class="subj">colour</span>에 모두 부합합니다 왜냐하면 &quot;u&quot;가 선택적이기 때문입니다.</td>
+	  <td>물음표는 이전 문자, <a href="#set">부류</a>, 또는 <a href="#subpat">부패턴</a>이 0 또는 1개에 부합합니다. 이것을 "앞의 문자는 선택적이다"라고 간주하십시오; 예를 들어, <span class="regex">colou?r</span>는 <span class="subj">color</span>와 <span class="subj">colour</span>에 모두 부합합니다 왜냐하면 "u"가 선택적이기 때문입니다.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>+</strong></td>
-	  <td>덧셈 부호는 하나 이상의 이전 문자, <a href="#class">부류</a>, 또는 <a href="#subpat">부패턴</a>에 부합합니다. 예를 들어 <span class="regex">a+</span>는 <span class="subj">a</span>b 그리고 <span class="subj">aaa</span>b에 부합합니다. 그러나 <span class="regex">a*</span> 그리고 <span class="regex">a?</span>와 다르게, 패턴 <span class="regex">a+</span>는 &quot;a&quot;가  없는 문자열의 선두에 부합하지 않습니다.</td>
+	  <td>덧셈 부호는 하나 이상의 이전 문자, <a href="#class">부류</a>, 또는 <a href="#subpat">부패턴</a>에 부합합니다. 예를 들어 <span class="regex">a+</span>는 <span class="subj">a</span>b 그리고 <span class="subj">aaa</span>b에 부합합니다. 그러나 <span class="regex">a*</span> 그리고 <span class="regex">a?</span>와 다르게, 패턴 <span class="regex">a+</span>는 "a"가 없는 문자열의 선두에 부합하지 않습니다.</td>
   </tr>
 	<tr>
 	  <td align="center">{min,max}</td>
-	  <td><p>이전의 문자, <a href="#set">부류</a>, 또는 <a href="#subpat">부패턴</a>이 최소 <em>min</em>회 그리고 최대 <em>max</em>회 나타나면 부합합니다. 예를 들어, <span class="regex">a{1,2}</span>는  <span class="subj">a</span>b에 부합하지만 <span class="subj">aa</span>ab에서 오직 앞의 두 a에만 부합합니다.</p>
+	  <td><p>이전의 문자, <a href="#set">부류</a>, 또는 <a href="#subpat">부패턴</a>이 최소 <em>min</em>회 그리고 최대 <em>max</em>회 나타나면 부합합니다. 예를 들어, <span class="regex">a{1,2}</span>는 <span class="subj">a</span>b에 부합하지만 <span class="subj">aa</span>ab에서 오직 앞의 두 a에만 부합합니다.</p>
         <p>또, {3}는 정확하게 3 회 나타나야 한다는 뜻이고, {3<strong>,</strong>}는 3 회 이상을 의미합니다. 주의: 지정된 횟수는 65536보다 작아야 합니다. 그리고 앞의 숫자는 뒤의 숫자보다 같거나 작아야 합니다.</p></td>
   </tr>
 	<tr>
 	  <td align="center"><strong>[...]</strong></td>
-	  <td><p><a name="set"></a><a name="class"></a><strong>문자 부류:</strong> 각괄호는 문자의 범위나 리스트를 둘러쌉니다 (또는 둘 다). 예를 들어, <span class="regex">[abc]</span>는 &quot; a, b 또는 c중 어느 문자에나 부합한다&quot;는 뜻입니다. 사이에 옆줄 문자를 사용하면 범위가 생성됩니다; 예를 들어, <span class="regex">[a-z]</span>는 &quot;소문자 a부터 z까지의 (포함) 모든 문자 하나에 부합한다&quot;는 뜻입니다. 리스트와 범위는 조합할 수 있습니다; 예를 들어 <span class="regex">[a-zA-Z0-9_]</span>는 &quot;모든 알파벳과 숫자 또는 밑줄 문자&quot;를 뜻합니다.</p>
+	  <td><p><a name="set"></a><a name="class"></a><strong>문자 부류:</strong> 각괄호는 문자의 범위나 리스트를 둘러쌉니다 (또는 둘 다). 예를 들어, <span class="regex">[abc]</span>는 " a, b 또는 c중 어느 문자에나 부합한다"는 뜻입니다. 사이에 옆줄 문자를 사용하면 범위가 생성됩니다; 예를 들어, <span class="regex">[a-z]</span>는 "소문자 a부터 z까지의 (포함) 모든 문자 하나에 부합한다"는 뜻입니다. 리스트와 범위는 조합할 수 있습니다; 예를 들어 <span class="regex">[a-zA-Z0-9_]</span>는 "모든 알파벳과 숫자 또는 밑줄 문자"를 뜻합니다.</p>
 	    <p>문자 부류 다음에 *, ?, +, 또는 {min,max}가 따라올 수 있습니다. 예를 들어, <span class="regex">[0-9]+</span>는 숫자가 하나 이상 나타나면 부합합니다; 그래서 xyz<span class="subj">123</span>에는 부합하지만 abcxyz에는 부합하지 않습니다.</p>            
         <p>다음 POSIX 이름 집합도 지원합니다. 형태는 [[:xxx:]]와 같으며, 여기에서 xxx는 다음 단어 중 하나입니다: alnum, alpha, ascii (0-127), blank (스페이스 또는 탭), cntrl (제어 문자), digit (0-9), xdigit (십육진수), print, graph (스페이스를 제외하고 인쇄 가능 문자), punct, lower, upper, space (공백문자), word (<a href="#word">\w</a>와 동일).</p>
         <p>문자 부류 안에서, 문자들은 피신시킬 필요가 없습니다. 부류 안에서 특별한 의미를 가질 경우는 제외합니다; 예를 들어, <span class="regex">[\^a]</span>, <span class="regex">[a\-b]</span>, <span class="regex">[a\]]</span>, 그리고 <span class="regex">[\\a]</span>.</p></td>
@@ -142,15 +129,15 @@
   </tr>
 	<tr>
 	  <td align="center"><strong>\d</strong></td>
-	  <td>숫자 하나에 부합합니다 (문자 부류 <span class="regex">[0-9]</span>와 동등합니다). 역으로, 대문자 \D는 &quot;숫자가 <em>아닌</em>-문자 하나&quot;에 부합합니다. 이것과 아래의 두 개는  <a href="#set">부류</a> 안에 사용할 수 있습니다; 예를 들어, <span class="regex">[\d.-]</span>는 &quot;숫자, 마침표, 또는 뺄셈 기호&quot;를 뜻합니다.</td>
+	  <td>숫자 하나에 부합합니다 (문자 부류 <span class="regex">[0-9]</span>와 동등합니다). 역으로, 대문자 \D는 "숫자가 <em>아닌</em>-문자 하나"에 부합합니다. 이것과 아래의 두 개는 <a href="#set">부류</a> 안에 사용할 수 있습니다; 예를 들어, <span class="regex">[\d.-]</span>는 "숫자, 마침표, 또는 뺄셈 기호"를 뜻합니다.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>\s</strong></td>
-	  <td>공백 문자에 부합합니다. 주로 스페이스, 탭, 그리고 새줄문자 (`r 그리고 `n)에 부합합니다. 반대로, 대문자 \S는 &quot;공백 문자가 <em>아닌</em>-문자&quot;를 뜻합니다.</td>
+	  <td>공백 문자에 부합합니다. 주로 스페이스, 탭, 그리고 새줄문자 (`r 그리고 `n)에 부합합니다. 반대로, 대문자 \S는 "공백 문자가 <em>아닌</em>-문자"를 뜻합니다.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>\w</strong></td>
-	  <td><a name="word"></a>&quot;단어&quot; 문자에 부합합니다. 즉 알파벳숫자나 밑줄문자에 부합합니다. 이것은 문자부류 <span class="regex">[a-zA-Z0-9_]</span>와 동등합니다. 역으로, 대문자 \W는 &quot;단어 문자가 <em>아닌</em>-문자&quot;를 뜻합니다.</td>
+	  <td><a name="word"></a>"단어" 문자에 부합합니다. 즉 알파벳숫자나 밑줄문자에 부합합니다. 이것은 문자부류 <span class="regex">[a-zA-Z0-9_]</span>와 동등합니다. 역으로, 대문자 \W는 "단어 문자가 <em>아닌</em>-문자"를 뜻합니다.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>^<br>
@@ -159,12 +146,11 @@
 	    <p><span class="regex">^</span>는 패턴의 선두에 나타나면 부합이 한 줄의 맨 앞에서 일어나야 합니다. 예를 들어, <span class="regex">^abc</span>는 <span class="subj">abc</span>123에는 부합하지만 123abc에는 부합하지 않습니다.</p>
 	    <p><span class="regex">$</span>가 패턴의 후미에 나타나면 부합이 한 줄의 맨 뒤에서 일어나야 합니다. 예를 들어, <span class="regex">abc$</span>는 123<span class="subj">abc</span>에는 부합하지만 abc123에는 부합하지 않습니다.</p>
       <p>두 개의 닻을 조합해 사용할 수 있습니다. 예를 들어, <span class="regex">^abc$</span>는 <span class="subj">abc</span>에만 부합합니다 (즉, 앞 뒤에 아무 문자도 없어야 합니다).</p>
-      <p>검색될 텍스트에 여러 줄이 포함되어 있다면, <a href="#Multiline">&quot;m&quot; 옵션을</a> 수단으로 닻을 텍스트 전체가 아니라 각 줄에 적용할 수 있습니다. 예를 들어, <span class="regex">m)^abc$</span>는 123`r`n<span class="subj">abc</span>`r`n789에 부합합니다. 그러나 &quot;m&quot; 옵션이 없다면, 부합하지 않습니다.</p></td>
+      <p>검색될 텍스트에 여러 줄이 포함되어 있다면, <a href="#Multiline">"m" 옵션을</a> 수단으로 닻을 텍스트 전체가 아니라 각 줄에 적용할 수 있습니다. 예를 들어, <span class="regex">m)^abc$</span>는 123`r`n<span class="subj">abc</span>`r`n789에 부합합니다. 그러나 "m" 옵션이 없다면, 부합하지 않습니다.</p></td>
   </tr>
 	<tr>
 	  <td align="center"><strong>\b</strong></td>
-	  <td>\b는 &quot;단어 경계&quot;를 뜻하는데, 문자를 소비하지 않기 때문에 닻과 비슷합니다. 현재 문자의 상태가 <a href="#word">단어 문자(\w)</a>의 반대가 되기를 요구합니다. 전형적으로 다른 단어 안에 나타나는 단어에 우발적으로 부합하는 것을 피하기 위해 사용됩니다. 
-	  예를 들어, <span class="regex">\bcat\b</span>는 catfish에 부합하지 않지만, <span class="subj">cat</span>에는 그 둘레에 구두점 기호가 있든 공백문자가 있든 상관없이 부합합니다. 대문자 \B는 그 반대입니다: 현재 문자가 단어 경계에 <em>있지 않기를</em> 요구합니다.</td>
+	  <td>\b는 "단어 경계"를 뜻하는데, 문자를 소비하지 않기 때문에 닻과 비슷합니다. 현재 문자의 상태가 <a href="#word">단어 문자(\w)</a>의 반대가 되기를 요구합니다. 전형적으로 다른 단어 안에 나타나는 단어에 우발적으로 부합하는 것을 피하기 위해 사용됩니다. 예를 들어, <span class="regex">\bcat\b</span>는 catfish에 부합하지 않지만, <span class="subj">cat</span>에는 그 둘레에 구두점 기호가 있든 공백문자가 있든 상관없이 부합합니다. 대문자 \B는 그 반대입니다: 현재 문자가 단어 경계에 <em>있지 않기를</em> 요구합니다.</td>
   </tr>
 	<tr>
 	  <td align="center"><strong>|</strong></td>
@@ -175,8 +161,8 @@
 	  <td><p><a name="subpat"></a>괄호로 둘러싸인 항목은 다음에 주로 많이 사용됩니다:</p>
 	    <ul>
 	      <li>평가의 순서를 결정합니다. 예를 들어, <span class="regex">(Sun|Mon|Tues|Wednes|Thurs|Fri|Satur)day</span>는 요일 이름에 부합합니다.</li>
-	      <li><span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span>, 또는 <span class="regex">{min,max}</span>를 문자 하나가 아니라 <em>일련의</em> 문자에 적용합니다. 예를 들어, <span class="regex">(abc)+</span>는 문자열 &quot;abc&quot;가 하나 이상 나타나면 부합합니다; 그래서 <span class="subj">abcabc</span>123는 부합하지만 ab123이나 bc123에는 부합하지 않습니다.</li>
-          <li><a name="capture"></a> <span class="regex">abc<span class="red">(.*)</span>xyz</span>에서 점-별과 같이 부패턴을 나포합니다. 예를 들어, <a href="../commands/RegExMatch.htm">RegExMatch()</a>는 각 패턴에 부합하는 부문자열을 자신의 <a href="../commands/RegExMatch.htm#Array">출력 배열</a>에 저장합니다. 비슷하게, <a href="../commands/RegExReplace.htm">RegExReplace()</a>는 $1와 같은 <a href="../commands/RegExReplace.htm#BackRef">역참조</a>를 통하여, 각 부패턴에 부합하는 부문자열을 결과에 삽입할 수 있습니다. 부패턴을 나포하는 부작용 없이 반괄호를 사용하려면, <span class="regex">?:</span>를 앞쪽 두 개의 문자로 하여 괄호 안에 지정하십시오; 예를 들어: <span class="regex">(<span class="red">?:</span>.*)</span></li>
+	      <li><span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span>, 또는 <span class="regex">{min,max}</span>를 문자 하나가 아니라 <em>일련의</em> 문자에 적용합니다. 예를 들어, <span class="regex">(abc)+</span>는 문자열 "abc"가 하나 이상 나타나면 부합합니다; 그래서 <span class="subj">abcabc</span>123는 부합하지만 ab123이나 bc123에는 부합하지 않습니다.</li>
+          <li><a name="capture"></a><span class="regex">abc<span class="red">(.*)</span>xyz</span>에서 점-별과 같이 부패턴을 나포합니다. 예를 들어, <a href="../commands/RegExMatch.htm">RegExMatch()</a>는 각 패턴에 부합하는 부문자열을 자신의 <a href="../commands/RegExMatch.htm#Array">출력 배열</a>에 저장합니다. 비슷하게, <a href="../commands/RegExReplace.htm">RegExReplace()</a>는 $1와 같은 <a href="../commands/RegExReplace.htm#BackRef">역참조</a>를 통하여, 각 부패턴에 부합하는 부문자열을 결과에 삽입할 수 있습니다. 부패턴을 나포하는 부작용 없이 반괄호를 사용하려면, <span class="regex">?:</span>를 앞쪽 두 개의 문자로 하여 괄호 안에 지정하십시오; 예를 들어: <span class="regex">(<span class="red">?:</span>.*)</span></li>
 	      <li>바로바로 <a href="#Options">옵션</a>을 변경합니다. 예를 들어, <span class="regex">(?im)</span>는 패턴의 나머지에 대하여 (또는 부패턴 안에서 일어나면 부패턴에) 대소문자 구별과 여러 줄 옵션을 켭니다. 역으로, <span class="regex">(?-im)</span>는 그 둘을 다 끕니다. DPS`r`n`a를 제외하고 모든 옵션을 지원합니다.</li>
 	    </ul></td>
   </tr>
@@ -184,8 +170,8 @@
 	  <td align="center"><strong>\t<br>
   \r<br>
   etc.</strong></td>
-	  <td><p>이 피신 연속열은 특수 문자를 의미합니다. 가장 많이 사용되는 것은 <span class="regex">\t</span> (탭), <span class="regex">\r</span> (캐리지 리턴), 그리고 <span class="regex">\n</span> (줄넘김)입니다. 오토핫키에서 액센트 (`)는 선택적으로 이런 경우 역사선 대신 사용할 수 있습니다. \xhh 형태의 피신 연속열도 지원합니다. 여기에서 <em>hh</em>는 00부터 FF 사이의  ANSI 문자의 십육진 코드입니다.</p>
-      <p>v1.0.46.06+에서, <span class="regex">\R</span>는 &quot;종류에 상관없이 새줄 하나&quot;를 뜻합니다. 즉, <a href="#NEWLINE_ANY">`a 옵션</a>에 나열되어 있는 줄들을 뜻합니다 (그렇지만, <a href="#class">문자 부류</a> 안에서 \R은 그저 기호 &quot;R&quot;에 불과합니다). v1.0.47.05+에서, <span class="regex">\R</span>를 CR, LF, 그리고 CRLF로 제한할 수 있습니다. (옵션 바로 뒤) 패턴의 앞에 대문자로 (*BSR_ANYCRLF)를 지정하면 됩니다; 예, <span class="regex">im)(*BSR_ANYCRLF)abc\Rxyz</span></p></td>
+	  <td><p>이 피신 연속열은 특수 문자를 의미합니다. 가장 많이 사용되는 것은 <span class="regex">\t</span> (탭), <span class="regex">\r</span> (캐리지 리턴), 그리고 <span class="regex">\n</span> (줄넘김)입니다. 오토핫키에서 액센트 (`)는 선택적으로 이런 경우 역사선 대신 사용할 수 있습니다. \xhh 형태의 피신 연속열도 지원합니다. 여기에서 <em>hh</em>는 00부터 FF 사이의 ANSI 문자의 십육진 코드입니다.</p>
+      <p>v1.0.46.06+에서, <span class="regex">\R</span>는 "종류에 상관없이 새줄 하나"를 뜻합니다. 즉, <a href="#NEWLINE_ANY">`a 옵션</a>에 나열되어 있는 줄들을 뜻합니다 (그렇지만, <a href="#class">문자 부류</a> 안에서 \R은 그저 기호 "R"에 불과합니다). v1.0.47.05+에서, <span class="regex">\R</span>를 CR, LF, 그리고 CRLF로 제한할 수 있습니다. (옵션 바로 뒤) 패턴의 앞에 대문자로 (*BSR_ANYCRLF)를 지정하면 됩니다; 예, <span class="regex">im)(*BSR_ANYCRLF)abc\Rxyz</span></p></td>
   </tr>
   <tr id="slashP">
     <td align="center"><strong>\p{xx}<br>\P{xx}<br>\X</strong></td>
@@ -198,11 +184,8 @@
     </td>
   </tr>
 </table>
-<p><strong>탐욕적</strong>: 기본값입니다, <span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span>, 그리고 <span class="regex">{min,max}</span>는 탐욕적입니다. 왜냐하면 여전히 전체 패턴을 만족시키기만 하면 <em>마지막</em> 가능한 문자까지 모든 문자를 소비하기 때문입니다.
-
-대신에 가능한 <em>첫</em> 문자에 멈추게 하고 싶다면, 다음에 물음표를 덧붙이십시오. 예를 들어, (물음표 없는) 패턴 <span class="regex">&lt;.+&gt;</span>는 다음과 같은 뜻입니다: &quot;&lt;를 찾고, 다음에 하나 이상의 문자들이 따라오고, 다음에 &gt;이 따라오는 문자열을 찾아라&quot;. 이 패턴이 <em>전체</em> 문자열 <span class="subj"><span class="red"><strong>&lt;</strong></span>em&gt;text&lt;/em<span class="red"><strong>&gt;</strong></span></span>에 부합하지 못하도록 막으려면, 물음표를 덧셈 부호 뒤에 추가하십시오: <span class="regex">&lt;.+<span class="red">?</span>&gt;</span>. 이렇게 하면 부합이 첫 번째 '&gt;'에서 멈추고 그리하여 첫 번째 태그 <span class="subj"><span class="red"><strong>&lt;</strong></span>em<span class="red"><strong>&gt;</strong></span></span>에만 부합합니다.</p>
-<p>
-<strong>내다-보기와 돌아-보기 표명</strong>: 그룹 <span class="regex">(?=...)</span>, <span class="regex">(?!...)</span>, <span class="regex">(?&lt;=...)</span>, 그리고 <span class="regex">(?&lt;!...)</span>는 <em>표명(assertions)</em>이라고 부릅니다. 왜냐하면 조건은 만족하도록 요구하지만 문자를 전혀 소비하지 않기 때문입니다. 예를 들어, <span class="regex">abc(?=.*xyz)</span> 는 내다-보기 표명입니다. 문자열 xyz가 문자열 abc의 오른쪽 어딘가에서 끝나기를 요구합니다 (그렇지 않다면, 전체 패턴을 부합한 것으로 간주하지 않습니다). <span class="regex">(?=...)</span>는 <em>긍정</em> 내다-보기로 부릅니다. 왜냐하면 지정된 패턴이 존재하기를 요구하기 때문입니다. 반대로, <span class="regex">(?!...)</span>는 <em>부정</em> 내다-보기 입니다. 왜냐하면 지정한 패턴이 존재하지 <em>않기</em>를 요구합니다. 비슷하게, <span class="regex">(?&lt;=...)</span>와 <span class="regex">(?&lt;!...)</span>는 (각각) 긍정 그리고 부정 <em>돌아-보기</em>입니다. 왜냐하면 현재 위치에서 오른쪽이 아니라 <em>왼쪽을</em> 돌아 보기 때문입니다. 돌아-보기는 내다-보기보다 제한이 더 많습니다. 왜냐하면 <span class="regex">*</span>, <span class="regex">?</span>, 그리고 <span class="regex">+</span>와 같은 다양한 크기의 수량자를 지원하지 않기 때문입니다. 피신 연속열 \K는 돌아-보기 표명과 비슷해 보입니다. 왜냐하면 이전에-부합된 문자를 최종 부합 결과에서 빼버리기 때문입니다. 예를 들어, <span class="regex">foo\Kbar</span>는 &quot;foobar&quot;에 부합하지만 &quot;bar&quot;에 부합했다고 보고합니다.</p>
+<p><strong>탐욕적</strong>: 기본값입니다, <span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span>, 그리고 <span class="regex">{min,max}</span>는 탐욕적입니다. 왜냐하면 여전히 전체 패턴을 만족시키기만 하면 <em>마지막</em> 가능한 문자까지 모든 문자를 소비하기 때문입니다. 대신에 가능한 <em>첫</em> 문자에 멈추게 하고 싶다면, 다음에 물음표를 덧붙이십시오. 예를 들어, (물음표 없는) 패턴 <span class="regex">&lt;.+&gt;</span>는 다음과 같은 뜻입니다: "&lt;를 찾고, 다음에 하나 이상의 문자들이 따라오고, 다음에 &gt;이 따라오는 문자열을 찾아라". 이 패턴이 <em>전체</em> 문자열 <span class="subj"><span class="red"><strong>&lt;</strong></span>em&gt;text&lt;/em<span class="red"><strong>&gt;</strong></span></span>에 부합하지 못하도록 막으려면, 물음표를 덧셈 부호 뒤에 추가하십시오: <span class="regex">&lt;.+<span class="red">?</span>&gt;</span>. 이렇게 하면 부합이 첫 번째 '&gt;'에서 멈추고 그리하여 첫 번째 태그 <span class="subj"><span class="red"><strong>&lt;</strong></span>em<span class="red"><strong>&gt;</strong></span></span>에만 부합합니다.</p>
+<p><strong>내다-보기와 돌아-보기 표명</strong>: 그룹 <span class="regex">(?=...)</span>, <span class="regex">(?!...)</span>, <span class="regex">(?&lt;=...)</span>, 그리고 <span class="regex">(?&lt;!...)</span>는 <em>표명(assertions)</em>이라고 부릅니다. 왜냐하면 조건은 만족하도록 요구하지만 문자를 전혀 소비하지 않기 때문입니다. 예를 들어, <span class="regex">abc(?=.*xyz)</span> 는 내다-보기 표명입니다. 문자열 xyz가 문자열 abc의 오른쪽 어딘가에서 끝나기를 요구합니다 (그렇지 않다면, 전체 패턴을 부합한 것으로 간주하지 않습니다). <span class="regex">(?=...)</span>는 <em>긍정</em> 내다-보기로 부릅니다. 왜냐하면 지정된 패턴이 존재하기를 요구하기 때문입니다. 반대로, <span class="regex">(?!...)</span>는 <em>부정</em> 내다-보기 입니다. 왜냐하면 지정한 패턴이 존재하지 <em>않기</em>를 요구합니다. 비슷하게, <span class="regex">(?&lt;=...)</span>와 <span class="regex">(?&lt;!...)</span>는 (각각) 긍정 그리고 부정 <em>돌아-보기</em>입니다. 왜냐하면 현재 위치에서 오른쪽이 아니라 <em>왼쪽을</em> 돌아 보기 때문입니다. 돌아-보기는 내다-보기보다 제한이 더 많습니다. 왜냐하면 <span class="regex">*</span>, <span class="regex">?</span>, 그리고 <span class="regex">+</span>와 같은 다양한 크기의 수량자를 지원하지 않기 때문입니다. 피신 연속열 \K는 돌아-보기 표명과 비슷해 보입니다. 왜냐하면 이전에-부합된 문자를 최종 부합 결과에서 빼버리기 때문입니다. 예를 들어, <span class="regex">foo\Kbar</span>는 "foobar"에 부합하지만 "bar"에 부합했다고 보고합니다.</p>
 <p><strong>관련 항목</strong>: 정규 표현식은 <a href="../commands/RegExMatch.htm">RegExMatch()</a>, <a href="../commands/RegExReplace.htm">RegExReplace()</a>, 그리고 <a href="../commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>가 지원합니다.</p>
 <p><strong>마지막 당부</strong>: 이 페이지가 아주 사용되는 RegEx 특징의 대부분을 다루고 있지만, 이 말고도 조건적 부분 패턴 같이, 탐험해 볼 만한 수 많은 특징이 있습니다. 완전한 PCRE 매뉴얼은 <a href="http://www.pcre.org/pcre.txt">www.pcre.org/pcre.txt</a>에 있습니다.</p>
 <p>&nbsp;</p>

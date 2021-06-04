@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>If/IfEqual/IfNotEqual/IfLess/IfLessOrEqual/IfGreater/IfGreaterOrEqual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,8 +12,7 @@
 
 <h1>If/IfEqual/IfNotEqual/IfLess/IfLessOrEqual/IfGreater/IfGreaterOrEqual</h1>
 
-<p>
-<a href="../Variables.htm">변수</a>를 변수해 비교해  TRUE로 평가될 경우 수행할 명령어(들)을 지정합니다.  명령어가 여럿 존재하면,  <a href="Block.htm">블록</a> (활괄호) 안에 둘러 싸십시오.</p>
+<p><a href="../Variables.htm">변수</a>를 변수해 비교해 TRUE로 평가될 경우 수행할 명령어(들)을 지정합니다. 명령어가 여럿 존재하면, <a href="Block.htm">블록</a> (활괄호) 안에 둘러 싸십시오.</p>
 
 <pre class="Syntax">IfEqual, var, value (same: if var = value)
 IfNotEqual, var, value (same: if var &lt;&gt; value) (!= can be used in place of &lt;&gt;)
@@ -22,7 +22,7 @@ IfLess, var, value (same: if var &lt; value)
 IfLessOrEqual, var, value (same: if var &lt;= value)
 If var <em>; 변수의 내용이 비어 있거나 0이면, 거짓으로 간주됩니다. 그렇지 않으면 참입니다.</em>
 
-다음도 참조: <a href="IfInString.htm">IfInString</a></pre>
+다음 참조: <a href="IfInString.htm">IfInString</a></pre>
 <h3>매개변수</h3>
 <dl>
 
@@ -35,38 +35,25 @@ If var <em>; 변수의 내용이 비어 있거나 0이면, 거짓으로 간주�
 </dl>
 
 <h3>논평</h3>
-<p>
-변수(<em>var</em>)와 값(<em>value</em>)이 순수하게 숫치라면, 문자열이 아니라 숫자로 비교됩니다. 그렇지 않으면, 문자열로 알파벳 순으로 비교됩니다 (즉, 알파벳 숫서로 <em>var</em>가 <em>value</em>보다 큰지 작은지 같은지 결정합니다).</p>
-<p>
-IF 또는 <a href="Else.htm">ELSE</a>가 여러 줄을 소유하면, 그런 줄들은 활괄호로 둘러 싸야 합니다. 예를 들어:</p>
+<p>변수(<em>var</em>)와 값(<em>value</em>)이 순수하게 숫치라면, 문자열이 아니라 숫자로 비교됩니다. 그렇지 않으면, 문자열로 알파벳 순으로 비교됩니다 (즉, 알파벳 숫서로 <em>var</em>가 <em>value</em>보다 큰지 작은지 같은지 결정합니다).</p>
+<p>IF 또는 <a href="Else.htm">ELSE</a>가 여러 줄을 소유하면, 그런 줄들은 활괄호로 둘러 싸야 합니다. 예를 들어:</p>
 <pre>if count &lt;= 0
 {
     WinClose Untitled - Notepad
-    MsgBox 어떤 항목도 존재하지 않습니다.
+    MsgBox 항목이 하나도 없습니다.
 }</pre>
-<p>
-그렇지만, 한 줄만 IF 또는 ELSE에 속한다면, 활괄호는 선택적입니다.</p>
-<p>
-명령어-이름 스타일을 사용한다면, 또다른 명령어는 IF 서술문과 같은 줄에만 나타날 수 있습니다. 다른 말로, 다음은 유효합니다:</p>
-
+<p>그렇지만, 한 줄만 IF 또는 ELSE에 속한다면, 활괄호는 선택적입니다.</p>
+<p>명령어-이름 스타일을 사용한다면, 또다른 명령어는 IF 서술문과 같은 줄에만 나타날 수 있습니다. 다른 말로, 다음은 유효합니다:</p>
 <pre>IfEqual, x, 1, Sleep, 1
 IfGreater, x, 1, EnvAdd, x, 2</pre>
-<p>
-그러나 다음은 유효하지 않습니다:</p>
-
+<p>그러나 다음은 유효하지 않습니다:</p>
 <pre>if x = 1 Sleep 1
 IfGreater, x, 1, x += 2</pre>
-<p>
-<a href="IfExpression.htm#otb">One True Brace (OTB) 스타일</a>은 이런 유형이 if 서술문에 사용하면 <strong>안 됩니다</strong>. 오직 표현식 if-서술문에만 사용할 수 있습니다.</p>
-<p>
-관련하여 말씀드리자면, 다음 명령어 <code><a href="IfBetween.htm">if var [not] between LowerBound and UpperBound</a></code>는 변수가 두 값 사이에 있는지 점검합니다. 그리고 <code><a href="IfIn.htm">if var [not] in value1,value2</a></code>는 변수의 내용이 값 목록 안에 존재하는지 점검하는 데 사용할 수 있습니다.</p>
-
+<p><a href="IfExpression.htm#otb">One True Brace (OTB) 스타일</a>은 이런 유형이 if 서술문에 사용하면 <strong>안 됩니다</strong>. 오직 표현식 if-서술문에만 사용할 수 있습니다.</p>
+<p>관련하여 말씀드리자면, 다음 명령어 "<a href="IfBetween.htm">if var [not] between LowerBound and UpperBound</a>"는 변수가 두 값 사이에 있는지 점검합니다. 그리고 "<a href="IfIn.htm">if var [not] in value1,value2</a>"는 변수의 내용이 값 목록 안에 존재하는지 점검하는 데 사용할 수 있습니다.</p>
 <h3>관련 항목</h3>
-<p>
-<a href="IfExpression.htm">IF (expression)</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="SetExpression.htm">할당 표현식 (:=)</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfInString.htm">IfInString</a>, <a href="Block.htm">블록</a>, <a href="Else.htm">Else</a></p>
-
+<p><a href="IfExpression.htm">IF (expression)</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="SetExpression.htm">할당 표현식 (:=)</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfInString.htm">IfInString</a>, <a href="Block.htm">블록</a>, <a href="Else.htm">Else</a></p>
 <h3>예제</h3>
-
 <pre class="NoIndent">if counter &gt;= 1
     Sleep, 10
 
@@ -80,7 +67,7 @@ if MyVar = %MyVar2%
     MsgBox MyVar와 MyVar2의 내용은 동일합니다.
 else if MyVar =
 {
-    MsgBox, 4,, MyVar가 비어 있습니다. 계속하시겠습니까?
+    MsgBox, 4,, MyVar가 비어 있습니다. 계속할까요?
     IfMsgBox, No
         Return
 }

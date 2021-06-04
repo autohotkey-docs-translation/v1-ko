@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>If var [not] between LowerBound and UpperBound</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -30,15 +31,10 @@ if <i>Var</i> not between <i>LowerBound</i> and <i>UpperBound</i></pre>
 </dl>
 
 <h3>논평</h3>
-<p>
-매개변수 세 개가 모두 순수하게 숫치이면, 문자열이 아니라 숫자로 비교됩니다. 그렇지 않으면, 문자열처럼 알파벳 순으로 비교됩니다 (즉, 알파벳 순서로 <em>Var</em>가 지정한 범위 안에 있는지 결정됩니다). 그 경우, <code><a href="StringCaseSense.htm">StringCaseSense</a> On</code>을 사용하면 대소문자를 구분해 비교할 수 있습니다.</p>
-<p>
-<strong>연산자 &quot;between&quot;, &quot;is&quot;, &quot;in&quot;, 그리고 &quot;contains&quot;는 <a href="../Variables.htm#Expressions">표현식</a> 안에 지원되지 않습니다.</strong></p>
-
+<p>매개변수 세 개가 모두 순수하게 숫치이면, 문자열이 아니라 숫자로 비교됩니다. 그렇지 않으면, 문자열처럼 알파벳 순으로 비교됩니다 (즉, 알파벳 순서로 <em>Var</em>가 지정한 범위 안에 있는지 결정됩니다). 그 경우, <code><a href="StringCaseSense.htm">StringCaseSense</a> On</code>을 사용하면 대소문자를 구분해 비교할 수 있습니다.</p>
+<p><strong>연산자 "between", "is", "in", 그리고 "contains"는 <a href="../Variables.htm#Expressions">표현식</a> 안에 지원되지 않습니다.</strong></p>
 <h3>관련 항목</h3>
-<p>
-<a href="IfEqual.htm">IfEqual/Greater/Less</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfIs.htm">if var is type</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="EnvAdd.htm">EnvAdd</a><a href="Block.htm">, 블록</a>, <a href="Else.htm">Else</a></p>
-
+<p><a href="IfEqual.htm">IfEqual/Greater/Less</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfIs.htm">if var is type</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="EnvAdd.htm">EnvAdd</a><a href="Block.htm">, 블록</a>, <a href="Else.htm">Else</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">if var between 1 and 5
     MsgBox, %var%는 범위가 1 이상 5 이하입니다.

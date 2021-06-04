@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Try</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,38 +12,30 @@
 
 <h1>Try <span class="ver">[v1.1.04+]</span></h1>
 
-<p>
-하나 이상의 서술문들을 (명령어나 표현식을) <a href="Throw.htm">throw</a> 명령어가 던지는 실행시간 에러와 예외로부터 보호합니다.</p>
+<p>하나 이상의 서술문 (명령어나 표현식)을 <a href="Throw.htm">throw</a> 명령어가 던지는 실행시간 에러와 예외로부터 보호합니다.</p>
 
 <pre class="Syntax">Try <i>Statement</i></pre>
 <pre class="Syntax" style="line-height: 100%">Try
 {
     <i>Statements</i>
 }</pre>
-
 <h3>논평</h3>
-<p>
-<em>try</em> 명령어는 보통 다음에 <a href="Block.htm">블록</a>이 따라옵니다 - 활괄호로 둘러 싸인 하나 이상의 서술문 (명령어나 표현식). 하나의 서술문만 실행한다면, <em>try</em>와 같은 줄 또는 다음 줄에 배치할 수 있고, 활괄호를 생략할 수 있습니다. <em>try</em>가 에러를 잡을 때 정확하게 한 번만 실행되는 코드를 지정하려면, <a href="Catch.htm">catch</a> 명령어를 사용하십시오.</p>
-<p>
-실행시간 에러가 일어나면 <a href="Throw.htm">throw</a> 명령어 또는 프로그램이 예외를 던질 수 있습니다. try 블록 안에서 또는 블록에서 호출한 함수 안에서 예외가 던져질 때, 다음과 같은 일이 일어납니다:</p>
+<p><em>try</em> 명령어는 보통 다음에 <a href="Block.htm">블록</a>이 따라옵니다 - 활괄호로 둘러 싸인 하나 이상의 서술문 (명령어나 표현식). 하나의 서술문만 실행한다면, <em>try</em>와 같은 줄 또는 다음 줄에 배치할 수 있고, 활괄호를 생략할 수 있습니다. <em>try</em>가 에러를 잡을 때 정확하게 한 번만 실행되는 코드를 지정하려면, <a href="Catch.htm">catch</a> 명령어를 사용하십시오.</p>
+<p>실행시간 에러가 일어나면 <a href="Throw.htm">throw</a> 명령어 또는 프로그램이 예외를 던질 수 있습니다. try 블록 안에서 또는 블록에서 호출한 함수 안에서 예외가 던져질 때, 다음과 같은 일이 일어납니다:</p>
 <ul>
   <li>상응하는 <a href="Catch.htm">catch</a> 서술문이 있다면, 실행은 거기에서 계속됩니다.</li>
   <li>catch 서술문은 없지만 <a href="Finally.htm">finally</a> 서술문이 있다면, 그것이 실행됩니다. 그러나 일단 끝나면 예외는 자동으로 다시 던져집니다.</li>
   <li>catch 서술문도 없고 finally 서술문도 없다면, 실행은 다음 줄 try 블록 밖으로 계속됩니다.</li>
 </ul>
-<p>
-try 블록이 실행 중이지 않은 동안에 예외가 던져지면, 에러 메시지를 보여주고 현재 쓰레드를 종료합니다.</p>
-<p>
-<a href="Block.htm#otb">One True Brace (OTB) 스타일</a>을 선택적으로 <em>try</em> 명령어에 사용할 수 있습니다. 예를 들어:</p>
+<p>try 블록이 실행 중이지 않은 동안에 예외가 던져지면, 에러 메시지를 보여주고 현재 쓰레드를 종료합니다.</p>
+<p><a href="Block.htm#otb">One True Brace (OTB) 스타일</a>을 선택적으로 <em>try</em> 명령어에 사용할 수 있습니다. 예를 들어:</p>
 <pre>try <strong>{</strong>
     ...
 <strong>}</strong> catch e <strong>{</strong>
     ...
 <strong>}</strong></pre>
-
 <h3>관련 항목</h3>
 <p><a href="Catch.htm">Catch</a>, <a href="Throw.htm">Throw</a>, <a href="Finally.htm">Finally</a>, <a href="Block.htm">블록</a></p>
-
 <h3 id="Examples">예제</h3>
 <pre class="NoIndent" id="ex_basic"><em>; 예제 #1: try/catch/throw의 기본 개념.</em>
 
@@ -65,7 +58,7 @@ HelloWorld()  <em>; 언제나 성공합니다.</em>
 MakeToast()  <em>; 언제나 실패합니다.</em>
 {
     <em>; try 블록의 에러 처리에 곧바로 점프합니다:</em>
-    <a href="Throw.htm">throw</a> A_ThisFunc &quot; is not implemented, sorry&quot;
+    <a href="Throw.htm">throw</a> A_ThisFunc " is not implemented, sorry"
 }
 </pre>
 
@@ -89,15 +82,15 @@ catch
 
 try
 {
-    obj := <a href="ComObjCreate.htm">ComObjCreate</a>(&quot;<a href="http://msdn.microsoft.com/en-us/library/aa227633(v=vs.60).aspx">ScriptControl</a>&quot;)
-    obj.ExecuteStatement(&quot;MsgBox &quot;&quot;This is embedded VBScript&quot;&quot;&quot;)
+    obj := <a href="ComObjCreate.htm">ComObjCreate</a>("<a href="http://msdn.microsoft.com/en-us/library/aa227633(v=vs.60).aspx">ScriptControl</a>")
+    obj.ExecuteStatement("MsgBox ""This is embedded VBScript""")
     obj.InvalidMethod() <em>; 이 줄은 실행 시간 에러를 일으킵니다.</em>
 }
 catch e
 {
     <em>; e를 담고 있는 객체에 관한 더 자세한 정보는 <a href="Throw.htm#Exception">Exception()</a>를 참조하십시오.</em>
-    MsgBox, 16,, % &quot;Exception thrown!`n`nwhat: &quot; e.what &quot;`nfile: &quot; e.file
-        . &quot;`nline: &quot; e.line &quot;`nmessage: &quot; e.message &quot;`nextra: &quot; e.extra
+    MsgBox, 16,, % "Exception thrown!`n`nwhat: " e.what "`nfile: " e.file
+        . "`nline: " e.line "`nmessage: " e.message "`nextra: " e.extra
 }
 </pre>
 

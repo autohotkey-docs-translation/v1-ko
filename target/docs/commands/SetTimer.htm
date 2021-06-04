@@ -1,9 +1,10 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>SetTimer</title>
 <meta name="description" content="Perform scripted actions at intervals of your choice with this free macro program. SetTimer launches a subroutine automatically and repeatedly.">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,93 +13,62 @@
 
 <h1>SetTimer</h1>
 
-<p>서브루틴이 지정된 일정 간격으로 자동으로 반복적으로 기동되도록 만듭니다.</p>
+<p>서브루틴이 자동으로 그리고 반복적으로 지정된 시간 간격마다 기동되도록 만듭니다.</p>
 
 <pre class="Syntax">SetTimer [, Label, Period|On|Off|Delete, Priority]</pre>
 <h3>매개변수</h3>
 <dl>
 
   <dt>Label</dt>
-  <dd>
-  <p>점프해 갈 <a href="../misc/Labels.htm">라벨</a> 또는 <a href="../Hotkeys.htm">핫키 라벨</a>의 이름.  <a href="Return.htm">Return</a>이나 <a href="Exit.htm">Exit</a>을 만날 때까지 <em>Label</em> 아래의 명령어들이 실행됩니다. 거의 모든 다른 명령어의 매개변수처럼, <em>Label</em>은 <a href="../Variables.htm">변수</a> 참조가 될 수 있습니다. %MyLabel%와 같이, 변수에 저장된 이름이 목표로 사용됩니다.</p>
-  <p>
-  <span class="ver">[v1.1.01+]:</span> <em>Label</em>이 생략되면, <a href="../Variables.htm#ThisLabel">A_ThisLabel</a>이 사용됩니다. 예를 들어, <code>SetTimer,, Off</code>를 타이머 서브루틴 안에 사용하면 타이머를 끌 수 있습니다.</p>
-  <p id="Functor"><span class="ver">[v1.1.20+]:</span> 라벨 이름이 유효하지 않으면, 이 매개변수는 함수의 이름, 또는 <a href="../objects/Functor.htm">함수 객체</a>를 담고 있는 한 개짜리 변수가 될 수 있습니다. 예를 들어, <code>SetTimer %funcobj%, 1000</code> 또는 <code>SetTimer % funcobj, 1000</code>. 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다.</p>
+  <dd><p>점프해 갈 <a href="../misc/Labels.htm">라벨</a> 또는 <a href="../Hotkeys.htm">핫키 라벨</a>의 이름. <a href="Return.htm">Return</a>이나 <a href="Exit.htm">Exit</a>을 만날 때까지 <em>Label</em> 아래의 명령어들이 실행됩니다. 거의 모든 다른 명령어의 매개변수처럼, <em>Label</em>은 <a href="../Variables.htm">변수</a> 참조가 될 수 있습니다. %MyLabel%와 같이, 변수에 저장된 이름이 목표로 사용됩니다.</p>
+  <p><span class="ver">[v1.1.01+]:</span> <em>Label</em>이 생략되면, <a href="../Variables.htm#ThisLabel">A_ThisLabel</a>이 사용됩니다. 예를 들어, <code>SetTimer,, Off</code>를 타이머 서브루틴 안에 사용하면 타이머를 끌 수 있습니다.</p>
+  <p id="Functor"><span class="ver">[v1.1.20+]:</span> 유효하지 않은 라벨 이름이라면, 이 매개변수는 함수의 이름, 또는 (<a href="../objects/Functor.htm">함수 객체</a>를 담고 있는) 단일 변수 참조일 수 있습니다. 예를 들어, <code>SetTimer %funcobj%, 1000</code> 또는 <code>SetTimer % funcobj, 1000</code>. 함수 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다.</p>
   </dd>
 
   <dt>Period|On|Off|Delete</dt>
   <dd><p><strong>On</strong>: 이전 기간(<em>period</em>) 동안 비활성화되어 있던 타이머를 재활성화합니다. 타이머가 존재하지 않으면, 새로 만듭니다 (기본 간격은 250입니다). 타이머가 존재하지만 이전에 <a href="#once">한-번만- 실행 모드</a>로 설정되어 있었다면, 다시 한 번만 실행됩니다.</p>
       <p><strong>Off</strong>: 기존의 타이머를 끕니다.</p>
       <p><strong>Delete</strong> <span class="ver">[v1.1.20+]</span>: 기존의 타이머를 끄고 삭제합니다. 타이머가 <a href="../objects/Functor.htm">함수 객체</a>에 연관되어 있다면, 그 객체는 해제됩니다. 타이머를 끄더라도 객체는 해제되지 않습니다.</p>
-      <p>
-	  <strong>Period</strong>: 이 매개변수를 <a href="#Precision">대략적인</a> 밀리 초의 개수로 사용하여 타이머를 생성하거나 갱신합니다. 이 시간은 마지막으로 <em>Label</em> 서브루틴이 시작한 이후로 경과해야 하는 시간입니다. 이 시간 만큼 지나면, <em>Label</em>은 다시 실행됩니다 
-	  (단, 지난 시간 이후로 계속 실행 중이라면 예외입니다). 타이머는 자동으로 활성화됩니다. 이를 막으려면, 이 매개변수에 OFF를 지정하고, 즉시 두 번째로 명령어를 호출하십시오.</p>
-      <p>
-	  <em>Period</em>는 정수여야 합니다. 단 변수나 표현식이 사용되면 안됩니다. 이 경우는 소수점 이하는 전부 무시됩니다.</p>
-      <p>
-	  이 매개변수가 비어 있고 그리고:<br>
+      <p><strong>Period</strong>: 이 매개변수를 <a href="#Precision">대략적인</a> 밀리 초의 개수로 사용하여 타이머를 생성하거나 갱신합니다. 이 시간은 마지막으로 <em>Label</em> 서브루틴이 시작한 이후로 경과해야 하는 시간입니다. 이 시간 만큼 지나면, <em>Label</em>은 다시 실행됩니다 (단, 지난 시간 이후로 계속 실행 중이라면 예외입니다). 타이머는 자동으로 활성화됩니다. 이를 막으려면, 이 매개변수에 OFF를 지정하고, 즉시 두 번째로 명령어를 호출하십시오.</p>
+      <p><em>Period</em>는 정수여야 합니다. 단 변수나 표현식이 사용되면 안됩니다.</p>
+      <p>이 경우는 소수점 이하는 전부 무시됩니다. 이 매개변수가 비어 있고 그리고:<br>
       1) 타이머가 존재하지 않는다면: 기간을 250으로 하여 생성됩니다.<br>
-      2) 타이머가 이미 존재한다면: 그 타이머가 활성화되고 <em>Priority</em>를 지정하지 않는 한,  이전의 기간(<em>period</em>)은 <a href="#reset">리셋</a>됩니다.</p>
-      <p>
-	  <strong><a name="once" id="once"></a>Run only once</strong> <span class="ver">[v1.0.46.16+]:</span> 음의 정수로 <em>Period</em>를 지정하면 타이머가 오직 한 번만 실행되어야 한다는 사실을 나타낼 수 있습니다. 예를 들어,  -100을 지정하면 타이머는 지금 부터 100 ms 동안 실행되고 타이머를 끕니다. 마치 <code>SetTimer, Label, Off</code>를 사용한 효과가 있습니다.<br>
+      2) 타이머가 이미 존재한다면: 그 타이머가 활성화되고 <em>Priority</em>를 지정하지 않는 한, 이전의 기간(<em>period</em>)은 <a href="#reset">리셋</a>됩니다.</p>
+      <p><strong><a name="once" id="once"></a>Run only once</strong> <span class="ver">[v1.0.46.16+]:</span> 음의 정수로 <em>Period</em>를 지정하면 타이머가 오직 한 번만 실행되어야 한다는 사실을 나타낼 수 있습니다. 예를 들어, -100을 지정하면 타이머는 지금 부터 100 ms 동안 실행되고 타이머를 끕니다. 마치 <code>SetTimer, Label, Off</code>를 사용한 효과가 있습니다.<br>
       </p>
     </dd>
 
   <dt>Priority</dt>
-  <dd>
-  <p>이 선택적 매개변수는 -2147483648에서 2147483647 사이의 정수입니다 (또는 <a href="../Variables.htm#Expressions">표현식</a>). 이 타이머의 쓰레드 우선 순위를 지정합니다. 생략하면, 0이 사용됩니다. 자세한 것은 <a href="../misc/Threads.htm">쓰레드</a>를 참조하십시오.</p>
-      <p>
-	  다른 것은 전혀 건드리지 않은 채로 기존 타이머의 우선 순위만 바꾸려면, 이 매개변수 앞의 매개변수를 빈 채로 두십시오.</p></dd>
+  <dd><p>이 선택적 매개변수는 -2147483648에서 2147483647 사이의 정수입니다 (또는 <a href="../Variables.htm#Expressions">표현식</a>). 이 타이머의 쓰레드 우선 순위를 지정합니다. 생략하면, 0이 사용됩니다. 자세한 것은 <a href="../misc/Threads.htm">쓰레드</a>를 참조하십시오.</p>
+      <p>다른 것은 전혀 건드리지 않은 채로 기존 타이머의 우선 순위만 바꾸려면, 이 매개변수 앞의 매개변수를 빈 채로 두십시오.</p></dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>
-타이머는 비동기적으로 실행되기 때문에 유용합니다. 지정된 간격으로 일정하게 실행된다는 뜻입니다. 심지어 스크립트가 창을 기다리거나, 대화상자를 보여주거나 또는 다른 일을 하느라 바쁜 때에도 상관이 없습니다. 
-
-많이 사용되는 예로는 사용자가 쉴 때 어떤 일을 하기 (<a href="../Variables.htm#TimeIdle">A_TimeIdle</a>에 반영됨) 또는 사용자가 나타나는 순간 원하지 않는 창을 닫기가 있습니다.</p>
-<p>
-타이머 때문에 스크립트가 동시에 여러 일을 수행한다는 환상을 불러 일으키지만, 사실은 그렇지 않습니다. 대신에, 시간제한 서브루틴을 다른 쓰레드와 똑같이 취급합니다: <a href="../Hotkeys.htm">핫키 서브루틴</a>과 마찬가지로, 다른 쓰레드에게 인터럽트 당하고 또 인터럽트 할 수 있습니다. 자세한 것은 <a href="../misc/Threads.htm">쓰레드</a>를 참조하십시오.</p>
-<p>
-타이머가 만들어질 때마다, 재활성되고, 새 기간(<em>period</em>)으로 갱신됩니다. 그의 서브루틴은 즉시 실행되지 않습니다; 먼저 기간(<em>period</em>)이 다해야 합니다. 타이머를 시작하자 마자 바로 실행하고 싶으면, <a href="Gosub.htm">Gosub</a>를 사용해 타이머의 서브루틴을 실행하십시오 (그렇지만, 이것은 타이머 자체가 그런 것 처럼 새 쓰레드를 시작하지 않습니다; 그래서 <a href="SendMode.htm">SendMode</a>와 같은 설정은 기본값으로 시작하지 않습니다).</p>
-<p>
-<a name="reset"></a>SetTimer가 기존의 타이머에 사용되고 매개변수 #2가 숫자이거나 단어 ON 이면 (또는 생략되면), 지난 번 실행된 타이머의 &quot;내부 시간&quot;이 현재 시간으로 재설정됩니다; 다른 말로 하면, 전체 기간이 경과해야 서브루틴이 다시 실행됩니다.</p>
-<p>
-<strong><a name="Precision"></a>타이머의 정밀도</strong>: OS의 시간-유지 시스템의 정밀도 때문에, <em>Period</em>는 전형적으로 (설치된 하드웨어와 드라이버의 유형에 따라) 가장 가까운 10 또는 15.6 밀리초의 배수로 반올림됩니다. 예를 들어, 1부터 10 (포함) 사이의 <em>Period</em>는 보통 Windows 2000/XP에서 10 또는 15.6과 동등합니다. 더 짧은 지연은 Loop+Sleep을 통하여 달성할 수 있습니다. 예제는 <a href="Sleep.htm#ShorterSleep">DllCall+<span class="NoIndent">timeBeginPeriod</span>+Sleep</a>를 보십시오.</p>
-<p>
-타이머는 다음 상황 아래에서는 지정된 만큼 자주 실행될 수는 없습니다:</p>
+<p>타이머는 비동기적으로 실행되기 때문에 유용합니다. 지정된 간격으로 일정하게 실행된다는 뜻입니다. 심지어 스크립트가 창을 기다리거나, 대화상자를 보여주거나 또는 다른 일을 하느라 바쁜 때에도 상관이 없습니다. 많이 사용되는 예로는 사용자가 쉴 때 어떤 일을 하기 (<a href="../Variables.htm#TimeIdle">A_TimeIdle</a>에 반영됨) 또는 사용자가 나타나는 순간 원하지 않는 창을 닫기가 있습니다.</p>
+<p>타이머 때문에 스크립트가 동시에 여러 일을 수행한다는 환상을 불러 일으키지만, 사실은 그렇지 않습니다. 대신에, 시간제한 서브루틴을 다른 쓰레드와 똑같이 취급합니다: <a href="../Hotkeys.htm">핫키 서브루틴</a>과 마찬가지로, 다른 쓰레드에게 인터럽트 당하고 또 인터럽트 할 수 있습니다. 자세한 것은 <a href="../misc/Threads.htm">쓰레드</a>를 참조하십시오.</p>
+<p>타이머가 만들어질 때마다, 재활성되고, 새 기간(<em>period</em>)으로 갱신됩니다. 그의 서브루틴은 즉시 실행되지 않습니다; 먼저 기간(<em>period</em>)이 다해야 합니다. 타이머를 시작하자 마자 바로 실행하고 싶으면, <a href="Gosub.htm">Gosub</a>를 사용해 타이머의 서브루틴을 실행하십시오 (그렇지만, 이것은 타이머 자체가 그런 것 처럼 새 쓰레드를 시작하지 않습니다; 그래서 <a href="SendMode.htm">SendMode</a>와 같은 설정은 기본값으로 시작하지 않습니다).</p>
+<p><a name="reset"></a>SetTimer가 기존의 타이머에 사용되고 매개변수 #2가 숫자이거나 단어 ON 이면 (또는 생략되면), 지난 번 실행된 타이머의 "내부 시간"이 현재 시간으로 재설정됩니다; 다른 말로 하면, 전체 기간이 경과해야 서브루틴이 다시 실행됩니다.</p>
+<p><strong><a name="Precision"></a>타이머의 정밀도</strong>: OS의 시간-유지 시스템의 정밀도 때문에, <em>Period</em>는 전형적으로 (설치된 하드웨어와 드라이버의 유형에 따라) 가장 가까운 10 또는 15.6 밀리초의 배수로 반올림됩니다. 예를 들어, 1부터 10 (포함) 사이의 <em>Period</em>는 보통 Windows 2000/XP에서 10 또는 15.6과 동등합니다. 더 짧은 지연은 Loop+Sleep을 통하여 달성할 수 있습니다. 예제는 <a href="Sleep.htm#ShorterSleep">DllCall+<span class="NoIndent">timeBeginPeriod</span>+Sleep</a>를 보십시오.</p>
+<p>타이머는 다음 상황 아래에서는 지정된 만큼 자주 실행될 수는 없습니다:</p>
 <ol>
-  <li>
-  다른 어플리케이션들이 CPU에 아주 큰 부담을 줍니다.</li>
-  <li>
-  타이머 서브루틴은 그 자체로 실행에 자신에게 주어진 기간보다 더 많이 걸립니다. 또는 경쟁관계에 있는 타이머가 너무 많습니다 (<a href="SetBatchLines.htm">SetBatchLines</a>를 변경하면 도움이 될 것입니다).</li>
-  <li>
- 타이머가 다른 <a href="../misc/Threads.htm">쓰레드</a>에 의해 인터럽트 되었습니다. 즉, 또다른 일정의 서브루틴, <a href="../Hotkeys.htm">핫키 서브루틴</a>, 또는 <a href="Menu.htm">맞춤 메뉴 항목</a>이 타이머를 인터럽트 했습니다 (인터럽트는 <a href="Critical.htm">Critical</a>을 통하여 피할 수 있습니다). 이런 일이 일어나면 그리고 인터럽트한 쓰레드가 종료에 시간이 오래 걸린다면, 인터럽트된 타이머는 그 동안 꺼지는 효과가 있습니다. 그렇지만, 다른 타이머들은 계속해서 실행됩니다. 첫 번째 타이머를 인터럽트한 <a href="../misc/Threads.htm">쓰레드</a>를 또 인터럽트 합니다.</li>
+  <li>다른 어플리케이션들이 CPU에 아주 큰 부담을 줍니다.</li>
+  <li>타이머 서브루틴은 그 자체로 실행에 자신에게 주어진 기간보다 더 많이 걸립니다. 또는 경쟁관계에 있는 타이머가 너무 많습니다 (<a href="SetBatchLines.htm">SetBatchLines</a>를 변경하면 도움이 될 것입니다).</li>
+  <li>타이머가 다른 <a href="../misc/Threads.htm">쓰레드</a>에 의해 인터럽트 되었습니다. 즉, 또다른 일정의 서브루틴, <a href="../Hotkeys.htm">핫키 서브루틴</a>, 또는 <a href="Menu.htm">맞춤 메뉴 항목</a>이 타이머를 인터럽트 했습니다 (인터럽트는 <a href="Critical.htm">Critical</a>을 통하여 피할 수 있습니다). 이런 일이 일어나면 그리고 인터럽트한 쓰레드가 종료에 시간이 오래 걸린다면, 인터럽트된 타이머는 그 동안 꺼지는 효과가 있습니다. 그렇지만, 다른 타이머들은 계속해서 실행됩니다. 첫 번째 타이머를 인터럽트한 <a href="../misc/Threads.htm">쓰레드</a>를 또 인터럽트 합니다.</li>
   <li><a href="Critical.htm">Critical</a>이나 <a href="Thread.htm">Thread Interrupt/Priority</a>의 결과로 스크립트를 인터럽트 할 수 없습니다. 그 시간 동안, 타이머는 실행되지 않습니다. 나중에, 스크립트가 다시 인터럽트가 가능해지면, 기간을 넘긴 타이머는 가능하면 한 번 빨리 실행된 다음, 그의 원래 일정을 재개합니다.</li>
 </ol>
-<p>
-타이머는 스크립트가 <a href="Suspend.htm">보류중(suspended)</a>일 때에도 작동합니다. 그러나 <a href="../misc/Threads.htm">현재 쓰레드</a>에 &quot;<a href="Thread.htm">Thread NoTimers</a>&quot;가 작용하고 있거나 어떤 쓰레드이든 쓰레드가 정지(<a href="Pause.htm">paused</a>)되어 있으면 작동하지 않습니다. 게다가, 사용자가 (예를 들어 트레이 아이콘 메뉴나 메뉴 바와 같은) 스크립트 매뉴를 통하여 항해하고 있을 때에도 작동하지 않습니다.</p>
-<p>
-타이머는 임시로 스크립트의 현재 활동을 인터럽트해 작동하기 때문에, 그의 서브루틴은 (빨리 끝낼 수 있도록) 짧게 유지해야 합니다. 오랫 동안 인터럽트 하는 것은 바람직하지 못합니다.</p>
-<p>
-스크립트가 실행되는 중에도 효과를 유지하는 타이머는 보통 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에 만들어야 합니다. 대조적으로, 임시 타이머는 종종 그의 서브루틴에 의하여 꺼지기도 합니다 (이 페이지 하단의 예제를 보십시오).</p>
-<p>
-시간제한 서브루틴이 실행 중일 때마다, <a href="SendMode.htm">SendMode</a>와 같은 설정에 대한 기본 값으로 새롭게 시작합니다. 이런 기본값들은 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에서 바꿀 수 있습니다.</p>
-<p>
-<a href="../Hotkeys.htm">핫키</a>의 반응 시간이 중요하다면 (게임에서와 같이) 그리고 스크립트가 보유한 타이머의 서브루틴이 실행에 대략 5 ms 이상이 걸려야 한다면, 다음 명령어를 사용해 15 ms 지연 시간으로 바꾸지 않도록 막습니다. 그렇게 하지 않으면 타이머 쓰레드를 인터럽트할 수 없는 순간에 핫키가 눌리면 그런 지연이 일어납니다:</p>
-
+<p>타이머는 스크립트가 <a href="Suspend.htm">보류중(suspended)</a>일 때에도 작동합니다. 그러나 <a href="../misc/Threads.htm">현재 쓰레드</a>에 "<a href="Thread.htm">Thread NoTimers</a>"가 작용하고 있거나 어떤 쓰레드이든 쓰레드가 정지(<a href="Pause.htm">paused</a>)되어 있으면 작동하지 않습니다. 게다가, 사용자가 (예를 들어 트레이 아이콘 메뉴나 메뉴 바와 같은) 스크립트 매뉴를 통하여 항해하고 있을 때에도 작동하지 않습니다.</p>
+<p>타이머는 임시로 스크립트의 현재 활동을 인터럽트해 작동하기 때문에, 그의 서브루틴은 (빨리 끝낼 수 있도록) 짧게 유지해야 합니다. 오랫 동안 인터럽트 하는 것은 바람직하지 못합니다.</p>
+<p>스크립트가 실행되는 중에도 효과를 유지하는 타이머는 보통 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에 만들어야 합니다. 대조적으로, 임시 타이머는 종종 그의 서브루틴에 의하여 꺼지기도 합니다 (이 페이지 하단의 예제를 보십시오).</p>
+<p>시간제한 서브루틴이 실행 중일 때마다, <a href="SendMode.htm">SendMode</a>와 같은 설정에 대한 기본 값으로 새롭게 시작합니다. 이런 기본 값은 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에서 바꿀 수 있습니다.</p>
+<p><a href="../Hotkeys.htm">핫키</a>의 반응 시간이 중요하다면 (게임에서와 같이) 그리고 스크립트가 보유한 타이머의 서브루틴이 실행에 대략 5 ms 이상이 걸려야 한다면, 다음 명령어를 사용해 15 ms 지연 시간으로 바꾸지 않도록 막습니다. 그렇게 하지 않으면 타이머 쓰레드를 인터럽트할 수 없는 순간에 핫키가 눌리면 그런 지연이 일어납니다:</p>
 <pre><a href="Thread.htm">Thread</a>, interrupt, 0  <em>; 모든 쓰레드를 언제나 인터럽트가 가능하도록 만듭니다.</em></pre>
-
 <p>그의 서브루틴이 현재 실행 중인데 타이머가 꺼지더라도, 그 서브루틴은 완료할 때까지 계속 진행됩니다.</p>
-<p>
-<a href="KeyHistory.htm">KeyHistory</a> 특징은 얼마나 많은 타이머가 존재하는지 그리고 얼마나 많이 현재 켜져 있는지 보여줍니다.</p>
-<p>
-타이머의 기간은 4294967295 밀리초보다 클 수 없습니다 (49.7 일).</p>
+<p><a href="KeyHistory.htm">KeyHistory</a> 특징은 얼마나 많은 타이머가 존재하는지 그리고 얼마나 많이 현재 켜져 있는지 보여줍니다.</p>
+<p>타이머의 기간은 4294967295 밀리초보다 클 수 없습니다 (49.7 일).</p>
 <p>스크립트를 계속 실행하려면 -- 오직 타이머만 담고 있는 스크립트 -- <a href="_Persistent.htm">#Persistent</a>를 사용하십시오.</p>
-
 <h3>관련 항목</h3>
 <p><a href="Gosub.htm">Gosub</a>, <a href="Return.htm">Return</a>, <a href="../misc/Threads.htm">Threads</a>, <a href="Thread.htm">Thread (command)</a>, <a href="Critical.htm">Critical</a>, <a href="../Functions.htm#IsLabel">IsLabel()</a>, <a href="Menu.htm">Menu</a>, <a href="_Persistent.htm">#Persistent</a></p>
-
 <h3>예제</h3>
 <pre class="NoIndent"><em>; 예제 #1: 원하지 않는 창이 나타날 때마다 닫습니다:</em>
 #Persistent
@@ -125,7 +95,7 @@ Sleep, 3000
 SplashTextOff
 return</pre>
 <p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #3: 핫키가 한 번, 두 번, 그리고 세 번 눌렸는지 탐지합니다.
+<pre class="NoIndent"><em>; 예제 #3: 핫키가 한 번, 두 번, 그리고 세 번 눌렸는지 탐지합니다. 
 ; 얼마나 많이 눌렀는가에 따라
 ; 핫키가 다른 조치를 수행할 수 있습니다:</em>
 #c::

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>SetWinDelay</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,36 +12,26 @@
 
 <h1>SetWinDelay</h1>
 
-<p><a href="WinActivate.htm">WinActivate</a>와 같은 각 창 명령어를 실행한 후에 일어날 지연시간을 설정합니다.</p>
+<p><a href="WinActivate.htm">WinActivate</a>와 같이, 각 창 명령어 다음에 지연 시간을 설정합니다.</p>
 
 <pre class="Syntax">SetWinDelay, Delay</pre>
 <h3>매개변수</h3>
 <dl>
 
   <dt>Delay</dt>
-  <dd><p>밀리초 시간, <a href="../Variables.htm#Expressions">표현식</a> 가능. -1은 지연시간이 없으며 0이면 가능하면 최소로 지연합니다. 설정하지 않으면, 기본 값은 100입니다.</p></dd>
+  <dd><p>밀리초 단위 시간, <a href="../Variables.htm#Expressions">표현식</a> 가능. -1이면 지연 시간이 전혀 없습니다. 0이면 가능한 적게 지연됩니다. 설정하지 않으면, 기본 값은 100입니다.</p></dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>
-각 창 명령어가 실행된 후 짧은 지연시간 (잠자기)가 자동으로 실행됩니다. 단, <a href="WinActive.htm">IfWinActive</a>와 <a href="WinExist.htm">IfWinExist</a>는 제외합니다. 이렇게 하는 이유는 스크립트의 신뢰성을 개선하기 위해서입니다. 창은 종종 생성되거나, 활성화되거나 또는 최소화 되거나 등등 변경이 있고 난 후에 일정한 &quot;휴식&quot;시간이 필요합니다. 그래야 창은 자신을 갱신할 기회를 가질 수 있고 스크립트가 그 창에 보내려고 시도하는 다음 명령어에 응답할 수 있기 때문입니다.</p>
-<p>
-지연 시간이 -1이라도 (지연 시간 전혀 없음) 허용하지만, 적어도 0은 사용하기를 권장합니다. 그래야 CPU가 부하가 많더라도 스크립트가 제대로 실행된다는 보장이 높아집니다.</p>
-<p>
-지연 시간이 0이면 내부적으로 Sleep(0)을 실행하는데, 이 함수는 그를 필요로 하는 프로세스에 스크립트의 시간조각(timeslice)의 나머지를 건넵니다. 아무것도 없으면, Sleep(0)은 전혀 잠자지 않습니다.</p>
-<p>
-CPU가 느리거나 부하가 많다면, 또는 창 애니메이션이 켜져 있다면, 더 높은 지연 시간이 필요합니다.</p>
-
-<p>
-내장 변수 <strong>A_WinDelay</strong>에 현재 설정이 담겨 있습니다.</p>
-<p>
-새로 기동된  <a href="../misc/Threads.htm">쓰레드</a>는 (예를 들어 <a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본 설정을 가지고 새롭게 시작합니다. 이 기본 값은 자동 실행 섹션 (스크립트의 상단)에서 이 명령어를 사용하여 변경할 수 있습니다.</p>
-
+<p>각 창 명령어가 실행된 후 짧은 지연시간 (잠자기)가 자동으로 실행됩니다. 단, <a href="WinActive.htm">IfWinActive</a>와 <a href="WinExist.htm">IfWinExist</a>는 제외합니다. 이렇게 하는 이유는 스크립트의 신뢰성을 개선하기 위해서입니다. 창은 종종 생성되거나, 활성화되거나 또는 최소화 되거나 등등 변경이 있고 난 후에 일정한 "휴식"시간이 필요합니다. 그래야 창은 자신을 갱신할 기회를 가질 수 있고 스크립트가 그 창에 보내려고 시도하는 다음 명령어에 응답할 수 있기 때문입니다.</p>
+<p>지연 시간이 -1이라도 (전혀 지연 시간 없음) 허용하지만, 적어도 0은 사용하기를 권장합니다. 그러면 CPU에 부하가 많아도 스크립트가 올바르게 실행될 것이라는 보장이 높아집니다.</p>
+<p>지연 시간이 0이면 내부적으로 Sleep(0)을 실행합니다. 이는 그를 필요로 하는 다른 프로세스에 스크립트의 시간조각(timeslice)의 나머지를 나누어 줍니다. 남는 게 없으면, Sleep(0)은 전혀 잠자지 않습니다.</p>
+<p>CPU가 느리거나 부하가 많으면, 또는 창 애니메이션이 켜져 있으면, 높은 지연 시간이 필요합니다.</p>
+<p>내장 변수 <strong>A_WinDelay</strong>에 현재 설정이 담겨 있습니다.</p>
+<p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
 <h3>관련 항목</h3>
-<p>
-<a href="SetControlDelay.htm">SetControlDelay</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, <a href="SetBatchLines.htm">SetBatchLines</a>, <a href="SendMode.htm">SendMode</a></p>
-
+<p><a href="SetControlDelay.htm">SetControlDelay</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, <a href="SetBatchLines.htm">SetBatchLines</a>, <a href="SendMode.htm">SendMode</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">SetWinDelay, 10</pre>
 

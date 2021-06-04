@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>DllCall</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -13,26 +14,26 @@
 
 <p>표준 Windows API 함수 같이, DLL안의 함수를 호출합니다.</p>
 
-<pre class="Syntax">Result := DllCall(&quot;[DllFile\]Function&quot; [, Type1, Arg1, Type2, Arg2, &quot;Cdecl ReturnType&quot;])</pre>
+<pre class="Syntax">Result := DllCall("[DllFile\]Function" [, Type1, Arg1, Type2, Arg2, "Cdecl ReturnType"])</pre>
 <h3>매개변수</h3>
 <dl>
 
   <dt>Result</dt>
-  <dd><p>DllCall은 함수가 돌려주는 실제 값을 돌려줍니다.  함수가 값을 돌려주지 않는 유형이라면, 그 결과는 정의되지 않은 정수입니다. <a href="#error">에러</a> 때문에 함수를 호출할 수 없다면, 그 결과 값은 비어 있습니다(빈 문자열).</p></dd>
+  <dd><p>DllCall은 함수가 돌려주는 실제 값을 돌려줍니다. 함수가 값을 돌려주지 않는 유형이라면, 그 결과는 정의되지 않은 정수입니다. <a href="#error">에러</a> 때문에 함수를 호출할 수 없다면, 그 결과 값은 비어 있습니다(빈 문자열).</p></dd>
 
   <dt>[DllFile\]Function</dt>
-  <dd><p>DLL이나 EXE 파일 이름 다음에 역사선 그리고 함수의 이름이 따라옵니다. 예를 들어: <code>&quot;MyDLL\MyFunction&quot;</code> (확장자가 생략되면 &quot;.dll&quot;이 기본값입니다). 절대 경로를 지정하지 않으면, <em>DllFile</em>은 시스템 PATH 또는 <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>에 있다고 간주됩니다.</p>
-      <p><em><a name="std"></a>DllFile</em>은 User32.dll, Kernel32.dll, ComCtl32.dll, 또는 Gdi32.dll에 거주하는 함수들을 호출할 때 생략할 수 있습니다. 예를 들어, <code>&quot;User32\IsWindowVisible&quot;</code>는 <code>&quot;IsWindowVisible&quot;</code>와 결과가 같습니다.</p>
-      <p>함수가 주어진 이름으로 발견되지 않으면, A (ANSI) 또는 W (Unicode) 접미사를 어느 버전의 오토핫키가 스크립트를 실행중인가에 기반하여 자동으로 추가합니다. 예를 들어, <code>&quot;MessageBox&quot;</code>는 ANSI 버전은 <code>&quot;MessageBoxA&quot;</code> 그리고 유니코드 버전은 <code>&quot;MessageBoxW&quot;</code>와 같습니다.</p>
+  <dd><p>DLL이나 EXE 파일 이름 다음에 역사선 그리고 함수의 이름이 따라옵니다. 예를 들어: <code>"MyDLL\MyFunction"</code> (확장자가 생략되면 ".dll"이 기본값입니다). 절대 경로를 지정하지 않으면, <em>DllFile</em>은 시스템 PATH 또는 <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>에 있다고 간주됩니다.</p>
+      <p><em><a name="std"></a>DllFile</em>은 User32.dll, Kernel32.dll, ComCtl32.dll, 또는 Gdi32.dll에 거주하는 함수들을 호출할 때 생략할 수 있습니다. 예를 들어, <code>"User32\IsWindowVisible"</code>는 <code>"IsWindowVisible"</code>와 결과가 같습니다.</p>
+      <p>함수가 주어진 이름으로 발견되지 않으면, A (ANSI) 또는 W (Unicode) 접미사를 어느 버전의 오토핫키가 스크립트를 실행중인가에 기반하여 자동으로 추가합니다. 예를 들어, <code>"MessageBox"</code>는 ANSI 버전은 <code>"MessageBoxA"</code> 그리고 유니코드 버전은 <code>"MessageBoxW"</code>와 같습니다.</p>
       <p><em>반복적으로</em> DLL에 호출할 경우 <a href="#load">미리 적재하면</a> 수행성능을 극적으로 향상시킬 수 있습니다.</p>
     <p>v1.0.46.08+에서, 이 매개변수는 정수 만으로 구성될 수 있습니다. 호출할 함수의 주소로 번역됩니다. 그런 주소의 소스로는 <a href="#COM">COM</a> 그리고 <a href="RegisterCallback.htm">RegisterCallback()</a>이 포함됩니다.</p></dd>
 
   <dt>Type1, Arg1</dt>
-  <dd><p>각 쌍마다 함수에 건네질 하나의 매개변수를 나타냅니다. 쌍의 개수는 제한이 없습니다. <em>Type</em>에 관한 것은 아래의 <a href="#types">유형 테이블</a>을 참조하십시오.  <em>Arg</em>에 대하여, 함수에 건넬 값을 지정합니다.</p></dd>
+  <dd><p>각 쌍마다 함수에 건네질 하나의 매개변수를 나타냅니다. 쌍의 개수는 제한이 없습니다. <em>Type</em>에 관한 것은 아래의 <a href="#types">유형 테이블</a>을 참조하십시오. <em>Arg</em>에 대하여, 함수에 건넬 값을 지정합니다.</p></dd>
 
   <dt>Cdecl ReturnType</dt>
-  <dd><p><a name="cdecl"></a>단어 <em>Cdecl</em>은 보통 생략합니다. 대부분의 함수가 표준 호출 관례를 사용하지 &quot;C&quot; 호출 관례를 사용하지는 않기 때문입니다 (wsprintf 함수와 같이 가변 개수의 인자를 받는 함수는 예외로 합니다). Cdecl을 생략했지만 호출에서 <a href="#An">ErrorLevel A<strong>n</strong></a>를 산출한다면 -- 여기에서 <strong>n</strong>는 건넨 인자들의 총 크기입니다 -- <em>Cdecl</em>이 필요할 수 있습니다. 대부분의 객체-지향  C++ 함수는 <i>thiscall</i> 관례를 사용하지만, 이는 지원하지 않습니다.</p>
-      <p>존재한다면, 단어 <em>Cdecl</em>은 반환 유형보다 (있다면) 먼저 나타나야 합니다. 다음 단어와 스페이스나 탭으로 분리하십시오. 예를 들어: <code>&quot;Cdecl Str&quot;</code>.</p>
+  <dd><p><a name="cdecl"></a>단어 <em>Cdecl</em>은 보통 생략합니다. 대부분의 함수가 표준 호출 관례를 사용하지 "C" 호출 관례를 사용하지는 않기 때문입니다 (wsprintf 함수와 같이 가변 개수의 인자를 받는 함수는 예외로 합니다). Cdecl을 생략했지만 호출에서 <a href="#An">ErrorLevel A<strong>n</strong></a>를 산출한다면 -- 여기에서 <strong>n</strong>는 건넨 인자들의 총 크기입니다 -- <em>Cdecl</em>이 필요할 수 있습니다. 대부분의 객체-지향 C++ 함수는 <i>thiscall</i> 관례를 사용하지만, 이는 지원하지 않습니다.</p>
+      <p>존재한다면, 단어 <em>Cdecl</em>은 반환 유형보다 (있다면) 먼저 나타나야 합니다. 다음 단어와 스페이스나 탭으로 분리하십시오. 예를 들어: <code>"Cdecl Str"</code>.</p>
       <p><span class="ver">[AHK_L 53+]:</span> 별도로 "C" 호출 관례는 64-비트 코드에 존재하지 않기 때문에, <i>Cdecl</i>을 지정해도 64-비트 빌드의 오토핫키에서는 아무 효과가 없을 수 있습니다.</p>
       <p><em>ReturnType</em>: 함수가 32-비트 부호있는 정수 (Int), BOOL을 돌려주거나, 또는 아무것도 돌려주지 않으면, <em>ReturnType</em>을 생략할 수 있습니다. 그렇지 않으면, 아래의 <a href="#types">유형 테이블</a>에 있는 인자 중 하나를 지정하십시오. <a href="#asterisk">별표 접미사</a>도 지원됩니다.</p></dd>
 
@@ -42,15 +43,15 @@
 <table class="info">
 <tr>
 <td>Str</td>
-<td><p><a name="str"></a>&quot;Blue&quot;나 MyVar 같은 문자열. 호출된 함수가 그 문자열을 변경하고 인자가 비보호 변수이면, 그의 내용이 갱신됩니다. 예를 들어, 다음 호출은 <em>MyVar</em>의 내용을 대문자로 변경합니다: <code>DllCall(&quot;CharUpper&quot;, &quot;Str&quot;, <i>MyVar</i>)</code>.</p>
+<td><p><a name="str"></a>"Blue"나 MyVar 같은 문자열. 호출된 함수가 그 문자열을 변경하고 인자가 비보호 변수이면, 그의 내용이 갱신됩니다. 예를 들어, 다음 호출은 <em>MyVar</em>의 내용을 대문자로 변경합니다: <code>DllCall("CharUpper", "Str", <i>MyVar</i>)</code>.</p>
   <p>그렇지만, 함수가 한 변수의 현재 내용보다 더 큰 문자열을 저장하도록 설계되었다면, 변수가 충분히 더 큰지 먼저 점검한 다음 그 함수를 호출하십시오. <code><a href="VarSetCapacity.htm">VarSetCapacity(MyVar, 123)</a></code>를 호출해 보면 알 수 있습니다. 여기에서 123은 <em>MyVar</em>가 보유할 수 있는 길이입니다.</p>
   <p><em>Str</em> 인자는 숫자로 평가되는 <a href="../Variables.htm#Expressions">표현식</a>이 되면 안됩니다 (예를 들어, i+1). 그렇다면, 함수는 호출되지 않으며 ErrorLevel은 -2로 설정됩니다.</p>
-  <p><a href="#asterisk">별표 변수</a> &quot;Str*&quot;은 지원되지만 거의 사용되지 않습니다.  &quot;TCHAR **&quot; 또는 &quot;LPTSTR *&quot; 같은 것을 기대하는 함수와 함께 사용할 수 있습니다.</p>
+  <p><a href="#asterisk">별표 변수</a> "Str*"은 지원되지만 거의 사용되지 않습니다. "TCHAR **" 또는 "LPTSTR *" 같은 것을 기대하는 함수와 함께 사용할 수 있습니다.</p>
   <p>주의: 문자열을 함수에 건넬 때, 함수가 <a href="../Compat.htm#DllCall">어떤 <i>유형</i>의 문자열</a>을 기대하는지 인지해야 합니다.</p></td>
 </tr>
 <tr>
   <td><a name="astr"></a><a name="wstr"></a>AStr<br>WStr</td>
-  <td><span class="ver">[AHK_L 42+]:</span> <b>A</b>NSI  문자열 또는 Unicode (<b>W</b>ide character) 문자열. 동등한 Win32 유형과 기타 자세한 사항은 <a href="../Compat.htm#DllCall">스크립트 호환성</a>을 참조하십시오.</td>
+  <td><span class="ver">[AHK_L 42+]:</span> <b>A</b>NSI 문자열 또는 Unicode (<b>W</b>ide character) 문자열. 동등한 Win32 유형과 기타 자세한 사항은 <a href="../Compat.htm#DllCall">스크립트 호환성</a>을 참조하십시오.</td>
 </tr>
 <tr>
   <td>Int64</td>
@@ -58,8 +59,8 @@
 </tr>
 <tr>
   <td>Int</td>
-  <td id="Int"><p>32-비트 정수로서 (일반적인 정수 유형), 범위는 -2147483648 (-0x80000000)부터 2147483647 (0x7FFFFFFF)까지입니다. Int는 종종 &quot;Long&quot;이라고도 부릅니다.</p>
-    <p>Int는 또  BOOL 인자를 기대하는 함수에 사용할 수 있습니다 (BOOL 값은 1 또는 0입니다).</p>
+  <td id="Int"><p>32-비트 정수로서 (일반적인 정수 유형), 범위는 -2147483648 (-0x80000000)부터 2147483647 (0x7FFFFFFF)까지입니다. Int는 종종 "Long"이라고도 부릅니다.</p>
+    <p>Int는 또 BOOL 인자를 기대하는 함수에 사용할 수 있습니다 (BOOL 값은 1 또는 0입니다).</p>
     <p><a href="#unsigned">부호없는</a> Int (UInt)도 상당히 자주 사용됩니다. 예를 들어 DWORD.</p></td>
 </tr>
 <tr>
@@ -80,7 +81,7 @@
 </tr>
 <tr>
   <td>Ptr</td>
-  <td id="ptr"><p><span class="ver">[AHK_L 42+]:</span> <a href="../Variables.htm#PtrSize">포인터-ㅋ기</a>의 정수로서, . 스크립트를 실행하는 버전이 32비트인가 아니면 64비트인가에 따라 Int 또는 Int64와 동등합니다. <i>Ptr</i>은 배열이나 구조체를 가리키는 포인터 (RECT* 또는 LPPOINT) 그리고 거의 모든 핸들과 (HWND, HBRUSH 또는 HBITMAP) 함께 사용해야 합니다. 매개변수가 LPDWORD 또는 int*와 같이 단일 숫치 값을 가리키는 포인터이면, 일반적으로 &quot;Ptr&quot; 대신에 * 또는 P 접미사를 사용해야 합니다.</p>
+  <td id="ptr"><p><span class="ver">[AHK_L 42+]:</span> <a href="../Variables.htm#PtrSize">포인터-ㅋ기</a>의 정수로서, . 스크립트를 실행하는 버전이 32비트인가 아니면 64비트인가에 따라 Int 또는 Int64와 동등합니다. <i>Ptr</i>은 배열이나 구조체를 가리키는 포인터 (RECT* 또는 LPPOINT) 그리고 거의 모든 핸들과 (HWND, HBRUSH 또는 HBITMAP) 함께 사용해야 합니다. 매개변수가 LPDWORD 또는 int*와 같이 단일 숫치 값을 가리키는 포인터이면, 일반적으로 "Ptr" 대신에 * 또는 P 접미사를 사용해야 합니다.</p>
   <p><i>Ptr</i>은 또 * 또는 P 접미사와도 사용가능합니다; LPVOID* 류를 통하여 포인터를 출력하는 함수와 함께 사용해야 합니다.</p>
   <p><i>UPtr</i>도 유효하지만, 32-비트 빌드에서는 부호가 없습니다. 오토핫키가 부호없는 64-비트 정수를 지원하지 않기 때문입니다.</p>
   <p>예전 버전의 오토핫키와 호환이 필요하면, 아래에 보여주는 바와 같이 변수 유형을 사용하십시오:</p>
@@ -91,23 +92,20 @@ DllCall("DeleteFile", Ptr, &amp;filename) <em>; Ptr 둘레에 인용 부호를 �
 <tr>
   <td>* or P<br>
     (suffix)</td>
-  <td id="asterisk"><p>별표를 (선택적으로 앞에 스페이스와 함께) 위의 유형에 추가하면 값 자체가 아니라 인자의 주소가 건네집니다 (호출되는 함수는 그것을 받아들이도록 설계되어 있어야 합니다). 그런 인자의 값은 함수가 변경할 수 있기 때문에, naked 변수가 인자로 건네질 때마다, 그 변수의 내용은 갱신됩니다. 예를 들어, 다음 호출은 MyVar의 내용을 MyFunction에 주소로 건넵니다. 그러나 MyVar도 갱신되어 MyFunction 함수의 변경을 반영합니다: <code>DllCall(&quot;MyDll\MyFunction&quot;, &quot;Int*&quot;, MyVar)</code>.</p>
-    <p>
-	일반적으로, 별표는 함수에 인자 유형이나 반환 유형이 &quot;LP&quot;로 시작할 때마다 사용됩니다. 가장 흔한 예는 LPDWORD인데, 이는 DWORD 값을 가리키는 포인터입니다. DWORD는 부호 없는 32-비트 정수이기 때문에 &quot;UInt*&quot;나 &quot;UintP&quot;를 사용하여 LPDWORD를 표현하십시오. 별표는 LPTSTR와 같은 문자열 유형, LPRECT와 같이 구조체를 가리키는 포인터, 또는 배열에 사용하면 안됩니다; 여기에 대해서는, 변수를 건네는가 아니면 그의 주소를 건네는가에 따라, <a href="#str">&quot;Str&quot;</a>이나 &quot;Ptr&quot;을 사용해야 합니다..</p>
-    <p>주의: &quot;Char*&quot;는 <a href="#str">&quot;Str&quot;</a>과 같지 않습니다. 왜냐하면 &quot;Char*&quot;는 8-비트 숫자의 주소를 건네는 반면에, <a href="#str">&quot;Str&quot;</a>은 일련의 문자열의 주소를 건네기 때문입니다. 문자는 오토핫키의 버전에 따라, 8-비트 (ANSI) 또는 16-비트 (Unicode)일 수 있습니다. 비슷하게, &quot;UInt*&quot;는 32-비트 숫자의 주소를 건넵니다. 그래서 함수가 값의 배열 또는 32비트보다 더 큰 구조를 기대할 경우 사용하면 안 됩니다.</p>
-    <p>
-	오토핫키의 변수는 유형이 고정되어 있지 않기 때문에, 함수에 건네는 주소는 변수 자체가 아니라 임시 메모리를 가리킵니다. 변수에 <a href="VarSetCapacity.htm">VarSetCapacity</a>을 호출할 필요가 없습니다. 함수가 반환되면  DllCal이 올바르게 그 변수를 갱신해 줄 것이기 때문입니다.</p>
+  <td id="asterisk"><p>별표를 (선택적으로 앞에 스페이스와 함께) 위의 유형에 추가하면 값 자체가 아니라 인자의 주소가 건네집니다 (호출되는 함수는 그것을 받아들이도록 설계되어 있어야 합니다). 그런 인자의 값은 함수가 변경할 수 있기 때문에, naked 변수가 인자로 건네질 때마다, 그 변수의 내용은 갱신됩니다. 예를 들어, 다음 호출은 MyVar의 내용을 MyFunction에 주소로 건넵니다. 그러나 MyVar도 갱신되어 MyFunction 함수의 변경을 반영합니다: <code>DllCall("MyDll\MyFunction", "Int*", MyVar)</code>.</p>
+    <p>일반적으로, 별표는 함수에 인자 유형이나 반환 유형이 "LP"로 시작할 때마다 사용됩니다. 가장 흔한 예는 LPDWORD인데, 이는 DWORD 값을 가리키는 포인터입니다. DWORD는 부호 없는 32-비트 정수이기 때문에 "UInt*"나 "UintP"를 사용하여 LPDWORD를 표현하십시오. 별표는 LPTSTR와 같은 문자열 유형, LPRECT와 같이 구조체를 가리키는 포인터, 또는 배열에 사용하면 안됩니다; 여기에 대해서는, 변수를 건네는가 아니면 그의 주소를 건네는가에 따라, <a href="#str">"Str"</a>이나 "Ptr"을 사용해야 합니다..</p>
+    <p>주의: "Char*"는 <a href="#str">"Str"</a>과 같지 않습니다. 왜냐하면 "Char*"는 8-비트 숫자의 주소를 건네는 반면에, <a href="#str">"Str"</a>은 일련의 문자열의 주소를 건네기 때문입니다. 문자는 오토핫키의 버전에 따라, 8-비트 (ANSI) 또는 16-비트 (Unicode)일 수 있습니다. 비슷하게, "UInt*"는 32-비트 숫자의 주소를 건넵니다. 그래서 함수가 값의 배열 또는 32비트보다 더 큰 구조를 기대할 경우 사용하면 안 됩니다.</p>
+    <p>오토핫키의 변수는 유형이 고정되어 있지 않기 때문에, 함수에 건네는 주소는 변수 자체가 아니라 임시 메모리를 가리킵니다. 변수에 <a href="VarSetCapacity.htm">VarSetCapacity</a>을 호출할 필요가 없습니다. 함수가 반환되면 DllCal이 올바르게 그 변수를 갱신해 줄 것이기 때문입니다.</p>
     </td>
 </tr>
 <tr>
   <td>U (prefix)</td>
   <td><p><a name="unsigned"></a>위의 정수 유형 앞에 문자 U를 배치하면 부호없는 정수로 번역됩니다 (UInt64, UInt, UShort, 그리고 UChar). 엄밀히 말해, 이것은 반환 값과 <a href="#asterisk">별표 변수</a>에만 필요합니다. 왜냐하면 값으로 건네어진 인자가 부호가 있는지 없는지 신경쓰지 않기 때문입니다 (Int64는 제외).</p>
-    <p>부호없는 인자에 음의 정수를 지정하면, 되면, 그 정수는 부호없는 영역으로 변환됩니다. 
-	예를 들어,  -1을 UInt로 보내면, 0xFFFFFFFF이 됩니다.</p>
+    <p>부호없는 인자에 음의 정수를 지정하면, 되면, 그 정수는 부호없는 영역으로 변환됩니다. 예를 들어, -1을 UInt로 보내면, 0xFFFFFFFF이 됩니다.</p>
     <p>함수가 생산하는 <em>Unsigned</em> 64-비트 정수는 지원하지 않습니다. 그러므로, 0x8000000000000000 이상의 수와 작업하려면, U 접두사를 생략하고 함수로부터 받은 음의 정수 값은 거대한 정수로 번역하십시오. 예를 들어, -1을 Int64로 산출하는 함수는 실제로 0xFFFFFFFFFFFFFFFF을 생산하고 있는 것입니다. UInt64를 산출하도록 설계되어 있다면 말입니다.</p></td>
 </tr>
 </TABLE>
-<p><strong>주의</strong>: 인자 유형 또는 반환 유형을 지정할 때 스페이스나 별표가 들어 있지 않으면, 그 주위에 인용부호를 두루지 않아도 됩니다. 예를 들어, <code>Str</code>을 <code>&quot;Str&quot;</code>  대신에 사용할 수 있고 <code>CDecl</code>을 <code>&quot;CDecl&quot;</code> 대신 사용할 수 있습니다. 게다가, 문자 P를 별표 대신 사용해도 인용부호를 생략할 수 있습니다. 예를 들어: <code>UIntP</code>.</p>
+<p><strong>주의</strong>: 인자 유형 또는 반환 유형을 지정할 때 스페이스나 별표가 들어 있지 않으면, 그 주위에 인용부호를 두루지 않아도 됩니다. 예를 들어, <code>Str</code>을 <code>"Str"</code> 대신에 사용할 수 있고 <code>CDecl</code>을 <code>"CDecl"</code> 대신 사용할 수 있습니다. 게다가, 문자 P를 별표 대신 사용해도 인용부호를 생략할 수 있습니다. 예를 들어: <code>UIntP</code>.</p>
 
 <h3 id="error">ErrorLevel</h3>
 <p><span class="ver">[v1.1.04+]</span> 이 함수는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
@@ -117,97 +115,80 @@ DllCall("DeleteFile", Ptr, &amp;filename) <em>; Ptr 둘레에 인용 부호를 �
 <p><strong>-2</strong>: <a href="#types">반환 유형</a> 또는 지정된 <a href="#types">인자 유형</a>중 하나가 유효하지 않습니다. 이 에러는 숫자로 평가되는 <a href="../Variables.htm#Expressions">표현식</a>을 문자열에 건네도 일어납니다 (<a href="#str">str</a>).</p>
 <p><strong>-3</strong>: 지정된 <em>DllFile</em>에 접근 또는 적재할 수 없습니다. <em>DllFile</em> 파일에 명시적으로 경로가 지정되지 않았다면, 그 파일은 시스템에 PATH 또는 <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>에 존재해야 합니다. 이 에러는 사용자가 파일에 접근권한이 없을 경우, 또는 오토핫키가 32비트이고 DLL이 64-비트 또는 그 반대인 경우에도 일어날 수 있습니다.</p>
 <p><strong>-4</strong>: 지정된 함수를 DLL 안에서 발견할 수 없습니다.</p>
-<p><strong>N</strong> (양의 정수): 함수가 호출되었지만 치명적인 에러 번호 <strong>N</strong>과 함께 실패했습니다 (예를 들어, 0xC0000005는 &quot;무단 접근&quot;을 뜻합니다). 그런 경우, 함수는 빈 값(빈 문자열)을 돌려주지만, <a href="#asterisk">별표 변수</a>는 모두 여전히 갱신됩니다. 치명적인 예외의 예는  NULL과 같은 무효한 포인터를 참조하는 것입니다. <a href="#cdecl">Cdecl</a> 함수는 다음 문단에서 절대로 <em>&quot;An&quot;</em> 에러를 생산하지 않기 때문에, 너무 인자를 적게 건네면 예외가 일어날 수도 있습니다.</p>
-<p><strong><a name="An"></a>An</strong> (문자 A 다음에 정수 <strong>n</strong>): 함수가 호출되었지만 인자를 너무 많게 또는 너무 적게 건넸습니다. &quot;<strong>n</strong>&quot;는 인자 리스트에서 올바르지 않은 바이트의 개수입니다. <strong>n</strong>이 양수이면, 너무 많은 (또는 너무 큰 인자를) 인자를 건넸기 때문입니다. 그렇지 않으면 <a href="#cdecl">CDecl</a>로 호출해야 합니다.  <strong>n</strong>이 음수이면, 너무 적게 인자를 건넸기 때문입니다. 이 상황은 함수의 연산의 신뢰성을 위해 반드시 교정해야 합니다. 이 에러의 존재는 또한 예외가 일어났다는 것을 가리킵니다. 이 경우 함수는 빈 문자열을 돌려줍니다. x64 호출 관례 때문에, 64-비트 빌드는 ErrorLevel에 <b>An</b>을 설정하지 않습니다.</p>
+<p><strong>N</strong> (양의 정수): 함수가 호출되었지만 치명적인 에러 번호 <strong>N</strong>과 함께 실패했습니다 (예를 들어, 0xC0000005는 "무단 접근"을 뜻합니다). 그런 경우, 함수는 빈 값(빈 문자열)을 돌려주지만, <a href="#asterisk">별표 변수</a>는 모두 여전히 갱신됩니다. 치명적인 예외의 예는 NULL과 같은 무효한 포인터를 참조하는 것입니다. <a href="#cdecl">Cdecl</a> 함수는 다음 문단에서 절대로 <em>"An"</em> 에러를 생산하지 않기 때문에, 너무 인자를 적게 건네면 예외가 일어날 수도 있습니다.</p>
+<p><strong><a name="An"></a>An</strong> (문자 A 다음에 정수 <strong>n</strong>): 함수가 호출되었지만 인자를 너무 많게 또는 너무 적게 건넸습니다. "<strong>n</strong>"는 인자 리스트에서 올바르지 않은 바이트의 개수입니다. <strong>n</strong>이 양수이면, 너무 많은 (또는 너무 큰 인자를) 인자를 건넸기 때문입니다. 그렇지 않으면 <a href="#cdecl">CDecl</a>로 호출해야 합니다. <strong>n</strong>이 음수이면, 너무 적게 인자를 건넸기 때문입니다. 이 상황은 함수의 연산의 신뢰성을 위해 반드시 교정해야 합니다. 이 에러의 존재는 또한 예외가 일어났다는 것을 가리킵니다. 이 경우 함수는 빈 문자열을 돌려줍니다. x64 호출 관례 때문에, 64-비트 빌드는 ErrorLevel에 <b>An</b>을 설정하지 않습니다.</p>
 
 <h3 id="except">예외와 A_LastError</h3>
-<p>
-내장 예외 처리에도 불구하고, 여전히 스크립트가 DllCall과 충돌할 가능성이 있습니다. 이런 일은 함수가 직접적으로 예외를 일으키지 않고 종료하지 않는 문자열이나 나쁜 포인터 같이 뭔가 부적적한 것을 산출할 경우 일어날 수 있습니다. 스크립트가 적당하지 않은 값을 건넸다면, 예를 들어, 나쁜 포인터나 가용 능력이 불충분한 <a href="#str">&quot;str&quot;</a>을 건넸다면 이것은 함수의 잘못이 아닐 수 있습니다.
-부적절한 인자 유형이나 반환 유형을 지정할 때에도 스크립트가 충돌할 수 있습니다. 예를 들어 함수가 생산한 보통의 정수를 <a href="#asterisk">별표 변수</a> 또는 <a href="#str">str</a>이기를 요구하면 충돌합니다.</p>
+<p>내장 예외 처리에도 불구하고, 여전히 스크립트가 DllCall과 충돌할 가능성이 있습니다. 이런 일은 함수가 직접적으로 예외를 일으키지 않고 종료하지 않는 문자열이나 나쁜 포인터 같이 뭔가 부적적한 것을 산출할 경우 일어날 수 있습니다. 스크립트가 적당하지 않은 값을 건넸다면, 예를 들어, 나쁜 포인터나 가용 능력이 불충분한 <a href="#str">"str"</a>을 건넸다면 이것은 함수의 잘못이 아닐 수 있습니다. 부적절한 인자 유형이나 반환 유형을 지정할 때에도 스크립트가 충돌할 수 있습니다. 예를 들어 함수가 생산한 보통의 정수를 <a href="#asterisk">별표 변수</a> 또는 <a href="#str">str</a>이기를 요구하면 충돌합니다.</p>
 <p><a name="LastError"></a>내장 변수 <strong>A_LastError</strong>에는 운영 체제의 GetLastError() 함수의 결과 값이 담겨 있습니다. 이 함수는 해당 함수가 호출된 후에 바로 호출됩니다. (이 때문에 받는 수행성능의 충격은 측정할 수 없습니다). A_LastError는 0부터 4294967295 사이의 숫자입니다 (언제나 십진수로 포맷됩니다. 십육진수로 포맷되지 않습니다). <a href="../misc/ErrorLevel.htm">ErrorLevel</a>처럼, A_LastError은 쓰레드마다 설정됩니다; 즉, 다른 <a href="../misc/Threads.htm">쓰레드</a>가 인터럽트 하더라도 변하지 않습니다. 그렇지만, A_LastError는 <a href="Run.htm#LastError">Run/RunWait</a>로도 설정될 수 있습니다.</p>
 
 <h3 id="load">수행성능</h3>
-<p>DLL을 반복적으로 호출할 때, 명시적으로 적재하면 수행성능이 극적으로 향상됩니다 ( User32와 같은 <em><a href="#std">표준 DLL</a>에는 필요하지 않습니다. 언제나 메모리에 상주하기 때문입니다</em>). 이런 관례를 차용하면 DllCall은 내부적으로 매번 LoadLibrary와 FreeLibrary를 호출할 필요가 없어집니다:</p>
-<pre>hModule := DllCall(&quot;<strong>LoadLibrary</strong>&quot;, &quot;Str&quot;, &quot;MyFunctions.dll&quot;, &quot;Ptr&quot;)  <em>; 회돌이 안에서 DllCall()이 라이브러리를 적재할 필요가 없습니다.</em>
+<p>DLL을 반복적으로 호출할 때, 명시적으로 적재하면 수행성능이 극적으로 향상됩니다 ( User32와 같은 <em><a href="#std">표준 DLL</a>에는 필요하지 않습니다. 언제나 메모리에 상주하기 때문입니다</em>). 이런 관례를 차용하면 DllCall은 내부적으로 매번 LoadLibrary와 FreeLibrary를 호출할 필요가 없어집니다. 예를 들어:</p>
+<pre>hModule := DllCall("<strong>LoadLibrary</strong>", "Str", "MyFunctions.dll", "Ptr")  <em>; 회돌이 안에서 DllCall()이 라이브러리를 적재할 필요가 없습니다.</em>
 Loop, C:\My Documents\*.*, , 1
-    result := DllCall(&quot;MyFunctions\BackupFile&quot;, &quot;Str&quot;, A_LoopFileFullPath)
-DllCall(&quot;<strong>FreeLibrary</strong>&quot;, &quot;Ptr&quot;, hModule)  <em>; 메모리를 절약하기 위해, DLL은 사용한 다음 내려도 됩니다.</em></pre>
-<p>
-v1.0.46.08+에서는 함수의 주소를 미리 찾아놓으면 훨씬 더 빠르게 수행성능을 개선시킬 수 있습니다. 예를 들어:</p>
+    result := DllCall("MyFunctions\BackupFile", "Str", A_LoopFileFullPath)
+DllCall("<strong>FreeLibrary</strong>", "Ptr", hModule)  <em>; 메모리를 절약하기 위해, DLL은 사용한 다음 내려도 됩니다.</em></pre>
+<p>v1.0.46.08+에서는 함수의 주소를 미리 찾아놓으면 훨씬 더 빠르게 수행성능을 개선시킬 수 있습니다. 예를 들어:</p>
 <pre><em>; 다음 예제에서, DLL이 아직 적재되지 않았다면, GetModuleHandle 대신 LoadLibrary를 사용합니다.</em>
-<strong>MulDivProc</strong> := DllCall(&quot;GetProcAddress&quot;, Ptr, DllCall(&quot;GetModuleHandle&quot;, Str, &quot;<strong>kernel32</strong>&quot;, &quot;Ptr&quot;), AStr, &quot;<strong>MulDiv</strong>&quot;, &quot;Ptr&quot;)
+<strong>MulDivProc</strong> := DllCall("GetProcAddress", Ptr, DllCall("GetModuleHandle", Str, "<strong>kernel32</strong>", "Ptr"), AStr, "<strong>MulDiv</strong>", "Ptr")
 Loop 500
     DllCall(<strong>MulDivProc</strong>, Int, 3, Int, 4, Int, 3)</pre>
 <p><span class="ver">[AHK_L 31+]:</span> DllCall의 첫 번째 매개변수가 <code>"MulDiv"</code>와 같은 기호 문자열이고 그 함수를 담고 있는 DLL이 보통 스크립트가 실행되기 전에 적재되어 있다면, 그 문자열은 자동으로 함수 주소로 결정됩니다. 이런 내장 최적화는 위에 보여준 예제보다 더 효과적입니다.</p>
-<p>
-또한, 스크립트의 아무데나 <a href="_NoEnv.htm">#NoEnv</a>줄을 추가하면 인용부호 없는 매개변수 유형이 사용될 때 (예, Int vs. &quot;Int&quot;) DllCall의 수행성능이 향상됩니다.</p>
-<p>
-마지막으로, 문자열-변수를 함수에 건넬 때 그 함수가 문자열의 길이를 변경하지 않을 경우, 그 변수를 &quot;<a href="#str">str</a>&quot; 이 아니라 (특히 문자열이 아주 길 때) <a href="../Variables.htm#amp">주소</a>로 보내면 (예, &amp;MyVar) 수행성능을 향상시킬 수 있습니다. 다음 예제는 문자열을 대문자로 변환합니다: <code>DllCall(&quot;CharUpper&quot;, <strong>Ptr</strong>, <strong>&amp;</strong>MyVar, Ptr)</code>.</p>
+<p>또한, 스크립트의 아무데나 <a href="_NoEnv.htm">#NoEnv</a>줄을 추가하면 인용부호 없는 매개변수 유형이 사용될 때 (예, Int vs. "Int") DllCall의 수행성능이 향상됩니다.</p>
+<p>마지막으로, 문자열-변수를 함수에 건넬 때 그 함수가 문자열의 길이를 변경하지 않을 경우, 그 변수를 "<a href="#str">str</a>" 이 아니라 (특히 문자열이 아주 길 때) <a href="../Variables.htm#amp">주소</a>로 보내면 (예, &amp;MyVar) 수행성능을 향상시킬 수 있습니다. 다음 예제는 문자열을 대문자로 변환합니다: <code>DllCall("CharUpper", <strong>Ptr</strong>, <strong>&amp;</strong>MyVar, Ptr)</code>.</p>
 
 <h3 id="struct">구조체와 배열</h3>
-<p>
-구조체는 메모리에 서로 이웃해 저장된 <em>멤버</em> (필드) 집단입니다. 대부분의 멤버는 정수인 경향이 있습니다.</p>
-<p>
-구조체의 주소를 (또는 메모리-블록 배열을) 받는 함수는 그 구조체의 날 이진 데이터를 보통 변수에 저장하면 호출할 수 있습니다. 일반적으로 다음 단계를 밟습니다:</p>
-<p>
-1) <code><a href="VarSetCapacity.htm">VarSetCapacity</a>(MyStruct, 123, 0)</code>를 호출하여 목표 변수가 그 구조체의 데이터를 수용할 만큼 충분한지 확인합니다. 123을 적어도 그 구조체의 크기만큼 큰  숫자로 교체합니다. 선택적으로 마지막 매개변수에 0을 지정할 수 있습니다; 모든 멤버가 이진 0으로 초기화됩니다. 전형적으로 이렇게 해서 다음 단계에서  NumPut()이 자주 호출되는 것을 막습니다.</p>
-<p>
-2) 목표 함수가 구조체에 있는 값들을 최초로 사용한다면, <code><a href="NumPut.htm">NumPut</a>(123, MyStruct, 4, "UInt")</code>을 호출해 모든 멤버들을 0아닌 값으로 초기화합니다. 123을 목표 멤버 안에 배치될 정수로 교체합니다 (또는 <code>&amp;Var</code>에 변수의 <a href="../Variables.htm#amp">주소</a>를 저장하도록 지정합니다). 4를 목표 멤버의 오프셋으로 교체합니다 ( &quot;오프셋&quot; 설명은 step #4를 참조합니다). "UInt"를 적절한 유형으로 교체하거나 멤버가 포인터나 핸들이라면 생략합니다.</p>
-<p>3) 목표 함수를 호출합니다. MyStruct의 <a href="../Variables.htm#amp">주소</a>를 UInt (또는 AHK_L 42+에서는 Ptr) 인자로 건넵니다. 예를 들어, <code>DllCall(&quot;MyDll\MyFunc&quot;, Ptr, <strong>&amp;</strong>MyStruct)</code>. 함수는 멤버들을 조사해 보고 필요하면 변경합니다.</p>
-<p>
-4) <code>MyInteger := <a href="NumGet.htm">NumGet</a>(MyStruct, 4, "UInt")</code>를 사용하면 구조체로부터 원하는 값을 얼마든지 열람할 수 있습니다. 4를 구조체에 있는 목표 멤버의 오프셋으로 교체합니다. 첫 멤버는 언제나 0에 있습니다. 두 번째 멤버는 오프셋 0부터 첫 멤버의 크기를 더한 위치에 있습니다 (전형적으로 4). 두 번째를 넘어선 멤버의 위치는 바로 앞 멤버의 오프셋의 위치에 그 크기를 더한 위치에 있습니다. 대부분이 멤버는 -- DWORD, Int, 그리고 <a href="#Int">키타 32-비트 정수 유형</a> -- 크기가 4 바이트입니다. "UInt"를 적절한 유형으로 교체하거나 멤버가 포인터나 핸들이면 생략하십시오.</p>
+<p>구조체는 메모리에 서로 이웃해 저장된 <em>멤버</em> (필드) 집단입니다. 대부분의 멤버는 정수인 경향이 있습니다.</p>
+<p>구조체의 주소를 (또는 메모리-블록 배열을) 받는 함수는 그 구조체의 날 이진 데이터를 보통 변수에 저장하면 호출할 수 있습니다. 일반적으로 다음 단계를 밟습니다:</p>
+<p>1) <code><a href="VarSetCapacity.htm">VarSetCapacity</a>(MyStruct, 123, 0)</code>를 호출하여 목표 변수가 그 구조체의 데이터를 수용할 만큼 충분한지 확인합니다. 123을 적어도 그 구조체의 크기만큼 큰 숫자로 교체합니다. 선택적으로 마지막 매개변수에 0을 지정할 수 있습니다; 모든 멤버가 이진 0으로 초기화됩니다. 전형적으로 이렇게 해서 다음 단계에서 NumPut()이 자주 호출되는 것을 막습니다.</p>
+<p>2) 목표 함수가 구조체에 있는 값들을 최초로 사용한다면, <code><a href="NumPut.htm">NumPut</a>(123, MyStruct, 4, "UInt")</code>을 호출해 모든 멤버들을 0아닌 값으로 초기화합니다. 123을 목표 멤버 안에 배치될 정수로 교체합니다 (또는 <code>&amp;Var</code>에 변수의 <a href="../Variables.htm#amp">주소</a>를 저장하도록 지정합니다). 4를 목표 멤버의 오프셋으로 교체합니다 ( "오프셋" 설명은 step #4를 참조합니다). "UInt"를 적절한 유형으로 교체하거나 멤버가 포인터나 핸들이라면 생략합니다.</p>
+<p>3) 목표 함수를 호출합니다. MyStruct의 <a href="../Variables.htm#amp">주소</a>를 UInt (또는 AHK_L 42+에서는 Ptr) 인자로 건넵니다. 예를 들어, <code>DllCall("MyDll\MyFunc", Ptr, <strong>&amp;</strong>MyStruct)</code>. 함수는 멤버들을 조사해 보고 필요하면 변경합니다.</p>
+<p>4) <code>MyInteger := <a href="NumGet.htm">NumGet</a>(MyStruct, 4, "UInt")</code>를 사용하면 구조체로부터 원하는 값을 얼마든지 열람할 수 있습니다. 4를 구조체에 있는 목표 멤버의 오프셋으로 교체합니다. 첫 멤버는 언제나 0에 있습니다. 두 번째 멤버는 오프셋 0부터 첫 멤버의 크기를 더한 위치에 있습니다 (전형적으로 4). 두 번째를 넘어선 멤버의 위치는 바로 앞 멤버의 오프셋의 위치에 그 크기를 더한 위치에 있습니다. 대부분이 멤버는 -- DWORD, Int, 그리고 <a href="#Int">키타 32-비트 정수 유형</a> -- 크기가 4 바이트입니다. "UInt"를 적절한 유형으로 교체하거나 멤버가 포인터나 핸들이라면 생략합니다.</p>
 <p>실제 사용법은 <a href="#ExStruct">구조체 예제</a>를 참조하십시오.</p>
-
 <h3 id="limits">알려진 한계</h3>
-<p><a href="../Variables.htm#amp">배열의 주소</a>를 (예, <code>&amp;MyVar</code>) 함수에 건넬 때 그 함수가 변수의 내용의 길이를 변경하면, 그 다음부터 변수를 사용하면 올바르게 작동하지 않을 가능성이 있습니다. 이를 해결하려면, 다음 중 하나의 조치를 수행하십시오: 1) MyVar를 Ptr/address가 아니라 <a href="#str">&quot;Str&quot;</a> 인자로 건네십시오; 2) v1.0.44.03+에서, <code><a href="VarSetCapacity.htm#neg1">VarSetCapacity(MyVar, -1)</a></code>를 호출하면 DllCall을 호출한 후에 변수의 내부에 저장된 길이가 갱신됩니다. .</p>
+<p><a href="../Variables.htm#amp">배열의 주소</a>를 (예, <code>&amp;MyVar</code>) 함수에 건넬 때 그 함수가 변수의 내용의 길이를 변경하면, 그 다음부터 변수를 사용하면 올바르게 작동하지 않을 가능성이 있습니다. 이를 해결하려면, 다음 중 하나의 조치를 수행하십시오: 1) MyVar를 Ptr/address가 아니라 <a href="#str">"Str"</a> 인자로 건네십시오; 2) v1.0.44.03+에서, <code><a href="VarSetCapacity.htm#neg1">VarSetCapacity(MyVar, -1)</a></code>를 호출하면 DllCall을 호출한 후에 변수의 내부에 저장된 길이가 갱신됩니다.</p>
 <p>함수가 변수에 저장한 이진값 0은 그 오른쪽의 모든 데이터를 감추어 버립니다; 즉, 그런 데이터는 대부분의 명령어와 함수에서 접근하거나 변경할 수 없습니다. 그렇지만, <a href="../Variables.htm#amp">주소 연산자</a> 그리고 <a href="NumPut.htm">NumPut</a>/<a href="NumGet.htm">NumGet</a>, 뿐만 아니라 DllCall 자체로 조작할 수 있습니다.</p>
-<p>
-자신에게 건네어진 문자열의 주소를 돌려주는 함수는 예상과 다르게 다른 메모리 주소에 동일한 문자열을 돌려줄 가능성이 있습니다. 예를 들어, 프로그래밍 언어로 <code>CharLower(CharUpper(MyVar))</code>를 호출하면 <em>MyVar</em>의 내용이 소문자로 변환됩니다. 그러나 같은 일을 DllCall()로 하면, <em>MyVar</em>는 그 다음 호출 뒤에 대문자가 됩니다.  왜냐하면 CharLower는 <em>MyVar</em>와  내용이 동일한 다른/임시 문자열에 연산을 수행하기 때문입니다 :</p>
+<p>자신에게 건네어진 문자열의 주소를 돌려주는 함수는 예상과 다르게 다른 메모리 주소에 동일한 문자열을 돌려줄 가능성이 있습니다. 예를 들어, 프로그래밍 언어로 <code>CharLower(CharUpper(MyVar))</code>를 호출하면 <em>MyVar</em>의 내용이 소문자로 변환됩니다. 그러나 같은 일을 DllCall()로 하면, <em>MyVar</em>는 그 다음 호출 뒤에 대문자가 됩니다. 왜냐하면 CharLower는 <em>MyVar</em>와 내용이 동일한 다른/임시 문자열에 연산을 수행하기 때문입니다 :</p>
 <pre>MyVar = ABC
-result := DllCall(&quot;CharLower&quot;, <strong><u>str</u></strong>, DllCall(&quot;CharUpper&quot;, Str, MyVar, <strong><u>Str</u></strong>), Str)</pre>
-<p>
-이를 우회하려면, 위에서 두 개의 밑줄 붙은 &quot;Str&quot; 값을 Ptr로 변경하십시오. 이렇게 하면 CharUpper의 반환 값이 순수한 주소로 번역됩니다. CharLower에 정수로 건네어질 것입니다.</p>
-<p>
-문자열을 다룰 때 다른 한계를 마주할 수도 있습니다. 자세한 것은 <a href="../Compat.htm#DllCall">스크립트 호환성</a>을 참조하십시오.</p>
-
+result := DllCall("CharLower", <strong><u>str</u></strong>, DllCall("CharUpper", Str, MyVar, <strong><u>Str</u></strong>), Str)</pre>
+<p>이를 우회하려면, 위에서 두 개의 밑줄 붙은 "Str" 값을 Ptr로 변경하십시오. 이렇게 하면 CharUpper의 반환 값이 순수한 주소로 번역됩니다. CharLower에 정수로 건네어질 것입니다.</p>
+<p>문자열을 다룰 때 다른 한계를 마주할 수도 있습니다. 자세한 것은 <a href="../Compat.htm#DllCall">스크립트 호환성</a>을 참조하십시오.</p>
 <h3 id="COM">컴포넌트 객체 모델 (COM)</h3>
-<p>
-COM 객체는 VBScript와 비슷한 언어로 접근할 수 있으며 전형적으로 오토핫키의 <a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjGet.htm">ComObjGet</a> 또는 <a href="ComObjActive.htm">ComObjActive</a> 그리고 내장 <a href="../Objects.htm#Usage_Objects">객체 구문</a>을 통하여 접근할 수도 있습니다.</p>
+<p>COM 객체는 VBScript와 비슷한 언어로 접근할 수 있으며 전형적으로 오토핫키의 <a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjGet.htm">ComObjGet</a> 또는 <a href="ComObjActive.htm">ComObjActive</a> 그리고 내장 <a href="../Objects.htm#Usage_Objects">객체 구문</a>을 통하여 접근할 수도 있습니다.</p>
 <p><a href="http://msdn.microsoft.com/en-us/library/ms221608.aspx">IDispatch</a>를 지원하지 않는 COM 객체는 DllCall과 함께 사용하려면 함수의 주소를 그 객체 인터페이스의 가상 함수 테이블에서 열람합니다. 더 자세한 것은 아래의 <a href="#ExTaskbar">예제</a>를 참조하십시오.</p>
 <p>.NET 프레임워크 대부분도 COM과 DllCall을 통하여 접근할 수 있습니다. 다음<a href="http://www.autohotkey.com/forum/topic26191.html">http://www.autohotkey.com/forum/topic26191.html</a>을 참조하십시오.
 </p>
 
-<h3>관련</h3>
+<h3>관련 항목</h3>
 <p><a href="../Compat.htm#DllCall">스크립트 호환성</a>, <a href="PostMessage.htm">PostMessage</a>, <a href="OnMessage.htm">OnMessage()</a>, <a href="RegisterCallback.htm">RegisterCallback()</a>, <a href="Run.htm">Run</a>, <a href="VarSetCapacity.htm">VarSetCapacity</a>, <a href="../Functions.htm">Functions</a>, <a href="SysGet.htm">SysGet</a>, <a href="http://msdn.microsoft.com/library/">MSDN Library</a></p>
-
 <h3>예제</h3>
-<pre class="NoIndent"><em>; 예제: Windows API 함수 &quot;MessageBox&quot;를 호출하고 사용자가 누른 버튼을 보고합니다.</em>
+<pre class="NoIndent"><em>; 예제: Windows API 함수 "MessageBox"를 호출하고 사용자가 누른 버튼을 보고합니다.</em>
 
-WhichButton := DllCall(&quot;MessageBox&quot;, &quot;Int&quot;, &quot;0&quot;, &quot;Str&quot;, &quot;Press Yes or No&quot;, &quot;Str&quot;, &quot;Title of box&quot;, &quot;Int&quot;, 4)
+WhichButton := DllCall("MessageBox", "Int", "0", "Str", "Press Yes or No", "Str", "Title of box", "Int", 4)
 MsgBox You pressed button #%WhichButton%.</pre>
 
 <pre class="NoIndent"><em>; 예제: 바탕화면 화면을 지정된 비트맵 파일로 바꿉니다 (.bmp).</em>
 
-DllCall(&quot;SystemParametersInfo&quot;, UInt, 0x14, UInt, 0, Str, <i>A_WinDir <strong>.</strong> &quot;\winnt.bmp&quot;</i>, UInt, 2)</pre>
+DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, <i>A_WinDir <strong>.</strong> "\winnt.bmp"</i>, UInt, 2)</pre>
 
-<pre class="NoIndent"><em>; 예제: API 함수 &quot;IsWindowVisible&quot;를 호출해 노트패드 창이 보이는지 알아냅니다.</em>
+<pre class="NoIndent"><em>; 예제: API 함수 "IsWindowVisible"를 호출해 노트패드 창이 보이는지 알아냅니다.</em>
 
 DetectHiddenWindows On
-if not DllCall(&quot;IsWindowVisible&quot;, &quot;Ptr&quot;, WinExist(&quot;Untitled - Notepad&quot;))  <em>; WinExist() returns an HWND.</em>
+if not DllCall("IsWindowVisible", "Ptr", WinExist("Untitled - Notepad"))  <em>; WinExist() returns an HWND.</em>
     MsgBox The window is not visible.</pre>
 
 <pre class="NoIndent"><em>; 예제: API의 wsprintf()를 호출해  432 숫자 앞에 0을 덧대어 10 자리 너비의 문자로 만듭니다 (0000000432).</em>
 
 VarSetCapacity(ZeroPaddedNumber, 20)  <em>; 변수가 새 문자열을 받을 만큼 충분히 큰지 확인합니다.</em>
-DllCall(&quot;wsprintf&quot;, &quot;Str&quot;, ZeroPaddedNumber, &quot;Str&quot;, &quot;%010d&quot;, &quot;Int&quot;, 432, &quot;Cdecl&quot;)  <em>; Cdecl 호출 관례를 요구합니다.</em>
+DllCall("wsprintf", "Str", ZeroPaddedNumber, "Str", "%010d", "Int", 432, "Cdecl")  <em>; Cdecl 호출 관례를 요구합니다.</em>
 MsgBox %ZeroPaddedNumber%</pre>
 
 <pre class="NoIndent"><a name="QPC"></a><em>; 예제: QueryPerformanceCounter()의 사용법을 보여줍니다. <a href="../Variables.htm#TickCount">A_TickCount의</a> 10ms 보다 더 정밀도가 높습니다.</em>
 
-DllCall(&quot;QueryPerformanceCounter&quot;, &quot;Int64*&quot;, CounterBefore)
+DllCall("QueryPerformanceCounter", "Int64*", CounterBefore)
 Sleep 1000
-DllCall(&quot;QueryPerformanceCounter&quot;, &quot;Int64*&quot;, CounterAfter)
-MsgBox % &quot;Elapsed QPC time is &quot; . CounterAfter - CounterBefore</pre>
+DllCall("QueryPerformanceCounter", "Int64*", CounterAfter)
+MsgBox % "Elapsed QPC time is " . CounterAfter - CounterBefore</pre>
 
 <pre class="NoIndent"><em>; 예제: 임시로 마우스의 속도를 줄여주는 핫키입니다. 더 정밀하게 위치를 잡는데 도움이 됩니다.
 ; F1 키를 누르면 커서의 속도가 느려집니다. 떼면 원래의 속도로 돌아옵니다.</em>
@@ -216,13 +197,13 @@ F1::
 SPI_GETMOUSESPEED = 0x70
 SPI_SETMOUSESPEED = 0x71
 <em>; 나중에 복구할 수 있도록 현재 속도를 열람합니다:</em>
-<strong>DllCall</strong>(&quot;SystemParametersInfo&quot;, UInt, SPI_GETMOUSESPEED, UInt, 0, UIntP, OrigMouseSpeed, UInt, 0)
+<strong>DllCall</strong>("SystemParametersInfo", UInt, SPI_GETMOUSESPEED, UInt, 0, UIntP, OrigMouseSpeed, UInt, 0)
 <em>; 이제 마우스를 더 느린 속도로 지정합니다. 가장 마지막 매개변수 바로 앞에 지정되어 있습니다 (범위는  1-20이고, 10이 기본값입니다):</em>
-<strong>DllCall</strong>(&quot;SystemParametersInfo&quot;, UInt, SPI_SETMOUSESPEED, UInt, 0, Ptr, <strong>3</strong>, UInt, 0)
+<strong>DllCall</strong>("SystemParametersInfo", UInt, SPI_SETMOUSESPEED, UInt, 0, Ptr, <strong>3</strong>, UInt, 0)
 KeyWait F1  <em>; 키보드 자동 반복 때문에 DllCall이 반복적으로 호출되는 것을 방지합니다.</em>
 return
 
-F1 up::<strong>DllCall</strong>(&quot;SystemParametersInfo&quot;, UInt, 0x71, UInt, 0, Ptr, OrigMouseSpeed, UInt, 0)  <em>; 원래 속도를 복구합니다</em></pre>
+F1 up::<strong>DllCall</strong>("SystemParametersInfo", UInt, 0x71, UInt, 0, Ptr, OrigMouseSpeed, UInt, 0)  <em>; 원래 속도를 복구합니다</em></pre>
 
 <pre class="NoIndent"><a name="GetChildHWND"></a><em>; 예제: 창의 유일한 ID 그리고 그의 콘트롤 중 ClassNN이나 텍스트를 건넬 때,
 ; 다음 함수는 그 콘트롤의 HWND (유일한 ID)를 돌려줍니다.
@@ -238,7 +219,7 @@ SetTimer, WatchScrollBar, 100
 return
 
 WatchScrollBar:
-ActiveWindow := WinExist(&quot;A&quot;)
+ActiveWindow := WinExist("A")
 if not ActiveWindow  <em>; No active window.</em>
     return
 ControlGetFocus, FocusedControl, ahk_id %ActiveWindow%
@@ -246,43 +227,43 @@ if not FocusedControl  <em>; No focused control.</em>
     return
 <em>; 툴팁에 수평 또는 수직 스크롤바의 위치를 보여줍니다:</em>
 ControlGet, ChildHWND, Hwnd,, %FocusedControl%, ahk_id %ActiveWindow%
-ToolTip % <strong>DllCall</strong>(&quot;GetScrollPos&quot;, &quot;Ptr&quot;, ChildHWND, &quot;Int&quot;, 1)  <em>;  마지막 매개변수는 SB_VERT에 대해 1 for, SB_HORZ에 대해 0입니다.</em>
+ToolTip % <strong>DllCall</strong>("GetScrollPos", "Ptr", ChildHWND, "Int", 1)  <em>;  마지막 매개변수는 SB_VERT에 대해 1 for, SB_HORZ에 대해 0입니다.</em>
 return</pre>
 
 <pre class="NoIndent"><a name="file"></a><em>; 예제: 작동하는 스크립트입니다. 텍스트를 파일에 쓴다음 다시 메모리로 읽어 들입니다 (v1.0.34+ 요구).
 ; 이 메쏘드를 사용하면 여러 파일을 동시에 읽거나 쓸 경우 수행성능이 향상 됩니다.
-; AHK_L 42+에서는 <a href="FileOpen.htm">FileOpen</a>을 사용하면, <a href="FileOpen.htm#writeread">같은 일을 할 수 있습니다</a>.</em>
+; AHK_L 42+에서는 <a href="FileOpen.htm#writeread">FileOpen</a>을 사용하면, <a href="FileOpen.htm">같은 일을 할 수 있습니다</a>.</em>
 
 FileSelectFile, FileName, S16,, Create a new file:
 if FileName =
     return
 GENERIC_WRITE = 0x40000000  <em>; 읽기가 아니라 쓰기 용도로 파일을 엽니다.</em>
 CREATE_ALWAYS = 2  <em>; 새 파일을 만듭니다 (기존의 파일을 덮어씀).</em>
-hFile := <strong>DllCall</strong>(&quot;CreateFile&quot;, Str, FileName, UInt, GENERIC_WRITE, UInt, 0, Ptr, 0, UInt, CREATE_ALWAYS, UInt, 0, Ptr, 0, Ptr)
+hFile := <strong>DllCall</strong>("CreateFile", Str, FileName, UInt, GENERIC_WRITE, UInt, 0, Ptr, 0, UInt, CREATE_ALWAYS, UInt, 0, Ptr, 0, Ptr)
 if not hFile
 {
-    MsgBox Can't open &quot;%FileName%&quot; for writing.
+    MsgBox Can't open "%FileName%" for writing.
     return
 }
 TestString = This is a test string.`r`n  <em>; 파일을 이런 식으로 쓸 때,  `n 말고 `r`n을 사용하여 새 줄을 시작하십시오.</em>
-<strong>DllCall</strong>(&quot;WriteFile&quot;, Ptr, hFile, Str, TestString, UInt, StrLen(TestString), UIntP, BytesActuallyWritten, Ptr, 0)
-<strong>DllCall</strong>(&quot;CloseHandle&quot;, Ptr, hFile)  <em>; 파일을 닫습니다.</em>
+<strong>DllCall</strong>("WriteFile", Ptr, hFile, Str, TestString, UInt, StrLen(TestString), UIntP, BytesActuallyWritten, Ptr, 0)
+<strong>DllCall</strong>("CloseHandle", Ptr, hFile)  <em>; 파일을 닫습니다.</em>
 
 <em>; 파일에 썼으므로 이제 다시 그 내용을 메모리로 읽어 들입니다.</em>
 GENERIC_READ = 0x80000000  <em>; 쓰기 말고 읽기 용도로 파일을 엽니다.</em>
 OPEN_EXISTING = 3  <em>; 이 모드는 열릴 파일이 이미 존재해야 함을 가리킵니다.</em>
 FILE_SHARE_READ = 0x1 <em>; This and the next are whether other processes can open the file while we have it open.</em>
 FILE_SHARE_WRITE = 0x2
-hFile := <strong>DllCall</strong>(&quot;CreateFile&quot;, Str, FileName, UInt, GENERIC_READ, UInt, FILE_SHARE_READ|FILE_SHARE_WRITE, Ptr, 0, UInt, OPEN_EXISTING, UInt, 0, Ptr, 0)
+hFile := <strong>DllCall</strong>("CreateFile", Str, FileName, UInt, GENERIC_READ, UInt, FILE_SHARE_READ|FILE_SHARE_WRITE, Ptr, 0, UInt, OPEN_EXISTING, UInt, 0, Ptr, 0)
 if not hFile
 {
-    MsgBox Can't open &quot;%FileName%&quot; for reading.
+    MsgBox Can't open "%FileName%" for reading.
     return
 }
 <em>; 테스트 목적으로 변수를 비우지만, 가용 능력이 충분한지 확인하십시오:</em>
 BytesToRead := VarSetCapacity(TestString, StrLen(TestString))
-<strong>DllCall</strong>(&quot;ReadFile&quot;, Ptr, hFile, Str, TestString, UInt, BytesToRead, UIntP, BytesActuallyRead, Ptr, 0)
-<strong>DllCall</strong>(&quot;CloseHandle&quot;, Ptr, hFile)  <em>; 파일을 닫습니다.</em>
+<strong>DllCall</strong>("ReadFile", Ptr, hFile, Str, TestString, UInt, BytesToRead, UIntP, BytesActuallyRead, Ptr, 0)
+<strong>DllCall</strong>("CloseHandle", Ptr, hFile)  <em>; 파일을 닫습니다.</em>
 MsgBox The following string was read from the file: %TestString%</pre>
 
 <pre class="NoIndent"><a name="HideCursor"></a><em>; 예제: Win+C를 누를 때 마우스 커서를 감춥니다. 나중에 커서를 보여주려면, 다시 Win+C를 누릅니다.
@@ -292,18 +273,18 @@ OnExit, ShowCursor  <em>; 스크립트가 종료할 때 커서가 보이는지 �
 return
 
 ShowCursor:
-SystemCursor(&quot;On&quot;)
+SystemCursor("On")
 ExitApp
 
-#c::SystemCursor(&quot;Toggle&quot;)  <em>; Win+C 핫키로 커서를 켜고 끕니다.</em>
+#c::SystemCursor("Toggle")  <em>; Win+C 핫키로 커서를 켜고 끕니다.</em>
 
-SystemCursor(OnOff=1)   <em>; INIT = &quot;I&quot;,&quot;Init&quot;; OFF = 0,&quot;Off&quot;; TOGGLE = -1,&quot;T&quot;,&quot;Toggle&quot;; ON = others</em>
+SystemCursor(OnOff=1)   <em>; INIT = "I","Init"; OFF = 0,"Off"; TOGGLE = -1,"T","Toggle"; ON = others</em>
 {
     static AndMask, XorMask, $, h_cursor
         ,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13 <em>; 시스템 커서</em>
         , b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13   <em>; 빈 커서</em>
         , h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13   <em>; 기본 커서의 핸들</em>
-    if (OnOff = &quot;Init&quot; or OnOff = &quot;I&quot; or $ = &quot;&quot;)       <em>; 요청될 때 또는 첫 번째로 호출될 때 초기화합니다</em>
+    if (OnOff = "Init" or OnOff = "I" or $ = "")       <em>; 요청될 때 또는 첫 번째로 호출될 때 초기화합니다</em>
     {
         $ = h                                          <em>; 기본 커서를 활성화합니다</em>
         VarSetCapacity( h_cursor,4444, 1 )
@@ -313,50 +294,50 @@ SystemCursor(OnOff=1)   <em>; INIT = &quot;I&quot;,&quot;Init&quot;; OFF = 0,&qu
         StringSplit c, system_cursors, `,
         Loop %c0%
         {
-            h_cursor   := DllCall( &quot;LoadCursor&quot;, &quot;Ptr&quot;,0, &quot;Ptr&quot;,c%A_Index% )
-            h%A_Index% := DllCall( &quot;CopyImage&quot;, &quot;Ptr&quot;,h_cursor, &quot;UInt&quot;,2, &quot;Int&quot;,0, &quot;Int&quot;,0, &quot;UInt&quot;,0 )
-            b%A_Index% := DllCall( &quot;CreateCursor&quot;, &quot;Ptr&quot;,0, &quot;Int&quot;,0, &quot;Int&quot;,0
-                , &quot;Int&quot;,32, &quot;Int&quot;,32, &quot;Ptr&quot;,&amp;AndMask, &quot;Ptr&quot;,&amp;XorMask )
+            h_cursor   := DllCall( "LoadCursor", "Ptr",0, "Ptr",c%A_Index% )
+            h%A_Index% := DllCall( "CopyImage", "Ptr",h_cursor, "UInt",2, "Int",0, "Int",0, "UInt",0 )
+            b%A_Index% := DllCall( "CreateCursor", "Ptr",0, "Int",0, "Int",0
+                , "Int",32, "Int",32, "Ptr",&amp;AndMask, "Ptr",&amp;XorMask )
         }
     }
-    if (OnOff = 0 or OnOff = &quot;Off&quot; or $ = &quot;h&quot; and (OnOff &lt; 0 or OnOff = &quot;Toggle&quot; or OnOff = &quot;T&quot;))
+    if (OnOff = 0 or OnOff = "Off" or $ = "h" and (OnOff &lt; 0 or OnOff = "Toggle" or OnOff = "T"))
         $ = b  <em>; 빈 커서를 사용합니다</em>
     else
         $ = h  <em>; 저장된 커서를 사용합니다</em>
 
     Loop %c0%
     {
-        h_cursor := DllCall( &quot;CopyImage&quot;, &quot;Ptr&quot;,%$%%A_Index%, &quot;UInt&quot;,2, &quot;Int&quot;,0, &quot;Int&quot;,0, &quot;UInt&quot;,0 )
-        DllCall( &quot;SetSystemCursor&quot;, &quot;Ptr&quot;,h_cursor, &quot;UInt&quot;,c%A_Index% )
+        h_cursor := DllCall( "CopyImage", "Ptr",%$%%A_Index%, "UInt",2, "Int",0, "Int",0, "UInt",0 )
+        DllCall( "SetSystemCursor", "Ptr",h_cursor, "UInt",c%A_Index% )
     }
 }</pre>
 
-<pre class="NoIndent" id="ExStruct"><em>; 구조체 예제: RECT 구조체의 주소를 GetWindowRect()에 건넵니다. 
+<pre class="NoIndent" id="ExStruct"><em>; 구조체 예제: RECT 구조체의 주소를 GetWindowRect()에 건넵니다.
 ; 구조체의 멤버가 창의 좌, 상, 우, 하의 위치에 설정됩니다 (화면에 상대적임).</em>
 
 Run Notepad
-WinWait Untitled - Notepad  <em>; This also sets the &quot;<a href="../misc/WinTitle.htm#LastFoundWindow">last found window</a>&quot; for use with WinExist() below.</em>
+WinWait Untitled - Notepad  <em>; This also sets the "<a href="../misc/WinTitle.htm#LastFoundWindow">last found window</a>" for use with WinExist() below.</em>
 VarSetCapacity(Rect, 16)  <em>; A RECT is a struct consisting of four 32-bit integers (i.e. 4*4=16).</em>
-<strong>DllCall</strong>(&quot;GetWindowRect&quot;, Ptr, WinExist(), Ptr, &amp;Rect)  <em>; WinExist() returns an HWND.</em>
-MsgBox % &quot;Left &quot; . <a href="NumGet.htm">NumGet</a>(Rect, 0, "Int") . &quot; Top &quot; . NumGet(Rect, 4, "Int")
-    . &quot; Right &quot; . NumGet(Rect, 8, "Int") . &quot; Bottom &quot; . NumGet(Rect, 12, "Int")</pre>
+<strong>DllCall</strong>("GetWindowRect", Ptr, WinExist(), Ptr, &amp;Rect)  <em>; WinExist() returns an HWND.</em>
+MsgBox % "Left " . <a href="NumGet.htm">NumGet</a>(Rect, 0, "Int") . " Top " . NumGet(Rect, 4, "Int")
+    . " Right " . NumGet(Rect, 8, "Int") . " Bottom " . NumGet(Rect, 12, "Int")</pre>
 
-<pre class="NoIndent"><em>; 구조체 예제: FillRect()에 RECT 구조체의 주소를 건넵니다. 
+<pre class="NoIndent"><em>; 구조체 예제: FillRect()에 RECT 구조체의 주소를 건넵니다.
 ; 이 구조체는 임시로 빨갛게 칠할 화면의 구역을 가리킵니다.</em>
 
 VarSetCapacity(Rect, 16, 0)  <em>; 4-바이트 정수를 수용하도록 가용능력을 설정하고 그 모두를 0으로 초기화합니다.</em>
-<a href="NumPut.htm">NumPut</a>(A_ScreenWidth//2, Rect, 8, "Int")  <em>; 구조체에서 세 번째 정수는 &quot;rect.right&quot;입니다.</em>
-NumPut(A_ScreenHeight//2, Rect, 12, "Int") <em>; 구조체에서 네 번째 정수는 &quot;rect.bottom&quot;입니다.</em>
-hDC := <strong>DllCall</strong>(&quot;GetDC&quot;, "Ptr", 0, "Ptr")  <em>; 0을 건네 데스크탑의 장치 문맥을 얻습니다.</em>
-hBrush := <strong>DllCall</strong>(&quot;CreateSolidBrush&quot;, "UInt", 0x0000FF, "Ptr")  <em>; 빨간색 브러쉬를 만듭니다 (BGR 형식으로 0x0000FF 임).</em>
-<strong>DllCall</strong>(&quot;FillRect&quot;, "Ptr", hDC, "Ptr", &amp;Rect, "Ptr", hBrush)  <em>; 지정된 사각구역을 위의 브러쉬를 사용하여 채웁니다.</em>
-<strong>DllCall</strong>(&quot;ReleaseDC&quot;, "Ptr", 0, "Ptr", hDC)  <em>; 청소.</em>
-<strong>DllCall</strong>(&quot;DeleteObject&quot;, "Ptr", hBrush)  <em>; 청소.</em></pre>
+<a href="NumPut.htm">NumPut</a>(A_ScreenWidth//2, Rect, 8, "Int")  <em>; 구조체에서 세 번째 정수는 "rect.right"입니다.</em>
+NumPut(A_ScreenHeight//2, Rect, 12, "Int") <em>; 구조체에서 네 번째 정수는 "rect.bottom"입니다.</em>
+hDC := <strong>DllCall</strong>("GetDC", "Ptr", 0, "Ptr")  <em>; 0을 건네 데스크탑의 장치 문맥을 얻습니다.</em>
+hBrush := <strong>DllCall</strong>("CreateSolidBrush", "UInt", 0x0000FF, "Ptr")  <em>; 빨간색 브러쉬를 만듭니다 (BGR 형식으로 0x0000FF 임).</em>
+<strong>DllCall</strong>("FillRect", "Ptr", hDC, "Ptr", &amp;Rect, "Ptr", hBrush)  <em>; 지정된 사각구역을 위의 브러쉬를 사용하여 채웁니다.</em>
+<strong>DllCall</strong>("ReleaseDC", "Ptr", 0, "Ptr", hDC)  <em>; 청소.</em>
+<strong>DllCall</strong>("DeleteObject", "Ptr", hBrush)  <em>; 청소.</em></pre>
 
-<pre class="NoIndent"><em>; 구조체 예제: 시스템 시계를 지정된 날짜와 시간으로 변경합니다.
+<pre class="NoIndent"><em>; 구조체 예제: 시스템 시계를 지정된 날짜와 시간으로 변경합니다. 
 ; 앞으로 날짜를 변경할 때 주의하십시오. 일정이 잡혀 있는 작업이 너무 이르게 실행될 가능성이 있습니다!</em>
 
-SetSystemTime(&quot;20051008142211&quot;)  <em>; <a href="FileSetTime.htm#YYYYMMDD">시간도장</a>을 건넵니다 (지역시간입니다. UTC아님).</em>
+SetSystemTime("20051008142211")  <em>; <a href="FileSetTime.htm#YYYYMMDD">시간도장</a>을 건넵니다 (지역시간입니다. UTC아님).</em>
 
 SetSystemTime(YYYYMMDDHHMISS)
 <em>; 시스템 시계를 지정된 날짜와 시간으로 설정합니다.
@@ -371,24 +352,25 @@ SetSystemTime(YYYYMMDDHHMISS)
     VarSetCapacity(SystemTime, 16, 0)  <em>; 이 구조는 8개의 UShort로 구성됩니다(즉, 8*2=16).</em>
 
     StringLeft, Int, YYYYMMDDHHMISS, 4    <em>; YYYY (해)</em>
-    <a href="NumPut.htm">NumPut</a>(Int, SystemTime, 0, &quot;UShort&quot;)
+    <a href="NumPut.htm">NumPut</a>(Int, SystemTime, 0, "UShort")
     StringMid, Int, YYYYMMDDHHMISS, 5, 2  <em>; MM (달, 1-12)</em>
-    NumPut(Int, SystemTime, 2, &quot;UShort&quot;)
+    NumPut(Int, SystemTime, 2, "UShort")
     StringMid, Int, YYYYMMDDHHMISS, 7, 2  <em>; DD (날)</em>
-    NumPut(Int, SystemTime, 6, &quot;UShort&quot;)
+    NumPut(Int, SystemTime, 6, "UShort")
     StringMid, Int, YYYYMMDDHHMISS, 9, 2  <em>; HH (24-시간제 시간)</em>
-    NumPut(Int, SystemTime, 8, &quot;UShort&quot;)
+    NumPut(Int, SystemTime, 8, "UShort")
     StringMid, Int, YYYYMMDDHHMISS, 11, 2 <em>; MI (분)</em>
-    NumPut(Int, SystemTime, 10, &quot;UShort&quot;)
+    NumPut(Int, SystemTime, 10, "UShort")
     StringMid, Int, YYYYMMDDHHMISS, 13, 2 <em>; SS (초)</em>
-    NumPut(Int, SystemTime, 12, &quot;UShort&quot;)
+    NumPut(Int, SystemTime, 12, "UShort")
 
-    return <strong>DllCall</strong>(&quot;SetSystemTime&quot;, Ptr, &amp;SystemTime)
+    return <strong>DllCall</strong>("SetSystemTime", Ptr, &amp;SystemTime)
 }</pre>
 
 <pre class="NoIndent"><em>/* <strong>고급 구조체 예제:</strong>
 
-1) DllCall()을 사용하여 TCP/IP 서버에 네트워크 접속을 만들고 그로부터 데이터를 받는 방법은 <a href="../scripts/WinLIRC.htm">WinLIRC 클라이언트 스크립트</a>를 참조하십시오. 
+1) DllCall()을 사용하여 TCP/IP 서버에 네트워크 접속을 만들고 그로부터 데이터를 받는 방법은 <a href="../scripts/WinLIRC.htm">WinLIRC 클라이언트 스크립트</a>를 참조하십시오.
+
 
 2) 운영 체제는 사용자가 글꼴이나 컬러 또는 아이콘을 고를 수 있도록 표준 대화상자를 제공합니다.
 이런 대화상자는 구조체를 사용하고 <a href="http://www.autohotkey.com/forum/topic17230.html">www.autohotkey.com/forum/topic17230.html</a>에서 예를 보실 수 있습니다.
@@ -427,9 +409,9 @@ DllCall(vtable(tbl,4), "ptr", tbl, "ptr", activeHwnd)  <em>; tbl.<a href="http:/
 ObjRelease(tbl)
 
 vtable(ptr, n) {
-    <em>; NumGet(ptr+0)은 객체의 가상 함수 데이블을 (간단히 말해 vtable을) 돌려줍니다
-    ; 표현식에서 나머지는 vtable로부터 n 번째 함수의 주소의 주소를 열람합니다.
-    </em>
+    <em>; NumGet(ptr+0)은 그 객체의 가상 함수 테이블의 (약자로 vtable)
+    ; 주소를 돌려줍니다. 표현식의 나머지는 n번째 함수의 주소를
+    ; vtable로부터 열람합니다.</em>
     return NumGet(NumGet(ptr+0), n*A_PtrSize)
 }
 </pre>

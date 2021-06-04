@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>#MaxThreads</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -18,26 +19,15 @@
 <dl>
 
   <dt>Value</dt>
-  <dd><p>동시에 존재할 수 있는 <a href="../misc/Threads.htm">쓰레드</a>의 최대 개수. 255 보다 큰 값을 지정하면  255를 지정한 것과 동일합니다 (1.0.48 이전 버전에는, 20이 제한 값이었습니다).</p></dd>
+  <dd><p>동시에 존재할 수 있는 <a href="../misc/Threads.htm">쓰레드</a>의 최대 개수. 255 보다 큰 값을 지정하면 255를 지정한 것과 동일합니다 (1.0.48 이전 버전에는, 20이 제한 값이었습니다).</p></dd>
 
 </dl>
 <h3>논평</h3>
-<p>
-이 설정은 전역적입니다. (스크립트 아무데서나) 한 번만 지정하면 전체 스크립트의 행위에 영향을 미친다는 뜻입니다.</p>
-<p>
-값이 1인 것도 허용하지만, 권장하지 않습니다. 스크립트가 <a href="MsgBox.htm">MsgBox</a>나 기타 대화상자를 보여줄 때마다 새로운 <a href="../Hotkeys.htm">핫키</a>가 기동하지 못하도록 막기 때문입니다. 또한  또다른 <a href="../misc/Threads.htm">쓰레드</a>가 자고 있거나 대기하고 있을 때마다 <a href="SetTimer.htm">타이머도</a> 실행되지 못합니다</p>
-<p>
-#MaxThreads 에 도달하더라도 다음 유형의 <a href="../misc/Threads.htm">쓰레드</a>를 최대 두 개까지 만들 수 있습니다: 
-<p>
-<a href="../Hotkeys.htm">핫키</a>, <a href="../Hotstrings.htm">핫스트링</a>, <a href="OnClipboardChange.htm">OnClipboardChange</a>, 또는 <a href="Gui.htm#Events">GUI 이벤트</a>가 그 유형에 해당됩니다. 단, 그의 서브부틴의 첫 줄이 <a href="ExitApp.htm">ExitApp</a>, <a href="Pause.htm">Pause</a>, <a href="Edit.htm">Edit</a>, <a href="Reload.htm">Reload</a>, <a href="KeyHistory.htm">KeyHistory</a>, <a href="ListLines.htm">ListLines</a>, <a href="ListVars.htm">ListVars</a>, 또는 <a href="ListHotkeys.htm">ListHotkeys</a>인 경우에만 허용됩니다. 
-
-<p>
-또한, <a href="OnExit.htm">OnExit subroutine</a>은 언제나 얼마나 많은 쓰레드가 있는지에 상관없이 기동합니다.</p>
-<p>
-이 설정이 <a href="_MaxThreadsPerHotkey.htm">#MaxThreadsPerHotkey</a>보다 작으면, 그 설정을 오버라이드 하는 효과가 있습니다.</p>
-<p>
-이 지시어가 스크립트에 지정되어 있지 않으면, 10이 설정된 것처럼 행위합니다.</p>
-
+<p>이 설정은 전역적입니다. (스크립트 아무데서나) 한 번만 지정하면 전체 스크립트의 행위에 영향을 줄 수 있다는 뜻입니다.</p>
+<p>값이 1인 것도 허용하지만, 권장하지 않습니다. 스크립트가 <a href="MsgBox.htm">MsgBox</a>나 기타 대화상자를 보여줄 때마다 새로운 <a href="../Hotkeys.htm">핫키</a>가 기동하지 못하도록 막기 때문입니다. 또한 또다른 <a href="../misc/Threads.htm">쓰레드</a>가 자고 있거나 대기하고 있을 때마다 <a href="SetTimer.htm">타이머도</a> 실행되지 못합니다</p>
+<p>#MaxThreads 에 도달하더라도 다음 유형의 <a href="../misc/Threads.htm">쓰레드</a>를 최대 두 개까지 만들 수 있습니다: <a href="../Hotkeys.htm">핫키</a>, <a href="../Hotstrings.htm">핫스트링</a>, <a href="OnClipboardChange.htm">OnClipboardChange</a>, 또는 <a href="Gui.htm#Events">GUI 이벤트</a>가 그 유형에 해당됩니다. 단, 그의 서브부틴의 첫 줄이 <a href="ExitApp.htm">ExitApp</a>, <a href="Pause.htm">Pause</a>, <a href="Edit.htm">Edit</a>, <a href="Reload.htm">Reload</a>, <a href="KeyHistory.htm">KeyHistory</a>, <a href="ListLines.htm">ListLines</a>, <a href="ListVars.htm">ListVars</a>, 또는 <a href="ListHotkeys.htm">ListHotkeys</a>인 경우에만 허용됩니다. 또한, <a href="OnExit.htm">OnExit subroutine</a>은 언제나 얼마나 많은 쓰레드가 있는지에 상관없이 기동합니다.</p>
+<p>이 설정이 <a href="_MaxThreadsPerHotkey.htm">#MaxThreadsPerHotkey</a>보다 작으면, 그 설정을 오버라이드 하는 효과가 있습니다.</p>
+<p>이 지시어가 스크립트에 지정되어 있지 않으면, 10이 설정된 것처럼 행위합니다.</p>
 <h3>관련 항목</h3>
 <p><a href="_MaxThreadsPerHotkey.htm">#MaxThreadsPerHotkey</a>, <a href="../misc/Threads.htm">Threads</a>, <a href="_MaxHotkeysPerInterval.htm">#MaxHotkeysPerInterval</a>, <a href="_HotkeyInterval.htm">#HotkeyInterval</a>, <a href="ListHotkeys.htm">ListHotkeys</a>, <a href="_MaxMem.htm">#MaxMem</a></p>
 <h3>예제</h3>

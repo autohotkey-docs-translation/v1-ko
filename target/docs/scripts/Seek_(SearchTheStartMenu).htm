@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Seek -- by Phi</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@
 
 <h1>Seek -- by Phi</h1>
 
-<p>시작 메뉴를 항해하는 것은 난삽할 수 있습니다. 특히 시간이 지나면서 많은 프로그램을 설치했다면 더욱 난삽합니다. 'Seek'으로 대소문자를 구분하지 않고 키 단어/문구를 지정하면 시작 메뉴로부터 오직 부합하는 프로그램과 디렉토리만 여과합니다. 그래서 쉽게 목표 프로그램을 몇 개 안되는 부합 엔트리 중 하나에서 열 수 있습니다. 이렇게 하면 시작 메뉴를 검색하고 순회하는 지겨운 작업을 하지 않아도 됩니다.
+<p>시작 메뉴를 항해하는 것은 약간 난삽할 수 있습니다. 특히 시간이 지나면서 많은 프로그램을 설치했다면 정말 난삽합니다. 'Seek'으로 대소문자를 구분하지 않는 키 단어/문구를 지정하면 시작 메뉴에서 그에 부합하는 프로그램과 디렉토리만 여과할 수 있습니다. 그러면 부합하는 몇 안되는 엔트리 중에서 쉽게 목표 프로그램을 열 수 있습니다. 이렇게 하면 시작 메뉴를 검색하고 순회하는 지겨운 일을 하지 않아도 됩니다.
 </p>
 <p><a href="Seek_(SearchTheStartMenu).ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
 
@@ -33,10 +34,10 @@
 ;  옵션:
 ;    -cache 가능하면 캐쉬된 디렉토리 리스트를 사용한다
 ;           (아무 옵션도 지정하지 않으면 이것이 기본값이다)
-;    -scan  디렉토리를 스캔해 
-              최근의 디렉토리 목록을 열람한다
-;    -scex  스캔 &amp; 종료 (잠재적으로 시간을 소모하는 
-              디렉토리 스캔 작업을 배경 작업으로 설정할 경우
+;    -scan  디렉토리를 스캔해
+최근의 디렉토리 목록을 열람한다
+;    -scex  스캔 &amp; 종료 (잠재적으로 시간을 소모하는
+디렉토리 스캔 작업을 배경 작업으로 설정할 경우
 ;              유용하다)
 ;    -help  이 도움말을 보여준다
 ;
@@ -48,7 +49,7 @@
 ;    Seek.ahk (원본 스크립트) 또는 Seek.exe (컴파일된 실행 파일)
 ;    로 실행할 수 있습니다.
 ;
-;    Seek.exe를 얻으려면, Seek.zip을 내려받으면 됩니다 
+;    Seek.exe를 얻으려면, Seek.zip을 내려받으면 됩니다
 ;    (안에 소스 코드와 컴파일된 이진 파일이 모두 들어 있습니다)
 ;    http://home.ripway.com/2004-10/188589/
 ;    그렇지 않으면, 스스로 Seek.ahk를 컴파일해도 됩니다
@@ -63,7 +64,7 @@
 ;
 ;    X:\myTools\AutoHotkey\AutoHotkey.exe Y:\myAHK\Seek.ahk
 ;
-;    잊지 말고 X:\myTools 그리고 Y:\myAHK를 
+;    잊지 말고 X:\myTools 그리고 Y:\myAHK를
 ;    여러분의 컴퓨터에 맞는 적절한 디렉토리 이름으로 교체하십시오.
 ;
 ; 2. 실행 파일 Seek.exe는 어디든 마음래도 두셔도 됩니다.
@@ -72,7 +73,7 @@
 ;    설치를 제거하려면,
 ;    그냥 Seek.exe를 삭제하면 끝입니다.
 ;
-;    'Seek'이 생성하는 두 개의 2 파일만 
+;    'Seek'이 생성하는 두 개의 2 파일만
 ;    TMP 디렉토리에 배치됩니다:
 ;
 ;      a. _Seek.key  (마지막 질의 문자열을 위한 캐쉬 파일)
@@ -83,16 +84,16 @@
 ;
 ; 3. 'Seek'을 실행하는 가장 편리한 방법은 단축키/핫키를
 ;    이용하는 것입니다. 여러분의 컴퓨터에
-;    아직 핫키 관리 프로그램을 사용하고 있지 않다면, 필자는 
+;    아직 핫키 관리 프로그램을 사용하고 있지 않다면, 필자는
 ;    AutoHotkey를 강력 추천합니다. 지금 당장은
 ;    핫키 관리 프로그램을 설치하고 싶지 않다면
 ;    윈도우즈의 단축키를 이용할 수 있습니다.  'Seek'를 기동할
-;    단축 키 (예, ALT-F1)를 묶으면 됩니다. 이것은 중요합니다.
-;    언제든지 어디서든 'Seek'를
-;    실행할 수 있기 때문입니다..
+;    단축 키 (예, ALT-F1)를 묶으면 됩니다. 이것은 중요합니다. ;    언제든지 어디서든 'Seek'를
+;    important so that you can run 'Seek' at anytime and
+;    anywhere.
 ;
 ; 4. 처음 'Seek'를 실행할 때, 시작 메뉴를 스캔합니다
-;    그리고 디렉토리 리스트를 
+;    그리고 디렉토리 리스트를
 ;    캐쉬 파일에 저장합니다.
 ;
 ;    다음 디렉토리가 스캔 대상에 포함됩니다:
@@ -100,12 +101,13 @@
 ;    - %A_StartMenuCommon%
 ;
 ;    기본값으로, 연이은 실행은 캐쉬 파일로부터 읽습니다
-;    그래서 적재 시간을 절약합니다. 
-;    옵션에 관한 더 자세한 정보는 'Seek.exe -help'를 실행하십시오. 
+;    그래서 적재 시간을 절약합니다.
+;    more info on options, run 'Seek.exe -help'. If you
 ;    시작 메뉴에 별로 프로그램이 없다면
 ;    캐쉬 사용을 포기하고 언제나 디렉토리 스캔을
 ;    사용하라고 'Seek'에게 알릴 수 있습니다 (옵션 -scan).
-;    그런 식으로 언제나 최신 목록을 얻을 수 있습니다.
+;    option -scan).  That way, you will always get the
+;    latest listing.
 ;
 ; 5. 'Seek'을 실행할 때, 창이 나타나서
 ;    여러분이 키 단어/문구를 입력하기를 기다립니다.
@@ -159,7 +161,7 @@
 ;   검색 결과의 상단에 배치.
 ;   (Suggested by Yih Yeong)
 ;
-; - 리스트 박스 대신, 일련의 어플리케이션 아이콘을 
+; - 리스트 박스 대신, 일련의 어플리케이션 아이콘을
 ;   보여줌. 그러면 그 아이콘 위에 커서를 올리면
 ;   프로그램 정보가 들어 있는 툴팁이
 ;   나타난다 (경로, 등등).
@@ -170,7 +172,7 @@
 ;   프로그램/디렉토리에만 부합.
 ;   (Suggested by Stefan)
 ;
-; - 즐겨 찾기 관리 추가. 단 번에 
+; - 즐겨 찾기 관리 추가. 단 번에
 ;   프로그램 그룹을 기동.
 ;   (Suggested by Atomhrt)
 ;
@@ -190,7 +192,7 @@
 ; - 최초 배포.
 ;
 ; * v1.1.1
-; - 창-최대화 옵션 제거. 
+; - 창-최대화 옵션 제거.
 ;   잘 작동하지 않은 프로그램이 있기 때문에.
 ; - 'Open' 기능을 촉발시키기 위해 더블 클릭 탐지 추가.
 ;
@@ -214,24 +216,25 @@
 ; - 사용자가 자신의 맞춤 디렉토리 목록을 스캔 대상에 포함할 수 있도록 허용.
 ;   사용자는 그냥 텍스트 파일 'Seek.dir'을 Seek.exe 또는  Seek.ahk가 있는
 ;   디렉토리에 만들어, 추가될 디렉토리의 전체 경로를
-;   한 줄에 하나씩 지정하기만 하면 된다. 
-;   경로는 홑따옴표 또는 겹따옴표로 둘러 싸지 마십시오.
+;   한 줄에 하나씩 지정하기만 하면 된다.
+;   added, one directory per line. Do not enclose the path in
+;   quotes or double-quotes.
 ;
 ; * v2.0.3
 ; - 이름으로 정렬 /on 옵션을 DIR-명령어에 추가.
-; - 사용자가 여러 질의 문자열을 스페이스로 분할해 입력할 때,
-;   퍼지 검색. 예, &quot;med pla&quot;. 문자열이 모두
-;   (&quot;med&quot; &amp; &quot;pla&quot;) 발견되면 부합한다.
-;   이것은 &quot;Media Player&quot;, &quot;Macromedia Flash Player&quot;,
-;   &quot;Play Medieval King&quot;, &quot;medpla&quot;, &quot;plamed&quot;에 부합한다.
+; - 사용자가 스페이스로 구분하여,
+;   퍼지 검색. 예, "med pla". 문자열이 모두
+;   ("med" &amp; "pla") 발견되면 부합한다.
+;   이것은 "Media Player", "Macromedia Flash Player",
+;   "Play Medieval King", "medpla", "plamed"에 부합한다.
 ; - 탭-이동 절차를 교정. 모든 버튼을 시작으로부터 오른쪽으로 추가하고,
 ;   실제로 사용할 수 있을 때까지
 ;   불능으로 만들어서.
 ; - 툴팁=피드백을 교체하기 위해 상태 바를 추가.
 ; - 폐기된 내부 스위치를 제거 (ToolTipFilename).
-; - &quot;dir&quot; 명령어의 사용을 오토핫키의
-;   &quot;Loop&quot; 명령어로 교체해 디렉토리 내용을 스캔.
-;   &quot;dir&quot;은 확장 문자 세트를 처리할 수 없으므로
+; - "dir" 명령어의 사용을 오토핫키의
+;   "Loop" 명령어로 교체해 디렉토리 내용을 스캔.
+;   "dir"은 확장 문자 세트를 처리할 수 없으므로
 ;   비-영어 (예, 독일어) 디렉토리와 파일이름은 잘못 얻게 됨
 ;   (이 변경을 테스트해 주신 볼프강 부가티(Wolfgang Bujatti)와
 ;   시에스 플리지(Sietse Fliege)에게 감사)
@@ -261,7 +264,7 @@
 ; 기본 익스플로러가 사용됩니다.</em>
 dirExplorer = E:\utl\xplorer2_lite\xplorer2.exe
 
-<em>; 스캔 대상에 포함될  사용자의 추가 맞춤 디렉토리 목록 
+<em>; 스캔 대상에 포함될  사용자의 추가 맞춤 디렉토리 목록
 ; 전체 경로는 홑따옴표 또는 겹따옴표로 둘러싸면 안됩니다
 ; 이 파일이 없으면
 ; 기본 디렉토리만 스캔합니다.</em>
@@ -272,13 +275,13 @@ SeekMyDir = %A_ScriptDir%\Seek.dir
 ; 원하지 않으면 이를 바꿀 필요가 없습니다.</em>
 dirListing = %A_Temp%\_Seek.list
 
-<em>; 마지막 검색의 캐쉬된 키 단어/문구를 저장할
+<em>; 캐쉬 디렉토리/프로그램 목록을 저장할
 ; 파일이름과 디렉토리 위치를 지정합니다
 ;  원하지 않으면 이를 바꿀 필요가 없습니다.</em>
 keyPhrase = %A_Temp%\_Seek.key
 
 <em>; 검색 문자열 추적 (ON/OFF)
-; ON이면, 다음에 Seek을 실행할 때 
+; ON이면, 다음에 Seek을 실행할 때
 ; 마지막-사용된 질의 문자열을기본으로 재사용합니다.
 ; OFF이면, 마지막 사용된 질의 문자열을 추적하지 않습니다
 ; 그리고 다음번 Seek를 실행할 때
@@ -301,7 +304,7 @@ version = Seek v2.0.3
 <em>; DISPLAY HELP INSTRUCTIONS</em>
 If 1 in --help,-help,/h,-h,/?,-?
 {
-    MsgBox,, %version%, 시작 메뉴를 항해하는 것은 난삽할 수 있습니다. 특히 시간이 지나면서 많은 프로그램을 설치했다면 더욱 난삽합니다. 'Seek'으로 대소문자를 구분하지 않고 키 단어/문구를 지정하면 시작 메뉴로부터 오직 부합하는 프로그램과 디렉토리만 여과합니다. 그래서 쉽게 목표 프로그램을 몇 개 안되는 부합 엔트리 중 하나에서 열 수 있습니다. 이렇게 하면 시작 메뉴를 검색하고 순회하는 지겨운 작업을 하지 않아도 됩니다.`n`n;  필자는 재미있게 이 코딩을 즐겼습니다. 모쪼록 여러분도 재미있게 사용하시기를 바랍니다. 주저하지 마시고 이메일을 주십시오. 논평이든 피드백이든 환영합니다: phi1618 (*a.t*) gmail :D0T: com.`n`nOptions:`n  -cache`t가능하면 캐쉬된 디렉토리 리스트를 사용한다 (아무 옵션도 지정하지 않으면 이것이 기본값이다)`n  -scan`t디렉토리를 스캔해 최근의 디렉토리 목록을 열람한다`n  -scex`tScan &amp; 스캔 &amp; 종료 (잠재적으로 시간을 소모하는 디렉토리 스캔 작업을 배경 작업으로 설정할 경우 유용하다)`n  -help`t이 도움말을 보여준다
+    MsgBox,, %version%, 시작 메뉴를 항해하는 것은 난삽할 수 있습니다. 특히 시간이 지나면서 많은 프로그램을 설치했다면 더욱 난삽합니다. 'Seek'으로 대소문자를 구분하지 않는 키 단어/문구를 지정하면 시작 메뉴에서 그에 부합하는 프로그램과 디렉토리만 여과할 수 있습니다. 그러면 부합하는 몇 안되는 엔트리 중에서 쉽게 목표 프로그램을 열 수 있습니다. 이렇게 하면 시작 메뉴를 검색하고 순회하는 지겨운 작업을 하지 않아도 됩니다.`n`n;  필자는 재미있게 이 코딩을 즐겼습니다. 모쪼록 여러분도 재미있게 사용하시기를 바랍니다. 주저하지 마시고 이메일을 주십시오. 논평이든 피드백이든 환영합니다: phi1618 (*a.t*) gmail :D0T: com.`n`nOptions:`n  -cache`t가능하면 캐쉬된 디렉토리 리스트를 사용한다 (아무 옵션도 지정하지 않으면 이것이 기본값이다)`n  -scan`t디렉토리를 스캔해 최근의 디렉토리 목록을 열람한다`n  -scex`tScan &amp; 스캔 &amp; 종료 (잠재적으로 시간을 소모하는 디렉토리 스캔 작업을 배경 작업으로 설정할 경우 유용하다)`n  -help`t이 도움말을 보여준다
     Goto QuitNoSave
 }
 
@@ -346,7 +349,7 @@ IfNotEqual 1, -scex
     <em>; 종료 버튼 추가</em>
     Gui, 1:Add, Button, gButtonEXIT X743 Y446, Exit
 
-    <em>; 질의 창을 팝업 </em>
+    <em>; 질의 창을 팝업</em>
     Gui, 1:Show, Center, %version%
 }
 
@@ -456,9 +459,7 @@ IfExist, %SeekMyDir%
     Loop, read, %SeekMyDir%
     {
         IfNotExist, %A_LoopReadLine%
-            MsgBox, 8192, %version%, 맞춤 디렉토리 리스트를 처리중
-			...`n`n&quot;%A_LoopReadLine%&quot;는 존재하지 않으며
-			스캔 대상에서 제외됩니다.`n업데이트 하십시오 [ %SeekMyDir% ].
+            MsgBox, 8192, %version%, 맞춤 디렉토리 리스트를 처리중 ...`n`n"%A_LoopReadLine%"는 존재하지 않으며 스캔 대상에서 제외됩니다.`n업데이트 하십시오 [ %SeekMyDir% ].
         Else
             scanPath = %scanPath%|%A_LoopReadLine%
     } 
@@ -513,7 +514,7 @@ If List = |
 {
     <em>; 부합하는 레코드가 하나도 발견되지 않았습니다</em>
     <em>; 사용자에게 질의 문자열을 변경하고 다시 시도하도록 요구합니다.</em>
-    MsgBox, 8192, %version%, 질의 문자열 &quot;%CurFilename%&quot;는 부합하는 레코드가 없습니다. 다시 시도하십시오.
+    MsgBox, 8192, %version%, 질의 문자열 "%CurFilename%"는 부합하는 레코드가 없습니다. 다시 시도하십시오.
     GuiControl, 1:Disable, ButtonOPENDIR
     GuiControl, 1:Enable, ButtonSCANSTARTMENU
     Goto EnterQuery
@@ -531,7 +532,7 @@ Else
         GuiControl, 1:Choose, OpenTarget, |1
 }
 
-<em>; REFRESH GUI</em>
+<em>; 구이를 갱신합니다</em>
 Gui, 1:Show, Center, %version%
 
 Return
@@ -556,7 +557,7 @@ If sfmFilename &lt;&gt;
         tFilename = %Filename%
         If sfmFilename &lt;&gt; %tFilename%
         {
-            <em>; 사용자가 검색 문자열을 변경했습니다. </em>
+            <em>; 사용자가 검색 문자열을 변경했습니다.</em>
             <em>; 예전 문자열을 사용하여 검색을 계속할 이유가 없습니다. 그래서 종료합니다.</em>
             Return
         }
@@ -738,14 +739,14 @@ If status &lt;&gt; Ready <em>; 디렉토리가 아님</em>
 <em>; 디렉토리가 존재하는지 점검합니다</em>
 IfNotExist, %OpenTarget%
 {
-    MsgBox, 8192, %version%, %OpenTarget%이 존재하지 않습니다. 이것은 디렉토리 캐쉬가 유효 기간이 지났다는 뜻입니다. 'Scan Start-Menu' 버튼을 아래에서 클릭하면 이제 최신 디렉토리 리스트로 디렉토리 캐쉬를 업데이트할 수 있습니다.
+    MsgBox, 8192, %version%, %OpenTarget%이 존재하지 않습니다. 이것은 그 디렉토리 캐쉬가 유효기간이 지났다는 뜻입니다. 아래의 'Scan Start-Menu' 버튼을 클릭하면 이제 여러분의 최신 디렉토리 목록으로 디렉토리 캐쉬를 업데이트할 수 있습니다.
     Goto EnterQuery
 }
 
 <em>; 디렉토리를 엽니다</em>
 IfExist, %dirExplorer%
 {
-    Run, &quot;%dirExplorer%&quot; &quot;%OpenTarget%&quot;, , Max <em>; OPEN WITH CUSTOMISED FILE EXPLORER</em>
+    Run, "%dirExplorer%" "%OpenTarget%", , Max <em>; OPEN WITH CUSTOMISED FILE EXPLORER</em>
 }
 Else
 {

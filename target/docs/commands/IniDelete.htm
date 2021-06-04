@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>IniDelete</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,14 +12,14 @@
 
 <h1>IniDelete</h1>
 
-<p>표준 포맷의 .ini 파일로부터 값을 하나 삭제합니다.</p>
+<p>표준 형식의 .ini 파일로부터 값을 지웁니다.</p>
 
 <pre class="Syntax">IniDelete, Filename, Section [, Key]</pre>
 <h3>매개변수</h3>
 <dl>
 
   <dt>Filename</dt>
-  <dd><p> .ini 파일의 이름, 절대 경로가 지정되어 있지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주합니다.</p></dd>
+  <dd><p>.ini 파일의 이름, 절대 경로가 지정되어 있지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주합니다.</p></dd>
 
   <dt>Section</dt>
   <dd><p>.ini 파일의 섹션 이름. 각괄호 안에 나타나는 제목 문구입니다. (각괄호는 이 매개변수 안에 포함시키지 마십시오).</p></dd>
@@ -28,15 +29,12 @@
 
 </dl>
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 많은 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1로 설정됩니다. 그렇지 않으면 0이 설정됩니다</p>
-
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
 <h3>논평</h3>
-<p>
-표준  ini 파일은 모습이 다음과 같습니다:</p>
+<p>표준 ini 파일은 모습이 다음과 같습니다:</p>
 <pre>[SectionName]
 Key=Value</pre>
-
 <h3>관련 항목</h3>
 <p><a href="IniRead.htm">IniRead</a>, <a href="IniWrite.htm">IniWrite</a>, <a href="RegDelete.htm">RegDelete</a></p>
 <h3>예제</h3>

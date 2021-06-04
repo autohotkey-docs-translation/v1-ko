@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>FileRemoveDir</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -20,20 +21,17 @@
   <dt>DirName</dt>
   <dd><p>삭제할 디렉토리의 이름. 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주합니다.</p></dd>
 
-  <dt>하위 폴더까지 삭제할 것인가?</dt>
-  <dd><p><strong>0</strong> (기본값): <em>DirName</em>에 포함된 파일과 하위-디렉토리는 <strong>지우지 않습니다</strong>. 
-  이 경우, <em>DirName</em>이 비어 있지 않으면, 아무 행위도 일어나지 않으며 ErrorLevel은 1로 설정됩니다.</p>
-    <p><strong>1</strong>: 모든 파일과 하위디렉토리를 삭제합니다 (윈도우즈의 명령어 &quot;rmdir /S&quot;).</p>
-    <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다. 심지어 참이나 거짓으로 평가되는 것도 가능합니다 (참과 거짓은 내부적으로 1과 0으로 저장되기 때문입니다).</p></dd>
+  <dt>Recurse?</dt>
+  <dd><p><strong>0</strong> (기본값): <em>DirName</em>에 포함된 파일과 하위-디렉토리는 <strong>지우지 않습니다</strong>. 이 경우, <em>DirName</em>이 비어 있지 않으면, 아무 행위도 일어나지 않으며 ErrorLevel은 1로 설정됩니다.</p>
+    <p><strong>1</strong>: 모든 파일과 하위디렉토리를 삭제합니다 (윈도우즈의 명령어 "rmdir /S").</p>
+    <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다. 심지어 거짓이나 참으로 평가되면 무엇이든 될 수 있습니다 (참과 거짓은 내부적으로 1과 0으로 저장되기 때문입니다).</p></dd>
 
 </dl>
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패시 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-
 <h3>논평</h3>
 <p>없음</p>
-
 <h3>관련 항목</h3>
 <p><a href="FileCreateDir.htm">FileCreateDir</a>, <a href="FileDelete.htm">FileDelete</a></p>
 <h3>예제</h3>

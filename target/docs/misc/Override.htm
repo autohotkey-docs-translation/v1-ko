@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Overriding Hotkeys</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,34 +12,26 @@
 <body>
 <h1>핫키를 불능화하거나 오버라이드하기</h1>
 
-<p>
-Win+L과 Win+U를 제외하고 모든 내장 윈도우즈 핫키를 끌 수 있습니다. 레지스트를 다음과 같이 변경하면 됩니다 (이 방법은 모든 운영체제에 작동하겠지만, 아마도 리부트가 필요할 것입니다):</p>
+<p>Win+L과 Win+U를 제외하고 모든 내장 윈도우즈 핫키를 끌 수 있습니다. 레지스트를 다음과 같이 변경하면 됩니다 (이 방법은 모든 운영체제에 작동하겠지만, 아마도 리부트가 필요할 것입니다):</p>
 <pre>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
 NoWinKeys REG_DWORD 0x00000001 (1)</pre>
-<p>
-그러나 단순히 불능화하는 것 말고 더 많은 것을 원한다면 계속 읽어 보십시오.</p>
-<p>
-또다른 어플리케이션이 소유한 핫키를 오버라이드 하거나 불능으로 만들 수 있습니다. 그냥 스크립트에서 거기에 다른 조치를 할당하기만 하면 됩니다. 이 특징을 가장 많이 사용하는 예는 윈도우즈 자체에 내장된 핫키를 바꾸는 것입니다. 예를 들어, Win+E (윈도우즈 탐색기를 기동하는 단축 키)를 다른 행위를 수행하도록 만들고 싶다면, 다음을 사용하십시오:</p>
+<p>그러나 단순히 불능화하는 것 말고 더 많은 것을 원한다면 계속 읽어 보십시오.</p>
+<p>또다른 어플리케이션이 소유한 핫키를 오버라이드 하거나 불능으로 만들 수 있습니다. 그냥 스크립트에서 거기에 다른 조치를 할당하기만 하면 됩니다. 이 특징을 가장 많이 사용하는 예는 윈도우즈 자체에 내장된 핫키를 바꾸는 것입니다. 예를 들어, Win+E (윈도우즈 탐색기를 기동하는 단축 키)를 다른 행위를 수행하도록 만들고 싶다면, 다음을 사용하십시오:</p>
 <pre>#e::
 MsgBox 이 핫키는 이제 스크립트가 소유합니다.
 return</pre>
-<p>
-다음 예제에서,  RUN 창을 여는 Win+R 핫키는 완전히 불능화됩니다:</p>
+<p>다음 예제에서, RUN 창을 여는 Win+R 핫키는 완전히 불능화됩니다:</p>
 <pre>#r::return</pre>
-<p>
-비슷하게, 두 윈도우즈 키를 모두 끄려면, 다음을 사용하십시오:</p>
+<p>비슷하게, 두 윈도우즈 키를 모두 끄려면, 다음을 사용하십시오:</p>
 <pre>Lwin::return
 Rwin::return</pre>
-<p>
-어플리케이션의 비-전역 핫키를 바꾸거나 끄려면 (즉, 어플리케이션이 활성 창일 경우에만 작동하는 단축 키), 다음 예제에서  노트패드에만 Control+P (Print)를 끄는 방법을 연구해 보십시오. 다른 모든 창에는 단축 키가 여전히 효과가 있도록 그대로 둡니다:</p>
+<p>어플리케이션의 비-전역 핫키를 바꾸거나 끄려면 (즉, 어플리케이션이 활성 창일 경우에만 작동하는 단축 키), 다음 예제에서 노트패드에만 Control+P (Print)를 끄는 방법을 연구해 보십시오. 다른 모든 창에는 단축 키가 여전히 효과가 있도록 그대로 둡니다:</p>
 <pre>$^p::
 IfWinActive ahk_class Notepad
     return  <em>; 즉, 아무것도 하지 않습니다. Control-P가 Notepad에서 아무일도 하지 않게 됩니다.</em>
 Send ^p
 return</pre>
-<p>
-위의 예제에서, $ 접두 심볼이 있어야 핫키가 자신을 활성화 시키지 않고 &quot;자신을 전송&quot;할 수 있습니다 (그렇지 않으면 무한 회돌이 관하여 경고 상자가 촉발됩니다). 다음도 참조하십시오: <a href="../Hotkeys.htm#Context">문맥-감지 핫키</a>.</p>
-<p>
-위의 모든 예제를 시험해 볼 수 있습니다. &quot;Override.ahk&quot;와 같은 새 텍스트 파일 안으로 복사해 넣고,  파일을 기동해 보십시오.</p>
+<p>위의 예제에서, $ 접두 심볼이 있어야 핫키가 자신을 활성화 시키지 않고 "자신을 전송"할 수 있습니다 (그렇지 않으면 무한 회돌이 관하여 경고 상자가 촉발됩니다). 다음 참조: <a href="../Hotkeys.htm#Context">문맥-감지 핫키</a>.</p>
+<p>위의 모든 예제를 시험해 볼 수 있습니다. "Override.ahk"와 같은 새 텍스트 파일 안으로 복사해 넣고, 파일을 기동해 보십시오.</p>
 </body>
 </html>

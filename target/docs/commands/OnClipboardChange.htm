@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>OnClipboardChange</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,27 +13,23 @@
 <h1>OnClipboardChange</h1>
 
 <p>어플리케이션이 (스크립트도 마찬가지로) 클립보드의 내용을 변경할 때마다 (존재한다면) 이름이 OnClipboardChange인 라벨이 자동으로 기동됩니다. 이 라벨은 또 스크립트가 처음 시작할 때 한 번 실행됩니다.</p>
-<p>
-내장 변수 A_EventInfo에 다음과 같이 담겨 있습니다:<br>
-0 현재 클립보드가 비어 있습니다;<br>
+<p>내장 변수 A_EventInfo에 다음과 같이 담겨 있습니다:<br>
+  0 현재 클립보드가 비어 있습니다;<br>
 1 텍스트로 표현이 가능한 것이 들어 있습니다 (여기에는 탐색 창으로부터 <a href="../misc/Clipboard.htm#CopiedFiles">복사된 파일</a>이 포함됩니다);<br>
 2 그림과 같이 전혀 텍스트가 아닌 것이 들어 있습니다.</p>
-<p>
-다음 예제는 작동하는 스크립트입니다. 실행될 때마다, 간략하게 각 클립보드의 변경에 대하여 툴팁을 보여줍니다.</p>
-
+<p>다음 예제는 작동하는 스크립트입니다. 실행될 때마다, 간략하게 각 클립보드의 변경에 대하여 툴팁을 보여줍니다.</p>
 <pre id="LabelExample">#Persistent
 return
 
 OnClipboardChange:
 ToolTip Clipboard data type: %A_EventInfo%
 Sleep 1000
-ToolTip  <em>; Turn off the tip.</em>
+ToolTip  <em>; 팁을 끕니다.</em>
 return</pre>
 
 &nbsp;
 <h2 id="Function">OnClipboardChange() <span class="ver">[v1.1.20+]</span></h2>
-<p>
-클립보드의 내용이 변경될 때마다 실행될 <a href="../Functions.htm">함수</a> 또는 <a href="../objects/Functor.htm">함수 객체</a>를 등록합니다.</p>
+<p>클립보드의 내용이 변경될 때마다 실행될 <a href="../Functions.htm">함수</a> 또는 <a href="../objects/Functor.htm">함수 객체</a>를 등록합니다.</p>
 
 <pre class="Syntax">OnClipboardChange(Func [, AddRemove])</pre>
 <h3>매개변수</h3>
@@ -46,8 +43,7 @@ return</pre>
   <strong>1</strong> (기본값): 이전에 등록된 함수 다음에 이 함수를 호출합니다.<br>
   <strong>-1</strong>: 이전에 등록된 함수 보다 먼저 이 함수를 호출합니다.<br>
   <strong>0</strong>: 이 함수를 호출하지 않습니다.</p>
-  <p>
-  OnClipboardChange 라벨이 존재하면, 언제나 먼저 호출됩니다.</p></dd>
+  <p>OnClipboardChange 라벨이 존재하면, 언제나 먼저 호출됩니다.</p></dd>
 
 </dl>
 
@@ -60,14 +56,12 @@ return</pre>
     <strong>1</strong> 텍스트로 표현할 수 있는 것이 들어 있습니다 (여기에는 탐색 창으로부터 <a href="../misc/Clipboard.htm#CopiedFiles">복사된 파일</a>이 포함됩니다);<br>
     <strong>2</strong> 그림과 같이 전혀 텍스트가 아닌 것이 들어 있습니다.</p></dd>
   
-  <dt><em>Return Value</em></dt>
-  <dd><p>
-  이것이 마지막 함수 또는 유일한 OnClipboardChange 함수라면 반환값은 무시됩니다. 그렇지 않으면, 함수는 0 아닌 값을 돌려주어 연이어서 다른 함수가 호출되지 못하도록 막습니다.</p></dd>
+  <dt><em>반환 값</em></dt>
+  <dd><p>이것이 마지막 함수 또는 유일한 OnClipboardChange 함수라면 반환값은 무시됩니다. 그렇지 않으면, 함수는 0 아닌 값을 돌려주어 연이어서 다른 함수가 호출되지 못하도록 막습니다.</p></dd>
 </dl>
 
 <h3 id="FunctionExample">예제</h3>
-<p>
-다음 예제는 <a href="#LabelExample">위의 예제</a>와 동등합니다. 그러나 이 함수는 스크립트가 처음 실행될 때 호출되지 않습니다; 오직 클립보드의 내용이 변경될 때만 호출됩니다.</p>
+<p>다음 예제는 <a href="#LabelExample">위의 예제</a>와 동등합니다. 그러나 이 함수는 스크립트가 처음 실행될 때 호출되지 않습니다; 오직 클립보드의 내용이 변경될 때만 호출됩니다.</p>
 <pre>#Persistent
 OnClipboardChange("ClipChanged")
 return
@@ -75,14 +69,12 @@ return
 ClipChanged(Type) {
     ToolTip Clipboard data type: %Type%
     Sleep 1000
-    ToolTip  <em>; Turn off the tip.</em>
+    ToolTip  <em>; 팁을 끕니다.</em>
 }</pre>
 
 <h2>논평</h2>
-<p>
-OnClipboardChange 라벨 또는 함수가 이미 실행되고 있는 동안에 클립보드가 변경되면, 그 고지 이벤트는 폐기됩니다. 이것이 바람직하지 않다면, <a href="../commands/Critical.htm">Critical</a>을 라벨의 첫 줄에 지정하십시오. 그렇지만, 이것은 또 OnClipboardChange 쓰레드가 실행 중인 동안에 일어나는 다른 <a href="../misc/Threads.htm">쓰레드</a>를 (예를 들어 핫키 누름을) 버퍼처리/연기합니다.</p>
-<p>
-스크립트 자체가 클립보드를 바꾸면, 그의 OnClipboardChange 라벨 또는 함수는 전형적으로 즉시 실행되지 않습니다; 즉, 클립보드를 변경한 명령어 바로 아래의 명령어들이 먼저 실행될 가능성이 높습니다. 이 라벨이나 함수를 강제로 즉시 실행하려면, 클립보드를 변경한 후에 <code><a href="../commands/Sleep.htm">Sleep 20</a></code>와 같이 짧게 지연하십시오.</p>
+<p>OnClipboardChange 라벨 또는 함수가 이미 실행되고 있는 동안에 클립보드가 변경되면, 그 고지 이벤트는 폐기됩니다. 이것이 바람직하지 않다면, <a href="../commands/Critical.htm">Critical</a>을 라벨의 첫 줄에 지정하십시오. 그렇지만, 이것은 또 OnClipboardChange 쓰레드가 실행 중인 동안에 일어나는 다른 <a href="../misc/Threads.htm">쓰레드</a>를 (예를 들어 핫키 누름을) 버퍼처리/연기합니다.</p>
+<p>스크립트 자체가 클립보드를 바꾸면, 그의 OnClipboardChange 라벨 또는 함수는 전형적으로 즉시 실행되지 않습니다; 즉, 클립보드를 변경한 명령어 바로 아래의 명령어들이 먼저 실행될 가능성이 높습니다. 이 라벨이나 함수를 강제로 즉시 실행하려면, 클립보드를 변경한 후에 <code><a href="../commands/Sleep.htm">Sleep 20</a></code>와 같이 짧게 지연하십시오.</p>
 
 <h3>관련 항목</h3>
 <p><a href="../misc/Clipboard.htm">Clipboard</a>, <a href="OnExit.htm">OnExit</a>, <a href="OnMessage.htm">OnMessage()</a>, <a href="RegisterCallback.htm">RegisterCallback()</a></p>

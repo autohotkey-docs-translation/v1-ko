@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>GroupActivate</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,17 +12,17 @@
 
 <h1>GroupActivate</h1>
 
-<p><a href="GroupAdd.htm">GroupAdd</a>로 정의된 창 그룹에서 다음 창을 활성화합니다.</p>
+<p><a href="GroupAdd.htm">GroupAdd</a>로 정의된 창 그룹에서 다음 창을 활성화합니다.  </p>
 
 <pre class="Syntax">GroupActivate, GroupName [, R]</pre>
 <h3>매개변수</h3>
 <dl>
 
   <dt>GroupName</dt>
-  <dd><p>활성화 할 그룹의 이름,  최초로 <a href="GroupAdd.htm">GroupAdd</a>로 정의되어 있습니다.</p></dd>
+  <dd><p>활성화 할 그룹의 이름, 최초로 <a href="GroupAdd.htm">GroupAdd</a>로 정의되어 있습니다.</p></dd>
 
   <dt>R</dt>
-  <dd><p>이 매개변수는 그룹에서 멤버가 현재 전혀 활성화되어 있지 않을 경우 가장 오래된 창을 활성화할 지 아니면 가장 새로운 창을 활성화할 지 결정합니다. 생략하면, 가장 오래된 창이 언제나 활성화됩니다. 기호 R이라면, 가장 새로운 창 (가장 최근에 활성화 된 창) 이 활성화됩니다. 그러나 명령어가 주어지는 순간 그룹에 아무 멤버도 활성화되어 있지 않을 경우에만 그렇습니다. &quot;R&quot;은 임시로 전혀 관련 없는 작업으로 전환할 경우에 유용합니다. <a href="GroupActivate.htm">GroupActivate</a>, <a href="GroupDeactivate.htm">GroupDeactivate</a>, 또는 <a href="GroupClose.htm">GroupClose</a>를 통하여 그룹으로 다시 돌아 오면, 가장 오래된 창이 아니라 여러분이 가장 최근에 작업한 창이 활성화됩니다..</p></dd>
+  <dd><p>이 매개변수는 그룹에서 멤버가 현재 전혀 활성화되어 있지 않을 경우 가장 오래된 창을 활성화할 지 아니면 가장 새로운 창을 활성화할 지 결정합니다. 생략하면, 가장 오래된 창이 언제나 활성화됩니다. 기호 R이라면, 가장 새로운 창 (가장 최근에 활성화 된 창) 이 활성화됩니다. 그러나 명령어가 주어지는 순간 그룹에 아무 멤버도 활성화되어 있지 않을 경우에만 그렇습니다. "R"은 임시로 전혀 관련 없는 작업으로 전환할 경우에 유용합니다. <a href="GroupActivate.htm">GroupActivate</a>, <a href="GroupDeactivate.htm">GroupDeactivate</a>, 또는 <a href="GroupClose.htm">GroupClose</a>를 통하여 그룹으로 다시 돌아 오면, 가장 오래된 창이 아니라 여러분이 가장 최근에 작업한 창이 활성화됩니다.</p></dd>
 
 </dl>
 
@@ -29,17 +30,12 @@
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 활성화 할 창을 발견할 수 없으면 1이 설정되고 그렇지 않으면 0이 설정됩니다.</p>
 
 <h3>논평</h3>
-<p>
-이 명령어는 그룹의 창 규격에 부합하는 첫 창이 활성화 되도록 만듭니다. 두 번째로 사용하면 순서대로 다음 창이 활성화 됩니다. 등등. 보통, 핫키에 할당되기 때문에 이 창-순회 행위는 그 키를 누르면 자동으로 수행됩니다.</p>
-<p>
-또다른 창이 활성화 되자 마자 그 즉시 또 창이 활성화되면, 어떤 시스템에서는 (OS와 그 설정에 따라) 태스크 바 버튼이 깜빡거릴 수 있습니다. 이를 피하려면 <a href="_WinActivateForce.htm">#WinActivateForce</a>를 사용하십시오.</p>
-<p>
-창 그룹에 관한 더 자세한 정보는 <a href="GroupAdd.htm">GroupAdd</a>를 참조하십시오.</p>
+<p>이 명령어는 그룹의 창 규격에 부합하는 첫 창이 활성화 되도록 만듭니다. 두 번째로 사용하면 순서대로 다음 창이 활성화 됩니다. 등등. 보통, 핫키에 할당되기 때문에 이 창-순회 행위는 그 키를 누르면 자동으로 수행됩니다.</p>
+<p>또다른 창이 활성화 되자 마자 그 즉시 또 창이 활성화되면, 어떤 시스템에서는 (OS와 그 설정에 따라) 태스크 바 버튼이 깜빡거릴 수 있습니다. 이를 피하려면 <a href="_WinActivateForce.htm">#WinActivateForce</a>를 사용하십시오.</p>
+<p>창 그룹에 관한 더 자세한 정보는 <a href="GroupAdd.htm">GroupAdd</a>를 참조하십시오.</p>
 
 <h3>관련 항목</h3>
-<p>
-<a href="GroupAdd.htm">GroupAdd</a>, <a href="GroupDeactivate.htm">GroupDeactivate</a>, <a href="GroupClose.htm">GroupClose</a>, <a href="_WinActivateForce.htm">#WinActivateForce</a></p>
-
+<p><a href="GroupAdd.htm">GroupAdd</a>, <a href="GroupDeactivate.htm">GroupDeactivate</a>, <a href="GroupClose.htm">GroupClose</a>, <a href="_WinActivateForce.htm">#WinActivateForce</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">GroupActivate, MyGroup, R</pre>
 

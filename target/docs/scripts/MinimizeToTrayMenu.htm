@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>Minimize Window to Tray Menu</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>창을 트레이 메뉴로 최소화하기</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@
 
 <h1>창을 트레이 메뉴로 최소화하기</h1>
 
-<p>이 스크립트는 여러분이 선택한 핫키를 창을 감추는 데 할당합니다. 창은 스크립트의 트레이 메뉴 아래에 엔트리가 됩니다. 숨은 창들은 개별적으로 또는 한 꺼번에 메뉴에서 상응하는 항목을 선택해 보여줄 수 있습니다. 스크립트가 어떤 이유로 종료하면, 숨겨진 모든 창은 자동으로 숨김 해제됩니다.
+<p>이 스크립트는 여러분 선택한 핫키를 창을 감추는 데 할당합니다. 창은 스크립트의 트레이 메뉴 아래에 엔트리가 됩니다. 숨은 창은 그러면 개별적으로 또는 모두 한꺼번에 다시 보여줄 수 있습니다. 메뉴에서 상응하는 메뉴를 선택하면 됩니다. 스크립트가 어떤 이유로 종료하면, 숨겨지 모든 창들이 자동으로 보여집니다.
 </p>
 <p><a href="MinimizeToTrayMenu.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
 
@@ -47,10 +48,10 @@ mwt_UnHotkey = #u  <em>; Win+U</em>
 ; 예를 들어 Help 그리고 Pause를 비우려면, N을 사용하십시오. 그렇지 않으면, Y를 사용하십시오:</em>
 mwt_StandardMenu = N
 
-<em>; 다음의 몇 가지 수행성능을 위한 설정은 
-; #HotkeyModifierTimeout 시간 안에 조치를 마치는 데 도움이 됩니다. 
+<em>; 다음의 몇 가지 수행성능을 위한 설정은
+; #HotkeyModifierTimeout 시간 안에 조치를 마치는 데 도움이 됩니다.
 ; 그리하여 주욱 늘어선 여러 창을 일렬로 감추기 위해
-;  핫키의 수식자를 떼고 누를 필요가 없습니다. 
+;  핫키의 수식자를 떼고 누를 필요가 없습니다.
 ; 다음과 같이 설정하면 #InstallKeybdHook 또는 기타 수단을 통하여
 ; 스크립트에 키보드 갈고리를 사용할 필요가 없습니다:</em>
 #HotkeyModifierTimeout 100
@@ -65,7 +66,7 @@ SetKeyDelay 0
 Hotkey, %mwt_Hotkey%, mwt_Minimize
 Hotkey, %mwt_UnHotkey%, mwt_UnMinimize
 
-<em>; 사용자가 어떤 수단으로 스크립트를 종료하면, 
+<em>; 사용자가 어떤 수단으로 스크립트를 종료하면,
 ; 모든 창을 먼저 닫습니다:</em>
 OnExit, mwt_RestoreAllThenExit
 
@@ -94,14 +95,14 @@ if mwt_WindowCount &gt;= %mwt_MaxWindows%
     return
 }
 
-<em>; &quot;마지막으로 발견된 창&quot;을 설정해 수행성능을 개선하고 일을 간단하게 만듭니다.
+<em>; "마지막으로 발견된 창"을 설정해 수행성능을 개선하고 일을 간단하게 만듭니다.
 ; 어떤 경우 활성 창이 없을 수 있으므로,
 ; 시간제한을 추가했습니다:</em>
 WinWait, A,, 2
 if ErrorLevel &lt;&gt; 0  <em>; 시한 종료, 그래서 아무것도 하지 않습니다.</em>
     return
 
-<em>; 그렇지 않으면, &quot;마지막 발견 창&quot;을 설정하고 이제 사용할 수 있습니다:</em>
+<em>; 그렇지 않으면, "마지막 발견 창"을 설정하고 이제 사용할 수 있습니다:</em>
 WinGet, mwt_ActiveID, ID
 WinGetTitle, mwt_ActiveTitle
 WinGetClass, mwt_ActiveClass
@@ -112,7 +113,7 @@ if mwt_ActiveClass in Shell_TrayWnd,Progman
 }
 <em>; 창을 감추어도 비활성화되는 것은 아니기 때문에,
 ; 이 창 아래의 창을 활성화 합니다. 다른 방법을 시도했지만, 결과적으로
-; 태스크 바가 활성화되었습니다. 이런 식으로 (숨기 바로 직전의) 활성 창을 
+; 태스크 바가 활성화되었습니다. 이런 식으로 (숨기 바로 직전의) 활성 창을
 ; 스택 뒤로 밀어 버리는 편이 가장 좋은 듯 보입니다:</em>
 Send, !{esc}
 <em>; Hide it only now that WinGetTitle/WinGetClass above have been run
@@ -125,12 +126,12 @@ WinHide
 ;     (그렇지 않으면, 빈 항목을 아래의 다양한 루틴에서 제대로 다룰 수 없습니다).</em>
 if mwt_ActiveTitle =
     mwt_ActiveTitle = ahk_class %mwt_ActiveClass%
-<em>; 제목이 길이가 짧은지 확인합니다. 
+<em>; 제목이 길이가 짧은지 확인합니다.
 ; mwt_ActiveTitle도 역시 이 특정한 메뉴 항목을 유일하게 식별하는 데 기여합니다.</em>
 StringLeft, mwt_ActiveTitle, mwt_ActiveTitle, %mwt_MaxLength%
 
 <em>; 트레이 메뉴가 각 메뉴 이름이 유일하기를 요구하는 외에도
-; 메뉴 이름이 유일해야만 나중에 창이 숨을 때 
+; 메뉴 이름이 유일해야만 나중에 창이 숨을 때
 ; 배열에서 안전하게 찾을 수 있습니다.
 ; 그래서 아직 그렇지 않다면 유일하게 만드십시오:</em>
 Loop, %mwt_MaxWindows%
@@ -244,12 +245,12 @@ Loop, %mwt_MaxWindows%
     {
         StringTrimRight, IDToRestore, mwt_WindowID%a_index%, 0
         WinShow, ahk_id %IDToRestore%
-        WinActivate ahk_id %IDToRestore%  <em>; 종종 필요함.</em>
+        WinActivate ahk_id %IDToRestore%  <em>; 종종 필요.</em>
         <em>; 이런 식으로 하거나 vs. 모두 지웁니다(DeleteAll)</em>
         <em>; 가름 줄과 첫 항목은 그대로 둡니다:</em>
         StringTrimRight, MenuToRemove, mwt_WindowTitle%a_index%, 0
         Menu, Tray, delete, %MenuToRemove%
-        mwt_WindowID%a_index% =  <em>; 비워서 슬롯을 풀어 줍니다.</em>
+        mwt_WindowID%a_index% =  <em>; 비워서 슬롯을 풀어줍니다.</em>
         mwt_WindowTitle%a_index% =
         mwt_WindowCount -= 1
     }

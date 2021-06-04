@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>PixelSearch</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,57 +12,44 @@
 
 <h1>PixelSearch</h1>
 
-<p>화면의 구역을 검색해 지정된 컬러의 픽셀을 찾습니다.</p>
+<p>화면 구역을 검색해 지정된 색을 가진 픽셀을 찾습니다.</p>
 
 <pre class="Syntax">PixelSearch, OutputVarX, OutputVarY, X1, Y1, X2, Y2, ColorID [, Variation, Fast|RGB]</pre>
 <h3>매개변수</h3>
 <dl>
 
   <dt>OutputVarX/Y</dt>
-  <dd><p>
-  <em>ColorID</em>에 부합하는 첫 번째 픽셀의 X와 Y의 좌표를 저장할 변수의 이름 (부합이 발견되지 않으면, 변수는 비워집니다). 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>를 사용하여 좌표 체계를 바꾼 경우는 예외입니다.</p>
-    <p>
-	이 매개변수가 비어 있으면, ErrorLevel (아래 참조)를 사용하여 부합이 발견되었는지 알아낼 수 있습니다.</p></dd>
+  <dd><p><em>ColorID</em>에 부합하는 첫 번째 픽셀의 X와 Y의 좌표를 저장할 변수의 이름 (부합이 발견되지 않으면, 변수는 비워집니다). 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>가 사용되어 좌표가 변경된 경우는 제외합니다.</p>
+    <p>이 매개변수가 비어 있는 경우가 있습니다. 그러면 ErrorLevel (아래 참조)를 사용하여 일치가 발견되었는지 알아낼 수 있습니다.</p></dd>
 
   <dt>X1, Y1</dt>
-  <dd><p>검색할 사각 구역의 좌상 모서리의 X와 Y의 좌표. <a href="../Variables.htm#Expressions">표현식</a> 가능. <strong>좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>를 사용하여 좌표 체계를 바꾼 경우는 예외입니다.</strong>.</p></dd>
+  <dd><p>검색할 사각형의 좌상 X와 Y 좌표, <a href="../Variables.htm#Expressions">표현식</a> 가능. <strong>좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>를 사용하여 좌표 체계를 바꾼 경우는 예외입니다.</strong>.</p></dd>
 
   <dt>X2, Y2</dt>
-  <dd><p>검색할 사각 구역의 우하 모서리의 X와 Y의 좌표. <a href="../Variables.htm#Expressions">표현식</a> 가능. 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>를 사용하여 좌표 체계를 바꾼 경우는 예외입니다.</p></dd>
+  <dd><p>검색할 사각형의 우하 모서리 X와 Y 좌표, <a href="../Variables.htm#Expressions">표현식</a> 가능. 좌표는 활상 창에 상대적입니다. 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>가 사용되어 좌표가 변경된 경우는 제외합니다.</p></dd>
 
   <dt>ColorID</dt>
   <dd><p>검색에 사용할 청-녹-적(Blue-Green-Red (BGR)) 형식의 십육진 또는 십진 컬러 ID. <a href="../Variables.htm#Expressions">표현식</a> 가능. Color ID는 Window Spy를 사용하여 또는 <a href="PixelGetColor.htm">PixelGetColor</a>를 통하여 알아낼 수 있습니다 (트레이 메뉴로 접근 가능). 예를 들어: <code>0x9d6346</code>.</p></dd>
 
   <dt>Variation</dt>
-  <dd><p>0과 255 (포함) 사이의 값.
-  컬러의 적녹청 채도에 대하여 방향에 관계없이 몇 개의 쉐이드 변형을 허용할지 나타냅니다. (<a href="../Variables.htm#Expressions">표현식 가능</a>). 이 매개변수는 구하는 컬러가 언제나 정확하게 같은 쉐이드가 아닐 경우 유용합니다. 255 쉐이드의 변형을 지정했다면, 모든 컬러가 부합합니다. 기본값은 0 쉐이드입니다.</p></dd>
+  <dd><p>0과 255 (포함) 사이의 값. 컬러의 적녹청 채도에 대하여 방향에 관계없이 몇 개의 쉐이드 변형을 허용할지 나타냅니다. (<a href="../Variables.htm#Expressions">표현식 가능</a>). 이 매개변수는 구하는 컬러가 언제나 정확하게 같은 쉐이드가 아닐 경우 유용합니다. 255 쉐이드 변형을 지정하면, 모든 색이 부합합니다. 기본 값은 0 쉐이드입니다.</p></dd>
 
   <dt>Fast|RGB</dt>
   <dd><p>이 매개변수는 단어 Fast, RGB를 담거나 또는 둘 담을 수 있습니다 (둘 다 존재하면, 스페이스로 둘사이를 가르십시오; 즉, <em>Fast RGB</em>).</p>
-      <p>
-	  <strong><a name="fast"></a>Fast</strong>: 
-	  빠른 검색 방법을 사용합니다. 대부분의 경우 검색에 사용된 CPU 시간의 양을 극적으로 줄여줍니다. 8-비트 (256-색) 컬러 깊이를 지원하지만, 빠른 모드는 24-비트 또는 32-비트 컬러에서 훨씬 더 빠릅니다. 화면의 컬러 깊이가 16-비트 이하라면, <em>Variation</em> 매개변수는 빠른 모드에서 느린 모드와 약간 다르게 행동할 수도 있습니다. 마지막으로, 빠른 모드는 화면을 컬럼 단위가 아니라 줄 단위로 (위에서 아래로) 검색합니다. 그러므로, 부합하는 픽셀이 많은 경우 느린 모드에서 발견되는 픽셀과 다른 픽셀을 발견할 수도 있습니다.</p>
-      <p>
-	  <strong>RGB</strong>: <em>ColorID</em>는 BGR이 아니라 RGB 값으로 번역됩니다. 다른 말로, 적과 청 구성요소가 서로 바뀝니다.</p></dd>
+      <p><strong><a name="fast"></a>Fast</strong>: 빠른 검색 방법을 사용합니다. 대부분의 경우 검색에 사용된 CPU 시간의 양을 극적으로 줄여줍니다. 8-비트 (256-색) 컬러 깊이를 지원하지만, 빠른 모드는 24-비트 또는 32-비트 컬러에서 훨씬 더 빠릅니다. 화면의 컬러 깊이가 16-비트 이하라면, <em>Variation</em> 매개변수는 빠른 모드에서 느린 모드와 약간 다르게 행동할 수도 있습니다. 마지막으로, 빠른 모드는 화면을 컬럼 단위가 아니라 줄 단위로 (위에서 아래로) 검색합니다. 그러므로, 부합하는 픽셀이 많은 경우 느린 모드에서 발견되는 픽셀과 다른 픽셀을 발견할 수도 있습니다.</p>
+      <p><strong>RGB</strong>: <em>ColorID</em>는 BGR이 아니라 RGB 값으로 번역됩니다. 다른 말로, 적과 청 구성요소가 서로 바뀝니다.</p></dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 검색하는 동안 문제가 있으면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><span class="ver">[v1.1.04+]</span> 이 명령어는 검색하는 동안 문제가 있다면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 지정된 구역에서 컬러를 발견하였으면 0이 설정되고, 발견하지 못했으면 1이 설정됩니다. 아니면 문제가 있어서 검색을 수행하지 못했으면 2가 설정됩니다.</p>
-
 <h3>논평</h3>
-<p>
-검색될 구역은 반드시 보여야 합니다; 다른 말로, 창에서 또다른 창에 가려진 구역은 검색이 불가능하니다. 대조적으로, 마우스 커서 아래의 픽셀은 보통 탐지할 수 있습니다. 이에 대한 예외는 게임 커서입니다. 대부분의 경우 게임 커서는 자신의 아래에 있는 픽셀들을 감춥니다.</p>
-<p>
-Slow 모드 전용: 기본값으로, 검색은 해당 구역의 좌상 모서리로부터 시작하여 수직으로 내려가며 픽셀이 부합하는지 맞추어 봅니다. 부합을 발견하지 못하면, 검색은 컬럼 오른쪽에서 부합하는 픽셀을 찾을 때까지 계속됩니다. 기본값이 좌에서 우로 검색 순서는 매개변수 리스트에서 <em>X1</em>와 <em>X2</em>를 바꾸면 뒤집어 집니다. 다른 말로, <em>X1</em>이 <em>X2</em>보다 더 크면, 검색은 <em>X1</em>컬럼에서 시작하여, 오른쪽에서 왼쪽으로 수행됩니다. 비슷하게, <em>Y1</em>이 <em>Y2</em>보다 크면, 검색될 픽셀 컬럼이 위가 아니라 아래부터 시작합니다. 마지막으로, 검색될 구역이 방대하고 검색이 높은 빈도록 반복되면, CPU 시간을 많이 소비할 수 있습니다. 이를 경감하려면, 검색 구역의 크기를 최소한으로 유지하십시오.</p>
-
+<p>검색될 구역은 반드시 보여야 합니다; 다른 말로, 다른 창 뒤에 가려진 창의 구역은 검색할 수 없습니다. 대조적으로, 마우스 아래의 커서는 보통 탐지할 수 있습니다. 이에 대한 예외는 게임 커서입니다. 대부분의 경우 게임 커서는 자신의 아래에 있는 픽셀들을 감춥니다.</p>
+<p>Slow 모드 전용: 기본값으로, 검색은 해당 구역의 좌상 모서리로부터 시작하여 수직으로 내려가며 픽셀이 부합하는지 맞추어 봅니다. 부합을 발견하지 못하면, 검색은 컬럼 오른쪽에서 부합하는 픽셀을 찾을 때까지 계속됩니다. 기본값이 좌에서 우로 검색 순서는 매개변수 리스트에서 <em>X1</em>와 <em>X2</em>를 바꾸면 뒤집어 집니다. 다른 말로, <em>X1</em>이 <em>X2</em>보다 더 크면, 검색은 <em>X1</em>컬럼에서 시작하여, 오른쪽에서 왼쪽으로 수행됩니다. 비슷하게, <em>Y1</em>이 <em>Y2</em>보다 크면, 검색될 픽셀 컬럼이 위가 아니라 아래부터 시작합니다. 마지막으로, 검색될 구역이 방대하고 검색이 높은 빈도록 반복되면, CPU 시간을 많이 소비할 수 있습니다. 이를 경감하려면, 검색 구역의 크기를 최소한으로 유지하십시오.</p>
 <h3>관련 항목</h3>
-<p>
-<a href="PixelGetColor.htm">PixelGetColor</a>, <a href="ImageSearch.htm">ImageSearch</a>, <a href="CoordMode.htm">CoordMode</a>, <a href="MouseGetPos.htm">MouseGetPos</a></p>
-
+<p><a href="PixelGetColor.htm">PixelGetColor</a>, <a href="ImageSearch.htm">ImageSearch</a>, <a href="CoordMode.htm">CoordMode</a>, <a href="MouseGetPos.htm">MouseGetPos</a></p>
 <h3>예제</h3>
-
 <pre class="NoIndent">PixelSearch, Px, Py, 200, 200, 300, 300, 0x9d6346, 3, Fast
 if ErrorLevel
     MsgBox, 해당 컬러를 지정된 구역에서 발견하지 못했습니다.

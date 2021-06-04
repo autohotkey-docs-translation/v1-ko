@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>StringReplace</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,7 +12,7 @@
 
 <h1>StringReplace</h1>
 
-<p>지정된 부문자열을 새 문자열로 교체합니다.</p>
+<p>지정된 부분문자열을 새 문자열로 교체합니다.</p>
 
 <pre class="Syntax">OutputVar := StrReplace(Haystack, SearchText [, ReplaceText, OutputVarCount, Limit := -1])  <em>; v1.1.21+</em>
 StringReplace, OutputVar, InputVar, SearchText [, ReplaceText, ReplaceAll?]</pre>
@@ -23,49 +24,38 @@ StringReplace, OutputVar, InputVar, SearchText [, ReplaceText, ReplaceAll?]</pre
 
   <dt>InputVar 또는 Haystack</dt>
   <dd>
-    <p>그의 내용을 읽을 변수의 이름. 이름을 퍼센트 사인으로 둘러 싸지 마십시오. 단, 변수의  <em>내용</em>이 이름이기를 원하는 경우는 예외입니다.</p>
-    <p>
-	StrReplace()는 함수이므로, <em>Haystack</em>은 표현식이 가능합니다.</p>
+    <p>내용을 읽어 들일 변수의 이름. 이름을 퍼센트 사인으로 둘러 싸지 마십시오. 변수의 <em>내용</em>을 이름으로 사용하고 싶다면 예외입니다.</p>
+    <p>StrReplace()는 함수이므로, <em>Haystack</em>은 표현식이 가능합니다.</p>
   </dd>
 
   <dt>SearchText</dt>
-  <dd><p>검색에 사용될 문자열. 부합은 대소문자를 구분하지 않습니다. 단, <a href="StringCaseSense.htm">StringCaseSense</a>가 켜져 있는 경우는 예외입니다.</p></dd>
+  <dd><p>검색할 문자열. 부합은 대소문자를 구분하지 않습니다. 단, <a href="StringCaseSense.htm">StringCaseSense</a>가 켜져 있는 경우는 예외입니다.</p></dd>
 
   <dt>ReplaceText</dt>
   <dd><p><em>SearchText</em>는 이 텍스트로 교체됩니다. 생략되거나 비어 있으면, <em>SearchText</em>는 빈 문자열로 교체됩니다. 다른 말로, <em>OutputVar</em>로부터 제외됩니다.</p></dd>
   
   <dt>OutputVarCount (<em>StrReplace</em>)</dt>
-  <dd><p>교체가 일어난 횟수를 저장할 변수의 이름. 인용부호 처리 안함 (없으면 0).</p></dd>
+  <dd><p>일어난 교체의 횟수를 저장할 변수의 이름. 따옴표 처리 없음 (교체가 없으면 0).</p></dd>
   
   <dt>Limit (<em>StrReplace</em>)</dt>
-  <dd><p>
-  <em>Limit</em>을 생략하면, 기본값은  -1입니다. 기본으로 <em>Haystack</em> 발견된 <strong>모든</strong> 패턴을 교체합니다. 그렇지 않으면, 교체를 허용할 최대 횟수를 지정하십시오. <em>Haystack</em>에서 마지막 매개변수의 오른쪽 부분은 교체되지 않고 그대로입니다.</p></dd>
+  <dd><p><em>Limit</em>을 생략하면, 기본값은 -1입니다. 기본값은 <em>Haystack</em>에서 발견된 패턴에 부합하면 <strong>모두</strong> 교체합니다. 그렇지 않으면, 허용할 교체의 최대 횟수를 지정하십시오. <em>Haystack</em>에서 마지막 교체 이후의 오른쪽 부분은 바뀌지 않습니다.</p></dd>
 
   <dt>ReplaceAll? (<em>StringReplace</em>)</dt>
   <dd><p>생략하면, 오직 <em>SearchText</em>의 첫 번째 부합만 교체됩니다. 그러나 이 매개변수가 1이나 A 또는 All이면, 모든 부합이 교체됩니다.</p>
-    <p>
-	단어 <strong>UseErrorLevel</strong>을 지정하면 ErrorLevel에 교체된 횟수를 저장할 수 있습니다 (없으면 0). UseErrorLevel은 묵시적으로 &quot;All&quot;.</p>
+    <p>단어 <strong>UseErrorLevel</strong>을 지정하면 ErrorLevel에 교체된 횟수를 저장할 수 있습니다 (없으면 0). UseErrorLevel은 묵시적으로 "All".</p>
     </dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
-<p>
-<strong>StrReplace:</strong> ErrorLevel은 설정되지 않습니다.</p>
+<p><strong>StrReplace:</strong> ErrorLevel은 설정되지 않습니다.</p>
 <p><strong>StringReplace:</strong> 마지막 매개변수가 <em>UseErrorLevel</em>이면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에는 교체된 횟수가 설정됩니다 (없으면 0). 그렇지 않으면, ErrorLevel은 <em>SearchText</em>를 <em>InputVar</em> 안에서 발견하지 못한 경우 1이 설정되고 발견한 경우는 0이 설정됩니다.</p>
-
 <h3>논평</h3>
-<p>
-이 명령어 그리고 기타 모든 명령어에 대하여, <em>OutputVar</em>는 <em>InputVar</em>와 변수가 같아도 허용됩니다.</p>
-<p>
-내장 변수 <a href="../Variables.htm">%A_Space%</a>와 <a href="../Variables.htm">%A_Tab%</a>에 각각 스페이스 하나와 탭 문자 하나가 들어 있습니다. <em>SearchText</em>의 앞이나 뒤에서 스페이스와 탭만 홀로 검색할 때 유용합니다.</p>
-<p>
-v1.0.45에서, AllSlow 옵션은 수행성능 향상과 효율적인 메모리 이용을 위해 폐기 되었습니다. 여전히 지정할 수는 있지만, 아무 효과가 없을 것입니다.</p>
-
+<p>이 명령어와 다른 모든 명령어에 대하여, <em>OutputVar</em>는 <em>InputVar</em>와 같은 변수가 되어도 허용합니다.</p>
+<p>내장 변수 <a href="../Variables.htm">%A_Space%</a>와 <a href="../Variables.htm">%A_Tab%</a>에 각각 스페이스 문자 하나와 탭 문자 하나가 들어 있습니다. <em>SearchText</em>의 앞이나 뒤에서 스페이스와 탭을 따로 검색할 경우에 유용합니다.</p>
+<p>v1.0.45에서, AllSlow 옵션은 수행성능 향상과 효율적인 메모리 이용을 위해 폐기 되었습니다. 여전히 지정할 수는 있지만, 아무 효과가 없을 것입니다.</p>
 <h3>관련 항목</h3>
-<p>
-<a href="RegExReplace.htm">RegExReplace()</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringGetPos.htm">StringGetPos</a>,  <a href="IfIs.htm">if var is type</a></p>
-
+<p><a href="RegExReplace.htm">RegExReplace()</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringGetPos.htm">StringGetPos</a>,  <a href="IfIs.htm">if var is type</a></p>
 <h3>예제</h3>
 <pre class="NoIndent"><em>; 클립보드의 내용에서 모든 CR+LF를 제거합니다:</em>
 StringReplace, clipboard, clipboard, `r`n, , All

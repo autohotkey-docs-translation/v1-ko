@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>OutputDebug</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,29 +12,25 @@
 
 <h1>OutputDebug</h1>
 
-<p>문자열을 디버거에 (있다면) 전송하여 보여줍니다.</p>
+<p>문자열을 (있다면) 디버거에 보내 보여줍니다.</p>
 
 <pre class="Syntax">OutputDebug, Text</pre>
 <h3>매개변수</h3>
 <dl>
 
   <dt>Text</dt>
-  <dd><p>보여주기 위해 디버거에 전송할 텍스트. 이 텍스트에는 라인피드 (`n)가 포함되어 새 줄을 시작할 수 있습니다. 게다가, 기다란 한 줄은 <a href="../Scripts.htm#continuation">계속 섹션</a>을 수단으로 여러 개의 짧은 줄들로 가를 수 있습니다.</p></dd>
+  <dd><p>보여주기 위해 디버거에 전송할 텍스트. 이 텍스트는 라인피드 문자 (`n)를 포함해 새줄을 시작할 수도 있습니다. 게다가, 기다란 한줄은 <a href="../Scripts.htm#continuation">계속 섹션</a>을 이용하여 더 짧은 여러 줄로 분리할 수 있습니다.</p></dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>
-스크립트의 프로세스에 디버거가 없다면, 시스템 디버거가 그 문자열을 화면에 보여줍니다. 시스템 디버거가 꺼져 있다면, 이 명령어는 아무 효과가 없습니다.</p>
-<p>
-디버거의 한 가지 예는 DebugView입니다. 이 디버거는 무료이며 <a href="http://www.sysinternals.com">www.sysinternals.com</a>에서 얻을 수 있습니다.</p>
-<p>
-다음도 참조하십시오: <a href="../Scripts.htm#debug">다른 디버깅 방법들</a></p>
-
+<p>스크립트의 프로세스에 디버거가 없다면, 시스템 디버거가 그 문자열을 화면에 보여줍니다. 시스템 디버거가 꺼져 있다면, 이 명령어는 아무 효과가 없습니다.</p>
+<p>디버거의 한 가지 예는 DebugView입니다. 이 디버거는 무료이며 <a href="http://www.sysinternals.com">www.sysinternals.com</a>에서 얻을 수 있습니다.</p>
+<p>다음 참조: <a href="../Scripts.htm#debug">다른 디버깅 방법들</a></p>
 <h3>관련 항목</h3>
 <p><a href="FileAppend.htm">FileAppend</a>, <a href="../Scripts.htm#continuation">계속 섹션</a></p>
 <h3>예제</h3>
-<pre class="NoIndent">OutputDebug, %A_Now%: 창 &quot;%TargetWindowTitle%&quot;가 존재하지 않으므로, 프로세스가 종료되었습니다.</pre>
+<pre class="NoIndent">OutputDebug, %A_Now%: 창 "%TargetWindowTitle%"가 존재하지 않으므로, 프로세스가 종료되었습니다.</pre>
 
 </body>
 </html>

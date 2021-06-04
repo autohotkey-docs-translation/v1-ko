@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>AutoTrim</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -20,33 +21,24 @@
   <dt>On|Off</dt>
   <dd><p><strong>On</strong>: <code><a href="SetEnv.htm">Var1 = %Var2%</a></code>와 같은 서술문에서, 탭과 스페이스가 <em>Var2</em>의 앞 뒤에 있으면 <em>Var1</em>으로부터 걷어냅니다. 이것이 기본값입니다.</p>
       <p><strong><a name="Off"></a>Off</strong>: 탭과 스페이스를 걷어내지 않습니다.</p>
-      <p>
-	  기호 그대로의 탭과 스페이스는 이 설정에 상관없이 생략됩니다.  v1.1.06이전에는, 여기에 `t 또는 기타 피신된 기호 그대로의 스페이스나 탭이 포함되었습니다. 예를 들어 AutoTrim이 Off일 때, 서술문 <code>Var = `t</code>는 v1.1.06에서는 탭 문자를 할당하고 그 이전 버전은 빈 문자열이 할당됩니다.</p></dd>
+      <p>기호 그대로의 탭과 스페이스는 이 설정에 상관없이 생략됩니다. v1.1.06이전에는, 여기에 `t 또는 기타 피신된 기호 그대로의 스페이스나 탭이 포함되었습니다. 예를 들어 AutoTrim이 Off일 때, 서술문 <code>Var = `t</code>는 v1.1.06에서는 탭 문자를 할당하고 그 이전 버전은 빈 문자열이 할당됩니다.</p></dd>
 
 </dl>
 
 <h3>논평</h3>
-<p>
-이 명령어가 스크립트에 없으면, 설정은 ON이 기본값입니다.</p>
-<p>
-내장 변수 <strong>A_AutoTrim</strong>에는 현재 설정이 담겨 있습니다 (On 또는 Off).</p>
-<p>
-내장 변수 <a href="../Variables.htm#Space">A_Space</a> 그리고 <a href="../Variables.htm#Tab">A_Tab</a>에는 단일 스페이스와 단일 탭 문자가 각각 들어 있습니다.</p>
-<p>
-AutoTrim은 <code>Var := &quot; string &quot;</code>와 같은 <a href="SetExpression.htm">표현식 할당</a>에 영향을 주지 않습니다. 다른 말로 하면, 그 경우 선두 후미의 스페이스와 탭은 언제나 그대로 유지됩니다.</p>
-<p>
-새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
-
+<p>이 명령어가 스크립트에 없으면, 설정은 ON이 기본값입니다.</p>
+<p>내장 변수 <strong>A_AutoTrim</strong>에는 현재 설정이 담겨 있습니다 (On 또는 Off).</p>
+<p>내장 변수 <a href="../Variables.htm#Space">A_Space</a> 그리고 <a href="../Variables.htm#Tab">A_Tab</a>에는 단일 스페이스와 단일 탭 문자가 각각 들어 있습니다.</p>
+<p>AutoTrim은 <code>Var := " string "</code>와 같은 <a href="SetExpression.htm">표현식 할당</a>에 영향을 주지 않습니다. 다른 말로 하면, 그 경우 선두 후미의 스페이스와 탭은 언제나 그대로 유지됩니다.</p>
+<p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
 <h3>관련 항목</h3>
-<p>
-<a href="SetEnv.htm">SetEnv</a></p>
-
+<p><a href="SetEnv.htm">SetEnv</a></p>
 <h3>예제</h3>
 <pre class="NoIndent">AutoTrim, off
 NewVar1 = %OldVar%  <em>; OldVar에 선두와 후미에 스페이스가 들어 있으면, NewVar도 역시 그대로 가집니다.</em>
 NewVar2 = %A_Space%  <em>; AutoTrim이 꺼져 있으면, 단일 스페이스를 이런 식으로 할당할 수 있습니다.</em>
 
-Var1 := &quot;`t&quot; <strong>.</strong> Var2 <strong>.</strong> &quot; &quot;  <em>; <a href="../Variables.htm#Expressions">표현식</a>이기 때문에 AutoTrim의 설정은 문제가 되지 않습니다.</em></pre>
+Var1 := "`t" <strong>.</strong> Var2 <strong>.</strong> " "  <em>; <a href="../Variables.htm#Expressions">표현식</a>이기 때문에 AutoTrim의 설정은 문제가 되지 않습니다.</em></pre>
 
 </body>
 </html>
