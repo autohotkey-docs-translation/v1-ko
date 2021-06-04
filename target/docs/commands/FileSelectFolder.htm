@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileSelectFolder</title>
+<title>FileSelectFolder - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileSelectFolder command displays a standard dialog that allows the user to select a folder." />
+<meta name="ahk:equiv-v2" content="commands/DirSelect.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +15,8 @@
 
 <p>사용자가 폴더를 선택할 수 있는 표준 대화상자를 보여줍니다.</p>
 
-<pre class="Syntax">FileSelectFolder, OutputVar [, StartingFolder, Options, Prompt]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FileSelectFolder</span>, OutputVar <span class="optional">, StartingFolder, Options, Prompt</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -27,8 +28,7 @@ Folder := RegExReplace(Folder, "\\$")  <em>; Removes the trailing backslash, if 
   <dd><p>비어 있거나 생략하면, 대화상자의 최초 선택이 사용자의 내문서 폴더가 됩니다 (또는 내컴퓨터도 가능). <code>::{20d04fe0-3aea-1069-a2d8-08002b30309d}</code> (즉, 내컴퓨터)와 같은 <a href="../misc/CLSID-List.htm">CLSID 폴더</a>를 지정하면 특정한 폴더에서 항해를 지정할 수 있습니다.</p>
       <p>그렇지 않으면, 이 매개변수의 가장 흔한 사용법은 별표 다음에 드라이브나 폴더의 절대 경로가 따라와 최초로 선택되는 것입니다. 예를 들어, <code>*C:\</code>은 처음에 C 드라이브를 선택합니다. 비슷하게, <code>*C:\My Folder</code>이면 처음에 그 특정 폴더를 선택합니다.</p>
       <p>별표는 사용자에게 시작 폴더로부터 위로 (루트쪽으로) 항해를 허용한다는 뜻입니다. 별표가 없다면, 사용자는 <em>StartingFolder</em>안 (또는 <em>StartingFolder</em> 자체)에서만 선택해야 합니다. 별표를 생략하면 좋은 점은 <em>StartingFolder</em>가 처음에 트리가 확장된 상태로 보여진다는 것입니다. 이 덕분에 사용자는 첫 번째 플러스 사인을 클릭하지 않아도 됩니다.</p>
-      <p>별표가 존재하면, 위로 항해는 바탕화면 말고 선택적으로 폴더로 제한됩니다. 이렇게 제한하려면 별표를 최상단 폴더의 절대 경로 앞에 두고 다음에 정확하게 스페이스 하나 또는 탭 하나를 배치하면 됩니다. 다음 예제에서 사용자는 C:\My Folder 위로 항해하는 것이 허용되지 않습니다 (그러나 최초 선택은 C:\My Folder\Projects입니다):<br>
-      <code>C:\My Folder *C:\My Folder\Projects</code></p>
+      <p>별표가 존재하면, 위로 항해는 바탕화면 말고 선택적으로 폴더로 제한됩니다. 이렇게 제한하려면 별표를 최상단 폴더의 절대 경로 앞에 두고 다음에 정확하게 스페이스 하나 또는 탭 하나를 배치하면 됩니다. For example, <code>C:\My Folder *C:\My Folder\Projects</code> would not allow the user to navigate any higher than C:\My Folder (but the initial selection would be C:\My Folder\Projects).</p>
     </dd>
 
   <dt>Options</dt>
@@ -36,37 +36,43 @@ Folder := RegExReplace(Folder, "\\$")  <em>; Removes the trailing backslash, if 
       <p><strong>0</strong>: 아래의 옵션을 모두 비활성화 합니다 (Windows 2000 제외, "새 폴더 만들기" 버튼이 어쨋거나 나타날 수 있습니다).</p>
       <p><strong>1</strong> (기본값): 사용자가 새 폴더를 만들 수 있는 버튼이 제공됩니다.</p>
       <p><strong>더하기 2</strong> 위의 숫자에 더하면 사용자가 폴더의 이름을 타자할 수 있는 편집 필드를 제공합니다. 예를 들어, 이 매개변수에 값을 3을 지정하면 편집 필드와 "새 폴더 만들기" 버튼을 모두 제공합니다.</p>
-      <p><strong><a name="NewDialog"></a>더하기 4</strong> 위의 숫자에 더하면 BIF_NEWDIALOGSTYLE 특성이 생략됩니다. 4를 더하면 WinPE 또는 BartPE와 같은 설치전 환경(Preinstallation Environment)에서도 확실하게 FileSelectFolder가 제대로 작동합니다. 그렇지만, 이렇게 하면 "새 폴더 만들기" 버튼이 나타나지 않습니다. 적어도 Windows XP에서는 확실하게 나타나지 않습니다. ["4"는 v1.0.48+를 요구합니다]</p>
+      <p id="NewDialog"><strong>더하기 4</strong> 위의 숫자에 더하면 BIF_NEWDIALOGSTYLE 특성이 생략됩니다. 4를 더하면 WinPE 또는 BartPE와 같은 설치전 환경(Preinstallation Environment)에서도 확실하게 FileSelectFolder가 제대로 작동합니다. 그렇지만, 이렇게 하면 "새 폴더 만들기" 버튼이 나타나지 않습니다. 적어도 Windows XP에서는 확실하게 나타나지 않습니다. ["4"는 v1.0.48+를 요구합니다]</p>
       <p>사용자가 편집 필드 안에 무효한 폴더 이름을 타자하면, <em>OutputVar</em>는 사용자가 입력한 이름이 아니라 항해 트리에서 선택된 폴더가 설정됩니다. 적어도 Windows XP에서는 그렇습니다.</p>
-      <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다.<br>
-      </p></dd>
+      <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다.</p></dd>
 
   <dt>Prompt</dt>
-  <dd><p>사용자에게 무엇을 할지 창에 보여주는 텍스트. 생략되거나 비어 있으면, "Select Folder - %A_SCRIPTNAME%" (즉, 현재 스크립트의 이름)이 기본값이 됩니다.</p></dd>
+  <dd><p>사용자에게 무엇을 할지 창에 보여주는 텍스트. 생략되거나 비어 있으면, "Select Folder - %A_ScriptName%" (즉, 현재 스크립트의 이름)이 기본값이 됩니다.</p></dd>
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 사용자가 폴더를 선택하지 않고 (예를 들어 취소 버튼을 눌러서) 취소하면 1이 설정됩니다. 시스템이 대화상자를 보여주기를 거부하는 경우에도 1이 설정됩니다 (거의 없음). 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
+<p>A folder-selection dialog usually looks like this:</p>
+<img src="../static/dlg_folder.png" alt="FileSelectFolder" />
 <p>GUI 창은 <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>를 사용하여 모달 폴더-선택 대화상자를 보여줄 수 있습니다. 모달 대화상자는 끝날 때까지 사용자가 GUI 창과 상호작용하는 것을 막습니다.</p>
 <p>알려진 한계: FileSelectFolder 대화상자를 보여주는 동안에 기동되는 <a href="SetTimer.htm">타이머</a>는 사용자가 대화상자에서 클릭한 효과를 타이머가 끝날 때까지 연기합니다. 이를 우회하려면, 끝나는데 시간이 많이 걸리는 서브루틴의 타이머를 피하거나, 모든 타이머를 모달 대화상자를 사용하는 동안에는 끄십시오:</p>
 <pre><a href="Thread.htm">Thread</a>, NoTimers
 FileSelectFolder, OutputVar,, 3
 Thread, NoTimers, false</pre>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="FileSelectFile.htm">FileSelectFile</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="ToolTip.htm">ToolTip</a>, <a href="Gui.htm">GUI</a>, <a href="../misc/CLSID-List.htm">CLSID List</a>, <a href="FileCopyDir.htm">FileCopyDir</a>, <a href="FileMoveDir.htm">FileMoveDir</a>, <a href="SplitPath.htm">SplitPath</a></p>
-<p>또한, 운영 체제는 사용자가 글꼴이나 색깔, 또는 아이콘을 선택할 수 있는 표준 대화상자를 제공합니다. 이런 대화상자는 <a href="DllCall.htm">DllCall()</a>을 통하여 보여줄 수 있습니다. 다음에 예시합니다: <a href="http://www.autohotkey.com/forum/topic17230.html">www.autohotkey.com/forum/topic17230.html</a>.</p>
-<h3>예제</h3>
-<pre class="NoIndent">FileSelectFolder, OutputVar, , 3
+<p>또한, 운영 체제는 사용자가 글꼴이나 색깔, 또는 아이콘을 선택할 수 있는 표준 대화상자를 제공합니다. 이런 대화상자는 <a href="DllCall.htm">DllCall()</a>을 통하여 보여줄 수 있습니다. 다음에 예시합니다: <a href="https://github.com/majkinetor/mm-autohotkey/tree/master/Dlg">GitHub</a>.</p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Allows the user to select a folder and provides both an edit field and a "make new folder" button.</p>
+<pre>FileSelectFolder, OutputVar, , 3
 if OutputVar =
     MsgBox, 폴더를 선택하지 않았습니다.
 else
-    MsgBox, "%OutputVar%" 폴더를 선택했습니다.
+    MsgBox, "%OutputVar%" 폴더를 선택했습니다.</pre>
+</div>
 
-<em>; <a href="../misc/CLSID-List.htm">CLSID</a> 예제:</em>
-FileSelectFolder, OutputVar, ::{20d04fe0-3aea-1069-a2d8-08002b30309d}  <em>; 내 컴퓨터.</em></pre>
+<div class="ex" id="ExCLSID">
+<p><a class="ex_number" href="#ExCLSID"></a> A <a href="../misc/CLSID-List.htm">CLSID</a> example. Allows the user to select a folder in the "My Computer" directory.</p>
+<pre>FileSelectFolder, OutputVar, ::{20d04fe0-3aea-1069-a2d8-08002b30309d}  <em>; 내 컴퓨터.</em></pre>
+</div>
 
 </body>
 </html>

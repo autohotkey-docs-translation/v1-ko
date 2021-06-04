@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ComObjConnect()</title>
+<title>ComObjConnect() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ComObjConnect function connects a COM object's event sources to functions with a given prefix." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -11,17 +11,17 @@
 <body>
 
 <h1>ComObjConnect() <span class="ver">[AHK_L 53+]</span></h1>
-<p>객체의 이벤트 소스를 주어진 접두사를 가진 함수에 연결합니다.</p>
-<pre class="Syntax">ComObjConnect(ComObject [, Prefix])</pre>
+<p>COM 객체의 이벤트를 주어진 접두사를 가진 함수에 연결합니다.</p>
+<pre class="Syntax"><span class="func">ComObjConnect</span>(ComObject <span class="optional">, Prefix</span>)</pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>ComObject</dt>
   <dd>
     <p>이벤트를 일으키는 객체.</p>
-    <p>객체가 IConnectionPointContainer 인터페이스를 지원하지 않거나 또는 객체의 클래스에 관한 유형정보를 열람할 수 없으면, 에러 메시지가 나타납니다. 이것은 <a href="ComObjError.htm">ComObjError</a> 또는 <a href="Try.htm">try</a>/<a href="Catch.htm">catch</a>으로 억누르거나 처리할 수 있습니다.</p>
-    <p><span class="ver">[v1.1.22]+</span>에서, IProvideClassInfo 인터페이스를 객체가 지원하면 그 클래스의 관한 유형정보를 열람하는 데 사용됩니다. 그렇지 않으면, ComObjConnect는 객체의 IDispatch 인터페이스를 통하 유형 정보를 열람하려고 시도하는데, 이것은 신뢰성이 떨어집니다.</p>
+    <p>객체가 IConnectionPointContainer 인터페이스를 지원하지 않거나 또는 객체의 클래스에 관한 유형정보를 열람할 수 없으면, 에러 메시지가 나타납니다. 이것은 <a href="ComObjError.htm">ComObjError()</a> 또는 <a href="Try.htm">try</a>/<a href="Catch.htm">catch</a>으로 억누르거나 처리할 수 있습니다.</p>
+    <p><span class="ver">[v1.1.22+]</span>: IProvideClassInfo 인터페이스를 객체가 지원하면 그 클래스의 관한 유형정보를 열람하는 데 사용됩니다. 그렇지 않으면, ComObjConnect는 객체의 IDispatch 인터페이스를 통하 유형 정보를 열람하려고 시도하는데, 이것은 신뢰성이 떨어집니다.</p>
   </dd>
 
   <dt>Prefix</dt>
@@ -33,12 +33,12 @@
 
 </dl>
 
-<h3 id="Usage">사용법</h3>
+<h2 id="Usage">사용법</h2>
 <p>효과적으로 ComObjConnect를 사용하려면, 먼저 관심을 둔 이벤트를 처리할 함수를 스크립트에 작성해야 합니다. "이벤트-처리자"라고 하는 그런 함수는 구조가 다음과 같습니다:</p>
 <pre class="Syntax Short NoIndent"><i>Prefix</i><b>EventName</b>([<i>Params...</i>, ComObject])
 {
     <i class="dull">... event-handling code ...</i>
-    return <i>returnValue</i>
+    return <i>ReturnValue</i>
 }</pre>
 <p><i>Prefix</i>는 여러분이 고른 접두사입니다. 반면에 <b>EventName</b>은 함수가 처리해야 하는 이벤트의 이름입니다.</p>
 <p><i>Params</i>는 이벤트가 가진 매개변수에 상응합니다. 이벤트에 매개변수가 없으면, <i>Params</i>도 완전히 생략되어야 합니다. <i>ComObject</i>는 선택적입니다. 그리고 <i>Params</i>의 개수가 올바르게 정의되어 있을 경우에만 사용해야 합니다; 그 안에 ComObjConnect에 건넸던 원래 포장 객체를 가리키는 참조가 들어 있습니다. "ComObject"는 여러분의 스크립트 문맥에 맞게 보다 의미있는 이름으로 교체되어야 합니다.</p>
@@ -47,34 +47,41 @@
 <p>객체와 연결을 끊으려면 (이벤트 처리를 중지하려면) <code>ComObjConnect(yourObject)</code>를 호출합니다.</p>
 <p>매개변수 개수를 알지 못하면, <a href="../Functions.htm#Variadic">가변 함수</a>를 사용할 수 있습니다.</p>
 
-<h3>관련 항목</h3>
-<p><a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjGet.htm">ComObjGet</a>, <a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjError.htm">ComObjError</a>, <a href="http://msdn.microsoft.com/en-us/library/ccxe1xe6.aspx">WScript.ConnectObject (MSDN)</a></p>
+<h2 id="Remarks">논평</h2>
+<p>The script must retain a reference to <em>ComObject</em>, otherwise it would be freed automatically and would disconnect from its COM object, preventing any further events from being detected. There is no standard way to detect when the connection is no longer required, so the script must disconnect manually by calling ComObjConnect.</p>
+<p>The <a href="_Persistent.htm">#Persistent</a> directive may be needed to keep the script running while it is listening for events.</p>
+<p>On failure, the function may throw an exception, exit the script or simply return, depending on the current <a href="ComObjError.htm">ComObjError()</a> setting and <a href="ComObjError.htm#factors">other factors</a>.</p>
 
-<h3 id="Examples">예제</h3>
-<pre class="NoIndent">
-ie := ComObjCreate("<a href="http://msdn.microsoft.com/en-us/library/aa752084.aspx">InternetExplorer.Application</a>")
+<h2 id="Related">관련 항목</h2>
+<p><a href="ComObjCreate.htm">ComObjCreate()</a>, <a href="ComObjGet.htm">ComObjGet()</a>, <a href="ComObjActive.htm">ComObjActive()</a>, <a href="ComObjError.htm">ComObjError()</a>, <a href="http://msdn.microsoft.com/ko-kr/library/ccxe1xe6.aspx">WScript.ConnectObject (MSDN)</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExIE">
+<p><a class="ex_number" href="#ExIE"></a> Launches an instance of Internet Explorer and connects events to corresponding script functions with the prefix "IE_". For details about the COM object and DocumentComplete event used below, see <a href="http://msdn.microsoft.com/ko-kr/library/aa752084.aspx">InternetExplorer object (Microsoft Docs)</a>.</p>
+<pre>ie := ComObjCreate("InternetExplorer.Application")
 
 <em>; 상응하는 스크립트 함수에 접두사를 "IE_"로 하여 이벤트를 연결합니다.</em>
-<b>ComObjConnect</b>(ie, "IE_")
+ComObjConnect(ie, "IE_")
 
 ie.Visible := true  <em>; 이것은 IE7에서 제대로 작동하지 않는다고 알려져 있습니다.</em>
-ie.Navigate("http://ahkscript.org/")
+ie.Navigate("https://www.autohotkey.com/")
 #Persistent
 
-<b>IE_<a href="http://msdn.microsoft.com/en-us/library/aa768329.aspx">DocumentComplete</a></b>(ieEventParam, url, ieFinalParam) {
+IE_DocumentComplete(ieEventParam, url, ieFinalParam) {
     global ie
     if (ie != ieEventParam)
-        s .= <em>"첫 매개변수는 새 포장 객체입니다.`n"</em>
+        s .= "First parameter is a new wrapper object.`n"
     if (ie == ieFinalParam)
-        s .= <em>"마지막 매개변수는 원래 포장 객체입니다.`n"</em>
+        s .= "Final parameter is the original wrapper object.`n"
     if ((disp1:=<a href="ComObjActive.htm#enwrap">ComObjUnwrap</a>(ieEventParam)) == (disp2:=ComObjUnwrap(ieFinalParam)))
-        s .= <em>"두 포장 객체 모두 같은 IDispatch 실체를 가리킵니다.`n"</em>
+        s .= "Both wrapper objects refer to the same IDispatch instance.`n"
     <a href="ObjAddRef.htm">ObjRelease</a>(disp1), ObjRelease(disp2)
     MsgBox % s . "Finished loading " ie.Document.title " @ " url
     ie.Quit()
     ExitApp
 }
 </pre>
+</div>
 
 </body>
 </html>

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#If</title>
+<title>#If - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #If directive creates context-sensitive hotkeys and hotstrings. 문맥 감지 핫키는 표현식의 결과에 따라 다르게 조치를 수행합니다 (또는 아무것도 하지 않습니다)." />
+<meta name="ahk:equiv-v2" content="commands/_HotIf.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -11,12 +12,12 @@
 <body>
 
 
-<h1>#If <span class="ver">[AHK_L]</span></h1>
+<h1>#If <span class="ver">[AHK_L 4+]</span></h1>
 
 <p>문맥-감지 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 만듭니다. 문맥 감지 핫키는 표현식의 결과에 따라 다르게 조치를 수행합니다 (또는 아무것도 하지 않습니다).</p>
 
-<pre class="Syntax">#If [, Expression ]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">#If</span> <span class="optional">Expression</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Expression</dt>
@@ -24,28 +25,39 @@
 
 </dl>
 
-<h3>기본 연산</h3>
+<h2 id="Basic_Operation">기본 연산</h2>
 <p>유효한 연산식이면 핫키가 활성화 될 문맥을 정의하는 데 사용할 수 있습니다. 예를 들어:</p>
 <pre>#If WinActive("ahk_class Notepad") or WinActive(MyWindowTitle)
 #Space::MsgBox You pressed Win+Spacebar in Notepad or %MyWindowTitle%.</pre>
 <p>#IfWin 지시어처럼, #If도 위치에 민감합니다: 스크립트에서 물리적으로 아래에 있는 모든 핫키와 핫스트링에 영향을 줍니다. #If 그리고 #IfWin는 또 상호 배타적입니다; 즉, 가장 최근의 #If 또는 #IfWin만 효과가 있습니다.</p>
 <p>문맥 감지를 끄려면, 모든 매개변수를 생략하고 #If 또는 #IfWin 지시어를 지정하면 됩니다. 예를 들어:</p>
 <pre>#If</pre>
+<p>다른 지시어처럼, #If는 조건적으로 실행할 수 없습니다.</p>
 
-<h3>총평</h3>
-<p>핫키를 구성하는 키 조합이 눌리면, #If 표현식을 평가하여 그 핫키를 활성화 할지 말지를 결정합니다. 표현식의 평가가 완료될 때까지 또는 <a href="_IfTimeout.htm">시간제한</a>이 풀릴 때까지 시스템은 키보드나 마우스 입력에 응답하지 않을 가능성이 있습니다. 표현식이 평가되고 있는 동안에 (예를 들어 표현식이 호출한 함수로부터) 키눌림이나 마우스 클릭을 전송하면 복잡한 일이 야기되므로 피하는 편이 좋습니다.</p>
+<h2 id="General_Remarks">총평</h2>
+<p>When the key, mouse or joystick button combination which forms a hotkey is pressed, the #If expression is evaluated to determine if the hotkey should activate.</p>
+<p class="warning"><strong>Note:</strong> Scripts should not assume that the expression is only evaluated when the key is pressed (see below).</p>
 <p>표현식은 프로그램이 핫키가 활성화되어 있는지 알 필요가 있을 때마다 평가될 수도 있습니다. 예를 들어, <code>a &amp; b::</code>와 같은 맞춤 조합에 대하여 #If 표현식은 접두 키가 (이 예제에서는 <code>a</code>) 눌릴 때 평가되어, 맞춤 수식 키로 행위해야 할지 말지 결정합니다.</p>
-<p>위에 기술한 이유 때문에, 표현식은 반드시 빨리 완료되도록 그리고 부작용이 없도록 작성해야 합니다.</p>
+<p class="warning"><strong>Note:</strong> Use of #If in an unresponsive script may cause input lag or break hotkeys (see below).</p>
+<p>There are several more caveats to the #If directive:</p>
+<ul>
+  <li>Keyboard or mouse input is typically buffered (delayed) until expression evaluation completes or <a href="_IfTimeout.htm">times out</a>.</li>
+  <li>Expression evaluation can only be performed by the script's main thread (at the OS level, not a <a href="../misc/Threads.htm">quasi-thread</a>), not directly by the keyboard/mouse hook. If the script is busy or unresponsive, such as if a FileCopy is in progress, expression evaluation is delayed and may time out.</li>
+  <li>If the <a href="_IfTimeout.htm#LowLevelHooksTimeout">system-defined timeout</a> is reached, the system may stop notifying the script of keyboard or mouse input (see #IfTimeout for details).</li>
+  <li>표현식이 평가되고 있는 동안에 (예를 들어 표현식이 호출한 함수로부터) 키눌림이나 마우스 클릭을 전송하면 복잡한 일이 야기되므로 피하는 편이 좋습니다.</li>
+</ul>
 <p><span class="ver">[AHK_L 53+]:</span> <a href="../Variables.htm#ThisHotkey">A_ThisHotkey</a>와 <a href="../Variables.htm#TimeSinceThisHotkey">A_TimeSinceThisHotkey</a>는 현재 #If 표현식이 평가되고 있는 핫키에 기반하도록 설정됩니다.</p>
 <p><span class="ver">[v1.0.95.00+]:</span> <a href="../Variables.htm#PriorHotkey">A_PriorHotkey</a>와 <a href="../Variables.htm#TimeSincePriorHotkey">A_TimeSincePriorHotkey</a>는 임시로 "This" 변수에 상응하는 이전의 값을 담고 있습니다.</p>
 
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="_IfWinActive.htm">#IfWin</a> 지시어의 행위 특성은 대부분 #If에도 적용됩니다.</p>
 <p><a href="_IfTimeout.htm">#IfTimeout</a>을 사용하면 기본 시간제한 값을 바꿀 수 있습니다.</p>
 
-<h3 id="Examples">예제</h3>
-<pre class="NoIndent">
-<em>; 예제 1: 태스크 바 위에서 마우스 휠을 스크롤해서 볼륨을 조절합니다.</em>
+<h2 id="Examples">예제</h2>
+
+<div class="ex" id="ExVolume">
+<p><a class="ex_number" href="#ExVolume"></a> Allows the volume to be adjusted by scrolling the mouse wheel over the taskbar.</p>
+<pre>
 #If MouseIsOver("ahk_class Shell_TrayWnd")
 WheelUp::Send {Volume_Up}
 WheelDown::Send {Volume_Down}
@@ -54,8 +66,12 @@ MouseIsOver(WinTitle) {
     MouseGetPos,,, Win
     return WinExist(WinTitle . " ahk_id " . Win)
 }
+</pre>
+</div>
 
-<em>; 예제 2: 모든 편집 콘트롤을 위한 간단한 단어-삭제 단축키.</em>
+<div class="ex" id="ExWordDelete">
+<p><a class="ex_number" href="#ExWordDelete"></a> 모든 편집 콘트롤을 위한 간단한 단어-삭제 단축키.</p>
+<pre>
 #If ActiveControlIsOfClass("Edit")
 ^BS::Send ^+{Left}{Del}
 ^Del::Send ^+{Right}{Del}
@@ -66,12 +82,20 @@ ActiveControlIsOfClass(Class) {
     WinGetClass, FocusedControlClass, ahk_id %FocusedControlHwnd%
     return (FocusedControlClass=Class)
 }
+</pre>
+</div>
 
-<em>; 예제 3: 문맥-감지 핫키.</em>
+<div class="ex" id="ExContextInsens">
+<p><a class="ex_number" href="#ExContextInsens"></a> 문맥-감지 핫키.</p>
+<pre>
 #If
 Esc::ExitApp
+</pre>
+</div>
 
-<em id="ex4">; 예제 4: 동적인 핫키. <b>예제 1을 필요로 함.</b></em>
+<div class="ex" id="ExDynamic">
+<p><a class="ex_number" href="#ExDynamic"></a> 동적인 핫키. This example requires the MousIsOver function from <a href="#ExVolume">example #1</a>.</p>
+<pre>
 NumpadAdd::
 Hotkey, If, MouseIsOver("ahk_class Shell_TrayWnd")
 if (doubleup := !doubleup)
@@ -84,6 +108,7 @@ DoubleUp:
 Send {Volume_Up 2}
 return
 </pre>
+</div>
 
 </body>
 </html>

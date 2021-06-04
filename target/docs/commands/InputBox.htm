@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>InputBox</title>
+<title>InputBox - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The InputBox command displays an input box to ask the user to enter a string." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>입력 박스를 보여주고 사용자가 문자열을 타자해 넣기를 요구합니다.</p>
 
-<pre class="Syntax">InputBox, OutputVar [, Title, Prompt, HIDE, Width, Height, X, Y, Font, Timeout, Default]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">InputBox</span>, OutputVar <span class="optional">, Title, Prompt, HIDE, Width, Height, X, Y, Locale, Timeout, Default</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -39,32 +39,41 @@
   <dt>X, Y</dt>
   <dd><p>창의 X 좌표와 Y 좌표 (0,0을 사용하면 바탕화면의 좌상 모서리로 이동합니다), <a href="../Variables.htm#Expressions">표현식</a> 가능. 좌표가 비어 있거나 생략하면, 대화상자는 해당 차원의 가운데에 정렬됩니다. 좌표가 음수이면 그 창을 부분적으로 배치하거나 완전히 바탕화면 밖으로 배치할 수 있습니다.</p></dd>
 
-  <dt>Font</dt>
-  <dd><p>아직 구현되지 않았습니다 (빈 채로 두십시오). 앞으로 verdana:8와 같은 것을 받게 될 것입니다.</p></dd>
+  <dt>Locale <span class="ver">[v1.1.31+]</span></dt>
+  <dd><p>If this parameter is the word Locale, the OK and Cancel buttons are named according to the current user's locale (for example, Abbrechen instead of Cancel on a German OS). In addition, to display these names correctly, the buttons are made wider and the minimum width of the input box is increased. This becomes the default behavior in <a href="https://www.autohotkey.com/v2/">AutoHotkey v2</a>.</p></dd>
 
   <dt>Timeout</dt>
-  <dd><p>초 단위 시간제한 (소수점을 포함할 수 있고 <a href="../Variables.htm#Expressions">표현식</a> 가능). 이 값이 2147483 (24.8 일)을 초과하면, 2147483으로 설정됩니다. 시간제한을 경과하면, InputBox 창이 자동으로 닫히고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 2가 설정됩니다. <em>OutputVar</em>는 여전히 사용자가 입력한 것이 설정됩니다.</p></dd>
+  <dd><p>초 단위 시간제한 (소수점을 포함할 수 있고 <a href="../Variables.htm#Expressions">표현식</a> 가능). 이 값이 2147483 (24.8 일)을 초과하면, 2147483으로 설정됩니다. After the timeout has elapsed, the input box will be automatically closed and <a href="../misc/ErrorLevel.htm">ErrorLevel</a> will be set to 2. <em>OutputVar</em>는 여전히 사용자가 입력한 것이 설정됩니다.</p></dd>
 
   <dt>Default</dt>
-  <dd><p>InputBox 대화상자가 처음 시작할 때 편집 필드에 나타날 텍스트. 사용자는 백스페이스나 기타 수단으로 변경할 수 있습니다.</p></dd>
+  <dd><p>A string that will appear in the input box's edit field when the dialog first appears. 사용자는 백스페이스나 기타 수단으로 변경할 수 있습니다.</p></dd>
 
 </dl>
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
-<p>아래 참조.</p>
-<h3>논평</h3>
-<p>이 대화상자로 사용자는 텍스트를 입력하고 OK 또는 CANCEL를 누를 수 있습니다. 사용자는 대화상자의 테두리를 끌어 크기를 조절할 수 있습니다.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 사용자가 CANCEL 버튼을 누르면 1이 설정되고 OK 버튼을 누르면 0이 설정됩니다. 아니면 대화상자가 시간 제한에 걸리면 2가 설정됩니다. 세 경우 모두 <em>OutputVar</em>에는 사용자가 입력한 값이 설정됩니다. 이렇게 하면 CANCEL 버튼은 CANCEL말고 스크립트 디자이너가 원하는 함수를 수행할 수 있습니다.</p>
-<p>GUI 창은 <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>를 사용하여 모달 InputBox를 보여줄 수도 있습니다. 모달 InputBox를 사용하면 사용자는 InputBox를 끝낼 때까지 GUI 창과 상호작용할 수 없습니다.</p>
-<h3>관련 항목</h3>
+
+<h2 id="Remarks">논평</h2>
+<p>An input box usually looks like this:</p>
+<img src="../static/dlg_input.png" alt="InputBox" />
+<p>이 대화상자로 사용자는 텍스트를 입력하고 OK 또는 CANCEL를 누를 수 있습니다. 사용자는 대화상자의 테두리를 끌어 크기를 조절할 수 있습니다.</p>
+<p>A GUI window may display a modal input box by means of <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>. A modal input box prevents the user from interacting with the GUI window until the input box is dismissed.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="Gui.htm">GUI</a>, <a href="Input.htm">Input</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a>, <a href="SplashTextOn.htm">SplashTextOn</a>, <a href="ToolTip.htm">ToolTip</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">InputBox, password, 암호를 입력하십시오, (입력은 보이지 않을 겁니다), hide 
-InputBox, UserInput, Phone Number, 전화 번호를 입력하십시오., , 640, 480
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExPassword">
+<p><a class="ex_number" href="#ExPassword"></a> Allows the user to enter a hidden password.</p>
+<pre>InputBox, password, 암호를 입력하십시오, (입력은 보이지 않을 겁니다), hide</pre>
+</div>
+
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Allows the user to enter a phone number.</p>
+<pre>InputBox, UserInput, Phone Number, 전화 번호를 입력하십시오., , 640, 480
 if ErrorLevel
     MsgBox, CANCEL을 눌렀습니다.
 else
     MsgBox, "%UserInput%"을 입력했습니다.</pre>
+</div>
 
 </body>
 </html>

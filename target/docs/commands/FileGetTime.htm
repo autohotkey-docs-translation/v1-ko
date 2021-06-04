@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileGetTime</title>
+<title>FileGetTime - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileGetTime command retrieves the datetime stamp of a file or folder." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>파일이나 폴더의 날짜시간 도장을 열람합니다.</p>
 
-<pre class="Syntax">FileGetTime, OutputVar [, Filename, WhichTime]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FileGetTime</span>, OutputVar <span class="optional">, Filename, WhichTime</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -25,25 +25,35 @@
   <dd><p>목표 파일이나 폴더의 이름. 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주합니다. 생략하면, 가장 안쪽 <a href="LoopFile.htm">파일-회돌이</a>에 싸인 현재 파일이 사용됩니다.</p></dd>
 
   <dt>WhichTime</dt>
-  <dd>열람할 시간도장:<br>
-      M = 변경시간 (매개변수를 생략하면 이것이 기본값)<br>
-      C = 생성 시간<br>
-      A = 마지막 접근 시간</dd>
+  <dd><p>비어 있거나 생략하면, 기본값은 M (변경시간)입니다. Otherwise, specify one of the following letters to set which timestamp should be retrieved:</p>
+    <ul>
+      <li>M = 변경시간</li>
+      <li>C = 생성 시간</li>
+      <li>A = 마지막 접근 시간</li>
+    </ul>
+  </dd>
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
 <p><a href="../Variables.htm#LastError">A_LastError</a>는 운영 체제의 GetLastError() 함수의 결과가 설정됩니다.</p>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>날짜와 시간에 관한 설정은 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>를 참조하십시오.</p>
-<h3>관련 항목</h3>
-<p><a href="FileSetTime.htm">FileSetTime</a>, <a href="FormatTime.htm">FormatTime</a>, <a href="IfIs.htm">If var is [not] type</a>, <a href="FileGetAttrib.htm">FileGetAttrib</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="FileGetVersion.htm">FileGetVersion</a>, <a href="LoopFile.htm">File-회돌이</a>, <a href="EnvAdd.htm">EnvAdd</a>, <a href="EnvSub.htm">EnvSub</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FileGetTime, OutputVar, C:\My Documents\test.doc  <em>; 기본으로 변경 시간을 열람합니다.</em>
-FileGetTime, OutputVar, C:\My Documents\test.doc, C  <em>; 생성 시간을 열람합니다.</em></pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="FileSetTime.htm">FileSetTime</a>, <a href="FormatTime.htm">FormatTime</a>, <a href="IfIs.htm">If var is [not] type</a>, <a href="FileGetAttrib.htm">FileGetAttrib</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="FileGetVersion.htm">FileGetVersion</a>, <a href="LoopFile.htm">File-loop</a>, <a href="EnvAdd.htm">EnvAdd (date math)</a>, <a href="EnvSub.htm">EnvSub (date difference)</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves the modification time and stores it in <var>OutputVar</var>.</p>
+<pre>FileGetTime, OutputVar, C:\My Documents\test.doc</pre>
+</div>
+
+<div class="ex" id="ExC">
+<p><a class="ex_number" href="#ExC"></a> Retrieves the creation time and stores it in <var>OutputVar</var>.</p>
+<pre>FileGetTime, OutputVar, C:\My Documents\test.doc, C</pre>
+</div>
 
 </body>
 </html>

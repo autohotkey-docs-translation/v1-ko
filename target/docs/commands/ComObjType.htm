@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ComObjType()</title>
+<title>ComObjType() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ComObjType function retrieves type information from a COM object." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -10,87 +10,99 @@
 </head>
 <body>
 
-<h1>ComObjType() <span class="ver">[v1.0.91+]</span></h1>
+<h1>ComObjType() <span class="ver">[AHK_L 53+]</span></h1>
 
 <p>유형 정보를 COM 객체로부터 열람합니다.</p>
 
-<pre class="Syntax">VarType := ComObjType(ComObject)
-Name    := ComObjType(ComObject, "Name")
-IID     := ComObjType(ComObject, "IID")</pre>
+<pre class="Syntax">
+VarType := <span class="func">ComObjType</span>(ComObject)           <em>; <span class="ver">[v1.0.91+]</span> 필요</em>
+IName   := <span class="func">ComObjType</span>(ComObject, "Name")
+IID     := <span class="func">ComObjType</span>(ComObject, "IID")
+CName   := <span class="func">ComObjType</span>(ComObject, "Class")  <em>; <span class="ver">[v1.1.26+]</span> 필요</em>
+CLSID   := <span class="func">ComObjType</span>(ComObject, "CLSID")  <em>; <span class="ver">[v1.1.26+]</span> 필요</em></pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>ComObject</dt>
   <dd><p>COM 객체 또는 유형 있는 값을 담고 있는 포장 객체.</p></dd>
-
-  <dt>VarType</dt>
-  <dd><p>값의 유형을 나타내는 정수. 아래 참조.</p></dd>
-
-  <dt>Name</dt>
-  <dd><p>인터페이스 유형 이름.</p></dd>
-
-  <dt>IID</dt>
-  <dd><p>인터페이스 유형을 나타내는 전역적으로 유일한 식별자 (GUID)</p></dd>
+  
+  <dt>Param2</dt>
+  <dd><p>The second parameter is a string indicating the type information to retrieve.</p></dd>
 
 </dl>
 
-<h3>반환 값</h3>
-<p>두 번째 매개변수를 생략하면, 포장 객체에 담긴 variant 유형의 값이 반환됩니다.</p>
-<p>두 번째 매개변수가 "Name" 또는 "IID"이고 포장 객체에 COM 객체가 들어 있으면 (variant 유형 VT_DISPATCH), 그 COM 객체의 유형 이름 또는 그의 첫 인터페이스의 식별자가 반환됩니다.</p>
-<p>매개변수가 유효하지 않거나 에러가 일어나면, 빈 문자열이 반환됩니다.</p>
+<h2 id="Return_Value">반환 값</h2>
+<p>The return value depends on the value of <em>Param2</em>:</p>
+<table class="info">
+  <tr><th style="min-width: 5em;">Param2</th><th abbr="Return">반환 값</th></tr>
+  <tr><td>생략</td><td><span class="ver">[v1.0.91+]:</span> An integer <a href="#vt">variant type code</a> indicating the type of value contained by the COM wrapper object.</td></tr>
+  <tr><td><code>"Name"</code></td><td>The name of the object's default interface.</td></tr>
+  <tr><td><code>"IID"</code></td><td>The globally unique identifier (GUID) of the object's default interface.</td></tr>
+  <tr><td><code>"Class"</code></td><td><span class="ver">[v1.1.26+]:</span> The object's class name. Note that this is not the same as a Prog ID (a Prog ID is a name used to identify the class in the system registry, or for ComObjCreate).</td></tr>
+  <tr><td><code>"CLSID"</code></td><td><span class="ver">[v1.1.26+]:</span> The globally unique identifier (GUID) of the object's class. Classes are often registered by CLSID under the <code>HKCR\CLSID</code> registry key.</td></tr>
+</table>
+<p>An empty string is returned if either parameter is invalid or if the requested type information could not be retrieved.</p>
 
-<h3 id="vt">Variant 유형의 상수들</h3>
+<h2 id="vt">Variant 유형의 상수들</h2>
 <pre>
-VT_EMPTY     =      0  <em>; 값 없음</em>
-VT_NULL      =      1  <em>; SQL-스타일의 널</em>
-VT_I2        =      2  <em>; 16-비트 유부호 정수</em>
-VT_I4        =      3  <em>; 32-비트 유부호 정수</em>
-VT_R4        =      4  <em>; 32-비트 부동 소수점 수</em>
-VT_R8        =      5  <em>; 64-비트 부동 소수점 수</em>
-VT_CY        =      6  <em>; 화폐</em>
-VT_DATE      =      7  <em>; 날짜</em>
-VT_BSTR      =      8  <em>; COM 문자열 (고정 길이의 유니코드 문자열)</em>
-VT_DISPATCH  =      9  <em>; COM 객체</em>
-VT_ERROR     =    0xA  <em>; 에러 코드 (32-비트 정수)</em>
-VT_BOOL      =    0xB  <em>; 불리언 True (-1) 또는 False (0)</em>
-VT_VARIANT   =    0xC  <em>; <a href="http://msdn.microsoft.com/en-us/library/ms221627.aspx">VARIANT</a> (반드시 VT_ARRAY 또는 VT_BYREF와 조합해 사용해야 함)</em>
-VT_UNKNOWN   =    0xD  <em>; IUnknown 인터페이스 포인터</em>
-VT_DECIMAL   =    0xE  <em>; (지원 안함)</em>
-VT_I1        =   0x10  <em>; 8-비트 유부호 정수</em>
-VT_UI1       =   0x11  <em>; 8-비트 무부호 정수</em>
-VT_UI2       =   0x12  <em>; 16-비트 무부호 정수</em>
-VT_UI4       =   0x13  <em>; 32-비트 무부호 정수</em>
-VT_I8        =   0x14  <em>; 64-비트 유부호 정수</em>
-VT_UI8       =   0x15  <em>; 64-비트 무부호 정수</em>
-VT_INT       =   0x16  <em>; 유부호 머신 정수</em>
-VT_UINT      =   0x17  <em>; 무부호 머신 정수</em>
-VT_RECORD    =   0x24  <em>; 사용자-정의 유형 -- 지원하지 않음</em>
-VT_ARRAY     = 0x2000  <em>; <a href="http://msdn.microsoft.com/en-us/library/ms221482.aspx">SAFEARRAY</a></em>
-VT_BYREF     = 0x4000  <em>; 또다른 유형의 값을 가리키는 포인터</em>
+VT_EMPTY     :=      0  <em>; 값 없음</em>
+VT_NULL      :=      1  <em>; SQL-스타일의 널</em>
+VT_I2        :=      2  <em>; 16-비트 유부호 정수</em>
+VT_I4        :=      3  <em>; 32-비트 유부호 정수</em>
+VT_R4        :=      4  <em>; 32-비트 부동 소수점 수</em>
+VT_R8        :=      5  <em>; 64-비트 부동 소수점 수</em>
+VT_CY        :=      6  <em>; 화폐</em>
+VT_DATE      :=      7  <em>; 날짜</em>
+VT_BSTR      :=      8  <em>; COM 문자열 (고정 길이의 유니코드 문자열)</em>
+VT_DISPATCH  :=      9  <em>; COM 객체</em>
+VT_ERROR     :=    0xA  <em>; 에러 코드 (32-비트 정수)</em>
+VT_BOOL      :=    0xB  <em>; 불리언 True (-1) 또는 False (0)</em>
+VT_VARIANT   :=    0xC  <em>; <a href="http://msdn.microsoft.com/ko-kr/library/ms221627.aspx">VARIANT</a> (반드시 VT_ARRAY 또는 VT_BYREF와 조합해 사용해야 함)</em>
+VT_UNKNOWN   :=    0xD  <em>; IUnknown 인터페이스 포인터</em>
+VT_DECIMAL   :=    0xE  <em>; (지원 안함)</em>
+VT_I1        :=   0x10  <em>; 8-비트 유부호 정수</em>
+VT_UI1       :=   0x11  <em>; 8-비트 무부호 정수</em>
+VT_UI2       :=   0x12  <em>; 16-비트 무부호 정수</em>
+VT_UI4       :=   0x13  <em>; 32-비트 무부호 정수</em>
+VT_I8        :=   0x14  <em>; 64-비트 유부호 정수</em>
+VT_UI8       :=   0x15  <em>; 64-비트 무부호 정수</em>
+VT_INT       :=   0x16  <em>; 유부호 머신 정수</em>
+VT_UINT      :=   0x17  <em>; 무부호 머신 정수</em>
+VT_RECORD    :=   0x24  <em>; 사용자-정의 유형 -- 지원하지 않음</em>
+VT_ARRAY     := 0x2000  <em>; <a href="http://msdn.microsoft.com/ko-kr/library/ms221482.aspx">SAFEARRAY</a></em>
+VT_BYREF     := 0x4000  <em>; 또다른 유형의 값을 가리키는 포인터</em>
 <em>/*
  VT_ARRAY와 VT_BYREF는 또다른 값과 조합하여 (비트별 OR을 사용) 정확한 유형을 지정합니다.
- 예를 들면, 0x2003는 32-비트 유부호 정수로 구성된 <a href="http://msdn.microsoft.com/en-us/library/ms221482.aspx">SAFEARRAY</a>로
- 식별되고 0x400C는  <a href="http://msdn.microsoft.com/en-us/library/ms221627.aspx">VARIANT</a>를 가리키는 포인터로 식별됩니다.
+ 예를 들면, 0x2003는 32-비트 유부호 정수로 구성된 <a href="http://msdn.microsoft.com/ko-kr/library/ms221482.aspx">SAFEARRAY</a>로
+ 식별되고 0x400C는  <a href="http://msdn.microsoft.com/ko-kr/library/ms221627.aspx">VARIANT</a>를 가리키는 포인터로 식별됩니다.
 */</em>
 </pre>
 
-<h3>총평</h3>
-<p>대부분의 경우, COM 객체의 메쏘드나 특성으로부터 반환된 값은 오토핫키가 지원하는 적절한 데이터 유형으로 변환됩니다. 구체적으로 처리가 되지 않는 유형은 <a href="http://msdn.microsoft.com/en-us/library/ms221258.aspx">VariantChangeType</a>를 통하여 강제로 문자열로 변환됩니다; 이것이 실패하거나 variant 유형에 VT_ARRAY 또는 VT_BYREF 플래그가 들어 있다면, 대신에 값과 그의 유형을 모두 담고 있는 객체가 반환됩니다.</p>
+<h2 id="General_Remarks">총평</h2>
+<p>대부분의 경우, COM 객체의 메쏘드나 특성으로부터 반환된 값은 오토핫키가 지원하는 적절한 데이터 유형으로 변환됩니다. 구체적으로 처리가 되지 않는 유형은 <a href="http://msdn.microsoft.com/ko-kr/library/ms221258.aspx">VariantChangeType</a>를 통하여 강제로 문자열로 변환됩니다; 이것이 실패하거나 variant 유형에 VT_ARRAY 또는 VT_BYREF 플래그가 들어 있다면, 대신에 값과 그의 유형을 모두 담고 있는 객체가 반환됩니다.</p>
 <p>모든 변수 <i>x</i>에 대하여, 만약 <code>ComObjType(x)</code>가 정수를 돌려주면, <i>x</i>에는 COM 객체 포장자가 들어 있습니다.</p>
+<p>If <em>Param2</em> is <code>"Name"</code> or <code>"IID"</code>, type information is retrieved via the <a href="https://msdn.microsoft.com/ko-kr/library/ms221571.aspx">IDispatch::GetTypeInfo</a> interface method. <em>ComObject</em>'s variant type must be VT_DISPATCH.</p>
+<p>If <em>Param2</em> is <code>"Class"</code> or <code>"CLSID"</code>, type information is retrieved via the <a href="https://msdn.microsoft.com/ko-kr/library/ms690192.aspx">IProvideClassInfo::GetClassInfo</a> interface method. <em>ComObject</em>'s variant type must be VT_DISPATCH or VT_UNKNOWN, and the object must implement the IProvideClassInfo interface (some objects do not).</p>
 
+<h2 id="Related">관련 항목</h2>
+<p><a href="ComObjValue.htm">ComObjValue()</a>, <a href="ComObjCreate.htm">ComObjCreate()</a>, <a href="ComObjGet.htm">ComObjGet()</a>, <a href="ComObjActive.htm">ComObjActive()</a></p>
 
-<h3>관련 항목</h3>
-<p><a href="ComObjValue.htm">ComObjValue</a>, <a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjGet.htm">ComObjGet</a>, <a href="ComObjActive.htm">ComObjActive</a></p>
-
-<h3>예제</h3>
-<pre class="NoIndent">
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Reports various type information of a COM object.</p>
+<pre>
 d := <a href="ComObjCreate.htm">ComObjCreate</a>("Scripting.Dictionary")
-VarType := ComObjType(d)          <em>; 언제나 9는 스크립트를 호출할 수 있는 객체를 뜻합니다.</em>
-Name    := ComObjType(d, "Name")  <em>; 스크립틀 호출할 수 있는 객체에만 유효합니다.</em>
-IID     := ComObjType(d, "IID")   <em>; 위와 같습니다.</em>
-MsgBox Variant type:`t%VarType%`nType name:`t%Name%`nInterface ID:`t%IID%
+VarType := ComObjType(d)
+IName   := ComObjType(d, "Name")
+IID     := ComObjType(d, "IID")
+CName   := ComObjType(d, "Class")  <em>; <span class="ver">[v1.1.26+]</span> 필요</em>
+CLSID   := ComObjType(d, "CLSID")  <em>; <span class="ver">[v1.1.26+]</span> 필요</em>
+MsgBox % "Variant type:`t" VarType
+	. "`nInterface name:`t" IName "`nInterface ID:`t" IID
+	. "`nClass name:`t" CName "`nClass ID (CLSID):`t" CLSID
 </pre>
+</div>
 
 </body>
 </html>

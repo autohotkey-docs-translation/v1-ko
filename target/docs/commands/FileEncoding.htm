@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileEncoding</title>
+<title>FileEncoding - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileEncoding command sets the default encoding for FileRead, FileReadLine, Loop Read, FileAppend, and FileOpen()." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,23 +12,30 @@
 
 <h1>FileEncoding <span class="ver">[AHK_L 42+]</span></h1>
 
-<p>기본 인코딩을 설정합니다: <a href="FileRead.htm">FileRead</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="LoopReadFile.htm">Loop Read</a>, <a href="FileAppend.htm">FileAppend</a>, 그리고 <a href="FileOpen.htm">FileOpen</a>.</p>
+<p>기본 인코딩을 설정합니다: <a href="FileRead.htm">FileRead</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="LoopReadFile.htm">Loop Read</a>, <a href="FileAppend.htm">FileAppend</a>, 그리고 <a href="FileOpen.htm">FileOpen()</a>.</p>
 
-<pre class="Syntax">FileEncoding [, Encoding]</pre>
-<p>인코딩은 다음 값 중 하나입니다:</p>
-<ul>
-  <li><code>UTF-8</code>: Unicode UTF-8, CP65001과 동등.</li>
-  <li><code>UTF-16</code>: Unicode UTF-16 작은값 종료형. CP1200과 동등.</li>
-  <li><code>UTF-8-RAW</code> 또는 <code>UTF-16-RAW</code>: 위와 동등, 그러나 새 파일이 작성될 때 바이트 순서 표식을 쓰지 않습니다.</li>
-  <li><code>CP<i>nnn</i></code>: 숫치 식별자 <i>nnn</i>이 있는 코드 페이지. <a href="http://msdn.microsoft.com/en-us/library/dd317756.aspx">코드 페이지 식별자</a>를 참조하십시오.</li>
-  <li>비어 있거나 생략하면: 시스템 기본 ANSI 코드 페이지. 이것이 기본 설정값입니다.</li>
-</ul>
+<pre class="Syntax"><span class="func">FileEncoding</span> <span class="optional">, Encoding</span></pre>
 
-<h3>논평</h3>
+<h2 id="Parameters">매개변수</h2>
+<dl>
+  <dt>Encoding</dt>
+  <dd>
+    <p>One of the following values (if omitted, it defaults to the system default ANSI code page, which is also the default setting):</p>
+    <p><strong>UTF-8:</strong> Unicode UTF-8, CP65001과 동등.</p>
+    <p><strong>UTF-8-RAW:</strong> 위와 동등, 그러나 새 파일이 작성될 때 바이트 순서 표식을 쓰지 않습니다.</p>
+    <p><strong>UTF-16:</strong> Unicode UTF-16 작은값 종료형. CP1200과 동등.</p>
+    <p><strong>UTF-16-RAW:</strong> 위와 동등, 그러나 새 파일이 작성될 때 바이트 순서 표식을 쓰지 않습니다.</p>
+    <p><strong>CP<em>nnn</em>:</strong> 숫치 식별자 <em>nnn</em>이 있는 코드 페이지. <a href="http://msdn.microsoft.com/ko-kr/library/dd317756.aspx">코드 페이지 식별자</a>를 참조하십시오.</p>
+  </dd>
+</dl>
+
+<h2 id="Remarks">논평</h2>
 <p><code>A_FileEncoding</code>에 현재 설정이 담겨 있습니다.</p>
+<p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
+<p>The default encoding is not used if a UTF-8 or UTF-16 byte order mark is present in the file, unless the file is being opened with write-only access (i.e. the previous contents of the file are being discarded).</p>
 
-<h3>관련 항목</h3>
-<p><a href="FileOpen.htm">FileOpen</a>, <a href="StrPutGet.htm">StrPut/StrGet</a>, <a href="../Compat.htm#FileRead">스크립트 호환성</a></p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="FileOpen.htm">FileOpen()</a>, <a href="StrGet.htm">StrGet()</a>, <a href="StrPut.htm">StrPut()</a>, <a href="../Compat.htm#FileRead">스크립트 호환성</a></p>
 
 </body>
 </html>

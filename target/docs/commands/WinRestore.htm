@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinRestore</title>
+<title>WinRestore - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinRestore command unminimizes or unmaximizes the specified window if it is minimized or maximized." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>지정된 창이 최대화 또는 최소화 상태이면 원래대로 복구합니다.</p>
 
-<pre class="Syntax">WinRestore [, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">WinRestore</span> <span class="optional">, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>WinTitle</dt>
@@ -32,15 +32,18 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>특정 유형의 창이 올바르게 WinRestore에 응답하지 않으면, 대신 다음을 시도해 보십시오:</p>
-<pre><a href="PostMessage.htm">PostMessage</a>, 0x112, 0xF120,,, WinTitle, WinText  <em>; 0x112 = WM_SYSCOMMAND, 0xF120 = SC_RESTORE</em></pre>
+<pre><a href="PostMessage.htm">PostMessage</a>, 0x0112, 0xF120,,, WinTitle, WinText  <em>; 0x0112 = WM_SYSCOMMAND, 0xF120 = SC_RESTORE</em></pre>
 <p>이 명령어는 부합하는 최상위 창에만 작동합니다. 단, <em>WinTitle</em>이 <a href="GroupAdd.htm">ahk_group GroupName</a>일 경우는 제외합니다. 이 경우 그룹 안의 모든 창이 영향을 받습니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="WinMinimize.htm">WinMinimize</a>, <a href="WinMaximize.htm">WinMaximize</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">WinRestore, Untitled - Notepad</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Unminimizes or unmaximizes Notepad if it is minimized or maximized.</p>
+<pre>WinRestore, Untitled - Notepad</pre>
+</div>
 
 </body>
 </html>

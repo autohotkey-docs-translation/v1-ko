@@ -1,16 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FormatTime</title>
+<title>FormatTime - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FormatTime command transforms a YYYYMMDDHH24MISS timestamp into the specified date/time format." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 <style type="text/css">
-<!--
 .red {color: #FF0000}
--->
 </style>
 </head>
 <body>
@@ -19,8 +17,8 @@
 
 <p>시간도장 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>를 지정된 날짜/시간 형식으로 변환합니다.</p>
 
-<pre class="Syntax">FormatTime, OutputVar [, <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>, Format]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FormatTime</span>, OutputVar <span class="optional">, <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>, Format</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -35,19 +33,23 @@
 
 </dl>
 
-<h3>날짜 형식 <span class="red">(대소문자 구분)</span></h3>
+<h2 id="Date_Formats">날짜 형식 (대소문자 구분)</h2>
 <table class="info">
   <tr>
+    <th style="width:15%">Format</th>
+    <th abbr="설명">설명</th>
+  </tr>
+  <tr>
     <td>d</td>
-    <td>앞에 0 없이 달의 날짜 (1 - 31)</td>
+    <td>앞에 0 없이 달의 날짜 (1 – 31)</td>
   </tr>
   <tr>
     <td>dd</td>
     <td>앞에 0을 두고 달의 날짜 (01 – 31)</td>
   </tr>
   <tr>
-    <td width="15%">ddd</td>
-    <td width="85%">현재 사용자의 언어로 주의 날짜의 짧은 이름 (예, Mon)</td>
+    <td>ddd</td>
+    <td>현재 사용자의 언어로 주의 날짜의 짧은 이름 (예, Mon)</td>
   </tr>
   <tr>
     <td>dddd</td>
@@ -75,7 +77,7 @@
   </tr>
   <tr>
     <td>yy</td>
-    <td>세기 없는 해, 앞에 0 있음 (00 - 99)</td>
+    <td>세기 없는 해, 앞에 0 있음 (00 – 99)</td>
   </tr>
   <tr>
     <td>yyyy</td>
@@ -86,23 +88,27 @@
     <td>현재 사용자의 로케일에 대한 시대 문자열 (없으면 비어 있음)</td>
   </tr>
 </table>
-<h3>시간 형식 <span class="red">(대소문자 구분)</span></h3>
+<h2 id="Time_Formats">시간 형식 (대소문자 구분)</h2>
 <table class="info">
   <tr>
+    <th style="width:15%">Format</th>
+    <th abbr="설명">설명</th>
+  </tr>
+  <tr>
     <td>h</td>
-    <td>앞에 0 없이 시각; 12-시간제 형식 (1 - 12)</td>
+    <td>앞에 0 없이 시각; 12-시간제 형식 (1 – 12)</td>
   </tr>
   <tr>
     <td>hh</td>
     <td>앞에 0 있는 시각; 12-시간제 형식 (01 – 12)</td>
   </tr>
   <tr>
-    <td width="15%">H</td>
-    <td width="85%">앞에 0 없는 시각; 24-시간제 형식 (0 - 23)</td>
+    <td>H</td>
+    <td>앞에 0 없는 시각; 24-시간제 형식 (0 – 23)</td>
   </tr>
   <tr>
     <td>HH</td>
-    <td>앞에 0 있는 시각; 24-시간제 형식 (00– 23)</td>
+    <td>앞에 0 있는 시각; 24-시간제 형식 (00 – 23)</td>
   </tr>
   <tr>
     <td>m</td>
@@ -129,8 +135,13 @@
     <td>다중-문자 시간 표식자, 예를 들어 AM 또는 PM (로케일에 따라 다름)</td>
   </tr>
 </table>
-<h3>다음 형식은 반드시 <span class="red">홀로</span> 사용되어야 합니다; 즉, 다른 형식이나 텍스트가 <em>Format</em> 매개변수에 없습니다. 이 형식은 대소문자를 구별하지 않습니다.</h3>
+<h2 id="Standalone_Formats">Standalone Formats</h2>
+  <p>다음 형식은 반드시 <strong>홀로</strong> 사용되어야 합니다; 즉, 다른 형식이나 텍스트가 <em>Format</em> 매개변수에 없습니다. 이 형식은 대소문자를 구별하지 않습니다.</p>
 <table class="info">
+  <tr>
+    <th style="width:15%">Format</th>
+    <th abbr="설명">설명</th>
+  </tr>
   <tr>
     <td>(Blank)</td>
     <td><em>Format</em>을 비워 두면 시간과 그리고 다음에 기다란 날짜를 생산합니다. 예를 들어, 어떤 로케일에서는 "4:55 PM Saturday, November 27, 2004"로 나타날 수 있습니다.</td>
@@ -140,8 +151,8 @@
     <td>현재 사용자의 로케일에 대한 시간 표현, 예를 들어 "5:26 PM"</td>
   </tr>
   <tr>
-    <td width="15%">ShortDate</td>
-    <td width="85%">현재 사용자의 로케일에 대한 짧은 날짜 표현, 예를 들어 "02/29/04"</td>
+    <td>ShortDate</td>
+    <td>현재 사용자의 로케일에 대한 짧은 날짜 표현, 예를 들어 "02/29/04"</td>
   </tr>
   <tr>
     <td>LongDate</td>
@@ -168,43 +179,49 @@
     <td>ISO 8601 완전 해의 개수 그리고 주 개수 : 예를 들어: 200453. 1월 1일을 포함한 주가 새 해에서 4 일 이상 포함되어 있으면, 첫 번째 주로 간주됩니다. 그렇지 않으면, 이전 해의 마지막 주로 간주됩니다. 그리고 그 다음 주가 새 해의 첫 주가 됩니다. 결론적으로, 1월 4일과 1월의 첫 번째 목요일은 언제나 1번 주에 있습니다.</td>
   </tr>
 </table>
-<h3>추가 옵션</h3>
+<h2 id="Additional_Options">추가 옵션</h2>
 <p>다음 옵션은 시간도장 바로 뒤 <em>YYYYMMDDHH24MISS</em> 매개변수 안에 나타날 수 있습니다 (시간도장이 없다면, 홀로 사용해도 됩니다). 다음 예제에서, 뒤쪽 네 항목 사이에 쉼표가 없는 데 주목하십시오:</p>
 <pre>FormatTime, OutputVar, 20040228 LSys D1 D4</pre>
 <p><strong>R</strong>: 뒤집습니다. 날짜를 시간 앞에 둡니다 (<em>Format</em>이 비어 있을 경우에만 의미가 있습니다).</p>
-<p><strong>Ln</strong>: 이 옵션이 <em>없으면</em>, 문자열을 포맷하는 데 현재 사용자의 로케일이 사용됩니다. 대신에 운영 체제의 로케일을 사용하려면, "LSys"를 지정하십시오. 특정한 로케일을 사용하려면, 기호 L과 다음에 십육진 또는 십진 로케일 식별자 (LCID)를 지정하십시오. LCID를 구성하는 방법에 관한 더 자세한 정보는 <a href="http://www.microsoft.com">www.microsoft.com</a>에서 다음 문구를 검색해 보십시오: Locale Identifiers</p>
-<p><strong>Dn</strong>: 날짜 옵션. <strong>n</strong>에 다음 숫자 중 하나를 지정하십시오:<br>
-  0: 강제로 기본 옵션을 사용하도록 만듭니다. 이는 또한 짧은 날짜가 효력을 발휘하게 만들기도 합니다. <br>
-  1: 짧은 날짜를 사용합니다 (<em>Format</em>이 비어 있을 경우에만 의미가 있습니다; 2와 8에는 호환되지 않습니다).<br>
-  2: 긴 날짜를 사용합니다 (<em>Format</em>이 비어 있을 경우에만 의미가 있습니다; 1과 8에는 호환성이 없습니다).<br>
-  4: 대안 달력을 (있다면) 사용합니다.<br>
-  8: 해-달 형식을 사용합니다 (<em>Format</em>이 비어 있을 경우에만 의미가 있습니다; 1과 2에는 호환성이 없습니다).<br>
-  0x10: 좌에서 우로 읽기 순서 레이아웃을 위한 표식을 추가합니다.<br>
-  0x20: 우에서 좌로 읽기 순서 레이아웃을 위한 표식을 추가합니다.<br>
-  0x80000000: 사용자가 시스템의 기본 날짜 형식에 대하여 변경해서 오버라이드 하는 것들을 준수하지 않습니다. <br>
-0x40000000: 문자열 변환에 로케일의 코드 페이지 대신에 시스템 ANSI 코드 페이지를 사용합니다.</p>
-<p><strong>Tn</strong>: 시간 옵션. <strong>n</strong>에 다음 숫자 중 하나를 지정하십시오:<br>
-  0: 강제로 기본 옵션을 사용하도록 만듭니다. 이는 또한 분과 초가 보이도록 만듭니다.<br>
-  1: 분과 초를 생략합니다.<br>
-  2: 초를 생략합니다. <br>
-  4: 시간 표식을 생략합니다 (예, AM/PM).<br>
-  8: 12-시간제가 아니라 언제나 24-시간제를 사용합니다.<br>
-  12: 위의 두 옵션을 조합.<br>
-  0x80000000: 사용자가 시스템의 기본 날짜 형식에 가한 변경을 준수하지 않습니다. <br>
-  0x40000000: 문자열 변환에 로케일의 코드 페이지 대신에 시스템 ANSI 코드 페이지를 사용합니다.</p>
-<p><strong>주의</strong>: Dn과 Tn은 여러 옵션 효과를 위해 반복할 수 있습니다. 예를 들어 다음 예제와 같이: <code>FormatTime, OutputVar, 20040228 D2 D4 T1 T8</code></p>
-<h3 id="Remarks">논평</h3>
+<p><strong>Ln</strong>: 이 옵션이 <em>없으면</em>, 문자열을 포맷하는 데 현재 사용자의 로케일이 사용됩니다. 대신에 운영 체제의 로케일을 사용하려면, "LSys"를 지정하십시오. 특정한 로케일을 사용하려면, 기호 L과 다음에 십육진 또는 십진 로케일 식별자 (LCID)를 지정하십시오. LCID를 구성하는 방법에 관한 더 자세한 정보는 <a href="https://www.microsoft.com">www.microsoft.com</a>에서 다음 문구를 검색해 보십시오: Locale Identifiers</p>
+<p><strong>Dn</strong>: 날짜 옵션. <strong>n</strong>에 다음 숫자 중 하나를 지정하십시오:</p>
+<ul>
+  <li>0 = 강제로 기본 옵션을 사용하도록 만듭니다. 이는 또한 짧은 날짜가 효력을 발휘하게 만들기도 합니다.</li>
+  <li>1 = 짧은 날짜를 사용합니다 (<em>Format</em>이 비어 있을 경우에만 의미가 있습니다; 2와 8에는 호환되지 않습니다).</li>
+  <li>2 = 긴 날짜를 사용합니다 (<em>Format</em>이 비어 있을 경우에만 의미가 있습니다; 1과 8에는 호환성이 없습니다).</li>
+  <li>4 = 대안 달력을 (있다면) 사용합니다.</li>
+  <li>8 = 해-달 형식을 사용합니다 (<em>Format</em>이 비어 있을 경우에만 의미가 있습니다; 1과 2에는 호환성이 없습니다).</li>
+  <li>0x10 = 좌에서 우로 읽기 순서 레이아웃을 위한 표식을 추가합니다.</li>
+  <li>0x20 = 우에서 좌로 읽기 순서 레이아웃을 위한 표식을 추가합니다.</li>
+  <li>0x80000000 = 사용자가 시스템의 기본 날짜 형식에 대하여 변경해서 오버라이드 하는 것들을 준수하지 않습니다.</li>
+  <li>0x40000000 = 문자열 변환에 로케일의 코드 페이지 대신에 시스템 ANSI 코드 페이지를 사용합니다.</li>
+</ul>
+<p><strong>Tn</strong>: 시간 옵션. <strong>n</strong>에 다음 숫자 중 하나를 지정하십시오:</p>
+<ul>
+  <li>0 = 강제로 기본 옵션을 사용하도록 만듭니다. 이는 또한 분과 초가 보이도록 만듭니다.</li>
+  <li>1 = 분과 초를 생략합니다.</li>
+  <li>2 = 초를 생략합니다.</li>
+  <li>4 = 시간 표식을 생략합니다 (예, AM/PM).</li>
+  <li>8 = 12-시간제가 아니라 언제나 24-시간제를 사용합니다.</li>
+  <li>12 = 위의 두 옵션을 조합.</li>
+  <li>0x80000000 = 사용자가 시스템의 기본 날짜 형식에 가한 변경을 준수하지 않습니다.</li>
+  <li>0x40000000 = 문자열 변환에 로케일의 코드 페이지 대신에 시스템 ANSI 코드 페이지를 사용합니다.</li>
+</ul>
+<p class="note"><strong>주의</strong>: Dn과 Tn은 여러 옵션 효과를 위해 반복할 수 있습니다. 예를 들어 다음 예제와 같이: <code>FormatTime, OutputVar, 20040228 D2 D4 T1 T8</code></p>
+<h2 id="Remarks">논평</h2>
 <p>기호와 숫자를 글자 그대로 <em>Format</em>으로부터 <em>OutputVar</em>로 변환하고 싶다면 홑따옴표로 다음 예제와 같이 둘러야 합니다: <code>'Date:' MM/dd/yy 'Time:' hh:mm:ss tt</code>.</p>
 <p>대조적으로, 스페이스, 탭, 라인피드 (`n), 정사선, 쌍점, 쉼표, 그리고 기타 구두점 기호와 같이 비-알파숫자 문자는 홑 따옴표 안에 두를 필요가 없습니다. 이에 대한 예외는 홑따옴표 자체입니다: 문자 그대로 사용하려면, 연속적으로 홑따옴표를 사용하거나 (''''), 또는 홑따옴표가 이미 바깥쪽 홑따옴표 안에 있다면 그냥 두 개를 사용하십시오.</p>
 <p><em>Format</em>에 날짜와 시간 요소가 함께 들어 있다면, 서로 섞이면 안됩니다. 다른 말로, 문자열은 두 부분으로 나눌 수 있어야 합니다: 한 부분은 시간 그리고 나머지 반은 날짜로 구분되어야 합니다. 예를 들어, 형식 문자열이 "hh yyyy mm"와 같이 구성되어 있다면 예상한 결과가 나오지 않습니다. 왜냐하면 두 개의 시간 요소 사이에 날짜 요구가 있기 때문입니다.</p>
 <p><em>Format</em>에 달의 숫치 날짜 (d 또는 dd) 그리고 다음에 완전한 달 이름 (MMMM)이 담겨 있다면, (해당 언어가 소유격 형태를 가지고 있다면) 소유격 형태의 달 이름이 사용됩니다.</p>
 <p><em>Format</em>에 2000 문자 이상이 들어 있다면, <em>OutputVar</em>는 비워집니다.</p>
 <p>관련하여 말씀드리면, 날짜와 시간의 덧셈과 뺄셈은 <a href="EnvAdd.htm">EnvAdd</a> 그리고 <a href="EnvSub.htm">EnvSub</a>로 수행할 수 있습니다.</p>
-<h3>관련 항목</h3>
-<p>반대 방향으로 변환하려면 -- 즉, 형식화된/날짜/시간<em>으로부터</em> <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> 형식<em>으로</em> 바꾸려면 -- 다음을 참조하십시오: <a href="http://www.autohotkey.com/forum/topic20405.html">www.autohotkey.com/forum/topic20405.html</a></p>
-<p>다음 참조: <a href="GuiControls.htm#DateTime">Gui DateTime 콘트롤</a>, <a href="SetFormat.htm">SetFormat</a>, <a href="Transform.htm">Transform</a>, <a href="../Variables.htm#date">내장된 날짜 변수와 시간 변수</a>, <a href="FileGetTime.htm">FileGetTime</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FormatTime, TimeString
+<h2 id="Related">관련 항목</h2>
+<p>반대 방향으로 변환하려면 -- 즉, 형식화된/날짜/시간<em>으로부터</em> <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> 형식<em>으로</em> 바꾸려면 -- 다음을 참조하십시오: <a href="https://www.autohotkey.com/forum/topic20405.html">www.autohotkey.com/forum/topic20405.html</a></p>
+<p>다음 참조: <a href="GuiControls.htm#DateTime">Gui DateTime 콘트롤</a>, <a href="Format.htm">Format()</a>, <a href="SetFormat.htm">SetFormat</a>, <a href="Transform.htm">Transform</a>, <a href="../Variables.htm#date">내장된 날짜 변수와 시간 변수</a>, <a href="FileGetTime.htm">FileGetTime</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Demonstrates different usages.</p>
+<pre>FormatTime, TimeString
 MsgBox 현재 시간과 날짜는 (시간 먼저) %TimeString%입니다.
 
 FormatTime, TimeString, R
@@ -227,24 +244,26 @@ MsgBox %TimeString%
 
 FormatTime, YearWeek, 20050101, YWeek
 MsgBox 2005년 1월 1일의 ISO 년도와 주 번호는 다음과 같습니다: %YearWeek%</pre>
+</div>
 
-<pre class="NoIndent"><em>; 파일의 날짜-시간 도장을 바꿉니다:</em>
-FileSelectFile, FileName, 3,, Pick a file
-if FileName =  <em>; 사용자가 파일을 고르지 않았습니다.</em>
+<div class="ex" id="ExFileTime">
+<p><a class="ex_number" href="#ExFileTime"></a> 파일의 날짜-시간 도장을 바꿉니다.</p>
+<pre>FileSelectFile, FileName, 3,, Pick a file
+if (FileName = "")  <em>; 사용자가 파일을 고르지 않았습니다.</em>
     return
 FileGetTime, FileTime, %FileName%
 FormatTime, FileTime, %FileTime%   <em>; 마지막 매개변수가 생략되었기 때문에, 긴 날짜와 시간이 열람됩니다.</em>
 MsgBox 선택된 파일은 %FileTime%에 마지막으로 변경되었습니다.</pre>
+</div>
 
-<pre class="NoIndent"><em>; 다음 함수는 지정된 개수의 초를
-; 상응하는 시간, 분, 그리고 초로 변환합니다 (hh:mm:ss 형식).</em>
-
-MsgBox % FormatSeconds(7384)  <em>; 7384 = 2 hours + 3 minutes + 4 seconds. 결과: 2:03:04</em>
+<div class="ex" id="ExFormatSec">
+<p><a class="ex_number" href="#ExFormatSec"></a> 지정된 개수의 초를 상응하는 시간, 분, 그리고 초로 변환합니다 (hh:mm:ss 형식).</p>
+<pre>MsgBox % FormatSeconds(7384)  <em>; 7384 = 2 hours + 3 minutes + 4 seconds. 결과: 2:03:04</em>
 
 FormatSeconds(NumberOfSeconds)  <em>; 지정된 개수의 초를  hh:mm:ss 형식으로 변환합니다.</em>
 {
-    time = 19990101  <em>; 임의의 날짜의 *자정*.</em>
-    time += %NumberOfSeconds%, seconds
+    time := 19990101  <em>; 임의의 날짜의 *자정*.</em>
+    time += NumberOfSeconds, seconds
     FormatTime, mmss, %time%, mm:ss
     return NumberOfSeconds//3600 ":" mmss
     <em>/*
@@ -253,6 +272,7 @@ FormatSeconds(NumberOfSeconds)  <em>; 지정된 개수의 초를  hh:mm:ss 형�
     return hmmss
     */</em>
 }</pre>
+</div>
 
 </body>
 </html>

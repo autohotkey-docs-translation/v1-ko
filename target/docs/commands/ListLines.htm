@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ListLines</title>
+<title>ListLines - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ListLines command displays the script lines most recently executed." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,41 +14,37 @@
 
 <p>가장 최근에 실행된 스크립트 줄을 화면에 보여줍니다.</p>
 
-<pre class="Syntax">ListLines [, On|Off]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">ListLines</span> <span class="optional">, OnOff</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>On|Off</dt>
-  <dd><p>비어 있거나 생략하면, 최근에 실행된 줄 이력을 보여줍니다. v1.0.48.01+에서, 선택적인 첫 번째 매개변수를 추가했는데, 이것은 On 또는 Off일 수 있습니다. 다음과 같이 <a href="../misc/Threads.htm">현재 쓰레드</a>의 행위에만 영향을 줍니다:</p>
+  <dt>OnOff</dt>
+  <dd><p>비어 있거나 생략하면, 최근에 실행된 줄 이력을 보여줍니다. <span class="ver">[v1.0.48.01+]</span>: 선택적인 첫 번째 매개변수를 추가했는데, 이것은 On 또는 Off일 수 있습니다. 다음과 같이 <a href="../misc/Threads.htm">현재 쓰레드</a>의 행위에만 영향을 줍니다:</p>
       <p><strong>On</strong>: 잇따라-실행되는 줄들을 이력에 포함합니다. 이것은 모든 스크립트가 시작할 때 기본값입니다.</p>      
-      <p><strong>Off</strong>: 잇따라-실행되는 줄들을 이력으로부터 제외합니다.</p></dd>
+      <p><strong>Off</strong>: 잇따라-실행되는 줄들을 이력으로부터 제외합니다.</p>
+      <p><span class="ver">[v1.1.30+]:</span> The decimal values 1 and 0 may be used in place of On and Off, respectively.</p>
+      </dd>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>(매개변수 없이) ListLines는 메인 창에서 "View-&gt;Lines most recently executed" 메뉴 항목을 선택한 것과 동등합니다. <a href="../Scripts.htm#debug">스크립트를 디버그</a>하는 데 도움을 줄 수 있습니다.</p>
 <p><code>ListLines Off/On</code>를 사용하면 선택적으로 어떤 줄들을 이력으로부터 제외할 수 있습니다. 그러면 이력이 너무 빠르게 꽉 차는 것을 막는데 도움이 될 수 있습니다 (예를 들어 빠르고 많은 반복이 있는 회돌이 같은 경우). <code>ListLines Off</code>도 몇 퍼센트는 수행성능 향상에 도움이 됩니다.</p>
 <p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
-<p>내장 변수 "A_ListLines"같은 것은 없지만, 비슷한 기능을 얻을 수 있습니다. 스크립트에 다음을 포함하십시오:</p>
-<pre>ListLines(PassTrueToTurnOnOrFalseToTurnOff)  <em>; ListLines의 이전 설정을 돌려줍니다 (다음을 호출하기 전에).</em>
-{
-    static sListLines := true  <em>; 모든 스크립트가 시작할 때 기본값은 "ListLines On"입니다.</em>
-    ListLines % PassTrueToTurnOnOrFalseToTurnOff ? "On" : "Off"  <em>; 이 아래로 실행되는 줄들을 로그로부터 제외하기 위해 ListLines를 무조건 실행합니다.</em>
-    ListLines_prev := sListLines
-    sListLines := PassTrueToTurnOnOrFalseToTurnOff
-    return ListLines_prev
-}
-
-<em>; 위의 함수를 사용하려면:</em>
-prev_ListLines := ListLines(false)  <em>; ListLines를 임시로 끕니다.
-; ...</em>
-ListLines(prev_ListLines)  <em>; ListLines를 이전의 설정으로 복구합니다.</em></pre>
+<p><span class="ver">[v1.1.28+]:</span> The built-in variable A_ListLines contains 1 if ListLines is enabled and 0 otherwise.</p>
 <p>관련하여 한 마디 하면, 내장 변수 <a href="../Variables.htm#LineNumber">A_LineNumber</a>와 <a href="../Variables.htm#LineFile">A_LineFile</a>에느 각각 현재 실행 중인 줄 번호와 자신이 속한 파일 이름이 담깁니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="KeyHistory.htm">KeyHistory</a>, <a href="ListHotkeys.htm">ListHotkeys</a>, <a href="ListVars.htm">ListVars</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">ListLines
-ListLines Off</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> 가장 최근에 실행된 스크립트 줄을 화면에 보여줍니다.</p>
+<pre>ListLines</pre>
+</div>
+
+<div class="ex" id="ExOff">
+<p><a class="ex_number" href="#ExOff"></a> 잇따라-실행되는 줄들을 이력으로부터 제외합니다.</p>
+<pre>ListLines Off</pre>
+</div>
 
 </body>
 </html>

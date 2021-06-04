@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SplitPath</title>
+<title>SplitPath - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SplitPath command separates a file name or URL into its name, directory, extension, and drive." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>파일 이름이나 URL을 이름, 디렉토리, 확장자, 그리고 드라이브로 가릅니다.</p>
 
-<pre class="Syntax">SplitPath, InputVar [, OutFileName, OutDir, OutExtension, OutNameNoExt, OutDrive]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">SplitPath</span>, InputVar <span class="optional">, OutFileName, OutDir, OutExtension, OutNameNoExt, OutDrive</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>InputVar</dt>
@@ -41,16 +41,18 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>출력 변수는 상응하는 정보가 필요하지 않으면 생략할 수 있습니다.</p>
 <p><em>InputVar</em>에 파일이름이 들어 있는데 드라이브 기호가 없다며 (즉, 경로가 없거나 단순히 상대 경로만 있다면), <em>OutDrive</em>는 비워지지만 다른 모든 출력 변수는 올바르게 설정됩니다. 비슷하게, 경로가 존재하지 않으면, <em>OutDir</em>은 비워집니다; 그리고 경로는 있으나 파일이름이 없으면, <em>OutFileName</em>과 <em>OutNameNoExt</em>가 비워집니다.</p>
 <p>시스템에서 실제 파일과 디렉토리는 이 명령어로 점검되지 않습니다. 그냥 <em>InputVar</em>에 주어진 문자열을 분석할 뿐입니다.</p>
 <p>파일이름에 유효하지 않은 와일드카드 (* 그리고 ?) 그리고 기타 문자는 유효한 문자로 취급합니다. 단, 예외는 쌍점, 역사선, 그리고 점입니다. 이것들은 각자 임무에 따라 파일의 드라이브 기호와 디렉토리 그리고 확장자를 구분하는 데 사용됩니다.</p>
-<p><strong>URL 지원</strong>: <em>InputVar</em>에 쌍점과 두개의 정사선이 포함되어 있다면, 예를 들어 http://domain.com or ftp://domain.com와 같은 경우, <em>OutDir</em>는 프로토콜 접두어 + 도메인 이름 + 디렉토리 (예, http://domain.com/images)가 설정됩니다. 그리고 <em>OutDrive</em>는 프로토콜 접두어 + 도메인 이름 (예, http://domain.com)이 설정됩니다. 다른 모든 변수는 위에 정의된 대로 설정됩니다.</p>
-<h3>관련 항목</h3>
-<p><a href="LoopFile.htm#LoopFileExt">A_LoopFileExt</a>, <a href="StringSplit.htm">StringSplit</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FullFileName = C:\My Documents\Address List.txt
+<p><strong>URL 지원</strong>: <em>InputVar</em>에 쌍점과 두개의 정사선이 포함되어 있다면, 예를 들어 https://domain.com or ftp://domain.com와 같은 경우, <em>OutDir</em>는 프로토콜 접두어 + 도메인 이름 + 디렉토리 (예, https://domain.com/images)가 설정됩니다. 그리고 <em>OutDrive</em>는 프로토콜 접두어 + 도메인 이름 (예, https://domain.com)이 설정됩니다. 다른 모든 변수는 위에 정의된 대로 설정됩니다.</p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="LoopFile.htm#LoopFileExt">A_LoopFileExt</a>, <a href="StrSplit.htm">StrSplit()</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a>, <a href="StringSplit.htm">StringSplit</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Demonstrates different usages.</p>
+<pre>FullFileName := "C:\My Documents\Address List.txt"
    
 <em>; 위로부터 파일이름만 가져 옵니다:</em>
 SplitPath, FullFileName, name
@@ -67,6 +69,7 @@ SplitPath, FullFileName, name, dir, ext, name_no_ext, drive
 ; ext = txt
 ; name_no_ext = Address List
 ; drive = C:</em></pre>
+</div>
 
 </body>
 </html>

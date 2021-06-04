@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinMenuSelectItem</title>
+<title>WinMenuSelectItem - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinMenuSelectItem command invokes a menu item from the menu bar of the specified window." />
+<meta name="ahk:equiv-v2" content="commands/MenuSelect.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +15,8 @@
 
 <p>지정된 창의 메뉴 바에서 메뉴 항목을 요청합니다.</p>
 
-<pre class="Syntax">WinMenuSelectItem, WinTitle, WinText, Menu [, SubMenu1, SubMenu2, SubMenu3, SubMenu4, SubMenu5, SubMenu6, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">WinMenuSelectItem</span>, WinTitle, WinText, Menu <span class="optional">, SubMenu1, SubMenu2, SubMenu3, SubMenu4, SubMenu5, SubMenu6, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>WinTitle</dt>
@@ -25,23 +26,22 @@
   <dd><p>존재하면, 이 매개변수는 목표 창 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>가 켜져 있어야 탐지됩니다.</p></dd>
 
   <dt>Menu</dt>
-  <dd><p>최상위 레벨 메뉴의 이름. 예, File, Edit, View. 메뉴 항목의 위치로 될 수 있습니다. 1&amp;이면 첫 메뉴를 나타내고 2&amp;이면 두 번째 메뉴를 나타냅니다 등등.</p></dd>
+  <dd><p>The name (or a prefix of the name) of the top-level menu item, e.g. File, Edit, View. 메뉴 항목의 위치로 될 수 있습니다. <code>1&amp;</code>이면 첫 메뉴를 나타내고 <code>2&amp;</code>이면 두 번째 메뉴를 나타냅니다 등등.</p>
+  <p>The search is case-insensitive according to the rules of the current user's locale, and stops at the first matching item. The use of ampersand (&amp;) to indicate the underlined letter in a menu item is <em>usually</em> not necessary (i.e. &amp;File is the same as File).</p>
+  <p class="warning"><strong>Known limitation:</strong> If the parameter contains an ampersand, it must match the item name exactly, including all non-literal ampersands (which are hidden or displayed as an underline). If the parameter does not contain an ampersand, all ampersands are ignored, including literal ones. For example, an item displayed as "a &amp;&nbsp;b" may match a parameter value of <code>a &amp;&amp;&nbsp;b</code> or <code>a &nbsp;b</code>.</p>
+  <p><span class="ver">[v1.1.28+]:</span> Specify <code>0&amp;</code> to use the window's <a href="#sys">system menu</a>.</p>
+  </dd>
 
   <dt>SubMenu1</dt>
-  <dd><p>선택할 메뉴 항목의 이름 또는 그의 위치 (위 참조).</p></dd>
+  <dd><p>선택할 메뉴 항목의 이름 또는 그의 위치 (위 참조).</p>
+  <p>This can be omitted if the top-level item does not contain a menu (rare).</p></dd>
 
   <dt>SubMenu2</dt>
   <dd><p><em>SubMenu1</em> 자체에 메뉴가 포함되어 있으면, 이것이 그 메뉴 항목의 이름 또는 그의 위치입니다.</p></dd>
 
   <dt>SubMenu3</dt>
-  <dd><p>위와 동일.</p></dd>
-
   <dt>SubMenu4</dt>
-  <dd><p>위와 동일.</p></dd>
-
   <dt>SubMenu5</dt>
-  <dd><p>위와 동일.</p></dd>
-
   <dt>SubMenu6</dt>
   <dd><p>위와 동일.</p></dd>
 
@@ -53,24 +53,40 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+
+<h2 id="Remarks">논평</h2>
 <p>이 명령어가 작동하려면, 목표 창이 활성화되어 있지 않아야 합니다. 그렇지만 창은 <a href="WinRestore.htm">최소화 상태가 아니어야</a> 합니다.</p>
 <p>이 명령어는 비 표준 메뉴 바를 사용하는 어플과 <strong>작동하지 않습니다</strong>. 예로는 Microsoft Outlook과 Outlook Express가 있는데, 이들은 메뉴바에 위장한 툴바를 사용합니다. 이런 경우, <a href="ControlSend.htm">ControlSend</a>나 <a href="PostMessage.htm">PostMessage</a>의 사용을 고려하십시오. 분명히 비-표준 메뉴바를 가진 어플과 상호작용할 수 있을 것입니다.</p>
-<p>메뉴 이름 매개변수는 대소문자를 구분하지 않습니다 (즉, File-&gt;Save는 file-&gt;save와 동일합니다). 그리고 앰퍼센드 (&amp;)를 사용해 메뉴 항목 첫 문자에 밑줄을 그어 표시하는 일은 필요하지 않습니다 (즉, &amp;File은 File과 동일합니다).</p>
 <p>메뉴 이름 매개변수는 또한 위치를 지정할 수도 있습니다. 이 방법은 (아마도 실제 텍스트보다 그림이 포함되어 있기 때문에) 텍스트가 없는 메뉴를 지원하기 위해 존재합니다. 위치 1&amp;은 첫 메뉴 항목이고 (예, 첫 File 메뉴), 위치 2&amp;는 두 번째 메뉴 항목입니다 (예, Edit 메뉴) 등등. 메뉴 가름 줄은 메뉴 항목으 위치를 결정하기 위한 목적으로 메뉴 항목 개수에 포함됩니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
 
-<h3>관련 항목</h3>
-<p><a href="ControlSend.htm">ControlSend</a>, <a href="PostMessage.htm">PostMessage</a></p>
-<h3>예제</h3>
-<pre class="NoIndent"><em>; 노트패드에서 File-&gt;Open이 선택됩니다:</em>
-WinMenuSelectItem, Untitled - Notepad, , File, Open
+<h2 id="sys">System Menu <span class="ver">[v1.1.28+]</span></h2>
+<p><em>Menu</em> can be <code>0&amp;</code> to select an item within the window's system menu, which typically appears when the user presses <kbd>Alt</kbd>+<kbd>Space</kbd> or clicks on the icon in the window's title bar. 예를 들어:</p>
+<pre><em>; Paste a command into cmd.exe without activating the window.</em>
+Clipboard := "echo Hello, world!`r"
+WinMenuSelectItem ahk_exe cmd.exe,, 0&amp;, Edit, Paste</pre>
+<p class="warning"><strong>Caution:</strong> Use this only on windows which have custom items in their system menu.</p>
+<p>If the window does not already have a custom system menu, a copy of the standard system menu will be created and assigned to the target window as a side effect. This copy is destroyed by the system when the script exits, leaving other scripts unable to access it. Therefore, avoid using 0&amp; for the standard items which appear on all windows. Instead, post the <a href="https://msdn.microsoft.com/library/ms646360">WM_SYSCOMMAND</a> message directly. 예를 들어:</p>
+<pre><em>; Like "<a href="WinMinimize.htm">WinMinimize</a> A", but also play the system sound for minimizing.</em>
+WM_SYSCOMMAND := 0x0112
+SC_MINIMIZE := 0xF020
+PostMessage WM_SYSCOMMAND, SC_MINIMIZE, 0,, A</pre>
 
-<em>; 위와 동등하지만 이름이 아니라 위치로 선택됩니다:</em>
-WinMenuSelectItem, Untitled - Notepad, , 1&amp;, 2&amp;</pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="ControlSend.htm">ControlSend</a>, <a href="PostMessage.htm">PostMessage</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Selects File-&gt;Open in Notepad.</p>
+<pre>WinMenuSelectItem, Untitled - Notepad,, File, Open</pre>
+</div>
+
+<div class="ex" id="ExPos">
+<p><a class="ex_number" href="#ExPos"></a> Same as above except it is done by position instead of name.</p>
+<pre>WinMenuSelectItem, Untitled - Notepad,, 1&amp;, 2&amp;</pre>
+</div>
 
 </body>
 </html>

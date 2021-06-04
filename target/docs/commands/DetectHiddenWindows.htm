@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>DetectHiddenWindows</title>
+<title>DetectHiddenWindows - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content='The DetectHiddenWindows command determines whether invisible windows are "seen" by the script.' />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,26 +14,32 @@
 
 <p>스크립트에 보이지 않은 창을 "보여줄지 말지" 결정합니다.</p>
 
-<pre class="Syntax">DetectHiddenWindows, On|Off</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">DetectHiddenWindows</span>, OnOff</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>On|Off</dt>
+  <dt>OnOff</dt>
   <dd><p><strong>On</strong>: 숨은 창을 탐지합니다.</p>
-    <p><strong>Off</strong>: 이것이 기본값입니다. 숨은 창은 탐지되지 않습니다. 단,<a href="WinShow.htm">WinShow</a> 명령어로는 탐지할 수 있습니다.</p></dd>
+    <p><strong>Off</strong>: 이것이 기본값입니다. 숨은 창은 탐지되지 않습니다. 단,<a href="WinShow.htm">WinShow</a> 명령어로는 탐지할 수 있습니다.</p>
+    <p><span class="ver">[v1.1.30+]:</span> The decimal values 1 and 0 may be used in place of On and Off, respectively.</p>
+    </dd>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>DetectHiddenWindows를 켜면 어떤 경우 스크립팅이 힘들어질 수 있습니다. 왜냐하면 어떤 숨은 시스템 창이 우발적으로 여러분이 작업을 시도하는 텍스트 또는 창 제목에 부합해 버릴 수 있기 때문입니다. 그래서 대부분의 스크립트는 이 설정을 끈 상태로 두어야 합니다. 그렇지만, 숨은 창과 직접적으로 작업을 하고 싶다면 켜는게 좋습니다. 작업 전에 먼저 <a href="WinShow.htm">WinShow</a>를 사용하여 보여주어야 할 필요가 없습니다.</p>
-<p>모든 창 명령어는 <a href="WinShow.htm">WinShow</a>를 제외하고 이 설정에 영향을 받습니다. 여기에는<a href="WinActivate.htm">WinActivate</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="WinExist.htm">IfWinExist</a>가 포함됩니다. 대조적으로, <a href="WinShow.htm">WinShow</a>는 언제나 숨은 창을 보여줍니다. 숨은 창 탐지가 켜져 있지 않더라도 상관없습니다.</p>
-<p><a href="../misc/WinTitle.htm#ahk_id">ahk_id method</a>를 통하여 또는 <a href="../misc/WinTitle.htm#LastFoundWindow">마지막 발견 창</a>으로 콘트롤이나 자손 창에 접근할 때 DetectHiddenWindows을 켤 필요가 없습니다. 또 GUI 창에 <code><a href="Gui.htm#LastFound">Gui +LastFound</a></code>를 통하여 접근할 때도 필요 없습니다.</p>
+<p>All windowing commands, built-in functions and control flow statements except <a href="WinShow.htm">WinShow</a> are affected by this setting, including <a href="WinActivate.htm">WinActivate</a>, <a href="WinActive.htm">WinActive()</a>, <a href="IfWinActive.htm">IfWinActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="WinExist.htm">WinExist()</a>, <a href="IfWinExist.htm">IfWinExist</a>. 대조적으로, <a href="WinShow.htm">WinShow</a>는 언제나 숨은 창을 보여줍니다. 숨은 창 탐지가 켜져 있지 않더라도 상관없습니다.</p>
+<p><a href="../misc/WinTitle.htm#ahk_id">ahk_id method</a>를 통하여 또는 <a href="../misc/WinTitle.htm#LastFoundWindow">마지막 발견 창</a>으로 콘트롤이나 자손 창에 접근할 때 DetectHiddenWindows을 켤 필요가 없습니다. 또 GUI 창에 <code>Gui +<a href="Gui.htm#LastFound">LastFound</a></code>를 통하여 접근할 때도 필요 없습니다.</p>
+<p><span class="ver">[v1.1.32+]:</span> Cloaked windows are also considered hidden. Cloaked windows, introduced with Windows 8, are windows on a non-active virtual desktop or UWP apps which have been suspended to improve performance, or more precisely to reduce their memory consumption. On Windows 10, the processes of those are indicated with a green leaf in the Task Manager. Such windows are hidden from view, but might still have the WS_VISIBLE window style. Prior to v1.1.32, all windows with the WS_VISIBLE style were considered visible.</p>
 <p>내장 함수 <strong>A_DetectHiddenWindows</strong>에 현재 설정이 담겨 있습니다 (On 또는 Off).</p>
 <p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="DetectHiddenText.htm">DetectHiddenText</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">DetectHiddenWindows, on</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Turns on the detection of hidden windows.</p>
+<pre>DetectHiddenWindows, On</pre>
+</div>
 
 </body>
 </html>

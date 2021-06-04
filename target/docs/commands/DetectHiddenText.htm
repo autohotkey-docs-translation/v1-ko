@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>DetectHiddenText</title>
+<title>DetectHiddenText - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content='The DetectHiddenText command determines whether invisible text in a window is "seen" for the purpose of finding the window.' />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,26 +12,31 @@
 
 <h1>DetectHiddenText</h1>
 
-<p>창을 찾기 위한 목적으로 창에서 보이지 않은 텍스트를 "보여줄지 말지" 결정합니다. 이것은 IfWinExist 그리고 WinActivate와 같은 명령어들에 영향을 줍니다.</p>
+<p>창을 찾기 위한 목적으로 창에서 보이지 않은 텍스트를 "보여줄지 말지" 결정합니다. This affects commands, built-in functions and control flow statements such as WinExist() and WinActivate.</p>
 
-<pre class="Syntax">DetectHiddenText, On|Off</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">DetectHiddenText</span>, OnOff</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>On|Off</dt>
+  <dt>OnOff</dt>
   <dd><p><strong>On</strong>: 이것이 기본값입니다. 숨은 텍스트가 탐지됩니다.</p>
-      <p><strong>Off</strong>: 숨은 텍스트는 탐지되지 않습니다.</p></dd>
+      <p><strong>Off</strong>: 숨은 텍스트는 탐지되지 않습니다.</p>
+      <p><span class="ver">[v1.1.30+]:</span> The decimal values 1 and 0 may be used in place of On and Off, respectively.</p>
+      </dd>
 
 </dl>
 
-<h3>논평</h3>
-<p>"숨은 텍스트"는 창에서 보이지 않는 콘트롤을 가리키는 용어입니다. 그래서 그의 텍스트도 "숨은"것으로 간주합니다. DetectHiddenText를 끄면 멀티-탭 대화상자 또는 다중-판 창에서 다른 판 사이의 차이를 발견하고 싶을 때 유용합니다. Window Spy를 사용하면 현재 활성 창에서 숨어 있는 텍스트를 알아낼 수 있습니다. <em>WinText</em>를 매개변수로 하는 명령어는 모두 이 설정에 영향을 받습니다. 여기에는 <a href="WinActivate.htm">WinActivate</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinWait.htm">WinWait</a>, 그리고 <a href="WinExist.htm">IfWinExist</a>가 포함됩니다.</p>
+<h2 id="Remarks">논평</h2>
+<p>"숨은 텍스트"는 창에서 보이지 않는 콘트롤을 가리키는 용어입니다. 그래서 그의 텍스트도 "숨은"것으로 간주합니다. DetectHiddenText를 끄면 멀티-탭 대화상자 또는 다중-판 창에서 다른 판 사이의 차이를 발견하고 싶을 때 유용합니다. Window Spy를 사용하면 현재 활성 창에서 숨어 있는 텍스트를 알아낼 수 있습니다. All commands, built-in functions and control flow statements that accept a <em>WinText</em> parameter are affected by this setting, including <a href="WinActivate.htm">WinActivate</a>, <a href="WinActive.htm">WinActive()</a>, <a href="IfWinActive.htm">IfWinActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="WinExist.htm">WinExist()</a>, and <a href="IfWinExist.htm">IfWinExist</a>.</p>
 <p>내장 변수 <strong>A_DetectHiddenText</strong>에 현재 설정이 들어 있습니다 (On 또는 Off).</p>
 <p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="DetectHiddenWindows.htm">DetectHiddenWindows</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">DetectHiddenText, off</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Turns off the detection of hidden text.</p>
+<pre>DetectHiddenText, Off</pre>
+</div>
 
 </body>
 </html>

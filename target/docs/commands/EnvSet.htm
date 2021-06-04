@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>EnvSet</title>
+<title>EnvSet - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The EnvSet command writes a value to a variable contained in the environment." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,28 +14,31 @@
 
 <p>값을 <a href="../Variables.htm">환경 변수</a>에 씁니다.</p>
 
-<pre class="Syntax">EnvSet, EnvVar, Value</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">EnvSet</span>, EnvVar, Value</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>EnvVar</dt>
-  <dd>사용할 <a href="../Variables.htm#env">환경 변수</a>의 이름. 예, "COMSPEC" 또는 "PATH".</dd>
+  <dd>사용할 <a href="../Concepts.htm#environment-variables">환경 변수</a>의 이름. 예, "COMSPEC" 또는 "PATH".</dd>
 
   <dt>Value</dt>
-  <dd><p><a href="../Variables.htm#env">환경 변수</a>에 설정할 값.</p></dd>
+  <dd><p><a href="../Concepts.htm#environment-variables">환경 변수</a>에 설정할 값.</p></dd>
 
 </dl>
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>운영 체제는 환경 변수의 길이를 32 KB의 텍스트로 제한합니다.</p>
-<p>이 명령어로 생성되거나 변경된 환경 변수는 스크립트가 <a href="Run.htm">Run</a> 또는 <a href="Run.htm">RunWait</a>를 통하여 실행한 프로그램에서만 접근이 가능합니다. 더 자세한 것은 <a href="../Variables.htm#env">환경 변수</a>를 참조하십시오.</p>
+<p>이 명령어로 생성되거나 변경된 환경 변수는 스크립트가 <a href="Run.htm">Run</a> 또는 <a href="Run.htm">RunWait</a>를 통하여 실행한 프로그램에서만 접근이 가능합니다. 더 자세한 것은 <a href="../Concepts.htm#environment-variables">환경 변수</a>를 참조하십시오.</p>
 <p>이 명령어는 <a href="SetEnv.htm">SetEnv</a>와 별도로 존재합니다. 왜냐하면 <a href="../Variables.htm">정상적인 스크립트 변수</a>는 운영 체제의 환경에 저장되지 않기 때문입니다. 수행성능이 악화되고 OS가 환경 변수를 32 KB의 길이로 제한하기 때문입니다.</p>
-<h3>관련 항목</h3>
-<p><a href="EnvGet.htm">EnvGet</a>, <a href="_NoEnv.htm">#NoEnv</a>, <a href="../Variables.htm#env">환경 변수</a>, <a href="EnvUpdate.htm">EnvUpdate</a>, <a href="SetEnv.htm">SetEnv</a>, <a href="Run.htm">Run</a>, <a href="Run.htm">RunWait</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">EnvSet, AutGUI, 변수에 넣을 텍스트.</pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="EnvGet.htm">EnvGet</a>, <a href="_NoEnv.htm">#NoEnv</a>, <a href="../Concepts.htm#environment-variables">환경 변수</a>, <a href="EnvUpdate.htm">EnvUpdate</a>, <a href="SetEnv.htm">SetEnv</a>, <a href="Run.htm">Run</a>, <a href="Run.htm">RunWait</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Writes some text to the AutGUI variable contained in the environment.</p>
+<pre>EnvSet, AutGUI, 변수에 넣을 텍스트.</pre>
+</div>
 
 </body>
 </html>

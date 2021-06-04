@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ComObjCreate()</title>
+<title>ComObjCreate() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ComObjCreate function creates a COM object." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,9 +12,9 @@
 
 <h1>ComObjCreate() <span class="ver">[AHK_L 53+]</span></h1>
 <p>COM 객체를 생성합니다.</p>
-<pre class="Syntax">ComObject := ComObjCreate(CLSID [, IID])</pre>
+<pre class="Syntax">ComObject := <span class="func">ComObjCreate</span>(CLSID <span class="optional">, IID</span>)</pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>CLSID</dt>
@@ -25,21 +25,23 @@
 
 </dl>
 
-<h3>반환 값</h3>
-<p>에러가 일어나면, 빈 문자열이 반환됩니다.</p>
-<p>IID가 지정되면, 인터페이스 포인터가 반환됩니다. 스크립트는 포인터 작업이 끝나면 전형적으로 <a href="ObjAddRef.htm">ObjRelease</a>를 호출합니다.</p>
+<h2 id="Return_Value">반환 값</h2>
+<p>On failure, the function may throw an exception, exit the script or return an empty string, depending on the current <a href="ComObjError.htm">ComObjError()</a> setting and <a href="ComObjError.htm#factors">other factors</a>.</p>
+<p>IID가 지정되면, 인터페이스 포인터가 반환됩니다. 스크립트는 포인터 작업이 끝나면 전형적으로 <a href="ObjAddRef.htm">ObjRelease()</a>를 호출합니다.</p>
 <p>그렇지 않으면, 스크립트가 사용할 수 있는 포장 객체가 반환됩니다. <a href="../Objects.htm#Usage_Objects">객체 구문</a>을 참조하십시오.</p>
 
-<h3>관련 항목</h3>
-<a href="ComObjGet.htm">ComObjGet</a>, <a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjConnect.htm">ComObjConnect</a>, <a href="ComObjArray.htm">ComObjArray</a>, <a href="ComObjError.htm">ComObjError</a>, <a href="ComObjQuery.htm">ComObjQuery</a>, <a href="http://msdn.microsoft.com/en-us/library/dcw63t7z.aspx">CreateObject (MSDN)</a>
+<h2 id="Related">관련 항목</h2>
+<a href="ComObjGet.htm">ComObjGet()</a>, <a href="ComObjActive.htm">ComObjActive()</a>, <a href="ComObjConnect.htm">ComObjConnect()</a>, <a href="ComObjArray.htm">ComObjArray()</a>, <a href="ComObjError.htm">ComObjError()</a>, <a href="ComObjQuery.htm">ComObjQuery()</a>, <a href="http://msdn.microsoft.com/ko-kr/library/dcw63t7z.aspx">CreateObject (MSDN)</a>
 
-<h3>예제</h3>
-<p>계속해서 증가하는 리스트의 예는 다음 포럼의 토픽을 참조하십시오: <a href="http://www.autohotkey.com/forum/topic61509.html">http://www.autohotkey.com/forum/topic61509.html</a>.</p>
-<pre class="NoIndent">
-ie := <b>ComObjCreate</b>("InternetExplorer.Application")
+<h2 id="Examples">예제</h2>
+<p>계속해서 증가하는 리스트의 예는 다음 포럼의 토픽을 참조하십시오: <a href="https://www.autohotkey.com/forum/topic61509.html">https://www.autohotkey.com/forum/topic61509.html</a>.</p>
+<div class="ex" id="ExIE">
+<p><a class="ex_number" href="#ExIE"></a> Launches an instance of Internet Explorer, makes it visible and navigates to a website.</p>
+<pre>ie := ComObjCreate("InternetExplorer.Application")
 ie.Visible := true  <em>; 이것은 IE7에서 제대로 작동하지 않는다고 알려져 있습니다.</em>
-ie.Navigate("http://ahkscript.org/")
+ie.Navigate("https://www.autohotkey.com/")
 </pre>
+</div>
 
 </body>
 </html>

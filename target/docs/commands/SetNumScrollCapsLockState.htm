@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SetCapsLockState/SetNumLockState/SetScrollLockState</title>
+<title>SetCapsLockState / SetNumLockState / SetScrollLockState - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SetCapsLockState, SetNumLockState and SetScrollLockState commands set the state of the corresponding key. 강제로 온 또는 오프 상태를 유지할 수 있습니다." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -10,14 +10,16 @@
 </head>
 <body>
 
-<h1>SetCapsLockState/SetNumLockState/SetScrollLockState</h1>
+<h1>SetCapsLockState / SetNumLockState / SetScrollLockState</h1>
 
-<p>Capslock/NumLock/ScrollLock 키의 상태를 설정합니다. 강제로 온 또는 오프 상태를 유지할 수 있습니다.</p>
+<p><kbd>CapsLock</kbd>/<kbd>NumLock</kbd>/<kbd>ScrollLock</kbd> 키의 상태를 설정합니다. 강제로 온 또는 오프 상태를 유지할 수 있습니다.</p>
 
-<pre class="Syntax">SetCapsLockState [, State]
-SetNumLockState [, State]
-SetScrollLockState [, State]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">SetCapsLockState</span> <span class="optional">, State</span>
+<span class="func">SetNumLockState</span> <span class="optional">, State</span>
+<span class="func">SetScrollLockState</span> <span class="optional">, State</span>
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>State</dt>
@@ -25,18 +27,33 @@ SetScrollLockState [, State]</pre>
       <p><strong>On</strong>: 키를 켜고 AlwaysOn/Off 속성을 제거합니다.</p>
 	  <p><strong>Off</strong>: 키를 끄고 AlwaysOn/Off 속성을 제거합니다.</p>
       <p><strong>AlwaysOn</strong>: 강제로 켠 상태를 유지합니다.</p>
-      <p><strong>AlwaysOff</strong>: 강제로 끈 상태를 유지합니다.</p></dd>
+      <p><strong>AlwaysOff</strong>: 강제로 끈 상태를 유지합니다.</p>
+      <p><span class="ver">[v1.1.30+]:</span> The decimal values 1 and 0 may be used in place of On and Off, respectively.</p>
+      </dd>
 
 </dl>
 
-<h3>논평</h3>
-<p><a href="Send.htm">Send</a> 명령어를 사용하여 키를 반대 상태로 토글할 수 있습니다; 예를 들어: <code>Send {Capslock}</code>.</p>
+<h2 id="Remarks">논평</h2>
+<p>Alternatively to <a href="#ExToggle">example #3</a> below, a key can also be toggled to its opposite state via the <a href="Send.htm">Send</a> command; for example: <code>Send {CapsLock}</code>. However, sending {CapsLock} might require <code><a href="SetStoreCapslockMode.htm">SetStoreCapsLockMode</a> Off</code> beforehand.</p>
 <p>키를 <em>AlwaysOn</em> 또는 <em>AlwaysOff</em> 상태로 유지하려면 <a href="_InstallKeybdHook.htm">키보드 갈고리</a>가 필요합니다. 키보드 갈고리는 그런 경우 자동으로 설치됩니다.</p>
-<h3>관련 항목</h3>
-<p><a href="SetStoreCapslockMode.htm">SetStoreCapslockMode</a>, <a href="GetKeyState.htm">GetKeyState</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">SetNumlockState, on
-SetScrollLockState, AlwaysOff</pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="SetStoreCapslockMode.htm">SetStoreCapsLockMode</a>, <a href="GetKeyState.htm#function">GetKeyState()</a></p>
+<h2 id="Examples">예제</h2>
+
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Turns on <kbd>NumLock</kbd> and removes the AlwaysOn/Off attribute of the key (if present).</p>
+<pre>SetNumLockState, On</pre>
+</div>
+
+<div class="ex" id="ExAlwaysOff">
+<p><a class="ex_number" href="#ExAlwaysOff"></a> Forces <kbd>ScrollLock</kbd> to stay off permanently.</p>
+<pre>SetScrollLockState, AlwaysOff</pre>
+</div>
+
+<div class="ex" id="ExToggle">
+<p><a class="ex_number" href="#ExToggle"></a> Toggles <kbd>CapsLock</kbd> to its opposite state.</p>
+<pre>SetCapsLockState % !GetKeyState("CapsLock", "T") <em>; <span class="ver">[v1.1.30+]</span> 필요</em></pre>
+</div>
 
 </body>
 </html>

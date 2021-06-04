@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#KeyHistory</title>
+<title>#KeyHistory - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #KeyHistory directive sets the maximum number of keyboard and mouse events displayed by the KeyHistory window." />
+<meta name="ahk:equiv-v2" content="commands/KeyHistory.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,22 +15,30 @@
 
 <p><a href="KeyHistory.htm">KeyHistory</a> 창에 보여지는 키보드와 마우스 이벤트의 최대 개수를 설정합니다. 0을 설정하면 키 이력이 꺼집니다.</p>
 
-<pre class="Syntax">#KeyHistory MaxEvents</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">#KeyHistory</span> MaxEvents</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>MaxEvents</dt>
   <dd><p><a href="KeyHistory.htm">KeyHistory</a> 창에 보여지는 키보드와 마우스 이벤트의 최대 개수 (기본값은 40이고, 최대는 500). 0을 지정하면 키 이력이 완전히 꺼집니다.</p></dd>
 
 </dl>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>이 설정은 스크립트가 실행을 시작하기 전에 효과를 내기 때문에, (스크립트 어느 곳에서나) 한 번만 지정하면 됩니다.</p>
 <p>각 키눌림과 마우스 클릭은 다운-이벤트와 업-이벤트로 구성되기 때문에, <a href="KeyHistory.htm">KeyHistory</a>는 "완전한 이벤트"의 반쪽만 지정된 갯수만큼 보여줍니다. 예를 들어, 스크립트에 <code>#KeyHistory 50</code>이 들어 있다면, 키눌림과 마우스 클릭을 25 개까지 보여줍니다</p>
-<h3>관련 항목</h3>
+<p>다른 지시어처럼, #KeyHistory는 조건적으로 실행할 수 없습니다.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="KeyHistory.htm">KeyHistory</a>, <a href="_NoTrayIcon.htm">#NoTrayIcon</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#KeyHistory 0    <em>; 키 이력을 끕니다.</em>
-#KeyHistory 100  <em>; 100 개의 이벤트까지 저장합니다.</em></pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Causes <a href="KeyHistory.htm">KeyHistory</a> to display the last 100 instead 40 keyboard and mouse events.</p>
+<pre>#KeyHistory 100</pre>
+</div>
+
+<div class="ex" id="ExDisable">
+<p><a class="ex_number" href="#ExDisable"></a> Disables key history entirely.</p>
+<pre>#KeyHistory 0</pre>
+</div>
 
 </body>
 </html>

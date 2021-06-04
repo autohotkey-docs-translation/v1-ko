@@ -1,471 +1,503 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Send/SendRaw/SendInput/SendPlay/SendEvent: Send keys &amp; clicks</title>
-<meta name="description" content="Send keystrokes and mouse clicks to any window with this free macro program. SendInput is generally the fastest and most reliable method.">
+<title>Send - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Send, SendRaw, SendInput, SendPlay and SendEvent commands send simulated keystrokes and mouse clicks to the active window." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
-<style type="text/css">
-<!--
-.red {color: #FF0000; font-weight: bold;}
--->
-</style>
 </head>
 <body>
 
-<h1>Send / SendRaw / SendInput / SendPlay / SendEvent: Send Keys &amp; Clicks</h1>
+<h1>Send, SendRaw, SendInput, SendPlay, SendEvent</h1>
 
 <p>시률레이트된 키눌림과 마우스 클릭을 <a href="WinActivate.htm">활성</a> 창에 전송합니다.</p>
 
-<pre class="Syntax">Send Keys
-SendRaw Keys
-SendInput Keys
-SendPlay Keys
-SendEvent Keys</pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">Send</span> Keys
+<span class="func">SendRaw</span> Keys
+<span class="func">SendInput</span> Keys
+<span class="func">SendPlay</span> Keys
+<span class="func">SendEvent</span> Keys
+</pre>
+
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Keys</dt>
-  <dd><p>전송할 키 연속열. 다른 명령어처럼, 첫 매개변수 앞의 쉼표는 선택적입니다.</p></dd>
+  <dd>
+    <p>전송할 키 연속열. 다른 명령어처럼, 첫 매개변수 앞의 쉼표는 선택적입니다.</p>
+    <p>By default (that is, if neither SendRaw nor the <a href="#Raw">Raw mode</a> or <a href="#Text">Text mode</a> is used), the characters <code>^+!#{}</code> have a special meaning. The characters <code>^+!#</code> represent the modifier keys <kbd>Ctrl</kbd>, <kbd>Shift</kbd>, <kbd>Alt</kbd> and <kbd>Win</kbd>. They affect only the very next key. To send the corresponding modifier key on its own, enclose the key name in braces. To just press (hold down) or release the key, follow the key name with the word "down" or "up" as shown below.</p>
+    <style>
+      #modifierkeys td:not(:last-child) {
+        white-space: nowrap;
+        text-align: center
+      }
+    </style>
+    <table id="modifierkeys" class="info">
+      <tr>
+        <th>심볼</th>
+        <th>Key</th>
+        <th>Press</th>
+        <th>Release</th>
+        <th>예제</th>
+      </tr>
+      <tr>
+        <td>^</td>
+        <td>{Ctrl}</td>
+        <td>{Ctrl down}</td>
+        <td>{Ctrl up}</td>
+        <td><code>Send ^{Home}</code> presses <kbd>Ctrl</kbd>+<kbd>Home</kbd></td>
+      </tr>
+      <tr>
+        <td>+</td>
+        <td>{Shift}</td>
+        <td>{Shift down}</td>
+        <td>{Shift up}</td>
+        <td><code>Send +abC</code> sends the text "AbC"<br>
+          <code>Send !+a</code> presses <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd></td>
+      </tr>
+      <tr>
+        <td>!</td>
+        <td>{Alt}</td>
+        <td>{Alt down}</td>
+        <td>{Alt up}</td>
+        <td><code>Send !a</code> presses <kbd>Alt</kbd>+<kbd>A</kbd></td>
+      </tr>
+      <tr>
+        <td>#</td>
+        <td>{LWin}<br>{RWin}</td>
+        <td>{LWin down}<br>{RWin down}</td>
+        <td>{LWin up}<br>{RWin up}</td>
+        <td><code>Send #e</code> holds down <kbd>Win</kbd> and then presses <kbd>E</kbd></td>
+      </tr>
+    </table>
+    <p class="note"><strong>주의</strong>: As capital letters are produced by sending <kbd>Shift</kbd>, <code>A</code> produces a different effect in some programs than <code>a</code>. For example, <code>!A</code> presses <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> and <code>!a</code> presses <kbd>Alt</kbd>+<kbd>A</kbd>. 잘 모르겠으면, 소문자를 사용하십시오.</p>
+    <p>The characters <code>{}</code> are used to enclose <a href="#keynames">key names and other options</a>, and to send special characters literally. For example, <code>{Tab}</code> is <kbd>Tab</kbd> and <code>{!}</code> is a literal exclamation mark.</p>
+    <p><span class="ver">[v1.1.27+]:</span> Enclosing a plain ASCII letter (a-z or A-Z) in braces forces it to be sent as the corresponding virtual keycode, even if the character does not exist on the current keyboard layout. In other words, <code>Send a</code> produces the letter "a" while <code>Send {a}</code> may or may not produce "a", depending on the keyboard layout. For details, see the <a href="#AZ">remarks below</a>.</p>
+  </dd>
 
 </dl>
 
-<p><strong><a name="SendRaw"></a>날 모드</strong>: <em>SendRaw</em> 명령어는 모든 문자들 문자 그대로 해석합니다. {Enter}를 ENTER 키눌림으로, ^c를 Control-C로, 등등 변환하지 않습니다. 그렇지만, 피신 연속열의 정상 규칙, 변수 참조 그리고 표현식은 여전히 적용됩니다. 왜냐하면 명령어가 실행되기 전에 이것들이 먼저 처리되기 때문입니다. SendInput, SendPlay, 또는 SendEvent에 날 모드를 사용하려면, 문자열에서 첫 항목에 <a href="#Raw">{Raw}</a>를 쓰십시오. 예를 들어: <code>SendInput {Raw}abc</code>.</p>
-<p><strong>정상 모드</strong>: 날 모드가 아닐 때, 다음 문자들은 수식자로 취급됩니다 (이 수식 키들은 바로 다음 키에만 영향을 줍니다):</p>
-<p><span class="red">!</span>: ALT 키눌림을 전송합니다. 예를 들어, <code>Send This is text!a</code>는 "This is text"를 전송한 다음 ALT+a를 누릅니다. <strong>주의</strong>: !A는 어떤 프로그램에서는 !a와 전혀 다른 효과를 냅니다. 이것은 !A가 ALT+SHIFT+A를 누르는 반면 !a는 ALT+a를 누르기 때문입니다. 잘 모르겠으면, 소문자를 사용하십시오.</p>
-<p><span class="red">+</span>: SHIFT 키눌림을 전송합니다. 예를 들어, <code>Send +abC</code>는 "AbC"를 전송하고, <code>Send !+a</code>는 ALT+SHIFT+a를 누릅니다.</p>
-<p><span class="red">^</span>: CONTROL 키눌림을 전송합니다. 예를 들어, <code>Send ^!a</code>는 CTRL+ALT+a를 누르고, <code>Send ^{Home}</code>는 CONTROL+HOME을 누릅니다. <strong>주의</strong>: ^A는 어떤 프로그램에서 ^a와 전혀 다른 효과를 냅니다. 왜냐하면 ^A는 CONTROL+SHIFT+A를 누르는 반면 ^a는 CONTROL+a를 누르기 때문입니다. 잘 모르겠으면, 소문자를 사용하십시오.</p>
-<p><span class="red">#</span>: WIN 키눌림을 전송합니다. 그러므로 <code>Send #e</code>는 Windows 키를 누른 채로 기호 "e"를 누릅니다.</p>
-<p><br>
-<a name="SendInput"></a><a name="SendPlay"></a><strong>SendInput</strong>그리고 <strong>SendPlay</strong> <span class="ver">[v1.0.43+]:</span> SendInput 그리고 SendPlay는 Send와 같은 구문을 사용합니다. 그러나 일반적으로 더 빠르고 더 신뢰성이 있습니다. 게다가, 전송하는 동안에 물리적 키눌림과 마우스 클릭을 버퍼 처리해 줍니다. 그 덕분에 사용자의 키눌림이 흩어지지 않고 온전하게 전송됩니다. <a href="SendMode.htm">SendMode</a>을 사용하면 Send를 SendInput 또는 SendPlay과 똑같이 만들 수 있습니다. 각 모드에 관하여 더 자세한 정보는 아래의 <a href="#SendInputDetail">SendInput</a> 그리고 <a href="#SendPlayDetail">SendPlay</a>를 참조하십시오.</p>
-<p><a name="SendEvent"></a><strong>SendEvent</strong> <span class="ver">[v1.0.43+]:</span> SendEvent는 1.0.43-이전의 <em>Send</em> 명령어와 같은 방법으로 키눌림을 전송합니다. 키눌림의 전송 비율은 <a href="SetKeyDelay.htm">SetKeyDelay</a>로 결정됩니다. 기본값으로, <em>Send</em>는 <em>SendEvent</em>와 동일하지만; <a href="SendMode.htm">SendMode</a>를 통하여 <a href="#SendInputDetail">SendInput</a>이나 <a href="#SendPlayDetail">SendPlay</a>와 같게 만들 수 있습니다 .</p>
-<p><strong>Key Names</strong>: 다음 테이블은 전송이 가능한 특수 키들을 나열합니다. (각 키 이름은 활괄호로 둘러싸야 합니다):</p>
+<h2 id="Send_variants">Send variants</h2>
+<p><strong>Send:</strong> 기본값으로, Send는 SendEvent와 동일하지만; <a href="SendMode.htm">SendMode</a>를 통하여 SendInput이나 SendPlay와 같게 만들 수 있습니다 .</p>
+<p><strong>SendRaw:</strong> Similar to Send, except that all characters in <em>Keys</em> are interpreted and sent literally. See <a href="#Raw">Raw mode</a> for details.</p>
+<p><strong id="SendInput">SendInput</strong>그리고 <strong id="SendPlay">SendPlay</strong> <span class="ver">[v1.0.43+]:</span> SendInput 그리고 SendPlay는 Send와 같은 구문을 사용합니다. 그러나 일반적으로 더 빠르고 더 신뢰성이 있습니다. 게다가, 전송하는 동안에 물리적 키눌림과 마우스 클릭을 버퍼 처리해 줍니다. 그 덕분에 사용자의 키눌림이 흩어지지 않고 온전하게 전송됩니다. <a href="SendMode.htm">SendMode</a>을 사용하면 Send를 SendInput 또는 SendPlay과 똑같이 만들 수 있습니다. 각 모드에 관하여 더 자세한 정보는 아래의 <a href="#SendInputDetail">SendInput</a> 그리고 <a href="#SendPlayDetail">SendPlay</a>를 참조하십시오.</p>
+<p id="SendEvent"><strong>SendEvent</strong> <span class="ver">[v1.0.43+]:</span> SendEvent는 1.0.43-이전의 <em>Send</em> 명령어와 같은 방법으로 키눌림을 전송합니다. 키눌림의 전송 비율은 <a href="SetKeyDelay.htm">SetKeyDelay</a>로 결정됩니다.</p>
+
+<h2 id="Special_modes">Special modes</h2>
+<p>The following modes affect the interpretation of the characters in <em>Keys</em> or the behavior of key-sending commands such as Send, SendInput, SendPlay, SendEvent and <a href="ControlSend.htm">ControlSend</a>. These modes must be specified as <code>{x}</code> in <em>Keys</em>, where x is either Raw, Text, or Blind. 예를 들어, <code>{Raw}</code>.</p>
+
+<h3 id="Raw">Raw mode</h3>
+<p id="SendRaw">The Raw mode can be either enabled with <code>{Raw}</code>, SendRaw or <a href="ControlSend.htm">ControlSendRaw</a>, which causes all subsequent characters, including the special characters <code>^+!#{}</code>, to be interpreted literally rather than translating <code>{Enter}</code> to <kbd>Enter</kbd>, <code>^c</code> to <kbd>Ctrl</kbd>+<kbd>C</kbd>, etc. For example, both <code>Send {Raw}{Tab}</code> and <code>SendRaw {Tab}</code> send <code>{Tab}</code> instead of <kbd>Tab</kbd>.</p>
+<p>The Raw mode does not affect the interpretation of <a href="../misc/EscapeChar.htm">escape sequences</a>, <a href="../Variables.htm#retrieving">variable references</a> and <a href="../Variables.htm#Expressions">expressions</a>. For example, <code>SendRaw ``100`%</code> sends the string <code class="no-highlight">`100%</code>. When using <a href="ControlSend.htm">ControlSend</a>, it is also necessary to escape literal commas (<code>`,</code>).</p>
+
+<h3 id="Text">Text mode <span class="ver">[v1.1.27+]</span></h3>
+<p id="SendText">The Text mode can be enabled with <code>{Text}</code>, which is similar to the Raw mode, except that no attempt is made to translate characters (other than <code>`r</code>, <code>`n</code>, <code>`t</code> and <code>`b</code>) to keycodes; instead, the <a href="#fallback">fallback method</a> is used for all of the remaining characters. For SendEvent, SendInput and <a href="ControlSend.htm">ControlSend</a>, this improves reliability because the characters are much less dependent on correct modifier state. This mode can be combined with the Blind mode to avoid releasing any modifier keys: <code>Send {Blind}{Text}your text</code>. However, some applications require that the modifier keys be released.</p>
+<p><code>`n</code>, <code>`r</code> and <code>`r`n</code> are all translated to a single <kbd>Enter</kbd>, unlike the default behavior and Raw mode, which translate <code>`r`n</code> to two <kbd>Enter</kbd>. <code>`t</code> is translated to <kbd>Tab</kbd> and <code>`b</code> to <kbd>Backspace</kbd>, but all other characters are sent without translation.</p>
+<p><span class="ver">[v1.1.29+]:</span> Like the Blind mode, the Text mode ignores <a href="SetStoreCapslockMode.htm">SetStoreCapsLockMode</a> (that is, the state of <kbd>CapsLock</kbd> is not changed) and does not <a href="../Hotkeys.htm#win-l">wait for <kbd>Win</kbd> to be released</a>. This is because the Text mode typically does not depend on the state of <kbd>CapsLock</kbd> and cannot trigger the system <kbd>Win</kbd>+<kbd>L</kbd> hotkey. However, this only applies when <em>Keys</em> begins with <code>{Text}</code> or <code>{Blind}{Text}</code>.</p>
+
+<h3 id="Blind">Blind mode</h3>
+<p id="blind">The Blind mode can be enabled with <code>{Blind}</code>, which gives the script more control by disabling a number of things that are normally done automatically to make things work as expected. <code>{Blind}</code> must be the first item in the string to enable the Blind mode. It has the following effects:</p>
+<ul>
+  <li>The Blind mode avoids releasing the modifier keys (Alt, Ctrl, Shift, and Win) if they started out in the down position. 예를 들어, 핫키 <code>+s::Send {Blind}abc</code>는 abc가 아니라 ABC를 전송합니다. 왜냐하면 사용자가 <kbd>Shift</kbd>를 누르고 있기 때문입니다.</li>
+  <li>Modifier keys are restored differently to allow a Send to turn off a hotkey's modifiers even if the user is still physically holding them down. For example, <code>^space::Send {Ctrl up}</code> automatically pushes <kbd>Ctrl</kbd> back down if the user is still physically holding <kbd>Ctrl</kbd>, whereas <code>^space::Send {Blind}{Ctrl up}</code> allows <kbd>Ctrl</kbd> to be logically up even though it is physically down.</li>
+  <li><a href="SetStoreCapslockMode.htm">SetStoreCapsLockMode</a> is ignored; that is, the state of <kbd>CapsLock</kbd> is not changed.</li>
+  <li><a href="_MenuMaskKey.htm">Menu masking</a> is disabled. That is, Send omits the extra keystrokes that would otherwise be sent in order to prevent: 1) Start Menu appearance during Win keystrokes (LWin/RWin); 2) menu bar activation during Alt keystrokes. However, the Blind mode does not prevent masking performed by the keyboard hook following activation of a hook hotkey.</li>
+  <li>Send does not wait for <kbd>Win</kbd> to be released even if the text contains an <kbd>L</kbd> keystroke. This would normally be done to prevent Send from triggering the system "lock workstation" hotkey (<kbd>Win</kbd>+<kbd>L</kbd>). See <a href="../Hotkeys.htm#win-l">Hotkeys</a> for details.</li>
+</ul>
+<p>맹목-모드는 <a href="../misc/Remap.htm">키를 리맵핑할 때</a> 내부적으로 사용됩니다. 예를 들어, 리맵핑 <code>a::b</code>는: 1) "a"를 타자하면 "b"를 생산하고; 2) 대문자 "A"를 타자하면 대문자 "B"를 생산하며 ; 그리고 3) <kbd>Ctrl</kbd>+<kbd>A</kbd>를 타자하면 <kbd>Ctrl</kbd>+<kbd>B</kbd>를 생산합니다.</p>
+<p><code>{Blind}</code> is not supported by SendRaw or <a href="ControlSend.htm">ControlSendRaw</a>; use <code>{Blind}{Raw}</code> instead.</p>
+<p><a href="#SendPlayDetail">SendPlay</a>도 완벽하게는 지원하지 못합니다. 특히 수식 키들을 다룰 때 (Ctrl, Alt, Shift, 그리고 Win) 지원하지 못합니다.</p>
+
+<h2 id="keynames">키 이름</h2>
+<p>다음 테이블은 전송이 가능한 특수 키들을 나열합니다. (각 키 이름은 활괄호로 둘러싸야 합니다):</p>
 <table class="info">
   <tr>
-    <th width="200">키 이름</th>
-    <th>결과 키눌림</th>
+    <th abbr="키 이름">키 이름</th>
+    <th abbr="설명">설명</th>
   </tr>
   <tr>
-    <td align="center">{F1} - {F24}</td>
-    <td>기능 키. 예를 들어: {F12}는 F12 키.</td>
+    <td>{F1} - {F24}</td>
+    <td>기능 키. 예를 들어: {F12} is <kbd>F12</kbd>.</td>
   </tr>
   <tr>
-    <td align="center">{!}</td>
+    <td>{!}</td>
     <td>!</td>
   </tr>
   <tr>
-    <td align="center">{#}</td>
+    <td>{#}</td>
     <td>#</td>
   </tr>
   <tr>
-    <td align="center">{+}</td>
+    <td>{+}</td>
     <td>+</td>
   </tr>
   <tr>
-    <td align="center">{^}</td>
+    <td>{^}</td>
     <td>^</td>
   </tr>
   <tr>
-    <td align="center">{{}</td>
+    <td>{{}</td>
     <td>{</td>
   </tr>
   <tr>
-    <td align="center">{}}</td>
+    <td>{}}</td>
     <td>}</td>
   </tr>
   <tr>
-    <td align="center">{Enter}</td>
-    <td>메인 키보드의 엔터키</td>
+    <td>{Enter}</td>
+    <td><kbd>Enter</kbd> on the main keyboard</td>
   </tr>
   <tr>
-    <td align="center">{Escape} 또는 {Esc}</td>
-    <td>ESCAPE</td>
+    <td>{Escape} 또는 {Esc}</td>
+    <td><kbd>Esc</kbd></td>
   </tr>
   <tr>
-    <td align="center">{Space}</td>
-    <td>SPACE (스페이스가 전송할 문자열의 앞이나 뒤에 나타날 때 필요합니다 -- 가운데 있는 스페이스는 문자 그대로 스페이스입니다)</td>
+    <td>{Space}</td>
+    <td><kbd>Space</kbd> (스페이스가 전송할 문자열의 앞이나 뒤에 나타날 때 필요합니다 -- 가운데 있는 스페이스는 문자 그대로 스페이스입니다)</td>
   </tr>
   <tr>
-    <td align="center">{Tab}</td>
-    <td>탭키</td>
+    <td>{Tab}</td>
+    <td><kbd>Tab</kbd></td>
   </tr>
   <tr>
-    <td align="center">{Backspace} 또는 {BS}</td>
-    <td>백스페이스</td>
+    <td>{Backspace} 또는 {BS}</td>
+    <td><kbd>Backspace</kbd></td>
   </tr>
   <tr>
-    <td align="center">{Delete} 또는 {Del}</td>
-    <td>삭제</td>
+    <td>{Delete} 또는 {Del}</td>
+    <td><kbd>Del</kbd></td>
   </tr>
   <tr>
-    <td align="center">{Insert} 또는 {Ins}</td>
-    <td>삽입</td>
+    <td>{Insert} 또는 {Ins}</td>
+    <td><kbd>Ins</kbd></td>
   </tr>
   <tr>
-    <td align="center">{Up}</td>
-    <td>메인 위 화살표 키</td>
+    <td>{Up}</td>
+    <td><kbd>↑</kbd> (up arrow) on main keyboard</td>
   </tr>
   <tr>
-    <td align="center">{Down}</td>
-    <td>메인 아래 화살표 키</td>
+    <td>{Down}</td>
+    <td><kbd>↓</kbd> (down arrow) on main keyboard</td>
   </tr>
   <tr>
-    <td align="center">{Left}</td>
-    <td>메인 왼쪽 화살표 키</td>
+    <td>{Left}</td>
+    <td><kbd>←</kbd> (left arrow) on main keyboard</td>
   </tr>
   <tr>
-    <td align="center">{Right}</td>
-    <td>메인 오른쪽 화살표 키</td>
+    <td>{Right}</td>
+    <td><kbd>→</kbd> (right arrow) on main keyboard</td>
   </tr>
   <tr>
-    <td align="center">{Home}</td>
-    <td>메인 홈 키</td>
+    <td>{Home}</td>
+    <td><kbd>Home</kbd> on main keyboard</td>
   </tr>
   <tr>
-    <td align="center">{End}</td>
-    <td>메인 엔드 키</td>
+    <td>{End}</td>
+    <td><kbd>End</kbd> on main keyboard</td>
   </tr>
   <tr>
-    <td align="center">{PgUp}</td>
-    <td>메인 페이지 업 키</td>
+    <td>{PgUp}</td>
+    <td><kbd>PgUp</kbd> on main keyboard</td>
+  </tr>
+  <tr class="sep_below">
+    <td>{PgDn}</td>
+    <td><kbd>PgDn</kbd> on main keyboard</td>
   </tr>
   <tr>
-    <td align="center">{PgDn}</td>
-    <td>메인 페이지 다운 키</td>
+    <td>{CapsLock}</td>
+    <td><kbd>CapsLock</kbd> (Win 2k/XP이라면 <a href="SetNumScrollCapsLockState.htm">SetCapsLockState</a>을 사용하는 편이 더 신뢰성이 높습니다). {CapsLock}를 전송하려면 미리 <code><a href="SetStoreCapslockMode.htm">SetStoreCapsLockMode</a> Off</code>이 되어 있어야 합니다.</td>
   </tr>
   <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <td>{ScrollLock}</td>
+    <td><kbd>ScrollLock</kbd> (다음도 참조: <a href="SetNumScrollCapsLockState.htm">SetScrollLockState</a>)</td>
+  </tr>
+  <tr class="sep_below">
+    <td>{NumLock}</td>
+    <td><kbd>NumLock</kbd> (다음도 참조: <a href="SetNumScrollCapsLockState.htm">SetNumLockState</a>)</td>
   </tr>
   <tr>
-    <td align="center">{CapsLock}</td>
-    <td>CapsLock (Win 2k/XP이라면 <a href="SetNumScrollCapsLockState.htm">SetCapsLockState</a>을 사용하는 편이 더 신뢰성이 높습니다). {CapsLock}를 전송하려면 미리 <a href="SetStoreCapslockMode.htm">SetStoreCapslockMode Off</a>이 되어 있어야 합니다.</td>
+    <td>{Control} 또는 {Ctrl}</td>
+    <td><kbd>Ctrl</kbd> (기술 정보: 좌우 구분 없는 가상 키를 보내지만 스캔 코드는 왼쪽을 전송함)</td>
   </tr>
   <tr>
-    <td align="center">{ScrollLock}</td>
-    <td>ScrollLock (다음도 참조: <a href="SetNumScrollCapsLockState.htm">SetScrollLockState</a>)</td>
+    <td>{LControl} 또는 {LCtrl}</td>
+    <td>왼쪽 <kbd>Ctrl</kbd> 키 (기술 정보: 좌우 구분 없는 가상 키가 아니라 왼쪽 가상 키를 전송함)</td>
   </tr>
   <tr>
-    <td align="center">{NumLock}</td>
-    <td>NumLock (다음도 참조: <a href="SetNumScrollCapsLockState.htm">SetNumLockState</a>)</td>
+    <td>{RControl} 또는 {RCtrl}</td>
+    <td>오른쪽 <kbd>Ctrl</kbd> 키</td>
+  </tr>
+  <tr class="sep_below">
+    <td>{Control down} 또는 {Ctrl down}</td>
+    <td>{Ctrl up}이 전송될 때까지 <kbd>Ctrl</kbd>를 누릅니다. 대신에 왼쪽 또는 오른쪽 키를 누르고 있으려면, {RCtrl down}과 {RCtrl ujp}을 사용하십시오.</td>
   </tr>
   <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <td>{Alt}</td>
+    <td><kbd>Alt</kbd>  (기술 정보: 좌우 구분 없는 가상 키를 보내지만 스캔 코드는 왼쪽을 전송함)</td>
   </tr>
   <tr>
-    <td align="center">{Control} 또는 {Ctrl}</td>
-    <td>CONTROL (기술 정보: 좌우 구분 없는 가상 키를 보내지만 스캔 코드는 왼쪽을 전송함)</td>
+    <td>{LAlt}</td>
+    <td>왼쪽 <kbd>Alt</kbd> 키 (기술 정보: 좌우 구분 없는 가상 키가 아니라 왼쪽 가상 키를 전송함)</td>
   </tr>
   <tr>
-    <td align="center">{LControl} 또는 {LCtrl}</td>
-    <td>왼쪽 CONTROL 키 (기술 정보: 좌우 구분 없는 가상 키가 아니라 왼쪽 가상 키를 전송함)</td>
+    <td>{RAlt}</td>
+    <td>오른쪽 <kbd>Alt</kbd> 키 (또는 키보드 레이아웃에 따라 <kbd>AltGr</kbd>)</td>
+  </tr>
+  <tr class="sep_below">
+    <td>{Alt down}</td>
+    <td>{Alt up}이 전송될 때까지 <kbd>Alt</kbd>를 누릅니다. 대신에 왼쪽 또는 오른쪽 키를 누르고 있으려면 {RAlt down}과 {RAlt up}을 사용하십시오.</td>
   </tr>
   <tr>
-    <td align="center">{RControl} 또는 {RCtrl}</td>
-    <td>오른쪽 CONTROL 키</td>
+    <td>{Shift}</td>
+    <td><kbd>Shift</kbd> (기술 정보: 좌우 구분 없는 가상 키를 보내지만 스캔 코드는 왼쪽을 전송함)</td>
   </tr>
   <tr>
-    <td align="center">{Control Down} 또는 {Ctrl Down}</td>
-    <td>{Ctrl Up}이 전송될 때까지 CONTROL 키를 누릅니다. 대신에 왼쪽 또는 오른쪽 키를 누르고 있으려면, {RCtrl Down}과 {RCtrl Up}을 사용하십시오.</td>
+    <td>{LShift}</td>
+    <td>왼쪽 <kbd>Shift</kbd> 키 (기술 정보: 좌우 구분 없는 가상 키가 아니라 왼쪽 가상 키를 전송함)</td>
   </tr>
   <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <td>{RShift}</td>
+    <td>오른쪽 <kbd>Shift</kbd> 키</td>
+  </tr>
+  <tr class="sep_below">
+    <td>{Shift down}</td>
+    <td>{Shift up}이 전송될 때까지 <kbd>Shift</kbd>를 누릅니다. 대신에 왼쪽 또는 오른쪽 키를 누르고 있으려면 {RShift down}과 {RShift up}을 사용하십시오.</td>
   </tr>
   <tr>
-    <td align="center">{Alt}</td>
-    <td>ALT (기술 정보: 좌우 구분 없는 가상 키를 보내지만 스캔 코드는 왼쪽을 전송함)</td>
+    <td>{LWin}</td>
+    <td>왼쪽 <kbd>Win</kbd> 키</td>
   </tr>
   <tr>
-    <td align="center">{LAlt}</td>
-    <td>왼쪽 ALT 키 (기술 정보: 좌우 구분 없는 가상 키가 아니라 왼쪽 가상 키를 전송함)</td>
+    <td>{RWin}</td>
+    <td>오른쪽 <kbd>Win</kbd> 키</td>
   </tr>
   <tr>
-    <td align="center">{RAlt}</td>
-    <td>오른쪽 ALT 키 (또는 키보드 레이아웃에 따라 AltGr)</td>
+    <td>{LWin down}</td>
+    <td>{LWin up}이 전송될 때까지 왼쪽 <kbd>Win</kbd>를 누릅니다</td>
+  </tr>
+  <tr class="sep_below">
+    <td>{RWin down}</td>
+    <td>{RWin up}이 전송될 때까지 오른쪽 <kbd>Win</kbd>를 누릅니다</td>
   </tr>
   <tr>
-    <td align="center">{Alt Down}</td>
-    <td>{Alt Up}이 전송될 때까지 ALT 키를 누릅니다. 대신에 왼쪽 또는 오른쪽 키를 누르고 있으려면 {RAlt Down}과 {RAlt Up}을 사용하십시오.</td>
+    <td>{AppsKey}</td>
+    <td><kbd>Menu</kbd> 키 (오른쪽 클릭 또는 문맥 메뉴를 요청합니다)</td>
   </tr>
   <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <td>{Sleep}</td>
+    <td><kbd>Sleep</kbd>.</td>
   </tr>
-  <tr>
-    <td align="center">{Shift}</td>
-    <td>SHIFT (기술 정보: 좌우 구분 없는 가상 키를 보내지만 스캔 코드는 왼쪽을 전송함)</td>
-  </tr>
-  <tr>
-    <td align="center">{LShift}</td>
-    <td>왼쪽 SHIFT 키 (기술 정보: 좌우 구분 없는 가상 키가 아니라 왼쪽 가상 키를 전송함)</td>
-  </tr>
-  <tr>
-    <td align="center">{RShift}</td>
-    <td>오른쪽 SHIFT 키</td>
-  </tr>
-  <tr>
-    <td align="center">{Shift Down}</td>
-    <td>{Shift Up}이 전송될 때까지 SHIFT 키를 누릅니다. 대신에 왼쪽 또는 오른쪽 키를 누르고 있으려면 {RShift Down}과 {RShift Up}을 사용하십시오.</td>
-  </tr>
-  <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-  </tr>
-  <tr>
-    <td align="center">{LWin}</td>
-    <td>왼쪽 Windows 키</td>
-  </tr>
-  <tr>
-    <td align="center">{RWin}</td>
-    <td>오른쪽 Windows 키</td>
-  </tr>
-  <tr>
-    <td align="center">{LWin Down}</td>
-    <td>{LWin Up}이 전송될 때까지 왼쪽 Windows 키를 누릅니다</td>
-  </tr>
-  <tr>
-    <td align="center">{RWin Down}</td>
-    <td>{RWin Up}이 전송될 때까지 오른쪽 Windows 키를 누릅니다</td>
-  </tr>
-  <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-  </tr>
-  <tr>
-    <td align="center">{AppsKey}</td>
-    <td>Windows App 키 (오른쪽 클릭 또는 문맥 메뉴를 요청합니다)</td>
-  </tr>
-  <tr>
-    <td align="center">{Sleep}</td>
-    <td>컴퓨터 SLEEP 키.</td>
-  </tr>
-  <tr>
-    <td align="center">{ASC nnnnn}</td>
-    <td><p><a name="asc"></a>ALT+nnnnn 키패드 조합을 전송합니다. 이를 이용하여 키보드에 존재하지 않는 특수 문자들을 발생시킬 수 있습니다. ASCII 문자들을 발생시키려면, 1부터 255 사이의 숫자를 지정하십시오. (대부분의 언어에 표준인) ANSI 문자를 발생시키려면, 128부터 255 사이의 숫자를 지정하되, 앞에 0을 덧붙이십시오. 예, {Asc 0133}.</p>
+  <tr id="asc">
+    <td>{ASC nnnnn}</td>
+    <td><p><kbd>Alt</kbd>+nnnnn 키패드 조합을 전송합니다. 이를 이용하여 키보드에 존재하지 않는 특수 문자들을 발생시킬 수 있습니다. ASCII 문자들을 발생시키려면, 1부터 255 사이의 숫자를 지정하십시오. (대부분의 언어에 표준인) ANSI 문자를 발생시키려면, 128부터 255 사이의 숫자를 지정하되, 앞에 0을 덧붙이십시오. 예, {Asc 0133}.</p>
     <p>유니코드 문자는 256부터 65535 사이의 숫자를 지정해 발생시킬 수 있습니다 (앞에 0을 붙이지 않음). 그렇지만, 이 방법은 모든 어플리케이션에서 지원되지는 않습니다. 대안은 아래 섹션을 참조하십시오.</p></td>
   </tr>
   <tr id="Unicode">
-    <td align="center">{U+nnnn}</td>
-    <td><p><a name="sendu"></a><span class="ver">[AHK_L 24+]:</span> 유니코드 문자를 전송합니다. <em>nnnn</em>은 앞에 0을 제외하고 문자의 십육진 값입니다. 유니코드 버전의 오토핫키에서는 자동으로 Send와 ControlSend이 유니코드 텍스트를 지원하기 때문에 이 방법이 필요하지 않습니다.</p>
-    <p>문자가 가상 키보드에 짝지어지지 않는다면, <a href="http://msdn.microsoft.com/en-us/library/ms646310.aspx">SendInput()</a> 또는 <a href="http://msdn.microsoft.com/en-us/library/ms646276.aspx">WM_CHAR</a>을 이용해 그 문자를 전송할 수 있습니다. 현재의 Send 모드는 아무 효과가 없습니다.</p></td>
+    <td>{U+nnnn}</td>
+    <td><p id="sendu"><span class="ver">[AHK_L 24+]:</span> 유니코드 문자를 전송합니다. <em>nnnn</em>은 앞에 0을 제외하고 문자의 십육진 값입니다. 유니코드 버전의 오토핫키에서는 자동으로 Send와 ControlSend이 유니코드 텍스트를 지원하기 때문에 이 방법이 필요하지 않습니다.</p>
+    <p><a href="http://msdn.microsoft.com/ko-kr/library/ms646310.aspx">SendInput()</a> 또는 <a href="http://msdn.microsoft.com/ko-kr/library/ms646276.aspx">WM_CHAR</a>을 이용해 그 문자를 전송할 수 있습니다. 현재의 Send 모드는 아무 효과가 없습니다. Characters sent this way usually do not trigger shortcut keys or hotkeys.</p></td>
   </tr>
-  <tr>
-    <td align="center"><p>{vkXX}<br>
+  <tr id="vk" class="sep_below">
+    <td><p>{vkXX}<br>
       {scYYY}<br>
     {vkXXscYYY}</p></td>
-    <td><p><a name="vk"></a>가상 키 XX와 스캔 코드 YYY인 키눌림을 전송합니다. 예를 들어: <code>Send {vkFFsc159}</code>. sc 또는 vk 부분을 생략하면, 그 자리에 가장 적절한 값이 전송됩니다.</p>
-      <p>XX와 YYY에 대한 값들은 십육진수이고 보통 메인 창이 <a href="KeyHistory.htm">View-&gt;Key history</a> 메뉴 항목을 통하여 알아낼 수 있습니다. 다음 참조: <a href="../KeyList.htm#SpecialKeys">특수 키</a></p></td>
+    <td><p>가상 키 XX와 스캔 코드 YYY인 키눌림을 전송합니다. 예를 들어: <code>Send {vkFFsc159}</code>. sc 또는 vk 부분을 생략하면, 그 자리에 가장 적절한 값이 전송됩니다.</p>
+      <p>XX와 YYY에 대한 값들은 십육진수이고 보통 메인 창이 <a href="KeyHistory.htm">View-&gt;Key history</a> 메뉴 항목을 통하여 알아낼 수 있습니다. 다음 참조: <a href="../KeyList.htm#SpecialKeys">특수 키</a></p>
+      <p class="warning"><strong>Warning:</strong> Combining vk and sc in this manner is valid only with Send. Prior to <span class="ver">[v1.1.27]</span>, hotkeys permitted but ignored any non-hexadecimal characters following XX.</p></td>
   </tr>
   <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <td>{Numpad0} - {Numpad9}</td>
+    <td>넘패드 숫자 키 (<kbd>NumLock</kbd>을 켜면 보임). 예를 들어: {Numpad5} is <kbd>5</kbd>.</td>
   </tr>
   <tr>
-    <td align="center">{Numpad0} - {Numpad9}</td>
-    <td>넘패드 숫자 키 (Numlock을 켜면 보임). 예를 들어: {Numpad5}는 숫자 5입니다.</td>
+    <td>{NumpadDot}</td>
+    <td><kbd>.</kbd> (넘패드 점) (<kbd>NumLock</kbd>을 켜면 보임).</td>
   </tr>
   <tr>
-    <td align="center">{NumpadDot}</td>
-    <td>넘패드 점 (Numlock을 켜면 보임).</td>
+    <td>{NumpadEnter}</td>
+    <td><kbd>Enter</kbd> on keypad</td>
   </tr>
   <tr>
-    <td align="center">{NumpadEnter}</td>
-    <td>키패드의 엔터 키</td>
+    <td>{NumpadMult}</td>
+    <td><kbd>*</kbd> (넘패드 곱셈)</td>
   </tr>
   <tr>
-    <td align="center">{NumpadMult}</td>
-    <td>넘패드 곱셈 키</td>
+    <td>{NumpadDiv}</td>
+    <td><kbd>/</kbd> (넘패드 나눗셈)</td>
   </tr>
   <tr>
-    <td align="center">{NumpadDiv}</td>
-    <td>넘패드 나눗셈 키</td>
+    <td>{NumpadAdd}</td>
+    <td><kbd>+</kbd> (넘패드 덧셈)</td>
+  </tr>
+  <tr class="sep_below">
+    <td>{NumpadSub}</td>
+    <td><kbd>-</kbd> (넘패드 뺄셈)</td>
   </tr>
   <tr>
-    <td align="center">{NumpadAdd}</td>
-    <td>넘패드 덧셈 키</td>
+    <td>{NumpadDel}</td>
+    <td>키패드의 <kbd>Del</kbd> (이 키와 아래의 넘패드 키들은 <kbd>NumLock</kbd>이 꺼져 있을 때 사용됩니다)</td>
   </tr>
   <tr>
-    <td align="center">{NumpadSub}</td>
-    <td>넘패드 뺄셈 키</td>
+    <td>{NumpadIns}</td>
+    <td><kbd>Ins</kbd> on keypad</td>
   </tr>
   <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <td>{NumpadClear}</td>
+    <td>키패드의 소거 키 (보통 <kbd>NumLock</kbd>이 꺼져 있을 때 <kbd>5</kbd> 키).</td>
   </tr>
   <tr>
-    <td align="center">{NumpadDel}</td>
-    <td>키패드의 삭제 키 (이 키와 아래의 넘패드 키들은 Numlock이 꺼져 있을 때 사용됩니다)</td>
+    <td>{NumpadUp}</td>
+    <td><kbd>↑</kbd> (up arrow) on keypad</td>
   </tr>
   <tr>
-    <td align="center">{NumpadIns}</td>
-    <td>키패드의 삽입 키</td>
+    <td>{NumpadDown}</td>
+    <td><kbd>↓</kbd> (down arrow) on keypad</td>
   </tr>
   <tr>
-    <td align="center">{NumpadClear}</td>
-    <td>키패드의 소거 키 (보통 Numlock이 꺼져 있을 때 '5' 키).</td>
+    <td>{NumpadLeft}</td>
+    <td><kbd>←</kbd> (left arrow) on keypad</td>
   </tr>
   <tr>
-    <td align="center">{NumpadUp}</td>
-    <td>키패드의 위 화살표 키</td>
+    <td>{NumpadRight}</td>
+    <td><kbd>→</kbd> (right arrow) on keypad</td>
   </tr>
   <tr>
-    <td align="center">{NumpadDown}</td>
-    <td>키패드의 아래 화살표 키</td>
+    <td>{NumpadHome}</td>
+    <td><kbd>Home</kbd> on keypad</td>
   </tr>
   <tr>
-    <td align="center">{NumpadLeft}</td>
-    <td>키패드의 왼쪽 화살표 키</td>
+    <td>{NumpadEnd}</td>
+    <td><kbd>End</kbd> on keypad</td>
   </tr>
   <tr>
-    <td align="center">{NumpadRight}</td>
-    <td>키패드의 오른쪽 화살표 키</td>
+    <td>{NumpadPgUp}</td>
+    <td><kbd>PgUp</kbd> on keypad</td>
+  </tr>
+  <tr class="sep_below">
+    <td>{NumpadPgDn}</td>
+    <td><kbd>PgDn</kbd> on keypad</td>
   </tr>
   <tr>
-    <td align="center">{NumpadHome}</td>
-    <td>키패드의 홈 키</td>
-  </tr>
-  <tr>
-    <td align="center">{NumpadEnd}</td>
-    <td>키패드의 엔드 키</td>
-  </tr>
-  <tr>
-    <td align="center">{NumpadPgUp}</td>
-    <td>키패드의 페이지-업 키</td>
-  </tr>
-  <tr>
-    <td align="center">{NumpadPgDn}</td>
-    <td>키패드의 페이지-다운 키</td>
-  </tr>
-  <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-  </tr>
-  <tr>
-    <td align="center">{Browser_Back}</td>
+    <td>{Browser_Back}</td>
     <td>브라우저의 "back" 버튼</td>
   </tr>
   <tr>
-    <td align="center">{Browser_Forward}</td>
+    <td>{Browser_Forward}</td>
     <td>브라우저의 "forward" 버튼</td>
   </tr>
   <tr>
-    <td align="center">{Browser_Refresh}</td>
+    <td>{Browser_Refresh}</td>
     <td>브라우저의 "refresh" 버튼</td>
   </tr>
   <tr>
-    <td align="center">{Browser_Stop}</td>
+    <td>{Browser_Stop}</td>
     <td>브라우저의 "stop" 버튼</td>
   </tr>
   <tr>
-    <td align="center">{Browser_Search}</td>
+    <td>{Browser_Search}</td>
     <td>브라우저의 "search" 버튼</td>
   </tr>
   <tr>
-    <td align="center">{Browser_Favorites}</td>
+    <td>{Browser_Favorites}</td>
     <td>브라우저의 "favorites" 버튼</td>
   </tr>
   <tr>
-    <td align="center">{Browser_Home}</td>
+    <td>{Browser_Home}</td>
     <td>브라우저를 기동하고 홈페이지로 갑니다</td>
   </tr>
   <tr>
-    <td align="center">{Volume_Mute}</td>
+    <td>{Volume_Mute}</td>
     <td>마스터 볼륨 음소거. 보통 <code><a href="SoundSet.htm">SoundSet</a>, +1, , mute</code>와 동등함.</td>
   </tr>
   <tr>
-    <td align="center">{Volume_Down}</td>
+    <td>{Volume_Down}</td>
     <td>마스터 볼륨을 줄입니다. 보통 <code><a href="SoundSet.htm">SoundSet</a> -5</code>와 동등.</td>
   </tr>
   <tr>
-    <td align="center">{Volume_Up}</td>
+    <td>{Volume_Up}</td>
     <td>마스터 볼륨을 높입니다. 보통 <code><a href="SoundSet.htm">SoundSet</a> +5</code>와 동등함.</td>
   </tr>
   <tr>
-    <td align="center">{Media_Next}</td>
+    <td>{Media_Next}</td>
     <td>미디어 플레이어에서 다음 트랙으로</td>
   </tr>
   <tr>
-    <td align="center">{Media_Prev}</td>
+    <td>{Media_Prev}</td>
     <td>미디어 플레이어에서 이전 트랙으로</td>
   </tr>
   <tr>
-    <td align="center">{Media_Stop}</td>
+    <td>{Media_Stop}</td>
     <td>미디어 플레이어 중지</td>
   </tr>
   <tr>
-    <td align="center">{Media_Play_Pause}</td>
+    <td>{Media_Play_Pause}</td>
     <td>미디어 플레이어 정지/연주</td>
   </tr>
   <tr>
-    <td align="center">{Launch_Mail}</td>
+    <td>{Launch_Mail}</td>
     <td>이메일 어플리케이션 기동</td>
   </tr>
   <tr>
-    <td align="center">{Launch_Media}</td>
+    <td>{Launch_Media}</td>
     <td>미디어 플레이어 기동</td>
   </tr>
   <tr>
-    <td align="center">{Launch_App1}</td>
+    <td>{Launch_App1}</td>
     <td>사용자 app1 기동</td>
   </tr>
-  <tr>
-    <td align="center">{Launch_App2}</td>
+  <tr class="sep_below">
+    <td>{Launch_App2}</td>
     <td>사용자 app2 기동</td>
   </tr>
   <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
+    <td>{PrintScreen}</td>
+    <td><kbd>PrtSc</kbd></td>
   </tr>
   <tr>
-    <td align="center">{PrintScreen}</td>
-    <td>화면 인쇄</td>
+    <td>{CtrlBreak}</td>
+    <td><kbd>Ctrl</kbd>+<kbd>Pause</kbd></td>
   </tr>
-  <tr>
-    <td align="center">{CtrlBreak}</td>
-    <td>Ctrl+break</td>
+  <tr class="sep_below">
+    <td>{Pause}</td>
+    <td><kbd>정지</kbd></td>
   </tr>
-  <tr>
-    <td align="center">{Pause}</td>
-    <td>정지</td>
-  </tr>
-  <tr>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-  </tr>
-  <tr>
-    <td align="center"><strong>{Click [Options]}</strong><br>
+  <tr id="Click">
+    <td>{Click [Options]}<br>
     <span class="ver">[v1.0.43+]</span></td>
-    <td><a name="Click"></a><a href="Click.htm">Click 명령어</a>와 같은 옵션을 사용하여 마우스 클릭을 전송합니다. 예를 들어, <code>{Click}</code>은 마우스 커서의 현재 위치에 왼 마우스 버튼을 한 번 클릭합니다. 그리고 <code>{Click 100, 200}</code>는 좌표 100, 200에 클릭합니다 (<a href="CoordMode.htm">CoordMode</a>에 기반). 클릭 없이 마우스를 이동시키려면, 좌표 다음에 0을 지정하십시오; 예를 들어: <code>{Click 100, 200, 0}</code>. 마우스 클릭 사이의 지연 시간은 <a href="SetMouseDelay.htm">SetMouseDelay</a>로 결정됩니다 (<a href="SetKeyDelay.htm">SetKeyDelay</a>로 결정되지 않습니다).</td>
+    <td><a href="Click.htm">Click 명령어</a>와 같은 옵션을 사용하여 마우스 클릭을 전송합니다. 예를 들어, <code>Send {Click}</code>은 마우스 커서의 현재 위치에 왼 마우스 버튼을 한 번 클릭합니다. 그리고 <code>Send {Click 100 200}</code>는 좌표 100, 200에 클릭합니다 (<a href="CoordMode.htm">CoordMode</a>에 기반). 클릭 없이 마우스를 이동시키려면, 좌표 다음에 0을 지정하십시오; 예를 들어: <code>Send {Click 100 200 0}</code>. 마우스 클릭 사이의 지연 시간은 <a href="SetMouseDelay.htm">SetMouseDelay</a>로 결정됩니다 (<a href="SetKeyDelay.htm">SetKeyDelay</a>로 결정되지 않습니다).</td>
   </tr>
   <tr>
-    <td align="center">{WheelDown}, {WheelUp}, {WheelLeft}, {WheelRight}, {LButton}, {RButton}, {MButton}, {XButton1}, {XButton2}</td>
-    <td>커서의 현재 위치에 마우스 버튼 이벤트를 전송합니다 (위치와 기타 옵션에 관하여 통제하려면, 위의 <a href="Click.htm">{Click}</a>을 사용하십시오). 마우스 클릭 사이의 지연 시간은 <a href="SetMouseDelay.htm">SetMouseDelay</a>으로 결정됩니다. WheelLeft/Right는 v1.0.48+을 요구하지만, Windows Vista 미만의 운영 체제에서는 아무 효과가 없습니다.</td>
+    <td>{WheelDown}, {WheelUp}, {WheelLeft}, {WheelRight}, {LButton}, {RButton}, {MButton}, {XButton1}, {XButton2}</td>
+    <td>
+      <p>커서의 현재 위치에 마우스 버튼 이벤트를 전송합니다 (위치와 기타 옵션에 관하여 통제하려면, 위의 <a href="Click.htm">{Click}</a>을 사용하십시오). 마우스 클릭 사이의 지연 시간은 <a href="SetMouseDelay.htm">SetMouseDelay</a>으로 결정됩니다. WheelLeft/Right는 <span class="ver">[v1.0.48+]</span>을 요구하지만, Windows Vista 미만의 운영 체제에서는 아무 효과가 없습니다.</p>
+      <p>LButton and RButton correspond to the "physical" left and right buttons when used with Send, but the "logical" left and right buttons when used with hotkeys. In other words, if the user has swapped the buttons via system settings, <code>{LButton}</code> performs a logical right click, but a physical left click activates the <code>RButton::</code> hotkey. Likewise for <code>{RButton}</code> and <code>LButton::</code>. To always perform a logical click, use <a href="Click.htm">{Click}</a> instead.</p>
+    </td>
   </tr>
   <tr>
-    <td align="center"><strong>{Blind}</strong></td>
-    <td><p><a name="blind"></a>문자열에서 {Blind}가 첫 항목이면, 프로그램은 Alt/Control/Shift/Win 키가 눌린 상태에서 시작했을 경우 떼려고 하지 않습니다. 예를 들어, 핫키 <code>+s::Send {Blind}abc</code>는 abc가 아니라 ABC를 전송합니다. 왜냐하면 사용자가 Shift 키를 누르고 있기 때문입니다.</p>
-      <p>{Blind}는 또한 <a href="SetStoreCapslockMode.htm">SetStoreCapslockMode</a>를 무시합니다; 즉, Capslock의 상태가 바뀌지 않습니다. 마지막으로, {Blind}는 추가 Control 키눌림을 생략합니다; 그러므로: 1) LWin/RWin 키를 눌러도 시작 메뉴가 촉발되지 않습니다; 2) Alt 키를 눌러도 메뉴 바가 활성화되지 않습니다.</p>
-      <p>맹목-모드는 <a href="../misc/Remap.htm">키를 리맵핑할 때</a> 내부적으로 사용됩니다. 예를 들어, 리맵핑 "a::b"는: 1) "a"를 타자하면 "b"를 생산하고; 2) 대문자 A를 타자하면 대문자 B를 생산하며 ; 그리고 3) Control-A를 타자하면 Control-B를 생산합니다.</p>
-      <p>{Blind}는 SendRaw과 <a href="ControlSend.htm">ControlSendRaw</a>가 지원하지 않습니다. 게다가, <a href="#SendPlayDetail">SendPlay</a>도 완벽하게는 지원하지 못합니다. 특히 수식 키들을 다룰 때 (Control, Alt, Shift, 그리고 Win) 지원하지 못합니다.</p></td>
+    <td>{Blind}</td>
+    <td>Enables the <a href="#blind">Blind mode</a>, which gives the script more control by disabling a number of things that are normally done automatically to make things generally work as expected. The string <code>{Blind}</code> must occur at the beginning of the string.</td>
   </tr>
   <tr>
-    <td align="center"><strong>{Raw}</strong><br>
+    <td>{Raw}<br>
     <span class="ver">[v1.0.43+]</span></td>
-    <td><a name="Raw" id="Raw"></a>키눌림을 보이는 그대로 전송합니다. {Enter}를 ENTER 키눌림으로 변환하지 않고, <code>^c</code>를 Control-C로 변환하지 않습니다, 등등. 문자열 {Raw}는 문자열의 시작부터 일어날 필요는 없지만, 일단 지정되면, 문자열의 나머지에 효과를 유지합니다.</td>
+    <td>Enables the <a href="#SendRaw">Raw mode</a>, which causes the following characters to be interpreted literally: <code>^+!#{}</code>. 문자열 <code>{Raw}</code>는 문자열의 시작부터 일어날 필요는 없지만, 일단 지정되면, 문자열의 나머지에 효과를 유지합니다.</td>
+  </tr>
+  <tr>
+    <td>{Text}<br>
+    <span class="ver">[v1.1.27+]</span></td>
+    <td>Enables the <a href="#SendText">Text mode</a>, which sends a stream of characters rather than keystrokes. Like the Raw mode, the Text mode causes the following characters to be interpreted literally: <code>^+!#{}</code>. 문자열 <code>{Text}</code>는 문자열의 시작부터 일어날 필요는 없지만, 일단 지정되면, 문자열의 나머지에 효과를 유지합니다.</td>
   </tr>
 </table>
 
-<h2>키를 반복하기 또는 키를 누르고 있기</h2>
-<p><strong>키를 반복하려면</strong>: 키의 이름에 활괄호를 두르고 다음에 반복할 횟수를 지정합니다. 예를 들어:</p>
+<h2 id="Repeating_or_Holding_Down_a_Key">키를 반복하기 또는 키를 누르고 있기</h2>
+<p id="repeat"><strong>키를 반복하려면</strong>: 키의 이름에 활괄호를 두르고 다음에 반복할 횟수를 지정합니다. 예를 들어:</p>
 <pre>Send {DEL 4}  <em>; Delete 키를 4 번 누릅니다.</em>
 Send {S 30}   <em>; 대문자 S를 30개 전송합니다.</em>
 Send +{TAB 4}  <em>; Shift-Tab을 4 번 누릅니다.</em></pre>
-<p><strong>키를 누르고 있거나 떼기</strong>: 키의 이름을 활괄호로 둘러싸고 다음에 단어 <strong>Down</strong> 또는 <strong>Up</strong>을 지정합니다. 예를 들어:</p>
+<p id="Down"><strong>키를 누르고 있거나 떼기</strong>: 키의 이름을 활괄호로 둘러싸고 다음에 단어 <strong>Down</strong> 또는 <strong>Up</strong>을 지정합니다. 예를 들어:</p>
 <pre>Send {b down}{b up}
 Send {TAB down}{TAB up}
 Send {Up down}  <em>; 위 화살표 키를 누릅니다.</em>
@@ -478,41 +510,75 @@ Send {Up up}  <em>; 위 화살표 키를 뗍니다.</em></pre>
     Sleep 30  <em>; 키 눌림 사이에 대기하는 밀리 초 (또는 <a href="SetKeyDelay.htm">SetKeyDelay</a>를 사용하십시오).</em>
 }
 Send {Tab up}  <em>; 키를 뗍니다.</em></pre>
-<p>단어 <em>DownTemp</em>도 사용할 수 있습니다. 그의 효과는 수식 (Control/Shift/Alt/Win) 키를 제외하고 <em>Down</em>과 똑 같습니다. 그런 경우, <em>DownTemp</em>는 연이은 전송에 키가 영구히 눌려 있는 것은 아니며, 그러므로 키눌림이 요구하면 언제든지 떼어도 좋다고 알려줍니다. 예를 들어, <code>Send {Control DownTemp}</code> 다음에 <code>Send a</code>가 따라오면 보통의 "a" 키눌림을 생산하며, control-A 키눌림을 생산하지 않습니다.</p>
+<p>By default, Send will not automatically release a modifier key (Control, Shift, Alt, and Win) if that modifier key was "pressed down" by sending it. For example, <code>Send a</code> may behave similar to <code>Send <a href="#blind">{Blind}</a>{Ctrl up}a{Ctrl down}</code> if the user is physically holding <kbd>Ctrl</kbd>, but <code>Send {Ctrl Down}</code> followed by <code>Send a</code> will produce <kbd>Ctrl</kbd>+<kbd>A</kbd>. <em>DownTemp</em> and <em>DownR</em> can be used to override this behavior. <em>DownTemp</em> and <em>DownR</em> have the same effect as <em>Down</em> except for the modifier keys (Control, Shift, Alt, and Win).</p>
+<p id="DownTemp"><strong>DownTemp</strong>는 연이은 전송에 키가 영구히 눌려 있는 것은 아니며, 그러므로 키눌림이 요구하면 언제든지 떼어도 좋다고 알려줍니다. 예를 들어, <code>Send {Control DownTemp}</code> 다음에 <code>Send a</code>가 따라오면 보통의 <kbd>A</kbd> 키눌림을 생산하며, <kbd>Ctrl</kbd>+<kbd>A</kbd> 키눌림을 생산하지 않습니다. Any use of Send may potentially release the modifier permanently, so <em>DownTemp</em> is not ideal for <a href="../misc/Remap.htm">remapping</a> modifier keys.</p>
+<p id="DownR"><span class="ver">[v1.1.27+]:</span> <strong>DownR</strong> (where "R" stands for <a href="../misc/Remap.htm">remapping</a>, which is its main use) tells subsequent sends that if the key is automatically released, it should be pressed down again when send is finished. For example, <code>Send {Control DownR}</code> followed later by <code>Send a</code> would produce <kbd>A</kbd>, not <kbd>Ctrl</kbd>+<kbd>A</kbd>, but will leave <kbd>Ctrl</kbd> in the pressed state for use with keyboard shortcuts. In other words, <em>DownR</em> has an effect similar to physically pressing the key.</p>
+<p>If a character does not correspond to a virtual key on the current keyboard layout, it cannot be "pressed" or "released". For example, <code>Send {µ up}</code> has no effect on most layouts, and <code>Send {µ down}</code> is equivalent to <code>Send µ</code>.</p>
 
 <h2 id="Remarks">총평</h2>
-<p>Send 명령어가 지원하는 문자에 특별한 제한은 없습니다. 문자가 현재 키보드 레이아웃에 존재하지 않으면, 오토핫키 버전에 따라 유니코드 문자 패킷 또는 <a href="#asc">Alt+nnnnn</a> 조합을 전송해 흉내낼 수 있습니다. 유니코드 문자는 텍스트로 유니코드 버전의 오토핫키에서 직접적으로 지원합니다. 또는 다른 버전이라면 <a href="#sendu">{U+nnnn} 표기법</a>을 사용하면 됩니다.</p>
+<p id="characters"><strong>Characters vs. keys</strong>: By default, characters are sent by first translating them to keystrokes. If this translation is not possible (that is, if the current keyboard layout does not contain a key or key combination which produces that character), the character is sent by one of following fallback methods:</p>
+<ul id="fallback">
+  <li>SendEvent and SendInput use <a href="http://msdn.microsoft.com/ko-kr/library/ms646310">SendInput()</a> with the <a href="https://msdn.microsoft.com/ko-kr/library/ms646271#keyeventf_unicode">KEYEVENTF_UNICODE flag</a>. <span class="ver">[v1.1.27+]:</span> ANSI builds of AutoHotkey convert the character to Unicode before sending it. Prior to v1.1.27, ANSI builds used the Alt+nnnnn method.</li>
+  <li>SendPlay uses the <a href="#asc">Alt+nnnnn</a> method, which produces Unicode only if supported by the target application.</li>
+  <li>ControlSend posts a <a href="http://msdn.microsoft.com/ko-kr/library/ms646276.aspx">WM_CHAR</a> message.</li>
+</ul>
+<p class="warning"><strong>Note:</strong> Characters sent using any of the above methods usually do not trigger keyboard shortcuts or hotkeys.</p>
+<p id="AZ"><span class="ver">[v1.1.27+]:</span> For characters in the range <strong>a-z</strong> or <strong>A-Z</strong> (plain ASCII letters), each character which does not exist in the current keyboard layout may be sent either as a character or as the corresponding virtual keycode (vk41-vk5A):</p>
+<ul>
+  <li>If a naked letter is sent (that is, without modifiers or braces), or if <a href="#Raw">Raw</a> mode is in effect, it is sent as a character. For example, <code>Send {Raw}Regards</code> sends the expected text, even though pressing <kbd>R</kbd> (vk52) produces some other character (such as <kbd>К</kbd> on the Russian layout). <code>{Raw}</code> can be omitted in this case, unless a modifier key was put into effect by a prior Send.</li>
+  <li>If one or more modifier keys have been put into effect by the Send command, or if the letter is wrapped in braces, it is sent as a keycode (modified with <kbd>Shift</kbd> if the letter is upper-case). This allows the script to easily activate standard keyboard shortcuts. For example, <code>^c</code> and <code>{Ctrl down}c{Ctrl up}</code> activate the standard <kbd>Ctrl</kbd>+<kbd>C</kbd> shortcut and <code>{c}</code> is equivalent to <code>{vk43}</code>.</li>
+</ul>
+<p>If the letter exists in the current keyboard layout, it is always sent as whichever keycode the layout associates with that letter (unless the <a href="#SendText">Text mode</a> is used, in which case the character is sent by other means). In other words, the section above is only relevant for non-Latin based layouts such as Russian.</p>
+<p id="mask"><strong>Modifier State</strong>: When Send is required to change the state of the <kbd>Win</kbd> or <kbd>Alt</kbd> modifier keys (such as if the user was holding one of those keys), it may inject additional keystrokes (<kbd>Ctrl</kbd> by default) to prevent the Start menu or window menu from appearing. 자세한 것은 <a href="_MenuMaskKey.htm">#MenuMaskKey</a>를 참조하십시오.</p>
 <p><strong>SendInput/SendPlay와 비교한 BlockInput</strong>: <a href="BlockInput.htm">BlockInput</a> 명령어는 사용자가 물리적으로 타자하는 키 눌림이 흉내낸 키눌림에 방해를 받지 않도록 막아 주지만, 종종 <a href="#SendInputDetail">SendInput</a>이나 <a href="#SendPlayDetail">SendPlay</a>를 사용하면 더 좋은 경우가 있습니다. 키눌림과 마우스 클릭이 인터럽트가 불가능합니다. BlockInput과 다르게, SendInput/Play 는 전송하는 동안 사용자가 타자한 키들을 버리지 않습니다; 대신, 그런 키들은 버퍼 처리되었다가 나중에 전송됩니다.</p>
 <p>엄청나게 많은 키눌림을 전송할 경우, <a href="../Scripts.htm#continuation">계속 섹션</a>을 사용하면 가독성과 유지관리성을 개선할 수 있습니다.</p>
-<p>운영 체제는 CTRL-ALT-DELETE 조합을 허용하지 않기 때문에, <code>Send ^!{Delete}</code>와 같이 하더라도 아무 효과가 없습니다.</p>
+<p>운영 체제는 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 조합을 허용하지 않기 때문에, <code>Send ^!{Delete}</code>와 같이 하더라도 아무 효과가 없습니다.</p>
 <p><b>Send는 아무 효과가 없을 수 있습니다</b> Windows Vista 이후 활성 창이 관리자 권한으로 실행중인데 스크립트는 관리자 권한이 없으면 그렇습니다. 이것은 사용자 인터페이스 권한 격리(User Interface Privilege Isolation) 보안 매커니즘 때문입니다.</p>
 
 <h2 id="SendInputDetail">SendInput <span class="ver">[v1.0.43+]</span></h2>
 <p>SendInput은 일반적으로 키눌림과 마우스 클릭을 전송하는 데 선호되는 방법입니다. 왜냐하면 속도가 월등하고 신뢰성이 있기 때문입니다. 대부분의 상황에서, SendInput은 거의 즉시 실행됩니다. 기다란 문자열을 보내도 순식간입니다. SendInput은 빠르기 때문에, 더 신뢰성이 있습니다. 왜냐하면 다른 창이 의도치 않게 나타나거나 키눌림을 가로 채는 빈도가 줄어들기 때문입니다. SendInput 동안에 사용자가 타자하면 연기되었다가 나중에 처리되므로 신뢰성은 더욱 개선됩니다.</p>
 <p>다른 전송 모드와 다르게, 운영 체제는 SendInput을 대략 5000 문자로 제한합니다 (이 값은 운영 체제의 버전과 수행성능 설정에 따라 달라집니다). 이 제한을 넘어서 문자들과 이벤트들은 전송되지 않습니다.</p>
-<p><strong>주의:</strong> SendInput은 SetKeyDelay를 무시합니다. 왜냐하면 운영 체제가 이 모드에서는 지연 시간을 지원하지 않기 때문입니다. 그렇지만, 아래에 기술한 상황 아래에서 SendInput은 <a href="#SendEvent">SendEvent</a>에 의존합니다. SendEvent는 <code><a href="SetKeyDelay.htm">SetKeyDelay -1, 0</a></code>를 사용합니다 (단, SendEvent의 키 지연시간이(KeyDelay) <code>-1,-1</code>인 경우는 예외입니다. 이 경우는 <code>-1,-1</code>이 사용됩니다). SendInput이 <a href="#SendPlayDetail">SendPlay</a>에 의존할 때, SendPlay의 키 지연시간(KeyDelay)을 사용합니다.</p>
-<p><a name="SendInputUnavail"></a>If a script <em>other than</em> the one executing SendInput has a <a href="_InstallKeybdHook.htm">low-level keyboard hook</a> installed, SendInput automatically reverts to <a href="#SendEvent">SendEvent</a> (or <a href="#SendPlayDetail">SendPlay</a> if <a href="SendMode.htm"><code>SendMode InputThenPlay</code></a> is in effect). 외부 갈고리의 존재 때문에 SendInput의 모든 장점이 가려집니다. 그 때문에 SendPlay와 SendEvent에 비해 열등합니다. 그렇지만, SendInput은 AutoHotkey v1.0.43+이 아니라면 저-수준 갈고리를 탐지할 수 없기 때문에, 이런 경우는 의존할 것이 없으므로 SendPlay/Event 보다 신뢰성이 더 떨어집니다.</p>
-<p>SendInput이 <a href="#Click">{Click}</a>와 같은 수단을 통하여 마우스 클릭을 전송할 때 그리고 <a href="SetMouseDelay.htm"><code>CoordMode Mouse, Relative</code></a>가 켜져 있을 때 (기본값), 모든 클릭은 전송이 시작될 때 활성화 된 창에 상대적입니다. 그러므로, SendInput이 의도적으로 (알트-탭 같은 수단으로) 또다른 창을 활성화하면, 같은 명령어 안에서 연이은 클릭의 좌표들은 오류가 일어납니다. 왜냐하면 여전히 새 창이 아니라 예전 창에 상대적이기 때문입니다.</p>
+<p class="note"><strong>주의:</strong> SendInput은 SetKeyDelay를 무시합니다. 왜냐하면 운영 체제가 이 모드에서는 지연 시간을 지원하지 않기 때문입니다. 그렇지만, 아래에 기술한 상황 아래에서 SendInput은 <a href="#SendEvent">SendEvent</a>에 의존합니다. SendEvent는 <code><a href="SetKeyDelay.htm">SetKeyDelay</a> -1, 0</code>를 사용합니다 (단, SendEvent의 키 지연시간이(KeyDelay) <code>-1,-1</code>인 경우는 예외입니다. 이 경우는 <code>-1,-1</code>이 사용됩니다). SendInput이 <a href="#SendPlayDetail">SendPlay</a>에 의존할 때, SendPlay의 키 지연시간(KeyDelay)을 사용합니다.</p>
+<p id="SendInputUnavail">If a script <em>other than</em> the one executing SendInput has a <a href="_InstallKeybdHook.htm">low-level keyboard hook</a> installed, SendInput automatically reverts to <a href="#SendEvent">SendEvent</a> (or <a href="#SendPlayDetail">SendPlay</a> if <code><a href="SendMode.htm">SendMode</a> InputThenPlay</code> is in effect). 외부 갈고리의 존재 때문에 SendInput의 모든 장점이 가려집니다. 그 때문에 SendPlay와 SendEvent에 비해 열등합니다. 그렇지만, SendInput은 <span class="ver">[AutoHotkey v1.0.43+]</span>이 아니라면 저-수준 갈고리를 탐지할 수 없기 때문에, 이런 경우는 의존할 것이 없으므로 SendPlay/Event 보다 신뢰성이 더 떨어집니다.</p>
+<p>SendInput이 <a href="#Click">{Click}</a>와 같은 수단을 통하여 마우스 클릭을 전송할 때 그리고 <code><a href="CoordMode.htm">CoordMode</a> Mouse, Relative</code>가 켜져 있을 때 (기본값), 모든 클릭은 전송이 시작될 때 활성화 된 창에 상대적입니다. 그러므로, SendInput이 의도적으로 (알트-탭 같은 수단으로) 또다른 창을 활성화하면, 같은 명령어 안에서 연이은 클릭의 좌표들은 오류가 일어납니다. 왜냐하면 여전히 새 창이 아니라 예전 창에 상대적이기 때문입니다.</p>
+
 <h2 id="SendPlayDetail">SendPlay <span class="ver">[v1.0.43+]</span></h2>
-<p>SendPlay의 가장 큰 장점은 다른 모드와 다르게 광범위한 게임에서 마우스 클릭과 키눌림을 "재시연"할 수 있다는 것입니다. 예를 들어, 특정한 게임은 오직 <a href="../Hotstrings.htm#SendMode">SendPlay 옵션이</a>이 있을 경우에만 <a href="../Hotstrings.htm#SendMode">핫스트링</a>을 받아 들입니다. 그렇지만, SendPlay는 Windows Vista 이후에서 사용자 계정 통제(User Account Control)가 켜져 있으면, 아무 효과가 없습니다. 스크립트가 사용자 권한으로 실행되어도 마찬가지입니다. 다음 스크립트는 이 문제의 우회책을 제공합니다: <a href="http://www.autohotkey.com/forum/topic75595.html">http://www.autohotkey.com/forum/topic75595.html</a>.</p>
+<p class="warning"><strong>Warning:</strong> SendPlay may have no effect at all if UAC is enabled, even if the script is running as an administrator. For more information, refer to the <a href="../FAQ.htm#uac">FAQ</a>.</p>
+<p>SendPlay의 가장 큰 장점은 다른 모드와 다르게 광범위한 게임에서 마우스 클릭과 키눌림을 "재시연"할 수 있다는 것입니다. 예를 들어, 특정한 게임은 오직 <a href="../Hotstrings.htm#SendMode">SendPlay 옵션이</a>이 있을 경우에만 <a href="../Hotstrings.htm#SendMode">핫스트링</a>을 받아 들입니다.</p>
 <p>세 가지 전송 모드 중에서, SendPlay가 가장 이상합니다. 왜냐하면 키눌림과 마우스 클릭을 사실상 흉내내지 않기 때문입니다. 대신에, 일련의 이벤트 (메시지)를 만들어 냅니다. 그 메시지들이 활성 창으로 직접 흘러 들어갑니다 (<a href="ControlSend.htm">ControlSend</a>와 비슷하게, 그러나 낮은 수준에서). 결과적으로, SendPlay는 핫키나 핫트링을 촉발시키지 않습니다.</p>
 <p><a href="#SendInputDetail">SendInput</a>처럼, SendPlay의 키눌림은 사용자가 타자한 키눌림 때문에 흩어지지 않습니다. 그래서, 사용자가 어쩌다가 SendPlay 중에 타자를 하더라도, 그런 키눌림은 연기되었다가 나중에 처리됩니다.</p>
 <p>SendPlay는 SendInput에 비해 상당히 느립니다. 그러나 보통 전통적인 <a href="#SendEvent">SendEvent</a> 모드 보다는 빠릅니다 (<a href="SetKeyDelay.htm">KeyDelay</a>가 -1일 경우에도 마찬가지입니다).</p>
-<p>Windows 키 (LWin 그리고 RWin)는 <a href="_InstallKeybdHook.htm">키보드 갈고리</a>가 설치되어 있으면 SendPlay 동안 자동으로 막힙니다. 이 덕분에 전송하는 동안에 사용자가 우발적으로 Windows 키를 눌러도 시작 메뉴가 나타나지 않습니다. 대조적으로, LWin와 RWin 말고 다른 키들은 막아줄 필요가 있습니다. 왜냐하면 운영 체제가 자동으로 키들을 (버퍼 처리하여) SendPlay가 끝날 때까지 연기해 주기 때문입니다.</p>
-<p>SendPlay는 SetKeyDelay와 SetMouseDelay의 표준 설정을 사용하지 않습니다. 대신에, 기본값으로 전혀 대기 시간이 없습니다. 이 대기 시간은 다음 예제와 같이 바꿀 수 있습니다:</p>
+<p>Both <kbd>Win</kbd> (LWin and RWin) are automatically blocked during a SendPlay if the <a href="_InstallKeybdHook.htm">keyboard hook</a> is installed. 이 덕분에 전송하는 동안에 사용자가 우발적으로 <kbd>Win</kbd>를 눌러도 시작 메뉴가 나타나지 않습니다. 대조적으로, LWin와 RWin 말고 다른 키들은 막아줄 필요가 있습니다. 왜냐하면 운영 체제가 자동으로 키들을 (버퍼 처리하여) SendPlay가 끝날 때까지 연기해 주기 때문입니다.</p>
+<p>SendPlay는 <a href="SetKeyDelay.htm">SetKeyDelay</a>와 <a href="SetMouseDelay.htm">SetMouseDelay</a>의 표준 설정을 사용하지 않습니다. 대신에, 기본값으로 전혀 대기 시간이 없습니다. 이 대기 시간은 다음 예제와 같이 바꿀 수 있습니다:</p>
 <pre><a href="SetKeyDelay.htm">SetKeyDelay</a>, 0, 10, <strong>Play</strong>  <em>; SendPlay 모드에서는 0과 -1이 같음을 주목하십시오.</em>
 <a href="SetMouseDelay.htm">SetMouseDelay</a>, 10, <strong>Play</strong></pre>
-<p>SendPlay는 Capslock, Numlock, 또는 Scroll-lock 키를 켜고 끌 수 없습니다. 비슷하게, <a href="GetKeyState.htm">GetKeyState</a>로 보이는 키의 상태를 바꿀 수 없습니다. 단, 그 키눌림들이 스크립트의 창 중에 하나로 전송된다면 예외입니다. 그 때까지, 왼쪽/오른쪽 수식키에 변화가 있다면 (예, RControl) 오직 좌우 구분 없는 수식키를 통해서만 탐지할 수 있습니다 (예, Control). 또, SendPlay는 <a href="SendMode.htm#Play">SendMode 페이지</a>에 기술된 다른 제한도 있습니다.</p>
-<p><a href="#SendInputDetail">SendInput</a> 그리고 <a href="#SendEvent">SendEvent</a>과 다르게, 사용자는 Control-Alt-Del이나 Control-Escape를 눌러서 SendPlay를 인터럽트할 수 있습니다. 이런 일이 일어날 때, 나머지 키눌림은 전송되지 않지만 스크립트른 마치 SendPlay가 정상적으로 전송을 완료한 것처럼 실행을 계속합니다.</p>
+<p>SendPlay는 <kbd>CapsLock</kbd>, <kbd>NumLock</kbd>, 또는 <kbd>ScrollLock</kbd>를 켜고 끌 수 없습니다. 비슷하게, <a href="GetKeyState.htm#function">GetKeyState()</a>로 보이는 키의 상태를 바꿀 수 없습니다. 단, 그 키눌림들이 스크립트의 창 중에 하나로 전송된다면 예외입니다. 그 때까지, 왼쪽/오른쪽 수식키에 변화가 있다면 (예, RControl) 오직 좌우 구분 없는 수식키를 통해서만 탐지할 수 있습니다 (예, Control). 또, SendPlay는 <a href="SendMode.htm#Play">SendMode 페이지</a>에 기술된 다른 제한도 있습니다.</p>
+<p><a href="#SendInputDetail">SendInput</a> 그리고 <a href="#SendEvent">SendEvent</a>과 다르게, 사용자는 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>이나 <kbd>Ctrl</kbd>+<kbd>Esc</kbd>를 눌러서 SendPlay를 인터럽트할 수 있습니다. 이런 일이 일어날 때, 나머지 키눌림은 전송되지 않지만 스크립트른 마치 SendPlay가 정상적으로 전송을 완료한 것처럼 실행을 계속합니다.</p>
 <p>SendPlay는 send LWin과 RWin 이벤트를 보낼 수 있지만, 창에 직접적으로 전송합니다. 운영 체제 고유의 기능을 수행하지 않습니다. 이를 우회하려면, <a href="#SendEvent">SendEvent</a>를 사용하십시오. 예를 들어, <code>SendEvent #r</code>는 시작 메뉴의 실행 대화상자를 보여줄 것입니다.</p>
 
-<h2>관련 항목</h2>
-<p><a href="SendMode.htm">SendMode</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetStoreCapslockMode.htm">SetStoreCapslockMode</a>, <a href="_EscapeChar.htm">피신 연속열 (예, `%)</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="BlockInput.htm">BlockInput</a>, <a href="../Hotstrings.htm">핫스트링</a>, <a href="WinActivate.htm">WinActivate</a></p>
-<h2>예제</h2>
-<pre class="NoIndent">Send Sincerely,{enter}John Smith  <em>; 두 줄의 서명을 타자합니다.</em>
-Send !fs <em>; File-&gt;Save 메뉴를 선택합니다 (Alt+F를 누른 다음 S).</em>
-Send {End}+{Left 4} <em>; 텍스트 끝으로 점프해서 네 개의 shift+left-arrow 키눌림을 전송합니다.</em>
-SendInput <a href="#Raw">{Raw}</a>기다란 날 문자열들이 빠른 방법을 사용하여 전송됨 (<a href="#SendInputDetail">SendInput</a>).</pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="SendMode.htm">SendMode</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetStoreCapslockMode.htm">SetStoreCapsLockMode</a>, <a href="../misc/EscapeChar.htm">피신 연속열 (예, `%)</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="BlockInput.htm">BlockInput</a>, <a href="../Hotstrings.htm">핫스트링</a>, <a href="WinActivate.htm">WinActivate</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> 두 줄의 서명을 타자합니다.</p>
+<pre>Send Sincerely,{enter}John Smith</pre>
+</div>
+
+<div class="ex" id="ExModifier">
+<p><a class="ex_number" href="#ExModifier"></a> File-&gt;Save 메뉴를 선택합니다 (Alt+F를 누른 다음 S).</p>
+<pre>Send !fs</pre>
+</div>
+
+<div class="ex" id="ExBrace">
+<p><a class="ex_number" href="#ExBrace"></a> 텍스트 끝으로 점프해서 네 개의 shift+left-arrow 키눌림을 전송합니다.</p>
+<pre>Send {End}+{Left 4}</pre>
+</div>
+
+<div class="ex" id="ExSendInputRaw">
+<p><a class="ex_number" href="#ExSendInputRaw"></a> Sends a long series of <a href="#Raw">raw characters</a> via the fastest method.</p>
+<pre><a href="#SendInputDetail">SendInput</a> {Raw}A long series of raw characters sent via the fastest method.</pre>
+</div>
 
 </body>
 </html>

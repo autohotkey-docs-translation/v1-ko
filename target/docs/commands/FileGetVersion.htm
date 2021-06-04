@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileGetVersion</title>
+<title>FileGetVersion - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileGetVersion command retrieves the version of a file." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,30 +14,37 @@
 
 <p>파일의 버전을 열람합니다.</p>
 
-<pre class="Syntax">FileGetVersion, OutputVar [, Filename]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FileGetVersion</span>, OutputVar <span class="optional">, Filename</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
   <dd><p>버전 번호/문자열을 저장할 변수의 이름.</p></dd>
 
   <dt>Filename</dt>
-  <dd><p>목표 파일의 이름, 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 생략하면, 가장 안쪽 <a href="LoopFile.htm">파일-회돌이</a>에 싸인 현재 파일이 사용됩니다.</p></dd>
+  <dd><p>The name of the target file. If a full path is not specified, this function uses the search sequence specified by the system <a href="https://msdn.microsoft.com/ko-kr/library/windows/desktop/ms684175">LoadLibrary</a> function. 생략하면, 가장 안쪽 <a href="LoopFile.htm">파일-회돌이</a>에 싸인 현재 파일이 사용됩니다.</p></dd>
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
 <p><a href="../Variables.htm#LastError">A_LastError</a>는 운영 체제의 GetLastError() 함수의 결과가 설정됩니다.</p>
 
-<h3>논평</h3>
-<p>대부분의 비-실행 파일 (심지어 어떤 EXE 파일)은 버전이 없습니다. 그래서 이런 경우는 OutputVar가 비어 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Remarks">논평</h2>
+<p>대부분의 비-실행 파일 (심지어 어떤 EXE 파일)은 버전이 없습니다. 그래서 이런 경우는 <em>OutputVar</em>가 비어 있습니다.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="FileGetAttrib.htm">FileGetAttrib</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="FileSetTime.htm">FileSetTime</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="LoopFile.htm">File-회돌이</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FileGetVersion, version, C:\My Application.exe
-FileGetVersion, version, %A_ProgramFiles%\AutoHotkey\AutoHotkey.exe</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves the version of a file and stores it in <var>Version</var>.</p>
+<pre>FileGetVersion, Version, C:\My Application.exe</pre>
+</div>
+
+<div class="ex" id="ExBIV">
+<p><a class="ex_number" href="#ExBIV"></a> Retrieves the version of the file "AutoHotkey.exe" located in AutoHotkey's installation directory and stores it in <var>Version</var>.</p>
+<pre>FileGetVersion, Version, %A_ProgramFiles%\AutoHotkey\AutoHotkey.exe</pre>
+</div>
 
 </body>
 </html>

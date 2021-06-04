@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Trim</title>
+<title>Trim() / LTrim() / RTrim() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Trim, LTrim and RTrim functions trim characters from the beginning and/or end of a string." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -10,14 +10,16 @@
 </head>
 <body>
 
-<h1>Trim <span class="ver">[AHK_L 31+]</span></h1>
+<h1>Trim() / LTrim() / RTrim() <span class="ver">[AHK_L 31+]</span></h1>
 
 <p>문자열의 앞뒤로부터 문자들을 걷어냅니다.</p>
 
-<pre class="Syntax">Result :=  Trim(String, OmitChars = " `t")
-Result := LTrim(String, OmitChars = " `t")
-Result := RTrim(String, OmitChars = " `t")</pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+Result :=  <span class="func">Trim</span>(String, OmitChars := " `t")
+Result := <span class="func">LTrim</span>(String, OmitChars := " `t")
+Result := <span class="func">RTrim</span>(String, OmitChars := " `t")
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>String</dt>
@@ -28,13 +30,20 @@ Result := RTrim(String, OmitChars = " `t")</pre>
 
 </dl>
 
-<h3>예제</h3>
-<pre class="NoIndent">text := "  text  "
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Trims all spaces from the left and right side of a string.</p>
+<pre>text := "  text  "
 MsgBox % "No trim:`t '" text "'"
     . "`nTrim:`t '" Trim(text) "'"
     . "`nLTrim:`t '" LTrim(text) "'"
-    . "`nRTrim:`t '" RTrim(text) "'"
-MsgBox % LTrim("00000123","0")</pre>
+    . "`nRTrim:`t '" RTrim(text) "'"</pre>
+</div>
+
+<div class="ex" id="ExTrimZeros">
+<p><a class="ex_number" href="#ExTrimZeros"></a> Trims all zeros from the left side of a string.</p>
+<pre>MsgBox % LTrim("00000123", "0")</pre>
+</div>
 
 </body>
 </html>

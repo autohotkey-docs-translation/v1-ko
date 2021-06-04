@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Exit</title>
+<title>Exit - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Exit command exits the current thread or (if the script is not persistent) the entire script." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,31 +12,35 @@
 
 <h1>Exit</h1>
 
-<p><a href="../misc/Threads.htm">현재 쓰레드</a>를 종료합니다. 또는 (스크립트가 <a href="_Persistent.htm">영속적</a>이 아니고 핫키가 포함되어 있지 않으면) 전체 스크립트를 종료합니다.</p>
+<p>Exits the <a href="../misc/Threads.htm">current thread</a> or (if the script is not <a href="_Persistent.htm">persistent</a>) the entire script.</p>
 
-<pre class="Syntax">Exit [, ExitCode]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">Exit</span> <span class="optional">, ExitCode</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>ExitCode</dt>
-  <dd><p>스크립트가 종료할 때 호출자로부터 반환된 -2147483648부터 2147483647 사이의 정수 (<a href="../Variables.htm#Expressions">표현식</a> 가능). 이 코드는 스크립트를 부화시킨 어느 프로그램도 접급할 수 있습니다. 예를 들어 (RunWait를 통한) 스크립트 또는 배치 파일(.bat). 생략하면, <em>ExitCode</em>는 기본값으로 0이 설정됩니다. 전통적으로 0은 성공을 나타내는 데 사용됩니다.</dd>
+  <dd><p>스크립트가 종료할 때 호출자로부터 반환된 -2147483648부터 2147483647 사이의 정수 (<a href="../Variables.htm#Expressions">표현식</a> 가능). 이 코드는 스크립트를 부화시킨 어느 프로그램도 접급할 수 있습니다. 예를 들어 (RunWait를 통한) 스크립트 또는 배치 파일(.bat). 생략하면, <em>ExitCode</em>는 기본값으로 0이 설정됩니다. 전통적으로 0은 성공을 나타내는 데 사용됩니다.</p></dd>
 
 </dl>
 
-<h3>논평</h3>
-<p>스크립트에 핫키가 없다면, 그리고 <a href="_Persistent.htm">영속적</a>이 아니라면, 그리고 Num/Scroll/CapsLock 키를 AlwaysOn 또는 AlwaysOff 상태를 유지하도록 요구하지 않았다면, Exit을 만나면 그 즉시 종료합니다 (단, <a href="OnExit.htm">OnExit</a> 서브루틴이 있다면 예외입니다).</p>
-<p>그렇지 않으면, Exit 명령어는 <a href="../misc/Threads.htm">현재 쓰레드</a>를 종료합니다. 다른 말로, <a href="Menu.htm">메뉴</a>나 <a href="SetTimer.htm">타이머</a> 또는 <a href="../Hotkeys.htm">핫키</a> 서브루틴으로부터 직접 간접적으로 호출된 서브루틴의 스택은 마치 각각 <a href="Return.htm">Return</a>을 만난 것처럼 모두 한꺼번에 반환됩니다. Exit이 그런 서브루틴 안에서 직접 사용되면 -- 자신이 간접적으로 호출한 서브루틴 중의 하나가 아니라 -- Exit은 <a href="Return.htm">Return</a>과 동등합니다.</p>
-<p><a href="ExitApp.htm">ExitApp</a>를 사용하면 <a href="_Persistent.htm">영속적</a>이거나 핫키가 있는 스크립트를 완전히 종료할 수 있습니다.</p>
-<h3>관련 항목</h3>
-<p><a href="ExitApp.htm">ExitApp</a>, <a href="OnExit.htm">OnExit</a>, <a href="../Functions.htm">Functions</a>, <a href="Gosub.htm">Gosub</a>, <a href="Return.htm">Return</a>, <a href="../misc/Threads.htm">Threads</a>, <a href="_Persistent.htm">#Persistent</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#z::
+<h2 id="Remarks">논평</h2>
+<p>If the script is not <a href="_Persistent.htm">persistent</a>, Exit will attempt to terminate the entire script as though <a href="ExitApp.htm">ExitApp</a> was called.</p>
+<p>If the script is not terminated, the Exit command terminates the <a href="../misc/Threads.htm">current thread</a>. 다른 말로, <a href="Menu.htm">메뉴</a>나 <a href="SetTimer.htm">타이머</a> 또는 <a href="../Hotkeys.htm">핫키</a> 서브루틴으로부터 직접 간접적으로 호출된 서브루틴의 스택은 마치 각각 <a href="Return.htm">Return</a>을 만난 것처럼 모두 한꺼번에 반환됩니다. Exit이 그런 서브루틴 안에서 직접 사용되면 -- 자신이 간접적으로 호출한 서브루틴 중의 하나가 아니라 -- Exit은 <a href="Return.htm">Return</a>과 동등합니다.</p>
+<p>Use <a href="ExitApp.htm">ExitApp</a> to completely terminate a script that is <a href="_Persistent.htm">persistent</a>.</p>
+
+<h2 id="Related">관련 항목</h2>
+<p><a href="ExitApp.htm">ExitApp</a>, <a href="OnExit.htm#function">OnExit()</a>, <a href="OnExit.htm#command">OnExit</a>, <a href="../Functions.htm">함수</a>, <a href="Gosub.htm">Gosub</a>, <a href="Return.htm">Return</a>, <a href="../misc/Threads.htm">쓰레드</a>, <a href="_Persistent.htm">#Persistent</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> In this example, the Exit command terminates the Sub2 subroutine as well as the calling subroutine.</p>
+<pre>#z::
 Gosub, Sub2
-MsgBox, 이 msgbox는 EXIT 때문에 절대 나타나지 않습니다.
+MsgBox, 이 MsgBox는 EXIT 때문에 절대 나타나지 않습니다.
 return
 
 Sub2:
 Exit  <em>; 이 서브루틴과 더불어 호출한 서브루틴을 종료합니다.</em></pre>
+</div>
 
 </body>
 </html>

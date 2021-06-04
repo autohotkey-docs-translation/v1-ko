@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ControlMove</title>
+<title>ControlMove - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ControlMove command moves or resizes a control." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,13 +14,13 @@
 
 <p>콘트롤을 이동하거나 크기를 변경합니다.</p>
 
-<pre class="Syntax">ControlMove, Control, X, Y, Width, Height [, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">ControlMove</span>, Control, X, Y, Width, Height <span class="optional">, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Control</dt>
   <dd><p>ClassNN (콘트롤의 클래스이름과 실체 번호) 또는 콘트롤의 텍스트일 수 있습니다. 둘 모두 Window Spy로 알아낼 수 있습니다. 텍스트를 사용할 때, 부합하는 행위는 <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>로 결정됩니다. 이 매개변수가 비어 있으면, 목표 창의 최상위 콘트롤이 사용됩니다.</p>
-    <p>콘트롤의 HWND (창 핸들)에 작동시키려면, <em>Control</em> 매개변수를 빈 채로 두고 <code>ahk_id %ControlHwnd%</code>를 <em>WinTitle</em> 매개변수에 지정하십시오 (이것은 숨은 창에도 작동합니다. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있어도 상관 없습니다). 콘트롤의 HWND는 전형적으로 <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, 또는 <a href="DllCall.htm">DllCall</a>을 통하여 열람됩니다.</p></dd>
+    <p>콘트롤의 HWND (창 핸들)에 작동시키려면, <em>Control</em> 매개변수를 빈 채로 두고 <code>ahk_id %ControlHwnd%</code>를 <em>WinTitle</em> 매개변수에 지정하십시오 (이것은 숨은 창에도 작동합니다. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있어도 상관 없습니다). 콘트롤의 HWND는 전형적으로 <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, 또는 <a href="DllCall.htm">DllCall()</a>을 통하여 열람됩니다.</p></dd>
 
   <dt>X, Y</dt>
   <dd><p><em>Control</em>의 새 위치의 좌상 모서리의 X와 Y 좌표 (픽셀 단위), <a href="../Variables.htm#Expressions">표현식</a> 가능. 좌표가 비어 있으면, <em>Control</em>의 그 차원의 위치는 변경되지 않습니다. 좌표는 <em>Control</em>의 부모 창의 좌상 모서리에 상대적입니다; <a href="ControlGetPos.htm">ControlGetPos</a> 또는 Window Spy를 사용하면 그 좌표를 알 수 있습니다.</p></dd>
@@ -42,28 +42,31 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>신뢰성을 개선하기 위하여, 이 명령어를 사용할 때마다 자동으로 지연 시간이 있읍니다. 이 지연 시간은 <a href="SetControlDelay.htm">SetControlDelay</a>를 통하여 바꿀 수 있습니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
 
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="ControlGetPos.htm">ControlGetPos</a>, <a href="WinMove.htm">WinMove</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="Control.htm">Control</a>, <a href="ControlGet.htm">ControlGet</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlSend.htm">ControlSend</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">SetTimer, ControlMoveTimer
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExControlMoveTimer">
+<p><a class="ex_number" href="#ExControlMoveTimer"></a> Demonstrates how to manipulate the OK button of an input box while the script is waiting for user input.</p>
+<pre>SetTimer, ControlMoveTimer
 InputBox, OutputVar, My Input Box
 return
 
 ControlMoveTimer:
-IfWinNotExist, My Input Box
+if not WinExist("My Input Box")
     return
 <em>; 그렇지 않으면 위에서 우리를 위해 "마지막으로 발견된" 창을 설정합니다:</em>
-SetTimer, ControlMoveTimer, off
+SetTimer, ControlMoveTimer, Off
 WinActivate
-<strong>ControlMove, OK, 10, , 200</strong>  <em>; OK 버튼을 왼쪽으로 이동하고 그의 너비를 늘립니다.</em>
+ControlMove, OK, 10, , 200  <em>; OK 버튼을 왼쪽으로 이동하고 그의 너비를 늘립니다.</em>
 return</pre>
+</div>
 
 </body>
 </html>

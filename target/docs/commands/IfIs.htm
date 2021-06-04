@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>If var is [not] type</title>
+<title>If Var is Type - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The &quot;if Var is Type&quot; statement checks whether a variable's contents are numeric, uppercase, etc." />
+<meta name="ahk:equiv-v2" content="commands/Is.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,82 +15,93 @@
 
 <p><a href="../Variables.htm">변수</a>의 내용이 숫치인지, 대문자인지 등등을 점검합니다.</p>
 
-<pre class="Syntax">if var is <i>type</i>
-if var is not <i>type</i></pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">if</span> Var <span class="func">is</span> Type
+<span class="func">if</span> Var <span class="func">is not</span> Type
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>var</dt>
+  <dt>Var</dt>
   <dd><p><a href="../Variables.htm">변수</a> 이름.</p></dd>
 
-  <dt>type</dt>
-  <dd><p>아래의 논평 참조.</p></dd>
+  <dt>Type</dt>
+  <dd>
+    <p>Specify one of the following types:</p>
+    <table class="info">
+      <tr>
+        <th style="width:15%">Type</th>
+        <th abbr="설명">설명</th>
+      </tr>
+      <tr>
+        <td>integer</td>
+        <td><em>Var</em>가 비어 있지 않고 그리고 순수하게 (소수점 없는) 숫치 문자열 (십육진수 또는 십진수)이면 참입니다. 선두와 후미에 스페이스와 탭을 허용합니다. 이 문자열은 플러스 또는 마이너스 사인으로 시작할 수도 있습니다.</td>
+      </tr>
+      <tr>
+        <td>float</td>
+        <td><em>Var</em>기 비어 있지 않고 그리고 부동 소수점 수를 포함하고 있으면 참입니다; 즉, 소수점이 있는 순수 숫치 문자열이면 참입니다. 선두와 후미에 스페이스와 탭을 허용합니다. 이 문자열을 플러스 또는 마이너스 사인으로 시작할 수도 있습니다.</td>
+      </tr>
+      <tr>
+        <td>number</td>
+        <td><em>Var</em>에 정수나 부동 소수점 수가 담기면 참입니다 (각각의 조건은 위의 기술을 따릅니다).</td>
+      </tr>
+      <tr>
+        <td>digit</td>
+        <td><em>Var</em>가 비어 있거나 오직 숫자만 담고 있으면 참입니다. 즉, 0에서 9까지로 구성되면 참입니다. 다른 문자들은 다음과 같이 허용되지 않습니다: 스페이스, 탭, 플러스 사인, 마이너스 사인, 소수 점, 십육진 수, 그리고 0x 접두사.</td>
+      </tr>
+      <tr>
+        <td>xdigit</td>
+        <td>십육진 자리: <em>digit</em>와 동일하지만 A 부터 F (대문자 또는 소문자))도 허용합니다. <span class="ver">[v1.0.44.09+]</span>: 에서는 접두사 0x도 허용합니다.</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td><em>Var</em>가 비어 있거나 알파벳만 포함하고 있으면 참입니다. 문자열에 숫자, 스페이스, 탭, 구두점 또는 기타 비-알파벳 문자를 담고 있으면 거짓입니다. 예를 들어, <em>Var</em>에 스페이스가 있고 다음 기호가 따라오면, <em>알파벳</em>으로 <em>간주하지 않습니다</em>.</td>
+      </tr>
+      <tr>
+        <td>upper</td>
+        <td><em>Var</em>가 비어 있거나 또는 오직 대문자만 담고 있으면 참입니다. 문자열에 숫자, 스페이스, 탭, 구두점 또는 기타 비-대문자를 담고 있으면 거짓입니다.</td>
+      </tr>
+      <tr>
+        <td>lower</td>
+        <td><em>Var</em>가 비어 있거나 오직 소문자만 담고 있으면 참입니다. 숫자가 있거나, 스페이스, 탭, 구두점, 또는 기타 비-소문자가 문자열에 있으면 거짓입니다.</td>
+      </tr>
+      <tr>
+        <td>alnum</td>
+        <td><em>alpha</em>와 동일하지만 0 부터 9 사이의 문자도 허용합니다.</td>
+      </tr>
+      <tr>
+        <td>space</td>
+        <td><em>Var</em>가 비어 있거나 공백 문자만 담고 있으면 참입니다. 공백 문자는 다음과 같이 구성됩니다: 스페이스 (<a href="../Variables.htm">%A_Space%</a>), 탭 (<a href="../Variables.htm">%A_Tab%</a> or `t), 줄넘김 (`n), 리턴 (`r), 수직 탭 (`v), 그리고 장피드 (`f).</td>
+      </tr>
+      <tr id="time">
+        <td>time</td>
+        <td>
+          <p><em>Var</em>에 유효한 날짜-시간 도장이 들어 있으면 참입니다. 형식이 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>이거나 아니면 앞쪽 부분만이라도 됩니다. 예를 들어, 2004와 같은 4-자리 문자열은 유효로 간주합니다. Use <a href="StrLen.htm">StrLen()</a> or <a href="StringLen.htm">StringLen</a> to determine whether additional time components are present.</p>
+          <p>1601년 미만은 유효로 간주하지 않습니다. 운영 체제가 보통 지원하지 않기 때문입니다. 최대 해는 9999년입니다.</p>
+          <p>단어 DATE를 단어 TIME 대신 사용해도, 결과는 같습니다.</p>
+        </td>
+      </tr>
+    </table>
+  </dd>
 
 </dl>
 
-<h3>논평</h3>
-<p>지원되는 <em>유형</em>:</p>
-<table class="info">
-  <tr>
-    <td width="15%">integer</td>
-    <td width="85%"><em>var</em>가 비어 있지 않고 그리고 순수하게 (소수점 없는) 숫치 문자열 (십육진수 또는 십진수)이면 참입니다. 선두와 후미에 스페이스와 탭을 허용합니다. 이 문자열은 플러스 또는 마이너스 사인으로 시작할 수도 있습니다.</td>
-  </tr>
-  <tr>
-    <td>float</td>
-    <td><em>var</em>기 비어 있지 않고 그리고 부동 소수점 수를 포함하고 있으면 참입니다; 즉, 소수점이 있는 순수 숫치 문자열이면 참입니다. 선두와 후미에 스페이스와 탭을 허용합니다. 이 문자열을 플러스 또는 마이너스 사인으로 시작할 수도 있습니다.</td>
-  </tr>
-  <tr>
-    <td>number</td>
-    <td><em>var</em>에 정수나 부동 소수점 수가 담기면 참입니다 (각각의 조건은 위의 기술을 따릅니다).</td>
-  </tr>
-  <tr>
-    <td>digit</td>
-    <td><em>var</em>가 비어 있거나 오직 숫자만 담고 있으면 참입니다. 즉, 0에서 9까지로 구성되면 참입니다. 다른 문자들은 다음과 같이 허용되지 않습니다: 스페이스, 탭, 플러스 사인, 마이너스 사인, 소수 점, 십육진 수, 그리고 0x 접두사.</td>
-  </tr>
-  <tr>
-    <td>xdigit</td>
-    <td>십육진 자리: <em>digit</em>와 동일하지만 A 부터 F (대문자 또는 소문자))도 허용합니다. v1.0.44.09+에서는 접두사 0x도 허용합니다.</td>
-  </tr>
-  <tr>
-    <td>alpha</td>
-    <td><em>var</em>가 비어 있거나 알파벳만 포함하고 있으면 참입니다. 문자열에 숫자, 스페이스, 탭, 구두점 또는 기타 비-알파벳 문자를 담고 있으면 거짓입니다. 예를 들어, <em>var</em>에 스페이스가 있고 다음 기호가 따라오면, <em>알파벳</em>으로 <em>간주하지 않습니다</em>.</td>
-  </tr>
-  <tr>
-    <td>upper</td>
-    <td><em>var</em>가 비어 있거나 또는 오직 대문자만 담고 있으면 참입니다. 문자열에 숫자, 스페이스, 탭, 구두점 또는 기타 비-대문자를 담고 있으면 거짓입니다.</td>
-  </tr>
-  <tr>
-    <td>lower</td>
-    <td><em>var</em>가 비어 있거나 오직 소문자만 담고 있으면 참입니다. 숫자가 있거나, 스페이스, 탭, 구두점, 또는 기타 비-소문자가 문자열에 있으면 거짓입니다.</td>
-  </tr>
-  <tr>
-    <td>alnum</td>
-    <td><em>alpha</em>와 동일하지만 0 부터 9 사이의 문자도 허용합니다.</td>
-  </tr>
-  <tr>
-    <td>space</td>
-    <td><em>var</em>가 비어 있거나 공백 문자만 담고 있으면 참입니다. 공백 문자는 다음과 같이 구성됩니다: 스페이스 (<a href="../Variables.htm">%A_Space%</a>), 탭 (<a href="../Variables.htm">%A_Tab%</a> or `t), 줄넘김 (`n), 리턴 (`r), 수직 탭 (`v), 그리고 장피드 (`f).</td>
-  </tr>
-  <tr>
-    <td>time</td>
-    <td><p><a name="time"></a><em>var</em>에 유효한 날짜-시간 도장이 들어 있으면 참입니다. 형식이 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>이거나 아니면 앞쪽 부분만이라도 됩니다. 예를 들어, 2004와 같은 4-자리 문자열은 유효로 간주합니다. <a href="StringLen.htm">StringLen</a>을 사용하면 추가로 시간 구성 부분이 존재하는지 알아낼 수 있습니다.</p>
-      <p>1601년 미만은 유효로 간주하지 않습니다. 운영 체제가 보통 지원하지 않기 때문입니다. 최대 해는 9999년입니다.</p>
-      <p>단어 DATE를 단어 TIME 대신 사용해도, 결과는 같습니다.</p>
-    </td>
-  </tr>
-</table>
-<p><b>주의:</b> 연산자 "between", "is", "in", 그리고 "contains"는 <a href="../Variables.htm#Expressions">표현식</a>에 <strong>지원하지 않습니다</strong>.</p>
+<h2 id="Remarks">논평</h2>
+<p>The "is" operator is not supported in <a href="../Variables.htm#Expressions">expressions</a>.</p>
 <p><span class="ver">[AHK_L 42+]:</span> 시스템 로케일은 <a href="StringCaseSense.htm">StringCaseSense Locale</a>이 사용되지 않는 한 무시됩니다.</p>
 
-<h3>관련 항목</h3>
-<p><a href="../Variables.htm#YYYY">%A_YYYY%</a>, <a href="SetFormat.htm">SetFormat</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="IfEqual.htm">IfEqual</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="StringLen.htm">StringLen</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringLower.htm">StringUpper</a>, <a href="EnvAdd.htm">EnvAdd</a><a href="Block.htm">, 블록</a>, <a href="Else.htm">Else</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">if var is float
+<h2 id="Related">관련 항목</h2>
+<p><a href="../Variables.htm#YYYY">%A_YYYY%</a>, <a href="Format.htm">Format()</a>, <a href="SetFormat.htm">SetFormat</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="IfEqual.htm">IfEqual</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="StrLen.htm">StrLen()</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringLower.htm">StringUpper</a>, <a href="Block.htm">블록</a>, <a href="Else.htm">Else</a>, <a href="StringLen.htm">StringLen</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Checks whether <var>var</var> is a floating point number or an integer and checks whether it is a valid timestamp.</p>
+<pre>if var is float
     MsgBox, %var%는 부동 소수점 수입니다.
 else if var is integer
     MsgBox, %var%는 정수입니다.
 if var is time
     MsgBox, %var%는 또한 유효한 날짜-시간이기도 합니다.</pre>
+</div>
 
 </body>
 </html>

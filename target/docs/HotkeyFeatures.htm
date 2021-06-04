@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Advanced Hotkey Features - Mouse and Keyboard Shortcuts</title>
+<title>Advanced Hotkey Features | AutoHotkey</title>
+<meta name="description" content="Learn advanced hotkey features such as using any keys as modifiers or automating game actions on the screen." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,45 +12,91 @@
 <body>
 <h1>고급 핫키 특징</h1>
 
-<p>키보드에서 <u>손쉽게 닿을 수 있는 키 인데도</u> 어떤 키는 거의 사용되지 않습니다. 이런 키들에 유용한 일들을 시킵시다! 예를 들어, 오른쪽 ALT 키를 거의 사용하지 않습니다. 여러분이 자주 하는 일을 그 키에 시키십시오:</p>
+
+<h2 id="toc">목차</h2>
+<ul>
+  <li><a href="#general">일반</a>
+    <ul>
+      <li><a href="#easy-to-reach">Remap easy to reach but rarely used keys</a></li>
+      <li><a href="#keys-as-modifiers">Use any keys as modifiers</a></li>
+      <li><a href="#AltTab">Make the mouse wheel perform alt-tabbing</a></li>
+      <li><a href="#keyboard-to-mouse">Make a keyboard key become a mouse button</a></li>
+      <li><a href="#context-sensitive">핫키가 문맥을 감지하도록 만듭니다</a></li>
+      <li><a href="#hotstrings">타자하면서 확장될 약어를 정의합니다</a></li>
+    </ul>
+  </li>
+  <li><a href="#gaming">Gaming</a>
+    <ul>
+      <li><a href="#wear-and-tear">손가락에 고통을 덜어줍니다</a></li>
+      <li><a href="#mouse-hotkeys">Create mouse hotkeys</a></li>
+      <li><a href="#pass-through">"무사-통과" 핫키를 만듭니다</a></li>
+      <li><a href="#game-actions">Automate game actions on the screen</a></li>
+      <li><a href="#keyboard-hook">Use the keyboard hook</a></li>
+    </ul>
+  </li>
+  <li><a href="#related">관련 주제</a></li>
+</ul>
+
+<h2 id="general">일반</h2>
+
+<h3 id="easy-to-reach">Remap easy to reach but rarely used keys</h3>
+<p>키보드에서 손쉽게 닿을 수 있는 키 인데도 어떤 키는 거의 사용되지 않습니다. 이런 키들에 유용한 일들을 시킵시다! 예를 들어, 오른쪽 <kbd>Alt</kbd>를 거의 사용하지 않습니다. 여러분이 자주 하는 일을 그 키에 시키십시오:</p>
 <pre>RAlt::
 MsgBox 오른쪽 ALT 키를 누르셨습니다.
 return</pre>
-<p>심지어 오른쪽 알트 키의 고유 기능을 잃지 않고서도 위의 일을 할 수 있습니다. 오른쪽-ALT 키를 다른 핫키에 "접두키"로 할당하면 됩니다. 아래의 예제에서 오른쪽-ALT 키는 접두키가 됩니다. 다른 <strong>모든</strong> 키들을 정상처럼 작동하도록 변경합니다. 그러나 또다른 키를 변경하는데 사용하지 않고 오른쪽-Alt 키를 누르고 뗀다면, 그의 핫키 행위가 즉시 효과를 발휘합니다:</p>
+<p>You can even do the above without losing the native function of the right <kbd>Alt</kbd> by assigning the right <kbd>Alt</kbd> to be a "prefix" for at least one other hotkey. 아래의 예제에서 오른쪽-<kbd>Alt</kbd> 키는 접두키가 됩니다. 다른 <strong>모든</strong> 키들을 정상처럼 작동하도록 변경합니다. 그러나 또다른 키를 변경하는데 사용하지 않고 오른쪽-<kbd>Alt</kbd>를 누르고 뗀다면, 그의 핫키 행위가 즉시 효과를 발휘합니다:</p>
 <pre>RAlt &amp; j::AltTab</pre>
-<p>&nbsp;</p>
-<p>수식자로 <u>CTRL, ALT, SHIFT, 그리고 WIN</u>만 사용할 수 있는 것은 아닙니다. <strong>무엇이든</strong> 두개의 키 또는 마우스 버튼을 조합하여 맞춤 핫키를 만들 수 있습니다: 예를 들어: Numpad0를 누른 채로 Numpad1을 눌러 핫키를 기동시킵니다 (구문: Numpad0 &amp; Numpad1::); CapsLock을 누른 채로 또다른 키를 누르거나, 또는 마우스 버튼을 클릭합니다 (구문: CapsLock &amp; RButton::). 이 경우, CapsLock 키의 상태 (on 또는 off)는 핫키를 기동하는 데 사용되더라도 바뀌지 않습니다. 자세한 것은 <a href="Hotkeys.htm#combo">키를 마음대로 조립하기</a>를 참조하십시오.</p>
-<p>&nbsp;</p>
-<p><u><a name="AltTab">Alt-Tab을 완전하게 대체하도록 </a>마우스 휠</u> (또는 기타 키)을 변환합니다. 휠을 클릭해 메뉴를 보여거나 감춥니다. 그리고 휠을 돌려서 메뉴를 항해합니다. 휠은 Alt-Tab 메뉴가 보이지 않을 때 여전히 정상 작동합니다. 다음은 그 구문입니다:</p>
+
+<h3 id="keys-as-modifiers">Use any keys as modifiers</h3>
+<p>수식자로 <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, <kbd>Shift</kbd>, 그리고 <kbd>Win</kbd>만 사용할 수 있는 것은 아닙니다. <strong>무엇이든</strong> 두개의 키 또는 마우스 버튼을 조합하여 맞춤 핫키를 만들 수 있습니다: 예를 들어: Hold down Numpad0 and press Numpad1 to launch a hotkey (<code>Numpad0 &amp; Numpad1::</code>); hold down <kbd>CapsLock</kbd> and press another key, or click a mouse button (<code>CapsLock &amp; RButton::</code>). 이 경우, <kbd>CapsLock</kbd> 키의 상태 (on 또는 off)는 핫키를 기동하는 데 사용되더라도 바뀌지 않습니다. 자세한 것은 <a href="Hotkeys.htm#combo">키를 마음대로 조립하기</a>를 참조하십시오.</p>
+
+<h3 id="AltTab">Make the mouse wheel perform alt-tabbing</h3>
+<p>Alt-Tab을 완전하게 대체하도록 마우스 휠 (또는 기타 키)을 변환합니다. 휠을 클릭해 메뉴를 보여거나 감춥니다. 그리고 휠을 돌려서 메뉴를 항해합니다. 휠은 Alt-Tab 메뉴가 보이지 않을 때 여전히 정상 작동합니다. 다음은 그 구문입니다:</p>
 <pre>MButton::AltTabMenu
 WheelDown::AltTab
 WheelUp::ShiftAltTab</pre>
-<p>&nbsp;</p>
-<p><u>키보드 키를 마우스 버튼이 <strong>되도록</strong> 만듭니다</u>, 또는 키나 마우스 버튼을 누르고 있는 동안 어떤 행위가 계속해서 반복되도록 만듭니다. 예제는 <a href="misc/Remap.htm#RemapMouse">리맵핑 페이지</a>를 참조하십시오.</p>
-<p>&nbsp;</p>
-<p><u>핫키가 문맥을 감지하도록 만듭니다</u>: 작업 중인 창의 유형에 적절하게 가장-쉽게-닿을-수-있는 핫키가 행위를 수행하게 합니다. 다음 예제에서, 오른쪽 콘트롤 키는 활성 창이 노트패드인가 아니면 계산기인가에 따라 다르게 행위를 수행합니다:</p>
+
+<h3 id="keyboard-to-mouse">Make a keyboard key become a mouse button</h3>
+<p>키보드 키를 마우스 버튼이 <strong>되도록</strong> 만듭니다, 또는 키나 마우스 버튼을 누르고 있는 동안 어떤 행위가 계속해서 반복되도록 만듭니다. 예제는 <a href="misc/Remap.htm#RemapMouse">리맵핑 페이지</a>를 참조하십시오.</p>
+
+<h3 id="context-sensitive">핫키가 문맥을 감지하도록 만듭니다</h3>
+<p>작업 중인 창의 유형에 적절하게 가장-쉽게-닿을-수-있는 핫키가 행위를 수행하게 합니다. In the following example, the right <kbd>Ctrl</kbd> performs a different action depending on whether Notepad or Calculator is the active window:</p>
 <pre>#IfWinActive ahk_class Notepad
 RControl::WinMenuSelectItem, , , File, Save  <em>; 현재 파일을 노트패드에 저장합니다.</em>
 
 #IfWinActive Calculator
 RControl::Send, ^c!{tab}^v  <em>; 계산기의 내용을 이전의 활성 창 안으로 복사합니다.</em></pre>
 <p>자세한 것은 <a href="commands/_IfWinActive.htm">#IfWinActive</a>를 참조하십시오.</p>
-<p>&nbsp;</p>
-<p><u>핫-스트링: 타자하면서 확장될 약어를 정의합니다</u>. 특별한 훈련이나 경험이 전혀 필요 없습니다. 예를 들어, 다음 줄이 들어 있는 스크립트는 타자하는 곳에서 ceo, cfo, 그리고 btw를 확장합니다:</p>
+
+<h3 id="hotstrings">타자하면서 확장될 약어를 정의합니다</h3>
+<p>Also known as <a href="Hotstrings.htm">hotstrings</a>. 특별한 훈련이나 경험이 전혀 필요 없습니다. 예를 들어, 다음 줄이 들어 있는 스크립트는 타자하는 곳에서 ceo, cfo, 그리고 btw를 확장합니다:</p>
 <pre>::ceo::Chief Executive Officer
 ::cfo::Chief Financial Officer
 ::btw::by the way</pre>
-<p><a href="Hotstrings.htm">(보다 자세한 것은 여기를 참조합니다)</a><br>
-</p>
-<p>&nbsp;</p>
-<p><strong><u>게이머라면 특별히 관심을 가질 만한 기능들:</u></strong></p>
+
+<h2 id="gaming">Gaming</h2>
+
+<h3 id="wear-and-tear">손가락에 고통을 덜어줍니다</h3>
+<p>손가락에 고통을 덜어줍니다. 실제로 <a href="KeyList.htm">어느 키든</a> 핫키로 사용하면 됩니다. 여기에는 단일 기호문자, 화살표 키, 넘패드 키, 심지어 키 수식자 자체도 포함됩니다 (Ctrl, Alt, Win, and Shift).</p>
+
+<h3 id="mouse-hotkeys">Create mouse hotkeys</h3>
+<p>마우스 핫키를 만듭니다. 여기에는 마우스 휠 버튼(MButton) 그리고 휠의 위/아래 또는 좌/우 회전을 포함합니다 (WheelUp, WheelDown, WheelLeft, 그리고 WheelRight). 또 키보드 키를 마우스 버튼과 조합해 사용할 수 있습니다. 예를 들어, 오른쪽-콘트롤-버튼은 <code>^RButton::</code>으로 표현됩니다.</p>
+
+<h3 id="pass-through">"무사-통과" 핫키를 만듭니다</h3>
+<p>예를 들어, 클릭 자체가 게임에 정상적으로 전송되는 동안에도 왼쪽 마우스 버튼은 핫키 행위를 촉발시킬 수 있습니다. (구문: <code>~LButton::</code>).</p>
+
+<h3 id="game-actions">Automate game actions on the screen</h3>
+<p><a href="commands/PixelSearch.htm">PixelSearch</a>, <a href="commands/PixelGetColor.htm">PixelGetColor</a>, 그리고 <a href="commands/ImageSearch.htm">ImageSearch</a>와 같은 명령어를 사용하여 게임을 자동화합니다.</p>
+
+<h3 id="keyboard-hook">Use the keyboard hook</h3>
+<p><a href="commands/_UseHook.htm">키보드 갈고리</a>를 선택적으로 사용하여 핫키를 구현합니다. 게임이 CPU를 덜 사용하는 동안 다른 핫키 방법보다 더 반응이 좋습니다. 키보드 갈고리는 또 게임의 한계를 극복할 수 있습니다. 어느 키든 얼마든지 게임 행위에 "맵"할 수 있습니다.</p>
+
+<h2 id="related">관련 주제</h2>
 <ul>
-  <li>손가락에 고통을 덜어줍니다. 실제로 <a href="KeyList.htm">어느 키든</a> 핫키로 사용하면 됩니다. 여기에는 단일 기호문자, 화살표 키, 넘패드 키, 심지어 키 수식자 자체도 포함됩니다 (CTRL/ALT/WIN/SHIFT).</li>
-  <li>마우스 핫키를 만듭니다. 여기에는 마우스 휠 버튼(MButton) 그리고 휠의 위/아래 또는 좌/우 회전을 포함합니다 (WheelUp, WheelDown, WheelLeft, 그리고 WheelRight). 또 키보드 키를 마우스 버튼과 조합해 사용할 수 있습니다. 예를 들어, 오른쪽-콘트롤-버튼은 <code>^RButton::</code>으로 표현됩니다.</li>
-  <li>"무사-통과" 핫키를 만듭니다. 예를 들어, 클릭 자체가 게임에 정상적으로 전송되는 동안에도 왼쪽 마우스 버튼은 핫키 행위를 촉발시킬 수 있습니다. (구문: <code>~LButton::</code>).</li>
-  <li><a href="commands/PixelSearch.htm">PixelSearch</a>, <a href="commands/PixelGetColor.htm">PixelGetColor</a>, 그리고 <a href="commands/ImageSearch.htm">ImageSearch</a>와 같은 명령어를 사용하여 게임을 자동화합니다.</li>
-  <li><a href="commands/_UseHook.htm">키보드 갈고리</a>를 선택적으로 사용하여 핫키를 구현합니다. 게임이 CPU를 덜 사용하는 동안 다른 핫키 방법보다 더 반응이 좋습니다. 키보드 갈고리는 또 게임의 한계를 극복할 수 있습니다. 어느 키든 얼마든지 게임 행위에 "맵"할 수 있습니다.</li>
+  <li><a href="Hotkeys.htm">핫키</a></li>
+  <li><a href="Hotstrings.htm">핫스트링</a></li>
+  <li><a href="misc/Remap.htm">Remapping Keys</a></li>
 </ul>
-<p>더 자세한 정보는 <a href="Hotkeys.htm">핫키</a>를 참조하십시오.</p>
+
 </body>
 </html>

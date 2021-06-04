@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>StrLen / StringLen</title>
+<title>StringLen - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The StringLen command retrieves the count of how many characters are in a string." />
+<meta name="ahk:equiv-v2" content="commands/StrLen.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -10,33 +11,35 @@
 </head>
 <body>
 
-<h1>StrLen / StringLen</h1>
-
+<h1>StringLen</h1>
 <p>문자열에 들은 문자의 갯수를 열람합니다.</p>
+<p class="warning"><strong>비추천:</strong> 이 명령어는 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="StrLen.htm">StrLen</a> 기능을 사용하십시오.</p>
+<pre class="Syntax"><span class="func">StringLen</span>, OutputVar, InputVar</pre>
 
-<pre class="Syntax">OutputVar := StrLen(InputVar)
-StringLen, OutputVar, InputVar
-</pre>
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>길이를 저장할 변수의 이름.</p></dd>
+  <dd>길이를 저장할 변수의 이름.</dd>
 
   <dt>InputVar</dt>
-  <dd><p>측정할 내용이 들어 있는 변수의 이름. 이름을 퍼센트 사인으로 둘러 싸지 마십시오. 변수의 <em>내용</em>을 이름으로 사용하고 싶다면 예외입니다.</p></dd>
+  <dd>측정할 내용이 들어 있는 변수의 이름. 이름을 퍼센트 사인으로 둘러 싸지 마십시오. 변수의 <em>내용</em>을 이름으로 사용하고 싶다면 예외입니다.</dd>
 
 </dl>
 
-<h3>논평</h3>
-<p><em>InputVar</em>가 이전에 <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>에 할당된 변수이면, StringLen은 그의 전체 크기를 보고합니다.</p>
-<h3>관련 항목</h3>
-<p><a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">InputVar := "재빠른 갈색 여우, 게으른 개를 덮쳤네"
-MsgBox % "InputVar의 길이는 " . StrLen(InputVar) <em>; 결과: 21</em>
-StringLen, length, InputVar
-MsgBox, InputVar의 길이는 %length%입니다.</pre>
+<h2 id="Remarks">논평</h2>
+<p>If <var>InputVar</var> is a variable to which <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a> was previously assigned, StringLen will retrieve its total size.</p>
+
+<h2 id="Related">관련 항목</h2>
+<p><a href="StrLen.htm">StrLen()</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves and reports the count of how many characters are in a string.</p>
+<pre>StrValue := "The quick brown fox jumps over the lazy dog"
+StringLen, Length, StrValue
+MsgBox, The length of the string is %Length%.</pre>
+</div>
 
 </body>
 </html>

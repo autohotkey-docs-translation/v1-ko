@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Loop</title>
+<title>Loop - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Loop statement performs a series of code lines repeatedly: either the specified number of times or until a Break statement is encountered." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>일련의 명령어들을 반복적으로 수행합니다: 지정된 횟수만큼 또는 <a href="Break.htm">break</a>를 만날 때까지.</p>
 
-<pre class="Syntax">Loop [, Count]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">Loop</span> <span class="optional">, Count</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Count</dt>
@@ -25,36 +25,42 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>회돌이 명령어는 보통 다음 <a href="Block.htm">블록</a>이 따라옵니다. 블록은 회돌이의 <em>몸</em>을 형성하는 서술문 집단입니다. 그렇지만, 서술문이 하나만 있는 회돌이는 블록을 요구하지 않습니다 ("if" 그리고 그의 "else"는 이런 목적으로 하나의 서술문으로 계수됩니다).</p>
 <p>이 명령어의 일반적인 사용법은 무한 회돌이입니다. <a href="Break.htm">break</a> 명령어를 회돌이의 <em>몸</em> 어딘가에 사용해 회돌이를 끝낼 때를 결정합니다.</p>
-<p>회돌이 안에 <a href="Break.htm">break</a>와 <a href="Continue.htm">continue</a>를 사용하는 것을 적극 권장합니다. <a href="Goto.htm">goto</a>는 자제하십시오. 왜냐하면 일반적으로 스크립트를 더 이해하기 어렵게 만들고 유지관리하기도 더 힘들게 만들기 때문입니다. "Do...While" 회돌이를 만들려면, 회돌이 <em>몸체</em>의 마지막 서술문을 IF 서술문으로 만들어서 조건적으로 <a href="Break.htm">break</a> 명령어를 실행하도록 만드십시오. 같은 테크닉을 사용하면 "While" 회돌이를 만들 수 있습니다. 그러나 그 대신에 <a href="While.htm">While</a> 명령어를 사용해야 합니다.</p>
+<p>회돌이 안에 <a href="Break.htm">break</a>와 <a href="Continue.htm">continue</a>를 사용하는 것을 적극 권장합니다. <a href="Goto.htm">goto</a>는 자제하십시오. 왜냐하면 일반적으로 스크립트를 더 이해하기 어렵게 만들고 유지관리하기도 더 힘들게 만들기 때문입니다. One can also create a "While" or "Do...While/Until" loop by making the first or last statement of the loop's <em>body</em> an IF statement that conditionally issues the <a href="Break.htm">break</a> command, but the use of <a href="While.htm">While</a> or <a href="Until.htm">Loop...Until</a> is usually preferred.</p>
 <p>내장 변수 <strong>A_Index</strong>에는 현재 회돌이 반복 횟수가 담깁니다. 회돌이의 <em>몸체</em>가 처음 실행될 때 1이 담기고, 그 다음 실행 때 2가 담깁니다; 등등. 내부 회돌이가 외부 회돌이로 둘러 싸여 있다면, 내부 회돌이가 우선 순위가 있습니다. A_Index는 모든 유형의 회돌이에 작동합니다. 여기에는 <a href="LoopFile.htm">파일-회돌이</a>와 <a href="LoopReg.htm">레지스트리-회돌이</a>가 포함됩니다; 그러나 A_Index는 회돌이 밖이면 0이 담깁니다.</p>
 <p><a href="Block.htm#otb">One True Brace (OTB) 스타일</a>을 선택적으로 정상 회돌이에 사용할 수 있습니다 (그러나 특별한 회돌이에는 안됩니다. 예를 들어 <a href="LoopFile.htm">파일-패턴 회돌이</a> 그리고 <a href="LoopParse.htm">파싱 회돌이</a>). 예를 들어:</p>
-<pre>Loop <strong>{</strong>
+<pre>Loop {
     ...
-<strong>}</strong>
-Loop %RepeatCount% <strong>{</strong>
+}
+Loop %RepeatCount% {
     ...
-<strong>}</strong></pre>
+}</pre>
 <p>특수 회돌이: 회돌이를 사용해 자동으로 파일, 폴더, 레지스트리 항목을 (한 번에 하나씩) 열람할 수 있습니다. 자세한 것은 <a href="LoopFile.htm">파일-회돌이</a> 그리고 <a href="LoopReg.htm">레지스트리-회돌이</a>를 참조하십시오. 게다가, <a href="LoopReadFile.htm">파일-읽기 회돌이</a>는 파일의 전체 내용을 한 번에 한 줄씩 처리할 수 있습니다. 마지막으로, <a href="LoopParse.htm">파싱 회돌이</a>는 가름자로 구분된 문자열 안에 포함된 개별 필드들을 처리할 수 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="Until.htm">Until</a>, <a href="While.htm">While-회돌이</a>, <a href="For.htm">For-회돌이</a>, <a href="LoopFile.htm">파일과 폴더 회돌이</a>, <a href="LoopReg.htm">레지스트리 회돌이</a>, <a href="LoopReadFile.htm">파일-읽기 회돌이</a>, <a href="LoopParse.htm">파싱 회돌이</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">블록</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Loop, 3
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Creates a loop with 3 iterations.</p>
+<pre>Loop, 3
 {
     MsgBox, 반복 숫자는 %A_Index%입니다.  <em>; A_Index는 1, 2, 그 다음에 3이 됩니다</em>
     Sleep, 100
-}
-
-Loop
-{
-    if a_index &gt; 25
-        break  <em>; 회돌이를 종료합니다</em>
-    if a_index &lt; 20
-        continue <em>; 아래를 건너 뛰고 새 반복을 시작합니다</em>
-    MsgBox, a_index = %a_index% <em>; 이 곳은 숫자를 20부터 25 까지만 보여줍니다.</em>
 }</pre>
+</div>
+
+<div class="ex" id="ExBreakContinue">
+<p><a class="ex_number" href="#ExBreakContinue"></a> Creates an infinite loop, but it will be terminated after the 25th iteration.</p>
+<pre>Loop
+{
+    if (A_Index &gt; 25)
+        break  <em>; 회돌이를 종료합니다</em>
+    if (A_Index &lt; 20)
+        continue <em>; 아래를 건너 뛰고 새 반복을 시작합니다</em>
+    MsgBox, A_Index = %A_Index% <em>; 이 곳은 숫자를 20부터 25 까지만 보여줍니다.</em>
+}</pre>
+</div>
 
 </body>
 </html>

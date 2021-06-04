@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>If var [not] between LowerBound and UpperBound</title>
+<title>If Var between Low and High - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The &quot;if Var between Low and High&quot; statement checks whether a variable's contents are numerically or alphabetically between two values (inclusive)." />
+<meta name="ahk:equiv-v2" content="commands/If.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,9 +15,11 @@
 
 <p><a href="../Variables.htm">변수</a>의 내용이 숫치적으로 또는 알파벳 순으로 두 값(포함) 사이에 있는지 점검합니다.</p>
 
-<pre class="Syntax">if <i>Var</i> between <i>LowerBound</i> and <i>UpperBound</i>
-if <i>Var</i> not between <i>LowerBound</i> and <i>UpperBound</i></pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">if</span> Var <span class="func">between</span> LowerBound <span class="func">and</span> UpperBound
+<span class="func">if</span> Var <span class="func">not between</span> LowerBound <span class="func">and</span> UpperBound
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Var</dt>
@@ -30,29 +33,44 @@ if <i>Var</i> not between <i>LowerBound</i> and <i>UpperBound</i></pre>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>매개변수 세 개가 모두 순수하게 숫치이면, 문자열이 아니라 숫자로 비교됩니다. 그렇지 않으면, 문자열처럼 알파벳 순으로 비교됩니다 (즉, 알파벳 순서로 <em>Var</em>가 지정한 범위 안에 있는지 결정됩니다). 그 경우, <code><a href="StringCaseSense.htm">StringCaseSense</a> On</code>을 사용하면 대소문자를 구분해 비교할 수 있습니다.</p>
-<p><strong>연산자 "between", "is", "in", 그리고 "contains"는 <a href="../Variables.htm#Expressions">표현식</a> 안에 지원되지 않습니다.</strong></p>
-<h3>관련 항목</h3>
+<p>The "between" operator is not supported in <a href="../Variables.htm#Expressions">expressions</a>. Instead, use <a href="IfExpression.htm">If statements</a> such as <code>if (Var &gt;= LowerBound and Var &lt;= UpperBound)</code> to simulate the behavior of this operator.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="IfEqual.htm">IfEqual/Greater/Less</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfIs.htm">if var is type</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="EnvAdd.htm">EnvAdd</a><a href="Block.htm">, 블록</a>, <a href="Else.htm">Else</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">if var between 1 and 5
-    MsgBox, %var%는 범위가 1 이상 5 이하입니다.
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExInteger">
+<p><a class="ex_number" href="#ExInteger"></a> Checks whether <var>var</var> is in the range 1 to 5.</p>
+<pre>if var between 1 and 5
+    MsgBox, %var%는 범위가 1 이상 5 이하입니다.</pre>
+</div>
 
-if var <strong>not</strong> between 0.0 and 1.0
-    MsgBox %var%는 범위가 0.0 이상 1.0 이하입니다.
+<div class="ex" id="ExFloat">
+<p><a class="ex_number" href="#ExFloat"></a> Checks whether <var>var</var> is in the range 0.0 to 1.0.</p>
+<pre>if var not between 0.0 and 1.0
+    MsgBox %var%는 범위가 0.0 이상 1.0 이하입니다.</pre>
+</div>
 
-if var between %VarLow% and %VarHigh%
-    MsgBox %var%는 %VarLow%과 %VarHigh% 사이에 있습니다.
+<div class="ex" id="ExVar">
+<p><a class="ex_number" href="#ExVar"></a> Checks whether <var>var</var> is between <var>VarLow</var> and <var>VarHigh</var> (inclusive).</p>
+<pre>if var between %VarLow% and %VarHigh%
+    MsgBox %var%는 %VarLow%과 %VarHigh% 사이에 있습니다.</pre>
+</div>
 
-if var between blue and red
-    MsgBox %var%는 알파벳 순서로 단어 blue와 red 사이에 있습니다.
+<div class="ex" id="ExString">
+<p><a class="ex_number" href="#ExString"></a> Checks whether <var>var</var> is alphabetically between the words blue and red (inclusive).</p>
+<pre>if var between blue and red
+    MsgBox %var%는 알파벳 순서로 단어 blue와 red 사이에 있습니다.</pre>
+</div>
 
-LowerLimit = 1
-UpperLimit = 10
+<div class="ex" id="ExInputBox">
+<p><a class="ex_number" href="#ExInputBox"></a> Allows the user to enter a number and checks whether it is in the range 1 to 10.</p>
+<pre>LowerLimit := 1
+UpperLimit := 10
 InputBox, UserInput, %LowerLimit%과 %UpperLimit% 사이의 숫자를 입력하십시오.
 if UserInput not between %LowerLimit% and %UpperLimit%
     MsgBox 입력이 유효한 범위 안에 있지 않습니다.</pre>
+</div>
 
 </body>
 </html>

@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileCopy</title>
+<title>FileCopy - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileCopy command copies one or more files." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,47 +14,62 @@
 
 <p>파일을 복사합니다.</p>
 
-<pre class="Syntax">FileCopy, SourcePattern, DestPattern [, Flag]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FileCopy</span>, SourcePattern, DestPattern <span class="optional">, Overwrite</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>SourcePattern</dt>
   <dd><p>단일 파일이나 폴더 또는 C:\Temp\*.tmp 같으 와일드 카드 패턴. <em>SourcePattern</em>은 절재 경로가 지정되어 있지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다.</p></dd>
 
   <dt>DestPattern</dt>
-  <dd>목표의 이름이나 패턴, 절대 경로가 지정되지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 간단한 복사를 수행하려면 -- 기존의 파일이름은 그대로 두고 -- 폴더 이름만 지정하십시오. 다음에 보여주는 예제는 기능상 동등합니다:<br>
+  <dd><p>목표의 이름이나 패턴, 절대 경로가 지정되지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다.</p>
+      <p>If present, the first asterisk (<code>*</code>) in the filename is replaced with the source filename excluding its extension, while the first asterisk after the last full stop (<code>.</code>) is replaced with the source file's extension. If an asterisk is present but the extension is omitted, the source file's extension is used.</p>
+      <p>To perform a simple copy -- retaining the existing file name(s) -- specify only the folder name as shown in these mostly equivalent examples:</p>
       <pre>FileCopy, C:\*.txt, C:\My Folder</pre>
       <pre>FileCopy, C:\*.txt, C:\My Folder\*.*</pre>
+      <p>목표 디렉토리는 이미 존재해야 합니다. If <em>My Folder</em> does not exist, the first example above will use "My Folder" as the target filename, while the second example will copy no files.</p>
     </dd>
 
-  <dt>Flag</dt>
-  <dd><p>(선택적) 이 매개변수는 파일이 이미 존재하면 덮어쓸지 말지 결정합니다:</p>
-      <p>0 = (기본값) 기존의 파일을 덮어쓰지 않습니다<br>
-        1 = 기존의 파일을 덮어 씁니다</p>
-      <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다. 심지어 거짓이나 참으로 평가되면 무엇이든 될 수 있습니다 (참과 거짓은 내부적으로 1과 0으로 저장되기 때문입니다).</p></dd>
+  <dt>Overwrite</dt>
+  <dd>
+      <p>This parameter determines whether to overwrite files if they already exist. If this parameter is 1 (true), the command overwrites existing files. If omitted or 0 (false), the command does not overwrite existing files.</p>
+      <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다. 심지어 거짓이나 참으로 평가되면 무엇이든 될 수 있습니다 (참과 거짓은 내부적으로 1과 0으로 저장되기 때문입니다).</p>
+  </dd>
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 에러 때문에 복사에 실패한 파일의 개수가 설정됩니다. 그렇지 않으면 0이 설정됩니다.</p>
-<p>어느 경우든, 소스 파일이 단일 파일이고 (와일드카드 없음) 그리고 그 파일이 존재하지 않으면, ErrorLevel은 0으로 설정됩니다. 이 상황을 탐지하려면, 복사하기 전에 <a href="IfExist.htm">IfExist</a> 또는 <a href="../Functions.htm#FileExist">FileExist()</a>를 소스 파일에 사용하십시오.</p>
+<p>어느 경우든, 소스 파일이 단일 파일이고 (와일드카드 없음) 그리고 그 파일이 존재하지 않으면, ErrorLevel은 0으로 설정됩니다. 이 상황을 탐지하려면, 복사하기 전에 <a href="FileExist.htm">FileExist()</a> 또는 <a href="IfExist.htm">IfExist</a>를 소스 파일에 사용하십시오.</p>
 <p><a href="FileMove.htm">FileMove</a>와 다르게, 파일을 자기 자신에 복사하는 것은 언제나 에러로 간주됩니다. 덮어쓰기 모드가 켜져 있어도 마찬가지입니다.</p>
 <p>파일이 발견되면, <a href="../Variables.htm#LastError">A_LastError</a>는 0 (0) 또는 마지막 실패 후에 곧바로 운영 체제의 GetLastError() 함수의 결과가 설정됩니다. 그렇지 않으면 A_LastError에는 왜 파일이 발견되지 않았는지 알려주는 에러 코드가 담깁니다.</p>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>FileCopy는 파일만 복사합니다. 대신 폴더의 내용을 (그의 모든 파일과 하위 폴더) 복사하려면, 아래 섹션의 예제를 참조하십시오. 단일 폴더 (하위 폴더 포함)를 복사하려면, <a href="FileCopyDir.htm">FileCopyDir</a>을 사용하십시오.</p>
 <p>에러를 만나도 연산은 멈추지 않습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="FileMove.htm">FileMove</a>, <a href="FileCopyDir.htm">FileCopyDir</a>, <a href="FileMoveDir.htm">FileMoveDir</a>, <a href="FileDelete.htm">FileDelete</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FileCopy, C:\My Documents\List1.txt, D:\Main Backup\  <em>; 사본을 만들지만 원본의 파일 이름을 유지합니다.</em>
-FileCopy, C:\My File.txt, C:\My File New.txt  <em>; 파일에 새 이름을 주고, 같은 폴더 안으로 복사합니다.</em>
-FileCopy, C:\Folder1\*.txt, D:\New Folder\*.bkp  <em>; 새 위치에 복사하고 새 확장자를 부여합니다.</em></pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 다음 예제는 한 폴더 안의 모든 파일과 하위 폴더를 다른 폴더로 복사 합니다:</em>
-ErrorCount := CopyFilesAndFolders("C:\My Folder\*.*", "D:\Folder to receive all files &amp; folders")
-if ErrorCount &lt;&gt; 0
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExKeepOrigName">
+<p><a class="ex_number" href="#ExKeepOrigName"></a> 사본을 만들지만 원본의 파일 이름을 유지합니다.</p>
+<pre>FileCopy, C:\My Documents\List1.txt, D:\Main Backup\</pre>
+</div>
+
+<div class="ex" id="ExNewName">
+<p><a class="ex_number" href="#ExNewName"></a> 파일에 새 이름을 주고, 같은 폴더 안으로 복사합니다.</p>
+<pre>FileCopy, C:\My File.txt, C:\My File New.txt</pre>
+</div>
+
+<div class="ex" id="ExNewExt">
+<p><a class="ex_number" href="#ExNewExt"></a> Copies text files to a new location and gives them a new extension.</p>
+<pre>FileCopy, C:\Folder1\*.txt, D:\New Folder\*.bkp</pre>
+</div>
+
+<div class="ex" id="ExCopyAll">
+<p><a class="ex_number" href="#ExCopyAll"></a> 한 폴더 안의 모든 파일과 하위 폴더를 다른 폴더로 복사 합니다.</p>
+<pre>ErrorCount := CopyFilesAndFolders("C:\My Folder\*.*", "D:\Folder to receive all files &amp; folders")
+if (ErrorCount != 0)
     MsgBox %ErrorCount% files/folders could not be copied.
 
 CopyFilesAndFolders(SourcePattern, DestinationFolder, DoOverwrite = false)
@@ -74,6 +89,7 @@ CopyFilesAndFolders(SourcePattern, DestinationFolder, DoOverwrite = false)
     }
     return ErrorCount
 }</pre>
+</div>
 
 </body>
 </html>

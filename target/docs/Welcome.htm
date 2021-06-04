@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ko">
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Welcome to AutoHotkey</title>
+  <meta name="robots" content="noindex, nofollow" />
   <link href="static/theme.css" rel="stylesheet" type="text/css" />
   <style>
   h1, h2 {
@@ -24,17 +25,18 @@
 </head>
 <body>
 
-<a id="ahklogo"><img src="static/ahk_logo.png" border="0" alt="AutoHotkey"></a>
+<a id="ahklogo"><img src="static/ahk_logo.svg" onerror="this.src='static/ahk_logo.png'; this.onerror=null;" alt="AutoHotkey"></a>
 
 <div id="container">
   <h1 id="welcome">환영합니다...</h1>
   
-  <h2>시작하기</h2>
+  <h2 id="Getting_Started">시작하기</h2>
   <p>AutoHotkey로 뭔가를 할 수 있으려면, 먼저 스크립트를 작성해 무엇을 할지 알려주어야 합니다.<br>
   <a class="emlink" href="Tutorial.htm">자습서를 읽거나</a> 아니면 <a href="Scripts.htm">곧장 뛰어 들어가면</a> 그 방법을 배울 수 있습니다.</p>
-  <p>도움을 얻거나 많은 유용한 스크립트를 발견할 수 있습니다: <a href="http://ahkscript.org/boards/">우리의 토론 포럼에 오십시오</a>.</p>
+  <p>Basically: <a href="Tutorial.htm#s12">create a script file</a> → <a href="Tutorial.htm#s2">add some hotkeys</a> → run the script file.</p>
+  <p>도움을 얻거나 많은 유용한 스크립트를 발견할 수 있습니다: <a href="https://www.autohotkey.com/boards/">우리의 토론 포럼에 오십시오</a>.</p>
   
-  <h2 style="margin-top: 1.5em">왜 내가 이 페이지를 보고 있나요?</h2>
+  <h2 id="Why_am_I_seeing_this" style="margin-top: 1.5em">왜 내가 이 페이지를 보고 있나요?</h2>
   <div id="why">
   <p>어느 스크립트를 실행할지 <a href="Scripts.htm#cmd">알려주지 않고</a> 오토핫키를 실행했는데 <a href="Scripts.htm#defaultfile">기본 위치에서</a> 스크립트를 찾을 수 없었기 때문입니다.</p>
   </div>

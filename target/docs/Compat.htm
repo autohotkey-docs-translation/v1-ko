@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>스크립트의 호환성</title>
+<title>Script Compatibility | AutoHotkey</title>
+<meta name="description" content="Find out what has changed compared to AutoHotkey 1.0 and how much the impact is." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,16 +12,18 @@
 
 <h1>스크립트의 호환성</h1>
 
-<p>AutoHotkey 1.0으로 작성된 스크립트는 대부분 AutoHotkey 1.1 위에서 아무 변경없이 실행됩니다. 그러나 몇 가지 기능은 두 버전 사이의 어떨 수 없는 차이점 때문에 제대로 작동하지 않을 수 있습니다. 가장 문제가 되는 차이점은 DllCall 같은 고급 기능에만 영향을 미치기 때문에, 대부분의 사용자는 신경쓸 필요가 없습니다.</p>
+<p>AutoHotkey 1.0으로 작성된 스크립트는 대부분 AutoHotkey 1.1 위에서 아무 변경없이 실행됩니다. 그러나 몇 가지 기능은 두 버전 사이의 어떨 수 없는 차이점 때문에 제대로 작동하지 않을 수 있습니다. 가장 문제가 되는 차이점은 DllCall() 같은 고급 기능에만 영향을 미치기 때문에, 대부분의 사용자는 신경쓸 필요가 없습니다.</p>
 <p>AutoHotkey 1.1은 "AutoHotkey_L"이라고도 알려져 있는데, 반면에 AutoHotkey 1.0은 역으로 "AutoHotkey Basic"이라는 라벨이 붙었습니다. AutoHotkey_L의 예전 버전 중에는 1.0.* 버전 번호를 사용합니다. 그래서 명확하게 하기 위해, 이 문서는 오토핫키의 두 분기를 버전 번호가 아니라 이름으로 지칭합니다.</p>
 <p class="note"><strong>주의:</strong> 가장 흔한 문제는 유니코드 텍스트를 지원하도록 변경한 때문인데, 이는 그냥 ANSI 버전의 AutoHotkey_L를 사용하면 피할 수 있습니다.</p>
 
-<h3>기본</h3>
+<h2 id="toc">목차</h2>
+<h3 id="toc_basic">기본</h3>
 <p>큰 충격:</p>
 <ul>
   <li><a href="#Syntax_Errors">구문 에러를 더 이상 용납하지 않습니다</a></li>
   <li><a href="#FileRead">FileRead가 부패한 이진 데이터를 돌려줄 수 있습니다</a></li>
   <li><a href="#Names">변수 이름과 함수 이름에 [, ] 또는 ?를 허용하지 않습니다</a></li>
+  <li><a href="#DPIScale">GUI에 DPI 스케일링이 기본적으로 켜집니다</a></li>
 </ul>
 <p>중간 충격:</p>
 <ul>
@@ -31,7 +33,6 @@
   <li><a href="#LastError">A_LastError는 더 많은 명령어에 의하여 변경됩니다</a></li>
   <li><a href="#MsgBox">MsgBox가 쉼표를 더 일관성이 있게 처리합니다</a></li>
   <li><a href="#GuiOwner">Gui +Owner는 추가 스타일을 오버라이드합니다</a></li>
-  <li><a href="#DPIScale">GUI에 DPI 스케일링이 기본적으로 켜집니다</a></li>
   <li><a href="#VistaSound">SoundSet과 SoundGet은 비스타 이후에 더 잘 작동합니다</a></li>
   <li><a href="#Tilde">~틸드는 맞춤 수식 키의 작동에 영향을 미칩니다</a></li>
   <li><a href="#ComboUpDown"><code>x &amp; y::</code>는 x를 뗄 때 <code>x::</code>와 <code>x up::</code>을 모두 촉발시킵니다</a></li>
@@ -47,7 +48,7 @@
   <li><a href="#Escaped_Whitespace">선두와 후미의 `t 연속열은 더 이상 폐기되지 않습니다</a></li>
 </ul>
 
-<h3>고급</h3>
+<h3 id="toc_advanced">고급</h3>
 <ul>
   <li><a href="#Format">Unicode vs ANSI</a>
     <ul>
@@ -61,7 +62,7 @@
 
 <h2 id="Basic">기본</h2>
 
-<h3 id="Syntax_Errors"><a name="Validation"></a>구문 에러</h3>
+<span id="Validation"></span><h3 id="Syntax_Errors">구문 에러</h3>
 <p>AutoHotkey Basic에서 용인되었던 어떤 구문 에러는 이제 더 이상 AutoHotkey_L에서 용납하지 않습니다. 그런 에러는 대부분 식별하기만 하면 쉽게 교정할 수 있습니다. 다음 에러는 스크립트를 AutoHotkey_L에서 기동하자 마자 즉시 탐지됩니다. 교정해야 스크립트를 실행할 수 있습니다:</p>
 <ul>
   <li>명령어와 매개변수 사이에 스페이스나 탭 또는 쉼표가 필요합니다. 예를 들어, <code>MsgBox&lt; foo</code> 그리고 <code>If!foo</code>는 용납되지 않습니다.</li>
@@ -79,7 +80,7 @@
 </ul>
 
 <h3 id="FileRead">FileRead</h3>
-<p><a href="commands/FileRead.htm#Binary">FileRead</a>는 보통의 경우 코드 페이지 사이에 텍스트를 변환합니다. 그러므로 부패한 이진 데이터를 출력할 가능성이 있습니다. 이를 피하려면 <code>*c</code> 옵션을 추가하거나 대신에 <a href="commands/FileOpen.htm">FileOpen</a>을 사용하십시오.</p>
+<p><a href="commands/FileRead.htm#Binary">FileRead</a>는 보통의 경우 코드 페이지 사이에 텍스트를 변환합니다. 그러므로 부패한 이진 데이터를 출력할 가능성이 있습니다. 이를 피하려면 <code>*c</code> 옵션을 추가하거나 대신에 <a href="commands/FileOpen.htm">FileOpen()</a>을 사용하십시오.</p>
 
 <h3 id="Names">변수 이름과 함수 이름</h3>
 <p><code>[</code>, <code>]</code> 그리고 <code>?</code>는 <a href="Variables.htm#Expressions">표현식</a>에 사용이 예약되어 있습니다. 그래서 더 이상 변수 이름으로 유효하지 않습니다. 결론적으로, <code>?</code>는 (<a href="Variables.htm#ternary">삼진 연산</a>에 사용됨) 더 이상 양쪽에 스페이스가 없어도 됩니다. <a href="Objects.htm#Syntax">객체 구문</a>을 참조하십시오.</p>
@@ -90,10 +91,13 @@
   <li>이 문자들이 다른 문맥에 사용되면, 예를 들어 할당의 왼편이나 명령어의 입/출력 변수의 이름 또는 %percent% 사인에 사용되면, 에러 메시지가 나타나고 스크립트는 기동하지 못합니다.</li>
 </ul>
 
+<h3 id="DPIScale">DPI 스케일링</h3>
+<p><a href="commands/Gui.htm#DPIScale">DPI scaling</a> is enabled by default for script GUIs to ensure they scale according to the <a href="Variables.htm#ScreenDPI">system DPI setting</a>.  If enabled and the system DPI setting is not 96 (100%), positions and sizes accepted by or returned from Gui commands are not compatible with other commands.  To disable DPI scaling, use <code>Gui -DPIScale</code>.</p>
+
 <h3 id="Transform">Transform</h3>
 <p><i>Transform</i> 하위-명령어 중 일부는 유니코드 버전의 AutoHotkey_L에서 변경되거나 사용할 수 없습니다:</p>
 <ul>
-  <li><a href="commands/Transform.htm#Unicode">Transform, Unicode</a>는 사용 불가능합니다. 유니코드 텍스트를 클립보드에 할당하려면, 보통처럼 할당하십시오. 다음 참조: <a href="commands/StrPutGet.htm">StrPut/StrGet</a>.</li>
+  <li><a href="commands/Transform.htm#Unicode">Transform, Unicode</a>는 사용 불가능합니다. 유니코드 텍스트를 클립보드에 할당하려면, 보통처럼 할당하십시오. 다음 참조: <a href="commands/StrPut.htm">StrPut()</a> / <a href="commands/StrGet.htm">StrGet()</a>.</li>
   <li><a href="commands/Transform.htm#HTML">Transform, HTML</a>는 추가 특징을 지원합니다.</li>
 </ul>
 
@@ -127,9 +131,6 @@ MsgBox,, Title
 <h3 id="GuiOwner">Gui +Owner</h3>
 <p><a href="commands/Gui.htm#Owner">+Owner</a> 옵션을 Gui에 적용하면 WS_CHILD 스타일이 제거되고 WS_POPUP 스타일이 설정됩니다. 이 때문에 스타일을 설정한 <em>다음에</em> <code>+Owner</code>를 사용하여 Gui의 부모 창을 설정한 스크립트는 깨질 수 있습니다.</p>
 
-<h3 id="DPIScale">DPI 스케일링</h3>
-<p><a href="commands/Gui.htm#DPIScale">DPI 스케일링</a>은 기본적으로 스크립트 GUI에 켜집니다. 이 때문에 DPI 설정이 96 (100%)이 아니면 스크립트에 영향을 미칩니다. 이를 끄려면, <code>Gui -DPIScale</code>를 사용하십시오.</p>
-
 <h3 id="VistaSound">Windows Vista 이후의 Sound 명령어</h3>
 <p><a href="commands/SoundSet.htm">SoundSet</a>, <a href="commands/SoundGet.htm">SoundGet</a>, <a href="commands/SoundSetWaveVolume.htm">SoundSetWaveVolume</a> 그리고 <a href="commands/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> Windows Vista 이후에 개선되었습니다. 전형적인 행위의 변화로:</p>
 <ul>
@@ -138,7 +139,7 @@ MsgBox,, Title
 </ul>
 
 <h3 id="Tilde">~틸드와 맞춤 조합 핫키</h3>
-<p>v1.1.14 부터, <a href="Hotkeys.htm#Tilde">틸드 접두 심볼</a>은 맞춤 조합에 수식 키로 사용될 때 키가 작동하는 방식에 영향을 미칩니다.</p>
+<p><span class="ver">[v1.1.14]</span> 부터, <a href="Hotkeys.htm#Tilde">틸드 접두 심볼</a>은 맞춤 조합에 수식 키로 사용될 때 키가 작동하는 방식에 영향을 미칩니다.</p>
 
 <h3 id="ComboUpDown">맞춤 조합키와 Down/Up 핫키</h3>
 <p>틸드 접두 심볼이 사용되는 경우를 제외하고, 키-다운과 키-업 핫키가 맞춤 수식 키로 정의되어 있다면, 키를 뗄 때 둘 모두 촉발 됩니다. 예를 들어, <code>x &amp; y::</code>이면 x를 뗄 때 <code>x::</code>와 <code>x up::</code>가 모두 촉발 됩니다. 예전에는 <code>x::</code>가 촉발 되지 않았습니다.</p>
@@ -148,7 +149,7 @@ MsgBox,, Title
 
 <h3 id="Window_Groups">창 그룹</h3>
 <p><a href="commands/GroupActivate.htm">GroupActivate</a>는 활성화 할 창을 발견하지 못하면 ErrorLevel에 1을 설정합니다, 그렇지 않으면 0을 설정합니다. 이전에는 ErrorLevel을 변경하지 않고 그대로 두었습니다.</p>
-<p><a href="commands/GroupAdd.htm">GroupAdd</a>의 <em>Label</em> 매개변수는 창 그룹에 전체적으로 적용됩니다. 그룹 안의 특정 창 규격 하나에만 적용되지 않습니다. 이 변경에 관한 토론이 <a href="http://www.autohotkey.com/community/viewtopic.php?t=61362">포럼</a>에 있습니다. 그렇지만, 이 매개변수를 사용하는 것은 <strong>추천 하지 않습니다</strong>; 대신에 GroupActivate를 호출한 후에 ErrorLevel을 점검하십시오.</p>
+<p><a href="commands/GroupAdd.htm">GroupAdd</a>의 <em>Label</em> 매개변수는 창 그룹에 전체적으로 적용됩니다. 그룹 안의 특정 창 규격 하나에만 적용되지 않습니다. 이 변경에 관한 토론이 <a href="https://www.autohotkey.com/community/viewtopic.php?t=61362">포럼</a>에 있습니다. 그렇지만, 이 매개변수를 사용하는 것은 <strong>추천 하지 않습니다</strong>; 대신에 GroupActivate를 호출한 후에 ErrorLevel을 점검하십시오.</p>
 
 <h3 id="Run">Run / RunWait</h3>
 <p>AutoHotkey_L은 <a href="commands/Run.htm">Run</a>과 <a href="commands/Run.htm">RunWait</a> 명령어가 목표(<em>Target</em>) 매개변수를 번역하는 방식이 약간 개선되었습니다. 이 때문에 아주 희귀한 경우이기는 하지만, 예전에는 작동하지 않던 것들이 작동하게 되어 AutoHotkey Basic에서 이미 잘 작동하는 스크립트에 영향을 미칠 수 있습니다. 새로운 행위는 다음과 같습니다:</p>
@@ -158,10 +159,10 @@ MsgBox,, Title
 </ul>
 
 <h3 id="ControlZ">Control-Z</h3>
-<p><a href="commands/LoopReadFile.htm">Loop Read</a> 그리고 <a href="commands/FileReadLine.htm">FileReadLine</a>는 더 이상 문자 Control-Z (0x1A)를 파일 끝 표식으로 이해하지 않습니다. Control-Z는 모두, 파일 맨 끝에 오더라도, 그대로 적재됩니다. <a href="commands/FileRead.htm">FileRead</a>는 이미 이 문자를 무시합니다. 그래서 이 문제에 영향을 받지 않습니다.</p>
+<p><a href="commands/LoopReadFile.htm">Loop Read</a> 그리고 <a href="commands/FileReadLine.htm">FileReadLine</a>는 더 이상 문자 <kbd>Ctrl</kbd>+<kbd>Z</kbd> (0x1A)를 파일 끝 표식으로 이해하지 않습니다. <kbd>Ctrl</kbd>+<kbd>Z</kbd>는 모두, 파일 맨 끝에 오더라도, 그대로 적재됩니다. <a href="commands/FileRead.htm">FileRead</a>는 이미 이 문자를 무시합니다. 그래서 이 문제에 영향을 받지 않습니다.</p>
 
 <h3 id="Compatibility_Mode">호환 모드</h3>
-<p>스크립트를 실행하는 데 사용된 EXE 파일의 특성에 <a href="http://www.microsoft.com/windowsxp/using/helpandsupport/learnmore/appcompat.mspx#ECD">호환 모드</a>가 Windows 95, 98/ME 또는 NT4로 설정되었다면, 그 스크립트는 올바르게 작동하지 못합니다. 왜냐하면 호환 모드 때문에 특정 버전의 Windows가 어플리케이션에 보고되지만, AutoHotkey_L은 이런 버전을 지원하지 않기 때문입니다. 예를 들어, 호환 모드를 Windows 95 or 98/ME에 설정하면 <code>MsgBox %A_OSVersion%</code>는 <code>WIN_NT4</code>라고 보고합니다.</p>
+<p>스크립트를 실행하는 데 사용된 EXE 파일의 특성에 <a href="https://support.microsoft.com/ko-kr/help/15078/windows-make-older-programs-compatible">호환 모드</a>가 Windows 95, 98/ME 또는 NT4로 설정되었다면, 그 스크립트는 올바르게 작동하지 못합니다. 왜냐하면 호환 모드 때문에 특정 버전의 Windows가 어플리케이션에 보고되지만, AutoHotkey_L은 이런 버전을 지원하지 않기 때문입니다. 예를 들어, 호환 모드를 Windows 95 or 98/ME에 설정하면 <code>MsgBox %A_OSVersion%</code>는 <code>WIN_NT4</code>라고 보고합니다.</p>
 
 <h3 id="IsCompiled">A_IsCompiled</h3>
 <p><a href="Variables.htm#IsCompiled">A_IsCompiled</a>는 스크립트가 컴파일되지 않았다면 빈 문자열로 정의됩니다. 이전에는 정의되지 않은 채 그대로 두었습니다. 그 때문에 스크립트가 컴파일되지 않았음에도 <code>A_IsCompiled := 1</code>와 같은 할당이 유효했었습니다. 이제는 모든 경우에 읽기 전용 내장 변수로 취급됩니다.</p>
@@ -171,7 +172,8 @@ MsgBox,, Title
 
 
 <h2 id="Format">Unicode vs ANSI</h2>
-<p>텍스트 값은 종종 문자열(<em>string</em>)이라고 부릅니다. 각 텍스트의 값이 문자열의 연속 또는 줄지어(<em>string</em>) 저장되어 있기 때문입니다. 각 문자의 숫치 문자 코드와 크기 (바이트 단위)는 어느 버전의 AutoHotkey를 사용하고 있는가에 달려 있습니다: <i>Unicode</i> 또는 <i>ANSI</i>. 이런 세부 사항은 다음과 같은 일을 하려는 스크립트에 전형적으로 중요합니다:</p>
+<p class="note"><strong>Note:</strong> This section builds on topics covered in other parts of the documentation: <a href="Concepts.htm#strings">Strings</a>, <a href="Concepts.htm#string-encoding">String Encoding</a>.</p>
+<p>Within a string (text value), the numeric character code and size (in bytes) of each character depends on the <a href="Concepts.htm#native-encoding">native encoding</a> of the script or AutoHotkey executable; i.e. <i>Unicode</i> or <i>ANSI</i>. 이런 세부 사항은 다음과 같은 일을 하려는 스크립트에 전형적으로 중요합니다:</p>
 <ul>
   <li><a href="#DllCall">DllCall</a>을 통하여 문자열을 외부 함수에 전달할 때.</li>
   <li><a href="commands/PostMessage.htm">PostMessage/SendMessage</a>를 통하여 문자열을 전달 할 때.</li>
@@ -181,8 +183,8 @@ MsgBox,, Title
 <p>한 가지 형식만 염두에 두고 설계된 스크립트는 종종 엉뚱한 버전의 AutoHotkey로 실행할 때 문제에 봉착합니다. 예를 들면, 어떤 스크립트가 AutoHotkey Basic용으로 작성되었다면 ANSI 버전의 AutoHotkey_L에서는 잘 작동하지만 유니코드 버전에서는 실패합니다. 어느 버전을 사용하고 있는지 잘 모르겠다면, 다음 스크립트를 실행해 보십시오:</p>
 <pre>MsgBox % <a href="Variables.htm#IsUnicode">A_IsUnicode</a> ? "Unicode" : "ANSI"</pre>
 <p><strong>ANSI:</strong> 각 문자는 <strong>한 바이트</strong> (8 비트)입니다. 127을 넘는 문자 코드는 시스템의 언어 설정에 따라 달라집니다.</p>
-<p><strong>Unicode:</strong> 각 문자는 <strong>두 바이트</strong> (16 비트)입니다. 문자 코드는 <a href="http://en.wikipedia.org/wiki/UTF-16">UTF-16</a> 형식으로 정의됩니다.</p>
-<p class="Indent"><em>의미구조 주의:</em> 기술적으로, 어떤 유니코드 문자는 <i>두 개의</i> 16-비트 코드 단위로 표현됩니다. 합쳐서 "대리 쌍(surrogate pair)"라고 부릅니다. 비슷하게, 어떤 <a href="http://msdn.microsoft.com/en-us/library/dd317752.aspx">ANSI 코드 페이지</a>는 (보통 <a href="http://msdn.microsoft.com/en-us/library/dd317794.aspx">DBCS(Double Byte Character Sets</a>)라고 부름) 두 바이트 문자를 담고 있습니다. 그렇지만, 실용적인 이유로, 이것들을 거의 언제나 두 개의 개별 단위로 취급합니다 (단순하게 하기 위해 그냥 "문자(characters)"라고 부릅니다).</p>
+<p><strong>Unicode:</strong> 각 문자는 <strong>두 바이트</strong> (16 비트)입니다. 문자 코드는 <a href="https://ko.wikipedia.org/wiki/UTF-16">UTF-16</a> 형식으로 정의됩니다.</p>
+<p class="Indent"><em>의미구조 주의:</em> 기술적으로, 어떤 유니코드 문자는 <i>두 개의</i> 16-비트 코드 단위로 표현됩니다. 합쳐서 "대리 쌍(surrogate pair)"라고 부릅니다. 비슷하게, 어떤 <a href="http://msdn.microsoft.com/ko-kr/library/dd317752.aspx">ANSI 코드 페이지</a>는 (보통 <a href="http://msdn.microsoft.com/ko-kr/library/dd317794.aspx">DBCS(Double Byte Character Sets</a>)라고 부름) 두 바이트 문자를 담고 있습니다. 그렇지만, 실용적인 이유로, 이것들을 거의 언제나 두 개의 개별 단위로 취급합니다 (단순하게 하기 위해 그냥 "문자(characters)"라고 부릅니다).</p>
 
 <h3 id="VarSetCapacity">VarSetCapacity</h3>
 <p>VarSetCapacity는 변수의 가용 능력을 <i>바이트 단위</i>로 설정합니다. 변수의 가용능력을 문자의 개수에 기반하여 설정하려면, 문자의 크기를 반드시 고려해야 합니다. 예를 들어:</p>
@@ -200,28 +202,28 @@ VarSetCapacity(native_var,  t_size(capacity_in_chars))  <em>; <a href="#NumPutGe
 <h3 id="DllCall">DllCall</h3>
 <p>"Str" 유형이 사용될 때, 현재 빌드의 고유 유형의 문자열이라는 뜻입니다. 어떤 함수는 특정한 형태의 문자열을 요구하거나 돌려주기 때문에, 다음의 문자열 유형을 사용할 수 있습니다:</p>
 <table class="info">
-  <tr><th>&nbsp;</th><th>문자 크기</th><th>C / Win32 Types</th><th>Encoding</th></tr>
-  <tr><td class="Syntax" style="text-align:center">WStr</td><td style="text-align:center">16-비트</td><td>wchar_t*, WCHAR*, LPWSTR, LPCWSTR</td><td>UTF-16</td></tr>
-  <tr><td class="Syntax" style="text-align:center">AStr</td><td style="text-align:center">8-비트</td><td>char*, CHAR*, LPSTR, LPCSTR</td><td>ANSI (시스템 기본 ANSI 코드 페이지)</td></tr>
-  <tr><td class="Syntax" style="text-align:center">Str</td><td style="text-align:center">--</td><td>TCHAR*, LPTSTR, LPCTSTR</td><td>유니코드 빌드의 <b>WStr</b> 그리고 ANSI 빌드의 <b>AStr</b>과 동등.</td></tr>
+  <tr><th>&nbsp;</th><th class="center">문자 크기</th><th>C / Win32 유형</th><th>인코딩</th></tr>
+  <tr><td class="Syntax center">WStr</td><td class="center">16-비트</td><td>wchar_t*, WCHAR*, LPWSTR, LPCWSTR</td><td>UTF-16</td></tr>
+  <tr><td class="Syntax center">AStr</td><td class="center">8-비트</td><td>char*, CHAR*, LPSTR, LPCSTR</td><td>ANSI (시스템 기본 ANSI 코드 페이지)</td></tr>
+  <tr><td class="Syntax center">Str</td><td class="center">--</td><td>TCHAR*, LPTSTR, LPCTSTR</td><td>유니코드 빌드의 <b>WStr</b> 그리고 ANSI 빌드의 <b>AStr</b>과 동등.</td></tr>
 </table>
 <p>"Str" 또는 현재 빌드에 대하여 그와 동등한 유형이 매개변수로 사용되면, 그 문자열 또는 변수의 주소가 함수에 건네집니다. 그렇지 않으면 대신에 문자열의 임시 사본이 원하는 포맷으로 생성되고 건네집니다. 일반적으로, "AStr" 그리고 "WStr"은 함수가 그 매개변수에 변수를 쓸 때 사용하면 안 됩니다.</p>
-<p><b>주의:</b> "AStr" 그리고 "WStr"은 매개변수에 대하여 그리고 그 함수의 반환 값에 대하여 똑 같이 유효합니다.</p>
-<p>일반적으로, 스크립트가 문자열을 매개변수로 받는 함수를 DllCall를 통하여 호출하면, 다음 접근법 중 하나를 취해야 합니다:</p>
+<p class="note"><b>주의:</b> "AStr" 그리고 "WStr"은 매개변수에 대하여 그리고 그 함수의 반환 값에 대하여 똑 같이 유효합니다.</p>
+<p>일반적으로, 스크립트가 문자열을 매개변수로 받는 함수를 DllCall()를 통하여 호출하면, 다음 접근법 중 하나를 취해야 합니다:</p>
 <ol>
-  <li>함수를 Unicode (W) 버전과 ANSI (A) 버전으로 모두 사용할 수 있으면, 현재 빌드에 대하여 적절한 버전을 호출합니다. 다음 예제에서, "DeleteFile"은 내부적으로 "DeleteFileA" 또는 "DeleteFileW"이라고 부릅니다. "DeleteFile" 자체는 실제로 존재하지 않으므로, DllCall은 자동으로 현재 빌드에 대하여 적절하게 "A" 또는 "W"를 시도합니다:
+  <li>함수를 Unicode (W) 버전과 ANSI (A) 버전으로 모두 사용할 수 있으면, 현재 빌드에 대하여 적절한 버전을 호출합니다. 다음 예제에서, "DeleteFile"은 내부적으로 "DeleteFileA" 또는 "DeleteFileW"이라고 부릅니다. "DeleteFile" 자체는 실제로 존재하지 않으므로, DllCall()은 자동으로 현재 빌드에 대하여 적절하게 "A" 또는 "W"를 시도합니다:
   <pre>DllCall("DeleteFile", "Ptr", &amp;filename)
 DllCall("DeleteFile", "Str", filename)</pre>
   <p>다음 예제에서, <code>&amp;filename</code>은 문자열의 주소를 정확하게 있는 그대로 건넵니다. 그래서 함수는 문자열을 "Str" 유형과 같은 형식이라고 예상해야 합니다. AutoHotkey Basic에서 "UInt"를 "Ptr" 대신에 사용할 수 있습니다. 그러나 결과 코드는 64-비트와 호환되지 않습니다.</p>
-  <p><b>주의:</b> 함수를 정확하게 지정된 대로 발견할 수 없으면, AutoHotkey_L은 어느 DLL이 지정되어 있는가에 상관 없이 "A" 또는 "W" 접두사를 덧붙입니다. 그렇지만, AutoHotkey Basic은 User32.dll, Kernel32.dll, ComCtl32.dll, 또는 Gdi32.dll에 있는 함수에 대해서만 "A" 접두사를 붙입니다.</p></li>
+  <p class="note"><b>주의:</b> 함수를 정확하게 지정된 대로 발견할 수 없으면, AutoHotkey_L은 어느 DLL이 지정되어 있는가에 상관 없이 "A" 또는 "W" 접두사를 덧붙입니다. 그렇지만, AutoHotkey Basic은 User32.dll, Kernel32.dll, ComCtl32.dll, 또는 Gdi32.dll에 있는 함수에 대해서만 "A" 접두사를 붙입니다.</p></li>
   <li>함수가 오직 특정 유형이 문자열만 입력으로 받는다면, 그 스크립트는 적절한 문자열 유형을 사용할 수 있습니다:
   <pre>DllCall("DeleteFileA", "AStr", filename)
 DllCall("DeleteFileW", "WStr", filename)</pre></li>
-  <li>함수가 (비-고유 형식으로) 문자열을 수정해야 한다면, 스크립트는 버퍼를 <a href="#VarSetCapacity">위에 기술한 대로</a> 할당하고 그의 주소를 함수에 건네야 합니다. 매개변수가 입력을 받는다면, 스크립트는 또한 입력 문자열도 적절한 형식으로 변환해야 합니다; <a href="commands/StrPutGet.htm">StrPut</a>을 사용하면 변환할 수 있습니다.</li>
+  <li>함수가 (비-고유 형식으로) 문자열을 수정해야 한다면, 스크립트는 버퍼를 <a href="#VarSetCapacity">위에 기술한 대로</a> 할당하고 그의 주소를 함수에 건네야 합니다. 매개변수가 입력을 받는다면, 스크립트는 또한 입력 문자열도 적절한 형식으로 변환해야 합니다; <a href="commands/StrPut.htm">StrPut()</a>을 사용하면 변환할 수 있습니다.</li>
 </ol>
 
 <h3 id="NumPutGet">NumPut / NumGet</h3>
-<p>NumPut이나 NumGet이 문자열에 사용될 때, 주어진 유형의 문자열에 대하여 오프셋과 유형이 정확해야 합니다. 다음을 지침으로 삼으십시오:</p>
+<p>NumPut()이나 NumGet()이 문자열에 사용될 때, 주어진 유형의 문자열에 대하여 오프셋과 유형이 정확해야 합니다. 다음을 지침으로 삼으십시오:</p>
 <pre><em>;  8-bit/ANSI   strings:  size_of_char=1  type_of_char="Char"
 ; 16-bit/UTF-16 strings:  size_of_char=2  type_of_char="UShort"</em>
 <i>n</i>th_char := NumGet(var, (<i>n</i>-1)*<i>size_of_char</i>, <i>type_of_char</i>)
@@ -243,9 +245,9 @@ t_size(char_count=1) {
 <ul>
   <li>여러 포인터를 가진 구조체의 필드에 대한 오프셋 계산.</li>
   <li>여러 포인터를 가진 구조체의 크기 계산.</li>
-  <li><a href="commands/DllCall.htm">DllCall</a>, <a href="commands/NumPut.htm">NumPut</a> 또는 <a href="commands/NumGet.htm">NumGet</a>에 사용되는 유형 이름.</li>
+  <li><a href="commands/DllCall.htm">DllCall()</a>, <a href="commands/NumPut.htm">NumPut()</a> 또는 <a href="commands/NumGet.htm">NumGet()</a>에 사용되는 유형 이름.</li>
 </ul>
-<p>크기와 오프셋 계산은 <a href="Variables.htm#PtrSize">A_PtrSize</a>을 사용하십시오. DllCall, NumPut 그리고 NumGet에는 적절하게 <a href="commands/DllCall.htm">Ptr</a> 유형을 사용하십시오.</p>
+<p>크기와 오프셋 계산은 <a href="Variables.htm#PtrSize">A_PtrSize</a>을 사용하십시오. DllCal()l, NumPut() 그리고 NumGet()에는 적절하게 <a href="commands/DllCall.htm">Ptr</a> 유형을 사용하십시오.</p>
 <p>필드의 오프셋은 보통 그 앞에 있는 모든 필드의 전체 크기임을 기억하십시오. 또 핸들도 (HWND와 HBITMAP 같은 유형을 포함하여) 본질적으로 포인터-유형임을 명심하십시오.</p>
 <pre><em>/*
   typedef struct _PROCESS_INFORMATION {
@@ -253,10 +255,10 @@ t_size(char_count=1) {
     HANDLE hThread;
     DWORD  dwProcessId; // UInt (4 bytes)
     DWORD  dwThreadId;
-  } <a href="http://msdn.microsoft.com/en-us/library/ms684873.aspx">PROCESS_INFORMATION</a>, *LPPROCESS_INFORMATION;
+  } <a href="http://msdn.microsoft.com/ko-kr/library/ms684873.aspx">PROCESS_INFORMATION</a>, *LPPROCESS_INFORMATION;
 */</em>
 VarSetCapacity(pi, A_PtrSize*2 + 8) <em>; Ptr + Ptr + UInt + UInt</em>
-DllCall("<a href="http://msdn.microsoft.com/en-us/library/ms682425.aspx">CreateProcess</a>", <span class="dull">&lt;omitted for brevity&gt;</span>, "Ptr", &amp;pi, <span class="dull">&lt;omitted&gt;</span>)
+DllCall("<a href="http://msdn.microsoft.com/ko-kr/library/ms682425.aspx">CreateProcess</a>", <span class="dull">&lt;omitted for brevity&gt;</span>, "Ptr", &amp;pi, <span class="dull">&lt;omitted&gt;</span>)
 hProcess    := NumGet(pi, 0)         <em>; Defaults to "Ptr".</em>
 hThread     := NumGet(pi, A_PtrSize) <em>;</em>
 dwProcessId := NumGet(pi, A_PtrSize*2,     "UInt")

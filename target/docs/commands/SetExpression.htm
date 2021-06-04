@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Var := expression</title>
+<title>Var := Expression - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content='The "Var := Expression" statement evaluates an expression and stores the result in a variable.' />
+<meta name="ahk:equiv-v2" content="Variables.htm#AssignOp" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -15,7 +16,7 @@
 <p>표현식을 평가해 그 결과를 <a href="../Variables.htm">변수</a>에 저장합니다.</p>
 
 <pre class="Syntax">Var := expression</pre>
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Var</dt>
@@ -26,7 +27,7 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>:= 연산자는 다음과 같이 간단한 경우에 = 연산자처럼 똑같이 빠르게 수행되도록 최적화 됩니다:</p>
 <pre>x := y  <em>; 수행성능은 x = %y%와 같음</em>
 x := 5  <em>; 수행성능은 x = 5와 같음.</em>
@@ -35,14 +36,27 @@ x := "literal string"  <em>; 수행성은 x = literal string과 같음.</em></pr
 <pre>CaseSensitive := false
 ContinueSearch := true</pre>
 <p>이 명령어 그리고 <em>OutputVar</em>를 받는 기타 명령어로 <a href="../misc/Arrays.htm#pseudo">의사-배열</a>을 생성할 수 있습니다. <em>OutputVar</em>에 또다른 변수를 가리키는 참조를 담도록 만들면 됩니다. 예, <code>Array%i% := Var/100 + 5</code>. 더 자세한 정보는 <a href="../misc/Arrays.htm">배열</a>을 참조하십시오.</p>
-<h3>관련 항목</h3>
-<p><a href="../Variables.htm#Expressions">표현식</a>, <a href="IfExpression.htm">IF (표현식)</a>, <a href="../Functions.htm">Functions</a>, <a href="SetEnv.htm">SetEnv</a>, <a href="EnvSet.htm">EnvSet</a>, <a href="EnvAdd.htm">EnvAdd</a>, <a href="EnvSub.htm">EnvSub</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="IfEqual.htm">If</a>, <a href="../misc/Arrays.htm">배열</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Var := 3
-Var := "literal string"
-Var := Price * (1 - Discount/100)
+<h2 id="Related">관련 항목</h2>
+<p><a href="../Variables.htm#Expressions">Expressions</a>, <a href="IfExpression.htm">If (expression)</a>, <a href="../Functions.htm">Functions</a>, <a href="SetEnv.htm">SetEnv</a>, <a href="EnvSet.htm">EnvSet</a>, <a href="EnvAdd.htm">EnvAdd</a>, <a href="EnvSub.htm">EnvSub</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="IfEqual.htm">If (legacy)</a>, <a href="../misc/Arrays.htm">Arrays</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExString">
+<p><a class="ex_number" href="#ExString"></a> Assigns a literal string to a variable.</p>
+<pre>Var := "literal string"</pre>
+</div>
 
-Finished := not Done or A_Index &gt; 100
+<div class="ex" id="ExNumber">
+<p><a class="ex_number" href="#ExNumber"></a> Assigns a number to a variable.</p>
+<pre>Var := 3</pre>
+</div>
+
+<div class="ex" id="ExMath">
+<p><a class="ex_number" href="#ExMath"></a> Calculates the net price and stores the result in <var>Var</var>.</p>
+<pre>Var := Price * (1 - Discount/100)</pre>
+</div>
+
+<div class="ex" id="ExBoolean">
+<p><a class="ex_number" href="#ExBoolean"></a> Determines the truth of an expression and stores the result (1 for true or 0 for false) in <var>Finished</var>.</p>
+<pre>Finished := not Done or A_Index &gt; 100
 if not Finished
 {
     FileAppend, %NewText%`n, %TargetFile%
@@ -50,6 +64,7 @@ if not Finished
 }
 else
     ExitApp</pre>
+</div>
 
 </body>
 </html>

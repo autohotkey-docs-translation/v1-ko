@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SetStoreCapslockMode</title>
+<title>SetStoreCapslockMode - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SetStoreCapslockMode command determines whether to restore the state of the CapsLock key after a Send command." />
+<meta name="ahk:equiv-v2" content="commands/SetStoreCapsLockMode.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -10,28 +11,37 @@
 </head>
 <body>
 
-<h1>SetStoreCapslockMode</h1>
+<h1>SetStoreCapsLockMode</h1>
 
-<p><a href="Send.htm">Send</a> 후에 CapsLock의 상태를 복구할지 말지 결정합니다 .</p>
+<p><a href="Send.htm">Send</a> 후에 <kbd>CapsLock</kbd>의 상태를 복구할지 말지 결정합니다.</p>
 
-<pre class="Syntax">SetStoreCapslockMode, On|Off</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">SetStoreCapsLockMode</span>, OnOff</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>On|Off</dt>
-  <dd><p><strong>On</strong>: 모든 스크립트에 최초로 설정됩니다: CapsLock 키는 <a href="Send.htm">Send</a>가 자신의 연산을 위해 잠시 그것을 변경할 필요가 있었다면 그의 이전 값으로 복구됩니다.</p>
-    <p><strong>Off</strong>: CapsLock 키의 상태를 절대 바꾸지 않습니다. 결과적으로, <a href="Send.htm">Send</a>의 연산 동안 어쩌다가 Capslock 키가 켜졌다면(ON) 문자의 대소문자가 반대로 나타날 것입니다.</p></dd>
+  <dt>OnOff</dt>
+  <dd>
+    <p>다음 값 중 하나:</p>
+    <p><strong>On</strong>: 모든 스크립트에 최초로 설정됩니다: <kbd>CapsLock</kbd> 키는 <a href="Send.htm">Send</a>가 자신의 연산을 위해 잠시 그것을 변경할 필요가 있었다면 그의 이전 값으로 복구됩니다.</p>
+    <p><strong>Off</strong>: <kbd>CapsLock</kbd> 키의 상태를 절대 바꾸지 않습니다. 결과적으로, <a href="Send.htm">Send</a>의 연산 동안 어쩌다가 <kbd>CapsLock</kbd>가 켜졌다면(ON) 문자의 대소문자가 반대로 나타날 것입니다.</p>
+    <p><span class="ver">[v1.1.30+]:</span> The decimal values 1 and 0 may be used in place of On and Off, respectively.</p>
+  </dd>
 
 </dl>
 
-<h3>논평</h3>
-<p>이것은 Capslock 키가 <a href="Send.htm">Send</a>와 <a href="ControlSend.htm">ControlSend</a>에 대하여 언제나 꺼지는 것은 아니라는 뜻입니다. 성공적으로 꺼졌다고 할지라도, 키들이 전송된 후에 다시 원래대로 켜지지 않을 수도 있습니다.</p>
+<h2 id="Remarks">논평</h2>
+<p>이것은 <kbd>CapsLock</kbd>가 <a href="Send.htm">Send</a>와 <a href="ControlSend.htm">ControlSend</a>에 대하여 언제나 꺼지는 것은 아니라는 뜻입니다. 성공적으로 꺼졌다고 할지라도, 키들이 전송된 후에 다시 원래대로 켜지지 않을 수도 있습니다.</p>
 <p>이 명령어는 자주 사용되지 않습니다. 왜냐하면 기본값이 대부분의 경우 제일 좋기 때문입니다.</p>
+<p>This setting is ignored by <a href="Send.htm#blind">blind mode</a> and (in <span class="ver">[v1.1.29+]</span>) <a href="Send.htm#SendText">text mode</a>; that is, the state of <kbd>CapsLock</kbd> is not changed in those cases.</p>
+<p><span class="ver">[v1.1.23+]:</span> 내장 변수 <strong>A_StoreCapsLockMode</strong>에 현재 설정이 담겨 있습니다.</p>
 <p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="SetNumScrollCapsLockState.htm">SetCaps/Num/ScrollLockState</a>, <a href="Send.htm">Send</a>, <a href="ControlSend.htm">ControlSend</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">SetStoreCapslockMode, off</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Causes the state of <kbd>CapsLock</kbd> not to be changed at all.</p>
+<pre>SetStoreCapsLockMode, Off</pre>
+</div>
 
 </body>
 </html>

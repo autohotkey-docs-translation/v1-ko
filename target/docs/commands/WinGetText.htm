@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinGetText</title>
+<title>WinGetText - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinGetText command retrieves the text from the specified window." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>지정된 창으로부터 텍스트를 열람합니다.</p>
 
-<pre class="Syntax">WinGetText, OutputVar [, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">WinGetText</span>, OutputVar <span class="optional">, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -35,24 +35,28 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
+<p>부합하는 창이 없으면, <em>OutputVar</em>는 비워집니다.</p>
 <p>열람된 텍스트는 일반적으로 Window Spy가 그 창에 대하여 보여주는 것과 동일합니다. 그렇지만, <a href="DetectHiddenText.htm">DetectHiddenText</a>가 꺼져 있다면, 숨은 텍스트는 <em>OutputVar</em>에 포함되지 않습니다.</p>
-<p>각 텍스트 원소는 캐리지 리턴과 라인피드 (CR+LF)로 끝납니다. 스크립트에서는 `r`n로 표기됩니다. 각 줄이나 부문자열을 추출하려면, <a href="StringGetPos.htm">StringGetPos</a> 그리고 <a href="StringMid.htm">StringMid</a>와 같은 명령어를 사용하십시오. <a href="LoopParse.htm">회돌이 파싱</a>을 사용하면 각 줄이나 단어를 하나씩 조사할 수 있습니다.</p>
-<p>열람된 텍스트가 (불완전하게) 잘려 나타나면, 먼저 <code><a href="VarSetCapacity.htm">VarSetCapacity(OutputVar, 55)</a></code>를 사용한 다음 WinGetText를 시도하십시오 [잘려 나간 텍스트보다 훨씬 더 큰 크기로 55를 교체하십시오]. 어플리케이션이 WM_GETTEXTLENGTH 메시지에 제대로 응답하지 않는 경우, AutoHotkey가 출력 변수를 너무 작게 만들어 모든 텍스트를 담지 못하기 때문입니다.</p>
+<p>각 텍스트 원소는 캐리지 리턴과 라인피드 (CR+LF)로 끝납니다. 스크립트에서는 `r`n로 표기됩니다. To extract individual lines or substrings, use commands or built-in functions such as <a href="InStr.htm">InStr()</a> and <a href="SubStr.htm">SubStr()</a>. <a href="LoopParse.htm">회돌이 파싱</a>을 사용하면 각 줄이나 단어를 하나씩 조사할 수 있습니다.</p>
+<p>열람된 텍스트가 (불완전하게) 잘려 나타나면, 먼저 <code><a href="VarSetCapacity.htm">VarSetCapacity</a>(OutputVar, 55)</code>를 사용한 다음 WinGetText를 시도하십시오 [잘려 나간 텍스트보다 훨씬 더 큰 크기로 55를 교체하십시오]. 어플리케이션이 WM_GETTEXTLENGTH 메시지에 제대로 응답하지 않는 경우, AutoHotkey가 출력 변수를 너무 작게 만들어 모든 텍스트를 담지 못하기 때문입니다.</p>
 <p>열람된 텍스트의 양은 변수의 최대 가용 능력으로 제한됩니다 (이는 <a href="_MaxMem.htm">#MaxMem</a> 지시어를 통하여 변경할 수 있습니다). 결과적으로, 이 명령어는 목표 창에 (예, 큰 문서를 열고 있는 편집기에) 방대한 양의 텍스트가 있다면 방대한 양의 RAM을 사용할 수 있습니다. 이를 피하려면, 창 텍스트의 포인터만 열람하는 것도 가능합니다. 대신에 <a href="ControlGetText.htm">ControlGetText</a>를 사용하십시오. 어느 경우든, 변수의 메모리는 나중에 아무것도 할당하지 않으면 해제할 수 있습니다. 즉, <code>OutputVar =</code>이면 메모리가 해제됩니다.</p>
 <p>창의 모든 콘트롤 목록을 열람하려면, 다음 예제를 따르십시오: <code><a href="WinGet.htm">WinGet</a>, OutputVar, ControlList, WinTitle</code></p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
 
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="ControlGetText.htm">ControlGetText</a>, <a href="WinGetActiveStats.htm">WinGetActiveStats</a>, <a href="WinGetActiveTitle.htm">WinGetActiveTitle</a>, <a href="WinGetTitle.htm">WinGetTitle</a>, <a href="WinGetPos.htm">WinGetPos</a>, <a href="_MaxMem.htm">#MaxMem</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Run, Calc.exe
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Opens the calculator, waits until it exists, and retrieves and reports its text.</p>
+<pre>Run, Calc.exe
 WinWait, Calculator
-WinGetText, text  <em>; 위에서 발견한 창을 사용합니다.</em>
+WinGetText, text <em>; Use the window found by WinWait.</em>
 MsgBox, The text is:`n%text%</pre>
+</div>
 
 </body>
 </html>

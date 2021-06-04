@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Loop (파일 &amp; 폴더)</title>
+<title>Loop (files &amp; folders) - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Loop Files statement retrieves the specified files or folders, one at a time." />
+<meta name="ahk:equiv-v2" content="commands/LoopFiles.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -11,186 +12,225 @@
 <body>
 
 <h1>Loop (파일 &amp; 폴더)</h1>
-
 <p>지정된 파일이나 폴더를 한 번에 하나씩 열람합니다.</p>
 
-<pre class="Syntax">Loop, Files, FilePattern [, Mode]  <em>; v1.1.21+ (권장)</em></pre>
-<pre class="Syntax">Loop, FilePattern [, IncludeFolders?, Recurse?]</pre>
-<h3>매개변수</h3>
+<h2 id="new">New Syntax <span class="ver">[v1.1.21+]</span></h2>
+<pre class="Syntax"><span class="func">Loop, Files</span>, FilePattern <span class="optional">, Mode</span></pre>
+
+<h3 id="New_Parameters">매개변수</h3>
 <dl>
 
-  <dt>Files <span class="ver">[v1.1.21+]</span></dt>
+  <dt>Files</dt>
   <dd><p>문자 그대로 <code>Files</code> (대소문자-구별). 변수나 표현식 불가능.</p></dd>
 
   <dt>FilePattern</dt>
-  <dd><p>단일 파일이나 폴더의 이름, 또는<code>C:\Temp\*.tmp</code>와 같은 와이들카드 패턴. <em>FilePattern</em>은 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다.</p>
-    <p>별표와 물음표 표식 모두 와일드카드로 지원됩니다. 패턴이 파일의 긴/보통 이름에 또는 그의 <a href="#LoopFileShortName">8.3 짧은 이름</a>에 나타나면 일치가 일어납니다.</p>
-    <p>이 매개변수가 단일 파일이나 폴더이고 (즉, 와일드카드가 아니고) <em>Recurse</em>가 1로 설정되었거나 <em>Mode</em>에 <code>R</code>이 포함되어 있으면, 부합하는 것이 여럿일 수 있습니다. 지정된 파일 이름이 검색되는 여러 폴더에 나타나기 때문입니다.</p></dd>
+  <dd><p>단일 파일이나 폴더의 이름, 또는<code>C:\Temp\*.tmp</code>와 같은 와이들카드 패턴. <em>FilePattern</em>은 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>에 있다고 간주됩니다.</p>
+      <p>별표와 물음표 표식 모두 와일드카드로 지원됩니다. 패턴이 파일의 긴/보통 이름에 또는 그의 <a href="#LoopFileShortName">8.3 짧은 이름</a>에 나타나면 일치가 일어납니다.</p>
+      <p>If this parameter is a single file or folder (i.e. no wildcards) and <em>Mode</em> includes R, more than one match will be found if the specified file name appears in more than one of the folders being searched.</p></dd>
 
-  <dt>Mode <span class="ver">[v1.1.21+]</span></dt>
-  <dd><p>다음 기호들로 구성됩니다:</p>
-    <p><code>D</code>: 디렉토리 포함 (폴더).<br>
-    <code>F</code>: 파일 포함. F와 D를 모두 생략하면 파일도 포함됩니다.<br>
-    <code>R</code>: 서브디렉토리 안으로 재귀합니다 (서브폴더). R이 생략되면, 서브디렉토리의 파일과 폴더 포함되지 않습니다.</p>
+  <dt>Mode</dt>
+  <dd><p>If blank or omitted, only files are included and subdirectories are not recursed into. Otherwise, specify one or more of the following letters:</p>
+    <ul>
+      <li>D = 디렉토리 포함 (폴더).</li>
+      <li>F = 파일 포함. If both F and D are omitted, files are included but not folders.</li>
+      <li>R = 서브디렉토리 안으로 재귀합니다 (서브폴더). R이 생략되면, 서브디렉토리의 파일과 폴더 포함되지 않습니다.</li>
+    </ul>
   </dd>
-
-  <dt>IncludeFolders?</dt>
-  <dd><p>다음 숫자 중 하나, 또는 비어 있으면 기본값 사용:<br>
-      0 (기본값) 폴더는 열람하지 않습니다 (파일만 열람).<br>
-  1 와일드카드 패턴에 부합하는 모든 파일과 폴더를 열람합니다.<br>
-  2 폴더만 열람합니다 (파일 열람 안함).</p></dd>
-  
-  <dt>Recurse?</dt>
-  <dd>다음 숫자 중 하나, 또는 비어 있으면 기본값 사용:<br>
-      0 (기본값) 하위폴더에 재귀해 들어가지 않습니다.<br>
-1 서브폴더 안으로 재귀해 들어가 거기에서 <em>FilePattern</em>에 부합하는 모든 파일과 폴더를 열람합니다. 모든 하위폴더에 재귀해 들어갑니다. <em>FilePattern</em>에 부합하는 폴더에만 재귀하는 것이 아닙니다.</dd>
 
 </dl>
 
-<h3>파일-회돌이 안에서 사용할 수 있는 특별한 변수</h3>
+<h2 id="old">Old Syntax</h2>
+<p class="warning"><strong>비추천:</strong> 이 구문는 새 스크립트에 사용을 추천하지 않습니다. Use the <a href="#new">new syntax</a> instead.</p>
+<pre class="Syntax"><span class="func">Loop</span>, FilePattern <span class="optional">, IncludeFolders?, Recurse?</span></pre>
+
+<h3 id="Old_Parameters">매개변수</h3>
+<dl>
+
+  <dt>FilePattern</dt>
+  <dd><p>단일 파일이나 폴더의 이름, 또는<code>C:\Temp\*.tmp</code>와 같은 와이들카드 패턴. <em>FilePattern</em>은 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다.</p>
+      <p>별표와 물음표 표식 모두 와일드카드로 지원됩니다. 패턴이 파일의 긴/보통 이름에 또는 그의 <a href="#LoopFileShortName">8.3 짧은 이름</a>에 나타나면 일치가 일어납니다.</p>
+      <p>If this parameter is a single file or folder (i.e. no wildcards) and <em>Recurse</em> is set to 1, more than one match will be found if the specified file name appears in more than one of the folders being searched.</p></dd>
+
+  <dt>IncludeFolders?</dt>
+  <dd><p>If blank or omitted, it defaults to 0 (only files are retrieved). 그렇지 않으면, 다음 숫자 중 하나를 지정하십시오:</p>
+    <ul>
+      <li>0 = 폴더는 열람하지 않습니다 (파일만 열람).</li>
+      <li>1 = 와일드카드 패턴에 부합하는 모든 파일과 폴더를 열람합니다.</li>
+      <li>2 = 폴더만 열람합니다 (파일 열람 안함).</li>
+    </ul>
+  </dd>
+
+  <dt>Recurse?</dt>
+  <dd><p>비어 있거나 생략하면, 기본값은 0 (하위폴더에 재귀해 들어가지 않습니다)입니다. 그렇지 않으면, 다음 숫자 중 하나를 지정하십시오:</p>
+    <ul>
+      <li>0 = 하위폴더에 재귀해 들어가지 않습니다.</li>
+      <li>1 = 서브폴더 안으로 재귀해 들어가 거기에서 <em>FilePattern</em>에 부합하는 모든 파일과 폴더를 열람합니다. 모든 하위폴더에 재귀해 들어갑니다. <em>FilePattern</em>에 부합하는 폴더에만 재귀하는 것이 아닙니다.</li>
+    </ul>
+  </dd>
+
+</dl>
+
+<h2 id="Special_Variables">파일-회돌이 안에서 사용할 수 있는 특별한 변수</h2>
 <p>다음 변수들은 파일-회돌이라면 모두 존재합니다. 안쪽 파일-회돌이가 바깥 파일-회돌이에 둘러 싸여 있다면, 안쪽 파일 회돌이가 우선권이 있습니다:</p>
 <table class="info">
   <tr>
-    <td>A_LoopFileName</td>
-    <td><a name="LoopFileName" id="LoopFileName"></a>현재 열람된 파일이나 폴더의 이름 (경로 없음).</td>
+    <th abbr="변수">변수</th>
+    <th abbr="설명">설명</th>
   </tr>
-  <tr>
-    <td><a name="LoopFileExt"></a>A_LoopFileExt</td>
+  <tr id="LoopFileName">
+    <td>A_LoopFileName</td>
+    <td>현재 열람된 파일이나 폴더의 이름 (경로 없음).</td>
+  </tr>
+  <tr id="LoopFileExt">
+    <td>A_LoopFileExt</td>
     <td>파일 확장자 (예, TXT, DOC, 또는 EXE). 마침표 (.)는 포함되지 않습니다.</td>
   </tr>
-  <tr>
-    <td>A_LoopFileFullPath</td>
-    <td><a name="LoopFileFullPath"></a>현재 열람된 파일/폴더의 전체 경로와 이름. <em>FilePattern</em>에 절대 경로가 아니라 상대 경로가 담겨 있다면, 여기에도 상대 경로가 담깁니다. 게다가, <em>FilePattern</em>이 짧은 (8.3) 폴더 이름이면 역시 짧은 이름이 담깁니다 (긴 버전을 얻으려면 다음 항목을 참조하십시오).</td>
+  <tr id="LoopFileFullPath">
+    <td>A_LoopFileFullPath<br>
+    A_LoopFilePath</td>
+    <td><p>현재 열람된 파일/폴더의 전체 경로와 이름. <em>FilePattern</em>에 절대 경로가 아니라 상대 경로가 담겨 있다면, 여기에도 상대 경로가 담깁니다. 게다가, <em>FilePattern</em>이 짧은 (8.3) 폴더 이름이면 역시 짧은 이름이 담깁니다 (긴 버전을 얻으려면 다음 항목을 참조하십시오).</p>
+    <p>A_LoopFilePath is available in <span class="ver">[v1.1.28+]</span> as an alias of A_LoopFileFullPath, which is a misnomer.</p></td>
   </tr>
-  <tr>
+  <tr id="LoopFileLongPath">
     <td>A_LoopFileLongPath</td>
-    <td><a name="LoopFileLongPath"></a>다음과 같은 점에서 A_LoopFileFullPath와 다릅니다: 1) 언제나 파일의 절대/완전한 경로가 담깁니다. <em>FilePattern</em>에 절대 경로가 담겨 있어도 상관이 없습니다; 2) <em>FilePattern</em> 자체의 짧은 (8.3) 폴더 이름은 긴 이름으로 변환됩니다; 3) <em>FilePattern</em> 안의 문자는 파일 시스템에 저장된 대소문자에 맞추어 대문자나 소문자로 변환됩니다. 이는 파일 이름을 탐색기에 보이듯이 정확한 경로 이름으로 -- 예를 들어 스크립트 안에 명령 줄 매개변수로 건네어지는 경로 -- 변환하는 데 유용합니다.</td>
+    <td><p>다음과 같은 점에서 A_LoopFileFullPath와 다릅니다: 1) 언제나 파일의 절대/완전한 경로가 담깁니다. <em>FilePattern</em>에 절대 경로가 담겨 있어도 상관이 없습니다; 2) <em>FilePattern</em> 자체의 짧은 (8.3) 폴더 이름은 긴 이름으로 변환됩니다; 3) <em>FilePattern</em> 안의 문자는 파일 시스템에 저장된 대소문자에 맞추어 대문자나 소문자로 변환됩니다. 이는 파일 이름을 탐색기에 보이듯이 정확한 경로 이름으로 -- 예를 들어 스크립트 안에 명령 줄 매개변수로 건네어지는 경로 -- 변환하는 데 유용합니다.</p></td>
   </tr>
-  <tr>
+  <tr id="LoopFileShortPath">
     <td>A_LoopFileShortPath</td>
-    <td><p><a name="LoopFileShortPath"></a>현재 열람된 파일/폴더의 8.3 짧은 경로와 이름. 예를 들어: C:\MYDOCU~1\ADDRES~1.txt. <em>FilePattern</em>에 절대 경로가 아니라 상대 경로가 담겨 있다면, 여기에도 상대 경로가 담깁니다.</p>
+    <td><p>현재 열람된 파일/폴더의 8.3 짧은 경로와 이름. 예를 들어: C:\MYDOCU~1\ADDRES~1.txt. <em>FilePattern</em>에 절대 경로가 아니라 상대 경로가 담겨 있다면, 여기에도 상대 경로가 담깁니다.</p>
       <p>단일 파일이나 폴더에 대하여 완벽한 8.3 경로와 이름을 열람하려면, <em>FilePattern</em>에 그의 이름을 다음 예제와 같이 지정하십시오:</p>
 <pre>Loop, C:\My Documents\Address List.txt
-    ShortPathName = %A_LoopFileShortPath%</pre>
-        <p>주의: 이 변수는 파일이 짧은 이름이 없다면 <strong>비어 있습니다</strong>. 이런 일은 레지스트리에 NtfsDisable8dot3NameCreation가 설정되어 있는 시스템에서 일어날 수 있습니다. 또 FilePattern에 상대 경로가 들어 있고 회돌이의 몸체가 <a href="SetWorkingDir.htm">SetWorkingDir</a>를 사용하는 경우에도 일어날 수 있습니다. 현재 회돌이 자체에 영향이 있는 현재 작업 디렉토리로부터 다른 디렉토리로 전환하면 안됩니다.</p></td>
+    ShortPathName := A_LoopFileShortPath</pre>
+        <p class="note"><strong>주의</strong>: 이 변수는 파일이 짧은 이름이 없다면 <strong>비어 있습니다</strong>. 이런 일은 레지스트리에 NtfsDisable8dot3NameCreation가 설정되어 있는 시스템에서 일어날 수 있습니다. 또 <em>FilePattern</em>에 상대 경로가 들어 있고 회돌이의 몸체가 <a href="SetWorkingDir.htm">SetWorkingDir</a>를 사용하는 경우에도 일어날 수 있습니다. 현재 회돌이 자체에 영향이 있는 현재 작업 디렉토리로부터 다른 디렉토리로 전환하면 안됩니다.</p></td>
   </tr>
-  <tr>
+  <tr id="LoopFileShortName">
     <td>A_LoopFileShortName</td>
-    <td><a name="LoopFileShortName"></a>8.3 짧은 이름, 또는 파일의 또다른 이름. 파일에 짧은 이름이 없다면 (긴 이름이 8.3보다 더 짧거나 또는 어쩌면 NTFS 파일 시스템에서 짧은-이름 생성이 꺼져 있기 때문에), <em>A_LoopFileName</em>이 대신 열람됩니다.</td>
+    <td>8.3 짧은 이름, 또는 파일의 또다른 이름. 파일에 짧은 이름이 없다면 (긴 이름이 8.3보다 더 짧거나 또는 어쩌면 NTFS 파일 시스템에서 짧은-이름 생성이 꺼져 있기 때문에), <em>A_LoopFileName</em>이 대신 열람됩니다.</td>
   </tr>
-  <tr>
+  <tr id="LoopFileDir">
     <td>A_LoopFileDir</td>
-    <td><a name="LoopFileDir"></a><em>A_LoopFileName</em>이 거주하는 디렉토리의 경로. <em>FilePattern</em>에 절대 경로가 아니라 상대 경로가 들어 있다면, 여기의 경로도 상대 경로가 됩니다. 루트 디렉토리는 뒤에 역사선을 포함하지 않습니다. 예를 들어: C:</td>
+    <td><em>A_LoopFileName</em>이 거주하는 디렉토리의 경로. <em>FilePattern</em>에 절대 경로가 아니라 상대 경로가 들어 있다면, 여기의 경로도 상대 경로가 됩니다. 루트 디렉토리는 뒤에 역사선을 포함하지 않습니다. 예를 들어: C:</td>
   </tr>
-  <tr>
+  <tr id="LoopFileTimeModified">
     <td>A_LoopFileTimeModified</td>
-    <td><a name="LoopFileTimeModified"></a>파일이 마지막으로 수정된 시각. 형식은 <a href="FileSetTime.htm">YYYYMMDDHH24MISS</a>.</td>
+    <td>파일이 마지막으로 수정된 시각. 형식은 <a href="FileSetTime.htm">YYYYMMDDHH24MISS</a>.</td>
   </tr>
-  <tr>
+  <tr id="LoopFileTimeCreated">
     <td>A_LoopFileTimeCreated</td>
-    <td><a name="LoopFileTimeCreated"></a>파일이 생성된 시각. 형식은 <a href="FileSetTime.htm">YYYYMMDDHH24MISS</a>.</td>
+    <td>파일이 생성된 시각. 형식은 <a href="FileSetTime.htm">YYYYMMDDHH24MISS</a>.</td>
   </tr>
-  <tr>
+  <tr id="LoopFileTimeAccessed">
     <td>A_LoopFileTimeAccessed</td>
-    <td><a name="LoopFileTimeAccessed"></a>파일에 마지막으로 접근한 시각. 형식은 <a href="FileSetTime.htm">YYYYMMDDHH24MISS</a>.</td>
+    <td>파일에 마지막으로 접근한 시각. 형식은 <a href="FileSetTime.htm">YYYYMMDDHH24MISS</a>.</td>
   </tr>
-  <tr>
+  <tr id="LoopFileAttrib">
     <td>A_LoopFileAttrib</td>
-    <td><a name="LoopFileAttrib"></a>현재 열람된 파일의 <a href="FileGetAttrib.htm">속성</a>.</td>
+    <td>현재 열람된 파일의 <a href="FileGetAttrib.htm">속성</a>.</td>
   </tr>
-  <tr>
+  <tr id="LoopFileSize">
     <td>A_LoopFileSize</td>
-    <td><a name="LoopFileSize"></a>현재 열람된 파일의 바이트 단위 크기. 4 기가 바이트보다 큰 파일도 지원합니다.</td>
+    <td>현재 열람된 파일의 바이트 단위 크기. 4 기가 바이트보다 큰 파일도 지원합니다.</td>
   </tr>
-  <tr>
+  <tr id="LoopFileSizeKB">
     <td>A_LoopFileSizeKB</td>
-    <td><a name="LoopFileSizeKB"></a>현재 열람된 파일의 Kbytes 단위 크기, 가장 가까운 정수로 반내림됩니다.</td>
+    <td>현재 열람된 파일의 Kbytes 단위 크기, 가장 가까운 정수로 반내림됩니다.</td>
   </tr>
-  <tr>
+  <tr id="LoopFileSizeMB">
     <td>A_LoopFileSizeMB</td>
-    <td><a name="LoopFileSizeMB"></a>현재 열람된 파일의 Mbytes 단위 크기, 가장 가까운 정수로 반내림 됩니다.</td>
+    <td>현재 열람된 파일의 Mbytes 단위 크기, 가장 가까운 정수로 반내림 됩니다.</td>
   </tr>
 </table>
-<h3>논평</h3>
+
+<h2 id="Remarks">논평</h2>
 <p>파일 회돌이는 파일/폴더의 집단을 한 번에 하나씩 처리하고 싶을 때 유용합니다.</p>
 <p>숨은 파일을 포함하여, 부합하는 모든 파일이 열람됩니다. 대조적으로, DIR와 같은 OS 특징은 기본으로 숨은 파일을 제외합니다. 숨은, 시스템, 또는 읽기 전용 파일을 처리하지 않도록 하려면, 회돌이 안에 다음과 같은 코드를 사용하십시오:</p>
 <pre>if A_LoopFileAttrib contains H,R,S  <em>; 속성이 H (Hidden), R (Read-only), 또는 S (System)인 파일은 건너 뜁니다. 주의: "H,R,S"에 스페이스가 없습니다.</em>
     continue  <em>; 이 파일을 건너 뛰고 다음 파일로 갑니다.</em></pre>
 <p>파일을 재귀적으로 검색하는 동안 절대 경로 대신에 상대 경로를 얻으려면, <a href="SetWorkingDir.htm">SetWorkingDir</a>을 사용하여 회돌이를 시작하기 전에 먼저 기본 폴더로 변경한 다음, Loop에서는 그 경로를 생략하십시오 (예, <code>Loop, *.*, 0, 1</code>). 그러면 <a href="#LoopFileFullPath">A_LoopFileFullPath</a>에 그 기본 폴더에 상대적인 파일의 경로가 담깁니다.</p>
 <p>파일-회돌이는 자신의 범위 안에서 파일이나 폴더를 만들거나 이름을 바꿀 경우 스스로를 혼란에 빠트릴 수 있습니다. 예를 들어, <a href="FileMove.htm">FileMove</a>나 기타 수단으로 파일 이름을 변경한다면, 그런 파일은 각각 두 번 발견이 될 수 있습니다: 한 번은 그의 예전 이름으로 그리고 다시 새 이름으로 발견됩니다. 이를 우회하려면, 파일 리스트가 생성된 후에만 파일의 이름을 바꾸십시오. 예를 들어:</p>
-<pre>FileList =
+<pre>FileList := ""
 Loop, Files, *.jpg
-   FileList = %FileList%%A_LoopFileName%`n
+    FileList .= A_LoopFileName "`n"
 Loop, Parse, FileList, `n
-   FileMove, %A_LoopField%, renamed_%A_LoopField%</pre>
+    FileMove, %A_LoopField%, renamed_%A_LoopField%</pre>
 <p>NTFS 파일 시스템의 파일은 아마도 언제나 알파벳 순서로 열람될 것입니다. 다른 파일 시스템에서는 특별한 순사가 없이 열람됩니다. 특정 순서로 열람하려면, 아래 섹션의 에제에서 보여주는 것처럼 <a href="Sort.htm">Sort</a> 명령어를 사용하십시오.</p>
 <p>파일이나 폴더 이름이 259 문자가 넘어가면 마치 존재하지 않는 것처럼 건너 뜁니다. 그런 파일은 거의 없습니다. 그런 파일은 거의 없습니다. 왜냐하면, 보통 운영 체제가 그런 파일은 생성을 허용하지 않기 때문입니다.</p>
 <p><a href="Block.htm">Blocks</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, 그리고 A_Index 변수 (모든 유형의 회돌이에 존재함)에 관한 정보는 <a href="Loop.htm">Loop</a>를 참조하십시오.</p>
-<h3>관련 항목</h3>
-<p><a href="Loop.htm">Loop</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">Blocks</a>, <a href="SplitPath.htm">SplitPath</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileSetTime.htm">FileSetTime</a></p>
-<h3>예제</h3>
-<pre class="NoIndent"><em>; 예제 #1:</em>
-Loop Files, %A_ProgramFiles%\*.txt, R  <em>; 서브폴더 안으로 재귀합니다.</em>
+
+<h2 id="Related">관련 항목</h2>
+<p><a href="Loop.htm">Loop</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">블록</a>, <a href="SplitPath.htm">SplitPath</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileSetTime.htm">FileSetTime</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Reports the full path of each text file located in a directory and in its subdirectories.</p>
+<pre>Loop Files, %A_ProgramFiles%\*.txt, R  <em>; 서브폴더 안으로 재귀합니다.</em>
 {
     MsgBox, 4, , Filename = %A_LoopFileFullPath%`n`nContinue?
     IfMsgBox, No
         break
 }</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #2: 폴더의 크기를 계산합니다. 그의 서브폴더 안에 있는 파일들을 모두 포함합니다:</em>
-SetBatchLines, -1  <em>; 연산을 최대 속도로 설정합니다.</em>
-FolderSizeKB = 0
+</div>
+
+<div class="ex" id="ExSize">
+<p><a class="ex_number" href="#ExSize"></a> 폴더의 크기를 계산합니다. 그의 서브폴더 안에 있는 파일들을 모두 포함합니다.</p>
+<pre>SetBatchLines, -1  <em>; 연산을 최대 속도로 설정합니다.</em>
+FolderSizeKB := 0
 FileSelectFolder, WhichFolder  <em>; 사용자에게 폴더를 고르도록 요청합니다.</em>
 Loop, Files, %WhichFolder%\*.*, R
-    FolderSizeKB += %A_LoopFileSizeKB%
+    FolderSizeKB += A_LoopFileSizeKB
 MsgBox Size of %WhichFolder% is %FolderSizeKB% KB.</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #3: 이름으로 정렬된 파일 이름들을 열람합니다. (다음 예제는 날짜로 정렬):</em>
-FileList =  <em>; 빈 값으로 초기화합니다.</em>
+</div>
+
+<div class="ex" id="ExSortName">
+<p><a class="ex_number" href="#ExSortName"></a> 이름으로 정렬된 파일 이름들을 열람합니다. (다음 예제는 날짜로 정렬).</p>
+<pre>FileList := ""  <em>; 빈 값으로 초기화합니다.</em>
 Loop, C:\*.*
-    FileList = %FileList%%A_LoopFileName%`n
+    FileList .= A_LoopFileName "`n"
 Sort, FileList, R  <em>; R 옵션은 역순으로 정렬합니다. 다른 옵션은 <a href="Sort.htm">Sort</a>를 참조하십시오.</em>
 Loop, parse, FileList, `n
 {
-    if A_LoopField =  <em>; 리스트 맨 끝에 있는 빈 항목은 무시합니다.</em>
+    if (A_LoopField = "")  <em>; 리스트 맨 끝에 있는 빈 항목은 무시합니다.</em>
         continue
     MsgBox, 4,, File number %A_Index% is %A_LoopField%.  계속할까요?
     IfMsgBox, No
         break
 }</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #4: 수정 날짜로 정렬된 파일 이름들을 열람합니다:</em>
-FileList =
+</div>
+
+<div class="ex" id="ExSortDate">
+<p><a class="ex_number" href="#ExSortDate"></a> 수정 날짜로 정렬된 파일 이름들을 열람합니다.</p>
+<pre>FileList := ""
 Loop, Files, %A_MyDocuments%\Photos\*.*, FD  <em>; 파일과 디렉토리를 포함합니다</em>
-    FileList = %FileList%%A_LoopFileTimeModified%`t%A_LoopFileName%`n
+    FileList .= A_LoopFileTimeModified "`t" A_LoopFileName "`n"
 Sort, FileList  <em>; Sort by date.</em>
 Loop, Parse, FileList, `n
 {
-    if A_LoopField =  <em>; 리스트 맨 끝의 마지막 라인피드 (빈 항목)은 무시합니다.</em>
+    if (A_LoopField = "")  <em>; 리스트 맨 끝의 마지막 라인피드 (빈 항목)은 무시합니다.</em>
         continue
     StringSplit, FileItem, A_LoopField, %A_Tab%  <em>; 탭 문자에서 두 부분으로 나눕니다.</em>
     MsgBox, 4,, The next file (modified at %FileItem1%) is:`n%FileItem2%`n`nContinue?
     IfMsgBox, No
         break
 }</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #5: 목표 파일과 비교해서 더 새로운 소스 파일만 복사합니다:
-</em>
-CopyIfNewer:
+</div>
+
+<div class="ex" id="ExFileCopy">
+<p><a class="ex_number" href="#ExFileCopy"></a> 목표 파일과 비교해서 더 새로운 소스 파일만 복사합니다.</p>
+<pre>CopyIfNewer:
 <em>; 호출자는 변수 CopySourcePattern과 CopyDest를 우리 대신 설정해 줍니다.</em>
 Loop, Files, %CopySourcePattern%
 {
-    copy_it = n
-    IfNotExist, %CopyDest%\%A_LoopFileName%  <em>; 목표 파일이 아직 존재하지 않으면 항상 복사합니다.</em>
-        copy_it = y
+    copy_it := false
+    if not FileExist(CopyDest "\" A_LoopFileName)  <em>; 목표 파일이 아직 존재하지 않으면 항상 복사합니다.</em>
+        copy_it := true
     else
     {
         FileGetTime, time, %CopyDest%\%A_LoopFileName%
         EnvSub, time, %A_LoopFileTimeModified%, seconds  <em>; 목표 파일의 시간으로부터 소스 파일의 시간을 뺍니다.</em>
-        if time &lt; 0  <em>; 소스 파일은 목표 파일보다 더 새롭습니다.</em>
-            copy_it = y
+        if (time &lt; 0)  <em>; 소스 파일은 목표 파일보다 더 새롭습니다.</em>
+            copy_it := true
     }
-    if copy_it = y
+    if copy_it
     {
         FileCopy, %A_LoopFileFullPath%, %CopyDest%\%A_LoopFileName%, 1   <em>;  overwrite=yes를 사용하여 복사합니다</em>
         if ErrorLevel
@@ -198,16 +238,18 @@ Loop, Files, %CopySourcePattern%
     }
 }
 Return</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #6: 명령줄 매개변수를 통하여 건네어진 파일 이름을 긴 이름, 완전한 이름으로 변환합니다.
-; 그리고 파일 시스템에 저장된 대소문자에 맞게 이름을 대문자나 소문자로 교정합니다.</em>
-Loop %0%  <em>; 스크립트에 떨구어진 각 파일에 대하여 (또는 매개변수로 건네어진).</em>
+</div>
+
+<div class="ex" id="ExLongPath">
+<p><a class="ex_number" href="#ExLongPath"></a> 명령줄 매개변수를 통하여 건네어진 파일 이름을 긴 이름, 완전한 이름으로 변환합니다. 그리고 파일 시스템에 저장된 대소문자에 맞게 이름을 대문자나 소문자로 교정합니다.</p>
+<pre>Loop %0%  <em>; 스크립트에 떨구어진 각 파일에 대하여 (또는 매개변수로 건네어진).</em>
 {
     GivenPath := %A_Index%  <em>; 다음 명령줄 매개변수를 열람합니다.</em>
     Loop %GivenPath%, 1
-        LongPath = %A_LoopFileLongPath%
+        LongPath := A_LoopFileLongPath
     MsgBox 대소문자를 교정한 기다란 경로의 파일이름은`n%GivenPath%`n다음과 같습니다:`n%LongPath%
 }</pre>
+</div>
 
 </body>
 </html>

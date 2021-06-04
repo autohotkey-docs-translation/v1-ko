@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SetKeyDelay</title>
+<title>SetKeyDelay - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SetKeyDelay command sets the delay that will occur after each keystroke sent by the Send or ControlSend commands." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,40 +12,43 @@
 
 <h1>SetKeyDelay</h1>
 
-<p><a href="Send.htm">Send</a>와 <a href="ControlSend.htm">ControlSend</a>에 의한 각 키눌림마다 일어날 지연 시간을 설정합니다.</p>
+<p><a href="Send.htm">Send</a>나 <a href="ControlSend.htm">ControlSend</a>로 키를 누른 후에 지연될 시간을 설정합니다.</p>
 
-<pre class="Syntax">SetKeyDelay [, Delay, PressDuration, Play]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">SetKeyDelay</span> <span class="optional">, Delay, PressDuration, Play</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Delay</dt>
   <dd><p>밀리초 단위 시간, <a href="../Variables.htm#Expressions">표현식</a> 가능. -1이면 지연 시간이 전혀 없고 0이면 가능하면 적게 지연됩니다 (그렇지만, <em>Play</em> 매개변수가 존재하면, 0과 -1 모두 지연 시간이 없습니다). 이 매개변수를 비워 두면 현재 <em>Delay</em>를 유지합니다.</p>
     <p>SetKeyDelay가 스크립트에 사용되지 않으면, 기본 <em>Delay</em>는 전통적인 SendEvent 모드에 대하여 10입니다. <a href="Send.htm#SendPlayDetail">SendPlay mode</a>에 대해서 기본 <em>Delay</em>는 -1입니다. 두 모드 모두 기본 <em>PressDuration</em> (아래 참조)는 -1입니다.</p></dd>
 
-  <dt>PressDuration</dt>
-  <dd><p><a name="dur"></a>어떤 게임과 기타 특수한 어플리케이션은 각 키눌림 안에서 지연 시간을 요구합니다; 즉, 키가 눌린 후 다시 떼기 까지 그 사이에 지연 시간을 요구할 수 있습니다.</p>
+  <dt id="dur">PressDuration</dt>
+  <dd><p>어떤 게임과 기타 특수한 어플리케이션은 각 키눌림 안에서 지연 시간을 요구합니다; 즉, 키가 눌린 후 다시 떼기 까지 그 사이에 지연 시간을 요구할 수 있습니다.</p>
       <p>-1이면 지연 시간이 전혀 없습니다 (기본 값). 그리고 0이면 가능하면 적게 지연됩니다 (그렇지만, <em>Play</em> 매개변수가 존재하면, 0과 -1 모두 지연 시간이 없습니다). 이 매개변수를 생략하면 현재 <em>PressDuration</em>이 바뀌지 않습니다.</p>
-	  <p>주의: <em>PressDuration</em>는 전송 중인 키를 지원하기 위하여 수식 키 상태를 변경한 다음에도 지연 시간을 생산합니다 (CTRL, ALT, SHIFT, 그리고 WIN).</p>
+	  <p class="note"><strong>주의</strong>: <em>PressDuration</em>는 전송 중인 키를 지원하기 위하여 수식 키 상태를 변경한 다음에도 지연 시간을 생산합니다 (<kbd>Ctrl</kbd>, <kbd>Alt</kbd>, <kbd>Shift</kbd>, 그리고 <kbd>Win</kbd>).</p>
     <p>이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다.</p></dd>
 
-  <dt>Play<br>
-    <span class="ver">[v1.0.43+]</span></dt>
+  <dt>Play <span class="ver">[v1.0.43+]</span></dt>
   <dd><p>단어 <em>Play</em>는 위의 설정을 전통적인 SendEvent 모드가 아니라 <a href="Send.htm#SendPlayDetail">SendPlay 모드</a>에 적용합니다. 스크립트가 이 매개변수를 사용하지 않으면, 지연 시간은 SendPlay에 대하여 언제나 -1/-1입니다.</p></dd>
 
 </dl>
 
-<h3>논평</h3>
-<p><strong>주의:</strong> <a href="Send.htm#SendInputDetail">SendInput</a>은 SetKeyDelay를 준수하지 않습니다; 그 모드에서는 키눌림 사이에 지연 시간이 전혀 없습니다. 이는 <a href="SendMode.htm">SendMode Input</a>이 켜져 있을 때 <a href="Send.htm">Send</a>도 마찬가지로 적용됩니다.</p>
+<h2 id="Remarks">논평</h2>
+<p class="note"><strong>주의:</strong> <a href="Send.htm#SendInputDetail">SendInput</a>은 SetKeyDelay를 준수하지 않습니다; 그 모드에서는 키눌림 사이에 지연 시간이 전혀 없습니다. 이는 <a href="SendMode.htm">SendMode Input</a>이 켜져 있을 때 <a href="Send.htm">Send</a>도 마찬가지로 적용됩니다.</p>
 <p>짧은 지연(잠자기)는 <a href="Send.htm">Send</a> 또는 <a href="ControlSend.htm">ControlSend</a>가 전송하는 키눌림마다 자동으로 시행됩니다. 이렇게 하면 스크립트의 신뢰성이 개선됩니다. 왜냐하면 창은 가끔 빠르게 밀려 오는 키눌림의 범람 속도를 따라 잡을 수 없기 때문입니다.</p>
+<p>During the delay (sleep), the current thread is made <a href="../misc/Threads.htm#Interrupt">uninterruptible</a>.</p>
 <p>OS의 시간-유지 시스템의 정밀성 때문에, 지연 시간은 가장 까까운 10 또는 15의 배수로 올림됩니다. 예를 들어, 1과 10 (포함) 사이의 지연 시간은 대부분의Windows XP 시스템에서 10 또는 15와 동등합니다 (아마도 2k도 마찬가지일 것임).</p>
 <p>Send/SendEvent 모드에 대하여, 지연 시간이 0이면 내부적으로 Sleep(0)을 실행합니다. 그러면 스크립트의 시간조각(timeslice)의 나머지를 그를 필요로 하는 다른 프로세스에 양보합니다. 남는 게 없으면, Sleep(0)은 전혀 잠자지 않습니다. 대조적으로, 지연 시간이 -1이면 절대 잠자지 않습니다. 더 높은 신뢰를 위해, -1보다는 0을 권장합니다.</p>
 <p>지연 시간이 -1로 설정되면, 스크립트의 프로세스 우선순위는 전통적인 <a href="SendMode.htm">SendEvent 모드</a>를 사용할 때 얼마나 빨리 키눌림을 전송할 것인가를 결정하는 중요한 요인이 됩니다. 스크립트의 우선순위를 높이려면, <code><a href="Process.htm">Process</a>, Priority,, High</code>를 사용하십시오. 이 때문에 전형적으로 키눌림이 <a href="WinActivate.htm">활성 창</a>이 처리하는 속도보다 더 빨리 전송되지만, 시스템이 지동으로 키눌림을 버퍼 처리해 줍니다. 버퍼 처리된 키눌림은 <a href="Send.htm">Send</a> 명령어가 완료된 후에도 계속해서 목표 창에 도달합니다 (심지어 창이 더 이상 활성 창이 아니더라도 상관이 없습니다). 이것은 보통 해가 되지 않습니다. 왜냐하면 같은 창에 연이어 전송되는 키눌림은 이미 버퍼에 자리 잡은 키눌림 뒤에 차곡차곡 쌓이기 때문입니다.</p>
-<p>내장 변수 <strong>A_KeyDelay</strong>에 Send/SendEvent 모드에 대한 현재 <em>Delay</em> 설정이 담겨 있습니다. <em>PressDuration</em>나 <a href="Send.htm#SendPlayDetail">SendPlay</a>의 <em>Delay</em>를 위한 내장 변수는 없습니다.</p>
+<p>내장 변수 <strong>A_KeyDelay</strong>에 Send/SendEvent 모드에 대한 현재 <em>Delay</em> 설정이 담겨 있습니다. <span class="ver">[v1.1.23+]:</span> <strong>A_KeyDuration</strong> contains the setting for <em>PressDuration</em>, while <strong>A_KeyDelayPlay</strong> and <strong>A_KeyDurationPlay</strong> contain the settings for <a href="Send.htm#SendPlayDetail">SendPlay</a>.</p>
 <p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="Send.htm">Send</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="SendMode.htm">SendMode</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="SetWinDelay.htm">SetWinDelay</a>, <a href="SetBatchLines.htm">SetBatchLines</a>, <a href="Click.htm">Click</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">SetKeyDelay, 0</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Causes the smallest possible delay to occur after each keystroke sent via <a href="Send.htm">Send</a> or <a href="ControlSend.htm">ControlSend</a>.</p>
+<pre>SetKeyDelay, 0</pre>
+</div>
 
 </body>
 </html>

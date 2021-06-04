@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>While-loop</title>
+<title>While Loop - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The While loop statement performs a series of code lines repeatedly until the specified expression evaluates to false." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,11 @@
 
 <p>지정된 <a href="../Variables.htm#Expressions">표현식</a>이 거짓으로 평가될 때까지 일련의 명령어를 반복적으로 실행합니다.</p>
 
-<pre class="Syntax">While <i>Expression</i></pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">While</span> <i>Expression</i>
+<span class="func">While</span>(<i>Expression</i>)
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Expression</dt>
@@ -23,23 +26,23 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>표현식은 반복을 하기 전에 각각 한 번씩 평가됩니다. 표현식이 참으로 평가되면 (그 결과가 빈문자열이나 0만 아니면), 회돌이의 몸체가 실행됩니다; 그렇지 않으면, 실행은 회돌이 몸체 다음 줄로 점프합니다.</p>
 <p>while-회돌이는 보통 다음에 <a href="Block.htm">블록</a>이 따라옵니다. 블록은 회돌이의 <em>몸체</em>를 형성하는 서술문의 집단입니다. 그렇지만, 서술문이 하나만 있는 회돌이는 블록을 요구하지 않습니다 ("if" 그리고 그의 "else"는 이런 목적으로 하나의 서술문으로 계수됩니다).</p>
-<p><a name="otb"></a>One True Brace (OTB) 스타일을 선택적으로 사용할 수 있습니다. 이 스타일은 여는 활괄호를 그 아래가 아니라 같은 줄에 나타나도록 허용합니다. 예를 들어: <code>while x &lt; y {</code>.</p>
+<p id="otb">One True Brace (OTB) 스타일을 선택적으로 사용할 수 있습니다. 이 스타일은 여는 활괄호를 그 아래가 아니라 같은 줄에 나타나도록 허용합니다. 예를 들어: <code>while x &lt; y {</code>.</p>
 <p>내장 변수 <strong>A_Index</strong>에는 현재 회돌이 반복 횟수가 담깁니다. 1을 담고 있으면 처음으로 회돌이의 표현식과 몸체가 실행된 것입니다. 그 다음 실행 때 2가 담깁니다; 등등. 내부 회돌이가 외부 회돌이로 둘러 싸여 있다면, 내부 회돌이가 우선 순위가 있습니다. A_Index는 모든 유형의 회돌이 안에서 작동하지만, 0이면 회돌이 바깥에 있는 것입니다.</p>
 <p>모든 회돌이와 마찬가지로, <a href="Break.htm">Break</a>는 회돌이를 일찍 빠져 나오는 데 사용할 수 있습니다. 또한, <a href="Continue.htm">Continue</a>는 현재 실행의 나머지를 건너 뛰는 데 사용할 수 있습니다. 그 때마다 A_Index는 1 만큼씩 증가하고 while-회돌이의 표현식이 재평가됩니다. 여전히 참이면, 새로 반복을 시작합니다; 그렇지 않으면 회돌이를 끝냅니다.</p>
 <p>특수 회돌이: 회돌이를 사용해 자동으로 파일, 폴더, 레지스트리 항목을 (한 번에 하나씩) 열람할 수 있습니다. 자세한 것은 <a href="LoopFile.htm">파일-회돌이</a> 그리고 <a href="LoopReg.htm">레지스트리-회돌이</a>를 참조하십시오. 게다가, <a href="LoopReadFile.htm">파일-읽기 회돌이</a>는 파일의 전체 내용을 한 번에 한 줄씩 처리할 수 있습니다. 마지막으로, <a href="LoopParse.htm">파싱 회돌이</a>는 가름자로 구분된 문자열 안에 포함된 개별 필드들을 처리할 수 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="Until.htm">Until</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">Blocks</a>, <a href="Loop.htm">Loop</a>, <a href="For.htm">For-회돌이</a>, <a href="LoopFile.htm">파일-폴더 회돌이</a>, <a href="LoopReg.htm">레지스트리 회돌이</a>, <a href="LoopReadFile.htm">파일-읽기 회돌이</a>, <a href="LoopParse.htm">파싱 회돌이</a>, <a href="IfExpression.htm">If (expression)</a></p>
-<h3>예제</h3>
-<pre class="NoIndent"><em>; 사용자가 왼버튼을 끄는 동안, ToolTip이 끌기-구역 안에 그 크기를 보여줍니다.</em>
-
-CoordMode, Mouse, Screen
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> As the user drags the left mouse button, a tooltip displays the size of the region inside the drag-area.</p>
+<pre>CoordMode, Mouse, Screen
 
 ~LButton::
     MouseGetPos, begin_x, begin_y
-    <strong>while</strong> GetKeyState("LButton")
+    while GetKeyState("LButton")
     {
         MouseGetPos, x, y
         ToolTip, % begin_x ", " begin_y "`n" Abs(begin_x-x) " x " Abs(begin_y-y)
@@ -47,6 +50,7 @@ CoordMode, Mouse, Screen
     }
     ToolTip
 return</pre>
+</div>
 
 </body>
 </html>

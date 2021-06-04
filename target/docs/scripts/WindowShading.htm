@@ -1,66 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
+
 <head>
-<title>Window Shading (창을 제목 바까지 말아 올리기) -- by Rajat</title>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/content.js" type="text/javascript"></script>
+  <meta http-equiv="refresh" content="0; url=index.htm#WindowShading">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="canonical" href="index.htm#WindowShading">
+  <title>Redirection</title>
 </head>
+
 <body>
-
-<h1>Window Shading (창을 제목 바까지 말아 올리기) -- by Rajat</h1>
-
-<p>이 스크립트는 핫키를 누려면 창을 그의 제목 바까지 줄이고 다시 그의 원래 크기로 돌아옵니다. 창의 개수에 상관없이 이런 식으로 줄일 수 있습니다 (스크립트가 각각을 따로따로 기억합니다). 스크립트가 어떤 이유로 종료하면, "말려 올라간" 모든 창이 원래의 높이로 복구됩니다.
-</p>
-<p><a href="WindowShading.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
-
-<pre class="NoIndent"><em>; 말린 창의 높이를 여기에서 설정합니다.
-; 아마도 이 숫자가 얼마나 낮은가에 상관 없이 운영체제는
-; 제목바가 숨는 것을 허용하지 않을 것입니다:</em>
-ws_MinHeight = 25
-
-<em>; 이 줄은 어떤 이유로 스크립트가 종료하면
-; 말려 올라간 창을 복구합니다:</em>
-OnExit, ExitSub
-return  <em>; 자동 실행 섹션의 끝</em>
-
-#z::  <em>; 이 줄을 바꿔 다른 핫키를 골라도 됩니다.
-; 이 시점 이후로, 어떤 변경도 허용하지 않습니다
-; 단, 스크립트의 기본 기능을 변경하고 싶은 경우는 예외입니다.
-; 다음 줄을 주석 해제하면 이 서브루틴을 핫키가 아니라
-; 맞춤 메뉴 항목으로 변환할 수 있습니다.
-; 지연 시간 덕분에 메뉴 때문에 꺼졌던
-; 활성 창은 다시 켜집니다:
-;Sleep, 200</em>
-WinGet, ws_ID, ID, A
-Loop, Parse, ws_IDList, |
-{
-    IfEqual, A_LoopField, %ws_ID%
-    {
-        <em>; 부합이 발견되었으므로, 이 창은 복구됩니다 (다시 펴짐):</em>
-        StringTrimRight, ws_Height, ws_Window%ws_ID%, 0
-        WinMove, ahk_id %ws_ID%,,,,, %ws_Height%
-        StringReplace, ws_IDList, ws_IDList, |%ws_ID%
-        return
-    }
-}
-WinGetPos,,,, ws_Height, A
-ws_Window%ws_ID% = %ws_Height%
-WinMove, ahk_id %ws_ID%,,,,, %ws_MinHeight%
-ws_IDList = %ws_IDList%|%ws_ID%
-return
-
-ExitSub:
-Loop, Parse, ws_IDList, |
-{
-    if A_LoopField =  <em>; 리스트의 첫 필드는 보통 비어 있습니다.</em>
-        continue      <em>; 그래서 건너 뜁니다.</em>
-    StringTrimRight, ws_Height, ws_Window%A_LoopField%, 0
-    WinMove, ahk_id %A_LoopField%,,,,, %ws_Height%
-}
-ExitApp  <em>; OnExit 서브루틴에 대하여 반드시 이렇게 해야만 스크립트를 실제로 종료할 수 있습니다.</em>
-</pre>
+  <p>Redirecting to <a href="index.htm#WindowShading">Window Shading</a>.</p>
 </body>
+
 </html>

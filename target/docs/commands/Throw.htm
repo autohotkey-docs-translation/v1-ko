@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Throw</title>
+<title>Throw - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Throw statement signals the occurrence of an error. 이 신호는 try-catch 서술문으로 잡을 수 있습니다." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>에러가 일어났다는 신호를 보냅니다. 이 신호는 <a href="Try.htm">try</a>-<a href="Catch.htm">catch</a> 서술문으로 잡을 수 있습니다.</p>
 
-<pre class="Syntax">Throw [, Expression]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">Throw</span> <span class="optional">, Expression</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Expression</dt>
@@ -31,8 +31,10 @@ throw { what: "Custom error", file: A_LineFile, line: A_LineNumber } <em>; <a hr
 
 </dl>
 
-<h3 id="Exception">Exception(Message [, What, Extra])</h3>
-<p>다음 특성을 가진 객체를 만듭니다. 또한 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>가 만든 예외에 흔합니다:</p>
+<h2 id="Exception">Exception()</h2>
+<p>Creates an object with properties, also common to exceptions created by <a href="Catch.htm#RuntimeErrors">runtime errors</a>.</p>
+<pre class="Syntax"><span class="func">Exception</span>(Message <span class="optional">, What, Extra</span>)</pre>
+<p>This object contains the following properties:</p>
 <ul>
   <li><strong>Message:</strong> 에러 메시지 또는<a href="../misc/ErrorLevel.htm">ErrorLevel</a> 값.</li>
   <li><strong>What:</strong> 에러가 일어날 때 실행 중인 또는 실행될 함수나 라벨 또는 명령어의 이름.</li>
@@ -40,20 +42,21 @@ throw { what: "Custom error", file: A_LineFile, line: A_LineNumber } <em>; <a hr
   <li><strong>File:</strong> 에러가 일어난 줄이 있는 스크립트 파일의 전체 경로를 자동으로 설정됩니다.</li>
   <li><strong>Line:</strong> 에러가 일어난 줄 번호를 자동으로 설정합니다.</li>
 </ul>
-<p><em>What</em>이 생략되면, 현재 함수나 서브루틴의 이름이 기본값이 됩니다. 그렇지 않으면 문자열이거나 또는 호출 스택의 위쪽으로부터 아래로 음의 오프셋일 수 있습니다. 예를 들어, 값이 -1이면 <code>Exception.What</code>에 현재 함수나 서브루틴을 설정하고 <code>Exception.Line</code>에 그를 호출한 줄을 설정합니다. 그렇지만, 스크립트가 <a href="../Scripts.htm#ahk2exe">컴파일</a> 되었거나 오프셋이 유효하지 않으면, <em>What</em>은 그냥 문자열로 변환됩니다.</p>
+<p><em>What</em>이 생략되면, 현재 함수나 서브루틴의 이름이 기본값이 됩니다. 그렇지 않으면 문자열이거나 또는 호출 스택의 위쪽으로부터 아래로 음의 오프셋일 수 있습니다. For example, a value of -1 sets <code>Exception.What</code> to the current function or subroutine, and <code>Exception.Line</code> and <code>Exception.File</code> to the line and file which called it. 그렇지만, 스크립트가 <a href="../Scripts.htm#ahk2exe">컴파일</a> 되었거나 오프셋이 유효하지 않으면, <em>What</em>은 그냥 문자열로 변환됩니다.</p>
 <p><em>Message</em>와 <em>Extra</em>는 문자열로 변환됩니다. 이것들은 예외가 던져졌는데 잡지 못하면 에러 대화상자에 보여집니다.</p>
 <pre>try
-    BadlyCodedFunc()
+    SomeFunction()
 catch e
     MsgBox % "Error in " e.What ", which was called at line " e.Line 
 
-BadlyCodedFunc() {
+SomeFunction() {
     throw Exception("Fail", -1)
 }</pre>
 
-<h3>관련 항목</h3>
-<p><a href="Try.htm">Try</a>, <a href="Catch.htm">Catch</a>, <a href="Finally.htm">Finally</a></p>
-<h3>예제</h3>
+<h2 id="Related">관련 항목</h2>
+<p><a href="Try.htm">Try</a>, <a href="Catch.htm">Catch</a>, <a href="Finally.htm">Finally</a>, <a href="OnError.htm">OnError()</a></p>
+
+<h2 id="Examples">예제</h2>
 <p><a href="Try.htm#Examples">Try</a> 참조.</p>
 
 </body>

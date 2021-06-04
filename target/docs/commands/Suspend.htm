@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Suspend</title>
+<title>Suspend - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Suspend command disables or enables all or selected hotkeys and hotstrings." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,35 +14,44 @@
 
 <p>선택된 또는 모든 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 켜고 끕니다.</p>
 
-<pre class="Syntax">Suspend [, Mode]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">Suspend</span> <span class="optional">, Mode</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Mode</dt>
   <dd><p><strong>On</strong>: 모든 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 보류합니다. 단, 논평 섹션에 설명한 것들은 예외입니다.</p>
       <p><strong>Off</strong>: 위에서 꺼진 핫키와 핫스트링을 다시 켭니다.</p>
       <p><strong>Toggle</strong> (기본값): 이전 상태와 반대 상태로 변경합니다 (On 또는 Off).</p>
-    <p><strong>Permit</strong>: 현재 서브루틴을 보류에서 면제시키는 일만 합니다. 다른 일은 하지 않습니다.</p></dd>
+    <p><strong>Permit</strong>: 현재 서브루틴을 보류에서 면제시키는 일만 합니다. 다른 일은 하지 않습니다.</p>
+      <p><span class="ver">[v1.1.30+]:</span> The decimal values 1, 0 and -1 may be used in place of On, Off and Toggle, respectively.</p>
+      </dd>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
+<p>By default, the script can also be suspended via its <a href="../Program.htm#tray-icon">tray icon</a> or <a href="../Program.htm#main-window">main window</a>.</p>
 <p>맨 첫 줄이 보류된(Suspend) 핫키/핫스트링 서브루틴은 (<code>Suspend On</code>을 제외하고) 보류로부터 면제됩니다. 다른 말로 하면, 핫키는 보류가 켜져 있는 (ON) 동안에도 여전히 켜져 있을 것입니다. 그러므로 그런 핫키를 통하여 보류를 끌 수 있습니다.</p>
+<p>이 명령어가 가한 변경 때문에 정당성을 얻으면 <a href="_InstallKeybdHook.htm">키보드</a> 그리고/또는 <a href="_InstallMouseHook.htm">마우스</a> 갈고리가 설치되거나 제거됩니다.</p>
 <p>선택된 핫키 또는 핫스트링을 존재하는 창의 유형에 기반하여 자동으로 끄려면, <a href="_IfWinActive.htm">#IfWinActive/Exist</a>를 사용하십시오.</p>
 <p>스크립트의 핫키를 보류하더라도 이미 실행 중인 스크립트의 <a href="../misc/Threads.htm">쓰레드</a>는 (있다면) 멈추지 않습니다; 멈추려면 <a href="Pause.htm">Pause</a>를 사용하십시오.</p>
 <p>스크립트의 핫키가 보류될 때, 그의 트레이 아이콘은 기호 S로 바뀝니다. 이를 피하려면 아이콘을 동결하면 됩니다. Menu 명령어의 마지막 매개변수에 1을 지정하면 동결시킬 수 있습니다. 예를 들어:</p>
 <pre><a href="Menu.htm">Menu</a>, Tray, Icon, C:\My Icon.ico, , 1</pre>
-<p>내장 변수 A_IsSuspended는 스크립트가 보류되면 1 그렇지 않으면 0이 설정됩니다.</p>
-<h3>관련 항목</h3>
+<p>내장 변수 <a href="../Variables.htm#IsSuspended">A_IsSuspended</a>는 스크립트가 보류되면 1 그렇지 않으면 0이 설정됩니다.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="_IfWinActive.htm">#IfWinActive/Exist</a>, <a href="Pause.htm">Pause</a>, <a href="Menu.htm">Menu</a>, <a href="ExitApp.htm">ExitApp</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">^!s::Suspend  <em>; 토글-보류 함수를 핫키에 할당합니다.</em></pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExHotkey">
+<p><a class="ex_number" href="#ExHotkey"></a> Press a hotkey once to suspend all hotkeys and hotstrings. Press it again to unsuspend.</p>
+<pre>^!s::Suspend  <em>; Ctrl+Alt+S</em></pre>
+</div>
 
-<pre id="PostMessage" class="NoIndent"><em>; Suspend 명령어를 또다른 스크립트에 보냅니다.</em>
-<a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, On
-WM_COMMAND := 0x111
+<div class="ex" id="PostMessage">
+<p><a class="ex_number" href="#PostMessage"></a> Suspend 명령어를 또다른 스크립트에 보냅니다.</p>
+<pre><a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, On
+WM_COMMAND := 0x0111
 ID_FILE_SUSPEND := 65404
 <a href="PostMessage.htm">PostMessage</a>, WM_COMMAND, ID_FILE_SUSPEND,,, C:\YourScript.ahk ahk_class AutoHotkey</pre>
+</div>
 
 </body>
 </html>

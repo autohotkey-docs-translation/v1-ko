@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinShow</title>
+<title>WinShow - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinShow command unhides the specified window." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>지정된 창을 보여줍니다.</p>
 
-<pre class="Syntax">WinShow [, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">WinShow</span> <span class="optional">, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>WinTitle</dt>
@@ -32,18 +32,21 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>기본적으로, WinShow는 언제나 숨은 창을 탐지할 수 있는 유일한 명령어입니다. 다른 명령어들은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있을 경우에만 숨은 창을 탐지할 수 있습니다.</p>
 <p>이 명령어는 부합하는 최상위 창에만 작동합니다. 단, <em>WinTitle</em>이 <a href="GroupAdd.htm">ahk_group GroupName</a>일 경우는 제외합니다. 이 경우 그룹 안의 모든 창이 영향을 받습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="WinHide.htm">WinHide</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="../misc/WinTitle.htm#LastFoundWindow">마지막 발견 창</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Run, notepad.exe
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Opens Notepad, waits until it exists, hides it for a short time and unhides it.</p>
+<pre>Run, notepad.exe
 WinWait, Untitled - Notepad
 Sleep, 500
-WinHide  <em>; 매개변수가 생략되었기 때문에, 위에서 발견한 창을 사용합니다</em>.
+WinHide <em>; Use the window found by WinWait.</em>
 Sleep, 1000
-WinShow</pre>
+WinShow <em>; Use the window found by WinWait.</em></pre>
+</div>
 
 </body>
 </html>

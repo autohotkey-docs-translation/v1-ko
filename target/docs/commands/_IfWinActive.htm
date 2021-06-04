@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#IfWinActive / #IfWinExist</title>
+<title>#IfWinActive / #IfWinNotActive / #IfWinExist / #IfWinNotExist - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #IfWinActive, #IfWinNotActive, #IfWinExist and #IfWinNotExist directives create context-sensitive hotkeys and hotstrings depending on the type of window that is active or exists." />
+<meta name="ahk:equiv-v2" content="commands/_HotIf.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -10,16 +11,18 @@
 </head>
 <body>
 
-<h1>#IfWinActive / #IfWinExist</h1>
+<h1>#IfWinActive / #IfWinNotActive / #IfWinExist / #IfWinNotExist</h1>
 
 <p>문맥-감지 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 만듭니다. 그런 핫키는 활성화 된 또는 존재하는 창의 종류에 따라 다른 조치를 수행합니다 (또는 아무일도 하지 않습니다).</p>
 
-<pre class="Syntax">#IfWinActive [, WinTitle, WinText]
-#IfWinExist [, WinTitle, WinText]
-#IfWinNotActive [, WinTitle, WinText]
-#IfWinNotExist [, WinTitle, WinText]
-<a href="_If.htm">#If [, Expression]</a></pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">#IfWinActive</span> <span class="optional">WinTitle, WinText</span>
+<span class="func">#IfWinExist</span> <span class="optional">WinTitle, WinText</span>
+<span class="func">#IfWinNotActive</span> <span class="optional">WinTitle, WinText</span>
+<span class="func">#IfWinNotExist</span> <span class="optional">WinTitle, WinText</span>
+<a href="_If.htm">#If <span class="optional">, Expression</span></a>
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>WinTitle</dt>
@@ -31,13 +34,12 @@
   <dt>WinText</dt>
   <dd><p>존재하면, 이 매개변수는 목표 창 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>이 자동-실행 섹션 (스크립트이 최상단)에 켜져 있으면 탐지됩니다.</p></dd>
 
-  <dt>ExcludeTitle<br>
-    ExcludeText</dt>
+  <dt>ExcludeTitle, ExcludeText</dt>
   <dd><p>이것들은 <strong>지원되지 않지만</strong>, <em>WinTitle</em>대하여 <code>ahk_group MyGroup</code>를 지정하면 간접적으로 사용할 수 있습니다 (여기에서 <em>MyGroup</em>은 <a href="GroupAdd.htm">GroupAdd</a>를 통하여 생성된 그룹이며, 이 그룹은 ExcludeTitle/Text를 지원합니다).</p></dd>
 
 </dl>
 
-<h3>기본 연산</h3>
+<h2 id="Basic_Operation">기본 연산</h2>
 <p>#IfWin 지시어로 문맥 감지 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 쉽게 만들 수 있습니다. 예를 들어:</p>
 <pre>#IfWinActive ahk_class Notepad
 #space::MsgBox 노트패드 안에서 Win+Spacebar를 눌렀습니다.</pre>
@@ -46,11 +48,12 @@
 <pre>#IfWinActive</pre>
 <p>#IfWin이 꺼져 있을 때 (또는 스크립트에 전혀 사용되지 않으며), 모든 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>이 모든 창에 대하여 활성화 됩니다 (<a href="Suspend.htm">Suspend</a>나 <a href="Hotkey.htm">Hotkey 명령어</a>를 통하여 끌 수 있습니다).</p>
 <p>마우스나 키보드 핫키가 #IfWin를 통하여 꺼져 있을 때, 고유의 기능을 수행합니다; 즉, 마치 그런 핫키가 전혀 없는 것처럼 활성 창에 건네집니다. 한 가지 예외가 있습니다: 조이스틱 핫키는: #IfWin이 작동하더라도, 다른 프로그램이 버튼 누름을 보는 것을 막지 않습니다.</p>
-<p>#IfWin는 또 정상 키의 행위를 마치 엔터키나 스페이스 키처럼 바꾸는 데에도 사용할 수 있습니다. 이는 특정 창이 그 키를 무시하거나 마음에 안드는 행위를 수행할 경우 유용합니다. 예를 들어:</p>
+<p>#IfWin can also be used to alter the behavior of an ordinary key like <kbd>Enter</kbd> or <kbd>Space</kbd>. 이는 특정 창이 그 키를 무시하거나 마음에 안드는 행위를 수행할 경우 유용합니다. 예를 들어:</p>
 <pre>#IfWinActive Reminders ahk_class #32770  <em>; 아웃룩의 "알리미" 창.</em>
 Enter::Send !o  <em>; "Enter" 키눌림은 선택된 알리미를 재우는게 아니라 열리도록 만듭니다.</em>
 #IfWinActive</pre>
-<h3 id="variant">변종 (중복) 핫키</h3>
+<p>다른 지시어처럼, #IfWin는 조건적으로 실행할 수 없습니다.</p>
+<h2 id="variant">변종 (중복) 핫키</h2>
 <p>특정 <a href="../Hotkeys.htm">핫키</a>나 <a href="../Hotstrings.htm">핫스트링</a>은 각 정의마다 #IfWin 기준이 다르다면 스크립트에 한 번 이상 정의할 수 있습니다. 이것을 <em>핫키 변종</em>이라고 합니다. 예를 들어:</p>
 <pre>#IfWinActive ahk_class Notepad
 ^!c::MsgBox 노트패드에서 Control+Alt+C를 눌렀습니다.
@@ -69,28 +72,31 @@ MsgBox 노트패드 또는 워드패드에서 Win+Z를 눌렀습니다.
 return</pre>
 <p>대안으로, <code>#IfWinActive ahk_group MyGroup</code>을 통하여 <a href="GroupAdd.htm">창 그룹</a>을 사용할 수 있습니다.</p>
 <p>핫키 변종을 (스크립트가 실행중인 동안에) 동적으로 생성하려면, <a href="Hotkey.htm#IfWin">"Hotkey IfWin"</a>를 참조하십시오.</p>
-<h3 id="gen">총평</h3>
-<p>#IfWin는 또 적절할 때 접두 키를 자신의 고유 기능으로 복구합니다 (<a href="../Hotkeys.htm#prefix">접두 키</a>는 "a &amp; b"와 같이 핫키 안에 있는 "a" 키입니다). 주어진 접두 심볼에 대하여 활성화된 핫키가 전혀 없을 때마다 이런 일이 일어납니다.</p>
+<h2 id="gen">총평</h2>
+<p>#IfWin는 또 적절할 때 접두 키를 자신의 고유 기능으로 복구합니다 (<a href="../Hotkeys.htm#prefix">접두 키</a>는 "a &amp; b"와 같이 핫키 안에 있는 <kbd>A</kbd> 키입니다). 주어진 접두 심볼에 대하여 활성화된 핫키가 전혀 없을 때마다 이런 일이 일어납니다.</p>
 <p>Gosub나 Goto를 사용하여 핫키나 핫스트링 라벨에 점프할 때, 스크립트 상단에 가까운 변종으로 점프합니다.</p>
 <p>핫키가 현재 #IfWin을 통하여 꺼져 있으면, 그의 키나 마우스 버튼은 "#" 문자와 함께 <a href="KeyHistory.htm">KeyHistory</a>의 "Type" 컬럼에 나타납니다. 이는 스크립트 디버깅에 도움이 됩니다.</p>
-<p>%Var%와 같은 변수 참조는 현재 지원하지 않습니다. 그러므로, 퍼센트 사인은 `%를 통하여 <a href="_EscapeChar.htm">피신</a>시켜야 합니다. 앞으로는 지원할 가능성이 있습니다. 비슷하게, (`,를 통하여) 글자 그대로의 쉼표도 피신시켜야 합니다. 추가 매개변수가 미래에 추가될 가능성이 있습니다. 이 한계를 우회할 필요가 있다면, <a href="GroupAdd.htm">GroupAdd</a>와 <a href="../misc/WinTitle.htm#ahk_group">ahk_group</a>를 사용하십시오.</p>
+<p>%Var%와 같은 변수 참조는 현재 지원하지 않습니다. 그러므로, 퍼센트 사인은 `%를 통하여 <a href="../misc/EscapeChar.htm">피신</a>시켜야 합니다. 앞으로는 지원할 가능성이 있습니다. 비슷하게, (`,를 통하여) 글자 그대로의 쉼표도 피신시켜야 합니다. 추가 매개변수가 미래에 추가될 가능성이 있습니다. 이 한계를 우회할 필요가 있다면, <a href="GroupAdd.htm">GroupAdd</a>와 <a href="../misc/WinTitle.htm#ahk_group">ahk_group</a>를 사용하십시오.</p>
 <p><a href="Hotkey.htm">Hotkey 명령어</a>가 핫키에 할당한 라벨은 #IfWin에 직접적으로 영향을 받지는 않습니다. 대신에, #IfWin를 스크립트 상단에 가깝게 사용하면 Hotkey 명령어가 생성한 모든 핫키에 영향을 줍니다 (단 <a href="Hotkey.htm#IfWin">"Hotkey IfWin"</a>가 사용되어 그것을 바꾸지 않았어야 합니다).</p>
 <p><a href="../Hotkeys.htm#alttab">알트-탭 핫키</a>는 #IfWin에 영향을 받지 않습니다: 오히려 모든 창에 효과가 있습니다.</p>
 <p><a href="../misc/WinTitle.htm#LastFoundWindow">마지막 발견 창은</a>이 #IfWinActive/Exist이 설정합니다 (그렇지만 #IfWin<em>Not</em>Active/<em>Not</em>Exist로는 설정되지 않습니다). 예를 들어:</p>
 <pre>#IfWinExist ahk_class Notepad
 #n::WinActivate  <em>; #IfWin이 발견한 창을 활성화합니다.</em></pre>
-<p>#IfWin의 매개변수 중 하나에 선두 또는 후미의 스페이스/탭이 필요하면, <a href="_EscapeChar.htm">피신 연속열</a> `s와 `t를 사용할 수 있습니다.</p>
+<p>#IfWin의 매개변수 중 하나에 선두 또는 후미의 스페이스/탭이 필요하면, <a href="../misc/EscapeChar.htm">피신 연속열</a> `s와 `t를 사용할 수 있습니다.</p>
 <p>수행성능의 이유로, #IfWin는 지정된 창의 존재나 활성화를 항상 관제하지는 않습니다. 대신에, 핫키나 핫스트링을 타자할 때만 부합하는 창이 있는지 점검합니다. 부합하는 창이 존재하지 않으면, 키눌림이나 마우스 클릭은 활성 창 안으로 그대로 통과시킵니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>이 (스크립트 상단) 자동 실행 섹션에서 켜졌다면 탐지됩니다 .</p>
-<h3>관련 항목</h3>
-<p><a href="_If.htm">#If <i>표현식</i></a>, <a href="Hotkey.htm">Hotkey 명령어</a>, <a href="../Hotkeys.htm">Hotkeys</a>, <a href="../Hotstrings.htm">Hotstrings</a>, <a href="Suspend.htm">Suspend</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#IfWinActive ahk_class Notepad
+<h2 id="Related">관련 항목</h2>
+<p><a href="_If.htm">#If <i>표현식</i></a>, <a href="Hotkey.htm">Hotkey 명령어</a>, <a href="../Hotkeys.htm">Hotkeys</a>, <a href="../Hotstrings.htm">Hotstrings</a>, <a href="Suspend.htm">Suspend</a>, <a href="WinActive.htm">WinActive()</a>, <a href="WinExist.htm">WinExist()</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Creates two hotkeys and one hotstring which only work when Notepad is active, and one hotkey which works for any window except Notepad.</p>
+<pre>#IfWinActive ahk_class Notepad
 ^!a::MsgBox 노트패드가 활성화되어 있는 동안 Ctrl-Alt-A를 눌렀습니다.  <em>; 이 핫키는 다른 창에 눌려봐야 아무 효과도 없습니다 (그대로 "통과 시킵니다").</em>
 #c::MsgBox 노트패드가 활성화되어 있는 동안 Win-C를 눌렀습니다.
 ::btw:노트패드에 있는 동안에만 :"btw"에 대하여 이 텍스트로 교체됩니다.
 #IfWinActive
 #c::MsgBox 노트패드가 아닌 창에서 Win-C를 눌렀습니다.</pre>
+</div>
 
 </body>
 </html>

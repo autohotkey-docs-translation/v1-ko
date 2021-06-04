@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>IfInString / IfNotInString</title>
+<title>IfInString / IfNotInString - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The IfInString and IfNotInString statements check whether a variable contains the specified string or not." />
+<meta name="ahk:equiv-v2" content="commands/InStr.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -13,14 +14,16 @@
 <h1>IfInString / IfNotInString</h1>
 
 <p><a href="../Variables.htm">변수</a>에 지정된 문자열이 담겨 있는지 점검합니다.</p>
+<p class="warning"><strong>비추천:</strong> 이러한 명령어는 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="InStr.htm">InStr</a> 기능을 사용하십시오.</p>
 
-<pre class="Syntax">IfInString, var, SearchString
-IfNotInString, var, SearchString
-Position := <a href="../Functions.htm#InStr">InStr</a>(Haystack, Needle [, CaseSensitive?, StartingPos]]) <em>; 자세한 것은 <a href="../Functions.htm#InStr">InStr() function</a>를 참조합니다.</em></pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">IfInString</span>, Var, SearchString
+<span class="func">IfNotInString</span>, Var, SearchString
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>var</dt>
+  <dt>Var</dt>
   <dd><p>부합을 위해 그의 내용을 검색할 <a href="../Variables.htm">변수</a>의 이름.</p></dd>
 
   <dt>SearchString</dt>
@@ -28,7 +31,7 @@ Position := <a href="../Functions.htm#InStr">InStr</a>(Haystack, Needle [, CaseS
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>내장 변수 <a href="../Variables.htm">%A_Space%</a>와 <a href="../Variables.htm">%A_Tab%</a>는 안에 스페이스 하나와 탭 문자 하나가 각각 들어 있습니다. 이런 문자들을 단독으로 검색할 때 유용할 수 있습니다.</p>
 <p>또다른 명령어는 이 명령어와 같은 줄에 나타날 수 있습니다. 다른 말로 하면, 다음은 둘 다 동등합니다:</p>
 <pre>IfInString, MyVar, abc, Gosub, Process1
@@ -36,11 +39,13 @@ IfInString, MyVar, abc
     Gosub, Process1</pre>
 <p>그렇지만, 이름있는 명령어 말고 다른 항목은 같은 줄에 지원하지 않습니다. 예를 들어:</p>
 <pre>IfInString, MyVar, abc, found := true  <em><strong>; 유효하지 않음.</strong></em></pre>
-<h3>관련 항목</h3>
-<p><a href="../Functions.htm#InStr">InStr()</a>, <a href="RegExMatch.htm">RegExMatch()</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="IfEqual.htm">IfEqual</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfIs.htm">if var is type</a>, <a href="Block.htm">블록</a>, <a href="Else.htm">Else</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Haystack = abcdefghijklmnopqrs
-Needle = abc
+<h2 id="Related">관련 항목</h2>
+<p><a href="InStr.htm">InStr()</a>, <a href="RegExMatch.htm">RegExMatch()</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="IfEqual.htm">IfEqual</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfIs.htm">if var is type</a>, <a href="Block.htm">블록</a>, <a href="Else.htm">Else</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Checks whether <var>Haystack</var> contains the substring "abc".</p>
+<pre>Haystack := "abcdefghijklmnopqrs"
+Needle := "abc"
 IfInString, Haystack, %Needle%
 {
     MsgBox, 문자열이 발견되었습니다.
@@ -48,6 +53,7 @@ IfInString, Haystack, %Needle%
 }
 else
     Sleep, 1</pre>
+</div>
 
 </body>
 </html>

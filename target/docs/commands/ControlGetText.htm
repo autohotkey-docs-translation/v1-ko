@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ControlGetText</title>
+<title>ControlGetText - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ControlGetText command retrieves text from a control." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>콘트롤로부터 텍스트를 열람합니다.</p>
 
-<pre class="Syntax">ControlGetText, OutputVar [, Control, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">ControlGetText</span>, OutputVar <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -23,7 +23,7 @@
 
   <dt>Control</dt>
   <dd><p>ClassNN (콘트롤의 클래스이름과 실체 번호) 또는 콘트롤의 텍스트일 수 있습니다. 둘 모두 Window Spy로 알아낼 수 있습니다. 텍스트를 사용할 때, 부합하는 행위는 <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>로 결정됩니다. 이 매개변수가 비어있거나 생략되면, 목표 창의 최상위 콘트롤이 사용됩니다.</p>
-    <p>콘트롤의 HWND (창 핸들)에 작동시키려면, <em>Control</em> 매개변수를 빈 채로 두고 <code>ahk_id %ControlHwnd%</code>를 <em>WinTitle</em> 매개변수에 지정하십시오 (이것은 숨은 창에도 작동합니다. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있어도 상관 없습니다). 콘트롤의 HWND는 전형적으로 <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, 또는 <a href="DllCall.htm">DllCall</a>을 통하여 열람됩니다.</p></dd>
+    <p>콘트롤의 HWND (창 핸들)에 작동시키려면, <em>Control</em> 매개변수를 빈 채로 두고 <code>ahk_id %ControlHwnd%</code>를 <em>WinTitle</em> 매개변수에 지정하십시오 (이것은 숨은 창에도 작동합니다. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있어도 상관 없습니다). 콘트롤의 HWND는 전형적으로 <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, 또는 <a href="DllCall.htm">DllCall()</a>을 통하여 열람됩니다.</p></dd>
 
   <dt>WinTitle</dt>
   <dd><p>목표 창을 식별하는 창 제목 또는 다른 기준. <a href="../misc/WinTitle.htm">WinTitle</a> 참조.</p></dd>
@@ -39,21 +39,24 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
-<p>주의: 텍스트를 ListView, ListBox, 또는 ComboBox으로부터 열람하려면, 대신에 <a href="ControlGet.htm#List">ControlGet List</a>를 사용하십시오.</p>
-<p>열람된 텍스트가 잘려 나간 것 같으면 (불완전하면), ControlGetText 말고 <code><a href="VarSetCapacity.htm">VarSetCapacity(OutputVar, 55)</a></code>를 사용해 보십시오 [55를 잘려나간 텍스트보다 상당히 더 긴 크기로 교체하십시오]. 어플리케이션이 WM_GETTEXTLENGTH 메시지에 제대로 응답하지 않는 경우, AutoHotkey가 출력 변수를 너무 작게 만들어 모든 텍스트를 담지 못하기 때문입니다.</p>
+<h2 id="Remarks">논평</h2>
+<p class="note"><strong>주의</strong>: 텍스트를 ListView, ListBox, 또는 ComboBox으로부터 열람하려면, 대신에 <a href="ControlGet.htm#List">ControlGet List</a>를 사용하십시오.</p>
+<p>열람된 텍스트가 잘려 나간 것 같으면 (불완전하면), ControlGetText 말고 <code><a href="VarSetCapacity.htm">VarSetCapacity</a>(OutputVar, 55)</code>를 사용해 보십시오 [55를 잘려나간 텍스트보다 상당히 더 긴 크기로 교체하십시오]. 어플리케이션이 WM_GETTEXTLENGTH 메시지에 제대로 응답하지 않는 경우, AutoHotkey가 출력 변수를 너무 작게 만들어 모든 텍스트를 담지 못하기 때문입니다.</p>
 <p>열람된 텍스트의 양은 변수의 최대 가용 능력으로 제한됩니다 (이는 <a href="_MaxMem.htm">#MaxMem</a> 지시어를 통하여 변경할 수 있습니다). 결과적으로, 목표 콘트롤에 방대한 양의 텍스트가 담겨 있으면 (예를 들어, 편집기에 방대한 문서가 열려 있는 경우) 이 명령어는 방대한 양의 램을 사용할 가능성이 있습니다. 그렇지만, 변수의 메모리는 아무것도 지정하지 않으면 손쉽게 해제할 수 있습니다. 즉, <code>OutputVar =</code>.</p>
 <p>대부분의 콘트롤 유형으로부터 열람된 텍스트는 각 줄의 끝을 표시하기 위해 홀로 라인피드(`n)를 사용하지 않고 캐리지 리턴과 라인피드 (`r`n)를 사용합니다.</p>
 <p><code>SetTitleMatchMode Slow</code>를 처리할 필요는 없습니다. 왜냐하면 ControlGetText는 언제나 텍스트를 느린 방법으로 받기 때문입니다 (그 때문에 광범위한 범위의 콘트롤 유형에 작동합니다).</p>
 <p>창의 모든 콘트롤 목록을 열람하려면, <a href="WinGet.htm#ControlList">WinGet ControlList</a>를 사용하십시오.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="ControlSetText.htm">ControlSetText</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="Control.htm">Control</a>, <a href="ControlGet.htm">ControlGet</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="_MaxMem.htm">#MaxMem</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">ControlGetText, OutputVar, Edit1, Untitled -</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves the current text from Notepad's edit control and stores it in <var>OutputVar</var>.</p>
+<pre>ControlGetText, OutputVar, Edit1, Untitled -</pre>
+</div>
 
 </body>
 </html>

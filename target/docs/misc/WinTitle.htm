@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinTitle &amp; Last Found Window</title>
+<title>WinTitle &amp; 가장 마지막으로 발견된 창 | AutoHotkey</title>
+<meta name="description" content="This page lists criteria that can be used in the WinTitle parameter of commands etc. to determine the target window(s)." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -20,14 +20,14 @@
   padding: .2em .5em;
 }
 #QuickRef tr:nth-child(even) {
-  background-color: #f4f4f4;
+  background: rgba(150, 150, 150, 0.1);
 }
 </style>
 </head>
 <body>
-<h1><em>WinTitle</em> 매개변수 &amp; 가장 마지막으로 발견된 창</h1>
+<h1><var>WinTitle</var> 매개변수 &amp; 가장 마지막으로 발견된 창</h1>
 
-<p>많은 명령어와 몇몇 함수는 <em>WinTitle</em> 매개변수가 있습니다. 이 매개변수는 작업할 창을 식별하는 데 사용됩니다. 이 매개변수는 창의 제목 또는 제목 일부일 수도 있고 이 페이지에 기술된 다른 기준일 수도 있습니다.</p>
+<p>Various commands, functions and control flow statements have a <var>WinTitle</var> parameter, used to identify which window (or windows) to operate on. 이 매개변수는 창의 제목 또는 제목 일부일 수도 있고 이 페이지에 기술된 다른 기준일 수도 있습니다.</p>
 
 <strong>간편 참조</strong>
 <table id="QuickRef">
@@ -43,69 +43,66 @@
 </table>
 
 <h2 id="Matching">부합 행위</h2>
-<p><a href="../commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>은 각 창의 제목에 부분 또는 전체 제목을 어떻게 비교할지 제어합니다. 설정에 따라, <em>WinTitle</em>은 정화하게 일치하는 제목이 될 수도 있고, 아니면 제목에 어디에나 나타나는 부문자열, 또는 <a href="RegEx-QuickRef.htm">RegEx 패턴</a>이 될 수 있습니다. 이 설정은 또 <a href="#ahk_class">ahk_class</a>를 정확한 클래스 이름으로 이해할지 아니면 RegEx 패턴으로 이해할지 제어합니다.</p>
+<p><a href="../commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>은 각 창의 제목에 부분 또는 전체 제목을 어떻게 비교할지 제어합니다. 설정에 따라, <var>WinTitle</var>은 정화하게 일치하는 제목이 될 수도 있고, 아니면 제목에 어디에나 나타나는 부문자열, 또는 <a href="RegEx-QuickRef.htm">RegEx 패턴</a>이 될 수 있습니다. This setting also controls whether the <a href="#ahk_class">ahk_class</a> and <a href="#ahk_exe">ahk_exe</a> criteria are interpreted as RegEx patterns.</p>
+<p>Window titles are case sensitive, except when using the <a href="RegEx-QuickRef.htm#opt_i">i) modifier</a> in a RegEx pattern.</p>
 <p>숨은 창은 <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>이 켜져 있을 때만 탐지됩니다. 언제나 숨을 참을 탐지하는 <a href="../commands/WinShow.htm">WinShow</a>는 제외합니다.</p>
-<p>여러 창이 <em>WinTitle</em>과 기타 기준에 부합하면, 가장 위에 부합한 창이 사용됩니다. 활성 창이 기준에 부합하면, 보통 다른 모든 창보다 위에 있기 때문에 우선 순위를 갖습니다. 그렇지만, <a href="../commands/WinSet.htm#AlwaysOnTop">항상 최상단</a> 창이 부합하면 (그리고 활성 창은 최상단 창이 아니면), 대신에 그것이 사용됩니다.</p>
+<p>여러 창이 <var>WinTitle</var>과 기타 기준에 부합하면, 가장 위에 부합한 창이 사용됩니다. 활성 창이 기준에 부합하면, 보통 다른 모든 창보다 위에 있기 때문에 우선 순위를 갖습니다. 그렇지만, <a href="../commands/WinSet.htm#AlwaysOnTop">항상 최상단</a> 창이 부합하면 (그리고 활성 창은 최상단 창이 아니면), 대신에 그것이 사용됩니다.</p>
 
-<h2 id="ActiveWindow">활성 창 (A)</h2>
-<p><em>WinTitle</em>이 기호 <code>A</code>이고 다른 세 개의 창 매개변수가 비어 있거나 생략되면, 그 활성 창이 사용됩니다 (<em>WinText</em>, <em>ExcludeTitle</em> 그리고 <em>ExcludeText</em>).</p>
-<pre>
-<em>; 활성 창의 ID/HWND를 열람합니다</em>
-id := WinExist("A")
-MsgBox % id
+<h2 id="ActiveWindow">A (활성 창)</h2>
+<p>Use the letter <code>A</code> for <var>WinTitle</var> and omit the other three window parameters (<em>WinText</em>, <em>ExcludeTitle</em> and <em>ExcludeText</em>), to operate on the active window.</p>
+<p>The following example retrieves and reports the unique ID (HWND) of the active window:</p>
+<pre>MsgBox % WinExist("A")</pre>
+<p>The following example creates a hotkey which can be pressed to maximize the active window:</p>
+<pre>#Up::WinMaximize, A  <em>; Win+Up</em></pre>
 
-<em>; Win+↑을 눌러; 활성 창을 최대화합니다</em>
-#Up::WinMaximize, A</pre>
+<h2 id="ahk_">ahk_ Criteria</h2>
+<p>Specify one or more of the following ahk_ criteria (optionally in addition to a window's title). An ahk_ criterion always consists of an ahk_ keyword and its criterion value, both separated by zero or more spaces or tabs. For example, <code>ahk_class Notepad</code> represents a Notepad window.</p>
+<p>The ahk_ keyword and its criterion value do not need to be separated by spaces or tabs. This is primarily useful when specifying ahk_ criteria as expressions in combination with variables. For example, you could specify <code>"ahk_pid" PID</code> instead of <code>"ahk_pid " PID</code>. In all other cases, however, it is recommended to use at least one space or tab as a separation to improve readability.</p>
 
-<h2 id="ahk_class">ahk_class 창 클래스</h2>
-<p>창 클래스는 시스템이 창을 생성하기 위하여 주형틀로 사용하는 속성의 집합입니다. 다른 말로, 창의 클래스 이름은 어떤 <em>유형의</em> 창인지 식별합니다. 창 클래스를 사용하려면, Window Spy가 보여주는 것처럼 <code>ahk_class ExactClassName</code>를 사용하십시오. <em>ExactClassName</em>은 <a href="../commands/WinGetClass.htm">WinGetClass</a>로 열람할 수 있습니다.</p>
-<p>RegEx <a href="../commands/SetTitleMatchMode.htm">제목 부합 모드</a>가 켜져 있으면, ahk_class는 <a href="../misc/RegEx-QuickRef.htm">정규 표현식</a>을 받습니다.</p>
-<pre>
-<em>; 콘솔 창을 활성화합니다 (예, cmd.exe)</em>
-WinActivate, ahk_class ConsoleWindowClass
-</pre>
+<h3 id="ahk_class">ahk_class (창 클래스)</h3>
+<p>Use <code>ahk_class <var>ClassName</var></code> in <var>WinTitle</var> to identify a window by its window class.</p>
+<p>창 클래스는 시스템이 창을 생성하기 위하여 주형틀로 사용하는 속성의 집합입니다. 다른 말로, 창의 클래스 이름은 어떤 <em>유형의</em> 창인지 식별합니다. A window class can be revealed via Window Spy or retrieved by <a href="../commands/WinGetClass.htm">WinGetClass</a>. If the RegEx <a href="../commands/SetTitleMatchMode.htm">title matching mode</a> is active, <var>ClassName</var> accepts a <a href="RegEx-QuickRef.htm">regular expression</a>.</p>
+<p>The following example activates a console window (e.g. cmd.exe):</p>
+<pre>WinActivate, ahk_class ConsoleWindowClass</pre>
+<p>The following example does the same as above, but uses a <a href="RegEx-QuickRef.htm">regular expression</a> (note that the RegEx <a href="../commands/SetTitleMatchMode.htm">title matching mode</a> must be turned on beforehand to make it work):</p>
+<pre>WinActivate, ahk_class i)^ConsoleWindowClass$</pre>
 
-<h2 id="ahk_id">ahk_id Unique ID / HWND</h2>
-<p>각 창이나 콘트롤에 유일한 ID가 있습니다. 이를 HWND (Handle to WiNDow)라고도 합니다. 이 ID를 사용하면 제목이 변해도 창이나 콘트롤을 식별할 수 있습니다. 창의 ID는 전형적으로 <a href="../commands/WinExist.htm">WinExist()</a>나 <a href="../commands/WinGet.htm">WinGet</a>을 통하여 열람합니다. 콘트롤의 ID는 전형적으로 <a href="../commands/ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="../commands/MouseGetPos.htm">MouseGetPos</a>, 또는 <a href="../commands/DllCall.htm">DllCall</a>을 통하여 열람합니다. 또한, ahk_id는 콘트롤이 보이지 않아도 작동합니다; 즉, <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a> 설정은 콘트롤에 문제가 되지 않습니다.</p>
-<pre>
-WinActivate, ahk_id %VarContainingID%
-</pre>
+<h3 id="ahk_id">ahk_id (유일한 ID/HWND)</h3>
+<p>Use <code>ahk_id <var>HWND</var></code> in <var>WinTitle</var> to identify a window or control by its unique ID.</p>
+<p>각 창이나 콘트롤에 유일한 ID가 있습니다. 이를 HWND (Handle to WiNDow)라고도 합니다. 이 ID를 사용하면 제목이 변해도 창이나 콘트롤을 식별할 수 있습니다. 창의 ID는 전형적으로 <a href="../commands/WinExist.htm">WinExist()</a>나 <a href="../commands/WinGet.htm">WinGet</a>을 통하여 열람합니다. 콘트롤의 ID는 전형적으로 <a href="../commands/ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="../commands/MouseGetPos.htm">MouseGetPos</a>, 또는 <a href="../commands/DllCall.htm">DllCall()</a>을 통하여 열람합니다. Also, the ahk_id criterion will operate on controls even if they are hidden; that is, the setting of <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a> does not matter for controls.</p>
+<p>The following example activates a window by a unique ID stored in <var>VarContainingID</var>:</p>
+<pre>WinActivate, ahk_id %VarContainingID%</pre>
 
-<h2 id="ahk_pid">ahk_pid 프로세스 ID</h2>
-<p>ahk_pid를 사용하면 특정 프로세스에 속한 창을 식별할 수 있습니다. 프로세스 식별자 (PID)는 전형적으로 <a href="../commands/WinGet.htm">WinGet</a>, <a href="../commands/Run.htm">Run</a> 또는 <a href="../commands/Process.htm">Process</a>으로 열람합니다.</p>
-<pre>
-WinActivate, ahk_pid %VarContainingPID%
-</pre>
+<h3 id="ahk_pid">ahk_pid (프로세스 ID)</h3>
+<p>Use <code>ahk_pid <var>PID</var></code> in <var>WinTitle</var> to identify a window belonging to a specific process. 프로세스 식별자 (PID)는 전형적으로 <a href="../commands/WinGet.htm">WinGet</a>, <a href="../commands/Run.htm">Run</a> 또는 <a href="../commands/Process.htm">Process</a>으로 열람합니다. The ID of a window's process can be revealed via Window Spy.</p>
+<p>The following example activates a window by a process ID stored in <var>VarContainingPID</var>:</p>
+<pre>WinActivate, ahk_pid %VarContainingPID%</pre>
 
-<h2 id="ahk_exe">ahk_exe 프로세스 이름/경로 <span class="ver">[v1.1.01+]</span></h2>
-<p>ahk_exe를 사용하면 주어진 경로나 이름의 프로세스에 속한 창을 식별할 수 있습니다.</p>
-<p><a href="#ahk_pid">ahk_pid</a>는 특정한 프로세스 하나로 제한되는 반면에, ahk_exe는 주어진 문자열에 부합하는 이름 또는 전체 경로를 가진 모든 프로세스를 고려합니다. RegEx <a href="../commands/SetTitleMatchMode.htm">제목 일치 모드</a>가 켜져 있다면, ahk_exe는 <a href="../misc/RegEx-QuickRef.htm">정규 표현식</a>을 받습니다. 그렇지 않으면, ahk_exe는 대소문자를 구분하는 이름이나 전체 경로를 받습니다; 예를 들어, <code>ahk_exe notepad.exe</code>는 <code>ahk_exe C:\Windows\Notepad.exe</code>, <code>ahk_exe C:\Windows\System32\Notepad.exe</code> 그리고 기타 변종들을 포괄합니다.</p>
-<pre>
-<em>; 기존의 notepad.exe 창을 활성화하거나, 새로 엽니다</em>
-if WinExist("ahk_exe notepad.exe")
-    WinActivate, ahk_exe notepad.exe
-else
-    Run, notepad.exe
-</pre>
+<h3 id="ahk_exe">ahk_exe (프로세스 이름/경로) <span class="ver">[v1.1.01+]</span></h3>
+<p>Use <code>ahk_exe <var>ProcessNameOrPath</var></code> in <var>WinTitle</var> to identify a window belonging to any process with the given name or path.</p>
+<p>While the <a href="#ahk_pid">ahk_pid criterion</a> is limited to one specific process, the ahk_exe criterion considers all processes with name or full path matching a given string. If the RegEx <a href="../commands/SetTitleMatchMode.htm">title matching mode</a> is active, <var>ProcessNameOrPath</var> accepts a <a href="RegEx-QuickRef.htm">regular expression</a> which must match the full path of the process. Otherwise, it accepts a case-insensitive name or full path; for example, <code>ahk_exe notepad.exe</code> covers <code>ahk_exe C:\Windows\Notepad.exe</code>, <code>ahk_exe C:\Windows\System32\Notepad.exe</code> and other variations. The name of a window's process can be revealed via Window Spy.</p>
+<p>The following example activates a Notepad window by its process name:</p>
+<pre>WinActivate, ahk_exe notepad.exe</pre>
+<p>The following example does the same as above, but uses a <a href="RegEx-QuickRef.htm">regular expression</a> (note that the RegEx <a href="../commands/SetTitleMatchMode.htm">title matching mode</a> must be turned on beforehand to make it work):</p>
+<pre>WinActivate, ahk_exe i)\\notepad\.exe$  <em>; Match the name part of the full path.</em></pre>
 
-<h2 id="ahk_group">ahk_group 창 그룹</h2>
-<p>ahk_group을 사용하면 이전에 정의된 <a href="../commands/GroupAdd.htm">창 그룹</a>에 포함된 규칙에 부합하는창을 식별할 수 있습니다.</p>
-<p><a href="../commands/WinMinimize.htm">WinMinimize</a>, <a href="../commands/WinMaximize.htm">WinMaximize</a>, <a href="../commands/WinRestore.htm">WinRestore</a>, <a href="../commands/WinHide.htm">WinHide</a>, <a href="../commands/WinShow.htm">WinShow</a>, <a href="../commands/WinClose.htm">WinClose</a>, 그리고 <a href="../commands/WinKill.htm">WinKill</a> 명령어는 <strong>모든</strong> 그룹 창에 작동합니다. 대조적으로, <a href="../commands/WinActivate.htm">WinActivate</a>와 <a href="../commands/WinExist.htm">IfWinExist</a> 같은 다른 창 명령어는 그룹의 최상위 창에만 작동합니다.</p>
-<pre>
-<em>; 그룹을 정의합니다: 윈도우즈 탐색기 창</em>
+<h3 id="ahk_group">ahk_group (창 그룹)</h3>
+<p>Use <code>ahk_group <var>GroupName</var></code> in <var>WinTitle</var> to identify a window or windows matching the rules contained by a previously defined <a href="../commands/GroupAdd.htm">window group</a>.</p>
+<p><a href="../commands/WinMinimize.htm">WinMinimize</a>, <a href="../commands/WinMaximize.htm">WinMaximize</a>, <a href="../commands/WinRestore.htm">WinRestore</a>, <a href="../commands/WinHide.htm">WinHide</a>, <a href="../commands/WinShow.htm">WinShow</a>, <a href="../commands/WinClose.htm">WinClose</a>, and <a href="../commands/WinKill.htm">WinKill</a> will act on <strong>all</strong> the group's windows. By contrast, other window commands, functions and control flow statements such as <a href="../commands/WinActivate.htm">WinActivate</a>, <a href="../commands/WinExist.htm">WinExist()</a> and <a href="../commands/IfWinExist.htm">IfWinExist</a> will operate only on the topmost window of the group.</p>
+<p>The following example activates any window matching the criteria defined by a window group:</p>
+<pre><em>; 그룹을 정의합니다: 윈도우즈 탐색기 창</em>
 GroupAdd, Explorer, ahk_class ExploreWClass <em>; 비스타 이후에 사용안됨</em>
 GroupAdd, Explorer, ahk_class CabinetWClass
 
 <em>; 위의 기준에 부합하는 창은 모두 활성화합니다</em>
-WinActivate, ahk_group Explorer
-</pre>
+WinActivate, ahk_group Explorer</pre>
 
 <h2 id="multi">다중 기준</h2>
-<p>(검색을 확대하는) <a href="#ahk_group">ahk_group</a>과 대조적으로, WinTitle 매개변수 안에 하나 이상의 기준을 특정해 검색의 범위를 좁힐 수 있습니다. 다음 예제에서, 스크립트는 제목에 <em>My File.txt</em>이 포함되어 있고 <strong>그리고 </strong> 그의 클래스가 <em>Notepad</em>인 창을 기다립니다:</p>
+<p>By contrast with the <a href="#ahk_group">ahk_group criterion</a> (which broadens the search), the search may be narrowed by specifying more than one criterion within the <var>WinTitle</var> parameter. 다음 예제에서, 스크립트는 제목에 <em>My File.txt</em>이 포함되어 있고 <strong>그리고 </strong> 그의 클래스가 <em>Notepad</em>인 창을 기다립니다:</p>
 <pre>WinWait <strong>My File.txt</strong> ahk_class <strong>Notepad</strong>
 WinActivate  <em>; 발견된 창을 활성화합니다.</em></pre>
 <p>이 모드를 사용할 때, 제목 텍스트를 (원하는 순서대로) 제일 먼저 나열해야 하고, 다음에 하나 이상의 기준이 따라 와야 합니다. 첫 번째 기준 이후로는 서로 정확하게 하나의 스페이스나 탭으로 갈라야 합니다 (다른 스페이스나 탭은 이전 기준의 기호 그대로의 부분으로 취급됩니다).</p>
-<p><a href="#ahk_id">ahk_id</a>를 다른 기준과 조합해 창 제목, 클래스 또는 기타 특성을 테스트할 수 있습니다:</p>
+<p>The <a href="#ahk_id">ahk_id criterion</a> can be combined with other criteria to test a window's title, class or other attributes:</p>
 <pre>
 MouseGetPos,,, id
 if WinExist("ahk_class Notepad ahk_id " id)
@@ -113,30 +110,33 @@ if WinExist("ahk_class Notepad ahk_id " id)
 </pre>
 
 
-<h2 id="LastFoundWindow">"가장 마지막으로 발견된" 창</h2>
+<h2 id="LastFoundWindow">마지막으로 발견된 창</h2>
 
-<p>이것은 다음이 가장 마지막으로 발견한 창입니다: <a href="../commands/WinExist.htm">IfWin[Not]Exist</a>, <a href="../commands/WinExist.htm">WinExist()</a>, <a href="../commands/WinActive.htm">IfWin[Not]Active</a>, <a href="../commands/WinActive.htm">WinActive()</a>, <a href="../commands/WinWaitActive.htm">WinWait[Not]Active</a>, 또는 <a href="../commands/WinWait.htm">WinWait</a>. 스크립트를 쉽게 만들고 관리할 수 있습니다. 왜냐하면 목표 창의 WinTitle과 WinText가 매 창 명령어마다 반복될 필요가 없기 때문입니다. 게다가, 스크립트의 수행성능도 더 좋아집니다. 왜냐하면 목표 창을 처음 발견하면 그 다음부터는 반복해서 검색할 필요가 없기 때문입니다.</p>
-<p>"가장 마지막에 발견된" 창은 <a href="../commands/WinWait.htm">WinWait</a>, <a href="../commands/WinActivateBottom.htm">WinActivateBottom</a>, 그리고 <a href="../commands/GroupAdd.htm">GroupAdd</a>를 제외하고 다른 모든 창 관련 명령어가 사용할 수 있습니다. 사용하려면, 그냥 네 개의 창 매개변수를 생략하면 됩니다 (WinTitle, WinText, ExcludeTitle, 그리고 ExcludeText).</p>
-<p>각 <a href="../misc/Threads.htm">쓰레드</a>마다 자신의 "마지막으로 발견된" 창의 값을 유지합니다. 즉, <a href="../misc/Threads.htm">현재 쓰레드</a> 또다른 쓰레드에 의해 인터럽트 되더라도, 원래 쓰레드가 재개할 때 인터럽트한 쓰레드의 것이 아니라 여전히 원래의 "마지막으로 발견된" 창의 값을 가진다는 뜻입니다..</p>
-<p>마지막으로 발견된 창이 보이지 않는 <a href="../commands/Gui.htm">Gui 창</a>이면, <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있더라도 사용할 수 있습니다. 이것은 종종 <code><a href="../commands/Gui.htm#LastFound">Gui +LastFound</a></code>와 함께 조합해서 사용됩니다.</p>
-<pre class="NoIndent">Run Notepad
+<p>이것은 다음이 가장 마지막으로 발견한 창입니다: <a href="../commands/IfWinExist.htm">IfWinExist</a>, <a href="../commands/IfWinExist.htm">IfWinNotExist</a>, <a href="../commands/WinExist.htm">WinExist()</a>, <a href="../commands/IfWinActive.htm">IfWinActive</a>, <a href="../commands/IfWinActive.htm">IfWinNotActive</a>, <a href="../commands/WinActive.htm">WinActive()</a>, <a href="../commands/WinWaitActive.htm">WinWaitActive</a>, <a href="../commands/WinWaitActive.htm">WinWaitNotActive</a>, 또는 <a href="../commands/WinWait.htm">WinWait</a>. It can make scripts easier to create and maintain since <var>WinTitle</var> and <var>WinText</var> of the target window do not need to be repeated for every windowing command, function or control flow statement. 게다가, 스크립트의 수행성능도 더 좋아집니다. 왜냐하면 목표 창을 처음 발견하면 그 다음부터는 반복해서 검색할 필요가 없기 때문입니다.</p>
+<p>The last found window can be used by all of the windowing commands, functions and control flow statements except <a href="../commands/WinWait.htm">WinWait</a>, <a href="../commands/WinActivateBottom.htm">WinActivateBottom</a>, <a href="../commands/GroupAdd.htm">GroupAdd</a>, <a href="../commands/WinGet.htm#Count">WinGet Count</a>, and <a href="../commands/WinGet.htm#List">WinGet List</a>. 사용하려면, 그냥 네 개의 창 매개변수를 생략하면 됩니다 (<var>WinTitle</var>, <var>WinText</var>, <var>ExcludeTitle</var>, 그리고 <var>ExcludeText</var>).</p>
+<p>각 <a href="Threads.htm">쓰레드</a>마다 자신의 마지막으로 발견된 창의 값을 유지합니다. 즉, <a href="Threads.htm">현재 쓰레드</a> 또다른 쓰레드에 의해 인터럽트 되더라도, 원래 쓰레드가 재개할 때 인터럽트한 쓰레드의 것이 아니라 여전히 원래의 마지막으로 발견된 창의 값을 가진다는 뜻입니다..</p>
+<p>마지막으로 발견된 창이 보이지 않는 <a href="../commands/Gui.htm">Gui 창</a>이면, <a href="../commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있더라도 사용할 수 있습니다. 이것은 종종 <a href="../commands/Gui.htm#LastFound">Gui +LastFound</a>와 함께 조합해서 사용됩니다.</p>
+<p>The following example opens Notepad, waits until it exists and activates it:</p>
+<pre>Run Notepad
 WinWait Untitled - Notepad
-WinActivate  <em>; 가장 마지막에 발견된 창을 사용합니다.</em>
+WinActivate <em>; Use the window found by WinWait.</em></pre>
 
-IfWinExist, Untitled - Notepad
+<p>The following example activates and maximizes the Notepad window found by the WinExist function above:</p>
+<pre>if WinExist("Untitled - Notepad")
 {
-    WinActivate  <em>; 위에서 발견한 창을 자동으로 사용합니다.</em>
-    WinMaximize  <em>; 위와 같습니다</em>
+    WinActivate <em>; Use the window found by WinExist.</em>
+    WinMaximize <em>; 위와 동일.</em>
     Send, Some text.{Enter}
     return
-}
+}</pre>
 
-IfWinNotExist, Calculator
+<p>The following example returns if the calculator does not exist, otherwise the calculator will be activated and moved to a new position:</p>
+<pre>if not WinExist("Calculator")
     return
 else
 {
-    WinActivate  <em>; 위의 "IfWinNotExist"는 또 "마지막 발견 창"을 갱신해 줍니다.</em>
-    WinMove, 40, 40  <em>; 새로운 위치로 이동합니다.</em>
+    WinActivate <em>; Use the window found by WinExist.</em>
+    WinMove, 40, 40 <em>; 위와 동일.</em>
     return
 }</pre>
 

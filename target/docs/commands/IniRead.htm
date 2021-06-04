@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>IniRead</title>
+<title>IniRead - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The IniRead command reads a value, section or list of section names from a standard format .ini file." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,11 +14,12 @@
 
 <p>표준 형식의 .ini 파일로부터 섹션 이름의 리스트 또는 섹션, 값을 읽습니다.</p>
 
-<pre class="Syntax">IniRead, OutputVar, Filename, Section, Key [, Default]
-IniRead, OutputVarSection, Filename, Section
-IniRead, OutputVarSectionNames, Filename
+<pre class="Syntax">
+<span class="func">IniRead</span>, OutputVar, Filename, Section, Key <span class="optional">, Default</span>
+<span class="func">IniRead</span>, OutputVarSection, Filename, Section
+<span class="func">IniRead</span>, OutputVarSectionNames, Filename
 </pre>
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -47,20 +48,23 @@ IniRead, OutputVarSectionNames, Filename
       </dd>
 
 </dl>
-<h3>ErrorLevel</h3>
+<h2 id="Error_Handling">에러 처리</h2>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 이 명령어로 설정되지 <strong>않습니다</strong>. 문제가 있었다면, <em>OutputVar</em>에는 위에 기술한 바와 같이 <em>Default</em> 값이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>운영 체제는 자동으로 열람된 문자열에서 앞 뒤 스페이스/탭을 생략합니다. 이를 방지하려면, 문자열을 홑따옴표 또는 겹따옴표로 둘러 싸십시오. 가장 바깥쪽 홑따옴표 또는 겹따옴표도 생략됩니다. 그러나 따옴표 안의 스페이스는 유지됩니다.</p>
 <p>65,535 문자보다 긴 값은 결과가 일관성이 없을 가능성이 높습니다.</p>
 <p>표준 ini 파일은 모습이 다음과 같습니다:</p>
 <pre>[SectionName]
 Key=Value</pre>
-<p><b>유니코드:</b> IniRead와 IniWrite는 외부 함수 <a href="http://msdn.microsoft.com/en-us/library/ms724353.aspx">GetPrivateProfileString</a>와 <a href="http://msdn.microsoft.com/en-us/library/ms725501.aspx">WritePrivateProfileString</a>에 의존해 값을 읽고 씁니다. 이런 함수들은 유니코드를 UTF-16 파일만 지원합니다; 다른 모든 파일은 시스템의 기본 ANSI 코드 페이지를 사용한다고 간주됩니다.</p>
-<h3>관련 항목</h3>
+<p><b>유니코드:</b> IniRead와 IniWrite는 외부 함수 <a href="http://msdn.microsoft.com/ko-kr/library/ms724353.aspx">GetPrivateProfileString</a>와 <a href="http://msdn.microsoft.com/ko-kr/library/ms725501.aspx">WritePrivateProfileString</a>에 의존해 값을 읽고 씁니다. 이런 함수들은 유니코드를 UTF-16 파일만 지원합니다; 다른 모든 파일은 시스템의 기본 ANSI 코드 페이지를 사용한다고 간주됩니다.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="IniDelete.htm">IniDelete</a>, <a href="IniWrite.htm">IniWrite</a>, <a href="RegRead.htm">RegRead</a>, <a href="LoopReadFile.htm">파일-읽기 회돌이</a>, <a href="FileRead.htm">FileRead</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">IniRead, OutputVar, C:\Temp\myfile.ini, section2, key
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Reads the value of a key located in section2 from a standard format .ini file and stores it in <var>OutputVar</var>.</p>
+<pre>IniRead, OutputVar, C:\Temp\myfile.ini, section2, key
 MsgBox, 값은 %OutputVar%입니다.</pre>
+</div>
 
 </body>
 </html>

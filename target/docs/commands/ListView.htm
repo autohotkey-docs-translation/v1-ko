@@ -1,9 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ListView (GUI)</title>
-<meta name="description" content="Create ListView controls easily with this free scripting language. Includes context menus, row/column icons, and click-to-sort column headings.">
+<title>ListView (GUI) - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="In its most recognizable form, the ListView control displays a tabular view of rows and columns. This page contains the functions to modify it." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -13,27 +12,24 @@
 <body>
 <h1>ListView</h1>
 
-<h2>목차</h2>
+<h2 id="toc">목차</h2>
 <ul>
   <li><a href="#Intro">소개와 간단한 예제</a></li>
-  <li><a href="#Options">옵션과 스타일</a></li>
-  <li><a href="#View">보기 모드</a>: (기본), 아이콘, 타일, 소형-아이콘, 그리고 리스트를 보고합니다.</li>
-  <li><a href="#BuiltIn">내장 함수</a>:
-    <ul>
-      <li><a href="#bifRow">행 함수 (추가, 변경, 그리고 삭제)</a></li>
-      <li><a href="#bifCol">열 함수</a></li>
-      <li><a href="#bifGet">ListView로부터 데이터 얻기</a></li>
-    </ul>
-  </li>
+  <li><a href="#Options">Options and Styles for the Options Parameter</a></li>
+  <li><a href="#View">보기 모드</a>: Report (default), Icon, Tile, IconSmall, and List.</li>
+  <li><a href="#BuiltIn">ListView용 내장 함수</a></li>
   <li><a href="#notify">G-Label 고지</a></li>
   <li><a href="#IL">ImageLists</a> (아이콘을 ListView에 추가하는 수단)</li>
-  <li><a href="#Remarks">ListView 논평</a></li>
+  <li><a href="#Remarks">논평</a></li>
   <li><a href="#Examples">예제</a></li>
 </ul>
+
 <h2 id="Intro">소개와 간단한 예제</h2>
 <p>List-View는 운영 체제가 제공하는 대단히 정교한 콘트롤 중 하나입니다. 자주 보는 형태로는, 행과 열을 테이블 방식으로 보여주는 것이 있습니다. 그 예로는 윈도우즈 탐색기에서 파일과 폴더를 (자세히 보기) 나열해 보여줍니다.</p>
+<p>A ListView usually looks like this:</p>
+<img src="../static/ctrl_listview.png" alt="ListView" />
 <p>정교하기는 하지만, 기본적인 특징은 사용하기 쉽습니다. ListView를 생성하는 구문은 다음과 같습니다:</p>
-<pre class="Syntax"><a name="GuiAdd"></a>Gui, Add, ListView, Options, ColumnTitle1|ColumnTitle2|...</pre>
+<pre class="Syntax" id="GuiAdd"><span class="func">Gui</span>, Add, ListView, Options, ColumnTitle1|ColumnTitle2|...</pre>
 <p>다음은 작동하는 스크립트입니다. 사용자의 "My Documents" 폴더에 든 파일 목록을 담은 ListView를 만들고 보여줍니다:</p>
 <pre><em>; ListView를 두 개의 열, 이름과 크기로 해서 만듭니다:</em>
 Gui, Add, ListView, r20 w700 gMyListView, Name|Size (KB)
@@ -50,7 +46,7 @@ Gui, Show
 return
 
 MyListView:
-if A_GuiEvent = DoubleClick
+if (A_GuiEvent = "DoubleClick")
 {
     <a href="#LV_GetText">LV_GetText</a>(RowText, A_EventInfo)  <em>; 행의 첫 필드로부터 텍스트를 얻습니다.</em>
     ToolTip You double-clicked row number %A_EventInfo%. Text: "%RowText%"
@@ -59,26 +55,28 @@ return
 
 GuiClose:  <em>; 창이 닫히면 스크립트가 자동으로 종료해야 한다고 알립니다.</em>
 ExitApp</pre>
-<h2 id="Options">"<em>Gui, Add, ListView, <u>Options</u></em>"에 대한 옵션과 스타일</h2>
-<p><strong><a name="AltSubmit"></a>AltSubmit:</strong> 스크립트에게 정상보다 더 많은 유형의 ListView 이벤트를 고지합니다. 다른 말로 하면, g-라벨이 더 자주 기동됩니다. 자세한 것은<a href="#notify">ListView 고지</a>를 참조하십시오.</p>
+
+<h2 id="Options">Options and Styles for the Options Parameter</h2>
+<p id="AltSubmit"><strong>AltSubmit:</strong> 스크립트에게 정상보다 더 많은 유형의 ListView 이벤트를 고지합니다. 다른 말로 하면, g-라벨이 더 자주 기동됩니다. 자세한 것은<a href="#notify">ListView 고지</a>를 참조하십시오.</p>
 <p><strong>Background:</strong> 단어 Background 다음에 바로 색 이름 (<a href="Progress.htm#colors">컬러 차트</a> 참조) 또는 RGB 값을 지정하십시오 (0x 접두사는 선택적입니다). 예제: <code>BackgroundSilver</code>, <code>BackgroundFFDD99</code>. 이 옵션이 존재하지 않으면, ListView는 처음에 기본값이 <a href="Gui.htm#Color">Gui Color</a>의 마지막 매개변수로 설정된 배경색으로 시작합니다. (없다면, 시스템의 기본 배경색이 사용됩니다). <code>BackgroundDefault</code>를 지정하면 시스템의 기본 배경색에 적용됩니다 (보통 흰색). 예를 들어, <code>GuiControl, +BackgroundDefault, MyListView</code>를 통하여 ListView를 기본값으로 복구할 수 있습니다.</p>
 <p><strong>C</strong>: 텍스트 컬러. 기호 C 다음에 바로 컬러 이름 (<a href="Progress.htm#colors">컬러 차트</a> 참조) 또는 RGB 값을 지정하십시오 (0x 접두사는 선택적입니다). 예제: <code>cRed</code>, <code>cFF2211</code>, <code>c0xFF2211</code>, <code>cDefault</code>.</p>
-<p><strong><a name="Checked"></a>Checked:</strong> 각 행의 왼쪽에 체크박스를 제공합니다. 행을 <a href="#LV_Add">추가</a>할 때, 단어 <em>Check</em>를 그의 옵션에 지정하면 박스를 체크표식된 상태로 시작할 수 있습니다. 사용자는 그 체크박스를 클릭하거나 스페이스바를 눌러 행을 체크하거나 해제할 수 있습니다.</p>
-<p><strong><a name="Count"></a>Count:</strong> 단어 Count 다음에 바로 ListView가 궁극적으로 담을 행의 총 개수를 지정하십시오. 제한은 없습니다: 이 한계를 넘어서도 행은 여전히 추가할 수 있습니다. 대신에, 이 옵션은 행을 추가할 때마다 메모리를 할당하기 보다 한 번만 할당할 수 있도록 제어하기 위한 힌트로 기여합니다. 그러면 행-추가 수행성능이 크게 개선됩니다 (또한 정렬 수행성능도 향상됩니다). 수행성능을 더욱 개선하려면, 방대한 개수의 행을 추가하기 전에 <code>GuiControl, -Redraw, MyListView</code>를 사용하십시오. 이후로, <code>GuiControl, +Redraw, MyListView</code>를 사용하면 다시 그리기를 다시 켤 수 있습니다 (또한 콘트롤도 다시 칠합니다).</p>
+<p id="Checked"><strong>Checked:</strong> 각 행의 왼쪽에 체크박스를 제공합니다. 행을 <a href="#LV_Add">추가</a>할 때, 단어 <em>Check</em>를 그의 옵션에 지정하면 박스를 체크표식된 상태로 시작할 수 있습니다. 사용자는 그 체크박스를 클릭하거나 스페이스바를 눌러 행을 체크하거나 해제할 수 있습니다.</p>
+<p id="Count"><strong>Count:</strong> 단어 Count 다음에 바로 ListView가 궁극적으로 담을 행의 총 개수를 지정하십시오. 제한은 없습니다: 이 한계를 넘어서도 행은 여전히 추가할 수 있습니다. 대신에, 이 옵션은 행을 추가할 때마다 메모리를 할당하기 보다 한 번만 할당할 수 있도록 제어하기 위한 힌트로 기여합니다. 그러면 행-추가 수행성능이 크게 개선됩니다 (또한 정렬 수행성능도 향상됩니다). 수행성능을 더욱 개선하려면, 방대한 개수의 행을 추가하기 전에 <code>GuiControl, -Redraw, MyListView</code>를 사용하십시오. 이후로, <code>GuiControl, +Redraw, MyListView</code>를 사용하면 다시 그리기를 다시 켤 수 있습니다 (또한 콘트롤도 다시 칠합니다).</p>
 <p><strong>Grid:</strong> 수직 수평 줄을 시각적으로 제공해 행와 열 사이의 경계를 나타냅니다.</p>
-<p><strong>Hdr:</strong> <code>-Hdr</code> (마이너스 Hdr)을 지정하면 열 제목이 담긴 특별한 최상위 행을 생략할 수 있습니다. 나중에 다시 보이게 하려면, <code>GuiControl, +Hdr, MyListView</code>를 사용하십시오.</p>
-<p><strong>LV:</strong> 문자열 LV 다음에 바로 <a href="../misc/Styles.htm#ListView">확장 ListView 스타일</a> 번호를 지정하십시오. 이런 스타일들은 완전히 총칭 확장 스타일과 다릅니다. 예를 들어, <code><strong>-E</strong>0x200</code>를 지정하면 콘트롤의 기본 테두리를 없애기 위해 총칭 확장 스타일 WS_EX_CLIENTEDGE가 제거됩니다. 대조적으로, <code><strong>-LV</strong>0x20</code>를 지정하면 <a href="#frs">LVS_EX_FULLROWSELECT</a>이 제거됩니다.</p>
+<p><strong>Hdr:</strong> Specify <code>-Hdr</code> (minus Hdr) to omit the header (the special top row that contains column titles). 나중에 다시 보이게 하려면, <code>GuiControl, +Hdr, MyListView</code>를 사용하십시오.</p>
+<p id="LVS_EX"><strong>LV:</strong> 문자열 LV 다음에 바로 <a href="../misc/Styles.htm#LVS_EX">확장 ListView 스타일</a> 번호를 지정하십시오. 이런 스타일들은 완전히 총칭 확장 스타일과 다릅니다. 예를 들어, <code><strong>-E</strong>0x200</code>를 지정하면 콘트롤의 기본 테두리를 없애기 위해 총칭 확장 스타일 WS_EX_CLIENTEDGE가 제거됩니다. 대조적으로, <code><strong>-LV</strong>0x20</code>를 지정하면 <a href="#frs">LVS_EX_FULLROWSELECT</a>이 제거됩니다.</p>
 <p><strong>LV0x10</strong>: <code>-LV0x10</code>을 지정하면 사용자가 열 헤더를 왼쪽이나 오른쪽으로 끌어서 재정렬할 수 없습니다. 그렇지만, 이렇게 하는 것은 보통 불필요합니다. 왜냐하면 열을 물리적으로 재배치하는 것은 스크립트에 보여지는 열 순서에 영향을 미치지 않기 때문입니다. 예를 들어, 첫 번째 열은 스크립트의 관점에서 언제나 열 1입니다. 사용자가 물리적으로 그 열을 왼쪽이나 오른쪽 다른 열로 이동했다고 할지라도 마찬가지입니다.</p>
-<p><strong><a name="frs"></a>LV0x20</strong>: <code>-LV0x20</code>을 지정하면 행에서 첫 번째 필드를 클릭해야만 선택됩니다 (보통, 필드 <em>아무데나</em> 클릭해도 선택됩니다). 이렇게 하면 사용자가 행 그룹 둘레의 사각 박스를 끌어서 행들을 더 쉽게 선택할 수 있습니다.</p>
+<p id="frs"><strong>LV0x20</strong>: <code>-LV0x20</code>을 지정하면 행에서 첫 번째 필드를 클릭해야만 선택됩니다 (보통, 필드 <em>아무데나</em> 클릭해도 선택됩니다). 이렇게 하면 사용자가 행 그룹 둘레의 사각 박스를 끌어서 행들을 더 쉽게 선택할 수 있습니다.</p>
 <p><strong>Multi:</strong> <code>-Multi</code> (마이너스 Multi)를 지정하면 사용자가 한 번에 하나씩만 선택할 수 있습니다.</p>
 <p><strong>NoSortHdr:</strong> 헤더를 클릭해도 선택되지 않습니다. 보통의 버튼처럼 보이지 않고 납짝 눌린 모습입니다. 대부분의 다른 ListView 스타일과 다르게, 이 스타일은 ListView가 생성된 후에 변경할 수 없습니다.</p>
-<p><strong><a name="NoSort"></a>NoSort:</strong> 사용자가 열 헤더를 클릭하면 일어나는 자동 정렬을 끕니다. 그렇지만, 그 헤더는 여전히 시각적으로 버튼처럼 행위합니다 (단, NoSortHdr가 지정된 경우는 예외입니다). 게다가, g-라벨은 여전히 <a href="#ColClick">ColClick notification</a>을 받아서, 거기에 맞춤 정렬 또는 기타 조치로 응답할 수 있습니다.</p>
-<p><strong><a name="ReadOnly"></a>ReadOnly:</strong> <code>-ReadOnly</code> (마이너스 ReadOnly)를 지정하면 각 행의 첫 열에 있는 텍스트를 편집할 수 있습니다. 행을 편집하려면, 선택한 다음, <a href="#WantF2">F2 키</a>를 누르십시오. 다른 방법으로, 행을 한 번 클릭해서 선택한 다음, 0.5 초를 기다린 다음, 같은 행을 다시 클릭하면 편집할 수 있습니다.</p>
+<p id="NoSort"><strong>NoSort:</strong> 사용자가 열 헤더를 클릭하면 일어나는 자동 정렬을 끕니다. 그렇지만, 그 헤더는 여전히 시각적으로 버튼처럼 행위합니다 (단, NoSortHdr가 지정된 경우는 예외입니다). 게다가, g-라벨은 여전히 <a href="#ColClick">ColClick notification</a>을 받아서, 거기에 맞춤 정렬 또는 기타 조치로 응답할 수 있습니다.</p>
+<p id="ReadOnly"><strong>ReadOnly:</strong> <code>-ReadOnly</code> (마이너스 ReadOnly)를 지정하면 각 행의 첫 열에 있는 텍스트를 편집할 수 있습니다. To edit a row, select it then press <kbd>F2</kbd> (see the <a href="#WantF2">WantF2</a> option below). 다른 방법으로, 행을 한 번 클릭해서 선택한 다음, 0.5 초를 기다린 다음, 같은 행을 다시 클릭하면 편집할 수 있습니다.</p>
 <p><strong>R</strong>: 행의 높이 (생성시). 기호 R 다음에 바로 콘트롤 안에 여유를 주기 위해 허용할 행의 개수를 지정하십시오. 예를 들어, <code>R10</code>는 콘트롤에 10 행 높이를 만듭니다. ListView가 보고 모드가 아니라 <a href="#View">보기 모드</a>로 생성되었다면, 콘트롤은 크기가 텍스트 행이 아니라 아이콘 행에 맞추어 조절됩니다. 주의: <a href="#IL">아이콘</a>을 ListView의 행에 추가하면 각 행의 높이가 증가합니다. 그래서 이 옵션이 부정확하게 됩니다.</p>
-<p><strong><a name="Sort"></a>Sort:</strong> 콘트롤이 첫 열의 내용에 맞추어 알파벳 순서로 정렬을 유지합니다.</p>
-<p><strong><a name="SortDesc" id="SortDesc"></a>SortDesc:</strong> 위와 같지만 내림 차순입니다.</p>
-<p><strong><a name="WantF2"></a>WantF2</strong> <span class="ver">[v1.0.44+]:</span> <code>-WantF2</code> (마이너스 WantF2)를 지정하면 F2 키로 현재 초점이 있는 행을 <a href="#ReadOnly">편집</a>할 수 없습니다. 이 설정은 <code><a href="#ReadOnly">-ReadOnly</a></code>도 켜져 있어야 효과가 있습니다. 이 설정에 상관 없이, g-라벨은 여전히 F2 <a href="#NotifyK">고지</a>를 받습니다.</p>
+<p id="Sort"><strong>Sort:</strong> 콘트롤이 첫 열의 내용에 맞추어 알파벳 순서로 정렬을 유지합니다.</p>
+<p id="SortDesc"><strong>SortDesc:</strong> 위와 같지만 내림 차순입니다.</p>
+<p id="WantF2"><strong>WantF2</strong> <span class="ver">[v1.0.44+]:</span> <code>-WantF2</code> (마이너스 WantF2)를 지정하면 <kbd>F2</kbd> 키로 현재 초점이 있는 행을 <a href="#ReadOnly">편집</a>할 수 없습니다. 이 설정은 <code>-<a href="#ReadOnly">ReadOnly</a></code>도 켜져 있어야 효과가 있습니다. 이 설정에 상관없이, g-라벨은 여전히 <kbd>F2</kbd> <a href="#NotifyK">고지</a>를 받습니다.</p>
 <p><strong>(이름 없는 번호 스타일):</strong> 위의 스타일 말고는 자주 사용되지 않기 때문에, 나머지 스타일은 이름이 없습니다. 목록은 <a href="../misc/Styles.htm#ListView">ListView 스타일 테이블</a>을 참조하십시오.</p>
+
 <h2 id="View">보기 모드</h2>
 <p>ListView는 다섯가지 보기 모드가 있습니다. 그 중에 가장 많이 사용되는 보기는 보고 모드입니다 (이것이 기본값). 다른 보기 모드 중 하나를 사용하려면, 그 이름을 옵션 목록에 지정하십시오. 보기 모드는 콘트롤이 생성된 후에도 바꿀 수 있습니다. 예를 들어: <code>GuiControl, +IconSmall, MyListView</code>.</p>
 <p><strong>Icon:</strong> 큰-아이콘 보기로 보여줍니다. 이 보기 모드 그리고 <em>Report</em>를 제외하고 다른 모든 모드에서, 첫 열이 아닌 다른 컬럼에 있는 텍스트는 보이지 않습니다. 이 모드에서 아이콘을 보여주려면, ListView는 큰-아이콘 <a href="#IL">ImageList</a>를 거기에 할당해야 합니다.</p>
@@ -86,62 +84,117 @@ ExitApp</pre>
 <p><strong>IconSmall:</strong> 작은-아이콘 보기로 보여줍니다.</p>
 <p><strong>List:</strong> 리스트 형태로 작은-아이콘 보기로 보여줍니다. 아이콘을 열에 보여줍니다. 열의 개수는 콘트롤의 너비와 그 안에 든 가장 넓은 텍스트의 너비에 따라 다릅니다</p>
 <p><strong>Report:</strong> 다시 보고 모드로 전환합니다. 이것이 원래 초기값입니다. 예를 들어: <code>GuiControl, +Report, MyListView</code>.</p>
+
 <h2 id="BuiltIn">ListView용 내장 함수</h2>
-<p>모든 ListView 함수는 현재 쓰레드의 <a href="Gui.htm#DefaultWin">기본 GUI 창</a>에 작동합니다 (이는 <a href="Gui.htm#Default"><code>Gui, 2:Default</code></a>를 통하여 바꿀 수 있습니다). 기본 창이 존재하지 않거나 ListView 콘트롤이 없으면, 모든 함수는 0을 돌려주어 문제를 알립니다.</p>
-<p><a name="GuiLV"></a>창에 하나 이상의 ListView 콘트롤이 있으면, 기본값으로 함수들은 최근에 추가된 콘트롤에 작동합니다. 이를 바꾸려면, <code>Gui, ListView, ListViewName</code>를 지정하십시오. 여기에서 <em>ListViewName</em>은 ListView의 <a href="Gui.htm#var">연관 변수</a>의 이름이거나, Window Spy가 보여주는 ClassNN 또는(v1.1.04+에서) 그의 HWND일 수 있습니다. 일단 변경되면, 모든 기존의 그리고 미래의 <a href="../misc/Threads.htm">쓰레드</a>는 지정된 ListView를 사용합니다.</p>
-<p><a name="RowNumber"></a>문구 "row number"가 이 페이지에 사용되면, ListView 안에서 행의 현재 위치를 참조합니다. 최상위 행은 1이고, 두 번째 행은 2이며, 그리고 등등. 한 행이 추가된 후에, 그의 행 번호는 다른 행을 정렬하고 지우며 그리고 삽입하기 때문에 바뀌는 경향이 있습니다. 그러므로, 그의 내용에 기반하여 특정한 행(들)을 찾으려면, 보통 회돌이 안에서 <a href="#LV_GetText">LV_GetText()</a>를 사용하는 것이 가장 좋습니다.</p>
-<h2 id="bifRow">행 함수</h2>
-<h3><a name="LV_Add"></a>LV_Add([Options, Field1, Field2, ...])</h3>
-<p>새 행을 리스트 아래에 추가합니다. 매개변수 <em>Field1</em>과 기타는 새 행의 열로서, 텍스트 또는 숫치일 수 있습니다 (숫치 <a href="../Variables.htm#Expressions">표현식</a> 결과 포함). 필드를 모드 비우려면, "" 비슷한 것을 지정하십시오. 모든 열을 채우기에 필드가 부족하면, 마지막 열은 빈채로 남습니다. 필득 너무 많다면, 마지막 필드들은 완전히 무시됩니다.</p>
+<p>모든 ListView 함수는 현재 쓰레드의 <a href="Gui.htm#DefaultWin">기본 GUI 창</a>에 작동합니다 (이는 <code><a href="Gui.htm#Default">Gui, 2:Default</a></code>를 통하여 바꿀 수 있습니다). 기본 창이 존재하지 않거나 ListView 콘트롤이 없으면, 모든 함수는 0을 돌려주어 문제를 알립니다.</p>
+<p id="GuiLV">창에 하나 이상의 ListView 콘트롤이 있으면, 기본값으로 함수들은 최근에 추가된 콘트롤에 작동합니다. 이를 바꾸려면, <code>Gui, ListView, ListViewName</code>를 지정하십시오. 여기에서 <em>ListViewName</em>은 ListView의 <a href="Gui.htm#var">연관 변수</a>의 이름이거나, Window Spy가 보여주는 ClassNN 또는<span class="ver">[v1.1.04+]</span>에서 그의 HWND일 수 있습니다. 일단 변경되면, 모든 기존의 그리고 미래의 <a href="../misc/Threads.htm">쓰레드</a>는 지정된 ListView를 사용합니다. <span class="ver">[v1.1.23+]:</span> <a href="../Variables.htm#DefaultListView">A_DefaultListView</a> contains the current setting.</p>
+<p id="RowNumber">문구 "row number"가 이 페이지에 사용되면, ListView 안에서 행의 현재 위치를 참조합니다. 최상위 행은 1이고, 두 번째 행은 2이며, 그리고 등등. 한 행이 추가된 후에, 그의 행 번호는 다른 행을 정렬하고 지우며 그리고 삽입하기 때문에 바뀌는 경향이 있습니다. 그러므로, 그의 내용에 기반하여 특정한 행(들)을 찾으려면, 보통 회돌이 안에서 <a href="#LV_GetText">LV_GetText()</a>를 사용하는 것이 가장 좋습니다.</p>
+
+<p id="bifRow"><strong>행 함수:</strong></p>
+<ul>
+    <li><a href="#LV_Add">LV_Add</a>: 새 행을 리스트 아래에 추가합니다.</li>
+    <li><a href="#LV_Insert">LV_Insert</a>: Inserts a new row at the specified row number.</li>
+    <li><a href="#LV_Modify">LV_Modify</a>: Modifies the attributes and/or text of a row.</li>
+    <li><a href="#LV_Delete">LV_Delete</a>: Deletes the specified row or all rows.</li>
+</ul>
+
+<p id="bifCol"><strong>열 함수:</strong></p>
+<ul>
+    <li><a href="#LV_ModifyCol">LV_ModifyCol</a>: 지정된 열의 텍스트와 속성 그리고 헤더를 변경합니다.</li>
+    <li><a href="#LV_InsertCol">LV_InsertCol</a>: Inserts a new column at the specified column number.</li>
+    <li><a href="#LV_DeleteCol">LV_DeleteCol</a>: 지정된 열과 그 아래의 모든 내용을 삭제합니다.</li>
+</ul>
+
+<p id="bifGet"><strong>Retrieval functions:</strong></p>
+<ul>
+    <li><a href="#LV_GetCount">LV_GetCount</a>: Returns the total number of rows or columns.</li>
+    <li><a href="#LV_GetNext">LV_GetNext</a>: 다음으로 선택된, 체크된 또는 초점이 있는 행의 번호를 열람합니다.</li>
+    <li><a href="#LV_GetText">LV_GetText</a>: Retrieves the text at the specified row and column.</li>
+</ul>
+
+<p id="bifIcon"><strong>Other functions:</strong></p>
+<ul>
+    <li><a href="#LV_SetImageList">LV_SetImageList</a>: Sets or replaces an ImageList for displaying icons.</li>
+</ul>
+
+<h3 id="LV_Add">LV_Add</h3>
+<p>새 행을 리스트 아래에 추가합니다.</p>
+<pre class="Syntax"><span class="func">LV_Add</span>(<span class="optional">Options, Field1, Field2, ...</span>)</pre>
+<p>매개변수 <em>Field1</em>과 기타는 새 행의 열로서, 텍스트 또는 숫치일 수 있습니다 (숫치 <a href="../Variables.htm#Expressions">표현식</a> 결과 포함). 필드를 모드 비우려면, "" 비슷한 것을 지정하십시오. 모든 열을 채우기에 필드가 부족하면, 마지막 열은 빈채로 남습니다. 필득 너무 많다면, 마지막 필드들은 완전히 무시됩니다.</p>
 <p>실패시, LV_Add()는 0을 돌려줍니다. 성공하면, 새 <a href="#RowNumber">행 번호</a>를 돌려줍니다. ListView가 <a href="#Sort">Sort</a> 또는 <a href="#SortDesc">SortDesc</a> 스타일을 가지고 있다면 반드시 미자막 행 번호일 필요는 없습니다.</p>
-<h4><a name="RowOptions"></a>행 옵션</h4>
+
+<h4 id="RowOptions">행 옵션</h4>
 <p><em>Options</em> 매개변수는아래 리스트의 단어로 구성되는 문자열입니다 (대소문자 구문 없음). 다음 단어와 스페이스나 탭으로 분리하십시오. 옵션을 제거하려면, 앞에 마이너스 사인을 추가하십시오. 옵션을 추가하려면, 플러스 사인을 허용하지만 필수는 아닙니다.</p>
 <p><strong>Check</strong>: 체크표식을 행에 보여줍니다 (ListView가 <a href="#Checked">체크박스</a>를 가지고 있다면). 나중에 해제하려면, <code>LV_Modify(RowNumber, "-Check")</code>를 사용하십시오.</p>
-<p><a name="ColN"></a><strong>Col</strong>: 단어 Col 다음에 바로 열 번호를 지정하십시오. 거기부터 매개변수 <em>Col1</em>과 기타를 적용하기 시작합니다. 이것은 한 행에서 왼쪽에 있는 필드에 영향을 주지 않고 개별 필드를 변경하는 데 <a href="#LV_Modify">LV_Modify()</a>와 아주 자주 사용됩니다.</p>
-<p><a name="Focus"></a><strong>Focus</strong>: 키보드 초점을 행에 설정합니다 (종종 Select와 함께 사용됩니다). 나중에 초점을 해제하려면, <code>LV_Modify(RowNumber, "-Focus")</code>을 사용하십시오.</p>
+<p id="ColN"><strong>Col</strong>: 단어 Col 다음에 바로 열 번호를 지정하십시오. 거기부터 매개변수 <em>Col1</em>과 기타를 적용하기 시작합니다. 이것은 한 행에서 왼쪽에 있는 필드에 영향을 주지 않고 개별 필드를 변경하는 데 <a href="#LV_Modify">LV_Modify()</a>와 아주 자주 사용됩니다.</p>
+<p id="Focus"><strong>Focus</strong>: 키보드 초점을 행에 설정합니다 (종종 Select와 함께 사용됩니다). 나중에 초점을 해제하려면, <code>LV_Modify(RowNumber, "-Focus")</code>을 사용하십시오.</p>
 <p><strong>Icon</strong>: 단어 Icon 다음에 바로 이 행의 아이콘 번호를 지정합니다. 이 아이콘은 첫 열의 왼쪽에 보여집니다. 이 옵션이 없으면, <a href="#IL">ImageList</a>에서 첫 아이콘이 사용됩니다. 빈 아이콘을 보여주려면, ImageList의 아이콘의 번호보다 더 큰 번호를 지정하십시오. 콘트롤에 작은-아이콘 ImageList가 없다면, <a href="#View">보고 모드</a>에서 아이콘도 보이지 않고 아이콘을 위해 스페이스도 보존되지 않습니다.</p>
 <p><strong>Select</strong>: 행을 선택합니다. 나중에 해제하려면, <code>LV_Modify(RowNumber, "-Select")</code>를 사용하십시오. 행들을 선택할 때, 보통 적어도 한 행은 언제나 <a href="#Focus">초점 특성</a>을 가지는지 확인하는 것이 가장 좋습니다. 왜냐하면 그래서 Apps 키가 그의 <a href="Gui.htm#GuiContextMenu">문맥 메뉴</a>를 (있다면) 초점 행 근처에 보여줄 수 있기 때문입니다. 단어 <em>Select</em>는 선택적으로 다음에 바로 0 또는 1이 따라와 시작 상태를 알려줄 수 있습니다. 다른 말로, <code>"Select"</code> 그리고 <code>"Select" <strong>.</strong> VarContainingOne</code>는 같습니다 (여기에서 점은 <a href="../Variables.htm#concat">결합 연산자</a>입니다). 이 테크닉은 또한 위의 <em>Focus</em> 그리고 <em>Check</em>에도 작동합니다</p>
-<p><strong><a name="Vis"></a>Vis</strong> <span class="ver">[v1.0.44+]</span>: 지정된 행이 필요하면 ListView를 스크롤해서 완전히 보이도록 확인합니다. 이것은 LV_Modify()에만 영향을 줍니다; 예를 들어: <code>LV_Modify(RowNumber, "Vis")</code>.</p>
-<h3><a name="LV_Insert"></a>LV_Insert(RowNumber [, Options, Col1, Col2, ...])</h3>
-<p>LV_Add()와 동일하게 행위합니다. 단, 첫 번째 매개변수가 다릅니다. 이 매개변수는 새로 삽입된 행의 행 번호를 지정합니다. <em>RowNumber</em> 이하의 행은 모두 아래로 이동해 새 행을 위해 자리를 내 줍니다. <em>RowNumber</em>가 리스트의 행 갯수보다 더 크면 (그렇지만 2147483647 높이까지 허용됨), 그 새 행은 리스트 끝에 추가됩니다. <em>Options</em>에 관한 것은, <a href="#RowOptions">행 옵션</a>을 참조하십시오.</p>
-<h3><a name="LV_Modify"></a>LV_Modify(RowNumber, Options [, NewCol1, NewCol2, ...])</h3>
-<p>행의 텍스트와 속성을 변경합니다. 성공하면 1 실패하면 0을 돌려줍니다.<em>RowNumber</em>가 0이면, 콘트롤 안의 <u>모든</u> 행이 변경됩니다 (이 경우 함수는 완전히 성공하면 1을 돌려주고 부분적으로도 실패하면 0을 돌려줍니다). 첫 두 개의 매개변수만 존재하면, 그 행의 속성만 변경되고 그의 텍스트는 변경되지 않습니다. 비슷하게, 너무 매개변수가 적어서 모든 열을 처리할 수 없으면, 마지막에 있는 열들은 바뀌지 않습니다. <a href="#ColN">ColN option</a>를 사용하면 다른 열을 건드리지 않고 특정한 열을 업데이트할 수 있습니다. 다른 옵션으, <a href="#RowOptions">행 옵션</a>을 참조하십시오.</p>
-<h3><a name="LV_Delete"></a>LV_Delete([RowNumber])</h3>
+<p id="Vis"><strong>Vis</strong> <span class="ver">[v1.0.44+]</span>: 지정된 행이 필요하면 ListView를 스크롤해서 완전히 보이도록 확인합니다. 이것은 <a href="#LV_Modify">LV_Modify()</a>에만 영향을 줍니다; 예를 들어: <code>LV_Modify(RowNumber, "Vis")</code>.</p>
+
+<h3 id="LV_Insert">LV_Insert</h3>
+<p>Inserts a new row at the specified row number.</p>
+<pre class="Syntax"><span class="func">LV_Insert</span>(RowNumber <span class="optional">, Options, Col1, Col2, ...</span>)</pre>
+<p><a href="#LV_Add">LV_Add()</a>와 동일하게 행위합니다. 단, 첫 번째 매개변수가 다릅니다. 이 매개변수는 새로 삽입된 행의 행 번호를 지정합니다. <em>RowNumber</em> 이하의 행은 모두 아래로 이동해 새 행을 위해 자리를 내 줍니다. <em>RowNumber</em>가 리스트의 행 갯수보다 더 크면 (그렇지만 2147483647 높이까지 허용됨), 그 새 행은 리스트 끝에 추가됩니다. <em>Options</em>에 관한 것은, <a href="#RowOptions">행 옵션</a>을 참조하십시오.</p>
+
+<h3 id="LV_Modify">LV_Modify</h3>
+<p>Modifies the attributes and/or text of a row.</p>
+<pre class="Syntax"><span class="func">LV_Modify</span>(RowNumber <span class="optional">, Options, NewCol1, NewCol2, ...</span>)</pre>
+<p>성공하면 1 실패하면 0을 돌려줍니다. 성공하면 1 실패하면 0을 돌려줍니다.<em>RowNumber</em>가 0이면, 콘트롤 안의 <u>모든</u> 행이 변경됩니다 (이 경우 함수는 완전히 성공하면 1을 돌려주고 부분적으로도 실패하면 0을 돌려줍니다). 첫 두 개의 매개변수만 존재하면, 그 행의 속성만 변경되고 그의 텍스트는 변경되지 않습니다. 비슷하게, 너무 매개변수가 적어서 모든 열을 처리할 수 없으면, 마지막에 있는 열들은 바뀌지 않습니다. <a href="#ColN">ColN option</a>를 사용하면 다른 열을 건드리지 않고 특정한 열을 업데이트할 수 있습니다. 다른 옵션으, <a href="#RowOptions">행 옵션</a>을 참조하십시오.</p>
+
+<h3 id="LV_Delete">LV_Delete</h3>
+<p>Deletes the specified row or all rows.</p>
+<pre class="Syntax"><span class="func">LV_Delete</span>(<span class="optional">RowNumber</span>)</pre>
 <p>이 매개변수를 생략하면, ListView 안의 <strong>모든</strong> 행이 삭제됩니다. 그렇지 않으면, 오직 지정된 <em>RowNumber</em>만 삭제됩니다. 성공하면 1 실패하면 0을 돌려줍니다.</p>
-<h2 id="bifCol">열 함수</h2>
-<h3><a name="LV_ModifyCol"></a>LV_ModifyCol([ColumnNumber, Options, ColumnTitle])</h3>
-<p>지정된 열의 텍스트와 속성 그리고 헤더를 변경합니다. 첫 열은 번호가 1입니다 (0 아님). 모든 매개변수를 생략하면, 모든 열의 너비가 행의 내용에 맞게 조절됩니다. 첫 매개변수만 존재하면, 오직 지정된 컬럼만 자동으로 크기가 조절됩니다. 자동 크기 조절은 보고서 (자세하게) 보기 모드에서만 효과가 있습니다. 이 함수는 성공하면 1 실패하면 0을 돌려줍니다.</p>
-<h4><a name="ColOptions"></a>열 옵션</h4>
+
+<h3 id="LV_ModifyCol">LV_ModifyCol</h3>
+<p>지정된 열의 텍스트와 속성 그리고 헤더를 변경합니다.</p>
+<pre class="Syntax"><span class="func">LV_ModifyCol</span>(<span class="optional">ColumnNumber, Options, ColumnTitle</span>)</pre>
+<p>첫 열은 번호가 1입니다 (0 아님). 모든 매개변수를 생략하면, 모든 열의 너비가 행의 내용에 맞게 조절됩니다. 첫 매개변수만 존재하면, 오직 지정된 컬럼만 자동으로 크기가 조절됩니다. 자동 크기 조절은 보고서 (자세하게) 보기 모드에서만 효과가 있습니다. 이 함수는 성공하면 1 실패하면 0을 돌려줍니다.</p>
+
+<h4 id="ColOptions">열 옵션</h4>
 <p><em>Options</em> 매개변수는아래 리스트의 단어로 구성되는 문자열입니다 (대소문자 구문 없음). 다음 단어와 스페이스나 탭으로 분리하십시오. 옵션을 제거하려면, 앞에 마이너스 사인을 추가하십시오. 옵션을 추가하려면, 플러스 사인을 허용하지만 필수는 아닙니다.</p>
-<h4>열 옵션: 일반</h4>
+
+<h4 id="Column_Options_General">열 옵션: 일반</h4>
 <p><strong>N</strong>: N 에 열의 새 너비를 픽셀 단위로 지정하십시오. 이 번호는 옵션이 하나만 있다면 따옴표 처리하지 않아도 됩니다. 예를 들어 다음 두 예제는 모두 유효합니다: <code>LV_ModifyCol(1, 50)</code> 그리고 <code>LV_ModifyCol(1, "50 Integer")</code>.</p>
 <p><strong>Auto</strong>: 열의 너비를 그의 내용에 맞게 조절합니다. 이것은 보고서 (자세하게) 보기 모드가 아니면 아무 영향이 없습니다.</p>
 <p><strong>AutoHdr</strong>: 열의 너비를 그의 내용과 헤더 텍스트의 너비에 맞게 더 큰쪽으로 조절합니다. 마지막 열에 적용되면, ListView에서 나머지 모든 스페이스의 너비만큼 넓어집니다. 보통 행들을 추가한 후에만 이 설정을 적용하는 것이 좋습니다. 왜냐하면 그래야 마지막 열의 크기를 조절할 때 새로 도착한 수직 스크롤바를 고려할 수 있기 때문입니다. 이 옵션은 보고서 (자세하게) 보기 모드가 아니면 아무 효과가 없습니다.</p>
 <p><strong>Icon</strong>: 단어 Icon 다음에 바로 <a href="#IL">ImageList</a>의 아이콘 번호를 지정하면 열 헤더의 텍스트 옆에 보여줄 수 있습니다. <code>-Icon</code> (마이너스 icon)을 지정하면 기존의 아이콘을 제거할 수 있습니다.</p>
 <p><strong>IconRight</strong>: 아이콘을 왼쪽이 아니라 열의 오른쪽에 배치합니다.</p>
-<h4>열 옵션: 데이터 유형</h4>
+
+<h4 id="Column_Options_Data_Type">열 옵션: 데이터 유형</h4>
 <p><strong>Float</strong>: 정렬의 목적으로, 이 열에 부동 소수점 수가 들어 있다는 것을 나타냅니다 (십육진 형식은 지원하지 않습니다). Float와 Text 열에 대하여 정렬의 수행성능은 정수에 비해 최대 25 배까지 느릴 수 있스니다.</p>
-<p><a name="Integer"></a><strong>Integer</strong>: 정렬의 목적으로, 이 열에 정수가 들어 있다는 것을 나타냅니다. 적절하게 정렬되려면, 각 정수는 32-비트여야 합니다; 즉, 범위가 -2147483648에서 2147483647 이내여야 합니다. 값이 정수가 아니라면, 정렬할 때 0으로 간주됩니다 (단, 숫자로 시작하는 경우는 예외입니다. 이 경우 그 숫자가 사용됩니다). 숫자는 십육진 형식 또는 십진 형식으로 나타날 수 있습니다 (예, <code>0xF9E0</code>).</p>
-<p><a name="Text"></a><strong>Text</strong>: 열을 다시 텍스트-모드 정렬로 바꿉니다. 이것이 모든 열에 기본값입니다. 오직 텍스트의 앞쪽 8190 글자만 정렬의 목적으로 의미가 있습니다 (단, <a href="#Logical"><em>Logical</em> 옵션은</a>예외인데, 이 경우 제한 4094 글자입니다).</p>
-<h4>열 옵션: 정렬 / 정돈</h4>
+<p id="Integer"><strong>Integer</strong>: 정렬의 목적으로, 이 열에 정수가 들어 있다는 것을 나타냅니다. 적절하게 정렬되려면, 각 정수는 32-비트여야 합니다; 즉, 범위가 -2147483648에서 2147483647 이내여야 합니다. 값이 정수가 아니라면, 정렬할 때 0으로 간주됩니다 (단, 숫자로 시작하는 경우는 예외입니다. 이 경우 그 숫자가 사용됩니다). 숫자는 십육진 형식 또는 십진 형식으로 나타날 수 있습니다 (예, <code>0xF9E0</code>).</p>
+<p id="Text"><strong>Text</strong>: 열을 다시 텍스트-모드 정렬로 바꿉니다. 이것이 모든 열에 기본값입니다. 오직 텍스트의 앞쪽 8190 글자만 정렬의 목적으로 의미가 있습니다 (단, <a href="#Logical"><em>Logical</em> 옵션은</a>예외인데, 이 경우 제한 4094 글자입니다).</p>
+
+<h4 id="Column_Options_Alignment">열 옵션: 정렬</h4>
 <p><strong>Center</strong>: 텍스트를 열 가운데로 정렬합니다. 정수 또는 부동 소수점 수 열을 중앙 정렬하려면, 단어 Center를 단어 Integer 또는 Float 뒤에 놓으십시오.</p>
 <p><strong>Left</strong>: 열의 텍스트를 왼쪽에 정렬합니다. 이것이 모든 열의 기본 값입니다. 예전 운영체제에서, 첫 열은 강제로 왼쪽 정렬될 수 있습니다.</p>
 <p><strong>Right</strong>: 열의 텍스트를 오른쪽에 정렬합니다. 이 속성은 Integer 그리고 Float 열에는 지정할 필요가 없습니다. 왜냐하면 기본적으로 우측 정렬이기 때문입니다. 기본 값은 <code>"Integer Left"</code> 또는 <code>"Float Center"</code>와 같이 지정해 바꿀 수 있습니다.</p>
-<h4>열 옵션: 정렬</h4>
-<p><strong><a name="Case" id="Case"></a>Case</strong>: 열의 정렬은 대소문자를 구분합니다 (only <a href="#Text">텍스트</a> 열에만 영향을 미칩니다). 옵션 <em>Case</em>, <em>CaseLocale</em>, 그리고 <em>Logical</em>이 모두 생략되면, 대문자 A-Z를 정렬의 목적으로 소문자와 동일하게 취급합니다.</p>
+
+<h4 id="Column_Options_Sorting">열 옵션: 정렬</h4>
+<p id="Case"><strong>Case</strong>: 열의 정렬은 대소문자를 구분합니다 (only <a href="#Text">텍스트</a> 열에만 영향을 미칩니다). 옵션 <em>Case</em>, <em>CaseLocale</em>, 그리고 <em>Logical</em>이 모두 생략되면, 대문자 A-Z를 정렬의 목적으로 소문자와 동일하게 취급합니다.</p>
 <p><strong>CaseLocale</strong> <span class="ver">[v1.0.43.03+]:</span> 열의 정렬은 현재 사용자의 로케일에 기반하여 대소문자를 구분하지 않습니다 (<a href="#Text">텍스트</a> 컬럼에만 영향을 미칩니다). 예를 들어, 대부분의 영어와 서구 유럽 로케일은 기호 A-Z 그리고 Ä와 Ü 같은 ANSI 기호들을 소문자로 취급합니다. 이 방법은 또한 "word sort"를 사용하는데, 이것은 "coop" 그리고 "co-op"와 같은 단어들이 함께 있는 것처럼 하이픈과 어포스트로피를 취급합니다.</p>
-<p><a name="Desc"></a><strong>Desc</strong>: 내림 차순입니다. 사용자가 정렬을 시작하면 열을 내림 차순으로 시작합니다.</p>
-<p><a name="Logical"></a><strong>Logical</strong> <span class="ver">[v1.0.44.12+]:</span> <em>CaseLocale</em>과 같습니다. 단, 텍스트에서 숫자 연속은 단순히 문자가 아니라 순수한 숫자로 취급됩니다. 예를 들어, 문자열 "T33"은 "T4"보다 크다고 간주됩니다. <em>Logical</em> 은 Windows XP 이상을 요구합니다 (이전 운영체제에서는 <em>CaseLocale</em>이 대신 자동으로 사용됩니다). 게다가, <em>Logical</em>과 <em>Case</em>는 현재 서로 배타적입니다: 둘 중에 최근에 지정된 것만 효과가 있습니다.</p>
+<p id="Desc"><strong>Desc</strong>: 내림 차순입니다. 사용자가 정렬을 시작하면 열을 내림 차순으로 시작합니다.</p>
+<p id="Logical"><strong>Logical</strong> <span class="ver">[v1.0.44.12+]:</span> <em>CaseLocale</em>과 같습니다. 단, 텍스트에서 숫자 연속은 단순히 문자가 아니라 순수한 숫자로 취급됩니다. 예를 들어, 문자열 "T33"은 "T4"보다 크다고 간주됩니다. <em>Logical</em> 은 Windows XP 이상을 요구합니다 (이전 운영체제에서는 <em>CaseLocale</em>이 대신 자동으로 사용됩니다). 게다가, <em>Logical</em>과 <em>Case</em>는 현재 서로 배타적입니다: 둘 중에 최근에 지정된 것만 효과가 있습니다.</p>
 <p><strong>NoSort</strong>: 사용자가 이 열을 클릭하더라도 자동으로 정렬하지 못하도록 막습니다. 모든 열에 정렬을 끄려면 <a href="#NoSort">NoSort</a>를 ListView의 옵션에 포함시키십시오. ListView에 g-라벨이 있다면, 사용자가 정렬-불가 컬럼을 클릭할 때 <a href="#ColClick">ColClick 고지</a>를 여전히 받습니다.</p>
 <p><strong>Sort</strong>: 즉시 오름 차순으로 열을 정렬합니다 (<a href="#Desc">Desc</a> 옵션이 지정되어 있더라도 오름차순으로 정렬합니다).</p>
 <p><strong>SortDesc</strong>: 즉시 열을 내림 차순으로 정렬합니다.</p>
 <p><strong>Uni</strong>: 단방향으로 정렬합니다. 이렇게 하면 같은 열에 두 번 클릭하더라도 정렬 방향이 바뀌지 않습니다.</p>
-<h3><a name="LV_InsertCol"></a>LV_InsertCol(ColumnNumber [, Options, ColumnTitle])</h3>
+
+<h3 id="LV_InsertCol">LV_InsertCol</h3>
+<p>Inserts a new column at the specified column number.</p>
+<pre class="Syntax"><span class="func">LV_InsertCol</span>(ColumnNumber <span class="optional">, Options, ColumnTitle</span>)</pre>
 <p>새 열을 생성해서 그것을 지정된 <em>ColumnNumber</em>로 삽입합니다 (다른 열은 오른쪽으로 이동해서 들어가 공간을 만듭니다). 첫 열은 1입니다 (0이 아님). <em>ColumnNumber</em>이 현재 콘트롤에 있는 열의 총 개수보다 크면, 그 새 열은 리스트 끝에 추가됩니다. 새로 삽입된 열은 그 아래에 빈 내용을 가지고 시작합니다. 단, 첫 열인 경우는 제외합니다. 이 경우는 앞의 첫 열의 내용을 상속받고 그 첫 열은 빈 내용을 얻습니다. 새 열의 속성은 -- 예를 들어 <a href="#Integer">정수 정렬</a>인가 아닌가 하는 속성은 -- 언제나 기본값을 가지고 시작합니다. 단, <em><a href="#ColOptions">Options</a></em>을 통하여 바꾼 경우는 예외입니다. 이 함수는 새 열의 위치 번호를 돌려줍니다 (실패하면 0). ListView에의 열의 최대 개수는 200입니다.</p>
-<h3><a name="LV_DeleteCol"></a>LV_DeleteCol(ColumnNumber)</h3>
-<p>지정된 열과 그 아래의 모든 내용을 삭제합니다. 성공하면 1 실패하면 0을 돌려줍니다. 열이 일단 삭제되면, 그 오른쪽에 있는 열들의 번호는 1 만큼씩 줄어듭니다. 결과적으로, <code>LV_DeleteCol(2)</code>를 두 번 호출하면 두 번째 세 번째 열이 삭제됩니다. Windows XP보다 오래된 운영 체제에서, 원래의 첫 열을 삭제하려고 시도하면 실패하고 0을 돌려줍니다.</p>
-<h2 id="bifGet">ListView로부터 데이터 얻기</h2>
-<h3><a name="LV_GetCount"></a>LV_GetCount(["Selected | Column"])</h3>
+
+<h3 id="LV_DeleteCol">LV_DeleteCol</h3>
+<p>지정된 열과 그 아래의 모든 내용을 삭제합니다.</p>
+<pre class="Syntax"><span class="func">LV_DeleteCol</span>(ColumnNumber)</pre>
+<p>성공하면 1 실패하면 0을 돌려줍니다. 열이 일단 삭제되면, 그 오른쪽에 있는 열들의 번호는 1 만큼씩 줄어듭니다. 결과적으로, <code>LV_DeleteCol(2)</code>를 두 번 호출하면 두 번째 세 번째 열이 삭제됩니다. Windows XP보다 오래된 운영 체제에서, 원래의 첫 열을 삭제하려고 시도하면 실패하고 0을 돌려줍니다.</p>
+
+<h3 id="LV_GetCount">LV_GetCount</h3>
+<p>Returns the total number of rows or columns, or the number of selected rows only.</p>
+<pre class="Syntax"><span class="func">LV_GetCount</span>(<span class="optional">Mode</span>)</pre>
 <p>매개변수를 생략하면, 함수는 콘트롤에 있는 행의 총 개수를 돌려줍니다. 매개변수가 "S" 또는 "Selected"이면, 선택된/강조된 행들만 계산에 포함됩니다. 매개변수가 "Col" 또는 "Column"이면, 함수는 콘트롤에 있는 열의 총 개수를 돌려줍니다. 이 함수는 언제나 순간적입니다. 왜냐하면 콘트롤이 이런 계수들을 추적관리하고 있기 때문입니다.</p>
 <p>이 함수는 종종 Loop의 최상단에 사용되며, 이 경우 함수는 (첫 반복이 시작하기 전에) 오직 한 번만 호출됩니다. 예를 들어:</p>
 <pre>Loop % LV_GetCount()
@@ -154,12 +207,15 @@ ExitApp</pre>
 <pre>Gui +LastFound
 Loop % LV_GetCount("Column")
 {
-    SendMessage, 4125, A_Index - 1, 0, SysListView321  <em>; 4125 is LVM_GETCOLUMNWIDTH.</em>
+    SendMessage, 0x101D, A_Index - 1, 0, SysListView321  <em>; 0x101D은 LVM_GETCOLUMNWIDTH입니다.</em>
     MsgBox Column %A_Index%'s width is %ErrorLevel%.
 }</pre>
-<h3><a name="LV_GetNext"></a>LV_GetNext([StartingRowNumber, "Checked | Focused"])</h3>
-<p>다음으로 선택된, 체크된 또는 초점이 있는 행의 번호를 열람합니다. 아무것도 발견되지 않으면, 0이 반환됩니다. <em>StartingRowNumber</em>가 생략되거나 1 보다 작으면, 검색은 리스트의 상단에서 시작합니다. 그렇지 않으면 검색은 <em>StartingRowNumber</em> 다음 행부터 시작합니다. 두 번째 매개변수가 생략되면, 함수는 다른 선택된/강조된 행을 검색합니다. 그렇지 않으면 "C" 또는 "Checked"를 지정해 다음 체크된 행을 검색하십시오; 아니면 "F" 또는 "Focused"를 지정해 초점이 있는 행을 찾으십시오 (전 리스트를 통틀어 초점이 있는 행은 절대 하나 밖에 없습니다. 그리고 종종 전혀 없을 수도 있습니다). 다음 예제는 ListView에서 선택된 모든 행들을 보고 합니다:</p>
-<pre>RowNumber = 0  <em>; 이렇게 하면 첫 회돌이 반복이 리스트의 최상단에서 검색을 시작합니다.</em>
+
+<h3 id="LV_GetNext">LV_GetNext</h3>
+<p>다음으로 선택된, 체크된 또는 초점이 있는 행의 번호를 열람합니다.</p>
+<pre class="Syntax"><span class="func">LV_GetNext</span>(<span class="optional">StartingRowNumber, RowType</span>)</pre>
+<p>아무것도 발견되지 않으면, 0이 반환됩니다. <em>StartingRowNumber</em>가 생략되거나 1 보다 작으면, 검색은 리스트의 상단에서 시작합니다. 그렇지 않으면 검색은 <em>StartingRowNumber</em> 다음 행부터 시작합니다. If <em>RowType</em> is omitted, the function searches for the next selected/highlighted row. 그렇지 않으면 "C" 또는 "Checked"를 지정해 다음 체크된 행을 검색하십시오; 아니면 "F" 또는 "Focused"를 지정해 초점이 있는 행을 찾으십시오 (전 리스트를 통틀어 초점이 있는 행은 절대 하나 밖에 없습니다. 그리고 종종 전혀 없을 수도 있습니다). 다음 예제는 ListView에서 선택된 모든 행들을 보고 합니다:</p>
+<pre>RowNumber := 0  <em>; 이렇게 하면 첫 회돌이 반복이 리스트의 최상단에서 검색을 시작합니다.</em>
 Loop
 {
     RowNumber := LV_GetNext(RowNumber)  <em>; 앞의 반복에서 발견한 행 바로 다음부터 검색을 재개합니다.</em>
@@ -170,25 +226,38 @@ Loop
 }</pre>
 <p>특정 행 번호가 체크되어 있는지 알아 내는 또다른 방법은 다음과 같습니다:</p>
 <pre>Gui +LastFound
-SendMessage, 4140, <i>RowNumber</i> - 1, 0xF000, SysListView321  <em>; 4140는 LVM_GETITEMSTATE.입니다. 0xF000는 LVIS_STATEIMAGEMASK입니다.</em>
+SendMessage, 0x102C, <i>RowNumber</i> - 1, 0xF000, SysListView321  <em>; 0x102C는 LVM_GETITEMSTATE.입니다. 0xF000는 LVIS_STATEIMAGEMASK입니다.</em>
 IsChecked := (ErrorLevel &gt;&gt; 12) - 1  <em>; <i>RowNumber</i>가 체크되어 있으면 IsChecked에 참이 설정되고,그렇지 않으면 거짓이 설정됩니다.</em></pre>
-<h3><a name="LV_GetText"></a>LV_GetText(OutputVar, RowNumber [, ColumnNumber])</h3>
-<p>지정된 <em>RowNumber</em>와 <em>ColumnNumber</em>에서 텍스트를 찾아 <em>OutputVar</em>에 저장합니다. <em>ColumnNumber</em>를 생략하면, 기본값은 1입니다 (첫 열에 있는 텍스트). <em>RowNumber</em>가 0이면, 열 헤더 텍스트가 열람됩니다. 텍스트가 8191자 보다 길면, 앞쪽 8191 글자만 열람됩니다. 성공하면 1을 돌려주고 실패하면 0을 돌려줍니다. 실패시, <em>OutputVar</em>도 비워집니다.</p>
+
+<h3 id="LV_GetText">LV_GetText</h3>
+<p>지정된 <em>RowNumber</em>와 <em>ColumnNumber</em>에서 텍스트를 찾아 <em>OutputVar</em>에 저장합니다.</p>
+<pre class="Syntax"><span class="func">LV_GetText</span>(OutputVar, RowNumber <span class="optional">, ColumnNumber</span>)</pre>
+<p><em>ColumnNumber</em>를 생략하면, 기본값은 1입니다 (첫 열에 있는 텍스트). <em>RowNumber</em>가 0이면, 열 헤더 텍스트가 열람됩니다. 텍스트가 8191자 보다 길면, 앞쪽 8191 글자만 열람됩니다. 성공하면 1을 돌려주고 실패하면 0을 돌려줍니다. 실패시, <em>OutputVar</em>도 비워집니다.</p>
 <p>스크립트에 보여지는 열 번호는 사용자가 열을 끌어 떨구어도 영향을 받지 않습니다. 예를 들어 원래의 첫 열이 번호는 1입니다. 사용자가 그 열을 끌어 오른쪽 다른 열에 떨구어도 마찬가지입니다.</p>
+
+<h3 id="LV_SetImageList">LV_SetImageList</h3>
+<p>Sets or replaces an <a href="#IL">ImageList</a> for displaying icons.</p>
+<pre class="Syntax"><span class="func">LV_SetImageList</span>(ImageListID <span class="optional">, IconType</span>)</pre>
+<p>이 함수는 보통 행을 ListView에 추가하기 이전에 호출됩니다. 아이콘이 ListView의 행 옆에 (선택적으로 그의 열에) 보여지도록 <a href="#IL">ImageList</a>를 설정합니다. <em>ImageListID</em>는 이전에 <a href="#IL_Create">IL_Create()</a>를 호출해 반환된 번호입니다. If <em>IconType</em> is omitted, the type of icons in the ImageList is detected automatically as large or small. 그렇지 않으면, 큰 아이콘에 0을 지정하고, 작은 아이콘에 1을 지정하며, 그리고 상태 아이콘에는 2를 지정하십시오 (상태 아이콘은 아직 직접적으로 지원하지 않지만, <a href="PostMessage.htm">SendMessage</a>를 통하여 사용할 수 있습니다).</p>
+<p>ListView는 최대 두 개의 ImageList를 가질 수 있습니다: 작은 아이콘 / 큰 아이콘. 스크립트에서 사용자가 큰 아이콘 보기에서 작은 아이콘 보기로 전환할 수 있도록 해 주므로 유용합니다. 여러 ImageList를 ListView에 추가하려면, LV_SetImageList()를 두 번 호출하고, 두 번째 리스트의 <em>ImageListID</em>를 지정합니다. ListView가 큰-아이콘과 작은-아이콘 ImageList를 모두 갖고 있다면 두 리스트에 같은 순서로 아이콘이 들어 있는지 확인해야 합니다. 왜냐하면 같은 ID 번호를 사용하여 특정 아이콘의 큰 아이콘과 작은 아이콘을 참조하기 때문입니다.</p>
+<p>아이콘과 타일을 제외하고 모든 <a href="#View">보기 모드</a>에 작은 아이콘을 보여주는 것이 전통적인 방식이지만, 이 행위는 큰 아이콘 리스트를 LV_SetImageList()에 건네고 1 (작은-아이콘)을 두 번째 매개변수에 지정하면 바꿀 수 있습니다. 이렇게 하면 또한 큰 아이콘에 맞게 ListView에서 각 행의 높이가 증가합니다.</p>
+<p>성공하면, LV_SetImageList()는 이전에 ListView에 연관되어 있던 <em>ImageListID</em>를 돌려줍니다 (없으면 0). 그렇게 떼어낸 ImageList는 <a href="#IL_Destroy">IL_Destroy(ImageListID)</a>를 통하여 정상적으로 파괴됩니다.</p>
+
 <h2 id="notify">G-라벨 고지 (Primary)</h2>
 <p><code><strong>g</strong>MySubroutine</code>과 같은 <a href="Gui.htm#label">g-label</a>은 콘트롤의 옵션에 나열할 수 있습니다. 이렇게 하면 사용자가 콘트롤에 어떤 조치를 수행할 때마다 <em>MySubroutine</em> 라벨이 자동으로 기동됩니다. 이 서브루틴은 내장 변수 <a href="../Variables.htm#Gui">A_Gui</a>와 <a href="../Variables.htm#GuiControl">A_GuiControl</a>를 참고해 어느 창 어느 ListView가 그 이벤트를 발생시켰는지 알아낼 수 있습니다. 더 중요한 것은, <strong>A_GuiEvent</strong>를 참고할 수 있다는 것인데, 여기에 다음 문자열이나 기호 중 하나가 담겨 있습니다 (미래 버전과의 호환을 위해, 스크립트는 이것만이 가능한 유일한 값들이라고 간주하면 안됩니다):</p>
 <p><strong>DoubleClick</strong>: 사용자가 콘트롤 안에서 더블클릭 했습니다. 변수 A_EventInfo에 초점 행 번호가 담깁니다. <a href="#LV_GetNext">LV_GetNext()</a>를 대신 사용하면 첫 번째로 <em>선택된</em> 행 번호를 알 수 있습니다. 사용자가 빈 곳에 더블클릭 했다면 0입니다.</p>
 <p><strong>R</strong>: 사용자가 콘트롤 안에서 <em>더블-우클릭</em> 했습니다. 변수 A_EventInfo에 초점 행 번호가 담깁니다.</p>
-<p><strong><a name="ColClick"></a>ColClick</strong>: 사용자가 열 헤더를 클릭 했습니다. 변수 A_EventInfo에 그 열 번호가 담깁니다. 이것은 그 열이 생성될 때 할당된 원래의 열 번호입니다; 즉, 사용자에 의한 끌기와 떨구기는 전혀 반영하지 않습니다. 열 클릭에 한 가지 가능한 반응은 숨은 열 기분으로 정렬하는 것입니다 (너비가 0). 안에 정렬에 적합한 형식으로 데이터가 들어 있습니다 (예를 들어 YYYYMMDD 정수 날짜). 그런 숨은 열은 좀 더 친숙한 형식으로 같은 데이터를 보여주는 다른 컬럼을 미러할 수 있습니다 (예를 들어 MM/DD/YY). 예를 들어, 스크립트는 <code><a href="#LV_ModifyCol">LV_ModifyCol(3, 0)</a></code>를 통하여 열 3을 숨길 수 있습니다. 다음 <code>LV_ModifyCol(2, "NoSort")</code>를 통하여 눈에 보이는 2 번 열에 자동 정렬을 꺼버립니다. 다음, 2 번 열에 대한 ColClick 고지에 대한 응답으로, 스크립트는 <code>LV_ModifyCol(3, "Sort")</code>를 통하여 숨은 열을 기준으로 ListView를 정렬할 것입니다.</p>
-<p><strong><a name="Drag" id="Drag"></a>D</strong>: 사용자가 행이나 아이콘을 끌려고 시도했습니다 (현재 행이나 아이콘 끌기는 내부적으로 지원하지 않습니다). 변수 A_EventInfo에 초점 행 번호가 담깁니다. v1.0.44+에서, 이 고지는 심지어 <a href="#AltSubmit">AltSubmit</a>이 없어도 일어납니다.</p>
+<p id="ColClick"><strong>ColClick</strong>: 사용자가 열 헤더를 클릭 했습니다. 변수 A_EventInfo에 그 열 번호가 담깁니다. 이것은 그 열이 생성될 때 할당된 원래의 열 번호입니다; 즉, 사용자에 의한 끌기와 떨구기는 전혀 반영하지 않습니다. 열 클릭에 한 가지 가능한 반응은 숨은 열 기분으로 정렬하는 것입니다 (너비가 0). 안에 정렬에 적합한 형식으로 데이터가 들어 있습니다 (예를 들어 YYYYMMDD 정수 날짜). 그런 숨은 열은 좀 더 친숙한 형식으로 같은 데이터를 보여주는 다른 컬럼을 미러할 수 있습니다 (예를 들어 MM/DD/YY). 예를 들어, 스크립트는 <code><a href="#LV_ModifyCol">LV_ModifyCol(3, 0)</a></code>를 통하여 열 3을 숨길 수 있습니다. 다음 <code>LV_ModifyCol(2, "NoSort")</code>를 통하여 눈에 보이는 2 번 열에 자동 정렬을 꺼버립니다. 다음, 2 번 열에 대한 ColClick 고지에 대한 응답으로, 스크립트는 <code>LV_ModifyCol(3, "Sort")</code>를 통하여 숨은 열을 기준으로 ListView를 정렬할 것입니다.</p>
+<p id="Drag"><strong>D</strong>: 사용자가 행이나 아이콘을 끌려고 시도했습니다 (현재 행이나 아이콘 끌기는 내부적으로 지원하지 않습니다). 변수 A_EventInfo에 초점 행 번호가 담깁니다. <span class="ver">[v1.0.44+]</span>: 이 고지는 심지어 <a href="#AltSubmit">AltSubmit</a>이 없어도 일어납니다.</p>
 <p><strong>d</strong> (소문자 D): 왼클릭 끌기가 아니라 우클릭 끌기라는 점만 제외하면 위와 같습니다.</p>
 <p><strong>e</strong> (소문자 E): 사용자가 행의 첫 필드 편집을 마쳤습니다 (사용자는 ListView의 옵션에 <code><a href="#ReadOnly"><strong>-</strong>ReadOnly</a></code>가 있을 경우에만 편집할 수 있습니다). 변수 A_EventInfo에 그 행 번호가 담깁니다.</p>
-<h2>G-라벨 고지 (Secondary)</h2>
+
+<h2 id="G-Label_Notifications_Secondary">G-라벨 고지 (Secondary)</h2>
 <p>ListView가 <a href="#Options">옵션에</a> 단어 AltSubmit을 가지고 있다면, 그의 g-라벨은 훨씬 더 자주 기동되고 <strong>A_GuiEvent</strong>에 다음 추가 값이 담길 수 있습니다:</p>
 <p><strong>Normal</strong>: 사용자가 행을 왼클릭 했습니다. 변수 A_EventInfo에 초점 행 번호가 담깁니다.</p>
 <p><strong>RightClick</strong>: 사용자가 행을 우클릭 했습니다. 변수 A_EventInfo에 초점 행 번호가 담깁니다. 대부분의 경우, 이에 응답하여 메뉴를 보여주는 것이 좋습니다. 대신에, <a href="Gui.htm#GuiContextMenu">GuiContextMenu label</a>를 사용하십시오. 왜냐하면 Apps 키도 인지하기 때문입니다. 예를 들어:</p>
 <pre>GuiContextMenu:  <em>; 우클릭 또는 Apps 키의 누름에 응답하여 기동됩니다.</em>
-if A_GuiControl &lt;&gt; MyListView  <em>; 이 점검은 선택적입니다. ListView 안에 클릭했을 경우에만 메뉴를 보여줍니다.</em>
+if (A_GuiControl != "MyListView")  <em>; 이 점검은 선택적입니다. ListView 안에 클릭했을 경우에만 메뉴를 보여줍니다.</em>
     return
 <em>; 메뉴를 주어진 A_GuiX 그리고 A_GuiY 좌표에 보여줍니다. 이것을 사용해야 합니다
 ; 왜냐하면 사용자가 Apps 키를 누르더라도 올바른 좌표를 제공하기 때문입니다:</em>
@@ -196,16 +265,17 @@ Menu, MyContextMenu, Show, %A_GuiX%, %A_GuiY%
 return</pre>
 <p><strong>A</strong>: 한 행이 활성화되었습니다. 기본으로 더블 클릭되면 활성화됩니다. 변수 A_EventInfo에 그 행 번호가 담깁니다.</p>
 <p><strong>C</strong>: ListView가 마우스 마우스 나포를 놓았습니다.</p>
-<p><strong>E</strong>: 사용자가 한 행의 첫 필드 편집을 시작했습니다 (사용자는 ListView가 옵션에 <code><a href="#ReadOnly">-ReadOnly</a></code>를 가지고 있을 경우에만 편집이 허용됩니다). 변수 A_EventInfo에 그 행 번호가 담깁니다.</p>
+<p><strong>E</strong>: 사용자가 한 행의 첫 필드 편집을 시작했습니다 (사용자는 ListView가 옵션에 <code>-<a href="#ReadOnly">ReadOnly</a></code>를 가지고 있을 경우에만 편집이 허용됩니다). 변수 A_EventInfo에 그 행 번호가 담깁니다.</p>
 <p><strong>F</strong>: ListView가 키보드 초점을 받았습니다.</p>
 <p><strong>f</strong> (소문자 F): ListView가 키보드 초점을 잃었습니다.</p>
-<p><strong><a name="ItemChanged"></a>I</strong>: 항목이 변경됨. 선택/체크/해제 등등으로 인해 한 행이 변경되었습니다. 사용자가 새 행을 선택하면, 적어도 그런 고지를 두 개 받습니다: 하나는 이전 행의 해제이고 다른 하나는 새 행의 선택에 고지가 옵니다. v1.0.44+에서, 변수 A_EventInfo에 그 행 번호가 담깁니다. v1.0.46.10+에서, ErrorLevel에 다음 기호 중 하나가 담겨 어떻게 항목이 변경되었는지 알려줍니다: S (select) 또는 s (de-select), 그리고/또는 F (focus) 또는 f (de-focus), 그리고/또는 C (checkmark) 또는 c (uncheckmark). 예를 들어, SF는 행이 선택되어 있꼬 초점이 있다는 뜻입니다. 특정 기호가 존재하는지 탐지하려면 <a href="LoopParse.htm">파싱 회돌이</a> 또는 대소문자 구분 옵션으로 <a href="../Functions.htm#InStr">InStr()</a>을 사용하십시오; 예를 들어: <code>InStr(ErrorLevel, "S", true)</code>. 주의: 미래 버전과의 호환을 위해, 스크립트는 "SsFfCc"만이 유일하게 가능하니 기호라고 간주하면 안됩니다. 또한, <a href="Critical.htm">Critical</a>을 <a href="Gui.htm#label">g-라벨</a>의 첫 줄에 지정하면 모든 "I" 고지를 받을 수 있다는 것을 확신할 수 있습니다 (그렇지 않으면, 스크립트가 따라 가지 못할 경우 어떤 고지는 잃어 버릴 수 있습니다).</p>
-<p><strong><a name="NotifyK"></a>K</strong>: ListView에 초점이 있는 동안에 사용자가 키를 눌렀습니다. A_EventInfo에 그 키의 가상 키코드가 담깁니다. 이 숫자는 범위가 1과 255 사이입니다. 이것을 <a href="../Functions.htm#GetKeyName">GetKeyName</a>을 통하여 키 이름이나 문자로 변환할 수 있습니다. 예를 들어, <code>key := GetKeyName(<a href="Format.htm">Format</a>("vk{:x}", A_EventInfo))</code>. 대부분의 키보드 레이아웃에서 A-Z 키는 <code><a href="../Functions.htm#Chr">Chr(A_EventInfo)</a></code>를 통하여 그에 상응하는 문자로 변환할 수 있습니다. F2 키눌림은 <a href="#WantF2">WantF2</a>에 상관 없이 받습니다. 그렇지만, Enter 키눌림은 받지 않습니다; 그를 받으려면, <a href="#Enter">아래에</a> 기술하는 것처럼 기본 버튼을 사용하십시오.</p>
+<p id="ItemChanged"><strong>I</strong>: 항목이 변경됨. 선택/체크/해제 등등으로 인해 한 행이 변경되었습니다. 사용자가 새 행을 선택하면, 적어도 그런 고지를 두 개 받습니다: 하나는 이전 행의 해제이고 다른 하나는 새 행의 선택에 고지가 옵니다. <span class="ver">[v1.0.44+]</span>: 변수 A_EventInfo에 그 행 번호가 담깁니다. <span class="ver">[v1.0.46.10+]</span>: ErrorLevel에 다음 기호 중 하나가 담겨 어떻게 항목이 변경되었는지 알려줍니다: S (select) 또는 s (de-select), 그리고/또는 F (focus) 또는 f (de-focus), 그리고/또는 C (checkmark) 또는 c (uncheckmark). 예를 들어, SF는 행이 선택되어 있꼬 초점이 있다는 뜻입니다. 특정 기호가 존재하는지 탐지하려면 <a href="LoopParse.htm">파싱 회돌이</a> 또는 대소문자 구분 옵션으로 <a href="InStr.htm">InStr()</a>을 사용하십시오; 예를 들어: <code>InStr(ErrorLevel, "S", true)</code>. 주의: 미래 버전과의 호환을 위해, 스크립트는 "SsFfCc"만이 유일하게 가능하니 기호라고 간주하면 안됩니다. 또한, <a href="Critical.htm">Critical</a>을 <a href="Gui.htm#label">g-라벨</a>의 첫 줄에 지정하면 모든 "I" 고지를 받을 수 있다는 것을 확신할 수 있습니다 (그렇지 않으면, 스크립트가 따라 가지 못할 경우 어떤 고지는 잃어 버릴 수 있습니다).</p>
+<p id="NotifyK"><strong>K</strong>: ListView에 초점이 있는 동안에 사용자가 키를 눌렀습니다. A_EventInfo에 그 키의 가상 키코드가 담깁니다. 이 숫자는 범위가 1과 255 사이입니다. 이것을 <a href="GetKey.htm">GetKeyName()</a>을 통하여 키 이름이나 문자로 변환할 수 있습니다. 예를 들어, <code>key := GetKeyName(<a href="Format.htm">Format</a>("vk{:x}", A_EventInfo))</code>. 대부분의 키보드 레이아웃에서 A-Z 키는 <code><a href="Chr.htm">Chr(A_EventInfo)</a></code>를 통하여 그에 상응하는 문자로 변환할 수 있습니다. <kbd>F2</kbd> is received regardless of <a href="#WantF2">WantF2</a>. 그렇지만, <kbd>Enter</kbd> 키눌림은 받지 않습니다; 그를 받으려면, <a href="#Enter">아래에</a> 기술하는 것처럼 기본 버튼을 사용하십시오.</p>
 <p><strong>M</strong>: Marquee. 사용자가 한 그룹의 행이나 아이콘 둘레의 선택 사각형을 끌기 시작했습니다.</p>
 <p><strong>S</strong>: 사용자가 ListView를 스크롤하기 시작했습니다.</p>
 <p><strong>s</strong> (소문자 S): 사용자가 ListView 스크롤을 끝냈습니다.</p>
-<h2 id="IL">ImageList <span class="ver">(아이콘을 ListView에 추가하는 수단)</span></h2>
-<p>이미지-리스트는 한 그룹의 동일한 크기의 아이콘으로서 메모리에 저장되어 있습니다. 생성될 때, 각 ImageList는 비어 있습니다. 스크립트는 IL_Add()를 반복적으로 호출해 아이콘을 그 리스트에 추가합니다. 각 아이콘은 순서대로 번호가 1 부터 할당됩니다. 스크립트는 이 번호를 참조해 특정 아이콘을 행이나 열 헤더에 보여줍니다. 다음 예제는 아이콘을 ListView의 행에 삽입하는 방법을 보여줍니다:</p>
+
+<h2 id="IL">ImageLists</h2>
+<p>이미지-리스트는 한 그룹의 동일한 크기의 아이콘으로서 메모리에 저장되어 있습니다. 생성될 때, 각 ImageList는 비어 있습니다. 스크립트는 <a href="#IL_Add">IL_Add()</a>를 반복적으로 호출해 아이콘을 그 리스트에 추가합니다. 각 아이콘은 순서대로 번호가 1 부터 할당됩니다. 스크립트는 이 번호를 참조해 특정 아이콘을 행이나 열 헤더에 보여줍니다. 다음 예제는 아이콘을 ListView의 행에 삽입하는 방법을 보여줍니다:</p>
 <pre>Gui, Add, ListView, h200 w180, Icon &amp; Number|Description  <em>; ListView를 생성합니다.</em>
 ImageListID := <a href="#IL_Create">IL_Create</a>(10)  <em>; ImageList를 만들어 10 개의 작은 아이콘을 보유합니다.</em>
 <a href="#LV_SetImageList">LV_SetImageList</a>(ImageListID)  <em>; 위의 ImageList에 현재 ListView를 할당합니다.</em>
@@ -219,28 +289,34 @@ return
 
 GuiClose:  <em>; 사용자가 ListView의 GUI 창을 닫으면 스크립트를 종료합니다.</em>
 ExitApp</pre>
-<h3><a name="IL_Create"></a>IL_Create([InitialCount, GrowCount, LargeIcons?])</h3>
-<p>새로 ImageList를 만듭니다. 처음에는 비어 있고, ImageList의 유일한 ID를 돌려줍니다 (실패하면 0을 돌려줍니다). <em>InitialCount</em>는 리스트에 즉시 삽입할 것이라고 예상하는 아이콘의 개수입니다 (생략하면, 기본값은 2입니다). <em>GrowCount</em>는 아이콘의 개수입니다. 이 값을 기준으로 현재 리스트가 가용 능력을 초과할 때마다 리스트가 증가합니다 (생략하면, 기본값은 5입니다). <em>LargeIcons</em>는 숫치 값이어야 합니다: 0이 아니면, ImageList는 큰 아이콘을 담습니다. 0이면 작은 아이콘을 담습니다 (생략하면 이것이 기본값입니다). 리스트에 추가된 아이콘들은 작고 큰 아이콘에 대한 시스템의 크기를 준수하여 맞게 자동으로 크기가 조절됩니다.</p>
-<h3><a name="LV_SetImageList"></a>LV_SetImageList(ImageListID [, 0|1|2])</h3>
-<p>이 함수는 보통 행을 ListView에 추가하기 이전에 호출됩니다. 아이콘이 ListView의 행 옆에 (선택적으로 그의 열에) 보여지도록 <a href="#IL">ImageList</a>를 설정합니다. ImageListID는 이전에 <a href="#IL_Create">IL_Create()</a>를 호출해 반환된 번호입니다. 두 번째 매개변수를 생략하면, ImageList에서 아이콘의 유형이 큰지 작은지 자동으로 탐지됩니다. 그렇지 않으면, 큰 아이콘에 0을 지정하고, 작은 아이콘에 1을 지정하며, 그리고 상태 아이콘에는 2를 지정하십시오 (상태 아이콘은 아직 직접적으로 지원하지 않지만, <a href="PostMessage.htm">SendMessage</a>를 통하여 사용할 수 있습니다).</p>
-<p>ListView는 최대 두 개의 ImageList를 가질 수 있습니다: 작은 아이콘 / 큰 아이콘. 스크립트에서 사용자가 큰 아이콘 보기에서 작은 아이콘 보기로 전환할 수 있도록 해 주므로 유용합니다. 여러 ImageList를 ListView에 추가하려면, LV_SetImageList()를 두 번 호출하고, 두 번째 리스트의 ImageListID를 지정합니다. ListView가 큰-아이콘과 작은-아이콘 ImageList를 모두 갖고 있다면 두 리스트에 같은 순서로 아이콘이 들어 있는지 확인해야 합니다. 왜냐하면 같은 ID 번호를 사용하여 특정 아이콘의 큰 아이콘과 작은 아이콘을 참조하기 때문입니다.</p>
-<p>아이콘과 타일을 제외하고 모든 <a href="#View">보기 모드</a>에 작은 아이콘을 보여주는 것이 전통적인 방식이지만, 이 행위는 큰 아이콘 리스트를 LV_SetImageList에 건네고 1 (작은-아이콘)을 두 번째 매개변수에 지정하면 바꿀 수 있습니다. 이렇게 하면 또한 큰 아이콘에 맞게 ListView에서 각 행의 높이가 증가합니다.</p>
-<p>성공하면, LV_SetImageList()는 이전에 ListView에 연관되어 있던 ImageListID를 돌려줍니다 (없으면 0). 그렇게 떼어낸 ImageList는 <a href="#IL_Destroy">IL_Destroy(ImageListID)</a>를 통하여 정상적으로 파괴됩니다.</p>
-<h3><a name="IL_Add"></a>IL_Add(ImageListID, Filename [, IconNumber, ResizeNonIcon?])</h3>
-<p>아이콘이나 그림을 지정된 <em>ImageListID</em>에 추가합니다. 그리고 그 새로운 아이콘의 인덱스를 돌려줍니다 (1은 첫 번째 아이콘, 2는 두 번째 아이콘이고 그리고. 등등). <em>Filename</em>은 아이콘 (.ICO), 커서 (.CUR), 또는 애니메이션 커서 (.ANI) 파일의 이름입니다 (애니메이션 커서는 실제로는 ListView에 보여질 때 움직이지 않습니다). 다른 아이콘 자원으로는 다음 유형의 파일이 포함됩니다: EXE, DLL, CPL, SCR, 그리고 기타 아이콘 자원을 보유한 유형들. 파일에 있는 첫 번째 아이콘 말고 아이콘 그룹을 사용하려면, 그의 번호를 <em>IconNumber</em>에 지정하십시오. <em>IconNumber</em>가 음수이면, 그의 절대 값은 실행 파일 안의 아이콘의 자원 ID로 간주됩니다. 다음 예제에서, 두 번째 아이콘 그룹으로부터 기본 아이콘이 사용됩니다: <code>IL_Add(ImageListID, "C:\My Application.exe", 2)</code>.</p>
+
+<h3 id="IL_Create">IL_Create</h3>
+<p>새로 ImageList를 만듭니다. 처음에는 비어 있고, ImageList의 유일한 ID를 돌려줍니다 (실패하면 0을 돌려줍니다).</p>
+<pre class="Syntax"><span class="func">IL_Create</span>(<span class="optional">InitialCount, GrowCount, LargeIcons</span>)</pre>
+<p><em>InitialCount</em>는 리스트에 즉시 삽입할 것이라고 예상하는 아이콘의 개수입니다 (생략하면, 기본값은 2입니다). <em>GrowCount</em>는 아이콘의 개수입니다. 이 값을 기준으로 현재 리스트가 가용 능력을 초과할 때마다 리스트가 증가합니다 (생략하면, 기본값은 5입니다). <em>LargeIcons</em>는 숫치 값이어야 합니다: 0이 아니면, ImageList는 큰 아이콘을 담습니다. 0이면 작은 아이콘을 담습니다 (생략하면 이것이 기본값입니다). 리스트에 추가된 아이콘들은 작고 큰 아이콘에 대한 시스템의 크기를 준수하여 맞게 자동으로 크기가 조절됩니다.</p>
+
+<h3 id="IL_Add">IL_Add</h3>
+<p>아이콘이나 그림을 지정된 <em>ImageListID</em>에 추가합니다. 그리고 그 새로운 아이콘의 인덱스를 돌려줍니다 (1은 첫 번째 아이콘, 2는 두 번째 아이콘이고 그리고. 등등).</p>
+<pre class="Syntax"><span class="func">IL_Add</span>(ImageListID, Filename <span class="optional">, IconNumber, ResizeNonIcon</span>)</pre>
+<p><em>Filename</em>은 아이콘 (.ICO), 커서 (.CUR), 또는 애니메이션 커서 (.ANI) 파일의 이름입니다 (애니메이션 커서는 실제로는 ListView에 보여질 때 움직이지 않습니다). 다른 아이콘 자원으로는 다음 유형의 파일이 포함됩니다: EXE, DLL, CPL, SCR, 그리고 기타 아이콘 자원을 보유한 유형들. 파일에 있는 첫 번째 아이콘 말고 아이콘 그룹을 사용하려면, 그의 번호를 <em>IconNumber</em>에 지정하십시오. <em>IconNumber</em>가 음수이면, 그의 절대 값은 실행 파일 안의 아이콘의 자원 ID로 간주됩니다. 다음 예제에서, 두 번째 아이콘 그룹으로부터 기본 아이콘이 사용됩니다: <code>IL_Add(ImageListID, "C:\My Application.exe", 2)</code>.</p>
 <p>BMP, GIF 그리고 JPG 같은 비-아이콘 이미지도 적재가 가능합니다. 그렇지만, 이 경우 두 개의 매개변수를 지정해야 올바른 행위를 확인할 수 있습니다: <em>IconNumber</em>는 마스크/투명 색 번호이어야 합니다 (0xFFFFFF [흰색]는 대부분의 그림에 가장 좋은 선택입니다); 그리고 <em>ResizeNonIcon</em>는 0이 아니어야 합니다. 그래야 그림 크기를 조절하여 아이콘 하나가 될 수 있거나, 아니면 그 이미지를 분해하여 그의 실제 크기에 맞게 얼마든지 많은 아이콘을 만들어 낼 수 있습니다.</p>
-<p>모든 운영 체제는 GIF, JPG, BMP, ICO, CUR, 그리고 ANI 이미지를 지원합니다. Windows XP 이후에, PNG, TIF, Exif, WMF, 그리고 EMF와 같은 이미지를 추가로 지원합니다. XP 보다 오래된 운영 체제는 마이크로소프트사의 무료 GDI+ DLL을 AutoHotkey.exe 폴더 안으로 복사해 지원할 수 있습니다 (그러나 <a href="../Scripts.htm#ahk2exe">컴파일 스크립트</a>의 경우는, 그 DLL을 스크립트의 폴더 안으로 복사해 넣으십시오). 이 DLL을내려 받으려면, <a href="http://www.microsoft.com">www.microsoft.com</a>에 다음 문구를 검색하십시오: gdi redistributable</p>
-<h3><a name="IL_Destroy"></a>IL_Destroy(ImageListID)</h3>
-<p>지정된 ImageList를 삭제합니다 그리고 성공하면 1을 돌려주고 실패하면 0을 돌려줍니다. 보통 ImageList를 파괴할 필요가 없습니다. 왜냐하면 일단 ListView에 부착되면, ListView나의 그의 부모 창이 파괴될 때 자동으로 같이 파괴되기 때문입니다. 그렇지만, ListView가 (그의 옵션에 <code>0x40</code>를 가져서) ImageList를 다른 ListView와 공유하면, 스크립트는 그를 사용하는 모든 ListView를 파괴한 후에 명시적으로 그 ImageList를 파괴해야 합니다. 비슷하게, 스크립트가 ListView의 예전 ImageList중 하나를 새 것으로 교체하면, 명시적으로 그 예전 리스트를 파괴해야 합니다.</p>
-<h2 id="Remarks">ListView 논평</h2>
+<p>모든 운영 체제는 GIF, JPG, BMP, ICO, CUR, 그리고 ANI 이미지를 지원합니다. Windows XP 이후에, PNG, TIF, Exif, WMF, 그리고 EMF와 같은 이미지를 추가로 지원합니다. XP 보다 오래된 운영 체제는 마이크로소프트사의 무료 GDI+ DLL을 AutoHotkey.exe 폴더 안으로 복사해 지원할 수 있습니다 (그러나 <a href="../Scripts.htm#ahk2exe">컴파일 스크립트</a>의 경우는, 그 DLL을 스크립트의 폴더 안으로 복사해 넣으십시오). 이 DLL을내려 받으려면, <a href="https://www.microsoft.com">www.microsoft.com</a>에 다음 문구를 검색하십시오: gdi redistributable</p>
+<p><span class="ver">[v1.1.23+]:</span> A <a href="../misc/ImageHandles.htm">bitmap or icon handle</a> can be used instead of a filename. 예를 들어, <code>HBITMAP:%handle%</code>.</p>
+
+<h3 id="IL_Destroy">IL_Destroy</h3>
+<p>지정된 ImageList를 삭제합니다 그리고 성공하면 1을 돌려주고 실패하면 0을 돌려줍니다.</p>
+<pre class="Syntax"><span class="func">IL_Destroy</span>(ImageListID)</pre>
+<p>보통 ImageList를 파괴할 필요가 없습니다. 왜냐하면 일단 ListView에 부착되면, ListView나의 그의 부모 창이 파괴될 때 자동으로 같이 파괴되기 때문입니다. 그렇지만, ListView가 (그의 옵션에 <code>0x40</code>를 가져서) ImageList를 다른 ListView와 공유하면, 스크립트는 그를 사용하는 모든 ListView를 파괴한 후에 명시적으로 그 ImageList를 파괴해야 합니다. 비슷하게, 스크립트가 ListView의 예전 ImageList중 하나를 새 것으로 교체하면, 명시적으로 그 예전 리스트를 파괴해야 합니다.</p>
+
+<h2 id="Remarks">논평</h2>
 <p><a href="Gui.htm#Submit">Gui Submit</a> 명령어는 ListView 콘트롤에 아무 영향이 없습니다. 그러므로, 스크립트는 ListView의 <a href="Gui.htm#var">연관 변수</a>를 사용하여 (있다면) 덮어쓸 걱정없이 다른 데이터를 저장할 수 있습니다.</p>
-<p>컬럼이 정렬된 후에 -- 사용자가 그의 헤더를 클릭했거나 스크립트가 <code><a href="#LV_ModifyCol">LV_ModifyCol(1, "Sort")</a></code>를 호출함으로써 -- 이후에 추가되는 행들은 정렬 순서를 준수하지 않고 리스트에 끝에 나타납니다. 이에 대한 예외는 <a href="#Sort">Sort</a>와 <a href="#SortDesc">SortDesc</a> 스타일인데, 새로 추가된 행들을 올바른 위치로 이동시킵니다.</p>
-<p><a name="Enter"></a>ListView에 초점이 있는 동안 사용자가 Enter를 누를 때를 탐지하려면 을 때 <a href="GuiControls.htm#DefaultButton">기본 버튼</a>을 사용하십시오 (원하면 감출 수 있습니다). 예를 들어:</p>
+<p>컬럼이 정렬된 후에 -- 사용자가 그의 헤더를 클릭했거나 스크립트가 <code><a href="#LV_ModifyCol">LV_ModifyCol</a>(1, "Sort")</code>를 호출함으로써 -- 이후에 추가되는 행들은 정렬 순서를 준수하지 않고 리스트에 끝에 나타납니다. 이에 대한 예외는 <a href="#Sort">Sort</a>와 <a href="#SortDesc">SortDesc</a> 스타일인데, 새로 추가된 행들을 올바른 위치로 이동시킵니다.</p>
+<p id="Enter">ListView에 초점이 있는 동안 사용자가 <kbd>Enter</kbd>를 누를 때를 탐지하려면 을 때 <a href="GuiControls.htm#DefaultButton">기본 버튼</a>을 사용하십시오 (원하면 감출 수 있습니다). 예를 들어:</p>
 <pre>Gui, Add, Button, Hidden Default, OK
 ...
 ButtonOK:
 GuiControlGet, FocusedControl, FocusV
-if FocusedControl &lt;&gt; MyListView
+if (FocusedControl != "MyListView")
     return
 MsgBox % "Enter was pressed. The focused row number is " . LV_GetNext(0, "Focused")
 return</pre>
@@ -249,26 +325,30 @@ return</pre>
 <p>ListView에서 최대 행의 개수는 오직 시스템 메모리에만 제한되지만, <a href="#Count">Count</a> 옵션에 기술한 것처럼 행-추가 수행성능을 크게 개선할 수 있습니다.</p>
 <p>ListView 둘레에 그림을 배경으로 사용할 수 있습니다 (즉, ListView를 액자틀에 넣을 수 있습니다). 이렇게 하려면, ListView 뒤에 <a href="GuiControls.htm#Picture">그림 콘트롤을</a>을 생성하고 그림의 <em>Options</em>에 <code>0x4000000</code>를 포함시키십시오 (WS_CLIPSIBLINGS임).</p>
 <p>스크립트를 창 당 여러 ListView를 생성할 수 있습니다. 기본 리스트뷰 말고 다른 ListView를 처리하려면, <a href="#BuiltIn">내장 함수</a>를 참조하십시오.</p>
-<p><a href="PostMessage.htm">SendMessage</a>로 열을 직접 삭제하거나 삽입하지 않는 것이 좋습니다. 왜냐면 프로그램은 각 열에 <a href="#Integer">선호하는 정렬 기준</a>이 다 따로 있어서, 동기화가 안될 수 있기 때문입니다. 대신에, <a href="#bifCol">내장 열 함수</a>를 사용하십시오.</p>
+<p><a href="PostMessage.htm">SendMessage</a>로 열을 직접 삭제하거나 삽입하지 않는 것이 좋습니다. 왜냐면 프로그램은 각 열에 <a href="#Integer">선호하는 정렬 기준</a>이 다 따로 있어서, 동기화가 안될 수 있기 때문입니다. 대신에, <a href="#BuiltIn">내장 열 함수</a>를 사용하십시오.</p>
 <p>ListView의 크기를 바꾸거나 숨기거나 글꼴을 바꾸는 것과 같은 조치들을 수행하려면 <a href="GuiControl.htm">GuiControl</a>을 사용하십시오.</p>
 <p>텍스트를 (스크립트가 소유한 것이 아닌) 외부 ListView로부터 추출하려면, <a href="ControlGet.htm#List">ControlGet List</a>를 사용하십시오.</p>
-<h2>관련 항목</h2>
+
+<h2 id="Related">관련 항목</h2>
 <p><a href="TreeView.htm">TreeView</a>, <a href="GuiControls.htm">Other Control Types</a>, <a href="Gui.htm">Gui</a>, <a href="Gui.htm#GuiContextMenu">GuiContextMenu</a>, <a href="GuiControl.htm">GuiControl</a>, <a href="GuiControlGet.htm">GuiControlGet</a>, <a href="../misc/Styles.htm#ListView">ListView 스타일 테이블</a></p>
+
 <h2 id="Examples">예제</h2>
-<pre class="NoIndent"><em>; 0을 첫 행 번호로 지정해 모든 행을 선택하거나 해제합니다:</em>
-<a href="#LV_Modify">LV_Modify</a>(0, "Select")   <em>; 모두 선택합니다.</em>
+
+<div class="ex" id="ExAllRows">
+<p><a class="ex_number" href="#ExAllRows"></a> Selects or de-selects all rows by specifying 0 as the row number.</p>
+<pre><a href="#LV_Modify">LV_Modify</a>(0, "Select")   <em>; 모두 선택합니다.</em>
 LV_Modify(0, "-Select")  <em>; 모두 해제합니다.</em>
-LV_Modify(0, "-Check")  <em>;  모든 <a href="#Checked">체크박스</a>를 해제합니다.</em>
+LV_Modify(0, "-Check")  <em>;  모든 <a href="#Checked">체크박스</a>를 해제합니다.</em></pre>
+</div>
 
-<em>; 모든 열을 그의 내용에 맞게 자동 크기 조절합니다:</em>
-<a href="#LV_ModifyCol">LV_ModifyCol</a>()  <em>; 이 모드에는 매개변수가 없습니다.</em></pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; MAIN EXAMPLE
-; 다음 스크립트는 이 페이지 위에 있는 예제에 비해 더 정교합니다.
-; 사용자가 선택한 폴더 안의 각 파일들을 그의 유형에 맞게 아이콘을 연관지어 보여줍니다.
-; 사용자는 파일을 더블클릭 하거나 하나 이상의 파일을 우클릭해 문맥 메뉴를 보여줄 수 있습니다.</em>
+<div class="ex" id="ExAutoSize">
+<p><a class="ex_number" href="#ExAutoSize"></a> 모든 열을 그의 내용에 맞게 자동 크기 조절합니다.</p>
+<pre><a href="#LV_ModifyCol">LV_ModifyCol</a>()  <em>; 이 모드에는 매개변수가 없습니다.</em></pre>
+</div>
 
-<em>; 사용자에게 창을 끌어 크기를 변경하도록 허용합니다:</em>
+<div class="ex" id="ExAdvanced">
+<p><a class="ex_number" href="#ExAdvanced"></a> 다음 스크립트는 이 페이지 위에 있는 예제에 비해 더 정교합니다. 사용자가 선택한 폴더 안의 각 파일들을 그의 유형에 맞게 아이콘을 연관지어 보여줍니다. 사용자는 파일을 더블클릭 하거나 하나 이상의 파일을 우클릭해 문맥 메뉴를 보여줄 수 있습니다.</p>
+<pre><em>; 사용자에게 창을 끌어 크기를 변경하도록 허용합니다:</em>
 Gui +Resize
 
 <em>; 버튼을 만듭니다:</em>
@@ -276,8 +356,8 @@ Gui, Add, Button, Default gButtonLoadFolder, Load a folder
 Gui, Add, Button, x+20 gButtonClear, Clear List
 Gui, Add, Button, x+20, Switch View
 
-<em>; ListView와 그의 컬럼을 생성합니다:</em>
-<a href="#GuiAdd">Gui, Add, ListView</a>, xm r20 w700 vMyListView gMyListView, Name|In Folder|Size (KB)|Type
+<em>; Create the ListView and its columns via <a href="#GuiAdd">Gui Add</a>:</em>
+Gui, Add, ListView, xm r20 w700 vMyListView gMyListView, Name|In Folder|Size (KB)|Type
 <a href="#LV_ModifyCol">LV_ModifyCol</a>(3, "Integer")  <em>; 정렬을 위해, Size 열이 정수임을 나타냅니다.</em>
 
 <em>; ListView가 아이콘을 보여줄 수 있도록 ImageList를 만듭니다:</em>
@@ -308,9 +388,9 @@ if not Folder  <em>; 사용자가 대화상자를 취소했습니다.</em>
 
 <em>; 폴더 이름의 마지막 글자자 역사선인지 점검합니다. 혹시 루트 디렉토리 일 수 있습니다.
 ; 만약 C:\와 같다면, 그것을 제거해 나중에 두개의 역사선이 되는 것을 막습니다.</em>
-StringRight, LastChar, Folder, 1
-if LastChar = \
-    StringTrimRight, Folder, Folder, 1  <em>; 뒤에 따르는 역사선을 제거합니다.</em>
+LastChar := SubStr(Folder, 0)
+if (LastChar = "\")
+    Folder := SubStr(Folder, 1, -1)  <em>; 뒤에 따르는 역사선을 제거합니다.</em>
 
 <em>; SHFILEINFO 구조에 필요한 버퍼 크기를 계산합니다.</em>
 sfi_size := A_PtrSize + 8 + (A_IsUnicode ? 680 : 340)
@@ -329,14 +409,14 @@ Loop %Folder%\*.*
     if FileExt in EXE,ICO,ANI,CUR
     {
         ExtID := FileExt  <em>; 특수한 ID를 위치 보유자로 사용합니다.</em>
-        IconNumber = 0  <em>; 발견하지 못한 것으로 표식을 붙여서 이런 유형이 각각 유일한 아이콘을 가지도록 합니다.</em>
+        IconNumber := 0  <em>; 발견하지 못한 것으로 표식을 붙여서 이런 유형이 각각 유일한 아이콘을 가지도록 합니다.</em>
     }
     else  <em>; 어떤 다른 확장자/파일-유형입니다. 그래서 그의 유일한 ID를 계산합니다.</em>
     {
-        ExtID = 0  <em>; 다른 확장자보다 더 짧은 확장자를 처리하기 위해 초기화합니다.</em>
+        ExtID := 0  <em>; 다른 확장자보다 더 짧은 확장자를 처리하기 위해 초기화합니다.</em>
         Loop 7     <em>; 확장자 길이를 7 문자로 제한합니다. 그래서 64-비트 값에 맞습니다.</em>
         {
-            StringMid, ExtChar, FileExt, A_Index, 1
+            ExtChar := SubStr(FileExt, A_Index, 1)
             if not ExtChar  <em>; 더 이상 문자가 없습니다.</em>
                 break
             <em>;  각 문자마다 다른 비트 위치를 할당해서 유일한 ID를 추출합니다.:</em>
@@ -350,19 +430,19 @@ Loop %Folder%\*.*
     if not IconNumber  <em>; 아직 이 확장자에 아이콘이 없습니다. 그래서 적재합니다.</em>
     {
         <em>; 이 파일 확장에 연관된 고품질의 작은 아이콘을 얻습니다:</em>
-        if not DllCall("Shell32\SHGetFileInfo" . (A_IsUnicode ? "W":"A"), "str", FileName
-            , "uint", 0, "ptr", &amp;sfi, "uint", sfi_size, "uint", 0x101)  <em>; 0x101 is SHGFI_ICON+SHGFI_SMALLICON</em>
-            IconNumber = 9999999  <em>; 빈 아이콘을 보여주기 위해 범위를 벗어나도록 설정합니다.</em>
+        if not DllCall("Shell32\SHGetFileInfo" . (A_IsUnicode ? "W":"A"), "Str", FileName
+            , "UInt", 0, "Ptr", &amp;sfi, "UInt", sfi_size, "UInt", 0x101)  <em>; 0x101 is SHGFI_ICON+SHGFI_SMALLICON</em>
+            IconNumber := 9999999  <em>; 빈 아이콘을 보여주기 위해 범위를 벗어나도록 설정합니다.</em>
         else <em>; 아이콘이 성공적으로 적재되었습니다.</em>
         {
             <em>; 구조로부터 hIcon 멤버를 추출합니다:</em>
             hIcon := NumGet(sfi, 0)
             <em>; HICON을 직접 작은-아이콘 그리고 큰-아이콘 리스트에 추가합니다.</em>
             <em>; 아래는 +1을 사용해, 반환된 인덱스트를 0 기반에서 1 기반으로 변환합니다:</em>
-            IconNumber := DllCall("ImageList_ReplaceIcon", "ptr", ImageListID1, "int", -1, "ptr", hIcon) + 1
-            DllCall("ImageList_ReplaceIcon", "ptr", ImageListID2, "int", -1, "ptr", hIcon)
+            IconNumber := DllCall("ImageList_ReplaceIcon", "Ptr", ImageListID1, "Int", -1, "Ptr", hIcon) + 1
+            DllCall("ImageList_ReplaceIcon", "Ptr", ImageListID2, "Int", -1, "Ptr", hIcon)
             <em>; 이제 ImageList 안으로 복사되었으므로, 원본은 파괴해야 합니다:</em>
-            DllCall("DestroyIcon", "ptr", hIcon)
+            DllCall("DestroyIcon", "Ptr", hIcon)
             <em>; 아이콘을 캐쉬해 메모리를 절약하고 적재 수행성능을 개선합니다:</em>
             IconArray%ExtID% := IconNumber
         }
@@ -390,7 +470,7 @@ IconView := not IconView             <em>; 다음을 대비해 뒤집습니다.<
 return
 
 MyListView:
-if A_GuiEvent = DoubleClick  <em>; 스크립트가 점검할 수 있다는 다른 값들이 많이 있습니다.</em>
+if (A_GuiEvent = "DoubleClick")  <em>; 스크립트가 점검할 수 있다는 다른 값들이 많이 있습니다.</em>
 {
     <a href="#LV_GetText">LV_GetText</a>(FileName, A_EventInfo, 1) <em>; 첫 필드의 텍스트를 얻습니다.</em>
     LV_GetText(FileDir, A_EventInfo, 2)  <em>; 두 번째 필드의 텍스트를 얻습니다.</em>
@@ -401,7 +481,7 @@ if A_GuiEvent = DoubleClick  <em>; 스크립트가 점검할 수 있다는 다�
 return
 
 <a href="Gui.htm#GuiContextMenu">GuiContextMenu</a>:  <em>; 우클릭 또는 Apps 키의 누름에 응답하여 기동됩니다.</em>
-if A_GuiControl &lt;&gt; MyListView  <em>; ListView 안을 클릭할 때만 메뉴를 보여줍니다.</em>
+if (A_GuiControl != "MyListView")  <em>; ListView 안을 클릭할 때만 메뉴를 보여줍니다.</em>
     return
 <em>; 메뉴를 주어진 A_GuiX 그리고 A_GuiY 좌표에 보여줍니다. 이것을 사용해야 합니다
 ; 왜냐하면 사용자가 Apps 키를 누르더라도 올바른 좌표를 제공하기 때문입니다:</em>
@@ -416,7 +496,7 @@ if not FocusedRowNumber  <em>; 초점 행이 없습니다.</em>
     return
 LV_GetText(FileName, FocusedRowNumber, 1) <em>; 첫 필드의 텍스트를 얻습니다.</em>
 LV_GetText(FileDir, FocusedRowNumber, 2)  <em>; 두 번째 필드의 텍스트를 얻습니다.</em>
-IfInString A_ThisMenuItem, Open  <em>; 사용자가 문맥 메뉴에서 "Open"을 선택했습니다.</em>
+if InStr(A_ThisMenuItem, "Open")  <em>; 사용자가 문맥 메뉴에서 "Open"을 선택했습니다.</em>
     Run %FileDir%\%FileName%,, UseErrorLevel
 else  <em>; 사용자가 문맥 메뉴에서 "Properties"를 선택했습니다.</em>
     Run Properties "%FileDir%\%FileName%",, UseErrorLevel
@@ -425,7 +505,7 @@ if ErrorLevel
 return
 
 ContextClearRows:  <em>; 사용자가 문맥 메뉴에서 "Clear"를 선택했습니다.</em>
-RowNumber = 0  <em>; 이렇게 하면 첫 반복이 최상단에서 검색을 시작합니다.</em>
+RowNumber := 0  <em>; 이렇게 하면 첫 반복이 최상단에서 검색을 시작합니다.</em>
 Loop
 {
     <em>; 행을 삭제하면 그 아래의 모든 다른 행의 RowNumber가 줄어 들기 때문에,</em>
@@ -439,7 +519,7 @@ Loop
 return
 
 GuiSize:  <em>; 사용자의 창 크기 조절에 응답하여 ListView를 키우거나 줄입니다.</em>
-if A_EventInfo = 1  <em>; 창은 최소화되어 있습니다. 아무 필요도 없습니다.</em>
+if (A_EventInfo = 1)  <em>; 창은 최소화되어 있습니다. 아무 필요도 없습니다.</em>
     return
 <em>; 그렇지 않으면, 창이 크기가 바뀌었거나 최대화되었습니다. 그에 맞도록 ListView의 크기를 조절합니다.</em>
 GuiControl, Move, MyListView, % "W" . (A_GuiWidth - 20) . " H" . (A_GuiHeight - 40)
@@ -447,6 +527,7 @@ return
 
 GuiClose:  <em>; 창이 닫힐 때, 자동으로 스크립트를 종료합니다:</em>
 ExitApp</pre>
+</div>
 
 </body>
 </html>

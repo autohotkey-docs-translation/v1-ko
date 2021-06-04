@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinGetActiveTitle</title>
+<title>WinGetActiveTitle - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinGetActiveTitle command retrieves the title of the active window." />
+<meta name="ahk:equiv-v2" content="commands/WinGetTitle.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +15,8 @@
 
 <p>활성 창의 제목을 열람합니다.</p>
 
-<pre class="Syntax">WinGetActiveTitle, OutputVar</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">WinGetActiveTitle</span>, OutputVar</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -23,13 +24,16 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>이 명령어는 다음과 동등합니다: <code><a href="WinGetTitle.htm">WinGetTitle</a>, OutputVar, A</code>.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="WinGetPos.htm">WinGetPos</a>, <a href="WinGetActiveStats.htm">WinGetActiveStats</a>, <a href="WinGetTitle.htm">WinGetTitle</a>, <a href="WinGetClass.htm">WinGetClass</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="ControlGetText.htm">ControlGetText</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">WinGetActiveTitle, Title
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves and reports the title of the active window.</p>
+<pre>WinGetActiveTitle, Title
 MsgBox, 활성 창의 제목은 "%Title%"입니다.</pre>
+</div>
 
 </body>
 </html>

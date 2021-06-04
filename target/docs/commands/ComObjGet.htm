@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ComObjGet()</title>
+<title>ComObjGet() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ComObjGet function returns a reference to an object provided by a COM component." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,40 +12,44 @@
 
 <h1>ComObjGet() <span class="ver">[AHK_L 53+]</span></h1>
 <p>COM 콤포넌트가 제공하는 객체 주소를 돌려줍니다.</p>
-<pre class="Syntax">ComObject := ComObjGet(Name)</pre>
+<pre class="Syntax">ComObject := <span class="func">ComObjGet</span>(Name)</pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Name</dt>
-  <dd><p>열람 가능한 객체의 이름. 더 자세한 정보는 <a href="http://msdn.microsoft.com/en-us/library/ms691253.aspx">MkParseDisplayName (MSDN)</a>을 참조하십시오.</p></dd>
+  <dd><p>열람 가능한 객체의 이름. 더 자세한 정보는 <a href="http://msdn.microsoft.com/ko-kr/library/ms691253.aspx">MkParseDisplayName (MSDN)</a>을 참조하십시오.</p></dd>
 
 </dl>
 
-<h3>관련 항목</h3>
-<a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjConnect.htm">ComObjConnect</a>, <a href="ComObjError.htm">ComObjError</a>, <a href="ComObjQuery.htm">ComObjQuery</a>, <a href="http://msdn.microsoft.com/en-us/library/ms678805.aspx">CoGetObject (MSDN)</a>
+<h2 id="Remarks">논평</h2>
+<p>On failure, the function may throw an exception, exit the script or return an empty string, depending on the current <a href="ComObjError.htm">ComObjError()</a> setting and <a href="ComObjError.htm#factors">other factors</a>.</p>
 
-<h3>예제</h3>
-<pre class="NoIndent" id="exwmi"><em>; 예제: Shift+Escape를 누르면 활성 창의 프로세스를
-;   기동시키는 데 사용된 명령줄 을 볼 수 있습니다.</em>
-+Esc::
+<h2 id="Related">관련 항목</h2>
+<a href="ComObjCreate.htm">ComObjCreate()</a>, <a href="ComObjActive.htm">ComObjActive()</a>, <a href="ComObjConnect.htm">ComObjConnect()</a>, <a href="ComObjError.htm">ComObjError()</a>, <a href="ComObjQuery.htm">ComObjQuery()</a>, <a href="http://msdn.microsoft.com/ko-kr/library/ms678805.aspx">CoGetObject (MSDN)</a>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="exwmi">
+<p><a class="ex_number" href="#exwmi"></a> Press <kbd>Shift</kbd>+<kbd>Esc</kbd> to show the command line which was used to launch the active window's process. XP 이상을 요구합니다.</p>
+<pre>+Esc::
     WinGet pid, PID, A
     <em>; WMI 서비스 객체를 얻습니다.</em>
-    wmi := <b>ComObjGet</b>("winmgmts:")
+    wmi := ComObjGet("winmgmts:")
     <em>; 질의를 실행해 부합하는 프로세스(들)를 열람합니다.</em>
     queryEnum := wmi.ExecQuery(""
         . "Select * from Win32_Process where ProcessId=" . pid)
         ._NewEnum()
     <em>; 첫 번째로 부합하는 프로세스를 얻습니다.</em>
-    if queryEnum[process]
-        MsgBox 0, Command line, % process.CommandLine
+    if queryEnum[proc]
+        MsgBox 0, Command line, % proc.CommandLine
     else
         MsgBox Process not found!
     <em>; 모든 전역 객체를 풀어줍니다 (지역 변수를 사용할 때는 필요치 않음).</em>
-    wmi := queryEnum := process := ""
+    wmi := queryEnum := proc := ""
 return
-<em>; Win32_Process: <a href="http://msdn.microsoft.com/en-us/library/aa394372.aspx">http://msdn.microsoft.com/en-us/library/aa394372.aspx</a></em>
+<em>; Win32_Process: <a href="http://msdn.microsoft.com/ko-kr/library/aa394372.aspx">http://msdn.microsoft.com/ko-kr/library/aa394372.aspx</a></em>
 </pre>
+</div>
 
 </body>
 </html>

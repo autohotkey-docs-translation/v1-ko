@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>StringCaseSense</title>
+<title>StringCaseSense - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content='The StringCaseSense command determines whether string comparisons are case sensitive (default is "not case sensitive").' />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,32 +14,39 @@
 
 <p>문자열 비교에 대소문자를 구분할지 결정합니다. (기본값은 "대소문자를 구별하지 않습니다").</p>
 
-<pre class="Syntax">StringCaseSense, On|Off|Locale</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">StringCaseSense</span>, OnOffLocale</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>On|Off|Locale</dt>
-  <dd><p><strong>On</strong>: 문자열 비교는 대소문자를 구분합니다. 이 설정은 또한 <a href="../Variables.htm#equal">표현식 등호 사인 연산자 (=)</a> 그리고 <a href="../Functions.htm#InStr">InStr()</a>의 대소문자 비 구분 모드를 아래에 기술된 <em>로케일</em> 방법을 사용하도록 만듭니다.</p>
-      <p><strong>Off</strong> (기본값으로 시작): 기호 A-Z는 소문자로 간주합니다. 이것은 하위 호환과 수행성능의 문제 때문에 모든 스크립트를 시작할 때 기본값입니다 (<em>Locale</em>은 비교되는 문자열의 성질에 따라 <em>Off</em> 때보다 1에서 8배까지 느립니다).</p>
-      <p><strong><a name="Locale"></a>Locale</strong> <span class="ver">[v1.0.43.03+]:</span> 문자열 비교는 현재 사용자의 로케일에 따라 대소문자를 <strong>구분</strong> 합니다. 예를 들어, 대부분의 영어와 서구 유럽 로케일은 기호 A-Z를 소문자로 취급할 뿐만 아니라 Ä and Ü와 같은 ANSI 기호도 소문자로 취급합니다.</p></dd>
+  <dt>OnOffLocale</dt>
+  <dd>
+    <p>Specify one of the following words:</p>
+    <p><strong>On</strong>: 문자열 비교는 대소문자를 구분합니다. 이 설정은 또한 <a href="../Variables.htm#equal">표현식 등호 사인 연산자 (=)</a> 그리고 <a href="InStr.htm">InStr()</a>의 대소문자 비 구분 모드를 아래에 기술된 <em>로케일</em> 방법을 사용하도록 만듭니다.</p>
+    <p><strong>Off</strong> (기본값으로 시작): 기호 A-Z는 소문자로 간주합니다. 이것은 하위 호환과 수행성능의 문제 때문에 모든 스크립트를 시작할 때 기본값입니다 (<em>Locale</em>은 비교되는 문자열의 성질에 따라 <em>Off</em> 때보다 1에서 8배까지 느립니다).</p>
+    <p id="Locale"><strong>Locale</strong> <span class="ver">[v1.0.43.03+]:</span> 문자열 비교는 현재 사용자의 로케일에 따라 대소문자를 <strong>구분</strong> 합니다. 예를 들어, 대부분의 영어와 서구 유럽 로케일은 기호 A-Z를 소문자로 취급할 뿐만 아니라 Ä and Ü와 같은 ANSI 기호도 소문자로 취급합니다.</p>
+    <p><span class="ver">[v1.1.30+]:</span> The decimal values 1 and 0 may be used in place of On and Off, respectively.</p>
+  </dd>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>이 설정은 다음에 적용됩니다:</p>
 <ul>
-  <li><a href="../Variables.htm#equal">표현식 비교 연산자</a> ( ==는 예외). 그렇지만, <a href="../Variables.htm#equal">등호-사인 연산자 (=)</a>는 언제나 대소문자를 구분하지 않기 때문에, <em>StringCaseSense</em>가 <em>On</em>되어 있으면 <em>Locale</em> 모드를 사용합니다. <a href="../Functions.htm#InStr">InStr()</a>의 대소문자 비구분 모드도 마찬가지로 Locale 모드를 사용합니다.</li>
-  <li><a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, 그리고 <a href="../Functions.htm#InStr">InStr()</a>. 그렇지만, InStr()은 <em>CaseSensitive</em> 매개변수가 참(<em>true</em>)이어도 영향을 받지 않습니다.</li>
-  <li><a href="StringReplace.htm">StringReplace</a></li>
+  <li><a href="../Variables.htm#equal">표현식 비교 연산자</a> ( ==는 예외). 그렇지만, <a href="../Variables.htm#equal">등호-사인 연산자 (=)</a>는 언제나 대소문자를 구분하지 않기 때문에, <em>StringCaseSense</em>가 <em>On</em>되어 있으면 <em>Locale</em> 모드를 사용합니다. <a href="InStr.htm">InStr()</a>의 대소문자 비구분 모드도 마찬가지로 Locale 모드를 사용합니다.</li>
+  <li><a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, 그리고 <a href="InStr.htm">InStr()</a>. 그렇지만, InStr()은 <em>CaseSensitive</em> 매개변수가 참(<em>true</em>)이어도 영향을 받지 않습니다.</li>
+  <li><a href="StrReplace.htm">StrReplace()</a> and <a href="StringReplace.htm">StringReplace</a>.</li>
   <li><a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, 그리고 <a href="IfEqual.htm">IfEqual과 그의 가족</a>.</li>
   <li><span class="ver">[AHK_L 42+]:</span> <a href="IfIs.htm">if var is [not] type</a>은 <i>Locale</i> 모드가 켜져 있을 경우에만 시스템 로케일을 존중합니다.</li>
 </ul>
 <p>내장 변수 <strong>A_StringCaseSense</strong>는 현재 설정이 담깁니다 (단어 On, Off, 또는 Locale).</p>
 <p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
-<h3>관련 항목</h3>
-<p><a href="IfEqual.htm">IfEqual</a>, <a href="IfInString.htm">IfInString</a>, <a href="IfBetween.htm">if var between</a>, <a href="StringReplace.htm">StringReplace</a>, <a href="StringGetPos.htm">StringGetPos</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">StringCaseSense Locale</pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="IfEqual.htm">IfEqual</a>, <a href="IfInString.htm">IfInString</a>, <a href="IfBetween.htm">if var between</a>, <a href="StrReplace.htm">StrReplace()</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringReplace.htm">StringReplace</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Makes string comparisons case insensitive according to the rules of the current user's locale.</p>
+<pre>StringCaseSense Locale</pre>
+</div>
 
 </body>
 </html>

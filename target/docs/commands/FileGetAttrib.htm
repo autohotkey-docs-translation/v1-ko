@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileGetAttrib</title>
+<title>FileGetAttrib - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileGetAttrib command reports whether a file or folder is read-only, hidden, etc." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,48 +14,50 @@
 
 <p>파일이나 폴더가 읽기 전용인지, 숨어 있는지 등등을 보고합니다.</p>
 
-<pre class="Syntax">FileGetAttrib, OutputVar [, Filename]
-<a href="FileGetAttrib.htm#attrib">AttributeString</a> := <a href="../Functions.htm#FileExist">FileExist</a>(FilePattern)</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FileGetAttrib</span>, OutputVar <span class="optional">, Filename</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
   <dd><p>열람된 텍스트를 저장할 변수의 이름.</p></dd>
 
   <dt>Filename</dt>
-  <dd><p>목표 파일의 이름, 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 생략하면, 가장 안쪽 <a href="LoopFile.htm">파일-회돌이</a>에 싸인 현재 파일이 사용됩니다.</p></dd>
+  <dd><p>목표 파일의 이름, 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 생략하면, 가장 안쪽 <a href="LoopFile.htm">파일-회돌이</a>에 싸인 현재 파일이 사용됩니다. Unlike <a href="FileExist.htm">FileExist()</a>, this must be a true filename, not a pattern.</p></dd>
 
 </dl>
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
 <p><a href="../Variables.htm#LastError">A_LastError</a>는 운영 체제의 GetLastError() 함수의 결과가 설정됩니다.</p>
 
-<h3>논평</h3>
-<p><a name="attrib"></a>반환된 문자열에는 다음 "RASHNDOCT" 문자열의 부문자열이 포함됩니다:<br>
-  <br>
-R = READONLY(읽기 전용)<br>
-A = ARCHIVE(보관)<br>
-S = SYSTEM(시스템)<br>
-H = HIDDEN(감춤)<br>
-N = NORMAL(정상)<br>
-D = DIRECTORY(디렉토리)<br>
-O = OFFLINE(오프라인)<br>
-C = COMPRESSED(압축)<br>
-T = TEMPORARY(임시)</p>
-<p><br>
-  특정 속성이 열람된 문자열에 존재하는지 점검하려면, 다음 예제를 따르십시오:</p>
+<h2 id="Remarks">논평</h2>
+<p id="attrib">반환된 문자열에는 다음 "RASHNDOCT" 문자열의 부문자열이 포함됩니다:</p>
+<ul>
+  <li>R = READONLY(읽기 전용)</li>
+  <li>A = ARCHIVE(보관)</li>
+  <li>S = SYSTEM(시스템)</li>
+  <li>H = HIDDEN(감춤)</li>
+  <li>N = NORMAL(정상)</li>
+  <li>D = DIRECTORY(디렉토리)</li>
+  <li>O = OFFLINE(오프라인)</li>
+  <li>C = COMPRESSED(압축)</li>
+  <li>T = TEMPORARY(임시)</li>
+</ul>
+<p>특정 속성이 열람된 문자열에 존재하는지 점검하려면, 다음 예제를 따르십시오:</p>
 <pre>FileGetAttrib, Attributes, C:\My File.txt
-IfInString, Attributes, H
+if InStr(Attributes, "H")
     MsgBox The file is hidden.</pre>
 <p>관련하여 한 마디 하면, 파일의 8.3 짧은 이름을 열람하려면, 다음 예제를 따르십시오:</p>
 <pre><a href="LoopFile.htm">Loop</a>, C:\My Documents\Address List.txt
-    ShortPathName = %A_LoopFileShortPath%  <em>; 결과는 다음과 비슷합니다: C:\MYDOCU~1\ADDRES~1.txt</em></pre>
+    ShortPathName := A_LoopFileShortPath  <em>; 결과는 다음과 비슷합니다: C:\MYDOCU~1\ADDRES~1.txt</em></pre>
 <p>비슷한 방법으로 8.3 짧은 이름의 긴 이름을 얻을 수 있습니다.</p>
-<h3>관련 항목</h3>
-<p><a href="../Functions.htm#FileExist">FileExist()</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="FileSetTime.htm">FileSetTime</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="FileGetVersion.htm">FileGetVersion</a>, <a href="LoopFile.htm">파일-회돌이</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FileGetAttrib, OutputVar, C:\New Folder</pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="FileExist.htm">FileExist()</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="FileSetTime.htm">FileSetTime</a>, <a href="FileGetSize.htm">FileGetSize</a>, <a href="FileGetVersion.htm">FileGetVersion</a>, <a href="LoopFile.htm">파일-회돌이</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Stores the attribute letters of a directory in <var>OutputVar</var>. Note that existing directories always have the attribute letter D.</p>
+<pre>FileGetAttrib, OutputVar, C:\New Folder</pre>
+</div>
 
 </body>
 </html>

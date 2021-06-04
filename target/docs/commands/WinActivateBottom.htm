@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinActivateBottom</title>
+<title>WinActivateBottom - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinActivateBottom command is similar to the WinActivate command but it activates the bottommost matching window rather than the topmost." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,10 +12,10 @@
 
 <h1>WinActivateBottom</h1>
 
-<p><a href="WinActivate.htm">WinActivate</a>와 동일합니다. 단 최상단 창이 아니라 (가장 최근까지도 활성화되지 않은) 최하단 창을 활성화한다는 점이 다릅니다.</p>
+<p><a href="WinActivate.htm">WinActivate</a>와 동일합니다. 단 최상단 창이 아니라 최하단 창을 활성화한다는 점이 다릅니다.</p>
 
-<pre class="Syntax">WinActivateBottom [, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">WinActivateBottom</span> <span class="optional">, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>WinTitle</dt>
@@ -32,23 +32,26 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
+<p>The bottommost window is typically the one least recently used, except when windows have been reordered, such as with <a href="WinSet.htm#Bottom">WinSet Bottom</a>.</p>
 <p>부합하는 창이 하나 밖에 없다면, WinActivateBottom은 <a href="WinActivate.htm">WinActivate</a>와 동일하게 행위합니다.</p>
 <p><a href="GroupAdd.htm">Window groups</a>은 이 명령어보다 더 고급입니다. 그래서 더 유연한 특징이 필요하면 사용을 고려해 보십시오.</p>
-<p>창이 최소화되어 있으면, 자동으로 복구한 다음 활성화합니다.</p>
+<p>If the window is minimized and inactive, it is automatically restored prior to being activated. <span class="ver">[v1.1.20+]:</span> If <em>WinTitle</em> is the letter "A" and the other parameters are omitted, the active window is restored. <span class="ver">[v1.1.28.02+]:</span> The window is restored even if it was already active.</p>
 <p>목표 창을 활성화하기 위해 60ms 동안 여섯 번 시도를 합니다. 그리하여, 보통 이 명령어 다음에 <a href="WinWaitActive.htm">WinWaitActive</a> 명령어가 따라올 필요가 없습니다.</p>
 <p><a href="WinActivate.htm">WinActivate</a>와 다르게, <a href="../misc/WinTitle.htm#LastFoundWindow">마지막 발견 창</a>은 최하단 창일 경우가 없기 때문에 사용할 수 없습니다. 그러므로, 적어도 매개변수 중 하나는 반드시 비어 있지 않아야 합니다.</p>
 <p>또다른 창이 활성화 되자 마자 그 즉시 또 창이 활성화되면, 어떤 시스템에서는 (OS와 그 설정에 따라) 태스크 바 버튼이 깜빡거릴 수 있습니다. 이를 피하려면 <a href="_WinActivateForce.htm">#WinActivateForce</a>를 사용하십시오.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
 
-<h3>관련 항목</h3>
-<p><a href="WinActivate.htm">WinActivate</a>, <a href="_WinActivateForce.htm">#WinActivateForce</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinWaitActive.htm">WinWaitActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="GroupActivate.htm">GroupActivate</a></p>
-<h3>예제</h3>
-<pre class="NoIndent"><em>; 이 핫키로 모든 열린 브라우저 창을 예전부터 새로운 순서로 방문할 수 있습니다:</em>
-#i::
+<h2 id="Related">관련 항목</h2>
+<p><a href="WinActivate.htm">WinActivate</a>, <a href="_WinActivateForce.htm">#WinActivateForce</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="WinExist.htm">WinExist()</a>, <a href="WinActive.htm">WinActive()</a>, <a href="WinWaitActive.htm">WinWaitActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="GroupActivate.htm">GroupActivate</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Press a hotkey to visit all open browser windows in order from oldest to newest.</p>
+<pre>#i:: <em>; Win+I</em>
 SetTitleMatchMode, 2
 WinActivateBottom, - Microsoft Internet Explorer
 return</pre>
+</div>
 
 </body>
 </html>

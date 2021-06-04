@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>StatusbarGetText</title>
+<title>StatusbarGetText - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The StatusbarGetText command retrieves the text from a standard status bar control." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>표준 상태 바 콘트롤으로부터 텍스트를 열람합니다.</p>
 
-<pre class="Syntax">StatusBarGetText, OutputVar [, Part#, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">StatusBarGetText</span>, OutputVar <span class="optional">, Part#, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -38,19 +38,23 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1 없으면 0이 설정됩니다. 문제가 있었으면 <em>OutputVar</em>도 비워집니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>이 명령어는 창에서 첫 번째 <em>표준</em> 상태 바를 읽으려고 시도합니다 (Microsoft 공통 콘트롤: msctls_statusbar32). 어떤 프로그램은 자신만의 상태 바를 사용하기도 하고 특별한 버전의 MS 공통 콘트롤을 사용합니다. 이 경우 텍스트를 열람할 수 없습니다.</p>
 <p>이 명령어를 회돌이 안에 사용하기 보다, 보통 <a href="StatusBarWait.htm">StatusBarWait</a>를 사용하는 것이 더 효율적입니다. 이 명령어는 반복적으로 StatusBarGetText를 호출하는 부담을 피하도록 최적화 되어 있습니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
 
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="StatusBarWait.htm">StatusBarWait</a>, <a href="WinGetTitle.htm">WinGetTitle</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="ControlGetText.htm">ControlGetText</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">StatusBarGetText, RetrievedText, 1, Search Results
-IfInString, RetrievedText, found, MsgBox, 검색 결과가 발견되었습니다.</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves and analyzes the text from the first part of a status bar.</p>
+<pre>StatusBarGetText, RetrievedText, 1, Search Results
+if InStr(RetrievedText, "found")
+    MsgBox, 검색 결과가 발견되었습니다.</pre>
+</div>
 
 </body>
 </html>

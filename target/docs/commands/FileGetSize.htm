@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileGetSize</title>
+<title>FileGetSize - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileGetSize command retrieves the size of a file." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>파일의 크기를 열람합니다.</p>
 
-<pre class="Syntax">FileGetSize, OutputVar [, Filename, Units]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FileGetSize</span>, OutputVar <span class="optional">, Filename, Units</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -25,32 +25,42 @@
   <dd><p>목표 파일의 이름, 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 생략하면, 가장 안쪽 <a href="LoopFile.htm">파일-회돌이</a>에 싸인 현재 파일이 사용됩니다.</p></dd>
 
   <dt>Units</dt>
-  <dd><p>존재하면, 바이트가 아니라 지정한 단위로 결과를 반환합니다:<br>
-      K = 킬로바이트<br>
-      M = 메가바이트</p></dd>
+  <dd><p>존재하면, 바이트가 아니라 지정한 단위로 결과를 반환합니다:</p>
+    <ul>
+      <li>K = 킬로바이트</li>
+      <li>M = 메가바이트</li>
+    </ul>
+  </dd>
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
 <p><a href="../Variables.htm#LastError">A_LastError</a>는 운영 체제의 GetLastError() 함수의 결과가 설정됩니다.</p>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>크기에 상관없이 파일을 지원합니다. 심지어 4 기가바이트가 넘어도 지원합니다. 또 <em>Units</em>가 바이트라도 지원합니다.</p>
 <p>목표 파일이 디렉토리이면, 그 크기는 OS가 믿는 크기대로 보고됩니다 (대부분은 0이 보고될 것입니다).</p>
 <p>폴더의 크기를 그의 모든 파일을 포함하여 계산하려면, 다음 예제를 따르십시오:</p>
 <pre>SetBatchLines, -1  <em>; 연산을 최대 속도로 설정합니다.</em>
-FolderSize = 0
+FolderSize := 0
 FileSelectFolder, WhichFolder  <em>; 사용자에게 폴더를 고르도록 요청합니다.</em>
 Loop, %WhichFolder%\*.*, , 1
-    FolderSize += %A_LoopFileSize%
+    FolderSize += A_LoopFileSize
 MsgBox Size of %WhichFolder% is %FolderSize% bytes.</pre>
-<h3>관련 항목</h3>
-<p><a href="FileGetAttrib.htm">FileGetAttrib</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="FileSetTime.htm">FileSetTime</a>, <a href="FileGetVersion.htm">FileGetVersion</a>, <a href="LoopFile.htm">File-loop</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FileGetSize, OutputVar, C:\My Documents\test.doc  <em>; 크기를 바이트 단위로 열람합니다.</em>
-FileGetSize, OutputVar, C:\My Documents\test.doc, K  <em>; 크기를 Kbytes 단위로 열람합니다.</em></pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="FileGetAttrib.htm">FileGetAttrib</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileGetTime.htm">FileGetTime</a>, <a href="FileSetTime.htm">FileSetTime</a>, <a href="FileGetVersion.htm">FileGetVersion</a>, <a href="LoopFile.htm">File-회돌이</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves the size in bytes and stores it in <var>OutputVar</var>.</p>
+<pre>FileGetSize, OutputVar, C:\My Documents\test.doc</pre>
+</div>
+
+<div class="ex" id="ExKB">
+<p><a class="ex_number" href="#ExKB"></a> Retrieves the size in kilobytes and stores it in <var>OutputVar</var>.</p>
+<pre>FileGetSize, OutputVar, C:\My Documents\test.doc, K</pre>
+</div>
 
 </body>
 </html>

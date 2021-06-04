@@ -8,10 +8,10 @@ Display compile progress=No
 Full-text search=Yes
 Index file=Index.hhk
 Language=0x412 Korean
-Title=AutoHotkey Help
+Title=AutoHotkey ë„ì›€ë§
 
 [WINDOWS]
-Contents="AutoHotkey Help: ÇÑ±ÛÆÇ jojhnsonj 151111",,,"docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73500,,0x10200e,[200,0,1080,700],,,,,3,,0
+Contents="AutoHotkey ë„ì›€ë§",,,"docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73500,,0x10200e,[200,0,1080,700],,,,,3,,0
 
 
 [FILES]

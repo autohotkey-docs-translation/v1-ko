@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileMoveDir</title>
+<title>FileMoveDir - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileMoveDir command moves a folder along with all its sub-folders and files. 폴더의 이름을 바꿀 수도 있습니다." />
+<meta name="ahk:equiv-v2" content="commands/DirMove.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,15 +15,16 @@
 
 <p>폴더를 그의 모든 하위 폴더를 포함하여 이동합니다. 폴더의 이름을 바꿀 수도 있습니다.</p>
 
-<pre class="Syntax">FileMoveDir, Source, Dest [, Flag]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FileMoveDir</span>, Source, Dest <span class="optional">, Flag</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Source</dt>
   <dd><p>소스 디렉토리의 이름 (뒤에 역사선 없음), 절대 경로가 지정되어 있지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 예를 들어: C:\My Folder</p></dd>
 
   <dt>Dest</dt>
-  <dd><p>디렉토리의 새로운 경로와 이름 (뒤에 역사선 없음), 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 예를 들어: D:\My Folder. <strong>주의</strong>: <em>Dest</em>는 이동한 후에 디렉토리가 갖게 될 실제 경로와 이름입니다; <em>Source</em>가 이동되어 들어 갈 디렉토리가 <em>아닙니다</em> (아래에 기술한 알려진 한계는 예외입니다).</p></dd>
+  <dd><p>디렉토리의 새로운 경로와 이름 (뒤에 역사선 없음), 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. 예를 들어: D:\My Folder.</p>
+  <p class="note"><strong>주의</strong>: <em>Dest</em>는 이동한 후에 디렉토리가 갖게 될 실제 경로와 이름입니다; <em>Source</em>가 이동되어 들어 갈 디렉토리가 <em>아닙니다</em> (아래에 기술한 알려진 한계는 예외입니다).</p></dd>
 
   <dt>Flag</dt>
   <dd><p>(옵션) 다음 단일 문자 중 하나를 지정하십시오:</p>
@@ -33,18 +35,29 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>FileMoveDir은 단일 폴더를 새 위치로 이동합니다. 대신 폴더의 내용을 (그의 모든 파일과 하위 디렉토리를 포함하여) 이동하려면, <a href="FileMove.htm">FileMove</a> 섹션의 예제를 참조하십시오.</p>
 <p>소스와 목표가 다른 볼륨에 있거나 UNC 경로에 있으면, 이동이 아니라 복사/제거 연산이 수행됩니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="FileCopyDir.htm">FileCopyDir</a>, <a href="FileCopy.htm">FileCopy</a>, <a href="FileMove.htm">FileMove</a>, <a href="FileDelete.htm">FileDelete</a>, <a href="LoopFile.htm">File-회돌이</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a>, <a href="SplitPath.htm">SplitPath</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FileMoveDir, C:\My Folder, D:\My Folder  <em>; 새 드라이브로 이동시킵니다.</em>
-FileMoveDir, C:\My Folder, C:\My Folder (renamed), R  <em>; 간단한 이름 변경.</em>
-FileMoveDir, C:\My Folder, C:\New Location\My Folder, R  <em>; 폴더는 같은 폴더에 있으면 "이름을 바꾸어" 다른 위치로 이동할 수 있습니다.</em></pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExNewDrive">
+<p><a class="ex_number" href="#ExNewDrive"></a> Moves a directory to a new drive.</p>
+<pre>FileMoveDir, C:\My Folder, D:\My Folder</pre>
+</div>
+
+<div class="ex" id="ExRename">
+<p><a class="ex_number" href="#ExRename"></a> Performs a simple rename.</p>
+<pre>FileMoveDir, C:\My Folder, C:\My Folder (renamed), R</pre>
+</div>
+
+<div class="ex" id="ExNewLocation">
+<p><a class="ex_number" href="#ExNewLocation"></a> 폴더는 같은 폴더에 있으면 "이름을 바꾸어" 다른 위치로 이동할 수 있습니다.</p>
+<pre>FileMoveDir, C:\My Folder, C:\New Location\My Folder, R</pre>
+</div>
 
 </body>
 </html>

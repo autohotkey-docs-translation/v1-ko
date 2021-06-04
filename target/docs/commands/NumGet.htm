@@ -1,19 +1,20 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>NumGet</title>
+<title>NumGet() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The NumGet function returns the binary number stored at the specified address+offset." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>NumGet</h1>
+<h1>NumGet()</h1>
 <p>지정된 주소+오프셋에 저장된 이진 숫자를 열람합니다.</p>
-<pre class="Syntax">Number := NumGet(VarOrAddress [, Offset = 0][, Type = "UPtr"])</pre>
+<pre class="Syntax">Number := <span class="func">NumGet</span>(VarOrAddress <span class="optional">, Offset := 0</span><span class="optional">, Type := "UPtr"</span>)</pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>VarOrAddress</dt>
@@ -27,23 +28,23 @@
 
   <dt>Type</dt>
   <dd>
-    <p>다음 문자열 중 하나 (생략하면 UPtr이 기본값입니다):<br>
-    UInt, Int, Int64, Short, UShort, Char, UChar, Double, Float, Ptr 또는 UPtr</p>
-    <p>DllCall와 다르게, 이것들은 문자 그대로의 문자열로 사용될 때 반드시 따옴표로 둘러 싸야 합니다.</p>
+    <p>비어 있거나 생략하면, 기본값은 UPtr입니다. Otherwise, specify UInt, Int, Int64, Short, UShort, Char, UChar, Double, Float, Ptr or UPtr.</p>
+    <p><em>Unsigned</em> 64-bit integers are not supported, as AutoHotkey's native integer type is Int64. Therefore, to work with numbers greater than or equal to 0x8000000000000000, omit the U prefix and interpret any negative values as large integers. For example, a value of -1 as an Int64 is really 0xFFFFFFFFFFFFFFFF if it is intended to be a UInt64. On 64-bit builds, UPtr is equivalent to Int64.</p>
+    <p>DllCall()와 다르게, 이것들은 문자 그대로의 문자열로 사용될 때 반드시 따옴표로 둘러 싸야 합니다.</p>
     <p>자세한 것은 <a href="DllCall.htm#types">DllCall 유형</a>을 참조하십시오.</p>
   </dd>
 
 </dl>
 
-<h3>반환 값</h3>
+<h2 id="Return_Value">반환 값</h2>
 <p>목표 주소가 유효하지 않으면, 빈 문자열이 돌아옵니다. 그렇지만, 어떤 무효 주소는 그런 식으로 탐지할 수 없습니다. 그래서 예상치 못한 행위를 야기할 수 있습니다.</p>
 <p>그렇지 않으면, 지정된 주소+오프셋에 있는 숫자가 반환됩니다.</p>
 
-<h3>총평</h3>
-<p>세 개의 매개변수만 존재하면, 세 번째 매개변수는 <em>Offset</em> 또는 <em>Type</em>일 수 있습니다. 예를 들어, <code>NumPut(x, var, "int")</code>는 유효합니다.</p>
+<h2 id="General_Remarks">총평</h2>
+<p>If only two parameters are present, the second parameter can be either <em>Offset</em> or <em>Type</em>. 예를 들어, <code>NumGet(var, "int")</code>는 유효합니다.</p>
 
-<h3>관련 항목</h3>
-<p><a href="NumPut.htm">NumPut</a>, <a href="DllCall.htm">DllCall</a>, <a href="VarSetCapacity.htm">VarSetCapacity</a></p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="NumPut.htm">NumPut()</a>, <a href="DllCall.htm">DllCall()</a>, <a href="VarSetCapacity.htm">VarSetCapacity()</a></p>
 
 
 </body>

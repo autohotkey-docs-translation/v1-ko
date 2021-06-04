@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#SingleInstance</title>
+<title>#SingleInstance - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #SingleInstance directive determines whether a script is allowed to run again when it is already running." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,26 +14,33 @@
 
 <p>스크립트에게 이미 실행 중일 때 다시 실행을 허용할지 결정합니다.</p>
 
-<pre class="Syntax">#SingleInstance [force|ignore|off]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">#SingleInstance</span> <span class="optional">ForceIgnorePromptOff</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>force|ignore|off</dt>
-  <dd><p>이 매개변수는 스크립트의 실체가 이미 이전에 실행 중일 때 스크립트가 또 기동하면 무슨 일이 일어날 지 결정합니다:</p>
-      <p>단어 FORCE는 대화 상자를 건너 뛰고 자동으로 예전 실체를 교체합니다. 그 효과는 <a href="Reload.htm">Reload</a> 명령어와 비슷합니다.</p>            
-      <p>단어 IGNORE는 대화 상자를 건너 뛰고 예전 실체를 그대로 실행되도록 둡니다. 즉, 이미 실행 중인 스크립트의 기동 시도를 무시합니다.</p>
-      <p>단어 OFF는 스크립트의 여러 실체를 병행적으로 실행되도록 허용합니다.</p>
-      <p>이 매개변수를 생략하면, 대화상자가 나타나 예전 실체를 유지할지 새 실체로 교체할지 묻습니다.</p></dd>
+  <dt>ForceIgnorePromptOff</dt>
+  <dd>
+    <p>If this parameter is omitted, it defaults to <em>Prompt</em>. To change this behavior, specify one of the following words:</p>
+    <p><strong>Force:</strong> Skips the dialog box and replaces the old instance automatically, which is similar in effect to the <a href="Reload.htm">Reload</a> command.</p>  
+    <p><strong>Ignore:</strong> Skips the dialog box and leaves the old instance running. 즉, 이미 실행 중인 스크립트의 기동 시도를 무시합니다.</p>
+    <p><strong>Prompt:</strong> Displays a dialog box asking whether to keep the old instance or replace it with the new one. This is the default behaviour if this directive is not used.</p>
+    <p><strong>Off:</strong> Allows multiple instances of the script to run concurrently.</p>
+  </dd>
 
 </dl>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>스크립트에 <a href="../Hotkeys.htm">hotkeys</a>, <a href="../Hotstrings.htm">hotstrings</a>, <a href="_Persistent.htm">#Persistent</a>, <a href="OnMessage.htm">OnMessage()</a>, 또는 <a href="Gui.htm">Gui</a>가 담겨 있으면 기본값은 단일-실체입니다 (대화상자가 나타나 &amp; 묻습니다). 다른 스크립트는 기본적으로 다중 실체를 허용합니다. 이 행위는 위에 기술한 것처럼 불능화하거나 변경할 수 있습니다.</p>
-<h3>관련 항목</h3>
+<p>This directive is ignored when any of the following <a href="../Scripts.htm#cmd">command line switches</a> are used: /force /f /restart /r</p>
+<p>AutoHotkey relies on the title of the script's <a href="../Program.htm#main-window">main window</a> to identify other running instances of the script.</p>
+<p>다른 지시어처럼, #SingleInstance는 조건적으로 실행할 수 없습니다.</p>
+
+<h2 id="Related">관련 항목</h2>
 <p><a href="Reload.htm">Reload</a>, <a href="_Persistent.htm">#Persistent</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#SingleInstance force
-#SingleInstance ignore
-#SingleInstance off</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Skips the dialog box and replaces the old instance automatically.</p>
+<pre>#SingleInstance Force</pre>
+</div>
 
 </body>
 </html>

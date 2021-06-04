@@ -1,9 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>조이스틱을 키보드나 마우스에 리맵하기</title>
-<meta name="description" content="Have your joystick send keystrokes and mouse clicks with this free macro program. It also allows a joystick to be used as a mouse.">
+<title>조이스틱을 키보드나 마우스에 리맵하기 | AutoHotkey</title>
+<meta name="description" content="Learn how to make joystick buttons or other joystick controls send keystrokes or mouse clicks." />
 <meta name="keywords" content="keyboard,keys,key,keystrokes,clicks,mouse,buttons,button,joystick,hotkeys,hotkey,macro">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,22 +13,39 @@
 
 <h1>조이스틱을 키보드나 마우스에 리맵하기</h1>
 
-
-<h2>목차</h2>
+<h2 id="toc">목차</h2>
 <ul>
   <li><a href="#imp">중요한 고지 사항</a></li>
-  <li><a href="#button">조이스틱 버튼이 키눌림이나 마우스 클릭을 전송하게 만들기</a></li>
-  <li><a href="#axis">조이스틱 Axis 또는 POV Hat이 키눌림이나 마우스 클릭을 전송하게 만들기</a></li>
+  <li><a href="#button">조이스틱 버튼이 키눌림이나 마우스 클릭을 전송하게 만들기</a>
+  <ul>
+      <li><a href="#different-approaches">Different Approaches</a></li>
+      <li><a href="#auto-repeating-joystick-buttons">자동-반복 키눌림</a></li>
+      <li><a href="#context-sensitive-joystick-buttons">문맥-감지 조이스틱 버튼</a></li>
+      <li><a href="#using-a-joystick-as-a-mouse">조이스틱을 마우스처럼 사용하기</a></li>
+  </ul></li>
+  <li><a href="#axis">Making Other Joystick Controls Send Keystrokes or Mouse Clicks</a>
+  <ul>
+      <li><a href="#joystick-axes">Joystick Axes</a></li>
+      <li><a href="#joystick-pov-hat">Joystick POV Hat</a></li>
+      <li><a href="#auto-repeating-other">자동-반복 키눌림</a></li>
+  </ul></li>
   <li><a href="#Remarks">논평</a></li>
+  <li><a href="#related">관련 주제</a></li>
 </ul>
+
 <h2 id="imp">중요한 고지 사항</h2>
 <ul>
-  <li>모든 조이스틱 버튼이나 축을 키나 마우스 버튼이 되도록 리맵할 수는 있지만, 어떤 조이스틱 버튼이나 축은 리맵할 수 없습니다. 그럴 경우는 <a href="http://www.geocities.com/deonvdw/Docs/PPJoyMain.htm">PPJoy</a> 같은 조이스틱 에뮬레이터의 도움을 받아야만 합니다.</li>
-  <li>오토핫키는 조이스틱의 각 버튼을 1과 32 사이의 번호로 식별합니다. 이 번호를 결정하려면 <a href="../scripts/JoystickTest.htm">조이스틱 테스트 스크립트</a>를 사용하십시오.</li>
+  <li>모든 조이스틱 버튼이나 축을 키나 마우스 버튼이 되도록 리맵할 수는 있지만, 어떤 조이스틱 버튼이나 축은 리맵할 수 없습니다. 그럴 경우는 <a href="https://sourceforge.net/projects/vjoystick/">vJoy</a> 같은 조이스틱 에뮬레이터의 도움을 받아야만 합니다.</li>
+  <li>오토핫키는 조이스틱의 각 버튼을 1과 32 사이의 번호로 식별합니다. 이 번호를 결정하려면 <a href="../scripts/index.htm#JoystickTest">조이스틱 테스트 스크립트</a>를 사용하십시오.</li>
 </ul>
+
 <h2 id="button">조이스틱 버튼이 키눌림이나 마우스 클릭을 전송하게 만들기</h2>
+
+<h3 id="different-approaches">Different Approaches</h3>
 <p>아래에 세 가지 접근법이 있습니다. 가장 쉬운 방법에서 시작하여 가장 복잡한 방법으로 끝납니다. 복잡한 방법은 광범위한 상황에 작동합니다 (예를 들어 키나 마우스 버튼을 누른 채로 있기를 요구하는 게임).</p>
-<p><strong>방법 #1</strong>: 이 방법은 간단한 키눌림과 마우스 클릭을 전송합니다. 예를 들어:</p>
+
+<h4 id="Method_1">방법 #1</h4>
+<p>이 방법은 간단한 키눌림과 마우스 클릭을 전송합니다. 예를 들어:</p>
 <pre>Joy1::<a href="../commands/Send.htm">Send</a> {Left}  <em>; 버튼 #1이 왼쪽 화살표 키 눌림을 전송하도록 만듭니다.</em>
 Joy2::<a href="../commands/Click.htm">Click</a>  <em>; 버튼 #2가 왼쪽 마우스 버튼 클릭을 전송하도록 만듭니다.</em>
 Joy3::Send a{Esc}{Space}{Enter}  <em>; 버튼 #3이 기호 "a" 와 다음에 피신 문자, 스페이스, 그리고 엔터를 전송하도록 만듭니다.</em>
@@ -42,30 +58,33 @@ WinActivate
 Send 이 텍스트는 노트패드에 나타납니다.{Enter}
 return</pre>
 <p>완전한 키와 마우스/조이스틱 버튼에 대한 <a href="../KeyList.htm">키 목록</a>을 참조하십시오.</p>
-<br>
-<p><strong>방법 #2</strong>: 이 방법은 조이스틱 버튼을 누르고 있는 동안 키나 마우스 버튼이 반드시 눌려 있어야 하는 경우에 필수입니다. 다음 예제는 조이스틱의 두 번째 버튼이 왼쪽 화살표 키가 되도록 만듭니다:</p>
+
+<h4 id="Method_2">방법 #2</h4>
+<p>이 방법은 조이스틱 버튼을 누르고 있는 동안 키나 마우스 버튼이 반드시 눌려 있어야 하는 경우에 필수입니다. 다음 예제는 조이스틱의 두 번째 버튼이 왼쪽 화살표 키가 되도록 만듭니다:</p>
 <pre>Joy2::
 Send {Left down}  <em>; 왼쪽 화살표 키를 누릅니다.</em>
 <a href="../commands/KeyWait.htm">KeyWait</a> Joy2  <em>; 사용자가 조이스틱 버튼을 뗄 때까지 기다립니다.</em>
 Send {Left up}  <em>; 왼쪽 화살표 키를 뗍니다.</em>
 return</pre>
-<br>
-<p><strong>방법 #3</strong>: 이 방법은 방법 #2에 기술된 유형의 조이스틱 핫키가 하나 이상 있고, 종종 그런 핫키를 동시에 누르고 떼어야 할 경우에 필수입니다. 다음 예제는 조이스틱의 세번째 버튼이 왼쪽 마우스 버튼이 되도록 만듭니다:</p>
+
+<h4 id="Method_3">방법 #3</h4>
+<p>이 방법은 방법 #2에 기술된 유형의 조이스틱 핫키가 하나 이상 있고, 종종 그런 핫키를 동시에 누르고 떼어야 할 경우에 필수입니다. 다음 예제는 조이스틱의 세번째 버튼이 왼쪽 마우스 버튼이 되도록 만듭니다:</p>
 <pre>Joy3::
 Send {LButton down}   <em>; 왼쪽 마우스 버튼을 누르고 있습니다.</em>
 SetTimer, WaitForButtonUp3, 10
 return
 
 WaitForButtonUp3:
-if <a href="../Functions.htm#GetKeyState">GetKeyState</a>("Joy3")  <em>; 버튼이 여전히 눌려 있습니다. 그래서 계속 대기합니다.</em>
+if <a href="../commands/GetKeyState.htm#function">GetKeyState</a>("Joy3")  <em>; 버튼이 여전히 눌려 있습니다. 그래서 계속 대기합니다.</em>
     return
 <em>; 그렇지 않으면, 버튼이 떼어졌습니다.</em>
 Send {LButton up}  <em>; 왼쪽 마우스 버튼을 뗍니다.</em>
-SetTimer, WaitForButtonUp3, off
+SetTimer, WaitForButtonUp3, Off
 return
 </pre>
-<br>
-<p><strong>자동-반복 키눌림</strong>: 어떤 프로그램이나 게임은 (마치 키보드를 계속 누른 채로 있는 것처럼) 키가 반복적으로 전송되기를 요구합니다. 다음 예제는 조이스틱의 두 번째 버튼을 누르고 있는 동안 스페이스바 키눌림을 반복적으로 전송합니다:</p>
+
+<h3 id="auto-repeating-joystick-buttons">자동-반복 키눌림</h3>
+<p>어떤 프로그램이나 게임은 (마치 키보드를 계속 누른 채로 있는 것처럼) 키가 반복적으로 전송되기를 요구합니다. 다음 예제는 조이스틱의 두 번째 버튼을 누르고 있는 동안 스페이스바 키눌림을 반복적으로 전송합니다:</p>
 <pre>Joy2::
 Send {Space down}   <em>; 스페이바를 누릅니다.</em>
 SetTimer, WaitForJoy2, <strong>30</strong>  <em>; 번호를 <strong>30</strong>에서 20이나 10으로 줄여 더 빠르게 키를 전송합니다. 더 증가시키면 더 느리게 전송됩니다.</em>
@@ -75,37 +94,45 @@ WaitForJoy2:
 if not GetKeyState("Joy2")  <em>; 버튼을 뗐습니다.</em>
 {
     Send {Space up}  <em>; 스페이스바를 뗍니다.</em>
-    SetTimer, WaitForJoy2, off  <em>; 버튼 관제를 멈춥니다.</em>
+    SetTimer, WaitForJoy2, Off  <em>; 버튼 관제를 멈춥니다.</em>
     return
 }
 <em>; 위는 "반환되지 않았기 때문에", 버튼은 여전히 눌린 채로 있습니다.</em>
 Send {Space down}  <em>; 또다른 스페이스바 키눌림을 전송합니다.</em>
 return</pre>
-<p><strong>문맥-감지 조이스틱 버튼</strong>: 지시어 <a href="../commands/_IfWinActive.htm">#IfWinActive/Exist</a>를 사용하면 선택된 조이스틱 버튼이 활성화 상태 또는 존재하는 창의 종류에 따라 다른 행위를 수행하도록 (또는 전혀 못하도록) 만들 수 있습니다.</p>
-<p><strong>조이스틱을 마우스처럼 사용하기</strong>: <a href="../scripts/JoystickMouse.htm">Joystick-To-Mouse 스크립트</a>는 조이스틱을 그의 버튼과 축 콘트롤을 리맵핑하여 마우스로 탈바꿈시킵니다.</p>
-<h2 id="axis">조이스틱 Axis 또는 POV Hat이 키눌림이나 마우스 클릭을 전송하게 만들기</h2>
-<p>스크립트가 조이스틱 축이나 POV hat의 움직임에 반응하도록 만들려면, <a href="../commands/SetTimer.htm">SetTimer</a>과 <a href="../commands/GetKeyState.htm">GetKeyState</a>를 사용하십시오. 다음 예제는 조이스틱의 X와 Y 축을 마치 키보드 위의 화살표 키 군처럼 행위하게 만듭니다 (상하좌우):</p>
+
+<h3 id="context-sensitive-joystick-buttons">문맥-감지 조이스틱 버튼</h3>
+<p>지시어 <a href="../commands/_IfWinActive.htm">#IfWinActive/Exist</a>를 사용하면 선택된 조이스틱 버튼이 활성화 상태 또는 존재하는 창의 종류에 따라 다른 행위를 수행하도록 (또는 전혀 못하도록) 만들 수 있습니다.</p>
+
+<h3 id="using-a-joystick-as-a-mouse">조이스틱을 마우스처럼 사용하기</h3>
+<p><a href="../scripts/index.htm#JoystickMouse">Joystick-To-Mouse 스크립트</a>는 조이스틱을 그의 버튼과 축 콘트롤을 리맵핑하여 마우스로 탈바꿈시킵니다.</p>
+
+<h2 id="axis">Making Other Joystick Controls Send Keystrokes or Mouse Clicks</h2>
+<p>스크립트가 조이스틱 축이나 POV hat의 움직임에 반응하도록 만들려면, <a href="../commands/SetTimer.htm">SetTimer</a>과 <a href="../commands/GetKeyState.htm#function">GetKeyState()</a>를 사용하십시오.</p>
+
+<h3 id="joystick-axes">Joystick Axes</h3>
+<p>다음 예제는 조이스틱의 X와 Y 축을 마치 키보드 위의 화살표 키 군처럼 행위하게 만듭니다 (상하좌우):</p>
 <pre>#Persistent  <em>; 스크립트를 사용자가 명시적으로 종료할 때까지 실행합니다.</em>
 <a href="../commands/SetTimer.htm">SetTimer</a>, WatchAxis, 5
 return
 
 WatchAxis:
-<a href="../commands/GetKeyState.htm">GetKeyState</a>, JoyX, JoyX  <em>; X 축의 위치를 얻습니다.</em>
-GetKeyState, JoyY, JoyY  <em>; Y 축의 위치를 얻습니다.</em>
-KeyToHoldDownPrev = %KeyToHoldDown%  <em>; Prev는 이제 이전에 놀린 키를 (있다면) 보유합니다.</em>
+JoyX := <a href="../commands/GetKeyState.htm#function">GetKeyState</a>("JoyX")  <em>; X 축의 위치를 얻습니다.</em>
+JoyY := GetKeyState("JoyY")  <em>; Y 축의 위치를 얻습니다.</em>
+KeyToHoldDownPrev := KeyToHoldDown  <em>; Prev는 이제 이전에 놀린 키를 (있다면) 보유합니다.</em>
 
-if JoyX &gt; 70
-    KeyToHoldDown = Right
-else if JoyX &lt; 30
-    KeyToHoldDown = Left
-else if JoyY &gt; 70
-    KeyToHoldDown = Down
-else if JoyY &lt; 30
-    KeyToHoldDown = Up
+if (JoyX &gt; 70)
+    KeyToHoldDown := "Right"
+else if (JoyX &lt; 30)
+    KeyToHoldDown := "Left"
+else if (JoyY &gt; 70)
+    KeyToHoldDown := "Down"
+else if (JoyY &lt; 30)
+    KeyToHoldDown := "Up"
 else
-    KeyToHoldDown =
+    KeyToHoldDown := ""
 
-if KeyToHoldDown = %KeyToHoldDownPrev%  <em>; 올바른 키가 이미 눌려 있습니다 (또는 아무 키도 필요하지 않습니다).</em>
+if (KeyToHoldDown = KeyToHoldDownPrev)  <em>; 올바른 키가 이미 눌려 있습니다 (또는 아무 키도 필요하지 않습니다).</em>
     return  <em>; 아무것도 하지 않습니다.</em>
 
 <em>; 그렇지 않으면, 이전의 키를 떼고 새로운 키를 누릅니다:</em>
@@ -115,32 +142,33 @@ if KeyToHoldDownPrev   <em>; 떼야 할 이전의 키가 있습니다.</em>
 if KeyToHoldDown   <em>; 누를 키가 있습니다.</em>
     Send, {%KeyToHoldDown% down}  <em>; 그 키를 누릅니다.</em>
 return</pre>
-<p>&nbsp;</p>
+
+<h3 id="joystick-pov-hat">Joystick POV Hat</h3>
 <p>다음 예제는 조이스틱의 POV hat이 마치 키보드의 화살표 군처럼 행위하게 만듭니다; 즉, POV hat은 화살표 키눌림을 전송합니다 (상하좌우):</p>
 <pre>#Persistent  <em>; 스크립트를 사용자가 명시적으로 종료할 때까지 실행합니다.</em>
 SetTimer, WatchPOV, 5
 return
 
 WatchPOV:
-GetKeyState, POV, JoyPOV  <em>; POV 콘트롤의 위치를 얻습니다.</em>
-KeyToHoldDownPrev = %KeyToHoldDown%  <em>; Prev는 이제 이전에 놀린 키를 (있다면) 보유합니다.</em>
+POV := GetKeyState("JoyPOV")  <em>; POV 콘트롤의 위치를 얻습니다.</em>
+KeyToHoldDownPrev := KeyToHoldDown  <em>; Prev는 이제 이전에 놀린 키를 (있다면) 보유합니다.</em>
 
 <em>; 어떤 조이스틱은 고정 증가되지 않고 부드러운/연속적인 POV를 가집니다.
 ; 그들 모두를 지원하려면, 범위를 사용하십시오:</em>
-if POV &lt; 0   <em>; 보고할 각도가 없습니다</em>
-    KeyToHoldDown =
-else if POV &gt; 31500                 <em>; 315 도부터 360 도까지: 앞으로</em>
-    KeyToHoldDown = Up
+if (POV &lt; 0)   <em>; 보고할 각도가 없습니다</em>
+    KeyToHoldDown := ""
+else if (POV &gt; 31500)               <em>; 315 도부터 360 도까지: 앞으로</em>
+    KeyToHoldDown := "Up"
 else if POV between 0 and 4500      <em>; 0 도부터 45 도까지: 앞으로</em>
-    KeyToHoldDown = Up
+    KeyToHoldDown := "Up"
 else if POV between 4501 and 13500  <em>; 45 도부터 135 도까지: 오른쪽으로</em>
-    KeyToHoldDown = Right
+    KeyToHoldDown := "Right"
 else if POV between 13501 and 22500 <em>; 135 도부터 225 도까지: 아랫쪽으로</em>
-    KeyToHoldDown = Down
+    KeyToHoldDown := "Down"
 else                                <em>; 225 도부터 315 도까지: 왼쪽으로</em>
-    KeyToHoldDown = Left
+    KeyToHoldDown := "Left"
 
-if KeyToHoldDown = %KeyToHoldDownPrev%  <em>; 올바른 키가 이미 눌려 있습니다 (또는 아무 키도 필요하지 않습니다).</em>
+if (KeyToHoldDown = KeyToHoldDownPrev)  <em>; 올바른 키가 이미 눌려 있습니다 (또는 아무 키도 필요하지 않습니다).</em>
     return  <em>; 아무것도 하지 않습니다.</em>
 
 <em>; 그렇지 않으면, 이전의 키를 떼고 새로운 키를 누릅니다:</em>
@@ -150,10 +178,11 @@ if KeyToHoldDownPrev   <em>; 떼야 할 이전의 키가 있습니다.</em>
 if KeyToHoldDown   <em>; 누를 키가 있습니다.</em>
     Send, {%KeyToHoldDown% down}  <em>; 그 키를 누릅니다.</em>
 return</pre>
-<p>&nbsp;</p>
-<p><strong>자동-반복 키눌림</strong>: 두 예제 모두 단순히 키를 누르고 있는게 아니라 키를 반복적으로 전송하도록 변경할 수 있습니다 (즉, 키보드에서 물리적으로 키를 누르고 있는 것처럼 흉내낼 수 있습니다). 이렇게 하려면, 다음 줄을:</p>
+
+<h3 id="auto-repeating-other">자동-반복 키눌림</h3>
+<p>두 예제 모두 단순히 키를 누르고 있는게 아니라 키를 반복적으로 전송하도록 변경할 수 있습니다 (즉, 키보드에서 물리적으로 키를 누르고 있는 것처럼 흉내낼 수 있습니다). 이렇게 하려면, 다음 줄을:</p>
 <pre>return  <em>; 아무것도 하지 않습니다.</em></pre>
-<p>다음과 같이 교체하십시오:</p>
+<p>With the following:</p>
 <pre>{
     if KeyToHoldDown
         Send, {%KeyToHoldDown% down}  <em>; 키눌림을 자동으로 반복합니다.</em>
@@ -161,11 +190,14 @@ return</pre>
 }</pre>
 <h2 id="Remarks">논평</h2>
 <p>첫 번째 말고 다른 조이스틱을 사용할 수 있습니다. 버튼 이름이나 축 이름 앞에 조이스틱 버튼 번호를 주면 됩니다. 예를 들어, <code>2Joy1</code>은 두 번째 조이스틱의 첫 번째 버튼입니다.</p>
-<p>다른 유용한 조이스틱 스크립트를 발굴하려면 <a href="http://www.autohotkey.com/forum/">AutoHotkey 포럼</a>을 방문하십시오. <em>Joystick and GetKeyState and Send</em>와 같은 키워드 검색이면 흥미로운 주제들을 얻을 수 있습니다.</p>
-<h2>관련 주제</h2>
-<p><a href="../scripts/JoystickMouse.htm">Joystick-To-Mouse 스크립트 (조이스틱을 마우스로 사용하기)</a><br>
-<a href="../KeyList.htm#Joystick">조이스틱 버튼, 축, 그리고 콘트롤 리스트</a><br>
-<a href="../commands/GetKeyState.htm">GetKeyState</a><br>
-<a href="Remap.htm">키보드와 마우스 리맵핑하기</a></p>
+<p>다른 유용한 조이스틱 스크립트를 발굴하려면 <a href="https://www.autohotkey.com/forum/">AutoHotkey 포럼</a>을 방문하십시오. <em>Joystick and GetKeyState and Send</em>와 같은 키워드 검색이면 흥미로운 주제들을 얻을 수 있습니다.</p>
+<h2 id="related">관련 주제</h2>
+<ul>
+    <li><a href="../scripts/index.htm#JoystickMouse">Joystick-To-Mouse 스크립트 (조이스틱을 마우스로 사용하기)</a></li>
+    <li><a href="../KeyList.htm#Joystick">조이스틱 버튼, 축, 그리고 콘트롤 리스트</a></li>
+    <li><a href="../commands/GetKeyState.htm#function">GetKeyState()</a></li>
+    <li><a href="Remap.htm">키보드와 마우스 리맵핑하기</a></li>
+</ul>
+
 </body>
 </html>

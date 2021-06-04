@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>GuiControlGet</title>
+<title>GuiControlGet - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The GuiControlGet command retrieves various types of information about a control in a GUI window." />
+<meta name="ahk:equiv-v2" content="objects/GuiControl.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -13,72 +14,132 @@
 <h1>GuiControlGet</h1>
 
 <p>GUI 창에 있는 콘트롤에 관하여 다양한 유형의 정보를 열람합니다.</p>
+<pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar <span class="optional">, <a href="#SubCommands">SubCommand</a>, ControlID, Value</span></pre>
 
-<pre class="Syntax">GuiControlGet, OutputVar [, Sub-command, ControlID, Param4]</pre>
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
-
   <dt>OutputVar</dt>
-  <dd><p>결과를 저장할 변수의 이름. 명령어를 완료하지 못하면 (아래 ErrorLevel 참조), 이 변수는 비워집니다.</p></dd>
-
-  <dt>Sub-command</dt>
-  <dd><p>아래 리스트 참조.</p></dd>
+  <dd><em>SubCommand</em> 명령의 결과를 저장할 변수의 이름.</dd>
+  
+  <dt>SubCommand, Value</dt>
+  <dd>These are dependent upon each other and their usage is described <a href="#SubCommands">below</a>.</dd>
 
   <dt>ControlID</dt>
   <dd><p>비어 있거냐 생략되면, 마치 출력 변수의 이름이 지정되어 있는 듯이 행위합니다. 예를 들어, <code>GuiControlGet, MyEdit</code>은 <code>GuiControlGet, MyEdit,, MyEdit</code>과 같습니다.</p>
       <p>목표 콘트롤에 연관 배열이 있으면, 그 변수의 이름을 <em>ControlID</em>로 지정하십시오 (이 방법은 다음이 기술한 방법보다 우선 순위가 높습니다). 이런 이유로, 보통 나중에 GuiControl 또는 GuiControlGet를 통하여 접근할 콘트롤에 변수를 할당하는 것이 제일 좋습니다. 심지어 그 콘트롤이 입력이 가능하지 않더라도 상관이 없습니다 (GroupBox 또는 Text).</p>
-    <p>그렇지 않으면, <em>ControlID</em>는 ClassNN (콘트롤의 클래스이름과 실체 번호) 또는 그 콘트롤의 텍스트일 수 있습니다. 둘 모두 Window Spy를 통하여 알아낼 수 있습니다. 텍스트를 사용할 때, 부합 행위는 <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>에 의하여 결정됩니다. 주의: 그림 콘트롤의 파일 이름이 (그 콘트롤이 생성되는 순간에 지정된 대로 ) 그의 <em>ControlID</em>로 사용될 수도 있씁니다.</p>
-    <p><span class="ver">[v1.1.04+]:</span> <em>ControlID</em>는 콘트롤의 <a href="Gui.htm#HwndOutputVar">HWND</a>일 수 있습니다. 다른 ControlID와 마찬가지로, <em>Sub-command</em>는 <a href="#Remarks">기본 창</a>이 아닐 경우 그 GUI의 이름과 번호도 포함할 수 있습니다. 예를 들어, <code>GuiControlGet Value, 2:, %Hwnd%</code>.</p></dd>
-
-  <dt>Param4</dt>
-  <dd><p>이 매개변수는 생략됩니다. 단, 아래 부-명령어 리스트에서 고지한 경우는 예외입니다.</p></dd>
-
+    <p>그렇지 않으면, <em>ControlID</em>는 ClassNN (콘트롤의 클래스이름과 실체 번호) 또는 그 콘트롤의 텍스트일 수 있습니다. 둘 모두 Window Spy를 통하여 알아낼 수 있습니다. 텍스트를 사용할 때, 부합 행위는 <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>에 의하여 결정됩니다.</p>
+    <p class="note"><strong>주의</strong>: 그림 콘트롤의 파일 이름이 (그 콘트롤이 생성되는 순간에 지정된 대로 ) 그의 <em>ControlID</em>로 사용될 수도 있씁니다.</p>
+    <p><span class="ver">[v1.1.04+]:</span> <em>ControlID</em>는 콘트롤의 <a href="Gui.htm#HwndOutputVar">HWND</a>일 수 있습니다.</p>
+    <p>콘트롤이 기본 GUI 위에 있지 않으면, <strong>그 GUI의 이름도 역시 지정해야 합니다</strong> -- 단, <span class="ver">[v1.1.20+]</span>에서는 <em>ControlID</em>이 HWND입니다. 각 HWND가 유일하기 때문입니다. 자세한 것은 <a href="#Remarks">논평</a>을 참조하십시오.</p>
+  </dd>
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 지정된 창/콘트롤이 존재하지 않거나 또는 다른 어떤 문제 때문에 명령어가 작동하지 못하면 1이 설정됩니다. 그렇지 않으면 0이 설정됩니다.</p>
-<h3>부-명령어</h3>
-<p><strong>(Blank)</strong>: <em>Sub-command</em>를 비워 두면 콘트롤의 내용을 열람할 수 있습니다. 모든 콘트롤 유형은 이름 자체로 설명이 됩니다. 하지만 다음은 예외입니다:</p>
+<h2 id="SubCommands">부-명령어</h2>
+<p>For <em>SubCommand</em>, specify one of the following:</p>
+<ul>
+  <li><a href="#Blank">(Blank)</a>: Retrieves the contents of the control.</li>
+  <li><a href="#Pos">Pos</a>: 콘트롤의 위치와 크기를 열람합니다.</li>
+  <li><a href="#Focus">Focus</a>: 현재 키보드 초점이 있는 콘트롤의 식별자를 열람합니다 (ClassNN).</li>
+  <li><a href="#FocusV">FocusV</a> <span class="ver">[v1.0.43.06+]</span>: Retrieves the name of the focused control's associated variable.</li>
+  <li><a href="#Enabled">Enabled</a>: 콘트롤이 켜져 있으면 1이 열람되고 꺼져 있으면 0이 열람됩니다.</li>
+  <li><a href="#Visible">Visible</a>: 콘트롤이 보이면 1을 열람하고 보이지 않으면 0을 열람합니다.</li>
+  <li><a href="#Hwnd">Hwnd</a> <span class="ver">[v1.0.46.16+]</span>: 콘트롤의 창 핸들(HWND)을 열람합니다.</li>
+  <li><a href="#Name">Name</a> <span class="ver">[v1.1.03+]</span>: Retrieves the name of the control's associated variable.</li>
+</ul>
+
+<h3 id="Blank">(Blank)</h3>
+<p>Retrieves the contents of the control.</p>
+<pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar <span class="optional">,, ControlID, Value</span></pre>
+<p><em>SubCommand</em>를 비워 두면 콘트롤의 내용을 열람할 수 있습니다. 모든 콘트롤 유형은 이름 자체로 설명이 됩니다. 하지만 다음은 예외입니다:</p>
 <p><a href="GuiControls.htm#Picture">Picture</a>: 콘트롤이 생성될 때 지정되어 있는, 그림 파일의 원래 이름을 열람합니다. 이 이름은 새 그림 파일 이름을 지정하더라도 바뀌지 않습니다.</p>
 <p><a href="GuiControls.htm#Edit">Edit</a>: 내용을 열람합니다. 그러나 텍스트 안의 줄 넘김 문자는 평범한 라인피드 문자(`n)로 표현됩니다. 전통적인 CR+LF (`r`n)로 표시되지 않습니다. 이 줄 끝 모드는<a href="ControlGetText.htm">ControlGetText</a> 그리고 <a href="ControlSetText.htm">ControlSetText</a>와 같은 비-GUI 명령어들이 사용합니다.</p>
 <p><a href="GuiControls.htm#Hotkey">Hotkey</a>: 콘트롤에 핫키가 없으면 빈 값이 열람됩니다. 그렇지 않으면 수식키와 키 이름을 열람합니다. 예제: <code>^!C</code>, <code>^Home</code>, <code>+^NumpadHome</code>.</p>
-<p><a href="GuiControls.htm#Checkbox">Checkbox</a>/<a href="GuiControls.htm#Radio">Radio</a>: 콘트롤에 체크가 있으면 1이 열람됩니다. 체크 표식이 없으면 0이 열람됩니다. 또는 회색 체크 표식이 있으면 -1이 열람됩니다. 대신에 콘트롤의 텍스트/캡션을 열람하려면, 단어 Text를 <em>Param4</em>에 지정하십시오. 주의: <a href="Gui.htm#Submit">Gui Submit</a> 명령어와 다르게, 라디오 버튼은 언제나 개별적으로 열람됩니다. 라디오 그룹 안에 있든 없든 상관이 없습니다.</p>
+<p><a href="GuiControls.htm#Checkbox">Checkbox</a>/<a href="GuiControls.htm#Radio">Radio</a>: 콘트롤에 체크가 있으면 1이 열람됩니다. 체크 표식이 없으면 0이 열람됩니다. 또는 회색 체크 표식이 있으면 -1이 열람됩니다. 대신에 콘트롤의 텍스트/캡션을 열람하려면, 단어 Text를 <em>Value</em>에 지정하십시오. 주의: <a href="Gui.htm#Submit">Gui Submit</a> 명령어와 다르게, 라디오 버튼은 언제나 개별적으로 열람됩니다. 라디오 그룹 안에 있든 없든 상관이 없습니다.</p>
 <p><a href="GuiControls.htm#UpDown">UpDown</a>/<a href="GuiControls.htm#Slider">Slider</a>/<a href="GuiControls.htm#Progress">Progress</a>: 콘트롤의 현재 위치를 열람합니다.</p>
 <p><a href="GuiControls.htm#Tab">Tab</a>/<a href="GuiControls.htm#DropDownList">DropDownList</a>/<a href="GuiControls.htm#ComboBox">ComboBox</a>/<a href="GuiControls.htm#ListBox">ListBox</a>: 현재 선택된 항목/탭의 텍스트를 열람합니다 (또는 콘트롤에 <a href="Gui.htm#AltSubmit">AltSubmit</a> 특성이 있다면 그의 위치를 열람합니다). ComboBox에 대하여, 선택된 항목이 없으면, 콘트롤의 편집 필드에 있는 텍스트가 대신 열람됩니다. <a href="GuiControls.htm#ListBoxMulti">다중-선택 ListBox</a>에 대하여, 그 창의 <a href="Gui.htm#Delimiter">현재 구분자</a>를 사용하여 출력됩니다.</p>
-<p><a href="ListView.htm">ListView</a> 그리고 <a href="TreeView.htm">TreeView</a>: 이들은 <em>Sub-command</em>가 비어 있으면 지원되지 않습니다. 대신에 내장 <a href="ListView.htm#BuiltIn">ListView 함수</a>와 <a href="TreeView.htm#BuiltIn">TreeView 함수</a>를 사용하십시오.</p>
+<p><a href="ListView.htm">ListView</a> 그리고 <a href="TreeView.htm">TreeView</a>: 이들은 <em>SubCommand</em>가 비어 있으면 지원되지 않습니다. 대신에 내장 <a href="ListView.htm#BuiltIn">ListView 함수</a>와 <a href="TreeView.htm#BuiltIn">TreeView 함수</a>를 사용하십시오.</p>
 <p><a href="GuiControls.htm#StatusBar">StatusBar</a>: 텍스트의 앞 부부만 열람합니다.</p>
 <p><a href="GuiControls.htm#ActiveX">ActiveX</a>: 콘트롤의 ActiveX 콤포넌트에 대하여 새 포장 객체를 열람합니다.</p>
-<p>주의: 콘트롤에서 그의 내용이 아니라 텍스트/캡션을 무조건 열람하려면, 단어 Text를 <em>Param4</em>에 지정하십시오.</p>
-<p>&nbsp;</p>
-<p><strong>GuiControlGet, OutputVar, Pos</strong>: 콘트롤의 위치와 크기를 열람합니다. 위치는 GUI 창의 클라이언트 구역에 상대적입니다. 클라이언트 구역에서 제목 바, 메뉴 바, 그리고 테두리는 제외됩니다. 정보는 네 개의 변수 안에 저장됩니다. 네 변수의 이름은 모두 <em>OutputVar</em>로 시작합니다. 예를 들어:</p>
+<p class="note"><strong>주의</strong>: To unconditionally retrieve the text/caption of a CheckBox, Radio, DropDownList or ComboBox rather than its contents, specify the word Text for <em>Value</em>.</p>
+
+<h3 id="Pos">Pos</h3>
+<p>콘트롤의 위치와 크기를 열람합니다.</p>
+<pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar, Pos <span class="optional">, ControlID</span></pre>
+<p>위치는 GUI 창의 클라이언트 구역에 상대적입니다. 클라이언트 구역에서 제목 바, 메뉴 바, 그리고 테두리는 제외됩니다. 정보는 네 개의 변수 안에 저장됩니다. 네 변수의 이름은 모두 <em>OutputVar</em>로 시작합니다. 예를 들어:</p>
 <pre>GuiControlGet, MyEdit, Pos
 MsgBox The X coordinate is %MyEditX%. The Y coordinate is %MyEditY%. The width is %MyEditW%. The height is %MyEditH%.</pre>
 <p><a href="../Functions.htm">함수</a> 안에서, 지역 변수 대신에 전역 변수 집합을 생성하려면, 이 명령어를 사용하기 전에 <em>OutputVar</em>를 <a href="../Functions.htm#Global">전역 변수로 선언</a>하십시오 (<a href="../Functions.htm#AssumeGlobal">전역-간주</a> 함수들에 대하여 그 반대도 마찬가지입니다). 그렇지만, <a href="../Functions.htm#ArrayConfusion">흔한 혼란의 근원</a> 때문에, 종종 각 변수를 집합 안에 선언하는 것이 필요하기도 합니다.</p>
-<p>&nbsp;</p>
-<p><strong>GuiControlGet, OutputVar, Focus</strong>: 현재 키보드 초점이 있는 콘트롤의 식별자를 열람합니다 (ClassNN). 지정된 GUI 창이 <a href="WinActivate.htm">활성화</a>되어 있어야 그의 콘트롤들이 초점을 가질 수 있기 때문에, <em>OutputVar</em>는 창이 활성화되어 있지 않으면 비워집니다. 예를 들어: <code>GuiControlGet, focused_control, focus</code>.</p>
-<p><strong>GuiControlGet, OutputVar, FocusV</strong> <span class="ver">[v1.0.43.06+]</span>: (위의) <em>Focus</em>와 같습니다. 단, 초점이 있는 콘트롤의 <a href="Gui.htm#Events">연관 변수</a>의 이름을 열람합니다. 그 콘트돌에 연관 변수가 없으면, 콘트돌의 텍스트/캡션의 앞쪽 63 글자가 대신 열람됩니다 (이것은 각 버튼에 변수 이름을 부여하는 것을 피하기 위해 아주 자주 사용됩니다).</p>
-<p><strong>GuiControlGet, OutputVar, Enabled</strong>: 콘트롤이 켜져 있으면 1이 열람되고 꺼져 있으면 0이 열람됩니다.</p>
-<p><strong>GuiControlGet, OutputVar, Visible</strong>: 콘트롤이 보이면 1을 열람하고 보이지 않으면 0을 열람합니다.</p>
-<p><strong><a name="Hwnd"></a>GuiControlGet, OutputVar, Hwnd</strong> <span class="ver">[v1.0.46.16+]</span>: 콘트롤의 창 핸들(HWND)을 열람합니다. 콘트롤의 HWND는 종종 <a href="PostMessage.htm">PostMessage</a>, <a href="PostMessage.htm">SendMessage</a>, 그리고 <a href="DllCall.htm">DllCall</a>과 함께 사용됩니다. 주의: <a href="Gui.htm#HwndOutputVar">HwndOutputVar</a>가 보통 HWND를 얻는 더 간결한 방법입니다.</p>
-<p id="Name"><strong>GuiControlGet, OutputVar, Name</strong> <span class="ver">[v1.1.03+]</span>: 콘트롤에 <a href="Gui.htm#Events">연관된 변수</a>의 이름을 열람합니다. 실패하면 <em>OutputVar</em>는 비워집니다.</p>
-<h3 id="Remarks">논평</h3>
+
+<h3 id="Focus">Focus</h3>
+<p>현재 키보드 초점이 있는 콘트롤의 식별자를 열람합니다 (ClassNN).</p>
+<pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar, Focus <span class="optional">, ControlID</span></pre>
+<p>지정된 GUI 창이 <a href="WinActivate.htm">활성화</a>되어 있어야 그의 콘트롤들이 초점을 가질 수 있기 때문에, <em>OutputVar</em>는 창이 활성화되어 있지 않으면 비워집니다. 예를 들어: <code>GuiControlGet, focused_control, Focus</code>.</p>
+
+<h3 id="FocusV">FocusV <span class="ver">[v1.0.43.06+]</span></h3>
+<p>Retrieves the name of the focused control's <a href="Gui.htm#Events">associated variable</a>.</p>
+<pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar, FocusV <span class="optional">, ControlID</span></pre>
+<p>See the <a href="#Focus">Focus</a> sub-command (above) for details. 그 콘트돌에 연관 변수가 없으면, 콘트돌의 텍스트/캡션의 앞쪽 63 글자가 대신 열람됩니다 (이것은 각 버튼에 변수 이름을 부여하는 것을 피하기 위해 아주 자주 사용됩니다).</p>
+
+<h3 id="Enabled">Enabled</h3>
+<p>콘트롤이 켜져 있으면 1이 열람되고 꺼져 있으면 0이 열람됩니다.</p>
+<pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar, Enabled <span class="optional">, ControlID</span></pre>
+
+<h3 id="Visible">Visible</h3>
+<p>콘트롤이 보이면 1을 열람하고 보이지 않으면 0을 열람합니다.</p>
+<pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar, Visible <span class="optional">, ControlID</span></pre>
+
+<h3 id="Hwnd">Hwnd <span class="ver">[v1.0.46.16+]</span></h3>
+<p>콘트롤의 창 핸들(HWND)을 열람합니다.</p>
+<pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar, Hwnd <span class="optional">, ControlID</span></pre>
+<p>콘트롤의 HWND는 종종 <a href="PostMessage.htm">PostMessage</a>, <a href="PostMessage.htm">SendMessage</a>, 그리고 <a href="DllCall.htm">DllCall</a>에 사용됩니다. 주의: <a href="Gui.htm#HwndOutputVar">HwndOutputVar</a>가 보통 HWND를 얻는 더 간결한 방법입니다.</p>
+
+<h3 id="Name">Name <span class="ver">[v1.1.03+]</span></h3>
+<p>Retrieves the name of the control's <a href="Gui.htm#Events">associated variable</a>.</p>
+<pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar, Name <span class="optional">, ControlID</span></pre>
+<p>If it doesn't have one, <em>OutputVar</em> is made blank.</p>
+
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 지정된 창/콘트롤이 존재하지 않거나 또는 다른 어떤 문제 때문에 명령어가 작동하지 못하면 1이 설정됩니다. 그렇지 않으면 0이 설정됩니다.</p>
+
+<h2 id="Remarks">논평</h2>
 <p>기본 창이 아닌 창을 처리하려면 (아래 참조), 그의 이름 또는 번호 그리고 쌍점 다음에 부-명령어를 다음 예제와 같이 포함시키십시오:</p>
 <pre>GuiControlGet, MyEdit, MyGui:
 GuiControlGet, MyEdit, MyGui:Pos
-GuiControlGet, Outputvar, MyGui:Focus</pre>
-<p>이것은 <em>ControlID</em>가 콘트롤의 연관 변수 또는 HWND일지라도 필수입니다.</p>
+GuiControlGet, OutputVar, MyGui:Focus</pre>
+<p>변수 하나가 여러 GUI 창에 사용될 수 있기 때문에 <em>ControlID</em>가 콘트롤의 연관 배열이라고 할지라도 꼭 이렇게 해야 합니다. <span class="ver">[v1.1.20+]</span>에서는 GUI 이름을 생략할 수 있습니다. <em>ControlID</em>가 콘크롤의 HWND일지라도 마찬가지입니다.</p>
 <p>GUI <a href="../misc/Threads.htm">쓰레드</a>는 GUI 행위의 결과로 기동된 쓰레드로 정의됩니다. GUI 행위에는 GUI 창이 메뉴 바로부터 항목을 선태하는 것, 또는 그의 <a href="Gui.htm#label">g-labels</a>중 하나를 (버튼을 눌러서) 촉발 시키는 것이 포함됩니다.</p>
 <p>GUI 쓰레드에 대하여 <a href="Gui.htm#DefaultWin">기본 창 이름</a>은 그 쓰레드를 기동한 창의 이름입니다. 비-GUI 쓰레드는 1을 기본값으로 사용합니다.</p>
 
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="Gui.htm">Gui</a>, <a href="GuiControl.htm">GuiControl</a>, <a href="ControlGet.htm">ControlGet</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">GuiControlGet, MyEdit
-GuiControlGet, CtrlContents,, MyEdit  <em>; 위와 같습니다. 단, 기본-아닌 출력 변수를 사용합니다.</em>
-GuiControlGet, MyCheckbox1 <em>; 체크되어 있으면 1, 체크가 없으면 0을 열람합니다.</em>
-GuiControlGet, MyCheckbox1,,, Text  <em>; 체크박스의 캡션/텍스트를 열람합니다.</em>
-GuiControlGet, Pic, Pos, Static4  <em>; 위치/크기는 PicX, PicY, PicW, 그리고 PicH에 저장됩니다.</em></pre>
+
+<h2 id="Examples">예제</h2>
+
+<div class="ex" id="ExNoControlID">
+<p><a class="ex_number" href="#ExNoControlID"></a> Retrieves the text of an Edit control and stores it in <var>MyEdit</var>.</p>
+<pre>GuiControlGet, MyEdit</pre>
+</div>
+
+<div class="ex" id="ExEdit">
+<p><a class="ex_number" href="#ExEdit"></a> Same as above but stores the text in <var>CtrlContents</var>.</p>
+<pre>GuiControlGet, CtrlContents,, MyEdit</pre>
+</div>
+
+<div class="ex" id="ExCheckBox">
+<p><a class="ex_number" href="#ExCheckBox"></a> Retrieves 1 if a checkbox is checked or 0 if it is unchecked.</p>
+<pre>GuiControlGet, MyCheckbox1</pre>
+</div>
+
+<div class="ex" id="ExCheckBoxText">
+<p><a class="ex_number" href="#ExCheckBoxText"></a> Retrieves the caption/text of a checkbox.</p>
+<pre>GuiControlGet, MyCheckbox1,,, Text</pre>
+</div>
+
+<div class="ex" id="ExPos">
+<p><a class="ex_number" href="#ExPos"></a> Stores the position and size in <var>PicX</var>, <var>PicY</var>, <var>PicW</var>, and <var>PicH</var>.</p>
+<pre>GuiControlGet, Pic, Pos, Static4</pre>
+</div>
 
 </body>
 </html>

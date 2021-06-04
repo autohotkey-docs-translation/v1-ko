@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>StringLower / StringUpper</title>
+<title>StringLower / StringUpper - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The StringLower and StringUpper commands convert a string to lowercase or uppercase." />
+<meta name="ahk:equiv-v2" content="commands/StrLower.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,9 +15,11 @@
 
 <p>문자열을 소문자 또는 대문자로 변환합니다.</p>
 
-<pre class="Syntax">StringLower, OutputVar, InputVar [, T]
-StringUpper, OutputVar, InputVar [, T]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">StringLower</span>, OutputVar, InputVar <span class="optional">, T</span>
+<span class="func">StringUpper</span>, OutputVar, InputVar <span class="optional">, T</span>
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -30,17 +33,32 @@ StringUpper, OutputVar, InputVar [, T]</pre>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>문자 또는 문자열이 전체적으로 대문자인지 아니면 소문자인지 탐지하려면, <a href="IfIs.htm">"if var is [not] upper/lower"</a>를 사용하십시오.</p>
 <p>이 명령어와 다른 모든 명령어에 대하여, <em>OutputVar</em>는 <em>InputVar</em>와 같은 변수가 되어도 허용합니다.</p>
 <p><span class="ver">[v1.1.20+]:</span> 아래에 보여주는 바와 같이 <a href="Format.htm">Format()</a>도 대소문자 변환에 사용할 수 있습니다:</p>
 <pre>MsgBox % Format("{:U}, {:L} and {:T}", "upper", "LOWER", "title")</pre>
 
-<h3>관련 항목</h3>
-<p><a href="Format.htm">Format()</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringReplace.htm">StringReplace</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">StringUpper, String1, String1  <em>; 즉, 출력은 입력과 같을 수 있습니다.</em>
-StringLower, String2, String2</pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="Format.htm">Format()</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringMid.htm">StringMid</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringLen.htm">StringLen</a>, <a href="StrReplace.htm">StrReplace()</a>, <a href="StringReplace.htm">StringReplace</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExLower">
+<p><a class="ex_number" href="#ExLower"></a> Converts to lower case and stores the string "this is a test." in <var>String1</var>.</p>
+<pre>String1 := "This is a test."
+StringLower, String1, String1  <em>; 즉, 출력은 입력과 같을 수 있습니다.</em></pre>
+</div>
+
+<div class="ex" id="ExUpper">
+<p><a class="ex_number" href="#ExUpper"></a> Converts to upper case and stores the string "THIS IS A TEST." in <var>String2</var>.</p>
+<pre>String2 := "This is a test."
+StringUpper, String2, String2</pre>
+</div>
+
+<div class="ex" id="ExTitle">
+<p><a class="ex_number" href="#ExTitle"></a> Converts to title case and stores the string "This Is A Test." in <var>String3</var>. Note that the same effect would be achieved by using StringLower instead of StringUpper.</p>
+<pre>String3 := "This is a test."
+StringUpper, String3, String3, T</pre>
+</div>
 
 </body>
 </html>

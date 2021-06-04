@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SoundGet</title>
+<title>SoundGet - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SoundGet command retrieves various settings of a sound device (master mute, master volume, etc.)" />
+<meta name="ahk:equiv-v2" content="commands/Sound.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,10 +13,10 @@
 
 <h1>SoundGet</h1>
 
-<p>사운드 장치로부터 다양한 설정을 열람합니다 (마스터 음소거, 마스터 볼륨 등등.)</p>
+<p>Retrieves various settings of a sound device (master mute, master volume, etc.)</p>
 
-<pre class="Syntax">SoundGet, OutputVar [, ComponentType, ControlType, DeviceNumber]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">SoundGet</span>, OutputVar <span class="optional">, ComponentType, ControlType, DeviceNumber</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -28,58 +29,58 @@
 
   <dt>ControlType</dt>
   <dd><p>비어 있거나 생략하면, 기본 값은 VOLUME입니다. 그렇지 않으면, 다음 단어 중 하나가 될 수 있습니다: VOLUME (또는 VOL), ONOFF, MUTE, MONO, LOUDNESS, STEREOENH, BASSBOOST, PAN, QSOUNDPAN, BASS, TREBLE, EQUALIZER, 또는 유효한 콘트롤 유형의 번호 (<a href="SoundSet.htm#Ex">사운드카드 분석 스크립트</a> 참조). 지정된 <em>ComponentType</em>에 지정된 <em>ControlType</em>이 없으면, ErrorLevel은 그 문제를 알려줄 것입니다.</p>
-    <p><strong>주의:</strong> 사운드 장치는 보통 VOLUME (또는 VOL) 그리고 MUTE만 지원합니다. 물론 다른 것들도 윈도우즈 버전과 사운드 장치에 따라 사용할 수 있습니다.</p></dd>
+    <p class="note"><strong>주의:</strong> 사운드 장치는 보통 VOLUME (또는 VOL) 그리고 MUTE만 지원합니다. 물론 다른 것들도 윈도우즈 버전과 사운드 장치에 따라 사용할 수 있습니다.</p></dd>
 
   <dt>DeviceNumber</dt>
   <dd><p>1부터 지원되는 장치의 총 개수까지의 숫자. 이 매개변수를 생략하면, 기본 값은 1입니다 (첫 번째 사운드 장치), 아니면 Windows Vista 이상에서 연주를 위한 시스템의 기본 장치입니다. 이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다. <a href="SoundSet.htm#Ex">사운드카드 분석 스크립트</a>가 어느 번호를 사용해야할지 결정하는 데 도움을 줄 것입니다.</p></dd>
 
 </dl>
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 명령어가 성공하면 0이 설정됩니다. 그렇지 않으면 다음 문구 중 하나가 설정됩니다:</p>
-<table class="info" style="width:436px">
-  <tr>
-    <td width="426">Invalid Control Type or Component Type (유효하지 않은 콘트롤 유형이나 컴포넌트 유형)</td>
-  </tr>
-  <tr>
-    <td>Can't Open Specified Mixer (지정된 믹서를 열 수 없음)</td>
-  </tr>
-  <tr>
-    <td>Mixer Doesn't Support This Component Type (믹서가 이 콤포넌트 유형을 지원하지 않음)</td>
-  </tr>
-  <tr>
-    <td>Mixer Doesn't Have That Many of That Component Type (믹서가 지정한 만큼 많은 콤포넌트 유형이 없음)</td>
-  </tr>
-  <tr>
-    <td>Component Doesn't Support This Control Type (컴포넌트가 이 콘트롤 유형을 지원하지 않음)</td>
-  </tr>
-  <tr>
-    <td>Can't Get Current Setting (현재 설정을 얻을 수 없음)</td>
-  </tr>
-</table>
-<h3>논평</h3>
+<ul>
+    <li>Invalid Control Type or Component Type (유효하지 않은 콘트롤 유형이나 컴포넌트 유형)</li>
+    <li>Can't Open Specified Mixer (지정된 믹서를 열 수 없음)</li>
+    <li>Mixer Doesn't Support This Component Type (믹서가 이 콤포넌트 유형을 지원하지 않음)</li>
+    <li>Mixer Doesn't Have That Many of That Component Type (믹서가 지정한 만큼 많은 콤포넌트 유형이 없음)</li>
+    <li>Component Doesn't Support This Control Type (컴포넌트가 이 콘트롤 유형을 지원하지 않음)</li>
+    <li>Can't Get Current Setting (현재 설정을 얻을 수 없음)</li>
+</ul>
+<h2 id="Remarks">논평</h2>
 <p>Windows Vista 이후는 v1.1.10부터 지원합니다.</p>
 <p>시스템에 설치된 사운드 장치 (믹서)의 능력을 알아내려면 -- 예를 들어, 컴포턴트 유형과 콘트롤 유형 -- 다음 <a href="SoundSet.htm#Ex">사운드카드 분석 스크립트</a>를 실행하십시오.</p>
-<p>오디오를 더 섬세하게 제어하려면, <a href="http://www.autohotkey.com/board/topic/21984-vista-audio-control-functions/">VA 라이브러리</a>의 사용을 고려해 보십시오.</p>
+<p>오디오를 더 섬세하게 제어하려면, <a href="https://www.autohotkey.com/board/topic/21984-vista-audio-control-functions/">VA 라이브러리</a>의 사용을 고려해 보십시오.</p>
 <p>설정을 바꾸려면 <a href="SoundSet.htm">SoundSet</a>을 사용하십시오.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="SoundSet.htm">SoundSet</a>, <a href="SoundGetWaveVolume.htm">SoundGetWaveVolume</a>, <a href="SoundSetWaveVolume.htm">SoundSetWaveVolume</a>, <a href="SoundPlay.htm">SoundPlay</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">SoundGet, master_volume
-MsgBox, 마스터 볼륨은 %master_volume% 퍼센트입니다.
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExMasterVol">
+<p><a class="ex_number" href="#ExMasterVol"></a> Retrieves and reports the master volume.</p>
+<pre>SoundGet, master_volume
+MsgBox, 마스터 볼륨은 %master_volume% 퍼센트입니다.</pre>
+</div>
 
-SoundGet, master_mute, , mute
-MsgBox, 마스터 음소거는 현재 %master_mute%입니다.
+<div class="ex" id="ExMasterMute">
+<p><a class="ex_number" href="#ExMasterMute"></a> Retrieves and reports the master mute setting.</p>
+<pre>SoundGet, master_mute,, Mute
+MsgBox, 마스터 음소거는 현재 %master_mute%입니다.</pre>
+</div>
 
-SoundGet, bass_level, Master, bass
+<div class="ex" id="ExMasterBass">
+<p><a class="ex_number" href="#ExMasterBass"></a> Retrieves and reports the master bass level if possible, otherwise an error message is displayed.</p>
+<pre>SoundGet, bass_level, Master, Bass
 if ErrorLevel
     MsgBox, 에러 설명: %ErrorLevel%
 else
-    MsgBox, MASTER에 대한 BASS 레벨은 %bass_level% 퍼센트입니다.
+    MsgBox, MASTER에 대한 BASS 레벨은 %bass_level% 퍼센트입니다.</pre>
+</div>
 
-SoundGet, microphone_mute, Microphone, mute
-if microphone_mute = Off
+<div class="ex" id="ExMicMute">
+<p><a class="ex_number" href="#ExMicMute"></a> Retrieves the microphone mute setting. If the microphone is not muted, a message box is displayed.</p>
+<pre>SoundGet, microphone_mute, Microphone, Mute
+if (microphone_mute = "Off")
     MsgBox, 마이크로폰이 음소거되지 않았습니다.</pre>
+</div>
 
 </body>
 </html>

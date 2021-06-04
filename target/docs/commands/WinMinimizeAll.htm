@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinMinimizeAll / WinMinimizeAllUndo</title>
+<title>WinMinimizeAll / WinMinimizeAllUndo - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinMinimizeAll and WinMinimizeAllUndo commands minimize or unminimize all windows." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,14 +14,20 @@
 
 <p>모든 창을 최소화하거나 환원합니다.</p>
 
-<pre class="Syntax">WinMinimizeAll
-WinMinimizeAllUndo</pre>
-<p>대부분의 시스템에서, 이것은 익스플로러의 Win-M 핫키 그리고 Win-D 핫키와 동등합니다.</p>
-<h3>관련 항목</h3>
+<pre class="Syntax">
+<span class="func">WinMinimizeAll</span>
+<span class="func">WinMinimizeAllUndo</span>
+</pre>
+<p>대부분의 시스템에서, 이것은 익스플로러의 <kbd>Win</kbd>+<kbd>M</kbd> 핫키 그리고 <kbd>Win</kbd>+<kbd>D</kbd> 핫키와 동등합니다.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="WinMinimize.htm">WinMinimize</a>, <a href="GroupAdd.htm">GroupAdd</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">WinMinimizeAll
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Minimizes all windows for 1 second and unminimizes them.</p>
+<pre>WinMinimizeAll
+Sleep, 1000
 WinMinimizeAllUndo</pre>
+</div>
 
 </body>
 </html>

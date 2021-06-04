@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>PixelGetColor</title>
+<title>PixelGetColor - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The PixelGetColor command retrieves the color of the pixel at the specified x,y coordinates." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>지정된 좌표에서 픽셀의 색을 열람합니다.</p>
 
-<pre class="Syntax">PixelGetColor, OutputVar, X, Y [, Alt|Slow|RGB]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">PixelGetColor</span>, OutputVar, X, Y <span class="optional">, Mode</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -24,7 +24,7 @@
   <dt>X, Y</dt>
   <dd><p>픽셀의 X와 Y 좌표, <a href="../Variables.htm#Expressions">표현식</a> 가능. 좌표는 활성 창에 상대적입니다. 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>가 사용되어 좌표가 변경된 경우는 제외합니다.</p></dd>
 
-  <dt>Alt|Slow|RGB</dt>
+  <dt>Mode</dt>
   <dd><p>이 매개변수는 0 개 이상의 다음 단어가 담깁니다. 단어가 여러 개 존재하면, 다음 단어와 스페이스로 가르십시오 (예, <code>Alt RGB</code>).</p>
       <p><strong>Alt</strong> <span class="ver">[v1.0.43.10+]:</span> 대체 방법을 사용하여 색을 열람합니다. 정상 방법으로는 특정 유형의 창에 대하여 정확하거나 유효한 컬러를 얻을 수 없을 경우에 사용됩니다. 이 방법은 정상 방법보다 대략 10% 정도 느립니다.</p>
       <p><strong>Slow</strong> <span class="ver">[v1.0.43.10+]:</span> 더 정교한 방법을 사용하여 컬러를 열람합니다. 어떤 전체 화면 어플리케이션에서 다른 메쏘드는 실패하지만 이 방법은 작동할 가능성이 있습니다. 이 방법은 정상 방법보다 대략 세 배 느립니다. 주의: <em>Slow</em>가 <em>Alt</em>보다 우선 순위가 높습니다. 그래서 이 경우는 <em>Alt</em>를 지정할 필요가 없습니다.</p>
@@ -32,10 +32,10 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>픽셀은 반드시 보여야 합니다; 다른 말로, 창에서 다른 창에 가려진 픽셀 컬러는 열람할 수 없습니다. 대조적으로, 마우스 아래의 커서는 보통 탐지할 수 있습니다. 이에 대한 예외는 게임 커서입니다. 대부분의 경우 게임 커서는 자신의 아래에 픽셀을 숨깁니다.</p>
 <p>현재 화면의 컬러를 알아내려면 Window Spy (트레이 아이콘 메뉴)를 사용하거나 또는 이 페이지 아래에 에제를 사용하십시오.</p>
 <p>알려진 한계:</p>
@@ -43,14 +43,17 @@
   <li>창이 <a href="WinSet.htm#trans">부분적으로 투명하거나</a> 또는 자신의 컬러를 보이지 않도록 표식했다면 (<a href="WinSet.htm#TransColor">TransColor</a>) 전형적으로 그 결과 컬러는 그 창에 아니라 그 창 뒤의 컬러가 됩니다.</li>
   <li>PixelGetColor는 어떤 어플리케이션에서 정확한 결과를 생산할 수 없을 수도 있습니다. 이런 일이 일어나면, 단어 <em>Alt</em> 또는 <em>Slow</em>를 마지막 매개변수에 지정해 보십시오.</li>
 </ul>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="PixelSearch.htm">PixelSearch</a>, <a href="ImageSearch.htm">ImageSearch</a>, <a href="CoordMode.htm">CoordMode</a>, <a href="MouseGetPos.htm">MouseGetPos</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">^!z::  <em>; Control+Alt+Z 핫키.</em>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Press a hotkey to show the color of the pixel located at the current position of the mouse cursor.</p>
+<pre>^!z::  <em>; Control+Alt+Z 핫키.</em>
 MouseGetPos, MouseX, MouseY
 PixelGetColor, color, %MouseX%, %MouseY%
 MsgBox 현재 커서 위치의 컬러는 %color%입니다.
 return</pre>
+</div>
 
 </body>
 </html>

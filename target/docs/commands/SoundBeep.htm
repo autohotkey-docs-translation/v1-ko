@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SoundBeep</title>
+<title>SoundBeep - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SoundBeep command emits a tone from the PC speaker." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>PC 스피커로 톤을 방출합니다.</p>
 
-<pre class="Syntax">SoundBeep [, Frequency, Duration]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">SoundBeep</span> <span class="optional">, Frequency, Duration</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Frequency</dt>
@@ -26,15 +26,22 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>스크립트는 소리가 끝나기를 기다린 다음 실행을 계속합니다. 게다가, 소리가 나오는 동안은 시스템의 반응성이 줄어들 수도 있습니다.</p>
 <p>컴퓨터에 사운드 카드가 없다면, 표준 삐-이 소리가 PC 스피커를 통하여 연주됩니다.</p>
 <p>PC 스피커 대신에 표준 시스템 사운드 카드로 삐-이 소리를 내려면, <a href="SoundPlay.htm">SoundPlay</a>의 별표 모드를 참조하십시오.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="SoundPlay.htm">SoundPlay</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">SoundBeep  <em>; 기본 진동수와 지속 시간으로 연주합니다.</em>
-SoundBeep, 750, 500  <em>; 0.5초간 높은 진동수로 연주합니다.</em></pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> 기본 진동수와 지속 시간으로 연주합니다.</p>
+<pre>SoundBeep</pre>
+</div>
+
+<div class="ex" id="ExParams">
+<p><a class="ex_number" href="#ExParams"></a> 0.5초간 높은 진동수로 연주합니다.</p>
+<pre>SoundBeep, 750, 500</pre>
+</div>
 
 </body>
 </html>

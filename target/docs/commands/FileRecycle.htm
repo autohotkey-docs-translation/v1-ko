@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileRecycle</title>
+<title>FileRecycle - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileRecycle command sends a file or directory to the recycle bin if possible, or permanently deletes it." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,10 +12,10 @@
 
 <h1>FileRecycle</h1>
 
-<p>파일이나 디렉토리를 휴지통으로 보냅니다.</p>
+<p>Sends a file or directory to the recycle bin if possible, or permanently deletes it.</p>
 
-<pre class="Syntax">FileRecycle, FilePattern</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FileRecycle</span>, FilePattern</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>FilePattern</dt>
@@ -24,15 +24,23 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
-<p><a href="http://msdn.microsoft.com/en-us/library/bb762164.aspx">SHFileOperation</a>이 실제 작업을 하는데 사용됩니다. 이 함수는 파일이 너무 커서 휴지통에 들어가지 않으면 영구히 지웁니다; v1.0.96 현재 이런 일이 일어나기 전에 경고를 보여줍니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Remarks">논평</h2>
+<p><a href="http://msdn.microsoft.com/ko-kr/library/bb762164.aspx">SHFileOperation</a>이 실제 작업을 하는데 사용됩니다. 이 함수는 파일이 너무 커서 휴지통에 들어가지 않으면 영구히 지웁니다; <span class="ver">[v1.0.96]</span> 현재 이런 일이 일어나기 전에 경고를 보여줍니다.</p>
+<p>The file may be permanently deleted without warning if the file cannot be recycled for other reasons, such as:</p>
+<ul>
+  <li>The file is on a removable drive.</li>
+  <li>The Recycle Bin has been disabled, such as via the <code>NukeOnDelete</code> registry value.</li>
+</ul>
+<h2 id="Related">관련 항목</h2>
 <p><a href="FileRecycleEmpty.htm">FileRecycleEmpty</a>, <a href="FileDelete.htm">FileDelete</a>, <a href="FileCopy.htm">FileCopy</a>, <a href="FileMove.htm">FileMove</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FileRecycle, C:\temp files\*.tmp</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Sends all .tmp files in a directory to the recycle bin if possible.</p>
+<pre>FileRecycle, C:\temp files\*.tmp</pre>
+</div>
 
 </body>
 </html>

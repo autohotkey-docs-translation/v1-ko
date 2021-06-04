@@ -1,5 +1,5 @@
-; IntelliSense -- by Rajat (requires XP/2k/NT)
-; http://www.autohotkey.com
+﻿; IntelliSense -- by Rajat (requires XP/2k/NT)
+; https://www.autohotkey.com
 ; This script watches while you edit an AutoHotkey script.  When it sees you
 ; type a command followed by a comma or space, it displays that command's
 ; parameter list to guide you.  In addition, you can press Ctrl+F1 (or
@@ -104,7 +104,7 @@ Loop
 	Input, I_Word, V, {enter}{escape}{space}`,
 	I_EndKey = %ErrorLevel%
 	
-	; Tooltip is hidden in these cases:
+	; ToolTip is hidden in these cases:
 	if I_EndKey in EndKey:Enter,EndKey:Escape
 	{
 		ToolTip

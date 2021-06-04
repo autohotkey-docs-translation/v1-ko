@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#Warn</title>
+<title>#Warn - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content='The #Warn directive enables or disables warnings for specific conditions which may indicate an error, such as a typo or missing "global" declaration.' />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,32 +14,40 @@
 
 <p>특정한 조건에 대한 경고를 켜고 끕니다. 철자오류가 있거나 선언이 없는 경우와 같이 에러를 나타낼 수도 있습니다.</p>
 
-<pre class="Syntax">#Warn [, WarningType, WarningMode]</pre>
+<pre class="Syntax"><span class="func">#Warn</span> <span class="optional">WarningType, WarningMode</span></pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>WarningType</dt>
   <dd>
       <p>켜고 끌 경고의 종류. 생략하면, <i>All</i>이 기본값입니다.</p>
-      <p><strong>UseUnsetLocal</strong> 또는 <strong>UseUnsetGlobal</strong>: 변수가 이전에 값이 할당되어 있지 않거나 <a href="VarSetCapacity.htm">VarSetCapacity</a>로 초기화되지 않은 채로 읽혀지면 경고를 보냅니다. 변수를 비울 목적이라면, 빈 문자열을 할당해 이 경고를 누르십시오.</p>
+      <p id="UseUnset"><strong>UseUnsetLocal</strong> 또는 <strong>UseUnsetGlobal</strong>: 변수가 이전에 값이 할당되어 있지 않거나 <a href="VarSetCapacity.htm">VarSetCapacity()</a>로 초기화되지 않은 채로 읽혀지면 경고를 보냅니다. 변수를 비울 목적이라면, 빈 문자열을 할당해 이 경고를 누르십시오.</p>
       <p>지역 변수와 전역 변수에 대하여 따로 경고 유형이 나눠집니다. 전역 변수는 영속적이고 스크립트-전체에 걸쳐 영향을 미치는 성질이 있으므로 미리 초기화하지 않고 사용하는 것이 보다 일반적이기 때문입니다. 이런 이유로, 어떤 스크립트 저자는 이런 종류의 경고를 지역 변수에는 켜고 전역 변수에는 끄고 싶어합니다.</p>
       <pre>#Warn
 <em>;y := ""  ; 이렇게 하면 경고를 누릅니다.</em>
 x := y    <em>; y에는 아직 값이 할당되지 않았습니다.</em></pre>
-      <p><strong>UseEnv</strong>: 환경 변수가 빈 스크립트 변수 대신에 자동으로 사용되면 경고를 보냅니다. 이런 일은 종종 환경 변수의 이름이 예상치 못하게 스크립트가 사용하는 변수에 일치할 때 일어납니다. 이 경고는 변수에 접근할 때 일어납니다. 그러나 스크립트에 <a href="_NoEnv.htm">#NoEnv</a>가 켜져 있으면 절대로 일어나지 않습니다 (여러 가지 이유로 권장함).</p>
+      <p id="UseEnv"><strong>UseEnv</strong>: 환경 변수가 빈 스크립트 변수 대신에 자동으로 사용되면 경고를 보냅니다. 이런 일은 종종 환경 변수의 이름이 예상치 못하게 스크립트가 사용하는 변수에 일치할 때 일어납니다. 이 경고는 변수에 접근할 때 일어납니다. 그러나 스크립트에 <a href="_NoEnv.htm">#NoEnv</a>가 켜져 있으면 절대로 일어나지 않습니다 (여러 가지 이유로 권장함).</p>
       <pre>#Warn
 <em>;#NoEnv             ; 이것을 추가해 "temp"가 환경 변수가 아니라고 밝히십시오.</em>
 <em>;EnvGet temp, TEMP  ; 이렇게 하면 환경 변수의 값을 스크립트 변수 안으로 복사할 것입니다.</em>
 temp := ""          <em>; 이 줄을 삭제해도, temp는 여전히 값을 가지고 있습니다.</em>
 MsgBox % temp       <em>; 이것은 이름이 "TEMP"인 환경 변수에 접근합니다.</em></pre>
-      <p><strong>LocalSameAsGlobal</strong>: 스크립트가 실행을 시작하기 전에, 전역 변수와 이름이 같은 <em>선언되지 않은</em> 지역 변수에 대하여 경고를 보여줍니다. 이것은 깜박잊고 전역 변수를 함수 안에 선언한 다음, 거기에 접근을 시도하면 야기되는 에러를 방지하기 위한 목적입니다. 그 변수가 실제로 지역 변수이기를 의도했다면, <code>local x</code> 또는 <code>static y</code>와 같이 선언하여 경고를 누를 수 있습니다.</p>
+      <p id="LocalSameAsGlobal"><strong>LocalSameAsGlobal</strong>: 스크립트가 실행을 시작하기 전에, 전역 변수와 이름이 같은 <em>선언되지 않은</em> 지역 변수에 대하여 경고를 보여줍니다. 이것은 깜박잊고 전역 변수를 함수 안에 선언한 다음, 거기에 접근을 시도하면 야기되는 에러를 방지하기 위한 목적입니다. 그 변수가 실제로 지역 변수이기를 의도했다면, <code>local x</code> 또는 <code>static y</code>와 같이 선언하여 경고를 누를 수 있습니다. This warning is never shown for variables inside a <a href="../Functions.htm#ForceLocal">force-local</a> function.</p>
       <pre>#Warn
 g := 1
 ShowG() {       <em>; 함수를 호출하지 않아도 경고가 나타납니다.</em>
     <em>;global g   ; &lt;-- 전역 변수에 접근하기 위해 필요합니다.</em>
     MsgBox % g  <em>; 선언할 필요없이, "g"는 빈 지역 변수입니다.</em>
 }</pre>
+      <p id="ClassOverwrite"><strong>ClassOverwrite</strong> <span class="ver">[v1.1.27+]</span>: Before the script starts to run, show a warning for each assignment targetting a class variable. For example, <code>box := new Box</code> will show a warning if <em>Box</em> is a class, since this would overwrite the class (within the super-global variable, <em>Box</em>). Warnings are also shown for output variables of commands, but not ByRef parameters. Warnings are not shown for nested classes or dynamic variable references.</p>
+      <p id="Unreachable"><strong>Unreachable</strong> <span class="ver">[v1.1.33+]</span>: Before the script starts to run, show a warning for each line that immediately follows a <code>Return</code>, <code>Break</code>, <code>Continue</code>, <code>Throw</code>, <code>Goto</code> or <code>Exit</code> at the same nesting level, unless that line is the target of a label. Although this does not detect all unreachable code, it detects common errors such as:</p>
+      <ul>
+        <li>Placing initialization code (such as an assignment or <a href="GroupAdd.htm">GroupAdd</a>) in between hotkey subroutines, when it should be in the <a href="../Language.htm#auto-execute-section">auto-execute section</a>.</li>
+        <li>Placing the first line of a "multi-line" hotkey subroutine on the same line as the hotkey label. Doing so will make it a <a href="../Hotkeys.htm#Intro">single-line hotkey</a>, with an implicit <code>return</code> that prevents any subsequent lines from executing. Similarly, placing <code>return</code> after a single-line hotkey is redundant and will cause a warning.</li>
+        <li>Placing a <a href="../Language.htm#subroutines">subroutine</a> inside another subroutine, breaking the flow of code.</li>
+      </ul>
+      <p>If the code is intended to be unreachable - such as if a <code>return</code> has been used to temporarily disable a block of code, or a hotkey or hotstring has been temporarily disabled by commenting it out - consider commenting out the unreachable code as well. Alternatively, the warning can be suppressed by defining a <a href="../misc/Labels.htm">label</a> above the first unreachable line.</p>
       <p><strong>All</strong>: 주어진 <em>WarningMode</em>를 지원되는 모든 경고 유형에 적용합니다.</p>
     </dd>
 
@@ -53,9 +61,9 @@ ShowG() {       <em>; 함수를 호출하지 않아도 경고가 나타납니다
     </dd>
 
 </dl>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 	<p>기본값으로, 모든 경고는 꺼져 있습니다.</p>
-	<p>경고는 실행시간에는 켜고 끌 수 없습니다; 설정은 스크립트가 적재될 때 결정됩니다. 그러므로, 스크립트에서 위치는 의미가 없습니다 (그리고, 다른 # 지시어처럼, #Warn은 조건적으로 실행할 수 없습니다).</p>
+	<p>경고는 실행시간에는 켜고 끌 수 없습니다; 설정은 스크립트가 적재될 때 결정됩니다. 그러므로, 스크립트에서 위치는 의미가 없습니다 (그리고, 다른 지시어처럼, #Warn은 조건적으로 실행할 수 없습니다).</p>
 	<p>그렇지만, 여러 #Warn 지시어의 순서는 의미가 있습니다: 마지막으로 나타나 주어진 경고를 설정한 지시어가 그 경고에 대한 모드를 결정합니다. 그래서, 예를 들어, UseEnv를 제외하고 아래의 두 서술문은 조합하여 모든 경고를 켠 효과가 있습니다:</p>
 <pre>#Warn All
 #Warn UseEnv, Off
@@ -64,14 +72,23 @@ EnvSet EnvVar, 1
 x := EnvVar       <em>; #NoEnv가 사용되지 않았으므로 문제가 없습니다.</em>
 x := NotAnEnvVar  <em>; 경고.</em>
 </pre>
-<h3>관련 항목</h3>
-<p><a href="../Functions.htm#Locals">지역 변수와 전역 변수</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">
-#Warn All, Off                    <em>; 모든 경고를 끕니다. 이것이 기본 상태입니다.</em>
-#Warn                             <em>; 모든 종류의 경고를 켭니다; 각 경고를 메시지 상자에 보여줍니다.</em>
-#Warn UseUnsetLocal, OutputDebug  <em>; 지역 변수를 설정하기 전에 사용되면 경고합니다; OutputDebug로 경고를 보냅니다.</em>
-</pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="../Functions.htm#Local">지역 변수와 전역 변수</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExAllOff">
+<p><a class="ex_number" href="#ExAllOff"></a> 모든 경고를 끕니다. 이것이 기본 상태입니다.</p>
+<pre>#Warn All, Off</pre>
+</div>
+
+<div class="ex" id="ExOmitted">
+<p><a class="ex_number" href="#ExOmitted"></a> Enables every type of warning and shows each warning in a message box.</p>
+<pre>#Warn</pre>
+</div>
+
+<div class="ex" id="ExUseUnsetLocalOutputDebug">
+<p><a class="ex_number" href="#ExUseUnsetLocalOutputDebug"></a> Warns when a local variable is used before it is set and sends each warning to OutputDebug.</p>
+<pre>#Warn UseUnsetLocal, OutputDebug</pre>
+</div>
 
 </body>
 </html>

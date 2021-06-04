@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#InstallMouseHook</title>
+<title>#InstallMouseHook - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #InstallMouseHook directive forces the unconditional installation of the mouse hook." />
+<meta name="ahk:equiv-v2" content="commands/InstallMouseHook.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,17 +15,21 @@
 
 <p>마우스 갈고리를 무조건 강제로 설치합니다.</p>
 
-<pre class="Syntax">#InstallMouseHook</pre>
-<h3>논평</h3>
+<pre class="Syntax"><span class="func">#InstallMouseHook</span></pre>
+<h2 id="Remarks">논평</h2>
 <p>마우스 갈고리는 마우스 <a href="../Hotkeys.htm">핫키</a>를 활성화하고 <a href="../Hotstrings.htm#NoMouse">핫스트링</a>을 촉발시키기 위한 목적으로 마우스 클릭을 관제합니다.</p>
 <p>오토핫키는 키보드 갈고리와 마우스 갈고리를 무조건 설치하지는 않습니다. 왜냐하면 그 둘이 적어도 500 KB의 메모리를 소비하기 때문입니다 (그러나 키보드 갈고리가 설치되어 있다면, 마우스 갈고리는 겨우 50 KB의 추가 메모리를 요구할 뿐입니다; 그리고 그 반대도 마찬가지입니다). 그러므로, 마우스 갈고리는 스크립트에 하나 이상의 마우스 <a href="../Hotkeys.htm">핫키</a>가 들어 있을 경우에만 설치됩니다. <a href="../Hotstrings.htm">핫스트링</a>에 대해서도 설치가 되지만, 그것은 <a href="_Hotstring.htm">#Hotstring NoMouse</a>를 통하여 비활성화할 수 있습니다.</p>
 <p>대조적으로, #InstallMouseHook 지시어는 무조건 마우스 갈고리를 설치합니다. <a href="KeyHistory.htm">KeyHistory</a>가 마우스 클릭을 관제해야 할 경우에 유용합니다.</p>
 <p>스크립트가 갈고리를 사용 중인지 여부는 <a href="KeyHistory.htm">KeyHistory</a> 명령어 또는 메뉴 항목을 통하여 알 수 있습니다. 어느 핫키가 갈고리를 사용하는지는 <a href="ListHotkeys.htm">ListHotkeys</a> 명령어나 메뉴 항목을 통하여 알 수 있습니다.</p>
 <p>이 지시어는 또한 스크립트를 <a href="_Persistent.htm">영속적</a>으로 만듭니다. 즉, 종료하려면 <a href="ExitApp.htm">ExitApp</a>를 사용해야 한다는 뜻입니다.</p>
-<h3>관련 항목</h3>
-<p><a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>, <a href="_UseHook.htm">#UseHook</a>, <a href="Hotkey.htm">핫키</a>, <a href="_Persistent.htm">#Persistent</a>, <a href="KeyHistory.htm">KeyHistory</a>, <a href="GetKeyState.htm">GetKeyState</a>, <a href="KeyWait.htm">KeyWait</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#InstallMouseHook</pre>
+<p>다른 지시어처럼, #InstallMouseHook는 조건적으로 실행할 수 없습니다.</p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>, <a href="_UseHook.htm">#UseHook</a>, <a href="Hotkey.htm">핫키</a>, <a href="_Persistent.htm">#Persistent</a>, <a href="KeyHistory.htm">KeyHistory</a>, <a href="GetKeyState.htm#function">GetKeyState()</a>, <a href="KeyWait.htm">KeyWait</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Installs the mouse hook unconditionally.</p>
+<pre>#InstallMouseHook</pre>
+</div>
 
 </body>
 </html>

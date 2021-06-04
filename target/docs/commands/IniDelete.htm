@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>IniDelete</title>
+<title>IniDelete - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The IniDelete command deletes a value from a standard format .ini file." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>표준 형식의 .ini 파일로부터 값을 지웁니다.</p>
 
-<pre class="Syntax">IniDelete, Filename, Section [, Key]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">IniDelete</span>, Filename, Section <span class="optional">, Key</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Filename</dt>
@@ -28,17 +28,20 @@
   <dd><p>.ini 파일의 키 이름. <strong>생략하면, 전체 <em>Section</em>이 삭제됩니다.</strong></p></dd>
 
 </dl>
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>표준 ini 파일은 모습이 다음과 같습니다:</p>
 <pre>[SectionName]
 Key=Value</pre>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="IniRead.htm">IniRead</a>, <a href="IniWrite.htm">IniWrite</a>, <a href="RegDelete.htm">RegDelete</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">IniDelete, C:\Temp\myfile.ini, section2, key</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Deletes a key and its value located in section2 from a standard format .ini file.</p>
+<pre>IniDelete, C:\Temp\myfile.ini, section2, key</pre>
+</div>
 
 </body>
 </html>

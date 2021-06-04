@@ -1,100 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
+
 <head>
-<title>조이스틱 테스트 스크립트</title>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/content.js" type="text/javascript"></script>
+  <meta http-equiv="refresh" content="0; url=index.htm#JoystickTest">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="canonical" href="index.htm#JoystickTest">
+  <title>Redirection</title>
 </head>
+
 <body>
-
-<h1>조이스틱 테스트 스크립트</h1>
-
-<p>이 스크립트는 조이스틱 버튼의 개수와 기타 속성을 알아내는 데 도움을 줍니다. 조이스틱이 눈금 조정이 필요한지 노출시켜 주기도 합니다; 즉, 각 축의 이동 범위는 0 부터 100 퍼센트 사이입니다. 눈금 조정이 필요하면, 운영 체제의 제어판 또는 조이스틱에 따라오는 소프트웨어를 이용하십시오.
-</p>
-<p><a href="JoystickTest.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
-
-<pre class="NoIndent"><em>; July 6, 2005: 조이스틱 번호를 자동 탐지.
-; May 8, 2005 : 수정: 조이스틱이 접속되어 있는지 탐지하는 수단으로
-; JoyAxes를 더 이상 질의하지 않음. 어떤 조이스틱은 게임패드이고
-; 축이 하나도 없기 때문입니다.</em>
-
-<em>; 무조건 특정 조이스틱 번호를 사용하고 싶다면,
-; 다음 값을 0에서 조이스틱 번호로 바꿉니다 (1-16).
-; 값이 0이면 조이스틱 번호를 자동 탐지합니다:</em>
-JoystickNumber = 0
-
-<em>; END OF CONFIG SECTION. 이 시점 이후로 변경하지 마십시오
-; 단, 스크립트의 기본 기능을 바꾸고 싶다면 예외입니다.</em>
-
-<em>; 요청하면 조이스틱 번호를 자동 탐지합니다:</em>
-if JoystickNumber &lt;= 0
-{
-    Loop 16  <em>; 각 조이스틱 번호를 질의해 어느 번호가 존재하는지 알아냅니다.</em>
-    {
-        GetKeyState, JoyName, %A_Index%JoyName
-        if JoyName &lt;&gt;
-        {
-            JoystickNumber = %A_Index%
-            break
-        }
-    }
-    if JoystickNumber &lt;= 0
-    {
-        MsgBox 시스템에 조이스틱이 장착되어 있지 않은 것 같습니다.
-        ExitApp
-    }
-}
-
-#SingleInstance
-SetFormat, float, 03  <em>; 축 위치 퍼센트에서 소수점을 생략합니다.</em>
-GetKeyState, joy_buttons, %JoystickNumber%JoyButtons
-GetKeyState, joy_name, %JoystickNumber%JoyName
-GetKeyState, joy_info, %JoystickNumber%JoyInfo
-Loop
-{
-    buttons_down =
-    Loop, %joy_buttons%
-    {
-        GetKeyState, joy%a_index%, %JoystickNumber%joy%a_index%
-        if joy%a_index% = D
-            buttons_down = %buttons_down%%a_space%%a_index%
-    }
-    GetKeyState, joyx, %JoystickNumber%JoyX
-    axis_info = X%joyx%
-    GetKeyState, joyy, %JoystickNumber%JoyY
-    axis_info = %axis_info%%a_space%%a_space%Y%joyy%
-    IfInString, joy_info, Z
-    {
-        GetKeyState, joyz, %JoystickNumber%JoyZ
-        axis_info = %axis_info%%a_space%%a_space%Z%joyz%
-    }
-    IfInString, joy_info, R
-    {
-        GetKeyState, joyr, %JoystickNumber%JoyR
-        axis_info = %axis_info%%a_space%%a_space%R%joyr%
-    }
-    IfInString, joy_info, U
-    {
-        GetKeyState, joyu, %JoystickNumber%JoyU
-        axis_info = %axis_info%%a_space%%a_space%U%joyu%
-    }
-    IfInString, joy_info, V
-    {
-        GetKeyState, joyv, %JoystickNumber%JoyV
-        axis_info = %axis_info%%a_space%%a_space%V%joyv%
-    }
-    IfInString, joy_info, P
-    {
-        GetKeyState, joyp, %JoystickNumber%JoyPOV
-        axis_info = %axis_info%%a_space%%a_space%POV%joyp%
-    }
-    ToolTip, %joy_name% (#%JoystickNumber%):`n%axis_info%`nButtons Down: %buttons_down%`n`n(종료하려면 트레이 아이콘을 우클릭 하십시오)
-    Sleep, 100
-}
-return
-</pre>
+  <p>Redirecting to <a href="index.htm#JoystickTest">Joystick Test Script</a>.</p>
 </body>
+
 </html>

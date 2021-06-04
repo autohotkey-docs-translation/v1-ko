@@ -527,7 +527,7 @@ indexData = [
   ["GroupClose","commands/GroupClose.htm",6,"SS"],
   ["GroupDeactivate","commands/GroupDeactivate.htm",6,"SS"],
   ["Gui","commands/Gui.htm",6,"SSSS"],
-  ["Gui control types","commands/GuiControls.htm"],
+  ["Gui 콘트롤 유형","commands/GuiControls.htm"],
   ["Gui styles reference","misc/Styles.htm"],
   ["GuiClose (label)","commands/Gui.htm#GuiClose"],
   ["GuiContextMenu (label)","commands/Gui.htm#GuiContextMenu"],
@@ -1061,7 +1061,7 @@ indexData = [
   ["WriteLine method (File)","objects/File.htm#WriteLine"],
   ["WriteNumType method (File)","objects/File.htm#WriteNum"],
   ["WS_* (GUI styles)","misc/Styles.htm"],
-  ["XButton","commands/Click.htm"],
+  ["XButton","KeyList.htm#mouse-advanced"],
   ["YYYYMMDDHH24MISS","commands/FileSetTime.htm#YYYYMMDD"],
   ["{Blind}","commands/Send.htm#blind"]
 ];

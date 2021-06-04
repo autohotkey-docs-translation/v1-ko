@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>함수 객체</title>
+<title>Function Objects - Definition &amp; Usage | AutoHotkey</title>
+<meta name="description" content="Function objects are either references to Func objects representing actual functions, or objects which can be called like functions." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -23,8 +23,8 @@
   <li><a href="../commands/Gui.htm#label">구이 콘트롤 이벤트</a> (g-labels)</li>
   <li><a href="../commands/Hotkey.htm#Functor">Hotkey</a></li>
   <li><a href="../commands/Menu.htm#Functor">Menu</a></li>
-  <li><a href="../commands/OnClipboardChange.htm">OnClipboardChange()</a></li>
-  <li><a href="../commands/OnExit.htm">OnExit()</a></li>
+  <li><a href="../commands/OnClipboardChange.htm#function">OnClipboardChange()</a></li>
+  <li><a href="../commands/OnExit.htm#function">OnExit()</a></li>
   <li><a href="../commands/OnMessage.htm">OnMessage()</a></li>
   <li><a href="../commands/SetTimer.htm#Functor">SetTimer</a></li>
 </ul>
@@ -49,9 +49,47 @@
 <ul>
   <li>스크립트가 <code><a href="../Functions.htm#DynCall">%this%()</a></code>나 <code>this.()</code>를 사용했다면 <code>method</code>는 빈 문자열입니다.</li>
   <li>이 함수 객체가 메쏘드로 사용중이라면, <code>IsObject(method)</code>는 참이고 <code>method</code>에는 목표 객체를 가리키는 참조 주소가 담깁니다. 예를 들어, <code>x.y</code>가 <code>this</code> 함수 객체를 가리키면, <code>x.y()</code> → <code>this[x]()</code> → <code>this.__Call(x)</code> → <code>this.Call(x)</code>.</li>
-  <li><span class="ver">[v1.1.20+]:</span> OnMessage나 SetTimer와 같이 역호출 함수를 받는 내장 함수 중 하나가 이 함수 객체를 사용중이면, Call 메쏘드만 필요합니다.</li>
+  <li><span class="ver">[v1.1.20+]:</span> OnMessage()나 SetTimer와 같이 역호출 함수를 받는 내장 함수 중 하나가 이 함수 객체를 사용중이면, Call 메쏘드만 필요합니다.</li>
 </ul>
-<p>__Call으로 직접 같은 일을 할 수 있습니다. 그렇지만, __Call을 Call로 방향전환하기를 권장합니다. 쉽게 AutoHotkey v2로 이전할 수 있습니다. 오토핫키 v2에서 <code>%this%()</code>의 행위와 메쏘드 호출은 직접적으로 Call 메쏘드를 호출하도록 변경되었습니다.</p>
+<p>__Call으로 직접 같은 일을 할 수 있습니다. 그렇지만, __Call을 Call로 방향전환하기를 권장합니다. 쉽게 <a href="https://www.autohotkey.com/v2/">AutoHotkey v2</a>로 이전할 수 있습니다. 오토핫키 v2에서 <code>%this%()</code>의 행위와 메쏘드 호출은 직접적으로 Call 메쏘드를 호출하도록 변경되었습니다.</p>
+<h3 id="User-Defined-Examples">예제</h3>
+<p>If you are defining multiple function object types, boilerplate code should be delegated to a base class (but if you'll ever combine your code with someone else's, be wary of conflicts). 예를 들어:</p>
+<pre id="class_FunctionObject">class FunctionObject {
+    __Call(method, args*) {
+        if (method = "")
+            return this.Call(args*)
+        if (IsObject(method))
+            return this.Call(method, args*)
+    }
+}</pre>
+<p>The following example defines a function array which can be called; when called, it calls each element of the array in turn.</p>
+<pre><em>; This example requires the <a href="#class_FunctionObject">FunctionObject class</a> above in order to work.</em>
+class FuncArrayType extends FunctionObject {
+    Call(obj, params*) {
+        <em>; 함수 리스트를 호출한다.</em>
+        Loop % this.Length()
+            this[A_Index].Call(params*)
+    }
+}
+
+<em>; 함수 배열을 생성한다.</em>
+funcArray := new FuncArrayType
+<em>; Add some functions to the array (can be done at any point).</em>
+funcArray.Push(Func("One"))
+funcArray.Push(Func("Two"))
+<em>; 배열을 메쏘드로 사용하는 객체를 생성한다.</em>
+obj := {method: funcArray}
+<em>; 메쏘드를 호출한다.</em>
+obj.method("foo", "bar")
+
+One(param1, param2) {
+    ListVars
+    MsgBox
+}
+Two(param1, param2) {
+    ListVars
+    MsgBox
+}</pre>
 
 <h2 id="BoundFunc">BoundFunc Object <span class="ver">[v1.1.20+]</span></h2>
 <p>함수처럼 행위합니다. 그러나 그저 미리 정의된 매개변수를 다른 함수로 건네는 역할만 합니다.</p>
@@ -73,6 +111,7 @@ RealFn(a, b) {
 <pre>file := FileOpen(A_ScriptFullPath, "r")
 getLine := ObjBindMethod(file, "ReadLine")
 MsgBox % %getLine%()  <em>; 이 파일의 첫 줄을 보여줍니다.</em></pre>
+<p>For a more complex example, see <a href="../commands/SetTimer.htm#ExampleClass">SetTimer</a>.</p>
 
 </body>
 </html>

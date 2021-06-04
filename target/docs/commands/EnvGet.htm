@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>EnvGet</title>
+<title>EnvGet - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The EnvGet command retrieves an environment variable." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,24 +14,33 @@
 
 <p>환경 변수를 열람합니다.</p>
 
-<pre class="Syntax">EnvGet, OutputVar, EnvVarName</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">EnvGet</span>, OutputVar, EnvVarName</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
   <dd><p>문자열을 저장할 변수 이름.</p></dd>
 
   <dt>EnvVarName</dt>
-  <dd><p>열람할 <a href="../Variables.htm#env">환경 변수</a>의 이름. 예를 들어: <code>EnvGet, OutputVar, Path</code>.</p></dd>
+  <dd><p>열람할 <a href="../Concepts.htm#environment-variables">환경 변수</a>의 이름. 예를 들어: <code>EnvGet, OutputVar, Path</code>.</p></dd>
 
 </dl>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>지정된 환경 변수가 비어 있거나 존재하지 않으면, <em>OutputVar</em> 비워집니다.</p>
 <p>운영 체제는 환경 변수의 길이를 32 KB의 텍스트로 제한합니다.</p>
-<h3>관련 항목</h3>
-<p><a href="EnvSet.htm">EnvSet</a>, <a href="_NoEnv.htm">#NoEnv</a>, <a href="../Variables.htm#env">환경 변수</a>, <a href="EnvUpdate.htm">EnvUpdate</a>, <a href="SetEnv.htm">SetEnv</a>, <a href="Run.htm">Run</a>, <a href="Run.htm">RunWait</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">EnvGet, OutputVar, LogonServer</pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="EnvSet.htm">EnvSet</a>, <a href="_NoEnv.htm">#NoEnv</a>, <a href="../Concepts.htm#environment-variables">환경 변수</a>, <a href="EnvUpdate.htm">EnvUpdate</a>, <a href="SetEnv.htm">SetEnv</a>, <a href="Run.htm">Run</a>, <a href="Run.htm">RunWait</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves an environment variable and stores its value in <var>OutputVar</var>.</p>
+<pre>EnvGet, OutputVar, LogonServer</pre>
+</div>
+
+<div class="ex" id="ExProgramFiles">
+<p><a class="ex_number" href="#ExProgramFiles"></a> Retrieves and reports the path of the "Program Files" directory. See <a href="RegRead.htm#ExProgramFiles">RegRead example #2</a> for an alternative method.</p>
+<pre>EnvGet, OutputVar, % <a href="../Variables.htm#Is64bitOS">A_Is64bitOS</a> ? "ProgramW6432" : "ProgramFiles"
+MsgBox, Program files are in: %OutputVar%</pre>
+</div>
 
 </body>
 </html>

@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>EnvUpdate</title>
+<title>EnvUpdate - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The EnvUpdate command notifies the OS and all running applications that environment variable(s) have changed." />
+<meta name="ahk:equiv-v2" content="AutoHotkey.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,19 +13,22 @@
 
 <h1>EnvUpdate</h1>
 
-<p>OS와 실행 중인 모든 어플에 <a href="../Variables.htm#env">환경 변수</a>가 변했다고 고지합니다.</p>
+<p>OS와 실행 중인 모든 어플에 <a href="../Concepts.htm#environment-variables">환경 변수</a>가 변했다고 고지합니다.</p>
 
-<pre class="Syntax">EnvUpdate</pre>
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<pre class="Syntax"><span class="func">EnvUpdate</span></pre>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>OS 환경을 갱신합니다. 로그오프 했다가 다시 로그온 한 것과 비슷한 효과가 있습니다.</p>
-<p>예를 들어, 다음 레지스트리 키를 변경한 후에, EnvUpdate를 사용하면 변경 사항을 방송할 수 있습니다: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment</p>
-<h3>관련 항목</h3>
+<p>예를 들어, 다음 레지스트리 키를 변경한 후에, EnvUpdate를 사용하면 변경 사항을 방송할 수 있습니다: <pre>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment</pre></p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="EnvSet.htm">EnvSet</a>, <a href="RegWrite.htm">RegWrite</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">EnvUpdate</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> OS 환경을 갱신합니다.</p>
+<pre>EnvUpdate</pre>
+</div>
 
 </body>
 </html>

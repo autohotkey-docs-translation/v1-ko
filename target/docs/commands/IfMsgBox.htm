@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>IfMsgBox</title>
+<title>IfMsgBox - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The IfMsgBox statement checks which button was pushed by the user during the most recent MsgBox command." />
+<meta name="ahk:equiv-v2" content="commands/MsgBox.htm#Result" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,36 +15,41 @@
 
 <p>가장 최근에 <a href="MsgBox.htm">MsgBox</a> 명령어가 작동 중인 동안 어느 버튼을 사용자가 눌렀는지 점검합니다.</p>
 
-<pre class="Syntax">IfMsgBox, ButtonName</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">IfMsgBox</span>, ButtonName</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>ButtonName</dt>
   <dd><p>사용자가 누른 버튼은 다음 문자열 중 하나입니다:<a href="MsgBox.htm"></a></p>
-      <p>Yes<br>
-        No<br>
-        OK<br>
-        Cancel<br>
-        Abort<br>
-        Ignore<br>
-        Retry<br>
-        Continue <span class="ver">[v1.0.44.08+]</span><br>
-        TryAgain <span class="ver">[v1.0.44.08+]</span><br>
-        Timeout (즉, MsgBox가 <a href="MsgBox.htm#Timeout">시간제한</a>에 걸렸다면 단어 "timeout"이 존재합니다.)</p>
-    </dd>
+    <ul>
+      <li>Yes</li>
+      <li>No</li>
+      <li>OK</li>
+      <li>Cancel</li>
+      <li>Abort</li>
+      <li>Ignore</li>
+      <li>Retry</li>
+      <li>Continue <span class="ver">[v1.0.44.08+]</span></li>
+      <li>TryAgain <span class="ver">[v1.0.44.08+]</span></li>
+      <li>Timeout (that is, the word "timeout" is present if the message box <a href="MsgBox.htm#Timeout">timed out</a>)</li>
+    </ul>
+  </dd>
 
 </dl>
 
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="MsgBox.htm">MsgBox</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">MsgBox, 4, , 계속하시겠습니다?, 5  <em>; 5-초로 시간 제한.</em>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Shows a yes-no message box which automatically stops execution after 5 seconds. The user can press the "No" button to initiate the stop immediately.</p>
+<pre>MsgBox, 4, , 계속하시겠습니다?, 5  <em>; 5-초로 시간 제한.</em>
 IfMsgBox, No
     Return  <em>; 사용자가 "No" 버튼을 눌렀습니다.</em>
 IfMsgBox, Timeout
     Return <em>; 즉, 생략하면 "No"라고 간주합니다.
 ; 그렇지 않으면, 계속합니다:</em>
-...</pre>
+<em>; ...</em></pre>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<title>InStr() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The InStr function searches for a given occurrence of a string, from the left or the right." />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>InStr()</h1>
+
+<p>왼쪽이나 오른쪽으로부터 주어진 문자열이 나타나는지 검색합니다.</p>
+
+<pre class="Syntax">FoundPos := <span class="func">InStr</span>(Haystack, Needle <span class="optional">, CaseSensitive := false, StartingPos := 1, Occurrence := 1</span>)</pre>
+<h2 id="Parameters">매개변수</h2>
+<dl>
+
+  <dt>Haystack</dt>
+  <dd><p>내용을 검색할 문자열.</p></dd>
+  
+  <dt>Needle</dt>
+  <dd><p>검색할 문자열.</p></dd>
+  
+  <dt>CaseSensitive</dt>
+  <dd><p>매개변수 <em>CaseSensitive</em>를 생략하거나 거짓이면, 대소문자를 구분하지 않고 검색합니다 (대소문자의 구별은 <a href="StringCaseSense.htm">StringCaseSense</a>에 따릅니다); 그렇지 않으면, 대소문자가 정확하게 일치해야 합니다.</p></dd>
+
+  <dt>StartingPos</dt>
+  <dd><p><em>StartingPos</em>를 생략하면, 1이 기본값이 됩니다 (<em>Haystack</em>의 시작). 그렇지 않으면, 2를 지정해 두 번째 문자에서 시작하거나 3을 지정해 세 번째 문자에서 시작할 수 있습니다. 등등.</p>
+      <p><em>StartingPos</em>가 <em>Haystack</em>의 길이를 넘어서면, 0이 반환됩니다. <span class="ver">[AHK_L 57+]:</span> <em>StartingPos</em>가 0이거나 음수이면, 끝에서부터 해당 오프셋에서 시작하여 역방향으로 (오른쪽에서 왼쪽으로) 검색이 수행됩니다.</p>
+      <p><em>StartingPos</em>의 값에 상관없이, 반환 값은 언제나 <em>Haystack</em>의 첫 문자에 상대적입니다. 예를 들어, "123abc789"에서 "abc" 의 위치는 언제나 4입니다.</p></dd>
+
+  <dt>Occurrence <span class="ver">[AHK_L 57+]</span></dt>
+  <dd><p>If <em>Occurrence</em> is omitted, it defaults to the first match of the <em>Needle</em> in <em>Haystack</em>. <em>Occurrence</em>에 2을 지정하면 두 번째 부합한 위치를 돌려주고, 3은 세 번째 부합 등등의 위치를 돌려줍니다.</p></dd>
+
+  </dl>
+  
+<h2 id="Return_Value">반환 값</h2>
+<p>This function returns the position of an occurrence of the string <em>Needle</em> in the string <em>Haystack</em>. 위치 1이 첫 번째 문자입니다; 왜냐하면 0은 "false"와 동의어이기 때문에, 직관적으로 "발견하지 못함"의 뜻이 됩니다.</p>
+<p>An occurrence of an empty string (<code>""</code>) can be found at any position; therefore, if <em>Needle</em> is an empty string, the return value is 1. As a blank <em>Needle</em> would typically only be passed by mistake, it will be treated as an error in AutoHotkey v2.</p>
+
+<h2 id="Remarks">논평</h2>
+<p>This function is a combination of <a href="IfInString.htm">IfInString</a> and <a href="StringGetPos.htm">StringGetPos</a>.</p>
+<p><a href="RegExMatch.htm">RegExMatch()</a> can be used to search for a pattern (regular expression) within a string, making it much more flexible than InStr(). However, InStr() is generally faster than RegExMatch() when searching for a simple substring.</p>
+
+<h2 id="Related">관련 항목</h2>
+<p><a href="RegExMatch.htm">RegExMatch()</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfIs.htm">if var is type</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExRetValue">
+<p><a class="ex_number" href="#ExRetValue"></a> Reports the 1-based position of the substring "abc" in the string "123abc789".</p>
+<pre>MsgBox % InStr("123abc789", "abc") <em>; Returns 4</em></pre>
+</div>
+
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Searches for <var>Needle</var> in <var>Haystack</var>.</p>
+<pre>Haystack := "The Quick Brown Fox Jumps Over the Lazy Dog"
+Needle := "Fox"
+If InStr(Haystack, Needle)
+    MsgBox, 문자열이 발견되었습니다.
+Else
+    MsgBox, The string was not found.</pre>
+</div>
+
+<div class="ex" id="ExCaseSens">
+<p><a class="ex_number" href="#ExCaseSens"></a> Demonstrates the difference between a case insensitive and case sensitive search.</p>
+<pre>Haystack := "The Quick Brown Fox Jumps Over the Lazy Dog"
+Needle := "the"
+MsgBox % InStr(Haystack, Needle, false, 1, 2) <em>; case insensitive search, return start position of second occurence</em>
+MsgBox % InStr(Haystack, Needle, true) <em>; case sensitive search, return start position of first occurence, same result as above</em>
+</pre>
+</div>
+
+</body>
+</html>

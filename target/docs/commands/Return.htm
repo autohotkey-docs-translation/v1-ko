@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Return</title>
+<title>Return - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Return statement returns from a subroutine to which execution had previously jumped via function-call, Gosub, Hotkey activation, or other means." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>서브루틴으로부터 이전에 실행을 점프했던 곳으로 돌아갑니다. <a href="../Functions.htm">함수-호출</a>, <a href="Gosub.htm">Gosub</a>, <a href="../Hotkeys.htm">핫키</a> 활성화, <a href="GroupActivate.htm">GroupActivate</a>, 기타 등등의 방법으로 점프했던 곳으로 돌아갑니다.</p>
 
-<pre class="Syntax">Return [, Expression]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">Return</span> <span class="optional">, Expression</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Expression</dt>
@@ -34,20 +34,23 @@ return %MyVar%</pre>
 <p>다른 말로, 변수 하나가 퍼센트 사인에 둘러 싸여 있으면 표현식이 아닌 것으로 취급됩니다. 이를 우회하려면, 반괄호로 둘러 싸서 확실하게 표현식으로 만드십시오; 예를 들어: <code>return (%MyVar%)</code>.</p></dd>
 
 </dl>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>돌아갈 호출자가 없다면, <em>Return</em>은 대신에 <a href="Exit.htm">Exit</a>을 수행합니다.</p>
 <p>함수로부터 호출자에게 여러 값을 돌려주는 다양한 방법이 있습니다. <a href="../Functions.htm#return">값을 호출자에게 돌려주기</a>에 자세하게 기술되어 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="../Functions.htm">함수</a>, <a href="Gosub.htm">Gosub</a>, <a href="Exit.htm">Exit</a>, <a href="ExitApp.htm">ExitApp</a>, <a href="GroupActivate.htm">GroupActivate</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#z::
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> The first Return separates the hotkey from the subroutine below. If it were not present, pressing the hotkey would cause <code>Sleep 1000</code> to be executed twice.</p>
+<pre>#z::
 MsgBox Win-Z 핫키가 눌렸습니다.
 Gosub MySubroutine
-<strong>return</strong>
-   
+return
+
 MySubroutine:
 Sleep 1000
-<strong>return</strong></pre>
+return</pre>
+</div>
 
 </body>
 </html>

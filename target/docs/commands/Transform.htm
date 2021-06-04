@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Transform</title>
+<title>Transform - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Transform command performs miscellaneous math functions, bitwise operations, and tasks such as ASCII/Unicode conversion." />
+<meta name="ahk:equiv-v2" content="commands/Math.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -13,80 +14,238 @@
 <h1>Transform</h1>
 
 <p>잡다한 수학 기능, 비트별 연산, 그리고 ASCII/유니코드 변환 같은 작업을 수행합니다.</p>
+<p class="warning"><strong>비추천:</strong> 이 명령어는 새 스크립트에 사용을 추천하지 않습니다. For details on what you can use instead, see the sub-command sections below.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, <a href="#SubCommands">SubCommand</a>, Value1 <span class="optional">, Value2</span></pre>
+<p>The <em>OutputVar</em> parameter is the name of the variable in which to store the result. <em>SubCommand</em>, <em>Value1</em> 그리고 <em>Value2</em> 매개변수는 서로 의존적입니다. 그리고 그 사용법은 아래에 기술합니다.</p>
 
-<pre class="Syntax">Transform, OutputVar, Cmd, Value1 [, Value2]</pre>
-<h3>매개변수</h3>
-<dl>
+<h2 id="SubCommands">부-명령어</h2>
+<p>For <em>SubCommand</em>, specify one of the following:</p>
+<ul>
+  <li><a href="#Unicode">Unicode</a> (for ANSI builds only): 클립보드의 유니코드 텍스트를 열람하거나 저장합니다.</li>
+  <li><a href="#Deref">Deref</a>: 변수 참조 그리고 다른 변수 안에 들어 있는 피신 연속열을 확대합니다.</li>
+  <li><a href="#HTML">HTML</a>: Converts the specified string into its HTML equivalent.</li>
+  <li><a href="#Asc">Asc</a>: Retrieves the character code for the first character in the specified string.</li>
+  <li><a href="#Chr">Chr</a>: Retrieves the single character corresponding to the character code.</li>
+  <li><a href="#Mod">Mod</a>: Retrieves the remainder of a division.</li>
+  <li><a href="#Exp">Exp</a>: Retrieves e raised to the <em>N</em>th power.</li>
+  <li><a href="#Sqrt">Sqrt</a>: Retrieves the square root of a number.</li>
+  <li><a href="#Log">Log</a>: Retrieves the logarithm (base 10) of a number.</li>
+  <li><a href="#Ln">Ln</a>: Retrieves the natural logarithm (base e) of a number.</li>
+  <li><a href="#Round">Round</a>: Retrieves a number rounded to <em>N</em> decimal places.</li>
+  <li><a href="#Ceil">Ceil</a>: Retrieves a number rounded up to the nearest integer.</li>
+  <li><a href="#Floor">Floor</a>: Retrieves a number rounded down to the nearest integer.</li>
+  <li><a href="#Abs">Abs</a>: Retrieves the absolute value of a number.</li>
+  <li><a href="#Sin">Sin</a>: Retrieves the trigonometric sine of a number.</li>
+  <li><a href="#Cos">Cos</a>: Retrieves the trigonometric cosine of a number.</li>
+  <li><a href="#Tan">Tan</a>: Retrieves the trigonometric tangent of a number.</li>
+  <li><a href="#ASin">ASin</a>: 호도 단위로 아크사인 값을 열람합니다.</li>
+  <li><a href="#ACos">ACos</a>: 호도 단위로 아크코사인을 열람합니다.</li>
+  <li><a href="#ATan">ATan</a>: 호도 단위로 아크탄젠트를 열람합니다.</li>
+  <li><a href="#Pow">Pow</a>: Retrieves a base raised to the power of an exponent.</li>
+  <li><a href="#BitNot">BitNot</a>: Retrieves the bit-inverted version of a number.</li>
+  <li><a href="#BitAnd">BitAnd</a>: Retrieves the result of the bitwise-AND of the specified numbers.</li>
+  <li><a href="#BitOr">BitOr</a>: Retrieves the result of the bitwise-OR of the specified numbers.</li>
+  <li><a href="#BitXOr">BitXOr</a>: Retrieves the result of the bitwise-EXCLUSIVE-OR of the specified numbers.</li>
+  <li><a href="#BitShiftLeft">BitShiftLeft</a>: Retrieves the result of shifting a number to the left by <em>N</em> bit positions.</li>
+  <li><a href="#BitShiftRight">BitShiftRight</a>: Retrieves the result of shifting a number to the right by <em>N</em> bit positions.</li>
+</ul>
 
-  <dt>OutputVar</dt>
-  <dd><p><em>Cmd</em> 명령의 결과를 저장할 변수의 이름. <a href="SetFormat.htm">SetFormat</a>은 정수가 십육진수로 저장될지 아니면 십진수로 저장될지 결정합니다.</p></dd>
-
-  <dt>Cmd, Value1/2</dt>
-  <dd><p>아래 리스트 참조.</p></dd>
-
-</dl>
-
-<h3>Cmd, Value1, Value2</h3>
-<p><em>Cmd</em>, <em>Value1</em> 그리고 <em>Value2</em> 매개변수는 서로 의존적입니다. 그리고 그 사용법은 아래에 기술합니다.</p>
-<p><strong><a name="Unicode"></a>Unicode [, String]</strong>: <em>(이 명령어는 유니코드 버전의 오토핫키에는 없습니다.)</em> 클립보드의 유니코드 텍스트를 열람하거나 저장합니다. 주의: 전체 클립보드는 <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>을 사용하여 열람하고 저장할 수 있습니다. 이렇게 하면 클립보드의 원본 내용의 손실 없이 "Transform Unicode"가 작동할 수 있습니다.</p>
+<h3 id="Unicode">유니코드</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. Use the Unicode version of AutoHotkey instead.</p>
+<p>Retrieves or stores Unicode text on the clipboard (for ANSI builds only).</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Unicode <span class="optional">, String</span></pre>
+<p>주의: The entire clipboard may be saved and restored by means of <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>, which allows this sub-command to operate without losing the original contents of the clipboard.</p>
 <p>다음 예제에 보여주는 바와 같이 두 가지 연산 모드가 있습니다:</p>
 <pre>Transform, OutputVar, Unicode  <em>; 클립보드의 유니코드 텍스트를 UTF-8 문자열로 열람합니다.</em>
 Transform, Clipboard, Unicode, %MyUTF_String%  <em>; 유니코드 텍스트를 클립보드에 배치합니다.</em></pre>
-<p>위의 두 번째 예제에서 %MyUTF_String% 대신에, 기호 그대로의 UTF-8 문자열을 선택적으로 사용할 수 있습니다.</p>
+<p>위의 두 번째 예제에서 <code>%MyUTF_String%</code> 대신에, 기호 그대로의 UTF-8 문자열을 선택적으로 사용할 수 있습니다.</p>
 <p>다음과 같은 핫키를 사용하면 주어진 유니코드 문자열에 상응하는 UTF-8 문자열을 알아낼 수 있습니다:</p>
 <pre>^!u::  <em>; Control+Alt+U 핫키.</em>
 MsgBox 유니코드 텍스트를 클립보드에 복사한 다음, 이 창으로 돌아옵니다. 계속하려면 OK를 누르십시오.
 Transform, ClipUTF, Unicode
-Clipboard = Transform, Clipboard, Unicode, %ClipUTF%`r`n
+Clipboard := "Transform, Clipboard, Unicode, %ClipUTF%`r`n"
 MsgBox 클립보드에 이제 다음 줄이 담겨 있습니다. 스크립트에 붙여 넣을 수 있습니다. 실행하면, 이 줄은 여러분이 복사한 원래의 유니코드 문자열을 클립보드에 배치합니다:`n`n%Clipboard%
 return</pre>
-<p>주의: <code><a href="Send.htm#sendu">Send {U+nnnn}</a></code> 명령어는 유니코드 문자를 생산하는 또다른 방법입니다.</p>
-<br>
-<p><strong>Asc, String</strong>: <em>String</em>의 첫 문자에 대하여 ASCII 코드를 열람합니다 (1부터 255 사이의 숫자). <em>String</em>이 비어 있으면, <em>OutputVar</em>도 비워집니다. 예를 들어: <code>Transform, OutputVar, Asc, %VarContainingString%</code>. 상응하는 함수: <a href="../Functions.htm#Asc">Asc(String)</a>.</p>
-<p><strong>Chr, Value1</strong>: <em>Value1</em>로 지정한 ASCII 코드에 상응하는 문자 하나를 열람합니다. <em>Value1</em>이 1과 255 사이에 있지 않으면, <em>OutputVar</em>는 비워져서 문제가 있음을 나타냅니다. 예를 들어: <code>Transform, OutputVar, Chr, 130</code>. 상응하는 함수: <a href="../Functions.htm#Chr">Chr(Number)</a>.</p>
-<p><strong><a name="Deref"></a>Deref, String</strong>: 변수 참조 그리고 다른 변수 안에 들어 있는 <a href="_EscapeChar.htm">피신 연속열</a>을 확대합니다. 형식이 나쁜 변수 참조는 확대 결과에서 생략됩니다. <em>OutputVar</em>가 자신으로 확대되는 경우에도 마찬가지입니다; 다른 말로, <em>String</em>의 변수 안에서 <em>OutputVar</em>를 참조하면 확대 결과로부터 제외됩니다 (그렇지만 <em>String</em> 자체는 %<em>OutputVar</em>%가 <u>될 수 있습니다</u>). 다음 예제에서, var1에 문자열 "test"가 담겨 있고 var2에 <u>기호 그대로의</u> 문자열 "%var1%"이 담겨 있다면, <em>OutputVar</em>는 문자열 "test"가 설정될 것입니다: <code>Transform, OutputVar, deref, %var2%</code>. <a href="../Functions.htm">함수</a> 안에서, <em>String</em> 안의 각 변수는 언제나 지역 변수로 결정납니다. 단, 그런 변수가 없을 경우는 전역 변수로 결정됩니다 (또는 아무것도 없다면 비워집니다).</p>
-<p><strong><a name="HTML"></a>HTML, String [, Flags]</strong>:</p>
-<p><em>ANSI 실행파일에 대하여:</em> 문자열(<em>String</em>)을 그의 HTML 동등물로 변환합니다. ASCII 값이 127이 넘는 문자를 상응하는 HTML 이름으로 변환합니다 (예, £는 &amp;pound;가 됩니다). 게다가, 다음 네 개의 "&amp;&lt;&gt; 문자는 &amp;quot;&amp;amp;&amp;lt;&amp;gt;로 변환됩니다. 마지막으로, 각 라인피드(`n)는 &lt;br&gt;`n으로 변환됩니다 (즉, &lt;br&gt; 다음에 라인피드). <em>Flags</em> 매개변수는 무시됩니다.</p>
-<p><em>유니코드 실행파일에 대하여:</em> 위의 기능 말고도, <em>Flags</em>는 0이 되거나 아니면 다음 값들이 조합(합)이 될 수 있습니다. 생략하면, 기본값은 1입니다.</p>
+<p class="note"><strong>주의:</strong> <code><a href="Send.htm#sendu">Send {U+nnnn}</a></code> 명령어는 유니코드 문자를 생산하는 또다른 방법입니다.</p>
+
+<h3 id="Deref">Deref</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. Use the <a href="../Language.htm#expressions">expression syntax</a> or a custom function such as <a href="RegExMatch.htm#ExDeref">Deref()</a> instead.</p>
+<p>변수 참조 그리고 다른 변수 안에 들어 있는 <a href="../misc/EscapeChar.htm">피신 연속열</a>을 확대합니다.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Deref, String</pre>
+<p>형식이 나쁜 변수 참조는 확대 결과에서 생략됩니다. <em>OutputVar</em>가 자신으로 확대되는 경우에도 마찬가지입니다; 다른 말로, <em>String</em>의 변수 안에서 <em>OutputVar</em>를 참조하면 확대 결과로부터 제외됩니다 (그렇지만 <em>String</em> <strong>자체</strong>는 <code>%OutputVar%</code>가 될 수 있습니다). 다음 예제에서, Var1에 문자열 "test"가 담겨 있고 Var2에 <strong>기호 그대로의</strong> 문자열 "%Var1%"이 담겨 있다면, <em>OutputVar</em>는 문자열 "test"가 설정될 것입니다: <code>Transform, OutputVar, Deref, %Var2%</code>. <a href="../Functions.htm">함수</a> 안에서, <em>String</em> 안의 각 변수는 언제나 지역 변수로 결정납니다. 단, 그런 변수가 없을 경우는 전역 변수로 결정됩니다 (또는 아무것도 없다면 비워집니다).</p>
+
+<h3 id="HTML">HTML</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. Use a custom function such as <a href="../scripts/index.htm#HTML_Entities_Encoding">EncodeHTML()</a> instead.</p>
+<p>문자열(<em>String</em>)을 그의 HTML 동등물로 변환합니다. ASCII 값이 127이 넘는 문자를 상응하는 HTML 이름으로 변환합니다 (예, <code>£</code>는 <code>&amp;pound;</code>가 됩니다).</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, HTML, String <span class="optional">, Flags</span></pre>
+<p>게다가, 다음 네 개의 <code>"&amp;&lt;&gt;</code> 문자는 <code>&amp;quot;&amp;amp;&amp;lt;&amp;gt;</code>로 변환됩니다. 마지막으로, 각 라인피드(<code>`n</code>)는 <code>&lt;br&gt;`n</code>으로 변환됩니다 (즉, <code>&lt;br&gt;</code> 다음에 라인피드). <em>Flags</em> 매개변수는 무시됩니다.</p>
+<p><strong>유니코드 실행파일에 대하여:</strong> 위의 기능 말고도, <em>Flags</em>는 0이 되거나 아니면 다음 값들이 조합(합)이 될 수 있습니다. 생략하면, 기본값은 1입니다.</p>
 <ul>
-    <li>1: 어떤 문자들을 이름붙인 표현식으로 변환합니다. 예, €는 <code>&amp;euro;</code>으로 변환됩니다</li>
-    <li>2: 어떤 문자들을 번호붙인 표현식으로 변환합니다. 예, €는 <code>&amp;#8364;</code>으로 변환됩니다</li>
+<li>1: 어떤 문자들을 이름붙인 표현식으로 변환합니다. 예, <code>€</code>는 <code>&amp;euro;</code>으로 변환됩니다</li>
+<li>2: 어떤 문자들을 번호붙인 표현식으로 변환합니다. 예, <code>€</code>는 <code>&amp;#8364;</code>으로 변환됩니다</li>
 </ul>
-<p>오직 비-ASCII 문자만 영향을 받습니다. <i>Flags</i> = 3이면, 번호붙인 표현식은 이름붙인 표현식이 사용 불가능할 경우에만 사용됩니다. 다음 문자들은 언제나 변환됩니다: <code>&lt;&gt;"&amp;</code> 그리고 <code>`n</code> (라인피드).</p>
-<p><strong><a name="FromCodePage"></a>FromCodePage</strong> / <strong><a name="ToCodePage"></a>ToCodePage</strong>: 비추천. 대신 <a href="StrPutGet.htm">StrPut() / StrGet()</a>을 사용하십시오.</p>
-<p><strong>Mod, Dividend, Divisor</strong>: 나뉘는수(<em>Dividend</em>)를 나누는수(<em>Divisor</em>)로 나눈 나머지를 열람합니다. <em>Divisor</em>가 0이면, <em>OutputVar</em>는 비워집니다. <em>Dividend</em>와 <em>Divisor</em>가 모두 소수점을 담을 수 있습니다. 음수이면, <em>Divisor</em>는 계산을 위해 양수로 취급됩니다. 다음 예제에서, 결과는 2입니다: <code>Transform, OutputVar, mod, 5, 3</code>. 상응하는 함수: <a href="../Functions.htm#Mod">Mod(Dividend, Divisor)</a>.</p>
-<p><strong>Pow, Base, Exponent</strong>: 밑수(<em>Base</em>)를 지수(<em>Exponent</em>) 제곱하여 열람합니다. <em>Base</em>와 <em>Exponent</em> 모두 소수점을 포함할 수 있습니다. <em>Exponent</em>가 음수이면, <em>OutputVar</em>는 부동 소수점 수로 포맷됩니다. <em>Base</em>와 <em>Exponent</em> 둘 다 정수라도 마찬가지입니다. 1.5와 같이 소수형 지수(<em>Exponent</em>)와 결합된 음의 <em>Base</em>는 지원하지 않습니다; 그러면 <em>OutputVar</em>가 비워집니다. 다음 참조: <a href="../Variables.htm#pow">** operator</a>.</p>
-<p><strong>Exp, N</strong>: e를 (대략 2.71828182845905) <em>N</em> 제곱해 열람합니다. <em>N</em>은 음수일 수 있으며 소수 점을 포함할 수 있습니다. 상응하는 함수: <a href="../Functions.htm#Exp">Exp(N)</a>.</p>
-<p><strong>Sqrt, Value1</strong>: Value1의 제곱근을 구합니다. <em>Value1</em>가 음수이면, <em>OutputVar</em>는 비워집니다. 상응하는 함수: <a href="../Functions.htm#Sqrt">Sqrt(Number)</a>.</p>
-<p><strong>Log, Value1</strong>: <em>Value1</em>의 (밑수가 10인) 상용 로그를 구합니다. <em>Value1</em>가 음수이면, <em>OutputVar</em>는 비워집니다. 상응하는 함수: <a href="../Functions.htm#Log">Log(Number)</a>.</p>
-<p><strong>Ln, Vaue1</strong>: <em>Value1</em>의 (밑수가 e인) 자연 로그를 열람합니다. <em>Value1</em>가 음수이면, <em>OutputVar</em>는 비워집니다. 상응하는 함수: <a href="../Functions.htm#Ln">Ln(Number)</a>.</p>
-<p><strong>Round, Value1 [, N]</strong>: <em>N</em>을 생략하면, <em>OutputVar</em>는 <em>Value1</em>이 가장 가까운 정수로 반올림되어 설정됩니다. <em>N</em>이 양수이면, <em>Value1</em>은 <em>N</em> 소수점 자리에서 반올림됩니다. <em>N</em>이 음수이면, <em>Value1</em>는 <em>N</em> 자리만큼 소수점 왼쪽에서 반올림됩니다. 예를 들어, -1이면 첫 째 자리에서 반올림되고, -2이면 10이 자리에서, 그리고 -3이면 백의 자리에서 반올림됩니다. 주의: Round는 소수 자리에서 반올림할 때 뒤에 따르는 0을 제거하지 않습니다. 예를 들어, 12.333을 소수 첫 째 자리에서 반올림하면 12.300000이 됩니다. 이 행위는 연산을 하기 전에<code><a href="SetFormat.htm">SetFormat</a>, Float, 0.1</code>과 같이 설정하면 바꿀 수 있습니다 (실제로, <a href="SetFormat.htm">SetFormat</a>을 사용하면 첫 째 자리에서 Round를 사용할 필요조차 없습니다). 상응하는 함수: <a href="../Functions.htm#Round">Round(Number [, N])</a>.</p>
-<p><strong>Ceil, Value1</strong>: <em>Value1</em>을 가장 가까운 정수로 올림하여 열람합니다. 상응하는 함수: <a href="../Functions.htm#Ceil">Ceil(Number)</a>.</p>
-<p><strong>Floor, Value1</strong>: <em>Value1</em>을 가장 가까운 정수로 내림하여 열람합니다. 상응하는 함수: <a href="../Functions.htm#Floor">Floor(Number)</a>.</p>
-<p><strong>Abs, Value1</strong>: <em>Value1</em>의 절대 값을 열람합니다. <em>Value1</em>에서 마이너스가 앞에 있다면 제거해 버리고 돌려줍니다. 상응하는 함수: <a href="../Functions.htm#Abs">Abs(Number)</a>.</p>
-<p><strong>Sin, Value1</strong>: <em>Value1</em>의 사인 값을 열람합니다. <em>Value1</em>은 호도로 표현되어야 합니다. 상응하는 함수: <a href="../Functions.htm#Sin">Sin(Number)</a>.</p>
-<p><strong>Cos, Value1</strong>: <em>Value1</em>의 코사인 값을 열람합니다. <em>Value1</em>은 호도로 표현되어야 합니다. 상응하는 함수: <a href="../Functions.htm#Cos">Cos(Number)</a>.</p>
-<p><strong>Tan, Value1</strong>: <em>Value1</em>의 탄젠트 값을 열람합니다. <em>Value1</em>은 호도로 표현되어야 합니다. 상응하는 함수: <a href="../Functions.htm#Tan">Tan(Number)</a>.</p>
-<p><strong>ASin, Value1</strong>: 호도 단위로 아크사인 값을 열람합니다 (<em>Value1</em>은 사인 값). <em>Value1</em>가 -1보다 작거나 1보다 크면, <em>OutputVar</em>는 비워집니다. 상응하는 함수: <a href="../Functions.htm#ASin">ASin(Number)</a>.</p>
-<p><strong>ACos, Value1</strong>: 호도 단위로 아크코사인을 열람합니다 (<em>Value1</em>은 코사인 값). <em>Value1</em>가 -1보다 작거나 1보다 크면, <em>OutputVar</em>는 비워집니다. 상응하는 함수: <a href="../Functions.htm#ACos">ACos(Number)</a>.</p>
-<p><strong>ATan, Value1</strong>: 호도 단위로 아크탄젠트를 열람합니다 (<em>Value1</em>은 탄젠트 값). 상응하는 함수: <a href="../Functions.htm#ATan">ATan(Number)</a>.</p>
-<br>
-<p>주의: 다음의 비트별 연산은 표현식에 사용하기 위해 더 간결한 <a href="../Variables.htm#bitwise">비트별 연산자</a>를 가지고 있습니다.</p>
-<p><strong>BitNot, Value1</strong>: <em>Value1</em>을 비트별로 뒤집어서 <em>OutputVar</em>에 저장합니다 (<em>Value1</em>이 부동 소수점 수이면, 계산 전에 정수로 잘라냅니다). <em>Value1</em>이 0부터 4294967295 (0xffffffff) 사이이면, <u>부호 없는</u> 32-비트 값으로 취급됩니다. 그렇지 않으면 <u>부호 있는</u> 64-비트 값으로 취급됩니다. 다음 예제에서, 그 결과는 0xfffff0f0 (4294963440)입니다: <code>Transform, OutputVar, BitNot, 0xf0f</code>.</p>
-<p><strong>BitAnd, Value1, Value2</strong>: <em>Value1</em>과 <em>Value2</em>를 비트별-AND한 결과를 열람합니다 (부동 소수점 값은 계산 전에 정수로 잘려 나갑니다). 다음 예제에서, 그 결과는 0xff00 (65280)입니다: <code>Transform, OutputVar, BitAnd, 0xff0f, 0xfff0</code>.</p>
-<p><strong>BitOr, Value1, Value2</strong>: <em>Value1</em>과 <em>Value2</em>를 비트별-OR한 결과를 열람합니다 (부동 소수점 값은 정수로 잘라 낸 다음 계산합니다). 다음 예제에서 그 결과는 0xf0f0 (61680)입니다: <code>Transform, OutputVar, BitOr, 0xf000, 0x00f0</code>.</p>
-<p><strong>BitXOr, Value1, Value2</strong>: <em>Value1</em>고 <em>Value2</em>를 비트별-EXCLUSIVE-OR한 결과를 열람합니다 (부동 소수점 값은 정수로 잘라낸 다음 계산합니다). 다음 예제에서, 그 결과는 0xff00 (65280)입니다: <code>Transform, OutputVar, BitXOr, 0xf00f, 0x0f0f</code>.</p>
-<p><strong>BitShiftLeft, Value1, Value2</strong>: <em>Value1</em>을 왼쪽으로 <em>Value2</em> 비트 위치 만큼 이동한 결과를 열람합니다. 이 값은 <em>Value1</em>을 "<em>Value2</em> 제곱만큼 곱한" 것과 동등합니다. (부동 소수점 값은 정수로 잘라낸 다음 계산합니다). 다음 예제에서 그 결과는 8입니다: <code>Transform, OutputVar, BitShiftLeft, 1, 3</code>.</p>
-<p><strong>BitShiftRight, Value1, Value2</strong>: <em>Value1</em>을 오른쪽으로 <em>Value2</em> 비트 위치만큼 이동한 결과를 열람합니다. 이 값은 <em>Value1</em>을 " <em>Value2</em> 제곱만큼 나눈" 것과 동등합니다. 나머지는 잘라내 버립니다. (부동 소수점 값은 정수로 잘라낸 다음 계산합니다). 다음 예제에서, 결과는 2입니다: <code>Transform, OutputVar, BitShiftRight, 17, 3</code>.</p>
-<h3>논평</h3>
+<p>오직 비-ASCII 문자만 영향을 받습니다. If <i>Flags</i> is the number 3, numbered expressions are used only where a named expression is not available. 다음 문자들은 언제나 변환됩니다: <code>&lt;&gt;"&amp;</code> 그리고 <code>`n</code> (라인피드).</p>
+
+<h3 id="Asc">Asc</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Asc.htm">Asc()</a>를 사용하십시오.</p>
+<p>Retrieves the character code (a number between 1 and 255, or 1 and 65535 if Unicode is supported) for the first character in <em>String</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Asc, String</pre>
+<p><em>String</em>이 비어 있으면, <em>OutputVar</em>도 비워집니다. 예를 들어: <code>Transform, OutputVar, Asc, %VarContainingString%</code>. 유니코드 보충 문자를 허용하려면, 대신에 <a href="Ord.htm">Ord(String)</a>를 사용하십시오.</p>
+
+<h3 id="Chr">Chr</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Chr.htm">Chr()</a>를 사용하십시오.</p>
+<p>Retrieves the single character corresponding to the character code indicated by <em>Number</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Chr, Number</pre>
+<p>If <em>Number</em> is not between 1 and 255 inclusive (or 1 and 65535 if Unicode is supported), <em>OutputVar</em> will be made blank to indicate the problem. 예를 들어: <code>Transform, OutputVar, Chr, 130</code>. Unlike <a href="Chr.htm">Chr()</a>, this sub-command does not support Unicode supplementary characters (character codes 0x10000 to 0x10FFFF).</p>
+
+<h3 id="Mod">Mod</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Mod">Mod()</a>를 사용하십시오.</p>
+<p>나뉘는수(<em>Dividend</em>)를 나누는수(<em>Divisor</em>)로 나눈 나머지를 열람합니다.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Mod, Dividend, Divisor</pre>
+<p><em>Divisor</em>가 0이면, <em>OutputVar</em>는 비워집니다. <em>Dividend</em>와 <em>Divisor</em>가 모두 소수점을 담을 수 있습니다. 음수이면, <em>Divisor</em>는 계산을 위해 양수로 취급됩니다. 다음 예제에서, 결과는 2입니다: <code>Transform, OutputVar, Mod, 5, 3</code>.</p>
+
+<h3 id="Exp">Exp</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Exp">Exp()</a>를 사용하십시오.</p>
+<p>e를 (대략 2.71828182845905) <em>N</em> 제곱해 열람합니다.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Exp, N</pre>
+<p><em>N</em>은 음수일 수 있으며 소수 점을 포함할 수 있습니다.</p>
+
+<h3 id="Sqrt">Sqrt</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Sqrt">Sqrt()</a>를 사용하십시오.</p>
+<p>Retrieves the square root of <em>Number</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Sqrt, Number</pre>
+<p><em>Number</em>가 음수이면, <em>OutputVar</em>는 비워집니다.</p>
+
+<h3 id="Log">Log</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Log">Log()</a>를 사용하십시오.</p>
+<p>Retrieves the logarithm (base 10) of <em>Number</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Log, Number</pre>
+<p><em>Number</em>가 음수이면, <em>OutputVar</em>는 비워집니다.</p>
+
+<h3 id="Ln">Ln</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Ln">Ln()</a>를 사용하십시오.</p>
+<p>Retrieves the natural logarithm (base e) of <em>Number</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Ln, Number</pre>
+<p><em>Number</em>가 음수이면, <em>OutputVar</em>는 비워집니다.</p>
+
+<h3 id="Round">Round</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Round">Round()</a>를 사용하십시오.</p>
+<p>Retrieves <em>Number</em> rounded to <em>N</em> decimal places.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Round, Number <span class="optional">, N</span></pre>
+<p><em>N</em>을 생략하면, <em>OutputVar</em>는 <em>Number</em>이 가장 가까운 정수로 반올림되어 설정됩니다. If <em>N</em> is positive number, <em>Number</em> will be rounded to <em>N</em> decimal places. If <em>N</em> is negative, <em>Number</em> will be rounded by <em>N</em> digits to the left of the decimal point. 예를 들어, -1이면 첫 째 자리에서 반올림되고, -2이면 10이 자리에서, 그리고 -3이면 백의 자리에서 반올림됩니다. 주의: The Round sub-command does not remove trailing zeros when rounding decimal places. 예를 들어, 12.333을 소수 첫 째 자리에서 반올림하면 12.300000이 됩니다. This behavior can be altered by using something like <code><a href="SetFormat.htm">SetFormat</a>, Float, 0.1</code> prior to the operation (in fact, <a href="SetFormat.htm">SetFormat</a> might eliminate the need to use the Round sub-command in the first place).</p>
+
+<h3 id="Ceil">Ceil</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Ceil">Ceil()</a>를 사용하십시오.</p>
+<p><em>Number</em>을 가장 가까운 정수로 올림하여 열람합니다.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Ceil, Number</pre>
+
+<h3 id="Floor">Floor</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Floor">Floor()</a>를 사용하십시오.</p>
+<p>Retrieves <em>Number</em> rounded down to the nearest integer.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Floor, Number</pre>
+
+<h3 id="Abs">Abs</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Abs">Abs()</a>를 사용하십시오.</p>
+<p>Retrieves the absolute value of <em>Number</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Abs, Number</pre>
+<p>This is computed by removing the leading minus sign (dash) from <em>Number</em> if it has one.</p>
+
+<h3 id="Sin">Sin</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Sin">Sin()</a>를 사용하십시오.</p>
+<p>Retrieves the trigonometric sine of <em>Number</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Sin, Number</pre>
+<p><em>Number</em>는 라디안으로 표현해야 합니다.</p>
+
+<h3 id="Cos">Cos</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Cos">Cos()</a>를 사용하십시오.</p>
+<p>Retrieves the trigonometric cosine of <em>Number</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Cos, Number</pre>
+<p><em>Number</em>는 라디안으로 표현해야 합니다.</p>
+
+<h3 id="Tan">Tan</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Tan">Tan()</a>를 사용하십시오.</p>
+<p>Retrieves the trigonometric tangent of <em>Number</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Tan, Number</pre>
+<p><em>Number</em>는 라디안으로 표현해야 합니다.</p>
+
+<h3 id="ASin">ASin</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#ASin">ASin()</a>를 사용하십시오.</p>
+<p>Retrieves the arcsine (the number whose sine is <em>Number</em>) in radians.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, ASin, Number</pre>
+<p><em>Number</em>가 -1보다 작거나 1보다 크면, <em>OutputVar</em>는 비워집니다.</p>
+
+<h3 id="ACos">ACos</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#ACos">ACos()</a>를 사용하십시오.</p>
+<p>Retrieves the arccosine (the number whose cosine is <em>Number</em>) in radians.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, ACos, Number</pre>
+<p><em>Number</em>가 -1보다 작거나 1보다 크면, <em>OutputVar</em>는 비워집니다.</p>
+
+<h3 id="ATan">ATan</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#ATan">ATan()</a>를 사용하십시오.</p>
+<p>Retrieves the arctangent (the number whose tangent is <em>Number</em>) in radians.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, ATan, Number</pre>
+
+<h3 id="Pow">Pow</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#pow"><code>**</code> 연산자</a>을 사용하십시오.</p>
+<p>밑수(<em>Base</em>)를 지수(<em>Exponent</em>) 제곱하여 열람합니다.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, Pow, Base, Exponent</pre>
+<p><em>Base</em>와 <em>Exponent</em> 모두 소수점을 포함할 수 있습니다. <em>Exponent</em>가 음수이면, <em>OutputVar</em>는 부동 소수점 수로 포맷됩니다. <em>Base</em>와 <em>Exponent</em> 둘 다 정수라도 마찬가지입니다. 1.5와 같이 소수형 지수(<em>Exponent</em>)와 결합된 음의 <em>Base</em>는 지원하지 않습니다; 그러면 <em>OutputVar</em>가 비워집니다.</p>
+
+<h3 id="BitNot">BitNot</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#unary"><code>~</code> 연산자</a>을 사용하십시오.</p>
+<p>Retrieves the bit-inverted version of <em>Number</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, BitNot, Number</pre>
+<p>Floating point values are truncated to integers prior to the calculation. <em>Number</em>이 0부터 4294967295 (0xffffffff) 사이이면, <strong>부호 없는</strong> 32-비트 값으로 취급됩니다. 그렇지 않으면 <strong>부호 있는</strong> 64-비트 값으로 취급됩니다. 다음 예제에서, 그 결과는 0xfffff0f0 (4294963440)입니다: <code>Transform, OutputVar, BitNot, 0xf0f</code>.</p>
+
+<h3 id="BitAnd">BitAnd</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#bitwise"><code>&amp;</code> 연산자</a>을 사용하십시오.</p>
+<p>Retrieves the result of the bitwise-AND of <em>Number1</em> and <em>Number2</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, BitAnd, Number1, Number2</pre>
+<p>Floating point values are truncated to integers prior to the calculation. 다음 예제에서, 그 결과는 0xff00 (65280)입니다: <code>Transform, OutputVar, BitAnd, 0xff0f, 0xfff0</code>.</p>
+
+<h3 id="BitOr">BitOr</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#bitwise"><code>|</code> 연산자</a>을 사용하십시오.</p>
+<p>Retrieves the result of the bitwise-OR of <em>Number1</em> and <em>Number2</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, BitOr, Number1, Number2</pre>
+<p>Floating point values are truncated to integers prior to the calculation. 다음 예제에서 그 결과는 0xf0f0 (61680)입니다: <code>Transform, OutputVar, BitOr, 0xf000, 0x00f0</code>.</p>
+
+<h3 id="BitXOr">BitXOr</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#bitwise"><code>^</code> 연산자</a>을 사용하십시오.</p>
+<p>Retrieves the result of the bitwise-EXCLUSIVE-OR of <em>Number1</em> and <em>Number2</em>.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, BitXOr, Number1, Number2</pre>
+<p>Floating point values are truncated to integers prior to the calculation. 다음 예제에서, 그 결과는 0xff00 (65280)입니다: <code>Transform, OutputVar, BitXOr, 0xf00f, 0x0f0f</code>.</p>
+
+<h3 id="BitShiftLeft">BitShiftLeft</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#bitwise"><code>&lt;&lt;</code> 연산자</a>을 사용하십시오.</p>
+<p>Retrieves the result of shifting <em>Number</em> to the left by <em>N</em> bit positions.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, BitShiftLeft, Number, N</pre>
+<p>This is equivalent to multiplying <em>Number</em> by "2 to the <em>N</em>th power". Floating point values are truncated to integers prior to the calculation. 다음 예제에서 그 결과는 8입니다: <code>Transform, OutputVar, BitShiftLeft, 1, 3</code>.</p>
+
+<h3 id="BitShiftRight">BitShiftRight</h3>
+<p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#bitwise"><code>&gt;&gt;</code> 연산자</a>을 사용하십시오.</p>
+<p>Retrieves the result of shifting <em>Number</em> to the right by <em>N</em> bit positions.</p>
+<pre class="Syntax"><span class="func">Transform</span>, OutputVar, BitShiftRight, Number, N</pre>
+<p>This is equivalent to dividing <em>Number</em> by "2 to the <em>N</em>th power", truncating the remainder. Floating point values are truncated to integers prior to the calculation. 다음 예제에서, 결과는 2입니다: <code>Transform, OutputVar, BitShiftRight, 17, 3</code>.</p>
+
+<div id="ToCodePage">
+  <h3 id="FromCodePage">FromCodePage / ToCodePage</h3>
+  <p><span class="ver">[AHK_L 54+]</span>: Removed. 대신 <a href="StrPut.htm">StrPut</a>/<a href="StrGet.htm">StrGet</a>을 사용하십시오.</p>
+</div>
+
+<h2 id="Remarks">논평</h2>
 <p>숫치 매개변수를 받는 부-명령어는 그런 매개변수에 대하여 <a href="../Variables.htm#Expressions">표현식</a>도 받을 수 있습니다.</p>
-<p><em>Value1</em> 또는 <em>Value2</em>가 부동 소수점 수이면, 다음 명령어(<em>Cmd</em>)들은 정수가 아니라 부동 소수점 수를 열람합니다: Mod, Pow, Round, 그리고 Abs. 열람된 소수 부분의 자리수는 <a href="SetFormat.htm">SetFormat</a>으로 결정됩니다.</p>
+<p>If one of the parameters is a floating point number, the following sub-commands will retrieve a floating point number rather than an integer: <a href="#Mod">Mod</a>, <a href="#Pow">Pow</a>, <a href="#Round">Round</a>, 그리고 <a href="#Abs">Abs</a>. 열람된 소수 부분의 자리수는 <a href="SetFormat.htm">SetFormat</a>으로 결정됩니다.</p>
 <p>호도 값을 각도로 변환하려면, 180/pi (대략 57.29578)를 곱하십시오. 디그리를 라디안으로 변환하려면 pi/180 (대략 0.01745329252)를 곱합니다.</p>
 <p>pi의 값 (대략 3.141592653589793)은 1 아크탄젠트의 4 배입니다.</p>
-<h3>관련 항목</h3>
-<p><a href="SetFormat.htm">SetFormat</a>, <a href="../Variables.htm#Expressions">표현식</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="StringLower.htm">StringLower</a>, <a href="IfIs.htm">if var is type</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Transform, OutputVar, Asc, A  <em>; 기호 A의 ASCII 코드를 얻습니다.</em></pre>
+
+<h2 id="Related">관련 항목</h2>
+<p><a href="Math.htm">Math Functions</a>, <a href="SetFormat.htm">SetFormat</a>, <a href="../Variables.htm#Expressions">Expressions</a>, <a href="../Variables.htm#Operators">Operators</a>, <a href="StringLower.htm">StringLower</a>, <a href="IfIs.htm">if var is type</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves the ASCII code of the letter A and stores it in <var>OutputVar</var>.</p>
+<pre>Transform, OutputVar, Asc, A</pre>
+</div>
 
 </body>
 </html>

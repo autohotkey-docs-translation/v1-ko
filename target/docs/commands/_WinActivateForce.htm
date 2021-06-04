@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#WinActivateForce</title>
+<title>#WinActivateForce - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #WinActivateForce directive skips the gentle method of activating a window and goes straight to the forceful method." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,13 +14,20 @@
 
 <p>창을 활성화하는 부드러운 방법을 건너 뛰고 곧바로 강제로 활성화합니다.</p>
 
-<pre class="Syntax">#WinActivateForce</pre>
+<pre class="Syntax"><span class="func">#WinActivateForce</span></pre>
 <p>이것을 스크립트 어느 곳에나 지정하면 창을 활성화하는 명령어가 -- <a href="WinActivate.htm">WinActivate</a>, <a href="WinActivateBottom.htm">WinActivateBottom</a>, 그리고 <a href="GroupActivate.htm">GroupActivate</a> 같은 명령어 -- 창을 활성화하는 "부드러운" 방법을 건너뛰고 곧바로 더 강력한 방법을 사용합니다.</p>
 <p>이 지시어는 보통 창을 얼마나 빨리 얼마나 신뢰성이 있게 활성화 해야 하는지는 변경하지 않습니다. 그러나 여러 다른 창들이 재빠르게 서로 활성화 될 때 태스크바 버튼이 번쩍이는 것을 막을 수도 있습니다.</p>
-<h3>관련 항목</h3>
+
+<h2 id="Remarks">논평</h2>
+<p>다른 지시어처럼, #WinActivateForce는 조건적으로 실행할 수 없습니다.</p>
+
+<h2 id="Related">관련 항목</h2>
 <p><a href="WinActivate.htm">WinActivate</a>, <a href="WinActivateBottom.htm">WinActivateBottom</a>, <a href="GroupActivate.htm">GroupActivate</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#WinActivateForce</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Enables the forceful method of activating a window.</p>
+<pre>#WinActivateForce</pre>
+</div>
 
 </body>
 </html>

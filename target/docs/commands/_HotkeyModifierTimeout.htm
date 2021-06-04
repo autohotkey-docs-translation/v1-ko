@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#HotkeyModifierTimeout</title>
+<title>#HotkeyModifierTimeout - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #HotkeyModifierTimeout directive affects the behavior of the hotkey modifiers CTRL, ALT, WIN, and SHIFT." />
+<meta name="ahk:equiv-v2" content="misc/A_HotkeyModifierTimeout.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,24 +13,24 @@
 
 <h1>#HotkeyModifierTimeout</h1>
 
-<p><a href="../Hotkeys.htm">핫키</a> 수식자의 행위에 영향을 미칩니다: CTRL, ALT, WIN, 그리고 SHIFT.</p>
+<p><a href="../Hotkeys.htm">핫키</a> 수식자의 행위에 영향을 미칩니다: <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, <kbd>Win</kbd>, 그리고 <kbd>Shift</kbd>.</p>
 
-<pre class="Syntax">#HotkeyModifierTimeout Milliseconds</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">#HotkeyModifierTimeout</span> Milliseconds</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Milliseconds</dt>
   <dd><p>밀리초 단위 간격. 값이 -1이면 시간 제한이 없습니다 (수식 키는 Send 후에 언제나 제자리로 돌아옵니다), 또는 0이면 언제나 시간 제한이 있습니다 (수식 키는 절대로 제자리로 돌아오지 않습니다).</p></dd>
 
 </dl>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>이 지시어는 다음과 같은 경우 <strong>사용할 필요가 없습니다</strong>:</p>
 <ul>
   <li>핫키가 <a href="Send.htm#SendInput">SendInput</a>이나 <a href="Send.htm#SendPlay">SendPlay</a> 방법으로 키눌림을 전송할 경우, Send 명령어가 완료될 때까지 이 메쏘드들은 사용자 키의 물리적 눌림이나 뗌을 연기하기 때문입니다.</li>
-  <li>스크립트에 키보드 갈고리가 설치되어 있을 경우 (메인 창의 "View-&gt;Key history" 메뉴 항목이나 <a href="KeyHistory.htm">KeyHistory</a> 명령어를 통하여 스크립트가 갈고리를 사용하는지 알아볼 수 있습니다), 사용자가 물리적으로 어느 수식 키를 (ALT/CTRL/WIN/SHIFT) 누르는지 갈고리가 추적할 수 있고 그리고 시간제한을 사용할 필요가 없기 때문입니다.</li>
+  <li>스크립트에 키보드 갈고리가 설치되어 있을 경우 (메인 창의 "View-&gt;Key history" 메뉴 항목이나 <a href="KeyHistory.htm">KeyHistory</a> 명령어를 통하여 스크립트가 갈고리를 사용하는지 알아볼 수 있습니다), 사용자가 물리적으로 어느 수식 키를 (<kbd>Alt</kbd>/<kbd>Ctrl</kbd>/<kbd>Win</kbd>/<kbd>Shift</kbd>) 누르는지 갈고리가 추적할 수 있고 그리고 시간제한을 사용할 필요가 없기 때문입니다.</li>
 </ul>
 <p>이 지시어의 효과를 시연하기 위해, 다음 예제를 생각해 보십시오: <code>^!a::Send, abc</code>.</p>
-<p><a href="Send.htm">Send</a> 명령어가 실행되면, 첫 번째로 CTRL과 ALT 키를 뗍니다. 그래서 문자들이 제대로 전송됩니다. 모든 키를 보내고 나면, 명령어는 어떻게 해야 CTRL과 ALT를 안전하게 제자리로 돌려놓을 수 있을지 알지 못합니다 (사용자가 여전히 수식 키를 누르고 있는지 어떤지 알 수가 없기 때문입니다). 그러나 지정된 밀리초 시간 동안에는 사용자가 아직 키를 뗄 기회를 갖지 못했다고 간주하고 수식 키들을 물리적 상태에 맞게 다시 돌려 놓습니다. 지정된 시간이 지나면, 수식 키는 다시 제자리로 돌아오지 않습니다. 수식키가 키를 변경하도록 만들려면 사용자는 수식 키를 떼고 다시 눌러야 합니다.</p>
+<p><a href="Send.htm">Send</a> 명령어가 실행되면, 첫 번째로 <kbd>Ctrl</kbd>과 <kbd>Alt</kbd>를 뗍니다. 그래서 문자들이 제대로 전송됩니다. 모든 키를 보내고 나면, 명령어는 어떻게 해야 <kbd>Ctrl</kbd>과 <kbd>Alt</kbd>를 안전하게 제자리로 돌려놓을 수 있을지 알지 못합니다 (사용자가 여전히 수식 키를 누르고 있는지 어떤지 알 수가 없기 때문입니다). 그러나 지정된 밀리초 시간 동안에는 사용자가 아직 키를 뗄 기회를 갖지 못했다고 간주하고 수식 키들을 물리적 상태에 맞게 다시 돌려 놓습니다. 지정된 시간이 지나면, 수식 키는 다시 제자리로 돌아오지 않습니다. 수식키가 키를 변경하도록 만들려면 사용자는 수식 키를 떼고 다시 눌러야 합니다.</p>
 <p>시간제한은 사용자가 전형적으로 핫키의 수식자를 떼기 전에 누르고 있는 시간보다 작은 값으로 설정해야 합니다. 그렇지 않으면, 수식키는 사용자가 물리적으로 누르고 있지 않아도 누른 위치로 복구되어 버릴 수 있습니다 (눌린 상태가 됨).</p>
 <p>이 지시어의 사용을 줄이거나 필요를 없앨 수 있습니다. 다음 중 하나를 사용하면:</p>
 <ul>
@@ -38,10 +39,14 @@
   <li>전통적인 <a href="Send.htm#SendEvent">SendEvent</a> 방법을 사용할 때, <a href="SetKeyDelay.htm">SetKeyDelay</a>를 0 또는 -1로 줄이십시오. 키눌림이 더 빠르게 전달되기 때문에 도움이 될 것입니다.</li>
 </ul>
 <p>이 지시어를 지정하지 않으면, 50으로 설정된 것처럼 행위합니다.</p>
-<h3>관련 항목</h3>
-<p><a href="GetKeyState.htm">GetKeyState</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#HotkeyModifierTimeout 100</pre>
+<p>다른 지시어처럼, #HotkeyModifierTimeout는 조건적으로 실행할 수 없습니다.</p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="GetKeyState.htm#function">GetKeyState()</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Sets the hotkey modifier timeout to 100 ms instead of 50 ms.</p>
+<pre>#HotkeyModifierTimeout 100</pre>
+</div>
 
 </body>
 </html>

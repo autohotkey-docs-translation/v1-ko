@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Finally</title>
+<title>Finally - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Finally statement ensures that one or more statements are always executed after a Try statement finishes." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,36 +12,41 @@
 
 <h1>Finally <span class="ver">[v1.1.14+]</span></h1>
 
-<p><a href="Try.htm">try</a> 서술문의 실행 후에 하나 이상의 서술문 (명령어 또는 표현식)을 항상 실행합니다.</p>
+<p>Ensures that one or more statements are always executed after a <a href="Try.htm">Try</a> statement finishes.</p>
 
-<pre class="Syntax">Finally <i>Statement</i></pre>
-<pre class="Syntax" style="line-height: 100%">Finally
+<pre class="Syntax"><span class="func">Finally</span> <i>Statement</i></pre>
+<pre class="Syntax" style="line-height: 100%">
+<span class="func">Finally</span>
 {
     <i>Statements</i>
-}</pre>
-<h3>논평</h3>
+}
+</pre>
+<h2 id="Remarks">논평</h2>
 <p><em>finally</em>를 사용할 때마다 위에 있는 <a href="Try.htm">try</a> (또는 <a href="Catch.htm">catch</a>) 서술문에 (연관되어 있어야) 속해야 합니다. <em>finally</em>는 언제나 가장 가까운 위의 <em>try</em> 서술문에 속합니다. <a href="Block.htm">block</a>이 사용되어 그 행위가 변경된 경우는 제외합니다.</p>
 <p><em>Try</em> 서술문은 <em>catch</em> 또는 <em>finally</em>가 존재하는가에 따라 다르게 행동합니다. 더 자세한 정보는 <a href="Try.htm">Try</a>를 참조하십시오.</p>
 <p><em>Goto</em>, <em>break</em>, <em>continue</em> 그리고 <em>return</em>은 <em>try</em> 블록 안의 제어 흐름 지시어를 억제하려면 꼭 필요하지만 <em>finally</em> 블록을 종료하는 데는 사용할 수 없습니다. 예를 들어, <em>try</em>가 <code>return 42</code>를 사용한다면, finally 블록이 실행된 후 값 42가 반환됩니다. 다음 명령어 중 하나를 사용하여 <em>finally</em> 블록을 빠져 나오려는 시도는 적재 시간에 그렇지 않으면 실행 시간에 가능하면 에러로 탐지됩니다.</p>
-<p>v1.1.19.02 이전에서, <em>finally</em> 서술문이 존재하면 <em>try</em> 안의 제어 흐름 서술문이 작동하지 못하는 버그가 있었습니다. <em>Return</em>이 <em>finally</em> 안에서 허용되는 버그가 있었지만, 예외를 던져도 무시되었습니다.</p>
+<p><span class="ver">[v1.1.19.02]</span> 이전에서, <em>finally</em> 서술문이 존재하면 <em>try</em> 안의 제어 흐름 서술문이 작동하지 못하는 버그가 있었습니다. <em>Return</em>이 <em>finally</em> 안에서 허용되는 버그가 있었지만, 예외를 던져도 무시되었습니다.</p>
+<p><em>Finally</em> statements are not executed if the script is directly terminated by any means, including the tray menu, <a href="ExitApp.htm">ExitApp</a>, or <a href="Exit.htm">Exit</a> (when the script is not <a href="_Persistent.htm">persistent</a>). However, if only the current <a href="../misc/Threads.htm">thread</a> (not the entire script) is exiting, <em>finally</em> statements are executed.</p>
 <p><a href="Block.htm#otb">One True Brace (OTB) 스타일</a>을 선택적으로 <em>finally</em> 명령어에 사용할 수 있습니다. 예를 들어:</p>
-<pre>try <strong>{</strong>
+<pre>try {
     ...
-<strong>}</strong> finally <strong>{</strong>
+} finally {
     ...
-<strong>}</strong>
+}
 
-try <strong>{</strong>
+try {
     ...
-<strong>}</strong> catch e <strong>{</strong>
+} catch e {
     ...
-<strong>}</strong> finally <strong>{</strong>
+} finally {
     ...
-<strong>}</strong></pre>
-<h3>관련 항목</h3>
+}</pre>
+<h2 id="Related">관련 항목</h2>
 <p><a href="Try.htm">Try</a>, <a href="Catch.htm">Catch</a>, <a href="Throw.htm">Throw</a>, <a href="Block.htm">블록</a></p>
-<h3 id="Examples">예제</h3>
-<pre class="NoIndent">try
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Demonstrates the behavior of <em>finally</em> in detail.</p>
+<pre>try
 {
     ToolTip, Working...
     Example1()
@@ -75,6 +80,7 @@ Example2()
         throw Exception("Test exception")
     MsgBox, Example2 did not fail
 }</pre>
+</div>
 
 </body>
 </html>

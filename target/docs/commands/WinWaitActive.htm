@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinWaitActive / WinWaitNotActive</title>
+<title>WinWaitActive / WinWaitNotActive - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinWaitActive and WinWaitNotActive commands wait until the specified window is active or not active." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,9 +14,11 @@
 
 <p>지정된 창이 활성화되거나 비활성화될 때까지 기다립니다.</p>
 
-<pre class="Syntax">WinWaitActive [, WinTitle, WinText, Seconds, ExcludeTitle, ExcludeText]
-WinWaitNotActive [, WinTitle, WinText, Seconds, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">WinWaitActive</span> <span class="optional">, WinTitle, WinText, Timeout, ExcludeTitle, ExcludeText</span>
+<span class="func">WinWaitNotActive</span> <span class="optional">, WinTitle, WinText, Timeout, ExcludeTitle, ExcludeText</span>
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>WinTitle</dt>
@@ -25,8 +27,8 @@ WinWaitNotActive [, WinTitle, WinText, Seconds, ExcludeTitle, ExcludeText]</pre>
   <dt>WinText</dt>
   <dd><p>존재하면, 이 매개변수는 목표 창 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>가 켜져 있어야 탐지됩니다.</p></dd>
 
-  <dt>Seconds</dt>
-  <dd><p>시간제한 까지 기다릴 초의 개수 그리고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>을 1로 설정. 빈 채로 두면 무한정 대기합니다. 0을 지정하면 0.5를 지정한 것과 같습니다. 이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다.</p></dd>
+  <dt>Timeout</dt>
+  <dd><p>시간제한 까지 기다릴 초의 개수 그리고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>을 1로 설정. Leave blank to allow the command to wait indefinitely. 0을 지정하면 0.5를 지정한 것과 같습니다. 이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다.</p></dd>
 
   <dt>ExcludeTitle</dt>
   <dd><p>제목에 이 값이 있는 창은 무시합니다.</p></dd>
@@ -36,26 +38,29 @@ WinWaitNotActive [, WinTitle, WinText, Seconds, ExcludeTitle, ExcludeText]</pre>
 
 </dl>
 
-<h3>ErrorLevel</h3>
+<h2 id="ErrorLevel">ErrorLevel</h2>
 <p>명령어가 시한제한에 걸리면 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 1이 설정되고 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
-<p>부합하는 창이 명령어의 기대를 만족하면, 그 명령어는 이제 촉발을 위해 <em>Seconds</em> 초를 기다리지 않습니다. 대신에, 즉시 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 0을 설정하고 스크립트는 실행을 계속합니다.</p>
+<h2 id="Remarks">논평</h2>
+<p>부합하는 창이 명령어의 기대를 만족하면, 그 명령어는 이제 촉발을 위해 <em>Timeout</em> 초를 기다리지 않습니다. 대신에, 즉시 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 0을 설정하고 스크립트는 실행을 계속합니다.</p>
 <p>명령어가 시작할 때 기대를 만족하는 창이 활성화되면 WinWaitActive와 WinWaitNotActive 모두 <a href="../misc/WinTitle.htm#LastFoundWindow">마지막으로 발견된 창</a>을 갱신합니다. </p>
 <p>이 명령어가 대기 상태에 있는 동안에, <a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a>를 통하여 새 <a href="../misc/Threads.htm">쓰레드</a>가 기동할 수 있습니다.</p>
 <p>이 명령어의 매개변수로 사용된 변수의 내용을 또다른 <a href="../misc/Threads.htm">쓰레드</a>가 변경하더라도, 이 명령어는 그 변경을 보지 못합니다 -- 명령어가 처음 대기를 시작할 때의 변수에 존재하는 원래 텍스트와 제목을 계속 사용합니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
-<h3>관련 항목</h3>
-<p><a href="WinWait.htm">WinWait</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Run, notepad.exe
-WinWaitActive, Untitled - Notepad, , 2
+<h2 id="Related">관련 항목</h2>
+<p><a href="WinWait.htm">WinWait</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="WinExist.htm">WinExist()</a>, <a href="WinActive.htm">WinActive()</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Opens Notepad and waits a maximum of 2 seconds until it is active. If WinWait times out, an error message is shown, otherwise Notepad is minimized.</p>
+<pre>Run, notepad.exe
+WinWaitActive, Untitled - Notepad,, 2
 if ErrorLevel
 {
     MsgBox, WinWait timed out.
     return
 }
 else
-    WinMinimize  <em>; WinWaitActive가 발견한 창을 최소화합니다.</em></pre>
+    WinMinimize <em>; Use the window found by WinWaitActive.</em></pre>
+</div>
 
 </body>
 </html>

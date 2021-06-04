@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SetControlDelay</title>
+<title>SetControlDelay - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SetControlDelay command sets the delay that will occur after each control-modifying command." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>각 콘트롤-변경 명령어 다음에 지연 시간을 설정합니다.</p>
 
-<pre class="Syntax">SetControlDelay, Delay</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">SetControlDelay</span>, Delay</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Delay</dt>
@@ -23,17 +23,20 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>짧은 지연 시간은 (sleep) 콘트롤을 변경하는 Control 명령어마다 자동으로 삽입됩니다. 즉, <a href="Control.htm">Control</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlFocus.htm">ControlFocus</a>, 그리고 <a href="ControlSetText.htm">ControlSetText</a> (<a href="ControlSend.htm">ControlSend</a>는 <a href="SetKeyDelay.htm">SetKeyDelay</a>를 사용). 이렇게 하는 이유는 스크립트의 신뢰성을 향상시키기 위해서입니다. 콘트롤은 종종 이런 명령어 때문에 변경이 되면 "잠시 쉬는 시간"이 필요합니다. 쉬는 시간이 있어야 자신을 갱신할 수 있고 스크립트가 전송하려고 시도하는 다음 명령어에 응답할 수 있기 때문입니다.</p>
 <p>지연 시간이 -1이라도 (전혀 지연 시간 없음) 허용하지만, 적어도 0은 사용하기를 권장합니다. 그러면 CPU에 부하가 많아도 스크립트가 올바르게 실행될 것이라는 보장이 높아집니다.</p>
 <p>지연 시간이 0이면 내부적으로 Sleep(0)을 실행합니다. 이는 그를 필요로 하는 다른 프로세스에 스크립트의 시간조각(timeslice)의 나머지를 나누어 줍니다. 남는 게 없으면, Sleep(0)은 전혀 잠자지 않습니다.</p>
 <p>CPU가 느리거나 부하가 많으면, 또는 창 애니메이션이 켜져 있으면, 높은 지연 시간이 필요합니다.</p>
 <p>내장 변수 <strong>A_ControlDelay</strong>에 현재 설정이 담겨 있습니다.</p>
 <p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="Control.htm">Control</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="SetWinDelay.htm">SetWinDelay</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, <a href="SetBatchLines.htm">SetBatchLines</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">SetControlDelay, 0</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Causes the smallest possible delay to occur after each control-modifying command.</p>
+<pre>SetControlDelay, 0</pre>
+</div>
 
 </body>
 </html>

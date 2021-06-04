@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ClipWait</title>
+<title>ClipWait - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ClipWait command waits until the clipboard contains data." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,29 +14,32 @@
 
 <p><a href="../misc/Clipboard.htm">클립보드</a>에 데이터가 담기기를 기다립니다.</p>
 
-<pre class="Syntax">ClipWait [, SecondsToWait, 1]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">ClipWait</span> <span class="optional">, Timeout, WaitForAnyData</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>SecondsToWait</dt>
+  <dt>Timeout</dt>
   <dd><p>생략하면, 무한정 기다립니다. 그렇지 않으면 지정한 초 개수 만큼만 기다립니다 (소수점을 포함할 수 있고 <a href="../Variables.htm#Expressions">표현식</a>이 될 수 있습니다). 0을 지정하면 0.5를 지정한 것과 같습니다.</p></dd>
 
-  <dt>1</dt>
-  <dd><p>이 매개변수를 생략하면, 더 선택의 범위가 넓어집니다. 특히 텍스트나 파일이 나타나기를 기다립니다 ("텍스트"는 무엇이든 노트패드에 붙여 넣을 때 텍스트를 생산하기만 하면 됩니다.). 이 매개변수가 1이면 (<a href="../Variables.htm#Expressions">표현식</a> 가능), 종류에 상관없이 데이터가 클립보드에 나타나기를 기다립니다.</p></dd>
+  <dt>WaitForAnyData</dt>
+  <dd><p>이 매개 변수를 생략 또는 0 (false) 경우, 더 선택의 범위가 넓어집니다. 특히 텍스트나 파일이 나타나기를 기다립니다 ("텍스트"는 무엇이든 노트패드에 붙여 넣을 때 텍스트를 생산하기만 하면 됩니다). 이 매개변수가 1 (true)이면 (<a href="../Variables.htm#Expressions">표현식</a> 가능), 종류에 상관없이 데이터가 클립보드에 나타나기를 기다립니다.</p></dd>
 
 </dl>
 
-<h3>ErrorLevel</h3>
+<h2 id="ErrorLevel">ErrorLevel</h2>
 <p>대기 시간이 경과하면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>는 1로 설정됩니다. 그렇지 않으면 (즉, 클립보드에 데이터가 있으면), ErrorLevel은 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>클립보드가 비어 있는지 알아 보기 위해 회돌이보다 이 명령어를 사용하는 편이 더 좋습니다. 왜냐하면 클립보드는 이 명령어로 열리지 않기 때문입니다. 그래서 더 수행성능이 좋고 클립보드를 사용하고 있는 다른 어플리케이션과 서로 간섭할 가능성을 피할 수 있기 때문입니다.</p>
-<p>이 명령어는 텍스트로 변환 가능한 것이면 무엇이든 (예, HTML) 텍스트로 간주합니다. 또한 탐색기 창에서 Control-C를 통하여 복사할 수 있는 파일도 텍스트로 간주합니다. 클립보드 변수 (%clipboard%)가 스크립트에서 참조될 때마다 그런 파일은 (전체 경로와 함께) 그의 파일이름으로 자동으로 변환됩니다. 자세한 것은 <a href="../misc/Clipboard.htm">Clipboard</a>를 참조하십시오.</p>
-<p>1이 첫 번째 매개변수로 존재하면, 어떤 종류이든 데이터가 클립보드에 나타나면 명령어를 만족시킵니다. 이것은 <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>과 함께 사용되어 그림과 같이 텍스트가 아닌 데이터를 저장할 수 있습니다.</p>
+<p>이 명령어는 텍스트로 변환 가능한 것이면 무엇이든 (예, HTML) 텍스트로 간주합니다. 또한 탐색기 창에서 <kbd>Ctrl</kbd>+<kbd>C</kbd>를 통하여 복사할 수 있는 파일도 텍스트로 간주합니다. 클립보드 변수 (%clipboard%)가 스크립트에서 참조될 때마다 그런 파일은 (전체 경로와 함께) 그의 파일이름으로 자동으로 변환됩니다. 자세한 것은 <a href="../misc/Clipboard.htm">Clipboard</a>를 참조하십시오.</p>
+<p>1 (true)이 첫 번째 매개변수로 존재하면, 어떤 종류이든 데이터가 클립보드에 나타나면 명령어를 만족시킵니다. 이것은 <a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>과 함께 사용되어 그림과 같이 텍스트가 아닌 데이터를 저장할 수 있습니다.</p>
 <p>이 명령어가 대기 상태에 있는 동안에, <a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a>를 통하여 새 <a href="../misc/Threads.htm">쓰레드</a>가 기동할 수 있습니다.</p>
-<h3>관련 항목</h3>
+<p>To wait for a fraction of a second, specify a floating point value for the first parameter, for example, 0.25 to wait for a maximum of 250 milliseconds.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="../misc/Clipboard.htm">Clipboard</a>, <a href="WinWait.htm">WinWait</a>, <a href="KeyWait.htm">KeyWait</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">clipboard = <em>; 클립보드를 비웁니다</em>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Empties the clipboard, copies the current selection into the clipboard and waits a maximum of 2 seconds until the clipboard contains data. If ClipWait times out, an error message is shown, otherwise the clipboard contents is shown.</p>
+<pre>Clipboard := "" <em>; 클립보드를 비웁니다</em>
 Send, ^c
 ClipWait, 2
 if ErrorLevel
@@ -44,8 +47,9 @@ if ErrorLevel
     MsgBox, 클립보드에 텍스트를 복사하려는 시도가 실패하였습니다.
     return
 }
-MsgBox, clipboard = %clipboard%
+MsgBox, clipboard = %Clipboard%
 return</pre>
+</div>
 
 </body>
 </html>

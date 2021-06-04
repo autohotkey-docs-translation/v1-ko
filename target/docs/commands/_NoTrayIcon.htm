@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#NoTrayIcon</title>
+<title>#NoTrayIcon - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #NoTrayIcon directive disables the showing of a tray icon." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,17 +12,21 @@
 
 <h1>#NoTrayIcon</h1>
 
-<p>트레이 아이콘을 끕니다.</p>
+<p><a href="../Program.htm#tray-icon">트레이 아이콘을</a> 끕니다.</p>
 
-<pre class="Syntax">#NoTrayIcon</pre>
+<pre class="Syntax"><span class="func">#NoTrayIcon</span></pre>
 <p>스크립트 아무데서나 이 지시어를 지정하면 스크립트가 기동될 때 트레이 아이콘이 나타나는 것을 막습니다. (스크립트를 EXE로 컴파일해도 마찬가지입니다).</p>
 <p>핫키를 가진 스크립트에 이를 사용하면, 핫키를 <a href="ExitApp.htm">ExitApp</a> 명령어에 묶는 게 좋습니다. 그렇지 않으면, 쉽게 프로그램을 빠져 나갈 방법이 없습니다 (컴퓨터를 재시작하거나 프로세스를 죽여야 합니다). 예를 들어: <code>#x::ExitApp</code>.</p>
 <p>트레이 아이콘을 스크립트가 실행되는 동안 언제든지 감추거나 보여줄 수 있습니다. 다음 명령어 <code><a href="Menu.htm">Menu</a>, Tray, Icon</code> 또는 <code><a href="Menu.htm">Menu</a>, Tray, NoIcon</code>을 사용하면 됩니다. <code><a href="Menu.htm">Menu</a>, Tray, NoIcon</code>을 스크립트의 맨 위에서 사용하면 단점이 있습니다. 스크립트가 처음으로 기동될 때 트레이 아이콘이 잠깐 보일 수 있습니다. 그를 피하려면, 대신에 #NoTrayIcon을 사용하십시오.</p>
 <p>트레이 아이콘이 현재 보이지 않으면 내장 변수 <strong>A_IconHidden</strong>에 1이 담깁니다. 그렇지 않으면 0이 담깁니다.</p>
-<h3>관련 항목</h3>
-<p><a href="Menu.htm">Menu</a>, <a href="ExitApp.htm">ExitApp</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#NoTrayIcon</pre>
+<p>다른 지시어처럼, #NoTrayIcon는 조건적으로 실행할 수 없습니다.</p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="../Program.htm#tray-icon">Tray Icon</a>, <a href="Menu.htm">Menu</a>, <a href="ExitApp.htm">ExitApp</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Causes the script to launch without a tray icon.</p>
+<pre>#NoTrayIcon</pre>
+</div>
 
 </body>
 </html>

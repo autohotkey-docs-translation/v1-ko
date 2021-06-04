@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>KeyHistory</title>
+<title>KeyHistory - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The KeyHistory command displays script info and a history of the most recent keystrokes and mouse clicks." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>스크립트 정보 그리고 가장 최근의 키눌림과 마우스 클릭의 이력을 보여줍니다.</p>
 
-<pre class="Syntax">KeyHistory</pre>
-<h3>논평</h3>
+<pre class="Syntax"><span class="func">KeyHistory</span></pre>
+<h2 id="Remarks">논평</h2>
 <p>이 명령어는 메인 창에서 "View-&gt;Key history" 메뉴 항목을 선택한 것과 동등합니다.</p>
 <p>키 이력을 끄려면, 다음 줄을 스크립트 아무데나 지정하십시오:</p>
   <pre><a href="_KeyHistory.htm">#KeyHistory</a> 0</pre>
@@ -25,10 +25,13 @@
 <p>스크립트에 <a href="_InstallKeybdHook.htm">키보드 갈고리</a>가 설치되어 있지 않으면, KeyHistory 창은 스크립트 자체에서 만들어내는 키보드 이벤트만 보여줍니다 (즉, 사용자의 이벤트는 보여주지 않습니다). 스크립트에 <a href="_InstallMouseHook.htm">마우스 갈고리</a>가 설치되어 있지 않으면, 마우스 버튼 이벤트는 보이지 않습니다. 스크립트가 갈고리를 사용하는 지 그 여부는 스크립트의 메인 창에서 "View-&gt;Key History"를 통하여 볼 수 있습니다 (트레이 아이콘의 "Open"을 통하여 접근이 가능합니다). 강제로 갈고리를 설치할 수 있습니다. 스크립트에 다음 줄을 추가하면 됩니다:</p>
 <pre><a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>
 <a href="_InstallMouseHook.htm">#InstallMouseHook</a></pre>
-<h3>관련 항목</h3>
-<p><a href="_KeyHistory.htm">#KeyHistory</a>, <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>, <a href="_InstallMouseHook.htm">#InstallMouseHook</a>, <a href="ListHotkeys.htm">ListHotkeys</a>, <a href="ListLines.htm">ListLines</a>, <a href="ListVars.htm">ListVars</a>, <a href="GetKeyState.htm">GetKeyState</a>, <a href="KeyWait.htm">KeyWait</a>, <a href="../Variables.htm#PriorKey">A_PriorKey</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">KeyHistory <em>; 이력 정보를 창 안에 보여줍니다.</em></pre>
+<h2 id="Related">관련 항목</h2>
+<p><a href="_KeyHistory.htm">#KeyHistory</a>, <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>, <a href="_InstallMouseHook.htm">#InstallMouseHook</a>, <a href="ListHotkeys.htm">ListHotkeys</a>, <a href="ListLines.htm">ListLines</a>, <a href="ListVars.htm">ListVars</a>, <a href="GetKeyState.htm#function">GetKeyState()</a>, <a href="KeyWait.htm">KeyWait</a>, <a href="../Variables.htm#PriorKey">A_PriorKey</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> 이력 정보를 창 안에 보여줍니다.</p>
+<pre>KeyHistory</pre>
+</div>
 
 </body>
 </html>

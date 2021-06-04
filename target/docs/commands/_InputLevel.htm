@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#InputLevel</title>
+<title>#InputLevel - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #InputLevel directive controls which artificial keyboard and mouse events are ignored by hotkeys and hotstrings." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,9 +12,9 @@
 
 <h1>#InputLevel <span class="ver">[v1.1.06+]</span></h1>
 <p>핫키와 핫스트링이 무시하는 인위적인 키보드 그리고 마우스 이벤트를 제어합니다.</p>
-<pre class="Syntax">#InputLevel [, Level]</pre>
+<pre class="Syntax"><span class="func">#InputLevel</span> <span class="optional">Level</span></pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Level</dt>
@@ -22,23 +22,28 @@
 
 </dl>
 
-<h3>총평</h3>
+<h2 id="General_Remarks">총평</h2>
 <p>SendLevel과 #InputLevel의 작동 방식에 대한 설명은 <a href="SendLevel.htm">SendLevel</a>을 참조하십시오.</p>
 <p>이 지시어는 위치에 민감합니다: 다음 #InputLevel 지시어가 나타날 때까지 모든 핫키와 핫트링에 영향을 줍니다. #InputLevel 지시어가 설정되어 있지 않으면, 핫키와 핫스트링은 기본값이 0입니다.</p>
+<p><span class="ver">[v1.1.23+]:</span> A hotkey's input level can also be set using the Hotkey command. 예를 들어: <code>Hotkey, #z, my_hotkey_sub, <strong>I1</strong></code></p>
 <p>핫키 또는 비-자동-교체 핫스트링의 레벨은 자신이 생산한 키눌림이나 버튼 클릭에 대하여 기본 <a href="SendLevel.htm">전송 레벨</a>로도 사용됩니다. 키보드나 마우스 <a href="../misc/Remap.htm">리맵핑</a>은 실제로는 한 쌍의 핫키이므로, #InputLevel을 사용하면 리맵핑이 다른 핫키를 촉발시킬 수 있습니다.</p>
-<p>v1.1.06 이전 버전은 #InputLevel 0인 것처럼 그리고 SendLevel 0의 효과가 있는 것처럼 행위합니다.</p>
+<p><span class="ver">[v1.1.06]</span> 이전 버전은 #InputLevel 0인 것처럼 그리고 SendLevel 0의 효과가 있는 것처럼 행위합니다.</p>
+<p>다른 지시어처럼, #InputLevel는 조건적으로 실행할 수 없습니다.</p>
 
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="SendLevel.htm">SendLevel</a>, <a href="../Hotkeys.htm">핫키</a>, <a href="../Hotstrings.htm">핫스트링</a></p>
 
-<h3>예제</h3>
-<pre class="NoIndent">
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Causes the first hotkey <code>Numpad0::</code> to trigger the second hotkey <code>~LButton::</code>. This would be not the case if the #InputLevel directives are omitted or commented out.</p>
+<pre>
 #InputLevel 1
 Numpad0::LButton
 #InputLevel 0
 <em>; 이 핫키는 Numpad0와 LButton이 모두 촉발할 수 있습니다:</em>
-~LButton::Msgbox Clicked
+~LButton::MsgBox Clicked
 </pre>
+</div>
 
 </body>
 </html>

@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-  <title>CLSID List (윈도우즈 클래스 식별자)</title>
+  <title>CLSID List (Windows Class Identifiers) | AutoHotkey</title>
+<meta name="description" content="A tabular list of some windows class identifiers (CLSID), which can be used with the FileSelectFile, FileSelectFolder and Run commands." />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -10,16 +10,15 @@
 </head>
 
 <body>
-<h1>CLSID List (윈도우즈 클래스 식별자)</h1>
+<h1>CLSID List <span class="headnote">(Windows Class Identifiers)</span></h1>
 <p>운영체제 안의 어떤 특수 폴더는 유일한 문자열로 식별됩니다. 이 문자열은 <a href="../commands/FileSelectFile.htm">FileSelectFile</a>, <a href="../commands/FileSelectFolder.htm">FileSelectFolder</a>, 그리고 <a href="../commands/Run.htm">Run</a>에 사용할 수 있습니다. 예를 들어:</p>
 <pre>FileSelectFile, OutputVar,, ::{645ff040-5081-101b-9f08-00aa002f954e}  <em>; 휴지통 안에서 파일 하나를 선택합니다.</em>
 FileSelectFolder, OutputVar, ::{20d04fe0-3aea-1069-a2d8-08002b30309d}  <em>; 내 컴퓨터 안에서 폴더를 하나 선택합니다.</em></pre>
-<br>
 <table class="info">
 <tr>
   <th>CLSID</th>
-  <th>의미/위치</th>
-  <th width="80"><a href="../commands/Run.htm">Run</a> 지원 여부?</th>
+  <th>위치</th>
+  <th style="width:80px"><a href="../commands/Run.htm">Run</a>?</th>
 </tr>
 <tr>
   <td>::{d20ea4e1-3957-11d2-a40b-0c5020524153}</td>
@@ -27,12 +26,12 @@ FileSelectFolder, OutputVar, ::{20d04fe0-3aea-1069-a2d8-08002b30309d}  <em>; 내
   <td>&nbsp;</td>
 </tr>
 <tr>
-  <td>::{85bbd92o-42a0-1o69-a2e4-08002b30309d}</td>
+  <td>::{85bbd920-42a0-1069-a2e4-08002b30309d}</td>
   <td>서류가방</td>
   <td>&nbsp;</td>
 </tr>
 <tr>
-  <td>::{21ec2o2o-3aea-1o69-a2dd-08002b30309d}</td>
+  <td>::{21ec2020-3aea-1069-a2dd-08002b30309d}</td>
   <td>제어판</td>
   <td>&nbsp;</td>
 </tr>

@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ComObjFlags()</title>
+<title>ComObjFlags() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ComObjFlags function retrieves or changes flags which control a COM wrapper object's behaviour." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -13,9 +13,9 @@
 
 <h1>ComObjFlags() <span class="ver">[v1.0.96.00+]</span></h1>
 <p>COM 포장 객체의 행위를 제어하는 플래그를 열람하거나 변경합니다.</p>
-<pre class="Syntax">Flags := ComObjFlags(ComObject [, NewFlags, Mask])</pre>
+<pre class="Syntax">Flags := <span class="func">ComObjFlags</span>(ComObject <span class="optional">, NewFlags, Mask</span>)</pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>ComObject</dt>
@@ -32,33 +32,38 @@
 
 </dl>
 
-<h3>Flags</h3>
+<h2 id="Flags">Flags</h2>
 <table class="info">
   <tr>
-    <td>F_OWNVALUE<br>1</td>
-    <td>현재는 오직 SafeArrays에만 영향을 줍니다. 이 플래그가 설정되면, SafeArray는 포장 객체가 해제될 때 파괴됩니다. SafeArrays는 참조 횟수 세기 메커니즘이 없으므로, 만약 이 플래그를 가진 SafeArray가 또다른 SafeArray의 한 원소에 할당되면, 따로 사본이 생성됩니다.</td>
+    <th class="center">Flag</th>
+    <th>효과</th>
+  </tr>
+  <tr>
+    <td class="center">1</td>
+    <td>F_OWNVALUE. 현재는 오직 SafeArrays에만 영향을 줍니다. 이 플래그가 설정되면, SafeArray는 포장 객체가 해제될 때 파괴됩니다. SafeArrays는 참조 횟수 세기 메커니즘이 없으므로, 만약 이 플래그를 가진 SafeArray가 또다른 SafeArray의 한 원소에 할당되면, 따로 사본이 생성됩니다.</td>
   </tr>
 </table>
 
-<h3>총평</h3>
+<h2 id="General_Remarks">총평</h2>
 <p><i>Mask</i>를 생략하면, <i>NewFlags</i>는 (양수이면) 더할 플래그, (음수이면) 제거할 플래그를 지정합니다. 예를 들어, <code>ComObjFlags(obj, -1)</code>는 F_OWNVALUE 플래그를 제거합니다. <i>Mask</i>에는 0이나 1말고 다른 값을 지정하지 마십시오; 다른 모든 비트는 미래에 사용할 목적으로 예약되어 있습니다.</p>
 
-<h3>관련 항목</h3>
-<p><a href="ComObjActive.htm">ComObjActive</a>, <a href="ComObjArray.htm">ComObjArray</a></p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="ComObjActive.htm">ComObjActive()</a>, <a href="ComObjArray.htm">ComObjArray()</a></p>
 
-<h3>예제</h3>
-<pre class="NoIndent"><em>; 예제: F_OWNVALUE 플그래가 있는지 점검합니다.</em>
-
-arr := ComObjArray(0xC, 1)
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExCheck">
+<p><a class="ex_number" href="#ExCheck"></a> F_OWNVALUE 플그래가 있는지 점검합니다.</p>
+<pre>arr := ComObjArray(0xC, 1)
 if ComObjFlags(arr) &amp; 1
     MsgBox arr은 자동으로 파괴됩니다.
 else
     MsgBox arr는 자동으로 파괴되지 않습니다.
 </pre>
+</div>
 
-<pre class="NoIndent"><em>; 예제: 배열-안의 배열 행위 바꾸기.</em>
-
-arr1 := ComObjArray(0xC, 3)
+<div class="ex" id="ExRemove">
+<p><a class="ex_number" href="#ExRemove"></a> 배열-안의 배열 행위 바꾸기.</p>
+<pre>arr1 := ComObjArray(0xC, 3)
 arr2 := ComObjArray(0xC, 1)
 arr2[0] := "original value"
 arr1[0] := arr2         <em>; 묵시적 사본을 할당합니다.</em>
@@ -73,6 +78,7 @@ arr1 := ""
 <em>; arr2 == arr1[1]이기 때문에 유효하지 않습니다. 이미 파괴되었습니다: 
 ;  arr2[0] := "foo"</em>
 </pre>
+</div>
 
 </body>
 </html>

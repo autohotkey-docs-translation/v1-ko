@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SetEnv</title>
+<title>SetEnv - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SetEnv command assigns the specified value to a variable." />
+<meta name="ahk:equiv-v2" content="Variables.htm#AssignOp" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -13,10 +14,13 @@
 <h1>SetEnv (Var = Value)</h1>
 
 <p>지정된 값을 <a href="../Variables.htm">변수</a>에 할당합니다.</p>
+<p class="warning"><strong>Deprecated:</strong> This command or a legacy assignment is not recommended for use in new scripts. Use <a href="SetExpression.htm">expression assignments</a> like <code>Var := Value</code> instead.</p>
 
-<pre class="Syntax">SetEnv, Var, Value
-Var = Value</pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">SetEnv</span>, Var, Value
+Var = Value
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Var</dt>
@@ -27,18 +31,35 @@ Var = Value</pre>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>기본값으로, <em>Value</em> 앞 뒤의 스페이스나 탭은 <em>Var</em>에서 제외됩니다. 이를 피하려면, <a href="AutoTrim.htm#Off">AutoTrim Off</a>에 기술된 방법을 사용하십시오.</p>
-<p>"SetEnv"라는 이름은 혼란을 줍니다. 이것은 AutoIt v2로부터 물려 받은 유산입니다. AutoIt v2와 다르게, AutoHotkey는 변수를 환경에 저장하지 않습니다. 수행성능이 좋지 않을 뿐만 아니라 OS가 환경 변수의 길이를 32 KB로 제한하기 때문입니다. <a href="../Variables.htm#env">환경 변수</a>에 쓰려면 SetEnv 대신에 <a href="EnvSet.htm">EnvSet</a>을 사용하십시오.</p>
+<p>"SetEnv"라는 이름은 혼란을 줍니다. 이것은 AutoIt v2로부터 물려 받은 유산입니다. AutoIt v2와 다르게, AutoHotkey는 변수를 환경에 저장하지 않습니다. 수행성능이 좋지 않을 뿐만 아니라 OS가 환경 변수의 길이를 32 KB로 제한하기 때문입니다. <a href="../Concepts.htm#environment-variables">환경 변수</a>에 쓰려면 SetEnv 대신에 <a href="EnvSet.htm">EnvSet</a>을 사용하십시오.</p>
 <p>거대한 변수가 점유한 메모리는 아무 것도 설정하지 않으면 해제할 수 있습니다. 예, <code>Var =</code>.</p>
-<p>이 명령어 그리고 <em>OutputVar</em>를 받는 기타 명령어로 <a href="../misc/Arrays.htm#pseudo">의사-배열</a>을 생성할 수 있습니다. <em>OuputVar</em>에 또다른 변수를 가리키는 참조를 담도록 만들면 됩니다. 예, <code>array%i% = 123</code>. 더 자세한 것은 <a href="../misc/Arrays.htm">배열</a>을 참조하십시오.</p>
-<h3>관련 항목</h3>
-<p><a href="AutoTrim.htm">AutoTrim</a>, <a href="EnvSet.htm">EnvSet</a>, <a href="EnvAdd.htm">EnvAdd</a>, <a href="EnvSub.htm">EnvSub</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="IfEqual.htm">If</a>, <a href="../misc/Arrays.htm">배열</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Var1 = 이것은 문자열입니다.
-Color2 = 450
-Color3 = %Var1%
-Array%i% = %A_TICKCOUNT%</pre>
+<p>이 명령어 그리고 <em>OutputVar</em>를 받는 기타 명령어로 <a href="../misc/Arrays.htm#pseudo">의사-배열</a>을 생성할 수 있습니다. <em>OutputVar</em>에 또다른 변수를 가리키는 참조를 담도록 만들면 됩니다. 예, <code>array%i% = 123</code>. 더 자세한 것은 <a href="../misc/Arrays.htm">배열</a>을 참조하십시오.</p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="AutoTrim.htm">AutoTrim</a>, <a href="EnvSet.htm">EnvSet</a>, <a href="EnvAdd.htm">EnvAdd</a>, <a href="EnvSub.htm">EnvSub</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="IfEqual.htm">If (legacy)</a>, <a href="../misc/Arrays.htm">Arrays</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExString">
+<p><a class="ex_number" href="#ExString"></a> Assigns a string to a variable.</p>
+<pre>Var1 = 이것은 문자열입니다.</pre>
+</div>
+
+<div class="ex" id="ExNumber">
+<p><a class="ex_number" href="#ExNumber"></a> Assigns a number to a variable.</p>
+<pre>Color2 = 450</pre>
+</div>
+
+<div class="ex" id="ExVar">
+<p><a class="ex_number" href="#ExVar"></a> Assigns the value of <var>Var1</var> to a variable.</p>
+<pre>Var1 = 이것은 문자열입니다.
+Color3 = %Var1%</pre>
+</div>
+
+<div class="ex" id="ExArray">
+<p><a class="ex_number" href="#ExArray"></a> Assigns the value of <a href="../Variables.htm#TickCount"><var>A_TickCount</var></a> to a <a href="../misc/Arrays.htm#pseudo">pseudo-array</a> variable.</p>
+<pre>i = 1
+Array%i% = %A_TickCount%</pre>
+</div>
 
 </body>
 </html>

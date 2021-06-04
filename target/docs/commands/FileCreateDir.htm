@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>FileCreateDir</title>
+<title>FileCreateDir - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The FileCreateDir command creates a folder." />
+<meta name="ahk:equiv-v2" content="commands/DirCreate.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,26 +13,29 @@
 
 <h1>FileCreateDir</h1>
 
-<p>디렉토리/폴더를 만듭니다.</p>
+<p>폴더를 생성합니다.</p>
 
-<pre class="Syntax">FileCreateDir, DirName</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">FileCreateDir</span>, DirName</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>DirName</dt>
   <dd><p>생성할 디렉토리 이름. 절대 경로가 지정되지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다.</p></dd>
 
 </dl>
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
 <p><a href="../Variables.htm#LastError">A_LastError</a>는 운영 체제의 GetLastError() 함수의 결과가 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 이 명령어는 또 아직 존재하지 않는다면 <em>DirName</em>에 주어진 모든 부모 디렉토리를 생성합니다.
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="FileRemoveDir.htm">FileRemoveDir</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">FileCreateDir, C:\Test1\My Images\Folder2</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Creates a new directory, including its parent directories if necessary.</p>
+<pre>FileCreateDir, C:\Test1\My Images\Folder2</pre>
+</div>
 
 </body>
 </html>

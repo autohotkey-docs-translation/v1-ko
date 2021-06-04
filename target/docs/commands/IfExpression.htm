@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>if (표현식)</title>
+<title>If (Expression) - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content='The "if (expression)" statement specifies one or more statements to execute if an expression evaluates to true.' />
+<meta name="ahk:equiv-v2" content="commands/If.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -10,42 +11,81 @@
 </head>
 <body>
 
-<h1>if (표현식)</h1>
+<h1>If (표현식)</h1>
+<p>Specifies one or more <a href="../Concepts.htm#statement">statements</a> to execute if an <a href="../Variables.htm#Expressions">expression</a> evaluates to true.</p>
+<pre class="Syntax"><span class="func">If</span> (<i>Expression</i>)
+{
+    <i>Statements</i>
+}</pre>
 
-<p><a href="../Variables.htm#Expressions">표현식</a>이 TRUE로 평가되면 수행할 명령어(들)을 지정합니다.</p>
-
-<pre class="Syntax">if (표현식)</pre>
-<h3>논평</h3>
-<p>표현식이 있는 if-서술문은 <a href="IfEqual.htm">전통적인-if</a>와 다릅니다. <code>If FoundColor &lt;&gt; Blue</code>와 같은 경우 단어 "if" 다음 문자가 여는 활괄호가 아닙니다. 보통 전체 표현식을 활괄호 안에 싸 넣으면 이렇게 할 수 있지만, <code>if (x &gt; 0) and (y &gt; 0)</code>와 같이 해도 달성할 수 있습니다. 게다가, 단어 "if" 다음의 첫 항목이 <a href="../Functions.htm">함수 호출</a>이거나 또는 "not"이나 "!"와 같은 연산자일 경우 여는-활괄호는 완전히 생략해도 됩니다.</p>
-<p>if-서술문의 표현식이 참으로 평가되면 (빈 문자열 또는 숫자 0만 아니면 어떤 결과도 참이므로), 그 줄 또는 그 밑의 <a href="Block.htm">블록</a>이 실행됩니다. 그렇지 않고, 상응하는 ELSE가 있다면, 실행은 그 줄 또는 그 밑의 블록으로 점프합니다.</p>
-<p>IF 또는 <a href="Else.htm">ELSE</a>가 여러 줄을 소유하면, 그런 줄들은 반드시 <a href="Block.htm">활괄호</a> 안에 둘러싸야 합니다. 그렇지만, 한 줄만 IF 또는 ELSE에 속해 있다면, 활괄호는 선택적입니다. 이 페이지 아래의 예제들을 참조하십시오.</p>
-<p><a name="otb"></a>One True Brace (OTB) 스타일은 선택적으로 표현식 if-서술문과 함께 사용할 수 있습니다 (그러나 <a href="IfEqual.htm">전통적인 if-서술문은 안 됩니다</a>). 예를 들어:</p>
-<pre>if (x &lt; y) <strong>{</strong>
-    ...
-<strong>}</strong>
-if WinExist("Untitled - Notepad") <strong>{</strong>
+<h2 id="Remarks">논평</h2>
+<p>An <em>If</em> statement that contains an expression is usually differentiated from a <a href="IfEqual.htm">traditional If statement</a> such as <code>if FoundColor != Blue</code> by enclosing the expression in parentheses, as in <code>if (FoundColor != "Blue")</code>. However, this is not strictly required, as any <em>If</em> statement which does not match any of the <a href="../Language.htm#legacy-if">legacy if patterns</a> is assumed to contain an expression. In particular, the following are also common ways of writing an <em>If (expression)</em>:</p>
+<ul>
+  <li>Starting with an open parenthesis but not fully enclosing the expression: <code>if (x &gt; 0) and (y &gt; 0)</code></li>
+  <li>Starting with a <a href="../Functions.htm">function call</a>: <code>if InStr(a, b)</code></li>
+  <li>Starting with an <a href="../Variables.htm#Operators">operator</a> such as <code>not</code> or <code>!</code>: <code>if !MyVar</code></li>
+</ul>
+<p><strong>Known limitation:</strong> For historical reasons, <em>If (expression)</em> actually accepts a <a href="../Language.htm#numeric-parameters">numeric parameter</a> rather than a pure expression. For example, <code>if %MyVar%</code> is equivalent to <code>if MyVar</code>. This can be avoided by always enclosing the expression in parentheses.</p>
+<p><em>If</em> 서술문의 표현식이 참으로 평가되면 (빈 문자열 또는 숫자 0만 아니면 어떤 결과도 참이므로), 그 줄 또는 그 밑의 <a href="Block.htm">블록</a>이 실행됩니다. Otherwise, if there is a corresponding <a href="Else.htm">Else</a> statement, execution jumps to the line or block underneath it.</p>
+<p>If an <em>If</em> owns more than one line, those lines must be enclosed in braces (to create a <a href="Block.htm">block</a>). 그렇지만, 한 줄만 IF 또는 <em>If</em>에 속해 있다면, 활괄호는 선택적입니다. 이 페이지 아래의 예제들을 참조하십시오.</p>
+<p>The space after <code>if</code> is optional if the expression starts with an open-parenthesis, as in <code>if(expression)</code>.</p>
+<p id="otb">The One True Brace (OTB) style may optionally be used with <em>If</em> statements that are expressions (but not <a href="IfEqual.htm">traditional If statements</a>). 예를 들어:</p>
+<pre>if (x &lt; y) {
+    <em>; ...</em>
+}
+if WinExist("Untitled - Notepad") {
     WinActivate
-<strong>}</strong>
-if IsDone <strong>{</strong>
-    ...
-<strong>}</strong> else <strong>{</strong>
-    ...
-<strong>}</strong></pre>
-<p>"else" 서술문과 다르게 -- 그의 오른쪽에 오기만 하면 서술문에 종류에 상관없이 지원하는 -- if-서술문은 오직 그의 오른쪽에 오는 "{"만 지원합니다.</p>
-<p>관련하여 말씀드리자면, 다음 명령어 "<a href="IfBetween.htm">if var [not] between LowerBound and UpperBound</a>"는 변수가 두 값 사이에 있는지 점검합니다. 그리고 "<a href="IfIn.htm">if var [not] in value1,value2</a>"는 변수의 내용이 값 목록 안에 존재하는지 점검하는 데 사용할 수 있습니다.</p>
-<h3>관련 항목</h3>
-<p><a href="../Variables.htm#Expressions">표현식</a>, <a href="SetExpression.htm">할당 표현식 (:=)</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfInString.htm">IfInString</a>, <a href="Block.htm">블록</a>, <a href="Else.htm">Else</a>, <a href="While.htm">While-회돌이</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">if (A_Index &gt; 100 or Done)
-    return
+}
+if IsDone {
+    <em>; ...</em>
+} else {
+    <em>; ...</em>
+}</pre>
+<p>Unlike an <em>If</em> statement, an <a href="Else.htm">Else</a> statement supports any type of statement immediately to its right.</p>
+<p>On a related note, the statement <code><a href="IfBetween.htm">if Var between LowerBound and UpperBound</a></code> checks whether a variable is between two values, and <code><a href="IfIn.htm">if Var in MatchList</a></code> can be used to check whether a variable's contents exist within a list of values.</p>
 
-if (A_TickCount - StartTime &gt; 2*MaxTime + 100)
+<h2 id="Related">관련 항목</h2>
+<p><a href="../Variables.htm#Expressions">표현식</a>, <a href="SetExpression.htm">할당 표현식 (:=)</a>, <a href="IfIn.htm">if var in/contains</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfInString.htm">IfInString</a>, <a href="Block.htm">블록</a>, <a href="Else.htm">Else</a>, <a href="While.htm">While-회돌이</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExOne">
+<p><a class="ex_number" href="#ExOne"></a> If <var>A_Index</var> is greater than 100, return.</p>
+<pre>if (A_Index &gt; 100)
+    return</pre>
+</div>
+
+<div class="ex" id="ExMultiple">
+<p><a class="ex_number" href="#ExMultiple"></a> If the result of <code>A_TickCount - StartTime</code> is greater than the result of <code>2*MaxTime + 100</code>, show "Too much time has passed." and terminate the script.</p>
+<pre>if (A_TickCount - StartTime &gt; 2*MaxTime + 100)
 {
     MsgBox 너무 많은 시간지 경과하였습니다.
     ExitApp
-}
+}</pre>
+</div>
 
-if (Color = "Blue" or Color = "White")
+<div class="ex" id="ExComplex">
+<p><a class="ex_number" href="#ExComplex"></a> This example is executed as follows:</p>
+<ol>
+  <li>If <var>Color</var> is the word "Blue" or "White":
+    <ol>
+      <li>Show "The color is one of the allowed values.".</li>
+      <li>Terminate the script.</li>
+    </ol>
+  </li>
+  <li>Otherwise if <var>Color</var> is the word "Silver":
+    <ol>
+      <li>Show "Silver is not an allowed color.".</li>
+      <li>Stop further checks.</li>
+    </ol>
+  </li>
+  <li>그렇지 않고:
+    <ol>
+      <li>Show "This color is not recognized.".</li>
+      <li>Terminate the script.</li>
+    </ol>
+  </li>
+</ol>
+<pre>if (Color = "Blue" or Color = "White")
 {
     MsgBox 컬러는 허용된 값 중 하나입니다.
     ExitApp
@@ -60,6 +100,16 @@ else
     MsgBox 이 색은 인지할 수 없습니다.
     ExitApp
 }</pre>
+</div>
+
+<div class="ex" id="ExMultiStatement">
+<p><a class="ex_number" href="#ExMultiStatement"></a> A single <a href="../Variables.htm#comma">multi-statement</a> line does not need to be enclosed in braces.</p>
+<pre>MyVar := 3
+if (MyVar &gt; 2)
+    MyVar++, MyVar := MyVar - 4, MyVar .= " test"
+MsgBox % MyVar  <em>; Reports "0 test".</em>
+</pre>
+</div>
 
 </body>
 </html>

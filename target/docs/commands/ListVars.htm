@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ListVars</title>
+<title>ListVars - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ListVars command displays the script's variables: 이름과 현재 내용." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,19 +14,34 @@
 
 <p>스크립트의 <a href="../Variables.htm">변수들</a>을 보여줍니다: 이름과 현재 내용.</p>
 
-<pre class="Syntax">ListVars</pre>
-<h3>논평</h3>
+<pre class="Syntax"><span class="func">ListVars</span></pre>
+<h2 id="Remarks">논평</h2>
 <p>이 명령어는 메인 창에서 "View-&gt;Variables" 메뉴 항목을 선택한 것과 동등합니다. <a href="../Scripts.htm#debug">스크립트를 디버그할 때</a> 도움이 됩니다.</p>
-<p>리스트의 각 줄은 다음과 같이 구성됩니다:<br>
-  1) 변수의 이름.<br>
-  2) 변수 내용의 길이와 변수의 <a href="VarSetCapacity.htm">가용능력</a>. 예를 들어: [50 of 63]<br>
-3) 변수 내용의 앞쪽 문자 60개.</p>
-<p>이 명령어가 <a href="../Functions.htm">함수</a> 안에 사용되면, 그 함수의 <a href="../Functions.htm#Locals">지역 변수들</a>이 (스크립트의 전역 변수들보다) 먼저 화면에 보여집니다.</p>
+<p>For each variable in the list, the variable's name and contents are shown, along with other information depending on what the variable contains. Each item is terminated with a carriage return and newline (<code>`r`n</code>), but may span multiple lines if the variable contains <code>`r`n</code>.</p>
+<p>List items may take the following forms (where words in <i>italics</i> are placeholders):</p>
+<pre class="no-highlight">
+<i>VarName</i>[<i>Length</i> of <i>Capacity</i>]: <i>String</i>
+<em>; <span class="ver">[v1.1.26+]</span></em>
+<i>VarName</i>: <i>TypeName</i> object {<i>Info</i>}
+<em>; Prior to <span class="ver">[v1.1.26]</span>:</em>
+<i>VarName</i>[Object]: <i>Address</i>
+<i>VarName</i>[Object]: <i>Address</i> &lt;= ComObject(<i>VarType</i>, <i>Value</i>)
+</pre>
+<p><i>Capacity</i> is the variable's current <a href="VarSetCapacity.htm">capacity</a> measured in characters, not bytes.</p>
+<p><i>String</i> is the first 60 characters of the variable's contents.</p>
+<p><i>Info</i> depends on the type of object, but is currently very limited.</p>
+<p>이 명령어가 <a href="../Functions.htm">함수</a> 안에 사용되면, 그 함수의 <a href="../Functions.htm#Local">지역 변수들</a>이 (스크립트의 전역 변수들보다) 먼저 화면에 보여집니다.</p>
 <p>알려진 한계: <a href="../Functions.htm">함수</a>에 (또는 전역 변수 리스트에) 10,000개가 넘게 변수가 들어 있다면, 이 명령어는 정확하게 알파벳 순서로 보여주지 못할 수 있습니다; 즉, 어떤 것은 빼고 보여줄 가능성이 있습니다.</p>
-<h3>관련 항목</h3>
+
+<h2 id="Related">관련 항목</h2>
 <p><a href="KeyHistory.htm">KeyHistory</a>, <a href="ListHotkeys.htm">ListHotkeys</a>, <a href="ListLines.htm">ListLines</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">ListVars</pre>
+<p>The <a href="https://github.com/Lexikos/DebugVars.ahk#debugvars">DebugVars</a> script can be used to inspect and change the contents of variables and objects.</p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Displays information about the script's variables.</p>
+<pre>ListVars</pre>
+</div>
 
 </body>
 </html>

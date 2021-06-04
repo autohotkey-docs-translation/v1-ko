@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ToolTip</title>
+<title>ToolTip - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ToolTip command creates an always-on-top window anywhere on the screen." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>언제나 최상위에 있는 창을 화면 어디든지 만듭니다.</p>
 
-<pre class="Syntax">ToolTip [, Text, X, Y, WhichToolTip]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">ToolTip</span> <span class="optional">, Text, X, Y, WhichToolTip</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Text</dt>
@@ -29,7 +29,8 @@
   <dd><p>여러 툴팁을 동시에 보여줄 필요가 없다면 이 매개변수를 생략하십시오. 그렇지 않으면, 이것은 1부터 20 사이의 숫자로 어느 툴팁 창에 작용해야 하는지 나타냅니다. 지정되지 않으면 그 번호는 1 (첫 번째)입니다. 이 매개변수는 <a href="../Variables.htm#Expressions">표현식</a>일 수 있습니다.</p></dd>
 
 </dl>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
+<p>A tooltip usually looks like this: <img src="../static/dlg_tooltip.png" alt="ToolTip" style="vertical-align: middle" /></p>
 <p>X &amp; Y 좌표가 툴팁을 화면 밖에 나타나도록 만든다면, 완전히 보이게 좌표가 재설정됩니다.</p>
 <p>툴팁은 다음 중 하나가 일어날 때까지 보여집니다:</p>
 <ul>
@@ -38,22 +39,25 @@
   <li>사용자가 툴팁에 클릭합니다 (이 행위는 운영 체제의 버전에 따라 다릅니다).</li>
 </ul>
 <p>GUI 창을 <a href="Gui.htm#OwnDialogs">Gui +OwnDialogs</a>를 수단으로 툴팁의 소유주로 만들 수 있습니다. 그런 툴팁은 소유주가 파괴될 때 자동으로 파괴됩니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="CoordMode.htm">CoordMode</a>, <a href="TrayTip.htm">TrayTip</a>, <a href="Gui.htm">GUI</a>, <a href="Progress.htm">Progress</a>, <a href="SplashTextOn.htm">SplashTextOn</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">ToolTip, 여러 줄`n툴팁 데모, 100, 150
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Shows a multiline tooltip at a specific position in the active window.</p>
+<pre>ToolTip, 여러 줄`n툴팁 데모, 100, 150</pre>
+</div>
 
-<em>; 툴팁을 일정 시간 후에 사라지게 만듭니다
-; Sleep을 사용할 필요가 없습니다 (이것은 현재 쓰레드를 멈춥니다):</em>
-#Persistent
+<div class="ex" id="ExAutoHide">
+<p><a class="ex_number" href="#ExAutoHide"></a> Hides a tooltip after a certain amount of time without having to use Sleep (which would stop the current thread).</p>
+<pre>#Persistent
 ToolTip, 시간 제한이 있는 툴팁`n이 툴팁은 5 초 후에 사라집니다.
-SetTimer, RemoveToolTip, 5000
+SetTimer, RemoveToolTip, -5000
 return
 
 RemoveToolTip:
-SetTimer, RemoveToolTip, Off
 ToolTip
 return</pre>
+</div>
 
 </body>
 </html>

@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ControlGetFocus</title>
+<title>ControlGetFocus - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ControlGetFocus command retrieves which control of the target window has input focus, if any." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>목표 창에서 초점이 있는 콘트롤을 열람합니다.</p>
 
-<pre class="Syntax">ControlGetFocus, OutputVar [, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">ControlGetFocus</span>, OutputVar <span class="optional">, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -35,22 +35,25 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 입력 초점이 있는 콘트롤을 성공적으로 열람하면 0이 설정됩니다. 그렇지 않으면 (예, 목표 창이 존재하지 않거나 입력 초점이 있는 콘트롤이 없는 경우) 1로 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>이 명령어로 열람한 콘트롤은 키보드 초점이 있습니다. 다시 말해, 사용자가 타자를 하면 키눌림을 받아들입니다.</p>
 <p>목표 창이 초점이 있는 콘트롤을 가지려면 활성화되어 있어야 합니다. 창이 활성화되어 있지 않으면, <em>OutputVar</em>는 비워집니다.</p>
-<p>v1.1.19.03이전에서, ControlGetFocus를 높은 빈도로 (즉, 500 ms 보다 빠르게) 반복적으로 실행하면, 보통 사용자의 더블-클릭을 방해했습니다. 이 문제는 이제 해결되었습니다.</p>
+<p><span class="ver">[v1.1.19.03]</span>이전에서, ControlGetFocus를 높은 빈도로 (즉, 500 ms 보다 빠르게) 반복적으로 실행하면, 보통 사용자의 더블-클릭을 방해했습니다. 이 문제는 이제 해결되었습니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlSend.htm">ControlSend</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">ControlGetFocus, OutputVar, Untitled - Notepad
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Reports the ClassNN of the control which has the input focus in Notepad.</p>
+<pre>ControlGetFocus, OutputVar, Untitled - Notepad
 if ErrorLevel
     MsgBox, The target window doesn't exist or none of its controls has input focus.
 else
     MsgBox, Control with focus = %OutputVar%</pre>
+</div>
 
 </body>
 </html>

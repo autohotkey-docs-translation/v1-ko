@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Edit</title>
+<title>Edit - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Edit command opens the current script for editing in the associated editor." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,30 +14,30 @@
 
 <p>현재 스크립트를 연관된 편집기에 열어 편집합니다.</p>
 
-<pre class="Syntax">Edit</pre>
+<pre class="Syntax"><span class="func">Edit</span></pre>
 <p>Edit 명령어는 현재 스크립트를 열어 편집합니다. 레지스트리의 "edit" 명령어를 사용합니다. (아무것도 지정되어 있지 않으면 Notepad를 사용함). 그렇지만, 편집기 창에 이미 해당 스크립트가 열려 있는 것 같으면 (그의 창 제목을 보고 유추함), 새 편집기 실체를 여는 대신에 그 창이 활성화됩니다.</p>
 <p>이 명령어는 컴파일된 스크립트 안에서 실행하면 아무 효과가 없습니다.</p>
-<p>관련해서 한 마디 하자면, 오토핫키 문법 강조는 다양한 편집기에서 사용할 수 있습니다 - 아래를 참조하십시오. 게다가, 편집기에서 오토핫키 명령어에 대한 문맥 감지 도움말은 <a href="../scripts/ContextSensitiveHelp.htm">다음 예제를 통하여</a> 활성화할 수 있습니다. 마지막으로, 여러분의 생산성을 개선할 수 있습니다. <a href="http://www.autohotkey.com/forum/topic12985.html">ISense</a>와 같은 자동-완성 기능을 사용하면 좋습니다. 이 기능은 거의 모든 편집기에서 작동합니다. 타자하는 것을 지켜 보다가 메뉴와 메개변수 목록을 보여줍니다. 덕분에 타자 수를 절약할 수 있고 매개변수의 순서를 기억하는 데에도 도움이 됩니다.</p>
+<p>관련해서 한 마디 하자면, 오토핫키 문법 강조는 다양한 편집기에서 사용할 수 있습니다 - 아래를 참조하십시오. 게다가, 편집기에서 오토핫키 명령어에 대한 문맥 감지 도움말은 <a href="../scripts/index.htm#ContextSensitiveHelp">다음 예제를 통하여</a> 활성화할 수 있습니다. Finally, your productivity may be improved by using an auto-completion utility like <a href="https://www.autohotkey.com/boards/viewtopic.php?f=60&amp;t=31484">the script by boiler</a> or <a href="https://www.autohotkey.com/boards/viewtopic.php?f=60&amp;t=27882">the script by Helgef</a>, which works in almost any editor. 타자하는 것을 지켜 보다가 메뉴와 메개변수 목록을 보여줍니다. 덕분에 타자 수를 절약할 수 있고 매개변수의 순서를 기억하는 데에도 도움이 됩니다.</p>
 
-<h3>관련 항목</h3>
-<p><a href="Reload.htm">Reload</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Edit <em>; 편집을 위해 스크립트를 엽니다.</em></pre>
-<pre class="NoIndent"><em>; 편집기의 명령 줄 사용법이 다음과 같다면,
-; 이 스크립트를 사용하여 ahk 파일을 위한 기본 편집기로 설정할 수 있습니다:
-;
-;   Editor.exe "Full path of script.ahk"
-;
-; 스크립트를 실행하면,
-; 편집기의 실행 파일을 선택하라고 요구합니다.
-;</em>
-FileSelectFile Editor, 2,, 편집기를 선택하십시오, Programs (*.exe)
+<h2 id="Related">관련 항목</h2>
+<p><a href="Reload.htm">Reload</a>, <a href="../Program.htm#edit">How to edit a script</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> 편집을 위해 스크립트를 엽니다.</p>
+<pre>Edit</pre>
+</div>
+
+<div class="ex" id="ExDefaultEditor">
+<p><a class="ex_number" href="#ExDefaultEditor"></a> If your editor's command-line usage is something like <code class="no-highlight">Editor.exe "Full path of script.ahk"</code>, the following can be used to set it as the default editor for ahk files. 스크립트를 실행하면, 편집기의 실행 파일을 선택하라고 요구합니다.</p>
+<pre id="Example">FileSelectFile Editor, 2,, 편집기를 선택하십시오, Programs (*.exe)
 if ErrorLevel
     ExitApp
 RegWrite REG_SZ, HKCR, AutoHotkeyScript\Shell\Edit\Command,, "%Editor%" "`%1"</pre>
+</div>
 
-<h3 id="Editors">오토핫키를 지원하는 편집기</h3>
-<p>SciTE4AutoHotkey는 SciTE라고 불리우는 편집기를 AutoHotkey스크립트를 위해 특별히 재단한 버전입니다. 다음과 같은 특징이 있습니다:</p>
+<h2 id="Editors">오토핫키를 지원하는 편집기</h2>
+<p><b>SciTE4AutoHotkey</b>는 SciTE라고 불리우는 편집기를 AutoHotkey스크립트를 위해 특별히 재단한 버전입니다. 다음과 같은 특징이 있습니다:</p>
 <ul>
   <li>구문 강조</li>
   <li>똑똑한 자동-들여쓰기</li>
@@ -48,20 +48,23 @@ RegWrite REG_SZ, HKCR, AutoHotkeyScript\Shell\Edit\Command,, "%Editor%" "`%1"</p
   <li>기타 오토핫키 스크립트를 위한 도구들</li>
 </ul>
 <p>SciTE4AutoHotkey는 다음에서 얻을 수 있습니다: <a href="http://fincs.ahk4.net/scite4ahk/">http://fincs.ahk4.net/scite4ahk/</a></p>
+<p><b>AHK Studio</b> is a script editor built using AutoHotkey, for editing AutoHotkey scripts. See the following forum thread for details, demonstration videos and an ever-growing list of features: <a href="https://www.autohotkey.com/boards/viewtopic.php?t=300">AHK Studio</a></p>
+<p><b>AutoGUI</b> is an integrated development environment for AutoHotkey which combines a GUI designer with a script editor. 이다음에서 얻을 수 있습니다: <a href="https://www.autohotkey.com/boards/viewtopic.php?f=6&amp;t=10157">AutoGUI - GUI Designer and Script Editor</a></p>
 <p>오토핫키 구문 강조를 사용할 수 있는 <b>다른 편집기</b>는 아래와 같습니다:</p>
 <ul>
-  <li>AkelPad - <a href="http://www.autohotkey.com/forum/topic23586.html">http://www.autohotkey.com/forum/topic23586.html</a></li>
-  <li>Crimson Editor - <a href="http://www.autohotkey.com/forum/topic5506.html">http://www.autohotkey.com/forum/topic5506.html</a></li>
-  <li>Eclipse, FAR1 관리자, 그리고 기타 Colorer take5를 사용하는 편집기들 - <a href="http://www.autohotkey.com/forum/topic10378.html">http://www.autohotkey.com/forum/topic10378.html</a></li>
-  <li>Emacs - <a href="https://github.com/tinku99/ahk-org-mode">https://github.com/tinku99/ahk-org-mode</a></li>
-  <li>Notepad++ - <a href="http://www.autohotkey.com/forum/topic58792.html">http://www.autohotkey.com/forum/topic58792.html</a></li>
-  <li>Notepad2 - <a href="http://www.autohotkey.com/forum/viewtopic.php?t=37652">http://www.autohotkey.com/forum/viewtopic.php?t=37652</a></li>
-  <li>PSPad - <a href="http://www.autohotkey.com/forum/topic9294.html">http://www.autohotkey.com/forum/topic9294.html</a></li>
-  <li>SciTE 그리고 신틸라 기반의 편집기들 - <a href="http://www.autohotkey.com/forum/topic9656.html">http://www.autohotkey.com/forum/topic9656.html</a></li>
-  <li>Sublime Text Editor - <a href="http://www.autohotkey.com/forum/viewtopic.php?p=368326#368326">http://www.autohotkey.com/forum/viewtopic.php?p=368326#368326</a></li>
-  <li>Total Commander with Synplus plugin - <a href="http://www.autohotkey.com/forum/topic7278.html">http://www.autohotkey.com/forum/topic7278.html</a></li>
+  <li><a href="https://www.autohotkey.com/forum/topic23586.html">AkelPad</a></li>
+  <li><a href="https://www.autohotkey.com/forum/topic5506.html">Crimson Editor</a></li>
+  <li><a href="https://www.autohotkey.com/forum/topic10378.html">Eclipse, FAR1 관리자, 그리고 기타 Colorer take5를 사용하는 편집기들</a></li>
+  <li><a href="https://github.com/tinku99/ahk-org-mode">Emacs</a></li>
+  <li><a href="https://www.autohotkey.com/forum/topic58792.html">Notepad++</a></li>
+  <li><a href="https://www.autohotkey.com/forum/viewtopic.php?t=37652">Notepad2</a></li>
+  <li><a href="https://www.autohotkey.com/forum/topic9294.html">PSPad</a></li>
+  <li><a href="https://www.autohotkey.com/forum/topic9656.html">SciTE 그리고 신틸라 기반의 편집기들</a></li>
+  <li><a href="https://www.autohotkey.com/forum/viewtopic.php?p=368326#368326">Sublime Text Editor</a></li>
+  <li><a href="https://www.autohotkey.com/forum/topic7278.html">Total Commander with Synplus plugin</a></li>
+  <li><a href="https://github.com/cweijan/vscode-autohotkey">Visual Studio Code with AutoHotkey Extension by cweijan</a></li>
 </ul>
-<p>추가로, AutoHotkey Basic (<a href="http://www.autohotkey.com/download/">http://www.autohotkey.com/download/</a>)의 압축 파일을 내려 받아 보면 다음과 같은 편집기에서 구문 강조를 활성화시켜 주는 파일들이 들어 있습니다. 그렇지만, 이 파일들은 심하게 기한이 오래 되었고 잘 작동하지 않을 수도 있습니다:</p>
+<p>추가로, AutoHotkey Basic (<a href="https://www.autohotkey.com/download/1.0/">https://www.autohotkey.com/download/1.0/</a>)의 압축 파일을 내려 받아 보면 다음과 같은 편집기에서 구문 강조를 활성화시켜 주는 파일들이 들어 있습니다. 그렇지만, 이 파일들은 심하게 기한이 오래 되었고 잘 작동하지 않을 수도 있습니다:</p>
 <ul>
   <li>ConTEXT</li>
   <li>EditPlus</li>
@@ -72,8 +75,8 @@ RegWrite REG_SZ, HKCR, AutoHotkeyScript\Shell\Edit\Command,, "%Editor%" "`%1"</p
   <li>UltraEdit</li>
   <li>Vim</li>
 </ul>
-<p>여러분의 편집기가 목록에 없다면, <a href="http://ahkscript.org/boards/">포럼</a>을 검색해서 여러분의 운을 시험해 보십시오.</p>
-<p>이 페이지에 추가된 편집기를 얻으려면, <a href="http://ahkscript.org/boards/ucp.php?i=pm&amp;mode=compose&amp;u=77">포럼을 통한</a> Lexikos 또는 <a href="https://github.com/Lexikos/AutoHotkey_L-Docs/">GitHub</a>를 방문해 보십시오.</p>
+<p>여러분의 편집기가 목록에 없다면, <a href="https://www.autohotkey.com/boards/">포럼</a>을 검색해서 여러분의 운을 시험해 보십시오.</p>
+<p>이 페이지에 추가된 편집기를 얻으려면, <a href="https://www.autohotkey.com/boards/ucp.php?i=pm&amp;mode=compose&amp;u=77">포럼을 통한</a> Lexikos 또는 <a href="https://github.com/Lexikos/AutoHotkey_L-Docs/">GitHub</a>를 방문해 보십시오.</p>
 
 </body>
 </html>

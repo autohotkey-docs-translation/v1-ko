@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SetMouseDelay</title>
+<title>SetMouseDelay - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SetMouseDelay command sets the delay that will occur after each mouse movement or click." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,29 +14,31 @@
 
 <p>마우스 이동이나 클릭 후에 지연될 시간을 설정합니다.</p>
 
-<pre class="Syntax">SetMouseDelay, Delay [, Play]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">SetMouseDelay</span>, Delay <span class="optional">, Play</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Delay</dt>
   <dd><p>밀리초 단위 시간, <a href="../Variables.htm#Expressions">표현식</a> 가능. -1이면 지연 시간이 전혀 없고 0이면 가능하면 적게 지연됩니다 (그렇지만, <em>Play</em> 매개변수가 존재하면, 0과 -1 모두 지연 시간이 없습니다). 설정하지 않으면, 기본 지연 시간은 전통적인 SendEvent 모드에 대하여 10이고 <a href="Send.htm#SendPlayDetail">SendPlay 모드</a>에 대하여 -1입니다.</p></dd>
 
-  <dt>Play<br>
-    <span class="ver">[v1.0.43+]</span></dt>
+  <dt>Play <span class="ver">[v1.0.43+]</span></dt>
   <dd><p>단어 <em>Play</em>는 지연 시간을 전통적인 Send/SendEvent 모드가 아니라 <a href="Send.htm#SendPlayDetail">SendPlay 모드</a>에 적용합니다. 스크립트가 이 매개변수를 사용하지 않으면, 지연 시간은 언제나 SendPlay에 대하여 -1입니다.</p></dd>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p><a href="Click.htm">Click</a> 그리고 <a href="MouseMove.htm">MouseMove</a>/<a href="MouseClick.htm">Click</a>/<a href="MouseClickDrag.htm">Drag</a> (<a href="SendMode.htm">SendInput 모드 제외</a>)에 의하여 발생하는 매 마우스 이동이나 클릭마다 짧은 지연 시간 (잠자기)이 자동으로 삽입됩니다. 이것은 스크립트의 신뢰성을 높이기 위한 것입니다. 창은 종종 빠른 속도의 마우스 이벤트 범람을 따라 잡을 수 없기 때문입니다.</p>
 <p>OS의 시간-유지 시스템의 정밀성 때문에, 지연 시간은 가장 까까운 10 또는 15의 배수로 올림됩니다. 예를 들어, 1과 10 (포함) 사이의 지연 시간은 대부분의Windows XP 시스템에서 10 또는 15와 동등합니다 (아마도 2k도 마찬가지일 것임).</p>
 <p>지연 시간이 0이면 내부적으로 Sleep(0)을 실행합니다. 이는 그를 필요로 하는 다른 프로세스에 스크립트의 시간조각(timeslice)의 나머지를 나누어 줍니다. 남는 게 없으면, Sleep(0)은 전혀 잠자지 않습니다. 대조적으로, 지연 시간이 -1이면 절대 잠자지 않습니다.</p>
-<p>내장 변수 <strong>A_MouseDelay</strong>에 Send/SendEvent 모드에 대한 현재 설정이 담겨 있습니다 (<a href="Send.htm#SendPlayDetail">SendPlay 모드</a>에 대해서는 내장 변수가 없습니다).</p>
+<p>내장 변수 <strong>A_MouseDelay</strong>에 Send/SendEvent 모드에 대한 현재 설정이 담겨 있습니다. <span class="ver">[v1.1.23+]:</span> <strong>A_MouseDelayPlay</strong> contains the current setting for <a href="Send.htm#SendPlayDetail">SendPlay mode</a>.</p>
 <p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="Click.htm">Click</a>, <a href="MouseMove.htm">MouseMove</a>, <a href="MouseClick.htm">MouseClick</a>, <a href="MouseClickDrag.htm">MouseClickDrag</a>, <a href="SendMode.htm">SendMode</a>, <a href="SetKeyDelay.htm">SetKeyDelay</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="SetWinDelay.htm">SetWinDelay</a>, <a href="SetBatchLines.htm">SetBatchLines</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">SetMouseDelay, 0</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Causes the smallest possible delay to occur after each mouse movement or click.</p>
+<pre>SetMouseDelay, 0</pre>
+</div>
 
 </body>
 </html>

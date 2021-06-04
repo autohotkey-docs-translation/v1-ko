@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Loop (파일 내용 읽기)</title>
+<title>Loop (read file contents) - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Loop Read statement retrieves the lines in a text file, one at a time." />
+<meta name="ahk:equiv-v2" content="commands/LoopRead.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +15,8 @@
 
 <p>텍스트 파일에서 줄을 한 번에 한 줄씩 열람합니다 (<a href="FileReadLine.htm">FileReadLine</a>보다 수행성능이 더 좋습니다).</p>
 
-<pre class="Syntax">Loop, Read, InputFile [, OutputFile]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">Loop, Read</span>, InputFile <span class="optional">, OutputFile</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Read</dt>
@@ -28,17 +29,17 @@
   <dd><p>(선택적) 회돌이를 하는 동안 열어 둘 파일의 이름. 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다.</p>
       <p>회돌이 몸체 안에서 매개 변수 하나만 (씌여질 텍스트만) 가지고 <a href="FileAppend.htm">FileAppend</a> 명령어를 사용하면 이 특별한 파일에 추가할 수 있습니다. 이런 방식으로 파일에 추가하면 <a href="FileAppend.htm">FileAppend</a>를 매개변수 2 개와 함께 사용하는 것보다 더 수행성능이 좋습니다. 왜냐하면 파일을 각 연산마다 닫고 다시 열 필요가 없기 때문입니다. 잊지 말고 텍스트 끝에 라인피드를 (`n) 추가하십시오.</p>
       <p>아무것도 씌여지지 않으면 파일은 열리지 않습니다. 이런 일은 Loop가 전혀 반복을 수행하지 않거나 <a href="FileAppend.htm">FileAppend</a> 명령어를 전혀 사용하지 않을 때 일어납니다.</p>
-      <p><strong>이진 모드</strong>: 텍스트 모드가 아니라 이진 모드로 추가하려면, 별표를 파일이름 앞에 추가하십시오. 이렇게 하면 각 라인피드 문자 (`n)가 윈도우즈의 표준 CR+LF 대신에 한개짜리 라인피드 (LF)가 씌여집니다. 예를 들어: <code><strong>*</strong>C:\My Unix File.txt</code>. 별표가 없더라도, <a href="FileAppend.htm">FileAppend</a>를 <u>처음</u> 사용할 때 Loop에서 캐리지 리턴과 라인피드를 쓰면 (`r`n) 이진 모드가 자동으로 켜집니다(?).</p>      
-      <p><strong>표준 출력 (stdout)</strong>: 별표를 (*) <em>OutputFile</em>에 지정하면 <a href="FileAppend.htm">FileAppend</a>가 쓰는 모든 텍스트는 표준 출력으로 전송됩니다 (stdout). 그런 출력을 파일에 방향전환하거나, 또다른 EXE로 파이프 처리하거나, 또는 <a href="_ErrorStdOut.htm">멋진 텍스트 편집기</a>로 나포할 수는 있지만, 기동된 명령어 프롬프트에 스크립트가 나타나지 않습니다. 더 자세한 것은 <a href="FileAppend.htm">FileAppend</a>를 참조하십시오.</p>
+          <p><strong>End of line (EOL) translation</strong>: To disable EOL translation, prepend an asterisk to the filename. 이렇게 하면 각 라인피드 문자 (`n)가 윈도우즈의 표준 CR+LF 대신에 한개짜리 라인피드 (LF)가 씌여집니다. 예를 들어: <code><strong>*</strong>C:\My Unix File.txt</code>. Even without the asterisk, EOL translation is disabled automatically if the Loop's <u>first</u> use of <a href="FileAppend.htm">FileAppend</a> writes any carriage return and linefeed pairs (`r`n).</p>
+      <p><strong>표준 출력 (stdout)</strong>: 별표를 (*) <em>OutputFile</em>에 지정하면 <a href="FileAppend.htm">FileAppend</a>가 쓰는 모든 텍스트는 표준 출력으로 전송됩니다 (stdout). 그런 텍스트는 파일에 방향전환할 수 있고, 또다른 EXE로 파이프 처리해 보낼 수 있으며, 또는 <a href="_ErrorStdOut.htm">환상적인 편집기</a>로 나포할 수 있습니다. 그렇지만, 표준출력으로 전송된 텍스트는 처음 기동된 프롬프트에 나타나지 않습니다. This can be worked around by 1) <span class="ver">[v1.1.33+]</span> compiling the script with the <a href="../misc/Ahk2ExeDirectives.htm#ConsoleApp">Ahk2Exe ConsoleApp directive</a>, or 2) piping a script's output to another command or program. 더 자세한 것은 <a href="FileAppend.htm">FileAppend</a>를 참조하십시오.</p>
       <p><strong>피신된 쉼표</strong>: 대부분의 다른 명령어의 마지막 매개변수와 다르게, <em>OutputFile</em>에서 쉼표는 반드시 피신시켜야 합니다 (`,).</p></dd>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>파일-읽기 회돌이는 텍스트 파일에 든 각 줄을 한 번에 하나씩 처리할 때 유용합니다. <a href="FileReadLine.htm">FileReadLine</a>을 사용하는 것보다 더 수행성능이 좋습니다. 왜냐햐면: 1) 연산 기간동안 파일이 열린 상태로 있을 수 있습니다; 그리고 2) 그 파일은 요청된 줄 번호츨 찾기 위해 매번 다시 스캔할 필요가 없습니다.</p>
-<p><a name="LoopReadLine"></a>내장 변수 <strong>A_LoopReadLine</strong>은 모든 파일-읽기 회돌이 안에 존재합니다. 안에 현재 줄의 내용이 담겨 있습니다. 줄 끝을 표식하는 캐리지 리턴과 라인피드는 제외되어 있습니다 (`r`n). 내부 파일-읽기 회돌이가 바깥 파일-읽기 회돌이로 둘러 싸여 있다면, 가장 안쪽 회돌이의 파일-줄이 우선 순위를 갖습니다.</p>
+<p id="LoopReadLine">내장 변수 <strong>A_LoopReadLine</strong>은 모든 파일-읽기 회돌이 안에 존재합니다. 안에 현재 줄의 내용이 담겨 있습니다. 줄 끝을 표식하는 캐리지 리턴과 라인피드는 제외되어 있습니다 (`r`n). 내부 파일-읽기 회돌이가 바깥 파일-읽기 회돌이로 둘러 싸여 있다면, 가장 안쪽 회돌이의 파일-줄이 우선 순위를 갖습니다.</p>
 <p>65,534 문자 길이 까지 줄을 읽을 수 있습니다. 줄 길이가 이 제한을 초과하면, 나머지 문자들을 다음 회돌이 때 읽힙니다.</p>
-<p><em>InputFile</em>으로부터 열람된 각 줄의 내용을 분해하기 위해 <a href="StringSplit.htm">StringSplit</a> 또는 <a href="LoopParse.htm">파싱 회돌이</a>가 종종 사용됩니다. 예를 들어, <em>InputFile</em>의 각 줄이 탭으로-구분된 일련의 필드로 구성되어 있다면, 그 필드들은 다음 예제와 같이 개별적으로 열람할 수 있습니다:</p>
+<p><a href="StrSplit.htm">StrSplit()</a>, <a href="StringSplit.htm">StringSplit</a> or a <a href="LoopParse.htm">parsing loop</a> is often used inside a file-reading loop to parse the contents of each line retrieved from <em>InputFile</em>. 예를 들어, <em>InputFile</em>의 각 줄이 탭으로-구분된 일련의 필드로 구성되어 있다면, 그 필드들은 다음 예제와 같이 개별적으로 열람할 수 있습니다:</p>
 <pre>Loop, read, C:\Database Export.txt
 {
     Loop, parse, A_LoopReadLine, %A_Tab%
@@ -47,47 +48,51 @@
     }
 }</pre>
 <p>전체 파일을 변수 안으로 적재하려면, <a href="FileRead.htm">FileRead</a>를 사용하십시오. 왜냐하면 회돌이보다 수행성능이 (특히 방대한 파일에 대하여) 훨씬 더 좋기 때문입니다.</p>
-<p>여러 파일을 동시에 열려면, <a href="DllCall.htm#file">다음 예제</a>에 보여주는 바와 같이 DllCall()를 사용하십시오.</p>
+<p>To have multiple files open simultaneously, use <a href="FileOpen.htm">FileOpen()</a>.</p>
 <p><a href="Block.htm">Blocks</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, 그리고 A_Index 변수 (모든 유형의 회돌이에 존재함)에 관한 정보는 <a href="Loop.htm">Loop</a>를 참조하십시오.</p>
 <p>바이트 순서 표식이 없을 때 파일을 어떻게 디코드할지 제어하려면 <a href="FileEncoding.htm">FileEncoding</a>을 사용하십시오.</p>
 
-<h3>관련 항목</h3>
-<p><a href="FileEncoding.htm">FileEncoding</a>, <a href="FileOpen.htm">FileOpen</a>/<a href="../objects/File.htm">File Object</a>, <a href="FileRead.htm">FileRead</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="FileAppend.htm">FileAppend</a>, <a href="Sort.htm">Sort</a>, <a href="Loop.htm">Loop</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">Blocks</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileSetTime.htm">FileSetTime</a></p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="FileEncoding.htm">FileEncoding</a>, <a href="FileOpen.htm">FileOpen()</a> / <a href="../objects/File.htm">File Object</a>, <a href="FileRead.htm">FileRead</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="FileAppend.htm">FileAppend</a>, <a href="Sort.htm">Sort</a>, <a href="Loop.htm">Loop</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">Blocks</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileSetTime.htm">FileSetTime</a></p>
 
-<h3>예제</h3>
-<pre class="NoIndent"><em>; 예제 #1: 1st 파일에서 단어 FAMILY가 든 줄들만 2nd 파일에 씌여집니다.
-; 기존의 파일에 추가하는게 아니라 덮어쓰려면 첫 줄을 주석 해제하십시오.
-;FileDelete, C:\Docs\Family Addresses.txt</em>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExFileAppend">
+<p><a class="ex_number" href="#ExFileAppend"></a> 1st 파일에서 단어 FAMILY가 든 줄들만 2nd 파일에 씌여집니다. 기존의 파일에 추가하는게 아니라 덮어쓰려면 첫 줄을 주석 해제하십시오.</p>
+<pre><em>;FileDelete, C:\Docs\Family Addresses.txt</em>
 
 Loop, read, C:\Docs\Address List.txt, C:\Docs\Family Addresses.txt
 {
-    IfInString, A_LoopReadLine, family, FileAppend, %A_LoopReadLine%`n
+    if InStr(A_LoopReadLine, "family")
+        FileAppend, %A_LoopReadLine%`n
 }</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #2: 텍스트 파일로부터 마지막 줄을 열람합니다.</em>
-Loop, read, C:\Log File.txt
+</div>
+
+<div class="ex" id="ExLastLine">
+<p><a class="ex_number" href="#ExLastLine"></a> 텍스트 파일로부터 마지막 줄을 열람합니다.</p>
+<pre>Loop, read, C:\Log File.txt
     last_line := A_LoopReadLine  <em>; 회돌이가 끝날 때, 여기에 그 마지막 줄을 보유합니다.</em></pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #3: 다음 스크립트는 HTML이나 텍스트 파일로부터
-; FTP와 HTTP의 URL을 모두 추출하려고 시도합니다:</em>
-FileSelectFile, SourceFile, 3,, Pick a text or HTML file to analyze.
-if SourceFile =
+</div>
+
+<div class="ex" id="ExURL">
+<p><a class="ex_number" href="#ExURL"></a> HTML이나 텍스트 파일로부터 FTP와 HTTP의 URL을 모두 추출하려고 시도합니다.</p>
+<pre>FileSelectFile, SourceFile, 3,, Pick a text or HTML file to analyze.
+if (SourceFile = "")
     return  <em>; 이 경우 종료합니다.</em>
 
 SplitPath, SourceFile,, SourceFilePath,, SourceFileNoExt
-DestFile = %SourceFilePath%\%SourceFileNoExt% Extracted Links.txt
+DestFile := SourceFilePath "\" SourceFileNoExt " Extracted Links.txt"
 
-IfExist, %DestFile%
+if FileExist(DestFile)
 {
     MsgBox, 4,, Overwrite the existing links file? Press No to append to it.`n`nFILE: %DestFile%
     IfMsgBox, Yes
         FileDelete, %DestFile%
 }
 
-LinkCount = 0
+LinkCount := 0
 Loop, read, %SourceFile%, %DestFile%
 {
-    URLSearchString = %A_LoopReadLine%
+    URLSearchString := A_LoopReadLine
     Gosub, URLSearch
 }
 MsgBox %LinkCount% links were found and written to "%DestFile%".
@@ -96,39 +101,40 @@ return
 
 URLSearch:
 <em>; 다음과 같이 특별한 방식으로 처리됩니다. 왜냐하면 어떤 URL은 다른 URL을 자신 안에 내장하기 때문입니다:</em>
-StringGetPos, URLStart1, URLSearchString, http://
-StringGetPos, URLStart2, URLSearchString, ftp://
-StringGetPos, URLStart3, URLSearchString, www.
+URLStart1 := InStr(URLSearchString, "https://")
+URLStart2 := InStr(URLSearchString, "http://")
+URLStart3 := InStr(URLSearchString, "ftp://")
+URLStart4 := InStr(URLSearchString, "www.")
 
 <em>; 가장 왼쪽의 시작 지점을 찾습니다:</em>
-URLStart = %URLStart1%  <em>; 기본 시작 지점을 설정합니다.</em>
+URLStart := URLStart1  <em>; 기본 시작 지점을 설정합니다.</em>
 Loop
 {
     <em>; "URLStart%A_Index%"를 한 번만 결정하면</em>
     <em>; (적어도 많은 변수가 있는 스크립트에서) 수행성능이 향상됩니다</em>
     ArrayElement := URLStart%A_Index%
-    if ArrayElement =  <em>; <a href="../misc/Arrays.htm#pseudo">의사-배열</a>의 끝에 도달했습니다.</em>
+    if (ArrayElement = "")  <em>; <a href="../misc/Arrays.htm#pseudo">의사-배열</a>의 끝에 도달했습니다.</em>
         break
-    if ArrayElement = -1  <em>; 이 요소는 자격이 없습니다.</em>
+    if (ArrayElement = 0)  <em>; 이 요소는 자격이 없습니다.</em>
         continue
-    if URLStart = -1
-        URLStart = %ArrayElement%
+    if (URLStart = 0)
+        URLStart := ArrayElement
     else <em>; URLStart는 안에 유효한 위치를 가지고 있습니다.. 그래서 그것을 ArrayElement와 비교합니다.</em>
     {
-        if ArrayElement &lt;&gt; -1
-            if ArrayElement &lt; %URLStart%
-                URLStart = %ArrayElement%
+        if (ArrayElement != 0)
+            if (ArrayElement &lt; URLStart)
+                URLStart := ArrayElement
     }
 }
 
-if URLStart = -1  <em>; URL이 URLSearchString에 존재하지 않습니다.</em>
+if (URLStart = 0)  <em>; URL이 URLSearchString에 존재하지 않습니다.</em>
     return
 
 <em>; 그렇지 않으면, 이 URL을 추출합니다:</em>
-StringTrimLeft, URL, URLSearchString, %URLStart%  <em>; 시작/부적절 부분을 제거합니다.</em>
+URL := SubStr(URLSearchString, URLStart)  <em>; 시작/부적절 부분을 제거합니다.</em>
 Loop, parse, URL, %A_Tab%%A_Space%&lt;&gt;  <em>; (있다면) 첫 번째 스페이스, 탭, 또는 앵글 문자를 찾습니다.</em>
 {
-    URL = %A_LoopField%
+    URL := A_LoopField
     break  <em>; 즉, 첫 번째 "필드"를 가져 오기 위해 오직 한 번만 회돌이를 수행합니다.</em>
 }
 <em>; 종료 문자가 발견되지 않아서 위의 회돌이에 반복이 없다면,
@@ -142,11 +148,12 @@ FileAppend, %URLCleansed%`n
 LinkCount += 1
 
 <em>; 이 줄에 다른 URL들이 있는 알아 봅니다:</em>
-StringLen, CharactersToOmit, URL
-CharactersToOmit += %URLStart%
-StringTrimLeft, URLSearchString, URLSearchString, %CharactersToOmit%
+CharactersToOmit := StrLen(URL)
+CharactersToOmit += URLStart
+URLSearchString := SubStr(URLSearchString, CharactersToOmit)
 Gosub, URLSearch  <em>; 자신에게 재귀 호출을 합니다.</em>
 return</pre>
+</div>
 
 </body>
 </html>

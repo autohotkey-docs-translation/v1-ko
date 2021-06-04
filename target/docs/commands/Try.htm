@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Try</title>
+<title>Try - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Try statement guards one or more code lines against runtime errors and exceptions thrown by the Throw statement." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,12 +14,14 @@
 
 <p>하나 이상의 서술문 (명령어나 표현식)을 <a href="Throw.htm">throw</a> 명령어가 던지는 실행시간 에러와 예외로부터 보호합니다.</p>
 
-<pre class="Syntax">Try <i>Statement</i></pre>
-<pre class="Syntax" style="line-height: 100%">Try
+<pre class="Syntax"><span class="func">Try</span> <i>Statement</i></pre>
+<pre class="Syntax" style="line-height: 100%">
+<span class="func">Try</span>
 {
     <i>Statements</i>
-}</pre>
-<h3>논평</h3>
+}
+</pre>
+<h2 id="Remarks">논평</h2>
 <p><em>try</em> 명령어는 보통 다음에 <a href="Block.htm">블록</a>이 따라옵니다 - 활괄호로 둘러 싸인 하나 이상의 서술문 (명령어나 표현식). 하나의 서술문만 실행한다면, <em>try</em>와 같은 줄 또는 다음 줄에 배치할 수 있고, 활괄호를 생략할 수 있습니다. <em>try</em>가 에러를 잡을 때 정확하게 한 번만 실행되는 코드를 지정하려면, <a href="Catch.htm">catch</a> 명령어를 사용하십시오.</p>
 <p>실행시간 에러가 일어나면 <a href="Throw.htm">throw</a> 명령어 또는 프로그램이 예외를 던질 수 있습니다. try 블록 안에서 또는 블록에서 호출한 함수 안에서 예외가 던져질 때, 다음과 같은 일이 일어납니다:</p>
 <ul>
@@ -29,17 +31,19 @@
 </ul>
 <p>try 블록이 실행 중이지 않은 동안에 예외가 던져지면, 에러 메시지를 보여주고 현재 쓰레드를 종료합니다.</p>
 <p><a href="Block.htm#otb">One True Brace (OTB) 스타일</a>을 선택적으로 <em>try</em> 명령어에 사용할 수 있습니다. 예를 들어:</p>
-<pre>try <strong>{</strong>
+<pre>try {
     ...
-<strong>}</strong> catch e <strong>{</strong>
+} catch e {
     ...
-<strong>}</strong></pre>
-<h3>관련 항목</h3>
-<p><a href="Catch.htm">Catch</a>, <a href="Throw.htm">Throw</a>, <a href="Finally.htm">Finally</a>, <a href="Block.htm">블록</a></p>
-<h3 id="Examples">예제</h3>
-<pre class="NoIndent" id="ex_basic"><em>; 예제 #1: try/catch/throw의 기본 개념.</em>
+}</pre>
 
-try  <em>; 코드를 실행해 봅니다.</em>
+<h2 id="Related">관련 항목</h2>
+<p><a href="Catch.htm">Catch</a>, <a href="Throw.htm">Throw</a>, <a href="Finally.htm">Finally</a>, <a href="Block.htm">블록</a>, <a href="OnError.htm">OnError()</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ex_basic">
+<p><a class="ex_number" href="#ex_basic"></a> Demonstrates the basic concept of try/catch/throw.</p>
+<pre>try  <em>; 코드를 실행해 봅니다.</em>
 {
     HelloWorld()
     MakeToast()
@@ -61,10 +65,11 @@ MakeToast()  <em>; 언제나 실패합니다.</em>
     <a href="Throw.htm">throw</a> A_ThisFunc " is not implemented, sorry"
 }
 </pre>
+</div>
 
-<pre class="NoIndent" id="ex_el"><em>; 예제 #2: ErrorLevel 대신에 try/catch 사용하기.</em>
-
-try
+<div class="ex" id="ex_el">
+<p><a class="ex_number" href="#ex_el"></a> Demonstrates the use of try/catch instead of ErrorLevel.</p>
+<pre>try
 {
     <em>; 다음 예제는 어떤 유형의 파일을 백업합니다:</em>
     FileCopy, %A_MyDocuments%\*.txt, D:\Backup\Text documents
@@ -77,12 +82,13 @@ catch
     ExitApp
 }
 </pre>
+</div>
 
-<pre class="NoIndent" id="ex_com"><em>; 예제 #3: COM 에러 다루기.</em>
-
-try
+<div class="ex" id="ex_com">
+<p><a class="ex_number" href="#ex_com"></a> Demonstrates the use of try/catch dealing with COM errors. For details about the COM object used below, see <a href="http://msdn.microsoft.com/ko-kr/library/aa227633(v=vs.60).aspx">Using the ScriptControl (Microsoft Docs)</a>.</p>
+<pre>try
 {
-    obj := <a href="ComObjCreate.htm">ComObjCreate</a>("<a href="http://msdn.microsoft.com/en-us/library/aa227633(v=vs.60).aspx">ScriptControl</a>")
+    obj := <a href="ComObjCreate.htm">ComObjCreate</a>("ScriptControl")
     obj.ExecuteStatement("MsgBox ""This is embedded VBScript""")
     obj.InvalidMethod() <em>; 이 줄은 실행 시간 에러를 일으킵니다.</em>
 }
@@ -93,10 +99,11 @@ catch e
         . "`nline: " e.line "`nmessage: " e.message "`nextra: " e.extra
 }
 </pre>
+</div>
 
-<pre class="NoIndent" id="ex_nesting"><em>; 예제 #4: try-catch 서술문들을 내포하기.</em>
-
-try Example1() <em>; 한 줄 서술문은 Try 명령어와 같은 줄에 있을 수 있습니다.</em>
+<div class="ex" id="ex_nesting">
+<p><a class="ex_number" href="#ex_nesting"></a> Demonstrates nesting try-catch statements.</p>
+<pre>try Example1() <em>; 한 줄 서술문은 Try 명령어와 같은 줄에 있을 수 있습니다.</em>
 catch e
     MsgBox, Example1() threw %e%.
 
@@ -105,7 +112,7 @@ Example1()
     try Example2()
     catch e
     {
-        if e = 1
+        if (e = 1)
             throw e <em>; 예외를 다시 던져서 호출자가 받을 수 있도록 합니다.</em>
         else
             MsgBox, Example2() threw %e%.
@@ -117,6 +124,7 @@ Example2()
     Random, o, 1, 2
     throw o
 }</pre>
+</div>
 
 </body>
 </html>

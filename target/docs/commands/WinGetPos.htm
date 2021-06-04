@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinGetPos</title>
+<title>WinGetPos - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinGetPos command retrieves the position and size of the specified window." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,14 +14,14 @@
 
 <p>지정된 창의 크기와 위치를 열람합니다.</p>
 
-<pre class="Syntax">WinGetPos [, X, Y, Width, Height, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">WinGetPos</span> <span class="optional">, X, Y, Width, Height, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>X, Y</dt>
   <dd><p>목표 창의 좌상 모서리 X 좌표와 Y 좌표를 저장할 이름. 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
 
-  <dt>Width/Height</dt>
+  <dt>Width, Height</dt>
   <dd><p>목표 창의 높이와 너비를 저장할 변수의 이름. 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
 
   <dt>WinTitle</dt>
@@ -38,26 +38,35 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>부합하는 창이 없으면, 출력 변수는 비워집니다.</p>
 <p><em>WinTitle</em> "프로그램 관리자r"가 사용되면, 이 명령어는 바탕화면의 크기를 열람합니다. 이는 보통 현재 화면 해상도와 같습니다.</p>
 <p>최소화된 창은 여전히 크기와 위치가 있습니다. 이 경우 반환된 값은 OS와 환경 구성에 따라 달라질 수 있습니다.</p>
 <p>마우스가 현재 선회 중인 창의 이름과 콘트롤을 발견하려면, <a href="MouseGetPos.htm">MouseGetPos</a>를 사용하십시오.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="WinMove.htm">WinMove</a>, <a href="ControlGetPos.htm">ControlGetPos</a>, <a href="WinGetActiveStats.htm">WinGetActiveStats</a>, <a href="WinGetActiveTitle.htm">WinGetActiveTitle</a>, <a href="WinGetTitle.htm">WinGetTitle</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="ControlGetText.htm">ControlGetText</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">WinGetPos, X, Y, Width, Height, Calculator
-MsgBox, Calculator is at %X%`,%Y%
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves and reports the position and size of the calculator.</p>
+<pre>WinGetPos, X, Y, W, H, Calculator
+MsgBox, Calculator is at %X%`,%Y% and its size is %W%x%H%</pre>
+</div>
 
-WinGetPos, X, Y, , , A  <em>; "A"는 활성 창의 위치를 얻습니다.</em>
-MsgBox, 활성 창의 위치: %X%`,%Y%
+<div class="ex" id="ExA">
+<p><a class="ex_number" href="#ExA"></a> Retrieves and reports the position of the active window.</p>
+<pre>WinGetPos, X, Y,,, A
+MsgBox, 활성 창의 위치: %X%`,%Y%</pre>
+</div>
 
-IfWinExist, Untitled - Notepad
+<div class="ex" id="ExLastFound">
+<p><a class="ex_number" href="#ExLastFound"></a> If Notepad does exist, retrieve and report its position.</p>
+<pre>if WinExist("Untitled - Notepad")
 {
-    WinGetPos, Xpos, Ypos  <em>; 위에서 발견한 창을 사용합니다.</em>
+    WinGetPos, Xpos, Ypos <em>; Use the window found by WinExist.</em>
     MsgBox, Notepad is at %Xpos%`,%Ypos%
 }</pre>
+</div>
 
 </body>
 </html>

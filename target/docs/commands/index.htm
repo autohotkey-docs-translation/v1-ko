@@ -1,58 +1,61 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>명령어와 함수 인덱스</title>
+<title>Alphabetical Command and Function Index | AutoHotkey</title>
+<meta name="description" content="A tabular list of all language elements (commands, functions, control flow statements, etc.) available in AutoHotkey, including their description." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 <style type="text/css">
-<!--
 .larger {font-size:130%;font-weight:normal}
--->
 </style>
 </head>
 <body>
 
 <h1>명령어와 함수 인덱스</h1>
 <p>더 자세한 정보는 함수나 명령어 이름에 클릭하십시오. 자주 사용하는 엔트리들은 <span class="larger">큰 글꼴</span>로 표시했습니다.</p>
+<p>Go to entries starting with: <a href="#E">E</a>,  &nbsp; <a href="#I">I</a>,  &nbsp; <a href="#M">M</a>,  &nbsp; <a href="#S">S</a>,  &nbsp; <a href="#W">W</a>, &nbsp; <a href="#hash">#</a></p>
 
 <table class="info">
   <tr>
-    <th width="25%">엔트리</th>
-    <th width="75%">설명</th>
+    <th style="width:11em">Name</th>
+    <th abbr="설명">설명</th>
   </tr>
   <tr>
     <td class="larger"><a href="Block.htm">{ ... } (블록)</a></td>
-    <td>한 쌍의 활괄호는 블록을 뜻합니다. 블록은 전형적으로 <a href="../Functions.htm">함수</a>, <a href="Else.htm">Else</a>, <a href="Loop.htm">Loop</a>, <a href="While.htm">While-loop</a>, 그리고 IF-명령어와 함께 사용됩니다.</td>
+    <td>Blocks are one or more <a href="../Concepts.htm#statement">statements</a> enclosed in braces. Typically used with <a href="../Functions.htm#define">function definitions</a> and <a href="../Language.htm#control-flow">control flow statements</a>.</td>
   </tr>
   <tr>
     <td class="larger"><a href="../Objects.htm#Usage_Associative_Arrays">{ ... } / Object()</a></td>
     <td>스크립트가 가능한 연관 배열을 생성합니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="../Objects.htm#Usage">[ ... ] / Array()</a></td>
+    <td class="larger"><a href="../Objects.htm#Usage_Simple_Arrays">[ ... ] / Array()</a></td>
     <td>스크립트가 가능한 연관 배열을 정수 키로 생성합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Abs">Abs()</a></td>
+    <td><a href="Math.htm#Abs">Abs()</a></td>
     <td><em>숫자</em>의 절대값을 돌려줍니다.</td>
   </tr>
   <tr>
     <td><a href="AutoTrim.htm">AutoTrim</a></td>
-    <td><a href="SetEnv.htm"><code>Var1 = %Var2%</code></a> 서술문에서 Var2의 처음과 끝에서 탭과 스페이스를 걷어낼지 말지 결정합니다.</td>
+    <td>Determines whether <a href="SetEnv.htm">traditional assignments</a> like <code>Var1 = %Var2%</code> omit spaces and tabs from the beginning and end of Var2.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#ASin">ASin()</a></td>
+    <td><a href="Asc.htm">Asc()</a></td>
+    <td>Returns the numeric value of the first byte or UTF-16 code unit in the specified string.</td>
+  </tr>
+  <tr>
+    <td><a href="Math.htm#ASin">ASin()</a></td>
     <td>아크사인을 라디안 단위로 돌려줍니다 (<em>Number</em>는 사인 값).</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#ACos">ACos()</a></td>
+    <td><a href="Math.htm#ACos">ACos()</a></td>
     <td>아크코사인을 라디안 단위로 돌려줍니다 (<em>Number</em>는 코사인 값).</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#ATan">ATan()</a></td>
+    <td><a href="Math.htm#ATan">ATan()</a></td>
     <td>아크탄젠트를 라디안 단위로 돌려줍니다 (<em>Number</em>는 탄젠트 값).</td>
   </tr>
   <tr>
@@ -61,15 +64,19 @@
   </tr>
   <tr>
     <td class="larger"><a href="Break.htm">Break</a></td>
-    <td><a href="Loop.htm">회돌이</a>를 빠져 나옵니다. 모든 종류의 <a href="Loop.htm">회돌이</a>에 적용됩니다.</td>
+    <td>Exits (terminates) any type of <a href="../Language.htm#loop-statement">loop statement</a>.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Catch.htm">Catch</a></td>
     <td><a href="Try.htm">try</a>서술문의 실행 중에 예외가 일어나면 실행할 코드를 지정합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Ceil">Ceil()</a></td>
+    <td><a href="Math.htm#Ceil">Ceil()</a></td>
     <td><em>Number</em>는 가장 가까운 정수로 올림됩니다 (.00 버림).</td>
+  </tr>
+  <tr>
+    <td><a href="Chr.htm">Chr()</a></td>
+    <td>Returns the string (usually a single character) corresponding to the character code indicated by the specified number.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Click.htm">Click</a></td>
@@ -85,7 +92,7 @@
   </tr>
   <tr>
     <td><a href="ComObjArray.htm">ComObjArray()</a></td>
-    <td>COM에 사용하기 위해 SAFEARRAY를 생성합니다.</td>
+    <td>COM에 사용할 SafeArray를 생성합니다.</td>
   </tr>
   <tr>
     <td><a href="ComObjConnect.htm">ComObjConnect()</a></td>
@@ -94,6 +101,10 @@
   <tr>
     <td class="larger"><a href="ComObjCreate.htm">ComObjCreate()</a></td>
     <td>COM 객체를 생성합니다.</td>
+  </tr>
+  <tr>
+    <td><a href="ComObjActive.htm">ComObject()</a></td>
+    <td>매개변수나 반환 값에 건넬 유형 있는 값을 나타내는 객체를 만듭니다.</td>
   </tr>
   <tr>
     <td><a href="ComObjActive.htm">ComObjEnwrap() / ComObjUnwrap()</a></td>
@@ -118,7 +129,8 @@
   <tr>
     <td><a href="ComObjActive.htm">ComObjParameter()</a></td>
     <td>값과 유형을 싸서 매개변수로 COM 메쏘드에 건넵니다.</td>
-  </tr><tr>
+  </tr>
+  <tr>
     <td><a href="ComObjQuery.htm">ComObjQuery()</a></td>
     <td>COM 객체에 인터페이스 또는 서비스를 질의합니다.</td>
   </tr>
@@ -132,7 +144,7 @@
   </tr>
   <tr>
     <td><a href="Continue.htm">Continue</a></td>
-    <td>현재 남은 <a href="Loop.htm">회돌이</a> 반복을 건너 뛰고 새 반복을 시작합니다. 모든 종류의 <a href="Loop.htm">회돌이</a>에 적용됩니다.</td>
+    <td>Skips the rest of a <a href="../Language.htm#loop-statement">loop statement</a>'s current iteration and begins a new one.</td>
   </tr>
   <tr>
     <td><a href="Control.htm">Control</a></td>
@@ -179,7 +191,7 @@
     <td>다양한 명령어에 대하여 화면 또는 활성 창에 좌표 모드가 상대적이 되도록 설정합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Cos">Cos()</a></td>
+    <td><a href="Math.htm#Cos">Cos()</a></td>
     <td><em>숫자</em>의 삼각함수 코사인을 돌려줍니다 .</td>
   </tr>
   <tr>
@@ -188,7 +200,7 @@
   </tr>
   <tr>
     <td><a href="DetectHiddenText.htm">DetectHiddenText</a></td>
-    <td>창을 찾기 위한 목적으로 창에서 보이지 않은 텍스트를 "보여줄지 말지" 결정합니다. 이것은 IfWinExist 그리고 WinActivate와 같은 명령어들에 영향을 줍니다.</td>
+    <td>창을 찾기 위한 목적으로 창에서 보이지 않은 텍스트를 "보여줄지 말지" 결정합니다. This affects commands, built-in functions and control flow statements such as WinExist() and WinActivate.</td>
   </tr>
   <tr>
     <td><a href="DetectHiddenWindows.htm">DetectHiddenWindows</a></td>
@@ -210,13 +222,13 @@
     <td><a href="DriveSpaceFree.htm">DriveSpaceFree</a></td>
     <td>드라이브의 여유 공간을 메가바이트 단위로 열람합니다.</td>
   </tr>
-  <tr>
+  <tr id="E">
     <td><a href="Edit.htm">Edit</a></td>
     <td>현재 스크립트를 연관된 편집기에 열어 편집합니다.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Else.htm">Else</a></td>
-    <td>IF-서술문이 FALSE로 평가되면 수행할 멸령어를 지정합니다. 하나 이상의 명령어가 존재하면, <a href="Block.htm">블록</a> 안에 (활괄호) 싸 넣으십시오.</td>
+    <td>Specifies one or more <a href="../Concepts.htm#statement">statements</a> to execute if an <a href="../Language.htm#if-statement">If statement</a> evaluates to false.</td>
   </tr>
   <tr>
     <td class="larger"><a href="EnvAdd.htm">EnvAdd</a></td>
@@ -247,15 +259,19 @@
     <td>OS와 실행 중인 모든 어플에 <a href="../Variables.htm">환경 변수</a>가 변했다고 고지합니다.</td>
   </tr>
   <tr>
+    <td><a href="Throw.htm#Exception">Exception()</a></td>
+    <td>Creates an object with properties, also common to exceptions created by <a href="Catch.htm#RuntimeErrors">runtime errors</a>.</td>
+  </tr>
+  <tr>
     <td><a href="Exit.htm">Exit</a></td>
-    <td><a href="../misc/Threads.htm">현재 쓰레드</a>를 종료합니다. 또는 (스크립트가 <a href="_Persistent.htm">영속적</a>이 아니고 핫키가 포함되어 있지 않으면) 전체 스크립트를 종료합니다.</td>
+    <td>Exits the <a href="../misc/Threads.htm">current thread</a> or (if the script is not <a href="_Persistent.htm">persistent</a>) the entire script.</td>
   </tr>
   <tr>
     <td class="larger"><a href="ExitApp.htm">ExitApp</a></td>
-    <td>스크립트를 무조건 종료합니다.</td>
+    <td>Terminates the script.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Exp">Exp()</a></td>
+    <td><a href="Math.htm#Exp">Exp()</a></td>
     <td><em>e</em> (대략 2.71828182845905)를 <em>N</em> 만큼 제곱해서 돌려줍니다.</td>
   </tr>
   <tr>
@@ -284,7 +300,11 @@
   </tr>
   <tr>
     <td><a href="FileEncoding.htm">FileEncoding</a></td>
-    <td>기본 인코딩을 설정합니다: <a href="FileRead.htm">FileRead</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="LoopReadFile.htm">Loop Read</a>, <a href="FileAppend.htm">FileAppend</a>, 그리고 <a href="FileOpen.htm">FileOpen</a>.<br><i>다음 참조:</i> <a href="../AHKL_Features.htm#enc">텍스트 인코딩</a></td>
+    <td>기본 인코딩을 설정합니다: <a href="FileRead.htm">FileRead</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="LoopReadFile.htm">Loop Read</a>, <a href="FileAppend.htm">FileAppend</a>, 그리고 <a href="FileOpen.htm">FileOpen()</a>.</td>
+  </tr>
+  <tr>
+    <td class="larger"><a href="FileExist.htm">FileExist()</a></td>
+    <td>Checks for the existence of a file or folder and returns its attributes.</td>
   </tr>
   <tr>
     <td><a href="FileInstall.htm">FileInstall</a></td>
@@ -319,8 +339,8 @@
     <td>폴더를 그의 모든 하위 폴더를 포함하여 이동합니다. 폴더의 이름을 바꿀 수도 있습니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="FileOpen.htm">FileOpen</a></td>
-    <td>객체-지향적 파일 입/출력을 제공합니다.</td>
+    <td class="larger"><a href="FileOpen.htm">FileOpen()</a></td>
+    <td>Opens a file to read specific content from it and/or to write new content into it.</td>
   </tr>
   <tr>
     <td class="larger"><a href="FileRead.htm">FileRead</a></td>
@@ -332,7 +352,7 @@
   </tr>
   <tr>
     <td><a href="FileRecycle.htm">FileRecycle</a></td>
-    <td>파일이나 디렉토리를 휴지통으로 보냅니다.</td>
+    <td>Sends a file or directory to the recycle bin if possible, or permanently deletes it.</td>
   </tr>
   <tr>
     <td><a href="FileRecycleEmpty.htm">FileRecycleEmpty</a></td>
@@ -343,8 +363,8 @@
     <td>폴더를 삭제합니다.</td>
   </tr>
   <tr>
-    <td height="14" class="larger"><a href="FileSelectFile.htm">FileSelectFile</a></td>
-    <td height="14">사용자가 파일을 열거나 저장할 수 있는 표준 대화상자를 보여줍니다.</td>
+    <td class="larger"><a href="FileSelectFile.htm">FileSelectFile</a></td>
+    <td>사용자가 파일을 열거나 저장할 수 있는 표준 대화상자를 보여줍니다.</td>
   </tr>
   <tr>
     <td><a href="FileSelectFolder.htm">FileSelectFolder</a></td>
@@ -360,10 +380,10 @@
   </tr>
   <tr>
     <td class="larger"><a href="Finally.htm">Finally</a></td>
-    <td><a href="Try.htm">Try</a> 서술문이 끝나면, 한 블록의 코드가 언제나 확실하게 실행되도록 합니다.</td>
+    <td>Ensures that one or more statements are always executed after a <a href="Try.htm">Try</a> statement finishes.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Floor">Floor()</a></td>
+    <td><a href="Math.htm#Floor">Floor()</a></td>
     <td><em>숫자</em>를 가장 가까운 정수로 버림한 다음 돌려줍니다 ( .00을 버림).</td>
   </tr>
   <tr>
@@ -371,7 +391,7 @@
     <td>일련의 명령어를 객체 안의 각 키-값 쌍마다 한 번씩 반복합니다.</td>
   </tr>
   <tr>
-    <td><a href="Format.htm">Format</a></td>
+    <td><a href="Format.htm">Format()</a></td>
     <td>가변 개수의 입력 값을 형식 문자열에 맞추어 포맷합니다.</td>
   </tr>
   <tr>
@@ -379,15 +399,27 @@
     <td>시간도장 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>를 지정된 날짜/시간 형식으로 변환합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Func">Func()</a></td>
+    <td><a href="Func.htm">Func()</a></td>
     <td>함수를 가리키는 <a href="../Objects.htm#Function_References">참조</a>를 열람합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#GetKeyName">GetKeyName()</a><br><a href="../Functions.htm#GetKeyName">GetKeyVK()</a><br><a href="../Functions.htm#GetKeyName">GetKeySC()</a></td>
-    <td>키의 가상 키 코드나 스캔 코드 또는 텍스트나 이름을 열람합니다.</td>
+    <td><a href="GetKey.htm">GetKeyName()</a></td>
+    <td>Retrieves the name or text of a key.</td>
   </tr>
   <tr>
-    <td><a href="GetKeyState.htm">GetKeyState</a></td>
+    <td><a href="GetKey.htm">GetKeyVK()</a></td>
+    <td>Retrieves the virtual key code of a key.</td>
+  </tr>
+  <tr>
+    <td><a href="GetKey.htm">GetKeySC()</a></td>
+    <td>Retrieves the scan code of a key.</td>
+  </tr>
+  <tr>
+    <td><a href="GetKeyState.htm#command">GetKeyState</a></td>
+    <td>키보드 키나 마우스/조이스틱 버튼이 눌려 있는지 여부를 점검합니다. 또 조이스틱 상태를 열람합니다.</td>
+  </tr>
+  <tr>
+    <td><a href="GetKeyState.htm#function">GetKeyState()</a></td>
     <td>키보드 키나 마우스/조이스틱 버튼이 눌려 있는지 여부를 점검합니다. 또 조이스틱 상태를 열람합니다.</td>
   </tr>
   <tr>
@@ -431,12 +463,16 @@
     <td>스크립트가 실행되는 동안에 핫키를 만들고, 변경하고, 켜고 끕니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="IfEqual.htm">if</a></td>
-    <td><a href="../Variables.htm">변수</a>를 변수해 비교해 TRUE로 평가될 경우 수행할 명령어(들)을 지정합니다. 명령어가 여럿 존재하면, <a href="Block.htm">블록</a> (활괄호) 안에 둘러 싸십시오.</td>
+    <td><a href="Hotstring.htm">Hotstring()</a></td>
+    <td>Creates, modifies, enables, or disables a hotstring while the script is running.</td>
+  </tr>
+  <tr id="I">
+    <td class="larger"><a href="IfExpression.htm">If (표현식)</a></td>
+    <td>Specifies one or more <a href="../Concepts.htm#statement">statements</a> to execute if an <a href="../Variables.htm#Expressions">expression</a> evaluates to true.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="IfExpression.htm">if (표현식)</a></td>
-    <td><a href="../Variables.htm#Expressions">표현식</a>이 TRUE로 평가되면 수행할 명령어(들)을 지정합니다.</td>
+    <td><a href="IfEqual.htm">If (legacy)</a></td>
+    <td>Specifies one or more <a href="../Concepts.htm#statement">statements</a> to execute if the comparison of a <a href="../Variables.htm">variable</a> to a value evaluates to true.</td>
   </tr>
   <tr>
     <td><a href="IfBetween.htm">If var [not] between</a></td>
@@ -452,11 +488,10 @@
   </tr>
   <tr>
     <td><a href="IfEqual.htm">IfEqual / IfNotEqual</a></td>
-    <td><a href="../Variables.htm">변수가</a>가 값과 같은지 비교합니다. 다음과 동등합니다: <code>if Var = Value</code> | <code>if Var &lt;&gt; Value</code>.</td>
+    <td><a href="../Variables.htm">변수가</a>가 값과 같은지 비교합니다. 다음과 동등합니다: <code>if Var = Value</code> | <code>if Var != Value</code>.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="IfExist.htm">IfExist</a> / 
-    <a href="../Functions.htm#FileExist">FileExist()</a></td>
+    <td><a href="IfExist.htm">IfExist / IfNotExist</a></td>
     <td>파일이나 폴더의 존재 여부를 점검합니다.</td>
   </tr>
   <tr>
@@ -464,7 +499,7 @@
     <td><a href="../Variables.htm">변수</a>를 값에 비교합니다. 다음과 동등합니다: <code>if Var &gt; Value</code> | <code>if Var &gt;= Value</code>.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="IfInString.htm">IfInString</a> / <a href="../Functions.htm#InStr">InStr()</a></td>
+    <td><a href="IfInString.htm">IfInString / IfNotInString</a></td>
     <td><a href="../Variables.htm">변수</a>에 지정된 문자열이 담겨 있는지 점검합니다.</td>
   </tr>
   <tr>
@@ -476,12 +511,18 @@
     <td>가장 최근에 <a href="MsgBox.htm">MsgBox</a> 명령어가 작동 중인 동안 어느 버튼을 사용자가 눌렀는지 점검합니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="WinActive.htm">IfWinActive / IfWinNotActive</a><br></td>
+    <td><a href="IfWinActive.htm">IfWinActive / IfWinNotActive</a></td>
     <td>지정된 창이 존재하는지 그리고 현재 활성 상태 (전경)인지 점검합니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="WinExist.htm">IfWinExist / IfWinNotExist</a><br></td>
+    <td><a href="IfWinExist.htm">IfWinExist / IfWinNotExist</a></td>
     <td>지정된 창이 존재하는지 점검합니다.</td>
+  </tr>
+  <tr>
+    <td><a href="ListView.htm#IL_Create">IL_Create()</a><br />
+        <a href="ListView.htm#IL_Add">IL_Add()</a><br />
+        <a href="ListView.htm#IL_Destroy">IL_Destroy()</a></td>
+    <td>The means by which icons are added to a <a href="ListView.htm">ListView</a> or <a href="TreeView.htm">TreeView</a> control.</td>
   </tr>
   <tr>
     <td><a href="ImageSearch.htm">ImageSearch</a></td>
@@ -493,11 +534,11 @@
   </tr>
   <tr>
     <td><a href="IniRead.htm">IniRead</a></td>
-    <td>표준 형식의 .ini 파일로부터 값을 읽습니다.</td>
+    <td>표준 형식의 .ini 파일로부터 섹션 이름의 리스트 또는 섹션, 값을 읽습니다.</td>
   </tr>
   <tr>
     <td><a href="IniWrite.htm">IniWrite</a></td>
-    <td>표준 형식의 .ini 파일에 값을 씁니다.</td>
+    <td>값이나 섹션을 표준 형식의 .ini 파일에 씁니다.</td>
   </tr>
   <tr>
     <td><a href="Input.htm">Input</a></td>
@@ -508,24 +549,28 @@
     <td>입력 박스를 보여주고 사용자가 문자열을 타자해 넣기를 요구합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#InStr">InStr()</a></td>
+    <td><a href="InputHook.htm">InputHook()</a></td>
+    <td>Creates an object which can be used to collect or intercept keyboard input.</td>
+  </tr>
+  <tr>
+    <td class="larger"><a href="InStr.htm">InStr()</a></td>
     <td>왼쪽이나 오른쪽으로부터 주어진 문자열이 <em>나타나는지</em> 검색합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#IsByRef">IsByRef()</a></td>
-    <td>ByRef 매개변수에 변수가 제공되는지 결정합니다.</td>
+    <td><a href="IsByRef.htm">IsByRef()</a></td>
+    <td>Returns a non-zero number if the specified <a href="../Functions.htm#ByRef">ByRef parameter</a> was supplied with a variable.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#IsFunc">IsFunc()</a></td>
-    <td>함수를 <a href="../Functions.htm#DynCall">동적으로 호출할 수 있는지</a> 알려줍니다.</td>
+    <td><a href="IsFunc.htm">IsFunc()</a></td>
+    <td>Returns a non-zero number if the specified function exists in the script.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#IsLabel">IsLabel()</a></td>
-    <td>주어진 값이 라벨에 존재하는지 점검합니다.</td>
+    <td><a href="IsLabel.htm">IsLabel()</a></td>
+    <td>Returns a non-zero number if the specified label exists in the script.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#IsObject">IsObject()</a></td>
-    <td>값이 객체인지 결정합니다.</td>
+    <td><a href="IsObject.htm">IsObject()</a></td>
+    <td>Returns a non-zero number if the specified value is an object.</td>
   </tr>
   <tr>
     <td><a href="KeyHistory.htm">KeyHistory</a></td>
@@ -548,11 +593,15 @@
     <td>스크립트의 <a href="../Variables.htm">변수들</a>을 보여줍니다: 이름과 현재 내용.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Log">Log()</a></td>
+    <td><a href="LoadPicture.htm">LoadPicture()</a></td>
+    <td>Loads a picture from file and returns a bitmap or icon handle.</td>
+  </tr>
+  <tr>
+    <td><a href="Math.htm#Log">Log()</a></td>
     <td><em>숫자</em>의 상용 로그를 돌려줍니다 (밑수 10).</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Ln">Ln()</a></td>
+    <td><a href="Math.htm#Ln">Ln()</a></td>
     <td><em>숫자</em>의 자연 로그를 돌려줍니다 (밑수 e).</td>
   </tr>
   <tr>
@@ -576,11 +625,41 @@
     <td>지정된 레지스트리 서브키의 내용을 한 번에 하나씩 열람합니다.</td>
   </tr>
   <tr>
+    <td><a href="ListView.htm#LV_Add">LV_Add()</a><br />
+    <a href="ListView.htm#LV_Delete">LV_Delete()</a><br />
+    <a href="ListView.htm#LV_DeleteCol">LV_DeleteCol()</a><br />
+    <a href="ListView.htm#LV_GetCount">LV_GetCount()</a><br />
+    <a href="ListView.htm#LV_GetNext">LV_GetNext()</a><br />
+    <a href="ListView.htm#LV_GetText">LV_GetText()</a><br />
+    <a href="ListView.htm#LV_Insert">LV_Insert()</a><br />
+    <a href="ListView.htm#LV_InsertCol">LV_InsertCol()</a><br />
+    <a href="ListView.htm#LV_Modify">LV_Modify()</a><br />
+    <a href="ListView.htm#LV_ModifyCol">LV_ModifyCol()</a><br />
+    <a href="ListView.htm#LV_SetImageList">LV_SetImageList()</a></td>
+    <td>The means by which the rows and columns of a <a href="ListView.htm">ListView</a> control are added, modified or retrieved.</td>
+  </tr>
+  <tr id="M">
+    <td><a href="Math.htm#Max">Max()</a></td>
+    <td>Returns the highest value of one or more numbers.</td>
+  </tr>
+  <tr>
     <td><a href="Menu.htm">Menu</a></td>
     <td>메뉴와 메뉴 항목을 생성, 삭제, 변경 그리고 보여줍니다. 트레이 아이콘과 그의 툴팁을 변경합니다. <a href="../Scripts.htm#ahk2exe">컴파일된 스크립트</a>의 메인 창을 열지 말지 제어합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Mod">Mod()</a></td>
+    <td><a href="MenuGetHandle.htm">MenuGetHandle()</a></td>
+    <td>Retrieves the <a href="Menu.htm#Win32_Menus">Win32 menu</a> handle of a menu.</td>
+  </tr>
+  <tr>
+    <td><a href="MenuGetName.htm">MenuGetName()</a></td>
+    <td>Retrieves the name of a menu given a handle to its underlying <a href="Menu.htm#Win32_Menus">Win32 menu</a>.</td>
+  </tr>
+  <tr>
+    <td><a href="Math.htm#Min">Min()</a></td>
+    <td>Returns the lowest value of one or more numbers.</td>
+  </tr>
+  <tr>
+    <td><a href="Math.htm#Mod">Mod()</a></td>
     <td>나머지 연산(Modulo)입니다. <em>피젯수(Dividend)</em>를 <em>젯수(Divisor)</em>로 나누고 나머지를 돌려줍니다.</td>
   </tr>
   <tr>
@@ -612,12 +691,74 @@
     <td>지정된 주소-오프셋에 이진 형식으로 숫자를 저장합니다.</td>
   </tr>
   <tr>
-    <td><a href="OnExit.htm">OnExit</a></td>
+    <td><a href="ObjAddRef.htm">ObjAddRef() / ObjRelease()</a></td>
+    <td>객체의 <a href="../Objects.htm#Reference_Counting">참조 횟수</a>를 줄이거나 늘립니다.</td>
+  </tr>
+  <tr>
+    <td><a href="ObjBindMethod.htm">ObjBindMethod()</a></td>
+    <td>주어진 객체의 메쏘드를 호출하는 <a href="../objects/Functor.htm#BoundFunc">BoundFunc object</a>를 생성합니다.</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="../objects/Object.htm#Clone">ObjClone()</a><br>
+      <a href="../objects/Object.htm#Count">ObjCount()</a><br>
+      <a href="../objects/Object.htm#Delete">ObjDelete()</a><br>
+      <a href="../objects/Object.htm#GetAddress">ObjGetAddress()</a><br>
+      <a href="../objects/Object.htm#GetCapacity">ObjGetCapacity()</a><br>
+      <a href="../objects/Object.htm#HasKey">ObjHasKey()</a><br>
+      <a href="../objects/Object.htm#Insert">ObjInsert()</a><br>
+      <a href="../objects/Object.htm#InsertAt">ObjInsertAt()</a><br>
+      <a href="../objects/Object.htm#Length">ObjLength()</a><br>
+      <a href="../objects/Object.htm#MinMaxIndex">ObjMaxIndex()</a><br>
+      <a href="../objects/Object.htm#MinMaxIndex">ObjMinIndex()</a><br>
+      <a href="../objects/Object.htm#NewEnum">ObjNewEnum()</a><br>
+      <a href="../objects/Object.htm#Pop">ObjPop()</a><br>
+      <a href="../objects/Object.htm#Push">ObjPush()</a><br>
+      <a href="../objects/Object.htm#Remove">ObjRemove()</a><br>
+      <a href="../objects/Object.htm#RemoveAt">ObjRemoveAt()</a><br>
+      <a href="../objects/Object.htm#SetCapacity">ObjSetCapacity()</a><br>
+    </td>
+    <td>These functions are equivalent to built-in methods of the <a href="../objects/Object.htm">Object</a> type. It is usually recommended to use the corresponding method instead.</td>
+  </tr>
+  <tr>
+    <td><a href="../objects/Object.htm#GetBase">ObjGetBase()</a></td>
+    <td>Retrieves an object's <a href="../Objects.htm#Custom_Objects">base object</a>.</td>
+  </tr>
+  <tr>
+    <td><a href="../objects/Object.htm#RawGet">ObjRawGet()</a></td>
+    <td>Retrieves a key-value pair from an object, bypassing the object's <a href="../Objects.htm#Meta_Functions">meta-functions</a>.</td>
+  </tr>
+  <tr>
+    <td><a href="../objects/Object.htm#RawSet">ObjRawSet()</a></td>
+    <td>Stores or overwrites a key-value pair in an object, bypassing the object's <a href="../Objects.htm#Meta_Functions">meta-functions</a>.</td>
+  </tr>
+  <tr>
+    <td><a href="../objects/Object.htm#SetBase">ObjSetBase()</a></td>
+    <td>Sets an object's <a href="../Objects.htm#Custom_Objects">base object</a>.</td>
+  </tr>
+  <tr>
+    <td><a href="OnClipboardChange.htm#function">OnClipboardChange()</a></td>
+    <td>클립보드의 내용이 변경될 때마다 실행될 <a href="../Functions.htm">함수</a> 또는 <a href="../objects/Functor.htm">함수 객체</a>를 등록합니다.</td>
+  </tr>
+  <tr>
+    <td><a href="OnError.htm">OnError()</a></td>
+    <td>Specifies a <a href="../Functions.htm">function</a> to run automatically when an unhandled error occurs.</td>
+  </tr>
+  <tr>
+    <td><a href="OnExit.htm#command">OnExit</a></td>
     <td>스크립트가 종료할 대 자동으로 실행할 <a href="Gosub.htm">서브루틴</a>을 지정합니다.</td>
   </tr>
   <tr>
+    <td><a href="OnExit.htm#function">OnExit()</a></td>
+    <td>Specifies a <a href="../Functions.htm">callback function</a> to run automatically when the script exits.</td>
+  </tr>
+  <tr>
     <td><a href="OnMessage.htm">OnMessage()</a></td>
-    <td>스크립트가 지정된 메시지를 받을 때 자동으로 호출할 <a href="../Functions.htm">함수</a>를 지정합니다.</td>
+    <td>스크립트가 지정된 메시지를 받을 때 자동으로 호출할 <a href="../Functions.htm">함수</a> 또는 <a href="../objects/Functor.htm">함수 객체</a>를 지정합니다 .</td>
+  </tr>
+  <tr>
+    <td><a href="Ord.htm">Ord()</a></td>
+    <td>Returns the ordinal value (numeric character code) of the first character in the specified string.</td>
   </tr>
   <tr>
     <td><a href="OutputDebug.htm">OutputDebug</a></td>
@@ -684,8 +825,8 @@
     <td>서브루틴으로부터 이전에 실행을 점프했던 곳으로 돌아갑니다. <a href="../Functions.htm">함수-호출</a>, <a href="Gosub.htm">Gosub</a>, <a href="../Hotkeys.htm">핫키</a> 활성화, <a href="GroupActivate.htm">GroupActivate</a>, 기타 등등의 방법으로 점프했던 곳으로 돌아갑니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Round">Round()</a></td>
-    <td><em>N</em>이 생략되거나 0이면, <em>Number</em>는 가장 가까운 정수로 버림됩니다. <em>N</em>이 양수이면, <em>Number</em>는<em>N</em>개의 십진 자리로 버림됩니다. <em>N</em>이 음수이면, <em>Number</em>는 소수점 왼쪽으로 <em>N</em> 자리수 만큼 버림됩니다.</td>
+    <td><a href="Math.htm#Round">Round()</a></td>
+    <td>Returns <em>Number</em> rounded to <em>N</em> decimal places.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Run.htm">Run</a></td>
@@ -699,8 +840,14 @@
     <td class="larger"><a href="Run.htm">RunWait</a></td>
     <td>외부 프로그램을 실행하고 끝날 때까지 기다립니다.</td>
   </tr>
+  <tr id="S">
+    <td><a href="GuiControls.htm#SB_SetIcon">SB_SetIcon()</a><br />
+    <a href="GuiControls.htm#SB_SetParts">SB_SetParts()</a><br />
+    <a href="GuiControls.htm#SB_SetText">SB_SetText()</a><br /></td>
+    <td>The means by which the bar of a <a href="GuiControls.htm#StatusBar">StatusBar</a> control is modified.</td>
+  </tr>
   <tr>
-    <td class="larger"><a href="Send.htm">Send</a> / <a href="Send.htm#SendRaw">SendRaw</a> / <a href="Send.htm#SendInput">SendInput</a> / <a href="Send.htm#SendPlay">SendPlay</a></td>
+    <td class="larger"><a href="Send.htm">Send</a> / <a href="Send.htm#SendRaw">SendRaw</a> / <a href="Send.htm#SendInput">SendInput</a> / <a href="Send.htm#SendPlay">SendPlay</a> / <a href="Send.htm#SendEvent">SendEvent</a></td>
     <td>시률레이트된 키눌림과 마우스 클릭을 <a href="WinActivate.htm">활성</a> 창에 전송합니다.</td>
   </tr>
   <tr>
@@ -720,8 +867,8 @@
     <td>얼마나 빨리 스크립트를 실행할지 결정합니다 (CPU 이용에 영향을 미칩니다).</td>
   </tr>
   <tr>
-    <td><a href="SetNumScrollCapsLockState.htm">SetCapslockState</a></td>
-    <td>Capslock 키의 상태를 설정합니다. 강제로 온 또는 오프 상태를 유지할 수 있습니다.</td>
+    <td><a href="SetNumScrollCapsLockState.htm">SetCapsLockState</a></td>
+    <td><kbd>Capslock</kbd> 키의 상태를 설정합니다. 강제로 온 또는 오프 상태를 유지할 수 있습니다.</td>
   </tr>
   <tr>
     <td><a href="SetControlDelay.htm">SetControlDelay</a></td>
@@ -748,20 +895,20 @@
     <td>마우스 이동이나 클릭 후에 지연될 시간을 설정합니다.</td>
   </tr>
   <tr>
-    <td><a href="SetNumScrollCapsLockState.htm">SetNumlockState</a></td>
-    <td>Numlock 키의 상태를 설정합니다. 강제로 온 또는 오프 상태를 유지할 수 있습니다.</td>
+    <td><a href="SetNumScrollCapsLockState.htm">SetNumLockState</a></td>
+    <td><kbd>Numlock</kbd> 키의 상태를 설정합니다. 강제로 온 또는 오프 상태를 유지할 수 있습니다.</td>
   </tr>
   <tr>
     <td><a href="SetNumScrollCapsLockState.htm">SetScrollLockState</a></td>
-    <td>Scrolllock 키의 상태를 설정합니다. 강제로 온 또는 오프 상태를 유지할 수 있습니다.</td>
+    <td><kbd>Scrolllock</kbd> 키의 상태를 설정합니다. 강제로 온 또는 오프 상태를 유지할 수 있습니다.</td>
   </tr>
   <tr>
     <td><a href="SetRegView.htm">SetRegView</a></td>
-    <td>레지스트리 명령어가 32-비트 스크립트에서 64-비트 레지스트리 뷰에 또는 그 반대로 접근하도록 해 줍니다.</td>
+    <td>Sets the registry view used by <a href="RegRead.htm">RegRead</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="RegDelete.htm">RegDelete</a> and <a href="LoopReg.htm">registry loops</a>, allowing them in a 32-bit script to access the 64-bit registry view and vice versa.</td>
   </tr>
   <tr>
-    <td><a href="SetStoreCapslockMode.htm">SetStoreCapslockMode</a></td>
-    <td><a href="Send.htm">Send</a> 후에 CapsLock의 상태를 복구할지 말지 결정합니다 .</td>
+    <td><a href="SetStoreCapslockMode.htm">SetStoreCapsLockMode</a></td>
+    <td><a href="Send.htm">Send</a> 후에 <kbd>CapsLock</kbd>의 상태를 복구할지 말지 결정합니다.</td>
   </tr>
   <tr>
     <td class="larger"><a href="SetTimer.htm">SetTimer</a></td>
@@ -784,7 +931,7 @@
     <td>시스템을 닫거나, 재시작하거나 또는 로그오프 합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Sin">Sin()</a></td>
+    <td><a href="Math.htm#Sin">Sin()</a></td>
     <td><em>Number</em>의 삼각 사인 값을 돌려줍니다.</td>
   </tr>
   <tr>
@@ -801,11 +948,11 @@
   </tr>
   <tr>
     <td><a href="SoundGet.htm">SoundGet</a></td>
-    <td>사운드 장치로부터 다양한 설정을 열람합니다 (마스터 음소거, 마스터 볼륨 등등.)</td>
+    <td>Retrieves various settings of a sound device (master mute, master volume, etc.)</td>
   </tr>
   <tr>
     <td><a href="SoundGetWaveVolume.htm">SoundGetWaveVolume</a></td>
-    <td>사운드 장치로부터 웨이브 출력 볼륨을 열람합니다.</td>
+    <td>Retrieves the wave output volume of a sound device.</td>
   </tr>
   <tr>
     <td><a href="SoundPlay.htm">SoundPlay</a></td>
@@ -817,26 +964,22 @@
   </tr>
   <tr>
     <td><a href="SoundSetWaveVolume.htm">SoundSetWaveVolume</a></td>
-    <td>사운드 장치를 위해 웨이브 출력 볼륨을 변경합니다.</td>
+    <td>Changes the wave output volume of a sound device.</td>
   </tr>
   <tr>
     <td><a href="Progress.htm">SplashImage</a></td>
-    <td>JPG, GIF, 또는 BMP 이미지를 담고 있는 창을 만들거나 갱신합니다.</td>
+    <td>Creates or updates a window containing an image.</td>
   </tr>
   <tr>
-    <td><a href="SplashTextOn.htm">SplashTextOn</a></td>
-    <td>맞춤 가능한 텍스트 팝업 창을 생성합니다.</td>
-  </tr>
-  <tr>
-    <td><a href="SplashTextOn.htm">SplashTextOff</a></td>
-    <td>위의 창을 닫습니다.</td>
+    <td><a href="SplashTextOn.htm">SplashTextOn / SplashTextOff</a></td>
+    <td>Creates or removes a customizable text popup window.</td>
   </tr>
   <tr>
     <td class="larger"><a href="SplitPath.htm">SplitPath</a></td>
     <td>파일 이름이나 URL을 이름, 디렉토리, 확장자, 그리고 드라이브로 가릅니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Sqrt">Sqrt()</a></td>
+    <td><a href="Math.htm#Sqrt">Sqrt()</a></td>
     <td><em>Number</em>의 평방근을 돌려줍니다.</td>
   </tr>
   <tr>
@@ -848,15 +991,15 @@
     <td>차의 상태 바에 지정된 문자열이 들어올 때까지 기다립니다.</td>
   </tr>
   <tr>
-    <td><a href="StrPutGet.htm">StrPut() / StrGet()</a></td>
-    <td>문자열을 메모리에 또는 메로리로부터 복사합니다. 선택적으로 코드 페이지 사이에 변환합니다.</td>
+    <td><a href="StrGet.htm">StrGet()</a></td>
+    <td>Copies a string from a memory address, optionally converting it from a given code page.</td>
   </tr>
   <tr>
     <td><a href="StringCaseSense.htm">StringCaseSense</a></td>
     <td>문자열 비교에 대소문자를 구분할지 결정합니다. (기본값은 "대소문자를 구별하지 않습니다").</td>
   </tr>
   <tr>
-    <td class="larger"><a href="StringGetPos.htm">StringGetPos</a> / <a href="../Functions.htm#InStr">InStr()</a></td>
+    <td><a href="StringGetPos.htm">StringGetPos</a></td>
     <td>문자열 안에서 지정된 부분문자열의 위치를 열람합니다.</td>
   </tr>
   <tr>
@@ -864,7 +1007,7 @@
     <td>문자열의 왼쪽으로부터 여러 문자를 열람합니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="StringLen.htm">StringLen / StrLen()</a></td>
+    <td><a href="StringLen.htm">StringLen</a></td>
     <td>문자열에 들은 문자의 갯수를 열람합니다.</td>
   </tr>
   <tr>
@@ -872,11 +1015,11 @@
     <td>문자열을 소문자로 변환합니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="StringMid.htm">StringMid</a> / <a href="../Functions.htm#SubStr">SubStr()</a></td>
+    <td><a href="StringMid.htm">StringMid</a></td>
     <td>문자열에서 지정된 위치로부터 하나 이상이 문자를 열람합니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="StringReplace.htm">StringReplace</a></td>
+    <td><a href="StringReplace.htm">StringReplace</a></td>
     <td>지정된 부분문자열을 새 문자열로 교체합니다.</td>
   </tr>
   <tr>
@@ -900,15 +1043,39 @@
     <td>문자열을 대문자로 변환합니다.</td>
   </tr>
   <tr>
+    <td class="larger"><a href="StrLen.htm">StrLen()</a></td>
+    <td>문자열에 들은 문자의 갯수를 열람합니다.</td>
+  </tr>
+  <tr>
+    <td><a href="StrPut.htm">StrPut()</a></td>
+    <td>Copies a string to a memory address, optionally converting it to a given code page.</td>
+  </tr>
+  <tr>
+    <td class="larger"><a href="StrReplace.htm">StrReplace()</a></td>
+    <td>지정된 부분문자열을 새 문자열로 교체합니다.</td>
+  </tr>
+  <tr>
+    <td><a href="StrSplit.htm">StrSplit()</a></td>
+    <td>문자열을 지정된 가름자를 사용하여 부분 문자열 배열로 가릅니다.</td>
+  </tr>
+  <tr>
+    <td class="larger"><a href="SubStr.htm">SubStr()</a></td>
+    <td>문자열에서 지정된 위치로부터 하나 이상이 문자를 열람합니다.</td>
+  </tr>
+  <tr>
     <td><a href="Suspend.htm">Suspend</a></td>
     <td>선택된 또는 모든 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 켜고 끕니다.</td>
+  </tr>
+  <tr>
+    <td><a href="Switch.htm">스위치</a></td>
+    <td>Executes one case from a list of mutually exclusive candidates.</td>
   </tr>
   <tr>
     <td><a href="SysGet.htm">SysGet</a></td>
     <td>화면 해상도, 다중-모니터 정보, 시스템 객체의 크기, 그리고 기타 시스템 특성을 열람합니다.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Tan">Tan()</a></td>
+    <td><a href="Math.htm#Tan">Tan()</a></td>
     <td><em>Number</em>의 삼각 탄젠트를 돌려줍니다.</td>
   </tr>
   <tr>
@@ -929,15 +1096,30 @@
   </tr>
   <tr>
     <td><a href="TrayTip.htm">TrayTip</a></td>
-    <td>풍선 메시지를 트레이 아이콘 근처에 만듭니다.</td>
+    <td>풍선 메시지를 트레이 아이콘 근처에 만듭니다. On Windows 10, a toast notification may be shown instead.</td>
   </tr>
   <tr>
-    <td><a href="Trim.htm">Trim</a></td>
-    <td>문자열의 처음과 끝으로부터 어떤 문자들을 걷어냅니다.</td>
+    <td><a href="Trim.htm">Trim() / LTrim() / RTrim()</a></td>
+    <td>문자열의 앞뒤로부터 문자들을 걷어냅니다.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Try.htm">Try</a></td>
     <td>하나 이상의 서술문 (명령어나 표현식)을 <a href="Throw.htm">throw</a> 명령어가 던지는 실행시간 에러와 예외로부터 보호합니다.</td>
+  </tr>
+  <tr>
+    <td><a href="TreeView.htm#TV_Add">TV_Add()</a><br />
+    <a href="TreeView.htm#TV_Delete">TV_Delete()</a><br />
+    <a href="TreeView.htm#TV_Get">TV_Get()</a><br />
+    <a href="TreeView.htm#TV_GetChild">TV_GetChild()</a><br />
+    <a href="TreeView.htm#TV_GetCount">TV_GetCount()</a><br />
+    <a href="TreeView.htm#TV_GetNext">TV_GetNext()</a><br />
+    <a href="TreeView.htm#TV_GetParent">TV_GetParent()</a><br />
+    <a href="TreeView.htm#TV_GetPrev">TV_GetPrev()</a><br />
+    <a href="TreeView.htm#TV_GetSelection">TV_GetSelection()</a><br />
+    <a href="TreeView.htm#TV_GetText">TV_GetText()</a><br />
+    <a href="TreeView.htm#TV_Modify">TV_Modify()</a><br />
+    <a href="TreeView.htm#TV_SetImageList">TV_SetImageList()</a></td>
+    <td>The means by which the items of a <a href="TreeView.htm">TreeView</a> control are added, modified or retrieved.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Until.htm">Until</a></td>
@@ -948,7 +1130,7 @@
     <td>인터넷으로부터 파일을 내려받습니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="SetEnv.htm">Var = value</a></td>
+    <td><a href="SetEnv.htm">Var = Value</a></td>
     <td>지정된 값을 <a href="../Variables.htm">변수</a>에 할당합니다.</td>
   </tr>
   <tr>
@@ -957,23 +1139,23 @@
   </tr>
   <tr>
     <td><a href="VarSetCapacity.htm">VarSetCapacity()</a></td>
-    <td>변수의 가용 능력을 확대하거나 그의 메모리를 해제합니다. 보통, 이것은 <a href="DllCall.htm">DllCall</a>과 같이 비정상적인 상황에서만 필요합니다.</td>
+    <td>변수의 가용 능력을 확대하거나 그의 메모리를 해제합니다. 보통, 이것은 <a href="DllCall.htm">DllCall()</a>과 같이 비정상적인 상황에서만 필요합니다.</td>
   </tr>
-  <tr>
-    <td class="larger"><a href="While.htm">While-loop</a></td>
+  <tr id="W">
+    <td class="larger"><a href="While.htm">While-회돌이</a></td>
     <td>지정된 <a href="../Variables.htm#Expressions">표현식</a>이 거짓으로 평가될 때까지 일련의 명령어를 반복적으로 실행합니다.</td>
   </tr>
   <tr>
     <td class="larger"><a href="WinActivate.htm">WinActivate</a></td>
-    <td>지정된 창을 활성화합니다 (전경 화면으로 만듭니다).</td>
+    <td>Activates the specified window.</td>
   </tr>
   <tr>
     <td><a href="WinActivateBottom.htm">WinActivateBottom</a></td>
-    <td><a href="WinActivate.htm">WinActivate</a>와 동일합니다. 단 최상단 창이 아니라 (가장 최근까지도 활성화되지 않은) 최하단 창을 활성화한다는 점이 다릅니다.</td>
+    <td><a href="WinActivate.htm">WinActivate</a>와 동일합니다. 단 최상단 창이 아니라 최하단 창을 활성화한다는 점이 다릅니다.</td>
   </tr>
   <tr>
-    <td><a href="WinActive.htm">WinActive()</a></td>
-    <td>활성창이 지정된 기준에 부합하면 그 유일한 ID (HWND)를 돌려줍니다.</td>
+    <td class="larger"><a href="WinActive.htm">WinActive()</a></td>
+    <td>Checks if the specified window is active and returns its unique ID (HWND).</td>
   </tr>
   <tr>
     <td class="larger"><a href="WinClose.htm">WinClose</a></td>
@@ -981,7 +1163,7 @@
   </tr>
   <tr>
   <td class="larger"><a href="WinExist.htm">WinExist()</a></td>
-    <td>제일 처음 부합한 창의 유일한 ID (HWND)를 돌려줍니다.</td>
+    <td>Checks if the specified window exists and returns the unique ID (HWND) of the first matching window.</td>
   </tr>
   <tr>
     <td><a href="WinGetActiveStats.htm">WinGetActiveStats</a></td>
@@ -1032,12 +1214,8 @@
     <td>지정된 창을 태스크 바의 버튼으로 축소합니다.</td>
   </tr>
   <tr>
-    <td><a href="WinMinimizeAll.htm">WinMinimizeAll</a></td>
-    <td>모든 창을 최소화합니다.</td>
-  </tr>
-  <tr>
-    <td><a href="WinMinimizeAll.htm">WinMinimizeAllUndo</a></td>
-    <td>이전 <a href="WinMinimizeAll.htm">WinMinimizeAll</a>의 효과를 언두합니다.</td>
+    <td><a href="WinMinimizeAll.htm">WinMinimizeAll / WinMinimizeAllUndo</a></td>
+    <td>모든 창을 최소화하거나 환원합니다.</td>
   </tr>
   <tr>
     <td class="larger"><a href="WinMove.htm">WinMove</a></td>
@@ -1064,18 +1242,14 @@
     <td>지정된 창이 끝날 때까지 기다립니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="WinWaitActive.htm">WinWaitActive</a></td>
-    <td>지정된 창이 활성화될 때까지 기다립니다.</td>
+    <td class="larger"><a href="WinWaitActive.htm">WinWaitActive / WinWaitNotActive</a></td>
+    <td>지정된 창이 활성화되거나 비활성화될 때까지 기다립니다.</td>
   </tr>
   <tr>
     <td class="larger"><a href="WinWaitClose.htm">WinWaitClose</a></td>
     <td>지정된 창이 존재하지 않을 때까지 기다립니다.</td>
   </tr>
-  <tr>
-    <td class="larger"><a href="WinWaitActive.htm">WinWaitNotActive</a></td>
-    <td>지정된 창이 활성화되지 않을 때까지 기다립니다.</td>
-  </tr>
-  <tr>
+  <tr id="hash">
     <td><a href="_ClipboardTimeout.htm">#ClipboardTimeout</a></td>
     <td>첫 시도가 실패하면 스크립트가 클립보드에 얼마나 오랫동안 접근을 시도해야 하는지 변경합니다.</td>
   </tr>
@@ -1084,12 +1258,20 @@
     <td>스크립트의 주석 심볼을 쌍반점으로부터 다른 문자열로 변경합니다.</td>
   </tr>
   <tr>
+    <td><a href="_EscapeChar.htm#Delimiter">#Delimiter</a></td>
+    <td>Changes the script's command parameter delimiter from comma to some other character.</td>
+  </tr>
+  <tr>
+    <td><a href="_EscapeChar.htm#DerefChar">#DerefChar</a></td>
+    <td>Changes the script's dereference symbol from percent to some other character.</td>
+  </tr>
+  <tr>
     <td><a href="_ErrorStdOut.htm">#ErrorStdOut</a></td>
-    <td>스크립트의 기동을 방해하는 구문 에러를 대화상자에 보여주는 대신에 표준 출력(stdout)으로 보냅니다.</td>
+    <td>스크립트의 실행을 막는 구문 에러를 대화상자에 보여주지 않고 표준에러(stderr)로 보냅니다.</td>
   </tr>
   <tr>
     <td><a href="_EscapeChar.htm">#EscapeChar</a></td>
-    <td>스크립트의 피신 문자를 바꿉니다 (예를 들어: 역사선 vs. 액센트).</td>
+    <td>Changes the script's escape character (e.g. backslash vs. accent).</td>
   </tr>
   <tr>
     <td><a href="_HotkeyInterval.htm">#HotkeyInterval</a></td>
@@ -1097,7 +1279,7 @@
   </tr>
   <tr>
     <td><a href="_HotkeyModifierTimeout.htm">#HotkeyModifierTimeout</a></td>
-    <td><a href="../Hotkeys.htm">핫키</a> 수식자의 행위에 영향을 미칩니다: CTRL, ALT, WIN, 그리고 SHIFT.</td>
+    <td><a href="../Hotkeys.htm">핫키</a> 수식자의 행위에 영향을 미칩니다: <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, <kbd>Win</kbd>, 그리고 <kbd>Shift</kbd>.</td>
   </tr>
   <tr>
     <td><a href="_Hotstring.htm">#Hotstring</a></td>
@@ -1105,18 +1287,18 @@
   </tr>
   <tr>
     <td class="larger"><a href="_If.htm">#If</a></td>
-    <td><a href="_IfWinActive.htm">#IfWinActive</a>와 비슷하지만, 어떤 표현식에도 사용할 수 있습니다.</td>
+    <td>문맥-감지 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 만듭니다. 문맥 감지 핫키는 표현식의 결과에 따라 다르게 조치를 수행합니다 (또는 아무것도 하지 않습니다).</td>
   </tr>
   <tr>
     <td><a href="_IfTimeout.htm">#IfTimeout</a></td>
     <td>#If 표현식 하나를 평가하는 데 소비될 최대 시간을 설정합니다.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="_IfWinActive.htm">#IfWinActive / #IfWinExist</a></td>
+    <td class="larger"><a href="_IfWinActive.htm">#IfWinActive / #IfWinNotActive / #IfWinExist / #IfWinNotExist</a></td>
     <td>문맥-감지 <a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm">핫스트링</a>을 만듭니다. 그런 핫키는 활성화 된 또는 존재하는 창의 종류에 따라 다른 조치를 수행합니다 (또는 아무일도 하지 않습니다).</td>
   </tr>
   <tr>
-    <td><a href="_Include.htm">#Include</a></td>
+    <td><a href="_Include.htm">#Include / #IncludeAgain</a></td>
     <td>스크립트는 마치 지정된 파일의 내용이 정확하게 이 위치에 존재하는 것처럼 행위합니다.</td>
   </tr>
   <tr>
@@ -1176,6 +1358,10 @@
     <td>스크립트를 영원히 실행 합니다 (즉, 사용자가 닫거나 <a href="ExitApp.htm">ExitApp</a>를 만날 때까지).</td>
   </tr>
   <tr>
+    <td><a href="_Requires.htm">#Requires</a></td>
+    <td>Displays an error and quits if a version requirement is not met.</td>
+  </tr>
+  <tr>
     <td><a href="_SingleInstance.htm">#SingleInstance</a></td>
     <td>스크립트에게 이미 실행 중일 때 다시 실행을 허용할지 결정합니다.</td>
   </tr>
@@ -1185,7 +1371,7 @@
   </tr>
   <tr>
     <td><a href="_Warn.htm">#Warn</a></td>
-    <td>선택된 조건에 대하여 경고를 켜고 끕니다. 이 에러는 개발자 에러를 가리킵니다.</td>
+    <td>특정한 조건에 대한 경고를 켜고 끕니다. 철자오류가 있거나 선언이 없는 경우와 같이 에러를 나타낼 수도 있습니다.</td>
   </tr>
   <tr>
     <td><a href="_WinActivateForce.htm">#WinActivateForce</a></td>

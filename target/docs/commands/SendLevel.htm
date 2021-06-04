@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SendLevel</title>
+<title>SendLevel - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SendLevel command controls which artificial keyboard and mouse events are ignored by hotkeys and hotstrings." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,9 +12,9 @@
 
 <h1>SendLevel <span class="ver">[v1.1.06+]</span></h1>
 <p>핫키와 핫스트링이 무시하는 인위적인 키보드 그리고 마우스 이벤트를 제어합니다.</p>
-<pre class="Syntax">SendLevel, Level</pre>
+<pre class="Syntax"><span class="func">SendLevel</span>, Level</pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Level</dt>
@@ -22,32 +22,38 @@
 
 </dl>
 
-<h3>총평</h3>
+<h2 id="General_Remarks">총평</h2>
 <p>기본값으로, <a href="_UseHook.htm">갈고리</a>와 <a href="../Hotkeys.htm">핫키</a> 그리고 <a href="../Hotstrings.htm">핫스트링</a>은 오토핫키 스크립트가 발생시킨 키보드와 마우스 이벤트를 무시합니다. 어떤 경우는 이 행위를 오버라이드하면 유용합니다; 예를 들면, 리맵 키를 다른 핫키를 촉발시키는 데 사용할 수 있습니다. SendLevel과 <a href="_InputLevel.htm">#InputLevel</a>은 이를 완수하는 수단을 제공합니다.</p>
 <p>SendLevel은 현재의 <a href="../misc/Threads.htm">스크립트 쓰레드</a>로 발생된 이벤트에 대하여 레벨을 설정합니다. 반면에 #InputLevel은 그 아래에 있는 핫키나 핫스트링에 대하여 레벨을 설정합니다. 스크립트가 발생시킨 이벤트가 다른 핫키나 핫스트링을 촉발할 수 있으려면, 이벤트의 전송 레벨이 핫키나 핫스트링의 입력 레벨보다 더 높아야 합니다.</p>
 <p>호환성:</p>
 <ul>
   <li><a href="Send.htm#SendPlayDetail">SendPlay</a>는 SendLevel에 영향을 받지 않습니다.</li>
-  <li><a href="Send.htm#SendInputDetail">SendInput</a>은 SendLevel에 영향을 받습니다. 그러나 스크립트의 갈고리 핫키는 SendInput이 진행 중인 동안 활성화될 수 없습니다. 왜냐하면 SendInput이 임시로 갈고리를 끄기 때문입니다.</li>
+  <li><a href="Send.htm#SendInputDetail">SendInput</a>은 SendLevel에 영향을 받습니다. 그러나 스크립트의 갈고리 핫키는 SendInput이 진행 중인 동안 활성화될 수 없습니다. 왜냐하면 SendInput이 임시로 갈고리를 끄기 때문입니다. However, when Send or SendInput <a href="Send.htm#SendInputUnavail">reverts to SendEvent</a>, it is able to activate the script's own hotkeys.</li>
   <li><a href="ListHotkeys.htm">"reg"</a> 방법을 사용하는 핫키는 물리적 입력과 인위적 입력을 구별할 수 있습니다. 그래서 SendLevel에 영향을 받지 않습니다. 그렇지만, 레벨이 0보다 높은 핫키는 언제나 키보드 또는 마우스 갈고리를 사용합니다.</li>
-  <li>자동-교체 <a href="../Hotstrings.htm">핫스트링</a>은 언제나 레벨 0에서 키눌림을 발생시킵니다. 왜냐하면 교체 텍스트가 또다른 핫스트링 또는 핫키를 촉발시키는 것은 보통 바람직하지 않기 때문입니다. 이를 우회하려면, 비-자동-교체 핫스트링과 Send 명령어를 사용하십시오.</li>
-  <li>현재 키보드 레이아웃에 있는 키와 상응하지 않는 문자는 핫스트링을 촉발시킬 수 없습니다. SendLevel이 사용되어도 마찬가지입니다. 이것은 핫스트링 인식자의 한계입니다.</li>
+  <li><a href="../Hotstrings.htm">Hotstrings</a> use #InputLevel only to determine whether the last typed character should trigger a hotstring. For instance, the hotstring <code>::btw::</code> can be triggered regardless of #InputLevel by sending <code>btw</code> at level 1 or higher and physically typing an <a href="../Hotstrings.htm#EndChars">ending character</a>. This is because hotstring recognition works by collecting input from all levels except level 0 into a single global buffer.</li>
+  <li>자동-교체 <a href="../Hotstrings.htm">핫스트링</a>은 언제나 레벨 0에서 키눌림을 발생시킵니다. 왜냐하면 교체 텍스트가 또다른 핫스트링 또는 핫키를 촉발시키는 것은 보통 바람직하지 않기 때문입니다. 이를 우회하려면, 비-자동-교체 핫스트링과 SendEvent 명령어를 사용하십시오.</li>
+  <li>Characters sent by the <a href="Send.htm#asc">ASC (Alt+nnnnn)</a> method cannot trigger a hotstring, even if SendLevel is used.</li>
+  <li>Characters sent by SendEvent with the <a href="Send.htm#SendText">{Text}</a> mode, <a href="Send.htm#Unicode">{U+nnnn}</a> or <a href="Send.htm#characters">Unicode fallback method</a> can trigger hotstrings.</li>
 </ul>
+<p><span class="ver">[v1.1.23+]:</span> 내장 변수 <strong>A_SendLevel</strong>에 현재 설정이 담겨 있습니다.</p>
 <p>새로 기동된 핫키 또는 핫스트링 <a href="../misc/Threads.htm">쓰레드</a>는 전송 레벨을 <a href="_InputLevel.htm">입력 레벨</a>과 같게 설정하고 시작합니다. 새로 기동된 다른 쓰레드는 (예를 들어 <a href="Menu.htm">맞춤 메뉴 항목</a> 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 기본 설정을 가지고 새롭게 시작합니다. 기본값은 보통 0이지만 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에 이 명령어을 사용하여 바꿀 수 있습니다.</p>
 <p>SendLevel이 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에 사용되면, <a href="../misc/Remap.htm">키보드와 마우스 리맵핑</a>에도 영향을 줍니다.</p>
-<p>v1.1.06 미만 버전 마치<code>#InputLevel 0</code> 그리고 <code>SendLevel 0</code>이 켜진 것처럼 행위합니다.</p>
+<p><span class="ver">[v1.1.06]</span> 이전 버전은 <code>#InputLevel 0</code>인 것처럼 그리고 <code>SendLevel 0</code>의 효과가 있는 것처럼 행위합니다.</p>
 
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="_InputLevel.htm">#InputLevel</a>, <a href="Send.htm">Send</a>, <a href="Click.htm">Click</a>, <a href="MouseClick.htm">MouseClick</a>, <a href="MouseClickDrag.htm">MouseClickDrag</a></p>
 
-<h3>예제</h3>
-<pre class="NoIndent">
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> SendLevel allows to trigger hotkeys and hotstrings of another script, which normally would not be the case.</p>
+<pre>
 SendLevel 1
 Send btw{Space} <em>; "by the way "를 생산.</em>
 
 <em>; 별도의 스크립트에 정의할 수 있습니다:</em>
 ::btw::by the way
 </pre>
+</div>
 
 </body>
 </html>

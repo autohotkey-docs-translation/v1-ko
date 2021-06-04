@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinSetTitle</title>
+<title>WinSetTitle - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinSetTitle command changes the title of the specified window." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,9 +14,11 @@
 
 <p>지정된 창의 제목을 바꿉니다.</p>
 
-<pre class="Syntax">WinSetTitle, NewTitle
-WinSetTitle, WinTitle, WinText, NewTitle [, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">WinSetTitle</span>, NewTitle
+<span class="func">WinSetTitle</span>, WinTitle, WinText, NewTitle <span class="optional">, ExcludeTitle, ExcludeText</span>
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>NewTitle</dt>
@@ -36,18 +38,23 @@ WinSetTitle, WinTitle, WinText, NewTitle [, ExcludeTitle, ExcludeText]</pre>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>창 제목을 변경하더라도 잠시일 뿐입니다. 창을 소유한 어플리케이션이 자주 창 제목을 바꿀 수 있습니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="WinMove.htm">WinMove</a>, <a href="WinGetActiveStats.htm">WinGetActiveStats</a>, <a href="WinGetActiveTitle.htm">WinGetActiveTitle</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="WinGetPos.htm">WinGetPos</a>, <a href="WinSet.htm">WinSet</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">WinSetTitle, Untitled - Notepad, , 새 제목입니다
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Changes the title of Notepad.</p>
+<pre>WinSetTitle, Untitled - Notepad, , 새 제목입니다</pre>
+</div>
 
-<em>; 대안:</em>
-Run, notepad.exe
+<div class="ex" id="ExLastFound">
+<p><a class="ex_number" href="#ExLastFound"></a> Opens Notepad, waits until it is active and changes its title.</p>
+<pre>Run, notepad.exe
 WinWaitActive, Untitled - Notepad
-WinSetTitle, This is a new title  <em>; 위에서 WinWaitActive가 발견한 창을 사용합니다.</em></pre>
+WinSetTitle, This is a new title <em>; Use the window found by WinWaitActive.</em></pre>
+</div>
 
 </body>
 </html>

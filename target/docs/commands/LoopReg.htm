@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Loop (레지스트리)</title>
+<title>Loop (registry) - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Loop Reg statement retrieves the contents of the specified registry subkey, one item at a time." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -11,46 +11,73 @@
 <body>
 
 <h1>Loop (레지스트리)</h1>
-
 <p>지정된 레지스트리 서브키의 내용을 한 번에 하나씩 열람합니다.</p>
 
-<pre class="Syntax">Loop, Reg, RootKey[\Key, Mode]  <em>; v1.1.21+ (권장)</em></pre>
-<pre class="Syntax">Loop, RootKey [, Key, IncludeSubkeys?, Recurse?]</pre>
-<h3>매개변수</h3>
+<h2 id="new">New Syntax <span class="ver">[v1.1.21+]</span></h2>
+<pre class="Syntax"><span class="func">Loop, Reg</span>, KeyName <span class="optional">, Mode</span></pre>
+
+<h3 id="New_Parameters">매개변수</h3>
 <dl>
 
-  <dt>Reg <span class="ver">[v1.1.21+]</span></dt>
-  <dd><p>문자 그대로의 단어 <code>Reg</code> (대소문자 구분). 변수나 표현식 불가능. 이 키워드가 존재하면, <em>Key</em>는 반드시 쉼표 대신에 정사선으로 <em>RootKey</em>와 분리해야 합니다. 둘 모두 하나의 변수에 담길 수 있습니다. 예를 들어, <code>Loop, Reg, HKLM\Software</code> 또는 <code>Loop, Reg, %FullPathOfKey%</code>.</p></dd>
+  <dt>Reg</dt>
+  <dd><p>문자 그대로의 단어 <code>Reg</code> (대소문자 구분). 변수나 표현식 불가능.</p></dd>
+
+  <dt>KeyName</dt>
+  <dd><p>The full name of the registry key such as <code>HKLM\Software</code> or <code>%FullPathOfKey%</code>.</p>
+      <p>This must start with HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, or HKEY_CURRENT_CONFIG (or the abbreviations for each of these, such as HKLM). <a href="#remote">원격 레지스트리</a>에 접근하려면, 컴퓨터 이름과 쌍점을 앞에 배치하십시오. 다음 예제와 같이: \\workstation01:HKEY_LOCAL_MACHINE</p></dd>
+
+  <dt>Mode</dt>
+  <dd><p>If blank or omitted, only values are included and subkeys are not recursed into. Otherwise, specify one or more of the following letters:</p>
+    <ul>
+      <li>K = 키를 포함합니다.</li>
+      <li>V = 값을 포함합니다. K와 V를 모두 생략하면 값들도 포함됩니다.</li>
+      <li>R = 하위키로 재귀해 들어갑니다. R이 생략되면, <em>KeyName</em>의 하위키의 키와 값은 포함되지 않습니다.</li>
+    </ul>
+  </dd>
+
+</dl>
+
+<h2 id="old">Old Syntax</h2>
+<p class="warning"><strong>비추천:</strong> 이 구문는 새 스크립트에 사용을 추천하지 않습니다. Use the <a href="#new">new syntax</a> instead.</p>
+<pre class="Syntax"><span class="func">Loop</span>, RootKey <span class="optional">, Key, IncludeSubkeys?, Recurse?</span></pre>
+
+<h3 id="Old_Parameters">매개변수</h3>
+<dl>
 
   <dt>RootKey</dt>
   <dd><p>HKEY_LOCAL_MACHINE (HKLM), HKEY_USERS (HKU), HKEY_CURRENT_USER (HKCU), HKEY_CLASSES_ROOT (HKCR), 또는 HKEY_CURRENT_CONFIG (HKCC) 중 하나가 되어야 합니다.</p>
-      <p>원격 레지스트리에 접근하려면, 컴퓨터 이름과 쌍점을 앞에 배치하십시오. 다음 예제와 같이: \\workstation01:HKEY_LOCAL_MACHINE</p></dd>
+      <p><a href="#remote">원격 레지스트리</a>에 접근하려면, 컴퓨터 이름과 쌍점을 앞에 배치하십시오. 다음 예제와 같이: \\workstation01:HKEY_LOCAL_MACHINE</p></dd>
 
   <dt>Key</dt>
   <dd><p>키의 이름 (예, Software\SomeApplication). 비어 있거나 생략하면, <em>RootKey</em>의 내용이 열람됩니다.</p></dd>
   
-  <dt>Mode <span class="ver">[v1.1.21+]</span></dt>
-  <dd><p>다음 기호들로 구성됩니다:</p>
-    <p><code>K</code>: 키를 포함합니다.<br>
-    <code>V</code>: 값을 포함합니다. K와 V를 모두 생략하면 값들도 포함됩니다.<br>
-    <code>R</code>: 하위키로 재귀해 들어갑니다. R이 생략되면, <em>Key</em>의 하위키의 키와 값은 포함되지 않습니다.</p>
+  <dt>IncludeSubkeys?</dt>
+  <dd><p>If blank or omitted, it defaults to 0 (only values are retrieved). 그렇지 않으면, 다음 숫자 중 하나를 지정하십시오:</p>
+    <ul>
+      <li>0 = <em>Key</em> 안에 포함된 하위키는 열람하지 않습니다 (오직 값만 열람합니다).</li>
+      <li>1 = 모든 값들과 하위키를 열람합니다.</li>
+      <li>2 = 하위키만 열람합니다 (값은 열람하지 않습니다).</li>
+    </ul>
   </dd>
 
-  <dt>IncludeSubkeys?</dt>
-  <dd><p>0 (기본값) <em>Key</em> 안에 포함된 하위키는 열람하지 않습니다 (오직 값만 열람합니다).<br>
-  1 모든 값들과 하위키를 열람합니다.<br>
-  2 하위키만 열람합니다 (값은 열람하지 않습니다).</p></dd>
-
   <dt>Recurse?</dt>
-  <dd>0 (기본값) 하위키에 재귀하지 않습니다.<br>
-1 하위키에 재귀해 들어갑니다. 그래서 그 안에 포함된 모든 값과 키를 열람합니다.</dd>
+  <dd><p>비어 있거나 생략하면, 기본값은 0 (하위키에 재귀하지 않습니다)입니다. 그렇지 않으면, 다음 숫자 중 하나를 지정하십시오:</p>
+    <ul>
+      <li>0 = 하위키에 재귀하지 않습니다.</li>
+      <li>1 = 하위키에 재귀해 들어갑니다. 그래서 그 안에 포함된 모든 값과 키를 열람합니다.</li>
+    </ul>
+  </dd>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>레지스트리-회돌이는 레지스트리 값 또는 하위키의 집단을 한 번에 하나씩 처리하고 싶을 때 유용합니다. 값과 하위키는 역순으로 (아래에서 위로) 열람되므로 회돌이를 방해하지 않고 회돌이 안에 <a href="RegDelete.htm">RegDelete</a>를 사용할 수 있습니다.</p>
 <p id="vars">다음 변수들이 레지스트리-회돌이 안에 존재합니다. 내부 레지스트리-회돌이가 외부 레지스트리-회돌이 안에 싸여 있다면, 내부 회돌이의 레지스트리 항목이 우선 순위를 갖습니다:</p>
 <table class="info">
+  <tr>
+    <th abbr="변수">변수</th>
+    <th abbr="설명">설명</th>
+  </tr>
   <tr>
     <td>A_LoopRegName</td>
     <td>현재 열람된 항목의 이름. 값 이름 또는 하위키의 이름 중 하나입니다. 값 이름에 값이 할당되어 있으면 Windows RegEdit이 "(Default)"로 보여주는 값 이름이 열람됩니다. 그러나 A_LoopRegName는 값 이름에 대하여 비워집니다.</td>
@@ -65,7 +92,7 @@
   </tr>
   <tr>
     <td>A_LoopRegSubKey</td>
-    <td>현재 SubKey의 이름. 이 키는 <em>Key</em> 매개변수와 같습니다. 단, <em>Recurse</em> 매개변수가 재귀적으로 다른 하위키들을 탐험하는 데 사용중이면 예외입니다. 그런 경우라면, 현재 열람된 항목의 전체 경로입니다. 루트 키를 포함하지 않습니다. 예를 들어: Software\SomeApplication\My SubKey</td>
+    <td>Name of the current subkey. 이 키는 <em>Key</em> 매개변수와 같습니다. 단, <em>Recurse</em> 매개변수가 재귀적으로 다른 하위키들을 탐험하는 데 사용중이면 예외입니다. 그런 경우라면, 현재 열람된 항목의 전체 경로입니다. 루트 키를 포함하지 않습니다. 예를 들어: Software\SomeApplication\My SubKey</td>
   </tr>
   <tr>
     <td>A_LoopRegTimeModified</td>
@@ -75,19 +102,23 @@
 <p>레지스트리-회돌이 안에서 사용될 때, 다음 명령어들을 사용하면 현재 열람된 항목을 처리해야 할지 말지 간단하게 알려줄 수 있습니다:</p>
 <table class="info">
   <tr>
-    <td width="21%"><a href="RegRead.htm">RegRead</a>, OutputVar</td>
-    <td width="79%">현재 항목을 읽습니다. 현재 항목이 키이면, ErrorLevel에 1이 설정되고 <em>OutputVar</em>는 비워집니다.</td>
+    <th style="min-width: 11em;">구문</th>
+    <th abbr="설명">설명</th>
   </tr>
   <tr>
-    <td><a href="RegWrite.htm">RegWrite</a> [, Value]</td>
+    <td><code><a href="RegRead.htm">RegRead</a>, OutputVar</code></td>
+    <td>현재 항목을 읽습니다. 현재 항목이 키이면, ErrorLevel에 1이 설정되고 <em>OutputVar</em>는 비워집니다.</td>
+  </tr>
+  <tr>
+    <td><code><a href="RegWrite.htm">RegWrite</a>, Value</code><br><code><a href="RegWrite.htm">RegWrite</a></code></td>
     <td>현재 항목을 씁니다. <em>Value</em>를 생략하면, 항목은 그의 유형에 따라 0이 되거나 비워집니다. 현재 항목이 키이면, ErrorLevel은 1이 설정되고 다른 효과는 전혀 없습니다.</td>
   </tr>
   <tr>
-    <td><a href="RegDelete.htm">RegDelete</a></td>
+    <td><code><a href="RegDelete.htm">RegDelete</a></code></td>
     <td>현재 항목을 삭제합니다. 현재 항목이 키이면, 그의 서브키 그리고 그 안에 포함된 값까지 함께 삭제됩니다.</td>
   </tr>
 </table>
-<p>(위에 기술된 <em>RootKey</em> 매개변수를 통하여) 원격 레지스트리에 접근할 때, 다음 사항이 적용됩니다:</p>
+<p id="remote">When accessing a remote registry (via the <em>RootKey</em> or <em>KeyName</em> parameter described above), the following notes apply:</p>
 <ul>
   <li>목표 머신은 원격 레지스트리 서비스를 실행하고 있어야 합니다.</li>
   <li>목표 컴퓨터가 여러분의 도메인과 같은 도메인에 있지 않다면 또는 지역이나 원격 사용자이름이 충분한 권한이 없다면 원격 레지스트리 접근은 실패할 수 있습니다 (그렇지만, 가능한 해결책은 아래를 참조하십시오).</li>
@@ -97,54 +128,59 @@
   <li>Windows XP Home Edition에 대하여, MSDN이 언급한 바에 의하면 "이 기능은 언제나 실패합니다". Home Edition은 레지스트리 서버도 클라이언트도 없습니다. 물론 클라이언트는 OS cab 파일 중에서 추출할 수 있습니다.</li>
 </ul>
 <p><a href="Block.htm">Blocks</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, 그리고 A_Index 변수 (모든 유형의 회돌이에 존재함)에 관한 정보는 <a href="Loop.htm">Loop</a>를 참조하십시오.</p>
-<h3>관련 항목</h3>
+
+<h2 id="Related">관련 항목</h2>
 <p><a href="Loop.htm">Loop</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">블록</a>, <a href="RegRead.htm">RegRead</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="RegDelete.htm">RegDelete</a>, <a href="SetRegView.htm">SetRegView</a></p>
 
-<h3>예제</h3>
-<pre class="NoIndent"><em>; 예제: 사용자가 타자한 인터넷 익스플로러의 URL 이력을 삭제합니다:</em>
-Loop, HKEY_CURRENT_USER, Software\Microsoft\Internet Explorer\TypedURLs
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExRegDelete">
+<p><a class="ex_number" href="#ExRegDelete"></a> 사용자가 타자한 인터넷 익스플로러의 URL 이력을 삭제합니다.</p>
+<pre>Loop, HKEY_CURRENT_USER, Software\Microsoft\Internet Explorer\TypedURLs
     RegDelete</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제: 작동하는 테스트 스크립트:</em>
-Loop, Reg, HKEY_CURRENT_USER\Software\Microsoft\Windows, KVR
+</div>
+
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> 작동하는 테스트 스크립트.</p>
+<pre>Loop, Reg, HKEY_CURRENT_USER\Software\Microsoft\Windows, KVR
 {
-    if a_LoopRegType = key
-        value =
+    if (A_LoopRegType = "key")
+        value := ""
     else
     {
         RegRead, value
         if ErrorLevel
-            value = *error*
+            value := "*error*"
     }
-    MsgBox, 4, , %a_LoopRegName% = %value% (%a_LoopRegType%)`n`nContinue?
+    MsgBox, 4, , %A_LoopRegName% = %value% (%A_LoopRegType%)`n`nContinue?
     IfMsgBox, NO, break
 }</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제: 전체 레지스트리에서 특정 값을
-; 재귀적으로 열람하는 예제.</em>
-SetBatchLines -1  <em>; 최대 속도로 검색합니다.</em>
-RegSearchTarget = Notepad  <em>; 서브루틴에 무엇을 검색하고 싶은지 알립니다.</em>
+</div>
+
+<div class="ex" id="ExRegSearch">
+<p><a class="ex_number" href="#ExRegSearch"></a> 전체 레지스트리에서 특정 값을 재귀적으로 열람하는.</p>
+<pre>SetBatchLines -1  <em>; 최대 속도로 검색합니다.</em>
+RegSearchTarget := "Notepad"  <em>; 서브루틴에 무엇을 검색하고 싶은지 알립니다.</em>
 Gosub, RegSearch
 return
 
 RegSearch:
-ContinueRegSearch = y
+ContinueRegSearch := true
 Loop, Reg, HKEY_LOCAL_MACHINE, KVR
 {
     Gosub, CheckThisRegItem
-    if ContinueRegSearch = n <em>; 멈추어야 합니다.</em>
+    if not ContinueRegSearch <em>; 멈추어야 합니다.</em>
         return
 }
 Loop, Reg, HKEY_USERS, KVR
 {
     Gosub, CheckThisRegItem
-    if ContinueRegSearch = n <em>; 멈추어야 합니다.</em>
+    if not ContinueRegSearch <em>; 멈추어야 합니다.</em>
         return
 }
 Loop, Reg, HKEY_CURRENT_CONFIG, KVR
 {
     Gosub, CheckThisRegItem
-    if ContinueRegSearch = n <em>; 멈추어야 합니다.</em>
+    if not ContinueRegSearch <em>; 멈추어야 합니다.</em>
         return
 }
 <em>; 주의: HKEY_USERS를 검색 중이라면
@@ -154,18 +190,19 @@ Loop, Reg, HKEY_CURRENT_CONFIG, KVR
 return
 
 CheckThisRegItem:
-if A_LoopRegType = KEY  <em>; 키 이름도 점검하고 싶다면 다음 두 줄을 제거하십시오.</em>
+if (A_LoopRegType = "KEY")  <em>; 키 이름도 점검하고 싶다면 다음 두 줄을 제거하십시오.</em>
     return
 RegRead, RegValue
 if ErrorLevel
     return
-IfInString, RegValue, %RegSearchTarget%
+if InStr(RegValue, RegSearchTarget)
 {
     MsgBox, 4, , The following match was found:`n%A_LoopRegKey%\%A_LoopRegSubKey%\%A_LoopRegName%`nValue = %RegValue%`n`nContinue?
     IfMsgBox, No
-        ContinueRegSearch = n  <em>; 호출자에게 검색을 멈추라고 알립니다.</em>
+        ContinueRegSearch := false  <em>; 호출자에게 검색을 멈추라고 알립니다.</em>
 }
 return</pre>
+</div>
 
 </body>
 </html>

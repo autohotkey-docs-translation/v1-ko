@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>StringMid</title>
+<title>StringMid - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The StringMid command retrieves one or more characters from the specified position in a string." />
+<meta name="ahk:equiv-v2" content="commands/SubStr.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,9 +15,10 @@
 
 <p>문자열에서 지정된 위치로부터 하나 이상이 문자를 열람합니다.</p>
 
-<pre class="Syntax">StringMid, OutputVar, InputVar, StartChar [, Count , L]
-NewStr := <a href="../Functions.htm#SubStr">SubStr</a>(String, StartPos [, Length]) <em>; 자세한 것은 <a href="../Functions.htm#SubStr">SubStr() 함수</a>를 참조하십시오.</em></pre>
-<h3>매개변수</h3>
+<p class="warning"><strong>비추천:</strong> 이 명령어는 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="SubStr.htm">SubStr</a> 기능을 사용하십시오.</p>
+
+<pre class="Syntax"><span class="func">StringMid</span>, OutputVar, InputVar, StartChar <span class="optional">, Count, L</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
@@ -29,27 +31,30 @@ NewStr := <a href="../Functions.htm#SubStr">SubStr</a>(String, StartPos [, Lengt
   <dd><p>추출할 첫 문자의 위치, <a href="../Variables.htm#Expressions">표현식</a> 가능. <a href="StringGetPos.htm">StringGetPos</a>와 다르게, 1이면 첫 문자입니다. <em>StartChar</em>가 1보다 작으면, 1이라고 간주합니다. <em>StartChar</em>가 문자열의 끝을 넘어서면, <em>OutputVar</em>는 비워집니다.</p></dd>
 
   <dt>Count</dt>
-  <dd><p>v1.0.43.10+에서, 이 매개변수는 생략하거나 비워 둘 수 있습니다. 이것은 문자열로부터 모든 문자를 열람하기에 충분히 큰 정수를 지정한 것과 같은 효과가 있습니다.</p>
+  <dd><p><span class="ver">[v1.0.43.10+]</span>: 이 매개변수는 생략하거나 비워 둘 수 있습니다. 이것은 문자열로부터 모든 문자를 열람하기에 충분히 큰 정수를 지정한 것과 같은 효과가 있습니다.</p>
       <p>그렇지 않으면, 추출할 문자의 개수를 지정하십시오. <a href="../Variables.htm#Expressions">표현식</a>이 가능합니다. <em>Count</em>가 0보다 작거나 같으면, <em>OutputVar</em>는 비워집니다. <em>Count</em>가 <em>StartChar</em>로부터 측정해 <em>InputVar</em>의 길이를 초과하면, <em>OutputVar</em>는 <em>StartChar</em>부터 시작해 <em>InputVar</em>의 전체로 설정됩니다.</p></dd>
 
   <dt>L</dt>
   <dd><p>기호 L을 사용하면 <em>StartChar</em>의 오른쪽이 아니라 왼쪽에 있는 문자들을 추출할 수 있습니다. 다음 예제에서, <em>OutputVar</em>는 <em>Red</em>로 설정됩니다:</p>
-<pre>InputVar = The Red Fox
+<pre>InputVar := "The Red Fox"
 StringMid, OutputVar, InputVar, 7, 3, L</pre>
     <p>L 옵션이 존재하고 <em>StartChar</em>가 1보다 작으면, <em>OutputVar</em>은 비워집니다. <em>StartChar</em>가 <em>InputVar</em>의 길이를 넘어 서면, 오직 <em>Count</em> 범위 안의 문자들만 추출됩니다. 예를 들어, 아래의 예제에서 <em>OutputVar</em>는 <em>Fox</em>가 설정됩니다:</p>
-<pre>InputVar = The Red Fox
+<pre>InputVar := "The Red Fox"
 StringMid, OutputVar, InputVar, 14, 6, L</pre>
 </dd>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>이 명령어와 기타 모든 명령어에 대하여, <em>OutputVar</em>는 <em>InputVar</em>와 변수가 같아도 허용합니다.</p>
-<h3>관련 항목</h3>
-<p><a href="../Functions.htm#SubStr">SubStr()</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Source = Hello this is a test. 
+<h2 id="Related">관련 항목</h2>
+<p><a href="SubStr.htm">SubStr()</a>, <a href="StringLeft.htm">StringLeft</a>, <a href="StringLeft.htm">StringRight</a>, <a href="StringTrimLeft.htm">StringTrimLeft</a>, <a href="StringTrimLeft.htm">StringTrimRight</a>, <a href="IfInString.htm">IfInString</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringLen.htm">StringLen</a>, <a href="StringLower.htm">StringLower</a>, <a href="StringLower.htm">StringUpper</a>, <a href="StringReplace.htm">StringReplace</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves a substring with a length of 4 characters at position 7.</p>
+<pre>Source := "Hello this is a test."
 StringMid, the_word_this, Source, 7, 4</pre>
+</div>
 
 </body>
 </html>

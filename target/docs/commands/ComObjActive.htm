@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ComObjActive()</title>
+<title>ComObjActive() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ComObjActive function retrieves a running object that has been registered with OLE." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -13,24 +13,26 @@
 <h1>ComObjActive() <span class="ver">[AHK_L 53+]</span></h1>
 
 <p>OLE로 등록되어 실행 중인 객체를 열람합니다.</p>
-<pre class="Syntax">ComObject := ComObjActive(CLSID)</pre>
+<pre class="Syntax">ComObject := <span class="func">ComObjActive</span>(CLSID)</pre>
 
 <p id="param">매개변수나 반환 값에 건넬 유형 있는 값을 나타내는 객체를 만듭니다.</p>
-<pre class="Syntax">ParamObj := ComObject(VarType, Value [, Flags])</pre>
+<pre class="Syntax">ParamObj := <span class="func">ComObject</span>(VarType, Value <span class="optional">, Flags</span>)</pre>
+<hr>
+<p class="warning"><strong>비추천:</strong> 아래에 보여주는 사용법은 추천하지 않습니다. 앞으로는 사용이 불가능하거나 바뀔 수 있습니다.</p>
+<p id="missing">COM 객체의 메쏘드를 호출할 때 선택적인 매개변수의 기본 값 대신에 사용할 객체를 만듭니다. <span class="ver">[v1.1.12+]</span>: This function is obsolete. Instead, simply write two consecutive commas, as in <code>Obj.Method(1,,3)</code></p>
+<pre class="Syntax">ParamObj := <span class="func">ComObjMissing</span>()</pre>
 
-<h4 style="margin-top:2em">절대 비추천:</h4>
-<p>아래에 보여주는 사용법은 추천하지 않습니다. 앞으로는 사용이 불가능하거나 바뀔 수 있습니다.</p>
-<p id="missing">COM 객체의 메쏘드를 호출할 때 선택적인 매개변수의 기본 값 대신에 사용할 객체를 만듭니다. v1.1.12부터 폐기되었습니다: 대신에 그냥 두 개의 쉼표를 연속적으로 사용하십시오. 다음과 같이: <code>Obj.Method(1,,3)</code></p>
-<pre class="Syntax">ParamObj := ComObjMissing()</pre>
-
-<p id="enwrap"><a href="http://msdn.microsoft.com/en-us/library/dd318520.aspx">IDispatch</a> 포인터를 객체에 싸 넣고 자동으로 AddRef를 호출합니다.</p>
-<pre class="Syntax">ComObject := ComObjEnwrap(DispPtr)
-DispPtr := ComObjUnwrap(ComObject)</pre>
+<p id="enwrap"><a href="http://msdn.microsoft.com/ko-kr/library/dd318520.aspx">IDispatch</a> 포인터를 객체에 싸 넣고 자동으로 AddRef를 호출합니다.</p>
+<pre class="Syntax">
+ComObject := <span class="func">ComObjEnwrap</span>(DispPtr)
+DispPtr := <span class="func">ComObjUnwrap</span>(ComObject)
+</pre>
 <p>미래를 보장하는 코드를 작성하려면, 대신 다음과 같이 사용하십시오:</p>
 <pre>ComObject := ComObject(9, DispPtr, 1), ObjAddRef(DispPtr)
 DispPtr := <a href="ComObjValue.htm">ComObjValue</a>(ComObject), ObjAddRef(DispPtr)</pre>
+<hr>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>CLSID</dt>
@@ -53,22 +55,26 @@ DispPtr := <a href="ComObjValue.htm">ComObjValue</a>(ComObject), ObjAddRef(DispP
 
 </dl>
 
-<h3 id="Flags">플래그</h3>
+<h2 id="Flags">Flags</h2>
 <table class="info">
   <tr>
-    <td>&nbsp;0&nbsp;</td>
+    <th class="center">Flag</th>
+    <th>효과</th>
+  </tr>
+  <tr>
+    <td class="center">0</td>
     <td>
-      <p>기본 행위. <a href="http://msdn.microsoft.com/en-us/library/ms691379.aspx">AddRef</a>는 IUnknown과 IDispatch 포인터에 대하여 자동으로 호출됩니다. 그래서 호출자는 <a href="ObjAddRef.htm">ObjRelease</a>를 사용하여 적절하게 포인터 사본을 놓아 주어야 합니다.</p>
+      <p>기본 행위. <a href="http://msdn.microsoft.com/ko-kr/library/ms691379.aspx">AddRef</a>는 IUnknown과 IDispatch 포인터에 대하여 자동으로 호출됩니다. 그래서 호출자는 <a href="ObjAddRef.htm">ObjRelease()</a>를 사용하여 적절하게 포인터 사본을 놓아 주어야 합니다.</p>
       <p>기본 행위는 앞으로 바뀔 수 있으므로, 인터페이스 포인터를 포장할 때 언제나 <em>Flags</em>를 <code>1</code>로 설정하기를 권장합니다. 그리고 필요하면 <a href="ObjAddRef.htm">ObjAddRef()</a>를 호출하기를 권장합니다.</p>
     </td>
   </tr>
   <tr>
-    <td>&nbsp;1&nbsp;</td>
-    <td>IUnknown, IDispatch 또는 SAFEARRAY 포인터의 소유권을 획득합니다. AddRef는 호출되지 않습니다. 포장 객체에 SAFEARRAY가 들어 있으면 (VT_BYREF는 제외), 포장 객체가 해제될 때 <a href="http://msdn.microsoft.com/en-us/library/ms221702.aspx">SafeArrayDestroy</a>가 자동으로 호출됩니다.</td>
+    <td class="center">1</td>
+    <td>IUnknown, IDispatch 또는 SAFEARRAY 포인터의 소유권을 획득합니다. AddRef는 호출되지 않습니다. 포장 객체에 SAFEARRAY가 들어 있으면 (VT_BYREF는 제외), 포장 객체가 해제될 때 <a href="https://msdn.microsoft.com/ko-kr/library/ms221702(v=vs.85).aspx">SafeArrayDestroy</a>가 자동으로 호출됩니다.</td>
   </tr>
 </table>
 
-<h3 id="ByRef">ByRef <span class="ver">[v1.1.17+]</span></h3>
+<h2 id="ByRef">ByRef <span class="ver">[v1.1.17+]</span></h2>
 <p>포장 객체의 <a href="ComObjType.htm"><em>VarType</em></a>에 VT_BYREF (0x4000) 플래그가 들어 있으면, 빈 각괄호<code>[]</code>를 사용하여 참조된 값을 읽거나 쓸 수 있습니다.</p>
 <p>참조를 생성할 때, <em>Value</em>는 반드시 주어진 유형의 값을 저장하기에 충분한 가용 능력이 있는 변수나 버퍼의 메모리 주소이어야 합니다. 예를 들어, 다음을 사용하면 VBScript 함수가 쓸 수 있는 변수를 만들 수 있습니다:</p>
 <pre>VarSetCapacity(var, 24, 0)
@@ -77,18 +83,22 @@ vref := ComObject(0x400C, &amp;var)  <em>; 0x400C는 VT_BYREF와 VT_VARIANT의 �
 vref[] := "in value"
 sc.Run("Example", vref)  <em>; sc는 반드시 아래의 <a href="#ByRefEx">예제</a>와 같이 초기화되어야 합니다.</em>
 MsgBox % vref[]</pre>
+<p>Note that although any previous value is freed when a new value is assigned by <code>vref[]</code> or the COM method, the final value is not freed automatically. Freeing the value requires knowing which type it is. Because it is VT_VARIANT in this case, it can be freed by calling <a href="https://docs.microsoft.com/ko-kr/windows/win32/api/oleauto/nf-oleauto-variantclear">VariantClear</a> with <a href="DllCall.htm">DllCall</a> or by using a simpler method: assign an integer, such as <code>vref[] := 0</code>.</p>
 
-<h3 id="Remarks">총평</h3>
+<h2 id="Remarks">총평</h2>
 <p>현재 버전에서, "ComObj"로 시작하는 함수가 다른 COM 함수 중 하나와 일치하지 않으면 실제로는 ComObjActive를 호출합니다. 예를 들어, <code>ComObjEnwrap(DispPtr)</code>와 <code>ComObjActive(DispPtr)</code>는 모두 <code>ComObject(DispPtr)</code>와 동등합니다 (묵시적으로 <em>VarType</em>은 9입니다). 그렇지만, 이 행위는 앞으로 사용하지 못할 것입니다. 그래서 이 페이지에서 보여주는 바와 같이 <code>ComObject()</code>와 <code>ComObjActive()</code>만 사용하는 것이 제일 좋습니다.</p>
+<p>If ComObjActive cannot retrieve an active object, it may throw an exception, exit the script or return an empty string, depending on the current <a href="ComObjError.htm">ComObjError()</a> setting and <a href="ComObjError.htm#factors">other factors</a>.</p>
 <p>IDispatch나 IUnknown 인터페이스 포인터를 포장하거나 열람하는 데 이 함수가 사용될 때, 기본 행위는 COM 객체의 참조 횟수를 늘리는 것입니다. 그러므로, 인터페이스 포인터는 더 이상 필요하지 않을 때 <a href="ObjAddRef.htm">수동으로</a> 해제해야 합니다. 포장 객체가 해제될 때, 그 안에 든 참조는 자동으로 해제됩니다.</p>
-<p><b>알려진 한계:</b> COM 객체가 포장될 때마다, 새 포장 객체가 생성됩니다. <code>obj1 == obj2</code> 그리고 <code>array[obj1] := value</code>와 같은 비교와 할당은 같은 COM 객체를 포함하고 있을 지라도 두 개의 포장 객체를 유일한 것으로 취급합니다.</p>
+<p><b>알려진 한계:</b> COM 객체가 포장될 때마다, 새 포장 객체가 생성됩니다. <code>if (obj1 == obj2)</code> 그리고 <code>array[obj1] := value</code>와 같은 비교와 할당은 같은 COM 객체를 포함하고 있을 지라도 두 개의 포장 객체를 유일한 것으로 취급합니다.</p>
 
-<h3 id="Related">관련 항목</h3>
-<p><a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjGet.htm">ComObjGet</a>, <a href="ComObjConnect.htm">ComObjConnect</a>, <a href="ComObjError.htm">ComObjError</a>, <a href="ComObjFlags.htm">ComObjFlags</a>, <a href="ObjAddRef.htm">ObjAddRef/ObjRelease</a>, <a href="ComObjQuery.htm">ComObjQuery</a>, <a href="http://msdn.microsoft.com/en-us/library/ms221467.aspx">GetActiveObject (MSDN)</a></p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="ComObjCreate.htm">ComObjCreate()</a>, <a href="ComObjGet.htm">ComObjGet()</a>, <a href="ComObjConnect.htm">ComObjConnect()</a>, <a href="ComObjError.htm">ComObjError()</a>, <a href="ComObjFlags.htm">ComObjFlags()</a>, <a href="ObjAddRef.htm">ObjAddRef() / ObjRelease()</a>, <a href="ComObjQuery.htm">ComObjQuery()</a>, <a href="http://msdn.microsoft.com/ko-kr/library/ms221467.aspx">GetActiveObject (MSDN)</a></p>
 
-<h3>예제</h3>
-<p>ComObjUnwrap: 다음 참조 <a href="ComObjConnect.htm#Examples">ComObjConnect</a>.</p>
-<pre class="NoIndent" id="ByRefEx">
+<h2 id="Examples">예제</h2>
+<p>ComObjUnwrap: 다음 참조 <a href="ComObjConnect.htm#Examples">ComObjConnect()</a>.</p>
+<div class="ex" id="ByRefEx">
+<p><a class="ex_number" href="#ByRefEx"></a> VARIANT ByRef를 COM 함수에 건넵니다.</p>
+<pre>
 <em>; 여는 말- ScriptControl은 32-비트 버전의 오토핫키를 요구합니다.</em>
 code =
 (
@@ -102,42 +112,65 @@ sc := <a href="ComObjCreate.htm">ComObjCreate</a>("ScriptControl"), sc.Language 
 
 <em>; 예제: VARIANT ByRef를 COM 함수에 건넵니다.</em>
 var := ComVar()
+var[] := "in value"  <em>; Use [] to assign a value.</em>
+sc.Run("Example", var.ref)  <em>; Pass the VT_BYREF ComObject (.ref).</em>
+MsgBox % var[]  <em>; Use [] to retrieve a value.</em>
+
+<em>; The same thing again, but more direct:</em>
+VarSetCapacity(variant_buf, 24, 0)  <em>; Make a buffer big enough for a VARIANT.</em>
+var := ComObject(0x400C, &amp;variant_buf)  <em>; Make a reference to a VARIANT.</em>
 var[] := "in value"
-sc.Run("Example", var.ref)
+sc.Run("Example", var)  <em>; Pass the VT_BYREF ComObject itself, no [] or .ref.</em>
 MsgBox % var[]
+<em>; If a VARIANT contains a string or object, it must be explicitly freed
+; by calling VariantClear or assigning a pure numeric value:</em>
+var[] := 0
 
 
 <em>; ComVar: 값을 ByRef로 건네는 데 사용할 수 있는 객체를 생성합니다.
 ;   ComVar[] 값을 열람합니다
 ;   ComVar[] := Val은 값을 설정합니다
 ;   ComVar.ref는 COM 함수에 건네기 위해 ByRef 객체를 열람합니다.</em>
-ComVar(Type=0xC)
+ComVar(Type := 0xC)
 {
-    static <a href="../Objects.htm#Custom_Objects">base</a> := { __Get: "ComVarGet", __Set: "ComVarSet", __Delete: "ComVarDel" }
-    <em>; 1 VARIANT의 배열을 만듭니다.  이 방법으로 모든 내장 코드는
-    ; VARIANT와 AutoHotkey 내부 유형 사이의 모든 변환을 처리할 수 있습니다.</em>
-    arr := <a href="ComObjArray.htm">ComObjArray</a>(Type, 1)
-    <em>; 그 배열을 잠그고 VARIANT를 가리키는 포인터를 열람합니다.</em>
-    DllCall("oleaut32\SafeArrayAccessData", "ptr", <a href="ComObjValue.htm">ComObjValue</a>(arr), "ptr*", arr_data)
-    <em>; 그 배열을 저장합니다. 그리고 VARIANT ByRef를 건네는 데 사용할 수 있는 객체를 저정합니다.</em>
-    return { ref: ComObject(0x4000|Type, arr_data), _: arr, base: base }
+    static base := { __Get: Func("ComVarGet"), __Set: Func("ComVarSet")
+        , __Delete: Func("ComVarDel") } <em>; For base, see Custom Objects.
+    
+    ; Create a new object based on base.</em>
+    cv := {base: base}
+    
+    <em>; Allocate memory for a VARIANT to hold our value. VARIANT is used even
+    ; when Type != VT_VARIANT so that VariantClear can be used by __delete.</em>
+    cv.SetCapacity("buf", 24), ptr := cv.GetAddress("buf")
+    NumPut(0, NumPut(0, ptr+0, "int64"), "int64")
+    
+    if (Type != 0xC) { <em>; Not VT_VARIANT.</em>
+        NumPut(Type, ptr+0, "ushort") <em>; Set the variant type for __delete.</em>
+        ptr += 8 <em>; Point to the actual value.</em>
+    }
+    
+    <em>; Create an object which can be used to pass the variable ByRef.</em>
+    cv.ref := ComObject(0x4000|Type, ptr)
+    
+    return cv
 }
 
-ComVarGet(cv, <a href="../Functions.htm#Variadic">p*</a>) { <em>; 스크립트가 미지의 필드에 접근하면 호출됩니다.</em>
+ComVarGet(cv, p*) { <em>; 스크립트가 미지의 필드에 접근하면 호출됩니다.</em>
     if p.MaxIndex() = "" <em>; 이름/매개변수 없음. 즉, cv[]</em>
-        return cv._[0]
+        return cv.ref[]
 }
 
 ComVarSet(cv, v, p*) { <em>; 스크립트가 미지의 필드를 설정할 때 호출됩니다.</em>
     if p.MaxIndex() = "" <em>; 이름/매개변수 없음. 즉, cv[]:=v</em>
-        return cv._[0] := v
+        return cv.ref[] := v
 }
 
 ComVarDel(cv) { <em>; 객체가 해제될 때 호출됩니다.
-    ; 이것이 성공해야 내부 배열이 해제될 수 있습니다.</em>
-    DllCall("oleaut32\SafeArrayUnaccessData", "ptr", ComObjValue(cv._))
+    ; Depending on type, this may be needed to free the value, if set.</em>
+    DllCall("oleaut32\VariantClear", "ptr", cv.GetAddress("buf"))
 }
 </pre>
+</div>
 
 </body>
 </html>

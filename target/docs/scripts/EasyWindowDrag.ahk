@@ -1,11 +1,11 @@
-; Easy Window Dragging (requires XP/2k/NT)
-; http://www.autohotkey.com
+﻿; Easy Window Dragging (requires XP/2k/NT)
+; https://www.autohotkey.com
 ; Normally, a window can only be dragged by clicking on its title bar.
 ; This script extends that so that any point inside a window can be dragged.
 ; To activate this mode, hold down CapsLock or the middle mouse button while
 ; clicking, then drag the window to a new position.
 
-; Note: You can optionally release Capslock or the middle mouse button after
+; Note: You can optionally release CapsLock or the middle mouse button after
 ; pressing down the mouse button rather than holding it down the whole time.
 ; This script requires v1.0.25+.
 
@@ -23,13 +23,13 @@ EWD_WatchMouse:
 GetKeyState, EWD_LButtonState, LButton, P
 if EWD_LButtonState = U  ; Button has been released, so drag is complete.
 {
-	SetTimer, EWD_WatchMouse, off
+	SetTimer, EWD_WatchMouse, Off
 	return
 }
 GetKeyState, EWD_EscapeState, Escape, P
 if EWD_EscapeState = D  ; Escape has been pressed, so drag is cancelled.
 {
-	SetTimer, EWD_WatchMouse, off
+	SetTimer, EWD_WatchMouse, Off
 	WinMove, ahk_id %EWD_MouseWin%,, %EWD_OriginalPosX%, %EWD_OriginalPosY%
 	return
 }

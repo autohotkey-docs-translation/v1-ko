@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<title>StrPut() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The StrPut function copies a string to a memory address, optionally converting it to a given code page." />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/content.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>StrPut() <span class="ver">[AHK_L 46+]</span></h1>
+
+<p>Copies a string to a memory address, optionally converting it to a given code page.</p>
+
+<pre class="Syntax">
+<span class="func">StrPut</span>(String <span class="optional">, Encoding := <i>None</i></span>)
+<span class="func">StrPut</span>(String, Target <span class="optional">, Length</span> <span class="optional">, Encoding := <i>None</i></span>)
+</pre>
+<h2 id="Parameters">매개변수</h2>
+<dl>
+
+  <dt>String</dt>
+  <dd>
+    <p>문자열, If a number is given, it is automatically converted to a string.</p>
+    <p><em>String</em> is assumed to be in the <a href="../Concepts.htm#string-encoding">native encoding</a>.</p>
+  </dd>
+
+  <dt>Target</dt>
+  <dd>
+    <p>The memory address to which the string will be written.</p>
+    <p class="warning"><strong>Note:</strong> If conversion between code pages is necessary, the required buffer size may differ from the size of the source string. For such cases, call StrPut with two parameters to calculate the required size.</p>
+  </dd>
+
+  <dt>Length</dt>
+  <dd>
+    <p>쓸 문자의 최대 개수, 필요하면 <a href="../Concepts.htm#null-termination">널-종료</a> <a href="../Concepts.htm#character">문자</a> 포함.</p>
+    <p>If <em>Length</em> is zero or less than the projected length after conversion (or the length of the source string if conversion is not required), zero characters are written.</p>
+    <p><em>Length</em> must not be omitted unless the buffer size is known to be sufficient, such as if the buffer was allocated based on a previous call to StrPut with the same <em>Source</em> and <em>Encoding</em>.</p>
+    <p class="warning"><strong>Note:</strong> When <em>Encoding</em> is specified, <em>Length</em> should be the size of the buffer (in characters), <strong>not</strong> the length of <em>String</em> or a substring, as conversion may increase its length.</p>
+    <p class="warning"><strong>Note:</strong> <em>Length</em> and StrPut's return value are measured in characters, whereas buffer sizes are usually measured in bytes.</p>
+  </dd>
+
+  <dt>Encoding</dt>
+  <dd>
+    <p>The target encoding; for example, <code>"UTF-8"</code>, <code>"UTF-16"</code> or <code>"CP936"</code>. For numeric identifiers, the prefix "CP" can be omitted only if <em>Length</em> is specified. 빈 문자열이나 <code>"CP0"</code>을 지정하면 시스템 기본 ANSI 코드 페이지를 사용합니다.</p>
+  </dd>
+
+</dl>
+
+<h2 id="Return_Value">반환 값</h2>
+<p>This function returns the number of <a href="../Concepts.htm#character">characters</a> written. If no <i>Target</i> was given, it returns the required buffer size in characters. If <em>Length</em> is exactly the length of the converted string, the string is not <a href="../Concepts.htm#null-termination">null-terminated</a>; otherwise the returned size includes the null-terminator.</p>
+
+<h2 id="Error_Handling">에러 처리</h2>
+<p>An empty string is returned if invalid parameters are detected, or if the conversion cannot be performed. If the final number of characters would exceed <em>Length</em>, the return value is zero.</p>
+
+<h2 id="Remarks">논평</h2>
+<p>Note that the <i>String</i> parameter is always assumed to use the <a href="../Concepts.htm#string-encoding">native encoding</a> of the current executable, whereas <i>Encoding</i> specifies the encoding of the string written to the given <i>Target</i>. <em>Encoding</em>을 지정하지 않으면, 그 문자열은 그냥 아무 변환도 일어나지 않고 그대로 복사되거나 측정됩니다.</p>
+
+
+<h2 id="Related">관련 항목</h2>
+<p><a href="../Concepts.htm#string-encoding">String Encoding</a>, <a href="StrGet.htm">StrGet()</a>, <a href="../Compat.htm">Script Compatibility</a>, <a href="FileEncoding.htm">FileEncoding</a>, <a href="DllCall.htm">DllCall()</a>, <a href="VarSetCapacity.htm">VarSetCapacity()</a></p>
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExNumEnc">
+<p><a class="ex_number" href="#ExNumEnc"></a> <em>Length</em>나 <em>Encoding</em>을 <em>Target</em> 다음에 직접적으로 지정할 수 있습니다. 그러나 그런 경우 <em>Encoding</em>은 절대로 숫치형이 되면 안됩니다.</p>
+<pre>
+StrPut(str, address, "cp0")  <em>; Code page 0, unspecified buffer size</em>
+StrPut(str, address, n, 0)   <em>; Maximum n chars, code page 0</em>
+StrPut(str, address, 0)      <em>; Unsupported (maximum 0 chars)</em>
+</pre>
+</div>
+<div class="ex" id="ExEncoding">
+<p><a class="ex_number" href="#ExEncoding"></a> StrPut은 특정한 인코딩으로 문자열에 대하여 필요한 버퍼 크기를 계산하기 위하여 한 번 호출이 가능합니다. 다음, 그 문자열을 인코드해서 버퍼 안으로 써 넣을 수 있습니다. The process can be simplified by adding this function to your <a href="../Functions.htm#lib">library</a>.</p>
+<pre filename="StrPutVar.ahk">StrPutVar(string, ByRef var, encoding)
+{
+    <em>; 가용능력을 확인합니다.</em>
+    VarSetCapacity( var, StrPut(string, encoding)
+        <em>; StrPut은 문자 개수를 돌려주지만, VarSetCapacity는 바이트를 필요로 합니다.</em>
+        * ((encoding="utf-16"||encoding="cp1200") ? 2 : 1) )
+    <em>; 그 문자열을 복사하거나 변환합니다.</em>
+    return StrPut(string, &amp;var, encoding)
+}</pre>
+</div>
+
+</body>
+</html>

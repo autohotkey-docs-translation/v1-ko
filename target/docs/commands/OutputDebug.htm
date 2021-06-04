@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>OutputDebug</title>
+<title>OutputDebug - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The OutputDebug command sends a string to the debugger (if any) for display." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>문자열을 (있다면) 디버거에 보내 보여줍니다.</p>
 
-<pre class="Syntax">OutputDebug, Text</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">OutputDebug</span>, Text</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Text</dt>
@@ -23,14 +23,17 @@
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>스크립트의 프로세스에 디버거가 없다면, 시스템 디버거가 그 문자열을 화면에 보여줍니다. 시스템 디버거가 꺼져 있다면, 이 명령어는 아무 효과가 없습니다.</p>
-<p>디버거의 한 가지 예는 DebugView입니다. 이 디버거는 무료이며 <a href="http://www.sysinternals.com">www.sysinternals.com</a>에서 얻을 수 있습니다.</p>
+<p>디버거의 한 가지 예는 DebugView입니다. 이 디버거는 무료이며 <a href="https://docs.microsoft.com/ko-kr/sysinternals/downloads/debugview">microsoft.com</a>에서 얻을 수 있습니다.</p>
 <p>다음 참조: <a href="../Scripts.htm#debug">다른 디버깅 방법들</a></p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="FileAppend.htm">FileAppend</a>, <a href="../Scripts.htm#continuation">계속 섹션</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">OutputDebug, %A_Now%: 창 "%TargetWindowTitle%"가 존재하지 않으므로, 프로세스가 종료되었습니다.</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> 문자열을 (있다면) 디버거에 보내 보여줍니다.</p>
+<pre>OutputDebug, %A_Now%: 창 "%TargetWindowTitle%"가 존재하지 않으므로, 프로세스가 종료되었습니다.</pre>
+</div>
 
 </body>
 </html>

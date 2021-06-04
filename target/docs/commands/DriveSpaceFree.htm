@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>DriveSpaceFree</title>
+<title>DriveSpaceFree - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The DriveSpaceFree command retrieves the free disk space of a drive, in Megabytes." />
+<meta name="ahk:equiv-v2" content="commands/DriveGetSpaceFree.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,24 +15,27 @@
 
 <p>드라이브의 여유 공간을 메가바이트 단위로 열람합니다.</p>
 
-<pre class="Syntax">DriveSpaceFree, OutputVar, Path</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">DriveSpaceFree</span>, OutputVar, Path</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>OutputVar</dt>
   <dd><p>결과를 저장할 변수, 온전한 숫자에 가장 가깝게 반내림됩니다.</p></dd>
 
-  <dt>path</dt>
+  <dt>Path</dt>
   <dd><p>정보를 수신할 드라이브 경로. NTFS는 볼륨 마운트와 디렉토리 연결을 지원하므로, 같은 "드라이브" 일 지라도 어떤 경우는 폴더마다 여유 공간을 다르게 보고할 수 있습니다.</p></dd>
 
 </dl>
 
-<h3>논평</h3>
-<p>OutputVar는 메가바이트 단위로 디스크 여유 공간의 양이 설정됩니다 (가까운 메가바이트로 반내림됩니다).</p>
-<h3>관련 항목</h3>
+<h2 id="Remarks">논평</h2>
+<p><em>OutputVar</em>는 메가바이트 단위로 디스크 여유 공간의 양이 설정됩니다 (가까운 메가바이트로 반내림됩니다).</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="Drive.htm">Drive</a>, <a href="DriveGet.htm">DriveGet</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">DriveSpaceFree, FreeSpace, c:\</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves the free disk space of the C drive and stores it in <em>FreeSpace</em>.</p>
+<pre>DriveSpaceFree, FreeSpace, C:\</pre>
+</div>
 
 </body>
 </html>

@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>MouseGetPos</title>
+<title>MouseGetPos - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The MouseGetPos command retrieves the current position of the mouse cursor, and optionally which window and control it is hovering over." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,11 +14,11 @@
 
 <p>마우스 커서의 현재 위치를 열람합니다. 그리고 선택적으로 어느 창과 콘트롤 위에 있는지 열람합니다.</p>
 
-<pre class="Syntax">MouseGetPos, [OutputVarX, OutputVarY, OutputVarWin, OutputVarControl, 1|2|3]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">MouseGetPos</span> <span class="optional">, OutputVarX, OutputVarY, OutputVarWin, OutputVarControl, Flag</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>OutputVarX/Y</dt>
+  <dt>OutputVarX, OutputVarY</dt>
   <dd><p>X와 Y 좌표를 열람할 변수의 이름. 열람된 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>를 사용하여 화면 좌표를 바꾼 경우는 예외입니다.</p>
     </dd>
 
@@ -28,27 +28,32 @@
 
   <dt>OutputVarControl</dt>
   <dd><p>이 선태적인 매개변수는 마우스 커서 아래에 있는 콘트롤의 이름(ClassNN)을 저장할 변수의 이름입니다. 콘트롤을 결정할 수 없으면, 이 변수는 비워집니다.</p>
-      <p>콘트롤의 이름은 언제나 Window Spy로 보여지는 이름과 일치해야 합니다. 최소 v1.0.14+이상 요구. 그렇지만 Window Spy와 다르게, 마우스 커서 아래의 창이 활성화되어 있지 않아도 콘트롤을 탐지할 수 있습니다.</p></dd>
+      <p>콘트롤의 이름은 언제나 Window Spy로 보여지는 이름과 일치해야 합니다. 최소 <span class="ver">[v1.0.14+]</span>이상 요구. 그렇지만 Window Spy와 다르게, 마우스 커서 아래의 창이 활성화되어 있지 않아도 콘트롤을 탐지할 수 있습니다.</p></dd>
 
-  <dt>1|2|3</dt>
-  <dd><p>생략하면, 기본값은 0입니다. 그렇지 않으면, 다음 숫자 중 하나를 지정하십시오:</p>
+  <dt>Flag</dt>
+  <dd>
+    <p>If omitted or 0, the command uses the default method to determine <em>OutputVarControl</em> and stores the control's ClassNN. To change this behavior, add up one or both of the following digits:</p>
     <p><strong>1</strong>: <em>OutputVarControl</em>을 알아 내는 데 더 간단한 방법을 사용합니다. 이 방법은 SysEdit이나 TextPad 같은 다중 문서 인터페이스(Multiple Document Interface (MDI)) 어플리케이션에서 활성/최상위 자손 창을 올바르게 열람합니다. 그렇지만, 다른 목적으로는 정밀하지 못합니다. 예를 들어 GroupBox 콘트롤 안의 콘트롤은 제대로 탐지하지 못합니다.</p>
     <p><strong>2</strong> <span class="ver">[v1.0.43.06+]:</span> 콘트롤의 ClassNN이 아니라 <a href="ControlGet.htm#Hwnd">콘트롤의 HWND</a>를 <em>OutputVarControl</em>에 저장합니다.</p>
-    <p><strong>3</strong> <span class="ver">[v1.0.43.06+]:</span> 위의 1과 2의 조합.</p></dd>
+    <p>For example, to put both options into effect, the <em>Flag</em> parameter must be set to 3.</p>
+  </dd>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>출력 변수는 상응하는 정보가 필요하지 않으면 생략할 수 있습니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="CoordMode.htm">CoordMode</a>, <a href="WinGet.htm">WinGet</a>, <a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="Click.htm">Click</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">MouseGetPos, xpos, ypos 
-Msgbox, The cursor is at X%xpos% Y%ypos%. 
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Reports the position of the mouse cursor.</p>
+<pre>MouseGetPos, xpos, ypos 
+MsgBox, The cursor is at X%xpos% Y%ypos%.</pre>
+</div>
 
-<em>; 이 예제에서 마우스를 이동시켜서 현재 마우스 아래에 있는
-; 창의 제목을 볼 수 있습니다:</em>
-#Persistent
+<div class="ex" id="ExWatchCursor">
+<p><a class="ex_number" href="#ExWatchCursor"></a> Allows you to move the mouse cursor around to see the title of the window currently under the cursor.</p>
+<pre>#Persistent
 SetTimer, WatchCursor, 100
 return
 
@@ -58,6 +63,7 @@ WinGetTitle, title, ahk_id %id%
 WinGetClass, class, ahk_id %id%
 ToolTip, ahk_id %id%`nahk_class %class%`n%title%`nControl: %control%
 return</pre>
+</div>
 
 </body>
 </html>

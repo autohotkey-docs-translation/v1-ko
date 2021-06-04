@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#Persistent</title>
+<title>#Persistent - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #Persistent directive keeps a script permanently running (that is, until the user closes it or ExitApp is encountered)." />
+<meta name="ahk:equiv-v2" content="commands/Persistent.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,14 +15,27 @@
 
 <p>스크립트를 영원히 실행 합니다 (즉, 사용자가 닫거나 <a href="ExitApp.htm">ExitApp</a>를 만날 때까지).</p>
 
-<pre class="Syntax">#Persistent</pre>
-<p>이 지시어가 스크립트에 존재하면, 자동 실행 섹션이 (스크립트이 상단 부분) 끝난 후에도 계속해서 실행됩니다. 스크립트에 <a href="SetTimer.htm">타이머</a>나 <a href="Menu.htm">맞춤 메뉴 항목</a>이 들어 있을 경우는 유용합니다. 그러나 <a href="../Hotkeys.htm">핫키</a>, <a href="../Hotstrings.htm">핫스트링</a>, 또는 <a href="OnMessage.htm">OnMessage()</a>나 <a href="Gui.htm">Gui</a>를 사용할 경우는 그렇지 않습니다.</p>
+<pre class="Syntax"><span class="func">#Persistent</span></pre>
+<p>A script is persistent if any of the following conditions are true:</p>
+<ul>
+  <li>At least one <a href="../Hotkeys.htm">hotkey</a> or <a href="../Hotstrings.htm">hotstring</a> has been defined in the script or created by the <a href="Hotkey.htm">Hotkey</a> command or <a href="Hotstring.htm">Hotstring</a> function, even if it is not enabled.</li>
+  <li>The <a href="_InstallKeybdHook.htm">keyboard hook</a> or <a href="_InstallMouseHook.htm">mouse hook</a> is installed.</li>
+  <li>The script contains any use of <a href="Gui.htm">Gui</a>, even if it has not been called.</li>
+  <li>The script contains any use of <a href="OnMessage.htm">OnMessage</a>, or has called it dynamically or retrieved a reference with <a href="Func.htm">Func</a>.</li>
+  <li>The <a href="Input.htm">Input</a> command has been called.</li>
+  <li>The #Persistent directive is present anywhere in the script.</li>
+</ul>
+<p>Use this directive to prevent the script from exiting after the <a href="../Scripts.htm#auto">auto-execute section</a> (top part of the script) completes. This is useful in cases where a script contains <a href="SetTimer.htm">timers</a> and/or <a href="Menu.htm">custom menu items</a> but does not meet any of the other conditions listed above.</p>
 <p>이 지시어를 기존의 스크립트에 추가하면, <a href="Exit.htm">Exit</a>을 <a href="ExitApp.htm">ExitApp</a>로 바꾸는 편이 좋습니다. 왜냐하면 <a href="Exit.htm">Exit</a>는 영구적인 스크립트를 종료하지 못하기 때문입니다; 오직 <a href="../misc/Threads.htm">현재 쓰레드</a>만 종료시킵니다.</p>
-<p>v1.0.16+에서 이 지시어는 또 스크립트를 단일-실체로 만들기도 합니다. 이를 오버라이드 하거나 단일-실체의 행위를 바꾸려면, <a href="_SingleInstance.htm">#SingleInstance</a>를 참조하십시오.</p>
-<h3>관련 항목</h3>
+<p><span class="ver">[v1.0.16+]</span>: 이 지시어는 또 스크립트를 단일-실체로 만들기도 합니다. 이를 오버라이드 하거나 단일-실체의 행위를 바꾸려면, <a href="_SingleInstance.htm">#SingleInstance</a>를 참조하십시오.</p>
+<p>다른 지시어처럼, #Persistent는 조건적으로 실행할 수 없습니다.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="_SingleInstance.htm">#SingleInstance</a>, <a href="SetTimer.htm">SetTimer</a>, <a href="Menu.htm">Menu</a>, <a href="Exit.htm">Exit</a>, <a href="ExitApp.htm">ExitApp</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#Persistent</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Causes the script to run permanently; that is, it will not exit automatically if it could.</p>
+<pre>#Persistent</pre>
+</div>
 
 </body>
 </html>

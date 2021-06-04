@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>RegWrite</title>
+<title>RegWrite - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The RegWrite command writes a value to the registry." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -11,57 +11,87 @@
 <body>
 
 <h1>RegWrite</h1>
-
 <p>값을 레지스트리에 씁니다.</p>
 
-<pre class="Syntax">RegWrite, ValueType, RootKey\SubKey [, ValueName, Value]  <em>; v1.1.21+</em>
-RegWrite, ValueType, RootKey, SubKey [, ValueName, Value]</pre>
-<h3>매개변수</h3>
+<h2 id="new">New Syntax  <span class="ver">[v1.1.21+]</span></h2>
+<pre class="Syntax"><span class="func">RegWrite</span>, ValueType, KeyName <span class="optional">, ValueName, Value</span></pre>
+
+<h3 id="New_Parameters">매개변수</h3>
+<dl>
+
+  <dt>ValueType</dt>
+  <dd><p>반드시 REG_SZ, REG_EXPAND_SZ, REG_MULTI_SZ, REG_DWORD, 또는 REG_BINARY 중 하나.</p></dd>
+
+  <dt>KeyName</dt>
+  <dd><p>The full name of the registry key.</p>
+      <p>This must start with HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, or HKEY_CURRENT_CONFIG (or the abbreviations for each of these, such as HKLM). <a href="LoopReg.htm#remote">원격 레지스트리</a>에 접근하려면, 컴퓨터 이름을 앞에 두고 다음에 쌍점 (또는 <span class="ver">[in v1.1.21+]</span>이면, 역사선)을, 다음 예제와 같이 배치하십시오: <code>\\workstation01:HKEY_LOCAL_MACHINE</code></p></dd>
+
+  <dt>ValueName</dt>
+  <dd><p>씌여질 값의 이름. 비어 있거나 생략하면, <em>KeyName</em>의 기본값이 사용됩니다. 기본 값은 RegEdit가 "(Default)"로 보여주는 값입니다.</p></dd>
+
+  <dt>Value</dt>
+  <dd><p>씌여질 값. 생략하면, <em>ValueType</em>에 따라 빈 문자열 또는 0이 기본값입니다. 텍스트가 길면, <a href="../Scripts.htm#continuation">계속 섹션</a>을 수단으로 짧은 줄로 가를 수 있습니다. 이렇게 하면 가독성과 유지관리성이 향상됩니다.</p></dd>
+
+</dl>
+
+<h2 id="old">Old Syntax</h2>
+<p class="warning"><strong>비추천:</strong> 이 구문는 새 스크립트에 사용을 추천하지 않습니다. Use the <a href="#new">new syntax</a> instead.</p>
+<pre class="Syntax"><span class="func">RegWrite</span>, ValueType, RootKey, SubKey <span class="optional">, ValueName, Value</span></pre>
+
+<h3 id="Old_Parameters">매개변수</h3>
 <dl>
 
   <dt>ValueType</dt>
   <dd><p>반드시 REG_SZ, REG_EXPAND_SZ, REG_MULTI_SZ, REG_DWORD, 또는 REG_BINARY 중 하나.</p></dd>
 
   <dt>RootKey</dt>
-  <dd><p>반드시 HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, 또는 HKEY_CURRENT_CONFIG 중의 하나여야 합니다. (또는 HKLM와 같은 약어). 원격 레지스트리에 접근하려면, 컴퓨터 이름을 앞에 두고 다음에 쌍점 (또는 v1.1.21+이면, 역사선)을, 다음 예제와 같이 배치하십시오: <code>\\workstation01:HKEY_LOCAL_MACHINE</code></p></dd>
+  <dd><p>반드시 HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, 또는 HKEY_CURRENT_CONFIG 중의 하나여야 합니다. (또는 HKLM와 같은 약어). <a href="LoopReg.htm#remote">원격 레지스트리</a>에 접근하려면, 컴퓨터 이름을 앞에 두고 다음에 쌍점 (또는 <span class="ver">[in v1.1.21+]</span>이면, 역사선)을, 다음 예제와 같이 배치하십시오: <code>\\workstation01:HKEY_LOCAL_MACHINE</code></p></dd>
 
   <dt>SubKey</dt>
   <dd><p>서브키의 이름 (예, Software\SomeApplication). <em>SubKey</em>가 존재하지 않으면, (필요하면 그의 조상도 함께) 생성됩니다. <em>SubKey</em>가 비어 있으면, 값은 직접적으로 <em>RootKey</em>에 씌여집니다 (그렇지만 어떤 운영 체제는 HKEY_CURRENT_USER이 최상위 레벨에 쓰는 것을 거부할 수도 있습니다).</p></dd>
   
-  <dt>RootKey\SubKey <span class="ver">[v1.1.21+]</span></dt>
-  <dd><p><em>RootKey</em> 다음에 바로 역사선이 따라오면 (<code>\</code>), <em>RootKey</em>와 <em>SubKey</em>는 하나의 매개변수로 병합됩니다.</p></dd>
-
   <dt>ValueName</dt>
-  <dd><p>씌여질 값의 이름. 비어 있거나 생략하면, <em>Subkey</em>의 기본값이 사용됩니다. 기본 값은 RegEdit가 "(Default)"로 보여주는 값입니다.</p></dd>
+  <dd><p>씌여질 값의 이름. 비어 있거나 생략하면, <em>SubKey</em>의 기본값이 사용됩니다. 기본 값은 RegEdit가 "(Default)"로 보여주는 값입니다.</p></dd>
 
   <dt>Value</dt>
   <dd><p>씌여질 값. 생략하면, <em>ValueType</em>에 따라 빈 문자열 또는 0이 기본값입니다. 텍스트가 길면, <a href="../Scripts.htm#continuation">계속 섹션</a>을 수단으로 짧은 줄로 가를 수 있습니다. 이렇게 하면 가독성과 유지관리성이 향상됩니다.</p></dd>
 
 </dl>
-<h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
+
+<h2 id="Error_Handling">에러 처리</h2>
+<p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 문제가 있으면 1, 그렇지 않으면 0이 설정됩니다.</p>
 <p><a href="../Variables.htm#LastError">A_LastError</a>는 운영 체제의 GetLastError() 함수의 결과가 설정됩니다.</p>
-<h3>논평</h3>
-<p><em>ValueType</em>이 REG_DWORD이면, <em>Value</em>는 -2147483648와 4294967295 (0xFFFFFFFF) 사이의 값이어야 합니다.</p>
+
+<h2 id="Remarks">논평</h2>
+<p><em>ValueType</em>이 REG_DWORD이면, <em>Value</em>는 -2147483648와 4294967295 (0xFFFFFFFF) 사이의 값이어야 합니다. In the registry, REG_DWORD values are always expressed as positive decimal numbers. To read it as a negative number with means such as <a href="RegRead.htm">RegRead</a>, convert it to a signed 32-bit integer by using <code>OutputVar := OutputVar &lt;&lt; 32 &gt;&gt; 32</code> or similar.</p>
 <p>REG_BINARY 키를 쓸 때, 십육진 문자로 구성된 문자열을 사용하십시오. 예를 들어 REG_BINARY 값이 01,a9,ff,77 이면 문자열 01A9FF77을 사용해 쓸 수 있습니다.</p>
 <p>REG_MULTI_SZ 키를 쓸 때, 각 구성요소를 다음 구성요소와 라인피드 문자로 갈라야 합니다 (`n). 마지막 구성요소는 선택적으로 라인피드로 끝나도 됩니다. 빈 구성요소는 허용하지 않습니다. 다른 말로, 두 개의 라인피드를 한 줄에 지정하지 마십시오 (`n`n). 왜냐하면 그렇게 하면 예상보다 더 짧은 값이 레지스트리에 씌여지기 때문입니다.</p>
-<p>REG_BINARY와 REG_MULTI_SZ 값이 64K보다 크면 v1.1.10.01 이후에서만 지원합니다. 예전 버전에서는 64K까지 만 남기고 잘라내 버립니다.</p>
+<p><span class="ver">[v1.1.10.01+]</span>: REG_BINARY and REG_MULTI_SZ values larger than 64K are also supported. 예전 버전에서는 64K까지 만 남기고 잘라내 버립니다.</p>
 <p>여러 키와 값에 작동하고 열람하려면, <a href="LoopReg.htm">레지스트리-회돌이</a>의 사용을 고려하십시오.</p>
 <p>원격 컴퓨터의 레지스트리에 접근하는 법에 관한 자세한 정보는 <a href="LoopReg.htm">레지스트리-회돌이</a>에서 논평을 참조하십시오.</p>
 <p>32-비트 스크립트에서 64-비트 섹션의 레지스트리로부터 엔트리를 또는 그 반대로 읽고 쓰려면, <a href="SetRegView.htm">SetRegView</a>를 사용하십시오.</p>
 
-<h3>관련 항목</h3>
-<p><a href="RegDelete.htm">RegDelete</a>, <a href="RegRead.htm">RegRead</a>, <a href="LoopReg.htm">Registry-loop</a>, <a href="SetRegView.htm">SetRegView</a>, <a href="IniWrite.htm">IniWrite</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">RegWrite, REG_SZ, HKEY_LOCAL_MACHINE, SOFTWARE\TestKey, MyValueName, Test Value
-RegWrite, REG_BINARY, HKEY_CURRENT_USER, Software\TEST_APP, TEST_NAME, 01A9FF77
-RegWrite, REG_MULTI_SZ, HKEY_CURRENT_USER, Software\TEST_APP, TEST_NAME, Line1`nLine2
+<h2 id="Related">관련 항목</h2>
+<p><a href="RegDelete.htm">RegDelete</a>, <a href="RegRead.htm">RegRead</a>, <a href="LoopReg.htm">레지스트리-회돌이</a>, <a href="SetRegView.htm">SetRegView</a>, <a href="IniWrite.htm">IniWrite</a></p>
 
-<em>; 다른 구문 (v1.1.21+ 필요):</em>
-RegWrite, REG_SZ, HKEY_LOCAL_MACHINE\SOFTWARE\TestKey, MyValueName, Test Value
-RegWrite, REG_BINARY, HKEY_CURRENT_USER\Software\TEST_APP, TEST_NAME, 01A9FF77
-RegWrite, REG_MULTI_SZ, HKEY_CURRENT_USER\Software\TEST_APP, TEST_NAME, Line1`nLine2</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExNewVsOld">
+<p><a class="ex_number" href="#ExNewVsOld"></a> New syntax vs. old syntax.</p>
+<p>Despite the different syntax, both examples have the same effect; that is, they write a string to the registry.</p>
+<pre>RegWrite, REG_SZ, HKEY_LOCAL_MACHINE\SOFTWARE\TestKey, MyValueName, Test Value</pre>
+<pre>RegWrite, REG_SZ, HKEY_LOCAL_MACHINE, SOFTWARE\TestKey, MyValueName, Test Value</pre>
+</div>
+
+<div class="ex" id="ExBinary">
+<p><a class="ex_number" href="#ExBinary"></a> Writes binary data to the registry.</p>
+<pre>RegWrite, REG_BINARY, HKEY_CURRENT_USER\Software\TEST_APP, TEST_NAME, 01A9FF77</pre>
+</div>
+
+<div class="ex" id="ExMulti">
+<p><a class="ex_number" href="#ExMulti"></a> Writes a multi-line string to the registry.</p>
+<pre>RegWrite, REG_MULTI_SZ, HKEY_CURRENT_USER\Software\TEST_APP, TEST_NAME, Line1`nLine2</pre>
+</div>
 
 </body>
 </html>

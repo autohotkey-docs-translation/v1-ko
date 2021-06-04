@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#MaxHotkeysPerInterval</title>
+<title>#MaxHotkeysPerInterval - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="Along with #HotkeyInterval, the #MaxHotkeysPerInterval directive specifies the rate of hotkey activations beyond which a warning dialog will be displayed." />
+<meta name="ahk:equiv-v2" content="misc/A_MaxHotkeysPerInterval.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,22 +15,26 @@
 
 <p><a href="_HotkeyInterval.htm">#HotkeyInterval</a>과 함께, <a href="../Hotkeys.htm">핫키</a> 활성화 비율을 지정합니다. 이 값을 넘어서면 경고 대화상자가 나타납니다.</p>
 
-<pre class="Syntax">#MaxHotkeysPerInterval Value</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">#MaxHotkeysPerInterval</span> Value</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Value</dt>
   <dd><p>경고 대화상자를 촉발하지 않고 <a href="_HotkeyInterval.htm">#HotkeyInterval</a>가 지정한 시간 사이에 누를 수 있는 핫키의 최대 개수.</p></dd>
 
 </dl>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>너무 관대하게 지정하지 않도록 주의하십시오. 왜냐하면 의도치 않게 무한 키눌림 회돌이를 초래한다면 (<a href="Send.htm">Send</a> 명령어를 사용했는데 우연하게도 다른 핫키를 촉발하게 되면), 범람하는 키보드 이벤트 때문에 컴퓨터가 응답을 하지 못하게 될 수 있습니다.</p>
 <p>좀 과도하게 간략한 예제를 들자면, 핫키 <code>^c::Send ^c</code>는 무한 키눌림 회돌이를 생산합니다. 이를 피하려면, 핫키 정의에 <a href="../Hotkeys.htm#prefixdollar">$ prefix</a> 접두사를 추가해 (예, <code>$^c::</code>) 핫키가 Send 명령어로 촉발되지 못하게 하십시오.</p>
 <p>이 지시어가 스크립트 안에 지정되어 있지 않으면, 70으로 설정한 것처럼 행위합니다.</p>
-<h3>관련 항목</h3>
+<p>다른 지시어처럼, #MaxHotkeysPerInterval는 조건적으로 실행할 수 없습니다.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="_HotkeyInterval.htm">#HotkeyInterval</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#MaxHotkeysPerInterval 200</pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Allows to press a maximum of 200 instead of 70 hotkeys per interval.</p>
+<pre>#MaxHotkeysPerInterval 200</pre>
+</div>
 
 </body>
 </html>

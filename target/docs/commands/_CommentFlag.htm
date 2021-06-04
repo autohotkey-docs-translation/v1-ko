@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>#CommentFlag</title>
+<title>#CommentFlag - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The #CommentFlag directive changes the script's comment symbol from semicolon to some other string." />
+<meta name="ahk:equiv-v2" content="AutoHotkey.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -13,25 +14,30 @@
 <h1>#CommentFlag</h1>
 
 <p>스크립트의 주석 심볼을 쌍반점으로부터 다른 문자열로 변경합니다.</p>
+<p class="warning"><strong>비추천:</strong> 이 지시어는 새 스크립트에 사용을 추천하지 않습니다. Use the default comment flag (semicolon) instead.</p>
 
-<pre class="Syntax">#CommentFlag NewString</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">#CommentFlag</span> NewString</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>NewString</dt>
   <dd><p>새로운 주석 플래그로 사용될 하나 이상의 문자. 15 문자까지 지정할 수 있습니다.</p></dd>
 
 </dl>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>기본 주석 플래그는 쌍반점입니다 (;).</p>
 <p>주석 플래그는 다음에 따라오는 텍스트가 스크립트에서 작동하지 말아야 한다고 알려 주는 데 사용됩니다 (주석은 스크립트가 기동할 때 메모리 안으로 적재되지 않습니다. 그래서 수행성능에 영향을 주지 않습니다).</p>
 <p>주석 플래그가 명령어와 같은 줄에 나타나면 왼쪽에 적어도 하나 이상의 스페이스나 탭이 있어야 주석으로 간주됩니다. 예를 들어:</p>
 <pre>MsgBox, Test1 <em>; 이것은 주석입니다.</em>
 MsgBox, Test2; 이것은 주석이 아니고 MsgBox가 보여줍니다.</pre>
-<h3>관련 항목</h3>
+<p>다른 지시어처럼, #CommentFlag는 조건적으로 실행할 수 없습니다.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="_EscapeChar.htm">#EscapeChar</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">#CommentFlag //  <em>; C++ 주석 스타일로 변경하니다.</em></pre>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> C++ 주석 스타일로 변경하니다.</p>
+<pre>#CommentFlag //</pre>
+</div>
 
 </body>
 </html>

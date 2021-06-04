@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>SetRegView</title>
+<title>SetRegView - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SetRegView command sets the registry view used by RegRead, RegWrite, RegDelete and registry loops, allowing them in a 32-bit script to access the 64-bit registry view and vice versa." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -11,10 +11,10 @@
 <body>
 
 <h1>SetRegView <span class="ver">[v1.1.08+]</span></h1>
-<p>RegRead, RegWrite, RegDelete 그리고 레지스트리 회돌이에 사용되는 레지스트리 뷰를 설정합니다.</p>
-<pre class="Syntax">SetRegView, RegView</pre>
+<p>Sets the registry view used by <a href="RegRead.htm">RegRead</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="RegDelete.htm">RegDelete</a> and <a href="LoopReg.htm">registry loops</a>, allowing them in a 32-bit script to access the 64-bit registry view and vice versa.</p>
+<pre class="Syntax"><span class="func">SetRegView</span>, RegView</pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>RegView</dt>
@@ -25,18 +25,20 @@
 
 </dl>
 
-<h3>총평</h3>
+<h2 id="General_Remarks">총평</h2>
 <p>이 명령어는 Windows 64-비트에만 유용합니다. Windows 32-비트에서는 효과가 없습니다.</p>
-<p>64-비트 시스템에서, 32-비트 어플리케이션은 <a href="http://msdn.microsoft.com/en-us/library/aa384249">WOW64</a>라고 부르는 Windows 서브시스템 위에서 실행됩니다. 기본으로, 시스템은 충돌을 피하기 위해 어떤 <a href="http://msdn.microsoft.com/en-us/library/aa384253">레지스트리 키</a>는 방향전환합니다. 예를 들어, 32-비트 스크립트에서<code>HKLM\SOFTWARE\AutoHotkey</code>는 <code>HKLM\SOFTWARE\Wow6432Node\AutoHotkey</code>으로 방향전환됩니다. SetRegView를 사용하면 32-비트 스크크립트의 레지스트리 명령어가 64-비트 레지스트리 뷰로 방향전환된 키에 그리고 그 반대로 접근할 수 있습니다.</p>
+<p>64-비트 시스템에서, 32-비트 어플리케이션은 <a href="http://msdn.microsoft.com/ko-kr/library/aa384249">WOW64</a>라고 부르는 Windows 서브시스템 위에서 실행됩니다. 기본으로, 시스템은 충돌을 피하기 위해 어떤 <a href="http://msdn.microsoft.com/ko-kr/library/aa384253">레지스트리 키</a>는 방향전환합니다. 예를 들어, 32-비트 스크립트에서<code>HKLM\SOFTWARE\AutoHotkey</code>는 <code>HKLM\SOFTWARE\Wow6432Node\AutoHotkey</code>으로 방향전환됩니다. SetRegView를 사용하면 32-비트 스크크립트의 레지스트리 명령어가 64-비트 레지스트리 뷰로 방향전환된 키에 그리고 그 반대로 접근할 수 있습니다.</p>
 
 <p>내장 변수 <em>A_RegView</em>에 현재 설정이 담깁니다. 새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>는 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본 설정을 가지고 새롭게 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
 
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="RegRead.htm">RegRead</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="RegDelete.htm">RegDelete</a>, <a href="LoopReg.htm">Loop (레지스트리)</a></p>
 
-<h3>예제</h3>
-<p id="example1">예제 1은 특정한 레지스트리 뷰를 설정하는 법과 레지스트리 방향전환으로 스크립트에 영향을 주는 법을 보여줍니다.</p>
-<pre><em>; 레지스트리 키에 32-비트 어플리케이션처럼 접근합니다.</em>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> 특정한 레지스트리 뷰를 설정하는 법과 레지스트리 방향전환으로 스크립트에 영향을 주는 법을 보여줍니다.</p>
+<pre id="example1">
+<em>; 레지스트리 키에 32-비트 어플리케이션처럼 접근합니다.</em>
 SetRegView 32
 RegWrite REG_SZ, HKLM, SOFTWARE\Test.ahk, Value, 123
 
@@ -52,8 +54,11 @@ MsgBox Read value '%value%' via Wow6432Node.
 SetRegView Default
 <em>;...</em>
 </pre>
-<p id="example2">예제 2은 스크립트가 실행중인 운영 체제와 EXE와 의 유형을 탐지하는 법을 보여줍니다.</p>
-<pre>if (A_PtrSize = 8)
+</div>
+
+<div class="ex" id="Ex32Or64">
+<p><a class="ex_number" href="#Ex32Or64"></a> 스크립트가 실행중인 운영 체제와 EXE와 의 유형을 탐지하는 법을 보여줍니다.</p>
+<pre id="example2">if (A_PtrSize = 8)
     script_is := "64-bit"
 else <em>; if (A_PtrSize = 4)</em>
     script_is := "32-bit"
@@ -64,6 +69,7 @@ else
     OS_is := "32-비트입니다. 오직 단일 레지스트리 뷰만 있습니다"
 
 MsgBox 이 스크립트는 %script_is%이고, OS는 %OS_is%입니다.</pre>
+</div>
 
 </body>
 </html>

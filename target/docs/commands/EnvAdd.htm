@@ -1,8 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>EnvAdd</title>
+<title>EnvAdd - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The EnvAdd command sets a variable to the sum of itself plus the given value (can also add or subtract time from a date-time value)." />
+<meta name="ahk:equiv-v2" content="commands/DateAdd.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -12,12 +13,14 @@
 
 <h1>EnvAdd</h1>
 
-<p>주어진 값을 자신과 합해 <a href="../Variables.htm">변수</a>에 설정합니다 (<a href="FileSetTime.htm#YYYYMMDD">날짜-시간</a> 값으로부터 시간을 더하거나 뺄 수도 있습니다). 다음과 동등합니다: <code>var += value</code>.</p>
+<p>주어진 값을 자신과 합해 <a href="../Variables.htm">변수</a>에 설정합니다 (<a href="FileSetTime.htm#YYYYMMDD">날짜-시간</a> 값으로부터 시간을 더하거나 뺄 수도 있습니다). 다음과 동등합니다: <code>Var += Value</code>.</p>
 
-<pre class="Syntax">EnvAdd, Var, Value [, TimeUnits]
-Var += Value [, TimeUnits]
-Var++</pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">EnvAdd</span>, Var, Value <span class="optional">, TimeUnits</span>
+Var += Value <span class="optional">, TimeUnits</span>
+Var++
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Var</dt>
@@ -34,20 +37,30 @@ Var++</pre>
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>이 명령어는 다음 단축 스타일과 동등합니다: <code>Var += Value</code>.</p>
 <p>변수는 <code>Var++</code>, <code>Var--</code>, <code>++Var</code>, 또는 <code>--Var</code>를 사용해 1 만큼씩 늘거나 줄 수 있습니다.</p>
 <p><em>Var</em>나 <em>Value</em>가 비어 있거나 숫자로 시작하지 않으면, 계산의 목적을 위해 0으로 간주됩니다 (<em>내부적으로</em> 표현식에 사용될 때 그리고 <em>TimeUnits</em> 매개변수를 사용할 때는 예외입니다).</p>
 <p><em>Var</em>나 <em>Value</em>에 소수점이 들어 있다면, 결과는 부동 소수점 수가 되고 형식은 <a href="SetFormat.htm">SetFormat</a>에 의해 설정됩니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Related">관련 항목</h2>
 <p><a href="EnvSub.htm">EnvSub</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="SetFormat.htm">SetFormat</a>, <a href="../Variables.htm#Expressions">표현식</a>, <a href="IfIs.htm">If var is [not] type</a>, <a href="SetEnv.htm">SetEnv</a>, <a href="FileGetTime.htm">FileGetTime</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">EnvAdd, MyCount, 2
-MyCount += 2  <em>; 위와 동등</em>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Sets <var>MyCount</var> to the sum of itself plus 2.</p>
+<pre>EnvAdd, MyCount, 2</pre>
+</div>
 
-var1 =  <em>; 비워서 아래가 대신 현재 시간을 사용하도록 만듭니다.</em>
+<div class="ex" id="ExOperator">
+<p><a class="ex_number" href="#ExOperator"></a> 위와 동등.</p>
+<pre>MyCount += 2</pre>
+</div>
+
+<div class="ex" id="ExDate">
+<p><a class="ex_number" href="#ExDate"></a> Adds 31 days to the current timestamp and reports the result.</p>
+<pre>var1 := ""  <em>; Make it blank so that the below will use the current timestamp instead.</em>
 var1 += 31, days
 MsgBox, %var1%  <em>; 답은 지금부터 31일 후가 될 것입니다.</em></pre>
+</div>
 
 </body>
 </html>

@@ -1,59 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
+
 <head>
-<title>창을 쉽게 끄는 방법 (XP/2k/NT 이상)</title>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/content.js" type="text/javascript"></script>
+  <meta http-equiv="refresh" content="0; url=index.htm#EasyWindowDrag">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="canonical" href="index.htm#EasyWindowDrag">
+  <title>Redirection</title>
 </head>
+
 <body>
-
-<h1>창을 쉽게 끄는 방법 (XP/2k/NT 이상)</h1>
-
-<p>보통, 창은 제목 바를 클릭해서 끌 수 있습니다. 이 스크립트는 창 안의 어느 지점에서든 끌 수 있도록 확장합니다. 이 모드를 활성화하려면, CapsLock 또는 가운데 버튼을 누르면서 클릭하면, 창을 새 위치까지 끌 수 있습니다.
-</p>
-<p><a href="EasyWindowDrag.ahk">이 스크립트 내려받기</a> &nbsp;| &nbsp;<a href="index.htm">다른 샘플 스크립트</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">홈으로</a></p>
-
-<pre class="NoIndent"><em>; 주의: 선택적으로 계속 누르고 있을 필요 없이
-; 마우스 버튼을 누른 다음에 Capslock 또는 가운데 버튼을 떼도 됩니다
-; 이 스크립트는 v1.0.25+를 요구합니다..</em>
-
-~MButton &amp; LButton::
-CapsLock &amp; LButton::
-CoordMode, Mouse  <em>; 화면/절대 좌표를 변환합니다.</em>
-MouseGetPos, EWD_MouseStartX, EWD_MouseStartY, EWD_MouseWin
-WinGetPos, EWD_OriginalPosX, EWD_OriginalPosY,,, ahk_id %EWD_MouseWin%
-WinGet, EWD_WinState, MinMax, ahk_id %EWD_MouseWin% 
-if EWD_WinState = 0  <em>; 창이 최대화 되어 있지 않은 경우에만,</em>
-    SetTimer, EWD_WatchMouse, 10 <em>; 사용자가 마우스를 끄는 것을 추적합니다.</em>
-return
-
-EWD_WatchMouse:
-GetKeyState, EWD_LButtonState, LButton, P
-if EWD_LButtonState = U  <em>; 버튼이 떼어졌습니다. 그래서 끌기가 완료 되었습니다.</em>
-{
-    SetTimer, EWD_WatchMouse, off
-    return
-}
-GetKeyState, EWD_EscapeState, Escape, P
-if EWD_EscapeState = D  <em>; Escape이 눌렸습니다. 그래서 끌기가 취소 되었습니다.</em>
-{
-    SetTimer, EWD_WatchMouse, off
-    WinMove, ahk_id %EWD_MouseWin%,, %EWD_OriginalPosX%, %EWD_OriginalPosY%
-    return
-}
-<em>; 그렇지 않으면, 창을 다시 배치해
-; 사용자가 마우스를 끌어 변경된 마우스 좌표를 반영합니다:</em>
-CoordMode, Mouse
-MouseGetPos, EWD_MouseX, EWD_MouseY
-WinGetPos, EWD_WinX, EWD_WinY,,, ahk_id %EWD_MouseWin%
-SetWinDelay, -1   <em>; 아래를 더 부드럽게 더 빠르게 이동시킵니다.</em>
-WinMove, ahk_id %EWD_MouseWin%,, EWD_WinX + EWD_MouseX - EWD_MouseStartX, EWD_WinY + EWD_MouseY - EWD_MouseStartY
-EWD_MouseStartX := EWD_MouseX  <em>; 이 서브루틴에 대한 다음 타이머 호출을 업데이트 합니다.</em>
-EWD_MouseStartY := EWD_MouseY
-return
-</pre>
+  <p>Redirecting to <a href="index.htm#EasyWindowDrag">Easy Window Dragging</a>.</p>
 </body>
+
 </html>

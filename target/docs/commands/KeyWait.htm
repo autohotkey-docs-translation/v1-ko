@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>KeyWait</title>
+<title>KeyWait - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The KeyWait command waits for a key or mouse/joystick button to be released or pressed down." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,8 +14,8 @@
 
 <p>키나 마우스/조이스틱 버튼을 누를 때까지 또는 뗄 때까지 기다립니다.</p>
 
-<pre class="Syntax">KeyWait, KeyName [, Options]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax"><span class="func">KeyWait</span>, KeyName <span class="optional">, Options</span></pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>KeyName</dt>
@@ -24,7 +24,7 @@
 
   <dt>Options</dt>
   <dd><p>이 매개변수가 비어 있으면, 명령어는 지정된 키나 마우스/조이스틱 버튼을 물리적으로 사용자가 떼기를 무한정 기다립니다. 그렇지만, <a href="_InstallKeybdHook.htm">키보드 갈고리</a>가 설치되어 있지 않고 <em>KeyName</em>이 <a href="Send.htm">Send</a> 명령어와 같은 수단으로 인위적으로 뗀 키보드 키이면, 그 키는 물리적으로 뗀 것처럼 보일 것입니다. <a href="_InstallMouseHook.htm">마우스 갈고리</a>가 설치되어 있지 않을 때 마우스 버튼도 마찬가지입니다.</p>
-      <p>Options: 다음 기호로 구성되는 문자열 (순서대로, 선택적으로 사이에 스페이스 허용):</p>
+      <p>옵션: 다음 기호로 구성되는 문자열 (순서대로, 선택적으로 사이에 스페이스 허용):</p>
       <p><strong>D</strong>: 키가 눌리기를 기다립니다.</p>            
       <p><strong>L</strong>: 키의 논리적 상태를 점검합니다. 이는 OS와 활성 창이 믿고 있는 키의 상태입니다 (반드시 물리적 상태와 같은 것은 아닙니다). 이 옵션은 조이스틱 버튼에 대해서는 무시됩니다.</p>
       <p><strong>T</strong>: Timeout (예, <code>T3</code>). 시한 종료를 선언하기 전에 기다릴 초의 개수. 시한이 지나면 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 1이 설정됩니다. 키나 버튼이 지정된 상태를 이루면, 이 명령어는 시한이 지나기를 기다리지 않습니다. 대신에, 즉시 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 0을 설정하고 스크립트는 실행을 계속합니다.</p>
@@ -32,49 +32,59 @@
 
 </dl>
 
-<h3>ErrorLevel</h3>
+<h2 id="ErrorLevel">ErrorLevel</h2>
 <p>명령어가 시한제한에 걸리면 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 1이 설정되고 그렇지 않으면 0이 설정됩니다.</p>
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p>키나 마우스 버튼의 물리적 상태는 보통 논리적 상태와 같습니다. 단, 키보드/마우스 갈고리가 설치되어 있지 않아야 합니다. 설치가 되어 있으면, 사용자가 물리적으로 키를 누르고 있는지 아닌지 정확하게 반영합니다. 여러분의 스크립트가 갈고리를 사용하고 있는지 알고 싶으면 <a href="KeyHistory.htm">KeyHistory</a> 명령어 또는 메뉴를 사용할 수 있습니다. 두 갈고리를 모두 강제로 설치하려면 스크립트에 <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a> 지시어와 <a href="_InstallMouseHook.htm">#InstallMouseHook</a> 지시어를 추가하면 됩니다.</p>
 <p>이 명령어가 대기 상태에 있는 동안에, <a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a>를 통하여 새 <a href="../misc/Threads.htm">쓰레드</a>가 기동할 수 있습니다.</p>
 <p>두 개 이상의 키가 떼어지기를 기다리려면, KeyWait를 연속적으로 사용하십시오. 예를 들어:</p>
 <pre>KeyWait Control  <em>; Control과 Alt가 모두 떼어지기를 기다립니다.</em>
 KeyWait Alt</pre>
 <p>키 집합 중의 한 키가 떼어지기를 기다리려면, <a href="Input.htm">Input</a> 명령어의 예제 섹션을 참조하십시오.</p>
-<h3>관련 항목</h3>
-<p><a href="GetKeyState.htm">GetKeyState</a>, <a href="../KeyList.htm">Key List</a>, <a href="Input.htm">Input</a>, <a href="KeyHistory.htm">KeyHistory</a>, <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>, <a href="_InstallMouseHook.htm">#InstallMouseHook</a>, <a href="ClipWait.htm">ClipWait</a>, <a href="WinWait.htm">WinWait</a></p>
-<h3>예제</h3>
-<pre class="NoIndent"><em>; 예제 #1: 기본 사용법:</em>
-KeyWait, a  <em>; A 키가 떼어지기를 기다립니다.</em>
-KeyWait, LButton, D  <em>; 왼쪽 마우스 버튼이 눌리기를 기다립니다.</em>
-KeyWait, Joy1, D T3  <em>; 첫 번째 조이스틱 버튼이 눌리기를 3 초까지 기다립니다.</em>
-KeyWait, LAlt, L  <em>; 왼쪽 Alt 키가 논리적으로 떼어지기를 기다립니다.</em></pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #2: 간단한 핫키:</em>
-~Capslock::
-KeyWait, Capslock  <em>; 사용자가 물리적으로 떼기를 기다립니다.</em>
-MsgBox Capslock 키를 누르고 뗐습니다.
+<h2 id="Related">관련 항목</h2>
+<p><a href="GetKeyState.htm#function">GetKeyState()</a>, <a href="../KeyList.htm">Key List</a>, <a href="Input.htm">Input</a>, <a href="KeyHistory.htm">KeyHistory</a>, <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a>, <a href="_InstallMouseHook.htm">#InstallMouseHook</a>, <a href="ClipWait.htm">ClipWait</a>, <a href="WinWait.htm">WinWait</a></p>
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> A 키가 떼어지기를 기다립니다.</p>
+<pre>KeyWait, a</pre>
+</div>
+
+<div class="ex" id="ExDown">
+<p><a class="ex_number" href="#ExDown"></a> 왼쪽 마우스 버튼이 눌리기를 기다립니다.</p>
+<pre>KeyWait, LButton, D</pre>
+</div>
+
+<div class="ex" id="ExTimeout">
+<p><a class="ex_number" href="#ExTimeout"></a> 첫 번째 조이스틱 버튼이 눌리기를 3 초까지 기다립니다.</p>
+<pre>KeyWait, Joy1, D T3</pre>
+</div>
+
+<div class="ex" id="ExLogical">
+<p><a class="ex_number" href="#ExLogical"></a> 왼쪽 Alt 키가 논리적으로 떼어지기를 기다립니다.</p>
+<pre>KeyWait, LAlt, L</pre>
+</div>
+
+<div class="ex" id="ExHotkey">
+<p><a class="ex_number" href="#ExHotkey"></a> When pressing this hotkey, KeyWait waits for the user to physically release the CapsLock key. As a result, subsequent statements are performed on release instead of press. This behavior is similar to <code>~CapsLock up::</code>.</p>
+<pre>~CapsLock::
+KeyWait, CapsLock  <em>; 사용자가 물리적으로 떼기를 기다립니다.</em>
+MsgBox CapsLock 키를 누르고 뗐습니다.
 return</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #3: 키 또는 마우스 버튼 리맵핑하기
-; (이것은 오직 시연용입니다. <a href="../misc/Remap.htm">내장된 리맵핑 특징</a>을 사용하는 것이 더 쉽습니다):
-; 왼버튼이 눌려 있는 동안 NumpadAdd를 눌렀습니다.
-; 그 효과로 NumpadAdd가 왼 버튼으로 변신합니다.</em>
-*NumpadAdd::
+</div>
+
+<div class="ex" id="ExRemap">
+<p><a class="ex_number" href="#ExRemap"></a> Remaps a key or mouse button (this is only for illustration because it would be easier to use the <a href="../misc/Remap.htm">built-in remapping feature</a>). The left mouse button is kept held down while NumpadAdd is down, which effectively transforms NumpadAdd into the left mouse button.</p>
+<pre>*NumpadAdd::
 MouseClick, left,,, 1, 0, D  <em>; 왼쪽 마우스 버튼을 누르고 있습니다.</em>
 KeyWait, NumpadAdd  <em>; 키가 떼어지기를 기다립니다.</em>
 MouseClick, left,,, 1, 0, U  <em>; 마우스 버튼을 뗍니다.</em>
 return</pre>
-<p>&nbsp;</p>
-<pre class="NoIndent"><em>; 예제 #4: 키가 두 번 눌릴 때를 탐지합니다 (더블 클릭과 유사).
-; KeyWait는 키보드의 자동 반복 특징 때문에 RControl 키를 누른 채 또다른 키를 변경할 때
-; 원하지 않는 이중-눌림이 되지 않도록 방지하는 데 사용됩니다.
-; 핫키의 쓰레드를 계속 실행되도록 유지해 자동-반복을 막고,
-; #MaxThreadsPerHotkey이 기본 설정으로 1을 유지하도록 함으로써 이 기능을 구현합니다.
-; 주의:  SetTimer 페이지 하단에 1, 2, 3-클릭을 구별하는
-; 더 정교한 스크립트가 있습니다.<a href="SetTimer.htm"></a></em>
-~RControl::
-if (A_PriorHotkey &lt;&gt; "~RControl" or A_TimeSincePriorHotkey &gt; 400)
+</div>
+
+<div class="ex" id="ExDouble">
+<p><a class="ex_number" href="#ExDouble"></a> 키가 두 번 눌릴 때를 탐지합니다 (더블 클릭과 유사). KeyWait는 키보드의 자동 반복 특징 때문에 RControl 키를 누른 채 또다른 키를 변경할 때 원하지 않는 이중-눌림이 되지 않도록 방지하는 데 사용됩니다. 핫키의 쓰레드를 계속 실행되도록 유지해 자동-반복을 막고, #MaxThreadsPerHotkey이 기본 설정으로 1을 유지하도록 함으로써 이 기능을 구현합니다. 주의: <a href="SetTimer.htm">SetTimer</a> 페이지 하단에 1, 2, 3-클릭을 구별하는 더 정교한 스크립트가 있습니다.</p>
+<pre>~RControl::
+if (A_PriorHotkey != "~RControl" or A_TimeSincePriorHotkey &gt; 400)
 {
     <em>; 눌림 사이에 너무 시간이 많습니다. 그래서 이것은 더블 클릭이 아닙니다.</em>
     KeyWait, RControl
@@ -82,6 +92,7 @@ if (A_PriorHotkey &lt;&gt; "~RControl" or A_TimeSincePriorHotkey &gt; 400)
 }
 MsgBox 오른쪽 콘트롤 키를 두 번 눌렀습니다.
 return</pre>
+</div>
 
 </body>
 </html>

@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>WinMove</title>
+<title>WinMove - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The WinMove command changes the position and/or size of the specified window." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,9 +14,11 @@
 
 <p>지정된 창의 위치 / 크기를 변경합니다.</p>
 
-<pre class="Syntax">WinMove, X, Y
-WinMove, WinTitle, WinText, X, Y [, Width, Height, ExcludeTitle, ExcludeText]</pre>
-<h3>매개변수</h3>
+<pre class="Syntax">
+<span class="func">WinMove</span>, X, Y
+<span class="func">WinMove</span>, WinTitle, WinText, X, Y <span class="optional">, Width, Height, ExcludeTitle, ExcludeText</span>
+</pre>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>X, Y</dt>
@@ -25,10 +27,10 @@ WinMove, WinTitle, WinText, X, Y [, Width, Height, ExcludeTitle, ExcludeText]</p
     <p>그렇지 않으면, X와 Y를 생략할 수 있습니다. 이 경우 현재 위치가 사용됩니다.</p></dd>
 
   <dt>WinTitle</dt>
-  <dd><p>목표 창을 식별하는 창 제목 또는 다른 기준. <a href="../misc/WinTitle.htm">WinTitle</a> 참조.</p></dd>
+  <dd><p>목표 창을 식별하는 창 제목 또는 다른 기준. <a href="../misc/WinTitle.htm">WinTitle</a> 참조. See also the <a href="#limitation">known limitation</a> below.</p></dd>
 
   <dt>WinText</dt>
-  <dd><p>존재하면, 이 매개변수는 목표 창 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>가 켜져 있어야 탐지됩니다.</p></dd>
+  <dd><p>존재하면, 이 매개변수는 목표 창 텍스트의 부문자열입니다 (동봉된 Window Spy 유틸리티에 노출됨). 숨은 텍스트는 <a href="DetectHiddenText.htm">DetectHiddenText</a>가 켜져 있어야 탐지됩니다. See also the <a href="#limitation">known limitation</a> below.</p></dd>
 
   <dt>Width, Height</dt>
   <dd><p>창의 새 너비와 높이 (픽셀 단위), 이 값은 <a href="../Variables.htm#Expressions">표현식</a>일 수있습니다. 하나라도 생략되거나 비어 있거나 단어 DEFAULT이면, 해당 차원의 크기는 바뀌지 않습니다.</p></dd>
@@ -41,30 +43,41 @@ WinMove, WinTitle, WinText, X, Y [, Width, Height, ExcludeTitle, ExcludeText]</p
 
 </dl>
 
-<h3>논평</h3>
+<h2 id="Remarks">논평</h2>
 <p><em>Width</em>와 <em>Height</em>가 너무 작다면 (또는 음수라면), 제목 바가 있는 대부분의 창은 일반적으로 112 x 27 픽셀보다 더 작아지지 않습니다 (그렇지만, 어떤 유형의 창은 따로 최소 크기를 가질 수 있습니다). <em>Width</em>와 <em>Height</em>가 너무 크면, 대부분의 창은 바탕화면 크기의 대략 12 픽셀을 넘어가지 않습니다.</p>
 <p>x와 y좌표에 음수 값은 허용됩니다. 다중-모니터 시스템을 지원하고 창을 완전히 화면으로부터 멀리 이동시킬 수 있습니다.</p>
 <p>WinMove는 최소화된 창을 이동할 수 없지만, 숨은 창은 이동시킬 수 있습니다. 물론 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 합니다.</p>
 <p>WinMove의 속도는 <a href="SetWinDelay.htm">SetWinDelay</a>에 영향을 받습니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
-<h3>관련 항목</h3>
+<p id="limitation"><strong>알려진 한계</strong>: If <em>WinTitle</em> or <em>WinText</em> contains <code>(</code>, <code>[</code> or <code>{</code>, but not the closing counterpart, such as <code>WinMove, KEDIT - [</code>, the parameter is automatically interpreted as an <a href="../Variables.htm#Expressions">expression</a>, resulting in an error message. To avoid this, you can use a <a href="../Variables.htm#percent-space">leading percent sign</a> to force a literal string instead, such as <code>WinMove, % "KEDIT - ["</code>.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="ControlMove.htm">ControlMove</a>, <a href="WinGetPos.htm">WinGetPos</a>, <a href="WinHide.htm">WinHide</a>, <a href="WinMinimize.htm">WinMinimize</a>, <a href="WinMaximize.htm">WinMaximize</a>, <a href="WinSet.htm">WinSet</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Run, calc.exe
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExLastFound">
+<p><a class="ex_number" href="#ExLastFound"></a> Opens the calculator, waits until it exists and moves it to the upper-left corner of the screen.</p>
+<pre>Run, calc.exe
 WinWait, Calculator
-WinMove, 0, 0 <em>; WinWait가 발견한 창을 화면의 좌상 모서리로 이동시킵니다.</em>
+WinMove, 0, 0 <em>; Use the window found by WinWait.</em></pre>
+</div>
 
-SplashTextOn, 400, 300, Clipboard, 클립보드에 다음이 담겨 있습니다:`n%clipboard%
-WinMove, Clipboard, , 0, 0 <em>; 스플래시 창을 좌상 모서리로 이동시킵니다.</em>
-Msgbox, 스플래시 텍스트를 취소하려면 OK를 누릅니다.
-SplashTextOff
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Creates a fixed-size popup window that shows the contents of the clipboard and moves it to the upper-left corner of the screen.</p>
+<pre>SplashTextOn, 400, 300, Clipboard, 클립보드에 다음이 담겨 있습니다:`n%Clipboard%
+WinMove, Clipboard,, 0, 0
+MsgBox, 스플래시 텍스트를 취소하려면 OK를 누릅니다.
+SplashTextOff</pre>
+</div>
 
-<em>; 다음 <a href="../Functions.htm">함수</a>는 지정된 창을 화면 가운데에 배치합니다:</em>
+<div class="ex" id="ExCenter">
+<p><a class="ex_number" href="#ExCenter"></a> Centers a window on the screen.</p>
+<pre>CenterWindow("ahk_class Notepad")
+
 CenterWindow(WinTitle)
 {
     WinGetPos,,, Width, Height, %WinTitle%
     WinMove, %WinTitle%,, (A_ScreenWidth/2)-(Width/2), (A_ScreenHeight/2)-(Height/2)
 }</pre>
+</div>
 
 </body>
 </html>

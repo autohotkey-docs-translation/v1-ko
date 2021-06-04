@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>ComObjValue()</title>
+<title>ComObjValue() - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The ComObjValue function retrieves the value or pointer stored in a COM wrapper object." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,9 +14,9 @@
 
 <p>COM 포장 객체에 저장된 값이나 포인터를 열람합니다.</p>
 
-<pre class="Syntax">Value := ComObjValue(ComObject)</pre>
+<pre class="Syntax">Value := <span class="func">ComObjValue</span>(ComObject)</pre>
 
-<h3>매개변수</h3>
+<h2 id="Parameters">매개변수</h2>
 <dl>
 
   <dt>Value</dt>
@@ -27,12 +27,12 @@
 
 </dl>
 
-<h3>총평</h3>
+<h2 id="General_Remarks">총평</h2>
 <p>이 함수는 범용 목적이 아닙니다.</p>
-<p>ComObjValue를 호출하는 것은 <code><i>variant</i>.llVal</code>와 동등합니다. 여기에서 <i>ComObject</i>는 <a href="http://msdn.microsoft.com/en-us/library/ms221627.aspx">VARIANT 구조체</a>로 취급됩니다. 이 함수를 사용하는 스크립트는 모두 반드시 어떤 <a href="ComObjType.htm">유형의 값</a>을 포장 객체가 가지고 있는지 그리고 어떻게 취급해야 할지 알고 있어야 합니다. 예를 들어, 인터페이스 포인터가 반환되면, <a href="ObjAddRef.htm">Release</a>는 호출하지 말아야 합니다. 그러나 <a href="ObjAddRef.htm">AddRef</a>는 스크립트가 그 포인터를 가지고 무엇을 하는가에 따라 필요할 수도 있습니다.</p>
+<p>ComObjValue를 호출하는 것은 <code><i>variant</i>.llVal</code>와 동등합니다. 여기에서 <i>ComObject</i>는 <a href="http://msdn.microsoft.com/ko-kr/library/ms221627.aspx">VARIANT 구조체</a>로 취급됩니다. 이 함수를 사용하는 스크립트는 모두 반드시 어떤 <a href="ComObjType.htm">유형의 값</a>을 포장 객체가 가지고 있는지 그리고 어떻게 취급해야 할지 알고 있어야 합니다. 예를 들어, 인터페이스 포인터가 반환되면, <a href="ObjAddRef.htm">Release</a>는 호출하지 말아야 합니다. 그러나 <a href="ObjAddRef.htm">AddRef</a>는 스크립트가 그 포인터를 가지고 무엇을 하는가에 따라 필요할 수도 있습니다.</p>
 
-<h3>관련 항목</h3>
-<p><a href="ComObjType.htm">ComObjType</a>, <a href="ComObjCreate.htm">ComObjCreate</a>, <a href="ComObjGet.htm">ComObjGet</a>, <a href="ComObjActive.htm">ComObjActive</a></p>
+<h2 id="Related">관련 항목</h2>
+<p><a href="ComObjType.htm">ComObjType()</a>, <a href="ComObjCreate.htm">ComObjCreate()</a>, <a href="ComObjGet.htm">ComObjGet()</a>, <a href="ComObjActive.htm">ComObjActive()</a></p>
 
 </body>
 </html>

@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-<title>Break</title>
+<title>Break - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The Break statement exits (terminates) any type of loop statement." />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -11,38 +11,50 @@
 <body>
 
 <h1>Break</h1>
+<p>Exits (terminates) any type of <a href="../Language.htm#loop-statement">loop statement</a>.</p>
+<pre class="Syntax"><span class="func">Break</span> <span class="optional">, LoopLabel</span></pre>
 
-<p><a href="Loop.htm">회돌이</a>를 빠져 나옵니다. 모든 종류의 <a href="Loop.htm">회돌이</a>에 적용됩니다.</p>
+<h2 id="Parameters">매개변수</h2>
+<dl>
+  <dt>LoopLabel <span class="ver">[AHK_L 59+]</span></dt>
+  <dd><em>LoopLabel</em>은 다음 서술문을 적용해야 할 회돌이를 식별합니다; <a href="../misc/Labels.htm">라벨 이름</a> 또는 숫자로 내포 레벨을 지정합니다. 생략하거나 1이면 , 이 서술문은 가장 안쪽 회돌이에 적용됩니다. <em>LoopLabel</em>은 상수 값이어야 합니다 - 변수와 표현식은 지원하지 않습니다. If a <a href="../misc/Labels.htm">label</a> is specified, it must point directly at a <a href="../Language.htm#loop-statement">loop statement</a>.</dd>
+</dl>
 
-<pre class="Syntax">Break [, LoopLabel]</pre>
-<p><span class="ver">[AHK_L 59+]:</span> 지정되면, <em>LoopLabel</em>은 이 서술문을 적용해야 할 회돌이를 식별합니다; <a href="../misc/Labels.htm">라벨 이름</a> 또는 숫치로 지정된 내포 레벨. 생략하거나 1이면 , 이 서술문은 가장 안쪽 회돌이에 적용됩니다. <em>LoopLabel</em>은 상수 값이어야 합니다 - 변수와 표현식은 지원하지 않습니다. <a href="../misc/Labels.htm">라벨</a>이 지정되면, 직접적으로 회돌이 명령어를 가리켜야 합니다.</p>
-<p><a href="Goto.htm">goto</a>보다 Break와 <a href="Continue.htm">Continue</a>의 사용을 권장합니다. 왜냐하면 보통 스크립트를 더 읽기 쉽고 더 관리하기 쉽게 만들어주기 때문입니다.</p>
-<h3>관련 항목</h3>
+<h2 id="Remarks">논평</h2>
+<p><a href="Goto.htm">Goto</a>보다 Break와 <a href="Continue.htm">Continue</a>의 사용을 권장합니다. 왜냐하면 보통 스크립트를 더 읽기 쉽고 더 관리하기 쉽게 만들어주기 때문입니다.</p>
+<h2 id="Related">관련 항목</h2>
 <p><a href="Continue.htm">Continue</a>, <a href="Loop.htm">Loop</a>, <a href="While.htm">While-회돌이</a>, <a href="For.htm">For-회돌이</a>, <a href="Block.htm">블록</a>, <a href="../misc/Labels.htm">라벨</a></p>
-<h3>예제</h3>
-<pre class="NoIndent">Loop
+
+<h2 id="Examples">예제</h2>
+<div class="ex" id="ExBasic">
+<p><a class="ex_number" href="#ExBasic"></a> Breaks the loop if <var>var</var> is greater than 25.</p>
+<pre>Loop
 {
-    ...
-    if var &gt; 25
+    <em>; ...</em>
+    if (var &gt; 25)
         break
-    ...
-    if var &lt;= 5
+    <em>; ...</em>
+    if (var &lt;= 5)
         continue
 }</pre>
-<pre class="NoIndent"><em>; 내포 회돌이 안으로부터 바깥 회돌이로 빠져 나옵니다.</em>
-<b>outer:</b>
+</div>
+
+<div class="ex" id="ExBreakOuter">
+<p><a class="ex_number" href="#ExBreakOuter"></a> 내포 회돌이 안으로부터 바깥 회돌이로 빠져 나옵니다.</p>
+<pre>outer:
 Loop 3
 {
     x := A_Index
     Loop 3
     {
         if (x*A_Index = 6)
-            <b>break outer</b>  <em>; <b>break 2</b> 또는 <b>goto break_outer</b>와 동등합니다.</em>
+            break outer  <em>; <b>break 2</b> 또는 <b>goto break_outer</b>와 동등합니다.</em>
         MsgBox %x%,%A_Index%
     }
 }
 break_outer: <em>; goto를 위한 라벨.</em>
 </pre>
+</div>
 
 </body>
 </html>
