@@ -23,7 +23,7 @@ jobs:
       with:
         ref: master
 
-    - name: Install AutoHotkey v2 32-bit
+    - name: Download and unzip AutoHotkey v2
       run: |
         $source = "https://www.autohotkey.com/download/ahk-v2.zip"
         $dest = "ahk-v2.zip"
