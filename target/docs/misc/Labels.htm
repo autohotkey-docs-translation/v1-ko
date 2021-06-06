@@ -62,7 +62,23 @@ return</pre>
 <p>라벨을 받는 많은 명령어들은 또 %MyLabel%와 같이 <a href="../Variables.htm">변수 참조</a>도 받을 수 있습니다. 이 경우 변수에 저장된 이름이 목표로 사용됩니다. 그렇지만, 수행성능은 약간 줄어듭니다. 왜냐하면 목표 라벨을 스크립트가 처음 적재될 때 "한 번만 찾아 보는 것이 아니라" 매번 찾아 보아야 하기 때문입니다.</p>
 
 <h2 id="hotkeys-and-hotstrings">핫키와 핫스트링</h2>
-<p><a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm#label">핫스트링 라벨</a>도 <a href="../commands/Goto.htm">Goto</a>, <a href="../commands/Gosub.htm">Gosub</a> 그리고 기타 명령어에 대하여 유효합니다. 그렇지만, 핫키나 핫스트링에 여러 <a href="../commands/_IfWinActive.htm">변종</a>이 있다면, 스크립트의 상단에 제일 가까운 변종이 사용됩니다. 핫키의 수식자나 핫스트링의 옵션은 모두 라벨의 이름의 일부입니다. 그러나 마지막 겹-쌍점 (::)은 생략합니다.</p>
+<p>Each <a href="../Hotkeys.htm">double-colon hotkey</a> also creates a label, unless it is a <a href="../Hotkeys.htm#Function">function hotkey</a>. The label's name is exactly as written in the script, and can differ from the hotkey's name as reported by <a href="../Variables.htm#ThisHotkey">A_ThisHotkey</a>, such as if the modifiers are written in a different order. The label name includes the hotkey's modifiers but not the final double-colon (<code>::</code>).</p>
+<p>A <a href="../Hotstrings.htm#label">hotstring label</a>'s name includes the leading colon and options, but not the final double-colon (<code>::</code>).</p>
+<p><a href="../Hotkeys.htm">핫키</a>와 <a href="../Hotstrings.htm#label">핫스트링 라벨</a>도 <a href="../commands/Goto.htm">Goto</a>, <a href="../commands/Gosub.htm">Gosub</a> 그리고 기타 명령어에 대하여 유효합니다. However, a hotkey or hotstring label can only be used in this manner if it is the first label with the given name. 예를 들어:</p>
+<pre>gosub ^+a  <em>; Example hotkey.</em>
+gosub +^a  <em>; Global hotkey.</em>
+gosub Esc  <em>; Esc label.</em>
+ExitApp
+
+#IfWinActive Example
+^+a::MsgBox Example hotkey.
+Esc:
+    MsgBox Esc label.
+    return
+#If
++^a::MsgBox Global hotkey.
+Esc::MsgBox Esc hotkey.</pre>
+<p>This limitation also applies to the <a href="../commands/Hotkey.htm">Hotkey</a> command's <em>Label</em> parameter.</p>
 
 <h2 id="named-loops">이름있는 회돌이</h2>
 <p>라벨은 또 <a href="../commands/Continue.htm">Continue</a>와 <a href="../commands/Break.htm">Break</a> 명령어에 대하여 회돌이를 식별하는 데에도 사용할 수 있습니다. 스크립트는 쉽게 깊이에 상관없이 내포 회돌이를 계속하거나 빠져 나올 수 있습니다.</p>
