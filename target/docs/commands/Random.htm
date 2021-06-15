@@ -22,7 +22,7 @@
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>결과를 저장할 변수의 이름. 저장된 부동 소수점 수의 형식은 <a href="SetFormat.htm">SetFormat</a>에 의하여 결정됩니다.</p></dd>
+  <dd><p>결과를 저장할 변수의 이름. The format of stored floating point numbers is determined by <a href="SetFormat.htm">SetFormat</a> if its <a href="SetFormat.htm#Fast">slow mode</a> is used; otherwise SetFormat only affects formatting when the number is converted to a string.</p></dd>
 
   <dt>Min</dt>
   <dd>생성될 가장 작은 수. 음수나 부동 소수점수 또는 <a href="../Variables.htm#Expressions">표현식</a> 가능. 생략하면, 가장 작은 값은 0입니다. 정수에 대하여 허용되는 가장 낮은 값은 -2147483648 for integers이지만, 부동 소수점 수는 제한이 없습니다.</dd>

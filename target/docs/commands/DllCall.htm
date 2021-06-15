@@ -221,7 +221,7 @@ F1 up::DllCall("SystemParametersInfo", "UInt", SPI_SETMOUSESPEED, "UInt", 0, "Pt
 </div>
 
 <div class="ex" id="ExWatchScrollBar">
-<p><a class="ex_number" href="#ExWatchScrollBar"></a> 활성 창을 관제하고 초점이 있는 콘트롤 안에서 그의 수직 스크롤바의 위치를 (실시간으로 갱신하여) 보여줍니다. ; 이것은 <span class="ver">[v1.0.43.06+]</span>을 요구합니다. 왜냐하면 <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>를 사용하기 때문입니다.</p>
+<p><a class="ex_number" href="#ExWatchScrollBar"></a> 활성 창을 관제하고 초점이 있는 콘트롤 안에서 그의 수직 스크롤바의 위치를 (실시간으로 갱신하여) 보여줍니다. 이것은 <span class="ver">[v1.0.43.06+]</span>을 요구합니다. 왜냐하면 <a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>를 사용하기 때문입니다.</p>
 <pre>#Persistent
 SetTimer, WatchScrollBar, 100
 return
@@ -276,7 +276,7 @@ MsgBox The following string was read from the file: %TestString%</pre>
 </div>
 
 <div class="ex" id="HideCursor">
-<p><a class="ex_number" href="#HideCursor"></a> <kbd>Win</kbd>+<kbd>C</kbd>를 누를 때 마우스 커서를 감춥니다. To later show the cursor, press this hotkey again. ; 스크립트는 <a href="https://www.autohotkey.com/forum/topic6107.html">www.autohotkey.com/forum/topic6107.html</a>에서 얻을 수 있습니다.</p>
+<p><a class="ex_number" href="#HideCursor"></a> <kbd>Win</kbd>+<kbd>C</kbd>를 누를 때 마우스 커서를 감춥니다. To later show the cursor, press this hotkey again. 스크립트는 <a href="https://www.autohotkey.com/forum/topic6107.html">www.autohotkey.com/forum/topic6107.html</a>에서 얻을 수 있습니다.</p>
 <pre>OnExit, ShowCursor  <em>; 스크립트가 종료할 때 커서가 보이는지 확인합니다.</em>
 return
 
