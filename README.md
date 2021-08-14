@@ -9,7 +9,7 @@ Korean translation of AutoHotkey's documentation
 5. Specify your new local project folder in the next field
 6. Click on OK
 
-At some point during the synchronization you will be asked for your GitHub username and password. You only need to enter this information once.
+At some point during the synchronization you will be asked for your GitHub username and password. You only need to enter this information once. Due to security-related changes made by GitHub on August 13th, 2021, you will now need to enter a personal access token (PAT) instead of your GitHub password. You can generate this token in your [GitHub account settings](https://github.com/settings/tokens). For details on how to do this, see [Creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). Recommended PAT settings: No expiration, select "repo" scope. If you have already entered your credentials and want to change them, force the credentials input window to reappear by removing the old credentials under Options > Preferences... > Team > Repository Credentials.
 
 That's it. Now you can translate as you like. Your new translations will be uploaded automatically on a regular basis and at various events such as save, close, etc. If you want to check the current translated state of the document, click on Project > Create Translated Documents and then on Project > Access Project Contents > Current Target Document. When you think it's ready for publishing for now, click on Project > Commit Target Files and let us know via PM, so we can publish the docs. If you have questions, feel free to ask us.
 
