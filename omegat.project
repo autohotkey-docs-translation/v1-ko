@@ -25,10 +25,10 @@
         <remove_tags>false</remove_tags>
         <external_command></external_command>
         <repositories>
-            <repository type="git" url="https://github.com/Lexikos/AutoHotkey_L-Docs.git">
+            <repository type="git" url="https://github.com/autohotkey-docs-translation/v1-source.git">
                 <mapping local="source/" repository="/"/>
             </repository>
-            <repository type="git" url="https://github.com/ahkscript/AHK-Docs_KO.git">
+            <repository type="git" url="https://github.com/autohotkey-docs-translation/v1-ko.git">
                 <mapping local="/" repository="/"/>
             </repository>
         </repositories>
