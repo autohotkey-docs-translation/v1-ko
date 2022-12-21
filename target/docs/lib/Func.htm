@@ -12,9 +12,9 @@
 
 <h1>Func Object <span class="ver">[v1.1.00+]</span></h1>
 
-<p>스크립트가 호출할 수 있는 사용자 정의 함수 또는 내장 함수를 가리킵니다. <a href="../commands/Func.htm">Func()</a>은 이 유형의 객체를 돌려줍니다.</p>
+<p>스크립트가 호출할 수 있는 사용자 정의 함수 또는 내장 함수를 가리킵니다. <a href="#Func">Func()</a>은 이 유형의 객체를 돌려줍니다.</p>
 
-<p>함수처럼 호출할 수 있는 다른 객체에 관한 정보는 <a href="Functor.htm">함수 객체</a>를 참조합니다.</p>
+<p>함수처럼 호출할 수 있는 다른 객체에 관한 정보는 <a href="../misc/Functor.htm">함수 객체</a>를 참조합니다.</p>
 
 <p>함수 객체를 가리키는 참조는 <em>함수 참조</em>로 알려져 있습니다. 함수 참조를 열람하려면, 다음 예제와 같이 함수 객체를 사용하십시오:</p>
 <pre><em>; "StrLen"이라는 이름의 함수를 가리키는 참조를 열람합니다.</em>
@@ -23,24 +23,34 @@ fn := Func("StrLen")
 <em>; 함수에 관한 정보를 보여줍니다.</em>
 MsgBox % fn.Name "() is " (fn.IsBuiltIn ? "built-in." : "user-defined.")</pre>
 
-<h2 id="Members">Object Members</h2>
-<p><strong>Properties:</strong></p>
-<ul>
-  <li><a href="#Name">Name</a>: 함수의 이름을 돌려줍니다.</li>
-  <li><a href="#IsBuiltIn">IsBuiltIn</a>: 함수가 <a href="../Functions.htm#BuiltIn">내장</a> 함수이면 참(<i>true</i>)을 돌려주고 그렇지 않으면 거짓(<i>false</i>)을 돌려줍니다.</li>
-  <li><a href="#IsVariadic">IsVariadic</a>: 함수가 <a href="../Functions.htm#Variadic">가변 함수</a>이면 참(<i>true</i>)을 돌려주고 그렇지 않으면 거짓(<i>false</i>)을 돌려줍니다.</li>
-  <li><a href="#MinParams">MinParams</a>: 필수 매개변수의 개수를 돌려줍니다.</li>
-  <li><a href="#MaxParams">MaxParams</a>: 사용자 정의 함수에 공식적으로-선언된 매개변수의 개수를 돌려줍니다. 또는 내장 함수의 최대 매개변수 개수를 돌려줍니다.</li>
-</ul>
-<p><strong>메쏘드:</strong></p>
-<ul>
-  <li><a href="#Call">Call</a>: 함수를 호출합니다.</li>
-  <li><a href="#Bind">Bind</a>: 매개변수를 함수에 묶고 <a href="Functor.htm#BoundFunc">BoundFunc 객체</a>를 돌려줍니다.</li>
-  <li><a href="#IsByRef">IsByRef</a>: 매개변수가 ByRef인지 결정합니다.</li>
-  <li><a href="#IsOptional">IsOptional</a>: 매개변수가 선택적인지 결정합니다.</li>
+<h2 id="toc">목차</h2>
+<ul class="indent">
+  <li><a href="#Methods">Methods</a>:
+    <ul>
+      <li><a href="#Call">Call</a>: 함수를 호출합니다.</li>
+      <li><a href="#Bind">Bind</a>: 매개변수를 함수에 묶고 <a href="../misc/Functor.htm#BoundFunc">BoundFunc 객체</a>를 돌려줍니다.</li>
+      <li><a href="#IsByRef">IsByRef</a>: 매개변수가 ByRef인지 결정합니다.</li>
+      <li><a href="#IsOptional">IsOptional</a>: 매개변수가 선택적인지 결정합니다.</li>
+    </ul>
+  </li>
+  <li><a href="#Properties">Properties</a>:
+    <ul>
+      <li><a href="#Name">Name</a>: 함수의 이름을 돌려줍니다.</li>
+      <li><a href="#IsBuiltIn">IsBuiltIn</a>: 함수가 <a href="../Functions.htm#BuiltIn">내장</a> 함수이면 참(<i>true</i>)을 돌려주고 그렇지 않으면 거짓(<i>false</i>)을 돌려줍니다.</li>
+      <li><a href="#IsVariadic">IsVariadic</a>: 함수가 <a href="../Functions.htm#Variadic">가변 함수</a>이면 참(<i>true</i>)을 돌려주고 그렇지 않으면 거짓(<i>false</i>)을 돌려줍니다.</li>
+      <li><a href="#MinParams">MinParams</a>: 필수 매개변수의 개수를 돌려줍니다.</li>
+      <li><a href="#MaxParams">MaxParams</a>: 사용자 정의 함수에 공식적으로-선언된 매개변수의 개수를 돌려줍니다. 또는 내장 함수의 최대 매개변수 개수를 돌려줍니다.</li>
+    </ul>
+  </li>
+  <li><a href="#Functions">Functions</a>:
+    <ul>
+      <li><a href="#Func">Func</a>: 함수를 가리키는 참조를 열람합니다.</li>
+    </ul>
+  </li>
 </ul>
 
-<div class="methodShort" id="Call"><h2>Call</h2>
+<h2 id="Methods">메쏘드</h2>
+<div class="methodShort" id="Call"><h3>Call</h3>
 <p>함수를 호출합니다.</p>
 <pre class="Syntax">
 Func.<span class="func">Call</span>(Param1, Param2, ...)  <em>; <span class="ver">[v1.1.19+]</span> 필요</em>
@@ -53,60 +63,73 @@ Func.(Param1, Param2, ...)  <em>; 예전 형식 - 비추천</em>
 <p><span class="ver">[v1.1.07+]:</span> <code><a href="../Functions.htm#DynCall">%Func%()</a></code>를 사용하면 이름이나 참조로 함수를 호출할 수 있습니다. 또는 __Call <a href="../Objects.htm#Meta_Functions">메타-함수</a>를 구현한 객체를 호출할 수 있습니다. 가능하면 <code>Func.()</code> 대신에 이것을 사용해야 합니다.</p>
 </div>
 
-<div class="methodShort" id="Bind"><h2>Bind <span class="ver">[v1.1.20+]</span></h2>
-<p>매개변수를 함수에 묶고 <a href="Functor.htm#BoundFunc">BoundFunc 객체</a>를 돌려줍니다.</p>
+<div class="methodShort" id="Bind"><h3>Bind <span class="ver">[v1.1.20+]</span></h3>
+<p>매개변수를 함수에 묶고 <a href="../misc/Functor.htm#BoundFunc">BoundFunc 객체</a>를 돌려줍니다.</p>
 <pre class="Syntax">BoundFunc := Func.<span class="func">Bind</span>(Param1, Param2, ...)</pre>
 <dl>
   <dt>Param1, Param2, ...</dt>
   <dd>매개변수 개수.</dd>
 </dl>
-<p>자세한 정보와 예제는 <a href="Functor.htm#BoundFunc">BoundFunc 객체</a>를 참조하십시오.</p>
+<p>자세한 정보와 예제는 <a href="../misc/Functor.htm#BoundFunc">BoundFunc 객체</a>를 참조하십시오.</p>
 </div>
 
-<div class="methodShort" id="Name"><h2>Name</h2>
-<p>함수의 이름을 돌려줍니다.</p>
-<pre class="Syntax">FunctionName := Func.Name</pre>
-</div>
-
-<div class="methodShort" id="IsBuiltIn"><h2>IsBuiltIn</h2>
-<p>함수가 <a href="../Functions.htm#BuiltIn">내장</a> 함수이면 참(<i>true</i>)을 돌려주고 그렇지 않으면 거짓(<i>false</i>)을 돌려줍니다.</p>
-<pre class="Syntax">Boolean := Func.IsBuiltIn</pre>
-</div>
-
-<div class="methodShort" id="IsVariadic"><h2>IsVariadic</h2>
-<p>함수가 <a href="../Functions.htm#Variadic">가변 함수</a>이면 참(<i>true</i>)을 돌려주고 그렇지 않으면 거짓(<i>false</i>)을 돌려줍니다.</p>
-<pre class="Syntax">Boolean := Func.IsVariadic</pre>
-</div>
-
-<div class="methodShort" id="MinParams"><h2>MinParams</h2>
-<p>필수 매개변수의 개수를 돌려줍니다.</p>
-<pre class="Syntax">ParamCount := Func.MinParams</pre>
-</div>
-
-<div class="methodShort" id="MaxParams"><h2>MaxParams</h2>
-<p>사용자 정의 함수에 공식적으로-선언된 매개변수의 개수를 돌려줍니다. 또는 내장 함수의 최대 매개변수 개수를 돌려줍니다.</p>
-<pre class="Syntax">ParamCount := Func.MaxParams</pre>
-<p>함수가 <a href="../Functions.htm#Variadic">가변 함수</a>이면, <em>ParamCount</em>은 "variadic*" 매개변수로 흘러 넘치지 않고 함수가 받아 들일 수 있는 매개변수의 최대 개수를 나타냅니다.</p></div>
-
-<div class="methodShort" id="IsByRef"><h2>IsByRef</h2>
+<div class="methodShort" id="IsByRef"><h3>IsByRef</h3>
 <p>매개변수가 ByRef인지 결정합니다.</p>
 <pre class="Syntax">Boolean := Func.<span class="func">IsByRef</span>(<span class="optional">ParamIndex</span>)</pre>
 <dl>
   <dt>ParamIndex</dt>
   <dd>선택적입니다: 매개변수의 1 기반-인덱스. 생략되면, <em>Boolean</em>은 함수에 ByRef 매개변수가 있는지 알려줍니다.</dd>
 </dl>
-<p><strong>Returns</strong> an empty string if the function is built-in or <i>ParamIndex</i> is invalid; otherwise, a boolean value indicating whether the parameter is ByRef.</p>
+<p>Returns an empty string if the function is built-in or <i>ParamIndex</i> is invalid; otherwise, a boolean value indicating whether the parameter is ByRef.</p>
 </div>
 
-<div class="methodShort" id="IsOptional"><h2>IsOptional</h2>
+<div class="methodShort" id="IsOptional"><h3>IsOptional</h3>
 <p>매개변수가 선택적인지 결정합니다.</p>
 <pre class="Syntax">Boolean := Func.<span class="func">IsOptional</span>(<span class="optional">ParamIndex</span>)</pre>
 <dl>
   <dt>ParamIndex</dt>
   <dd>선택적입니다: 매개변수의 1 기반-인덱스. If omitted, <em>Boolean</em> indicates whether the function has any optional parameters.</dd>
 </dl>
-<p><strong>Returns</strong> an empty string if <i>ParamIndex</i> is invalid; otherwise, a boolean value indicating whether the parameter is optional.</p>
+<p>Returns an empty string if <i>ParamIndex</i> is invalid; otherwise, a boolean value indicating whether the parameter is optional.</p>
 <p>가변 함수인 경우 매개변수는 공식적으로 선언할 필요가 없습니다. 내장 함수를 지원합니다.</p></div>
+
+<h2 id="Properties">Properties</h2>
+<div class="methodShort" id="Name"><h3>Name</h3>
+<p>함수의 이름을 돌려줍니다.</p>
+<pre class="Syntax">FunctionName := Func.Name</pre>
+</div>
+
+<div class="methodShort" id="IsBuiltIn"><h3>IsBuiltIn</h3>
+<p>함수가 <a href="../Functions.htm#BuiltIn">내장</a> 함수이면 참(<i>true</i>)을 돌려주고 그렇지 않으면 거짓(<i>false</i>)을 돌려줍니다.</p>
+<pre class="Syntax">Boolean := Func.IsBuiltIn</pre>
+</div>
+
+<div class="methodShort" id="IsVariadic"><h3>IsVariadic</h3>
+<p>함수가 <a href="../Functions.htm#Variadic">가변 함수</a>이면 참(<i>true</i>)을 돌려주고 그렇지 않으면 거짓(<i>false</i>)을 돌려줍니다.</p>
+<pre class="Syntax">Boolean := Func.IsVariadic</pre>
+</div>
+
+<div class="methodShort" id="MinParams"><h3>MinParams</h3>
+<p>필수 매개변수의 개수를 돌려줍니다.</p>
+<pre class="Syntax">ParamCount := Func.MinParams</pre>
+</div>
+
+<div class="methodShort" id="MaxParams"><h3>MaxParams</h3>
+<p>사용자 정의 함수에 공식적으로-선언된 매개변수의 개수를 돌려줍니다. 또는 내장 함수의 최대 매개변수 개수를 돌려줍니다.</p>
+<pre class="Syntax">ParamCount := Func.MaxParams</pre>
+<p>함수가 <a href="../Functions.htm#Variadic">가변 함수</a>이면, <em>ParamCount</em>은 "variadic*" 매개변수로 흘러 넘치지 않고 함수가 받아 들일 수 있는 매개변수의 최대 개수를 나타냅니다.</p></div>
+
+<h2 id="Functions">함수</h2>
+<h3 id="Func">Func <span class="ver">[v1.1.00+]</span></h3>
+<p>함수를 가리키는 참조를 열람합니다.</p>
+<pre class="Syntax">FunctionReference := <span class="func">Func</span>(FunctionName)</pre>
+<p><em>FunctionName</em> is the name of the function whose reference is retrieved, and must exist explicitly in the script.</p>
+<p>This function returns a <a href="../Objects.htm#Function_References">reference to <em>FunctionName</em></a>. (예를 들어 <a href="_Include.htm">#Include</a>로 포함하거나 또는 <a href="../Functions.htm#lib">라이브러리 함수</a>를 고정 호출하여) <em>FunctionName</em>이 명시적으로 스크립트에 존재하지 않으면, Func()는 0을 돌려줍니다.</p>
+<p>This function can be used to call the function or retrieve information such as the minimum and maximum number of parameters.</p>
+<p>The following example retrieves a reference to a function and displays information about it:</p>
+<pre>fn := Func("StrLen")
+  MsgBox % fn.Name "() is " (fn.IsBuiltIn ? "built-in." : "user-defined.")</pre>
+
 
 </body>
 </html>

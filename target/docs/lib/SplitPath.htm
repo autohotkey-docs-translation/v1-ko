@@ -20,24 +20,25 @@
 
   <dt>InputVar</dt>
   <dd>
-    <p>분석할 파일이름을 담고 있는 변수의 이름.</p>
+    <p>Name of the input variable containing the file name or URL to be analyzed.</p>
+    <p>Note that this command expects filename paths to contain backslashes (\) only and URLs to contain forward slashes (/) only.</p>
     <p><span class="ver">[v1.1.21+]:</span> 이 매개변수는 <code>% <a href="../Variables.htm#Expressions">표현식</a></code>이 될 수 있지만, 퍼센트-스페이스 접두사가 반드시 사용되어야 합니다.</p>
   </dd>
 
   <dt>OutFileName</dt>
-  <dd><p>경로 없이 파일 이름을 저장할 변수의 이름. 파일의 확장자는 포함됩니다.</p></dd>
+  <dd><p>Name of the output variable in which to store the file name without its path. 파일의 확장자는 포함됩니다.</p></dd>
 
   <dt>OutDir</dt>
-  <dd><p>파일의 디렉토리를 저장할 변수의 이름, 드라이브 기호와 (존재하면) 공유 이름을 포함합니다. 파일이 드라이브의 루트 디렉토리에 있다면 마지막의 역사선은 포함되지 않습니다.</p></dd>
+  <dd><p>Name of the output variable in which to store the directory of the file, including drive letter or share name (if present). 파일이 드라이브의 루트 디렉토리에 있다면 마지막의 역사선은 포함되지 않습니다.</p></dd>
 
   <dt>OutExtension</dt>
-  <dd><p>파일의 확장자를 저장할 변수의 이름 (예, TXT, DOC, 또는 EXE). 점은 포함되지 않습니다.</p></dd>
+  <dd><p>Name of the output variable in which to store the file's extension (e.g. TXT, DOC, or EXE). 점은 포함되지 않습니다.</p></dd>
 
   <dt>OutNameNoExt</dt>
-  <dd><p>경로, 점, 그리고 확장자 없이 파일 이름을 저장할 변수의 이름.</p></dd>
+  <dd><p>Name of the output variable in which to store the file name without its path, dot and extension.</p></dd>
 
   <dt>OutDrive</dt>
-  <dd><p>파일의 드라이브 기호 또는 서버 이름을 저장할 변수의 이름. 파일이 로컬 또는 맵 드라이브에 있다면, 변수는 드라이브 기호와 다름 쌍점 (역사선 없음)이 설정됩니다. 파일이 네트워크 경로에 있다면 (UNC), 변수는 공유 이름이 설정됩니다. 예, \\Workstation01</p></dd>
+  <dd><p>Name of the output variable in which to store the drive letter or server name of the file. 파일이 로컬 또는 맵 드라이브에 있다면, 변수는 드라이브 기호와 다름 쌍점 (역사선 없음)이 설정됩니다. 파일이 네트워크 경로에 있다면 (UNC), 변수는 공유 이름이 설정됩니다. 예, \\Workstation01</p></dd>
 
 </dl>
 

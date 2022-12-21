@@ -12,7 +12,7 @@
 
 <h1>OnMessage()</h1>
 
-<p>스크립트가 지정된 메시지를 받을 때 자동으로 호출할 <a href="../Functions.htm">함수</a> 또는 <a href="../objects/Functor.htm">함수 객체</a>를 지정합니다 .</p>
+<p>스크립트가 지정된 메시지를 받을 때 자동으로 호출할 <a href="../Functions.htm">함수</a> 또는 <a href="../misc/Functor.htm">함수 객체</a>를 지정합니다 .</p>
 
 <pre class="Syntax"><span class="func">OnMessage</span>(MsgNumber <span class="optional">, Function, MaxThreads</span>)</pre>
 <h2 id="Parameters">매개변수</h2>
@@ -22,7 +22,7 @@
   <dd><p>감시 또는 질의할 메시지 번호, 범위는 0부터 4294967295 (0xFFFFFFFF)까지. <a href="../misc/SendMessageList.htm">시스템 메시지</a> (즉, 0x0400 아래의 메시지)를 감시하고 싶지 않으면, 가능하면 4096 (0x1000)보다 더 큰 번호를 고르는 것이 제일 좋습니다. 이렇게 하면 오토핫키에 내부적으로 사용되는 메시지를 간섭할 기회가 줄어듭니다.</p></dd>
 
   <dt>Function</dt>
-  <dd><p><a href="../Functions.htm">함수</a>의 이름, <span class="ver">[v1.1.20+]</span>에서는 <a href="../objects/Functor.htm">함수 객체</a>. 기호 그대로의 함수 이름을 건네려면, 따옴표로 둘러 싸야 합니다.</p>
+  <dd><p><a href="../Functions.htm">함수</a>의 이름, <span class="ver">[v1.1.20+]</span>에서는 <a href="../misc/Functor.htm">함수 객체</a>. 기호 그대로의 함수 이름을 건네려면, 따옴표로 둘러 싸야 합니다.</p>
   <p>어떻게 함수가 등록되는가 그리고 OnMessage의 반환 값은 이 매개변수가 문자열인가 아니면 함수 객체인가에 달려 있습니다. 더 자세한 것은 <a href="#Name_v_Object">함수 이름 vs 객체</a>를 참조하십시오.</p>
   </dd>
 
@@ -54,7 +54,7 @@
 <pre class="Syntax">Name := <span class="func">OnMessage</span>(MsgNumber)</pre>
 
 <h3 id="Function_Object">함수 객체</h3>
-<p>(<a href="../objects/Func.htm">정상 함수</a>를 포함하여) 갯수에 상관없이 얼마든지 <a href="../objects/Functor.htm">함수 객체</a>는 주어진 <em>MsgNumber</em>를 감시할 수 있습니다.</p>
+<p>(<a href="Func.htm">정상 함수</a>를 포함하여) 갯수에 상관없이 얼마든지 <a href="../misc/Functor.htm">함수 객체</a>는 주어진 <em>MsgNumber</em>를 감시할 수 있습니다.</p>
 <p>다음 두 줄은 이전에 등록한 함수들 <strong>다음에</strong> 호출될 함수 객체를 등록합니다:</p>
 <pre class="Syntax">
 <span class="func">OnMessage</span>(MsgNumber, FuncObj)     <em>; Option 1</em>
@@ -113,7 +113,7 @@ MsgParentWindow := WinExist()  <em>; 메시지가 전송된 창의 유일한 ID�
 <p>정상 함수-호출과 다르게, 감시 메시지가 도착하면 함수는 새로운 <a href="../misc/Threads.htm">쓰레드</a>로 호출됩니다. 이 때문에, 함수는 <a href="SendMode.htm">SendMode</a> 그리고 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>과 같은 기본값을 가지고 새롭게 시작합니다. 이 기본값은 <a href="../Scripts.htm#auto">자동-실행 섹션</a>에서 바꿀 수 있습니다.</p>
 <p>콘트롤에 (포스트 방식이 아니라) 센드 방식으로 전송되는 메시지는 관제되지 않습니다. 왜냐하면 시스템은 그런 메시지들을 화면 뒤의 콘트롤에 직접 보내 버리기 때문입니다. 이런 일은 시스템에서-생성되는 메시지들에는 별로 문제가 되지 않습니다. 왜냐하면 대부분 포스트 방식으로 전송되기 때문입니다..</p>
 <p>OnMessage를 호출하는 스크립트는 자동으로 <a href="_Persistent.htm">영속적</a>이 됩니다. 또한 단일 실체이기도 합니다. 단, <a href="_SingleInstance.htm">#SingleInstance</a>를 사용하여 오버라이드된 경우는 예외입니다.</p>
-<p><p id="Critical">If a message arrives while its function is still running due to a previous arrival of the same message, by default the function will not be called again; instead, the message will be treated as unmonitored. If this is undesirable, there are multiple ways it can be avoided:</p>
+<p id="Critical">If a message arrives while its function is still running due to a previous arrival of the same message, by default the function will not be called again; instead, the message will be treated as unmonitored. If this is undesirable, there are multiple ways it can be avoided:</p>
 <ul>
   <li>If the message is posted rather than sent and has a number greater than 0x0311, it can be buffered until its function completes by specifying <a href="Critical.htm">Critical</a> as the first line of the function. Alternatively, <a href="Thread.htm">Thread Interrupt</a> can achieve the same effect as long as it lasts long enough for the function to finish.</li>
   <li><span class="ver">[v1.0.46+]:</span> Using <a href="Critical.htm">Critical</a> to increase the <a href="Critical.htm#Interval">message check interval</a> gives the function more time to complete before any messages are dispatched. An interval greater than 16 may be needed for reliability. Due to the granularity of the system timer (usually 15.6 milliseconds), the default interval of 5 milliseconds (for non-Critical threads) or 15 milliseconds (for Critical threads) might appear to pass the instant after the function starts.</li>

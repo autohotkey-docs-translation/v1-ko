@@ -3,7 +3,7 @@
 <head>
 <title>WinGetActiveStats - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The WinGetActiveStats command combines the features of WinGetActiveTitle and WinGetPos into one command." />
-<meta name="ahk:equiv-v2" content="commands/WinGetPos.htm" />
+<meta name="ahk:equiv-v2" content="lib/WinGetPos.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -15,26 +15,26 @@
 
 <p><a href="WinGetActiveTitle.htm">WinGetActiveTitle</a> 기능과 <a href="WinGetPos.htm">WinGetPos</a>기능을 하나의 명령어로 결합합니다.</p>
 
-<pre class="Syntax"><span class="func">WinGetActiveStats</span>, Title, Width, Height, X, Y</pre>
+<pre class="Syntax"><span class="func">WinGetActiveStats</span>, OutTitle, OutWidth, OutHeight, OutX, OutY</pre>
 <h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>Title</dt>
-  <dd><p>활성 창의 제목을 저장할 변수의 이름.</p></dd>
+  <dt>OutTitle</dt>
+  <dd><p>The name of the output variable in which to store the title of the active window.</p></dd>
 
-  <dt>Width, Height</dt>
-  <dd><p>활성 창의 너비와 높이를 저장할 변수의 이름.</p></dd>
+  <dt>OutWidth, OutHeight</dt>
+  <dd><p>The names of the output variables in which to store the width and height of the active window.</p></dd>
 
-  <dt>X, Y</dt>
-  <dd><p>활성 창의 좌상 모서리 X 좌표와 Y 좌표를 저장할 변수의 이름.</p></dd>
+  <dt>OutX, OutY</dt>
+  <dd><p>The names of the output variables in which to store the X and Y coordinates of the active window's upper left corner.</p></dd>
 
 </dl>
 
 <h2 id="Remarks">논평</h2>
 <p>부합하는 창이 없으면, 출력 변수는 비워집니다.</p>
 <p>이 명령어는 다음 코드와 동등합니다:</p>
-<pre><a href="WinGetTitle.htm">WinGetTitle</a>, Title, A
-<a href="WinGetPos.htm">WinGetPos</a>, X, Y, Width, Height, A</pre>
+<pre><a href="WinGetTitle.htm">WinGetTitle</a>, OutTitle, A
+<a href="WinGetPos.htm">WinGetPos</a>, OutX, OutY, OutWidth, OutHeight, A</pre>
 <p>활성 창이 숨어 있고 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있으면 (기본값), <a href="WinShow.htm">WinShow</a>를 제외하고 모든 명령어는 그 활성창을 "보지 못합니다". 이런 저런 이유로 활성 창이 없다면, 이 명령어는 그의 모든 출력 변수들을 비워버립니다.</p>
 <h2 id="Related">관련 항목</h2>
 <p><a href="WinGetPos.htm">WinGetPos</a>, <a href="WinGetActiveTitle.htm">WinGetActiveTitle</a>, <a href="WinGetTitle.htm">WinGetTitle</a>, <a href="WinGetClass.htm">WinGetClass</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="ControlGetText.htm">ControlGetText</a></p>

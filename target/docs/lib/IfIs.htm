@@ -3,7 +3,7 @@
 <head>
 <title>If Var is Type - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The &quot;if Var is Type&quot; statement checks whether a variable's contents are numeric, uppercase, etc." />
-<meta name="ahk:equiv-v2" content="commands/Is.htm" />
+<meta name="ahk:equiv-v2" content="lib/Is.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -55,7 +55,10 @@
       </tr>
       <tr>
         <td>alpha</td>
-        <td><em>Var</em>가 비어 있거나 알파벳만 포함하고 있으면 참입니다. 문자열에 숫자, 스페이스, 탭, 구두점 또는 기타 비-알파벳 문자를 담고 있으면 거짓입니다. 예를 들어, <em>Var</em>에 스페이스가 있고 다음 기호가 따라오면, <em>알파벳</em>으로 <em>간주하지 않습니다</em>.</td>
+        <td>
+          <p><em>Var</em>가 비어 있거나 알파벳만 포함하고 있으면 참입니다. 문자열에 숫자, 스페이스, 탭, 구두점 또는 기타 비-알파벳 문자를 담고 있으면 거짓입니다. 예를 들어, <em>Var</em>에 스페이스가 있고 다음 기호가 따라오면, <em>알파벳</em>으로 <em>간주하지 않습니다</em>.</p>
+          <p><span class="ver">[AHK_L 42+]:</span> If <a href="StringCaseSense.htm">StringCaseSense Locale</a> is in effect, the result is dependent on the system locale. Otherwise, only the ASCII letters A-Z (or a-z) are considered alphabetic.</p>
+        </td>
       </tr>
       <tr>
         <td>upper</td>

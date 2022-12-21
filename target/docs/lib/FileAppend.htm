@@ -48,9 +48,9 @@
 <h2 id="Remarks">논평</h2>
 <p>기존의 파일을 덮어쓰려면, FileAppend를 사용하기 전에 <a href="FileDelete.htm">FileDelete</a>로 지우십시오.</p>
 <p>목표 파일은 텍스트가 추가된 후 자동으로 닫힙니다 (단, FileAppend가 <a href="LoopReadFile.htm">파일-읽기/쓰기 회돌이</a> 안에서 단일-매개변수 모드를 사용할 때는 예외입니다).</p>
-<p><span class="ver">[AHK_L 42+]:</span> <a href="FileOpen.htm">FileOpen()</a>을 추가 모드로 사용하는 것이 FileAppend보다 더 섬세하게 제어할 수 있고 계속 파일을 열어 둘 수도 있습니다. 매번 파일을 열고 닫을 필요가 없습니다. 일단 파일이 추가 모드로 열리면 <code>file.<a href="../objects/File.htm#Write">Write</a>(string)</code>를 사용해 추가하면 됩니다. 파일 객체는 <a href="../objects/File.htm#RawWrite">RawWrite</a>/<a href="../objects/File.htm#RawRead">RawRead</a> 또는 <a href="../objects/File.htm#WriteNum">Write<i>Num</i></a>/<a href="../objects/File.htm#ReadNum">Read<i>Num</i></a>를 통하여 이진 I/O도 지원합니다. 반면에 FileAppend는 오직 텍스트만 지원합니다.</p>
+<p><span class="ver">[AHK_L 42+]:</span> <a href="FileOpen.htm">FileOpen()</a>을 추가 모드로 사용하는 것이 FileAppend보다 더 섬세하게 제어할 수 있고 계속 파일을 열어 둘 수도 있습니다. 매번 파일을 열고 닫을 필요가 없습니다. 일단 파일이 추가 모드로 열리면 <code>file.<a href="File.htm#Write">Write</a>(string)</code>를 사용해 추가하면 됩니다. 파일 객체는 <a href="File.htm#RawWrite">RawWrite</a>/<a href="File.htm#RawRead">RawRead</a> 또는 <a href="File.htm#WriteNum">Write<i>Num</i></a>/<a href="File.htm#ReadNum">Read<i>Num</i></a>를 통하여 이진 I/O도 지원합니다. 반면에 FileAppend는 오직 텍스트만 지원합니다.</p>
 <h2 id="Related">관련 항목</h2>
-<p><a href="FileOpen.htm">FileOpen()</a>/<a href="../objects/File.htm">File Object</a>, <a href="FileRead.htm">FileRead</a>, <a href="LoopReadFile.htm">파일-읽기 회돌이</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="IniWrite.htm">IniWrite</a>, <a href="FileDelete.htm">FileDelete</a>, <a href="OutputDebug.htm">OutputDebug</a>, <a href="../Scripts.htm#continuation">계속 섹션</a></p>
+<p><a href="FileOpen.htm">FileOpen()</a>/<a href="File.htm">File Object</a>, <a href="FileRead.htm">FileRead</a>, <a href="LoopReadFile.htm">파일-읽기 회돌이</a>, <a href="FileReadLine.htm">FileReadLine</a>, <a href="IniWrite.htm">IniWrite</a>, <a href="FileDelete.htm">FileDelete</a>, <a href="OutputDebug.htm">OutputDebug</a>, <a href="../Scripts.htm#continuation">계속 섹션</a></p>
 <h2 id="Examples">예제</h2>
 <div class="ex" id="ExBasic">
 <p><a class="ex_number" href="#ExBasic"></a> Creates a file, if necessary, and appends a line.</p>

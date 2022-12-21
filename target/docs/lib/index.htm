@@ -36,7 +36,7 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Abs">Abs()</a></td>
-    <td><em>숫자</em>의 절대값을 돌려줍니다.</td>
+    <td>Returns the absolute value of the specified number.</td>
   </tr>
   <tr>
     <td><a href="AutoTrim.htm">AutoTrim</a></td>
@@ -48,15 +48,15 @@
   </tr>
   <tr>
     <td><a href="Math.htm#ASin">ASin()</a></td>
-    <td>아크사인을 라디안 단위로 돌려줍니다 (<em>Number</em>는 사인 값).</td>
+    <td>Returns the arcsine (the number whose sine is the specified number) in radians.</td>
   </tr>
   <tr>
     <td><a href="Math.htm#ACos">ACos()</a></td>
-    <td>아크코사인을 라디안 단위로 돌려줍니다 (<em>Number</em>는 코사인 값).</td>
+    <td>Returns the arccosine (the number whose cosine is the specified number) in radians.</td>
   </tr>
   <tr>
     <td><a href="Math.htm#ATan">ATan()</a></td>
-    <td>아크탄젠트를 라디안 단위로 돌려줍니다 (<em>Number</em>는 탄젠트 값).</td>
+    <td>Returns the arctangent (the number whose tangent is the specified number) in radians.</td>
   </tr>
   <tr>
     <td><a href="BlockInput.htm">BlockInput</a></td>
@@ -72,7 +72,7 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Ceil">Ceil()</a></td>
-    <td><em>Number</em>는 가장 가까운 정수로 올림됩니다 (.00 버림).</td>
+    <td>Returns the specified number rounded up to the nearest integer (without any .00 suffix).</td>
   </tr>
   <tr>
     <td><a href="Chr.htm">Chr()</a></td>
@@ -192,7 +192,7 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Cos">Cos()</a></td>
-    <td><em>숫자</em>의 삼각함수 코사인을 돌려줍니다 .</td>
+    <td>Returns the trigonometric cosine of the specified number.</td>
   </tr>
   <tr>
     <td><a href="Critical.htm">Critical</a></td>
@@ -220,7 +220,7 @@
   </tr>
   <tr>
     <td><a href="DriveSpaceFree.htm">DriveSpaceFree</a></td>
-    <td>드라이브의 여유 공간을 메가바이트 단위로 열람합니다.</td>
+    <td>Retrieves the free disk space of the drive which contains the specified path, in megabytes.</td>
   </tr>
   <tr id="E">
     <td><a href="Edit.htm">Edit</a></td>
@@ -384,7 +384,7 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Floor">Floor()</a></td>
-    <td><em>숫자</em>를 가장 가까운 정수로 버림한 다음 돌려줍니다 ( .00을 버림).</td>
+    <td>Returns the specified number rounded down to the nearest integer (without any .00 suffix).</td>
   </tr>
   <tr>
     <td class="larger"><a href="For.htm">For</a></td>
@@ -399,7 +399,7 @@
     <td>시간도장 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>를 지정된 날짜/시간 형식으로 변환합니다.</td>
   </tr>
   <tr>
-    <td><a href="Func.htm">Func()</a></td>
+    <td><a href="Func.htm#Func">Func()</a></td>
     <td>함수를 가리키는 <a href="../Objects.htm#Function_References">참조</a>를 열람합니다.</td>
   </tr>
   <tr>
@@ -573,6 +573,10 @@
     <td>Returns a non-zero number if the specified value is an object.</td>
   </tr>
   <tr>
+    <td><a href="IsSet.htm">IsSet()</a></td>
+    <td>Returns a non-zero number if the specified variable has been assigned a value.</td>
+  </tr>
+  <tr>
     <td><a href="KeyHistory.htm">KeyHistory</a></td>
     <td>스크립트 정보 그리고 가장 최근의 키눌림과 마우스 클릭의 이력을 보여줍니다.</td>
   </tr>
@@ -598,11 +602,11 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Log">Log()</a></td>
-    <td><em>숫자</em>의 상용 로그를 돌려줍니다 (밑수 10).</td>
+    <td>Returns the logarithm (base 10) of the specified number.</td>
   </tr>
   <tr>
     <td><a href="Math.htm#Ln">Ln()</a></td>
-    <td><em>숫자</em>의 자연 로그를 돌려줍니다 (밑수 e).</td>
+    <td>Returns the natural logarithm (base e) of the specified number.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Loop.htm">Loop (보통)</a></td>
@@ -660,7 +664,7 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Mod">Mod()</a></td>
-    <td>나머지 연산(Modulo)입니다. <em>피젯수(Dividend)</em>를 <em>젯수(Divisor)</em>로 나누고 나머지를 돌려줍니다.</td>
+    <td>나머지 연산(Modulo)입니다. Returns the remainder of the specified dividend divided by the specified divisor.</td>
   </tr>
   <tr>
     <td><a href="MouseClick.htm">MouseClick</a></td>
@@ -696,49 +700,49 @@
   </tr>
   <tr>
     <td><a href="ObjBindMethod.htm">ObjBindMethod()</a></td>
-    <td>주어진 객체의 메쏘드를 호출하는 <a href="../objects/Functor.htm#BoundFunc">BoundFunc object</a>를 생성합니다.</td>
+    <td>주어진 객체의 메쏘드를 호출하는 <a href="../misc/Functor.htm#BoundFunc">BoundFunc object</a>를 생성합니다.</td>
   </tr>
   <tr>
     <td>
-      <a href="../objects/Object.htm#Clone">ObjClone()</a><br>
-      <a href="../objects/Object.htm#Count">ObjCount()</a><br>
-      <a href="../objects/Object.htm#Delete">ObjDelete()</a><br>
-      <a href="../objects/Object.htm#GetAddress">ObjGetAddress()</a><br>
-      <a href="../objects/Object.htm#GetCapacity">ObjGetCapacity()</a><br>
-      <a href="../objects/Object.htm#HasKey">ObjHasKey()</a><br>
-      <a href="../objects/Object.htm#Insert">ObjInsert()</a><br>
-      <a href="../objects/Object.htm#InsertAt">ObjInsertAt()</a><br>
-      <a href="../objects/Object.htm#Length">ObjLength()</a><br>
-      <a href="../objects/Object.htm#MinMaxIndex">ObjMaxIndex()</a><br>
-      <a href="../objects/Object.htm#MinMaxIndex">ObjMinIndex()</a><br>
-      <a href="../objects/Object.htm#NewEnum">ObjNewEnum()</a><br>
-      <a href="../objects/Object.htm#Pop">ObjPop()</a><br>
-      <a href="../objects/Object.htm#Push">ObjPush()</a><br>
-      <a href="../objects/Object.htm#Remove">ObjRemove()</a><br>
-      <a href="../objects/Object.htm#RemoveAt">ObjRemoveAt()</a><br>
-      <a href="../objects/Object.htm#SetCapacity">ObjSetCapacity()</a><br>
+      <a href="Object.htm#Clone">ObjClone()</a><br>
+      <a href="Object.htm#Count">ObjCount()</a><br>
+      <a href="Object.htm#Delete">ObjDelete()</a><br>
+      <a href="Object.htm#GetAddress">ObjGetAddress()</a><br>
+      <a href="Object.htm#GetCapacity">ObjGetCapacity()</a><br>
+      <a href="Object.htm#HasKey">ObjHasKey()</a><br>
+      <a href="Object.htm#Insert">ObjInsert()</a><br>
+      <a href="Object.htm#InsertAt">ObjInsertAt()</a><br>
+      <a href="Object.htm#Length">ObjLength()</a><br>
+      <a href="Object.htm#MinMaxIndex">ObjMaxIndex()</a><br>
+      <a href="Object.htm#MinMaxIndex">ObjMinIndex()</a><br>
+      <a href="Object.htm#NewEnum">ObjNewEnum()</a><br>
+      <a href="Object.htm#Pop">ObjPop()</a><br>
+      <a href="Object.htm#Push">ObjPush()</a><br>
+      <a href="Object.htm#Remove">ObjRemove()</a><br>
+      <a href="Object.htm#RemoveAt">ObjRemoveAt()</a><br>
+      <a href="Object.htm#SetCapacity">ObjSetCapacity()</a><br>
     </td>
-    <td>These functions are equivalent to built-in methods of the <a href="../objects/Object.htm">Object</a> type. It is usually recommended to use the corresponding method instead.</td>
+    <td>These functions are equivalent to built-in methods of the <a href="Object.htm">Object</a> type. It is usually recommended to use the corresponding method instead.</td>
   </tr>
   <tr>
-    <td><a href="../objects/Object.htm#GetBase">ObjGetBase()</a></td>
+    <td><a href="Object.htm#GetBase">ObjGetBase()</a></td>
     <td>Retrieves an object's <a href="../Objects.htm#Custom_Objects">base object</a>.</td>
   </tr>
   <tr>
-    <td><a href="../objects/Object.htm#RawGet">ObjRawGet()</a></td>
+    <td><a href="Object.htm#RawGet">ObjRawGet()</a></td>
     <td>Retrieves a key-value pair from an object, bypassing the object's <a href="../Objects.htm#Meta_Functions">meta-functions</a>.</td>
   </tr>
   <tr>
-    <td><a href="../objects/Object.htm#RawSet">ObjRawSet()</a></td>
+    <td><a href="Object.htm#RawSet">ObjRawSet()</a></td>
     <td>Stores or overwrites a key-value pair in an object, bypassing the object's <a href="../Objects.htm#Meta_Functions">meta-functions</a>.</td>
   </tr>
   <tr>
-    <td><a href="../objects/Object.htm#SetBase">ObjSetBase()</a></td>
+    <td><a href="Object.htm#SetBase">ObjSetBase()</a></td>
     <td>Sets an object's <a href="../Objects.htm#Custom_Objects">base object</a>.</td>
   </tr>
   <tr>
     <td><a href="OnClipboardChange.htm#function">OnClipboardChange()</a></td>
-    <td>클립보드의 내용이 변경될 때마다 실행될 <a href="../Functions.htm">함수</a> 또는 <a href="../objects/Functor.htm">함수 객체</a>를 등록합니다.</td>
+    <td>클립보드의 내용이 변경될 때마다 실행될 <a href="../Functions.htm">함수</a> 또는 <a href="../misc/Functor.htm">함수 객체</a>를 등록합니다.</td>
   </tr>
   <tr>
     <td><a href="OnError.htm">OnError()</a></td>
@@ -754,7 +758,7 @@
   </tr>
   <tr>
     <td><a href="OnMessage.htm">OnMessage()</a></td>
-    <td>스크립트가 지정된 메시지를 받을 때 자동으로 호출할 <a href="../Functions.htm">함수</a> 또는 <a href="../objects/Functor.htm">함수 객체</a>를 지정합니다 .</td>
+    <td>스크립트가 지정된 메시지를 받을 때 자동으로 호출할 <a href="../Functions.htm">함수</a> 또는 <a href="../misc/Functor.htm">함수 객체</a>를 지정합니다 .</td>
   </tr>
   <tr>
     <td><a href="Ord.htm">Ord()</a></td>
@@ -826,7 +830,7 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Round">Round()</a></td>
-    <td>Returns <em>Number</em> rounded to <em>N</em> decimal places.</td>
+    <td>Returns the specified number rounded to <em>N</em> decimal places.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Run.htm">Run</a></td>
@@ -932,7 +936,7 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Sin">Sin()</a></td>
-    <td><em>Number</em>의 삼각 사인 값을 돌려줍니다.</td>
+    <td>Returns the trigonometric sine of the specified number.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Sleep.htm">Sleep</a></td>
@@ -980,7 +984,7 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Sqrt">Sqrt()</a></td>
-    <td><em>Number</em>의 평방근을 돌려줍니다.</td>
+    <td>Returns the square root of the specified number.</td>
   </tr>
   <tr>
     <td><a href="StatusBarGetText.htm">StatusBarGetText</a></td>
@@ -1076,7 +1080,7 @@
   </tr>
   <tr>
     <td><a href="Math.htm#Tan">Tan()</a></td>
-    <td><em>Number</em>의 삼각 탄젠트를 돌려줍니다.</td>
+    <td>Returns the trigonometric tangent of the specified number.</td>
   </tr>
   <tr>
     <td><a href="Thread.htm">Thread</a></td>
@@ -1140,6 +1144,10 @@
   <tr>
     <td><a href="VarSetCapacity.htm">VarSetCapacity()</a></td>
     <td>변수의 가용 능력을 확대하거나 그의 메모리를 해제합니다. 보통, 이것은 <a href="DllCall.htm">DllCall()</a>과 같이 비정상적인 상황에서만 필요합니다.</td>
+  </tr>
+  <tr>
+    <td><a href="VerCompare.htm">VerCompare()</a></td>
+    <td>Compares two version strings.</td>
   </tr>
   <tr id="W">
     <td class="larger"><a href="While.htm">While-회돌이</a></td>

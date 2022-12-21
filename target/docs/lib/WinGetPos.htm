@@ -14,15 +14,15 @@
 
 <p>지정된 창의 크기와 위치를 열람합니다.</p>
 
-<pre class="Syntax"><span class="func">WinGetPos</span> <span class="optional">, X, Y, Width, Height, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<pre class="Syntax"><span class="func">WinGetPos</span> <span class="optional">, OutX, OutY, OutWidth, OutHeight, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>X, Y</dt>
-  <dd><p>목표 창의 좌상 모서리 X 좌표와 Y 좌표를 저장할 이름. 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
+  <dt>OutX, OutY</dt>
+  <dd><p>The names of the output variables in which to store the X and Y coordinates of the target window's upper left corner. 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
 
-  <dt>Width, Height</dt>
-  <dd><p>목표 창의 높이와 너비를 저장할 변수의 이름. 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
+  <dt>OutWidth, OutHeight</dt>
+  <dd><p>The names of the output variables in which to store the width and height of the target window. 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
 
   <dt>WinTitle</dt>
   <dd><p>목표 창을 식별하는 창 제목 또는 다른 기준. <a href="../misc/WinTitle.htm">WinTitle</a> 참조.</p></dd>
@@ -44,6 +44,8 @@
 <p>최소화된 창은 여전히 크기와 위치가 있습니다. 이 경우 반환된 값은 OS와 환경 구성에 따라 달라질 수 있습니다.</p>
 <p>마우스가 현재 선회 중인 창의 이름과 콘트롤을 발견하려면, <a href="MouseGetPos.htm">MouseGetPos</a>를 사용하십시오.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
+<p>On systems with multiple screens which have different DPI settings, the returned position and size may be different than expected due to <a href="../misc/DPIScaling.htm">OS DPI scaling</a>.</p>
+
 <h2 id="Related">관련 항목</h2>
 <p><a href="WinMove.htm">WinMove</a>, <a href="ControlGetPos.htm">ControlGetPos</a>, <a href="WinGetActiveStats.htm">WinGetActiveStats</a>, <a href="WinGetActiveTitle.htm">WinGetActiveTitle</a>, <a href="WinGetTitle.htm">WinGetTitle</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="ControlGetText.htm">ControlGetText</a></p>
 <h2 id="Examples">예제</h2>

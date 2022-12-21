@@ -19,16 +19,16 @@
 <dl>
 
   <dt>OutputVarX, OutputVarY</dt>
-  <dd><p>X와 Y 좌표를 열람할 변수의 이름. 열람된 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>를 사용하여 화면 좌표를 바꾼 경우는 예외입니다.</p>
+  <dd><p>The names of the output variables in which to store the X and Y coordinates. 열람된 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>를 사용하여 화면 좌표를 바꾼 경우는 예외입니다.</p>
     </dd>
 
   <dt>OutputVarWin</dt>
-  <dd><p>이 선택적인 매개변수는 마우스 커서 아래에 있는 창의 <a href="WinGet.htm">유일한 ID 번호</a>를 저장할 변수의 이름입니다. 창을 알아낼 수 없으면, 이 변수는 비워집니다.</p>
+  <dd><p>This optional parameter is the name of the output variable in which to store the <a href="WinGet.htm">unique ID number</a> of the window under the mouse cursor. 창을 알아낼 수 없으면, 이 변수는 비워집니다.</p>
       <p>창은 활성화되지 않아도 탐지됩니다. 숨은 창은 탐지할 수 없습니다.</p></dd>
 
   <dt>OutputVarControl</dt>
-  <dd><p>이 선태적인 매개변수는 마우스 커서 아래에 있는 콘트롤의 이름(ClassNN)을 저장할 변수의 이름입니다. 콘트롤을 결정할 수 없으면, 이 변수는 비워집니다.</p>
-      <p>콘트롤의 이름은 언제나 Window Spy로 보여지는 이름과 일치해야 합니다. 최소 <span class="ver">[v1.0.14+]</span>이상 요구. 그렇지만 Window Spy와 다르게, 마우스 커서 아래의 창이 활성화되어 있지 않아도 콘트롤을 탐지할 수 있습니다.</p></dd>
+  <dd><p>This optional parameter is the name of the output variable in which to store the name (ClassNN) of the control under the mouse cursor. 콘트롤을 결정할 수 없으면, 이 변수는 비워집니다.</p>
+      <p>콘트롤의 이름은 언제나 Window Spy로 보여지는 이름과 일치해야 합니다. 최소 <span class="ver">[v1.0.14+]</span>이상 요구. The window under the mouse cursor does not have to be active for a control to be detected.</p></dd>
 
   <dt>Flag</dt>
   <dd>
@@ -42,8 +42,11 @@
 
 <h2 id="Remarks">논평</h2>
 <p>출력 변수는 상응하는 정보가 필요하지 않으면 생략할 수 있습니다.</p>
+<p>On systems with multiple screens which have different DPI settings, the returned position may be different than expected due to <a href="../misc/DPIScaling.htm">OS DPI scaling</a>.</p>
+
 <h2 id="Related">관련 항목</h2>
 <p><a href="CoordMode.htm">CoordMode</a>, <a href="WinGet.htm">WinGet</a>, <a href="SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="Click.htm">Click</a></p>
+
 <h2 id="Examples">예제</h2>
 <div class="ex" id="ExBasic">
 <p><a class="ex_number" href="#ExBasic"></a> Reports the position of the mouse cursor.</p>

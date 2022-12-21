@@ -3,7 +3,7 @@
 <head>
 <title>Transform - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The Transform command performs miscellaneous math functions, bitwise operations, and tasks such as ASCII/Unicode conversion." />
-<meta name="ahk:equiv-v2" content="commands/Math.htm" />
+<meta name="ahk:equiv-v2" content="lib/Math.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -16,7 +16,7 @@
 <p>잡다한 수학 기능, 비트별 연산, 그리고 ASCII/유니코드 변환 같은 작업을 수행합니다.</p>
 <p class="warning"><strong>비추천:</strong> 이 명령어는 새 스크립트에 사용을 추천하지 않습니다. For details on what you can use instead, see the sub-command sections below.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, <a href="#SubCommands">SubCommand</a>, Value1 <span class="optional">, Value2</span></pre>
-<p>The <em>OutputVar</em> parameter is the name of the variable in which to store the result. <em>SubCommand</em>, <em>Value1</em> 그리고 <em>Value2</em> 매개변수는 서로 의존적입니다. 그리고 그 사용법은 아래에 기술합니다.</p>
+<p>The <em>OutputVar</em> parameter is the name of the output variable in which to store the result. <em>SubCommand</em>, <em>Value1</em> 그리고 <em>Value2</em> 매개변수는 서로 의존적입니다. 그리고 그 사용법은 아래에 기술합니다.</p>
 
 <h2 id="SubCommands">부-명령어</h2>
 <p>For <em>SubCommand</em>, specify one of the following:</p>
@@ -94,13 +94,13 @@ return</pre>
 
 <h3 id="Chr">Chr</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Chr.htm">Chr()</a>를 사용하십시오.</p>
-<p>Retrieves the single character corresponding to the character code indicated by <em>Number</em>.</p>
+<p>Retrieves the single character corresponding to the character code indicated by the specified number.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Chr, Number</pre>
 <p>If <em>Number</em> is not between 1 and 255 inclusive (or 1 and 65535 if Unicode is supported), <em>OutputVar</em> will be made blank to indicate the problem. 예를 들어: <code>Transform, OutputVar, Chr, 130</code>. Unlike <a href="Chr.htm">Chr()</a>, this sub-command does not support Unicode supplementary characters (character codes 0x10000 to 0x10FFFF).</p>
 
 <h3 id="Mod">Mod</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Mod">Mod()</a>를 사용하십시오.</p>
-<p>나뉘는수(<em>Dividend</em>)를 나누는수(<em>Divisor</em>)로 나눈 나머지를 열람합니다.</p>
+<p>Retrieves the remainder of the specified dividend divided by the specified divisor.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Mod, Dividend, Divisor</pre>
 <p><em>Divisor</em>가 0이면, <em>OutputVar</em>는 비워집니다. <em>Dividend</em>와 <em>Divisor</em>가 모두 소수점을 담을 수 있습니다. 음수이면, <em>Divisor</em>는 계산을 위해 양수로 취급됩니다. 다음 예제에서, 결과는 2입니다: <code>Transform, OutputVar, Mod, 5, 3</code>.</p>
 
@@ -112,77 +112,77 @@ return</pre>
 
 <h3 id="Sqrt">Sqrt</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Sqrt">Sqrt()</a>를 사용하십시오.</p>
-<p>Retrieves the square root of <em>Number</em>.</p>
+<p>Retrieves the square root of the specified number.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Sqrt, Number</pre>
 <p><em>Number</em>가 음수이면, <em>OutputVar</em>는 비워집니다.</p>
 
 <h3 id="Log">Log</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Log">Log()</a>를 사용하십시오.</p>
-<p>Retrieves the logarithm (base 10) of <em>Number</em>.</p>
+<p>Retrieves the logarithm (base 10) of the specified number.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Log, Number</pre>
 <p><em>Number</em>가 음수이면, <em>OutputVar</em>는 비워집니다.</p>
 
 <h3 id="Ln">Ln</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Ln">Ln()</a>를 사용하십시오.</p>
-<p>Retrieves the natural logarithm (base e) of <em>Number</em>.</p>
+<p>Retrieves the natural logarithm (base e) of the specified number.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Ln, Number</pre>
 <p><em>Number</em>가 음수이면, <em>OutputVar</em>는 비워집니다.</p>
 
 <h3 id="Round">Round</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Round">Round()</a>를 사용하십시오.</p>
-<p>Retrieves <em>Number</em> rounded to <em>N</em> decimal places.</p>
+<p>Retrieves the specified number rounded to <em>N</em> decimal places.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Round, Number <span class="optional">, N</span></pre>
 <p><em>N</em>을 생략하면, <em>OutputVar</em>는 <em>Number</em>이 가장 가까운 정수로 반올림되어 설정됩니다. If <em>N</em> is positive number, <em>Number</em> will be rounded to <em>N</em> decimal places. If <em>N</em> is negative, <em>Number</em> will be rounded by <em>N</em> digits to the left of the decimal point. 예를 들어, -1이면 첫 째 자리에서 반올림되고, -2이면 10이 자리에서, 그리고 -3이면 백의 자리에서 반올림됩니다. 주의: The Round sub-command does not remove trailing zeros when rounding decimal places. 예를 들어, 12.333을 소수 첫 째 자리에서 반올림하면 12.300000이 됩니다. This behavior can be altered by using something like <code><a href="SetFormat.htm">SetFormat</a>, Float, 0.1</code> prior to the operation (in fact, <a href="SetFormat.htm">SetFormat</a> might eliminate the need to use the Round sub-command in the first place).</p>
 
 <h3 id="Ceil">Ceil</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Ceil">Ceil()</a>를 사용하십시오.</p>
-<p><em>Number</em>을 가장 가까운 정수로 올림하여 열람합니다.</p>
+<p>Retrieves the specified number rounded up to the nearest integer.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Ceil, Number</pre>
 
 <h3 id="Floor">Floor</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Floor">Floor()</a>를 사용하십시오.</p>
-<p>Retrieves <em>Number</em> rounded down to the nearest integer.</p>
+<p>Retrieves the specified number rounded down to the nearest integer.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Floor, Number</pre>
 
 <h3 id="Abs">Abs</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Abs">Abs()</a>를 사용하십시오.</p>
-<p>Retrieves the absolute value of <em>Number</em>.</p>
+<p>Retrieves the absolute value of the specified number.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Abs, Number</pre>
 <p>This is computed by removing the leading minus sign (dash) from <em>Number</em> if it has one.</p>
 
 <h3 id="Sin">Sin</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Sin">Sin()</a>를 사용하십시오.</p>
-<p>Retrieves the trigonometric sine of <em>Number</em>.</p>
+<p>Retrieves the trigonometric sine of the specified number.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Sin, Number</pre>
 <p><em>Number</em>는 라디안으로 표현해야 합니다.</p>
 
 <h3 id="Cos">Cos</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Cos">Cos()</a>를 사용하십시오.</p>
-<p>Retrieves the trigonometric cosine of <em>Number</em>.</p>
+<p>Retrieves the trigonometric cosine of the specified number.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Cos, Number</pre>
 <p><em>Number</em>는 라디안으로 표현해야 합니다.</p>
 
 <h3 id="Tan">Tan</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#Tan">Tan()</a>를 사용하십시오.</p>
-<p>Retrieves the trigonometric tangent of <em>Number</em>.</p>
+<p>Retrieves the trigonometric tangent of the specified number.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, Tan, Number</pre>
 <p><em>Number</em>는 라디안으로 표현해야 합니다.</p>
 
 <h3 id="ASin">ASin</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#ASin">ASin()</a>를 사용하십시오.</p>
-<p>Retrieves the arcsine (the number whose sine is <em>Number</em>) in radians.</p>
+<p>Retrieves the arcsine (the number whose sine is the specified number) in radians.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, ASin, Number</pre>
 <p><em>Number</em>가 -1보다 작거나 1보다 크면, <em>OutputVar</em>는 비워집니다.</p>
 
 <h3 id="ACos">ACos</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#ACos">ACos()</a>를 사용하십시오.</p>
-<p>Retrieves the arccosine (the number whose cosine is <em>Number</em>) in radians.</p>
+<p>Retrieves the arccosine (the number whose cosine is the specified number) in radians.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, ACos, Number</pre>
 <p><em>Number</em>가 -1보다 작거나 1보다 크면, <em>OutputVar</em>는 비워집니다.</p>
 
 <h3 id="ATan">ATan</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="Math.htm#ATan">ATan()</a>를 사용하십시오.</p>
-<p>Retrieves the arctangent (the number whose tangent is <em>Number</em>) in radians.</p>
+<p>Retrieves the arctangent (the number whose tangent is the specified number) in radians.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, ATan, Number</pre>
 
 <h3 id="Pow">Pow</h3>
@@ -193,7 +193,7 @@ return</pre>
 
 <h3 id="BitNot">BitNot</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#unary"><code>~</code> 연산자</a>을 사용하십시오.</p>
-<p>Retrieves the bit-inverted version of <em>Number</em>.</p>
+<p>Retrieves the bit-inverted version of the specified number.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, BitNot, Number</pre>
 <p>Floating point values are truncated to integers prior to the calculation. <em>Number</em>이 0부터 4294967295 (0xffffffff) 사이이면, <strong>부호 없는</strong> 32-비트 값으로 취급됩니다. 그렇지 않으면 <strong>부호 있는</strong> 64-비트 값으로 취급됩니다. 다음 예제에서, 그 결과는 0xfffff0f0 (4294963440)입니다: <code>Transform, OutputVar, BitNot, 0xf0f</code>.</p>
 
@@ -217,13 +217,13 @@ return</pre>
 
 <h3 id="BitShiftLeft">BitShiftLeft</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#bitwise"><code>&lt;&lt;</code> 연산자</a>을 사용하십시오.</p>
-<p>Retrieves the result of shifting <em>Number</em> to the left by <em>N</em> bit positions.</p>
+<p>Retrieves the result of shifting the specified number to the left by <em>N</em> bit positions.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, BitShiftLeft, Number, N</pre>
 <p>This is equivalent to multiplying <em>Number</em> by "2 to the <em>N</em>th power". Floating point values are truncated to integers prior to the calculation. 다음 예제에서 그 결과는 8입니다: <code>Transform, OutputVar, BitShiftLeft, 1, 3</code>.</p>
 
 <h3 id="BitShiftRight">BitShiftRight</h3>
 <p class="warning"><strong>비추천:</strong> 새 스크립트에 사용을 추천하지 않습니다. 대신 <a href="../Variables.htm#bitwise"><code>&gt;&gt;</code> 연산자</a>을 사용하십시오.</p>
-<p>Retrieves the result of shifting <em>Number</em> to the right by <em>N</em> bit positions.</p>
+<p>Retrieves the result of shifting the specified number to the right by <em>N</em> bit positions.</p>
 <pre class="Syntax"><span class="func">Transform</span>, OutputVar, BitShiftRight, Number, N</pre>
 <p>This is equivalent to dividing <em>Number</em> by "2 to the <em>N</em>th power", truncating the remainder. Floating point values are truncated to integers prior to the calculation. 다음 예제에서, 결과는 2입니다: <code>Transform, OutputVar, BitShiftRight, 17, 3</code>.</p>
 

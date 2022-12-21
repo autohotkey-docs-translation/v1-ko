@@ -31,14 +31,13 @@ ul.list_of_p li { margin: 1em 0; }
 <p><b>IsObject()</b>를 사용하면 값이 객체인지 판별할 수 있습니다:</p>
 <pre>Result := IsObject(<i>expression</i>)</pre>
 
-<p>객체의 종류는 다음과 같습니다:</p>
+<p>See <em>Object Types</em> in the documentation side bar for a list of standard object types. There are three fundamental types:</p>
 <ul>
-  <li><a href="objects/Object.htm"><b>Object</b></a> - 스크립트 가능한 연관배열.</li>
-  <li><a href="objects/File.htm">File</a> - 파일 입/출력에 인터페이스를 제공합니다.</li>
-  <li><a href="objects/Functor.htm">Function 객체</a> - <a href="objects/Func.htm">Func</a>, <a href="objects/Functor.htm#BoundFunc">BoundFunc</a> 또는 <a href="objects/Functor.htm#User-Defined">사용자-정의</a>.</li>
-  <li><a href="commands/ComObjCreate.htm">ComObject</a> - IDispatch 인터페이스를 포장합니다 (COM 또는 "자동화" 객체).</li>
+  <li><a href="lib/Object.htm"><b>Object</b></a>: the basic type of all user-defined objects, simple arrays and associative arrays.</li>
+  <li><strong>Built-in objects</strong>, such as <a href="lib/File.htm">File</a>. Built-in objects have a strict set of properties and methods and do not permit new properties or methods to be added.</li>
+  <li><strong>COM wrapper objects</strong>. These typically represent a COM or "Automation" object implementing the <a href="https://docs.microsoft.com/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch interface</a>, but are also used to <a href="lib/ComObjActive.htm">wrap values of specific types</a> to be passed to COM objects and functions. COM objects are implemented by external libraries, so often differ in behaviour to AutoHotkey objects. </li>
 </ul>
-<p>Support for objects requires <span class="ver">[AHK_L 31+]</span>, but some features may require later a version.</p>
+<p>Support for objects requires <span class="ver">[AHK_L 31+]</span>, but some features may require a later version.</p>
 
 <h2 id="toc">목차</h2>
 <ul>
@@ -58,23 +57,23 @@ Array := Array(Item1, Item2, ..., ItemN)</pre>
 <pre>Value := Array[Index]</pre>
 <p>항목을 할당합니다:</p>
 <pre>Array[Index] := Value</pre>
-<p>Insert one or more items at a given index using the <a href="objects/Object.htm#InsertAt">InsertAt</a> method:</p>
+<p>Insert one or more items at a given index using the <a href="lib/Object.htm#InsertAt">InsertAt</a> method:</p>
 <pre>Array.InsertAt(Index, Value, Value2, ...)</pre>
-<p>Append one or more items using the <a href="objects/Object.htm#Push">Push</a> method:</p>
+<p>Append one or more items using the <a href="lib/Object.htm#Push">Push</a> method:</p>
 <pre>Array.Push(Value, Value2, ...)</pre>
-<p>Remove an item using the <a href="objects/Object.htm#RemoveAt">RemoveAt</a> method:</p>
+<p>Remove an item using the <a href="lib/Object.htm#RemoveAt">RemoveAt</a> method:</p>
 <pre>RemovedValue := Array.RemoveAt(Index)</pre>
-<p>Remove the last item using the <a href="objects/Object.htm#Pop">Pop</a> method:</p>
+<p>Remove the last item using the <a href="lib/Object.htm#Pop">Pop</a> method:</p>
 <pre>RemovedValue := Array.Pop()</pre>
-<p>배열이 비어 있지 않으면, <a href="objects/Object.htm#MinMaxIndex">MinIndex</a>와 <a href="objects/Object.htm#MinMaxIndex">MaxIndex</a>/<a href="objects/Object.htm#Length">Length</a>는 배열에서 현재 사용중인 가장 낮은 인덱스와 가장 높은 인덱스를 돌려줍니다. 가장 낮은 인덱스는 거의 대부분 1이므로, MaxIndex는 보통 항목의 개수를 돌려줍니다. 그렇지만, 정수 키가 없다면, MaxIndex는 빈 문자열을 돌려줍니다. 반면에 Length는 0을 돌려줍니다. 배열의 내용은 인덱스 또는 For-loop로 회돌이할 수 있습니다. 예를 들어:</p>
+<p>배열이 비어 있지 않으면, <a href="lib/Object.htm#MinMaxIndex">MinIndex</a>와 <a href="lib/Object.htm#MinMaxIndex">MaxIndex</a>/<a href="lib/Object.htm#Length">Length</a>는 배열에서 현재 사용중인 가장 낮은 인덱스와 가장 높은 인덱스를 돌려줍니다. 가장 낮은 인덱스는 거의 대부분 1이므로, MaxIndex는 보통 항목의 개수를 돌려줍니다. 그렇지만, 정수 키가 없다면, MaxIndex는 빈 문자열을 돌려줍니다. 반면에 Length는 0을 돌려줍니다. 배열의 내용은 인덱스 또는 For-loop로 회돌이할 수 있습니다. 예를 들어:</p>
 <pre>array := ["one", "two", "three"]
 
 <em>; 1부터 배열의 끝까지 반복합니다:</em>
-<a href="commands/Loop.htm">Loop</a> % array.Length()
+<a href="lib/Loop.htm">Loop</a> % array.Length()
     MsgBox % array[A_Index]
 
 <em>; 배열의 내용을 열거합니다:</em>
-<a href="commands/For.htm">For</a> index, value in array
+<a href="lib/For.htm">For</a> index, value in array
     MsgBox % "Item " index " is '" value "'"
 </pre>
 
@@ -87,11 +86,11 @@ Array := Object("KeyA", ValueA, "KeyB", ValueB, ..., "KeyZ", ValueZ)</pre>
 <pre>Value := Array[Key]</pre>
 <p>항목을 할당합니다:</p>
 <pre>Array[Key] := Value</pre>
-<p>Remove an item using the <a href="objects/Object.htm#Delete">Delete</a> method:</p>
+<p>Remove an item using the <a href="lib/Object.htm#Delete">Delete</a> method:</p>
 <pre>RemovedValue := Array.Delete(Key)</pre>
 <p>항목을 열거합니다:</p>
 <pre>array := {ten: 10, twenty: 20, thirty: 30}
-<a href="commands/For.htm">For</a> key, value in array
+<a href="lib/For.htm">For</a> key, value in array
     MsgBox %key% = %value%</pre>
 <p>연관 배열은 중간 중간 비워서 만들 수 있습니다 - 즉, <code>{1:"a",1000:"b"}</code>는 오직 두 개의 키-값 쌍만 들어 있습니다. 1000개가 아닙니다.</p>
 <p id="same_thing">AutoHotkey v1.x에서 단순 배열과 연관 배열은 같은 것입니다. 그렇지만 <code>[]</code>를 단순 배열로 간주하는 것이 그의 목적을 명확하게 보여주는 데 도움이 되고, 미래 버전의 오토핫키에 스크립트가 작동할 가능성을 높여줍니다. 앞으로는 단순 배열과 연관 배열 사이에 차이가 있을 수 있습니다.</p>
@@ -110,7 +109,7 @@ Array := Object("KeyA", ValueA, "KeyB", ValueB, ..., "KeyZ", ValueZ)</pre>
 <p>COM 객체의 특성과 사용자-정의 객체는 매개변수를 받을 수 있습니다:</p>
 <pre>Value := Object.Property[Parameters]
 Object.Property[Parameters] := Value</pre>
-<p><strong>관련 항목:</strong> <a href="objects/Object.htm">Object</a>, <a href="objects/File.htm">File Object</a>, <a href="objects/Func.htm">Func Object</a>, <a href="commands/ComObjCreate.htm">COM object</a></p>
+<p><strong>관련 항목:</strong> <a href="lib/Object.htm">Object</a>, <a href="lib/File.htm">File Object</a>, <a href="lib/Func.htm">Func Object</a>, <a href="lib/ComObjCreate.htm">COM object</a></p>
 <p><b>알려진 한계:</b></p>
 <ul><li>현재 <code><span class="dull">x</span>.y[z]<span class="dull">()</span></code>는 <code><span class="dull">x</span>["y", z]<span class="dull">()</span></code>으로 간주되는데, 이는 지원하지 않습니다. 임시 해결책으로, <code><span class="red">(</span><span class="dull">x.y</span><span class="red">)</span>[z]()</code>는 먼저 <code>x.y</code>를 평가한 다음, 그 결과를 메쏘드 호출의 목표로 사용합니다. <code>x.y[z].Call()</code>에는 이 한계가 없다는 것을 주목하십시오. 왜냐하면 <code>(x.y[z]).Call()</code>과 똑같이 평가되기 때문입니다.</li></ul>
 
@@ -147,7 +146,7 @@ x := "", y := ""             <em>; 위의 줄이 없다면, 이 줄로는 객체
 <pre>obj.item(x) := y
 obj.item[x] := y</pre>
 <p id="cassign"><code>x.y += 1</code>와 <code>--arr[1]</code>같은 복합 서술문을 지원합니다.</p>
-<p><span class="ver">[v1.1.20+]:</span> 특성을 설정하거나 획득할 때 매개변수를 생략할 수 있습니다. 예를 들어, <code>x[,2]</code>. 스크립트는 이를 이용하여 <a href="#Custom_Classes_property">특성</a>과 <a href="#Meta_Functions">메타-함수</a>의 매개변수에 기본 값들을 정의할 수 있습니다. 메쏘드 이름도 <code>x[](a)</code>처럼 완전히 생략 가능합니다. 스크립트는 이를 이용하여 __Call <a href="#Meta_Functions">메타-함수</a>의 매개변수에 기본 값을 정의할 수 있습니다. 왜냐하면 그렇지 않으면 값이 제공되지 않기 때문입니다. 이것은 <code>x.(a)</code>와 다르며, <code>x[""](a)</code>과 동등한 것에 주목하십시오. COM 객체를 호출할 때 특성이나 메쏘드 이름이 생략되면, 그의 "기본 멤버"가 호출됩니다.</p>
+<p><span class="ver">[v1.1.20+]:</span> 특성을 설정하거나 획득할 때 매개변수를 생략할 수 있습니다. 예를 들어, <code>x[,2]</code>. 스크립트는 이를 이용하여 <a href="#Custom_Classes_property">특성</a>과 <a href="#Meta_Functions">메타-함수</a>의 매개변수에 기본 값들을 정의할 수 있습니다. 메쏘드 이름도 <code>x[](a)</code>처럼 완전히 생략 가능합니다. Scripts can utilize this by defining a default value for the __Call <a href="#Meta_Functions">meta-function</a>'s first parameter, since it is not otherwise supplied with a value. 이것은 <code>x.(a)</code>와 다르며, <code>x[""](a)</code>과 동등한 것에 주목하십시오. COM 객체를 호출할 때 특성이나 메쏘드 이름이 생략되면, 그의 "기본 멤버"가 호출됩니다.</p>
 
 <h4 id="Keys">Keys</h4>
 <p><code>[]</code>, <code>{}</code> 또는 <code>new</code> 연산자로 생성된 객체에 어느 값을 사용할 수 있는지는 약간 제한이 있습니다 :</p>
@@ -156,9 +155,9 @@ obj.item[x] := y</pre>
   <li>정수 값의 문자열 형식은 유지되지 않습니다. For example, AutoHotkey v1 produces two different strings for <code>0x10</code> and <code>16</code> (unlike <a href="https://www.autohotkey.com/v2/">AutoHotkey v2</a>), but <code>x[0x10]</code>, <code>x[16]</code> and <code>x[00016]</code> are equivalent as only the numeric value is used.</li>
   <li>Numeric strings that do not contain a decimal point are converted to pure integers, so are subject to the limitations described above. Numeric strings outside the 64-bit range may produce inconsistent results.</li>
   <li>인용부호 붙은 기호 문자열은 v1.x에서 순수하게 비-숫자로 간주됩니다. 그래서 <code>x[1]</code>과<code>x["1"]</code>는 <i>동등하지 않습니다</i>. 게다가, 인용부호 붙은 기호 문자열은 ( <code>"0x" x</code>에서 처럼) 또다른 값과 결합합니다. 그 결과는 순수하게 비-숫자로 취급됩니다. 그렇지만, 이것은 변수에 적용되지 않습니다. 그래서 <code>x[1]</code>와 <code>x[y:="1"]</code>는 동등합니다. <a href="https://www.autohotkey.com/v2/">이 문제는 v2</a>에서 해결될 것입니다. 그래서 스크립트는 인용부호 붙은 숫치 기호를 키로 사용하는 것을 피해야 합니다.</li>
-  <li>부동 소수점수는 키로 지원하지 않습니다. - 대신에 문자열로 변환됩니다. v1.x에서, 부동 소수점 기호는 원래의 형식을 유지하는 반면에 (<code>0+1.0</code>나 <code>Sqrt(y)</code>의 결과 같이) 순수한 부동 소수점 수는 강제로 현재의 <a href="commands/SetFormat.htm">부동 소수점 수 형식</a>으로 변환됩니다. 일관성과 명료함을 위하여, 스크립트는 부동 소수점 기호를 키로 사용하지 말아야 합니다.</li>
-  <li id="base-key">By default, the string key "base" corresponds to the object's <a href="objects/Object.htm#Base">base</a> property, so cannot be used for storing ordinary values with a normal assignment. However, any property can be overridden by storing a value by some other means, such as <code><a href="objects/Object.htm#RawSet">ObjRawSet</a>(Object, "base", "")</code> or <code><a href="objects/Object.htm#SetCapacity">Object.SetCapacity</a>("base", 0)</code>. Once this is done, the key "base" acts like any other string.</li>
-  <li>Although <a href="objects/Object.htm">built-in method</a> names such as "Length" can be used as keys, storing a value will prevent the corresponding method from being called (unless that value is a reference to the appropriate function, such as <em>ObjLength</em>).</li>
+  <li>부동 소수점수는 키로 지원하지 않습니다. - 대신에 문자열로 변환됩니다. v1.x에서, 부동 소수점 기호는 원래의 형식을 유지하는 반면에 (<code>0+1.0</code>나 <code>Sqrt(y)</code>의 결과 같이) 순수한 부동 소수점 수는 강제로 현재의 <a href="lib/SetFormat.htm">부동 소수점 수 형식</a>으로 변환됩니다. 일관성과 명료함을 위하여, 스크립트는 부동 소수점 기호를 키로 사용하지 말아야 합니다.</li>
+  <li id="base-key">By default, the string key "base" corresponds to the object's <a href="lib/Object.htm#Base">base</a> property, so cannot be used for storing ordinary values with a normal assignment. However, any property can be overridden by storing a value by some other means, such as <code><a href="lib/Object.htm#RawSet">ObjRawSet</a>(Object, "base", "")</code> or <code><a href="lib/Object.htm#SetCapacity">Object.SetCapacity</a>("base", 0)</code>. Once this is done, the key "base" acts like any other string.</li>
+  <li>Although <a href="lib/Object.htm">built-in method</a> names such as "Length" can be used as keys, storing a value will prevent the corresponding method from being called (unless that value is a reference to the appropriate function, such as <em>ObjLength</em>).</li>
 </ul>
 
 <h2 id="Extended_Usage">확장 사용법</h2>
@@ -171,7 +170,7 @@ RetVal := %Func%(<i>Params</i>)     <em>; <span class="ver">[v1.1.07+]</span> �
 RetVal := Func.Call(<i>Params</i>)  <em>; <span class="ver">[v1.1.19+]</span> 필요</em>
 RetVal := Func.(<i>Params</i>)      <em>; 권장하지 않습니다</em>
 </pre>
-<p>함수 참조의 추가 특성들에 관한 정보는 <a href="objects/Func.htm">Func Object</a>를 참조하십시오.</p>
+<p>함수 참조의 추가 특성들에 관한 정보는 <a href="lib/Func.htm">Func Object</a>를 참조하십시오.</p>
 
 <span id="JaggedArrays"></span><h3 id="Usage_Arrays_of_Arrays">배열의 배열</h3>
 <p>오토핫키는 "다-차원" 배열을 지원합니다. 다른 배열 안에 배열을 투명하게 저장하면 됩니다. 예를 들어, 테이블은 행의 배열로 표현할 수 있습니다. 반면에 각 행 자체는 열의 배열입니다. 그 경우, <code>x</code>행 <code>y</code>열의 내용은 아래의 방법중 하나를 사용하여 설정할 수 있습니다:</p>
@@ -216,22 +215,22 @@ SecondFunc(param) {
 <p>하위-호환을 위해, <code>array[A_Index]</code>에 함수 참조가 아니라 함수 이름이 들어 있다면, 두 번째 형태는 배열(<i>array</i>)을 매개변수로 건네지 않습니다. 그렇지만, <code>array[A_Index]</code>가 <code>array.base[A_Index]</code>으로부터 <a href="#Custom_Objects">상속되었다면</a>, 배열(<i>array</i>)이 매개변수로 건네집니다.</p>
 
 <h2 id="Custom_Objects">맞춤 객체</h2>
-<p>스크립트로 만든 객체는 미리 정의된 구조를 가질 필요가 없습니다. 대신에, 각 객체는 특성과 메쏘드를 그의 <code>base</code> 객체로부터 상속받아야 합니다 (그렇지 않으면 "프로토타입" 또는 "class"라고 알려진). 특성과 메쏘드는 언제든지 객체에 추가할 수도 (제거할 수도) 있습니다. 이런 변경은 이로부터 파생된 모든 객체에 영향을 미칩니다. 보다 복잡하고 전화된 상황을 위해, 베이스 객체는 자신을 상속받은 객체들의 표준 행위를 오버라이드 할 수 있습니다. <a href="#Meta_Functions"><i>메타-함수</i></a>를 정의해 오버라이드 합니다.</p>
+<p>스크립트로 만든 객체는 미리 정의된 구조를 가질 필요가 없습니다. Instead, each object can inherit properties and methods from its <em>base</em> object (otherwise known as a "prototype" or "class"). 특성과 메쏘드는 언제든지 객체에 추가할 수도 (제거할 수도) 있습니다. 이런 변경은 이로부터 파생된 모든 객체에 영향을 미칩니다. 보다 복잡하고 전화된 상황을 위해, 베이스 객체는 자신을 상속받은 객체들의 표준 행위를 오버라이드 할 수 있습니다. <a href="#Meta_Functions"><i>메타-함수</i></a>를 정의해 오버라이드 합니다.</p>
 <p><em>Base</em> 객체는 그냥 평범한 객체이며, 전형적으로 두 가지 방식으로 생성됩니다:</p>
 <pre>class baseObject {
     static foo := "bar"
 }
 <em>; 또는</em>
 baseObject := {foo: "bar"}</pre>
-<p>객체를 또다른 객체로부터 파생시켜 생성하기 위해, 스크립트는 <a href="objects/Object.htm#Base">base 특성</a>에 할당하거나 <a href="#Custom_NewDelete"><code>new</code> 키워드를 사용할 수 있습니다</a>:</p>
+<p>객체를 또다른 객체로부터 파생시켜 생성하기 위해, 스크립트는 <a href="lib/Object.htm#Base">base 특성</a>에 할당하거나 <a href="#Custom_NewDelete"><code>new</code> 키워드를 사용할 수 있습니다</a>:</p>
 <pre>obj1 := Object(), obj1.base := baseObject
 obj2 := {base: baseObject}
 obj3 := new baseObject
 MsgBox % obj1.foo " " obj2.foo " " obj3.foo</pre>
-<p>언제든지 한 객체의 <code>base</code>를 재할당할 수 있습니다. 객체가 상속받은 모든 특성과 메쏘드를 효과적으로 교체합니다.</p>
+<p>It is possible to reassign an object's <em>base</em> at any time, effectively replacing all of the properties and methods that the object inherits.</p>
 
 <h3 id="Custom_Prototypes">프로토타입</h3>
-<p>프로토타입 또는 <code>base</code> 객체는 다른 객체와 마찬가지로 구성하고 조작합니다. 예를 들어, 특성 하나와 메쏘드 하나를 가진 평범한 객체는 다음과 같이 구성할 수 있습니다:</p>
+<p>Prototype or <em>base</em> objects are constructed and manipulated the same as any other object. 예를 들어, 특성 하나와 메쏘드 하나를 가진 평범한 객체는 다음과 같이 구성할 수 있습니다:</p>
 <pre><em>; 객체를 생성한다.</em>
 thing := {}
 <em>; Store a value.</em>
@@ -249,8 +248,7 @@ thing_test(this) {
 <pre>other := {}
 other.base := thing
 other.test()</pre>
-<p>이 경우, <i>other</i>는 <i>foo</i>를 상속받고 <i>test</i>는 <i>thing</i>으로부터 상속을 받습니다. 이런 상속 관계는 역동적입니다. 그래서 <code>thing.foo</code>가 변경되면, 그 변경이 <code>other.foo</code>에 반영됩니다. 스크립트가 <code>other.foo</code>에 할당하면, 그 값은 <i>other</i>에 저장됩니다. <code>thing.foo</code>에 변경을 더 가하더라도 <code>other.foo</code>에는 영향을 미치지 않습니다. <code>other.test()</code>가 호출되면, 그의 <i>this</i> 매개변수에는 <i>thing</i>이 아니라 <i>other</i>를 가리키는 참조가 들어갑니다.
-</p>
+<p>이 경우, <i>other</i>는 <i>foo</i>를 상속받고 <i>test</i>는 <i>thing</i>으로부터 상속을 받습니다. 이런 상속 관계는 역동적입니다. 그래서 <code>thing.foo</code>가 변경되면, 그 변경이 <code>other.foo</code>에 반영됩니다. 스크립트가 <code>other.foo</code>에 할당하면, 그 값은 <i>other</i>에 저장됩니다. <code>thing.foo</code>에 변경을 더 가하더라도 <code>other.foo</code>에는 영향을 미치지 않습니다. <code>other.test()</code>가 호출되면, 그의 <i>this</i> 매개변수에는 <i>thing</i>이 아니라 <i>other</i>를 가리키는 참조가 들어갑니다.</p>
 
 <h3 id="Custom_Classes">클래스 <span class="ver">[v1.1.00+]</span></h3>
 <p>어원으로 말하자면 "클래스"란 공통의 특성이나 속성을 가지고 있는 것들의 한 범주 또는 집합입니다. <a href="#Custom_Objects">base</a> 객체나 <a href="#Custom_Prototypes">prototype</a> 객체는 객체 집합에 대하여 특성과 행위를 정의하기 때문에, 클래스(<em>class</em>) 객체라고 부를 수도 있습니다. 편의를 위해, 베이스 객체는 아래에 보여주는 바와 같이 "class" 키워드를 사용하여 정의할 수 있습니다:</p>
@@ -281,7 +279,7 @@ other.test()</pre>
 }
 </pre>
 <p>스크립트가 적재될 때, 이 코드는 객체를 하나 구성하고 그것을 전역 변수 (또는 <span class="ver">[in v1.1.05+]</span>이라면 <a href="Functions.htm#SuperGlobal">수퍼-전역</a> 변수) <i>ClassName</i>에 저장합니다. To reference this class inside a <a href="Functions.htm#ForceLocal">force-local</a> function (or an assume-local or assume-static function prior to <span class="ver">[v1.1.05]</span>), a declaration such as <code>global ClassName</code> is required. <code>extends BaseClassName</code>가 있으면, <i>BaseClassName</i>은 반드시 또다른 클래스의 완전한 이름이어야 합니다 (그러나 <span class="ver">[v1.1.11]</span>에서는 정의된 순서는 문제가 되지 않습니다). 각 클래스의 완전한 이름이 <code><i>object</i>.__Class</code>에 저장됩니다.</p>
-<p>Because the class is referenced via a variable, the class name cannot be used to both reference the class and create a separate variable (such as to hold an instance of the class) in the same context. For example, <code>box := new Box</code> would replace the class object in <em>Box</em> with an instance of itself. <span class="ver">[v1.1.27+]:</span> <a href="commands/_Warn.htm#ClassOverwrite">#Warn ClassOverwrite</a> enables a warning to be shown at load time for each attempt to overwrite a class.</p>
+<p>Because the class is referenced via a variable, the class name cannot be used to both reference the class and create a separate variable (such as to hold an instance of the class) in the same context. For example, <code>box := new Box</code> would replace the class object in <em>Box</em> with an instance of itself. <span class="ver">[v1.1.27+]:</span> <a href="lib/_Warn.htm#ClassOverwrite">#Warn ClassOverwrite</a> enables a warning to be shown at load time for each attempt to overwrite a class.</p>
 <p>이 문서 안에서 클래스("class")라는 단어는 그 자체로 보통 <code>class</code> 키워드로 구성된 클래스 객체를 의미합니다.</p>
 <p>클래스 정의는 변수 선언, 메쏘드 정의, 내포 클래스 정의를 포함할 수 있습니다.</p>
 
@@ -322,7 +320,7 @@ Method()
   <li><code>base.Method()</code>는 언제나 현재 메소드가 정의되어 있는 클래스의 베이스를 요청합니다. <code>this</code>가 전적으로 그 클래스 또는 다른 클래스의 <em>sub-class</em>로부터 파생되었을지라도 말입니다.</li>
   <li><code>base.Method()</code>는 묵시적으로 <code>this</code>를 첫 (숨은) 매개변수로 건넵니다.</li>
 </ul>
-<p><code>base</code>는 다음에 점<code>.</code> 또는 각괄호 <code>[]</code>가 따라오면 특별한 의미를 가집니다. 그래서 <code>obj := base, obj.Method()</code>와 같은 코드는 작동하지 않습니다. 스크립트는 <i>base</i>의 특별한 행위를 불능으로 만들 수 있습니다. 거기에다 비어있지-않은 값을 할당하면 됩니다; 그렇지만, 이것은 권장하지 않습니다. 왜냐하면 변수 <i>base</i>는 꼭 비어 있어야 합니다. 스크립트가 <a href="commands/_NoEnv.htm">#NoEnv</a>를 빼먹으면 수행성능이 저하될 수 있기 때문입니다.</p>
+<p><code>base</code>는 다음에 점<code>.</code> 또는 각괄호 <code>[]</code>가 따라오면 특별한 의미를 가집니다. 그래서 <code>obj := base, obj.Method()</code>와 같은 코드는 작동하지 않습니다. 스크립트는 <i>base</i>의 특별한 행위를 불능으로 만들 수 있습니다. 거기에다 비어있지-않은 값을 할당하면 됩니다; 그렇지만, 이것은 권장하지 않습니다. 왜냐하면 변수 <i>base</i>는 꼭 비어 있어야 합니다. 스크립트가 <a href="lib/_NoEnv.htm">#NoEnv</a>를 빼먹으면 수행성능이 저하될 수 있기 때문입니다.</p>
 
 <h4 id="Custom_Classes_property">Properties <span class="ver">[v1.1.16+]</span></h4>
 <p>특성 정의는 스크립트가 특정한 키를 설정하거나 열람할 때마다 메쏘드를 실행하도록 허용합니다.</p>
@@ -367,7 +365,7 @@ class GMem
 <p>__Delete는 "__Class"를 키로 가지는 객체에 호출되지 않습니다. <a href="#Custom_Classes">클래스 객체</a>가 이 키를 기본값으로 가집니다.</p>
 <p>If the class has a super-class which defines these methods, <code>base.__New()</code> (with parameters as appropriate) and <code>base.__Delete()</code> should typically be called. Otherwise, only the most derived definition of the method is called, excluding any definition within the target object itself.</p>
 <p><span class="ver">[v1.1.28+]:</span> If an exception or runtime error is thrown while __Delete is executing and is not handled within __Delete, it acts as though __Delete was called from a new <a href="misc/Threads.htm">thread</a>. That is, an error dialog is displayed and __Delete returns, but the thread does not exit (unless it was already exiting). Prior to v1.1.28, unhandled exceptions caused inconsistent behavior.</p>
-<p>If the script is directly terminated by any means, including the tray menu, <a href="commands/ExitApp.htm">ExitApp</a>, or <a href="commands/Exit.htm">Exit</a> (when the script is not <a href="commands/_Persistent.htm">persistent</a>), any functions which have yet to return do not get the chance to do so. Therefore, any objects referenced by local variables of those functions are not released, so __Delete is not called.</p>
+<p>If the script is directly terminated by any means, including the tray menu, <a href="lib/ExitApp.htm">ExitApp</a>, or <a href="lib/Exit.htm">Exit</a> (when the script is not <a href="lib/_Persistent.htm">persistent</a>), any functions which have yet to return do not get the chance to do so. Therefore, any objects referenced by local variables of those functions are not released, so __Delete is not called.</p>
 <p>When the script exits, objects contained by global and static variables are released automatically in an arbitrary, implementation-defined order. When __Delete is called during this process, some global or static variables may have already been released, but any references contained by the object itself are still valid. It is therefore best for __Delete to be entirely self-contained, and not rely on any global or static variables.</p>
 
 <h3 id="Meta_Functions">메타-함수</h3>
@@ -400,14 +398,14 @@ class <i>ClassName</i> {
   <li>여러 매개변수가 <i>get</i>이나 <i>set</i>에 주어지고 키가 발견되면, 그의 값을 점검합니다. 그 값이 객체이면, 그것을 요청하여 나머지 매개변수들을 처리합니다. 그리고 더 이상 진행하지 않습니다.</li>
   <li>키가 발견되면,<br>
     <i>Get</i>: 그 값을 돌려줍니다.<br>
-    <i>Call</i>: Attempt to call the value, passing the target object as the first parameter (<code>this</code>). The value should be a function name or a <a href="objects/Functor.htm">function object</a>.</li>
+    <i>Call</i>: Attempt to call the value, passing the target object as the first parameter (<code>this</code>). The value should be a function name or a <a href="misc/Functor.htm">function object</a>.</li>
 </ul>
 <p>일치하는 키를 메타-함수가 객체에 저장하지만 반환(<code>return</code>)하지 않으면, 그 행위는 마치 키가 처음부터 그 객체에 존재한 것과 같습니다. __Set을 사용하는 예제는 <a href="#Subclassing_aoa">배열의 배열 서브-클래싱하기</a>를 참조하십시오.</p>
 <p>연산이 여전히 처리되지 않았다면, 이것이 내장 함수인지 아니면 내장 특성인지 점검하십시오:</p>
 <ul>
   <li><i>Get</i>: 기카 "base"이면, 그 객체의 base를 돌려줍니다.</li>
   <li><i>Set</i>: 키가 "base"이면, 그 객체의 base를 설정합니다 (또는 그 값이 객체가 아니면 제거합니다).</li>
-  <li><i>Call</i>: 적용할 수 있으면 <a href="objects/Object.htm">내장 메쏘드</a>를 호출합니다.</li>
+  <li><i>Call</i>: 적용할 수 있으면 <a href="lib/Object.htm">내장 메쏘드</a>를 호출합니다.</li>
 </ul>
 <p>여전히 연산이 처리되지 않았다면,</p>
 <ul>
@@ -477,9 +475,9 @@ class Color
 <p>However, in this case <a href="#Custom_Classes_property">Property syntax</a> could have been used instead, where code is shared by simply having each property call a central method. It is better to avoid using meta-functions where possible due to the high risk of misuse (see the notes in red above).</p>
 
 <h4 id="Objects_as_Functions">함수로서의 객체</h4>
-<p>For an outline of how to create objects which can act as functions, see <a href="objects/Functor.htm#User-Defined">Function Objects</a>.</p>
+<p>For an outline of how to create objects which can act as functions, see <a href="misc/Functor.htm#User-Defined">Function Objects</a>.</p>
 <p>A function object can also act as a meta-function, such as to define dynamic properties similar to those in the previous section. Although it is recommended to use <a href="#Custom_Classes_property">property syntax</a> instead, the example below shows the potential of meta-functions for implementing new concepts or behaviour, or changing the structure of the script.</p>
-<pre><em>; This example requires the <a href="objects/Functor.htm#class_FunctionObject">FunctionObject class</a> in order to work.</em>
+<pre><em>; This example requires the <a href="misc/Functor.htm#class_FunctionObject">FunctionObject class</a> in order to work.</em>
 blue := new Color(0x0000ff)
 MsgBox % blue.R "," blue.G "," blue.B
 
@@ -617,7 +615,7 @@ Default__Warn(nonobj, p1="", p2="", p3="", p4="")
 <p>어떤 경우는 DllCall()을 통하여 객체를 외부 코드에 건넬 필요가 있습니다. 또는 그것을 이진 데이터 구조로 저장하여 나중에 열람할 필요가 있습니다. An object's address can be retrieved via <code>address := &amp;object</code>; however, this effectively makes two references to the object, but the program only knows about the one in <em>object</em>. If the last <em>known</em> reference to the object was released, the object would be deleted. Therefore, the script must inform the object that it has gained a reference. There are two ways to do this:</p>
 <pre><em>; Method #1: Explicitly increment the reference count.</em>
 address := &amp;object
-<a href="commands/ObjAddRef.htm">ObjAddRef</a>(address)
+<a href="lib/ObjAddRef.htm">ObjAddRef</a>(address)
 
 <em>; Method #2: Use Object(), which increments the reference count and returns an address.</em>
 address := Object(object)</pre>
@@ -625,10 +623,10 @@ address := Object(object)</pre>
 <pre>object := Object(address)</pre>
 <p>Either way, the script must also inform the object when it is finished with that reference:</p>
 <pre><em>; 개체의 참조 횟수를 감소시켜 해제되도록 한다:</em>
-<a href="commands/ObjAddRef.htm">ObjRelease</a>(address)
+<a href="lib/ObjAddRef.htm">ObjRelease</a>(address)
 </pre>
 <p>Generally each new copy of an object's address should be treated as another reference to the object, so the script should call ObjAddRef() when it gains a copy and ObjRelease() immediately before losing one. For example, whenever an address is copied via something like <code>x := address</code>, ObjAddRef() should be called. Similarly, when the script is finished with <em>x</em> (or is about to overwrite <em>x</em>'s value), it should call ObjRelease().</p>
-<p>Note that the Object() function can be used even on objects which it did not create, such as <a href="commands/ComObjCreate.htm">COM objects</a> and <a href="objects/File.htm">File objects</a>.</p>
+<p>Note that the Object() function can be used even on objects which it did not create, such as <a href="lib/ComObjCreate.htm">COM objects</a> and <a href="lib/File.htm">File objects</a>.</p>
 
 </body>
 </html>

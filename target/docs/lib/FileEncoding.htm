@@ -25,12 +25,12 @@
     <p><strong>UTF-8-RAW:</strong> 위와 동등, 그러나 새 파일이 작성될 때 바이트 순서 표식을 쓰지 않습니다.</p>
     <p><strong>UTF-16:</strong> Unicode UTF-16 작은값 종료형. CP1200과 동등.</p>
     <p><strong>UTF-16-RAW:</strong> 위와 동등, 그러나 새 파일이 작성될 때 바이트 순서 표식을 쓰지 않습니다.</p>
-    <p><strong>CP<em>nnn</em>:</strong> 숫치 식별자 <em>nnn</em>이 있는 코드 페이지. <a href="http://msdn.microsoft.com/ko-kr/library/dd317756.aspx">코드 페이지 식별자</a>를 참조하십시오.</p>
+    <p><strong>CP<em>nnn</em>:</strong> 숫치 식별자 <em>nnn</em>이 있는 코드 페이지. <a href="https://learn.microsoft.com/windows/desktop/Intl/code-page-identifiers">코드 페이지 식별자</a>를 참조하십시오.</p>
   </dd>
 </dl>
 
 <h2 id="Remarks">논평</h2>
-<p><code>A_FileEncoding</code>에 현재 설정이 담겨 있습니다.</p>
+<p>The built-in variable <strong>A_FileEncoding</strong> contains the current setting.</p>
 <p>새로 기동된 <a href="../misc/Threads.htm">쓰레드</a>마다 (<a href="../Hotkeys.htm">핫키</a>, <a href="Menu.htm">맞춤 메뉴 항목</a>, 또는 <a href="SetTimer.htm">타이머</a> 서브루틴) 이 명령어에 대한 기본값을 가지고 새로 시작합니다. 이 설정은 이 명령어를 자동-실행 섹션에 (스크립트의 상단 부분) 사용하면 바꿀 수 있습니다.</p>
 <p>The default encoding is not used if a UTF-8 or UTF-16 byte order mark is present in the file, unless the file is being opened with write-only access (i.e. the previous contents of the file are being discarded).</p>
 

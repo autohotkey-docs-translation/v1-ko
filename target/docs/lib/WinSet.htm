@@ -3,7 +3,7 @@
 <head>
 <title>WinSet - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content='The WinSet command makes a variety of changes to the specified window, such as "always on top" and transparency.' />
-<meta name="ahk:equiv-v2" content="commands/Win.htm" />
+<meta name="ahk:equiv-v2" content="lib/Win.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -164,7 +164,7 @@ DllCall("dwmapi\DwmSetWindowAttribute", "ptr", WinExist("Window Title")
 </div>
 
 <div class="ex" id="ExTransColor">
-<p><a class="ex_number" href="#ExTransColor"></a> Makes all white pixels in Notepad invisible.</p>
+<p><a class="ex_number" href="#ExTransColor"></a> Makes all white pixels in Notepad invisible. This example may not work well with the new Notepad on Windows 11 or later.</p>
 <pre>WinSet, TransColor, White, Untitled - Notepad</pre>
 </div>
 
@@ -216,7 +216,7 @@ return</pre>
 </div>
 
 <div class="ex" id="ExRegion">
-<p><a class="ex_number" href="#ExRegion"></a> Usage of the <a href="#Region">Region</a> sub-command:</p>
+<p><a class="ex_number" href="#ExRegion"></a> Usage of the <a href="#Region">Region</a> sub-command. These examples may not work well with the new Notepad on Windows 11 or later.</p>
 <p>The following makes all parts of Notepad outside this rectangle invisible.</p>
 <pre>WinSet, Region, 50-0 W200 H250, ahk_class Notepad</pre>
 <p>The following does the same as above but with corners rounded to 40x40.</p>

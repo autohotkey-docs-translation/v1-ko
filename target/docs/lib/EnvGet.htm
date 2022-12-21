@@ -19,7 +19,7 @@
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>문자열을 저장할 변수 이름.</p></dd>
+  <dd><p>The name of the output variable in which to store the string.</p></dd>
 
   <dt>EnvVarName</dt>
   <dd><p>열람할 <a href="../Concepts.htm#environment-variables">환경 변수</a>의 이름. 예를 들어: <code>EnvGet, OutputVar, Path</code>.</p></dd>
@@ -40,6 +40,12 @@
 <p><a class="ex_number" href="#ExProgramFiles"></a> Retrieves and reports the path of the "Program Files" directory. See <a href="RegRead.htm#ExProgramFiles">RegRead example #2</a> for an alternative method.</p>
 <pre>EnvGet, OutputVar, % <a href="../Variables.htm#Is64bitOS">A_Is64bitOS</a> ? "ProgramW6432" : "ProgramFiles"
 MsgBox, Program files are in: %OutputVar%</pre>
+</div>
+
+<div class="ex" id="ExLocalAppData">
+<p><a class="ex_number" href="#ExLocalAppData"></a> Retrieves and reports the path of the current user's Local AppData directory.</p>
+<pre>EnvGet, LocalAppData, LocalAppData
+MsgBox, %A_UserName%'s Local directory is located at: %LocalAppData%</pre>
 </div>
 
 </body>

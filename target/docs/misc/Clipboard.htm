@@ -14,13 +14,14 @@
 <h1>Clipboard 그리고 <a href="#ClipboardAll">ClipboardAll</a></h1>
 
 <p><em>Clipboard</em>는 내장 <a href="../Variables.htm">변수</a>로서 창의 클립보드의 현재 내용을 반영합니다. 그 내용이 텍스트로 표현 가능하면 말입니다. 대조적으로, <em><a href="#ClipboardAll">ClipboardAll</a></em>은 그림이든 구조적 텍스트이든 무엇이든 클립보드에 담을 수 있습니다.</p>
+<p><span class="ver">[v1.1.35+]:</span> <code>A_Clipboard</code> is an alias of <code>Clipboard</code>.</p>
 <p id="CopiedFiles"><em>Clipboard</em>에서 텍스트의 각 줄은 전형적으로 캐리지 리턴과 라인피드(CR+LF)로 끝납니다. 스크립트에서는 <code>`r`n</code>으로 표현할 수 있습니다. (탐색기 창으로부터 <kbd>Ctrl</kbd>+<kbd>C</kbd>를 통하여 복사된) 파일은 텍스트로 간주됩니다: 스크립트에서 <em>Clipboard</em>를 참조할 때마다 자동으로 (완전한 경로와 함께) 그의 파일이름으로 변환됩니다. 파일을 하나씩 추출하려면 다음 예제를 따르십시오:</p>
-<pre><a href="../commands/LoopParse.htm">Loop, parse</a>, clipboard, `n, `r
+<pre><a href="../lib/LoopParse.htm">Loop, parse</a>, clipboard, `n, `r
 {
     MsgBox, 4, , File number %A_Index% is %A_LoopField%.`n`nContinue?
     IfMsgBox, No, break
 }</pre>
-<p>파일 이름을 알파벳 순서로 정렬하려면, <a href="../commands/Sort.htm">Sort</a> 명령어를 사용합니다. 클립보드에 존재하는 파일 이름을 파일에 쓰려면, <code><a href="../commands/FileAppend.htm">FileAppend</a>, %clipboard%`r`n, C:\My File.txt</code>를 사용합니다. 얼마나 오랫동안 스크립트가 클립보드를 열려고 시도할 지 변경하려면 -- 다른 어플리케이션에서 사용하고 있는 경우 -- <a href="../commands/_ClipboardTimeout.htm">#ClipboardTimeout</a>을 사용합니다.</p>
+<p>파일 이름을 알파벳 순서로 정렬하려면, <a href="../lib/Sort.htm">Sort</a> 명령어를 사용합니다. 클립보드에 존재하는 파일 이름을 파일에 쓰려면, <code><a href="../lib/FileAppend.htm">FileAppend</a>, %clipboard%`r`n, C:\My File.txt</code>를 사용합니다. 얼마나 오랫동안 스크립트가 클립보드를 열려고 시도할 지 변경하려면 -- 다른 어플리케이션에서 사용하고 있는 경우 -- <a href="../lib/_ClipboardTimeout.htm">#ClipboardTimeout</a>을 사용합니다.</p>
 <strong>기본 예제:</strong>
 <pre>clipboard := "my text"   <em>; 클립보드에 완전히 새로운 내용을 부여합니다.</em>
 clipboard := ""   <em>; Empty the clipboard.</em>
@@ -31,18 +32,18 @@ StringReplace, clipboard, clipboard, ABC, DEF, All   <em>; ABC가 나타나면 �
 <p><strong>ClipWait를 사용하여 스크립트의 신뢰성 높이기:</strong></p>
 <pre>clipboard := ""  <em>; 텍스트가 도착할 때를 탐지하도록 하기 위해 ClipWait를 비운 채로 시작합니다.</em>
 Send ^c
-<a href="../commands/ClipWait.htm">ClipWait</a>  <em>; 클립보드에 텍스트가 담기기를 기다립니다.</em>
+<a href="../lib/ClipWait.htm">ClipWait</a>  <em>; 클립보드에 텍스트가 담기기를 기다립니다.</em>
 MsgBox Control-C 다음 내용이 클립보드에 복사되었습니다:`n`n%clipboard%</pre>
 <h2 id="ClipboardAll">ClipboardAll <span class="headnote">(클립보드에 무엇이든 저장하고 복구하기)</span></h2>
 <p><em>ClipboardAll</em>은 클립보드에 무엇이든 담습니다 (그림과 구조화 텍스트). 클립보드의 내용을 저장하는데 주로 사용됩니다. 스크립트가 임시로 그 클립보드를 연산에 사용할 수 있습니다. 연산이 완료되면, 스크립트는 원래의 클립보드 내용을 아래에 보여주는 바와 같이 복구합니다:</p>
 <pre>ClipSaved := ClipboardAll   <em>; 전체 클립보드를 여러분의 변수에 저장합니다.
-; ... 여기에서 임시로 클립보드를 사용합니다. 예를 들어 <a href="../commands/Transform.htm#Unicode">Transform Unicode</a>를 통하여 유니코드 텍스트를 해석할 수 있습니다 ...</em>
+; ... 여기에서 임시로 클립보드를 사용합니다. 예를 들어 <a href="../lib/Transform.htm#Unicode">Transform Unicode</a>를 통하여 유니코드 텍스트를 해석할 수 있습니다 ...</em>
 Clipboard := ClipSaved   <em>; 원래 클립보드를 복구합니다. ( <i>ClipboardAll</i>이 아니라) <i>Clipboard</i>의 사용에 주목하십시오.</em>
 ClipSaved := ""   <em>; 클립보드가 아주 큰 경우 메모리를 해제합니다.</em></pre>
 <p><em>ClipboardAll</em>를 파일에 저장할 수도 있습니다 (이 모드에서, FileAppend는 언제나 기존의 파일을 덮어씁니다):</p>
-<pre><a href="../commands/FileAppend.htm">FileAppend</a>, %ClipboardAll%, C:\Company Logo.clip <em>; 파일 확장자는 문제가 되지 않습니다.</em></pre>
+<pre><a href="../lib/FileAppend.htm">FileAppend</a>, %ClipboardAll%, C:\Company Logo.clip <em>; 파일 확장자는 문제가 되지 않습니다.</em></pre>
 <p>나중에 다시 그 파일을 클립보드로 (또는 변수 안으로) 적재하려면, 다음 예제를 따르십시오:</p>
-<pre><a href="../commands/FileRead.htm">FileRead</a>, Clipboard, <strong>*c</strong> C:\Company Logo.clip <em>; *c의 사용에 주목하십시오. 반드시 파일이름 앞에 와야 합니다.</em></pre>
+<pre><a href="../lib/FileRead.htm">FileRead</a>, Clipboard, <strong>*c</strong> C:\Company Logo.clip <em>; *c의 사용에 주목하십시오. 반드시 파일이름 앞에 와야 합니다.</em></pre>
 
 <h3 id="limitations">한계</h3>
 <p>Some limitations apply to the direct use of <em>ClipboardAll</em>:</p>
@@ -53,29 +54,29 @@ ClipSaved := ""   <em>; 클립보드가 아주 큰 경우 메모리를 해제합
 <p>A variable containing binary clipboard data can be used as follows:</p>
 <ul>
   <li>Put the data back on the clipboard by assigning to <em>Clipboard</em> as shown above.</li>
-  <li>Write the clipboard data to file with <a href="../commands/FileAppend.htm">FileAppend</a>, as shown above.</li>
+  <li>Write the clipboard data to file with <a href="../lib/FileAppend.htm">FileAppend</a>, as shown above.</li>
   <li>Copy it to another variable (or <a href="../Functions.htm#ByRef">ByRef</a> parameter) as in this example: <code>ClipSaved2 := ClipSaved</code>.</li>
   <li>Pass it to a <a href="../Functions.htm">user-defined function</a> <a href="../Functions.htm#ByRef">by reference</a>, or in <span class="ver">[v1.0.46+]</span>, by value.</li>
-  <li>Determine the size of the data by passing it to <a href="../commands/StrLen.htm">StrLen()</a> as described <a href="#len">below</a>.</li>
+  <li>Determine the size of the data by passing it to <a href="../lib/StrLen.htm">StrLen()</a> as described <a href="#len">below</a>.</li>
   <li>Compare two such variables by using an old-style IF as shown <a href="#compare">below</a>.</li>
-  <li>Take its <a href="../Variables.htm#amp">address</a> or pass the variable itself to <a href="../commands/NumGet.htm">NumGet</a> to examine the data.</li>
+  <li>Take its <a href="../Variables.htm#amp">address</a> or pass the variable itself to <a href="../lib/NumGet.htm">NumGet</a> to examine the data.</li>
 </ul>
 <p>Further limitations apply:</p>
 <ul>
-  <li>When binary clipboard data is assigned to a variable, the variable is marked with a hidden attribute. This attribute can only be set by <a href="../commands/FileRead.htm">FileRead</a> with the <code>*c</code> option, or by direct assignment from <em>ClipboardAll</em> (as shown above) or another variable which has the attribute.</li>
+  <li>When binary clipboard data is assigned to a variable, the variable is marked with a hidden attribute. This attribute can only be set by <a href="../lib/FileRead.htm">FileRead</a> with the <code>*c</code> option, or by direct assignment from <em>ClipboardAll</em> (as shown above) or another variable which has the attribute.</li>
   <li>When used in ways other than those described above, binary clipboard data is usually interpreted as text and truncated at the first null character, which is typically at the beginning of the data. For instance, this occurs when one attempts to return the data from a function or assign it to a property or array element.</li>
-  <li>The clipboard attribute is removed when the variable is freed or assigned any other value, even by indirect means such as <a href="../commands/StrReplace.htm">StrReplace()</a> or <a href="../commands/StringReplace.htm">StringReplace</a>.</li>
+  <li>The clipboard attribute is removed when the variable is freed or assigned any other value, even by indirect means such as <a href="../lib/StrReplace.htm">StrReplace()</a> or <a href="../lib/StringReplace.htm">StringReplace</a>.</li>
   <li>Variables without the clipboard attribute are treated as text when assigned to <em>Clipboard</em> or passed to FileAppend, even if the data is in the appropriate binary format.</li>
 </ul>
 
 <h3 id="Notes">주의</h3>
 <p><em>ClipboardAll</em>이 클립보드에서 하나 이상의 데이터 객체(구조적 텍스트)를 열람할 수 없으면, 그것은 생략되지만 나머지 객체는 그대로 저장됩니다.</p>
-<p><a href="../commands/ClipWait.htm">ClipWait</a>을 사용하면 클립보드에 데이터가 담기는 때를 탐지할 수 있습니다 (선택적으로 텍스트-아닌 데이터 포함).</p>
-<p id="len"><a href="../commands/StrLen.htm">StrLen()</a>를 사용하면 <em>ClipboardAll</em>이 할당된 변수의 총 크기를 발견할 수 있습니다. 그렇지만, 유니코드 버전의 핫키에서 바이트 단위로 그 크기를 얻으려면, 그 크기에 2를 곱해야 얻을 수 있습니다. <a href="../Variables.htm#IsUnicode">A_IsUnicode</a>를 사용하면 ANSI와 Unicode 버전을 다음 예제와 같이 선택적으로 지원할 수 있습니다: <code>size := StrLen(ClipSaved) * (A_IsUnicode ? 2 : 1)</code>.</p>
-<p id="compare">Variables to which <em>ClipboardAll</em> has been assigned can be compared to each other (but not directly to <em>ClipboardAll</em>) by means of <a href="../commands/IfEqual.htm">If[Not]Equal</a>, <code>If Var1 = %Var2%</code>, or <code>If Var1 != %Var2%</code>. 다음 예제에서, 각 변수의 크기를 먼저 점검합니다. 크기가 충분하지 않아 결정할 수 없으면, 그 내용을 비교해 승부를 결정지을 수 있습니다:</p>
+<p><a href="../lib/ClipWait.htm">ClipWait</a>을 사용하면 클립보드에 데이터가 담기는 때를 탐지할 수 있습니다 (선택적으로 텍스트-아닌 데이터 포함).</p>
+<p id="len"><a href="../lib/StrLen.htm">StrLen()</a>를 사용하면 <em>ClipboardAll</em>이 할당된 변수의 총 크기를 발견할 수 있습니다. 그렇지만, 유니코드 버전의 핫키에서 바이트 단위로 그 크기를 얻으려면, 그 크기에 2를 곱해야 얻을 수 있습니다. <a href="../Variables.htm#IsUnicode">A_IsUnicode</a>를 사용하면 ANSI와 Unicode 버전을 다음 예제와 같이 선택적으로 지원할 수 있습니다: <code>size := StrLen(ClipSaved) * (A_IsUnicode ? 2 : 1)</code>.</p>
+<p id="compare">Variables to which <em>ClipboardAll</em> has been assigned can be compared to each other (but not directly to <em>ClipboardAll</em>) by means of <a href="../lib/IfEqual.htm">If[Not]Equal</a>, <code>If Var1 = %Var2%</code>, or <code>If Var1 != %Var2%</code>. 다음 예제에서, 각 변수의 크기를 먼저 점검합니다. 크기가 충분하지 않아 결정할 수 없으면, 그 내용을 비교해 승부를 결정지을 수 있습니다:</p>
 <pre>if ClipSaved1 != %ClipSaved2%   <em>; 이것은  <u>예전 스타일의 IF 서술문</u>입니다. 표현식이 아닙니다.</em>
     MsgBox 저장된 두 개의 클립보드가 서로 다릅니다.</pre>
-<p><em>ClipboardAll</em>을 변수에 저장하는 것은 <a href="../commands/_MaxMem.htm">#MaxMem</a>에 설정된 메모리 한계에 제한을 받지 않습니다.</p>
+<p><em>ClipboardAll</em>을 변수에 저장하는 것은 <a href="../lib/_MaxMem.htm">#MaxMem</a>에 설정된 메모리 한계에 제한을 받지 않습니다.</p>
 <p>A saved clipboard file internally consists of a four-byte format type, followed by a four-byte (for 32-bit) or eight-byte (for 64-bit) data-block size, followed by the data-block for that format. 클립보드에 하나 이상의 포맷이 들어 있다면 (거의 모든 경우에 그렇습니다), 이 세 개의 항목은 모든 포맷이 포함될 때까지 반복됩니다. 파일은 4 바이트 포맷 유형이 0으로 끝납니다.</p>
 <p>알려진 한계: 마이크로소프트 엑셀의 셀이 클립보드에 있을 때 <em>ClipboardAll</em>를 열람하면 엑셀이 "프린터 없음" 대화상자를 보여주는 버그가 있습니다.</p>
 <p>오토핫키로 작성된 클립보드 유틸리티:</p>
@@ -85,7 +86,7 @@ ClipSaved := ""   <em>; 클립보드가 아주 큰 경우 메모리를 해제합
 </ul>
 
 <h2 id="OnClipboardChange">OnClipboardChange</h2>
-<p>Scripts can detect changes to the content of the Clipboard by using <a href="../commands/OnClipboardChange.htm#function">OnClipboardChange()</a> or the <a href="../commands/OnClipboardChange.htm#label">OnClipboardChange label</a>.</p>
+<p>Scripts can detect changes to the content of the Clipboard by using <a href="../lib/OnClipboardChange.htm#function">OnClipboardChange()</a> or the <a href="../lib/OnClipboardChange.htm#label">OnClipboardChange label</a>.</p>
 
 </body>
 </html>

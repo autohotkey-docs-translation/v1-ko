@@ -80,7 +80,7 @@ MsgBox % Format("{2:x}{1:02x}", arr*)</pre>
   <tr>
     <td><code>&nbsp;</code></td>
     <td>
-      <p>스페이스 하나를 사용하면 출력 결과가 양의 값일 경우 앞에 스페이스를 하나 둘 수 있습니다. The space is ignored if both <code>&nbsp;</code> and <code>+</code> flags appear. For example, <code>Format("{:&nbsp;10}", 1)</code> returns <code class="no-highlight" style="white-space: pre"> 1</code>.</p>
+      <p>Use a space to prefix the output value with a <em>single</em> space if it is signed and positive. The space is ignored if both <code>&nbsp;</code> and <code>+</code> flags appear. For example, <code>Format("{:&nbsp;05d}", 1)</code> returns <code class="no-highlight" style="white-space: pre"> 0001</code>.</p>
       <p>If omitted, no space appears.</p>
     </td>
   </tr>

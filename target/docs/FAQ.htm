@@ -74,12 +74,12 @@
 <h3 id="percent">언제 정확하게 변수 이름을 퍼센트 기호로 둘러싸는가?</h3>
 <p>변수 이름은 언제나 퍼센트 기호로 둘러쌉니다. 단, 아래의 <strong>볼드체</strong>로 보여준 것은 제외합니다:</p>
 <ul>
-  <li>입력 변수나 출력 변수인 매개변수에: <code><a href="commands/StringLen.htm">StringLen</a>, <strong>OutputVar</strong>, <strong>InputVar</strong></code></li>
+  <li>입력 변수나 출력 변수인 매개변수에: <code><a href="lib/StringLen.htm">StringLen</a>, <strong>OutputVar</strong>, <strong>InputVar</strong></code></li>
   <li>할당의 왼쪽에: <code><strong>Var</strong> = 123abc</code></li>
-  <li><a href="commands/IfEqual.htm">전통적인 (비-표현식) if-서술문의 왼쪽에</a>: <code>If <strong>Var1</strong> &lt; %Var2%</code></li>
+  <li><a href="lib/IfEqual.htm">전통적인 (비-표현식) if-서술문의 왼쪽에</a>: <code>If <strong>Var1</strong> &lt; %Var2%</code></li>
   <li><a href="Variables.htm#Expressions">표현식</a>의 모든 곳에. 예를 들어:
   <pre>If (<strong>Var1</strong> &lt;&gt; <strong>Var2</strong>)
-      <strong>Var1 <a href="commands/SetExpression.htm">:=</a> Var2</strong> + 100</pre></li>
+      <strong>Var1 <a href="lib/SetExpression.htm">:=</a> Var2</strong> + 100</pre></li>
 </ul>
 <p>For further explanation of how percent signs are used, see <a href="Language.htm#legacy-syntax">Legacy Syntax</a> and <a href="Language.htm#dynamic-variables">Dynamic Variables</a>. Percent signs can also have other meanings:</p>
 <ul>
@@ -87,7 +87,7 @@
   <li><a href="misc/EscapeChar.htm">Escaped</a> percent signs (<code>`%</code>) and percent signs in <a href="Language.htm#strings">quoted literal strings</a> have no special meaning (they are interpreted as literal percent signs).</li>
 </ul>
 <h3 id="esc">언제 퍼센트 기호와 숨표를 <a href="misc/EscapeChar.htm">피신시켜야 하는가</a>?</h3>
-<p>문자 그대로의 퍼센트 기호는 반드시 <a href="misc/EscapeChar.htm">피신시켜야</a> 합니다. 앞에다 액센트/백틱을 붙이면 됩니다. 예를 들어: <code>MsgBox 현재 백분률은 25`% 입니다.</code> 문자 그대로의 쉼표도 반드시 피신시켜야 합니다 (<code>`,</code>). 단, <a href="commands/MsgBox.htm">MsgBox</a> 또는 명령어의 마지막 매개변수로 사용될 때는 제외합니다 (이 경우 액센트는 허용되지만 필수는 아닙니다).</p>
+<p>문자 그대로의 퍼센트 기호는 반드시 <a href="misc/EscapeChar.htm">피신시켜야</a> 합니다. 앞에다 액센트/백틱을 붙이면 됩니다. 예를 들어: <code>MsgBox 현재 백분률은 25`% 입니다.</code> 문자 그대로의 쉼표도 반드시 피신시켜야 합니다 (<code>`,</code>). 단, <a href="lib/MsgBox.htm">MsgBox</a> 또는 명령어의 마지막 매개변수로 사용될 때는 제외합니다 (이 경우 액센트는 허용되지만 필수는 아닙니다).</p>
 <p> 쉼표나 퍼센트 기호가 <a href="Variables.htm#Expressions">표현식</a> 안에서 따옴표로 둘러 싸이면, 액센트는 허용되지만 필수는 아닙니다. 예를 들어: <code>Var := "15%"</code>.</p>
 
 <h2 id="general-troubleshooting">General Troubleshooting</h2>
@@ -115,7 +115,7 @@
 <p>It may also be necessary to repair the default registry values, either by reinstalling AutoHotkey or by running AutoHotkey Setup (from the Start menu) and selecting <em>apply</em> near the top of the window.</p>
 
 <h3 id="autoexec">왜 스크립트에서 어떤 줄들은 전혀 실행되지 않는가?</h3>
-<p>어떤 줄이든 즉시 실행하고 싶다면 스크립트가 실행될 때 상단에 있어야 합니다. 그 다음에 <a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, 또는 <a href="commands/Return.htm">Return</a>이 나와야 합니다. 더 자세한 것은 <a href="Scripts.htm#auto">자동-실행 섹션</a>을 참조하십시오.</p>
+<p>어떤 줄이든 즉시 실행하고 싶다면 스크립트가 실행될 때 상단에 있어야 합니다. 그 다음에 <a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, 또는 <a href="lib/Return.htm">Return</a>이 나와야 합니다. 더 자세한 것은 <a href="Scripts.htm#auto">자동-실행 섹션</a>을 참조하십시오.</p>
 <p>또한, 한 줄 이상 실행하는 <a href="Hotkeys.htm">핫키</a>는 그의 첫 번째 줄이 핫키 <em>바로 아래에</em> 나타나야 합니다. 같은 줄이 아닙니다. 예를 들어:</p>
 <pre>#space::  <em>; Win+Spacebar</em>
 Run Notepad
@@ -130,13 +130,12 @@ return</pre>
   <li>Some windows refuse to be automated (e.g. Device Manager ignores Send).</li>
 </ul>
 <p>If you've switched operating systems, it is likely that something else has also changed and may be affecting your script. For instance, if you've got a new computer, it might have different drivers or other software installed. 또 새로운 버전의 오토핫키로 업그레이드했다면, 예전에는 어떤 버전이었는지 알아보고 <a href="AHKL_ChangeLog.htm">변경 기록</a>과 <a href="Compat.htm">호환성 노트</a>를 점검해 보십시오.</p>
-<p><a href="commands/SoundGet.htm">SoundGet</a>, <a href="commands/SoundSet.htm">SoundSet</a>, <a href="commands/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> 그리고 <a href="commands/SoundSetWaveVolume.htm">SoundSetWaveVolume</a>는 비스타 이전 이후 버전에 따라 다르게 행동합니다. 특히, 장치 번호가 다르고 어떤 컴포넌트는 사용할 수조차 없습니다. 행위는 오디오 드라이버에 따라 다릅니다. XP에 사용되는 드라이버라면 당연히 다를 겁니다. <a href="commands/SoundSet.htm#Ex">사운드 카드 분석 스크립트</a>를 사용하면 올바른 장치 번호를 찾을 수 있습니다.</p>
+<p><a href="lib/SoundGet.htm">SoundGet</a>, <a href="lib/SoundSet.htm">SoundSet</a>, <a href="lib/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> 그리고 <a href="lib/SoundSetWaveVolume.htm">SoundSetWaveVolume</a>는 비스타 이전 이후 버전에 따라 다르게 행동합니다. 특히, 장치 번호가 다르고 어떤 컴포넌트는 사용할 수조차 없습니다. 행위는 오디오 드라이버에 따라 다릅니다. XP에 사용되는 드라이버라면 당연히 다를 겁니다. <a href="lib/SoundSet.htm#Ex">사운드 카드 분석 스크립트</a>를 사용하면 올바른 장치 번호를 찾을 수 있습니다.</p>
 <p>Also refer to the following question:</p>
 
 <h3 id="uac">How do I work around problems caused by User Account Control (UAC)?</h3>
-<p><a href="https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90_%EA%B3%84%EC%A0%95_%EC%BB%A8%ED%8A%B8%EB%A1%A4">User Account Control (UAC)</a> is a common cause of problems, especially when moving from Windows XP/Vista/7 to Vista/7/8/10. Although it is present in Windows Vista and later, it is enabled by default on new systems or new installs, and it is more difficult to disable on Windows 8 and later.</p>
-<p>By default, UAC protects "elevated" programs (that is, programs which are running as admin) from being automated by non-elevated programs, since that would allow them to bypass security restrictions. Hotkeys are also blocked, so for instance, a non-elevated program cannot spy on input intended for an elevated program.</p>
-<p>UAC may also prevent <a href="commands/Send.htm#SendPlayDetail">SendPlay</a> and <a href="commands/BlockInput.htm">BlockInput</a> from working.</p>
+<p>By default, <a href="https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90_%EA%B3%84%EC%A0%95_%EC%BB%A8%ED%8A%B8%EB%A1%A4">User Account Control (UAC)</a> protects "elevated" programs (that is, programs which are running as admin) from being automated by non-elevated programs, since that would allow them to bypass security restrictions. Hotkeys are also blocked, so for instance, a non-elevated program cannot spy on input intended for an elevated program.</p>
+<p>UAC may also prevent <a href="lib/Send.htm#SendPlayDetail">SendPlay</a> and <a href="lib/BlockInput.htm">BlockInput</a> from working.</p>
 <p>Common workarounds are as follows:</p>
 <ul>
   <li>Enable the <em><a href="Program.htm#Installer_uiAccess">Add 'Run with UI Access' to context menus</a></em> option in AutoHotkey Setup. This option can be enabled or disabled without reinstalling AutoHotkey by re-running AutoHotkey Setup from the Start menu. Once it is enabled, launch your script file by right-clicking it and selecting <em>Run with UI Access</em>, or use a <a href="Scripts.htm#cmd">command line</a> like <code>"AutoHotkeyU32_UIA.exe" "Your script.ahk"</code> (but include full paths).</li>
@@ -157,8 +156,8 @@ return</pre>
 <p>AutoHotkey를 시작 메뉴로부터 기동했거나 또는 직접 AutoHotkey.exe를 (명령어 줄 매개변수 없이) 실행했다면, 위에 보여준 위치 중 하나에서 스크립트를 찾습니다. 다른 방법으로 아무데나 원하는 곳에 스크립트 파일을 만들어서 (something.ahk), 오토핫키를 실행하는 대신에 그 스크립트 파일을 실행할 수 있습니다.</p>
 <p>또 <a href="Scripts.htm#defaultfile">명령어 줄 매개변수 "스크립트 파일이름"</a> 그리고 <a href="Program.htm#portability">AutoHotkey.exe의 이식성</a>을 참조하십시오.</p>
 <h3 id="Debug">어떻게 코드에서 에러를 찾아 고치는가?</h3>
-<p>간단한 스크립트라면 <a href="Scripts.htm#debug">스크립트 디버깅하기</a>를 참조합니다. 변수의 내용을 보여주려면, <a href="commands/MsgBox.htm">MsgBox</a> 또는 <a href="commands/ToolTip.htm">ToolTip</a>을 사용합니다. 복잡한 스크립트라면 <a href="Scripts.htm#idebug">상호대화 디버깅</a>을 참조합니다.</p>
-<h3 id="run">왜 <a href="commands/Run.htm">Run</a> 명령어가 게임이나 프로그램을 기동시키지 못하는가?</h3>
+<p>간단한 스크립트라면 <a href="Scripts.htm#debug">스크립트 디버깅하기</a>를 참조합니다. 변수의 내용을 보여주려면, <a href="lib/MsgBox.htm">MsgBox</a> 또는 <a href="lib/ToolTip.htm">ToolTip</a>을 사용합니다. 복잡한 스크립트라면 <a href="Scripts.htm#idebug">상호대화 디버깅</a>을 참조합니다.</p>
+<h3 id="run">왜 <a href="lib/Run.htm">Run</a> 명령어가 게임이나 프로그램을 기동시키지 못하는가?</h3>
 <p>어떤 프로그램은 자신만의 디렉토리에서 시작할 필요가 있습니다 (잘 모르겠다면, 보통 그렇게 하는 것이 가장 좋습니다). 예를 들어:</p>
 <pre>Run, %A_ProgramFiles%\Some Application\App.exe, %A_ProgramFiles%\Some Application</pre>
 <p>If the program you are trying to start is in <code>%A_WinDir%\System32</code> and you are using AutoHotkey 32-bit on a 64-bit system, the <a href="https://msdn.microsoft.com/ko-kr/library/aa384187">File System Redirector</a> may be interfering. To work around this, use <code>%A_WinDir%\SysNative</code> instead; this is a virtual directory only visible to 32-bit programs running on 64-bit systems.</p>
@@ -168,15 +167,15 @@ return</pre>
 <p>Although AutoHotkey supports Unicode text, it is optimized for backward-compatibility, which means defaulting to the ANSI encoding rather than the more internationally recommended UTF-8.  AutoHotkey will not automatically recognize a UTF-8 file unless it begins with a byte order mark.</p>
 <p>In other words, UTF-8 files which lack a byte order mark are misinterpreted, causing non-ASCII characters to be decoded incorrectly. To resolve this, save the file as UTF-8 with BOM or <a href="Scripts.htm#cp">add the /CP65001 command line switch</a>.</p>
 <p>To save as UTF-8 with BOM in Notepad, select <em>UTF-8</em> from the <em>Encoding</em> drop-down in the Save As dialog.</p>
-<p>To read other UTF-8 files which lack a byte order mark, use <code><a href="commands/FileEncoding.htm">FileEncoding</a> UTF-8-RAW</code>, the <code>*P65001</code> option with <a href="commands/FileRead.htm">FileRead</a>, or <code>"UTF-8-RAW"</code> for the third parameter of <a href="commands/FileOpen.htm">FileOpen()</a>. The <code>-RAW</code> suffix can be omitted, but in that case any newly created files will have a byte order mark.</p>
+<p>To read other UTF-8 files which lack a byte order mark, use <code><a href="lib/FileEncoding.htm">FileEncoding</a> UTF-8-RAW</code>, the <code>*P65001</code> option with <a href="lib/FileRead.htm">FileRead</a>, or <code>"UTF-8-RAW"</code> for the third parameter of <a href="lib/FileOpen.htm">FileOpen()</a>. The <code>-RAW</code> suffix can be omitted, but in that case any newly created files will have a byte order mark.</p>
 <p>Note that INI files accessed with the standard INI commands do not support UTF-8; they must be saved as ANSI or UTF-16.</p>
 
-<h3 id="games">왜 <a href="Hotstrings.htm">핫스트링</a>, <a href="commands/Send.htm">Send</a>, 그리고 <a href="commands/Click.htm">Click</a>이 어떤 게임에서는 효과가 없는가?</h3>
+<h3 id="games">왜 <a href="Hotstrings.htm">핫스트링</a>, <a href="lib/Send.htm">Send</a>, 그리고 <a href="lib/Click.htm">Click</a>이 어떤 게임에서는 효과가 없는가?</h3>
 <p>모든 게임이 AHK가 전송하는 키와 클릭 또는 픽셀 컬러를 허용하는 것은 아닙니다.</p>
 <p>그러나 대안이 있습니다. 아래에 언급한 모든 해결책들을 시도해 보십시오. 모든 것이 실패하면, 아마도 AHK로는 게임을 작동시킬 수 없을 것입니다. 종종 게임이 GameGuard나 Hackshield 같은 핵과 치트 방지 수단을 갖추고 있는 경우가 있습니다. 그렇다면, 그 게임에는 오토핫키가 작동하지 않을 가능성이 아주 높습니다.</p>
 <ul>
   <li>
-  <p><a href="commands/Send.htm#SendPlay">SendPlay</a> 명령어, <a href="commands/SendMode.htm">SendMode Play</a> 그리고/또는 <a href="Hotstrings.htm">핫스트링 옵션 SP</a>를 시도합니다.</p>
+  <p><a href="lib/Send.htm#SendPlay">SendPlay</a> 명령어, <a href="lib/SendMode.htm">SendMode Play</a> 그리고/또는 <a href="Hotstrings.htm">핫스트링 옵션 SP</a>를 시도합니다.</p>
   <pre>SendPlay, abc</pre>
   <pre>SendMode, Play
 Send, abc</pre>
@@ -189,12 +188,12 @@ Send, abc</pre>
   <p class="note"><strong>주의</strong>: SendPlay는 Windows Vista 이후에 사용자 계정 제어가 켜져 있으면 전혀 효과가 없습니다. 스크립트가 관리자 권한으로 실행되더라도 마찬가지입니다.</p>
   </li>
   <li>
-  <p><a href="commands/SetKeyDelay.htm">SetKeyDelay</a>를 증가시켜 봅니다. 예를 들어:</p>
+  <p><a href="lib/SetKeyDelay.htm">SetKeyDelay</a>를 증가시켜 봅니다. 예를 들어:</p>
   <pre>SetKeyDelay, 0, 50
 SetKeyDelay, 0, 50, Play</pre>
   </li>
   <li>
-  <p><a href="commands/ControlSend.htm">ControlSend</a>를 시도합니다. 다른 Send 모드가 실패할 경우 성공할 가능성이 있습니다:</p>
+  <p><a href="lib/ControlSend.htm">ControlSend</a>를 시도합니다. 다른 Send 모드가 실패할 경우 성공할 가능성이 있습니다:</p>
   <pre>ControlSend,, abc, game_title</pre>
   </li>
   <li>
@@ -202,15 +201,15 @@ SetKeyDelay, 0, 50, Play</pre>
   <pre>Send {KEY down}{KEY up}</pre>
   </li>
   <li>
-  <p>한 키의 이벤트를 누르고 떼며, 그 사이에 <a href="commands/ControlSend.htm">Sleep</a>을 넣고 시험해 봅니다:</p>
+  <p>한 키의 이벤트를 누르고 떼며, 그 사이에 <a href="lib/ControlSend.htm">Sleep</a>을 넣고 시험해 봅니다:</p>
   <pre>Send {KEY down}
 Sleep 10 <em>; 여러가지 밀리초를 시험해 보십시오</em>
 Send {KEY up}</pre>
   </li>
 </ul>
 <h3 id="perf">어떻게 게임을 위해 성능을 향상시킬 수 있는가? 다시 말해 CPU에 엄청난 부담이 있을 때는 어떻게 개선하는가?</h3>
-<p>스크립트의 <a href="Hotkeys.htm">핫키</a>, <a href="commands/Click.htm">클릭</a>, 또는 <a href="commands/Send.htm">전송이</a> 보통 때보다 현저하게 느리다면, CPU가 엄청난 부담을 지고 있어서 그렇다면, 스크립트의 처리-우선순위를 높이면 도움이 될 수 있습니다. 이렇게 하려면, 다음 줄을 스크립트 상단 근처에 포함합니다:</p>
-<pre><a href="commands/Process.htm">Process</a>, Priority, , High</pre>
+<p>스크립트의 <a href="Hotkeys.htm">핫키</a>, <a href="lib/Click.htm">클릭</a>, 또는 <a href="lib/Send.htm">전송이</a> 보통 때보다 현저하게 느리다면, CPU가 엄청난 부담을 지고 있어서 그렇다면, 스크립트의 처리-우선순위를 높이면 도움이 될 수 있습니다. 이렇게 하려면, 다음 줄을 스크립트 상단 근처에 포함합니다:</p>
+<pre><a href="lib/Process.htm">Process</a>, Priority, , High</pre>
 <h3 id="Virus">My antivirus program flagged AutoHotkey or a compiled script as malware. Is it really a virus?</h3>
 <p>Although it is certainly possible that the file has been infected, most often these alerts are <em>false positives</em>, meaning that the antivirus program is mistaken. One common suggestion is to upload the file to an online service such as <a href="https://www.virustotal.com/">virustotal</a> or <a href="https://virusscan.jotti.org/">Jotti</a> and see what other antivirus programs have to say. If in doubt, you could send the file to the vendor of your antivirus software for confirmation. This might also help us and other AutoHotkey users, as the vendor may confirm it is a false positive and fix their product to play nice with AutoHotkey.</p>
 <p>False positives might be more common for compiled scripts which have been compressed, such as with UPX (default for AutoHotkey 1.0 but not 1.1) or MPRESS (optional for AutoHotkey 1.1). As the default AutoHotkey installation does not include a compressor, compiled scripts are not compressed by default.</p>
@@ -224,23 +223,23 @@ Send {KEY up}</pre>
 <p>Note that when you compile a script that uses auto-included function libraries, AutoHotkey.exe and the Lib folder must be up one level from Ahk2Exe.exe (e.g. \AutoHotkey.exe vs \Compiler\Ahk2Exe.exe). 또 Ahk2Exe는 설정을 다음 레지스트리 키에 저장한다는 것에도 주목하십시오: <code>HKCU\Software\AutoHotkey\Ahk2Exe</code>. The compiler itself (Ahk2Exe) is not needed to run scripts.</p>
 <h3 id="output">어떻게 명령어 줄 연산의 출력 결과를 얻을 수 있는가?</h3>
 <p>테스트에 의하면 파일 캐슁 때문에, 임시 파일은 상대적으로 작은 출력에 아주 빠를 수 있습니다. 사실, 그 파일이 사용된 후 곧바로 삭제된다면, 실제로 디스크에 씌여지지 조차 않는 경우가 종종 있습니다. 예를 들어:</p>
-<pre><a href="commands/Run.htm">RunWait</a> %ComSpec% /c dir &gt; C:\My Temp File.txt
+<pre><a href="lib/Run.htm">RunWait</a> %ComSpec% /c dir &gt; C:\My Temp File.txt
 FileRead, VarToContainContents, C:\My Temp File.txt
 FileDelete, C:\My Temp File.txt</pre>
-<p>임시 파일의 사용을 피하려면 (특히 출력이 클 때), <a href="commands/Run.htm">Run</a> 명령어에 예제에 보여준 바와 같이 <a href="commands/Run.htm#StdOut">Shell.Exec()</a> 메쏘드의 사용을 고려해 보십시오.</p>
+<p>임시 파일의 사용을 피하려면 (특히 출력이 클 때), <a href="lib/Run.htm">Run</a> 명령어에 예제에 보여준 바와 같이 <a href="lib/Run.htm#StdOut">Shell.Exec()</a> 메쏘드의 사용을 고려해 보십시오.</p>
 <h3 id="close">How can a script close, pause, suspend or reload other script(s)?</h3>
 <p>먼저, 다음은 또다른 스크립트를 닫는 예입니다:</p>
 <pre>DetectHiddenWindows On  <em>; 스크립트의 숨겨진 메인 창을 탐지되도록 허용합니다.</em>
 SetTitleMatchMode 2  <em>; 아래 파일의 전체 경로를 지정할 필요를 회피합니다.</em>
 WinClose ScriptFileName.ahk - AutoHotkey  <em>; 이것을 갱신하여 스크립트의 이름을 반영합니다 (대소문자 구분).</em></pre>
-<p>To <a href="commands/Suspend.htm">suspend</a>, <a href="commands/Pause.htm">pause</a> or <a href="commands/Reload.htm">reload</a> another script, replace the last line above with one of these:</p>
+<p>To <a href="lib/Suspend.htm">suspend</a>, <a href="lib/Pause.htm">pause</a> or <a href="lib/Reload.htm">reload</a> another script, replace the last line above with one of these:</p>
 <pre>PostMessage, 0x0111, 65305,,, ScriptFileName.ahk - AutoHotkey  <em>; Suspend.</em>
 PostMessage, 0x0111, 65306,,, ScriptFileName.ahk - AutoHotkey  <em>; Pause.</em>
 PostMessage, 0x0111, 65303,,, ScriptFileName.ahk - AutoHotkey  <em>; Reload.</em></pre>
 <h3 id="repeat">스크립트를 종료하지 않고 어떻게 반복 행위를 멈출 수 있는가?</h3>
-<p>전체 스크립트를 키가 눌릴 때 정지하거나 재개하려면, 핫키를 <a href="commands/Pause.htm">Pause</a> 명령어에 할당합니다. 다음 예제와 같이:</p>
+<p>전체 스크립트를 키가 눌릴 때 정지하거나 재개하려면, 핫키를 <a href="lib/Pause.htm">Pause</a> 명령어에 할당합니다. 다음 예제와 같이:</p>
 <pre>^!p::Pause  <em>; Ctrl+Alt+P를 눌러 정지합니다. 다시 누르면 재개합니다.</em></pre>
-<p><a href="commands/Loop.htm">회돌이</a> 안에서 반복되는 행위를 멈추려면, 다음의 작동하는 예제를 연구해 보십시오. 핫키 하나로 반복 행위를 시작하고 멈춥니다. 다른 말로 하면, 핫키를 한번 누르면 회돌이를 시작합니다. 그 핫키를 다시 누르면 회돌이를 멈춥니다.</p>
+<p><a href="lib/Loop.htm">회돌이</a> 안에서 반복되는 행위를 멈추려면, 다음의 작동하는 예제를 연구해 보십시오. 핫키 하나로 반복 행위를 시작하고 멈춥니다. 다른 말로 하면, 핫키를 한번 누르면 회돌이를 시작합니다. 그 핫키를 다시 누르면 회돌이를 멈춥니다.</p>
 <pre>#MaxThreadsPerHotkey 3
 #z::  <em><strong>; Win+Z 핫키 (이 핫키를 여러분의 기호에 맞게 변경합니다).</strong></em>
 #MaxThreadsPerHotkey 1
@@ -273,26 +272,26 @@ return</pre>
 MouseMove, 0, 0  <em>; 상태 바에 마우스를 올리면 링크를 보여주지 못하게 막습니다. 대신 "Done"이 보입니다.</em>
 WinWait, Yahoo! - 
 WinActivate 
-<a href="commands/StatusBarWait.htm">StatusBarWait</a>, Done, 30
+<a href="lib/StatusBarWait.htm">StatusBarWait</a>, Done, 30
 if ErrorLevel
     MsgBox 대기 시간이 끝났거나 창이 닫혔습니다. 
 else 
     MsgBox 페이지가 적재를 마쳤습니다.</pre>
 <h3 id="time">날짜와 시간을 어떻게 비교 또는 조작하는가?</h3>
-<p><a href="commands/EnvAdd.htm">EnvAdd</a> 명령어는 날짜, 시간, 분, 초를 더하고 빼서 시간-문자열로 만들 수 있습니다. 형식은 <a href="commands/FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>입니다. 다음 예제는 지정된 시간에서 7일을 뺍니다: <code>EnvAdd, VarContainingTimestamp, -7, days</code>.</p>
-<p>두 날짜나 시간 사이의 양을 결정하려면 <a href="commands/EnvSub.htm">EnvSub</a>를 참조하십시오. 안에 예제가 있습니다. 또한, 내장 변수 <a href="Variables.htm#Now">A_Now</a>에는 현재의 지역 시간이 담겨 있습니다. 마지막으로, 여러 내장 <a href="Variables.htm#date">날짜/시간 변수</a>가 있습니다. 뿐만 아니라 <a href="commands/FormatTime.htm">FormatTime</a> 명령어로 맞춤 날짜/시간 문자열을 만들 수 있습니다.</p>
+<p><a href="lib/EnvAdd.htm">EnvAdd</a> 명령어는 날짜, 시간, 분, 초를 더하고 빼서 시간-문자열로 만들 수 있습니다. 형식은 <a href="lib/FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>입니다. 다음 예제는 지정된 시간에서 7일을 뺍니다: <code>EnvAdd, VarContainingTimestamp, -7, days</code>.</p>
+<p>두 날짜나 시간 사이의 양을 결정하려면 <a href="lib/EnvSub.htm">EnvSub</a>를 참조하십시오. 안에 예제가 있습니다. 또한, 내장 변수 <a href="Variables.htm#Now">A_Now</a>에는 현재의 지역 시간이 담겨 있습니다. 마지막으로, 여러 내장 <a href="Variables.htm#date">날짜/시간 변수</a>가 있습니다. 뿐만 아니라 <a href="lib/FormatTime.htm">FormatTime</a> 명령어로 맞춤 날짜/시간 문자열을 만들 수 있습니다.</p>
 <h3 id="SendDate">현재 날짜와 시간을 어떻게 전송할 수 있는가?</h3>
-<p><a href="commands/FormatTime.htm">FormatTime</a> 또는 <a href="Variables.htm#date">날짜와 시간을 위한 내장 변수들을 사용하십시오</a>.</p>
+<p><a href="lib/FormatTime.htm">FormatTime</a> 또는 <a href="Variables.htm#date">날짜와 시간을 위한 내장 변수들을 사용하십시오</a>.</p>
 <h3 id="ControlSend">어떻게 텍스트를 활성되지 않은 창 또는 보이지 않는 창에 보낼 수 있는가?</h3>
-<p><a href="commands/ControlSend.htm">ControlSend</a>를 사용하십시오.</p>
+<p><a href="lib/ControlSend.htm">ControlSend</a>를 사용하십시오.</p>
 <h3 id="winamp">Winamp를 어떻게 제어하는가? 활성화되지 않을 경우에도 제어하고 싶다</h3>
 <p><a href="misc/Winamp.htm">Winamp 자동화하기</a>를 참조하십시오.</p>
-<h3 id="msgbox">어떻게 <a href="commands/MsgBox.htm">MsgBox</a>의 버튼 이름을 바꿀 수 있는가?</h3>
+<h3 id="msgbox">어떻게 <a href="lib/MsgBox.htm">MsgBox</a>의 버튼 이름을 바꿀 수 있는가?</h3>
 <p>다음 <a href="scripts/index.htm#MsgBoxButtonNames">예제</a>를 참조하십시오.</p>
 <h3 id="DefaultEditor">어떻게 기본 편집기를 바꿀 수 있는가? 문맥 메뉴나 트레이 아이콘을 통하여 접근하고 싶다</h3>
-<p><a href="commands/Edit.htm">편집기 예제 섹션에서</a> 기본 편집기를 바꾸는 스크립트를 보실 수 있습니다.</p>
+<p><a href="lib/Edit.htm">편집기 예제 섹션에서</a> 기본 편집기를 바꾸는 스크립트를 보실 수 있습니다.</p>
 <h3 id="GuiSubmit">어떻게 변수에 연관된 GUI의 내용들을 저장할 수 있는가?</h3>
-<p><a href="commands/Gui.htm#Submit">Gui Submit</a>을 사용합니다. 예를 들어:</p>
+<p><a href="lib/Gui.htm#Submit">Gui Submit</a>을 사용합니다. 예를 들어:</p>
 <pre>Gui, Add, Text,, 텍스트를 입력하고 Submit을 누릅니다:
 Gui, Add, Edit, vAssociatedVar
 Gui, Add, Button,, Submit
@@ -306,7 +305,7 @@ Return</pre>
 <h3 id="GDIPlus">어떻게 AHK로 그릴 수 있는가?</h3>
 <p>틱(tic)이 집필한 <a href="https://www.autohotkey.com/forum/topic32238.html">GDI+ 표준 라이브러리</a>를 참조하십시오. Gui를 사용하여 기본적인 메쏘드들을 사용할 수 있지만, 제한적입니다.</p>
 <h3 id="WinWaitAction">창이 나타나거나, 닫히거나 또는 [비]활성화될때 어떻게 행위를 촉발시킬 수 있는가?</h3>
-<p><a href="commands/WinWait.htm">WinWait</a>, <a href="commands/WinWaitClose.htm">WinWaitClose</a> 또는 <a href="commands/WinWaitActive.htm">WinWait[Not]Active</a>를 사용합니다.</p>
+<p><a href="lib/WinWait.htm">WinWait</a>, <a href="lib/WinWaitClose.htm">WinWaitClose</a> 또는 <a href="lib/WinWaitActive.htm">WinWait[Not]Active</a>를 사용합니다.</p>
 <p>There are also user-created solutions such as <a href="https://www.autohotkey.com/boards/viewtopic.php?f=6&amp;t=6463">OnWin.ahk</a> and <a href="https://www.autohotkey.com/board/topic/80644-how-to-hook-on-to-shell-to-receive-its-messages/">[How to] Hook on to Shell to receive its messages</a>.</p>
 <h2 id="hotkeys-hotstrings-and-remapping">핫키, 핫스트링, 그리고 리맵핑</h2>
 <h3 id="Startup">컴퓨터가 시작할 때마다 어떻게 핫키와 핫스트링을 자동으로 작동하게 만드는가?</h3>
@@ -318,8 +317,8 @@ Return</pre>
 </ol>
 <h3 id="HotMouse">마우스 버튼을 핫키처럼 작동시키는데 어려움을 겪고 있다. 무슨 조언이 있는가?</h3>
 <p>왼쪽 오른쪽 마우스 버튼은 보통 할당이 가능합니다 (예를 들어, <code>#LButton::</code>는 <kbd>Win</kbd>+LeftButton 핫키입니다). 비슷하게, 가운데 버튼과 <a href="KeyList.htm">마우스 휠</a>의 회전은 보통 할당이 가능합니다. 단, 마우스 드라이버가 버튼을 직접적으로 제어하는 경우는 제외합니다.</p>
-<p> 네 번째 버튼 (XButton1)과 다섯 번째 버튼(XButton2)은 마우스 드라이버가 클릭을 시스템에 <a href="commands/KeyHistory.htm">보이도록</a> 허용하면 할당이 가능할 수도 있습니다. 보이지 않거나 -- 또는 마우스가 버튼이 다섯개가 넘어가면 -- 마우스에 함께 따라온 소프트웨어를 조정해서 (보통 제어판이나 시작 메뉴로 접근할 수 있을 것입니다) 이런 버튼을 누를 때마다 키누름을 전송하도록 시도해 보아야 합니다. 그런 키눌림은 스크립트에서 핫키로 정의할 수 있습니다. 예를 들어, 네 번째 버튼이 <kbd>Ctrl</kbd>+<kbd>F1</kbd>를 전송하도록 구성했다면, <code>^F1::</code>를 사용하여 스크립트에 간접적으로 그 버튼을 핫키로 구성할 수 있습니다.</p>
-<p>다섯 버튼 마우스를 가지고 있는데 네 번째 버튼과 다섯 번째 버튼은 <a href="commands/KeyHistory.htm">보이지 않는다면</a>, 마우스 드라이버를 운영체제에 포함된 기본 드라이버로 바꾸어 볼 수 있습니다. 이것은 여러분의 특별한 마우스를 위한 전용 드라이버가 있고 거기에서 제공되는 특별한 특징이 없어도 살수 있다고 가정합니다.</p>
+<p> 네 번째 버튼 (XButton1)과 다섯 번째 버튼(XButton2)은 마우스 드라이버가 클릭을 시스템에 <a href="lib/KeyHistory.htm">보이도록</a> 허용하면 할당이 가능할 수도 있습니다. 보이지 않거나 -- 또는 마우스가 버튼이 다섯개가 넘어가면 -- 마우스에 함께 따라온 소프트웨어를 조정해서 (보통 제어판이나 시작 메뉴로 접근할 수 있을 것입니다) 이런 버튼을 누를 때마다 키누름을 전송하도록 시도해 보아야 합니다. 그런 키눌림은 스크립트에서 핫키로 정의할 수 있습니다. 예를 들어, 네 번째 버튼이 <kbd>Ctrl</kbd>+<kbd>F1</kbd>를 전송하도록 구성했다면, <code>^F1::</code>를 사용하여 스크립트에 간접적으로 그 버튼을 핫키로 구성할 수 있습니다.</p>
+<p>다섯 버튼 마우스를 가지고 있는데 네 번째 버튼과 다섯 번째 버튼은 <a href="lib/KeyHistory.htm">보이지 않는다면</a>, 마우스 드라이버를 운영체제에 포함된 기본 드라이버로 바꾸어 볼 수 있습니다. 이것은 여러분의 특별한 마우스를 위한 전용 드라이버가 있고 거기에서 제공되는 특별한 특징이 없어도 살수 있다고 가정합니다.</p>
 <h3 id="HotSymb">탭과 스페이스는 어떻게 핫키로 정의할 수 있는가?</h3>
 <p>문자가 아니라 키의 이름을 사용하십시오 (Tab 그리고 Space). 예를 들어, <code>#Space</code>는 <kbd>Win</kbd>+<kbd>Space</kbd>이고 <code>^!Tab</code>은 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Tab</kbd>입니다.</p>
 <h3 id="Remap">어떻게 키나 마우스 버튼을 리맵해서 다른 키처럼 만들 수 있는가?</h3>
@@ -331,7 +330,7 @@ Return</pre>
         MsgBox 두번-눌렀습니다
 return</pre>
 <h3 id="HotContext">어떻게 <a href="Hotkeys.htm">핫키</a>나 <a href="Hotstrings.htm">핫스트링을</a> 어떤 프로그램에는 배제할 수 있는가? 다른 말로 해서, 특정한 창이 활성화될 때 어떤 키는 마치 보통처럼 행위하게 만들고 싶다.</h3>
-<p>선호되는 방법은 <a href="commands/_IfWinActive.htm">#IfWinActive</a>입니다. 예를 들어:</p>
+<p>선호되는 방법은 <a href="lib/_IfWinActive.htm">#IfWinActive</a>입니다. 예를 들어:</p>
 <pre>#IfWinActive, ahk_class Notepad
 ^a::MsgBox 노트패드가 활성화되어 있는 동안 Control-A를 눌렀습니다.
 </pre>

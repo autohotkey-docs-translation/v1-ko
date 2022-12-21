@@ -148,7 +148,7 @@ GuiControl, Font, MyEdit  <em>; 위의 글꼴을 콘트롤에 적용합니다.</
 <p>다음 예제에서, OK 버튼에 새 기본 버튼이 주어집니다:</p>
 <pre>GuiControl, +Default, OK</pre>
 <p><a href="../misc/Styles.htm">스타일</a> 그리고 확장 스타일도 인식하지만, 그 중 어떤 것은 콘트롤이 생성된 후에 적용하거나 제거할 수 없습니다. ErrorLevel은 지정된 변경이 적어도 하나라도 성공하면 0이 설정됩니다. 그렇지 않으면, 1로 설정되어 아무 변경도 적용할 수 없었음을 알려줍니다. 변경이 성공적으로 적용되었다 할지라도, 콘트롤은 그 변경을 무시하기로 결정할 수도 있습니다.</p>
-<p id="Functor"><span class="ver">[v1.1.20+]:</span> <a href="Gui.htm#label">콘트롤의 이벤트</a>를 처리하기 위해 <a href="../objects/Functor.htm">함수 객체</a>를 설정하려면, <em>Value</em>은 반드시 다음 두 예 중 하나와 같이하나의 변수 참조가 되어야 합니다. 함수 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다.</p>
+<p id="Functor"><span class="ver">[v1.1.20+]:</span> <a href="Gui.htm#label">콘트롤의 이벤트</a>를 처리하기 위해 <a href="../misc/Functor.htm">함수 객체</a>를 설정하려면, <em>Value</em>은 반드시 다음 두 예 중 하나와 같이하나의 변수 참조가 되어야 합니다. 함수 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다.</p>
 <pre>GuiControl +g, <i>ControlID</i>, %FuncObj%
 GuiControl +g, <i>ControlID</i>, % FuncObj</pre>
 

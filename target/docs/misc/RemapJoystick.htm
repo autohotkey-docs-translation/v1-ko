@@ -46,11 +46,11 @@
 
 <h4 id="Method_1">방법 #1</h4>
 <p>이 방법은 간단한 키눌림과 마우스 클릭을 전송합니다. 예를 들어:</p>
-<pre>Joy1::<a href="../commands/Send.htm">Send</a> {Left}  <em>; 버튼 #1이 왼쪽 화살표 키 눌림을 전송하도록 만듭니다.</em>
-Joy2::<a href="../commands/Click.htm">Click</a>  <em>; 버튼 #2가 왼쪽 마우스 버튼 클릭을 전송하도록 만듭니다.</em>
+<pre>Joy1::<a href="../lib/Send.htm">Send</a> {Left}  <em>; 버튼 #1이 왼쪽 화살표 키 눌림을 전송하도록 만듭니다.</em>
+Joy2::<a href="../lib/Click.htm">Click</a>  <em>; 버튼 #2가 왼쪽 마우스 버튼 클릭을 전송하도록 만듭니다.</em>
 Joy3::Send a{Esc}{Space}{Enter}  <em>; 버튼 #3이 기호 "a" 와 다음에 피신 문자, 스페이스, 그리고 엔터를 전송하도록 만듭니다.</em>
 Joy4::Send Sincerely,{Enter}John Smith  <em>; 버튼 #4가 두 줄의 서명을 보내도록 만듭니다.</em></pre>
-<p>버튼에게 하나 이상의 명령어를 수행하도록 만들려면, 첫 명령어를 버튼 이름 <em>아래에</em> 두고 마지막 명령어를 <a href="../commands/Return.htm">return</a>으로 만들면 됩니다. 예를 들어:</p>
+<p>버튼에게 하나 이상의 명령어를 수행하도록 만들려면, 첫 명령어를 버튼 이름 <em>아래에</em> 두고 마지막 명령어를 <a href="../lib/Return.htm">return</a>으로 만들면 됩니다. 예를 들어:</p>
 <pre>Joy5::
 Run Notepad
 WinWait Untitled - Notepad
@@ -63,7 +63,7 @@ return</pre>
 <p>이 방법은 조이스틱 버튼을 누르고 있는 동안 키나 마우스 버튼이 반드시 눌려 있어야 하는 경우에 필수입니다. 다음 예제는 조이스틱의 두 번째 버튼이 왼쪽 화살표 키가 되도록 만듭니다:</p>
 <pre>Joy2::
 Send {Left down}  <em>; 왼쪽 화살표 키를 누릅니다.</em>
-<a href="../commands/KeyWait.htm">KeyWait</a> Joy2  <em>; 사용자가 조이스틱 버튼을 뗄 때까지 기다립니다.</em>
+<a href="../lib/KeyWait.htm">KeyWait</a> Joy2  <em>; 사용자가 조이스틱 버튼을 뗄 때까지 기다립니다.</em>
 Send {Left up}  <em>; 왼쪽 화살표 키를 뗍니다.</em>
 return</pre>
 
@@ -75,7 +75,7 @@ SetTimer, WaitForButtonUp3, 10
 return
 
 WaitForButtonUp3:
-if <a href="../commands/GetKeyState.htm#function">GetKeyState</a>("Joy3")  <em>; 버튼이 여전히 눌려 있습니다. 그래서 계속 대기합니다.</em>
+if <a href="../lib/GetKeyState.htm#function">GetKeyState</a>("Joy3")  <em>; 버튼이 여전히 눌려 있습니다. 그래서 계속 대기합니다.</em>
     return
 <em>; 그렇지 않으면, 버튼이 떼어졌습니다.</em>
 Send {LButton up}  <em>; 왼쪽 마우스 버튼을 뗍니다.</em>
@@ -102,22 +102,22 @@ Send {Space down}  <em>; 또다른 스페이스바 키눌림을 전송합니다.
 return</pre>
 
 <h3 id="context-sensitive-joystick-buttons">문맥-감지 조이스틱 버튼</h3>
-<p>지시어 <a href="../commands/_IfWinActive.htm">#IfWinActive/Exist</a>를 사용하면 선택된 조이스틱 버튼이 활성화 상태 또는 존재하는 창의 종류에 따라 다른 행위를 수행하도록 (또는 전혀 못하도록) 만들 수 있습니다.</p>
+<p>지시어 <a href="../lib/_IfWinActive.htm">#IfWinActive/Exist</a>를 사용하면 선택된 조이스틱 버튼이 활성화 상태 또는 존재하는 창의 종류에 따라 다른 행위를 수행하도록 (또는 전혀 못하도록) 만들 수 있습니다.</p>
 
 <h3 id="using-a-joystick-as-a-mouse">조이스틱을 마우스처럼 사용하기</h3>
 <p><a href="../scripts/index.htm#JoystickMouse">Joystick-To-Mouse 스크립트</a>는 조이스틱을 그의 버튼과 축 콘트롤을 리맵핑하여 마우스로 탈바꿈시킵니다.</p>
 
 <h2 id="axis">Making Other Joystick Controls Send Keystrokes or Mouse Clicks</h2>
-<p>스크립트가 조이스틱 축이나 POV hat의 움직임에 반응하도록 만들려면, <a href="../commands/SetTimer.htm">SetTimer</a>과 <a href="../commands/GetKeyState.htm#function">GetKeyState()</a>를 사용하십시오.</p>
+<p>스크립트가 조이스틱 축이나 POV hat의 움직임에 반응하도록 만들려면, <a href="../lib/SetTimer.htm">SetTimer</a>과 <a href="../lib/GetKeyState.htm#function">GetKeyState()</a>를 사용하십시오.</p>
 
 <h3 id="joystick-axes">Joystick Axes</h3>
 <p>다음 예제는 조이스틱의 X와 Y 축을 마치 키보드 위의 화살표 키 군처럼 행위하게 만듭니다 (상하좌우):</p>
 <pre>#Persistent  <em>; 스크립트를 사용자가 명시적으로 종료할 때까지 실행합니다.</em>
-<a href="../commands/SetTimer.htm">SetTimer</a>, WatchAxis, 5
+<a href="../lib/SetTimer.htm">SetTimer</a>, WatchAxis, 5
 return
 
 WatchAxis:
-JoyX := <a href="../commands/GetKeyState.htm#function">GetKeyState</a>("JoyX")  <em>; X 축의 위치를 얻습니다.</em>
+JoyX := <a href="../lib/GetKeyState.htm#function">GetKeyState</a>("JoyX")  <em>; X 축의 위치를 얻습니다.</em>
 JoyY := GetKeyState("JoyY")  <em>; Y 축의 위치를 얻습니다.</em>
 KeyToHoldDownPrev := KeyToHoldDown  <em>; Prev는 이제 이전에 놀린 키를 (있다면) 보유합니다.</em>
 
@@ -195,7 +195,7 @@ return</pre>
 <ul>
     <li><a href="../scripts/index.htm#JoystickMouse">Joystick-To-Mouse 스크립트 (조이스틱을 마우스로 사용하기)</a></li>
     <li><a href="../KeyList.htm#Joystick">조이스틱 버튼, 축, 그리고 콘트롤 리스트</a></li>
-    <li><a href="../commands/GetKeyState.htm#function">GetKeyState()</a></li>
+    <li><a href="../lib/GetKeyState.htm#function">GetKeyState()</a></li>
     <li><a href="Remap.htm">키보드와 마우스 리맵핑하기</a></li>
 </ul>
 

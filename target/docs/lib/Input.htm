@@ -3,7 +3,7 @@
 <head>
 <title>Input - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The Input command waits for the user to type a string." />
-<meta name="ahk:equiv-v2" content="commands/InputHook.htm" />
+<meta name="ahk:equiv-v2" content="lib/InputHook.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -20,7 +20,7 @@
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>사용자가 입력한 텍스트를 저장할 변수의 이름 (기본값으로, 인위적 입력도 나포됩니다).</p>
+  <dd><p>The name of the output variable in which to store the text entered by the user (by default, artificial input is also captured).</p>
       <p>이 매개변수 그리고 다른 매개변수들이 생략되면, 또다른 <a href="../misc/Threads.htm">쓰레드</a>에서 진행 중인 Input이 즉시 종료됩니다. 그리고 그의 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 단어 NewInput이 설정됩니다. 대조적으로, 현재 명령어의 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 이전 Input이 종료되었으면 0이 설정됩니다. 또는 종료할 이전 Input이 없었으면 1이 설정됩니다.</p>
       <p><em>OutputVar</em>는 사실상 키눌림을 저장하지 않습니다. 대신에, 키눌림으로 생산되는 문자들을 활성 창의 키보드 레이아웃/언어에 맞게 저장합니다. 결과적으로, 문자를 생산하지 않는 키눌림은 (예를 들어 <kbd>PgUp</kbd> 그리고 <kbd>Home</kbd>) 저장되지 않습니다 (그렇지만 아래의 <em>EndKeys</em> 매개변수를 통하여 인지할 수 있습니다).</p>
       <p class="warning"><strong>Note:</strong> <kbd>Esc</kbd> is translated to the ASCII ESC character, <code>Chr(27)</code>. This can be avoided by including <code>{Esc}</code> in <em>EndKeys</em>, in which case pressing <kbd>Esc</kbd> will terminate Input.</p>

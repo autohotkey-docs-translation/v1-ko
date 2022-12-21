@@ -23,14 +23,16 @@
   <ul>
     <li><a href="#Intro2">들어가는 말</a></li>
     <li><a href="#AddResource">AddResource</a>: Adds a resource to the .exe.</li>
-    <li><a href="#Bin">Bin</a>: Specifies the binary version of AutoHotkey to use.</li>
+    <li><a href="#Bin">Bin / Base</a> <span class="ver">[v1.1.33.10+]</span>: Specifies the base version of AutoHotkey to use.</li>
     <li><a href="#ConsoleApp">ConsoleApp</a>: Sets Console mode.</li>
     <li><a href="#Cont">Cont</a>: Specifies a directive continuation line.</li>
     <li><a href="#Debug">Debug</a>: Shows directive debugging text.</li>
     <li><a href="#ExeName">ExeName</a>: Specifies the location and name for the .exe.</li>
     <li><a href="#Let">Let</a>: Sets a user variable.</li>
+    <li><a href="#Nop">Nop</a> <span class="ver">[v1.1.34.03c+]</span>: Does nothing.</li>
     <li><a href="#Obey">Obey</a>: Obeys a command or expression.</li>
     <li><a href="#PostExec">PostExec</a>: Runs a program after compilation.</li>
+    <li><a href="#ResourceID">ResourceID</a> <span class="ver">[v1.1.34+]</span>: Assigns a non-standard resource ID to the main script.</li>
     <li><a href="#SetMainIcon">SetMainIcon</a>: Sets the main icon.</li>
     <li><a href="#SetProp">Set<i>Prop</i></a>: Sets an .exe property.</li>
     <li><a href="#Set">Set</a>: Sets a miscellaneous property.</li>
@@ -75,13 +77,15 @@ MsgBox This message appears in both the compiled and uncompiled script
 
 <p id="WorkFileName">In addition to these variable names, the special variable <strong>A_WorkFileName</strong> holds the temporary name of the processed .exe file. This can be used to pass the file name as a parameter to any <a href="#PostExec">PostExec</a> directives which need to access the generated .exe.</p>
 
+<p id="BasePath"> <span class="ver">[v1.1.34.04b+]</span> Furthermore, the special variable <strong>A_BasePath</strong> contains the full path and name of the selected base file.</p>
+
 <p id="PriorLine">Also, the special variable <strong>A_PriorLine</strong> contains the source line immediately preceding the current compiler directive. Intervening lines of blanks and comments only are ignored, as are any intervening compiler directive lines. This variable can be used to 'pluck' constant information from the script source, and use it in later compiler directives. An example would be accessing the version number of the script, which may be changed often. Accessing the version number in this way means that it needs to be changed only once in the source code, and the change will get copied through to the necessary directive. (See the RegEx example below for more information.)</p>
 
 <p>As well, special user variables can be created with the format <code>U_<i>Name</i></code> using the <a href="#Let">Let</a> and <a href="#Obey">Obey</a> directives, described below.</p>
 
 <p>In addition to being available for directive parameters, all variables can be accessed from any RT_MENU, RT_DIALOG, RT_STRING, RT_ACCELERATORS, RT_HTML, and RT_MANIFEST file supplied to the <a href="#AddResource">AddResource</a> directive, below.</p>
 
-<p>If needed, the value returned from the above variables can be manipulated by including at the end of the built-in variable name before the ending <code>%</code>, up to 2 parameters (called p2 and p3) all separated by tilde <code>~</code>. The p2 and p3 parameters will be used as literals in the 2nd and 3rd parameters of a <a href="../commands/RegExReplace.htm">RegExReplace</a> function to manipulate the value returned. (See <a href="RegEx-QuickRef.htm">RegEx Quick Reference</a>.) Note that p3 is optional.</p>
+<p>If needed, the value returned from the above variables can be manipulated by including at the end of the built-in variable name before the ending <code>%</code>, up to 2 parameters (called p2 and p3) all separated by tilde <code>~</code>. The p2 and p3 parameters will be used as literals in the 2nd and 3rd parameters of a <a href="../lib/RegExReplace.htm">RegExReplace</a> function to manipulate the value returned. (See <a href="RegEx-QuickRef.htm">RegEx Quick Reference</a>.) Note that p3 is optional.</p>
 
 <p>To include a tilde as data in p2 or p3, preceded it with a back-tick, i.e. <code>`~</code>. To include a back-tick character as data in p2 or p3, double it, i.e. <code>``</code>.</p>
 
@@ -94,8 +98,8 @@ MsgBox This message appears in both the compiled and uncompiled script
   <li>
     <p>Assume there is a source line followed by two compiler directives as follows:</p>
     <pre>CodeVersion := "1.2.3.4", company := "My Company"</pre>
-    <pre>;@Ahk2Exe-Let U_version = %A_PriorLine~U)^(.+"){1}(.+)".*$~$2%</pre>
-    <pre>;@Ahk2Exe-Let U_company = %A_PriorLine~U)^(.+"){3}(.+)".*$~$2%</pre>
+    <pre><em>;@Ahk2Exe-Let U_version = %A_PriorLine~U)^(.+"){1}(.+)".*$~$2%</em></pre>
+    <pre><em>;@Ahk2Exe-Let U_company = %A_PriorLine~U)^(.+"){3}(.+)".*$~$2%</em></pre>
     <p>These directives copy the version number <code>1.2.3.4</code> into the special variable <code>U_version</code>, and the company name <code>My Company</code> into the special variable <code>U_company</code> for use in other directives later.<br>
     (The <code>{1}</code> in the first regex was changed to <code>{3}</code> in the second regex to select after the third <code>"</code> to extract the company name.)</p>
   </li>
@@ -107,7 +111,7 @@ MsgBox This message appears in both the compiled and uncompiled script
 <pre class="Syntax"><span class="func">;@Ahk2Exe-AddResource</span> FileName <span class="optional">, ResourceName</span></pre>
 <dl>
   <dt>FileName</dt>
-  <dd>The filename of the resource to add. The type of the resource (as an integer or string) can be explicitly specified by prepending an asterisk to it: <code>*type Filename</code>. If omitted, Ahk2Exe automatically detects the type according to the file extension.</dd>
+  <dd>The filename of the resource to add. 절대 경로를 지정하지 않으면 파일이 스크립트 자신의 디렉토리에 (또는 상대적으로) 있다고 간주됩니다. The type of the resource (as an integer or string) can be explicitly specified by prepending an asterisk to it: <code>*type Filename</code>. If omitted, Ahk2Exe automatically detects the type according to the file extension.</dd>
   <dt>ResourceName</dt>
   <dd><i>(Optional)</i> The name that the resource will have (can be a string or an integer). If omitted, it defaults to the name (with no path) of the file, in uppercase.</dd>
 </dl>
@@ -125,22 +129,29 @@ MsgBox This message appears in both the compiled and uncompiled script
   <li>23 (RT_HTML): <code>.htm</code>, <code>.html</code>, <code>.mht</code></li>
   <li>24 (RT_MANIFEST): <code>.manifest</code>. If the name for the resource is not specified, it defaults to <code>1</code></li>
 </ul>
-<p><strong>Example:</strong> To replace the standard icons (other than the <a href="#SetMainIcon">main icon</a>):</p>
-<pre>;@Ahk2Exe-AddResource Icon1.ico, 160  ; Replaces 'H on blue'
+<p><strong>Example 1:</strong> To replace the standard icons (other than the <a href="#SetMainIcon">main icon</a>):</p>
+<pre><em>;@Ahk2Exe-AddResource Icon1.ico, 160  ; Replaces 'H on blue'
 ;@Ahk2Exe-AddResource Icon2.ico, 206  ; Replaces 'S on green'
 ;@Ahk2Exe-AddResource Icon3.ico, 207  ; Replaces 'H on red'
-;@Ahk2Exe-AddResource Icon4.ico, 208  ; Replaces 'S on red'</pre>
+;@Ahk2Exe-AddResource Icon4.ico, 208  ; Replaces 'S on red'</em></pre>
 
-<h3 id="Bin">Bin</h3>
-<p>Specifies the Binary version of AutoHotkey to be included in the generated .exe. (This overrides anything specified in the GUI or CLI.) This directive can be specified many times if necessary, but only in the top level script file (i.e. not in an <a href="../commands/_Include.htm">#Include</a> file). The compiler will be run at least once for each <em>Bin</em> directive found. (If an actual comment is appended to this directive, it must use the <code>&nbsp;;</code> flag. To truly comment out this directive, insert a space after the first comment flag.)</p>
-<pre class="Syntax"><span class="func">;@Ahk2Exe-Bin</span> [Path\]Name <span class="optional">, [Exe_path\][Name], Codepage</span></pre>
+<p><strong>Example 2:</strong> <span class="ver">[v1.1.34+]</span> To include another script as a separate RCDATA resource (see <a href="../Program.htm#embedded-scripts">Embedded Scripts</a>):</p>
+<pre><em>;@Ahk2Exe-AddResource MyScript1.ahk, #2
+;@Ahk2Exe-AddResource MyScript2.ahk, MYRESOURCE</em></pre>
+<p>Note that each script added with this directive will be fully and separately processed by the compiler, and can include further directives. If there are any competing directives overall, the last encountered by the compiler will be used.</p>
+
+<h3 id="Bin">Bin / Base <span class="ver">[v1.1.33.10+]</span></h3>
+<p>Specifies the base version of AutoHotkey to be used to generate the .exe file. This directive may be overridden by a base file parameter specified in the GUI or CLI. This directive can be specified many times if necessary, but only in the top level script file (i.e. not in an <a href="../lib/_Include.htm">#Include</a> file). The compiler will be run at least once for each Bin/Base directive found. (If an actual comment is appended to this directive, it must use the <code>&nbsp;;</code> flag. To truly comment out this directive, insert a space after the first comment flag.)</p>
+
+<pre class="Syntax"><span class="func">;@Ahk2Exe-Bin </span> [Path\]Name <span class="optional">, [Exe_path\][Name], Codepage</span> <em>; Deprecated</em>
+<span class="func">;@Ahk2Exe-Base</span> [Path\]Name <span class="optional">, [Exe_path\][Name], Codepage</span> <em>; <span class="ver">[v1.1.33.10+]</span></em></pre>
 <dl>
   <dt>[Path\]Name</dt>
-  <dd>The *.bin file to use. If no extension is supplied, <code>.bin</code> is assumed. A DOS mask may be specified for <em>Name</em>, e.g. <code>ANSI*</code>, <code>Unicode 32*</code>, <code>Unicode 64*</code>, or <code>*bit</code> for all three. If no path is specified, the standard *.bin files in the compiler folder are searched. The compiler will be run for each *.bin file that matches. Any use of built-in variable replacements must only be from <a href="#group1">group 1</a> above.</dd>
+  <dd>The *.bin file or in <span class="ver">[v1.1.33.10+]</span> the *.exe file to use. If no extension is supplied, <code>.bin</code> is assumed. The file is assumed to be in (or relative to) the compiler's own directory if an absolute path isn't specified. A DOS mask may be specified for <em>Name</em>, e.g. <code>ANSI*</code>, <code>Unicode 32*</code>, <code>Unicode 64*</code>, or <code>*bit</code> for all three. The compiler will be run for each *.bin or *.exe file that matches. Any use of built-in variable replacements must only be from <a href="#group1">group 1</a> above.</dd>
   <dt>[Exe_path\][Name]</dt>
   <dd><i>(Optional)</i> The file name to be given to the .exe. Any extension supplied will be replaced by <code>.exe</code>. If no path is specified, the .exe will be created in the script folder. If no name is specified, the .exe will have the default name. (This parameter can be overridden by the <a href="#ExeName">ExeName</a> directive.)</dd>
   <dt>Codepage</dt>
-  <dd><i>(Optional)</i> Overrides the default <a href="http://msdn.microsoft.com/ko-kr/library/dd317756.aspx">codepage</a>
+  <dd><i>(Optional)</i> Overrides the default <a href="https://learn.microsoft.com/windows/desktop/Intl/code-page-identifiers">codepage</a>
   used to process script files. (Scripts should begin with a Unicode byte-order-mark (BOM), rendering the use of this parameter unnecessary.)</dd>
 </dl>
 
@@ -165,16 +176,16 @@ MsgBox This message appears in both the compiled and uncompiled script
 </dl>
 
 <h3 id="ExeName">ExeName</h3>
-<p>Specifies the location and name given to the generated .exe file. (Also see the <a href="#Bin">Bin</a> directive.)</p>
+<p>Specifies the location and name given to the generated .exe file. (Also see the <a href="#Bin">Base</a> directive.) This directive may be overridden by an output file specified in the GUI or CLI.</p>
 <pre class="Syntax"><span class="func">;@Ahk2Exe-ExeName</span> [Path\][Name]</pre>
 <dl>
   <dt>[Path\][Name]</dt>
   <dd>The .exe file name. Any extension supplied will be replaced by <code>.exe</code>. If no path is specified, the .exe will be created in the script folder. If no name is specified, the .exe will have the default name.</dd>
 </dl>
 <strong>예제:</strong>
-<pre>;@Ahk2Exe-Obey U_bits, = %A_PtrSize% * 8
+<pre><em>;@Ahk2Exe-Obey U_bits, = %A_PtrSize% * 8
 ;@Ahk2Exe-Obey U_type, = "%A_IsUnicode%" ? "Unicode" : "ANSI"
-;@Ahk2Exe-ExeName %A_ScriptName~\.[^\.]+$%_%U_type%_%U_bits%</pre>
+;@Ahk2Exe-ExeName %A_ScriptName~\.[^\.]+$%_%U_type%_%U_bits%</em></pre>
 
 <h3 id="Let">Let</h3>
 <p>Creates (or modifies) one or more user variables which can be accessed by <code>%U_<i>Name</i>%</code>, similar to the built-in variables (see above).</p>
@@ -186,6 +197,18 @@ MsgBox This message appears in both the compiled and uncompiled script
   <dd>The value to be used.</dd>
 </dl>
 
+<h3 id="Nop">Nop <span class="ver">[v1.1.34.03c+]</span></h3>
+<p>Does nothing.</p>
+<pre class="Syntax"><span class="func">;@Ahk2Exe-Nop</span> <span class="optional">Text</span></pre>
+<dl>
+  <dt>Text</dt>
+  <dd><i>(Optional)</i> Any text, which is ignored.</dd>
+</dl>
+<strong>예제:</strong>
+<pre>Ver := A_AhkVersion "" <em>; If quoted literal not empty, do 'SetVersion'
+;@Ahk2Exe-Obey U_V, = "%A_PriorLine~U)^(.+")(.*)".*$~$2%" ? "SetVersion" : "Nop"
+;@Ahk2Exe-%U_V%        %A_AhkVersion%%A_PriorLine~U)^(.+")(.*)".*$~$2%</em></pre>
+
 <h3 id="Obey">Obey</h3>
 <p>Obeys isolated AutoHotkey commands or expressions, with result in <code>U_<i>Name</i></code>.</p>
 <pre class="Syntax"><span class="func">;@Ahk2Exe-Obey</span> Name, CmdOrExp <span class="optional">, Extra</span></pre>
@@ -196,11 +219,11 @@ MsgBox This message appears in both the compiled and uncompiled script
   <dd>
     <p>The command or expression to obey.</p>
     <p><strong>Command</strong> format must use <em>Name</em> as the output variable (often the first parameter), e.g.</p>
-    <pre>;@Ahk2Exe-Obey U_date, FormatTime U_date`, R D2 T2</pre>
+    <pre><em>;@Ahk2Exe-Obey U_date, FormatTime U_date`, R D2 T2</em></pre>
     <p><strong>Expression</strong> format must start with <code>=</code>, e.g.</p>
-    <pre>;@Ahk2Exe-Obey U_type, = "%A_IsUnicode%" ? "Unicode" : "ANSI"</pre>
+    <pre><em>;@Ahk2Exe-Obey U_type, = "%A_IsUnicode%" ? "Unicode" : "ANSI"</em></pre>
     <p>Expressions can be written in command format, e.g.</p>
-    <pre>;@Ahk2Exe-Obey U_bits, U_bits := %A_PtrSize% * 8</pre>
+    <pre><em>;@Ahk2Exe-Obey U_bits, U_bits := %A_PtrSize% * 8</em></pre>
     <p>If needed, separate multiple commands and expressions with <code>`n</code>.</p>
   </dd>
   <dt>Extra</dt>
@@ -208,7 +231,7 @@ MsgBox This message appears in both the compiled and uncompiled script
 </dl>
 
 <h3 id="PostExec">PostExec</h3>
-<p>Specifies a program to be executed after a successful compilation, before (or after) any <a href="../Scripts.htm#mpress">Compression</a> is applied to the .exe.</p>
+<p>Specifies a program to be executed after a successful compilation, before (or after) any <a href="../Scripts.htm#mpress">Compression</a> is applied to the .exe. This directive can be present many times and will be executed in the order encountered by the compiler, in the appropriate queue as specified by the <em>When</em> parameter.</p>
 <pre class="Syntax">
 <span class="func">;@Ahk2Exe-PostExec</span> Program [parameters] <span class="optional">, When, WorkingDir, Hidden, IgnoreErrors</span></pre>
 <dl>
@@ -230,18 +253,31 @@ MsgBox This message appears in both the compiled and uncompiled script
   <dt>IgnoreErrors <span class="ver">[v1.1.33.03+]</span></dt>
   <dd><i>(Optional)</i> If set to 1, any errors that occur during the launching or running of the program will not be reported to the user.</dd>
 </dl>
-<p><strong>Example 1:</strong> (To use these examples, first download <a href="https://github.com/AutoHotkey/Ahk2Exe/blob/master/BinMod.ahk">BinMod.ahk</a> and compile it according to the instructions in the downloaded script.)</p>
+<p><strong>Example 1:</strong> (To use the first two examples, first download <a href="https://github.com/AutoHotkey/Ahk2Exe/blob/master/BinMod.ahk">BinMod.ahk</a> and compile it according to the instructions in the downloaded script.)</p>
 <p>This example can be used to remove a reference to "AutoHotkey" in the generated .exe to disguise that it is a compiled AutoHotkey script:</p>
-<pre>;@Ahk2Exe-Obey U_au, = "%A_IsUnicode%" ? 2 : 1    ; Script ANSI or Unicode?
+<pre><em>;@Ahk2Exe-Obey U_au, = "%A_IsUnicode%" ? 2 : 1    ; Script ANSI or Unicode?
 ;@Ahk2Exe-PostExec "BinMod.exe" "%A_WorkFileName%"
-;@Ahk2Exe-Cont  "%U_au%2.&gt;AUTOHOTKEY SCRIPT&lt;. DATA              "</pre>
+;@Ahk2Exe-Cont  "%U_au%2.&gt;AUTOHOTKEY SCRIPT&lt;. DATA              "</em></pre>
 <p><strong>Example 2:</strong> This example will alter a UPX compressed .exe so that it can't be de-compressed with <code>UPX -d</code>:</p>
-<pre>;@Ahk2Exe-PostExec "BinMod.exe" "%A_WorkFileName%"
-;@Ahk2Exe-Cont  "11.UPX." "1.UPX!.", 2</pre>
-<p>There are other examples mentioned in the <a href="https://github.com/AutoHotkey/Ahk2Exe/blob/master/BinMod.ahk">BinMod.ahk</a> script.</p>
+<pre><em>;@Ahk2Exe-PostExec "BinMod.exe" "%A_WorkFileName%"
+;@Ahk2Exe-Cont  "11.UPX." "1.UPX!.", 2</em></pre>
+<p>(There are other examples mentioned in the <a href="https://github.com/AutoHotkey/Ahk2Exe/blob/master/BinMod.ahk">BinMod.ahk</a> script.)</p>
+<p><strong>Example 3:</strong> This example specifies the <a href="../Scripts.htm#mpress">Compression</a> to be used on a compiled script, if none is specified in the CLI or GUI. The default parameters normally used by the compiler are shown.</p><p>For MPRESS:</p>
+<pre><em>;@Ahk2Exe-PostExec "MPRESS.exe" "%A_WorkFileName%" -q -x, 0,, 1</em></pre>
+<p>For UPX:</p>
+<pre><em>;@Ahk2Exe-PostExec "UPX.exe" "%A_WorkFileName%"
+;@Ahk2Exe-Cont  -q --all-methods --compress-icons=0, 0,, 1</em></pre>
+
+<h3 id="ResourceID">ResourceID <span class="ver">[v1.1.34+]</span></h3>
+<p>Assigns a non-standard resource ID to be used for the main script for compilations which use an <a href="#Bin">.exe base file</a> (see <a href="../Program.htm#embedded-scripts">Embedded Scripts</a>). This directive may be overridden by a Resource ID specified in the GUI or CLI. This directive is ignored if it appears in a script inserted by the <a href="#AddResource">AddResource</a> directive.</p>
+<pre class="Syntax"><span class="func">;@Ahk2Exe-ResourceID</span> Name</pre>
+<dl>
+  <dt>Name</dt>
+  <dd>The resource ID to use. Numeric resource IDs should consist of a hash sign (#) followed by a decimal number.</dd>
+</dl>
 
 <h3 id="SetMainIcon">SetMainIcon</h3>
-<p>Overrides the custom EXE icon used for compilation. (To change the other icons, see the <a href="#AddResource">AddResource</a> example.)</p>
+<p>Overrides the custom EXE icon used for compilation. (To change the other icons, see the <a href="#AddResource">AddResource</a> example.) This directive may be overridden by an icon file specified in the GUI or CLI. The new icon might not be immediately visible in Windows Explorer if the compiled file existed before with a different icon, however the new icon can be shown by selecting <code>Refresh Windows Icons</code> from the Ahk2Exe <code>File</code> menu.</p>
 <pre class="Syntax"><span class="func">;@Ahk2Exe-SetMainIcon</span> <span class="optional">IcoFile</span></pre>
 <dl>
   <dt>IcoFile</dt>

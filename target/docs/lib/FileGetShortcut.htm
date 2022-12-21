@@ -22,25 +22,25 @@
   <dd><p>분석할 단축 파일의 이름. 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>에 있다고 간주됩니다. <strong>.lnk</strong> 확장자를 꼭 포함하십시오.</p></dd>
 
   <dt>OutTarget</dt>
-  <dd><p>단축 파일의 목표를 저장할 변수의 이름 (인자들은 제외). 예를 들어: C:\WINDOWS\system32\notepad.exe</p></dd>
+  <dd><p>Name of the output variable in which to store the shortcut's target (not including any arguments it might have). 예를 들어: C:\WINDOWS\system32\notepad.exe</p></dd>
 
   <dt>OutDir</dt>
-  <dd><p>단축 파일의 작업 디렉토리를 저장할 변수의 이름. 예를 들어: C:\My Documents. If environment variables such as %WinDir% are present in the string, one way to resolve them is via <a href="StrReplace.htm">StrReplace()</a> or <a href="StringReplace.htm">StringReplace</a>. 예를 들어: <code>StringReplace, OutDir, OutDir, `%WinDir`%, %<a href="../Variables.htm#WinDir">A_WinDir</a>%</code>.</p></dd>
+  <dd><p>Name of the output variable in which to store the shortcut's working directory. 예를 들어: C:\My Documents. If environment variables such as %WinDir% are present in the string, one way to resolve them is via <a href="StrReplace.htm">StrReplace()</a> or <a href="StringReplace.htm">StringReplace</a>. 예를 들어: <code>StringReplace, OutDir, OutDir, `%WinDir`%, %<a href="../Variables.htm#WinDir">A_WinDir</a>%</code>.</p></dd>
 
   <dt>OutArgs</dt>
-  <dd><p>단축 파일의 매개변수를 저장할 변수의 이름 (없으면 비어 있음).</p></dd>
+  <dd><p>Name of the output variable in which to store the shortcut's parameters (blank if none).</p></dd>
 
   <dt>OutDescription</dt>
-  <dd><p>단축 파일의 주석을 저장할 변수의 이름 (없으면 비어 있음).</p></dd>
+  <dd><p>Name of the output variable in which to store the shortcut's comments (blank if none).</p></dd>
 
   <dt>OutIcon</dt>
-  <dd><p>단축 파일의 아이콘 파일 이름을 저장할 변수의 이름 (없으면 비어 있음).</p></dd>
+  <dd><p>Name of the output variable in which to store the filename of the shortcut's icon (blank if none).</p></dd>
 
   <dt>OutIconNum</dt>
-  <dd><p>아이콘 파일 안에서의 단축 파일의 아이콘 번호를 저장할 변수의 이름 (없으면 비어 있음). 이 값은 대부분 1입니다. 첫 번째 아이콘이라는 뜻입니다.</p></dd>
+  <dd><p>Name of the output variable in which to store the shortcut's icon number within the icon file (blank if none). 이 값은 대부분 1입니다. 첫 번째 아이콘이라는 뜻입니다.</p></dd>
 
   <dt>OutRunState</dt>
-  <dd><p>단축 파일의 최초 기동 상태를 저장할 변수의 이름. 다음 숫자 중 하나입니다:</p>
+  <dd><p>Name of the output variable in which to store the shortcut's initial launch state, which is one of the following digits:</p>
     <ul>
       <li>1 = 정상</li>
       <li>3 = 최대</li>

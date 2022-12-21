@@ -19,33 +19,38 @@
 <h2 id="SubCommands">부-명령어</h2>
 <p>For <em>SubCommand</em>, specify one of the following:</p>
 <ul>
-    <li><a href="#Label">Label</a>: Renames the volume label of a drive.</li>
-    <li><a href="#Lock">Lock</a>: 드라이브의 꺼내기 기능이 작동하지 못 하도록 막습니다.</li>
-    <li><a href="#Unlock">Unlock</a>: Restores a drive's eject feature.</li>
+    <li><a href="#Label">Label</a>: Changes the volume label of a drive.</li>
+    <li><a href="#Lock">Lock</a>: Prevents the eject feature of a drive from working.</li>
+    <li><a href="#Unlock">Unlock</a>: Restores the eject feature of a drive.</li>
     <li><a href="#Eject">Eject</a>: CD 또는 DVD 드라이브의 트레이를 꺼내고 넣습니다.</li>
 </ul>
 
 <h3 id="Label">Label</h3>
-<p><em>Drive</em>의 볼륨 라벨을 <em>NewLabel</em>로 바꿉니다</p>
+<p>Changes the volume label of the specified drive.</p>
 <pre class="Syntax"><span class="func">Drive</span>, Label, Drive <span class="optional">, NewLabel</span></pre>
 <p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다 (UNC와 맵핑된 드라이브에서도 작동). <em>NewLabel</em>을 생략하면, 드라이브는 라벨이 없습니다.</p>
-<p>현재 라벨을 열람하려면, 다음 예제를 따르십시오: <code><a href="DriveGet.htm">DriveGet</a>, OutputVar, Label, C:</code>.</p>
+<p>To retrieve the current label, use the <a href="DriveGet.htm#Label">DriveGet's Label sub-command</a>, such as <code>DriveGet, OutputVar, Label, C:</code>.</p>
 
 <h3 id="Lock">Lock</h3>
-<p>드라이브의 꺼내기 기능이 작동하지 못 하도록 막습니다.</p>
+<p>Prevents the eject feature of the specified drive from working.</p>
 <pre class="Syntax"><span class="func">Drive</span>, Lock, Drive</pre>
-<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다 (UNC와 맵핑된 드라이브에서도 작동). 예를 들어: <code>Drive, Lock, D:</code>. 대부분의 드라이브는 "열어둔 채로 잠글 수" 없습니다. 그렇지만, 열려 있는 동안에 드라이브를 잠그면 아마도 그 결과는 닫히는 순간 잠기게 될 것입니다. 이 부-명령어는 잠금을 지원하지 않는 드라이브에는 아무 효과가 없습니다 (대부분의 읽기-전용 드라이브). 드라이브가 스크립트에 의해 잠기고 그리고 그 스크립트가 끝나버리면, 그 드라이브는 또 다른 스크립트나 프로그램이 풀어줄 때까지 또는 시스템이 재시작할 때까지 그대로 잠겨 있습니다. 지정된 드라이브가 존재하지 않거나 잠금 특징을 지원하지 않으면, ErrorLevel에 1이 설정됩니다. 그렇지 않으면 0이 설정됩니다.</p>
+<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다 (UNC와 맵핑된 드라이브에서도 작동).</p>
+<p>대부분의 드라이브는 "열어둔 채로 잠글 수" 없습니다. 그렇지만, 열려 있는 동안에 드라이브를 잠그면 아마도 그 결과는 닫히는 순간 잠기게 될 것입니다.</p>
+<p>이 부-명령어는 잠금을 지원하지 않는 드라이브에는 아무 효과가 없습니다 (대부분의 읽기-전용 드라이브).</p>
+<p>To unlock a drive, use the <a href="#Unlock">Unlock sub-command</a> below. 드라이브가 스크립트에 의해 잠기고 그리고 그 스크립트가 끝나버리면, 그 드라이브는 또 다른 스크립트나 프로그램이 풀어줄 때까지 또는 시스템이 재시작할 때까지 그대로 잠겨 있습니다.</p>
+<p>If the specified drive does not exist or does not support the locking feature, <a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 1. 그렇지 않으면 0이 설정됩니다.</p>
 
 <h3 id="Unlock">Unlock</h3>
-<p>Restores a drive's eject feature.</p>
+<p>Restores the eject feature of the specified drive.</p>
 <pre class="Syntax"><span class="func">Drive</span>, Unlock, Drive</pre>
-<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다 (UNC와 맵핑된 드라이브에서도 작동). 드라이브가 여러 번 잠겼다면 Unlock 부-명령은 여러 번 실행할 필요가 있습니다 (적어도 어떤 드라이브는 해당됩니다). 예를 들어, <code>Drive, Lock, D:</code>이 세번 실행되었다면, <code>Drive, Unlock, D:</code>를 세 번 실행해야 잠금이 풀릴 것입니다. 이 때문에 그리고 드라이브가 현재 잠겨 있는지 확인할 방법이 없기 때문에, 그의 잠금 상태를 <a href="../Variables.htm">변수</a>에 추적 관리하는 것이 유용합니다.</p>
+<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다 (UNC와 맵핑된 드라이브에서도 작동).</p>
+<p>This sub-command needs to be executed multiple times if the drive was locked multiple times (at least for some drives). For example, if <code>Drive, Lock, D:</code> was executed three times, three executions of <code>Drive, Unlock, D:</code> might be needed to unlock it. Because of this and the fact that there is no way to determine whether a drive is currently locked, it is often useful to keep track of its lock-state in a <a href="../Variables.htm">variable</a>.</p>
 
 <h3 id="Eject">Eject</h3>
 <p>CD 또는 DVD 드라이브의 트레이를 꺼내고 넣습니다.</p>
 <pre class="Syntax"><span class="func">Drive</span>, Eject <span class="optional">, Drive, 1</span></pre>
 <p>다른 미디어 또는 장치의 유형을 꺼내려면, 이 페이지 하단의 <a href="#ExDllCall">DllCall 예제를 #3</a> 참조하십시오.</p>
-<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다 (UNC와 맵핑된 드라이브에서도 작동). <em>Drive</em> 생략되면, 기본 값은 CD/DVD 드라이브가 사용됩니다. 트레이를 꺼내려면, 마지막 매개변수를 생략합니다. 트레이를 닫으려면 1을 마지막 매개변수에 지정합니다; 예를 들어: <code>Drive, Eject, D:, 1</code>.</p>
+<p><em>Drive</em> is the drive letter followed by a colon and an optional backslash. <em>Drive</em> 생략되면, 기본 값은 CD/DVD 드라이브가 사용됩니다. 트레이를 꺼내려면, 마지막 매개변수를 생략합니다. 트레이를 닫으려면 1을 마지막 매개변수에 지정합니다; 예를 들어: <code>Drive, Eject, D:, 1</code>.</p>
 <p>이 부-명령어 스크립트를 계속 진행하기 전에 꺼내기가 완료되기를 기다립니다. 트레이가 이미 올바른 상태에 있다면 (열려 있거나 또는 닫혀 있거나), <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 0이 설정됩니다 (즉, "에러 없음").</p>
 <p>이 부-명령어 네트워크 드라이브나 CD/DVD 드라이브가 아니면 작동하지 않습니다. 실패하면, <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 1이 설정됩니다.</p>
 <p>이전의 트레이 상태를 탐지하는 것도 가능합니다. 부-명령어가 완료에 소비되는 시간을 측정해 보면 압니다. 예를 들어, 다음 핫키는 트레이가 반대 상태가 되도록 토글합니다:</p>

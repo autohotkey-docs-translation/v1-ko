@@ -11,7 +11,7 @@
 
 <body>
 <h1>Window and Control Styles</h1>
-<p>This page lists some styles and extended styles which can be set or retrieved with <a href="../commands/Gui.htm">Gui</a>, <a href="../commands/GuiControl.htm">GuiControl</a>, <a href="../commands/WinSet.htm">WinSet</a>, <a href="../commands/WinGet.htm">WinGet</a>, <a href="../commands/Control.htm">Control</a> and <a href="../commands/ControlGet.htm">ControlGet</a> commands.</p>
+<p>This page lists some styles and extended styles which can be set or retrieved with <a href="../lib/Gui.htm">Gui</a>, <a href="../lib/GuiControl.htm">GuiControl</a>, <a href="../lib/WinSet.htm">WinSet</a>, <a href="../lib/WinGet.htm">WinGet</a>, <a href="../lib/Control.htm">Control</a> and <a href="../lib/ControlGet.htm">ControlGet</a> commands.</p>
 
 <h2 id="toc">목차</h2>
 <ul>
@@ -145,7 +145,7 @@
 </table>
 
 <h2 id="Text">Text Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#Text">Text</a> control. It has neither default styles nor forced styles.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#Text">Text</a> control. It has neither default styles nor forced styles.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -235,7 +235,7 @@
 </table>
 
 <h2 id="Edit">Edit Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#Edit">Edit</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a> and WS_EX_CLIENTEDGE (extended style E0x200). It has no forced styles.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#Edit">Edit</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a> and WS_EX_CLIENTEDGE (extended style E0x200). It has no forced styles.</p>
 <p>Edit 콘트롤이 여러-줄로 자동 탐지됩니다. 시작부터 내용에 여러 줄이 담겨 있거나, 그의 높이가 1 행보다 크거나, 아니면 그의 행 개수가 명시적으로 1보다 크게 지정되어 있기 때문입니다. 다음 스타일이 기본으로 적용됩니다: <a href="#WS_VSCROLL">WS_VSCROLL</a>, <a href="#ES_WANTRETURN">ES_WANTRETURN</a>, 그리고 <a href="#ES_AUTOVSCROLL">ES_AUTOVSCROLL</a>.</p>
 <p>Edit 콘트롤이 한 줄로 자동 탐지되면, 기본값은 <a href="#ES_AUTOHSCROLL">ES_AUTOHSCROLL</a>입니다.</p>
 <table class="info">
@@ -312,7 +312,7 @@
 </table>
 
 <h2 id="UpDown">UpDown Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#UpDown">UpDown</a> control. By default, it uses <a href="#UDS_ARROWKEYS">UDS_ARROWKEYS</a>, <a href="#UDS_ALIGNRIGHT">UDS_ALIGNRIGHT</a>, <a href="#UDS_SETBUDDYINT">UDS_SETBUDDYINT</a>, and <a href="#UDS_AUTOBUDDY">UDS_AUTOBUDDY</a>. It has no forced styles.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#UpDown">UpDown</a> control. By default, it uses <a href="#UDS_ARROWKEYS">UDS_ARROWKEYS</a>, <a href="#UDS_ALIGNRIGHT">UDS_ALIGNRIGHT</a>, <a href="#UDS_SETBUDDYINT">UDS_SETBUDDYINT</a>, and <a href="#UDS_AUTOBUDDY">UDS_AUTOBUDDY</a>. It has no forced styles.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -367,7 +367,7 @@
 </table>
 
 <h2 id="Pic">Picture Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#Picture">Picture</a> control. It has no default styles. The style SS_ICON (for icons and cursors) or SS_BITMAP (for other image types) is always enabled and cannot be disabled.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#Picture">Picture</a> control. It has no default styles. The style SS_ICON (for icons and cursors) or SS_BITMAP (for other image types) is always enabled and cannot be disabled.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -390,7 +390,7 @@
 </table>
 
 <h2 id="Button">Button, CheckBox, Radio, and GroupBox Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#Button">Button</a>, <a href="../commands/GuiControls.htm#Checkbox">CheckBox</a>, <a href="../commands/GuiControls.htm#Radio">Radio</a>, or <a href="../commands/GuiControls.htm#GroupBox">GroupBox</a> controls.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#Button">Button</a>, <a href="../lib/GuiControls.htm#Checkbox">CheckBox</a>, <a href="../lib/GuiControls.htm#Radio">Radio</a>, or <a href="../lib/GuiControls.htm#GroupBox">GroupBox</a> controls.</p>
 <p>By default, each of these controls except GroupBox uses the styles <a href="#BS_MULTILINE">BS_MULTILINE</a> (unless it has no explicitly set width or height, nor any CR/LF characters in their text) and <a href="#WS_TABSTOP">WS_TABSTOP</a> (however, Radio controls other than the first of each radio group lack WS_TABSTOP). In addition, Radio controls have <a href="#BS_NOTIFY">BS_NOTIFY</a> so that double clicks can be detected.</p>
 <p>The following styles are always enabled and cannot be disabled:</p>
 <ul>
@@ -468,8 +468,7 @@
 <tr id="BS_NOTIFY">
   <td>BS_NOTIFY</td>
   <td>0x4000</td>
-  <td>Enables a button to send BN_KILLFOCUS and BN_SETFOCUS notification codes to its parent window.
-  Note that buttons send the BN_CLICKED notification code regardless of whether it has this style. To get BN_DBLCLK notification codes, the button must have the BS_RADIOBUTTON or BS_OWNERDRAW style.</td>
+  <td>Enables a button to send BN_KILLFOCUS and BN_SETFOCUS notification codes to its parent window. Note that buttons send the BN_CLICKED notification code regardless of whether it has this style. To get BN_DBLCLK notification codes, the button must have the BS_RADIOBUTTON or BS_OWNERDRAW style.</td>
 </tr>
 <tr id="BS_TOP">
   <td>BS_TOP</td>
@@ -494,7 +493,7 @@
 </table>
 
 <h2 id="DDL">DropDownList and ComboBox Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#DropDownList">DropDownList</a> and <a href="../commands/GuiControls.htm#ComboBox">ComboBox</a> controls.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#DropDownList">DropDownList</a> and <a href="../lib/GuiControls.htm#ComboBox">ComboBox</a> controls.</p>
 <p>By default, each of these controls uses <a href="#WS_TABSTOP">WS_TABSTOP</a>. In addition, a DropDownList control uses <a href="#WS_VSCROLL">WS_VSCROLL</a>, and a ComboBox control uses <a href="#WS_VSCROLL">WS_VSCROLL</a> and <a href="#CBS_AUTOHSCROLL">CBS_AUTOHSCROLL</a>.</p>
 <p>The following styles are always enabled and cannot be disabled:</p>
 <ul>
@@ -560,7 +559,7 @@
 </table>
 
 <h2 id="ListBox">ListBox Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#ListBox">ListBox</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a>, <a href="#LBS_USETABSTOPS">LBS_USETABSTOPS</a>, <a href="#WS_VSCROLL">WS_VSCROLL</a>, and WS_EX_CLIENTEDGE (extended style E0x200). The style <a href="#LBS_NOTIFY">LBS_NOTIFY</a> (supports detection of double-clicks) is always enabled and cannot be disabled.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#ListBox">ListBox</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a>, <a href="#LBS_USETABSTOPS">LBS_USETABSTOPS</a>, <a href="#WS_VSCROLL">WS_VSCROLL</a>, and WS_EX_CLIENTEDGE (extended style E0x200). The style <a href="#LBS_NOTIFY">LBS_NOTIFY</a> (supports detection of double-clicks) is always enabled and cannot be disabled.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -610,7 +609,7 @@
 </table>
 
 <h2 id="ListView">ListView Control Styles</h2>
-<p>These styles affect the <a href="../commands/ListView.htm">ListView</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a>, <a href="#LVS_REPORT">LVS_REPORT</a>, <a href="#LVS_SHOWSELALWAYS">LVS_SHOWSELALWAYS</a>, <a href="#LVS_EX_FULLROWSELECT">LVS_EX_FULLROWSELECT</a>, <a href="#LVS_EX_HEADERDRAGDROP">LVS_EX_HEADERDRAGDROP</a>, and WS_EX_CLIENTEDGE (extended style E0x200). It has no forced styles.</p>
+<p>These styles affect the <a href="../lib/ListView.htm">ListView</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a>, <a href="#LVS_REPORT">LVS_REPORT</a>, <a href="#LVS_SHOWSELALWAYS">LVS_SHOWSELALWAYS</a>, <a href="#LVS_EX_FULLROWSELECT">LVS_EX_FULLROWSELECT</a>, <a href="#LVS_EX_HEADERDRAGDROP">LVS_EX_HEADERDRAGDROP</a>, and WS_EX_CLIENTEDGE (extended style E0x200). It has no forced styles.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -685,7 +684,7 @@
 <tr id="LVS_SHAREIMAGELISTS">
   <td>LVS_SHAREIMAGELISTS</td>
   <td>0x40</td>
-  <td>콘트롤이 파괴되더라도 <a href="../commands/ListView.htm#IL">이미지 리스트</a>가 삭제되지 않습니다. 이 스타일은 다중 리스트 뷰 콘트롤에 같은 이미지를 사용할 수 있습니다.</td>
+  <td>콘트롤이 파괴되더라도 <a href="../lib/ListView.htm#IL">이미지 리스트</a>가 삭제되지 않습니다. 이 스타일은 다중 리스트 뷰 콘트롤에 같은 이미지를 사용할 수 있습니다.</td>
 </tr>
 <tr id="LVS_SHOWSELALWAYS">
   <td>LVS_SHOWSELALWAYS</td>
@@ -713,7 +712,7 @@
   <td>+/-SortDesc. 위와 같지만 내림차순입니다.</td>
 </tr>
 </table>
-<p id="LVS_EX" class="note"><strong>Extended ListView styles</strong> require the <a href="../commands/ListView.htm#LVS_EX">LV prefix</a> when used with the Gui commands. Some extended styles introduced in Windows XP or later versions are not listed here. For a full list, see <a href="https://msdn.microsoft.com/ko-kr/library/bb774732">MSDN: Extended List-View Styles</a>.</p>
+<p id="LVS_EX" class="note"><strong>Extended ListView styles</strong> require the <a href="../lib/ListView.htm#LVS_EX">LV prefix</a> when used with the Gui commands. Some extended styles introduced in Windows XP or later versions are not listed here. For a full list, see <a href="https://msdn.microsoft.com/ko-kr/library/bb774732">MSDN: Extended List-View Styles</a>.</p>
 <table class="info">
 <tr>
   <th abbr="ExStyle">Extended Style</th>
@@ -818,7 +817,7 @@
 </table>
 
 <h2 id="TreeView">TreeView Control Styles</h2>
-<p>These styles affect the <a href="../commands/TreeView.htm">TreeView</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a>, <a href="#TVS_SHOWSELALWAYS">TVS_SHOWSELALWAYS</a>, <a href="#TVS_HASLINES">TVS_HASLINES</a>, <a href="#TVS_LINESATROOT">TVS_LINESATROOT</a>, <a href="#TVS_HASBUTTONS">TVS_HASBUTTONS</a>, and WS_EX_CLIENTEDGE (extended style E0x200). It has no forced styles.</p>
+<p>These styles affect the <a href="../lib/TreeView.htm">TreeView</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a>, <a href="#TVS_SHOWSELALWAYS">TVS_SHOWSELALWAYS</a>, <a href="#TVS_HASLINES">TVS_HASLINES</a>, <a href="#TVS_LINESATROOT">TVS_LINESATROOT</a>, <a href="#TVS_HASBUTTONS">TVS_HASBUTTONS</a>, and WS_EX_CLIENTEDGE (extended style E0x200). It has no forced styles.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -908,7 +907,7 @@
 </table>
 
 <h2 id="DateTime">DateTime Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#DateTime">DateTime</a> control. By default, it uses <a href="#DTS_SHORTDATECENTURYFORMAT">DTS_SHORTDATECENTURYFORMAT</a> and <a href="#WS_TABSTOP">WS_TABSTOP</a>. It has no forced styles.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#DateTime">DateTime</a> control. By default, it uses <a href="#DTS_SHORTDATECENTURYFORMAT">DTS_SHORTDATECENTURYFORMAT</a> and <a href="#WS_TABSTOP">WS_TABSTOP</a>. It has no forced styles.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -923,7 +922,7 @@
 <tr id="DTS_SHOWNONE">
   <td>DTS_SHOWNONE</td>
   <td>0x2</td>
-  <td>체크박스를 콘트롤 안에 보여줍니다. 사용자는 체크를 해제해 콘트롤에 날짜/시간을 선택하지 않을 수 있습니다. 콘트롤에 날짜/시간이 없으면, <a href="../commands/Gui.htm#Submit">Gui Submit</a> 그리고 <a href="../commands/GuiControlGet.htm">GuiControlGet</a>은 빈 값을 열람합니다 (빈 문자열).</td>
+  <td>체크박스를 콘트롤 안에 보여줍니다. 사용자는 체크를 해제해 콘트롤에 날짜/시간을 선택하지 않을 수 있습니다. 콘트롤에 날짜/시간이 없으면, <a href="../lib/Gui.htm#Submit">Gui Submit</a> 그리고 <a href="../lib/GuiControlGet.htm">GuiControlGet</a>은 빈 값을 열람합니다 (빈 문자열).</td>
 </tr>
 <tr id="DTS_SHORTDATEFORMAT">
   <td>DTS_SHORTDATEFORMAT</td>
@@ -933,17 +932,17 @@
 <tr id="DTS_LONGDATEFORMAT">
   <td>DTS_LONGDATEFORMAT</td>
   <td>0x4</td>
-  <td><a href="../commands/GuiControls.htm#DateTimeFormat">형식 옵션</a> "LongDate". 날짜를 긴 형식으로 보여줍니다. 어떤 로케일에서는 "Wednesday, June 01, 2005"처럼 보입니다.</td>
+  <td><a href="../lib/GuiControls.htm#DateTimeFormat">형식 옵션</a> "LongDate". 날짜를 긴 형식으로 보여줍니다. 어떤 로케일에서는 "Wednesday, June 01, 2005"처럼 보입니다.</td>
 </tr>
 <tr id="DTS_SHORTDATECENTURYFORMAT">
   <td>DTS_SHORTDATECENTURYFORMAT</td>
   <td>0xC</td>
-  <td><a href="../commands/GuiControls.htm#DateTimeFormat">형식 옵션</a> 비어있거나/생략됨. 날짜를 짧은 형식의 네 자리 해로 보여 줍니다. 어떤 로케일에서는 "6/1/2005"처럼 보입니다. Comctl32.dll의 시스템 버전이 5.8 미만이면, 이 스타일을 지원하지 않습니다. 그리고 자동으로 <a href="#DTS_SHORTDATEFORMAT">DTS_SHORTDATEFORMAT</a>이 대신합니다.</td>
+  <td><a href="../lib/GuiControls.htm#DateTimeFormat">형식 옵션</a> 비어있거나/생략됨. 날짜를 짧은 형식의 네 자리 해로 보여 줍니다. 어떤 로케일에서는 "6/1/2005"처럼 보입니다. Comctl32.dll의 시스템 버전이 5.8 미만이면, 이 스타일을 지원하지 않습니다. 그리고 자동으로 <a href="#DTS_SHORTDATEFORMAT">DTS_SHORTDATEFORMAT</a>이 대신합니다.</td>
 </tr>
 <tr id="DTS_TIMEFORMAT">
   <td>DTS_TIMEFORMAT</td>
   <td>0x9</td>
-  <td><a href="../commands/GuiControls.htm#DateTimeFormat">형식 옵션</a> "Time". 시간만 보여줍니다. 어떤 로케일에서는 "5:31:42 PM"처럼 보입니다.</td>
+  <td><a href="../lib/GuiControls.htm#DateTimeFormat">형식 옵션</a> "Time". 시간만 보여줍니다. 어떤 로케일에서는 "5:31:42 PM"처럼 보입니다.</td>
 </tr>
 <tr id="DTS_APPCANPARSE">
   <td>DTS_APPCANPARSE</td>
@@ -958,7 +957,7 @@
 </table>
 
 <h2 id="MonthCal">MonthCal Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#MonthCal">MonthCal</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a> (only in <span class="ver">[v1.1.22+]</span>, and only on Windows Vista and later). It has no forced styles.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#MonthCal">MonthCal</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a> (only in <span class="ver">[v1.1.22+]</span>, and only on Windows Vista and later). It has no forced styles.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -976,7 +975,7 @@
   <td>
     <p>이름있는 옵션 "Multi". 사용자는 날짜 하나로 제한되지 않고 한 범위의 날짜를 선택할 수 있습니다. 기본값으로, 최대 범위는 366 일입니다. 범위는 MCM_SETMAXSELCOUNT 메시지를 보내 바꿀 수 있습니다. 예를 들어:</p>
     <pre>Gui +LastFound
-<a href="../commands/PostMessage.htm">SendMessage</a>, 0x1004, 7, 0, SysMonthCal321 <em>; 7 days. 0x1004 is MCM_SETMAXSELCOUNT.</em></pre>
+<a href="../lib/PostMessage.htm">SendMessage</a>, 0x1004, 7, 0, SysMonthCal321 <em>; 7 days. 0x1004 is MCM_SETMAXSELCOUNT.</em></pre>
   </td>
 </tr>
 <tr id="MCS_WEEKNUMBERS">
@@ -997,7 +996,7 @@
 </table>
 
 <h2 id="Slider">Slider Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#Slider">Slider</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a>. It has no forced styles.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#Slider">Slider</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a>. It has no forced styles.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -1035,8 +1034,8 @@
   <td>
     <p>선택 범위만 보여줍니다. 선택 범위의 시작과 끝에 위치한 틱 표식은 (수직 대쉬 대신에) 삼각형으로 보여줍니다. 그리고 선택 범위가 강조됩니다 (강조를 하려면 <code>Gui -theme</code>를 통하여 테마를 제거할 필요가 있을 수도 있습니다).</p>
     <p>선택 범위를 설정하려면, 다음 예제를 따르십시오. 시작 위치를 55에 그리고 끝 위치를 66에 설정합니다:</p>
-    <pre><a href="../commands/PostMessage.htm">SendMessage</a>, 0x040B, 1, 55, msctls_trackbar321, WinTitle
-<a href="../commands/PostMessage.htm">SendMessage</a>, 0x040C, 1, 66, msctls_trackbar321, WinTitle</pre>
+    <pre><a href="../lib/PostMessage.htm">SendMessage</a>, 0x040B, 1, 55, msctls_trackbar321, WinTitle
+<a href="../lib/PostMessage.htm">SendMessage</a>, 0x040C, 1, 66, msctls_trackbar321, WinTitle</pre>
   </td>
 </tr>
 <tr id="TBS_FIXEDLENGTH">
@@ -1072,7 +1071,7 @@
 </table>
 
 <h2 id="Progress">Progress Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#Progress">Progress</a> control. By default, it uses <a href="#PBS_SMOOTH">PBS_SMOOTH</a>. It has no forced styles.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#Progress">Progress</a> control. By default, it uses <a href="#PBS_SMOOTH">PBS_SMOOTH</a>. It has no forced styles.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -1100,7 +1099,7 @@
 </table>
 
 <h2 id="Tab">Tab Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#Tab">Tab</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a> and <a href="#TCS_MULTILINE">TCS_MULTILINE</a>. The style <a href="#WS_CLIPSIBLINGS">WS_CLIPSIBLINGS</a> is always enabled and cannot be disabled, while <a href="#TCS_OWNERDRAWFIXED">TCS_OWNERDRAWFIXED</a> is forced on or off as required by the control's background color and/or text color.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#Tab">Tab</a> control. By default, it uses <a href="#WS_TABSTOP">WS_TABSTOP</a> and <a href="#TCS_MULTILINE">TCS_MULTILINE</a>. The style <a href="#WS_CLIPSIBLINGS">WS_CLIPSIBLINGS</a> is always enabled and cannot be disabled, while <a href="#TCS_OWNERDRAWFIXED">TCS_OWNERDRAWFIXED</a> is forced on or off as required by the control's background color and/or text color.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -1214,7 +1213,7 @@
 </table>
 
 <h2 id="StatusBar">StatusBar Control Styles</h2>
-<p>These styles affect the <a href="../commands/GuiControls.htm#StatusBar">StatusBar</a> control. By default, it uses <a href="#SBARS_TOOLTIPS">SBARS_TOOLTIPS</a> and <a href="#SBARS_SIZEGRIP">SBARS_SIZEGRIP</a> (the latter only if the window is resizable). It has no forced styles.</p>
+<p>These styles affect the <a href="../lib/GuiControls.htm#StatusBar">StatusBar</a> control. By default, it uses <a href="#SBARS_TOOLTIPS">SBARS_TOOLTIPS</a> and <a href="#SBARS_SIZEGRIP">SBARS_SIZEGRIP</a> (the latter only if the window is resizable). It has no forced styles.</p>
 <table class="info">
 <tr>
   <th>Style</th>
@@ -1228,7 +1227,7 @@
     <p>마우스가 상태바의 일부에 올라오면 툴팁을 보여줍니다: 1) 너무 보여줄 텍스트가 많을 때; 2) 또는 아이콘은 있으나 텍스트가 없을 때.</p>
     <p>툴팁의 텍스트는 다음을 통하여 설정합니다:</p>
     <pre>Gui +LastFound
-<a href="../commands/PostMessage.htm">SendMessage</a>, 0x0410, <strong>0</strong>, "Text to display", msctls_statusbar321</pre>
+<a href="../lib/PostMessage.htm">SendMessage</a>, 0x0410, <strong>0</strong>, "Text to display", msctls_statusbar321</pre>
     <p>위에서 볼드체 <strong>0</strong>은 0-기반의 구역 번호입니다. 첫 번째 말고 다른 구역을 사용하려면, 두 번째 구역은 1, 세 번째 구역은 2 등등을 지정합니다. 주의: 어떤 운영체제에서는 툴팁이 전혀 나타나지 않을 수도 있습니다.</p>
   </td>
 </tr>

@@ -32,11 +32,11 @@
 <pre>#n::
 Run Notepad
 return</pre>
-<p>위의 마지막 줄에서 <code><a href="commands/Return.htm">return</a></code>은 핫키를 끝내는 기능을 합니다. 그렇지만, 핫키가 오직 한 줄만 실행할 필요가 있다면, 이 줄은 겹-쌍점의 오른쪽에 나열할 수 있습니다. 다시 말해, <code>return</code>문이 묵시적으로 있습니다:</p>
+<p>위의 마지막 줄에서 <code><a href="lib/Return.htm">return</a></code>은 핫키를 끝내는 기능을 합니다. 그렇지만, 핫키가 오직 한 줄만 실행할 필요가 있다면, 이 줄은 겹-쌍점의 오른쪽에 나열할 수 있습니다. 다시 말해, <code>return</code>문이 묵시적으로 있습니다:</p>
 <pre>#n::Run Notepad</pre>
 <p>핫키에 하나 이상의 수식자를 사용하려면, 그것들을 연속적으로 나열합니다 (순서는 문제가 안됩니다). 다음 예제는 <code>^!s</code>를 사용하여 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd>를 나타냅니다:</p>
 <pre>^!s::
-<a href="commands/Send.htm">Send</a> Sincerely,{enter}John Smith  <em>; 이 줄은 키눌림을 활성 (가장 앞쪽) 창에 보냅니다.</em>
+<a href="lib/Send.htm">Send</a> Sincerely,{enter}John Smith  <em>; 이 줄은 키눌림을 활성 (가장 앞쪽) 창에 보냅니다.</em>
 return</pre>
 <h2 id="Symbols">Hotkey Modifier Symbols</h2>
 <p>다음 수식키 심볼을 사용하여 핫키를 정의할 수 있습니다:</p>
@@ -49,15 +49,15 @@ return</pre>
     <td class="center bold">#</td>
     <td>
       <p><kbd>Win</kbd> (윈도우즈 로고 키).</p>
-      <p id="win-l"><span class="ver">[v1.0.48.01+]</span>: For Windows Vista and later, hotkeys that include <kbd>Win</kbd> (e.g. #a) will wait for <kbd>Win</kbd> to be released before sending any text containing an <kbd>L</kbd> keystroke. 이 덕분에 그런 핫키 안에서 <a href="commands/Send.htm">Send</a>를 사용하더라도 PC가 잠기지 않습니다. 이 행위는 <a href="commands/Send.htm#SendPlayDetail">SendPlay</a> (필요하지 않으므로) 그리고 <a href="commands/Send.htm#blind">맹목 모드</a>를 제외하고 모든 전송 모드에 적용됩니다. <span class="ver">[v1.1.29+]:</span> <a href="commands/Send.htm#SendText">Text mode</a> is also excluded.</p>
-      <p class="note"><strong>Note:</strong> Pressing a hotkey which includes <kbd>Win</kbd> may result in extra simulated keystrokes (<kbd>Ctrl</kbd> by default). See <a href="commands/_MenuMaskKey.htm">#MenuMaskKey</a>.</p>
+      <p id="win-l"><span class="ver">[v1.0.48.01+]</span>: For Windows Vista and later, hotkeys that include <kbd>Win</kbd> (e.g. #a) will wait for <kbd>Win</kbd> to be released before sending any text containing an <kbd>L</kbd> keystroke. 이 덕분에 그런 핫키 안에서 <a href="lib/Send.htm">Send</a>를 사용하더라도 PC가 잠기지 않습니다. 이 행위는 <a href="lib/Send.htm#SendPlayDetail">SendPlay</a> (필요하지 않으므로) 그리고 <a href="lib/Send.htm#blind">맹목 모드</a>를 제외하고 모든 전송 모드에 적용됩니다. <span class="ver">[v1.1.29+]:</span> <a href="lib/Send.htm#SendText">Text mode</a> is also excluded.</p>
+      <p class="note"><strong>Note:</strong> Pressing a hotkey which includes <kbd>Win</kbd> may result in extra simulated keystrokes (<kbd>Ctrl</kbd> by default). See <a href="lib/_MenuMaskKey.htm">#MenuMaskKey</a>.</p>
     </td>
   </tr>
   <tr>
     <td class="center bold">!</td>
     <td>
       <p><kbd>Alt</kbd></p>
-      <p class="note"><strong>Note:</strong> Pressing a hotkey which includes <kbd>Alt</kbd> may result in extra simulated keystrokes (<kbd>Ctrl</kbd> by default). See <a href="commands/_MenuMaskKey.htm">#MenuMaskKey</a>.</p>
+      <p class="note"><strong>Note:</strong> Pressing a hotkey which includes <kbd>Alt</kbd> may result in extra simulated keystrokes (<kbd>Ctrl</kbd> by default). See <a href="lib/_MenuMaskKey.htm">#MenuMaskKey</a>.</p>
     </td>
   </tr>
   <tr>
@@ -100,7 +100,7 @@ return</pre>
     <td><p>핫키가 촉발되면, 그 키의 고유 기능은 불능이 됩니다 (시스템에 보이지 않습니다). 아래의 두 예제에서 , 사용자가 마우스 버튼을 클릭하면 활성 창으로 전송됩니다:</p>
       <pre>~RButton::MsgBox 오른쪽 마우스 버튼을 클릭했습니다.
 ~RButton &amp; C::MsgBox 오른쪽 마우스 버튼을 누를 채로 C를 눌렀습니다.</pre>
-      <p>다른 접두 심볼과 다르게, 틸드 접두 심볼은 어떤 핫키의 <a href="commands/_IfWinActive.htm#variant">변형</a>에는 나타나는 것이 허용됩니다. 그렇지만, 꺼지지 않았거나 보류된 맞춤 조합 핫키의 <a href="#prefix">접두 키</a>에 틸드가 적용되면, <em>모든</em> 키조합에 대하여 그 접두 키의 행위에 영향을 미칩니다.</p>
+      <p>다른 접두 심볼과 다르게, 틸드 접두 심볼은 어떤 핫키의 <a href="lib/_IfWinActive.htm#variant">변형</a>에는 나타나는 것이 허용됩니다. 그렇지만, 꺼지지 않았거나 보류된 맞춤 조합 핫키의 <a href="#prefix">접두 키</a>에 틸드가 적용되면, <em>모든</em> 키조합에 대하여 그 접두 키의 행위에 영향을 미칩니다.</p>
       <p><a href="#alttab">알트-탭</a>을 대체하는 특수한 핫키는 언제나 틸드 접두 심볼을 무시합니다.</p>
       <p><span class="ver">[v1.1.14+]:</span> 틸드 접두 심볼이 그 자신도 핫키로 사용되는 맞춤 수식 키에 적용되면 (<a href="#prefix">접두 키</a>), 그 핫키는 키를 뗄 때까지 기다리는 대신에 키가 눌릴 때 촉발됩니다. 예를 들어, 위의 <em>~RButton</em> 핫키는 버튼이 눌리자 마자 촉발됩니다. <span class="ver">[v1.1.14]</span> 이전이라면 (틸드 접두 심볼이 없으므로), 버튼을 떼자마자 촉발되었습니다. 그러나 <em>RButton &amp; C</em> 조합이 활성화되어 있지 않을 경우에만 촉발되었습니다.</p>
       <p>틸드 접두 심볼이 맞춤 조합 핫키에만 적용되고 비-맞춤 핫키에는 적용되지 않으면, 그 핫키의 고유 기능이 여전히 막혀 있습니다. 예를 들어, 아래의 스크립트에서 <kbd>Menu</kbd>를 누르면 툴팁을 보여주고 문맥 메뉴는 촉발시키지 않습니다:</p>
@@ -114,9 +114,9 @@ AppsKey Up::ToolTip
   <tr id="prefixdollar">
     <td class="center bold">$</td>
     <td>
-      <p>이것은 주로 스크립트가 <a href="commands/Send.htm">Send</a> 명령어를 사용하여, 핫키 자체를 구성하는 키들을 전송할 경우에만 필요합니다. 그렇지 않으면 핫키 자체가 촉발될 가능성이 있습니다. $ 접두 심볼은 강제로 <a href="commands/_InstallKeybdHook.htm">키보드 갈고리</a>가 이 핫키를 구현하는데 사용되도록 만듭니다. 그 부작용으로 <a href="commands/Send.htm">Send</a> 명령어는 그 핫키를 촉발시키지 못합니다. $ 접두 심볼은 이 핫키가 정의된 위쪽 어딘가에 <code><a href="commands/_UseHook.htm">#UseHook</a></code>을 지정하는 것과 동등합니다.</p>
-      <p>$ 접두 심볼은 마우스 핫키에는 아무 효과가 없습니다. 왜냐하면 마우스 핫키는 언제나 마우스 갈고리를 사용하기 때문입니다. 또 이미 키보드 갈고리를 요구하는 핫키에도 아무 효과가 없습니다. 여기에는 <a href="#Tilde">tilde (~)</a> 또는 <a href="#wildcard">wildcard (*)</a> 수식자를 가진 모든 핫키, 키-뗌 핫키와 맞춤 조합 핫키가 포함됩니다. To determine whether a particular hotkey uses the keyboard hook, use <a href="commands/ListHotkeys.htm">ListHotkeys</a>.</p>
-      <p><span class="ver">[v1.1.06+]:</span> <a href="commands/_InputLevel.htm">#InputLevel</a>과 <a href="commands/SendLevel.htm">SendLevel</a>를 사용하면 Send 명령어로 촉발될  핫키와 핫스트링을 제어할 수 있습니다.</p>
+      <p>이것은 주로 스크립트가 <a href="lib/Send.htm">Send</a> 명령어를 사용하여, 핫키 자체를 구성하는 키들을 전송할 경우에만 필요합니다. 그렇지 않으면 핫키 자체가 촉발될 가능성이 있습니다. $ 접두 심볼은 강제로 <a href="lib/_InstallKeybdHook.htm">키보드 갈고리</a>가 이 핫키를 구현하는데 사용되도록 만듭니다. 그 부작용으로 <a href="lib/Send.htm">Send</a> 명령어는 그 핫키를 촉발시키지 못합니다. $ 접두 심볼은 이 핫키가 정의된 위쪽 어딘가에 <code><a href="lib/_UseHook.htm">#UseHook</a></code>을 지정하는 것과 동등합니다.</p>
+      <p>$ 접두 심볼은 마우스 핫키에는 아무 효과가 없습니다. 왜냐하면 마우스 핫키는 언제나 마우스 갈고리를 사용하기 때문입니다. 또 이미 키보드 갈고리를 요구하는 핫키에도 아무 효과가 없습니다. 여기에는 <a href="#Tilde">tilde (~)</a> 또는 <a href="#wildcard">wildcard (*)</a> 수식자를 가진 모든 핫키, 키-뗌 핫키와 맞춤 조합 핫키가 포함됩니다. To determine whether a particular hotkey uses the keyboard hook, use <a href="lib/ListHotkeys.htm">ListHotkeys</a>.</p>
+      <p><span class="ver">[v1.1.06+]:</span> <a href="lib/_InputLevel.htm">#InputLevel</a>과 <a href="lib/SendLevel.htm">SendLevel</a>를 사용하면 Send 명령어로 촉발될  핫키와 핫스트링을 제어할 수 있습니다.</p>
     </td>
   </tr>
   <tr id="keyup">
@@ -125,7 +125,7 @@ AppsKey Up::ToolTip
       <pre>*LWin::Send {LControl down}
 *LWin Up::Send {LControl up}
 </pre>
-      <p>"Up"은 다음 예제와 같이 보통의 핫키와 함께 사용할 수도 있습니다: <code>^!r Up::MsgBox Ctrl+Alt+R을 누르고 뗐습니다.</code>. 또 <a href="#combo">핫키 조합</a>과도 작동합니다 (예, <code>F1 &amp; e Up::</code>)</p>      
+      <p>"Up"은 다음 예제와 같이 보통의 핫키와 함께 사용할 수도 있습니다: <code>^!r Up::MsgBox Ctrl+Alt+R을 누르고 뗐습니다.</code>. 또 <a href="#combo">핫키 조합</a>과도 작동합니다 (예, <code>F1 &amp; e Up::</code>)</p>
       <p>한계: 1) "Up"은 <a href="KeyList.htm">조이스틱 버튼</a>과 작동하지 않습니다; 그리고 2) 보통의/누름 짝이 없이 "Up" 핫키 하나만 사용하면 그 키를 완전히 점령합니다. 그 키는 누를 수 없습니다. 이를 피하는 한 가지 방법은 <a href="#Tilde">틸드 접두 심볼</a>을 추가하는 것입니다 (예, <code>~LControl up::</code>)</p>
       <p>"Up" hotkeys and their key-down counterparts (if any) always use the keyboard hook.</p>
       <p>관련해서 한 마디 하자면, 위와 비슷한 테크닉은 핫키를 접두 키로 만드는 것입니다. 핫키를 뗄 때 촉발되지만, 다른 키를 누르지 않는 한, 누르고 있는 동안에만 촉발된다는 장점이 있습니다. 예를 들어:</p>
@@ -143,21 +143,28 @@ return</pre>
 <pre>RWin::return</pre>
 
 <h2 id="Context">문맥-감지 핫키</h2>
-<p><a href="commands/_IfWinActive.htm">#IfWinActive/Exist</a>와 <a href="commands/_If.htm">#If</a> 지시어를 사용하면 특정 조건에 따라 핫키가 다른 행위를 수행하게 (또는 전혀 못하게) 만들 수 있습니다. 예를 들어:</p>
-<pre>#IfWinActive, ahk_class Notepad
+<p><a href="lib/_IfWinActive.htm">#IfWinActive/Exist</a>와 <a href="lib/_If.htm">#If</a> 지시어를 사용하면 특정 조건에 따라 핫키가 다른 행위를 수행하게 (또는 전혀 못하게) 만들 수 있습니다. 예를 들어:</p>
+<pre>#IfWinActive ahk_class Notepad
 ^a::MsgBox 노트패드가 활성상태인 동안 Ctrl-A를 눌렀습니다. 다른 창에 Ctrl-A를 누르면 Ctrl-A 키눌림이 그 창으로 전송됩니다.
 #c::MsgBox 노트패드가 활성화되어 있는 동안 Win-C를 눌렀습니다.
 
 #IfWinActive
 #c::MsgBox 노트패드가 아닌 다른 창이 활성 상태인 동안 Win-C를 눌렀습니다.
 
-#If MouseIsOver("ahk_class Shell_TrayWnd") <em>; For MouseIsOver, see <a href="commands/_If.htm#ExVolume">#If example 1</a>.</em>
+#If MouseIsOver("ahk_class Shell_TrayWnd") <em>; For MouseIsOver, see <a href="lib/_If.htm#ExVolume">#If example 1</a>.</em>
 WheelUp::Send {Volume_Up}     <em>; 태스크바 위에서 휠을 돌립니다: 볼륨을 높이거나/내립니다.</em>
 WheelDown::Send {Volume_Down} <em>;</em>
 </pre>
 
 <h2 id="combo">Custom Combinations</h2>
-<p>두 키 사이에 " &amp; "을 사용하여 맞춤 조합을 정의할 수 있습니다 (조이스틱 버튼 제외). 아래의 예에서, Numpad0를 누른 채로 두 번째 키를 누르면 핫키가 촉발됩니다:</p>
+<p>Normally shortcut key combinations consist of optional prefix/modifier keys (Ctrl, Alt, Shift and LWin/RWin) and a single suffix key. The standard modifier keys are designed to be used in this manner, so normally have no immediate effect when pressed down.</p>
+<p>A custom combination of two keys (including mouse but not joystick buttons) can be defined by using " &amp; " between them. Because they are intended for use with prefix keys that are not normally used as such, custom combinations have the following special behavior:</p>
+<ul>
+  <li>The prefix key loses its native function, unless it is a standard modifier key or toggleable key such as <kbd>CapsLock</kbd>.</li>
+  <li>If the prefix key is also used as a suffix in another hotkey, by default that hotkey is fired upon release, and is not fired at all if it was used to activate a custom combination. <span class="ver">[v1.1.14+]:</span> If there is both a key-down hotkey and a <a href="#keyup">key-up</a> hotkey, both hotkeys are fired at once. The fire-on-release effect is disabled if the <a href="#Tilde">tilde prefix</a> is applied to the prefix key in at least one active custom combination or the suffix hotkey itself.</li>
+</ul>
+<p class="note"><strong>Note:</strong> For combinations with standard modifier keys, it is usually better to use the standard syntax. For example, use <code>&lt;+s::</code> rather than <code>LShift &amp; s::</code>.</p>
+<p>아래의 예에서, Numpad0를 누른 채로 두 번째 키를 누르면 핫키가 촉발됩니다:</p>
 <pre id="prefix">Numpad0 &amp; Numpad1::MsgBox Numpad0을 누르고 있는 동안 Numpad1을 눌렀습니다.
 Numpad0 &amp; Numpad2::Run Notepad</pre>
 <p><strong>The prefix key loses its native function:</strong> In the above example, Numpad0 becomes a <em>prefix key</em>; but this also causes Numpad0 to lose its original/native function when it is pressed by itself. 이를 피하기 위해, 스크립트는 Numpad0가 새 행위를 수행하도록 구성할 수 있습니다. 예를 들어 다음과 같이:</p>
@@ -165,8 +172,7 @@ Numpad0 &amp; Numpad2::Run Notepad</pre>
 Numpad0::Send {Numpad0}  <em>; Numpad0를 <i>떼면</i> Numpad0 키눌림을 생산하도록 만듭니다. 아래의 주석을 참조하십시오.</em></pre>
 <p><strong>Fire on release:</strong> The presence of one of the above custom combination hotkeys causes the <em>release</em> of Numpad0 to perform the indicated action, but only if you did not press any other keys while Numpad0 was being held down. <span class="ver">[v1.1.14+]</span>: 이 행위를 피할 수 있습니다. <a href="#Tilde">틸드 접두 심볼</a>을 두 핫키중 하나에 적용하면 됩니다.</p>
 <p id="combo_mods"><strong>Modifiers:</strong> Unlike a normal hotkey, custom combinations act as though they have the <a href="#wildcard">wildcard (*)</a> modifier by default. For example, <code>1 &amp; 2::</code> will activate even if <kbd>Ctrl</kbd> or <kbd>Alt</kbd> is held down when <kbd>1</kbd> and <kbd>2</kbd> are pressed, whereas <code>^1::</code> would be activated only by <kbd>Ctrl</kbd>+<kbd>1</kbd> and not <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>1</kbd>.</p>
-<p>For standard modifier keys, normal hotkeys typically work as well or better than "custom" combinations. For example, <code>&lt;+s::</code> is recommended over <code>LShift &amp; s::</code>.</p>
-<p>Combinations of three or more keys are not supported. Combinations which your keyboard hardware supports can usually be detected by using <a href="commands/_If.htm">#If</a> and <a href="commands/GetKeyState.htm#function">GetKeyState()</a>, but the results may be inconsistent. 예를 들어:</p>
+<p>Combinations of three or more keys are not supported. Combinations which your keyboard hardware supports can usually be detected by using <a href="lib/_If.htm">#If</a> and <a href="lib/GetKeyState.htm#function">GetKeyState()</a>, but the results may be inconsistent. 예를 들어:</p>
 <pre><em>; Press AppsKey and Alt in any order, then slash (/).</em>
 #if GetKeyState("AppsKey", "P")
 Alt &amp; /::MsgBox Hotkey activated.
@@ -181,7 +187,7 @@ AppsKey &amp; /::MsgBox Hotkey activated.
 <p><strong>Keyboard hook:</strong> Custom combinations involving keyboard keys always use the keyboard hook, as do any hotkeys which use the prefix key as a suffix. For example, <code>a &amp; b::</code> causes <code>^a::</code> to always use the hook.</p>
 
 <h2 id="Features">Other Features</h2>
-<p><strong>NumLock, CapsLock, 그리고 ScrollLock:</strong> 이런 키들은 강제로 언제나 켜거나("AlwaysOn") 언제나 끌("AlwaysOff")수 있습니다. 예를 들어: <code><a href="commands/SetNumScrollCapsLockState.htm">SetNumLockState</a> AlwaysOn</code>.</p>
+<p><strong>NumLock, CapsLock, 그리고 ScrollLock:</strong> 이런 키들은 강제로 언제나 켜거나("AlwaysOn") 언제나 끌("AlwaysOff")수 있습니다. 예를 들어: <code><a href="lib/SetNumScrollCapsLockState.htm">SetNumLockState</a> AlwaysOn</code>.</p>
 <p><strong>익스플로러의 핫키 오버라이딩하기:</strong> <kbd>Win</kbd>+<kbd>E</kbd> (#e) 그리고 <kbd>Win</kbd>+<kbd>R</kbd> (#r) 같은 윈도우즈 내장 핫키는 개별적으로 오버라이드할 수 있습니다. 그냥 스크립트에서 거기에 행위를 할당하기만 하면 됩니다. 자세한 것은 <a href="misc/Override.htm">오버라이드 페이지</a>를 참조하십시오.</p>
 <p><strong>Alt-Tab 대안:</strong> 핫키는 알트-탭 대신에 다른 수단을 제공할 수 있습니다. 예를 들어, 다음의 두 핫키로 오른 손으로 알트-탭을 수행할 수 있습니다:</p>
 <pre>RControl &amp; RShift::AltTab  <em>; 오른쪽 콘트롤 키를 누른 채로 오른쪽-쉬프트를 반복적으로 눌러 앞으로 이동합니다.</em>
@@ -221,9 +227,9 @@ return</pre>
 <p><a href="#Tilde">틸드 (~) 연산자</a>가 <a href="#prefix">접두 키</a>와 함께 한 번이라도 사용되면, 모든 조합에 대하여 그 접두 키의 행위가 바뀝니다. 예를 들어, 아래의 두 핫키 모두, 두 정의 중에 하나만 틸드가 포함되어 있음에도 불구하고 활성 창은 모두 오른쪽 클릭을 받습니다:</p>
 <pre>~RButton &amp; LButton::MsgBox 우버튼을 누르고 있는 동안 왼버튼을 눌렀습니다.
 RButton &amp; WheelUp::MsgBox 우버튼을 누르고 있는 동안 휠을 위로 돌렸습니다.</pre>
-<p><a href="commands/Suspend.htm">Suspend</a> 명령어는 임시로 모든 핫키를 불능화할 수 있습니다. 단, 여러분이 직접 면제한 핫키는 예외입니다. 더 선택의 범위를 넓히려면, <a href="commands/_IfWinActive.htm">#IfWinActive/Exist</a>를 사용하십시오.</p>
-<p><a href="commands/Hotkey.htm">Hotkey</a> 명령어를 수단으로 하여, 스크립트가 실행중인 동안 핫키를 동적으로 생성할 수 있습니다. Hotkey 명령어는 또 스크립트에 이미 존재하는 핫키들을 개별적으로 수정하거나 불능으로 만들거나 활성화할 수 있습니다..</p>
-<p>조이스틱 핫키는 현재 ^ (Ctrl)과 # (Win) 같은 수식 접두 심볼을 지원하지 않습니다. 그렇지만, <a href="commands/GetKeyState.htm#function">GetKeyState</a>를 사용하면 다음 예제에 보여주는 바와 같이 그 효과를 흉내낼 수 있습니다:</p>
+<p><a href="lib/Suspend.htm">Suspend</a> 명령어는 임시로 모든 핫키를 불능화할 수 있습니다. 단, 여러분이 직접 면제한 핫키는 예외입니다. 더 선택의 범위를 넓히려면, <a href="lib/_IfWinActive.htm">#IfWinActive/Exist</a>를 사용하십시오.</p>
+<p><a href="lib/Hotkey.htm">Hotkey</a> 명령어를 수단으로 하여, 스크립트가 실행중인 동안 핫키를 동적으로 생성할 수 있습니다. Hotkey 명령어는 또 스크립트에 이미 존재하는 핫키들을 개별적으로 수정하거나 불능으로 만들거나 활성화할 수 있습니다..</p>
+<p>조이스틱 핫키는 현재 ^ (Ctrl)과 # (Win) 같은 수식 접두 심볼을 지원하지 않습니다. 그렇지만, <a href="lib/GetKeyState.htm#function">GetKeyState</a>를 사용하면 다음 예제에 보여주는 바와 같이 그 효과를 흉내낼 수 있습니다:</p>
 <pre>Joy2::
 if not GetKeyState("Control")  <em>; 왼쪽 콘트롤키 오른쪽 콘트롤 키 눌 다 눌려 있지 않습니다.</em>
     return  <em>; 즉, 아무것도 하지 않습니다.</em>
@@ -231,16 +237,16 @@ MsgBox 콘트롤 키를 누르고 있는 동안 첫 번째 조이스틱의 두 �
 return</pre>
 <p>핫키가 계속 진행하기 위해 자신의 수식 키가 떼어지기를 기다려야할 경우가 있습니다. 다음 예제를 살펴 보겠습니다:</p>
 <pre>^!s::Send {Delete}</pre>
-<p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd>를 누르면 시스템이 마치 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>를 누른 것처럼 행동합니다 (시스템이 Ctrl-Alt-Delete를 공격적으로 탐지하기 때문입니다). 이를 돌아가려면 <a href="commands/KeyWait.htm">KeyWait</a>를 사용하여 키를 떼기를 기다립니다; 예를 들어:</p>
+<p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd>를 누르면 시스템이 마치 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>를 누른 것처럼 행동합니다 (시스템이 Ctrl-Alt-Delete를 공격적으로 탐지하기 때문입니다). 이를 돌아가려면 <a href="lib/KeyWait.htm">KeyWait</a>를 사용하여 키를 떼기를 기다립니다; 예를 들어:</p>
 <pre>^!s::
 KeyWait Control
 KeyWait Alt
 Send {Delete}
 return</pre>
 <p><code>#z::</code>와 같은 핫키 라벨이 "Invalid Hotkey"와 같은 에러를 야기하는 경우, 시스템의 키보드 레이아웃/언어에 지정된 문자가 있을 수 있습니다 (이 경우는 "Z"). 키보드 레이아웃에 존재하지 않는 다른 문자를 사용하십시오.</p>
-<p>핫키 라벨을 <a href="commands/Gosub.htm">Gosub</a>이나 <a href="commands/Goto.htm">Goto</a>의 목표로 삼을 수 있습니다. 예를 들어: <code>Gosub ^!s</code>. See <a href="misc/Labels.htm#hotkeys-and-hotstrings">Labels</a> for related details.</p>
+<p>핫키 라벨을 <a href="lib/Gosub.htm">Gosub</a>이나 <a href="lib/Goto.htm">Goto</a>의 목표로 삼을 수 있습니다. 예를 들어: <code>Gosub ^!s</code>. See <a href="misc/Labels.htm#hotkeys-and-hotstrings">Labels</a> for related details.</p>
 <p>핫키의 흔한 사용 사례 하나는 예를 들어 일련의 키눌림이나 마우스 클릭 같이 반복 행위를 시작하고 멈추는 것입니다. 이를 보여주는 예는 <a href="FAQ.htm#repeat">다음 FAQ 주제</a>를 참조하십시오.</p>
-<p>마지막으로, 각 스크립트는 <a href="misc/Threads.htm">멀티-쓰레드</a>와 비슷합니다. 덕분에 이전의 핫키 서브루틴이 여전히 실행중이더라도 새 핫키를 기동시킬 수 있습니다. 예를 들어, 현재 핫키에 의하여 <a href="commands/MsgBox.htm">메시지 상자</a>가 화면에 보여지고 있더라도 새 핫키를 기동시킬 수 있습니다.</p>
+<p>마지막으로, 각 스크립트는 <a href="misc/Threads.htm">멀티-쓰레드</a>와 비슷합니다. 덕분에 이전의 핫키 서브루틴이 여전히 실행중이더라도 새 핫키를 기동시킬 수 있습니다. 예를 들어, 현재 핫키에 의하여 <a href="lib/MsgBox.htm">메시지 상자</a>가 화면에 보여지고 있더라도 새 핫키를 기동시킬 수 있습니다.</p>
 
 <h2 id="alttab"><span id="AltTabDetail"></span>Alt-Tab 핫키</h2>
 <p>Alt-Tab hotkeys simplify the mapping of new key combinations to the system's Alt-Tab hotkeys, which are used to invoke a menu for switching tasks (activating windows).</p>
@@ -265,7 +271,7 @@ WheelUp::ShiftAltTab</pre>
 <p>If the script sent <code>{Alt Down}</code> (such as to invoke the Alt-Tab menu), it might also be necessary to send <code>{Alt Up}</code> as shown in the example further below.</p>
 
 <h3 id="AltTabRemarks">총평</h3>
-<p>현재, 모든 특수 알트-탭 행위는 위의 예제와 같이 직접적으로 핫키에 할당해야 합니다 (즉, 명령어처럼 사용할 수 없습니다). <span class="red"><a href="commands/_IfWinActive.htm">#IfWin</a> 또는 <a href="commands/_If.htm">#If</a>에 영향을 받지 않기 때문입니다.</span></p>
+<p>현재, 모든 특수 알트-탭 행위는 위의 예제와 같이 직접적으로 핫키에 할당해야 합니다 (즉, 명령어처럼 사용할 수 없습니다). <span class="red"><a href="lib/_IfWinActive.htm">#IfWin</a> 또는 <a href="lib/_If.htm">#If</a>에 영향을 받지 않기 때문입니다.</span></p>
 <p>An alt-tab action may take effect on key-down and/or key-up regardless of whether the <code>up</code> keyword is used, and cannot be combined with another action on the same key. For example, using both <code>F1::AltTabMenu</code> and <code>F1 up::OtherAction()</code> is unsupported.</p>
 <p id="AltTabWindow">맞춤 알트-탭 행위는 핫키를 통해서도 만들 수 있습니다. As the identity of the alt-tab menu differs between OS versions, it may be helpful to use a window group as shown below. For the examples above and below which use <code>ahk_group AltTabWindow</code>, this window group is expected to be defined in the <a href="Scripts.htm#auto">auto-execute section</a>. Alternatively, <code>ahk_group AltTabWindow</code> can be replaced with the appropriate <code>ahk_class</code> for your system.</p>
 <pre>GroupAdd AltTabWindow, ahk_class MultitaskingViewFrame  <em>; Windows 10</em>
@@ -295,9 +301,9 @@ GroupAdd AltTabWindow, ahk_class #32771  <em>; Older, or with classic alt-tab en
                 Run explorer.exe "%path1%"
     }</pre>
 <p id="function-details"><span class="ver">[v1.1.28+]:</span> Hotstrings can also be defined this way. Multiple hotkeys or hotstrings can be stacked together to call the same function.</p>
-<p>There must only be whitespace, comments or directives between the hotkey/hotstring labels or label and the function. Hotkey/hotstring labels defined this way are not visible to <a href="commands/IsLabel.htm">IsLabel()</a>, <a href="commands/Gosub.htm">Gosub</a> or other commands; however, the <a href="Scripts.htm#auto">auto-execute section</a> ends at the first hotkey/hotstring even if it is assigned a function.</p>
+<p>There must only be whitespace, comments or directives between the hotkey/hotstring labels or label and the function. Hotkey/hotstring labels defined this way are not visible to <a href="lib/IsLabel.htm">IsLabel()</a>, <a href="lib/Gosub.htm">Gosub</a> or other commands; however, the <a href="Scripts.htm#auto">auto-execute section</a> ends at the first hotkey/hotstring even if it is assigned a function.</p>
 <p>함수를 사용하면 얻는 큰 혜택은 지역 변수를 사용할 수 있다는 것입니다. 다른 목적으로 같은 변수를 두 개 이상의 핫키에서 사용할 때 충돌을 피할 수 있습니다. 또한 자체-문서화 핫키를 권장합니다. 위의 코드에서 함수 이름 자체가 핫키를 설명하고 있습니다.</p>
-<p><a href="commands/Hotkey.htm">핫키</a> 명령어를 사용해도 함수나 함수 객체를 핫키에 할당할 수 있습니다.</p>
+<p><a href="lib/Hotkey.htm">핫키</a> 명령어를 사용해도 함수나 함수 객체를 핫키에 할당할 수 있습니다.</p>
 
 </body>
 </html>

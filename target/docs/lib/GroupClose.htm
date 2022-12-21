@@ -32,7 +32,9 @@
 
 <h2 id="Remarks">논평</h2>
 <p><em>Mode</em> 매개변수가 "A"가 아닐 때, 이 명령어의 행위는 <em>GroupName</em>에 대한 이전 행위가 <a href="GroupActivate.htm">GroupActivate</a>이었는가 아니면 <a href="GroupDeactivate.htm">GroupDeactivate</a>인가에 의해 결정됩니다. <a href="GroupDeactivate.htm">GroupDeactivate</a>였다면, 이 명령어는 <strong>그룹의 멤버가 아닐 때만</strong> 활성 창을 닫습니다 (그렇지 않으면 아무 일도 하지 않습니다). 만약 <a href="GroupActivate.htm">GroupActivate</a>이었거나 아무것도 없었다면, 이 명령어는 활성창이 <strong>그룹의 멤버일 경우에만</strong> 닫습니다 (그렇지 않으면 아무일도 하지 않습니다). 이 행위 덕분에 <em>GroupName</em>의 <a href="GroupActivate.htm">GroupActivate</a> 또는 <a href="GroupDeactivate.htm">GroupDeactivate</a> 핫키와 짝이 되게 GroupClose을 핫키에 할당할 수 있습니다.</p>
+<p>When the active window closes, the system typically activates the next most recently active window. If the newly active window is a match for the same window specification as the window that was just closed, it is left active even though the default <em>Mode</em> would normally dictate that the <strong>oldest</strong> window should be activated next. <span class="ver">[v1.1.35+]:</span> If the newly active window is a match for <strong>any</strong> of the group's window specifications, it is left active.</p>
 <p>창 그룹에 관한 더 자세한 정보는 <a href="GroupAdd.htm">GroupAdd</a>를 참조하십시오.</p>
+
 <h2 id="Related">관련 항목</h2>
 <p><a href="GroupAdd.htm">GroupAdd</a>, <a href="GroupActivate.htm">GroupActivate</a>, <a href="GroupDeactivate.htm">GroupDeactivate</a></p>
 <h2 id="Examples">예제</h2>

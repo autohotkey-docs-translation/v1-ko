@@ -62,11 +62,11 @@ WheelUp::ShiftAltTab</pre>
 <h3 id="context-sensitive">핫키가 문맥을 감지하도록 만듭니다</h3>
 <p>작업 중인 창의 유형에 적절하게 가장-쉽게-닿을-수-있는 핫키가 행위를 수행하게 합니다. In the following example, the right <kbd>Ctrl</kbd> performs a different action depending on whether Notepad or Calculator is the active window:</p>
 <pre>#IfWinActive ahk_class Notepad
-RControl::WinMenuSelectItem, , , File, Save  <em>; 현재 파일을 노트패드에 저장합니다.</em>
+RControl::Send, ^s  <em>; 현재 파일을 노트패드에 저장합니다.</em>
 
 #IfWinActive Calculator
 RControl::Send, ^c!{tab}^v  <em>; 계산기의 내용을 이전의 활성 창 안으로 복사합니다.</em></pre>
-<p>자세한 것은 <a href="commands/_IfWinActive.htm">#IfWinActive</a>를 참조하십시오.</p>
+<p>자세한 것은 <a href="lib/_IfWinActive.htm">#IfWinActive</a>를 참조하십시오.</p>
 
 <h3 id="hotstrings">타자하면서 확장될 약어를 정의합니다</h3>
 <p>Also known as <a href="Hotstrings.htm">hotstrings</a>. 특별한 훈련이나 경험이 전혀 필요 없습니다. 예를 들어, 다음 줄이 들어 있는 스크립트는 타자하는 곳에서 ceo, cfo, 그리고 btw를 확장합니다:</p>
@@ -86,10 +86,10 @@ RControl::Send, ^c!{tab}^v  <em>; 계산기의 내용을 이전의 활성 창 �
 <p>예를 들어, 클릭 자체가 게임에 정상적으로 전송되는 동안에도 왼쪽 마우스 버튼은 핫키 행위를 촉발시킬 수 있습니다. (구문: <code>~LButton::</code>).</p>
 
 <h3 id="game-actions">Automate game actions on the screen</h3>
-<p><a href="commands/PixelSearch.htm">PixelSearch</a>, <a href="commands/PixelGetColor.htm">PixelGetColor</a>, 그리고 <a href="commands/ImageSearch.htm">ImageSearch</a>와 같은 명령어를 사용하여 게임을 자동화합니다.</p>
+<p><a href="lib/PixelSearch.htm">PixelSearch</a>, <a href="lib/PixelGetColor.htm">PixelGetColor</a>, 그리고 <a href="lib/ImageSearch.htm">ImageSearch</a>와 같은 명령어를 사용하여 게임을 자동화합니다.</p>
 
 <h3 id="keyboard-hook">Use the keyboard hook</h3>
-<p><a href="commands/_UseHook.htm">키보드 갈고리</a>를 선택적으로 사용하여 핫키를 구현합니다. 게임이 CPU를 덜 사용하는 동안 다른 핫키 방법보다 더 반응이 좋습니다. 키보드 갈고리는 또 게임의 한계를 극복할 수 있습니다. 어느 키든 얼마든지 게임 행위에 "맵"할 수 있습니다.</p>
+<p><a href="lib/_UseHook.htm">키보드 갈고리</a>를 선택적으로 사용하여 핫키를 구현합니다. 게임이 CPU를 덜 사용하는 동안 다른 핫키 방법보다 더 반응이 좋습니다. 키보드 갈고리는 또 게임의 한계를 극복할 수 있습니다. 어느 키든 얼마든지 게임 행위에 "맵"할 수 있습니다.</p>
 
 <h2 id="related">관련 주제</h2>
 <ul>

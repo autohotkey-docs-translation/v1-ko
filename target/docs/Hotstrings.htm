@@ -37,7 +37,7 @@ MsgBox "btw"를 타자했습니다.
 return
 
 :*:]d::  <em>; 이 핫스트링은 아래의 명령어를 통하여 "]d"를 현재 날짜와 시간으로 교체합니다.</em>
-<a href="commands/FormatTime.htm">FormatTime</a>, CurrentDateTime,, M/d/yyyy h:mm tt  <em>; 대략 다음과 같이 보일 것입니다: 9/1/2005 3:53 PM</em>
+<a href="lib/FormatTime.htm">FormatTime</a>, CurrentDateTime,, M/d/yyyy h:mm tt  <em>; 대략 다음과 같이 보일 것입니다: 9/1/2005 3:53 PM</em>
 SendInput %CurrentDateTime%
 return</pre>
 <p>위의 두 예제가 자동-교체 핫스트링이 아님에도 불구하고, 여러분이 타자한 약어는 기본으로 지워집니다. 자동으로 백스페이스로 지우는 것인데, 이 행위는 <a href="#b0">b0</a> 옵션으로 끌 수 있습니다.</p>
@@ -45,44 +45,44 @@ return</pre>
 <h2 id="EndChars">종료 문자</h2>
 <p><a href="#Asterisk">별표 옵션</a>이 효과를 발휘하지 않는 한, 핫스트링의 약어 뒤에 <em>종료 문자</em>를 타자해야 행위를 촉발시킬 수 있습니다. 종료 문자는 처음에 다음으로 구성됩니다: <strong>-()[]{}':;"/\,.?!`n `t</strong> (note that `n is <kbd>Enter</kbd>, `t is <kbd>Tab</kbd>, and there is a plain space between `n and `t). 이 문자 세트는 다음 예제와 같이 편집해 바꿀 수 있습니다. 이렇게 하면 <u>모든</u> 핫스트링에 대하여 새로운 종료 문자가 설정됩니다. 그 아래에 있는 핫트링에만 영향을 미치는 것이 아닙니다:</p>
 <pre>#Hotstring EndChars -()[]{}:;'"/\,.?!`n `t</pre>
-<p><span class="ver">[v1.1.28+]:</span> The ending characters can be changed while the script is running by calling the <a href="commands/Hotstring.htm">Hotstring</a> function as demonstrated below:</p>
+<p><span class="ver">[v1.1.28+]:</span> The ending characters can be changed while the script is running by calling the <a href="lib/Hotstring.htm">Hotstring</a> function as demonstrated below:</p>
 <pre>Hotstring("EndChars", "-()[]{}:;")</pre>
 
 <h2 id="Options">Options</h2>
 <p>핫스트링의 기본 행위는 두 가지 방법으로 바꿀 수 있습니다:</p>
 <ol>
-  <li><a href="commands/_Hotstring.htm">#Hotstring</a> 지시어로 바꿀 수 있습니다. 이 지시어 아래쪽에 있는 모든 핫스트링에 물리적으로 영향을 미칩니다. 다음 예제는 C와 R 옵션 효과를 줍니다: <code>#Hotstring <strong>c r</strong></code>.</li>
+  <li><a href="lib/_Hotstring.htm">#Hotstring</a> 지시어로 바꿀 수 있습니다. 이 지시어 아래쪽에 있는 모든 핫스트링에 물리적으로 영향을 미칩니다. 다음 예제는 C와 R 옵션 효과를 줍니다: <code>#Hotstring <strong>c r</strong></code>.</li>
   <li>핫스트링의 첫 번째 쌍점 쌍 사이에 옵션을 배치하는 방법이 있습니다. The following example puts the C and * options (case sensitive and "ending character not required") into effect for a single hotstring: <code>:<strong>c*</strong>:j@::john@somedomain.com</code>.</li>
 </ol>
 <p>아래의 리스트는 각 옵션을 기술합니다. 위의 방법을 사용하는 하나 이상의 옵션을 지정하면, 스페이스를 선택적으로 그 사이에 포함할 수 있습니다.</p>
 <p id="Asterisk"><strong>*</strong> (별표): An ending character (e.g. <kbd>Space</kbd>, <kbd>.</kbd>, or <kbd>Enter</kbd>) is not required to trigger the hotstring. 예를 들어:</p>
 <pre>:*:j@::jsmith@somedomain.com</pre>
-<p>위의 예제는 @ 문자를 타자하는 순간 그의 교체 문자열을 전송합니다. <a href="commands/_Hotstring.htm">#Hotstring 지시어</a>를 사용할 때, <strong>*0</strong>을 사용하면 이 옵션을 끌 수 있습니다.</p>
+<p>위의 예제는 @ 문자를 타자하는 순간 그의 교체 문자열을 전송합니다. <a href="lib/_Hotstring.htm">#Hotstring 지시어</a>를 사용할 때, <strong>*0</strong>을 사용하면 이 옵션을 끌 수 있습니다.</p>
 <p id="Question"><strong>?</strong> (물음표): 핫스트링이 다른 단어 안에 있어도 촉발됩니다; 즉, 바로 앞에 타자된 문자가 알파벳이나 숫자일 때 촉발됩니다. 예를 들어, <code>:?:al::airline</code>이 핫스트링이라면, "practical "을 타자하면 "practicairline "으로 교체됩니다. <strong>?0</strong>을 사용하면 이 옵션을 끌 수 있습니다.</p>
 <p id="b0"><strong>B0</strong> (B 다음에 0): 여러분이 타자한 약어를 지우기 위해 자동 백스페이스 지우기가 <u>일어나지 않습니다</u>. 그냥 <strong>B</strong>만 사용하면 백스페이싱이 바로 이전에 꺼진 곳 다음부터 켜집니다. A script may also do its own backspacing via {bs 5}, which sends <kbd>Backspace</kbd> five times. Similarly, it may send <kbd>←</kbd> five times via {left 5}. 예를 들어, 다음 핫스트링은 "&lt;em&gt;&lt;/em&gt;"을 생산하고 캐럿을 5 자리 왼쪽으로 이동시킵니다 (그래서 태그 사이에 있게 됩니다):</p>
 <pre>:*b0:&lt;em&gt;::&lt;/em&gt;{left 5}</pre>
 <p id="C"><strong>C</strong>: 대소문자를 구분합니다: 약어를 타자할 때, 스크립트에 정의된 대소문자에 정확하게 일치해야 합니다. <strong>C0</strong>을 사용하면 대소문자 구분을 끕니다.</p>
-<p id="C1"><strong>C1</strong>: 타자된 대소문자를 따르지 않습니다. 이 옵션을 사용하면 <a href="#auto">자동-교체 핫스트링</a>을 대소문자를 구분하도록 만들 수 있고 실제로 타자한 문자의 대소문자 규격을 따르지 않도록 만들 수 있습니다. 대소문자 규격을 준수하는 핫스트링은 (이것이 기본값) 여러분이 약어를 모두 대문자로 타자했다면 교체 텍스트도 역시 모두 대문자로 생산합니다. If you type the first letter in caps, the first letter of the replacement will also be capitalized (if it is a letter). 다른 방식으로 대소문자를 타자하면, 교체 문자열 역시 정확하게 정의된 대로 전송됩니다. <a href="commands/_Hotstring.htm">#Hotstring 지시어</a>를 사용할 때, <strong>C0</strong>을 사용하면 이 옵션을 끌 수 있습니다. 핫스트링이 다시 대소문자를 준수하도록 만듭니다.</p>
+<p id="C1"><strong>C1</strong>: 타자된 대소문자를 따르지 않습니다. 이 옵션을 사용하면 <a href="#auto">자동-교체 핫스트링</a>을 대소문자를 구분하도록 만들 수 있고 실제로 타자한 문자의 대소문자 규격을 따르지 않도록 만들 수 있습니다. 대소문자 규격을 준수하는 핫스트링은 (이것이 기본값) 여러분이 약어를 모두 대문자로 타자했다면 교체 텍스트도 역시 모두 대문자로 생산합니다. If you type the first letter in caps, the first letter of the replacement will also be capitalized (if it is a letter). 다른 방식으로 대소문자를 타자하면, 교체 문자열 역시 정확하게 정의된 대로 전송됩니다. <a href="lib/_Hotstring.htm">#Hotstring 지시어</a>를 사용할 때, <strong>C0</strong>을 사용하면 이 옵션을 끌 수 있습니다. 핫스트링이 다시 대소문자를 준수하도록 만듭니다.</p>
 <p id="Kn"><strong>Kn</strong>: 키-지연 시간: 이 옵션은 자주 사용되지 않습니다. 자동-백스페이싱이나 <a href="#auto">자동-교체</a>에 의하여 생산된 키눌림 사이에 지연 시간을 설정합니다. 새 지연 시간을 <strong>n</strong>에 지정합니다; 예를 들어, k10으로 지정하면 10ms 지연되고 k-1이면 지연이 없습니다. 이 옵션의 정확한 행위는 어떤 <a href="#SendMode">전송 모드</a>가 작동 중인가에 따라 달라집니다:</p>
 <ul>
-  <li>SI (SendInput): 이 모드에서는 지연이 불가능하기 때문에 키-지연이 무시됩니다. 예외는 SendInput을 <a href="commands/Send.htm#SendInputUnavail">사용할 수 없을</a> 때인데, 이 경우 핫스트링은 (키-지연을 준수하는) 아래의 SendPlay 모드로 돌아갑니다.</li>
-  <li>SP (SendPlay): 지연 길이 0이 기본값입니다. 이 값은 SendPlay에서는 -1과 같습니다 (지연 없음). 이 모드에서, 지연은 실제로 키눌림 사이의 지연이 아니라 <a href="commands/SetKeyDelay.htm#dur">PressDuration</a>입니다.</li>
-  <li>SE (SendEvent): 지연 길이 0이 기본값입니다. 대부분의 목적에 0을 권장합니다. (내부적으로 <a href="commands/Sleep.htm">Sleep 0</a>을 수행하기 때문에) 빠르면서도 여전히 다른 프로세스와 잘 협력합니다. k-1을 지정하면 전혀 지연이 없습니다. CPU가 자주 쉰다면 자동 교체를 더 빠르게 만드는 데 유용합니다. -1로 설정할 때, 스크립트의 프로세스-우선순위는 얼마나 빠르게 키눌림을 전송할 수 있는가에 중요한 요소가 됩니다. 스크립트의 우선순위를 높이려면, <code><a href="commands/Process.htm">Process</a>, Priority,, High</code>를 사용하십시오.</li>
+  <li>SI (SendInput): 이 모드에서는 지연이 불가능하기 때문에 키-지연이 무시됩니다. 예외는 SendInput을 <a href="lib/Send.htm#SendInputUnavail">사용할 수 없을</a> 때인데, 이 경우 핫스트링은 (키-지연을 준수하는) 아래의 SendPlay 모드로 돌아갑니다.</li>
+  <li>SP (SendPlay): 지연 길이 0이 기본값입니다. 이 값은 SendPlay에서는 -1과 같습니다 (지연 없음). 이 모드에서, 지연은 실제로 키눌림 사이의 지연이 아니라 <a href="lib/SetKeyDelay.htm#dur">PressDuration</a>입니다.</li>
+  <li>SE (SendEvent): 지연 길이 0이 기본값입니다. 대부분의 목적에 0을 권장합니다. (내부적으로 <a href="lib/Sleep.htm">Sleep 0</a>을 수행하기 때문에) 빠르면서도 여전히 다른 프로세스와 잘 협력합니다. k-1을 지정하면 전혀 지연이 없습니다. CPU가 자주 쉰다면 자동 교체를 더 빠르게 만드는 데 유용합니다. -1로 설정할 때, 스크립트의 프로세스-우선순위는 얼마나 빠르게 키눌림을 전송할 수 있는가에 중요한 요소가 됩니다. 스크립트의 우선순위를 높이려면, <code><a href="lib/Process.htm">Process</a>, Priority,, High</code>를 사용하십시오.</li>
 </ul>
 <p id="O"><strong>O</strong>: 자동 교체가 생산될 때 <a href="#auto">자동-교체 핫스트링</a>의 종료 문자를 생략합니다. 이것은 여전히 종료 문자를 요구함으로써 핫스트링을 명료하게 유지하기를 원하지만, 실제로는 종료 문자가 화면에 나타나지 않기를 바랄 때 유용합니다. For example, if <code>:o:ar::aristocrat</code> is a hotstring, typing "ar" followed by the spacebar will produce "aristocrat" with no trailing space, which allows you to make the word plural or possessive without having to press <kbd>Backspace</kbd>. <strong>O0</strong> (문자 O 다음에 숫자 0)을 사용하면 이 옵션을 끌 수 있습니다.</p>
 <p id="Pn"><strong>Pn</strong>: 핫스트링의 <a href="misc/Threads.htm">우선순위</a> (예, P1). 자주 사용되지 않는 이 옵션은 <a href="#auto">자동-교체 핫스트링</a>에 아무 효과가 없습니다.</p>
-<p id="raw"><strong>R</strong>: Send the replacement text <a href="commands/Send.htm#SendRaw">raw</a>; that is, without translating {Enter} to <kbd>Enter</kbd>, ^c to <kbd>Ctrl</kbd>+<kbd>C</kbd>, etc. 이 옵션은 <a href="#continuation">계속 섹션</a>을 가진 핫스트링에 자동으로 효과를 발휘합니다. <strong>R0</strong>으로 이 옵션을 끌 수 있습니다.</p>
+<p id="raw"><strong>R</strong>: Send the replacement text <a href="lib/Send.htm#SendRaw">raw</a>; that is, without translating {Enter} to <kbd>Enter</kbd>, ^c to <kbd>Ctrl</kbd>+<kbd>C</kbd>, etc. 이 옵션은 <a href="#continuation">계속 섹션</a>을 가진 핫스트링에 자동으로 효과를 발휘합니다. <strong>R0</strong>으로 이 옵션을 끌 수 있습니다.</p>
 <p class="note"><strong>Note:</strong> <a href="#T">Text mode</a> may be more reliable. The R and T options are mutually exclusive.</p>
 <p id="SendMode"><strong>SI</strong> 또는 <strong>SP</strong> 또는 <strong>SE</strong> <span class="ver">[v1.0.43+]:</span> <a href="#auto">자동-교체 핫스트링</a>이 키눌림을 전송하는 데 사용할 방법을 설정합니다. 이 옵션들은 서로 배타적입니다: 오직 한 번에 하나씩만 효과가 있습니다. 다음은 각 옵션을 기술합니다:</p>
 <ul>
-  <li>SI는 <a href="commands/Send.htm#SendInputDetail">SendInput</a>의 약자입니다. 전형적으로 다른 모드보다 월등한 속도와 신뢰성이 있습니다. 또다른 장점은 아래의 SendPlay와 같이 SendInput은 핫스트링의 <a href="#auto">텍스트 자동-교체</a>가 일어나는 동안 타자되는 모든 것들을 대기시킵니다. 이 덕분에 키눌림이 교체 문자열 여기 저기로 흩어지지 않습니다. SendInput을 <a href="commands/Send.htm#SendInputUnavail">사용할 수 없으면</a>, 핫스트링은 자동으로 대신에 SendPlay를 사용합니다.</li>
-  <li>SP는 <a href="commands/Send.htm#SendPlayDetail">SendPlay</a>의 약자입니다. 핫스트링을 더 넓은 범위의 게임에 작동시킬 수 있습니다.</li>
-  <li>SE는 <a href="commands/Send.htm#SendEvent">SendEvent</a>의 약자입니다. 1.0.43 이전 버전에서는 이 값이 기본입니다.</li>
+  <li>SI는 <a href="lib/Send.htm#SendInputDetail">SendInput</a>의 약자입니다. 전형적으로 다른 모드보다 월등한 속도와 신뢰성이 있습니다. 또다른 장점은 아래의 SendPlay와 같이 SendInput은 핫스트링의 <a href="#auto">텍스트 자동-교체</a>가 일어나는 동안 타자되는 모든 것들을 대기시킵니다. 이 덕분에 키눌림이 교체 문자열 여기 저기로 흩어지지 않습니다. SendInput을 <a href="lib/Send.htm#SendInputUnavail">사용할 수 없으면</a>, 핫스트링은 자동으로 대신에 SendPlay를 사용합니다.</li>
+  <li>SP는 <a href="lib/Send.htm#SendPlayDetail">SendPlay</a>의 약자입니다. 핫스트링을 더 넓은 범위의 게임에 작동시킬 수 있습니다.</li>
+  <li>SE는 <a href="lib/Send.htm#SendEvent">SendEvent</a>의 약자입니다. 1.0.43 이전 버전에서는 이 값이 기본입니다.</li>
 </ul>
 <p>위의 옵션 중 어느 것도 사용되지 않으면, 기본 모드는 <span class="ver">[v1.0.43]</span> 이후의 SendInput입니다. 그렇지만, SI 옵션과 다르게, SendInput을 사용할 수 없을 때 SendPlay 대신에 SendEvent을 사용합니다.</p>
-<p id="T"><strong>T</strong> <span class="ver">[v1.1.27+]</span>: Send the replacement text <a href="#raw">raw</a>, without translating each character to a keystroke. For details, see <a href="commands/Send.htm#SendText">Text mode</a>. Use <strong>T0</strong> or <strong>R0</strong> to turn this option back off, or override it with <strong>R</strong>.</p>
+<p id="T"><strong>T</strong> <span class="ver">[v1.1.27+]</span>: Send the replacement text <a href="#raw">raw</a>, without translating each character to a keystroke. For details, see <a href="lib/Send.htm#SendText">Text mode</a>. Use <strong>T0</strong> or <strong>R0</strong> to turn this option back off, or override it with <strong>R</strong>.</p>
 <p id="X"><strong>X</strong> <span class="ver">[v1.1.28+]</span>: Execute. Instead of replacement text, the hotstring accepts a command or expression to execute. For example, <code>:X:~mb::MsgBox</code> would cause a message box to be displayed when the user types "~mb" instead of auto-replacing it with the word "MsgBox". This is most useful when defining a large number of hotstrings which call functions, as it would otherwise require three lines per hotstring.</p>
-<p>When used with the <a href="commands/Hotstring.htm">Hotstring</a> function, the X option causes the <em>Replacement</em> parameter to be interpreted as a label or function name instead of replacement text. However, the X option has this effect only if it is specified each time the function is called.</p>
+<p>When used with the <a href="lib/Hotstring.htm">Hotstring</a> function, the X option causes the <em>Replacement</em> parameter to be interpreted as a label or function name instead of replacement text. However, the X option has this effect only if it is specified each time the function is called.</p>
 <p id="z"><strong>Z</strong>: 자주 사용되지 않는 이 옵션은 핫스트링이 촉발된 다음 핫스트링 인식자를 재설정합니다. 다른 말로, 스크립트는 이전에 타자한 모든 것들을 다 잊어 버리고 완전히 새로운 문자열을 기다리기 시작합니다. 이렇게 하면 원하지 않는 핫스트링의 촉발을 막을 수 있습니다. 예시를 위해, 다음 핫스트링을 연구해 봅시다:</p>
 <pre>:b0*?:11::
 SendInput xx
@@ -98,7 +98,7 @@ return</pre>
 )</pre>
 <p>이 기본 행위를 바꾸는 방법은 <a href="Scripts.htm#continuation">계속 섹션</a>을 참조하십시오. 계속 섹션이 있으면 핫스트링도 역시 <a href="#raw">날 모드</a>가 기본값이 됩니다. 이 특별한 기본값을 오버라이드하는 유일한 방법은 계속 섹션을 가진 각 핫스트링 안에 <a href="#raw">r0 옵션</a>을 지정하는 것입니다 (예, <code>:r0:text1::</code>).</p>
 <h2 id="variant">문맥-감지 핫스트링</h2>
-<p><a href="commands/_IfWinActive.htm">#IfWinActive/Exist</a> 지시어를 사용하면 선택된 핫스트링이 문맥을 감지하게 만들 수 있습니다. 문맥 감지 핫스트링은 활성창의 유형에 따라 다르게 교체하거나, 다르게 행위하거나, 또는 아무것도 하지 않습니다. 예를 들어:</p>
+<p><a href="lib/_IfWinActive.htm">#IfWinActive/Exist</a> 지시어를 사용하면 선택된 핫스트링이 문맥을 감지하게 만들 수 있습니다. 문맥 감지 핫스트링은 활성창의 유형에 따라 다르게 교체하거나, 다르게 행위하거나, 또는 아무것도 하지 않습니다. 예를 들어:</p>
 <pre>#IfWinActive ahk_class Notepad
 ::btw::이 교체 텍스트는 노트패드에만 나타납니다.
 #IfWinActive
@@ -109,33 +109,33 @@ return</pre>
 <p>저자: <a href="http://www.biancolo.com/blog/autocorrect/">Jim Biancolo</a> and <a href="https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings">Wikipedia's Lists of Common Misspellings</a></p>
 
 <h2 id="remarks">논평</h2>
-<p><code>%MyVar%</code>와 같은 변수 참조는 현재 자동 교체 텍스트 안에서 지원하지 않습니다. 이를 해결하기 위해, <a href="#auto">auto-replace</a> 같은 핫스트링을 만들지 마십시오. 대신에, 약어 바로 아래에 <a href="commands/Send.htm#SendInput">SendInput</a> 명령어를 사용하고, 뒤이어서 단어 Return만 있는 줄을 배치하십시오.</p>
+<p><code>%MyVar%</code>와 같은 변수 참조는 현재 자동 교체 텍스트 안에서 지원하지 않습니다. 이를 해결하기 위해, <a href="#auto">auto-replace</a> 같은 핫스트링을 만들지 마십시오. 대신에, 약어 바로 아래에 <a href="lib/Send.htm#SendInput">SendInput</a> 명령어를 사용하고, 뒤이어서 단어 Return만 있는 줄을 배치하십시오.</p>
 <p>교체한 뒤에 따로 더 스페이스나 탭을 전송하려면, 스페이스나 탭을 교체 뒤에 포함하고 마지막 문자를 액센트/백틱(`)으로 만드십시오. 예를 들어:</p>
 <pre>:*:btw::By the way `</pre>
-<p id="NoMouse">By default, any click of the left or right mouse button will reset the hotstring recognizer. 다른 말로, 스크립트는 이전에 타자된 것들을 모두 잊어 버리고 전적으로 새로운 핫스트링을 기다립니다 (이것이 마음에 들지 않으면, , 다음 줄 <code><a href="commands/_Hotstring.htm">#Hotstring</a> NoMouse</code>를 스크립트에 지정하십시오). 이 "마우스 클릭에 리셋" 행위가 기본값입니다. 왜냐하면 각 클릭은 전형적으로 텍스트 삽입 위치를 이동시키거나 (캐럿) 키보드 초점을 새로운 콘트롤/필드로 설정하기 때문입니다. 그런 경우, 보통 다음이 바람직합니다: 1) <a href="#Question">물음표 옵션</a>이 없더라도 핫스트링을 촉발시킵니다; 2) 마우스를 클릭한 후에 타자한 것이 우발적으로 이전에 타자한 것과 더불어 유효한 약어를 형성할 때 촉발을 막습니다</p>
-<p id="focus-reset">The hotstring recognizer checks the active window each time a character is typed, and resets if a different window is active than before. If the active window changes but reverts before any characters are typed, the change is not detected (but the hotstring recognizer may be reset for some other reason). The hotstring recognizer can also be reset by calling <code><a href="commands/Hotstring.htm#Reset">Hotstring("Reset")</a></code>.</p>
-<p>내장 변수 <strong>A_EndChar</strong>에 종료 문자가 들어 있습니다. 타자하면 가장 최근의 자동-교체되지-않은 핫스링이 촉발됩니다. (<a href="#Asterisk">* 옵션 때문에</a>) 종료 문자가 필요하지 않으면, 비어 있습니다. A_EndChar는 Send 명령어를 사용하는 핫스트링을 만들 때 유용합니다. 또는 그의 행위가 타자된 종료 문자에 따라 바뀌어야 하는 핫스트링을 만들 때 유용합니다. 종료 문자 자체를 보내려면, <code>SendRaw %A_EndChar%</code>를 사용합니다 (<a href="commands/Send.htm">SendRaw</a>가 사용된 이유는 !{}와 같은 문자들이 보통의 Send 명령어로는 올바르게 전송되지 않기 때문입니다).</p>
+<p id="NoMouse">By default, any click of the left or right mouse button will reset the hotstring recognizer. 다른 말로, 스크립트는 이전에 타자된 것들을 모두 잊어 버리고 전적으로 새로운 핫스트링을 기다립니다 (이것이 마음에 들지 않으면, , 다음 줄 <code><a href="lib/_Hotstring.htm">#Hotstring</a> NoMouse</code>를 스크립트에 지정하십시오). 이 "마우스 클릭에 리셋" 행위가 기본값입니다. 왜냐하면 각 클릭은 전형적으로 텍스트 삽입 위치를 이동시키거나 (캐럿) 키보드 초점을 새로운 콘트롤/필드로 설정하기 때문입니다. 그런 경우, 보통 다음이 바람직합니다: 1) <a href="#Question">물음표 옵션</a>이 없더라도 핫스트링을 촉발시킵니다; 2) 마우스를 클릭한 후에 타자한 것이 우발적으로 이전에 타자한 것과 더불어 유효한 약어를 형성할 때 촉발을 막습니다</p>
+<p id="focus-reset">The hotstring recognizer checks the active window each time a character is typed, and resets if a different window is active than before. If the active window changes but reverts before any characters are typed, the change is not detected (but the hotstring recognizer may be reset for some other reason). The hotstring recognizer can also be reset by calling <code><a href="lib/Hotstring.htm#Reset">Hotstring("Reset")</a></code>.</p>
+<p>내장 변수 <strong>A_EndChar</strong>에 종료 문자가 들어 있습니다. 타자하면 가장 최근의 자동-교체되지-않은 핫스링이 촉발됩니다. (<a href="#Asterisk">* 옵션 때문에</a>) 종료 문자가 필요하지 않으면, 비어 있습니다. A_EndChar는 Send 명령어를 사용하는 핫스트링을 만들 때 유용합니다. 또는 그의 행위가 타자된 종료 문자에 따라 바뀌어야 하는 핫스트링을 만들 때 유용합니다. 종료 문자 자체를 보내려면, <code>SendRaw %A_EndChar%</code>를 사용합니다 (<a href="lib/Send.htm">SendRaw</a>가 사용된 이유는 !{}와 같은 문자들이 보통의 Send 명령어로는 올바르게 전송되지 않기 때문입니다).</p>
 <p>쉼표, 퍼센트 사인, 그리고 단일-쌍점은 핫스트링 정의 안에서 <a href="misc/EscapeChar.htm">피신 시킬 </a> 필요가 없지만, 왼쪽에 스페이스나 탭이 있는 백틱과 쌍점은 피신시켜야 합니다. 완전한 목록은 <a href="misc/EscapeChar.htm">피신 연속열</a>을 참조하십시오.</p>
-<p>{Enter}와 같은 <a href="commands/Send.htm">Send 명령어</a>의 특수 문자들은 (<a href="#raw">날 옵션</a>이 사용되지 않는 한) <a href="#auto">텍스트 자동-교체</a>에 지원되지만, 핫스트링 약어 자체는 이를 사용하지 않습니다. 대신에, `n를 <kbd>Enter</kbd> 키에 그리고 `t를 (또는 문자 그대로의 탭문자) <kbd>Tab</kbd>에 지정하십시오 (완전한 목록은 <a href="misc/EscapeChar.htm">피신 연속열</a>을 참조하십시오). 예를 들어, 다음 핫스트링 <code>:*:ab`t::</code>은 "ab"를 타자하고 바로 탭이 따라오면 촉발됩니다.</p>
+<p>{Enter}와 같은 <a href="lib/Send.htm">Send 명령어</a>의 특수 문자들은 (<a href="#raw">날 옵션</a>이 사용되지 않는 한) <a href="#auto">텍스트 자동-교체</a>에 지원되지만, 핫스트링 약어 자체는 이를 사용하지 않습니다. 대신에, `n를 <kbd>Enter</kbd> 키에 그리고 `t를 (또는 문자 그대로의 탭문자) <kbd>Tab</kbd>에 지정하십시오 (완전한 목록은 <a href="misc/EscapeChar.htm">피신 연속열</a>을 참조하십시오). 예를 들어, 다음 핫스트링 <code>:*:ab`t::</code>은 "ab"를 타자하고 바로 탭이 따라오면 촉발됩니다.</p>
 <p>스페이스와 탭은 핫스트링 정의 안에서 문자 그대로 취급됩니다. 예를 들어, 다음은 두 개의 다른 결과를 생산합니다: <code>::btw::by the way</code> 그리고 <code>::btw:: by the way</code>.</p>
-<p>핫스트링 약어는 40 문자를 넘을 수 없습니다. 이 길이를 초과하면 프로그램은 경고할 것입니다. 대조적으로, 핫스트링 교체 텍스트의 길이는 <a href="#SendMode">전송 모드</a>가 기본값인 SendInput일 때 대략 5000 문자로 제한됩니다. 제한을 16,383 문자로 증가시키려면 다른 <a href="#SendMode">전송 모드</a>중 하나로 전환하면 됩니다. 게다가, 핫스트링의 몸체에 <code><a href="commands/Send.htm#SendPlayDetail">SendPlay</a> %MyVariable%</code>를 사용하면 무제한 텍스트도 전송할 수 있습니다.</p>
+<p>핫스트링 약어는 40 문자를 넘을 수 없습니다. 이 길이를 초과하면 프로그램은 경고할 것입니다. 대조적으로, 핫스트링 교체 텍스트의 길이는 <a href="#SendMode">전송 모드</a>가 기본값인 SendInput일 때 대략 5000 문자로 제한됩니다. 제한을 16,383 문자로 증가시키려면 다른 <a href="#SendMode">전송 모드</a>중 하나로 전환하면 됩니다. 게다가, 핫스트링의 몸체에 <code><a href="lib/Send.htm#SendPlayDetail">SendPlay</a> %MyVariable%</code>를 사용하면 무제한 텍스트도 전송할 수 있습니다.</p>
 <p>핫스트링이 정의된 순서에 따라 서로 간에 우선 순위가 결정됩니다. 다른 말로, 하나 이상의 핫스트링이 여러분이 타자한 것에 부합하면, 제일 먼저 나열된 것만 효과를 발휘합니다. 관련 주제: <a href="#variant">문맥-감지 핫스트링</a>.</p>
 <p>여러분이 타자한 백스페이스는 모두 핫스트링의 감지를 위한 목적에 고려됩니다. However, the use of <kbd>↑</kbd>, <kbd>→</kbd>, <kbd>↓</kbd>, <kbd>←</kbd>, <kbd>PgUp</kbd>, <kbd>PgDn</kbd>, <kbd>Home</kbd>, and <kbd>End</kbd> to navigate within an editor will cause the hotstring recognition process to reset. 다른 말로, 전적으로 새로운 핫스트링을 기다리기 시작합니다.</p>
 <p>핫스트링은 활성 창이 키눌림을 무시할 때에도 타자될 수 있습니다. 다른 말로, 핫스트링은 촉발 약어가 전혀 보이지 않을지라도 여전히 촉발됩니다. In addition, you may still press <kbd>Backspace</kbd> to undo the most recently typed keystroke (even though you can't see the effect).</p>
-<p id="label">핫스트링 라벨에 <a href="commands/Gosub.htm">Gosub</a>는 <a href="commands/Goto.htm">Goto</a>를 적용할 수 있습니다. 첫 번째 쌍점 쌍을 (다른 옵션 심볼을 포함하여) 그이 이름 앞에 포함하면 됩니다. 예를 들어: <code>Gosub ::xyz</code>. 그렇지만, <a href="#auto">한-줄 (자동-교체) 핫스트링</a>에는 점프해봐야 아무 것도 하지 않습니다. 기껏해야 <a href="commands/Return.htm">return</a>을 실행하는 것으로 끝납니다.</p>
-<p>핫스트링은 관제가 되지 않고 보이지 않는 <a href="commands/Input.htm">Input</a> 명령어 동안에는 촉발되지 않지만, 보이는 Input은 핫스트링을 촉발시킬 수 있습니다.</p>
-<p id="InputLevel">기본값으로, 핫스트링은 AutoHotkey 스크립트가 생산하는 키눌림에는 촉발되지 않습니다. 그래서 핫스트링끼리 서로 촉발하는 무한 회돌이에 빠질 가능성을 피합니다. <span class="ver">[v1.1.06]</span> 이후 버전에서 이 행위는 <a href="commands/_InputLevel.htm">#InputLevel</a>과 <a href="commands/SendLevel.htm">SendLevel</a>로 통제할 수 있습니다. 그렇지만, 자동-교체 핫스트링은 언제나 레벨 0으로 전송되고 그러므로 <a href="commands/_UseHook.htm">갈고리 핫키</a>나 핫스트링을 촉발하지 않습니다.</p>
-<p><span class="ver">[v1.1.28+]:</span> Hotstrings can be created dynamically by means of the <a href="commands/Hotstring.htm">Hotstring</a> function, which can also modify, disable, or enable the script's existing hotstrings individually.</p>
-<p>어떤 목적에는 핫스트링보다 <a href="commands/Input.htm">Input</a> 명령어가 더 유연합니다. 예를 들어, 활성 창에 키눌림을 감출 수 있습니다 (게임 같은 경우). 또 <kbd>Esc</kbd>와 같이 문자가-아닌 종료 키를 지원합니다.</p>
-<p>핫스트링을 담고 있는 스크립트는 <a href="commands/_InstallKeybdHook.htm">키보드 갈고리</a>를 자동으로 사용합니다.</p>
+<p id="label">핫스트링 라벨에 <a href="lib/Gosub.htm">Gosub</a>는 <a href="lib/Goto.htm">Goto</a>를 적용할 수 있습니다. 첫 번째 쌍점 쌍을 (다른 옵션 심볼을 포함하여) 그이 이름 앞에 포함하면 됩니다. 예를 들어: <code>Gosub ::xyz</code>. 그렇지만, <a href="#auto">한-줄 (자동-교체) 핫스트링</a>에는 점프해봐야 아무 것도 하지 않습니다. 기껏해야 <a href="lib/Return.htm">return</a>을 실행하는 것으로 끝납니다.</p>
+<p>핫스트링은 관제가 되지 않고 보이지 않는 <a href="lib/Input.htm">Input</a> 명령어 동안에는 촉발되지 않지만, 보이는 Input은 핫스트링을 촉발시킬 수 있습니다.</p>
+<p id="InputLevel">기본값으로, 핫스트링은 AutoHotkey 스크립트가 생산하는 키눌림에는 촉발되지 않습니다. 그래서 핫스트링끼리 서로 촉발하는 무한 회돌이에 빠질 가능성을 피합니다. <span class="ver">[v1.1.06]</span> 이후 버전에서 이 행위는 <a href="lib/_InputLevel.htm">#InputLevel</a>과 <a href="lib/SendLevel.htm">SendLevel</a>로 통제할 수 있습니다. 그렇지만, 자동-교체 핫스트링은 언제나 레벨 0으로 전송되고 그러므로 <a href="lib/_UseHook.htm">갈고리 핫키</a>나 핫스트링을 촉발하지 않습니다.</p>
+<p><span class="ver">[v1.1.28+]:</span> Hotstrings can be created dynamically by means of the <a href="lib/Hotstring.htm">Hotstring</a> function, which can also modify, disable, or enable the script's existing hotstrings individually.</p>
+<p>어떤 목적에는 핫스트링보다 <a href="lib/Input.htm">Input</a> 명령어가 더 유연합니다. 예를 들어, 활성 창에 키눌림을 감출 수 있습니다 (게임 같은 경우). 또 <kbd>Esc</kbd>와 같이 문자가-아닌 종료 키를 지원합니다.</p>
+<p>핫스트링을 담고 있는 스크립트는 <a href="lib/_InstallKeybdHook.htm">키보드 갈고리</a>를 자동으로 사용합니다.</p>
 <p>핫스트링은 다음과 같은 방식으로 핫키와 동일하게 행위합니다:</p>
 <ul>
-  <li><a href="commands/Suspend.htm">Suspend</a> 명령어에 영향을 받습니다.</li>
-  <li><a href="commands/_MaxThreads.htm">#MaxThreads</a>와 <a href="commands/_MaxThreadsPerHotkey.htm">#MaxThreadsPerHotkey</a>를 준수합니다 (<a href="commands/_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a>는 제외).</li>
-  <li>핫스트링을 담고 있는 스크립트는 자동으로 <a href="commands/_Persistent.htm">영속적</a>이 됩니다.</li>
+  <li><a href="lib/Suspend.htm">Suspend</a> 명령어에 영향을 받습니다.</li>
+  <li><a href="lib/_MaxThreads.htm">#MaxThreads</a>와 <a href="lib/_MaxThreadsPerHotkey.htm">#MaxThreadsPerHotkey</a>를 준수합니다 (<a href="lib/_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a>는 제외).</li>
+  <li>핫스트링을 담고 있는 스크립트는 자동으로 <a href="lib/_Persistent.htm">영속적</a>이 됩니다.</li>
   <li>자동-교체-아닌 핫스트링은 기동될 때 새로 <a href="misc/Threads.htm">쓰레드</a>를 생성합니다. 게다가, <a href="Variables.htm#ThisHotkey">A_ThisHotkey</a>와 같은 내장 핫키 변수를 갱신합니다.</li>
 </ul>
-<p>알려진 한계: 자바 어플리케이션 같은 어떤 시스템에서는 핫스트링이 사용자가 (데드 키를 통하여) 방언 문자를 타자하지 못하도록 방해합니다. 이를 해결하려면, <a href="commands/Suspend.htm">Suspend</a>를 임시로 켤 수 있습니다 (모든 핫스트링이 꺼집니다).</p>
+<p>알려진 한계: 자바 어플리케이션 같은 어떤 시스템에서는 핫스트링이 사용자가 (데드 키를 통하여) 방언 문자를 타자하지 못하도록 방해합니다. 이를 해결하려면, <a href="lib/Suspend.htm">Suspend</a>를 임시로 켤 수 있습니다 (모든 핫스트링이 꺼집니다).</p>
 
 <h2 id="Function">Function Hotstrings <span class="ver">[v1.1.28+]</span></h2>
 <p>One or more hotstrings can be assigned a <a href="Functions.htm">function</a> by simply defining it immediately after the hotstring label, as in this example:</p>
@@ -154,11 +154,11 @@ return</pre>
     }
 </pre>
 <p>For additional details, see <a href="Hotkeys.htm#function-details">Function Hotkeys</a>.</p>
-<p>The <a href="commands/Hotstring.htm">Hotstring</a> function can also be used to assign a function or function object to a hotstring.</p>
+<p>The <a href="lib/Hotstring.htm">Hotstring</a> function can also be used to assign a function or function object to a hotstring.</p>
 
 <h2 id="Helper">핫스트링 도움 함수</h2>
 <p>안드레아스 보루타(Andreas Borutta)가 다음 스크립트를 제시했습니다. 핫스트링을 많이 사용한다면 아주 유용할 것입니다. <kbd>Win</kbd>+<kbd>H</kbd> (또는 또다른 핫키)를 누르면, 현재 선택된 텍스트가 핫스트링으로 변환됩니다. 예를 들어, 워드 프로세서에서 "by the way"를 선택했다면, <kbd>Win</kbd>+<kbd>H</kbd>를 누르면 여러분에게 그의 약자를 요구할 것입니다 (예, btw) 그리고 그 새 핫스트링을 스크립트에 추가합니다. 다음 스크립트를 재적재하여 그 핫스트링을 활성화합니다.</p>
-<p class="note"><strong>Note:</strong> The <a href="commands/Hotstring.htm">Hotstring</a> function can be used to create new hotstrings without reloading. Take a look at the <a href="commands/Hotstring.htm#ExHelper">first example</a> in the example section of the function's page to see how this could be done.</p>
+<p class="note"><strong>Note:</strong> The <a href="lib/Hotstring.htm">Hotstring</a> function can be used to create new hotstrings without reloading. Take a look at the <a href="lib/Hotstring.htm#ExHelper">first example</a> in the example section of the function's page to see how this could be done.</p>
 <pre class="NoIndent">#h::  <em>; Win+H 핫키
 ; 현재 선택된 텍스트를 얻는다. "ControlGet Selected" 대신에
 ; 클립보드를 사용한다. 왜냐하면 대부분의 편집기에 작동하기 때문이다.
@@ -176,8 +176,8 @@ if ErrorLevel  <em>; ClipWait 시간 종료.</em>
 ; 다른 문자들에 대해서도 똑 같이 교체한다. 그렇지 않으면
 ; 날 모드에서 문제를 일으킬 수 있다:</em>
 StringReplace, Hotstring, Clipboard, ``, ````, All  <em>; 아래의 다른 것들과의 간섭을 피하기 위해 이걸 먼저 교체한다.</em>
-StringReplace, Hotstring, Hotstring, `r`n, ``r, All  <em>; MS Word, 등등에서 `r을 사용하는 것이 `n보다 더 잘 작동한다 .</em>
-StringReplace, Hotstring, Hotstring, `n, ``r, All
+StringReplace, Hotstring, Hotstring, `r`n, ``n, All
+StringReplace, Hotstring, Hotstring, `n, ``n, All
 StringReplace, Hotstring, Hotstring, %A_Tab%, ``t, All
 StringReplace, Hotstring, Hotstring, `;, ```;, All
 Clipboard := ClipboardOld  <em>; 클립보드의 이전 내용을 복구한다.

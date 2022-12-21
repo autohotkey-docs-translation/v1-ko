@@ -84,8 +84,7 @@
     <li>AutoHotkey를 설치하는 동안 UNICODE 또는 ANSI 중 하나를 골라야 합니다. 짧게 말해, 아마도 UNICODE를 선택하는 편이 좋습니다. 영문자-아닌 문자와 숫자들을 지원하거든요. 설치 버튼이 나올 때까지 계속 진행합니다.</li>
     <li>일단 끝났으면, 성공입니다! 섹션 b에서 계속합니다.</li>
 </ol>
-<p class="note">For a video instruction, watch
-<a href="https://youtu.be/HcgQlGeaPHw">Install and Hello World</a> on YouTube.</p>
+<p class="note">For a video instruction, watch <a href="https://youtu.be/HcgQlGeaPHw">Install and Hello World</a> on YouTube.</p>
 
 <h3 id="s12">b. 스크립트 만드는 법</h3>
 <p>오토핫키를 설치했으면, 뭔가 일을 시키고 싶겠지요. 오토핫키가 마법은 아닙니다. 우리 모두가 그렇기를 바라지만, 실제로는 아닙니다. 그래서 무슨 일을 하라고 지시할 필요가 있습니다. 이런 절차를 "스크립팅(Scripting)"이라고 부릅니다.</p>
@@ -100,7 +99,7 @@
     <li>"Edit Script"를 클릭합니다.</li>
     <li>창이 열릴 겁니다. 아마도 노트패드이겠지요. 그렇다면, 성공입니다!
     <p>이제 스크립트를 만들었으므로, 파일 안에 내용을 채워 넣어야 하겠습니다. 모든 내장 명령어와 함수 그리고 변수 목록은 <a href="#s5">section 5</a>에서 보실 수 있습니다.</p>
-    <p>다음은 핫키를 담고 있는 아주 간단한 스크립트입니다. 그 핫키가 눌리면 <a href="commands/Send.htm">Send</a> 명령어를 사용하여 텍스트를 타자합니다:</p>
+    <p>다음은 핫키를 담고 있는 아주 간단한 스크립트입니다. 그 핫키가 눌리면 <a href="lib/Send.htm">Send</a> 명령어를 사용하여 텍스트를 타자합니다:</p>
     <pre>^j::
 Send, 나의 첫 번째 스크립트
 return</pre>
@@ -254,7 +253,7 @@ return
 MsgBox, MSPaint에서 WIN+SPACE를 눌렀습니다!
 return
 ::msg::You typed msg in MSPaint!</pre>
-<p class="note">For more in-depth information and similar commands, check out the <a href="commands/_IfWinActive.htm">#IfWinActive</a> page.</p>
+<p class="note">For more in-depth information and similar commands, check out the <a href="lib/_IfWinActive.htm">#IfWinActive</a> page.</p>
 <h3 id="s23">c. 파일당 다중 핫키/핫스트링</h3>
 <p>어떤 이유로 이런 생각이 드실지 모르겠습니다. 그래서, 명확하게 밝혀 둡니다: 오토핫키는 파일 하나당 <i>얼마든지 많은</i> 핫키와 핫스트링을 가질 수 있습니다. 1이든 3253이든 (그 이상이든) 상관없습니다.</p>
 <pre>#i::
@@ -291,9 +290,9 @@ SendInput, [b]{Ctrl down}v{Ctrl up}[/b] <em>; Wraps the selected text in BBCode 
 return  <em>; This ends the hotkey. The code below this will not be executed when pressing the hotkey.</em></pre>
 
 <h2 id="s3">3 - 키 눌림 전송하기</h2>
-<p>그래서 이제 키들을 프로그램으로 전송(타자)하기로 결정합니다.  <a href="commands/Send.htm">Send</a> 명령어를 사용하면 됩니다. This command literally sends keystrokes, to simulate typing or pressing of keys.</p>
+<p>그래서 이제 키들을 프로그램으로 전송(타자)하기로 결정합니다.  <a href="lib/Send.htm">Send</a> 명령어를 사용하면 됩니다. This command literally sends keystrokes, to simulate typing or pressing of keys.</p>
 <p>But before we get into things, we should talk about some common issues that people have.</p>
-<p>Just like hotkeys, the Send command has special keys too. <a href="commands/Send.htm">아주 많습니다.</a>. 다음은 가장 많이 사용하는 심볼 네 가지입니다:</p>
+<p>Just like hotkeys, the Send command has special keys too. <a href="lib/Send.htm">아주 많습니다.</a>. 다음은 가장 많이 사용하는 심볼 네 가지입니다:</p>
 <table class="info">
     <tr>
         <th class="center">심볼</th>
@@ -316,7 +315,7 @@ return  <em>; This ends the hotkey. The code below this will not be executed whe
         <td><kbd>Win</kbd>를 전송합니다 (윈도우즈 로고가 그려진 키) 그러므로 <code>Send #e</code>는 <kbd>Win</kbd>를 누른 다음 기호 <kbd>E</kbd>를 전송합니다.</td>
     </tr>
 </table>
-<p>The <a href="commands/Send.htm">gigantic table on the Send page</a> shows pretty much every special key built-in to AHK. 예를 들어: <code>{Enter}</code> 그리고 <code>{Space}</code>.</p>
+<p>The <a href="lib/Send.htm">gigantic table on the Send page</a> shows pretty much every special key built-in to AHK. 예를 들어: <code>{Enter}</code> 그리고 <code>{Space}</code>.</p>
 <p class="warning"><strong>주의:</strong> 이 테이블은 <a href="Hotkeys.htm">핫키</a>에 <b>적용되지 않습니다</b>. Meaning, you do not wrap <kbd>Ctrl</kbd> or <kbd>Enter</kbd> (or any other key) inside curly brackets when making a hotkey.</p>
 <p>다음 예제에서 핫키에 해서는 안되는 것들을 보여줍니다:</p>
 <pre><em>; 핫키를 만들 때...
@@ -329,7 +328,7 @@ return
 LCtrl::
 Send, AutoHotkey
 return</pre>
-<p>많은 사람들이 활괄호가 그냥 재미로 배치되어 있다고 생각합니다. 그러나 사실 <b>꼭 필요합니다</b>. 그렇게 해야 AHK가 <code>{!}</code>이 "느낌표"일 뿐 "<kbd>Alt</kbd> 키를 누르라"는 뜻이 아님을 이해합니다. 그래서 <a href="commands/Send.htm">Send</a> 페이지에 있는 테이블을 꼭 암기하시고 괄호를 제 자리에 배치하십시오. 예를 들어:</p>
+<p>많은 사람들이 활괄호가 그냥 재미로 배치되어 있다고 생각합니다. 그러나 사실 <b>꼭 필요합니다</b>. 그렇게 해야 AHK가 <code>{!}</code>이 "느낌표"일 뿐 "<kbd>Alt</kbd> 키를 누르라"는 뜻이 아님을 이해합니다. 그래서 <a href="lib/Send.htm">Send</a> 페이지에 있는 테이블을 꼭 암기하시고 괄호를 제 자리에 배치하십시오. 예를 들어:</p>
 <pre>Send, This text has been typed{!} <em>; Notice the ! between the curly brackets? That's because if it wasn't, AHK would press the ALT key.</em>
 </pre>
 <pre><em>; 위와 같지만,  이 번에는 ENTER 키입니다. AHK는 "Enter"를 타자해 버립니다
@@ -364,23 +363,23 @@ Send, {Up up}    <em>; 위 화살표 키를 뗍니다.</em></pre>
 두 번째 줄
 원하는 만큼 줄을 배치할 수 있습니다.
 )</pre>
-<p class="note"><strong>Note:</strong> There are several different forms of Send. 각자 따로 특별한 특징이 있습니다. If one form of Send does not work for your needs, try another type of Send. Simply replace the command name "Send" with one of the following: SendRaw, SendInput, SendPlay, SendEvent. 각자 어떤 일을 하는지에 관한 더 자세한 정보는 <a href="commands/Send.htm">여기를 읽어 보십시오</a>.</p>
+<p class="note"><strong>Note:</strong> There are several different forms of Send. 각자 따로 특별한 특징이 있습니다. If one form of Send does not work for your needs, try another type of Send. Simply replace the command name "Send" with one of the following: SendRaw, SendInput, SendPlay, SendEvent. 각자 어떤 일을 하는지에 관한 더 자세한 정보는 <a href="lib/Send.htm">여기를 읽어 보십시오</a>.</p>
 
 <h3 id="s31">a. 게임 </h3>
 <p class="warning"><strong>중요합니다:</strong> 많은 게임은, 특히 현대의 게임은, 속이는 것을 방지하는 기능이 있습니다. 예를 들어, 이런 종류의 게임으로는 GameGuard, Hackshield, PunkBuster, 등등이 있습니다. 이런 시스템을 우회하는 일은 게임사의 정책을 위반하는 것이며 그러면 여러분은 제명 당할 수 있습니다. 해결책은 대단히 복잡합니다.</p>
 <p>게임이 속임 방지 시스템이 있고 핫키와 핫스트링 그리고 Send 명령어가 작동하지 않는다면, 안타까운 일입니다. 그렇지만, 어떤 게임에서는 작동의 기회를 높일 수 있는 방법이 있지만, 마법의 <i>"당장 게임에서 작동하라"</i> 버튼은 없습니다. 그래서 포기하기 전에 이 <b>모든 것들을</b> 시도해 보십시오.</p>
 
-<p>DirectX와 관련된 문제도 있습니다. If you are having issues and you know the game uses DirectX, try the stuff described on the <a href="FAQ.htm#games">FAQ</a> page. More DirectX issues may occur when using <a href="commands/PixelSearch.htm">PixelSearch</a>, <a href="commands/PixelGetColor.htm">PixelGetColor</a> or <a href="commands/ImageSearch.htm">ImageSearch</a>. 어떤 색을 얻으려고 시도하는지에 상관없이 색깔이 검정색으로 바뀔 수 있습니다 (0x000000). 가능하면 창(Windowed 역주: 입력 방식을 전적으로 운영체제에 맡김) 모드에서 시험해 보십시오. 그러면 DirectX 문제가 해결될 지도 모릅니다.</p>
+<p>DirectX와 관련된 문제도 있습니다. If you are having issues and you know the game uses DirectX, try the stuff described on the <a href="FAQ.htm#games">FAQ</a> page. More DirectX issues may occur when using <a href="lib/PixelSearch.htm">PixelSearch</a>, <a href="lib/PixelGetColor.htm">PixelGetColor</a> or <a href="lib/ImageSearch.htm">ImageSearch</a>. 어떤 색을 얻으려고 시도하는지에 상관없이 색깔이 검정색으로 바뀔 수 있습니다 (0x000000). 가능하면 창(Windowed 역주: 입력 방식을 전적으로 운영체제에 맡김) 모드에서 시험해 보십시오. 그러면 DirectX 문제가 해결될 지도 모릅니다.</p>
 <p>AutoHotkey를 모든 프로그램에서 작동하시키는 단 한가지 해결책은 없습니다. 시도한 모든 것이 실패한다면, 안타깝게도 AutoHotkey로는 여러분의 요구를 만족시킬 수 없는 것입니다.</p>
 
 <h2 id="s4">4 - 프로그램 &amp; 웹사이트 실행하기</h2>
-<i>mspaint.exe, calc.exe, script.ahk</i> 심지어 폴더 같은 프로그램을 실행하려면, <a href="commands/Run.htm">Run</a> 명령어를 사용할 수 있습니다. 심지어 <a href="https://www.autohotkey.com/">https://www.autohotkey.com/</a>과 같이 URL에도 사용할 수 있습니다. 원하는 프로그램의 유형을 실행하도록 컴퓨터가 환경이 설정되어 있다면, 아주 간단합니다:
+<p><i>mspaint.exe, calc.exe, script.ahk</i> 심지어 폴더 같은 프로그램을 실행하려면, <a href="lib/Run.htm">Run</a> 명령어를 사용할 수 있습니다. 심지어 <a href="https://www.autohotkey.com/">https://www.autohotkey.com/</a>과 같이 URL에도 사용할 수 있습니다. 원하는 프로그램의 유형을 실행하도록 컴퓨터가 환경이 설정되어 있다면, 아주 간단합니다:</p>
 <pre><em>; 프로그램을 실행합니다. 주의: 대부분의 프로그램은 전체 파일 경로를 요구합니다:</em>
 Run, %A_ProgramFiles%\Some_Program\Program.exe
 
 <em>; 웹 사이트를 실행합니다:</em>
 Run, https://www.autohotkey.com</pre>
-<p>명령어-줄 매개변수와 CLSID와 같은 다른 고급 특징들도 역시 있습니다. If you want to learn more about that stuff, visit the <a href="commands/Run.htm">Run</a> page. </p>
+<p>명령어-줄 매개변수와 CLSID와 같은 다른 고급 특징들도 역시 있습니다. If you want to learn more about that stuff, visit the <a href="lib/Run.htm">Run</a> page. </p>
 <p>다음에 몇 가지 예를 더 보여줍니다:</p>
 <pre><em>;  윈도우즈의 표준 프로그램들과 같이 전체 경로가 필요하지 않은 프로그램이 있습니다:</em>
 Run, notepad.exe
@@ -392,22 +391,22 @@ Run, %A_MyDocuments%
 <em>; 웹 사이트를 실행합니다:</em>
 Run, https://www.autohotkey.com
 Run, https://www.google.com</pre>
-<p class="note">For more in-depth information and examples, check out the <a href="commands/Run.htm">Run</a> page.</p>
+<p class="note">For more in-depth information and examples, check out the <a href="lib/Run.htm">Run</a> page.</p>
 
 <h2 id="s5">5 - 명령어 vs. 함수</h2>
 <p>오토핫키는 코드를 만드는데 사용되는 크게 두 가지 유형이 있습니다: 명령어와 함수가 그것입니다.</p>
-<p class="note">A list of all commands and built-in functions can be found <a href="commands/index.htm">here</a>.</p>
+<p class="note">A list of all commands and built-in functions can be found <a href="lib/index.htm">here</a>.</p>
 <h3 id="Commands">명령어</h3>
 <p>그의 구문을 보면 (그의 겉 모습으로) 명령어인지 아닌지 구분할 수 있습니다. 명령어는 매개변수에 반괄호를 사용하지 않지만 함수는 사용합니다. 그래서 명령어는 다음과 같이 보입니다:</p>
 <pre>Command, Parameter1, Parameter2, Parameter3</pre>
-<p>명령어를 사용할 때, 다른 명령어를 같은 줄에 놓을 수 없습니다 (예외: <a href="commands/IfEqual.htm">IfEqual</a>). 명령어를 다른 명령어의 매개변수 안에 놓을 수 없습니다. 예를 들어:</p>
+<p>명령어를 사용할 때, 다른 명령어를 같은 줄에 놓을 수 없습니다 (예외: <a href="lib/IfEqual.htm">IfEqual</a>). 명령어를 다른 명령어의 매개변수 안에 놓을 수 없습니다. 예를 들어:</p>
 <pre>MsgBox, Hello Run, notepad.exe   <em>; 잘못됨</em>
 MsgBox, Hello, Run, notepad.exe  <em>; 잘못됨</em>
 
 MsgBox, Hello      <em>; 올바름</em>
 Run, notepad.exe</pre>
 
-Commands also differ from function in that they use "legacy syntax". This means that you <strong>need</strong> percent signs around a variable, such as <code>%Var%</code>, and that any text and numbers do not need to be in quotation marks, such as <code>This is some text</code>. 게다가, 함수와는 다르게 매개변수 안에서 수학식을 사용할 수 없습니다.
+<p>Commands also differ from function in that they use "legacy syntax". This means that you <strong>need</strong> percent signs around a variable, such as <code>%Var%</code>, and that any text and numbers do not need to be in quotation marks, such as <code>This is some text</code>. 게다가, 함수와는 다르게 매개변수 안에서 수학식을 사용할 수 없습니다.</p>
 <p class="note">매개변수에 수학식을 사용할 수는 있습니다. 강제로 <code>%</code> 기호로 표현식을 만들면 되지만, 이에 관해서는 다루지 않겠습니다.</p>
 <h3 id="Functions">함수</h3>
 <p>위에 언급한 바와 같이, 함수는 반괄호를 사용하기 때문에 다릅니다. 전형적인 함수의 모습은 다음과 같습니다:</p>
@@ -444,7 +443,7 @@ FileExist(VariableContainingPath)
 Output := SubStr("스크립팅을 하고 있어요, 정말 죽여주네요!", 16)</pre>
 
 <h3 id="s51">a. 코드 블록</h3>
-<p><a href="commands/Block.htm">Code blocks</a> are lines of code surrounded by little curly brackets (<code>{</code> and <code>}</code>). They group a section of code together so that AutoHotkey knows it's one big family and that it needs to stay together. They are most often used with functions and control flow statements such as <a href="commands/IfExpression.htm">If</a> and <a href="commands/Loop.htm">Loop</a>. 이것이 없다면, 블록에서 첫 줄만 호출됩니다.</p>
+<p><a href="lib/Block.htm">Code blocks</a> are lines of code surrounded by little curly brackets (<code>{</code> and <code>}</code>). They group a section of code together so that AutoHotkey knows it's one big family and that it needs to stay together. They are most often used with functions and control flow statements such as <a href="lib/IfExpression.htm">If</a> and <a href="lib/Loop.htm">Loop</a>. 이것이 없다면, 블록에서 첫 줄만 호출됩니다.</p>
 <p>다음 코드에서, 두 줄 모두 <em>MyVar</em>가 5와 같은 경우에만 실행됩니다:</p>
 <pre>if (MyVar = 5)
 {
@@ -521,7 +520,7 @@ MsgBox, We are now 'outside' of the if-statement. We did not need curly brackets
 </ul>
 
 <h3 id="s62">b. 사용자 입력 얻기</h3>
-<p>종종 사용자가 값을 채워 넣어주기를 바랄 경우가 있습니다. 여러 가지 방법이 있지만, 가장 간단한 방법은 <a href="commands/InputBox.htm">InputBox</a>입니다. 다음은 간단한 예입니다. 사용자에게 두 가지 질문을 하고 그 답을 가지고 무슨 일을 합니다:</p>
+<p>종종 사용자가 값을 채워 넣어주기를 바랄 경우가 있습니다. 여러 가지 방법이 있지만, 가장 간단한 방법은 <a href="lib/InputBox.htm">InputBox</a>입니다. 다음은 간단한 예입니다. 사용자에게 두 가지 질문을 하고 그 답을 가지고 무슨 일을 합니다:</p>
 <pre>InputBox, OutputVar, Question 1, 이름이 무엇입니까?
 if (OutputVar = "Bill")
     MsgBox, 멋진 이름이군요, %OutputVar%.
@@ -533,8 +532,8 @@ else
     MsgBox, %OutputVar%`, 정말 슬프군요.</pre>
 
 <h3 id="s63">c. 다른 예제들?</h3>
-<pre class="NoIndent"><a href="commands/MsgBox.htm">MsgBox</a>, 4,, 계속하시겠습니까?
-<a href="commands/IfMsgBox.htm">IfMsgBox</a>, No
+<pre class="NoIndent"><a href="lib/MsgBox.htm">MsgBox</a>, 4,, 계속하시겠습니까?
+<a href="lib/IfMsgBox.htm">IfMsgBox</a>, No
     return  <em>; No이면, 코드를 멈춥니다.</em>
 MsgBox, 당신은 YES를 눌렀습니다.  <em>; 그렇지 않으면, 사용자는 yes를 고른 것입니다.</em></pre>
 <pre class="NoIndent"><em>; 퍼센트 기호를 사용해야 할 때와 하지 말아야 할 때는 보여주는 몇 가지 예들:</em>
@@ -652,7 +651,7 @@ if Var1 &lt; %Var2%  <em>; Without parentheses, the IF is legacy. However, only 
     <dt>값을 제거하기</dt>
     <dd>
         <pre class="NoIndent">Banana.Consistency := ""</pre>
-        <p>가장 쉽게 값을 제거하는 방법은 그냥 없애 버리는 것입니다. 그냥 <code>""</code>로 설정하면 됩니다. <i>빈 문자열</i>이라고 부릅니다. 이것으로는 키가 제거되지 않지만, 값이 설정되지 않은 값과 동일하게 보이도록 만듭니다. <a href="objects/Object.htm#HasKey">HasKey</a> 메쏘드를 사용하면 키가 여전히 존재한다고 알려줄 수 있습니다. 그러면 여전히 <a href="commands/For.htm">For</a> 회돌이에 나타날 것입니다.</p>
+        <p>가장 쉽게 값을 제거하는 방법은 그냥 없애 버리는 것입니다. 그냥 <code>""</code>로 설정하면 됩니다. <i>빈 문자열</i>이라고 부릅니다. 이것으로는 키가 제거되지 않지만, 값이 설정되지 않은 값과 동일하게 보이도록 만듭니다. <a href="lib/Object.htm#HasKey">HasKey</a> 메쏘드를 사용하면 키가 여전히 존재한다고 알려줄 수 있습니다. 그러면 여전히 <a href="lib/For.htm">For</a> 회돌이에 나타날 것입니다.</p>
     </dd>
     <dt>Delete method</dt>
     <dd>
@@ -679,7 +678,7 @@ if Var1 &lt; %Var2%  <em>; Without parentheses, the IF is legacy. However, only 
 
 <h3 id="s81">a. The mysterious square brackets</h3>
 <p>문서를 통하여, 다음 두 심볼이 보일 겁니다 (<code>[</code> 그리고 <code>]</code>). 거의 모든 페이지 상단에 노란색 구문 박스 안에서 코드를 둘러 싸고 있지요. 이 각활호 안에 든 모든 것들은 <b><i>선택적</i>입니다</b>. 그 안에 든 것들은 필요 없으면 생략해도 된다는 뜻입니다. When writing your code, it is very important to <b>NOT</b> type the square brackets in your code.</p>
-<p><a href="commands/ControlGetText.htm">ControlGetText</a> 페이지에서 이것을 보실 수 있습니다:</p>
+<p><a href="lib/ControlGetText.htm">ControlGetText</a> 페이지에서 이것을 보실 수 있습니다:</p>
 <pre class="Syntax"><span class="func">ControlGetText</span>, OutputVar <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <p>그래서 그냥 원하다면 이렇게 해도 됩니다:</p>
 <pre>ControlGetText, OutputVar</pre>

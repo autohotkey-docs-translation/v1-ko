@@ -19,7 +19,7 @@
 <h2 id="Parameters">매개변수</h2>
 <dl>
   <dt>Encoding <span class="ver">[v1.1.33+]</span></dt>
-  <dd>An <a href="FileEncoding.htm">encoding string</a> specifying how to encode the output. For example, <code>#ErrorStdOut UTF-8</code> encodes error messages as UTF-8 before sending them to stderr. Whatever program is capturing the output must support UTF-8, and in some cases may need to be configured to expect it. 생략하면, 기본값은 <code>CP0</code>입니다.</dd>
+  <dd>An <a href="FileEncoding.htm">encoding string</a> specifying how to encode the output. For example, <code>#ErrorStdOut UTF-8</code> encodes error messages as UTF-8 before sending them to stderr. Whatever program is capturing the output must support UTF-8, and in some cases may need to be configured to expect it. If omitted, it defaults to CP0.</dd>
 </dl>
 
 <h2 id="Remarks">논평</h2>
@@ -28,8 +28,8 @@
 <p>오토핫키는 콘솔 프로그램이 아니기 때문에, 에러는 명령 프롬프트에 직접 나타나지 않습니다. This can be worked around by 1) <span class="ver">[v1.1.33+]</span> compiling the script with the <a href="../misc/Ahk2ExeDirectives.htm#ConsoleApp">Ahk2Exe ConsoleApp directive</a>, or 2) capturing the script's output via piping or redirection. 예를 들어:</p>
 <pre class="no-highlight">"C:\Program Files\AutoHotkey\AutoHotkey.exe" /ErrorStdOut "My Script.ahk" <strong>2&gt;&amp;1 |more</strong>
 "C:\Program Files\AutoHotkey\AutoHotkey.exe" /ErrorStdOut "My Script.ahk" <strong>2&gt;"Syntax-Error Log.txt"</strong></pre>
-<p>출력을 직접 클립보드로 파이프 처리해 넣을 수도 있습니다. <a href="https://www.autohotkey.com/misc/cb.zip">cb.zip</a> (4 KB)을 내려 받고, 다음 예제를 따르십시오:</p>
-<pre class="no-highlight">"C:\Program Files\AutoHotkey\AutoHotkey.exe" /ErrorStdOut "My Script.ahk" <strong>2&gt;&amp;1 |cb.exe</strong></pre>
+<p>You can also pipe the output directly to the clipboard by using the operating system's built-in clip command (for Windows XP and lower, download and use <a href="https://www.autohotkey.com/misc/cb.zip">cb.exe</a> instead). 예를 들어:</p>
+<pre class="no-highlight">"C:\Program Files\AutoHotkey\AutoHotkey.exe" /ErrorStdOut "My Script.ahk" <strong>2&gt;&amp;1 |clip</strong></pre>
 <p class="note"><strong>주의:</strong> <code>2&gt;&amp;1</code>는 stderr를 stdout로 방향전환되도록 만듭니다. 반면에 <code>2&gt;<i>Filename</i></code>는 stderr만 파일로 방향전환합니다.</p>
 <p>다른 지시어처럼, #ErrorStdOut는 조건적으로 실행할 수 없습니다.</p>
 

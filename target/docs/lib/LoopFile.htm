@@ -3,7 +3,7 @@
 <head>
 <title>Loop (files &amp; folders) - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The Loop Files statement retrieves the specified files or folders, one at a time." />
-<meta name="ahk:equiv-v2" content="commands/LoopFiles.htm" />
+<meta name="ahk:equiv-v2" content="lib/LoopFiles.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -26,7 +26,9 @@
   <dt>FilePattern</dt>
   <dd><p>단일 파일이나 폴더의 이름, 또는<code>C:\Temp\*.tmp</code>와 같은 와이들카드 패턴. <em>FilePattern</em>은 절대 경로를 지정하지 않으면 <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>에 있다고 간주됩니다.</p>
       <p>별표와 물음표 표식 모두 와일드카드로 지원됩니다. 패턴이 파일의 긴/보통 이름에 또는 그의 <a href="#LoopFileShortName">8.3 짧은 이름</a>에 나타나면 일치가 일어납니다.</p>
-      <p>If this parameter is a single file or folder (i.e. no wildcards) and <em>Mode</em> includes R, more than one match will be found if the specified file name appears in more than one of the folders being searched.</p></dd>
+      <p>If this parameter is a single file or folder (i.e. no wildcards) and <em>Mode</em> includes R, more than one match will be found if the specified file name appears in more than one of the folders being searched.</p>
+      <p>Patterns longer than 259 characters may fail to find any files due to <a href="../misc/LongPaths.htm">system limitations (MAX_PATH)</a>. This limit can be bypassed by using the <code>\\?\</code> <a href="../misc/LongPaths.htm#prefix">long path prefix</a>, with some stipulations.</code></p>
+    </dd>
 
   <dt>Mode</dt>
   <dd><p>If blank or omitted, only files are included and subdirectories are not recursed into. Otherwise, specify one or more of the following letters:</p>
@@ -154,7 +156,12 @@ Loop, Files, *.jpg
 Loop, Parse, FileList, `n
     FileMove, %A_LoopField%, renamed_%A_LoopField%</pre>
 <p>NTFS 파일 시스템의 파일은 아마도 언제나 알파벳 순서로 열람될 것입니다. 다른 파일 시스템에서는 특별한 순사가 없이 열람됩니다. 특정 순서로 열람하려면, 아래 섹션의 에제에서 보여주는 것처럼 <a href="Sort.htm">Sort</a> 명령어를 사용하십시오.</p>
-<p>파일이나 폴더 이름이 259 문자가 넘어가면 마치 존재하지 않는 것처럼 건너 뜁니다. 그런 파일은 거의 없습니다. 그런 파일은 거의 없습니다. 왜냐하면, 보통 운영 체제가 그런 파일은 생성을 허용하지 않기 때문입니다.</p>
+<p>File patterns longer than 259 characters are supported only by Unicode versions of AutoHotkey <span class="ver">[v1.1.31+]</span>, and only when at least one of the following is true:</p>
+<ul>
+  <li>The system has <a href="../misc/LongPaths.htm">long path support</a> enabled (requires Windows 10 version 1607 or later).</li>
+  <li>The <code>\\?\</code> <a href="../misc/LongPaths.htm#prefix">long path prefix</a> is used (caveats apply).</li>
+</ul>
+<p>In all other cases, file patterns longer than 259 characters will not find any files or folders. This limit applies both to <em>FilePattern</em> and any temporary pattern used during recursion into a subfolder. However, the combined length of each file's directory and filename can exceed 259 characters in <span class="ver">[v1.1.31+]</span>; on earlier versions such files are skipped over as though they do not exist.</p>
 <p><a href="Block.htm">Blocks</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, 그리고 A_Index 변수 (모든 유형의 회돌이에 존재함)에 관한 정보는 <a href="Loop.htm">Loop</a>를 참조하십시오.</p>
 
 <h2 id="Related">관련 항목</h2>

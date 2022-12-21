@@ -3,7 +3,7 @@
 <head>
 <title>FileMoveDir - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The FileMoveDir command moves a folder along with all its sub-folders and files. 폴더의 이름을 바꿀 수도 있습니다." />
-<meta name="ahk:equiv-v2" content="commands/DirMove.htm" />
+<meta name="ahk:equiv-v2" content="lib/DirMove.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -30,7 +30,7 @@
   <dd><p>(옵션) 다음 단일 문자 중 하나를 지정하십시오:</p>
       <p><strong>0</strong> (기본값): 기존의 파일을 덮어쓰지 않습니다. <em>Dest</em>가 이미 파일이나 폴더로 존재하면 이동은 실패합니다.</p>
       <p><strong>1</strong>: 기존의 파일을 덮어씁니다. 그렇지만, <em>Dest</em> 안의 파일이나 폴더가 <em>Source</em> 안에 해당하는 짝이 없으면 삭제되지 않습니다. <strong>알려진 한계:</strong> <em>Dest</em>가 이미 폴더로 존재하고 <em>Source</em>와 같은 볼륨에 있다면, <em>Source</em>는 그를 덮어 쓰는게 아니라 그 안으로 이동되어 들어갑니다. 이를 피하려면, 다음 옵션을 참고하십시오.</p>
-      <p><strong>2</strong>: 위의 모드 1과 동일하지만 제한이 없습니다.</p>      
+      <p><strong>2</strong>: 위의 모드 1과 동일하지만 제한이 없습니다.</p>
       <p><strong>R</strong>: 디렉토리를 이동하지 않고 그 이름을 변경합니다. 보통 이름을 변경하는 것은 이동한 것과 효과가 같지만, "모두 아니면 모두 아님" 행위를 원할 경우 도움이 됩니다; 즉, <em>Source</em>나 그의 파일 중 하나가 잠겨 있을 때 (사용 중일 때) 이동이 부분적으로만 성공하는 것을 원하지 않을 경우에 도움이 됩니다. 이 방법은 <em>Source</em>를 다른 볼륨으로 이동할 수 없습니다. 오직 자신의 볼륨에 있는 다른 디렉토리로만 이동할 수 있습니다. <em>Dest</em>가 이미 파일이나 폴더로 존재하면 이동에 실패합니다.</p></dd>
 
 </dl>

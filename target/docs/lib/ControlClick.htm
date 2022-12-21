@@ -21,7 +21,7 @@
   <dt>Control-or-Pos</dt>
   <dd><p>이 매개변수가 비어 있으면, 목표 창의 최상위 콘트롤이 클릭됩니다 (또는 콘트롤이 없으면 목표 창 자체가 클릭됩니다). 그렇지 않으면, 아래의 두 모드 중 하나가 사용됩니다.</p>
       <p>Mode 1 (Position): 목표 창의 좌상 모서리에 상대적인 X와 Y 좌표를 지정하십시오. X 좌표가 Y 좌표보다 먼저 나와야 하고 적어도 하나의 탭이나 스페이스가 그 사이에 있어야 합니다. 예를 들어: <code>X55 Y33</code>. 지정된 좌표에 콘트롤이 있다면, 그 좌표에 정확하게 클릭 이벤트가 전송됩니다. 콘트롤이 없다면, 목표 창 자체에 그 이벤트가 전송됩니다 (창의 성질에 따라 아무 효과가 없을 수 있습니다).</p>
-    <p class="note"><strong>주의</strong>: In mode 1, the X and Y option letters of the <em>Options</em> parameter are ignored.</p>      
+    <p class="note"><strong>주의</strong>: In mode 1, the X and Y option letters of the <em>Options</em> parameter are ignored.</p>
       <p>Mode 2 (ClassNN 또는 Text): ClassNN (콘트롤의 클래스이름과 실체 번호) 또는 콘트롤의 이름/텍스트를 지정하십시오. 둘 모두 Window Spy로 알아낼 수 있습니다. 이름/텍스트를 사용할 때, 부합하는 창은 <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>로 결정됩니다.</p>
       <p>기본값으로 모드 2가 모드 1보다 우선 순위가 높습니다. 예를 들어, 혹시라도 한 콘트롤의 텍스트나 ClassNN이 "Xnnn Ynnn" 형식이라면, 그러면 Mode 2인 것처럼 작동할 것입니다. 이를 오버라이드해서 무조건 모드 1을 사용하려면, 단어 Pos를 <em>Options</em>에 다음 예제와 같이 지정하십시오: <code>ControlClick, x255 y152, WinTitle,,,, Pos</code>.</p>
       <p>콘트롤의 HWND (창 핸들)에 작동시키라면, 이 매개변수를 빈 채로 두고 <code>ahk_id %ControlHwnd%</code>를 <em>WinTitle</em> 매개변수에 지정하십시오 (이것은 또한 숨은 창에도 작동합니다. <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 꺼져 있어도 됩니다). 콘트롤의 HWND는 전형적으로<a href="ControlGet.htm#Hwnd">ControlGet Hwnd</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, 또는 <a href="DllCall.htm">DllCall()</a>을 통하여 열람됩니다.</p></dd>

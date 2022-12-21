@@ -52,8 +52,8 @@
     <li><a href="#Show">Show</a>: Displays the specified menu.</li>
     <li><a href="#Color">Color</a>: Changes the background color of the menu.</li>
     <li><a href="#Click">Click</a>: Sets the number of clicks to activate the tray menu's default menu item.</li>
-    <li><a href="#MainWindow">MainWindow</a>: Allows the main window of a compiled script to be opened via the tray icon.</li>
-    <li><a href="#NoMainWindow">NoMainWindow</a>: Prevents the main window of a compiled script from being opened via the tray icon.</li>
+    <li><a href="#MainWindow">MainWindow</a>: Allows the main window of a script to be opened via the tray icon.</li>
+    <li><a href="#NoMainWindow">NoMainWindow</a>: Prevents the main window from being opened via the tray icon.</li>
     <li><a href="#UseErrorLevel">UseErrorLevel</a>: Skips any warning dialogs and thread terminations whenever the Menu command generates an error.</li>
 </ul>
 
@@ -63,7 +63,7 @@
 <p>이것은 다중 목적의 명령어로서. <em>MenuItemName</em> is the name or position of a menu item (see <a href="#MenuItemName">MenuItemName</a> for details). <em>MenuItemName</em>이 아직 존재하지 않으면, 메뉴에 추가됩니다. 그렇지 않으면, <em>MenuItemName</em>은 새로 지정된 <em>LabelOrSubmenu</em>로 갱신됩니다.</p>
 <p>메뉴 가름줄을 추가하려면, 세 개의 매개변수를 모두 생략하십시오.</p>
 <p>라벨 서브루틴은 사용자가 메뉴 항목을 선택할 때 새 <a href="../misc/Threads.htm">쓰레드</a>로 실행됩니다 (<a href="Gosub.htm">Gosub</a> 그리고 <a href="../Hotkeys.htm">핫키 서브루틴</a>과 비슷합니다). <em>LabelOrSubmenu</em>를 생략하면, <em>MenuItemName</em>이 라벨과 메뉴 항목의 이름으로 사용됩니다.</p>
-<p id="Functor"><span class="ver">[v1.1.20+]:</span> 기존의 라벨 이름이 아니면, <em>LabelOrSubmenu</em>는 함수의 이름이거나, 아니면 <a href="../objects/Functor.htm">함수 객체</a>를 담고 있는 단일 변수 참조일 수 있습니다. 예를 들어, <code>%FuncObj%</code> 또는 <code>% FuncObj</code>. See <a href="#ExBoundFunc">example #5</a> for a fully functional demonstration. 함수 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다. 함수는 아래에 보여주는 바와 같이 선택적으로 매개변수를 정의할 수 있습니다:</p>
+<p id="Functor"><span class="ver">[v1.1.20+]:</span> 기존의 라벨 이름이 아니면, <em>LabelOrSubmenu</em>는 함수의 이름이거나, 아니면 <a href="../misc/Functor.htm">함수 객체</a>를 담고 있는 단일 변수 참조일 수 있습니다. 예를 들어, <code>%FuncObj%</code> 또는 <code>% FuncObj</code>. See <a href="#ExBoundFunc">example #5</a> for a fully functional demonstration. 함수 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다. 함수는 아래에 보여주는 바와 같이 선택적으로 매개변수를 정의할 수 있습니다:</p>
 <pre><i>FunctionName</i>(ItemName, ItemPos, MenuName)</pre>
 <p><em>MenuItemName</em>를 부메뉴가 되게 만들려면 -- 선택되면 새 메뉴를 여는 메뉴 항목을 만들려면 -- <em>LabelOrSubmenu</em>에 쌍점 그리고 기존 맞춤 메뉴의 <em>MenuName</em>을 지정하십시오. 예를 들어:</p>
 <pre>Menu, MySubmenu, Add, Item1
@@ -106,7 +106,8 @@ Menu, Tray, Add, This menu item is a submenu, :MySubmenu</pre>
 <h3 id="Delete">Delete</h3>
 <p>Deletes the specified menu item from the menu.</p>
 <pre class="Syntax"><span class="func">Menu</span>, MenuName, Delete <span class="optional">, MenuItemName</span></pre>
-<p><em>MenuItemName</em> is the name or position of a menu item (see <a href="#MenuItemName">MenuItemName</a> for details). "Exit" (아래 참조)와 같은 표준 메뉴 항목은 개별적으로 삭제할 수 없습니다. If the <em>default</em> menu item is deleted, the effect will be similar to having used the <a href="#NoDefault">NoDefault</a> sub-command. <em>MenuItemName</em>을 생략하면, 전체 <em>MenuName</em> 메뉴가 삭제됩니다. <em>MenuName</em>을 부메뉴로 사용하고 있는 다른 메뉴에 있는 메뉴 항목도 마찬가지로 삭제됩니다. Deleting a menu also causes the current <a href="#Win32_Menus">Win32 menu</a> of its parent and submenus to be destroyed, to be recreated later as needed.</p>
+<p><em>MenuItemName</em> is the name or position of a menu item (see <a href="#MenuItemName">MenuItemName</a> for details). "Exit" (아래 참조)와 같은 표준 메뉴 항목은 개별적으로 삭제할 수 없습니다. If the <em>default</em> menu item is deleted, the effect will be similar to having used the <a href="#NoDefault">NoDefault</a> sub-command.</p>
+<p>If <em>MenuItemName</em> is omitted, the entire <em>MenuName</em> menu will be deleted as will any menu items in other menus that use <em>MenuName</em> as a submenu. Deleting a menu also causes the current <a href="#Win32_Menus">Win32 menu</a> of each of its submenus to be destroyed, to be recreated later as needed. Other menus which contain those submenus may also be affected. This can be avoided by deleting the items of the menu with <a href="#DeleteAll">DeleteAll</a> before deleting the menu itself.</p>
 
 <h3 id="DeleteAll">DeleteAll</h3>
 <p>Deletes all custom menu items from the menu.</p>
@@ -215,7 +216,7 @@ Menu, Tray, Add, This menu item is a submenu, :MySubmenu</pre>
 <h3 id="Show">Show</h3>
 <p>Displays <em>MenuName</em>.</p>
 <pre class="Syntax"><span class="func">Menu</span>, MenuName, Show <span class="optional">, X, Y</span></pre>
-<p>The user can select an item with arrow keys, menu shortcuts (underlined letters), or the mouse. 어떤 메뉴도 보여줄 수 있습니다. 여기에는 트레이 메뉴도 포함되지만, <a href="Gui.htm">GUI</a> 메뉴 바는 예외입니다. X와 Y를 모두 생략하면, 메뉴는 마우스 커서의 현재 위치에 보여집니다. 둘 중에 하나만 생략하면, 생략된 위치에 마우스 커서의 위치가 대신 사용됩니다. X와 Y는 활성 창에 상대적입니다. 전체 화면에 상대적으로 만들려면 미리 "<a href="CoordMode.htm">CoordMode</a>, Menu"를 지정하십시오.</p>
+<p>The user can select an item with arrow keys, menu shortcuts (underlined letters), or the mouse. 어떤 메뉴도 보여줄 수 있습니다. 여기에는 트레이 메뉴도 포함되지만, <a href="Gui.htm">GUI</a> 메뉴 바는 예외입니다. X와 Y를 모두 생략하면, 메뉴는 마우스 커서의 현재 위치에 보여집니다. 둘 중에 하나만 생략하면, 생략된 위치에 마우스 커서의 위치가 대신 사용됩니다. X와 Y는 활성 창에 상대적입니다. Specify <code><a href="CoordMode.htm">CoordMode</a>, Menu</code> beforehand to make them relative to the entire screen.</p>
 
 <h3 id="Color">Color</h3>
 <p>Changes the background color of the menu to <em>ColorValue</em>.</p>
@@ -250,18 +251,20 @@ Menu, Tray, Add, This menu item is a submenu, :MySubmenu</pre>
 <h2 id="MenuItemName">The <em>MenuItemName</em> Parameter</h2>
 <p>The name or position of a menu item. Some common rules apply to this parameter across all sub-commands which use it:</p>
 <ul>
-    <li>메뉴 항목 의 이름에 있는 글자 중 하나에 밑줄을 그으려면, 그 글자 앞에 앰퍼센드를 (&amp;) 배치하십시오. 메뉴가 나타날 때, 그런 항목은 키보드에서 상응하는 키를 눌러서 선택할 수 있습니다. 글자 그대로 앰퍼센드를 보여주려면, 연속적으로 앰퍼센드 두 개를 다음 예제와 같이 지정하십시오: <code>Save &amp;&amp; Exit</code></li>
-    <li>기존의 메뉴나 메뉴 항목을 참조할 때, 그 이름은 대소문자를 구별하지 않지만 앰퍼센드는 반드시 포함시켜야 합니다. 예를 들어: <code>&amp;Open</code></li>
-    <li><span class="ver">[v1.1.23+]:</span> To identify an existing item by its position in the menu, write the item's position followed by an ampersand. For example, <code>1&amp;</code> indicates the first item.</li>
+    <li>메뉴 항목 의 이름에 있는 글자 중 하나에 밑줄을 그으려면, 그 글자 앞에 앰퍼센드를 (&amp;) 배치하십시오. 메뉴가 나타날 때, 그런 항목은 키보드에서 상응하는 키를 눌러서 선택할 수 있습니다. 글자 그대로 앰퍼센드를 보여주려면, 연속적으로 앰퍼센드 두 개를 다음 예제와 같이 지정하십시오: <code class="no-highlight">Save &amp;&amp; Exit</code></li>
+    <li>기존의 메뉴나 메뉴 항목을 참조할 때, 그 이름은 대소문자를 구별하지 않지만 앰퍼센드는 반드시 포함시켜야 합니다. 예를 들어: <code class="no-highlight">&amp;Open</code></li>
+    <li><span class="ver">[v1.1.23+]:</span> To identify an existing item by its position in the menu, write the item's position followed by an ampersand. For example, <code class="no-highlight">1&amp;</code> indicates the first item.</li>
 </ul>
 
 <h2 id="Win32_Menus">Win32 Menus</h2>
-<p>As items are added to a menu or modified, the name and other properties of each item are recorded by the Menu command, but the actual <a href="https://msdn.microsoft.com/ko-kr/library/ms646977">Win32 menu</a> is not constructed immediately. This occurs when the menu or its parent menu is attached to a GUI or shown, either  for the first time or if the menu has been "destroyed" since it was last shown. Any of the following can cause this Win32 menu to be destroyed, along with any parent menus and submenus:</p>
+<p>As items are added to a menu or modified, the name and other properties of each item are recorded by the Menu command, but the actual <a href="https://msdn.microsoft.com/ko-kr/library/ms646977">Win32 menu</a> is not constructed immediately. This occurs when the menu or its parent menu is attached to a GUI or shown, either  for the first time or if the menu has been "destroyed" since it was last shown. Any of the following can cause this Win32 menu to be destroyed:</p>
 <ul>
   <li>Deleting a menu.</li>
   <li>Replacing an item's submenu with a label or a different menu.</li>
   <li>Prior to <span class="ver">[v1.1.27.03]</span>, calling the sub-commands <a href="#NoStandard">NoStandard</a> (if the standard items were present) or <a href="#DeleteAll">DeleteAll</a>.</li>
 </ul>
+<p>When the Win32 menu is destroyed, the Win32 menu of each submenu and parent menu may also be destroyed.</p>
+<p>When a menu which contains the standard items has its Win32 menu recreated, the standard items are placed at the top.</p>
 <p>Any modifications which are made to the menu directly by Win32 API calls only apply to the current "instance" of the menu, and are lost when the menu is destroyed.</p>
 <p>Each menu item is assigned an ID when it is first added to the menu. Scripts cannot rely on an item receiving a particular ID, but can retrieve the ID of an item by using GetMenuItemID as shown in the <a href="MenuGetHandle.htm#Examples">MenuGetHandle example</a>. This ID cannot be used with the Menu command, but can be used with various <a href="https://msdn.microsoft.com/ko-kr/library/ms646977">Win32 functions</a>.</p>
 
@@ -423,7 +426,7 @@ ExitApp
 </div>
 
 <div class="ex" id="ExBoundFunc">
-  <p><a class="ex_number" href="#ExBoundFunc"></a> Demonstrates the usage of <a href="../objects/Functor.htm#BoundFunc">BoundFunc objects</a> to pass additional parameters when using a function instead of a subroutine.</p>
+  <p><a class="ex_number" href="#ExBoundFunc"></a> Demonstrates the usage of <a href="../misc/Functor.htm#BoundFunc">BoundFunc objects</a> to pass additional parameters when using a function instead of a subroutine.</p>
   <pre><em>; Bind parameters to the function and return BoundFunc objects:</em>
 BoundGivePar := Func("GivePar").Bind("First", "Test one")
 BoundGivePar2 := Func("GivePar").Bind("Second", "Test two")

@@ -19,7 +19,7 @@
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>열람된 텍스트를 저장할 변수의 이름.</p></dd>
+  <dd><p>The name of the output variable in which to store the retrieved text.</p></dd>
 
   <dt>Control</dt>
   <dd><p>ClassNN (콘트롤의 클래스이름과 실체 번호) 또는 콘트롤의 텍스트일 수 있습니다. 둘 모두 Window Spy로 알아낼 수 있습니다. 텍스트를 사용할 때, 부합하는 행위는 <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>로 결정됩니다. 이 매개변수가 비어있거나 생략되면, 목표 창의 최상위 콘트롤이 사용됩니다.</p>
@@ -54,8 +54,15 @@
 <p><a href="ControlSetText.htm">ControlSetText</a>, <a href="WinGetText.htm">WinGetText</a>, <a href="Control.htm">Control</a>, <a href="ControlGet.htm">ControlGet</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="_MaxMem.htm">#MaxMem</a></p>
 <h2 id="Examples">예제</h2>
 <div class="ex" id="ExBasic">
-<p><a class="ex_number" href="#ExBasic"></a> Retrieves the current text from Notepad's edit control and stores it in <var>OutputVar</var>.</p>
+<p><a class="ex_number" href="#ExBasic"></a> Retrieves the current text from Notepad's edit control and stores it in <var>OutputVar</var>. This example may fail on Windows 11 or later, as it requires the classic version of Notepad.</p>
 <pre>ControlGetText, OutputVar, Edit1, Untitled -</pre>
+</div>
+<div class="ex" id="ExMainWin">
+<p><a class="ex_number" href="#ExMainWin"></a> Retrieves and reports the current text from the <a href="../Program.htm#main-window">main window</a>'s edit control.</p>
+<pre>ListVars
+WinWaitActive ahk_class AutoHotkey
+ControlGetText, OutputVar, Edit1 <em>; Use the window found above.</em>
+MsgBox % OutputVar</pre>
 </div>
 
 </body>

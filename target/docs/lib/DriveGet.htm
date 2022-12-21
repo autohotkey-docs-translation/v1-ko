@@ -3,7 +3,7 @@
 <head>
 <title>DriveGet - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The DriveGet command retrieves various types of information about the computer's drive(s)." />
-<meta name="ahk:equiv-v2" content="commands/Drive.htm" />
+<meta name="ahk:equiv-v2" content="lib/Drive.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -15,55 +15,78 @@
 
 <p>컴퓨터 드라이브에 관하여 다양한 유형의 정보를 열람합니다.</p>
 <pre class="Syntax"><span class="func">DriveGet</span>, OutputVar, <a href="#SubCommands">SubCommand</a> <span class="optional">, Value</span></pre>
-<p>The <em>OutputVar</em> parameter is the name of the variable in which to store the result. <em>SubCommand</em>와 <em>Value</em> 매개변수는 서로 의존합니다. 그 사용법은 아래에 기술합니다.</p>
+<p>The <em>OutputVar</em> parameter is the name of the output variable in which to store the result. <em>SubCommand</em>와 <em>Value</em> 매개변수는 서로 의존합니다. 그 사용법은 아래에 기술합니다.</p>
 
 <h2 id="SubCommands">부-명령어</h2>
 <p>For <em>SubCommand</em>, specify one of the following:</p>
 <ul>
     <li><a href="#List">List</a>: Retrieves a string of letters, one character for each drive letter in the system.</li>
-    <li><a href="#Capacity">Capacity</a>: Retrieves the total capacity of the specified path in megabytes.</li>
-    <li><a href="#FileSystem">FileSystem</a>: Retrieves the type of the specified drive's file system.</li>
-    <li><a href="#Label">Label</a>: Retrieves the volume label of the specified drive.</li>
-    <li><a href="#Serial">Serial</a>: Retrieves the volume serial number of the specified drive.</li>
-    <li><a href="#Type">Type</a>: Retrieves the drive type of the specified path.</li>
-    <li><a href="#Status">Status</a>: Retrieves the status of the specified path.</li>
+    <li><a href="#Capacity">Capacity</a>: Retrieves the total capacity of a drive.</li>
+    <li><a href="#FileSystem">FileSystem</a>: Retrieves the type of a drive's file system.</li>
+    <li><a href="#Label">Label</a>: Retrieves the volume label of a drive.</li>
+    <li><a href="#Serial">Serial</a>: Retrieves the volume serial number of a drive.</li>
+    <li><a href="#Type">Type</a>: Retrieves the type of a drive.</li>
+    <li><a href="#Status">Status</a>: Retrieves the status of a drive.</li>
     <li><a href="#StatusCD">StatusCD</a>: Retrieves the media status of a CD or DVD drive.</li>
 </ul>
 
 <h3 id="List">List</h3>
-<p>Retrieves a string of letters, one character for each drive letter in the system. 예를 들어: ACDEZ.</p>
+<p>Retrieves a string of letters, one character for each drive letter in the system.</p>
 <pre class="Syntax"><span class="func">DriveGet</span>, OutputVar, List <span class="optional">, Type</span></pre>
-<p>만약 <em>Type</em>이 생략되면, 모든 드라이브 유형이 열람됩니다. 그렇지 않으면, <em>Type</em>이 반드시 다음 중 하나를 지정해야 오직 그 특정한 드라이브만 열람할 수 있습니다: CDROM, REMOVABLE, FIXED, NETWORK, RAMDISK, UNKNOWN.</p>
+<p>Result example: ACDEZ. 만약 <em>Type</em>이 생략되면, 모든 드라이브 유형이 열람됩니다. 그렇지 않으면, <em>Type</em>이 반드시 다음 중 하나를 지정해야 오직 그 특정한 드라이브만 열람할 수 있습니다: CDROM, REMOVABLE, FIXED, NETWORK, RAMDISK, UNKNOWN.</p>
 
-<h3 id="Capacity">Capacity</h3>
-<p><em>Path</em> (예, <code>C:\</code>)의 총 용량을 메가바이트 단위로 열람합니다.</p>
+<h3 id="Capacity">Capacity (or Cap)</h3>
+<p>Retrieves the total capacity of a drive which contains the specified path, in megabytes.</p>
 <pre class="Syntax"><span class="func">DriveGet</span>, OutputVar, Capacity, Path</pre>
-<p>빈 공간을 알아내려면 <a href="DriveSpaceFree.htm">DriveSpaceFree</a>를 사용하십시오. 단어 Cap를 Capacity 대신 사용할 수 있습니다.</p>
+<p><var>Path</var> is any path contained by the drive (might also work on UNC paths and mapped drives). The result is rounded down to the nearest whole number. Use <a href="DriveSpaceFree.htm">DriveSpaceFree</a> to determine the free space.</p>
 
-<h3 id="FileSystem">FileSystem</h3>
-<p>Retrieves the type of <em>Drive</em>'s file system.</p>
+<h3 id="FileSystem">FileSystem (or FS)</h3>
+<p>Retrieves the type of the specified drive's file system.</p>
 <pre class="Syntax"><span class="func">DriveGet</span>, OutputVar, FileSystem, Drive</pre>
-<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다, 또는 <code>\\server1\share1</code>과 같은 UNC 이름입니다. <em>OutputVar</em>는 다음 단어 중 하나가 설정됩니다: FAT, FAT32, NTFS, CDFS (전형적으로 CD를 가리킴), UDF (전형적으로 DVD를 가리킴). 드라이브에 포맷된 미디어가 들어 있지 않으면 <em>OutputVar</em>는 비워지고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 1이 설정됩니다. 단어 FS를 FileSystem 대신 사용할 수 있습니다.</p>
+<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다, 또는 <code>\\server1\share1</code>과 같은 UNC 이름입니다. The possible values for <em>OutputVar</em> are defined by the system; they include (but are not limited to) the following: NTFS, FAT32, FAT, CDFS (typically indicates a CD), or UDF (typically indicates a DVD). 드라이브에 포맷된 미디어가 들어 있지 않으면 <em>OutputVar</em>는 비워지고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 1이 설정됩니다.</p>
 
 <h3 id="Label">Label</h3>
-<p>Retrieves <em>Drive</em>'s volume label.</p>
+<p>Retrieves the volume label of the specified drive.</p>
 <pre class="Syntax"><span class="func">DriveGet</span>, OutputVar, Label, Drive</pre>
-<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다, 또는 <code>\\server1\share1</code>과 같은 UNC 이름입니다. 라벨을 변경하려면, 다음 예제를 따르십시오: <code><a href="Drive.htm">Drive</a>, Label, C:, MyLabel</code>.</p>
+<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다, 또는 <code>\\server1\share1</code>과 같은 UNC 이름입니다.</p>
+<p>To change the label, use the <a href="Drive.htm#Label">Drive's Label sub-command</a>, such as <code>Drive, Label, C:, MyLabel</code>.</p>
 
 <h3 id="Serial">Serial</h3>
-<p>Retrieves <em>Drive</em>'s volume serial number expressed as decimal integer.</p>
+<p>Retrieves the volume serial number of the specified drive.</p>
 <pre class="Syntax"><span class="func">DriveGet</span>, OutputVar, Serial, Drive</pre>
-<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다, 또는 <code>\\server1\share1</code>과 같은 UNC 이름입니다. See <a href="Format.htm">Format()</a> or <a href="SetFormat.htm">SetFormat</a> for how to convert it to hexadecimal.</p>
+<p><em>Drive</em>는 드라이브 기호 다음에 쌍점과 선택적으로 역사선이 따라옵니다, 또는 <code>\\server1\share1</code>과 같은 UNC 이름입니다. See <a href="Format.htm">Format()</a> or <a href="SetFormat.htm">SetFormat</a> for how to convert the result to hexadecimal.</p>
 
 <h3 id="Type">Type</h3>
-<p>Retrieves <em>Path</em>'s drive type.</p>
+<p>Retrieves the type of the drive which contains the specified path.</p>
 <pre class="Syntax"><span class="func">DriveGet</span>, OutputVar, Type, Path</pre>
-<p><em>OutputVar</em>는 다음 단어 중 하나가 설정됩니다: Unknown, Removable, Fixed, Network, CDROM, RAMDisk.</p>
+<p><var>Path</var> is any path contained by the drive (might also work on UNC paths and mapped drives). <em>OutputVar</em> is made blank if the path is invalid (for example, because the drive does not exist). Otherwise, it is set to one of the following words: Unknown, Removable, Fixed, Network, CDROM, RAMDisk.</p>
 
 <h3 id="Status">Status</h3>
-<p>Retrieves <em>Path</em>'s status.</p>
+<p>Retrieves the status of the drive which contains the specified path.</p>
 <pre class="Syntax"><span class="func">DriveGet</span>, OutputVar, Status, Path</pre>
-<p><em>OutputVar</em>는 다음 단어 중 하나가 설정됩니다: Unknown (unformatted/RAW를 가리킬 수도 있음), Ready, NotReady (전형적으로 이동식 드라이브에 미디어가 없는 경우), Invalid (<em>Path</em>가 존재하지 않거나 현재 접근할 수 없는 네트워크 드라이브이거나, 등등.)</p>
+<p><var>Path</var> is any path contained by the drive (might also work on UNC paths and mapped drives). <em>OutputVar</em> is set to one of the following words:</p>
+<table class="info">
+    <tr>
+        <th style="width:15%">Status</th>
+        <th>주의</th>
+    </tr>
+    <tr>
+        <td>Unknown</td>
+        <td>Might indicate unformatted/RAW file system.</td>
+    </tr>
+    <tr>
+        <td>Ready</td>
+        <td>This is the most common.</td>
+    </tr>
+    <tr>
+        <td>NotReady</td>
+        <td>Typical for removable drives that don't contain media.</td>
+    </tr>
+    <tr>
+        <td>Invalid</td>
+        <td><em>Path</em> does not exist or is a network drive that is presently inaccessible, etc.</td>
+    </tr>
+</table>
 
 <h3 id="StatusCD">StatusCD</h3>
 <p>Retrieves the media status of a CD or DVD drive.</p>
@@ -71,8 +94,8 @@
 <p><em>Drive</em>는 드라이브 기호 다음에 쌍점. <em>Drive</em> 생략되면, 기본 값은 CD/DVD 드라이브가 사용됩니다. 상태를 알아낼 수 없으면 <em>OutputVar</em>는 비워집니다. 그렇지 않으면 다음 문자열 중 하나가 설정됩니다:</p>
 <table class="info">
     <tr>
-        <th style="width:15%">문자열</th>
-        <th abbr="설명">설명</th>
+        <th style="width:15%">Status</th>
+        <th>의미</th>
     </tr>
     <tr>
         <td>not ready</td>
@@ -101,7 +124,7 @@
 </table>
 <p>이 부-명령어는 아마도 네트워크 드라이브나 비-CD/DVD 드라이브에서는 작동하지 않을 것입니다; 그런 경우 또는 다른 어떤 이유로 실패하면, <em>OutputVar</em>는 비워지고 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>은 1이 설정됩니다.</p>
 <p>트레이가 최근에 닫혔다면, 부-명령어가 완료하려면 좀 시간이 걸릴 수 있습니다.</p>
-<p>트레이를 빼거나 넣으려면, <a href="Drive.htm">Drive</a> 명령어를 참조하십시오.</p>
+<p>To eject or retract the tray, see the <a href="Drive.htm#Eject">Drive's Eject sub-command</a>.</p>
 
 <h2 id="Error_Handling">에러 처리</h2>
 <p><span class="ver">[v1.1.04+]</span>: 이 명령어는 실패하면 예외를 던질 수 있습니다. 더 자세한 정보는 <a href="Catch.htm#RuntimeErrors">실행시간 에러</a>를 참조하십시오.</p>

@@ -12,17 +12,17 @@
 <body>
 <h1>PostMessage / SendMessage Tutorial <span class="headnote">by Rajat</span></h1>
 
-<p>This page explains how to send messages to a window or its controls via <a href="../commands/PostMessage.htm">PostMessage</a> or <a href="../commands/PostMessage.htm">SendMessage</a> and will answer some questions like:</p>
+<p>This page explains how to send messages to a window or its controls via <a href="../lib/PostMessage.htm">PostMessage</a> or <a href="../lib/PostMessage.htm">SendMessage</a> and will answer some questions like:</p>
 <ul>
   <li>"어떻게 최소화된 창에 버튼을 누르는가?"</li>
-  <li>"<a href="../commands/WinMenuSelectItem.htm">WinMenuSelectItem</a>이 메뉴 항목과 작동하지 않을 때 어떻게 메뉴 항목을 선택하는가?!"</li>
+  <li>"<a href="../lib/WinMenuSelectItem.htm">WinMenuSelectItem</a>이 메뉴 항목과 작동하지 않을 때 어떻게 메뉴 항목을 선택하는가?!"</li>
   <li>"이것은 겉모습을 바꿀 수 있는 창이다.... 어떻게 해야 항상 작동하는 명령어를 전송하는가?"</li>
   <li>"<strong>숨은</strong> 창은 어떻게 하는가?!"</li>
 </ul>
 <p>필수 조건: <span class="ver">[AutoHotkey v1.0.09+]</span> and Winspector Spy (<a href="https://www.softpedia.com/get/Security/Security-Related/Winspector.shtml">can be found here</a>)</p>
-<p>첫 예제로서, <a href="../commands/WinMenuSelectItem.htm">WinMenuSelectItem</a>가 아웃룩 익스프레스의 "New Message" 창의 메뉴 바와 작동하는 데 실패한다는 사실을 주목하십시오; 다시 말해, 다음 코드는 작동하지 않습니다:</p>
+<p>첫 예제로서, <a href="../lib/WinMenuSelectItem.htm">WinMenuSelectItem</a>가 아웃룩 익스프레스의 "New Message" 창의 메뉴 바와 작동하는 데 실패한다는 사실을 주목하십시오; 다시 말해, 다음 코드는 작동하지 않습니다:</p>
 <pre>WinMenuSelectItem, New Message,, &amp;Insert, &amp;Picture...</pre>
-<p>그러나 <a href="../commands/PostMessage.htm">PostMessage</a>가 그 일을 해 줄 수 있습니다:</p>
+<p>그러나 <a href="../lib/PostMessage.htm">PostMessage</a>가 그 일을 해 줄 수 있습니다:</p>
 <pre>PostMessage, 0x0111, 40239, 0, , New Message</pre>
 <p>마법처럼 작동합니다! 그러나 도데체 이것은 무엇인가? 0x0111는 <a href="SendMessageList.htm">wm_command 메시지</a>의 십육진 코드이고 40239는 이 특정한 창이 메뉴 항목 'Insert Picture' 선택으로 이해하는 코드입니다. 이제 어떻게 40239와 같은 값을 찾는지 알려 드리겠습니다:</p>
 <ol>
@@ -40,21 +40,21 @@
 <p>다음 예제로 페인트 프로그램을 택하겠습니다. 왜냐하면 누구나가 있을 것이기 때문입니다. 이제 어플이 하나 있는데 오토핫키를 사용하여 툴바로부터 툴을 하나 선택해야 한다고 가정해 보겠습니다.</p>
 <p>다음은 무엇을 할 것인가? 대부분은 아마도 툴바 버튼에 마우스 클릭을 예상할 겁니다. 그러나 툴바는 이동하고 숨을 수 있습니다! 페인트 툴바도 마찬가지입니다. 그래서 해당 사용자가 이렇게 구성해 두었다면, 스크립트는 그 시점에 바로 실패합니다. 그러나 다음 명령어는 여전히 작동합니다:</p>
 <pre>PostMessage, 0x0111, 639,,, Untitled - Paint</pre>
-<p><a href="../commands/PostMessage.htm">PostMessage</a>의 또다른 장점은 창이 배경에 있을 수 있다는 것입니다; 대조적으로, 마우스 클릭은 창이 활성화되어 있기를 요구합니다.</p>
+<p><a href="../lib/PostMessage.htm">PostMessage</a>의 또다른 장점은 창이 배경에 있을 수 있다는 것입니다; 대조적으로, 마우스 클릭은 창이 활성화되어 있기를 요구합니다.</p>
 <p>다음에 몇 가지 예를 더 보여드리겠습니다. 주의: 필자는 WinXP Pro (SP1)을 사용합니다 ... 다른 OS를 사용한다면 매개변수가 다를 수 있습니다 (윈도우즈에 따라 오는 Wordpad 그리고 Notepad에만 적용할 수 있습니다; 다른 것은 매개변수가 다르지 않을 것입니다):</p>
 <pre><em>;Wordpad 에 군청색 쓰기를 설정합니다</em>
-<a href="../commands/PostMessage.htm">PostMessage</a>, 0x0111, 32788, 0, , Document - WordPad</pre>
+<a href="../lib/PostMessage.htm">PostMessage</a>, 0x0111, 32788, 0, , Document - WordPad</pre>
 <pre><em>;Notepad의 관하여 상자를 엽니다</em>
-<a href="../commands/PostMessage.htm">PostMessage</a>, 0x0111, 65, 0, , Untitled - Notepad</pre>
+<a href="../lib/PostMessage.htm">PostMessage</a>, 0x0111, 65, 0, , Untitled - Notepad</pre>
 <pre><em>;Notepad에 워드랩을 토글합니다</em>
-<a href="../commands/PostMessage.htm">PostMessage</a>, 0x0111, 32, 0, , Untitled - Notepad</pre>
+<a href="../lib/PostMessage.htm">PostMessage</a>, 0x0111, 32, 0, , Untitled - Notepad</pre>
 <pre><em>;미디어 플레이어를 연주/정지합니다</em>
-<a href="../commands/PostMessage.htm">PostMessage</a>, 0x0111, 32808, 0, , Windows Media Player</pre>
+<a href="../lib/PostMessage.htm">PostMessage</a>, 0x0111, 32808, 0, , Windows Media Player</pre>
 <pre><em>;실행 중인 AHK 스크립트의 핫키들을 보류합니다</em>
 DetectHiddenWindows, On
 SetTitleMatchMode, 2
 <em>; Use 65306 to Pause and 65303 to Reload instead of Suspend. (see <a href="../FAQ.htm#close">FAQ</a>)</em>
-<a href="../commands/PostMessage.htm">PostMessage</a>, 0x0111, 65305,,, MyScript.ahk - AutoHotkey
+<a href="../lib/PostMessage.htm">PostMessage</a>, 0x0111, 65305,,, MyScript.ahk - AutoHotkey
 </pre>
 <pre><em>; Press CapsLock and Numpad2 to reload all AutoHotkey scripts</em>
 CapsLock &amp; Numpad2::
@@ -73,7 +73,7 @@ ReloadAllAhkScripts() {
     Reload
 }
 </pre>
-<p>위는 PostMessage용이었습니다. <a href="../commands/PostMessage.htm">SendMessage</a>도 똑같이 작동하지만 추가로 반환 값을 기다립니다. 이 값을 사용하면 Winamp에서 현재 연주 중인 트랙을 얻을 수 있습니다 (예제는 <a href="Winamp.htm">Winamp 자동화하기</a>를 참조하십시오).</p>
+<p>위는 PostMessage용이었습니다. <a href="../lib/PostMessage.htm">SendMessage</a>도 똑같이 작동하지만 추가로 반환 값을 기다립니다. 이 값을 사용하면 Winamp에서 현재 연주 중인 트랙을 얻을 수 있습니다 (예제는 <a href="Winamp.htm">Winamp 자동화하기</a>를 참조하십시오).</p>
 <p>다음에 몇 가지 더 주의 사항이 있습니다:</p>
 <ul>
   <li>위에서 OS가 XP이고 메시지 값이 OS 마다 다를 수 있다고 주의를 준 것은 순전히 경계 차원입니다. 여러분의 시스템에서 (특정 소프트웨어 버전과 함께) 작동하는 메시지를 발견했다면. 다른 시스템에도 같은 버전이 역시 작동할 것이라고 확신할 수 있습니다. 게다가, 대부분의 어플은 버전이 다르더라도 이 메시지 값을 똑 같이 유지합니다 (예, Windows Media Player 그리고 Winamp).</li>

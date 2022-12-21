@@ -19,7 +19,7 @@
 <dl>
 
   <dt>OutputVarX, OutputVarY</dt>
-  <dd><p><em>ColorID</em>에 부합하는 첫 번째 픽셀의 X와 Y의 좌표를 저장할 변수의 이름 (부합이 발견되지 않으면, 변수는 비워집니다). 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>가 사용되어 좌표가 변경된 경우는 제외합니다.</p>
+  <dd><p>The names of the output variables in which to store the X and Y coordinates of the first pixel that matches <em>ColorID</em> (if no match is found, the variables are made blank). 좌표는 활성 창에 상대적입니다. 단, <a href="CoordMode.htm">CoordMode</a>가 사용되어 좌표가 변경된 경우는 제외합니다.</p>
     <p>이 매개변수가 비어 있는 경우가 있습니다. 그러면 ErrorLevel (아래 참조)를 사용하여 일치가 발견되었는지 알아낼 수 있습니다.</p></dd>
 
   <dt>X1, Y1</dt>
@@ -37,6 +37,7 @@
   <dt>Mode</dt>
   <dd><p>이 매개변수는 단어 Fast, RGB를 담거나 또는 둘 담을 수 있습니다 (둘 다 존재하면, 스페이스로 둘사이를 가르십시오; 즉, <em>Fast RGB</em>).</p>
       <p id="fast"><strong>Fast</strong>: 빠른 검색 방법을 사용합니다. 대부분의 경우 검색에 사용된 CPU 시간의 양을 극적으로 줄여줍니다. 8-비트 (256-색) 컬러 깊이를 지원하지만, 빠른 모드는 24-비트 또는 32-비트 컬러에서 훨씬 더 빠릅니다. 화면의 컬러 깊이가 16-비트 이하라면, <em>Variation</em> 매개변수는 빠른 모드에서 느린 모드와 약간 다르게 행동할 수도 있습니다. 마지막으로, 빠른 모드는 화면을 컬럼 단위가 아니라 줄 단위로 검색합니다. 그러므로, 부합하는 픽셀이 많은 경우 느린 모드에서 발견되는 픽셀과 다른 픽셀을 발견할 수도 있습니다.</p>
+      <p class="warning"><strong>Note:</strong> The default <em>Slow</em> mode is unusable on most modern systems due to an incompatibility with desktop composition, which causes it to be orders of magnitude slower.</p>
       <p><strong>RGB</strong>: <em>ColorID</em>는 BGR이 아니라 RGB 값으로 번역됩니다. 다른 말로, 적과 청 구성요소가 서로 바뀝니다.</p></dd>
 
 </dl>

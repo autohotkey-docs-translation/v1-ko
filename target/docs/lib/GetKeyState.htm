@@ -23,7 +23,7 @@ KeyIsDown := <span class="func">GetKeyState</span>(KeyName <span class="optional
 
   <dt>KeyName</dt>
   <dd><p>단순히 키보드의 문자 하나이거나 또는 마우스/조이스틱 버튼과 같이 <a href="../KeyList.htm">키 목록</a>의 키 이름 중 하나일 수 있습니다. 예제: B, 5, LWin, RControl, Alt, Enter, Escape, LButton, MButton, Joy1.</p>
-      <p>대안으로, vkFF와 같은 명시적인 가상 키 코드를 지정해도 됩니다. 아주 희귀한 경우로 키에 이름이 없을 경우 유용합니다. 그런 키의 가상 키코드는 다음 <a href="../KeyList.htm#SpecialKeys">키 리스트</a> 페이지 하단에 있는 단계를 밟아 알아볼 수 있습니다.</p> 
+      <p>대안으로, vkFF와 같은 명시적인 가상 키 코드를 지정해도 됩니다. 아주 희귀한 경우로 키에 이름이 없을 경우 유용합니다. 그런 키의 가상 키코드는 다음 <a href="../KeyList.htm#SpecialKeys">키 리스트</a> 페이지 하단에 있는 단계를 밟아 알아볼 수 있습니다.</p>
       <p><b>알려진 한계:</b> 이 함수는 Left와 NumpadLeft 같이, 같은 가상 키 코드를 공유하면 두 키를 구별하지 못합니다.</p></dd>
 
   <dt>Mode</dt>
@@ -50,12 +50,12 @@ KeyIsDown := <span class="func">GetKeyState</span>(KeyName <span class="optional
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>열람된 키 상태를 저장할 변수의 이름. D이면 눌려 있고 U이면 뗀 상태입니다. 키 상태를 결정할 수 없으면 이 변수는 비어 있습니다. For the joystick's special keys such as axes and POV switch, <a href="#joystick">other values are retrieved</a>.</p>
+  <dd><p>The name of the output variable in which to store the retrieved key state, which is either D for down or U for up. 키 상태를 결정할 수 없으면 이 변수는 비어 있습니다. For the joystick's special keys such as axes and POV switch, <a href="#joystick">other values are retrieved</a>.</p>
       </dd>
 
   <dt>KeyName</dt>
   <dd><p>단순히 키보드의 문자 하나이거나 또는 마우스/조이스틱 버튼과 같이 <a href="../KeyList.htm">키 목록</a>의 키 이름 중 하나일 수 있습니다. 예제: B, 5, LWin, RControl, Alt, Enter, Escape, LButton, MButton, Joy1.</p>
-      <p>대안으로, vkFF와 같은 명시적인 가상 키 코드를 지정해도 됩니다. 아주 희귀한 경우로 키에 이름이 없을 경우 유용합니다. 그런 키의 가상 키코드는 다음 <a href="../KeyList.htm#SpecialKeys">키 리스트</a> 페이지 하단에 있는 단계를 밟아 알아볼 수 있습니다.</p> 
+      <p>대안으로, vkFF와 같은 명시적인 가상 키 코드를 지정해도 됩니다. 아주 희귀한 경우로 키에 이름이 없을 경우 유용합니다. 그런 키의 가상 키코드는 다음 <a href="../KeyList.htm#SpecialKeys">키 리스트</a> 페이지 하단에 있는 단계를 밟아 알아볼 수 있습니다.</p>
       <p><b>알려진 한계:</b> 이 명령는 Left와 NumpadLeft 같이, 같은 가상 키 코드를 공유하면 두 키를 구별하지 못합니다.</p></dd>
 
   <dt>Mode</dt>

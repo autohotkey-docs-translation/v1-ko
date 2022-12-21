@@ -32,11 +32,11 @@
 <p>각 스크립트는 평범한 텍스트 파일로서 안에 있는 줄들을 프로그램이 실행합니다 (AutoHotkey.exe). 스크립트는 또 <a href="Hotkeys.htm">핫키</a>와 <a href="Hotstrings.htm">핫스트링</a> 심지어 모조리 그것들로 구성되기도 합니다. 그렇지만, 핫키와 핫스링이 없다면 스크립트는 기동된 순간 그의 명령어들을 순서대로 위에서부터 아래로 수행합니다.</p>
 <p>프로그램은 스크립트를 메모리 안으로 한 줄씩 적재합니다. 각 줄은 길이가 16,383 문자입니다. 적재하는 동안, 스크립트는 <a href="misc/Performance.htm">최적화되고</a> 평가됩니다. 구문 에러는 화면에 보여지고 그 에러를 반드시 수정해야 스크립트를 실행할 수 있습니다.</p>
 <h2 id="auto">스크립트의 상단 (자동-실행 섹션)</h2>
-<p>스크립트가 적재된 후, 제일 윗 줄부터 실행을 시작해 <a href="commands/Return.htm">Return</a>, <a href="commands/Exit.htm">Exit</a>, <a href="Hotkeys.htm">핫키/핫스트링 라벨</a>, 또는 물리적으로 끝에 다다를 때까지 실행을 계속합니다 (순서에 상관이 없습니다). 스크립트에서 이 상단 부분을 <em>자동-실행</em> 섹션이라고 지칭합니다.</p>
-<p class="warning"><strong>Note:</strong> While the script's <em>first</em> hotkey/hotstring label has the same effect as <a href="commands/Return.htm">return</a>, other hotkeys and labels do not.</p>
-<p>If the script is not <a href="commands/_Persistent.htm">persistent</a>, it will terminate after the auto-execute section has completed. Otherwise, it will stay running in an idle state, responding to events such as <a href="Hotkeys.htm">hotkeys</a>, <a href="Hotstrings.htm">hotstrings</a>, <a href="commands/Gui.htm#label">GUI events</a>, <a href="commands/Menu.htm">custom menu items</a>, and <a href="commands/SetTimer.htm">timers</a>. A script is automatically persistent if it contains hotkeys, hotstrings, <a href="commands/OnMessage.htm">OnMessage()</a> or <a href="commands/Gui.htm">GUI</a>, and in a few other cases. The <a href="commands/_Persistent.htm">#Persistent</a> directive can also be used to explicitly make the script persistent.</p>
-<p><a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, <a href="commands/Menu.htm">메뉴 항목</a>, <a href="commands/Gui.htm#label">GUI 이벤트</a>, 또는 <a href="commands/SetTimer.htm">타이머</a>가 기동하는 <a href="misc/Threads.htm">쓰레드</a>마다 새롭게 기본 값을 가지고 시작합니다. 다음과 같은 속성들이 자동-실행 섹션에 설정되어 있습니다. 언셋하면, (각 페이지 문서에 기재된 대로) 표준 기본 값이 적용됩니다: <a href="commands/AutoTrim.htm">AutoTrim</a>, <a href="commands/CoordMode.htm">CoordMode</a>, <a href="commands/Critical.htm">Critical</a>, <a href="commands/DetectHiddenText.htm">DetectHiddenText</a>, <a href="commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="commands/FileEncoding.htm">FileEncoding</a>, <a href="commands/ListLines.htm">ListLines</a>, <a href="commands/SendLevel.htm">SendLevel</a>, <a href="commands/SendMode.htm">SendMode</a>, <a href="commands/SetBatchLines.htm">SetBatchLines</a>, <a href="commands/SetControlDelay.htm">SetControlDelay</a>, <a href="commands/SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="commands/SetFormat.htm">SetFormat</a>, <a href="commands/SetKeyDelay.htm">SetKeyDelay</a>, <a href="commands/SetMouseDelay.htm">SetMouseDelay</a>, <a href="commands/SetRegView.htm">SetRegView</a>, <a href="commands/SetStoreCapslockMode.htm">SetStoreCapsLockMode</a>, <a href="commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="commands/SetWinDelay.htm">SetWinDelay</a>, <a href="commands/StringCaseSense.htm">StringCaseSense</a>, and <a href="commands/Thread.htm">Thread</a>.</p>
-<p>자동-실행 섹션을 완료하는데 시간이 많이 걸린다면 (또는 완료되지 않는다면), 위의 설정에 대한 기본값은 100 밀리초 후에 효과를 발휘합니다. 자동-실행 섹션이 마침내 완료될 때, 기본 값은 자동-실행 섹션의 끝에서 효과가 있던 값들로 다시 갱신됩니다. 그리하여, 보통 제일 좋은 방법은 스크립트의 상단에 있는 기본 값들을 변경하는 것입니다. 여기에 <a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, <a href="commands/SetTimer.htm">타이머</a>, 또는 <a href="commands/Menu.htm">맞춤 메뉴 항목</a>이 들어 있습니다. 또 각 <a href="misc/Threads.htm">쓰레드</a>마다 따로 위의 설정을 보유하고 있다는 것을 주목하십시오. 그런 설정은 변경해도 다른 <a href="misc/Threads.htm">쓰레드</a>에 영향을 미치지 않습니다.</p>
+<p>스크립트가 적재된 후, 제일 윗 줄부터 실행을 시작해 <a href="lib/Return.htm">Return</a>, <a href="lib/Exit.htm">Exit</a>, <a href="Hotkeys.htm">핫키/핫스트링 라벨</a>, 또는 물리적으로 끝에 다다를 때까지 실행을 계속합니다 (순서에 상관이 없습니다). 스크립트에서 이 상단 부분을 <em>자동-실행</em> 섹션이라고 지칭합니다.</p>
+<p class="warning"><strong>Note:</strong> While the script's <em>first</em> hotkey/hotstring label has the same effect as <a href="lib/Return.htm">return</a>, other hotkeys and labels do not.</p>
+<p>If the script is not <a href="lib/_Persistent.htm">persistent</a>, it will terminate after the auto-execute section has completed. Otherwise, it will stay running in an idle state, responding to events such as <a href="Hotkeys.htm">hotkeys</a>, <a href="Hotstrings.htm">hotstrings</a>, <a href="lib/Gui.htm#label">GUI events</a>, <a href="lib/Menu.htm">custom menu items</a>, and <a href="lib/SetTimer.htm">timers</a>. A script is automatically persistent if it contains hotkeys, hotstrings, <a href="lib/OnMessage.htm">OnMessage()</a> or <a href="lib/Gui.htm">GUI</a>, and in a few other cases. The <a href="lib/_Persistent.htm">#Persistent</a> directive can also be used to explicitly make the script persistent.</p>
+<p><a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, <a href="lib/Menu.htm">메뉴 항목</a>, <a href="lib/Gui.htm#label">GUI 이벤트</a>, 또는 <a href="lib/SetTimer.htm">타이머</a>가 기동하는 <a href="misc/Threads.htm">쓰레드</a>마다 새롭게 기본 값을 가지고 시작합니다. 다음과 같은 속성들이 자동-실행 섹션에 설정되어 있습니다. 언셋하면, (각 페이지 문서에 기재된 대로) 표준 기본 값이 적용됩니다: <a href="lib/AutoTrim.htm">AutoTrim</a>, <a href="lib/CoordMode.htm">CoordMode</a>, <a href="lib/Critical.htm">Critical</a>, <a href="lib/DetectHiddenText.htm">DetectHiddenText</a>, <a href="lib/DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="lib/FileEncoding.htm">FileEncoding</a>, <a href="lib/ListLines.htm">ListLines</a>, <a href="lib/SendLevel.htm">SendLevel</a>, <a href="lib/SendMode.htm">SendMode</a>, <a href="lib/SetBatchLines.htm">SetBatchLines</a>, <a href="lib/SetControlDelay.htm">SetControlDelay</a>, <a href="lib/SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>, <a href="lib/SetFormat.htm">SetFormat</a>, <a href="lib/SetKeyDelay.htm">SetKeyDelay</a>, <a href="lib/SetMouseDelay.htm">SetMouseDelay</a>, <a href="lib/SetRegView.htm">SetRegView</a>, <a href="lib/SetStoreCapslockMode.htm">SetStoreCapsLockMode</a>, <a href="lib/SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="lib/SetWinDelay.htm">SetWinDelay</a>, <a href="lib/StringCaseSense.htm">StringCaseSense</a>, and <a href="lib/Thread.htm">Thread</a>.</p>
+<p>자동-실행 섹션을 완료하는데 시간이 많이 걸린다면 (또는 완료되지 않는다면), 위의 설정에 대한 기본값은 100 밀리초 후에 효과를 발휘합니다. 자동-실행 섹션이 마침내 완료될 때, 기본 값은 자동-실행 섹션의 끝에서 효과가 있던 값들로 다시 갱신됩니다. 그리하여, 보통 제일 좋은 방법은 스크립트의 상단에 있는 기본 값들을 변경하는 것입니다. 여기에 <a href="Hotkeys.htm">핫키</a>, <a href="Hotstrings.htm">핫스트링</a>, <a href="lib/SetTimer.htm">타이머</a>, 또는 <a href="lib/Menu.htm">맞춤 메뉴 항목</a>이 들어 있습니다. 또 각 <a href="misc/Threads.htm">쓰레드</a>마다 따로 위의 설정을 보유하고 있다는 것을 주목하십시오. 그런 설정은 변경해도 다른 <a href="misc/Threads.htm">쓰레드</a>에 영향을 미치지 않습니다.</p>
 
 <h2 id="continuation">긴 줄을 여러 개의 짧은 줄로 가르기</h2>
 <p>긴 줄은 작은 줄들로 쪼개어 가독성과 유지관리성을 향상시킬 수 있습니다. 이렇게 하더라도 스크립트의 실행 속도는 감소하지 않습니다. 왜냐하면 그런 줄들은 스크립트가 기동하는 순간 메모리에서 합병되기 때문입니다.</p>
@@ -75,7 +75,7 @@ FileAppend,  <em>; 이 경우 쉼표가 필요합니다.</em>
 1 번 줄 텍스트
 2 번 줄 텍스트. 기본값으로, 라인피드(`n)가 줄 사이에 존재합니다.
 ), C:\My File.txt</pre>
-<p>위의 예제에서, 일련의 줄들은 한 쌍의 괄호로 상단과 하단에 경계가 있습니다. 이런 것을 <em>계속 섹션</em>이라고 부릅니다. 하단 줄에 닫는 괄호 다음에 <a href="commands/FileAppend.htm">FileAppend</a>의 마지막 매개변수가 있음에 주목하십시오. 이 관례는 선택적입니다; 이와 같은 경우에 쉼표는 문자 그대로의 쉼표가 아니라 매개변수-가름자로 보이게 됩니다.</p>
+<p>위의 예제에서, 일련의 줄들은 한 쌍의 괄호로 상단과 하단에 경계가 있습니다. 이런 것을 <em>계속 섹션</em>이라고 부릅니다. 하단 줄에 닫는 괄호 다음에 <a href="lib/FileAppend.htm">FileAppend</a>의 마지막 매개변수가 있음에 주목하십시오. 이 관례는 선택적입니다; 이와 같은 경우에 쉼표는 문자 그대로의 쉼표가 아니라 매개변수-가름자로 보이게 됩니다.</p>
 <p>계속 섹션의 기본 행위를 오버라이드 할 수 있습니다. 계속 섹션의 여는 괄호의 오른쪽에 다음 옵션 중 하나 또는 여러개를 포함하면 됩니다. 옵션이 여럿 존재하면, 스페이스로 앞의 옵션과 각각 구별합니다. 예를 들어: <code>( LTrim Join| %</code>.</p>
 <p id="Join"><strong>Join</strong>: 어떻게 줄을 연결할지 지정합니다. 이 옵션이 생략되면, 각 줄은 마지막 줄을 제외하고 다음에 줄넘김 문자 (`n)가 따라옵니다. 단어 <em>Join</em> 자체만 지정하면, 줄들은 직접적으로 그 사이에 아무 문자 없이 서로 결합합니다. 그렇지 않으면 단어 <em>Join</em> 다음에 즉시 15개 까지의 문자가 따라와야 합니다. 예를 들어, <code>Join`s</code>는 마지막 줄을 제외하고 각 줄 뒤에 스페이스를 삽입합니다 -- 오로지 <em>Join</em>만 인식하는 특별한 피신 연속열입니다). 또다른 예는 <code>Join`r`n</code>인데, 이것은 줄과 줄 사이에 CR+LF를 삽입합니다. 비슷하게, <code>Join|</code>는 줄 사이에 파이프를 삽입합니다. 계속 섹션의 마지막 줄도 연결-문자로 끝내려면, 계속 섹션의 닫는 괄호 바로 위에 즉시 빈줄을 포함시킵니다.</p>
 <p>알려진 한계: 문자열 Join이 쌍점으로 끝나면, 그 줄에서 마지막 옵션으로 취급하면 안됩니다. 예를 들어, <code>(Join:</code>은 라벨 "(Join"으로 취급되고 <code>(LTrim Join:</code>은 지원하지 않습니다. 그러나 <code>(Join: C</code>는 좋습니다.</p>
@@ -107,21 +107,30 @@ Var .= "`n  <em>; 또다른 계속 섹션을 통하여 변수에 더 많은 텍�
 FileAppend, %Var%, C:\My File.txt</pre>
 <p>닫는 괄호는 연속 섹션의 끝을 나타내기 때문에, 줄을 닫는 괄호로 시작하려면, 앞에다 액센트/백틱을 배치해야 합니다: <code>`)</code>.</p>
 <p>계속 섹션 다음에 즉시 따라오는 줄에 또다른 계속 섹션을 여는 괄호가 담길 수 있습니다. 이렇게 하면 한 개의 줄을 구성하는 동안 위에 언급한 옵션들이 달라질 수 있습니다.</p>
-<p><a href="commands/_Include.htm">#Include</a>를 이용하여 계속 섹션을 구성하는 방법은 지원하지 않습니다.</p>
+<p><a href="lib/_Include.htm">#Include</a>를 이용하여 계속 섹션을 구성하는 방법은 지원하지 않습니다.</p>
 
 <h2 id="ahk2exe">스크립트를 EXE (Ahk2Exe)로 변환하기</h2>
 <p>A script compiler (courtesy of fincs, with additions by TAC109) is included with the program.</p>
-<p>Once a script is compiled, it becomes a standalone executable; that is, AutoHotkey.exe is not required in order to run the script. 컴파일 과정을 통해 실행 파일이 생성됩니다. 안에 다음과 같이 포함됩니다. 오토핫키 인터프리터, 스크립트, 그리고 기타 <a href="commands/_Include.htm">포함된</a> 파일, 그리고 <a href="commands/FileInstall.htm">FileInstall</a> 명령어를 통하여 병합한 파일들. <span class="ver">[v1.1.33+]:</span> Additional files can be included using <a href="misc/Ahk2ExeDirectives.htm">Compiler Directives</a>.</p>
+<p>Once a script is compiled, it becomes a standalone executable; that is, AutoHotkey.exe is not required in order to run the script. 컴파일 과정을 통해 실행 파일이 생성됩니다. 안에 다음과 같이 포함됩니다. 오토핫키 인터프리터, 스크립트, 그리고 기타 <a href="lib/_Include.htm">포함된</a> 파일, 그리고 <a href="lib/FileInstall.htm">FileInstall</a> 명령어를 통하여 병합한 파일들. <span class="ver">[v1.1.33+]:</span> Additional files can be included using <a href="misc/Ahk2ExeDirectives.htm">compiler directives</a>.</p>
+<h3 id="ahk2exe-toc">Compiler Topics</h3>
+<ul>
+  <li><a href="#ahk2exe-run">Running the Compiler</a></li>
+  <li><a href="#ahk2exe-base">Base Executable File</a></li>
+  <li><a href="#CompilerDirectives">Script Compiler Directives</a></li>
+  <li><a href="#mpress">Compressing Compiled Scripts</a></li>
+  <li><a href="#information">Background Information</a></li>
+</ul>
+<h3 id="ahk2exe-run">Running the Compiler</h3>
 <p>Ahk2Exe는 다음과 같은 방식으로 사용할 수 있습니다:</p>
 <ul>
   <li>
-    <p><strong>GUI 인터페이스</strong>: 시작 메뉴에서 "Convert .ahk to .exe" 항목을 선택합니다.</p>
+    <p><strong>GUI 인터페이스</strong>: 시작 메뉴에서 "Convert .ahk to .exe" 항목을 선택합니다. (After invoking the GUI, there may be a pause before the window is shown; see <a href="#information">Background Information</a> for more details.)</p>
   </li>
   <li>
-    <p><strong>우클릭</strong>: 익스플로러 창 안에서 .ahk 파일에 우클릭하고 "Compile Script"를 선택합니다 (오토핫키를 설치할 때 스크립트 컴파일 옵션을 선택했을 경우에만 메뉴가 있습니다). 이렇게 하면 스크립트와 기본 이름이 같은 EXE 파일이 생성됩니다. 잠시 후에 같은 디렉토리에 나타납니다. 주의: The EXE file is produced using the same custom icon, .bin file and <a href="#mpress">compression</a> setting that were last used by Method #1 above.</p>
+    <p><strong>우클릭</strong>: Within an open Explorer window, right-click any .ahk file and select "Compile Script" (only available if the script compiler option was chosen when AutoHotkey was installed). 이렇게 하면 스크립트와 기본 이름이 같은 EXE 파일이 생성됩니다. 잠시 후에 같은 디렉토리에 나타납니다. 주의: The EXE file is produced using the same custom icon, .bin file and <a href="#mpress">compression</a> setting that were last saved in Method #1 above, or as specified by any relevant <a href="misc/Ahk2ExeDirectives.htm">compiler directive</a> in the script.</p>
   </li>
   <li id="ahk2exeCmd">
-    <p><strong>명령 줄</strong>: The compiler can be run from the command line by using the parameters shown below. If any command line parameters are used, the script is compiled immediately unless <code class="no-highlight">/gui</code> is used.</p>
+    <p><strong>명령 줄</strong>: The compiler can be run from the command line by using the parameters shown below. If any command line parameters are used, the script is compiled immediately unless <code class="no-highlight">/gui</code> is used. All parameters are optional, except that there must be one <code class="no-highlight">/gui</code> or <code class="no-highlight">/in</code> parameter.</p>
     <style>
       #param_pairs td:not(:last-child) {
         white-space: nowrap;
@@ -138,15 +147,19 @@ FileAppend, %Var%, C:\My File.txt</pre>
       </tr>
       <tr id="SlashOut">
         <td>/out <i>exe_name</i></td>
-        <td>The path\name of the output .exe to be created. Default is the directory\base_name of the input file plus extension of .exe.</td>
+        <td>The path\name of the output .exe to be created. Default is the directory\base_name of the input file plus extension of .exe, or any relevant <a href="misc/Ahk2ExeDirectives.htm">compiler directive</a> in the script.</td>
       </tr>
       <tr id="slashIcon">
         <td>/icon <i>icon_name</i></td>
-        <td>The icon file to be used. Default is the last icon used in the GUI interface.</td>
+        <td>The icon file to be used. Default is the last icon saved in the GUI interface, or any <a href="misc/Ahk2ExeDirectives.htm#SetMainIcon">SetMainIcon</a> compiler directive in the script.</td>
       </tr>
-      <tr id="SlashBin">
-        <td>/bin <i>file_name</i></td>
-        <td>The .bin file to be used. Default is the last .bin file name used in the GUI interface.</td>
+      <tr id="SlashBase">
+        <td>/base <i>file_name</i></td>
+        <td><span class="ver">[v1.1.33.10+]:</span> The base file to be used (a .bin file or in <span class="ver">[v1.1.34+]</span> an .exe file). Default is the last base file name saved in the GUI interface, or any <a href="misc/Ahk2ExeDirectives.htm#Bin">Base</a> compiler directive in the script.</td>
+      </tr>
+      <tr id="SlashResourceID">
+        <td>/resourceid <i>name</i></td>
+        <td><span class="ver">[v1.1.34+]</span>: Assigns a non-standard resource ID to be used for the main script for compilations which use an <a href="#SlashBase">.exe base file</a> (see <a href="Program.htm#embedded-scripts">Embedded Scripts</a>). Numeric resource IDs should consist of a hash sign (#) followed by a decimal number. Default is #1, or any <a href="misc/Ahk2ExeDirectives.htm#ResourceID">ResourceID</a> compiler directive in the script.</td>
       </tr>
       <tr id="SlashCp">
         <td>/cp <i>codepage</i></td>
@@ -154,19 +167,27 @@ FileAppend, %Var%, C:\My File.txt</pre>
       </tr>
       <tr id="SlashCompress">
         <td>/compress <i>n</i></td>
-        <td><span class="ver">[v1.1.33+]:</span> <a href="#mpress">Compress</a> the exe? 0 = no, 1 = use MPRESS if present, 2 = use UPX if present. Default is the last setting used in the GUI interface.</td>
-      </tr>
-      <tr id="SlashAhk">
-        <td>/ahk <i>file_name</i></td>
-        <td><span class="ver">[v1.1.33+]:</span> The path\name of AutoHotkey.exe to be used when compiling the script. Default is AutoHotkey.exe in the directory immediately above that containing the compiler. If not there, the installed Autohotkey.exe is used if present. <span class="ver">[v1.1.33.01+]:</span> Otherwise AutoHotkeyU32.exe in the directory immediately above that containing the compiler is used.</td>
+        <td><span class="ver">[v1.1.33+]:</span> <a href="#mpress">Compress</a> the exe? 0 = no, 1 = use MPRESS if present, 2 = use UPX if present. Default is the last setting saved in the GUI interface.</td>
       </tr>
       <tr id="SlashGui">
         <td>/gui</td>
-        <td><span class="ver">[v1.1.33+]:</span> Show the GUI instead of immediately compiling. The other parameters can be used to override the settings last used in the GUI. <code>/in</code> is optional in this case.</td>
+        <td><span class="ver">[v1.1.33+]:</span> Shows the GUI instead of immediately compiling. The other parameters can be used to override the settings last saved in the GUI. <code>/in</code> is optional in this case.</td>
+      </tr>
+      <tr id="SlashGuiSilent">
+        <td>/silent [verbose]</td>
+        <td><span class="ver">[v1.1.33.10+]:</span> Disables all message boxes and instead outputs errors to the standard error stream (stderr); or to the standard output stream (stdout) if stderr fails. Other messages are also output to stdout. Optionally enter the word <code>verbose</code> to output status messages to stdout as well.</td>
+      </tr>
+      <tr id="SlashAhk">
+        <td class="warning"><strong>절대 비추천:</strong><br>/ahk <i>file_name</i></td>
+        <td class="warning"><span class="ver">[v1.1.33+]:</span> The path\name of AutoHotkey.exe to be used as a utility when compiling the script.</td>
       </tr>
       <tr id="SlashMpress">
         <td class="warning"><strong>절대 비추천:</strong><br>/mpress <i>0or1</i></td>
         <td class="warning"><a href="#mpress">Compress</a> the exe with MPRESS? 0 = no, 1 = yes. Default is the last setting used in the GUI interface.</td>
+      </tr>
+      <tr id="SlashBin">
+        <td class="warning"><strong>절대 비추천:</strong><br>/bin <i>file_name</i></td>
+        <td class="warning">The .bin file to be used. Default is the last .bin file name saved in the GUI interface.</td>
       </tr>
     </table>
     <p>예를 들어:</p>
@@ -178,7 +199,7 @@ FileAppend, %Var%, C:\My File.txt</pre>
   <li>Parameters containing spaces must be enclosed in double quotes.</li>
   <li>컴파일링은 전형적으로 스크립트의 수행성능을 개선하지 않습니다.</li>
   <li>v1.1.01 버전에서, 암호 보호와 /NoDecompile 스위치를 지원하지 않습니다.</li>
-  <li>명령어 <a href="commands/_NoTrayIcon.htm">#NoTrayIcon</a> 그리고 "<a href="commands/Menu.htm#MainWindow">Menu, Tray, MainWindow</a>" 는 컴파일된 스크립트의 행위에 영향을 미칩니다.</li>
+  <li>명령어 <a href="lib/_NoTrayIcon.htm">#NoTrayIcon</a> 그리고 "<a href="lib/Menu.htm#MainWindow">Menu, Tray, MainWindow</a>" 는 컴파일된 스크립트의 행위에 영향을 미칩니다.</li>
   <li>스크립트가 컴파일된 형태로 실행 중이면 내장 변수 <a href="Variables.htm#IsCompiled">A_IsCompiled</a>에 1이 담깁니다. 아니면 비어 있습니다.</li>
   <li><span class="ver">[v1.0.43+]:</span> 매개변수를 Ahk2Exe에 건네면, 컴파일 과정의 성패 여부를 알리는 메시지가 표준출력으로 나타납니다. 메시지가 명령어 프롬프트에 나타나지 않더라도, 출력을 파일로 방향 전환하는 것과 같은 수단을 써서 "잡을 수 있습니다" </li>
   <li> <span class="ver">[v1.1.22.03+]:</span> 추가로 실패할 경우, Ahk2Exe는 종료 코드에 일어난 에러의 종류를 알려줍니다. 이런 에러 코드는 <a href="https://github.com/AutoHotkey/Ahk2Exe/blob/master/ErrorCodes.md">GitHub (ErrorCodes.md)</a>에서 보실 수 있습니다.</li>
@@ -187,7 +208,7 @@ FileAppend, %Var%, C:\My File.txt</pre>
 
 <h3 id="ahk2exe-base">Base Executable File</h3>
 <p>Each compiled script .exe is based on an executable file which implements the interpreter. The base files included in the Compiler directory have the ".bin" extension; these are versions of the interpreter which do not include the capability to load external script files. Instead, the program looks for a Win32 (RCDATA) resource named "&gt;AUTOHOTKEY SCRIPT&lt;" and loads that, or fails if it is not found.</p>
-<p><span class="ver">[v1.1.34+]:</span> The standard AutoHotkey executable files can also be used as the base of a compiled script, by embedding a Win32 (RCDATA) resource with ID 1. This allows the compiled script .exe to be used with the <a href="#SlashScript">/script</a> switch to execute scripts other than the main embedded script. For more details, see <a href="Program.htm#embedded-scripts">Embedded Scripts</a>.</p>
+<p><span class="ver">[v1.1.34+]:</span> The standard AutoHotkey executable files can also be used as the base of a compiled script, by embedding a Win32 (RCDATA) resource with ID 1. (Additional scripts can be added with the <a href="misc/Ahk2ExeDirectives.htm#AddResource">AddResource</a> compiler directive.) This allows the compiled script .exe to be used with the <a href="#SlashScript">/script</a> switch to execute scripts other than the main embedded script. For more details, see <a href="Program.htm#embedded-scripts">Embedded Scripts</a>.</p>
 
 <h3 id="CompilerDirectives">Script Compiler Directives</h3>
 <p><span class="ver">[v1.1.33+]:</span> Script compiler directives allow the user to specify details of how a script is to be compiled. Some of the features are:</p>
@@ -205,6 +226,29 @@ FileAppend, %Var%, C:\My File.txt</pre>
 <p><strong>UPX</strong> official website (downloads and information): <a href="https://upx.github.io/">https://upx.github.io/</a></p>
 <p><strong>Note:</strong> While compressing the script executable prevents casual inspection of the script's source code using a plain text editor like Notepad or a PE resource editor, it does not prevent the source code from being extracted by tools dedicated to that purpose.</p>
 
+<h3 id="information">Background Information</h3>
+ <p>In <span class="ver">[v1.1.33.10+]</span>, the following folder structure is supported, where the running version of <code>Ahk2Exe.exe</code> is in the first \Compiler directory shown below:</p>
+<pre class="no-highlight">\AutoHotkey 
+   AutoHotkeyA32.exe 
+   AutoHotkeyU32.exe
+   AutoHotkeyU64.exe
+   \Compiler
+      Ahk2Exe.exe  <em>; the master version of Ahk2Exe</em>
+      ANSI 32-bit.bin
+      Unicode 32-bit.bin
+      Unicode 64-bit.bin
+   \AutoHotkey v2.0-a135
+      AutoHotkey32.exe
+      AutoHotkey64.exe
+      \Compiler
+   \v2.0-beta.1
+      AutoHotkey32.exe
+      AutoHotkey64.exe</pre>
+<p>The base file search algorithm runs for a short amount of time when Ahk2Exe starts, and works as follows:</p>
+<p>Qualifying AutoHotkey .exe files and all .bin files are searched for in the compiler's directory, the compiler's parent directory, and any of the compiler's sibling directories with directory names that start with <code>AutoHotkey</code> or <code>V</code>, but do not start with <code>AutoHotkey_H</code>. The selected directories are searched recursively. Any AutoHotkey.exe files found are excluded, leaving files such as AutoHotkeyA32.exe, AutoHotkey64.exe, etc. plus all .bin files found. All .exe files that are included must have a name starting with <code>AutoHotkey</code> and a file description containing the word <code>AutoHotkey</code>, and  must have a version of <code class="no-highlight">1.1.34+</code> or <code class="no-highlight">2.0-a135+</code>.</p>
+<p>A version of the AutoHotkey interpreter is also needed (as a utility) for a successful compile, and one is selected using a similar algorithm. In most cases the version of the interpreter used will match the version of the base file selected by the user for the compile.</p>
+
+
 <h2 id="cmd">스크립트에 명령 줄 매개변수 건네기</h2>
 <p>스크립트는 명령줄 매개변수를 지원합니다. 형식은 다음과 같습니다:</p>
 <pre>AutoHotkey.exe [<i>스위치</i>] [<i>Script Filename</i>] [<i>스크립트 매개변수</i>]</pre>
@@ -215,19 +259,19 @@ FileAppend, %Var%, C:\My File.txt</pre>
   <tr><th>스위치</th><th>의미</th><th class="wrap" abbr="Compiled?">Works compiled?</th></tr>
   <tr id="SlashF">
     <td>/f 또는 /force</td>
-    <td>무조건 기동합니다. 경고 대화상자를 전부 무시합니다. This has the same effect as <a href="commands/_SingleInstance.htm">#SingleInstance Off</a>.</td>
+    <td>무조건 기동합니다. 경고 대화상자를 전부 무시합니다. This has the same effect as <a href="lib/_SingleInstance.htm">#SingleInstance Off</a>.</td>
     <td>네</td>
   </tr>
   <tr id="SlashR">
     <td>/r 또는 /restart</td>
-    <td>스크립트가 재시작 중이라고 알립니다 (이는 또한 내부적으로 <a href="commands/Reload.htm">Reload</a> 명령어가 사용합니다).</td>
+    <td>Indicate that the script is being restarted and should attempt to close a previous instance of the script (this is also used by the <a href="lib/Reload.htm">Reload</a> command, internally).</td>
     <td>네</td>
   </tr>
   <tr id="ErrorStdOut">
     <td>/ErrorStdOut<br><br>/ErrorStdOut=<em>Encoding</em></td>
     <td>
-      <p>Send syntax errors that prevent a script from launching to the standard error stream (stderr) rather than displaying a dialog. 자세한 것은 <a href="commands/_ErrorStdOut.htm">#ErrorStdOut</a>를 참조하십시오. 이것을 /iLib와 조합하면 스크립트를 실행하지 않고 평가할 수 있습니다.</p>
-      <p><span class="ver">[v1.1.33+]:</span> An <a href="commands/FileEncoding.htm">encoding</a> can optionally be specified. For example, <code>/ErrorStdOut=UTF-8</code> encodes messages as UTF-8 before writing them to stderr.</p>
+      <p>Send syntax errors that prevent a script from launching to the standard error stream (stderr) rather than displaying a dialog. 자세한 것은 <a href="lib/_ErrorStdOut.htm">#ErrorStdOut</a>를 참조하십시오. 이것을 /iLib와 조합하면 스크립트를 실행하지 않고 평가할 수 있습니다.</p>
+      <p><span class="ver">[v1.1.33+]:</span> An <a href="lib/FileEncoding.htm">encoding</a> can optionally be specified. For example, <code>/ErrorStdOut=UTF-8</code> encodes messages as UTF-8 before writing them to stderr.</p>
     </td>
     <td>네</td>
   </tr>
@@ -258,7 +302,7 @@ FileAppend, %Var%, C:\My File.txt</pre>
   <tr id="SlashInclude">
     <td>/include <em>"IncFile"</em></td>
     <td>
-      <p><span class="ver">[v1.1.34+]:</span> <a href="commands/_Include.htm">Includes</a> a file prior to the main script. Only a single file can be included by this method. When the script is <a href="commands/Reload.htm">reloaded</a>, this switch is automatically passed to the new instance.</p>
+      <p><span class="ver">[v1.1.34+]:</span> <a href="lib/_Include.htm">Includes</a> a file prior to the main script. Only a single file can be included by this method. When the script is <a href="lib/Reload.htm">reloaded</a>, this switch is automatically passed to the new instance.</p>
     </td>
     <td>아니</td>
   </tr>
@@ -282,8 +326,9 @@ FileAppend, %Var%, C:\My File.txt</pre>
 </ul>
 <p>파일이름 <code><i>AutoHotkey</i>.ahk</code>는 스크립트를 실행하는 데 사용된 실행파일의 이름에 따라 다릅니다. 예를 들어, AutoHotkey.exe를 MyScript.exe로 이름을 바꾸었다면, <code>MyScript.ahk</code>를 찾으려고 시도합니다. AutoHotkeyU32.exe를 매개변수 없이 실행하면 AutoHotkeyU32.ahk를 찾습니다.</p>
 <p>주의: <a href="AHKL_ChangeLog.htm#L51">revision 51</a> 이전의 버전에서는 AutoHotkey.ini를 작업 디렉토리에서 찾거나 AutoHotkey.ahk를 나의 문서에서 찾았습니다.</p>
-<p><span class="ver">[v1.1.17+]:</span> 별표(*)를 파일이름에 지정해 표준 입력(stdin)으로부터 스크립트 텍스트를 읽어 들입니다. 예를 들어, <a href="commands/Run.htm#ExecScript">ExecScript()</a>를 참조하십시오.</p>
-<p id="cmd_args"><strong>스크립트 매개변수:</strong> 스크립트에 건네고 싶은 문자열(들), 각각 스페이스로 구분됩니다. 스페이스가 포함된 매개변수는 인용부호로 둘러싸야 합니다. 기호 그대로의 인용부호는 역사선(\")을 앞에 붙여서 건넬 수 있습니다. 결과적으로, 인용부호 매개변수에 뒤따르는 역사선은 (예를 들어 "C:\My Documents<span class="red">\"</span>) 기호 그대로의 인용부호로 취급됩니다 (즉, 스크립트는 문자열 C:\My Documents<span class="red">"</span>를 받습니다). 그런 따옴표를 제거하려면, <code><a href="commands/StringReplace.htm">StringReplace</a>, 1, 1, <span class="red">"</span>,, All</code>를 사용하십시오.</p>
+<p><span class="ver">[v1.1.17+]:</span> 별표(*)를 파일이름에 지정해 표준 입력(stdin)으로부터 스크립트 텍스트를 읽어 들입니다. 예를 들어, <a href="lib/Run.htm#ExecScript">ExecScript()</a>를 참조하십시오.</p>
+<p><span class="ver">[v1.1.34+]:</span> If the current executable file has <a href="Program.htm#embedded-scripts">embedded scripts</a>, this parameter can be an asterisk followed by the resource name or ID of an embedded script. For compiled scripts (i.e. if an embedded script with the ID #1 exists), this parameter must be preceded by the <code>/script</code> switch.</p>
+<p id="cmd_args"><strong>Script Parameters:</strong> The string(s) you want to pass into the script, with each separated from the next by one or more spaces. 스페이스가 포함된 매개변수는 인용부호로 둘러싸야 합니다. If you want to pass an empty string as a parameter, specify two consecutive quotation marks. 기호 그대로의 인용부호는 역사선(\")을 앞에 붙여서 건넬 수 있습니다. 결과적으로, 인용부호 매개변수에 뒤따르는 역사선은 (예를 들어 "C:\My Documents<span class="red">\"</span>) 기호 그대로의 인용부호로 취급됩니다 (즉, 스크립트는 문자열 C:\My Documents<span class="red">"</span>를 받습니다). 그런 따옴표를 제거하려면, <code><a href="lib/StringReplace.htm">StringReplace</a>, 1, 1, <span class="red">"</span>,, All</code>를 사용하십시오.</p>
 <p><span class="ver">[v1.1.27+]:</span> Incoming parameters, if present, are stored as an array in the built-in variable <strong>A_Args</strong>, and can be accessed using <a href="Objects.htm#Usage_Simple_Arrays">array syntax</a>. <code>A_Args[1]</code> contains the first parameter. 다음 예제는 너무 매개변수가 적게 건네어지면 스크립트를 종료합니다:</p>
 <pre>if A_Args.Length() &lt; 3
 {
@@ -305,7 +350,7 @@ FileAppend, %Var%, C:\My File.txt</pre>
 }</pre>
 <p><strong>알려진 한계:</strong> 파일을 끌어 .ahk 스크립트에 떨어트릴 때 NTFS 파일 시스템에서 8-점-3 (짧은) 이름이 꺼져 있으면 제대로 작동하지 못할 가능성이 높습니다. 한 가지 우회책은 스크립트를 <a href="#ahk2exe">컴파일</a>한 다음 그 결과 파일을 그 결과 EXE 파일 위에 끌어 떨구는 것입니다.</p>
 <p id="cmd_args_old"><strong>Legacy:</strong> The command line parameters are also stored in the <a href="Variables.htm">variables</a> %1%, %2%, and so on, as in versions prior to <span class="ver">[v1.1.27]</span>. 게다가, %0%에는 건네어진 매개변수의 개수가 담겨 있습니다 (없으면 0). 그렇지만, 이런 변수들은 표현식 안에서 직접적으로 참조할 수 없습니다. 왜냐하면 변수가 아니라 숫자로 보이기 때문입니다. 다음 예제는 너무 매개변수가 적게 건네어지면 스크립트를 종료합니다:</p>
-<pre>if 0 &lt; 3  <em>; <a href="commands/IfEqual.htm">비-표현식 if-서술문</a>의 왼쪽은 언제나 변수의 이름입니다.</em>
+<pre>if 0 &lt; 3  <em>; <a href="lib/IfEqual.htm">비-표현식 if-서술문</a>의 왼쪽은 언제나 변수의 이름입니다.</em>
 {
     MsgBox 이 스크립트는 적어도 3 개의 매개변수가 들어오기를 요구하지만, 겨우 %0% 개를 받았습니다.
     ExitApp
@@ -335,9 +380,9 @@ FileAppend, %Var%, C:\My File.txt</pre>
   <p class="note"><strong>Note:</strong> The "Default to UTF-8" option in the AutoHotkey <span class="ver">[v1.1.33+]</span> installer adds <code>/CP65001</code> to the command line for all scripts launched via the shell (Explorer).</p></li>
   <li>다른 경우는 모두 시스템 기본 ANSI 코드 페이지가 사용됩니다.</li>
 </ul>
-<p>이 원칙은 오토핫키가 적재하는 스크립트 파일에만 적용됩니다. 스크립트 자체의 파일 I/O에는 적용되지 않는다는 것을 주의하십시오. <a href="commands/FileEncoding.htm">파일인코딩</a>은 스크립트가 읽고 쓰는 기본 인코딩을 제어합니다. 반면에 <a href="commands/IniRead.htm">IniRead</a>와 <a href="commands/IniWrite.htm">IniWrite</a>는 언제나 UTF-16 또는 ANSI를 취급합니다.</p>
+<p>이 원칙은 오토핫키가 적재하는 스크립트 파일에만 적용됩니다. 스크립트 자체의 파일 I/O에는 적용되지 않는다는 것을 주의하십시오. <a href="lib/FileEncoding.htm">파일인코딩</a>은 스크립트가 읽고 쓰는 기본 인코딩을 제어합니다. 반면에 <a href="lib/IniRead.htm">IniRead</a>와 <a href="lib/IniWrite.htm">IniWrite</a>는 언제나 UTF-16 또는 ANSI를 취급합니다.</p>
 <p>모든 텍스트가 (필요하면) <a href="Compat.htm#Format">고유의 문자열 형식</a>으로 변환되므로, 유효하지 않거나 고유의 코드페이지에 존재하지 않는 문자는 위치보유자로 교체됩니다: ANSI라면 '?'로 교체되고 Unicode는 '�'로 교체됩니다. 유니코드 빌드본은 오직 스크립트 파일에 인코딩 에러가 있을 경우 또는 파일을 적재하고 저장하는 데 사용된 코드 페이지가 일치하지 않을 경우에만 교체가 일어납니다.</p>
-<p><a href="commands/RegWrite.htm">RegWrite</a>는 익스플로러로 기동된 스크립트에 대하여 기본값을 설정하는 데 사용할 수 있습니다(예, 더블클릭 실행):</p>
+<p><a href="lib/RegWrite.htm">RegWrite</a>는 익스플로러로 기동된 스크립트에 대하여 기본값을 설정하는 데 사용할 수 있습니다(예, 더블클릭 실행):</p>
 <pre><em>; 아래의 적절한 줄에 주석을 걷어내고 모두 주석 처리해서
 ; 현재 빌드의 기본값으로 리셋합니다. 필요한 대로 변경합니다:
 ; codepage := 0        ; 시스템 기본 ANSI 코드페이지
@@ -355,13 +400,13 @@ else            <em>; 현재 사용자에 대해서만 설정합니다.</em>
 <p>이미 오토핫키가 설치되어 있다고 가정합니다. 그렇지 않다면 결과가 불만족스러울 수도 있습니다.</p>
 
 <h2 id="debug">스크립트 디버깅하기</h2>
-<p><a href="commands/ListVars.htm">ListVars</a>와 <a href="commands/Pause.htm">Pause</a>같은 명령어들은 스크립트를 디버그하는 데 도움을 줄 수 있습니다. 예를 들어, 다음의 두 줄을 주의 깊게 선택된 위치에 임시로 삽입하면, 스크립트에 "정지 점"을 만듭니다:</p>
+<p><a href="lib/ListVars.htm">ListVars</a>와 <a href="lib/Pause.htm">Pause</a>같은 명령어들은 스크립트를 디버그하는 데 도움을 줄 수 있습니다. 예를 들어, 다음의 두 줄을 주의 깊게 선택된 위치에 임시로 삽입하면, 스크립트에 "정지 점"을 만듭니다:</p>
 <pre>ListVars
 Pause</pre>
 <p>스크립트가 이 두 줄을 만나면, 모든 변수의 현재 내용을 화면에 보여주므로 조사할 수 있습니다. 재개할 준비가 되면, File이나 Tray 메뉴를 통하여 재개합니다. 그러면 스크립트는 (혹 있다면) 다음 "정지 점"에 도달할 때까지 계속 진행합니다.</p>
 <p>일반적으로 이런 "정지 점"들을 활성 창이 스크립트에 영향을 주지 않는 곳에 배치하는 것이 제일 좋습니다. 예를 들어 WinActivate 명령어 바로 다음이 좋습니다. 이렇게 하면 스크립트는 적절하게 연산을 재개할 수 있습니다.</p>
-<p>다음 명령어들도 또한 디버깅에 유용합니다: <a href="commands/ListLines.htm">ListLines</a>, <a href="commands/KeyHistory.htm">KeyHistory</a>, 그리고 <a href="commands/OutputDebug.htm">OutputDebug</a>.</p>
-<p>아주 흔한 에러로, 철자 오류나 "global" 선언을 빼먹는 경우, <a href="commands/_Warn.htm">경고를 켜면</a> 탐지할 수 있습니다.</p>
+<p>다음 명령어들도 또한 디버깅에 유용합니다: <a href="lib/ListLines.htm">ListLines</a>, <a href="lib/KeyHistory.htm">KeyHistory</a>, 그리고 <a href="lib/OutputDebug.htm">OutputDebug</a>.</p>
+<p>아주 흔한 에러로, 철자 오류나 "global" 선언을 빼먹는 경우, <a href="lib/_Warn.htm">경고를 켜면</a> 탐지할 수 있습니다.</p>
 <h3 id="idebug">상호대화 디버깅 <span class="ver">[AHK_L 11+]</span></h3>
 <p>상호대화 디버깅은 지원되는 <a href="AHKL_DBGPClients.htm">DBGp 클라이언트</a>로 가능합니다. 전형적으로 다음 조치가 가능합니다:</p>
 <ul>
@@ -370,7 +415,7 @@ Pause</pre>
   <li>모든 변수 또는 특정 변수를 검사합니다.</li>
   <li>실행중인 서브루틴과 함수의 스택을 봅니다.</li>
 </ul>
-<p>이 기능은 컴파일된 스크립트에는 꺼져 있음에 유의하십시오.</p>
+<p>Note that this functionality is disabled for compiled scripts which are <a href="#ahk2exe-base">based on a BIN file</a>. For compiled scripts based on an EXE file, /debug must be specified after <a href="#SlashScript">/script</a>.</p>
 <p>상호대화 디버깅을 켜려면, 먼저 지원되는 디버거 클라이언트를 기동한 다음, 그 스크립트를 <b>/Debug</b> 명령어 줄 스위치와 함께 기동합니다.</p>
 <pre class="Syntax">AutoHotkey.exe /Debug<span class="optional">=<i>SERVER</i>:<i>PORT</i></span> ...</pre>
 <p><i>SERVER</i>와 <i>PORT</i>는 생략해도 됩니다. 예를 들어, 다음은 서로 동등합니다:</p>

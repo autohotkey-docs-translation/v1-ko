@@ -22,7 +22,7 @@
   <dt>WarningType</dt>
   <dd>
       <p>켜고 끌 경고의 종류. 생략하면, <i>All</i>이 기본값입니다.</p>
-      <p id="UseUnset"><strong>UseUnsetLocal</strong> 또는 <strong>UseUnsetGlobal</strong>: 변수가 이전에 값이 할당되어 있지 않거나 <a href="VarSetCapacity.htm">VarSetCapacity()</a>로 초기화되지 않은 채로 읽혀지면 경고를 보냅니다. 변수를 비울 목적이라면, 빈 문자열을 할당해 이 경고를 누르십시오.</p>
+      <p id="UseUnset"><strong>UseUnsetLocal</strong> 또는 <strong>UseUnsetGlobal</strong>: 변수가 이전에 값이 할당되어 있지 않거나 <a href="VarSetCapacity.htm">VarSetCapacity()</a>로 초기화되지 않은 채로 읽혀지면 경고를 보냅니다. 변수를 비울 목적이라면, 빈 문자열을 할당해 이 경고를 누르십시오. <a href="IsSet.htm">IsSet()</a> can be used to determine whether reading a variable would raise this warning.</p>
       <p>지역 변수와 전역 변수에 대하여 따로 경고 유형이 나눠집니다. 전역 변수는 영속적이고 스크립트-전체에 걸쳐 영향을 미치는 성질이 있으므로 미리 초기화하지 않고 사용하는 것이 보다 일반적이기 때문입니다. 이런 이유로, 어떤 스크립트 저자는 이런 종류의 경고를 지역 변수에는 켜고 전역 변수에는 끄고 싶어합니다.</p>
       <pre>#Warn
 <em>;y := ""  ; 이렇게 하면 경고를 누릅니다.</em>

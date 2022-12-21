@@ -20,12 +20,12 @@
 
   <dt>KeyName</dt>
   <dd><p>단순히 키보드의 문자 하나이거나 또는 마우스/조이스틱 버튼과 같이 <a href="../KeyList.htm">키 목록</a>의 키 이름 중 하나일 수 있습니다. 마우스/조이스틱 버튼과 같은 경우, 조이스틱 속성은 버튼 지원합니다.</p>
-      <p>명시적인 가상 키 코드도 <code>vkFF</code>와 같이 역시 지정할 수 있습니다. 이것은 키에 이름도 없고 건네질 때 보이는 문자도 생산하지 않는 아주 희귀한 경우에 유용합니다. 그의 가상 키 코드는 다음과 같이 종료할 수 있습니다. 아래 <a href="../KeyList.htm#SpecialKeys">키 리스트 페이지</a>에 있는 단계를 따르십시오.</p></dd>
+      <p>명시적인 가상 키 코드도 <code>vkFF</code>와 같이 역시 지정할 수 있습니다. 이것은 키에 이름도 없고 건네질 때 보이는 문자도 생산하지 않는 아주 희귀한 경우에 유용합니다. Its virtual key code can be determined by following the steps at the bottom of the <a href="../KeyList.htm#SpecialKeys">key list page</a>.</p></dd>
 
   <dt>Options</dt>
   <dd><p>이 매개변수가 비어 있으면, 명령어는 지정된 키나 마우스/조이스틱 버튼을 물리적으로 사용자가 떼기를 무한정 기다립니다. 그렇지만, <a href="_InstallKeybdHook.htm">키보드 갈고리</a>가 설치되어 있지 않고 <em>KeyName</em>이 <a href="Send.htm">Send</a> 명령어와 같은 수단으로 인위적으로 뗀 키보드 키이면, 그 키는 물리적으로 뗀 것처럼 보일 것입니다. <a href="_InstallMouseHook.htm">마우스 갈고리</a>가 설치되어 있지 않을 때 마우스 버튼도 마찬가지입니다.</p>
       <p>옵션: 다음 기호로 구성되는 문자열 (순서대로, 선택적으로 사이에 스페이스 허용):</p>
-      <p><strong>D</strong>: 키가 눌리기를 기다립니다.</p>            
+      <p><strong>D</strong>: 키가 눌리기를 기다립니다.</p>
       <p><strong>L</strong>: 키의 논리적 상태를 점검합니다. 이는 OS와 활성 창이 믿고 있는 키의 상태입니다 (반드시 물리적 상태와 같은 것은 아닙니다). 이 옵션은 조이스틱 버튼에 대해서는 무시됩니다.</p>
       <p><strong>T</strong>: Timeout (예, <code>T3</code>). 시한 종료를 선언하기 전에 기다릴 초의 개수. 시한이 지나면 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 1이 설정됩니다. 키나 버튼이 지정된 상태를 이루면, 이 명령어는 시한이 지나기를 기다리지 않습니다. 대신에, 즉시 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>에 0을 설정하고 스크립트는 실행을 계속합니다.</p>
       <p>시간제한 값은 2.5와 같이 부동 소수점 수가 될 수 있습니다. 그러나 0x03와 같은 십육진 수는 안됩니다.</p></dd>

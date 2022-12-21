@@ -12,24 +12,24 @@
 <body>
 <h1>스크립트 수행성능</h1>
 
-<p>수행성능을 극대화하려면, SetFormat의 사용을 자제하고 (<a href="../commands/SetFormat.htm#Fast">빠른 모드</a> 제외) 다음 줄을 각 스크립트의 상단 근처에 포함하십시오:</p>
-<pre><a href="../commands/_NoEnv.htm">#NoEnv</a>
-<a href="../commands/SetBatchLines.htm">SetBatchLines -1</a>
-<a href="../commands/ListLines.htm">ListLines Off</a></pre>
-<p>게다가, 다음 명령어를 사용하면 스크립트의 성질에 따라 수행성능에 영향을 미칩니다: <a href="../commands/SendMode.htm">SendMode</a>, <a href="../commands/SetKeyDelay.htm">SetKeyDelay</a>, <a href="../commands/SetMouseDelay.htm">SetMouseDelay</a>, <a href="../commands/SetWinDelay.htm">SetWinDelay</a>, <a href="../commands/SetControlDelay.htm">SetControlDelay</a>, 그리고 <a href="../commands/SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>.</p>
+<p>수행성능을 극대화하려면, SetFormat의 사용을 자제하고 (<a href="../lib/SetFormat.htm#Fast">빠른 모드</a> 제외) 다음 줄을 각 스크립트의 상단 근처에 포함하십시오:</p>
+<pre><a href="../lib/_NoEnv.htm">#NoEnv</a>
+<a href="../lib/SetBatchLines.htm">SetBatchLines -1</a>
+<a href="../lib/ListLines.htm">ListLines Off</a></pre>
+<p>게다가, 다음 명령어를 사용하면 스크립트의 성질에 따라 수행성능에 영향을 미칩니다: <a href="../lib/SendMode.htm">SendMode</a>, <a href="../lib/SetKeyDelay.htm">SetKeyDelay</a>, <a href="../lib/SetMouseDelay.htm">SetMouseDelay</a>, <a href="../lib/SetWinDelay.htm">SetWinDelay</a>, <a href="../lib/SetControlDelay.htm">SetControlDelay</a>, 그리고 <a href="../lib/SetDefaultMouseSpeed.htm">SetDefaultMouseSpeed</a>.</p>
 <h2 id="Built-in_Performance_Features">내장 수행성능 특징</h2>
 <p>스크립트는 적재되는 동안 그리고 구문을 점검하는 동안 유사-컴파일됩니다. 유사-컴파일은 스크립트가 소모하는 메모리를 줄이는 외에도, 극적으로 수행성능을 향상시킵니다.</p>
 <p>다음은 테크니컬한 최적화 과정을 기술합니다 (유사-컴파일링):</p>
 <ul>
-  <li>입력 변수와 출력 변수 (이름에 다른 변수를 가리키는 참조 주소가 들어있지 않을 때) 그리고 <a href="../commands/GroupAdd.htm">그룹</a> 이름은 메모리 주소로 결정됩니다.</li>
-  <li><a href="../commands/Loop.htm">Loops</a>, <a href="../commands/Block.htm">blocks</a>, <a href="../commands/IfExpression.htm">IFs (expression)</a>, <a href="../commands/IfEqual.htm">IFs (legacy)</a>, and <a href="../commands/Else.htm">ELSEs</a> are given the memory addresses of their related jump-points in the script.</li>
-  <li>각 <a href="../Hotkeys.htm">핫키</a>,<a href="../commands/Gosub.htm"> Gosub</a>, 그리고 <a href="../commands/Goto.htm">Goto</a>의 목적지는 변수가 아닌 한 메모리 주소로 결정됩니다.</li>
+  <li>입력 변수와 출력 변수 (이름에 다른 변수를 가리키는 참조 주소가 들어있지 않을 때) 그리고 <a href="../lib/GroupAdd.htm">그룹</a> 이름은 메모리 주소로 결정됩니다.</li>
+  <li><a href="../lib/Loop.htm">Loops</a>, <a href="../lib/Block.htm">blocks</a>, <a href="../lib/IfExpression.htm">IFs (expression)</a>, <a href="../lib/IfEqual.htm">IFs (legacy)</a>, and <a href="../lib/Else.htm">ELSEs</a> are given the memory addresses of their related jump-points in the script.</li>
+  <li>각 <a href="../Hotkeys.htm">핫키</a>,<a href="../lib/Gosub.htm"> Gosub</a>, 그리고 <a href="../lib/Goto.htm">Goto</a>의 목적지는 변수가 아닌 한 메모리 주소로 결정됩니다.</li>
   <li>각 명령어 이름은 점프 테이블의 주소로 교체됩니다.</li>
   <li>각 줄은 미리-해석되어 매개변수 리스트로 들어갑니다. (있다면) 각 매개변수는 미리 해석되어 <a href="../Variables.htm">변수</a> 리스트로 들어갑니다.</li>
   <li>각 <a href="../Variables.htm#Expressions">표현식</a>은 토큰화되어 중위식에서 후위식으로 변환됩니다.</li>
   <li><a href="../Variables.htm">변수</a>나 <a href="../Functions.htm">함수</a>를 가리키는 참조 주소는 메모리 주소로 결정됩니다.</li>
   <li>표현식에서 문자 그대로의 정수와 수학/비교 명령어는 이진 정수로 교체됩니다.</li>
 </ul>
-<p>게다가, 스크립트를 실행하는 동안, 이진 숫자들은 변수에 캐쉬가 되어 문자열로/으로부터 변환을 피합니다. 자세한 것은 <a href="../commands/SetFormat.htm#Fast">SetFormat</a>을 참조하십시오.</p>
+<p>게다가, 스크립트를 실행하는 동안, 이진 숫자들은 변수에 캐쉬가 되어 문자열로/으로부터 변환을 피합니다. 자세한 것은 <a href="../lib/SetFormat.htm#Fast">SetFormat</a>을 참조하십시오.</p>
 </body>
 </html>

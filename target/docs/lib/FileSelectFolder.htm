@@ -3,7 +3,7 @@
 <head>
 <title>FileSelectFolder - Syntax &amp; Usage | AutoHotkey</title>
 <meta name="description" content="The FileSelectFolder command displays a standard dialog that allows the user to select a folder." />
-<meta name="ahk:equiv-v2" content="commands/DirSelect.htm" />
+<meta name="ahk:equiv-v2" content="lib/DirSelect.htm" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -20,7 +20,7 @@
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>사용자가 선택한 폴더를 저장할 변수의 이름. 사용자가 취소하면 비워집니다 (즉, 폴더를 선택하지 않으면). 사용자가 루트 디렉토리를 선택하면 (예, C:\), <em>OutputVar</em>에는 역사선이 뒤에 포함됩니다. 이것이 싫다면, 다음과 같이 제거하십시오:</p>
+  <dd><p>The name of the output variable in which to store the user's selected folder. 사용자가 취소하면 비워집니다 (즉, 폴더를 선택하지 않으면). 사용자가 루트 디렉토리를 선택하면 (예, C:\), <em>OutputVar</em>에는 역사선이 뒤에 포함됩니다. 이것이 싫다면, 다음과 같이 제거하십시오:</p>
       <pre>FileSelectFolder, Folder
 Folder := RegExReplace(Folder, "\\$")  <em>; Removes the trailing backslash, if present.</em></pre></dd>
 

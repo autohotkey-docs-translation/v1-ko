@@ -12,7 +12,7 @@
 
 <h1>ComObjConnect() <span class="ver">[AHK_L 53+]</span></h1>
 <p>COM 객체의 이벤트를 주어진 접두사를 가진 함수에 연결합니다.</p>
-<pre class="Syntax"><span class="func">ComObjConnect</span>(ComObject <span class="optional">, Prefix</span>)</pre>
+<pre class="Syntax"><span class="func">ComObjConnect</span>(ComObject <span class="optional">, PrefixOrSink</span>)</pre>
 
 <h2 id="Parameters">매개변수</h2>
 <dl>
@@ -24,11 +24,10 @@
     <p><span class="ver">[v1.1.22+]</span>: IProvideClassInfo 인터페이스를 객체가 지원하면 그 클래스의 관한 유형정보를 열람하는 데 사용됩니다. 그렇지 않으면, ComObjConnect는 객체의 IDispatch 인터페이스를 통하 유형 정보를 열람하려고 시도하는데, 이것은 신뢰성이 떨어집니다.</p>
   </dd>
 
-  <dt>Prefix</dt>
+  <dt>PrefixOrSink</dt>
   <dd>
-      <p>이벤트 이름 앞에 붙일 문자열. 이벤트가 일어날 때 호출할 함수를 결정합니다.</p>
+      <p>A string to prefix to the event name to determine which function to call when an event occurs, or <span class="ver">[in v1.1.01+]</span> an <a href="#event-sink">event sink object</a> defining a method for each event to be handled.</p>
       <p>생략하면, 객체가 "연결이 끊깁니다"; 즉, 스크립트는 더 이상 그의 이벤트 고지를 받지 않습니다.</p>
-      <p><span class="ver">[v1.1.01+]:</span> 이 매개변수는 스크립트가 지정한 객체일 수 있습니다. 이벤트가 일어나면, 그에 상응하는 메쏘드가 호출됩니다. 첫 매개변수는 보통 숨은 <code>this</code> 매개변수입니다. 이 매개변수는 COM 객체 말고 스크립트에-정의된 객체를 참조합니다. 각 이벤트마다 메쏘드를 정의하지 않고 모든 이벤트를 나포하려면 <a href="../Objects.htm#Meta_Functions">__Call 메타-함수</a>를 정의하십시오.</p>
     </dd>
 
 </dl>
@@ -40,12 +39,19 @@
     <i class="dull">... event-handling code ...</i>
     return <i>ReturnValue</i>
 }</pre>
-<p><i>Prefix</i>는 여러분이 고른 접두사입니다. 반면에 <b>EventName</b>은 함수가 처리해야 하는 이벤트의 이름입니다.</p>
+<p><i>Prefix</i> should be the same as the <em>PrefixOrSink</em> parameter if it is a string; otherwise, it should be omitted. <b>EventName</b> should be replaced with the name of whatever event the function should handle.</p>
 <p><i>Params</i>는 이벤트가 가진 매개변수에 상응합니다. 이벤트에 매개변수가 없으면, <i>Params</i>도 완전히 생략되어야 합니다. <i>ComObject</i>는 선택적입니다. 그리고 <i>Params</i>의 개수가 올바르게 정의되어 있을 경우에만 사용해야 합니다; 그 안에 ComObjConnect에 건넸던 원래 포장 객체를 가리키는 참조가 들어 있습니다. "ComObject"는 여러분의 스크립트 문맥에 맞게 보다 의미있는 이름으로 교체되어야 합니다.</p>
 <p>이벤트 처리자는 반환 값이 있을 수 있다는 사실에 주목하십시오. COM-종속적 유형의 값을 돌려주려면, <a href="ComObjActive.htm#param">ComObject(type, value)</a>를 사용하십시오. 예를 들어, <code>return ComObject(0,0)</code>는 variant 유형의 VT_EMPTY를 돌려줍니다. 이것은 자바스크립트에서 <code>undefined</code>를 돌려주는 것 (또는 아무것도 돌려주지 않는 것)과 동등합니다.</p>
 <p>이벤트 처리를 켜려면 <code>ComObjConnect(yourObject, "<i>Prefix</i>")</code>를 호출합니다.</p>
 <p>객체와 연결을 끊으려면 (이벤트 처리를 중지하려면) <code>ComObjConnect(yourObject)</code>를 호출합니다.</p>
 <p>매개변수 개수를 알지 못하면, <a href="../Functions.htm#Variadic">가변 함수</a>를 사용할 수 있습니다.</p>
+
+<h3 id="event-sink">Event Sink <span class="ver">[v1.1.01+]</span></h3>
+<p>If <em>PrefixOrSink</em> is an object, whenever an event is raised, the corresponding method of that object is called. Although the object can be constructed dynamically, it is more typical for <em>PrefixOrSink</em> to refer to a class or an instance of a class. In that case, methods are defined as shown above, but without <em>Prefix</em>.</p>
+<p>As with any call to a method, the method's (normally hidden) <code>this</code> parameter contains a reference to the object through which the method was called; i.e. the event sink object, not the COM object. This can be used to provide context to the event handlers, or share values between them.</p>
+<p>To catch all events without defining a method for each one, define a <a href="../Objects.htm#Meta_Functions">__Call meta-function</a>.</p>
+<p><em>ComObject</em> retains a reference to <em>PrefixOrSink</em>, so it cannot be deleted before the object is disconnected.</p>
+<p><span class="ver">[v1.1.36.02+]:</span> <em>ComObject</em> releases its reference to <em>PrefixOrSink</em> automatically if the COM object releases the connection. For example, Internet Explorer does this when it exits. If the script does not retain its own reference to <em>PrefixOrSink</em>, it can use <a href="../Objects.htm#Custom_NewDelete">__Delete</a> to detect when this occurs. If the object is hosted by a remote process and the process terminates unexpectedly, it may take several minutes for the system to release the connection.</p>
 
 <h2 id="Remarks">논평</h2>
 <p>The script must retain a reference to <em>ComObject</em>, otherwise it would be freed automatically and would disconnect from its COM object, preventing any further events from being detected. There is no standard way to detect when the connection is no longer required, so the script must disconnect manually by calling ComObjConnect.</p>

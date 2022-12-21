@@ -79,7 +79,7 @@ FileOpen("**", "w")  <em>; 표준에러</em></pre>
     <td class="center">h</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td><i>Filename</i>이 객체 안에 싸 넣을 파일 핸들임을 나타냅니다. 공유 모드 플래그는 무시됩니다. 그리고 이 핸들이 가리키는 파일이나 스트림은 바이트 순서 표식이 점검되지 않습니다. 파일 핸들은 파일 객체가 파괴될 때 자동으로 <b>잠기지 않습니다</b>. 그리고 <a href="../objects/File.htm#Close">Close</a>를 호출해 봐야 아무 효과도 없습니다. 주의 하십시오. <i>Filename</i>이 파이프나 통신 장치 같이 위치 지정이 안되는(nonseeking) 장치를 가리키는 핸들이면 <a href="../objects/File.htm#Seek">Seek</a>, <a href="../objects/File.htm#Tell">Tell</a> 그리고 <a href="../objects/File.htm#Length">Length</a>를 사용하면 안 됩니다.</td>
+    <td><i>Filename</i>이 객체 안에 싸 넣을 파일 핸들임을 나타냅니다. 공유 모드 플래그는 무시됩니다. 그리고 이 핸들이 가리키는 파일이나 스트림은 바이트 순서 표식이 점검되지 않습니다. 파일 핸들은 파일 객체가 파괴될 때 자동으로 <b>잠기지 않습니다</b>. 그리고 <a href="File.htm#Close">Close</a>를 호출해 봐야 아무 효과도 없습니다. 주의 하십시오. <i>Filename</i>이 파이프나 통신 장치 같이 위치 지정이 안되는(nonseeking) 장치를 가리키는 핸들이면 <a href="File.htm#Seek">Seek</a>, <a href="File.htm#Tell">Tell</a> 그리고 <a href="File.htm#Length">Length</a>를 사용하면 안 됩니다.</td>
   </tr>
 </table>
 
@@ -146,7 +146,7 @@ FileOpen("**", "w")  <em>; 표준에러</em></pre>
 </table>
 
 <h2 id="Return_Value">반환 값</h2>
-<p>파일이 성공적으로 열리면, 반환 값은 <a href="../objects/File.htm">파일 객체</a>입니다.</p>
+<p>파일이 성공적으로 열리면, 반환 값은 <a href="File.htm">파일 객체</a>입니다.</p>
 <p>함수가 실패하면, 반환 값은 0이고 <span class="ver">[in AHK_L 54+]</span> <a href="../Variables.htm#LastError">A_LastError</a>는 에러 코드가 담깁니다.</p>
 <p>함수가 성공했는지 점검하려면 <code>if file</code> 또는 <code>IsObject(file)</code>를 사용하십시오.</p>
 
@@ -155,7 +155,7 @@ FileOpen("**", "w")  <em>; 표준에러</em></pre>
 <p>UTF-8 또는 UTF-16 바이트 순서 표식(byte order mark (BOM))을 담고 있는 파일이 읽기 접근을 위해 열릴 때, BOM은 파일 포인터를 그 다음으로 이동해서 출력으로부터 제외됩니다. 그러므로, <code>File.Position</code>은 파일을 열고 난후 즉시 3 또는 2를 보고합니다.</p>
 
 <h2 id="Related">관련 항목</h2>
-<p><a href="FileEncoding.htm">FileEncoding</a>, <a href="../objects/File.htm">파일 객체</a>, <a href="FileRead.htm">FileRead</a></p>
+<p><a href="FileEncoding.htm">FileEncoding</a>, <a href="File.htm">파일 객체</a>, <a href="FileRead.htm">FileRead</a></p>
 
 <h2 id="Examples">예제</h2>
 

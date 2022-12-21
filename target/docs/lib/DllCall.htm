@@ -18,11 +18,8 @@
 <h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>결과</dt>
-  <dd><p>DllCall은 함수가 돌려주는 실제 값을 돌려줍니다. 함수가 값을 돌려주지 않는 유형이라면, 그 결과는 정의되지 않은 정수입니다. <a href="#error">에러</a> 때문에 함수를 호출할 수 없다면, 그 결과 값은 비어 있습니다(빈 문자열).</p></dd>
-
   <dt>[DllFile\]Function</dt>
-  <dd><p>DLL이나 EXE 파일 이름 다음에 역사선 그리고 함수의 이름이 따라옵니다. 예를 들어: <code>"MyDLL\MyFunction"</code> (확장자가 생략되면 ".dll"이 기본값입니다). 절대 경로를 지정하지 않으면, <em>DllFile</em>은 시스템 PATH 또는 <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>에 있다고 간주됩니다.</p>
+  <dd><p>DLL이나 EXE 파일 이름 다음에 역사선 그리고 함수의 이름이 따라옵니다. 예를 들어: <code>"MyDLL\MyFunction"</code> (확장자가 생략되면 ".dll"이 기본값입니다). 절대 경로를 지정하지 않으면, <em>DllFile</em>은 시스템 PATH 또는 <a href="../Variables.htm#WorkingDir">A_WorkingDir</a>에 있다고 간주됩니다. Note that DllCall() expects a path with backslashes (\). Forward slashes (/) are not supported.</p>
       <p id="std"><em>DllFile</em>은 User32.dll, Kernel32.dll, ComCtl32.dll, 또는 Gdi32.dll에 거주하는 함수들을 호출할 때 생략할 수 있습니다. 예를 들어, <code>"User32\IsWindowVisible"</code>는 <code>"IsWindowVisible"</code>와 결과가 같습니다.</p>
       <p>함수가 주어진 이름으로 발견되지 않으면, A (ANSI) 또는 W (Unicode) 접미사를 어느 버전의 오토핫키가 스크립트를 실행중인가에 기반하여 자동으로 추가합니다. 예를 들어, <code>"MessageBox"</code>는 ANSI 버전은 <code>"MessageBoxA"</code> 그리고 유니코드 버전은 <code>"MessageBoxW"</code>와 같습니다.</p>
       <p><em>반복적으로</em> DLL에 호출할 경우 <a href="#load">미리 적재하면</a> 수행성능을 극적으로 향상시킬 수 있습니다.</p>
@@ -38,6 +35,9 @@
       <p><em>ReturnType</em>: 함수가 32-비트 부호있는 정수 (Int), BOOL을 돌려주거나, 또는 아무것도 돌려주지 않으면, <em>ReturnType</em>을 생략할 수 있습니다. 그렇지 않으면, 아래의 <a href="#types">유형 테이블</a>에 있는 인자 중 하나를 지정하십시오. <a href="#asterisk">별표 접미사</a>도 지원됩니다.</p></dd>
 
 </dl>
+
+<h2 id="Return_Value">반환 값</h2>
+<p>DllCall returns the actual value returned by <em>Function</em>. If <em>Function</em> is of a type that does not return a value, the result is an undefined integer. If <em>Function</em> cannot be called due to an <a href="#error">error</a>, the return value is blank (an empty string).</p>
 
 <h2 id="types">인자의 유형과 반환 값</h2>
 <table class="info">
@@ -161,8 +161,7 @@ result := DllCall("CharLower", "<strong><u>Str</u></strong>", DllCall("CharUpper
 <h2 id="COM">컴포넌트 객체 모델 (COM)</h2>
 <p>COM 객체는 VBScript와 비슷한 언어로 접근할 수 있으며 전형적으로 오토핫키의 <a href="ComObjCreate.htm">ComObjCreate()</a>, <a href="ComObjGet.htm">ComObjGet()</a> 또는 <a href="ComObjActive.htm">ComObjActive()</a> 그리고 내장 <a href="../Objects.htm#Usage_Objects">객체 구문</a>을 통하여 접근할 수도 있습니다.</p>
 <p><a href="http://msdn.microsoft.com/ko-kr/library/ms221608.aspx">IDispatch</a>를 지원하지 않는 COM 객체는 DllCall과 함께 사용하려면 함수의 주소를 그 객체 인터페이스의 가상 함수 테이블에서 열람합니다. 더 자세한 것은 아래의 <a href="#ExTaskbar">예제</a>를 참조하십시오.</p>
-<p>.NET 프레임워크 대부분도 COM과 DllCall을 통하여 접근할 수 있습니다. See <a href="https://www.autohotkey.com/forum/topic26191.html">.NET Framework Interop</a>.
-</p>
+<p>.NET 프레임워크 대부분도 COM과 DllCall을 통하여 접근할 수 있습니다. See <a href="https://www.autohotkey.com/forum/topic26191.html">.NET Framework Interop</a>.</p>
 
 <h2 id="Related">관련 항목</h2>
 <p><a href="../Compat.htm#DllCall">스크립트 호환성</a>, <a href="PostMessage.htm">PostMessage</a>, <a href="OnMessage.htm">OnMessage()</a>, <a href="RegisterCallback.htm">RegisterCallback()</a>, <a href="Run.htm">Run</a>, <a href="VarSetCapacity.htm">VarSetCapacity()</a>, <a href="../Functions.htm">Functions</a>, <a href="SysGet.htm">SysGet</a>, <a href="http://msdn.microsoft.com/library/">MSDN Library</a></p>

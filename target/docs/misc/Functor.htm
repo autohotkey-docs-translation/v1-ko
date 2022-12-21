@@ -14,19 +14,19 @@
 
 <p>"함수 객체"는 보통 다음을 뜻합니다:</p>
 <ul>
-  <li><a href="Func.htm">Func object</a>를 가리키는 참조 주소. 실제 <a href="../Functions.htm">함수</a>를 가리킵니다; 내장 함수 또는 스크립트에 정의된 함수.</li>
+  <li><a href="../lib/Func.htm">Func object</a>를 가리키는 참조 주소. 실제 <a href="../Functions.htm">함수</a>를 가리킵니다; 내장 함수 또는 스크립트에 정의된 함수.</li>
   <li>함수처럼 호출할 수 있는 사용자-정의 객체. 이는 종종 "functor"라고 지칭되기도 합니다.</li>
   <li>함수처럼 호출할 수 있는 다른 객체. 예를 들어 COM 메쏘드가 반환하는 <a href="#BoundFunc">BoundFunc object</a> 또는 JavaScript 함수 객체.</li>
 </ul>
 <p>함수 객체는 다음과 함께 사용할 수 있습니다:</p>
 <ul>
-  <li><a href="../commands/Gui.htm#label">구이 콘트롤 이벤트</a> (g-labels)</li>
-  <li><a href="../commands/Hotkey.htm#Functor">Hotkey</a></li>
-  <li><a href="../commands/Menu.htm#Functor">Menu</a></li>
-  <li><a href="../commands/OnClipboardChange.htm#function">OnClipboardChange()</a></li>
-  <li><a href="../commands/OnExit.htm#function">OnExit()</a></li>
-  <li><a href="../commands/OnMessage.htm">OnMessage()</a></li>
-  <li><a href="../commands/SetTimer.htm#Functor">SetTimer</a></li>
+  <li><a href="../lib/Gui.htm#label">구이 콘트롤 이벤트</a> (g-labels)</li>
+  <li><a href="../lib/Hotkey.htm#Functor">Hotkey</a></li>
+  <li><a href="../lib/Menu.htm#Functor">Menu</a></li>
+  <li><a href="../lib/OnClipboardChange.htm#function">OnClipboardChange()</a></li>
+  <li><a href="../lib/OnExit.htm#function">OnExit()</a></li>
+  <li><a href="../lib/OnMessage.htm">OnMessage()</a></li>
+  <li><a href="../lib/SetTimer.htm#Functor">SetTimer</a></li>
 </ul>
 
 <h2 id="User-Defined">사용자-정의 함수</h2>
@@ -95,8 +95,8 @@ Two(param1, param2) {
 <p>함수처럼 행위합니다. 그러나 그저 미리 정의된 매개변수를 다른 함수로 건네는 역할만 합니다.</p>
 <p>두 가지 방법으로 BoundFunc 객체를 생성할 수 있습니다:</p>
 <ul>
-  <li><a href="Func.htm#Bind">Func.Bind()</a> 메쏘드를 호출하면, 매개변수 값을 함수에 묶습니다.</li>
-  <li><a href="../commands/ObjBindMethod.htm">ObjBindMethod()</a>를 호출하면, 매개변수 값과 메쏘드 이름을 목표 객체에 묶습니다.</li>
+  <li><a href="../lib/Func.htm#Bind">Func.Bind()</a> 메쏘드를 호출하면, 매개변수 값을 함수에 묶습니다.</li>
+  <li><a href="../lib/ObjBindMethod.htm">ObjBindMethod()</a>를 호출하면, 매개변수 값과 메쏘드 이름을 목표 객체에 묶습니다.</li>
 </ul>
 <p>BoundFunc 객체는 아래 예제에 보여주는 바와 같이 호출할 수 있습니다. 다른 메쏘드는 지원하지 않습니다. BoundFunc가 호출될 때, 그에 묶인 함수나 메쏘드를 호출하면서, 묶인 매개변수와 그리고 호출자가 건넨 것을 모두 건넵니다. 예를 들어:</p>
 <pre>fn := Func("RealFn").Bind(1)
@@ -107,11 +107,11 @@ fn.Call(3) <em>; Shows "1, 3"</em>
 RealFn(a, b) {
     MsgBox %a%, %b%
 }</pre>
-<p><a href="../commands/ObjBindMethod.htm">ObjBindMethod()</a>를 사용하면 메쏘드 자체를 가리키는 참조 주소를 열람할 수 없을 때 메쏘드에 묶을 수 있습니다. 예를 들어:</p>
+<p><a href="../lib/ObjBindMethod.htm">ObjBindMethod()</a>를 사용하면 메쏘드 자체를 가리키는 참조 주소를 열람할 수 없을 때 메쏘드에 묶을 수 있습니다. 예를 들어:</p>
 <pre>file := FileOpen(A_ScriptFullPath, "r")
 getLine := ObjBindMethod(file, "ReadLine")
 MsgBox % %getLine%()  <em>; 이 파일의 첫 줄을 보여줍니다.</em></pre>
-<p>For a more complex example, see <a href="../commands/SetTimer.htm#ExampleClass">SetTimer</a>.</p>
+<p>For a more complex example, see <a href="../lib/SetTimer.htm#ExampleClass">SetTimer</a>.</p>
 
 </body>
 </html>

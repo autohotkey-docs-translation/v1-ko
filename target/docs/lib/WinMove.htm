@@ -50,6 +50,8 @@
 <p>WinMove의 속도는 <a href="SetWinDelay.htm">SetWinDelay</a>에 영향을 받습니다.</p>
 <p>창 제목과 텍스트는 대소문자를 구분합니다. 숨은 창은 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>가 켜져 있어야 탐지됩니다.</p>
 <p id="limitation"><strong>알려진 한계</strong>: If <em>WinTitle</em> or <em>WinText</em> contains <code>(</code>, <code>[</code> or <code>{</code>, but not the closing counterpart, such as <code>WinMove, KEDIT - [</code>, the parameter is automatically interpreted as an <a href="../Variables.htm#Expressions">expression</a>, resulting in an error message. To avoid this, you can use a <a href="../Variables.htm#percent-space">leading percent sign</a> to force a literal string instead, such as <code>WinMove, % "KEDIT - ["</code>.</p>
+<p>On systems with multiple screens which have different DPI settings, the final position and size of the window may differ from the requested values due to <a href="../misc/DPIScaling.htm">OS DPI scaling</a>.</p>
+
 <h2 id="Related">관련 항목</h2>
 <p><a href="ControlMove.htm">ControlMove</a>, <a href="WinGetPos.htm">WinGetPos</a>, <a href="WinHide.htm">WinHide</a>, <a href="WinMinimize.htm">WinMinimize</a>, <a href="WinMaximize.htm">WinMaximize</a>, <a href="WinSet.htm">WinSet</a></p>
 <h2 id="Examples">예제</h2>

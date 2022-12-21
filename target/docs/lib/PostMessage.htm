@@ -69,9 +69,10 @@
 <pre>SendMessage, 0x000C, 0, <strong>&amp;MyVar</strong>, ClassNN, WinTitle  <em>; 0x000C은 WM_SETTEXT입니다</em></pre>
 <p><span class="ver">[v1.0.43.06+]</span>: 메시지 수신자에 의하여 MyVar 안에 배정된 문자열은 별도의 추가 절차 없이 적절하게 인지됩니다. 그렇지만, 이것은 매개변수의 첫 문자가 앰퍼센드 (&amp;)일 경우에만 작동합니다; 예를 들어, <code>5+&amp;MyVar</code>는 작동하지 않지만 <code>&amp;MyVar</code> 또는 <code>&amp;MyVar+5</code>는 작동합니다.</p>
 <p>인용부호 처리된/기호 그대로의 문자열도 다음 예제와 같이 전송할 수 있습니다 (&amp; 연산자는 이 경우 사용하면 안 됩니다):</p>
-<pre>Run Notepad
-WinWait Untitled - Notepad
-SendMessage, 0x000C, 0, "<strong>New Notepad Title</strong>"  <em>; 0x000C은 WM_SETTEXT입니다</em></pre>
+<pre>#Persistent
+ListVars
+WinWaitActive, ahk_class AutoHotkey
+SendMessage, 0x000C, 0, "<strong>New Title</strong>"  <em>; 0x000C은 WM_SETTEXT입니다</em></pre>
 <p>메시지 하나를 숨어 있든 비활성화되어 있든 시스템에 있는 모든 창에 보내려면, <code>ahk_id 0xFFFF</code>를 <em>WinTitle</em> (0xFFFF는 HWND_BROADCAST임)에 지정하십시오. 이 테크닉은 다음 예제와 같이 방송용 의도의 메시지에만 사용해야 합니다:</p>
 <pre>SendMessage, 0x001A,,,, ahk_id 0xFFFF  <em>; 0x001A은 WM_SETTINGCHANGE입니다</em></pre>
 <p>스크립트가 메시지를 받도록 하려면 <a href="OnMessage.htm">OnMessage()</a>를 사용하십시오.</p>

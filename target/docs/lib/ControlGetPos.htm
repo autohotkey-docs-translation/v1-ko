@@ -14,16 +14,16 @@
 
 <p>콘트롤의 위치와 크기를 열람합니다.</p>
 
-<pre class="Syntax"><span class="func">ControlGetPos</span> <span class="optional">, X, Y, Width, Height, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<pre class="Syntax"><span class="func">ControlGetPos</span> <span class="optional">, OutX, OutY, OutWidth, OutHeight, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <h2 id="Parameters">매개변수</h2>
 <dl>
 
-  <dt>X, Y</dt>
-  <dd><p><em>Control</em>의 좌상 모서리의 X와 Y 좌표를 저장할 변수 이름 (픽셀 단위). 이 좌표는 목표 창의 좌상 모서리에 상대적이며 그래서 <a href="ControlMove.htm">ControlMove</a>가 사용하는 좌표와 같습니다.</p>
+  <dt>OutX, OutY</dt>
+  <dd><p>The names of the output variables in which to store the X and Y coordinates (in pixels) of <em>Control</em>'s upper left corner. 이 좌표는 목표 창의 좌상 모서리에 상대적이며 그래서 <a href="ControlMove.htm">ControlMove</a>가 사용하는 좌표와 같습니다.</p>
       <p>X나 Y를 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
 
-  <dt>Width, Height</dt>
-  <dd><p><em>Control</em>의 너비와 높이를 (픽셀 단위로) 저장할 변수의 이름. 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
+  <dt>OutWidth, OutHeight</dt>
+  <dd><p>The names of the output variables in which to store <em>Control</em>'s width and height (in pixels). 생략하면, 상응하는 값이 저장되지 않습니다.</p></dd>
 
   <dt>Control</dt>
   <dd><p>ClassNN (콘트롤의 클래스이름과 실체 번호) 또는 콘트롤의 텍스트일 수 있습니다. 둘 모두 Window Spy로 알아낼 수 있습니다. 텍스트를 사용할 때, 부합하는 행위는 <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>로 결정됩니다. 이 매개변수가 비어 있으면, 목표 창의 최상위 콘트롤이 사용됩니다.</p>

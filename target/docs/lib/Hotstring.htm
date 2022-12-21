@@ -35,8 +35,8 @@ OldValue := <span class="func">Hotstring</span>("<a href="#MouseReset">MouseRese
 
   <dt>Replacement</dt>
   <dd>
-    <p>The replacement string, or a <a href="../misc/Labels.htm">label</a>, <a href="../Functions.htm">function</a> or <a href="../objects/Functor.htm">function object</a> to call (as a new <a href="../misc/Threads.htm">thread</a>) when the hotstring triggers.</p>
-    <p>By default, all strings are treated as replacement text. To specify a label or function by name, include the <a href="../Hotstrings.htm#X">X (execute)</a> option in <em>String</em>. Both normal labels and <a href="../Hotkeys.htm">hotkey</a>/<a href="../Hotstrings.htm">hotstring</a> labels can be used, and the trailing colon(s) should not be included. If a function and a label exist with the same name, the label takes precedence. To use the function instead, pass a <a href="../objects/Func.htm">function reference</a>.</p>
+    <p>The replacement string, or a <a href="../misc/Labels.htm">label</a>, <a href="../Functions.htm">function</a> or <a href="../misc/Functor.htm">function object</a> to call (as a new <a href="../misc/Threads.htm">thread</a>) when the hotstring triggers.</p>
+    <p>By default, all strings are treated as replacement text. To specify a label or function by name, include the <a href="../Hotstrings.htm#X">X (execute)</a> option in <em>String</em>. Both normal labels and <a href="../Hotkeys.htm">hotkey</a>/<a href="../Hotstrings.htm">hotstring</a> labels can be used, and the trailing colon(s) should not be included. If a function and a label exist with the same name, the label takes precedence. To use the function instead, pass a <a href="Func.htm">function reference</a>.</p>
     <p>This parameter can be left blank if the hotstring already exists, in which case its replacement will not be changed. This is useful to change only the hotstring's options, or to turn it on or off.</p>
     <p class="note"><strong>주의</strong>: If this parameter is specified but the hotstring is disabled from a previous use of this function, the hotstring will remain disabled. To prevent this, include the word <code>"On"</code> in <em>OnOffToggle</em>.</p>
   </dd>
@@ -84,7 +84,7 @@ Hotstring("::btw", "by the way")</pre>
 <p>Retrieves or modifies the set of characters used as <a href="../Hotstrings.htm#EndChars">ending characters</a> by the hotstring recognizer. 예를 들어:</p>
 <pre>prev_chars := Hotstring("EndChars", "-()[]{}':;""/\,.?!`n `t")
 MsgBox The previous value was: %prev_chars%</pre>
-<p><a href="Hotstring.htm#EndChars">#Hotstring EndChars</a> also affects this setting.</p>
+<p><a href="#EndChars">#Hotstring EndChars</a> also affects this setting.</p>
 <p>It is currently not possible to specify a different set of end characters for each hotstring.</p>
 
 <h2 id="MouseReset">MouseReset</h2>
@@ -125,8 +125,8 @@ if ErrorLevel  <em>; ClipWait 시간 종료.</em>
 ; 다른 문자들에 대해서도 똑 같이 교체한다. 그렇지 않으면
 ; 날 모드에서 문제를 일으킬 수 있다:</em>
 ClipContent := StrReplace(Clipboard, "``", "````")  <em>; 아래의 다른 것들과의 간섭을 피하기 위해 이걸 먼저 교체한다.</em>
-ClipContent := StrReplace(ClipContent, "`r`n", "``r")  <em>; MS Word, 등등에서 `r을 사용하는 것이 `n보다 더 잘 작동한다 .</em>
-ClipContent := StrReplace(ClipContent, "`n", "``r")
+ClipContent := StrReplace(ClipContent, "`r`n", "``n")
+ClipContent := StrReplace(ClipContent, "`n", "``n")
 ClipContent := StrReplace(ClipContent, "`t", "``t")
 ClipContent := StrReplace(ClipContent, "`;", "```;")
 Clipboard := ClipboardOld  <em>; 클립보드의 이전 내용을 복구한다.</em>

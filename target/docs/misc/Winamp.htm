@@ -18,7 +18,7 @@
 if not WinExist("ahk_class Winamp v1.x")
     return
 <em>; 그렇지 않으면, 위에서 "가장 마지막에 발견된" 창을 아래에 사용하도록 설정했습니다.</em>
-<a href="../commands/ControlSend.htm">ControlSend</a>, ahk_parent, c  <em>; 정지/재개</em>
+<a href="../lib/ControlSend.htm">ControlSend</a>, ahk_parent, c  <em>; 정지/재개</em>
 return</pre>
 <p>다음은 Winamp 2.x에서 사용가능한 몇 가지 키보드 단축키입니다 (다른 버전에서도 작동할 것입니다). 위의 예제는 다음 키들을 사용하도록 개정할 수 있습니다:</p>
 <table class="info" style="width:50%">
@@ -73,7 +73,7 @@ return</pre>
 </table>
 <p>The following example asks Winamp which track number is currently active:</p>
 <pre>
-<a href="../commands/PostMessage.htm">SendMessage</a>, 0x0400, 0, 120,, ahk_class Winamp v1.x
+<a href="../lib/PostMessage.htm">SendMessage</a>, 0x0400, 0, 120,, ahk_class Winamp v1.x
 if (ErrorLevel != "FAIL")
 {
     ErrorLevel += 1  <em>; Winamp의 카운트는 0부터 시작합니다. 그래서 1 만큼 조정합니다.</em>

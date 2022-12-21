@@ -14,7 +14,7 @@
 
 <p>화면 해상도, 다중-모니터 정보, 시스템 객체의 크기, 그리고 기타 시스템 특성을 열람합니다.</p>
 <pre class="Syntax"><span class="func">SysGet</span>, OutputVar, <a href="#SubCommands">SubCommand</a> <span class="optional">, Value</span></pre>
-<p>The <em>OutputVar</em> parameter is the name of the variable in which to store the result. <em>SubCommand</em>와 <em>Value</em> 매개변수는 서로 의존합니다. 그 사용법은 아래에 기술합니다.</p>
+<p>The <em>OutputVar</em> parameter is the name of the output variable in which to store the result. <em>SubCommand</em>와 <em>Value</em> 매개변수는 서로 의존합니다. 그 사용법은 아래에 기술합니다.</p>
 
 <h2 id="SubCommands">부-명령어</h2>
 <p>For <em>SubCommand</em>, specify one of the following:</p>
@@ -120,24 +120,19 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
   </tr>
   <tr>
     <td>8193</td>
-    <td>
-      SM_REMOTECONTROL: 이 시스템 숫치는 터미널 서비스 환경에서 사용됩니다. 현재 세션이 원격 제어되고 있으면 그의 값은 0이 아닙니다; 그렇지 않으면 0.</td>
+    <td>SM_REMOTECONTROL: 이 시스템 숫치는 터미널 서비스 환경에서 사용됩니다. 현재 세션이 원격 제어되고 있으면 그의 값은 0이 아닙니다; 그렇지 않으면 0.</td>
   </tr>
   <tr>
     <td>4096</td>
-    <td>
-      SM_REMOTESESSION: 이 시스템 숫치는 터미널 서비스 환경에서 사용됩니다. 호출 프로세스가 터미널 서비스 클라이언트 세션에 연관되어 있으면, 반환 값은 0이 아닙니다. 호출 프로세스가 터미널 서버 콘솔 세션에 연관되어 있으면, 반환 값은 0입니다. 콘솔 세션이 반드시 물리적 콘솔이어야 할 필요는 없습니다.</td>
+    <td>SM_REMOTESESSION: 이 시스템 숫치는 터미널 서비스 환경에서 사용됩니다. 호출 프로세스가 터미널 서비스 클라이언트 세션에 연관되어 있으면, 반환 값은 0이 아닙니다. 호출 프로세스가 터미널 서버 콘솔 세션에 연관되어 있으면, 반환 값은 0입니다. 콘솔 세션이 반드시 물리적 콘솔이어야 할 필요는 없습니다.</td>
   </tr>
   <tr>
     <td>70</td>
-    <td>
-      SM_SHOWSOUNDS: 사용자가 어플리케이션을 시각적으로 정보를 보여주도록 요구하면 0이 아닌 값입니다. 보통은 정보를 청각 형태로만 제시합니다; 그렇지 않으면 0.
-    </td>
+    <td>SM_SHOWSOUNDS: 사용자가 어플리케이션을 시각적으로 정보를 보여주도록 요구하면 0이 아닌 값입니다. 보통은 정보를 청각 형태로만 제시합니다; 그렇지 않으면 0.</td>
   </tr>
   <tr>
     <td>8192</td>
-    <td>
-      SM_SHUTTINGDOWN: 현재 세션이 닫히고 있는 중이면 0이 아닌 값입니다; 그렇지 않으면 0. <b>Windows 2000:</b> 반환된 값은 항상 0입니다.</td>
+    <td>SM_SHUTTINGDOWN: 현재 세션이 닫히고 있는 중이면 0이 아닌 값입니다; 그렇지 않으면 0. <b>Windows 2000:</b> 반환된 값은 항상 0입니다.</td>
   </tr>
   <tr>
     <td>23</td>
@@ -145,8 +140,7 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
   </tr>
   <tr>
     <td>76, 77</td>
-    <td>
-      SM_XVIRTUALSCREEN, SM_YVIRTUALSCREEN: 가상 화면의 좌상 모서리 좌표. 가상 화면은 모든 디스플레이 모니터의 사각 테두리입니다. 대조적으로, SM_CXVIRTUALSCREEN, SM_CYVIRTUALSCREEN는 가상 화면의 너비와 높이입니다.</td>
+    <td>SM_XVIRTUALSCREEN, SM_YVIRTUALSCREEN: 가상 화면의 좌상 모서리 좌표. 가상 화면은 모든 디스플레이 모니터의 사각 테두리입니다. 대조적으로, SM_CXVIRTUALSCREEN, SM_CYVIRTUALSCREEN는 가상 화면의 너비와 높이입니다.</td>
   </tr>
 </table>
 

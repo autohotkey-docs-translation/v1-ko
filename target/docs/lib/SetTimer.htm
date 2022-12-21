@@ -21,14 +21,14 @@
   <dt id="Label">Label</dt>
   <dd><p>점프해 갈 <a href="../misc/Labels.htm">라벨</a> 또는 <a href="../Hotkeys.htm">핫키 라벨</a>의 이름. <a href="Return.htm">Return</a>이나 <a href="Exit.htm">Exit</a>을 만날 때까지 <em>Label</em> 아래의 명령어들이 실행됩니다. 거의 모든 다른 명령어의 매개변수처럼, <em>Label</em>은 <a href="../Variables.htm">변수</a> 참조가 될 수 있습니다. %MyLabel%와 같이, 변수에 저장된 이름이 목표로 사용됩니다.</p>
   <p id="OmitLabel"><span class="ver">[v1.1.01+]:</span> <em>Label</em>이 생략되면, <a href="../Variables.htm#ThisLabel">A_ThisLabel</a>이 사용됩니다. For example, <code>SetTimer,, Off</code> can be used inside a timer subroutine to turn off the timer, while <code>SetTimer,, 1000</code> would either update the current timer's <em>Period</em> or set a new timer using the label which is currently running. <span class="ver">[v1.1.24+]:</span> If A_ThisLabel is empty but the current thread was launched by a timer, that timer is used. This is useful for timers which launch functions or function objects.</p>
-  <p id="Functor"><span class="ver">[v1.1.20+]:</span> 유효하지 않은 라벨 이름이라면, 이 매개변수는 함수의 이름, 또는 (<a href="../objects/Functor.htm">함수 객체</a>를 담고 있는) 단일 변수 참조일 수 있습니다. 예를 들어, <code>SetTimer %FuncObj%, 1000</code> 또는 <code>SetTimer % FuncObj, 1000</code>. 함수 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다. See <a href="#ExampleClass">the class example</a> for more details.</p>
+  <p id="Functor"><span class="ver">[v1.1.20+]:</span> If not a valid label name, this parameter can be the name of a function whose parameter list has no mandatory parameters (see the <a href="#ExFunction">function example</a>), or a single variable reference containing a <a href="../misc/Functor.htm">function object</a>. For example, <code>SetTimer %FuncObj%, 1000</code> or <code>SetTimer % FuncObj, 1000</code>. 함수 객체를 돌려주는 다른 표현식은 현재 지원하지 않습니다. See the <a href="#ExampleClass">class example</a> for more details.</p>
   <p class="note"><strong>Note:</strong> <span class="ver">[v1.1.24+]:</span> Passing an empty variable or an expression which results in an empty value is considered an error. This parameter must be either given a non-empty value or completely omitted.</p>
   </dd>
 
   <dt>PeriodOnOffDelete</dt>
   <dd><p><strong>On</strong>: 이전 기간(<em>period</em>) 동안 비활성화되어 있던 타이머를 재활성화합니다. 타이머가 존재하지 않으면, 새로 만듭니다 (기본 간격은 250입니다). The timer is also <a href="#reset">reset</a>. 타이머가 존재하지만 이전에 <a href="#once">한-번만- 실행 모드</a>로 설정되어 있었다면, 다시 한 번만 실행됩니다.</p>
       <p><strong>Off</strong>: 기존의 타이머를 끕니다.</p>
-      <p><strong>Delete</strong> <span class="ver">[v1.1.20+]</span>: 기존의 타이머를 끄고 삭제합니다. 타이머가 <a href="../objects/Functor.htm">함수 객체</a>에 연관되어 있다면, 그 객체는 해제됩니다. 타이머를 끄더라도 객체는 해제되지 않습니다.</p>
+      <p><strong>Delete</strong> <span class="ver">[v1.1.20+]</span>: 기존의 타이머를 끄고 삭제합니다. 타이머가 <a href="../misc/Functor.htm">함수 객체</a>에 연관되어 있다면, 그 객체는 해제됩니다. 타이머를 끄더라도 객체는 해제되지 않습니다.</p>
       <p><strong>Period</strong>: Creates or updates a timer using the absolute value of this parameter as the <a href="#Precision">approximate</a> number of milliseconds that must pass before the timer is executed. The timer will be automatically enabled and <a href="#reset">reset</a>. It can be set to repeat automatically or run only once:</p>
       <ul>
         <li>If <em>Period</em> is positive, the timer will automatically repeat until it is explicitly disabled by the script.</li>
@@ -135,8 +135,20 @@ winc_presses := 0
 return</pre>
 </div>
 
+<div class="ex" id="ExFunction">
+<p><a class="ex_number" href="#ExFunction"></a> A simple counter. Uses a <a href="../Functions.htm">function</a> as the timer subroutine.</p>
+<pre>#Persistent
+SetTimer, Tick, 1000
+
+Tick()
+{
+    static count := 0
+    ToolTip % count++
+}</pre>
+</div>
+
 <div class="ex" id="ExampleClass">
-<p><a class="ex_number" href="#ExampleClass"></a> Uses a <a href="../Objects.htm#Custom_Classes_method">method</a> as the timer subroutine.</p>
+<p><a class="ex_number" href="#ExampleClass"></a> A more complex counter. Uses a <a href="../Objects.htm#Custom_Classes_method">method</a> as the timer subroutine.</p>
 <pre>counter := new SecondCounter
 counter.Start()
 Sleep 5000
@@ -172,7 +184,7 @@ class SecondCounter {
 }</pre>
 <p>Tips relating to the above example:</p>
 <ul>
-  <li>We can also use <code>this.timer := this.Tick.<a href="../objects/Func.htm#Bind">Bind</a>(this)</code>.  When <code>this.timer</code> is called, it will effectively invoke <code>this.Tick.<a href="../objects/Func.htm#Call">Call</a>(this)</code> (except that <code>this.Tick</code> is not re-evaluated).  By contrast, <a href="ObjBindMethod.htm">ObjBindMethod()</a> produces an object which invokes <code>this.Tick()</code>.</li>
+  <li>We can also use <code>this.timer := this.Tick.<a href="Func.htm#Bind">Bind</a>(this)</code>.  When <code>this.timer</code> is called, it will effectively invoke <code>this.Tick.<a href="Func.htm#Call">Call</a>(this)</code> (except that <code>this.Tick</code> is not re-evaluated).  By contrast, <a href="ObjBindMethod.htm">ObjBindMethod()</a> produces an object which invokes <code>this.Tick()</code>.</li>
   <li>If we rename <em>Tick</em> to <em>Call</em>, we can just use <code>this</code> directly instead of <code>this.timer</code>.  This also removes the need for the temporary variable.  However, ObjBindMethod() is useful when the object has multiple methods which should be called by different event sources, such as hotkeys, menu items, GUI controls, etc.</li>
   <li>If the timer is being modified or deleted from within a function/method called by the timer, it may be easier to <a href="#OmitLabel">omit the <em>Label</em> parameter</a>. In some cases this avoids the need to retain the original object which was passed to SetTimer, which eliminates one temporary variable (like <code>timer</code> in the example above).</li>
 </ul>
